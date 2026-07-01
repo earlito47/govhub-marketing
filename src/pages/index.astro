@@ -1,0 +1,67 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="GovHub — Modern tools for government teams">
+  <main>
+    <section class="hero">
+      <p class="eyebrow">GovHub</p>
+      <h1>Modern tools for the teams that run government.</h1>
+      <p class="lede">
+        We're building software that helps agencies procure, deliver, and
+        report on the work that matters. Something to show soon.
+      </p>
+      <p class="cta">
+        <a href="mailto:hello@govhub.example">Get in touch →</a>
+      </p>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  main {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 6rem 1.5rem;
+  }
+
+  .hero {
+    max-width: 42rem;
+  }
+
+  .eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 0.85rem;
+    color: var(--muted);
+    margin: 0 0 1.5rem;
+  }
+
+  h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    line-height: 1.15;
+    margin: 0 0 1.5rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+
+  .lede {
+    font-size: 1.15rem;
+    color: var(--muted);
+    margin: 0 0 2.5rem;
+  }
+
+  .cta a {
+    display: inline-block;
+    font-size: 1.05rem;
+    padding: 0.75rem 1.25rem;
+    border: 1px solid var(--accent);
+    border-radius: 0.5rem;
+    transition: background 0.15s ease;
+  }
+
+  .cta a:hover {
+    background: rgba(79, 140, 255, 0.12);
+    text-decoration: none;
+  }
+</style>
