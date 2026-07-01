@@ -1,0 +1,94 @@
+---
+const year = 2026;
+---
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="cols">
+      <div>
+        <p class="brand">GovHub</p>
+        <p class="muted">AI proposal writing for government contractors.</p>
+      </div>
+      <div>
+        <p class="heading">Product</p>
+        <ul>
+          <li><a href="/solutions/ai-proposal-generator/">AI proposal generator</a></li>
+          <li><a href="/solutions/form-autofiller/">Form autofiller</a></li>
+          <li><a href="/solutions/template-generator/">Template generator</a></li>
+          <li><a href="/pricing/">Pricing</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="heading">Compare</p>
+        <ul>
+          <li><a href="/vs/loopio/">GovHub vs Loopio</a></li>
+          <li><a href="/vs/responsive/">GovHub vs Responsive</a></li>
+          <li><a href="/vs/deltek-govwin-iq/">GovHub vs Deltek GovWin IQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="heading">Company</p>
+        <ul>
+          <li><a href="/faq/">FAQ</a></li>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="mailto:hello@govhub.example">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="copyright">© {year} GovHub. All rights reserved.</p>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    border-top: 1px solid var(--border);
+    padding: 3rem 0 2rem;
+    margin-top: 5rem;
+  }
+  .cols {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+  }
+  .brand {
+    font-weight: 700;
+    color: var(--fg);
+    margin: 0 0 0.5rem;
+  }
+  .muted {
+    color: var(--fg-muted);
+    font-size: 0.9rem;
+    margin: 0;
+  }
+  .heading {
+    color: var(--fg);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin: 0 0 0.75rem;
+  }
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  li {
+    margin: 0.4rem 0;
+  }
+  li a {
+    color: var(--fg-muted);
+    font-size: 0.9rem;
+  }
+  li a:hover {
+    color: var(--fg);
+    text-decoration: none;
+  }
+  .copyright {
+    color: var(--fg-muted);
+    font-size: 0.85rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+  }
+</style>

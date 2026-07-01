@@ -1,0 +1,95 @@
+---
+/**
+ * Renders both the visual FAQ accordion AND the FAQPage JSON-LD from
+ * a single source of truth. Never let the two drift.
+ */
+
+import SchemaOrg from './SchemaOrg.astro';
+
+interface FAQ {
+  question: string;
+  answer: string;
+}
+
+interface Props {
+  faqs: FAQ[];
+  heading?: string;
+}
+
+const { faqs, heading = 'Frequently asked questions' } = Astro.props;
+
+const mainEntity = faqs.map((f) => ({
+  '@type': 'Question',
+  name: f.question,
+  acceptedAnswer: {
+    '@type': 'Answer',
+    text: f.answer,
+  },
+}));
+---
+
+<SchemaOrg type="FAQPage" data={{ mainEntity }} />
+
+<section class="faq" aria-labelledby="faq-heading">
+  <h2 id="faq-heading">{heading}</h2>
+  <div class="faq-list">
+    {faqs.map((f) => (
+      <details>
+        <summary>{f.question}</summary>
+        <div class="answer">
+          <p>{f.answer}</p>
+        </div>
+      </details>
+    ))}
+  </div>
+</section>
+
+<style>
+  .faq {
+    max-width: var(--content-width);
+    margin: 4rem 0;
+  }
+  .faq h2 {
+    margin: 0 0 1.5rem;
+  }
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  details {
+    border: 1px solid var(--border);
+    border-radius: 0.5rem;
+    background: var(--bg-elevated);
+    padding: 0;
+  }
+  summary {
+    padding: 1rem 1.25rem;
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--fg);
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  summary::-webkit-details-marker {
+    display: none;
+  }
+  summary::after {
+    content: '+';
+    color: var(--fg-muted);
+    font-size: 1.25rem;
+    margin-left: 1rem;
+  }
+  details[open] summary::after {
+    content: '−';
+  }
+  .answer {
+    padding: 0 1.25rem 1.25rem;
+  }
+  .answer p {
+    color: var(--fg-muted);
+    margin: 0;
+  }
+</style>

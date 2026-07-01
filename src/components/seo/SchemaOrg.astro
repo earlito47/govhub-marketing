@@ -1,0 +1,59 @@
+---
+/**
+ * Emits JSON-LD schema.org markup.
+ *
+ * Supported `type` values:
+ *   - Organization       (default site-wide identity block)
+ *   - SoftwareApplication
+ *   - Article
+ *   - FAQPage
+ *   - BreadcrumbList
+ *
+ * Pass `data` for type-specific fields; sensible defaults are used for
+ * Organization when no data is provided.
+ */
+
+type SchemaType =
+  | 'Organization'
+  | 'SoftwareApplication'
+  | 'Article'
+  | 'FAQPage'
+  | 'BreadcrumbList';
+
+interface Props {
+  type: SchemaType;
+  data?: Record<string, unknown>;
+}
+
+const { type, data = {} } = Astro.props;
+
+const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? 'https://govhub-marketing.pages.dev';
+
+const defaultsByType: Record<SchemaType, Record<string, unknown>> = {
+  Organization: {
+    name: 'GovHub',
+    url: siteUrl,
+    logo: `${siteUrl}/favicon.svg`,
+    description: 'AI proposal writing platform for government contractors.',
+    sameAs: [],
+  },
+  SoftwareApplication: {
+    name: 'GovHub',
+    applicationCategory: 'BusinessApplication',
+    operatingSystem: 'Web',
+    offers: { '@type': 'Offer', priceCurrency: 'USD' },
+  },
+  Article: {},
+  FAQPage: { mainEntity: [] },
+  BreadcrumbList: { itemListElement: [] },
+};
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': type,
+  ...defaultsByType[type],
+  ...data,
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

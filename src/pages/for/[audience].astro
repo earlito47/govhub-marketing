@@ -1,0 +1,125 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import FAQSchema from '../../components/seo/FAQSchema.astro';
+import Breadcrumbs from '../../components/seo/Breadcrumbs.astro';
+import { audiences, type Audience } from '../../data/audiences';
+
+export function getStaticPaths() {
+  return audiences.map((a) => ({
+    params: { audience: a.slug },
+    props: { audience: a },
+  }));
+}
+
+interface Props {
+  audience: Audience;
+}
+
+const { audience } = Astro.props;
+const title = `GovHub for ${audience.name.toLowerCase()}`;
+const description = `${audience.headline} GovHub is the AI proposal platform designed for ${audience.name.toLowerCase()}.`;
+---
+
+<BaseLayout title={`${title} — AI proposal writing`} description={description}>
+  <main class="container">
+    <Breadcrumbs
+      items={[
+        { name: 'Home', url: '/' },
+        { name: 'For', url: '/for/' },
+        { name: audience.name, url: `/for/${audience.slug}/` },
+      ]}
+    />
+
+    <article class="prose">
+      <p class="eyebrow">For {audience.name.toLowerCase()}</p>
+      <h1>{audience.headline}</h1>
+      <p class="lede">{audience.intro}</p>
+
+      <h2>The problem</h2>
+      <ul class="problems">
+        {audience.problems.map((p) => <li>{p}</li>)}
+      </ul>
+
+      <h2>How GovHub helps</h2>
+      <div class="solutions">
+        {audience.solutions.map((s) => (
+          <div class="solution">
+            <h3>{s.title}</h3>
+            <p>{s.description}</p>
+          </div>
+        ))}
+      </div>
+
+      <p class="cta">
+        <a href="/pricing/">See pricing →</a>
+      </p>
+    </article>
+
+    <FAQSchema faqs={audience.faqs} heading={`${audience.name} — FAQ`} />
+  </main>
+</BaseLayout>
+
+<style>
+  main {
+    padding-bottom: 3rem;
+  }
+  .prose {
+    max-width: 48rem;
+    margin: 2rem 0 3rem;
+  }
+  .eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 0.85rem;
+    color: var(--accent);
+    margin: 0 0 1rem;
+  }
+  .lede {
+    font-size: 1.15rem;
+    color: var(--fg-muted);
+    margin: 1rem 0 2.5rem;
+  }
+  h2 {
+    margin-top: 2.5rem;
+  }
+  .problems {
+    padding-left: 1.25rem;
+    color: var(--fg-muted);
+  }
+  .problems li {
+    margin: 0.6rem 0;
+  }
+  .solutions {
+    display: grid;
+    gap: 1.25rem;
+    margin-top: 1rem;
+  }
+  .solution {
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+  }
+  .solution h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1.1rem;
+    color: var(--fg);
+  }
+  .solution p {
+    margin: 0;
+    color: var(--fg-muted);
+  }
+  .cta {
+    margin-top: 2.5rem;
+  }
+  .cta a {
+    display: inline-block;
+    padding: 0.75rem 1.25rem;
+    border: 1px solid var(--accent);
+    border-radius: 0.5rem;
+  }
+  .cta a:hover {
+    background: var(--accent-soft);
+    text-decoration: none;
+  }
+</style>

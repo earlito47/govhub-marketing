@@ -1,0 +1,85 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import FAQSchema from '../../components/seo/FAQSchema.astro';
+import Breadcrumbs from '../../components/seo/Breadcrumbs.astro';
+
+const faqs = [
+  {
+    question: 'What does the technical writer review look for?',
+    answer:
+      "Compliance drift (does the draft still hit every Section L requirement), evaluation-criteria alignment, active-voice consistency, benefit-oriented framing, page-limit adherence, and format conformance for the target agency.",
+  },
+  {
+    question: 'Does it replace a human proposal reviewer?',
+    answer:
+      "No. It surfaces issues faster than a human read-through can — page-limit overruns, missing requirements, weak claim-evidence pairing — but final review calls stay with your proposal manager.",
+  },
+  {
+    question: 'Can I run reviews on partial drafts?',
+    answer:
+      "Yes. Run reviews at pink, red, and gold stages — GovHub tracks which issues have been resolved between cycles.",
+  },
+];
+---
+
+<BaseLayout
+  title="AI technical writer review for government proposals — GovHub"
+  description="Automated technical writer review for federal RFP responses. Compliance drift, evaluation-criteria alignment, and page-limit adherence — flagged in minutes."
+>
+  <main class="container">
+    <Breadcrumbs
+      items={[
+        { name: 'Home', url: '/' },
+        { name: 'Solutions', url: '/solutions/' },
+        { name: 'Technical writer review', url: '/solutions/technical-writer-review/' },
+      ]}
+    />
+
+    <article class="prose">
+      <h1>Technical writer review, on demand</h1>
+      <p class="lede">
+        Automated technical writer review for government proposals — surfaces
+        compliance drift, misaligned evaluation-criteria framing, weak
+        claim-evidence pairing, and page-limit issues before your human reviewers
+        see the draft.
+      </p>
+
+      <h2>What the review checks</h2>
+      <ul>
+        <li>Every Section L "shall" and "must" is addressed in the draft.</li>
+        <li>Each response section maps to the Section M evaluation criteria.</li>
+        <li>Claims are paired with evidence — no unsupported assertions.</li>
+        <li>Active voice, benefit-first framing, government-appropriate register.</li>
+        <li>Page-limit adherence per section.</li>
+        <li>Format conformance: fonts, margins, page numbers, section labeling.</li>
+      </ul>
+    </article>
+
+    <FAQSchema faqs={faqs} heading="Technical writer review — FAQ" />
+  </main>
+</BaseLayout>
+
+<style>
+  main {
+    padding-bottom: 3rem;
+  }
+  .prose {
+    max-width: 48rem;
+    margin: 2rem 0 3rem;
+  }
+  .lede {
+    font-size: 1.15rem;
+    color: var(--fg-muted);
+    margin-bottom: 2rem;
+  }
+  h2 {
+    margin-top: 2.5rem;
+  }
+  ul {
+    padding-left: 1.25rem;
+    color: var(--fg-muted);
+  }
+  li {
+    margin: 0.5rem 0;
+  }
+</style>

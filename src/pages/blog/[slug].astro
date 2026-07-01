@@ -1,0 +1,70 @@
+---
+import BlogPostLayout from '../../layouts/BlogPostLayout.astro';
+import { getCollection, render, type CollectionEntry } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog', ({ data }) => !data.draft);
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+interface Props {
+  post: CollectionEntry<'blog'>;
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+
+const allPosts = await getCollection('blog', ({ data }) => !data.draft);
+const related = post.data.pillarSlug
+  ? allPosts.filter(
+      (p) => p.id !== post.id && p.data.pillarSlug === post.data.pillarSlug,
+    )
+  : [];
+---
+
+<BlogPostLayout
+  title={post.data.title}
+  description={post.data.description}
+  publishDate={post.data.publishDate}
+  updatedDate={post.data.updatedDate}
+  author={post.data.author}
+  slug={post.id}
+  pillarSlug={post.data.pillarSlug}
+>
+  <Content />
+
+  {related.length > 0 && (
+    <aside class="related">
+      <h2>Related posts</h2>
+      <ul>
+        {related.map((p) => (
+          <li>
+            <a href={`/blog/${p.id}/`}>{p.data.title}</a>
+          </li>
+        ))}
+      </ul>
+    </aside>
+  )}
+</BlogPostLayout>
+
+<style>
+  .related {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+  }
+  .related h2 {
+    font-size: 1.1rem;
+    margin: 0 0 1rem;
+  }
+  .related ul {
+    list-style: none;
+    padding: 0;
+  }
+  .related li {
+    margin: 0.5rem 0;
+  }
+</style>
