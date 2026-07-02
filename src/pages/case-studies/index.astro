@@ -2,12 +2,13 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/seo/Breadcrumbs.astro';
 import CTABand from '../../components/CTABand.astro';
+import CaseStudyCharts from '../../components/CaseStudyCharts.astro';
 import { caseStudies } from '../../data/case-studies';
 ---
 
 <BaseLayout
-  title="Customer Case Studies & Results | GovHub"
-  description="How government contractors use GovHub to raise win rates, submit more proposals, and bid on larger contracts. Real results from real teams."
+  title="Case Studies: Small Businesses Winning Federal Contracts | GovHub"
+  description="How small businesses use GovHub to win federal contracts — from a $1.79M Air Force STTR to a ~$49M SBA IT vehicle. Representative scenarios grounded in public award data."
 >
   <main class="container">
     <Breadcrumbs
@@ -18,12 +19,22 @@ import { caseStudies } from '../../data/case-studies';
     />
 
     <header class="prose">
-      <h1>Results from real government contractors</h1>
+      <h1>Small businesses winning federal contracts with GovHub</h1>
       <p class="lede">
-        How teams use GovHub to compete for — and win — federal, state, and local
-        contracts.
+        Five representative scenarios — spanning the Air Force, DHA, SBA, Commerce,
+        and the VA — showing how lean teams use GovHub to compete on quality
+        against much larger firms. Together they reflect roughly
+        <strong>$78.7M</strong> in small-business contract value.
+      </p>
+      <p class="disclaimer" role="note">
+        <strong>Illustrative scenarios.</strong> These are representative examples
+        grounded in real, public federal award data (SAM.gov, FPDS, USAspending) and
+        anonymized — they show the kind of outcome GovHub is built to enable, not
+        claims that specific named companies are customers.
       </p>
     </header>
+
+    <CaseStudyCharts />
 
     {caseStudies.length > 0 ? (
       <ul class="cards">
@@ -32,6 +43,7 @@ import { caseStudies } from '../../data/case-studies';
             <a href={`/case-studies/${c.slug}/`}>
               <span class="tag">{c.industry}</span>
               <h2>{c.title}</h2>
+              {c.contractValue && <p class="value">{c.contractValue}</p>}
               <p>{c.outcome}</p>
               <span class="more">Read the case study →</span>
             </a>
@@ -40,7 +52,7 @@ import { caseStudies } from '../../data/case-studies';
       </ul>
     ) : (
       <p class="empty">
-        We're publishing our first customer case studies now. In the meantime, see
+        We're publishing case studies now. In the meantime, see
         <a href="/solutions/">what GovHub does</a> or start a free trial.
       </p>
     )}
@@ -54,13 +66,29 @@ import { caseStudies } from '../../data/case-studies';
     padding: 1rem 1.5rem 4rem;
   }
   .prose {
-    max-width: 44rem;
-    margin: 1rem 0 2rem;
+    max-width: 46rem;
+    margin: 1rem 0 1rem;
   }
   .lede {
     font-size: 1.15rem;
     color: var(--fg-muted);
     margin-top: 1rem;
+  }
+  .lede strong {
+    color: var(--fg);
+  }
+  .disclaimer {
+    font-size: 0.9rem;
+    color: var(--fg-muted);
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    border-radius: 0.5rem;
+    padding: 0.85rem 1.1rem;
+    margin-top: 1.25rem;
+  }
+  .disclaimer strong {
+    color: var(--fg);
   }
   .empty {
     color: var(--fg-muted);
@@ -72,7 +100,7 @@ import { caseStudies } from '../../data/case-studies';
   .cards {
     list-style: none;
     padding: 0;
-    margin: 0;
+    margin: 2rem 0 0;
     display: grid;
     gap: 1.25rem;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -99,8 +127,13 @@ import { caseStudies } from '../../data/case-studies';
     font-weight: 600;
   }
   .cards h2 {
-    margin: 0.4rem 0 0.5rem;
-    font-size: 1.1rem;
+    margin: 0.4rem 0 0.25rem;
+    font-size: 1.05rem;
+  }
+  .value {
+    margin: 0 0 0.5rem;
+    font-weight: 700;
+    color: var(--fg);
   }
   .cards p {
     margin: 0 0 1rem;
