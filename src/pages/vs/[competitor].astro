@@ -52,15 +52,25 @@ const description = `Direct comparison of GovHub and ${competitor.name} for gove
       </p>
 
       <h2>Quick answer: which one should you use?</h2>
-      <p>
-        If your team primarily responds to <strong>government solicitations</strong> —
-        federal RFPs, state and local RFQs, sources sought, or task orders on IDIQ
-        vehicles — GovHub is designed for that workflow end to end. {competitor.name} is
-        a strong choice for <strong>{competitor.targetMarket.toLowerCase().replace(/\.$/, '')}</strong>,
-        but government-specific requirements (Section L/M structure, FAR/DFARS
-        compliance, Section 508 conformance, set-aside representations) are not
-        its primary design center.
-      </p>
+      {competitor.intent === 'complements' ? (
+        <p>
+          GovHub and {competitor.name} solve <strong>different problems</strong> and
+          are often used together. {competitor.name} helps you find, qualify, and
+          forecast opportunities; GovHub helps you <strong>write the proposal</strong>
+          once you decide to pursue one. If you're choosing between them, the real
+          question is where your gap is — discovery, or response.
+        </p>
+      ) : (
+        <p>
+          If your team primarily responds to <strong>government solicitations</strong> —
+          federal RFPs, state and local RFQs, sources sought, or task orders on IDIQ
+          vehicles — GovHub is designed for that workflow end to end. {competitor.name} is
+          a strong choice for <strong>{competitor.targetMarket.toLowerCase().replace(/\.$/, '')}</strong>,
+          but government-specific requirements (Section L/M structure, FAR/DFARS
+          compliance, Section 508 conformance, set-aside representations) are not
+          its primary design center.
+        </p>
+      )}
 
       <h2>Comparison at a glance</h2>
       <div class="table-wrap">
@@ -94,15 +104,31 @@ const description = `Direct comparison of GovHub and ${competitor.name} for gove
         {competitor.weaknesses.map((w) => <li>{w}</li>)}
       </ul>
 
-      <h2>Should you switch from {competitor.name} to GovHub?</h2>
-      <p>
-        Switching makes sense if the majority of your responses are government
-        solicitations and you are spending significant time working around
-        {competitor.name}'s general-purpose design to fit government-specific
-        requirements. If your response mix is mostly commercial B2B RFPs with
-        occasional government work, staying on {competitor.name} may be the
-        right call.
-      </p>
+      {competitor.intent === 'complements' ? (
+        <>
+          <h2>Do you need both {competitor.name} and GovHub?</h2>
+          <p>
+            Many contractors do. {competitor.name} sits earlier in the pipeline —
+            market intelligence, capture, and opportunity forecasting — while GovHub
+            takes over once you've decided to bid: drafting, compliance review, and
+            production. GovHub replaces the writing workflow, not the
+            opportunity-discovery workflow, and can import opportunity details from
+            a {competitor.name} export so you don't retype requirements.
+          </p>
+        </>
+      ) : (
+        <>
+          <h2>Should you switch from {competitor.name} to GovHub?</h2>
+          <p>
+            Switching makes sense if the majority of your responses are government
+            solicitations and you are spending significant time working around
+            {competitor.name}'s general-purpose design to fit government-specific
+            requirements. If your response mix is mostly commercial B2B RFPs with
+            occasional government work, staying on {competitor.name} may be the
+            right call.
+          </p>
+        </>
+      )}
 
       <p class="cta">
         <a href="/pricing/">See GovHub pricing →</a>
