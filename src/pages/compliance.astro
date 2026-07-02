@@ -1,0 +1,91 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/seo/Breadcrumbs.astro';
+import FAQSchema from '../components/seo/FAQSchema.astro';
+import CTABand from '../components/CTABand.astro';
+import { CONTACT_EMAIL } from '../config';
+
+const faqs = [
+  {
+    question: 'How does GovHub help with FAR and DFARS compliance?',
+    answer:
+      'GovHub is aware of common FAR and DFARS clauses and flags compliance-relevant sections while you draft and review, so gaps surface before submission rather than during evaluation. Final compliance decisions stay with your proposal team.',
+  },
+  {
+    question: 'Does GovHub handle Section 508 accessibility?',
+    answer:
+      'Yes. GovHub can generate Section 508 conformance statements and review proposal deliverables against the accessibility criteria federal agencies commonly require.',
+  },
+  {
+    question: 'Can GovHub check my proposal against Section L and Section M?',
+    answer:
+      'Yes. GovHub builds a compliance matrix from Section L and Section M and checks your draft against it, flagging requirements that are unaddressed or evaluation factors that are weakly covered.',
+  },
+];
+---
+
+<BaseLayout
+  title="Compliance in GovHub — FAR, DFARS & Section 508"
+  description="How GovHub keeps government proposals compliant: FAR/DFARS clause awareness, Section L/M compliance matrices, and Section 508 conformance checks built into the workflow."
+>
+  <main class="container">
+    <Breadcrumbs items={[{ name: 'Home', url: '/' }, { name: 'Compliance', url: '/compliance/' }]} />
+
+    <article class="prose">
+      <h1>Compliance is the point, not an afterthought</h1>
+      <p class="lede">
+        Most government proposals are lost on compliance, not on ideas. GovHub is
+        built around the regulations and evaluation structure that decide whether a
+        proposal is even read on the merits.
+      </p>
+
+      <h2>Regulatory awareness built into the workflow</h2>
+      <ul>
+        <li><strong>FAR &amp; DFARS:</strong> awareness of common Federal Acquisition Regulation and Defense FAR Supplement clauses, flagged where they apply to your response.</li>
+        <li><strong>Section L &amp; Section M:</strong> a compliance matrix generated from the instructions and evaluation factors, checked against your draft.</li>
+        <li><strong>Section 508:</strong> conformance statements and accessibility review for federal deliverables.</li>
+        <li><strong>Set-aside representations:</strong> awareness of 8(a), WOSB, SDVOSB, and HUBZone categories and the certifications they require.</li>
+      </ul>
+
+      <h2>How compliance checking works</h2>
+      <p>
+        GovHub shreds the solicitation into a compliance matrix, then checks your
+        response against it as sections are written — surfacing unaddressed
+        requirements, weak coverage of Section M factors, and format issues that
+        risk a non-responsive finding. It's the same discipline a strong proposal
+        team applies, run continuously instead of only at review time. Try it with
+        the free <a href="/solutions/compliance-matrix-generator/">compliance matrix
+        generator</a>.
+      </p>
+
+      <h2>Where GovHub's own security stands</h2>
+      <p>
+        Product-level security — encryption, access control, data handling, and our
+        certification posture — is covered on the
+        <a href="/security/">security page</a>. For questions about your agency's
+        specific compliance requirements, email
+        <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.
+      </p>
+    </article>
+
+    <FAQSchema faqs={faqs} heading="Compliance — FAQ" />
+
+    <CTABand
+      heading="Stop losing proposals on technicalities"
+      sub="Try the free compliance matrix generator, or start a full trial."
+      primaryHref="/solutions/compliance-matrix-generator/"
+      primaryLabel="Try the free tool"
+      secondaryHref="/security/"
+      secondaryLabel="See security"
+    />
+  </main>
+</BaseLayout>
+
+<style>
+  main { padding: 1rem 1.5rem 2rem; }
+  .prose { max-width: 48rem; margin: 1rem 0; }
+  .lede { font-size: 1.15rem; color: var(--fg-muted); }
+  h2 { margin-top: 2.5rem; }
+  ul { padding-left: 1.25rem; color: var(--fg-muted); }
+  li { margin: 0.5rem 0; }
+</style>

@@ -1,0 +1,140 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/seo/Breadcrumbs.astro';
+import FAQSchema from '../../components/seo/FAQSchema.astro';
+import CTABand from '../../components/CTABand.astro';
+import { getSolution } from '../../data/solutions';
+
+const solution = getSolution('proposal-sections')!;
+const sections = [
+  {
+    name: 'Executive summary',
+    body: 'A tight, evaluator-facing summary that leads with your win themes and maps to the Section M factors — written last, read first.',
+  },
+  {
+    name: 'Technical approach',
+    body: 'Structured around evaluation criteria, showing how you meet each Section C requirement with evidence rather than assertion.',
+  },
+  {
+    name: 'Management approach',
+    body: 'Staffing, organization, risk management, and quality control — the plan for actually delivering what the technical volume promises.',
+  },
+  {
+    name: 'Past performance',
+    body: 'Relevant, recent references written to the FAR 15.305 factors and mapped explicitly to this requirement.',
+  },
+  {
+    name: 'Staffing plan',
+    body: 'Key personnel, labor mix, and an org chart consistent with your cost volume’s level of effort.',
+  },
+];
+const faqs = [
+  {
+    question: 'Can GovHub generate a proposal executive summary?',
+    answer:
+      'Yes. GovHub drafts an executive summary that leads with your win themes and aligns to the solicitation’s Section M evaluation factors. You review and refine it — it removes the blank page, not your judgment.',
+  },
+  {
+    question: 'Does GovHub write the technical approach section?',
+    answer:
+      'GovHub drafts a technical approach structured around the evaluation criteria and your Section C requirements, pulling from your knowledge base so it reflects how your firm actually delivers. A subject-matter expert then reviews and finalizes it.',
+  },
+];
+---
+
+<BaseLayout title={solution.title} description={solution.description}>
+  <main class="container">
+    <Breadcrumbs
+      items={[
+        { name: 'Home', url: '/' },
+        { name: 'Solutions', url: '/solutions/' },
+        { name: solution.name, url: `/solutions/${solution.slug}/` },
+      ]}
+    />
+
+    <article class="prose">
+      <h1>Proposal section generators</h1>
+      <p class="lede">
+        Every government proposal is built from the same core sections. GovHub
+        drafts each one against your solicitation’s evaluation criteria — so your
+        team refines substance instead of starting from a blank page.
+      </p>
+
+      <h2>Sections GovHub drafts</h2>
+      <div class="grid">
+        {sections.map((s) => (
+          <div class="card">
+            <h3>{s.name}</h3>
+            <p>{s.body}</p>
+          </div>
+        ))}
+      </div>
+
+      <h2>Written to the evaluation, not to a template</h2>
+      <p>
+        Each generated section is structured around the Section M factors and the
+        Section L instructions, drawing on your past-performance and technical
+        libraries so the draft sounds like your firm. It’s the same engine behind
+        the <a href="/solutions/ai-proposal-generator/">AI proposal generator</a>,
+        focused section by section, and it pairs with
+        <a href="/solutions/technical-writer-review/">technical writer review</a>
+        to catch compliance drift before submission.
+      </p>
+      <p>
+        New to structuring a response? See
+        <a href="/blog/how-to-write-a-government-proposal/">how to write a
+        government proposal</a>.
+      </p>
+    </article>
+
+    <FAQSchema faqs={faqs} heading="Proposal sections — FAQ" />
+
+    <CTABand
+      heading="Draft every section against the evaluation"
+      sub="Start a free trial and generate your first proposal sections from a real solicitation."
+      secondaryHref="/solutions/"
+      secondaryLabel="See all solutions"
+    />
+  </main>
+</BaseLayout>
+
+<style>
+  main {
+    padding-bottom: 2rem;
+  }
+  .prose {
+    max-width: 48rem;
+    margin: 1.5rem 0;
+  }
+  .lede {
+    font-size: 1.15rem;
+    color: var(--fg-muted);
+    margin-bottom: 1rem;
+  }
+  h2 {
+    margin-top: 2.5rem;
+  }
+  .grid {
+    display: grid;
+    gap: 1.25rem;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    margin-top: 1.5rem;
+  }
+  .card {
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+  }
+  .card h3 {
+    margin: 0 0 0.4rem;
+    font-size: 1.05rem;
+    color: var(--fg);
+  }
+  .card p {
+    margin: 0;
+    color: var(--fg-muted);
+    font-size: 0.95rem;
+  }
+</style>
