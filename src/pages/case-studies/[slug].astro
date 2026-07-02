@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/seo/Breadcrumbs.astro';
+import SchemaOrg from '../../components/seo/SchemaOrg.astro';
 import { caseStudies, type CaseStudy } from '../../data/case-studies';
 
 export function getStaticPaths() {
@@ -15,12 +16,30 @@ interface Props {
 }
 
 const { study } = Astro.props;
+const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? '';
 ---
 
 <BaseLayout
   title={`${study.title} — GovHub case study`}
   description={study.outcome}
 >
+  <SchemaOrg
+    type="Article"
+    data={{
+      headline: study.title,
+      description: study.outcome,
+      datePublished: study.publishDate,
+      articleSection: 'Case study',
+      author: { '@type': 'Organization', name: 'GovHub' },
+      publisher: {
+        '@type': 'Organization',
+        name: 'GovHub',
+        logo: { '@type': 'ImageObject', url: `${siteUrl}/logo.png` },
+      },
+      mainEntityOfPage: `${siteUrl}/case-studies/${study.slug}/`,
+    }}
+  />
+
   <main class="container">
     <Breadcrumbs
       items={[
@@ -35,17 +54,27 @@ const { study } = Astro.props;
       <h1>{study.title}</h1>
       <p class="outcome">{study.outcome}</p>
 
+      {study.representative && (
+        <p class="disclaimer" role="note">
+          <strong>Illustrative scenario.</strong> An anonymized, representative
+          example grounded in public federal award data (SAM.gov / FPDS) — it shows
+          the kind of outcome GovHub is built to enable, not a claim about a
+          specific named company.
+        </p>
+      )}
+
       {(study.contractValue || study.timeframe) && (
         <ul class="facts">
           {study.contractValue && <li><strong>Contract value:</strong> {study.contractValue}</li>}
           {study.timeframe && <li><strong>Timeframe:</strong> {study.timeframe}</li>}
+          {study.metrics?.timeSaved && <li><strong>Time saved:</strong> {study.metrics.timeSaved}</li>}
         </ul>
       )}
 
       <h2>The challenge</h2>
       <p>{study.challenge}</p>
 
-      <h2>What they did with GovHub</h2>
+      <h2>How GovHub helped</h2>
       <p>{study.solution}</p>
 
       <h2>Results</h2>
@@ -59,6 +88,15 @@ const { study } = Astro.props;
           {study.author && <cite>— {study.author}, {study.customer}</cite>}
         </blockquote>
       )}
+
+      <h2>The GovHub capabilities behind a win like this</h2>
+      <ul class="related">
+        <li><a href="/solutions/rfp-shredding/">RFP shredding</a> and the free <a href="/solutions/compliance-matrix-generator/">compliance matrix generator</a> to capture every requirement.</li>
+        <li><a href="/solutions/ai-proposal-generator/">AI proposal generator</a> for technical, management, and past-performance volumes.</li>
+        <li><a href="/solutions/form-autofiller/">Form autofill</a> for reps &amp; certs and set-aside representations.</li>
+        <li><a href="/solutions/technical-writer-review/">Technical writer review</a> for compliance drift before submission.</li>
+        <li>Purpose-built for <a href="/for/small-business-contractors/">small-business contractors</a>.</li>
+      </ul>
 
       <p class="cta"><a href="/pricing/">See GovHub pricing →</a></p>
     </article>
@@ -83,7 +121,20 @@ const { study } = Astro.props;
   .outcome {
     font-size: 1.15rem;
     color: var(--fg-muted);
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
+  }
+  .disclaimer {
+    font-size: 0.9rem;
+    color: var(--fg-muted);
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    border-radius: 0.5rem;
+    padding: 0.85rem 1.1rem;
+    margin: 0 0 2rem;
+  }
+  .disclaimer strong {
+    color: var(--fg);
   }
   .facts {
     list-style: none;
@@ -107,11 +158,13 @@ const { study } = Astro.props;
   h2 {
     margin-top: 2.5rem;
   }
-  .results {
+  .results,
+  .related {
     padding-left: 1.25rem;
     color: var(--fg-muted);
   }
-  .results li {
+  .results li,
+  .related li {
     margin: 0.5rem 0;
   }
   blockquote {
