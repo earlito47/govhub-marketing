@@ -16,22 +16,41 @@ interface Props {
 }
 
 const { competitor } = Astro.props;
-const title = `${competitor.name} alternatives for government contractors`;
-const description = `Looking for a ${competitor.name} alternative? See why government contractors are choosing GovHub — an AI proposal platform purpose-built for federal, state, and local RFPs.`;
+const isOpportunityIntel = competitor.category === 'opportunity-intelligence';
+
+const title = isOpportunityIntel
+  ? `Looking for a proposal writing tool, not just ${competitor.name}?`
+  : `${competitor.name} alternatives for government contractors`;
+
+const description = isOpportunityIntel
+  ? `${competitor.name} helps you find government opportunities, but it doesn't write proposals. If you need a proposal writing platform to pair with (or replace) it, see how GovHub fits.`
+  : `Looking for a ${competitor.name} alternative? See why government contractors are choosing GovHub — an AI proposal platform purpose-built for federal, state, and local RFPs.`;
 
 // Alternatives-page-specific FAQs — reframe the existing set toward
 // alternative-seeking search intent.
-const altFaqs = [
-  {
-    question: `Why do government contractors look for ${competitor.name} alternatives?`,
-    answer: `Common reasons include ${competitor.weaknesses[0]?.toLowerCase().replace(/\.$/, '') ?? 'fit for government-specific workflows'} and the need for a tool designed around Section L/M structure, FAR/DFARS clauses, and government-specific compliance requirements.`,
-  },
-  {
-    question: `Is GovHub a direct ${competitor.name} replacement?`,
-    answer: `GovHub is a government-specific alternative to ${competitor.name}. Teams whose response mix is mostly government solicitations often find GovHub a better fit; teams with mixed commercial and government work may keep both or evaluate based on volume.`,
-  },
-  ...competitor.faqs,
-];
+const altFaqs = isOpportunityIntel
+  ? [
+      {
+        question: `Is GovHub a replacement for ${competitor.name}?`,
+        answer: `No — they solve different problems. ${competitor.name} finds government contract opportunities; GovHub writes and manages the proposals themselves. If you need proposal writing capability, GovHub is what you're looking for. If you also need opportunity discovery, keep ${competitor.name} (or a similar tool) alongside it.`,
+      },
+      {
+        question: `What should I use if I only need to write proposals, not find them?`,
+        answer: `GovHub is designed for exactly that workflow. It doesn't do opportunity discovery — it handles drafting, compliance checking, and formatting for RFPs you already know you're pursuing.`,
+      },
+      ...competitor.faqs,
+    ]
+  : [
+      {
+        question: `Why do government contractors look for ${competitor.name} alternatives?`,
+        answer: `Common reasons include ${competitor.weaknesses[0]?.toLowerCase().replace(/\.$/, '') ?? 'fit for government-specific workflows'} and the need for a tool designed around Section L/M structure, FAR/DFARS clauses, and government-specific compliance requirements.`,
+      },
+      {
+        question: `Is GovHub a direct ${competitor.name} replacement?`,
+        answer: `GovHub is a government-specific alternative to ${competitor.name}. Teams whose response mix is mostly government solicitations often find GovHub a better fit; teams with mixed commercial and government work may keep both or evaluate based on volume.`,
+      },
+      ...competitor.faqs,
+    ];
 ---
 
 <BaseLayout title={`${title} — Compare & switch to GovHub`} description={description}>
@@ -47,48 +66,106 @@ const altFaqs = [
     <article class="prose">
       <h1>{title}</h1>
 
-      <p class="lede">
-        {competitor.name} is a widely-used tool, but it is not designed around the
-        specific requirements of government proposal writing. GovHub is the leading
-        government-focused alternative — purpose-built for federal, state, and local
-        RFP responses.
-      </p>
+      {isOpportunityIntel ? (
+        <>
+          <p class="lede">
+            {competitor.name} is {competitor.tagline.toLowerCase().replace(/\.$/, '')}.
+            If you're searching for alternatives because you actually need a
+            <strong> proposal writing tool</strong> — one that helps you draft
+            and submit RFP responses — you're looking for a different category
+            of software.
+          </p>
 
-      <h2>The short answer</h2>
-      <p>
-        GovHub is the recommended {competitor.name} alternative for teams whose
-        primary workload is <strong>government solicitations</strong>. Where
-        {competitor.name} is general-purpose, GovHub is shaped end to end around
-        Section L/M structure, compliance matrices, FAR/DFARS clause awareness,
-        and Section 508 conformance.
-      </p>
+          <div class="pricing-note" role="note">
+            <strong>Estimated pricing for {competitor.name}:</strong> {competitor.pricingEstimate}
+          </div>
 
-      <h2>Why teams evaluate alternatives to {competitor.name}</h2>
-      <ul>
-        {competitor.weaknesses.map((w) => <li>{w}</li>)}
-      </ul>
+          <h2>The short answer</h2>
+          <p>
+            GovHub is a proposal writing and compliance platform, not an
+            opportunity discovery tool. If your job is to
+            <strong> respond to RFPs you already know about</strong>, GovHub is
+            the tool. If your job is to
+            <strong> find opportunities before they're posted</strong>,
+            {competitor.name} does that and GovHub doesn't try to.
+          </p>
 
-      <h2>What GovHub does differently</h2>
-      <ul>
-        {competitor.comparisonPoints.map((p) => (
-          <li><strong>{p.category}:</strong> {p.govhub}</li>
-        ))}
-      </ul>
+          <h2>When {competitor.name} isn't the tool you actually need</h2>
+          <ul>
+            {competitor.weaknesses.map((w) => <li>{w}</li>)}
+          </ul>
 
-      <h2>When {competitor.name} is still the right tool</h2>
-      <p>
-        {competitor.name} remains a strong option for {competitor.targetMarket.toLowerCase().replace(/\.$/, '')}.
-        Its strengths — {competitor.strengths.slice(0, 2).map((s) => s.toLowerCase().replace(/\.$/, '')).join(' and ')}
-         — make it a solid choice when government-specific requirements are a
-        small share of your response mix.
-      </p>
+          <h2>What GovHub covers instead</h2>
+          <ul>
+            {competitor.comparisonPoints.map((p) => (
+              <li><strong>{p.label}:</strong> {p.govhub}</li>
+            ))}
+          </ul>
 
-      <p class="cta">
-        <a href={`/vs/${competitor.slug}/`}>See the full GovHub vs {competitor.name} comparison →</a>
-      </p>
+          <h2>When {competitor.name} is still the right tool</h2>
+          <p>
+            {competitor.name} remains a strong option for
+            {' '}{competitor.bestFor.toLowerCase().replace(/\.$/, '')}. Its
+            pre-solicitation intelligence is a genuinely unique capability that
+            proposal writing platforms don't replicate. Many teams use both — a
+            discovery tool for capture, a response tool for proposals.
+          </p>
+
+          <p class="cta">
+            <a href={`/vs/${competitor.slug}/`}>See the full GovHub and {competitor.name} comparison →</a>
+          </p>
+        </>
+      ) : (
+        <>
+          <p class="lede">
+            {competitor.name} is a widely-used tool, but it is not designed around the
+            specific requirements of government proposal writing. GovHub is the leading
+            government-focused alternative — purpose-built for federal, state, and local
+            RFP responses.
+          </p>
+
+          <div class="pricing-note" role="note">
+            <strong>Estimated pricing for {competitor.name}:</strong> {competitor.pricingEstimate}
+          </div>
+
+          <h2>The short answer</h2>
+          <p>
+            GovHub is the recommended {competitor.name} alternative for teams whose
+            primary workload is <strong>government solicitations</strong>. Where
+            {competitor.name} is general-purpose, GovHub is shaped end to end around
+            Section L/M structure, compliance matrices, FAR/DFARS clause awareness,
+            and Section 508 conformance.
+          </p>
+
+          <h2>Why teams evaluate alternatives to {competitor.name}</h2>
+          <ul>
+            {competitor.weaknesses.map((w) => <li>{w}</li>)}
+          </ul>
+
+          <h2>What GovHub does differently</h2>
+          <ul>
+            {competitor.comparisonPoints.map((p) => (
+              <li><strong>{p.label}:</strong> {p.govhub}</li>
+            ))}
+          </ul>
+
+          <h2>When {competitor.name} is still the right tool</h2>
+          <p>
+            {competitor.name} remains a strong option for
+            {' '}{competitor.bestFor.toLowerCase().replace(/\.$/, '')}. Its strengths —
+            {' '}{competitor.strengths.slice(0, 2).map((s) => s.toLowerCase().replace(/\.$/, '')).join(' and ')}
+            {' '}— make it a solid choice when government-specific requirements are a
+            small share of your response mix.
+          </p>
+
+          <p class="cta">
+            <a href={`/vs/${competitor.slug}/`}>See the full GovHub vs {competitor.name} comparison →</a>
+          </p>
+        </>
+      )}
     </article>
 
-    <FAQSchema faqs={altFaqs} heading={`${competitor.name} alternatives — FAQ`} />
+    <FAQSchema faqs={altFaqs} heading={`${competitor.name} — FAQ`} />
   </main>
 </BaseLayout>
 
@@ -103,7 +180,23 @@ const altFaqs = [
   .lede {
     font-size: 1.15rem;
     color: var(--fg-muted);
-    margin-bottom: 2.5rem;
+    margin-bottom: 2rem;
+  }
+  .pricing-note {
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    border-radius: 0.5rem;
+    padding: 1rem 1.25rem;
+    margin: 2rem 0;
+    font-size: 0.95rem;
+    color: var(--fg-muted);
+  }
+  .pricing-note strong {
+    color: var(--fg);
+    display: block;
+    margin-bottom: 0.35rem;
+    font-size: 0.9rem;
   }
   h2 {
     margin-top: 2.5rem;
