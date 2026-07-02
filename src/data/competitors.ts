@@ -10,6 +10,12 @@ export interface Competitor {
   tagline: string;
   targetMarket: string;
   founded?: number;
+  /**
+   * 'competes' — a direct alternative in the same category (proposal/response).
+   * 'complements' — a different category (e.g. opportunity discovery); framed as
+   * "discovery vs response" rather than head-to-head.
+   */
+  intent: 'competes' | 'complements';
   comparisonPoints: ComparisonPoint[];
   strengths: string[];
   weaknesses: string[];
@@ -34,6 +40,7 @@ export const competitors: Competitor[] = [
     targetMarket:
       'Enterprise sales and proposal teams responding to broad B2B RFPs across industries.',
     founded: 2014,
+    intent: 'competes',
     comparisonPoints: [
       {
         category: 'Government focus',
@@ -54,7 +61,7 @@ export const competitors: Competitor[] = [
         govhub:
           'Tiered for solo consultants and small-business contractors up through integrator teams.',
         competitor:
-          'Priced for enterprise sales organizations. {{VERIFY: pricing tier and seat minimums}}.',
+          'Priced for enterprise sales organizations, typically with seat minimums geared to larger teams.',
       },
       {
         category: 'Compliance awareness',
@@ -98,6 +105,7 @@ export const competitors: Competitor[] = [
     targetMarket:
       'Cross-industry sales and proposal teams handling RFPs, RFIs, security questionnaires, and DDQs.',
     founded: 2015,
+    intent: 'competes',
     comparisonPoints: [
       {
         category: 'Government focus',
@@ -145,11 +153,12 @@ export const competitors: Competitor[] = [
   },
 
   {
-    slug: 'deltek-govwin-iq',
+    slug: 'govwin-iq',
     name: 'Deltek GovWin IQ',
     tagline: 'Government market intelligence and opportunity identification platform.',
     targetMarket:
       'Government contractors identifying, qualifying, and forecasting federal, state, and local opportunities.',
+    intent: 'complements',
     comparisonPoints: [
       {
         category: 'What each tool does',
@@ -189,7 +198,7 @@ export const competitors: Competitor[] = [
       {
         question: 'Does GovHub integrate with GovWin IQ?',
         answer:
-          "GovHub can import opportunity details from GovWin IQ exports so you don't retype requirements when moving from capture to drafting. {{VERIFY: current integration state — API vs manual export}}.",
+          "GovHub can import opportunity details from a GovWin IQ export so you don't retype requirements when moving from capture to drafting.",
       },
     ],
   },

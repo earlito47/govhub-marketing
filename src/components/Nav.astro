@@ -1,7 +1,10 @@
 ---
+import { SIGNIN_URL, SIGNUP_URL } from '../config';
+
 const links = [
-  { href: '/solutions/ai-proposal-generator/', label: 'Solutions' },
+  { href: '/solutions/', label: 'Solutions' },
   { href: '/pricing/', label: 'Pricing' },
+  { href: '/vs/', label: 'Compare' },
   { href: '/blog/', label: 'Blog' },
   { href: '/faq/', label: 'FAQ' },
 ];
@@ -9,7 +12,10 @@ const links = [
 
 <header class="site-header">
   <div class="container nav">
-    <a href="/" class="brand">GovHub</a>
+    <a href="/" class="brand" aria-label="GovHub home">
+      <img src="/favicon.svg" alt="" width="24" height="24" />
+      <span>GovHub</span>
+    </a>
     <nav aria-label="Primary">
       <ul>
         {links.map((l) => (
@@ -17,20 +23,31 @@ const links = [
         ))}
       </ul>
     </nav>
+    <div class="actions">
+      <a class="signin" href={SIGNIN_URL}>Sign in</a>
+      <a class="cta" href={SIGNUP_URL}>Start free trial</a>
+    </div>
   </div>
 </header>
 
 <style>
   .site-header {
     border-bottom: 1px solid var(--border);
-    padding: 1rem 0;
+    background: var(--bg-elevated);
+    padding: 0.85rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 20;
   }
   .nav {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    gap: 1.5rem;
   }
   .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
     color: var(--fg);
     font-weight: 700;
     font-size: 1.1rem;
@@ -38,6 +55,9 @@ const links = [
   }
   .brand:hover {
     text-decoration: none;
+  }
+  nav {
+    flex: 1;
   }
   nav ul {
     display: flex;
@@ -53,5 +73,40 @@ const links = [
   nav a:hover {
     color: var(--fg);
     text-decoration: none;
+  }
+  .actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .signin {
+    color: var(--fg-muted);
+    font-size: 0.95rem;
+  }
+  .signin:hover {
+    color: var(--fg);
+    text-decoration: none;
+  }
+  .cta {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: var(--accent);
+    color: #fff;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    font-size: 0.95rem;
+    white-space: nowrap;
+  }
+  .cta:hover {
+    background: var(--accent-hover);
+    text-decoration: none;
+  }
+  @media (max-width: 760px) {
+    nav {
+      display: none;
+    }
+    .signin {
+      display: none;
+    }
   }
 </style>

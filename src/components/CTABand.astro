@@ -1,0 +1,92 @@
+---
+import { SIGNUP_URL } from '../config';
+
+interface Props {
+  heading: string;
+  sub?: string;
+  primaryHref?: string;
+  primaryLabel?: string;
+  secondaryHref?: string;
+  secondaryLabel?: string;
+}
+
+const {
+  heading,
+  sub,
+  primaryHref = SIGNUP_URL,
+  primaryLabel = 'Start free trial',
+  secondaryHref,
+  secondaryLabel,
+} = Astro.props;
+---
+
+<section class="cta-band">
+  <div class="inner">
+    <h2>{heading}</h2>
+    {sub && <p>{sub}</p>}
+    <div class="buttons">
+      <a class="primary" href={primaryHref}>{primaryLabel}</a>
+      {secondaryHref && secondaryLabel && (
+        <a class="secondary" href={secondaryHref}>{secondaryLabel}</a>
+      )}
+    </div>
+    <p class="trust">No credit card required · 14-day free trial</p>
+  </div>
+</section>
+
+<style>
+  .cta-band {
+    margin: 4rem 0 1rem;
+    background: var(--accent-soft);
+    border: 1px solid var(--border);
+    border-radius: 1rem;
+    padding: 3rem 1.5rem;
+  }
+  .inner {
+    max-width: 40rem;
+    margin: 0 auto;
+    text-align: center;
+  }
+  h2 {
+    margin: 0 0 0.75rem;
+  }
+  p {
+    color: var(--fg-muted);
+    margin: 0 auto 1.5rem;
+    max-width: 34rem;
+  }
+  .buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .primary {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: var(--accent);
+    color: #fff;
+    border-radius: 0.5rem;
+    font-weight: 600;
+  }
+  .primary:hover {
+    background: var(--accent-hover);
+    text-decoration: none;
+  }
+  .secondary {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border: 1px solid var(--accent);
+    border-radius: 0.5rem;
+    color: var(--accent);
+    font-weight: 600;
+  }
+  .secondary:hover {
+    background: var(--bg-elevated);
+    text-decoration: none;
+  }
+  .trust {
+    font-size: 0.85rem;
+    margin: 1.5rem 0 0;
+  }
+</style>

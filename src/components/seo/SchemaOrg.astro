@@ -27,13 +27,13 @@ interface Props {
 
 const { type, data = {} } = Astro.props;
 
-const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? 'https://govhub-marketing.pages.dev';
+const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? 'https://www.govhub.online';
 
 const defaultsByType: Record<SchemaType, Record<string, unknown>> = {
   Organization: {
     name: 'GovHub',
     url: siteUrl,
-    logo: `${siteUrl}/favicon.svg`,
+    logo: `${siteUrl}/logo.png`,
     description: 'AI proposal writing platform for government contractors.',
     sameAs: [],
   },

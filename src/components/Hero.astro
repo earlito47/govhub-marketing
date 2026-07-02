@@ -1,0 +1,124 @@
+---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+
+interface Props {
+  eyebrow?: string;
+  title: string;
+  lede: string;
+  primaryHref: string;
+  primaryLabel: string;
+  secondaryHref?: string;
+  secondaryLabel?: string;
+  trust?: string;
+  image?: ImageMetadata;
+  imageAlt?: string;
+}
+
+const {
+  eyebrow,
+  title,
+  lede,
+  primaryHref,
+  primaryLabel,
+  secondaryHref,
+  secondaryLabel,
+  trust,
+  image,
+  imageAlt = '',
+} = Astro.props;
+---
+
+<section class:list={['hero', image && 'has-image']}>
+  <div class="copy">
+    {eyebrow && <p class="eyebrow">{eyebrow}</p>}
+    <h1>{title}</h1>
+    <p class="lede">{lede}</p>
+    <div class="ctas">
+      <a class="primary" href={primaryHref}>{primaryLabel}</a>
+      {secondaryHref && secondaryLabel && (
+        <a class="secondary" href={secondaryHref}>{secondaryLabel}</a>
+      )}
+    </div>
+    {trust && <p class="trust">{trust}</p>}
+  </div>
+  {image && (
+    <div class="media">
+      <Image src={image} alt={imageAlt} widths={[480, 800, 1200]} sizes="(max-width: 900px) 100vw, 40vw" loading="eager" />
+    </div>
+  )}
+</section>
+
+<style>
+  .hero {
+    padding: 3.5rem 0 3rem;
+  }
+  .hero.has-image {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 3rem;
+    align-items: center;
+  }
+  .copy {
+    max-width: 40rem;
+  }
+  .eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 0.85rem;
+    color: var(--accent);
+    font-weight: 600;
+    margin: 0 0 1rem;
+  }
+  h1 {
+    font-weight: 700;
+    margin: 0 0 1.25rem;
+  }
+  .lede {
+    font-size: 1.2rem;
+    color: var(--fg-muted);
+    margin: 0 0 2rem;
+  }
+  .ctas {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .primary {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background: var(--accent);
+    color: #fff;
+    border-radius: 0.5rem;
+    font-weight: 600;
+  }
+  .primary:hover {
+    background: var(--accent-hover);
+    text-decoration: none;
+  }
+  .secondary {
+    display: inline-block;
+    padding: 0.8rem 1.25rem;
+    color: var(--accent);
+    font-weight: 600;
+  }
+  .trust {
+    font-size: 0.85rem;
+    color: var(--fg-muted);
+    margin: 1.5rem 0 0;
+  }
+  .media :global(img) {
+    width: 100%;
+    height: auto;
+    border-radius: 1rem;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+  }
+  @media (max-width: 900px) {
+    .hero.has-image {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+  }
+</style>

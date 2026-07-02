@@ -1,0 +1,92 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/seo/Breadcrumbs.astro';
+import { competitors } from '../../data/competitors';
+---
+
+<BaseLayout
+  title="GovHub compared: Loopio, Responsive & GovWin IQ | GovHub"
+  description="How GovHub compares to Loopio, Responsive (RFPIO), and Deltek GovWin IQ for government contractors. See where each tool fits and which is right for your team."
+>
+  <main class="container">
+    <Breadcrumbs
+      items={[
+        { name: 'Home', url: '/' },
+        { name: 'Compare', url: '/vs/' },
+      ]}
+    />
+
+    <header class="prose">
+      <h1>How GovHub compares</h1>
+      <p class="lede">
+        Honest, side-by-side comparisons for teams evaluating government proposal
+        software. Each page explains where the other tool fits and where GovHub's
+        government-specific design wins.
+      </p>
+    </header>
+
+    <ul class="cards">
+      {competitors.map((c) => (
+        <li>
+          <a href={`/vs/${c.slug}/`}>
+            <h2>GovHub vs {c.name}</h2>
+            <p>{c.tagline}</p>
+            <span class="more">See the comparison →</span>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </main>
+</BaseLayout>
+
+<style>
+  main {
+    padding: 1rem 1.5rem 4rem;
+  }
+  .prose {
+    max-width: 44rem;
+    margin: 1rem 0 2rem;
+  }
+  .lede {
+    font-size: 1.15rem;
+    color: var(--fg-muted);
+    margin-top: 1rem;
+  }
+  .cards {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 1.25rem;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  }
+  .cards a {
+    display: flex;
+    flex-direction: column;
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    color: inherit;
+    box-shadow: var(--shadow);
+  }
+  .cards a:hover {
+    border-color: var(--accent);
+    text-decoration: none;
+  }
+  .cards h2 {
+    margin: 0 0 0.5rem;
+    font-size: 1.15rem;
+  }
+  .cards p {
+    margin: 0 0 1rem;
+    color: var(--fg-muted);
+    font-size: 0.95rem;
+    flex-grow: 1;
+  }
+  .more {
+    color: var(--accent);
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+</style>

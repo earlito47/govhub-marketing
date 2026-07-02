@@ -1,0 +1,64 @@
+---
+import { solutions, featuredSolutions, type Solution } from '../data/solutions';
+
+interface Props {
+  /** 'featured' shows only homepage-featured solutions; 'all' shows every one. */
+  mode?: 'featured' | 'all';
+}
+
+const { mode = 'all' } = Astro.props;
+const items: Solution[] = mode === 'featured' ? featuredSolutions() : solutions;
+---
+
+<div class="solutions-grid">
+  {items.map((s) => (
+    <a class="card" href={`/solutions/${s.slug}/`}>
+      <h3>{s.name}</h3>
+      <p>{s.summary}</p>
+      <span class="more">Learn more →</span>
+    </a>
+  ))}
+</div>
+
+<style>
+  .solutions-grid {
+    display: grid;
+    gap: 1.25rem;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    margin: 2rem 0;
+  }
+  .card {
+    display: flex;
+    flex-direction: column;
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    color: inherit;
+    box-shadow: var(--shadow);
+    transition:
+      border-color 0.15s ease,
+      transform 0.15s ease;
+  }
+  .card:hover {
+    border-color: var(--accent);
+    text-decoration: none;
+    transform: translateY(-2px);
+  }
+  h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1.1rem;
+    color: var(--fg);
+  }
+  p {
+    margin: 0 0 1rem;
+    color: var(--fg-muted);
+    font-size: 0.95rem;
+    flex-grow: 1;
+  }
+  .more {
+    color: var(--accent);
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+</style>

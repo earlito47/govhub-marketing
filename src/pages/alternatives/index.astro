@@ -1,0 +1,92 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/seo/Breadcrumbs.astro';
+import { competitors } from '../../data/competitors';
+---
+
+<BaseLayout
+  title="Alternatives to Loopio, Responsive & GovWin IQ | GovHub"
+  description="Evaluating alternatives to Loopio, Responsive, or Deltek GovWin IQ? See why government contractors choose GovHub — an AI proposal platform built for federal, state, and local RFPs."
+>
+  <main class="container">
+    <Breadcrumbs
+      items={[
+        { name: 'Home', url: '/' },
+        { name: 'Alternatives', url: '/alternatives/' },
+      ]}
+    />
+
+    <header class="prose">
+      <h1>Government-specific alternatives to the general-purpose tools</h1>
+      <p class="lede">
+        Most RFP-response platforms are built for commercial B2B sales and adapted
+        to government work. GovHub is built for it. If you are evaluating a switch,
+        start here.
+      </p>
+    </header>
+
+    <ul class="cards">
+      {competitors.map((c) => (
+        <li>
+          <a href={`/alternatives/${c.slug}/`}>
+            <h2>{c.name} alternatives</h2>
+            <p>{c.tagline}</p>
+            <span class="more">Why teams switch →</span>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </main>
+</BaseLayout>
+
+<style>
+  main {
+    padding: 1rem 1.5rem 4rem;
+  }
+  .prose {
+    max-width: 44rem;
+    margin: 1rem 0 2rem;
+  }
+  .lede {
+    font-size: 1.15rem;
+    color: var(--fg-muted);
+    margin-top: 1rem;
+  }
+  .cards {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 1.25rem;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  }
+  .cards a {
+    display: flex;
+    flex-direction: column;
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    color: inherit;
+    box-shadow: var(--shadow);
+  }
+  .cards a:hover {
+    border-color: var(--accent);
+    text-decoration: none;
+  }
+  .cards h2 {
+    margin: 0 0 0.5rem;
+    font-size: 1.15rem;
+  }
+  .cards p {
+    margin: 0 0 1rem;
+    color: var(--fg-muted);
+    font-size: 0.95rem;
+    flex-grow: 1;
+  }
+  .more {
+    color: var(--accent);
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+</style>

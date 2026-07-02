@@ -1,0 +1,116 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/seo/Breadcrumbs.astro';
+import CTABand from '../../components/CTABand.astro';
+import { caseStudies } from '../../data/case-studies';
+---
+
+<BaseLayout
+  title="Customer Case Studies & Results | GovHub"
+  description="How government contractors use GovHub to raise win rates, submit more proposals, and bid on larger contracts. Real results from real teams."
+>
+  <main class="container">
+    <Breadcrumbs
+      items={[
+        { name: 'Home', url: '/' },
+        { name: 'Case studies', url: '/case-studies/' },
+      ]}
+    />
+
+    <header class="prose">
+      <h1>Results from real government contractors</h1>
+      <p class="lede">
+        How teams use GovHub to compete for — and win — federal, state, and local
+        contracts.
+      </p>
+    </header>
+
+    {caseStudies.length > 0 ? (
+      <ul class="cards">
+        {caseStudies.map((c) => (
+          <li>
+            <a href={`/case-studies/${c.slug}/`}>
+              <span class="tag">{c.industry}</span>
+              <h2>{c.title}</h2>
+              <p>{c.outcome}</p>
+              <span class="more">Read the case study →</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    ) : (
+      <p class="empty">
+        We're publishing our first customer case studies now. In the meantime, see
+        <a href="/solutions/">what GovHub does</a> or start a free trial.
+      </p>
+    )}
+
+    <CTABand heading="Write your own success story" sub="Start a free trial and put GovHub on your next solicitation." />
+  </main>
+</BaseLayout>
+
+<style>
+  main {
+    padding: 1rem 1.5rem 4rem;
+  }
+  .prose {
+    max-width: 44rem;
+    margin: 1rem 0 2rem;
+  }
+  .lede {
+    font-size: 1.15rem;
+    color: var(--fg-muted);
+    margin-top: 1rem;
+  }
+  .empty {
+    color: var(--fg-muted);
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+  }
+  .cards {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 1.25rem;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  }
+  .cards a {
+    display: flex;
+    flex-direction: column;
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    color: inherit;
+    box-shadow: var(--shadow);
+  }
+  .cards a:hover {
+    border-color: var(--accent);
+    text-decoration: none;
+  }
+  .tag {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--accent);
+    font-weight: 600;
+  }
+  .cards h2 {
+    margin: 0.4rem 0 0.5rem;
+    font-size: 1.1rem;
+  }
+  .cards p {
+    margin: 0 0 1rem;
+    color: var(--fg-muted);
+    font-size: 0.95rem;
+    flex-grow: 1;
+  }
+  .more {
+    color: var(--accent);
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+</style>

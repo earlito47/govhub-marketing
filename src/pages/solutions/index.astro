@@ -1,0 +1,54 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/seo/Breadcrumbs.astro';
+import SolutionsGrid from '../../components/SolutionsGrid.astro';
+import CTABand from '../../components/CTABand.astro';
+---
+
+<BaseLayout
+  title="Government Contracting Solutions & AI Tools | GovHub"
+  description="Explore GovHub's AI solutions for government contractors: proposal generation, RFP shredding, compliance matrices, form autofill, SF330, and technical review — in one platform."
+>
+  <main class="container">
+    <Breadcrumbs
+      items={[
+        { name: 'Home', url: '/' },
+        { name: 'Solutions', url: '/solutions/' },
+      ]}
+    />
+
+    <header class="prose">
+      <h1>Everything you need to draft and win a government proposal</h1>
+      <p class="lede">
+        GovHub covers the response workflow end to end — from shredding a
+        solicitation into a compliance matrix, through AI drafting and form
+        autofill, to a compliance-aware final review. Every tool is built around
+        the structure of federal, state, and local proposals.
+      </p>
+    </header>
+
+    <SolutionsGrid mode="all" />
+
+    <CTABand
+      heading="See GovHub on your own solicitation"
+      sub="Start a free trial, or try the free compliance matrix generator — no login required."
+      secondaryHref="/solutions/compliance-matrix-generator/"
+      secondaryLabel="Try the free tool"
+    />
+  </main>
+</BaseLayout>
+
+<style>
+  main {
+    padding: 1rem 1.5rem 4rem;
+  }
+  .prose {
+    max-width: 46rem;
+    margin: 1rem 0 1rem;
+  }
+  .lede {
+    font-size: 1.15rem;
+    color: var(--fg-muted);
+    margin-top: 1rem;
+  }
+</style>

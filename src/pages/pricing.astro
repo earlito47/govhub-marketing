@@ -1,166 +1,101 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import SchemaOrg from '../components/seo/SchemaOrg.astro';
+import PricingTable from '../components/PricingTable.astro';
+import FAQSchema from '../components/seo/FAQSchema.astro';
+import CTABand from '../components/CTABand.astro';
+import { PLANS, PRICE_RANGE, TRIAL_DAYS, formatUsd } from '../data/pricing';
+import { faqsForPage } from '../data/faqs';
 
-const tiers = [
+// Cost FAQ comes from the shared data (single source of truth); the rest are
+// pricing-page specific.
+const pricingFaqs = [
+  ...faqsForPage('/pricing/'),
   {
-    name: 'Solo',
-    price: '{{STAT: solo price}}',
-    unit: 'per month',
-    tagline: 'Solo consultants and 1-person contracting shops.',
-    features: [
-      'AI drafting on federal, state, and local RFPs',
-      'Up to {{STAT: N}} active proposals',
-      'Past-performance library',
-      'Form autofill (reps & certs, SF-1449, SF-33)',
-    ],
+    question: `Is there a free trial?`,
+    answer: `Yes — every paid plan includes a ${TRIAL_DAYS}-day free trial with no credit card required. You can generate real proposals during the trial and keep your work if you subscribe.`,
   },
   {
-    name: 'Small business',
-    price: '{{STAT: small business price}}',
-    unit: 'per seat / month',
-    tagline: '1–15 person contracting firms competing for federal work.',
-    features: [
-      'Everything in Solo',
-      'Team collaboration and role-based access',
-      'Compliance matrix and FAR/DFARS clause library',
-      'Section 508 conformance checking',
-      'Priority support',
-    ],
-    highlight: true,
+    question: 'Can I cancel or change plans anytime?',
+    answer:
+      'Yes. Plans are month-to-month (or annual for the discount) and you can upgrade, downgrade, or cancel at any time. Annual billing saves roughly two months versus paying monthly.',
   },
   {
-    name: 'Integrator',
-    price: 'Contact us',
-    unit: '',
-    tagline: 'Larger integrator teams running multi-team pursuits.',
-    features: [
-      'Everything in Small business',
-      'SSO (SAML), SCIM, audit log',
-      'Enterprise past-performance and personnel library',
-      'Dedicated onboarding and CSM',
-      'Custom compliance rulesets',
-    ],
+    question: 'What counts as a proposal?',
+    answer:
+      'Each plan includes a set number of AI-drafted proposals per month — 3 on Solo, 15 on Pro, and 50 on Team. Reviewing, editing, and exporting a proposal does not consume additional allowance.',
   },
 ];
 ---
 
 <BaseLayout
-  title="Pricing — GovHub AI proposal writing"
-  description="GovHub pricing for solo consultants, small business contractors, and system integrators. Plans scale from single-user to enterprise pursuit teams."
+  title="Pricing Plans for AI Proposal Software | GovHub"
+  description="Compare GovHub pricing for AI government proposal writing, form autofill, and compliance automation. Plans from $129/month with a 14-day free trial — no credit card required."
 >
   <SchemaOrg
     type="SoftwareApplication"
     data={{
       name: 'GovHub',
-      offers: { '@type': 'Offer', priceCurrency: 'USD' },
+      applicationCategory: 'BusinessApplication',
+      operatingSystem: 'Web',
+      offers: {
+        '@type': 'AggregateOffer',
+        priceCurrency: PRICE_RANGE.currency,
+        lowPrice: PRICE_RANGE.low,
+        highPrice: PRICE_RANGE.high,
+        offerCount: PRICE_RANGE.offerCount,
+      },
     }}
   />
 
   <main class="container">
     <header class="prose">
-      <h1>Pricing</h1>
+      <h1>Simple pricing for government proposal software</h1>
       <p class="lede">
-        Plans that scale from a solo contractor's first federal RFP through
-        multi-team integrator pursuits. All plans include unlimited solicitation
-        imports and AI drafting.
+        Plans scale with your proposal volume — from a solo consultant's first
+        federal RFP to an agency's full pipeline. Every plan includes AI drafting,
+        form autofill, and compliance-aware review, with a {TRIAL_DAYS}-day free
+        trial and no credit card required.
       </p>
     </header>
 
-    <section class="tiers">
-      {tiers.map((t) => (
-        <article class:list={['tier', t.highlight && 'highlight']}>
-          <h2>{t.name}</h2>
-          <p class="price"><span class="amount">{t.price}</span> <span class="unit">{t.unit}</span></p>
-          <p class="tagline">{t.tagline}</p>
-          <ul>
-            {t.features.map((f) => <li>{f}</li>)}
-          </ul>
-          <a class="cta" href="mailto:hello@govhub.example">Get started</a>
-        </article>
-      ))}
-    </section>
+    <PricingTable />
+
+    <p class="range-note">
+      GovHub runs from {formatUsd(PRICE_RANGE.low)}/month (Solo) to
+      {formatUsd(PRICE_RANGE.high)}/month (Team), with a {formatUsd(PLANS[1].monthlyUsd)}/month
+      Pro plan for teams responding regularly.
+    </p>
+
+    <FAQSchema faqs={pricingFaqs} heading="Pricing FAQ" />
+
+    <CTABand
+      heading="Start winning more government work"
+      sub={`Try GovHub free for ${TRIAL_DAYS} days. No credit card required.`}
+      secondaryHref="/solutions/"
+      secondaryLabel="Explore the platform"
+    />
   </main>
 </BaseLayout>
 
 <style>
   main {
-    padding: 2rem 1.5rem 5rem;
+    padding: 2rem 1.5rem 4rem;
   }
   header.prose {
-    max-width: 42rem;
-    margin: 2rem 0 3rem;
+    max-width: 44rem;
+    margin: 1rem 0 2rem;
   }
   .lede {
     font-size: 1.15rem;
     color: var(--fg-muted);
-    margin: 1rem 0;
+    margin-top: 1rem;
   }
-  .tiers {
-    display: grid;
-    gap: 1.5rem;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  }
-  .tier {
-    background: var(--bg-elevated);
-    border: 1px solid var(--border);
-    border-radius: 0.75rem;
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
-  }
-  .tier.highlight {
-    border-color: var(--accent);
-    box-shadow: 0 0 0 1px var(--accent-soft) inset;
-  }
-  .tier h2 {
-    margin: 0;
-    font-size: 1.25rem;
-  }
-  .price {
-    margin: 1rem 0 0.5rem;
-    font-size: 1.6rem;
-    font-weight: 700;
-    color: var(--fg);
-  }
-  .price .amount {
-    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-    color: var(--accent);
-    background: var(--accent-soft);
-    padding: 0.15rem 0.5rem;
-    border-radius: 0.35rem;
-    font-size: 1rem;
-  }
-  .price .unit {
-    font-size: 0.9rem;
+  .range-note {
     color: var(--fg-muted);
-    font-weight: 400;
-    margin-left: 0.5rem;
-  }
-  .tagline {
-    color: var(--fg-muted);
-    margin: 0 0 1.25rem;
     font-size: 0.95rem;
-  }
-  ul {
-    padding-left: 1.2rem;
-    color: var(--fg-muted);
-    flex-grow: 1;
-    margin: 0 0 1.5rem;
-  }
-  li {
-    margin: 0.4rem 0;
-    font-size: 0.95rem;
-  }
-  .cta {
-    display: inline-block;
-    padding: 0.7rem 1.25rem;
-    border: 1px solid var(--accent);
-    border-radius: 0.5rem;
     text-align: center;
-  }
-  .cta:hover {
-    background: var(--accent-soft);
-    text-decoration: none;
+    margin: 1.5rem auto 0;
+    max-width: 42rem;
   }
 </style>
