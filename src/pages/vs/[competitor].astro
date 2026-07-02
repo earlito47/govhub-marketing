@@ -1,0 +1,181 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import FAQSchema from '../../components/seo/FAQSchema.astro';
+import Breadcrumbs from '../../components/seo/Breadcrumbs.astro';
+import SchemaOrg from '../../components/seo/SchemaOrg.astro';
+import { competitors, type Competitor } from '../../data/competitors';
+
+export function getStaticPaths() {
+  return competitors.map((c) => ({
+    params: { competitor: c.slug },
+    props: { competitor: c },
+  }));
+}
+
+interface Props {
+  competitor: Competitor;
+}
+
+const { competitor } = Astro.props;
+const title = `GovHub vs ${competitor.name}`;
+const description = `Direct comparison of GovHub and ${competitor.name} for government contractors. See where each tool fits, how they differ on compliance and AI drafting, and which is right for your team.`;
+---
+
+<BaseLayout title={`${title} — Government proposal software comparison`} description={description}>
+  <SchemaOrg
+    type="SoftwareApplication"
+    data={{
+      name: 'GovHub',
+      description: 'AI proposal writing platform for government contractors.',
+    }}
+  />
+
+  <main class="container">
+    <Breadcrumbs
+      items={[
+        { name: 'Home', url: '/' },
+        { name: 'Compare', url: '/vs/' },
+        { name: competitor.name, url: `/vs/${competitor.slug}/` },
+      ]}
+    />
+
+    <article class="prose">
+      <h1>{title}</h1>
+
+      <p class="lede">
+        {competitor.name} is {competitor.tagline.toLowerCase().replace(/\.$/, '')} —
+        aimed at {competitor.targetMarket.toLowerCase().replace(/\.$/, '')}.
+        GovHub is a government-specific alternative built around the structural
+        conventions of federal, state, and local proposals. This page walks
+        through how the two compare on the dimensions that matter for
+        government contractors.
+      </p>
+
+      <h2>Quick answer: which one should you use?</h2>
+      <p>
+        If your team primarily responds to <strong>government solicitations</strong> —
+        federal RFPs, state and local RFQs, sources sought, or task orders on IDIQ
+        vehicles — GovHub is designed for that workflow end to end. {competitor.name} is
+        a strong choice for <strong>{competitor.targetMarket.toLowerCase().replace(/\.$/, '')}</strong>,
+        but government-specific requirements (Section L/M structure, FAR/DFARS
+        compliance, Section 508 conformance, set-aside representations) are not
+        its primary design center.
+      </p>
+
+      <h2>Comparison at a glance</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Dimension</th>
+              <th>GovHub</th>
+              <th>{competitor.name}</th>
+            </tr>
+          </thead>
+          <tbody>
+            {competitor.comparisonPoints.map((p) => (
+              <tr>
+                <th scope="row">{p.category}</th>
+                <td>{p.govhub}</td>
+                <td>{p.competitor}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Where {competitor.name} is strong</h2>
+      <ul>
+        {competitor.strengths.map((s) => <li>{s}</li>)}
+      </ul>
+
+      <h2>Where GovHub wins for government work</h2>
+      <ul>
+        {competitor.weaknesses.map((w) => <li>{w}</li>)}
+      </ul>
+
+      <h2>Should you switch from {competitor.name} to GovHub?</h2>
+      <p>
+        Switching makes sense if the majority of your responses are government
+        solicitations and you are spending significant time working around
+        {competitor.name}'s general-purpose design to fit government-specific
+        requirements. If your response mix is mostly commercial B2B RFPs with
+        occasional government work, staying on {competitor.name} may be the
+        right call.
+      </p>
+
+      <p class="cta">
+        <a href="/pricing/">See GovHub pricing →</a>
+      </p>
+    </article>
+
+    <FAQSchema faqs={competitor.faqs} heading={`GovHub vs ${competitor.name} — FAQ`} />
+  </main>
+</BaseLayout>
+
+<style>
+  main {
+    padding-bottom: 3rem;
+  }
+  .prose {
+    max-width: 48rem;
+    margin: 2rem 0 3rem;
+  }
+  .lede {
+    font-size: 1.15rem;
+    color: var(--fg-muted);
+    margin-bottom: 2.5rem;
+  }
+  h2 {
+    margin-top: 2.5rem;
+  }
+  .table-wrap {
+    overflow-x: auto;
+    margin: 1.5rem 0;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+  }
+  th,
+  td {
+    border: 1px solid var(--border);
+    padding: 0.75rem 1rem;
+    text-align: left;
+    vertical-align: top;
+  }
+  thead th {
+    background: var(--bg-elevated);
+    color: var(--fg);
+  }
+  tbody th {
+    background: var(--bg-elevated);
+    color: var(--fg-muted);
+    font-weight: 600;
+    width: 22%;
+  }
+  td {
+    color: var(--fg-muted);
+  }
+  ul {
+    padding-left: 1.25rem;
+    color: var(--fg-muted);
+  }
+  ul li {
+    margin: 0.5rem 0;
+  }
+  .cta {
+    margin-top: 2.5rem;
+  }
+  .cta a {
+    display: inline-block;
+    padding: 0.75rem 1.25rem;
+    border: 1px solid var(--accent);
+    border-radius: 0.5rem;
+  }
+  .cta a:hover {
+    background: var(--accent-soft);
+    text-decoration: none;
+  }
+</style>

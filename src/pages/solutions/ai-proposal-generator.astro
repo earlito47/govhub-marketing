@@ -1,0 +1,92 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import FAQSchema from '../../components/seo/FAQSchema.astro';
+import Breadcrumbs from '../../components/seo/Breadcrumbs.astro';
+
+const faqs = [
+  {
+    question: 'What is an AI proposal generator?',
+    answer:
+      'An AI proposal generator drafts proposal narrative — technical approach, management approach, past performance — from a solicitation document and your existing knowledge base. GovHub is designed for government solicitations, not generic sales RFPs.',
+  },
+  {
+    question: 'Does the AI write the whole proposal for me?',
+    answer:
+      "GovHub generates first-draft narrative that a proposal manager or SME then reviews and edits. It removes the blank-page problem and the mechanical formatting work, not the human judgment.",
+  },
+  {
+    question: 'Can I use my own past-performance library?',
+    answer:
+      'Yes. GovHub ingests your past-performance write-ups, resumes, and technical documents so drafts sound like your team, not a template.',
+  },
+];
+---
+
+<BaseLayout
+  title="AI proposal generator for government contractors — GovHub"
+  description="GovHub's AI proposal generator drafts government RFP responses — Section L/M, FAR/DFARS, and Section 508 aware. Purpose-built for federal, state, and local proposals."
+>
+  <main class="container">
+    <Breadcrumbs
+      items={[
+        { name: 'Home', url: '/' },
+        { name: 'Solutions', url: '/solutions/' },
+        { name: 'AI proposal generator', url: '/solutions/ai-proposal-generator/' },
+      ]}
+    />
+
+    <article class="prose">
+      <h1>AI proposal generator for government contractors</h1>
+      <p class="lede">
+        GovHub's AI proposal generator drafts full government RFP responses —
+        Section L structure, Section M alignment, FAR/DFARS clause awareness, and
+        Section 508 conformance — from the solicitation and your own knowledge
+        base.
+      </p>
+
+      <h2>How it works</h2>
+      <ol>
+        <li>Import the solicitation (PDF, SAM.gov URL, or agency portal export).</li>
+        <li>GovHub extracts Section L requirements, Section M evaluation criteria, and the compliance matrix.</li>
+        <li>The AI drafts narrative sections against your past-performance library and technical assets.</li>
+        <li>Your team reviews, edits, and finalizes. GovHub handles formatting and page-limit enforcement.</li>
+      </ol>
+
+      <h2>What makes GovHub different from a generic AI writing tool</h2>
+      <ul>
+        <li>Trained on the structural conventions of government proposals, not generic B2B RFPs.</li>
+        <li>Aware of FAR/DFARS clauses and can flag compliance-relevant sections.</li>
+        <li>Understands set-aside categories and generates the appropriate certifications.</li>
+        <li>Compliance-matrix aware — drafts stay aligned with Section L as they evolve.</li>
+      </ul>
+    </article>
+
+    <FAQSchema faqs={faqs} heading="AI proposal generator — FAQ" />
+  </main>
+</BaseLayout>
+
+<style>
+  main {
+    padding-bottom: 3rem;
+  }
+  .prose {
+    max-width: 48rem;
+    margin: 2rem 0 3rem;
+  }
+  .lede {
+    font-size: 1.15rem;
+    color: var(--fg-muted);
+    margin-bottom: 2rem;
+  }
+  h2 {
+    margin-top: 2.5rem;
+  }
+  ul,
+  ol {
+    padding-left: 1.25rem;
+    color: var(--fg-muted);
+  }
+  li {
+    margin: 0.5rem 0;
+  }
+</style>

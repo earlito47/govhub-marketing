@@ -1,0 +1,62 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/seo/Breadcrumbs.astro';
+import { caseStudies, type CaseStudy } from '../../data/case-studies';
+
+export function getStaticPaths() {
+  return caseStudies.map((c) => ({
+    params: { slug: c.slug },
+    props: { study: c },
+  }));
+}
+
+interface Props {
+  study: CaseStudy;
+}
+
+const { study } = Astro.props;
+---
+
+<BaseLayout
+  title={`${study.title} — GovHub case study`}
+  description={study.outcome}
+>
+  <main class="container">
+    <Breadcrumbs
+      items={[
+        { name: 'Home', url: '/' },
+        { name: 'Case studies', url: '/case-studies/' },
+        { name: study.title, url: `/case-studies/${study.slug}/` },
+      ]}
+    />
+
+    <article class="prose">
+      <p class="eyebrow">{study.industry} · {study.customer}</p>
+      <h1>{study.title}</h1>
+      <p class="outcome">{study.outcome}</p>
+      <div set:html={study.body} />
+    </article>
+  </main>
+</BaseLayout>
+
+<style>
+  main {
+    padding-bottom: 3rem;
+  }
+  .prose {
+    max-width: 48rem;
+    margin: 2rem 0 3rem;
+  }
+  .eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 0.85rem;
+    color: var(--accent);
+    margin: 0 0 1rem;
+  }
+  .outcome {
+    font-size: 1.15rem;
+    color: var(--fg-muted);
+    margin-bottom: 2rem;
+  }
+</style>

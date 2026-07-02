@@ -1,0 +1,37 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import FAQSchema from '../components/seo/FAQSchema.astro';
+import { faqs } from '../data/faqs';
+---
+
+<BaseLayout
+  title="FAQ — GovHub"
+  description="Answers to common questions about GovHub — the AI proposal writing platform for government contractors."
+>
+  <main class="container">
+    <header class="prose">
+      <h1>Frequently asked questions</h1>
+      <p class="lede">
+        Common questions about GovHub, government proposal workflows, compliance,
+        and pricing.
+      </p>
+    </header>
+
+    <FAQSchema faqs={faqs} heading="All FAQs" />
+  </main>
+</BaseLayout>
+
+<style>
+  main {
+    padding: 2rem 1.5rem 5rem;
+  }
+  header.prose {
+    max-width: 42rem;
+    margin: 2rem 0 1rem;
+  }
+  .lede {
+    font-size: 1.1rem;
+    color: var(--fg-muted);
+    margin-top: 1rem;
+  }
+</style>

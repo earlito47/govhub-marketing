@@ -1,0 +1,88 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(
+  (a, b) => b.data.publishDate.getTime() - a.data.publishDate.getTime(),
+);
+---
+
+<BaseLayout
+  title="Blog — GovHub"
+  description="Guides, playbooks, and analysis on government proposal writing, federal RFP strategy, and contracting best practices."
+>
+  <main class="container">
+    <header class="prose">
+      <h1>Blog</h1>
+      <p class="lede">
+        Guides and playbooks for government proposal teams — from writing your
+        first federal response to running a 500-page IDIQ recompete.
+      </p>
+    </header>
+
+    <section class="posts">
+      {posts.length === 0 && <p class="muted">No posts published yet.</p>}
+      {posts.map((post) => (
+        <article class="post">
+          <h2>
+            <a href={`/blog/${post.id}/`}>{post.data.title}</a>
+          </h2>
+          <p class="date">
+            <time datetime={post.data.publishDate.toISOString()}>
+              {post.data.publishDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+            </time>
+          </p>
+          <p class="excerpt">{post.data.description}</p>
+        </article>
+      ))}
+    </section>
+  </main>
+</BaseLayout>
+
+<style>
+  main {
+    padding: 2rem 1.5rem 5rem;
+  }
+  header.prose {
+    max-width: 42rem;
+    margin: 2rem 0 3rem;
+  }
+  .lede {
+    font-size: 1.15rem;
+    color: var(--fg-muted);
+    margin-top: 1rem;
+  }
+  .posts {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 44rem;
+  }
+  .post {
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 1.5rem;
+  }
+  .post h2 {
+    margin: 0 0 0.25rem;
+    font-size: 1.25rem;
+  }
+  .post h2 a {
+    color: var(--fg);
+  }
+  .post h2 a:hover {
+    color: var(--accent);
+    text-decoration: none;
+  }
+  .date {
+    color: var(--fg-muted);
+    font-size: 0.9rem;
+    margin: 0 0 0.5rem;
+  }
+  .excerpt {
+    color: var(--fg-muted);
+    margin: 0;
+  }
+  .muted {
+    color: var(--fg-muted);
+  }
+</style>

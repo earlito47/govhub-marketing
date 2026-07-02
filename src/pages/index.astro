@@ -1,67 +1,157 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SchemaOrg from '../components/seo/SchemaOrg.astro';
 ---
 
-<Layout title="GovHub — Modern tools for government teams">
-  <main>
+<BaseLayout
+  title="GovHub — AI proposal writing for government contractors"
+  description="GovHub is the AI proposal writing platform built for government contractors. Draft, review, and submit federal, state, and local RFP responses faster."
+>
+  <SchemaOrg
+    type="SoftwareApplication"
+    data={{
+      name: 'GovHub',
+      description: 'AI proposal writing platform for government contractors.',
+    }}
+  />
+
+  <main class="container">
     <section class="hero">
       <p class="eyebrow">GovHub</p>
-      <h1>Modern tools for the teams that run government.</h1>
+      <h1>AI proposal writing built for government contractors.</h1>
       <p class="lede">
-        We're building software that helps agencies procure, deliver, and
-        report on the work that matters. Something to show soon.
+        Draft, review, and submit federal, state, and local RFP responses without
+        the overhead of a full proposal team. GovHub understands Section L/M,
+        FAR/DFARS, and Section 508 out of the box.
       </p>
-      <p class="cta">
-        <a href="mailto:hello@govhub.example">Get in touch →</a>
+      <p class="ctas">
+        <a class="primary" href="/pricing/">See pricing</a>
+        <a class="secondary" href="/vs/loopio/">Compare GovHub vs Loopio →</a>
       </p>
     </section>
+
+    <section class="value">
+      <div class="grid">
+        <article>
+          <h3>Purpose-built for government work</h3>
+          <p>Section L/M structure, evaluation-criteria alignment, and compliance matrices are the default — not a plugin.</p>
+        </article>
+        <article>
+          <h3>Drafting that reads like your team wrote it</h3>
+          <p>Ingests your past-performance library and technical narrative so the draft sounds like your firm, not a template.</p>
+        </article>
+        <article>
+          <h3>Compliance-aware review</h3>
+          <p>Automated checks against FAR/DFARS clauses, Section 508, and set-aside requirements before submission.</p>
+        </article>
+        <article>
+          <h3>Scales from solo contractor to system integrator</h3>
+          <p>One-person shops responding to their first federal RFP through multi-team pursuits with dozens of contributors.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="audience-strip">
+      <h2>Built for</h2>
+      <ul>
+        <li><a href="/for/small-business-contractors/">Small business contractors →</a></li>
+        <li><a href="/for/system-integrators/">System integrators →</a></li>
+      </ul>
+    </section>
+
+    <p class="note">
+      <em>This landing page is a placeholder. Full homepage content will be
+      ported from the existing site in a follow-up commit.</em>
+    </p>
   </main>
-</Layout>
+</BaseLayout>
 
 <style>
   main {
-    max-width: var(--max-width);
-    margin: 0 auto;
-    padding: 6rem 1.5rem;
+    padding: 3rem 1.5rem 5rem;
   }
-
   .hero {
-    max-width: 42rem;
+    max-width: 44rem;
+    margin: 2rem 0 5rem;
   }
-
   .eyebrow {
     text-transform: uppercase;
     letter-spacing: 0.12em;
     font-size: 0.85rem;
-    color: var(--muted);
-    margin: 0 0 1.5rem;
+    color: var(--accent);
+    margin: 0 0 1rem;
   }
-
   h1 {
-    font-size: clamp(2rem, 5vw, 3.5rem);
-    line-height: 1.15;
-    margin: 0 0 1.5rem;
     font-weight: 700;
-    letter-spacing: -0.02em;
+    margin: 0 0 1.25rem;
   }
-
   .lede {
     font-size: 1.15rem;
-    color: var(--muted);
-    margin: 0 0 2.5rem;
+    color: var(--fg-muted);
+    margin: 0 0 2rem;
   }
-
-  .cta a {
+  .ctas {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .primary {
     display: inline-block;
-    font-size: 1.05rem;
     padding: 0.75rem 1.25rem;
-    border: 1px solid var(--accent);
+    background: var(--accent);
+    color: #fff;
     border-radius: 0.5rem;
-    transition: background 0.15s ease;
+    font-weight: 600;
   }
-
-  .cta a:hover {
-    background: rgba(79, 140, 255, 0.12);
+  .primary:hover {
+    background: #3d7de6;
     text-decoration: none;
+  }
+  .secondary {
+    color: var(--fg-muted);
+  }
+  .value .grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    margin: 3rem 0;
+  }
+  .value article {
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+  }
+  .value h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1.05rem;
+  }
+  .value p {
+    margin: 0;
+    color: var(--fg-muted);
+    font-size: 0.95rem;
+  }
+  .audience-strip {
+    margin: 4rem 0 2rem;
+  }
+  .audience-strip h2 {
+    font-size: 1rem;
+    color: var(--fg-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: 0.75rem;
+  }
+  .audience-strip ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+  .note {
+    color: var(--fg-muted);
+    font-size: 0.9rem;
+    margin-top: 3rem;
   }
 </style>

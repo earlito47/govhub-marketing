@@ -1,0 +1,84 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import FAQSchema from '../../components/seo/FAQSchema.astro';
+import Breadcrumbs from '../../components/seo/Breadcrumbs.astro';
+
+const faqs = [
+  {
+    question: 'Which government forms does GovHub autofill?',
+    answer:
+      'SF-33, SF-1449, SF-1442, reps & certs, SAM.gov entity registrations, and common state/local vendor packets. {{VERIFY: complete supported forms list}}.',
+  },
+  {
+    question: 'Does GovHub handle small-business representations?',
+    answer:
+      'Yes. GovHub is aware of SBA 8(a), WOSB, EDWOSB, SDVOSB, HUBZone, and general small-business set-aside categories and populates the applicable representations.',
+  },
+  {
+    question: 'Can I reuse form data across proposals?',
+    answer:
+      'Yes. GovHub maintains a single company profile — CAGE, UEI, NAICS, socioeconomic status, contacts — that flows into every response.',
+  },
+];
+---
+
+<BaseLayout
+  title="Government form autofiller — GovHub"
+  description="Autofill SF-33, SF-1449, reps & certs, and small-business set-aside certifications across every federal RFP response. Built into GovHub."
+>
+  <main class="container">
+    <Breadcrumbs
+      items={[
+        { name: 'Home', url: '/' },
+        { name: 'Solutions', url: '/solutions/' },
+        { name: 'Form autofiller', url: '/solutions/form-autofiller/' },
+      ]}
+    />
+
+    <article class="prose">
+      <h1>Government form autofiller</h1>
+      <p class="lede">
+        Standard federal forms — SF-33, SF-1449, reps & certs, small-business
+        representations — autofill from your GovHub company profile. Fill once,
+        reuse on every response.
+      </p>
+
+      <h2>Forms and representations covered</h2>
+      <ul>
+        <li>SF-33 Solicitation, Offer and Award</li>
+        <li>SF-1449 Solicitation/Contract/Order for Commercial Items</li>
+        <li>SF-1442 Solicitation, Offer, and Award (Construction)</li>
+        <li>FAR 52.212-3 Offeror Representations and Certifications</li>
+        <li>Small business representations (8(a), WOSB, EDWOSB, SDVOSB, HUBZone)</li>
+        <li>SAM.gov entity data sync</li>
+      </ul>
+    </article>
+
+    <FAQSchema faqs={faqs} heading="Form autofiller — FAQ" />
+  </main>
+</BaseLayout>
+
+<style>
+  main {
+    padding-bottom: 3rem;
+  }
+  .prose {
+    max-width: 48rem;
+    margin: 2rem 0 3rem;
+  }
+  .lede {
+    font-size: 1.15rem;
+    color: var(--fg-muted);
+    margin-bottom: 2rem;
+  }
+  h2 {
+    margin-top: 2.5rem;
+  }
+  ul {
+    padding-left: 1.25rem;
+    color: var(--fg-muted);
+  }
+  li {
+    margin: 0.5rem 0;
+  }
+</style>

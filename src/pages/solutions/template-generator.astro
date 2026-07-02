@@ -1,0 +1,84 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import FAQSchema from '../../components/seo/FAQSchema.astro';
+import Breadcrumbs from '../../components/seo/Breadcrumbs.astro';
+
+const faqs = [
+  {
+    question: 'How does the template generator work?',
+    answer:
+      'GovHub reads the solicitation and generates a compliant response outline — Section L structure, evaluation-criteria alignment, compliance matrix, page-limit budget, and section-by-section instructions to authors.',
+  },
+  {
+    question: 'Can I customize the generated template?',
+    answer:
+      "Yes. The generated template is a starting point. Your proposal manager can adjust structure, page allocations, and author assignments before the drafting phase begins.",
+  },
+  {
+    question: 'Does the template include a compliance matrix?',
+    answer:
+      "Yes. Every generated template ships with a compliance matrix cross-referencing Section L, Section M, and applicable FAR/DFARS clauses.",
+  },
+];
+---
+
+<BaseLayout
+  title="Proposal template generator — GovHub"
+  description="Generate compliant government proposal templates automatically from any solicitation. Section L outline, Section M alignment, and compliance matrix included."
+>
+  <main class="container">
+    <Breadcrumbs
+      items={[
+        { name: 'Home', url: '/' },
+        { name: 'Solutions', url: '/solutions/' },
+        { name: 'Template generator', url: '/solutions/template-generator/' },
+      ]}
+    />
+
+    <article class="prose">
+      <h1>Proposal template generator</h1>
+      <p class="lede">
+        Turn a solicitation PDF into a ready-to-draft response template. Section L
+        outline, Section M alignment, compliance matrix, and per-section page
+        budget — generated in minutes, not days.
+      </p>
+
+      <h2>What each generated template includes</h2>
+      <ul>
+        <li>Section L-derived response outline with heading hierarchy.</li>
+        <li>Section M evaluation-criteria cross-reference at every heading.</li>
+        <li>Compliance matrix covering shall/must/will requirements.</li>
+        <li>Per-section page-limit budget matching the RFP page limits.</li>
+        <li>Author-assignment stubs for each section.</li>
+        <li>FAR/DFARS clause references applicable to the solicitation type.</li>
+      </ul>
+    </article>
+
+    <FAQSchema faqs={faqs} heading="Template generator — FAQ" />
+  </main>
+</BaseLayout>
+
+<style>
+  main {
+    padding-bottom: 3rem;
+  }
+  .prose {
+    max-width: 48rem;
+    margin: 2rem 0 3rem;
+  }
+  .lede {
+    font-size: 1.15rem;
+    color: var(--fg-muted);
+    margin-bottom: 2rem;
+  }
+  h2 {
+    margin-top: 2.5rem;
+  }
+  ul {
+    padding-left: 1.25rem;
+    color: var(--fg-muted);
+  }
+  li {
+    margin: 0.5rem 0;
+  }
+</style>

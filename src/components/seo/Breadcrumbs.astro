@@ -1,0 +1,71 @@
+---
+import SchemaOrg from './SchemaOrg.astro';
+
+interface Crumb {
+  name: string;
+  url: string;
+}
+
+interface Props {
+  items: Crumb[];
+}
+
+const { items } = Astro.props;
+const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? '';
+
+const itemListElement = items.map((c, i) => ({
+  '@type': 'ListItem',
+  position: i + 1,
+  name: c.name,
+  item: c.url.startsWith('http') ? c.url : `${siteUrl}${c.url}`,
+}));
+---
+
+<SchemaOrg type="BreadcrumbList" data={{ itemListElement }} />
+
+<nav aria-label="Breadcrumb" class="crumbs">
+  <ol>
+    {items.map((c, i) => (
+      <li>
+        {i === items.length - 1 ? (
+          <span aria-current="page">{c.name}</span>
+        ) : (
+          <a href={c.url}>{c.name}</a>
+        )}
+        {i < items.length - 1 && <span class="sep" aria-hidden="true">/</span>}
+      </li>
+    ))}
+  </ol>
+</nav>
+
+<style>
+  .crumbs {
+    padding: 1.5rem 0 0.5rem;
+    font-size: 0.9rem;
+  }
+  ol {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 0;
+    padding: 0;
+  }
+  li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--fg-muted);
+  }
+  li a {
+    color: var(--fg-muted);
+  }
+  li a:hover {
+    color: var(--fg);
+    text-decoration: none;
+  }
+  .sep {
+    color: var(--fg-muted);
+    opacity: 0.5;
+  }
+</style>
