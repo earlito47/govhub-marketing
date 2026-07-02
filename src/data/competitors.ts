@@ -1,204 +1,203 @@
-export interface ComparisonPoint {
-  category: string;
-  govhub: string;
-  competitor: string;
-}
+// src/data/competitors.ts
+// Seed data driving /vs/[competitor].astro and /alternatives/[competitor].astro
+// Sourced from verified 2026 reviews (G2, Capterra, Vendr, ITQlick, SoftwareAdvice)
+// as of research date. Pricing figures are third-party estimates since none of
+// these vendors publish list pricing — flagged as "estimated" in copy, not stated
+// as fact, to stay accurate and defensible.
 
 export interface Competitor {
   slug: string;
   name: string;
-  tagline: string;
-  targetMarket: string;
-  founded?: number;
-  /**
-   * 'competes' — a direct alternative in the same category (proposal/response).
-   * 'complements' — a different category (e.g. opportunity discovery); framed as
-   * "discovery vs response" rather than head-to-head.
-   */
-  intent: 'competes' | 'complements';
-  comparisonPoints: ComparisonPoint[];
-  strengths: string[];
-  weaknesses: string[];
-  faqs: Array<{ question: string; answer: string }>;
+  category: 'response-platform' | 'opportunity-intelligence'; // GovWin IQ is a different category — see note below
+  tagline: string; // one-line description of what the competitor actually does
+  pricingEstimate: string; // always phrase as "estimated" — none publish list pricing
+  bestFor: string; // who the competitor genuinely serves well — stay honest here
+  strengths: string[]; // real strengths, not strawmanned
+  weaknesses: string[]; // sourced from actual reviews, not invented
+  comparisonPoints: {
+    label: string;
+    govhub: string;
+    competitor: string;
+  }[];
+  faqs: { question: string; answer: string }[];
 }
 
-/**
- * Adding a competitor here automatically generates:
- *   - /vs/<slug>/          (head-to-head comparison)
- *   - /alternatives/<slug>/ (alternative-search intent)
- *
- * Framing rule: state verifiable facts about the competitor and clear
- * positioning claims about GovHub. Do not make defamatory claims about
- * competitors — differentiate on GovHub's angle instead of putting the
- * other product down.
- */
 export const competitors: Competitor[] = [
   {
     slug: 'loopio',
     name: 'Loopio',
-    tagline: 'Response management platform for enterprise RFP teams.',
-    targetMarket:
-      'Enterprise sales and proposal teams responding to broad B2B RFPs across industries.',
-    founded: 2014,
-    intent: 'competes',
-    comparisonPoints: [
-      {
-        category: 'Government focus',
-        govhub:
-          'Purpose-built for federal, state, and local government proposals. Understands Section L/M structure, evaluation criteria, and compliance matrices out of the box.',
-        competitor:
-          'General-purpose B2B RFP platform. Teams responding to government work configure it manually.',
-      },
-      {
-        category: 'AI drafting',
-        govhub:
-          'AI drafting trained on the structural conventions of government responses, not just Q&A libraries.',
-        competitor:
-          'Content-library-first: strong for reusing pre-approved answers, less oriented around drafting long-form technical narratives.',
-      },
-      {
-        category: 'Pricing model',
-        govhub:
-          'Tiered for solo consultants and small-business contractors up through integrator teams.',
-        competitor:
-          'Priced for enterprise sales organizations, typically with seat minimums geared to larger teams.',
-      },
-      {
-        category: 'Compliance awareness',
-        govhub:
-          'FAR/DFARS clause-aware; flags Section 508, cybersecurity, and small-business set-aside criteria during review.',
-        competitor: 'Compliance handling depends on how each customer configures their content library.',
-      },
-    ],
+    category: 'response-platform',
+    tagline:
+      'Enterprise RFP response and content library platform, trusted by large teams managing high-volume questionnaires.',
+    pricingEstimate:
+      'Estimated $15,000–$40,000+/year for small-to-mid teams, scaling to $80,000–$150,000+ for enterprise deployments. Loopio does not publish pricing; buyers go through a custom sales quote.',
+    bestFor:
+      'Large enterprise teams managing 50+ RFPs a year with a dedicated proposal desk and the headcount to maintain a content library.',
     strengths: [
-      'Mature content library and Q&A workflow.',
-      'Well-established integrations with Salesforce and Microsoft 365.',
-      'Broad customer base across industries.',
+      'Mature, well-regarded content library with strong search and reuse tooling',
+      'Clean, intuitive interface — commonly rated easier to onboard than Responsive',
+      'Deep Salesforce integration and established enterprise support model',
+      'Trusted by large organizations (IBM, Citrix, Thomson Reuters among reported customers)',
     ],
     weaknesses: [
-      'Not government-specific: FAR/DFARS/Section 508 handling is left to the customer.',
-      'Enterprise pricing is a poor fit for solo consultants and small-business contractors.',
+      'Seat-based pricing — occasional or non-critical contributors still require a full paid license, which discourages broad team adoption',
+      'Minimum annual commitment typically starts around $15,000, regardless of team size, pricing out most small govcon shops',
+      'The "Magic" AI autofill feature is library-dependent — output quality degrades quickly if the content library isn\'t actively maintained, and multiple reviewers describe it as inconsistent',
+      'SSO and Salesforce integration are priced as add-ons beyond the base subscription',
+      'Export formatting issues are a recurring complaint in verified reviews',
+      'Not built for the federal compliance structure (Section L/M, FAR/DFARS) that small govcon proposals require',
+    ],
+    comparisonPoints: [
+      {
+        label: 'Built for government compliance (Section L/M, FAR/DFARS)',
+        govhub: 'Yes — purpose-built for federal proposal structure',
+        competitor: 'No — general-purpose RFP/RFI/security questionnaire tool',
+      },
+      {
+        label: 'Pricing model',
+        govhub: 'Flat tiered pricing, accessible to solo and small teams',
+        competitor: 'Seat-based, ~$15K/year minimum commitment',
+      },
+      {
+        label: 'AI drafting approach',
+        govhub: 'Generates full proposal drafts from your inputs',
+        competitor: 'Suggests answers from a pre-built content library — requires ongoing library maintenance',
+      },
+      {
+        label: 'Built for small business / solo contractors',
+        govhub: 'Yes — core design target',
+        competitor: 'No — explicitly enterprise-tiered, per multiple reviewer reports',
+      },
     ],
     faqs: [
       {
-        question: 'Is GovHub a Loopio alternative for government contractors?',
+        question: 'Is Loopio good for small government contractors?',
         answer:
-          "Yes. GovHub is a government-specific alternative to Loopio, purpose-built for federal, state, and local RFP responses. Where Loopio serves broad enterprise sales teams, GovHub is designed around the structural conventions and compliance requirements of government proposals.",
+          'Loopio is built primarily for large enterprise teams with dedicated proposal staff. Its seat-based pricing and roughly $15,000/year minimum commitment make it a difficult fit for small or solo government contractors, and it is not purpose-built for federal compliance requirements like Section L/M structuring.',
       },
       {
-        question: 'Can I import my Loopio content library into GovHub?',
+        question: 'How is GovHub different from Loopio?',
         answer:
-          "Yes — GovHub supports importing existing proposal content and knowledge bases from Loopio and other platforms. Contact us for a migration walkthrough.",
-      },
-      {
-        question: 'How does pricing compare between GovHub and Loopio?',
-        answer:
-          "GovHub offers plans starting at a per-seat rate designed for small teams; Loopio is priced primarily for enterprise sales organizations. See the pricing page for current tiers.",
+          "GovHub is built specifically for government proposal compliance and small govcon teams, with AI that drafts full proposal content rather than just suggesting answers from a library you have to maintain yourself. Loopio is a broader enterprise RFP response tool used across industries, not government-specific.",
       },
     ],
   },
-
   {
     slug: 'responsive',
-    name: 'Responsive',
-    tagline: 'AI-powered response management platform (formerly RFPIO).',
-    targetMarket:
-      'Cross-industry sales and proposal teams handling RFPs, RFIs, security questionnaires, and DDQs.',
-    founded: 2015,
-    intent: 'competes',
-    comparisonPoints: [
-      {
-        category: 'Government focus',
-        govhub:
-          'Native handling of Section L, Section M, evaluation factors, and compliance matrices — the structure of a government response is built in.',
-        competitor:
-          'Broad B2B focus spanning sales RFPs and security questionnaires; government use is possible but the platform is not shaped around it.',
-      },
-      {
-        category: 'Content workflow',
-        govhub:
-          'Drafts full narrative sections against agency requirements, not just Q&A lookups.',
-        competitor:
-          'Strong AI-assisted Q&A workflows and content library management (its historical core competency).',
-      },
-      {
-        category: 'Team scale',
-        govhub:
-          'Optimized for teams of 1–50 responding to a few dozen opportunities per year.',
-        competitor:
-          "Optimized for larger sales orgs with high-volume questionnaire workflows.",
-      },
-    ],
+    name: 'Responsive (formerly RFPIO)',
+    category: 'response-platform',
+    tagline:
+      'Enterprise Strategic Response Management platform for high-volume RFPs, RFIs, DDQs, and security questionnaires.',
+    pricingEstimate:
+      'Estimated $7,000–$28,000/year, averaging around $13,955/year based on third-party transaction data. No public pricing or self-serve trial — sales-led custom quote only.',
+    bestFor:
+      'Mid-to-large enterprise proposal and presales teams with an established content library, dedicated proposal operations staff, and complex CRM integration needs.',
     strengths: [
-      'Mature AI-assisted Q&A and content library.',
-      'Broad integrations across CRM, cloud storage, and collaboration tools.',
-      'Strong for security-questionnaire-heavy sales cycles.',
+      '24 consecutive quarters as a G2 category leader — strong track record',
+      'Sophisticated workflow orchestration: task assignment, approval gates, multi-stakeholder routing',
+      'AI Writing Agent generates first-draft responses from prior successful answers',
+      'Broad document format support across RFPs, RFIs, DDQs, and security questionnaires',
     ],
     weaknesses: [
-      'Not shaped around the structural conventions of government proposals.',
-      'Compliance clause handling (FAR/DFARS/Section 508) requires manual setup.',
+      'No published pricing and no self-serve trial — every evaluation requires a sales conversation',
+      'GovCloud and dedicated cloud hosting for regulated/government use are not included in lower tiers and cost extra',
+      'Standard data migration is a paid add-on, which can be significant for teams with large legacy libraries',
+      'UI inconsistency between the legacy and redesigned interface is a recurring complaint in verified reviews',
+      'Does not natively track proposal win rates or connect submitted answers to deal outcomes',
+      'AI output quality is directly tied to library maintenance — same structural limitation as Loopio',
+      'Not built specifically for federal compliance workflows (Section L/M, FAR/DFARS, compliance matrices)',
+    ],
+    comparisonPoints: [
+      {
+        label: 'Built for government compliance (Section L/M, FAR/DFARS)',
+        govhub: 'Yes — purpose-built for federal proposal structure',
+        competitor: 'No — general enterprise RFx platform, not government-specific',
+      },
+      {
+        label: 'Pricing transparency',
+        govhub: 'Published tiered pricing',
+        competitor: 'Custom quote only, no public pricing',
+      },
+      {
+        label: 'GovCloud / regulated hosting',
+        govhub: 'Included',
+        competitor: 'Paid add-on on lower tiers',
+      },
+      {
+        label: 'Free trial available',
+        govhub: 'Yes',
+        competitor: 'No — demo and sales quote required',
+      },
     ],
     faqs: [
       {
-        question: 'Is GovHub a Responsive.io alternative?',
+        question: 'Does Responsive work for federal government proposals?',
         answer:
-          "Yes. GovHub is a government-specific alternative to Responsive (formerly RFPIO), purpose-built for federal, state, and local proposal responses.",
+          'Responsive is a general-purpose enterprise response management platform used across many industries — it is not purpose-built for federal compliance requirements like Section L/M structuring or FAR/DFARS proposal formatting. Teams in regulated or government contracting work may also need to pay extra for GovCloud hosting, which is not included in lower tiers.',
       },
       {
-        question: 'How does GovHub differ from Responsive for security questionnaires?',
+        question: 'Can I try Responsive for free?',
         answer:
-          "Responsive is strong for high-volume vendor security questionnaires. GovHub is focused on government solicitation responses — RFPs, RFIs, RFQs, and sources sought — where the structure and evaluation criteria are the primary drivers.",
+          'No. Responsive does not offer a self-serve free trial — access requires a sales conversation and custom quote.',
       },
     ],
   },
-
   {
     slug: 'govwin-iq',
     name: 'Deltek GovWin IQ',
-    tagline: 'Government market intelligence and opportunity identification platform.',
-    targetMarket:
-      'Government contractors identifying, qualifying, and forecasting federal, state, and local opportunities.',
-    intent: 'complements',
-    comparisonPoints: [
-      {
-        category: 'What each tool does',
-        govhub:
-          'GovHub writes the proposal — drafts, reviews, and formats your response once you have a solicitation to pursue.',
-        competitor:
-          'GovWin IQ finds and forecasts opportunities — it helps you identify which RFPs to pursue but is not a proposal writing tool.',
-      },
-      {
-        category: 'Where they fit in the pipeline',
-        govhub: 'Post-decision: capture is done, now write and submit.',
-        competitor: 'Pre-decision: market intelligence, capture planning, and opportunity forecasting.',
-      },
-      {
-        category: 'Do you need both?',
-        govhub:
-          'Many GovHub customers pair it with a market intelligence tool. GovHub replaces the drafting and review workflow, not the opportunity-discovery workflow.',
-        competitor:
-          "GovWin IQ complements — not competes with — a proposal writing platform.",
-      },
-    ],
+    category: 'opportunity-intelligence',
+    tagline:
+      'Government contract opportunity intelligence and market research platform — not a proposal writing tool.',
+    pricingEstimate:
+      'Estimated $13,000–$119,000/year, averaging around $29,000/year, based on third-party deal benchmark data. Entry-level packages exist around $6,000/year but typically exclude the analyst-access features that are GovWin\'s core value.',
+    bestFor:
+      'Large federal prime contractors chasing $50M+ contracts who need analyst-verified opportunity intelligence 3–5 years ahead of RFP release, and who have budget for a dedicated business development research tool.',
     strengths: [
-      'Deep dataset of federal, state, and local government opportunities.',
-      'Strong forecasting and market-intelligence features.',
-      'Established brand across large government contractors.',
+      '150+ industry analysts producing pre-solicitation opportunity intelligence — a genuinely unique capability no proposal-writing tool replicates',
+      'Deep integration with the Deltek ecosystem (Costpoint, Vantagepoint) for contractors already on that stack',
+      'Comprehensive federal and SLED (state/local/education) procurement data',
+      '4.5/5 rating on G2 from verified reviews',
     ],
     weaknesses: [
-      'Not a proposal writing tool — you still need something to draft, review, and format responses.',
-      'Priced for enterprise contractors; smaller firms often outgrow their subscription before their pipeline justifies it.',
+      'Not a proposal-writing or content generation platform at all — it finds opportunities, it does not help you write the response',
+      'Pricing is high relative to team size — multiple small business reviewers describe it as "a financial strain" and "cost prohibitive"',
+      'Dated, click-heavy user interface is a consistent complaint across verified reviews',
+      'Information overload — reviewers report too much unfiltered data without enough curation',
+      'No mobile app — desktop/browser only',
+      'Aggressive auto-renewal clauses requiring 60 days written notice to cancel',
+    ],
+    comparisonPoints: [
+      {
+        label: 'What it actually does',
+        govhub: 'Writes and manages your proposal response',
+        competitor: 'Finds and tracks opportunities — does not write proposals',
+      },
+      {
+        label: 'Proposal drafting / AI writing',
+        govhub: 'Yes — core feature',
+        competitor: 'No — GovWin IQ has no proposal generation capability',
+      },
+      {
+        label: 'Built for small business budgets',
+        govhub: 'Yes',
+        competitor: 'Entry packages exist (~$6K/yr) but exclude core analyst features',
+      },
+      {
+        label: 'Use case',
+        govhub: 'Respond to an RFP you\'ve already found',
+        competitor: 'Find an RFP before it\'s publicly posted',
+      },
     ],
     faqs: [
       {
-        question: 'Is GovHub a replacement for Deltek GovWin IQ?',
+        question: 'Is GovWin IQ the same kind of tool as GovHub?',
         answer:
-          "No — the two tools solve different problems. GovWin IQ helps you find and qualify opportunities. GovHub helps you write the proposal after you decide to pursue one. Many contractors use both.",
+          'No — this is an important distinction. GovWin IQ is an opportunity intelligence platform that helps you find and track government contracts, often years before they are formally posted. It does not write or manage proposal responses. GovHub is a proposal writing and compliance platform used once you already have an RFP to respond to. Many govcon teams use a discovery tool and a response tool together rather than choosing one over the other.',
       },
       {
-        question: 'Does GovHub integrate with GovWin IQ?',
+        question: 'Is GovWin IQ worth it for a small business?',
         answer:
-          "GovHub can import opportunity details from a GovWin IQ export so you don't retype requirements when moving from capture to drafting.",
+          'Multiple verified small-business reviewers describe GovWin IQ\'s pricing as a financial strain, and Deltek\'s own entry-level tier typically excludes the analyst-access features that are the platform\'s main value. It tends to make the most sense for larger contractors pursuing $50M+ opportunities who can absorb the estimated $13,000–$119,000/year cost.',
       },
     ],
   },
