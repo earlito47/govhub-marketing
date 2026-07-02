@@ -1,0 +1,300 @@
+---
+// Free, client-side compliance-matrix generator. Paste RFP text → heuristic
+// extraction of requirement statements (shall/must/will/required) with section
+// + L/M category detection → editable status → CSV export. Runs entirely in the
+// browser; nothing is uploaded. Plain <script>, no framework island.
+---
+
+<section class="tool" aria-label="Compliance matrix generator">
+  <div class="controls">
+    <label for="rfp-input">Paste your RFP or solicitation text</label>
+    <textarea
+      id="rfp-input"
+      rows="10"
+      placeholder="Paste the text of Sections L, M, and C (or the whole solicitation) here…"
+    ></textarea>
+    <div class="buttons">
+      <button id="generate-btn" type="button" class="primary">Generate compliance matrix</button>
+      <button id="sample-btn" type="button" class="ghost">Load sample RFP</button>
+      <button id="export-btn" type="button" class="ghost" disabled>Export CSV</button>
+    </div>
+    <p class="privacy">
+      🔒 Runs entirely in your browser. Your RFP never leaves your device — nothing
+      is uploaded to a server.
+    </p>
+  </div>
+
+  <div id="result" class="result" hidden>
+    <p id="summary" class="summary"></p>
+    <div class="table-wrap">
+      <table id="matrix">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Requirement</th>
+            <th>Section</th>
+            <th>L/M</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody id="matrix-body"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <p id="empty-msg" class="empty" hidden>
+    No requirement statements ("shall", "must", "will", "is required to") were
+    found in that text. Paste the instructions (Section L), evaluation factors
+    (Section M), or statement of work (Section C).
+  </p>
+</section>
+
+<script>
+  type Row = { text: string; section: string; category: string };
+
+  const SAMPLE = `SECTION L - INSTRUCTIONS TO OFFERORS
+L.1 General
+The offeror shall submit its proposal in two separate volumes: Volume I - Technical and Volume II - Price.
+The technical proposal shall not exceed 30 pages, single-sided.
+Offerors must register in SAM.gov prior to submission.
+The proposal shall be submitted no later than 2:00 PM EST on the due date.
+
+L.2 Technical Approach
+The offeror shall describe its technical approach to meeting all requirements in Section C.
+The offeror must demonstrate relevant past performance on at least three contracts of similar size and scope.
+
+SECTION M - EVALUATION FACTORS FOR AWARD
+M.1 The Government will evaluate proposals based on technical approach, past performance, and price.
+Technical approach will be evaluated for the offeror's understanding of the requirements.
+Past performance shall be evaluated for relevance and recency.
+
+SECTION C - STATEMENT OF WORK
+C.3.1 The contractor shall provide help desk support during core business hours.
+The contractor must maintain a 99.5% system availability.
+All deliverables shall comply with Section 508 accessibility standards.`;
+
+  const modalRe = /\b(shall|must|will|is required to|are required to|shall not|should)\b/i;
+  // Section heading heuristics.
+  const sectionHeadingRe =
+    /^\s*(section\s+[A-M]\b[^\n]*|[A-M]\.\d+(?:\.\d+)*|\d+(?:\.\d+)+)\b/i;
+
+  function letterOf(section: string): 'L' | 'M' | 'C' | '' {
+    const m = section.match(/\b([A-M])\b|section\s+([A-M])/i);
+    const l = (m?.[1] || m?.[2] || '').toUpperCase();
+    return l === 'L' || l === 'M' || l === 'C' ? (l as 'L' | 'M' | 'C') : '';
+  }
+
+  function categoryFor(section: string, text: string): string {
+    const l = letterOf(section);
+    if (l === 'L') return 'L · Instructions';
+    if (l === 'M') return 'M · Evaluation';
+    if (l === 'C') return 'C · Requirements';
+    if (/evaluat/i.test(text)) return 'M · Evaluation';
+    return 'General';
+  }
+
+  function extract(text: string): Row[] {
+    const rows: Row[] = [];
+    let currentSection = '—';
+    const lines = text.split(/\r?\n/);
+    for (const line of lines) {
+      const trimmed = line.trim();
+      if (!trimmed) continue;
+      if (sectionHeadingRe.test(trimmed) && trimmed.length < 90) {
+        currentSection = trimmed.replace(/\s+/g, ' ');
+        // A heading can also itself contain a requirement; fall through.
+      }
+      // Split a line into sentences so multiple requirements per line are caught.
+      const sentences = trimmed.split(/(?<=[.;])\s+(?=[A-Z0-9])/);
+      for (const s of sentences) {
+        const clean = s.trim();
+        if (clean.length < 12) continue;
+        if (modalRe.test(clean) && !sectionHeadingRe.test(clean)) {
+          rows.push({
+            text: clean,
+            section: currentSection,
+            category: categoryFor(currentSection, clean),
+          });
+        }
+      }
+    }
+    return rows;
+  }
+
+  function csvEscape(v: string): string {
+    return '"' + v.replace(/"/g, '""') + '"';
+  }
+
+  let currentRows: Row[] = [];
+
+  function render(rows: Row[]) {
+    const body = document.getElementById('matrix-body') as HTMLTableSectionElement;
+    const result = document.getElementById('result') as HTMLElement;
+    const emptyMsg = document.getElementById('empty-msg') as HTMLElement;
+    const exportBtn = document.getElementById('export-btn') as HTMLButtonElement;
+    const summary = document.getElementById('summary') as HTMLElement;
+    body.innerHTML = '';
+
+    if (rows.length === 0) {
+      result.hidden = true;
+      emptyMsg.hidden = false;
+      exportBtn.disabled = true;
+      return;
+    }
+    emptyMsg.hidden = true;
+    result.hidden = false;
+    exportBtn.disabled = false;
+    summary.textContent = `${rows.length} requirement${rows.length === 1 ? '' : 's'} extracted. Set a status for each, then export to CSV.`;
+
+    rows.forEach((r, i) => {
+      const tr = document.createElement('tr');
+      const statusId = `status-${i}`;
+      tr.innerHTML =
+        `<td>${i + 1}</td>` +
+        `<td>${r.text.replace(/</g, '&lt;')}</td>` +
+        `<td>${r.section.replace(/</g, '&lt;')}</td>` +
+        `<td>${r.category}</td>` +
+        `<td><select id="${statusId}" aria-label="Status for requirement ${i + 1}">` +
+        `<option>To do</option><option>In progress</option><option>Complete</option><option>N/A</option>` +
+        `</select></td>`;
+      body.appendChild(tr);
+    });
+  }
+
+  function exportCsv() {
+    const header = ['#', 'Requirement', 'Section', 'L/M Category', 'Status'];
+    const lines = [header.map(csvEscape).join(',')];
+    currentRows.forEach((r, i) => {
+      const sel = document.getElementById(`status-${i}`) as HTMLSelectElement | null;
+      const status = sel ? sel.value : 'To do';
+      lines.push(
+        [String(i + 1), r.text, r.section, r.category, status].map(csvEscape).join(','),
+      );
+    });
+    const blob = new Blob([lines.join('\r\n')], { type: 'text/csv;charset=utf-8;' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'compliance-matrix.csv';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  }
+
+  const input = document.getElementById('rfp-input') as HTMLTextAreaElement;
+  document.getElementById('generate-btn')?.addEventListener('click', () => {
+    currentRows = extract(input.value);
+    render(currentRows);
+    document.getElementById('result')?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  });
+  document.getElementById('sample-btn')?.addEventListener('click', () => {
+    input.value = SAMPLE;
+    currentRows = extract(SAMPLE);
+    render(currentRows);
+  });
+  document.getElementById('export-btn')?.addEventListener('click', exportCsv);
+</script>
+
+<style>
+  .tool {
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-radius: 1rem;
+    padding: 1.75rem;
+    box-shadow: var(--shadow);
+    margin: 1.5rem 0 2.5rem;
+  }
+  label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--fg);
+  }
+  textarea {
+    width: 100%;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.9rem;
+    padding: 0.85rem;
+    border: 1px solid var(--border);
+    border-radius: 0.5rem;
+    background: var(--bg);
+    color: var(--fg);
+    resize: vertical;
+  }
+  .buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1rem;
+  }
+  button {
+    font: inherit;
+    font-weight: 600;
+    padding: 0.6rem 1.1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    border: 1px solid var(--accent);
+  }
+  button.primary {
+    background: var(--accent);
+    color: #fff;
+  }
+  button.primary:hover {
+    background: var(--accent-hover);
+  }
+  button.ghost {
+    background: transparent;
+    color: var(--accent);
+  }
+  button.ghost:hover:not(:disabled) {
+    background: var(--accent-soft);
+  }
+  button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  .privacy {
+    font-size: 0.85rem;
+    color: var(--fg-muted);
+    margin: 1rem 0 0;
+  }
+  .summary {
+    font-weight: 600;
+    margin: 1.5rem 0 0.75rem;
+  }
+  .table-wrap {
+    overflow-x: auto;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+  }
+  th,
+  td {
+    border: 1px solid var(--border);
+    padding: 0.5rem 0.65rem;
+    text-align: left;
+    vertical-align: top;
+  }
+  thead th {
+    background: var(--bg);
+    color: var(--fg);
+  }
+  td {
+    color: var(--fg-muted);
+  }
+  select {
+    font: inherit;
+    padding: 0.25rem;
+    border: 1px solid var(--border);
+    border-radius: 0.35rem;
+    background: var(--bg);
+    color: var(--fg);
+  }
+  .empty {
+    color: var(--fg-muted);
+    margin-top: 1.25rem;
+  }
+</style>

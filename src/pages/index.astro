@@ -1,157 +1,227 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import SchemaOrg from '../components/seo/SchemaOrg.astro';
+import Hero from '../components/Hero.astro';
+import FeatureGrid from '../components/FeatureGrid.astro';
+import SolutionsGrid from '../components/SolutionsGrid.astro';
+import StatRow from '../components/StatRow.astro';
+import TrustSection from '../components/TrustSection.astro';
+import Testimonials from '../components/Testimonials.astro';
+import FAQSchema from '../components/seo/FAQSchema.astro';
+import CTABand from '../components/CTABand.astro';
+import { PRIMARY_KEYWORD, SIGNUP_URL, TRIAL_DAYS } from '../config';
+import { PRICE_RANGE, formatUsd } from '../data/pricing';
+import { faqsForPage } from '../data/faqs';
+import heroImage from '../assets/hero-handshake.jpg';
+
+// Primary term is single-sourced — see src/config.ts PRIMARY_KEYWORD.
+const title = `${PRIMARY_KEYWORD.h1} | GovHub`;
+const description = `GovHub is ${PRIMARY_KEYWORD.primary} built for federal, state, and local contractors — draft compliant RFP responses, autofill contract forms, and check Section L/M and FAR/DFARS compliance.`;
+
+const features = [
+  {
+    title: 'Purpose-built for government work',
+    description:
+      'Section L/M structure, evaluation-criteria alignment, and compliance matrices are the default — not a plugin bolted onto a commercial sales tool.',
+  },
+  {
+    title: 'Drafting that reads like your team wrote it',
+    description:
+      'Ingests your past-performance library and technical narrative so the draft sounds like your firm, not a generic template.',
+  },
+  {
+    title: 'Compliance-aware review',
+    description:
+      'Automated checks against FAR/DFARS clauses, Section 508, and set-aside requirements flag gaps before you submit.',
+  },
+  {
+    title: 'Scales from solo contractor to integrator',
+    description:
+      'One-person shops responding to their first federal RFP through multi-team pursuits with dozens of contributors.',
+  },
+];
+
+const steps = [
+  {
+    n: '1',
+    title: 'Upload the RFP',
+    body: 'Import the solicitation (PDF, SAM.gov URL, or agency export). GovHub “shreds” it to surface every requirement, instruction, and evaluation factor — including easy-to-miss compliance criteria.',
+  },
+  {
+    n: '2',
+    title: 'Add your company info',
+    body: 'Point GovHub at your capability statements and past-performance data. It maps your strengths to the RFP’s requirements automatically.',
+  },
+  {
+    n: '3',
+    title: 'Draft, review & export',
+    body: 'Review AI-generated content, apply compliant templates, and export a submission-ready proposal with forms and attachments.',
+  },
+];
+
+const stats = [
+  { value: `${formatUsd(PRICE_RANGE.low)}/mo`, label: 'Starting price' },
+  { value: `${TRIAL_DAYS} days`, label: 'Free trial, no card' },
+  { value: 'Federal · state · local', label: 'Solicitations supported' },
+];
+
+const homeFaqs = faqsForPage('/');
 ---
 
-<BaseLayout
-  title="GovHub — AI proposal writing for government contractors"
-  description="GovHub is the AI proposal writing platform built for government contractors. Draft, review, and submit federal, state, and local RFP responses faster."
->
+<BaseLayout title={title} description={description}>
   <SchemaOrg
     type="SoftwareApplication"
     data={{
       name: 'GovHub',
-      description: 'AI proposal writing platform for government contractors.',
+      applicationCategory: 'BusinessApplication',
+      operatingSystem: 'Web',
+      description,
+      offers: {
+        '@type': 'AggregateOffer',
+        priceCurrency: PRICE_RANGE.currency,
+        lowPrice: PRICE_RANGE.low,
+        highPrice: PRICE_RANGE.high,
+        offerCount: PRICE_RANGE.offerCount,
+      },
     }}
   />
 
   <main class="container">
-    <section class="hero">
-      <p class="eyebrow">GovHub</p>
-      <h1>AI proposal writing built for government contractors.</h1>
-      <p class="lede">
-        Draft, review, and submit federal, state, and local RFP responses without
-        the overhead of a full proposal team. GovHub understands Section L/M,
-        FAR/DFARS, and Section 508 out of the box.
+    <Hero
+      eyebrow="AI proposal software for government contractors"
+      title={PRIMARY_KEYWORD.h1}
+      lede="Draft, review, and submit federal, state, and local RFP responses without the overhead of a full proposal team. GovHub understands Section L/M, FAR/DFARS, and Section 508 out of the box."
+      primaryHref={SIGNUP_URL}
+      primaryLabel="Start free trial"
+      secondaryHref="/solutions/compliance-matrix-generator/"
+      secondaryLabel="Try the free compliance matrix tool →"
+      trust={`No credit card required · ${TRIAL_DAYS}-day free trial · Built for government contractors`}
+      image={heroImage}
+      imageAlt="Government contractors collaborating on a proposal"
+    />
+
+    <StatRow stats={stats} />
+
+    <section class="block">
+      <h2>No fluff. Compliance-grade content.</h2>
+      <p class="section-lede">
+        Built around FAR compliance, technical evaluation criteria, and what
+        actually wins contracts — not generic marketing copy.
       </p>
-      <p class="ctas">
-        <a class="primary" href="/pricing/">See pricing</a>
-        <a class="secondary" href="/vs/loopio/">Compare GovHub vs Loopio →</a>
-      </p>
+      <FeatureGrid features={features} />
     </section>
 
-    <section class="value">
-      <div class="grid">
-        <article>
-          <h3>Purpose-built for government work</h3>
-          <p>Section L/M structure, evaluation-criteria alignment, and compliance matrices are the default — not a plugin.</p>
-        </article>
-        <article>
-          <h3>Drafting that reads like your team wrote it</h3>
-          <p>Ingests your past-performance library and technical narrative so the draft sounds like your firm, not a template.</p>
-        </article>
-        <article>
-          <h3>Compliance-aware review</h3>
-          <p>Automated checks against FAR/DFARS clauses, Section 508, and set-aside requirements before submission.</p>
-        </article>
-        <article>
-          <h3>Scales from solo contractor to system integrator</h3>
-          <p>One-person shops responding to their first federal RFP through multi-team pursuits with dozens of contributors.</p>
-        </article>
+    <section class="block">
+      <h2>From RFP to a winning proposal in three steps</h2>
+      <div class="steps">
+        {steps.map((s) => (
+          <div class="step">
+            <span class="num">{s.n}</span>
+            <h3>{s.title}</h3>
+            <p>{s.body}</p>
+          </div>
+        ))}
       </div>
     </section>
 
-    <section class="audience-strip">
-      <h2>Built for</h2>
+    <section class="block">
+      <h2>An end-to-end contract acquisition platform</h2>
+      <p class="section-lede">
+        From shredding the solicitation to a submission-ready package, GovHub
+        covers the response workflow.
+      </p>
+      <SolutionsGrid mode="featured" />
+      <p class="more-link"><a href="/solutions/">See all solutions →</a></p>
+    </section>
+
+    <section class="block audience">
+      <h2>Built for your side of the table</h2>
       <ul>
         <li><a href="/for/small-business-contractors/">Small business contractors →</a></li>
         <li><a href="/for/system-integrators/">System integrators →</a></li>
       </ul>
     </section>
 
-    <p class="note">
-      <em>This landing page is a placeholder. Full homepage content will be
-      ported from the existing site in a follow-up commit.</em>
-    </p>
+    <TrustSection />
+
+    <Testimonials heading="What government contractors say" />
+
+    {homeFaqs.length > 0 && (
+      <FAQSchema faqs={homeFaqs} heading="Frequently asked questions" />
+    )}
+
+    <CTABand
+      heading="Win more government contracts with AI"
+      sub={`Start a free ${TRIAL_DAYS}-day trial, or try the free compliance matrix generator — no login required.`}
+      secondaryHref="/pricing/"
+      secondaryLabel="See pricing"
+    />
   </main>
 </BaseLayout>
 
 <style>
   main {
-    padding: 3rem 1.5rem 5rem;
+    padding: 0 1.5rem 2rem;
   }
-  .hero {
-    max-width: 44rem;
-    margin: 2rem 0 5rem;
+  .block {
+    margin: 4rem 0;
   }
-  .eyebrow {
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    font-size: 0.85rem;
-    color: var(--accent);
+  .block > h2 {
+    margin: 0 0 0.5rem;
+  }
+  .section-lede {
+    color: var(--fg-muted);
+    max-width: 40rem;
     margin: 0 0 1rem;
+    font-size: 1.05rem;
   }
-  h1 {
-    font-weight: 700;
-    margin: 0 0 1.25rem;
-  }
-  .lede {
-    font-size: 1.15rem;
-    color: var(--fg-muted);
-    margin: 0 0 2rem;
-  }
-  .ctas {
-    display: flex;
-    gap: 1rem;
-    align-items: center;
-    flex-wrap: wrap;
-  }
-  .primary {
-    display: inline-block;
-    padding: 0.75rem 1.25rem;
-    background: var(--accent);
-    color: #fff;
-    border-radius: 0.5rem;
-    font-weight: 600;
-  }
-  .primary:hover {
-    background: #3d7de6;
-    text-decoration: none;
-  }
-  .secondary {
-    color: var(--fg-muted);
-  }
-  .value .grid {
+  .steps {
     display: grid;
-    gap: 1.5rem;
+    gap: 1.25rem;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    margin: 3rem 0;
+    margin-top: 1.5rem;
   }
-  .value article {
+  .step {
     background: var(--bg-elevated);
     border: 1px solid var(--border);
     border-radius: 0.75rem;
     padding: 1.5rem;
+    box-shadow: var(--shadow);
   }
-  .value h3 {
-    margin: 0 0 0.5rem;
+  .num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background: var(--accent);
+    color: #fff;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+  }
+  .step h3 {
+    margin: 0 0 0.4rem;
     font-size: 1.05rem;
   }
-  .value p {
+  .step p {
     margin: 0;
     color: var(--fg-muted);
     font-size: 0.95rem;
   }
-  .audience-strip {
-    margin: 4rem 0 2rem;
+  .more-link {
+    margin-top: 1rem;
+    font-weight: 600;
   }
-  .audience-strip h2 {
-    font-size: 1rem;
-    color: var(--fg-muted);
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    margin-bottom: 0.75rem;
-  }
-  .audience-strip ul {
+  .audience ul {
     list-style: none;
     padding: 0;
     display: flex;
     gap: 1.5rem;
     flex-wrap: wrap;
+    margin: 0.5rem 0 0;
   }
-  .note {
-    color: var(--fg-muted);
-    font-size: 0.9rem;
-    margin-top: 3rem;
+  .audience a {
+    font-weight: 600;
   }
 </style>

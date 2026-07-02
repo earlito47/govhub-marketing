@@ -1,0 +1,115 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/seo/Breadcrumbs.astro';
+import FAQSchema from '../../components/seo/FAQSchema.astro';
+import CTABand from '../../components/CTABand.astro';
+import { getSolution } from '../../data/solutions';
+import { faqsForPage } from '../../data/faqs';
+
+const solution = getSolution('rfp-shredding')!;
+const faqs = [
+  ...faqsForPage('/solutions/rfp-shredding/'),
+  {
+    question: 'What is the difference between RFP shredding and a compliance matrix?',
+    answer:
+      'Shredding is the act of breaking the solicitation down into individual requirements; the compliance matrix is the structured output — those requirements arranged in a trackable table. Shredding produces the matrix. GovHub does both in one step.',
+  },
+  {
+    question: 'Which parts of a solicitation does GovHub shred?',
+    answer:
+      'Section L instructions, Section M evaluation factors, the Section C statement of work, and cross-referenced FAR/DFARS clauses. It captures "shall," "must," and "will" statements, submission mechanics, and format constraints such as page limits and fonts.',
+  },
+];
+---
+
+<BaseLayout title={solution.title} description={solution.description}>
+  <main class="container">
+    <Breadcrumbs
+      items={[
+        { name: 'Home', url: '/' },
+        { name: 'Solutions', url: '/solutions/' },
+        { name: solution.name, url: `/solutions/${solution.slug}/` },
+      ]}
+    />
+
+    <article class="prose">
+      <h1>RFP shredding software for government proposals</h1>
+      <p class="lede">
+        GovHub "shreds" a government solicitation — automatically breaking it into
+        every discrete requirement, instruction, and evaluation factor so nothing
+        slips through before you start writing.
+      </p>
+
+      <h2>What is RFP shredding?</h2>
+      <p>
+        RFP shredding is the process of decomposing a solicitation into its
+        individual, trackable requirements — every "shall," "must," and "will"
+        statement, every submission instruction in Section L, and every evaluation
+        factor in Section M. Done by hand, shredding a 100-page RFP can take a
+        senior proposal manager the better part of a day. It is also where
+        expensive mistakes happen: one missed requirement can make an entire
+        proposal "non-responsive."
+      </p>
+
+      <h2>How GovHub shreds a solicitation</h2>
+      <ol>
+        <li>Import the solicitation as a PDF, a SAM.gov link, or an agency export.</li>
+        <li>GovHub identifies section structure (L, M, C) and extracts every requirement statement.</li>
+        <li>Each requirement is tagged with its source section and evaluation relevance.</li>
+        <li>The result is a <a href="/solutions/compliance-matrix-generator/">compliance matrix</a> you build the response around.</li>
+      </ol>
+
+      <h2>Why shredding matters</h2>
+      <ul>
+        <li><strong>Nothing missed:</strong> every requirement is captured and trackable.</li>
+        <li><strong>Faster start:</strong> skip the manual read-and-highlight pass and start drafting sooner.</li>
+        <li><strong>Compliance-first:</strong> the matrix drives the response outline, so structure follows Section L automatically.</li>
+      </ul>
+
+      <p>
+        Want to try it now? The free
+        <a href="/solutions/compliance-matrix-generator/">compliance matrix
+        generator</a> shreds pasted RFP text in your browser. For the full
+        workflow — shred, draft, review, and export — see the
+        <a href="/solutions/ai-proposal-generator/">AI proposal generator</a>.
+      </p>
+    </article>
+
+    <FAQSchema faqs={faqs} heading="RFP shredding — FAQ" />
+
+    <CTABand
+      heading="Shred your next solicitation in minutes"
+      sub="Try the free compliance matrix generator, or start a full GovHub trial."
+      primaryHref="/solutions/compliance-matrix-generator/"
+      primaryLabel="Try the free tool"
+      secondaryHref="/pricing/"
+      secondaryLabel="See pricing"
+    />
+  </main>
+</BaseLayout>
+
+<style>
+  main {
+    padding-bottom: 2rem;
+  }
+  .prose {
+    max-width: 48rem;
+    margin: 1.5rem 0;
+  }
+  .lede {
+    font-size: 1.15rem;
+    color: var(--fg-muted);
+    margin-bottom: 1rem;
+  }
+  h2 {
+    margin-top: 2.5rem;
+  }
+  ol,
+  ul {
+    padding-left: 1.25rem;
+    color: var(--fg-muted);
+  }
+  li {
+    margin: 0.5rem 0;
+  }
+</style>
