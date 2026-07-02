@@ -1,0 +1,133 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/seo/Breadcrumbs.astro';
+import FAQSchema from '../../components/seo/FAQSchema.astro';
+import CTABand from '../../components/CTABand.astro';
+
+const templates = [
+  {
+    name: 'Defense contractor',
+    body: 'Formatting and section structure suited to DoD solicitations, including security and clearance sections.',
+  },
+  {
+    name: 'Federal IT services',
+    body: 'A clean, modern structure for technology and IT modernization proposals.',
+  },
+  {
+    name: 'Professional services',
+    body: 'A layout for consulting and advisory responses that keeps qualifications and approach front and center.',
+  },
+  {
+    name: 'Construction & engineering',
+    body: 'A project-focused structure with room for safety, past performance, and SF330-style qualifications.',
+  },
+];
+const faqs = [
+  {
+    question: 'Does GovHub include government proposal templates?',
+    answer:
+      'Yes. GovHub applies compliant, agency-ready templates that handle formatting, section numbering, and page-limit budgets automatically, so a draft becomes a submission-ready document without a designer.',
+  },
+  {
+    question: 'Are the templates compliant with federal formatting requirements?',
+    answer:
+      'The templates are built around common federal formatting rules — page limits, fonts, margins, and section numbering from Section L. You still confirm the specifics against each solicitation, and GovHub’s review flags formatting that would risk a non-responsive finding.',
+  },
+];
+---
+
+<BaseLayout
+  title="Government Proposal Templates & Template Software | GovHub"
+  description="Agency-ready government proposal templates that handle compliant formatting, section numbering, and page-limit budgets automatically — for defense, IT, professional services, and A-E."
+>
+  <main class="container">
+    <Breadcrumbs
+      items={[
+        { name: 'Home', url: '/' },
+        { name: 'Templates', url: '/templates/' },
+      ]}
+    />
+
+    <article class="prose">
+      <h1>Government proposal templates that keep you compliant</h1>
+      <p class="lede">
+        A basic Word document undersells a strong proposal. GovHub applies
+        professional, government-compliant templates instantly — correct
+        formatting, section numbering, and page-limit budgets — so your response
+        looks and reads like it came from a full proposal shop.
+      </p>
+
+      <h2>Template families</h2>
+      <div class="grid">
+        {templates.map((t) => (
+          <div class="card">
+            <h3>{t.name}</h3>
+            <p>{t.body}</p>
+          </div>
+        ))}
+      </div>
+
+      <h2>Why templates are a compliance tool, not decoration</h2>
+      <p>
+        Section L usually dictates format — page counts, fonts, margins, and
+        section numbering — and exceeding a page limit can get pages discarded
+        unread. A compliant template enforces those rules automatically, applies a
+        table of contents and consistent numbering, and produces print- and
+        screen-ready output. Templates are generated and applied by the
+        <a href="/solutions/template-generator/">template generator</a>, and the
+        review pass in <a href="/solutions/technical-writer-review/">technical
+        writer review</a> catches formatting that would risk a non-responsive
+        finding.
+      </p>
+    </article>
+
+    <FAQSchema faqs={faqs} heading="Proposal templates — FAQ" />
+
+    <CTABand
+      heading="Turn a draft into a submission-ready document"
+      sub="Start a free trial and apply a compliant template to your next proposal."
+      secondaryHref="/solutions/template-generator/"
+      secondaryLabel="See the template generator"
+    />
+  </main>
+</BaseLayout>
+
+<style>
+  main {
+    padding: 1rem 1.5rem 2rem;
+  }
+  .prose {
+    max-width: 48rem;
+    margin: 1rem 0;
+  }
+  .lede {
+    font-size: 1.15rem;
+    color: var(--fg-muted);
+  }
+  h2 {
+    margin-top: 2.5rem;
+  }
+  .grid {
+    display: grid;
+    gap: 1.25rem;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    margin-top: 1.5rem;
+  }
+  .card {
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+  }
+  .card h3 {
+    margin: 0 0 0.4rem;
+    font-size: 1.05rem;
+    color: var(--fg);
+  }
+  .card p {
+    margin: 0;
+    color: var(--fg-muted);
+    font-size: 0.95rem;
+  }
+</style>

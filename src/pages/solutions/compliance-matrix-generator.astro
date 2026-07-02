@@ -1,0 +1,119 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/seo/Breadcrumbs.astro';
+import FAQSchema from '../../components/seo/FAQSchema.astro';
+import CTABand from '../../components/CTABand.astro';
+import ComplianceMatrixTool from '../../components/ComplianceMatrixTool.astro';
+import { getSolution } from '../../data/solutions';
+import { faqsForPage } from '../../data/faqs';
+
+const solution = getSolution('compliance-matrix-generator')!;
+const faqs = [
+  ...faqsForPage('/solutions/compliance-matrix-generator/'),
+  {
+    question: 'Is the compliance matrix generator really free?',
+    answer:
+      'Yes. The tool on this page is free and requires no login. It runs entirely in your browser, so your solicitation text never leaves your device. GovHub’s full platform adds AI drafting, form autofill, and review on top of it.',
+  },
+  {
+    question: 'What does a compliance matrix include?',
+    answer:
+      'A compliance matrix lists every requirement from the solicitation alongside its source (Section L instruction, Section M factor, or Section C requirement), where you address it in your response, and a status. It is how you prove — to yourself and the evaluator — that nothing was missed.',
+  },
+];
+---
+
+<BaseLayout title={solution.title} description={solution.description}>
+  <main class="container">
+    <Breadcrumbs
+      items={[
+        { name: 'Home', url: '/' },
+        { name: 'Solutions', url: '/solutions/' },
+        { name: solution.name, url: `/solutions/${solution.slug}/` },
+      ]}
+    />
+
+    <article class="prose">
+      <h1>Free RFP compliance matrix generator</h1>
+      <p class="lede">
+        Paste your government solicitation below and GovHub extracts every
+        requirement — the "shall," "must," and "will" statements — into a
+        structured compliance matrix you can export to CSV. Free, no login, and it
+        runs entirely in your browser.
+      </p>
+    </article>
+
+    <ComplianceMatrixTool />
+
+    <article class="prose">
+      <h2>What is a compliance matrix?</h2>
+      <p>
+        A compliance matrix (also called a requirements traceability matrix or
+        "compliance crosswalk") is a table that maps every requirement in a
+        government solicitation to the place in your proposal where you address
+        it. It is the single most effective tool for avoiding a "non-responsive"
+        rejection: if a requirement from Section L, Section M, or the Section C
+        statement of work is not tracked, it is easy to miss — and missing one can
+        disqualify an otherwise-winning proposal.
+      </p>
+
+      <h2>How to build a compliance matrix for a government RFP</h2>
+      <ol>
+        <li>Pull every instruction from <strong>Section L</strong> (how to prepare and submit).</li>
+        <li>Pull every evaluation factor from <strong>Section M</strong> (how you'll be scored).</li>
+        <li>Pull the technical requirements from the <strong>Section C</strong> statement of work.</li>
+        <li>List each as a row, tagged with its source section and an owner.</li>
+        <li>Track a status per requirement and keep the matrix in sync as the response evolves.</li>
+      </ol>
+      <p>
+        The tool above automates steps 1–4 in seconds. GovHub's full platform then
+        keeps the matrix aligned with your draft as sections are written and
+        reviewed — see the <a href="/solutions/ai-proposal-generator/">AI proposal
+        generator</a> and <a href="/solutions/rfp-shredding/">RFP shredding</a>.
+      </p>
+
+      <h2>From matrix to a compliant proposal</h2>
+      <p>
+        A matrix tells you what to answer; GovHub helps you answer it. Once you've
+        shredded the solicitation, GovHub drafts each section against the
+        requirements, flags FAR/DFARS and Section 508 gaps, and autofills the
+        standard forms. Read the pillar guide on
+        <a href="/blog/how-to-write-a-government-proposal/">how to write a government
+        proposal</a> for the full workflow.
+      </p>
+    </article>
+
+    <FAQSchema faqs={faqs} heading="Compliance matrix generator — FAQ" />
+
+    <CTABand
+      heading="Turn your matrix into a winning proposal"
+      sub="GovHub drafts, checks, and formats the response around the requirements you just extracted."
+      secondaryHref="/solutions/"
+      secondaryLabel="See all solutions"
+    />
+  </main>
+</BaseLayout>
+
+<style>
+  main {
+    padding-bottom: 2rem;
+  }
+  .prose {
+    max-width: 48rem;
+    margin: 1.5rem 0;
+  }
+  .lede {
+    font-size: 1.15rem;
+    color: var(--fg-muted);
+  }
+  h2 {
+    margin-top: 2.5rem;
+  }
+  ol {
+    padding-left: 1.25rem;
+    color: var(--fg-muted);
+  }
+  ol li {
+    margin: 0.5rem 0;
+  }
+</style>

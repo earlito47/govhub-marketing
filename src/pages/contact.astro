@@ -1,0 +1,56 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/seo/Breadcrumbs.astro';
+import { CONTACT_EMAIL, SIGNUP_URL } from '../config';
+---
+
+<BaseLayout
+  title="Contact GovHub — Talk to Our Team"
+  description="Get in touch with GovHub for demos, support, or questions about AI-powered government proposal writing and compliance automation."
+>
+  <main class="container">
+    <Breadcrumbs items={[{ name: 'Home', url: '/' }, { name: 'Contact', url: '/contact/' }]} />
+
+    <article class="prose">
+      <h1>Contact GovHub</h1>
+      <p class="lede">
+        Questions about GovHub, a demo, or how it fits your pursuits? We'd like to
+        help.
+      </p>
+
+      <div class="cards">
+        <div class="card">
+          <h2>Email us</h2>
+          <p>The fastest way to reach the team.</p>
+          <p><a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a></p>
+        </div>
+        <div class="card">
+          <h2>Start a free trial</h2>
+          <p>See GovHub on a real solicitation — no credit card required.</p>
+          <p><a href={SIGNUP_URL}>Create your account →</a></p>
+        </div>
+        <div class="card">
+          <h2>Try the free tool</h2>
+          <p>Generate a compliance matrix from an RFP in your browser.</p>
+          <p><a href="/solutions/compliance-matrix-generator/">Open the tool →</a></p>
+        </div>
+      </div>
+
+      <p class="note">
+        Prefer to explore first? Browse the <a href="/solutions/">solutions</a>,
+        <a href="/pricing/">pricing</a>, or the <a href="/faq/">FAQ</a>.
+      </p>
+    </article>
+  </main>
+</BaseLayout>
+
+<style>
+  main { padding: 1rem 1.5rem 4rem; }
+  .prose { max-width: 46rem; margin: 1rem 0; }
+  .lede { font-size: 1.15rem; color: var(--fg-muted); margin-bottom: 2rem; }
+  .cards { display: grid; gap: 1.25rem; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+  .card { background: var(--bg-elevated); border: 1px solid var(--border); border-radius: 0.75rem; padding: 1.5rem; box-shadow: var(--shadow); }
+  .card h2 { margin: 0 0 0.4rem; font-size: 1.1rem; }
+  .card p { margin: 0 0 0.5rem; color: var(--fg-muted); font-size: 0.95rem; }
+  .note { margin-top: 2rem; color: var(--fg-muted); }
+</style>

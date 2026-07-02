@@ -1,5 +1,6 @@
 ---
-const year = 2026;
+import { CONTACT_EMAIL } from '../config';
+const year = new Date().getFullYear();
 ---
 
 <footer class="site-footer">
@@ -12,9 +13,10 @@ const year = 2026;
       <div>
         <p class="heading">Product</p>
         <ul>
+          <li><a href="/solutions/compliance-matrix-generator/">Compliance matrix generator</a></li>
           <li><a href="/solutions/ai-proposal-generator/">AI proposal generator</a></li>
           <li><a href="/solutions/form-autofiller/">Form autofiller</a></li>
-          <li><a href="/solutions/template-generator/">Template generator</a></li>
+          <li><a href="/solutions/">All solutions</a></li>
           <li><a href="/pricing/">Pricing</a></li>
         </ul>
       </div>
@@ -24,24 +26,36 @@ const year = 2026;
           <li><a href="/vs/loopio/">GovHub vs Loopio</a></li>
           <li><a href="/vs/responsive/">GovHub vs Responsive</a></li>
           <li><a href="/vs/govwin-iq/">GovHub and Deltek GovWin IQ</a></li>
+          <li><a href="/alternatives/loopio/">Loopio alternatives</a></li>
         </ul>
       </div>
       <div>
         <p class="heading">Company</p>
         <ul>
-          <li><a href="/faq/">FAQ</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="/security/">Security</a></li>
+          <li><a href="/compliance/">Compliance</a></li>
           <li><a href="/blog/">Blog</a></li>
-          <li><a href="mailto:hello@govhub.example">Contact</a></li>
+          <li><a href="/faq/">FAQ</a></li>
+          <li><a href="/contact/">Contact</a></li>
         </ul>
       </div>
     </div>
-    <p class="copyright">© {year} GovHub. All rights reserved.</p>
+    <div class="bottom">
+      <p class="copyright">© {year} GovHub. All rights reserved.</p>
+      <p class="legal">
+        <a href="/privacy/">Privacy</a>
+        <a href="/terms/">Terms</a>
+        <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
+      </p>
+    </div>
   </div>
 </footer>
 
 <style>
   .site-footer {
     border-top: 1px solid var(--border);
+    background: var(--bg-elevated);
     padding: 3rem 0 2rem;
     margin-top: 5rem;
   }
@@ -85,10 +99,29 @@ const year = 2026;
     color: var(--fg);
     text-decoration: none;
   }
-  .copyright {
-    color: var(--fg-muted);
-    font-size: 0.85rem;
+  .bottom {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1rem;
     padding-top: 1.5rem;
     border-top: 1px solid var(--border);
+  }
+  .copyright,
+  .legal {
+    color: var(--fg-muted);
+    font-size: 0.85rem;
+    margin: 0;
+  }
+  .legal {
+    display: flex;
+    gap: 1.25rem;
+  }
+  .legal a {
+    color: var(--fg-muted);
+  }
+  .legal a:hover {
+    color: var(--fg);
+    text-decoration: none;
   }
 </style>

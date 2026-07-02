@@ -1,0 +1,88 @@
+---
+// Homepage Security & Compliance band — security/compliance is a positioning
+// pillar, so surface it and link to the dedicated pages.
+const points = [
+  {
+    title: 'Built for federal security expectations',
+    body: 'Encryption in transit and at rest, role-based access, tenant isolation, audit logging, and US-based data — the controls a government security team asks about.',
+  },
+  {
+    title: 'FAR/DFARS-aware by design',
+    body: 'Compliance is the design center, not an afterthought: Section L/M structure, FAR/DFARS clause awareness, and Section 508 conformance are built into the workflow.',
+  },
+  {
+    title: 'Your proposal data stays yours',
+    body: 'GovHub does not train models on your proposal content. Your past performance, pricing, and technical data are used to serve you — nobody else.',
+  },
+];
+---
+
+<section class="trust">
+  <div class="head">
+    <h2>Security and compliance are the point, not an afterthought</h2>
+    <p>
+      Government buyers weigh security and compliance heavily. So do we — it is
+      how the product is built.
+    </p>
+  </div>
+  <div class="grid">
+    {points.map((p) => (
+      <article>
+        <h3>{p.title}</h3>
+        <p>{p.body}</p>
+      </article>
+    ))}
+  </div>
+  <p class="links">
+    <a href="/security/">How GovHub secures your data →</a>
+    <a href="/compliance/">GovHub and FAR/DFARS compliance →</a>
+  </p>
+</section>
+
+<style>
+  .trust {
+    margin: 4rem 0;
+  }
+  .head {
+    max-width: 42rem;
+  }
+  .head h2 {
+    margin: 0 0 0.75rem;
+  }
+  .head p {
+    color: var(--fg-muted);
+    margin: 0 0 2rem;
+  }
+  .grid {
+    display: grid;
+    gap: 1.25rem;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  }
+  article {
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+  }
+  article h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1.05rem;
+    color: var(--fg);
+  }
+  article p {
+    margin: 0;
+    color: var(--fg-muted);
+    font-size: 0.95rem;
+  }
+  .links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin: 1.75rem 0 0;
+  }
+  .links a {
+    font-weight: 600;
+    font-size: 0.95rem;
+  }
+</style>

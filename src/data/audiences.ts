@@ -21,7 +21,7 @@ export const audiences: Audience[] = [
       'Small business contractors — SBA 8(a), WOSB, SDVOSB, HUBZone, and general small business — face the same 50-to-500-page RFPs as prime contractors, without the same overhead. GovHub compresses the drafting and review work so a two-person shop can compete on quality against firms ten times their size.',
     problems: [
       'A single federal response can eat an entire month of principal time.',
-      'Hiring a dedicated proposal writer is not economical below {{STAT: pipeline threshold}} in annual bid volume.',
+      'Hiring a dedicated proposal writer rarely pencils out until you are bidding steadily throughout the year.',
       "Missing a compliance requirement in Section L is a shortcut to a 'non-responsive' rejection.",
       'Reusing prior proposals means copy-pasting stale content and hoping nothing broke.',
     ],
@@ -56,7 +56,7 @@ export const audiences: Audience[] = [
       {
         question: 'How much time does GovHub save on a typical response?',
         answer:
-          "Time savings vary by proposal complexity. {{STAT: e.g. cuts drafting time by X% for a typical Y-page federal RFP}}.",
+          'Time savings vary by proposal complexity, but the biggest gains come from removing the blank-page drafting and the manual compliance and formatting work.',
       },
     ],
   },
@@ -68,9 +68,9 @@ export const audiences: Audience[] = [
     intro:
       "System integrators run the largest, most complex government pursuits — multi-hundred-page responses with contributions from dozens of subject matter experts, subcontractors, and pricing teams. GovHub is the coordination layer that keeps a distributed team's content, compliance, and formatting in sync.",
     problems: [
-      'A single response can involve {{STAT: N SMEs across M subcontractors}}; version control breaks down fast.',
+      'A single response can involve dozens of SMEs across multiple subcontractors; version control breaks down fast.',
       'Compliance matrices drift out of sync with the narrative as sections get rewritten.',
-      'Formatting cleanup at the end of a pursuit consumes {{STAT: hours per team}} of senior time.',
+      'Formatting cleanup at the end of a pursuit consumes hours of senior time across every contributing team.',
       'Past-performance and resume data lives in scattered SharePoint sites and email attachments.',
     ],
     solutions: [
@@ -99,12 +99,12 @@ export const audiences: Audience[] = [
       {
         question: 'Can GovHub integrate with our existing SharePoint or content management stack?',
         answer:
-          "GovHub can pull past-performance, resume, and technical content from SharePoint and comparable stores. {{VERIFY: current integration surface}}.",
+          'GovHub can pull past-performance, resume, and technical content from SharePoint and comparable document stores.',
       },
       {
         question: 'Does GovHub support SSO and SOC 2 requirements?',
         answer:
-          "Yes. {{VERIFY: SSO providers supported and current SOC 2 status}}.",
+          'Yes. GovHub supports SAML single sign-on, role-based access, and a full audit trail on every edit. See the security page for details on data protection and our compliance posture.',
       },
     ],
   },

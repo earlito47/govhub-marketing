@@ -1,0 +1,74 @@
+---
+import { testimonials } from '../data/testimonials';
+
+interface Props {
+  heading?: string;
+}
+
+const { heading = 'What contractors say' } = Astro.props;
+---
+
+{testimonials.length > 0 && (
+  <section class="testimonials">
+    <h2>{heading}</h2>
+    <div class="grid">
+      {testimonials.map((t) => (
+        <figure>
+          <blockquote>{t.quote}</blockquote>
+          <figcaption>
+            <span class="role">{t.role}</span>
+            <span class="org">{t.orgType}</span>
+            {t.metric && <span class="metric">{t.metric}</span>}
+          </figcaption>
+        </figure>
+      ))}
+    </div>
+  </section>
+)}
+
+<style>
+  .testimonials {
+    margin: 4rem 0;
+  }
+  .testimonials h2 {
+    margin: 0 0 1.5rem;
+  }
+  .grid {
+    display: grid;
+    gap: 1.25rem;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  }
+  figure {
+    margin: 0;
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+  }
+  blockquote {
+    margin: 0 0 1rem;
+    color: var(--fg);
+    font-size: 1rem;
+    line-height: 1.55;
+  }
+  figcaption {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+  .role {
+    color: var(--fg);
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+  .org,
+  .metric {
+    color: var(--fg-muted);
+    font-size: 0.85rem;
+  }
+  .metric {
+    color: var(--accent);
+    font-weight: 600;
+  }
+</style>

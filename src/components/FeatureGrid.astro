@@ -1,0 +1,48 @@
+---
+interface Feature {
+  title: string;
+  description: string;
+}
+
+interface Props {
+  features: Feature[];
+  columns?: number;
+}
+
+const { features, columns = 2 } = Astro.props;
+---
+
+<div class="feature-grid" style={`--cols:${columns}`}>
+  {features.map((f) => (
+    <article>
+      <h3>{f.title}</h3>
+      <p>{f.description}</p>
+    </article>
+  ))}
+</div>
+
+<style>
+  .feature-grid {
+    display: grid;
+    gap: 1.25rem;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    margin: 2rem 0;
+  }
+  article {
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+  }
+  h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1.05rem;
+    color: var(--fg);
+  }
+  p {
+    margin: 0;
+    color: var(--fg-muted);
+    font-size: 0.95rem;
+  }
+</style>

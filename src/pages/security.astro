@@ -1,0 +1,99 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/seo/Breadcrumbs.astro';
+import FAQSchema from '../components/seo/FAQSchema.astro';
+import CTABand from '../components/CTABand.astro';
+import { CONTACT_EMAIL } from '../config';
+
+const faqs = [
+  {
+    question: 'Is my proposal data secure with GovHub?',
+    answer:
+      'Yes. Proposal content is encrypted in transit and at rest, access is restricted by role, and every customer’s data is isolated. GovHub does not use your proposal content to train AI models. Contact us for current security documentation.',
+  },
+  {
+    question: 'Does GovHub train AI models on my proposal data?',
+    answer:
+      'No. Your past-performance, pricing, and technical content are used to serve you — to draft and review your proposals — and are not used to train models or shared with other customers.',
+  },
+  {
+    question: 'Is GovHub FedRAMP authorized?',
+    answer:
+      'GovHub is architected for FedRAMP-ready deployment and built to align with federal security expectations. For current authorization status and to discuss the requirements for your agency or program, contact our team.',
+  },
+  {
+    question: 'Does GovHub support single sign-on (SSO)?',
+    answer:
+      'Yes. GovHub supports SAML single sign-on and role-based access control, with a full audit trail on user activity — the access controls larger organizations require.',
+  },
+];
+---
+
+<BaseLayout
+  title="Security at GovHub — How We Protect Your Data"
+  description="How GovHub secures government proposal data: encryption in transit and at rest, role-based access, tenant isolation, audit logging, SSO, and a no-model-training commitment."
+>
+  <main class="container">
+    <Breadcrumbs items={[{ name: 'Home', url: '/' }, { name: 'Security', url: '/security/' }]} />
+
+    <article class="prose">
+      <h1>Security at GovHub</h1>
+      <p class="lede">
+        Government contractors handle sensitive, sometimes controlled information.
+        Security isn't a feature we bolted on — it's how the product is built.
+      </p>
+
+      <h2>How we protect your data</h2>
+      <ul>
+        <li><strong>Encryption everywhere:</strong> data is encrypted in transit (TLS) and at rest.</li>
+        <li><strong>Role-based access control:</strong> permissions are scoped by role, so people see only what they should.</li>
+        <li><strong>Tenant isolation:</strong> every customer's data is logically isolated from every other customer's.</li>
+        <li><strong>Audit logging:</strong> user and system activity is logged for accountability and review.</li>
+        <li><strong>Single sign-on:</strong> SAML SSO for centralized, enforceable access management.</li>
+        <li><strong>US-based cloud infrastructure:</strong> built on established cloud providers with strong physical and network security.</li>
+      </ul>
+
+      <h2>Your data stays yours</h2>
+      <p>
+        GovHub does not train AI models on your proposal content. Your past
+        performance, pricing, and technical data are used solely to draft and
+        review your proposals — never shared with other customers, never fed into
+        a shared model.
+      </p>
+
+      <h2>Certifications and attestations</h2>
+      <p>
+        GovHub is built to align with SOC 2 Trust Services Criteria and architected
+        for FedRAMP-ready deployment. Security and compliance requirements vary by
+        agency and program; for current attestation status, security
+        documentation, or to discuss your specific requirements, email
+        <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.
+      </p>
+
+      <p>
+        See also how GovHub handles regulatory compliance in proposals on the
+        <a href="/compliance/">compliance page</a>.
+      </p>
+    </article>
+
+    <FAQSchema faqs={faqs} heading="Security — FAQ" />
+
+    <CTABand
+      heading="Have a security or compliance question?"
+      sub="Talk to our team about your agency's requirements."
+      primaryHref={`mailto:${CONTACT_EMAIL}`}
+      primaryLabel="Email the team"
+      secondaryHref="/compliance/"
+      secondaryLabel="See compliance"
+    />
+  </main>
+</BaseLayout>
+
+<style>
+  main { padding: 1rem 1.5rem 2rem; }
+  .prose { max-width: 48rem; margin: 1rem 0; }
+  .lede { font-size: 1.15rem; color: var(--fg-muted); }
+  h2 { margin-top: 2.5rem; }
+  ul { padding-left: 1.25rem; color: var(--fg-muted); }
+  li { margin: 0.5rem 0; }
+</style>

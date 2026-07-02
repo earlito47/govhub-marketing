@@ -34,7 +34,33 @@ const { study } = Astro.props;
       <p class="eyebrow">{study.industry} · {study.customer}</p>
       <h1>{study.title}</h1>
       <p class="outcome">{study.outcome}</p>
-      <div set:html={study.body} />
+
+      {(study.contractValue || study.timeframe) && (
+        <ul class="facts">
+          {study.contractValue && <li><strong>Contract value:</strong> {study.contractValue}</li>}
+          {study.timeframe && <li><strong>Timeframe:</strong> {study.timeframe}</li>}
+        </ul>
+      )}
+
+      <h2>The challenge</h2>
+      <p>{study.challenge}</p>
+
+      <h2>What they did with GovHub</h2>
+      <p>{study.solution}</p>
+
+      <h2>Results</h2>
+      <ul class="results">
+        {study.results.map((r) => <li>{r}</li>)}
+      </ul>
+
+      {study.quote && (
+        <blockquote>
+          <p>“{study.quote}”</p>
+          {study.author && <cite>— {study.author}, {study.customer}</cite>}
+        </blockquote>
+      )}
+
+      <p class="cta"><a href="/pricing/">See GovHub pricing →</a></p>
     </article>
   </main>
 </BaseLayout>
@@ -58,5 +84,64 @@ const { study } = Astro.props;
     font-size: 1.15rem;
     color: var(--fg-muted);
     margin-bottom: 2rem;
+  }
+  .facts {
+    list-style: none;
+    padding: 1rem 1.25rem;
+    margin: 0 0 2rem;
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-radius: 0.75rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+  .facts li {
+    color: var(--fg-muted);
+    font-size: 0.95rem;
+  }
+  .facts strong,
+  blockquote cite {
+    color: var(--fg);
+  }
+  h2 {
+    margin-top: 2.5rem;
+  }
+  .results {
+    padding-left: 1.25rem;
+    color: var(--fg-muted);
+  }
+  .results li {
+    margin: 0.5rem 0;
+  }
+  blockquote {
+    margin: 2.5rem 0;
+    padding: 1.25rem 1.5rem;
+    border-left: 3px solid var(--accent);
+    background: var(--bg-elevated);
+    border-radius: 0 0.5rem 0.5rem 0;
+  }
+  blockquote p {
+    margin: 0 0 0.5rem;
+    color: var(--fg);
+    font-size: 1.05rem;
+  }
+  blockquote cite {
+    font-style: normal;
+    font-size: 0.9rem;
+    color: var(--fg-muted);
+  }
+  .cta {
+    margin-top: 2.5rem;
+  }
+  .cta a {
+    display: inline-block;
+    padding: 0.75rem 1.25rem;
+    border: 1px solid var(--accent);
+    border-radius: 0.5rem;
+  }
+  .cta a:hover {
+    background: var(--accent-soft);
+    text-decoration: none;
   }
 </style>

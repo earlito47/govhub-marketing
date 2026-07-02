@@ -1,0 +1,7 @@
+# Cloudflare Pages redirects.
+# Apex → www so the canonical host (www.govhub.online) and the served host agree.
+https://govhub.online/*  https://www.govhub.online/:splat  301
+
+# Legacy competitor slug → clean slug (site was never live, kept for safety).
+/vs/deltek-govwin-iq/*            /vs/govwin-iq/:splat            301
+/alternatives/deltek-govwin-iq/*  /alternatives/govwin-iq/:splat  301

@@ -2,6 +2,11 @@
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 import SchemaOrg from '../components/seo/SchemaOrg.astro';
+// Self-hosted Inter (no render-blocking Google Fonts request).
+import '@fontsource/inter/400.css';
+import '@fontsource/inter/500.css';
+import '@fontsource/inter/600.css';
+import '@fontsource/inter/700.css';
 
 interface Props {
   title: string;
@@ -59,13 +64,16 @@ const fullOgImage = new URL(ogImage, Astro.site).toString();
 
 <style is:global>
   :root {
-    --bg: #0b1220;
-    --bg-elevated: #121a2e;
-    --fg: #e6edf7;
-    --fg-muted: #96a2b6;
-    --accent: #4f8cff;
-    --accent-soft: rgba(79, 140, 255, 0.12);
-    --border: rgba(255, 255, 255, 0.08);
+    /* Light, modernized brand palette (primary blue #357EDD on soft-gray). */
+    --bg: #f5f6fa;
+    --bg-elevated: #ffffff;
+    --fg: #1f2933;
+    --fg-muted: #5b6472;
+    --accent: #357edd;
+    --accent-hover: #2b6bc0;
+    --accent-soft: rgba(53, 126, 221, 0.1);
+    --border: rgba(15, 23, 42, 0.1);
+    --shadow: 0 1px 2px rgba(15, 23, 42, 0.04), 0 8px 24px rgba(15, 23, 42, 0.06);
     --max-width: 72rem;
     --content-width: 42rem;
   }
@@ -81,6 +89,7 @@ const fullOgImage = new URL(ogImage, Astro.site).toString();
     background: var(--bg);
     color: var(--fg);
     font-family:
+      'Inter',
       system-ui,
       -apple-system,
       BlinkMacSystemFont,
@@ -133,8 +142,6 @@ const fullOgImage = new URL(ogImage, Astro.site).toString();
     font-size: 1.05rem;
   }
 
-  /* Highlight unresolved stat placeholders so they don't ship silently */
-  .prose :global(code:has-text('{{STAT')),
   code {
     font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
     font-size: 0.95em;

@@ -1,0 +1,120 @@
+---
+import { PLANS, TRIAL_DAYS, formatUsd } from '../data/pricing';
+import { SIGNUP_URL } from '../config';
+---
+
+<div class="pricing">
+  {PLANS.map((plan) => (
+    <article class:list={['tier', plan.popular && 'popular']}>
+      {plan.popular && <span class="badge">Most popular</span>}
+      <h3>{plan.name}</h3>
+      <p class="desc">{plan.description}</p>
+      <p class="price">
+        <span class="amount">{formatUsd(plan.monthlyUsd)}</span>
+        <span class="unit">/month</span>
+      </p>
+      <p class="annual">or {formatUsd(plan.annualUsd)}/year (2 months free)</p>
+      <a class="cta" href={SIGNUP_URL}>Start {TRIAL_DAYS}-day free trial</a>
+      <ul>
+        {plan.features.map((f) => <li>{f}</li>)}
+      </ul>
+    </article>
+  ))}
+</div>
+
+<style>
+  .pricing {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    margin: 2rem 0;
+  }
+  .tier {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-radius: 0.9rem;
+    padding: 2rem;
+    box-shadow: var(--shadow);
+  }
+  .tier.popular {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 1px var(--accent) inset, var(--shadow);
+  }
+  .badge {
+    position: absolute;
+    top: -0.75rem;
+    left: 2rem;
+    background: var(--accent);
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.25rem 0.6rem;
+    border-radius: 0.4rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+  h3 {
+    margin: 0;
+    font-size: 1.25rem;
+    color: var(--fg);
+  }
+  .desc {
+    color: var(--fg-muted);
+    font-size: 0.9rem;
+    margin: 0.5rem 0 1.25rem;
+    min-height: 2.5em;
+  }
+  .price {
+    margin: 0;
+    color: var(--fg);
+  }
+  .amount {
+    font-size: 2rem;
+    font-weight: 700;
+  }
+  .unit {
+    color: var(--fg-muted);
+    font-size: 0.95rem;
+  }
+  .annual {
+    color: var(--fg-muted);
+    font-size: 0.85rem;
+    margin: 0.35rem 0 1.5rem;
+  }
+  .cta {
+    display: block;
+    text-align: center;
+    padding: 0.7rem 1.25rem;
+    background: var(--accent);
+    color: #fff;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+  }
+  .cta:hover {
+    background: var(--accent-hover);
+    text-decoration: none;
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-grow: 1;
+  }
+  li {
+    color: var(--fg-muted);
+    font-size: 0.92rem;
+    padding: 0.4rem 0 0.4rem 1.5rem;
+    position: relative;
+  }
+  li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: 700;
+  }
+</style>
