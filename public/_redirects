@@ -5,3 +5,14 @@ https://govhub.online/*  https://www.govhub.online/:splat  301
 # Legacy competitor slug → clean slug (site was never live, kept for safety).
 /vs/deltek-govwin-iq/*            /vs/govwin-iq/:splat            301
 /alternatives/deltek-govwin-iq/*  /alternatives/govwin-iq/:splat  301
+
+# Old app deep-links (from the previous combined site) → the app subdomain,
+# so bookmarks and stale links don't 404 on the marketing site.
+/auth       https://app.govhub.online/auth          301
+/signup     https://app.govhub.online/signup        301
+/login      https://app.govhub.online/login         301
+/v2/*       https://app.govhub.online/v2/:splat      301
+
+# Marketing slugs that changed (old Lovable site → new Astro site).
+/solutions/proposal-generator   /solutions/ai-proposal-generator/     301
+/solutions/technical-review     /solutions/technical-writer-review/   301
