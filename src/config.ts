@@ -11,11 +11,11 @@ export const SITE_URL = 'https://www.govhub.online';
  * The product app lives on its own subdomain, separate from this marketing site.
  * All "Start free trial" / "Sign in" CTAs route through APP_URL so the app
  * boundary can move without touching page markup.
- * {{VERIFY: confirm app subdomain + exact /signup and /login (or /auth) paths}}
+ * Confirmed app routes: signup = /signup, sign-in = /auth (there is no /login).
  */
 export const APP_URL = 'https://app.govhub.online';
 export const SIGNUP_URL = `${APP_URL}/signup`;
-export const SIGNIN_URL = `${APP_URL}/login`;
+export const SIGNIN_URL = `${APP_URL}/auth`;
 
 /** Primary contact address. {{VERIFY: real inbound address}} */
 export const CONTACT_EMAIL = 'hello@govhub.online';

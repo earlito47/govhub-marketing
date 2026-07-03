@@ -10,7 +10,7 @@ https://govhub.online/*  https://www.govhub.online/:splat  301
 # so bookmarks and stale links don't 404 on the marketing site.
 /auth       https://app.govhub.online/auth          301
 /signup     https://app.govhub.online/signup        301
-/login      https://app.govhub.online/login         301
+/login      https://app.govhub.online/auth          301
 /v2/*       https://app.govhub.online/v2/:splat      301
 
 # Marketing slugs that changed (old Lovable site → new Astro site).
