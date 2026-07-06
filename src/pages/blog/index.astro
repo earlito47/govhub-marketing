@@ -11,7 +11,7 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(
 <BaseLayout
   title="Blog — GovHub"
   description="Guides, playbooks, and analysis on government proposal writing, federal RFP strategy, and contracting best practices."
->
+ ogImage="/brand/page-graphics/blog-trail-map@2x.png">
   <main class="container">
     <PageHero art="/brand/page-graphics/blog-trail-map.svg">
     <header class="prose">
@@ -27,6 +27,16 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(
       {posts.length === 0 && <p class="muted">No posts published yet.</p>}
       {posts.map((post) => (
         <article class="post">
+          <img
+            class="thumb"
+            src={post.data.cover ?? '/brand/page-graphics/blog-trail-map.svg'}
+            alt=""
+            aria-hidden="true"
+            width="240"
+            height="150"
+            loading="lazy"
+            decoding="async"
+          />
           <h2>
             <a href={`/blog/${post.id}/`}>{post.data.title}</a>
           </h2>
@@ -87,5 +97,11 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(
   }
   .muted {
     color: var(--fg-muted);
+  }
+  .thumb {
+    width: 200px;
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 0.75rem;
   }
 </style>

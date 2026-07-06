@@ -22,6 +22,8 @@ Every hour spent on a proposal you can't win is an hour stolen from one you can.
 
 A structured [bid/no-bid decision](/blog/bid-no-bid-decision/) protects your calendar and your win rate at the same time.
 
+<img class="post-figure" src="/brand/illustrations/illo-focus-work.svg" alt="A proposal writer working through a draft at a desk" width="720" height="420" loading="lazy" decoding="async" />
+
 ## 2. Build the compliance matrix
 
 Once you commit to bidding, your first artifact is a **compliance matrix** — a table listing every requirement in the solicitation and where your response addresses it. This is the backbone of a compliant proposal.

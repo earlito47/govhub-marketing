@@ -20,6 +20,8 @@ The three most common reviews, in order:
 
 Some organizations add a **blue team** (early solution/win-strategy review, before drafting) and a **white glove** or green team (pricing review), but pink, red, and gold are the core three.
 
+<img class="post-figure" src="/brand/illustrations/illo-review-together.svg" alt="Two colleagues reviewing a proposal draft together" width="720" height="420" loading="lazy" decoding="async" />
+
 ## What does a pink team review catch?
 
 The pink team reviews an early, incomplete draft — often around 50–70% complete. It asks: *are we answering the right questions?* Is the approach sound, is the structure aligned to Section L, and are the win themes coming through? Pink team is about direction, not polish; finding a structural problem here is cheap, finding it at red team is expensive.

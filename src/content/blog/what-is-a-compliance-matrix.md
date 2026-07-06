@@ -22,6 +22,8 @@ At minimum, each row captures:
 
 More detailed matrices add the evaluation factor each requirement ties to, and a cross-reference to applicable FAR/DFARS clauses.
 
+<img class="post-figure" src="/brand/page-graphics/solution-compliance-matrix-pan.svg" alt="" aria-hidden="true" width="720" height="480" loading="lazy" decoding="async" />
+
 ## Why does a compliance matrix matter?
 
 Government evaluators check compliance first. If a required element is missing, your proposal can be set aside as non-responsive before anyone reads your technical approach. A matrix guarantees that every requirement is tracked, assigned, and answered — and it doubles as a checklist your reviewers use during [pink, red, and gold team reviews](/blog/color-team-reviews-pink-red-gold/).

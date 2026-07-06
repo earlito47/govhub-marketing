@@ -14,6 +14,8 @@ RFP shredding is the process of breaking a government solicitation down into eve
 
 To shred an RFP is to read it line by line and pull out every discrete obligation and instruction, then record each one as a separate item. A single sentence can contain several requirements; a 100-page solicitation can contain hundreds. Shredding turns that wall of text into a structured list you can assign, answer, and check off.
 
+<img class="post-figure" src="/brand/page-graphics/solution-rfp-shredding-strata.svg" alt="" aria-hidden="true" width="720" height="480" loading="lazy" decoding="async" />
+
 ## How does RFP shredding work?
 
 1. **Read for requirements, not narrative.** Every "shall," "must," "will," and "is required to" is a requirement to capture.
