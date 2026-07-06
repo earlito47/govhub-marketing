@@ -1,0 +1,213 @@
+/* ============================================================
+   GovHub Design Tokens — v3 "Gold Country" — warm + Federal Navy/Signal Teal (July 2026)
+   Direction: trust without the starch. Warm paper, brick-maroon
+   primary, gold optimism, denim blue kept as the trust thread.
+   Reference tokens only — never hardcode brand hex in components.
+   ============================================================ */
+
+:root {
+  /* ---- Brand core ---- */
+  --gh-maroon-600: #A03A2C;  /* Brick — primary brand + CTAs (AA on oat/white) */
+  --gh-maroon-700: #86301F;  /* hover */
+  --gh-maroon-800: #6E2417;  /* deep bands */
+  --gh-maroon-900: #5B1D12;  /* CTA band base, footer */
+  --gh-gold-400:   #E8A23D;  /* Marigold — accents, squiggles, sun. DECORATIVE ONLY */
+  --gh-gold-300:   #F3C87E;  /* highlight marker tint */
+  --gh-gold-600:   #9A6410;  /* text-safe gold (badges, small labels) */
+  --gh-navy-600:   #214B89;  /* Federal Navy — mountains, headings, secondary UI */
+  --gh-navy-800:   #16345E;  /* deep ridge / night bands / footer */
+  --gh-teal-600:   #12948C;  /* Signal Teal — links, accents, success checks (AA large / 18px+) */
+  --gh-teal-700:   #0E6E68;  /* text-safe teal for small text */
+  --gh-teal-tint:  #D8EAE7;  /* teal section fill */
+
+  /* ---- Surfaces ---- */
+  --gh-oat:        #FAF5EC;  /* page background (warm paper) */
+  --gh-surface:    #FFFFFF;  /* cards */
+  --gh-tint-blush: #F4E3D7;  /* warm section fill */
+  --gh-tint-sun:   #FBEFD9;  /* warm section fill */
+  --gh-tint-sky:   #E9F0F7;  /* cool relief fill */
+  --gh-tint-navy:  #DCE4F0;  /* dusk fill (About/Contact bands) */
+  --gh-tint-sand:  #EAD5B8;  /* arches, illustration bg */
+  --gh-line:       #E8DFD0;  /* hairlines on oat */
+
+  /* ---- Text ---- */
+  --gh-ink-900: #2E2B26;     /* headings — warm near-black */
+  --gh-ink-700: #4C463D;     /* body */
+  --gh-ink-500: #6E675C;     /* secondary (AA on oat/white) */
+  --gh-ink-inverse: #FAF5EC;
+  --gh-ink-inverse-soft: #F3C87E;
+
+  /* ---- Typography ----
+     Display: Fraunces (variable; SOFT 100, WONK 0) — warm, characterful headlines
+     Brand/UI accents: Bricolage Grotesque — wordmark, eyebrows, buttons, stats
+     Body: Figtree — friendly, highly legible */
+  --gh-font-display: "Fraunces", Georgia, serif;
+  --gh-font-brand: "Bricolage Grotesque", "Figtree", sans-serif;
+  --gh-font-body: "Figtree", -apple-system, "Segoe UI", sans-serif;
+
+  --gh-text-hero: clamp(2.7rem, 6.2vw, 4.4rem);
+  --gh-text-h2: clamp(1.9rem, 3.6vw, 2.6rem);
+  --gh-text-h3: 1.35rem;
+  --gh-text-body: 1.0625rem;
+  --gh-text-small: 0.875rem;
+  --gh-text-eyebrow: 0.8125rem;
+
+  /* ---- Shape: rounder = friendlier ---- */
+  --gh-radius-sm: 10px;
+  --gh-radius-md: 16px;
+  --gh-radius-lg: 24px;
+  --gh-radius-pill: 999px;
+  --gh-shadow-card: 0 1px 2px rgba(91, 29, 18, 0.05), 0 10px 28px rgba(91, 29, 18, 0.09);
+  --gh-shadow-raised: 0 2px 4px rgba(91, 29, 18, 0.07), 0 18px 44px rgba(91, 29, 18, 0.14);
+  --gh-space-section: clamp(4rem, 9vw, 7.5rem);
+
+  --gh-ease: cubic-bezier(0.34, 1.28, 0.44, 1); /* slight playful overshoot */
+  --gh-dur-fast: 160ms;
+  --gh-dur-med: 300ms;
+}
+
+/* ============================================================
+   Helper classes (adjust asset paths to your /public dir)
+   ============================================================ */
+
+/* Hero with sunrise-arch art on the right */
+.gh-hero {
+  position: relative;
+  background: var(--gh-oat);
+  overflow: hidden;
+}
+.gh-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("/brand/page-graphics/home-hero-strike-gold.svg") right bottom / min(64%, 900px) auto no-repeat;
+  pointer-events: none;
+}
+.gh-hero > * { position: relative; }
+
+/* Squiggle under a key headline word: wrap the word in a span */
+.gh-squiggle {
+  position: relative;
+  white-space: nowrap;
+}
+.gh-squiggle::after {
+  content: "";
+  position: absolute;
+  left: -2%;
+  bottom: -0.18em;
+  width: 104%;
+  height: 0.22em;
+  background: url("/brand/graphics/squiggle-underline.svg") center / 100% 100% no-repeat;
+}
+
+/* Gold marker highlight behind a word */
+.gh-highlight {
+  position: relative;
+  z-index: 0;
+  white-space: nowrap;
+}
+.gh-highlight::before {
+  content: "";
+  position: absolute;
+  inset: -0.08em -0.22em -0.12em;
+  z-index: -1;
+  background: url("/brand/graphics/highlight-swash.svg") center / 100% 100% no-repeat;
+}
+
+/* Section fills */
+.gh-section-blush { background: var(--gh-tint-blush); }
+.gh-section-sun   { background: var(--gh-tint-sun); }
+.gh-section-pattern {
+  background-color: var(--gh-oat);
+  background-image: url("/brand/graphics/topo-pattern-tile.svg");
+  background-size: 260px 260px;
+}
+.gh-section-confetti {
+  background-color: var(--gh-oat);
+  background-image: url("/brand/graphics/nugget-confetti-tile.svg");
+  background-size: 240px 240px;
+}
+
+/* Warm CTA band */
+.gh-cta-band {
+  background: var(--gh-navy-800) url("/brand/page-graphics/cta-band-night-mountains.svg") center / cover no-repeat;
+  color: var(--gh-ink-inverse);
+  border-radius: var(--gh-radius-lg);
+}
+
+/* Process connector */
+.gh-journey {
+  display: block;
+  width: min(640px, 90%);
+  height: 160px;
+  margin: 0 auto;
+  background: url("/brand/page-graphics/home-journey-3-steps.svg") center / contain no-repeat;
+}
+
+/* Cards: rounder, friendlier */
+.gh-card {
+  background: var(--gh-surface);
+  border: 1.5px solid var(--gh-line);
+  border-radius: var(--gh-radius-md);
+  box-shadow: var(--gh-shadow-card);
+  transition: transform var(--gh-dur-med) var(--gh-ease), box-shadow var(--gh-dur-med) var(--gh-ease);
+}
+.gh-card:hover { transform: translateY(-3px); box-shadow: var(--gh-shadow-raised); }
+
+/* Sticker badge chip (compliance moments) */
+.gh-sticker {
+  width: 56px;
+  height: 56px;
+  background: url("/brand/graphics/sticker-badge.svg") center / contain no-repeat;
+}
+
+/* Eyebrow */
+.gh-eyebrow {
+  font-family: var(--gh-font-brand);
+  font-size: var(--gh-text-eyebrow);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gh-maroon-600);
+}
+
+/* Buttons: pill = youthful */
+.gh-btn-primary {
+  background: var(--gh-maroon-600);
+  color: #fff;
+  border-radius: var(--gh-radius-pill);
+  font-family: var(--gh-font-brand);
+  font-weight: 600;
+  padding: 0.8em 1.6em;
+  transition: background var(--gh-dur-fast) var(--gh-ease), transform var(--gh-dur-fast) var(--gh-ease);
+}
+.gh-btn-primary:hover { background: var(--gh-maroon-700); transform: translateY(-1px); }
+.gh-btn-secondary {
+  background: transparent;
+  color: var(--gh-navy-600);
+  border: 2px solid var(--gh-navy-600);
+  border-radius: var(--gh-radius-pill);
+  font-family: var(--gh-font-brand);
+  font-weight: 600;
+}
+.gh-btn-secondary:hover { background: rgba(33, 75, 137, 0.07); }
+
+:where(a, button, [role="button"], input, select, textarea):focus-visible {
+  outline: 3px solid var(--gh-teal-600);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
+
+/* v3 additions */
+.gh-divider-ridge {
+  display: block; width: 320px; max-width: 60%; height: 44px; margin: 0 auto;
+  background: url("/brand/graphics/ridge-divider.svg") center / contain no-repeat;
+}
+.gh-footer-ridge {
+  height: 120px;
+  background: url("/brand/page-graphics/footer-ridge-strip.svg") bottom center / cover no-repeat;
+}
+a { color: var(--gh-teal-700); }
