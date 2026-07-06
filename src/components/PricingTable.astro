@@ -34,20 +34,20 @@ import { SIGNUP_URL } from '../config';
     display: flex;
     flex-direction: column;
     background: var(--bg-elevated);
-    border: 1px solid var(--border);
-    border-radius: 0.9rem;
+    border: 1.5px solid var(--border);
+    border-radius: var(--gh-radius-md);
     padding: 2rem;
     box-shadow: var(--shadow);
   }
   .tier.popular {
-    border-color: var(--accent);
-    box-shadow: 0 0 0 1px var(--accent) inset, var(--shadow);
+    border-color: var(--gh-navy-600);
+    box-shadow: 0 0 0 1px var(--gh-navy-600) inset, var(--shadow);
   }
   .badge {
     position: absolute;
     top: -0.75rem;
     left: 2rem;
-    background: var(--accent);
+    background: var(--gh-navy-600);
     color: #fff;
     font-size: 0.75rem;
     font-weight: 600;
@@ -72,6 +72,7 @@ import { SIGNUP_URL } from '../config';
     color: var(--fg);
   }
   .amount {
+    font-family: var(--gh-font-brand);
     font-size: 2rem;
     font-weight: 700;
   }
@@ -88,14 +89,17 @@ import { SIGNUP_URL } from '../config';
     display: block;
     text-align: center;
     padding: 0.7rem 1.25rem;
-    background: var(--accent);
+    background: var(--gh-maroon-600);
     color: #fff;
-    border-radius: 0.5rem;
+    border-radius: var(--gh-radius-pill);
+    font-family: var(--gh-font-brand);
     font-weight: 600;
     margin-bottom: 1.5rem;
+    transition: background var(--gh-dur-fast) var(--gh-ease), transform var(--gh-dur-fast) var(--gh-ease);
   }
   .cta:hover {
-    background: var(--accent-hover);
+    background: var(--gh-maroon-700);
+    transform: translateY(-1px);
     text-decoration: none;
   }
   ul {
@@ -114,7 +118,7 @@ import { SIGNUP_URL } from '../config';
     content: '✓';
     position: absolute;
     left: 0;
-    color: var(--accent);
+    color: var(--gh-teal-600);
     font-weight: 700;
   }
 </style>

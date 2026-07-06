@@ -14,8 +14,7 @@ const links = [
 <header class="site-header">
   <div class="container nav">
     <a href="/" class="brand" aria-label="GovHub home">
-      <img src="/favicon.svg" alt="" width="24" height="24" />
-      <span>GovHub</span>
+      <img src="/brand/logos/govhub-logo-horizontal.svg" alt="GovHub" height="28" />
     </a>
     <nav aria-label="Primary">
       <ul>
@@ -48,14 +47,11 @@ const links = [
   .brand {
     display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
-    color: var(--fg);
-    font-weight: 700;
-    font-size: 1.1rem;
-    letter-spacing: -0.01em;
   }
-  .brand:hover {
-    text-decoration: none;
+  .brand img {
+    height: 28px;
+    width: auto;
+    display: block;
   }
   nav {
     flex: 1;
@@ -69,10 +65,11 @@ const links = [
   }
   nav a {
     color: var(--fg-muted);
+    font-family: var(--gh-font-brand);
     font-size: 0.95rem;
   }
   nav a:hover {
-    color: var(--fg);
+    color: var(--gh-ink-900);
     text-decoration: none;
   }
   .actions {
@@ -82,24 +79,28 @@ const links = [
   }
   .signin {
     color: var(--fg-muted);
+    font-family: var(--gh-font-brand);
     font-size: 0.95rem;
   }
   .signin:hover {
-    color: var(--fg);
+    color: var(--gh-ink-900);
     text-decoration: none;
   }
   .cta {
     display: inline-block;
-    padding: 0.5rem 1rem;
-    background: var(--accent);
+    padding: 0.55rem 1.25rem;
+    background: var(--gh-maroon-600);
     color: #fff;
-    border-radius: 0.5rem;
+    border-radius: var(--gh-radius-pill);
+    font-family: var(--gh-font-brand);
     font-weight: 600;
     font-size: 0.95rem;
     white-space: nowrap;
+    transition: background var(--gh-dur-fast) var(--gh-ease), transform var(--gh-dur-fast) var(--gh-ease);
   }
   .cta:hover {
-    background: var(--accent-hover);
+    background: var(--gh-maroon-700);
+    transform: translateY(-1px);
     text-decoration: none;
   }
   @media (max-width: 760px) {

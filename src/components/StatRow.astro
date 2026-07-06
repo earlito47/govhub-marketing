@@ -31,14 +31,15 @@ const { stats } = Astro.props;
     text-align: center;
     padding: 1.5rem 1rem;
     background: var(--bg-elevated);
-    border: 1px solid var(--border);
-    border-radius: 0.75rem;
+    border: 1.5px solid var(--border);
+    border-radius: var(--gh-radius-md);
   }
   .value {
     display: block;
+    font-family: var(--gh-font-brand);
     font-size: 1.75rem;
     font-weight: 700;
-    color: var(--accent);
+    color: var(--gh-navy-600);
     line-height: 1.1;
   }
   .label {

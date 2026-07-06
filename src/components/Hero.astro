@@ -13,6 +13,10 @@ interface Props {
   trust?: string;
   image?: ImageMetadata;
   imageAlt?: string;
+  /** Decorative brand scene from public/ (SVG preferred) — always aria-hidden. */
+  art?: string;
+  artWidth?: number;
+  artHeight?: number;
 }
 
 const {
@@ -26,10 +30,13 @@ const {
   trust,
   image,
   imageAlt = '',
+  art,
+  artWidth = 900,
+  artHeight = 640,
 } = Astro.props;
 ---
 
-<section class:list={['hero', image && 'has-image']}>
+<section class:list={['hero', (image || art) && 'has-image']}>
   <div class="copy">
     {eyebrow && <p class="eyebrow">{eyebrow}</p>}
     <h1>{title}</h1>
@@ -42,7 +49,11 @@ const {
     </div>
     {trust && <p class="trust">{trust}</p>}
   </div>
-  {image && (
+  {art ? (
+    <div class="media art">
+      <img src={art} alt="" aria-hidden="true" width={artWidth} height={artHeight} loading="eager" decoding="async" />
+    </div>
+  ) : image && (
     <div class="media">
       <Image src={image} alt={imageAlt} widths={[480, 800, 1200]} sizes="(max-width: 900px) 100vw, 40vw" loading="eager" />
     </div>
@@ -87,20 +98,24 @@ const {
   }
   .primary {
     display: inline-block;
-    padding: 0.8rem 1.5rem;
-    background: var(--accent);
+    padding: 0.8rem 1.6rem;
+    background: var(--gh-maroon-600);
     color: #fff;
-    border-radius: 0.5rem;
+    border-radius: var(--gh-radius-pill);
+    font-family: var(--gh-font-brand);
     font-weight: 600;
+    transition: background var(--gh-dur-fast) var(--gh-ease), transform var(--gh-dur-fast) var(--gh-ease);
   }
   .primary:hover {
-    background: var(--accent-hover);
+    background: var(--gh-maroon-700);
+    transform: translateY(-1px);
     text-decoration: none;
   }
   .secondary {
     display: inline-block;
     padding: 0.8rem 1.25rem;
-    color: var(--accent);
+    color: var(--gh-teal-700);
+    font-family: var(--gh-font-brand);
     font-weight: 600;
   }
   .trust {
@@ -115,10 +130,21 @@ const {
     border: 1px solid var(--border);
     box-shadow: var(--shadow);
   }
+  /* Scene art is flat brand illustration — no photo chrome. */
+  .media.art :global(img) {
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
   @media (max-width: 900px) {
     .hero.has-image {
       grid-template-columns: 1fr;
       gap: 2rem;
+    }
+    /* Guide: scene art stacks ABOVE the H1 on mobile (photos stay below). */
+    .media.art {
+      order: -1;
+      max-width: 26rem;
     }
   }
 </style>
