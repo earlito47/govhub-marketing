@@ -4,56 +4,65 @@ import SchemaOrg from '../components/seo/SchemaOrg.astro';
 import Hero from '../components/Hero.astro';
 import FeatureGrid from '../components/FeatureGrid.astro';
 import SolutionsGrid from '../components/SolutionsGrid.astro';
+import SocialProofMarquee from '../components/SocialProofMarquee.astro';
 import StatRow from '../components/StatRow.astro';
 import TrustSection from '../components/TrustSection.astro';
 import Testimonials from '../components/Testimonials.astro';
 import FAQSchema from '../components/seo/FAQSchema.astro';
 import CTABand from '../components/CTABand.astro';
+import Icon from '../components/Icon.astro';
 import { PRIMARY_KEYWORD, SIGNUP_URL, TRIAL_DAYS } from '../config';
 import { PRICE_RANGE, formatUsd } from '../data/pricing';
 import { faqsForPage } from '../data/faqs';
-import heroImage from '../assets/hero-handshake.jpg';
 
 // Primary term is single-sourced — see src/config.ts PRIMARY_KEYWORD.
-const title = `${PRIMARY_KEYWORD.h1} | GovHub`;
+// <title> keeps the exact-match phrase; the H1 carries it inside a real pitch.
+const title = PRIMARY_KEYWORD.title;
 const description = `GovHub is ${PRIMARY_KEYWORD.primary} built for federal, state, and local contractors — draft compliant RFP responses, autofill contract forms, and check Section L/M and FAR/DFARS compliance.`;
 
 const features = [
   {
-    title: 'Purpose-built for government work',
+    title: 'Built for government work — not adapted to it',
     description:
-      'Section L/M structure, evaluation-criteria alignment, and compliance matrices are the default — not a plugin bolted onto a commercial sales tool.',
+      'Section L/M structure, evaluation-criteria alignment, and compliance matrices are the default, not a plugin bolted onto a commercial sales tool.',
+    icon: 'capitol',
   },
   {
-    title: 'Drafting that reads like your team wrote it',
+    title: 'Drafts that sound like your firm',
     description:
-      'Ingests your past-performance library and technical narrative so the draft sounds like your firm, not a generic template.',
+      'GovHub learns from your past-performance library and technical narrative, so the first draft reads like your best writer — not a generic template.',
+    icon: 'pen',
   },
   {
-    title: 'Compliance-aware review',
+    title: 'Compliance gaps caught before you submit',
     description:
-      'Automated checks against FAR/DFARS clauses, Section 508, and set-aside requirements flag gaps before you submit.',
+      'Automated checks against FAR/DFARS clauses, Section 508, and set-aside requirements flag problems while there is still time to fix them.',
+    icon: 'shield-check',
   },
   {
-    title: 'Scales from solo contractor to integrator',
+    title: 'Grows from your first bid to a full pipeline',
     description:
-      'One-person shops responding to their first federal RFP through multi-team pursuits with dozens of contributors.',
+      'Works for a one-person shop answering its first federal RFP, and for multi-team pursuits with dozens of contributors.',
+    icon: 'team',
   },
 ];
 
 const steps = [
   {
     n: '1',
+    icon: 'map',
     title: 'Upload the RFP',
     body: 'Import the solicitation (PDF, SAM.gov URL, or agency export). GovHub “shreds” it to surface every requirement, instruction, and evaluation factor — including easy-to-miss compliance criteria.',
   },
   {
     n: '2',
+    icon: 'shovel',
     title: 'Add your company info',
     body: 'Point GovHub at your capability statements and past-performance data. It maps your strengths to the RFP’s requirements automatically.',
   },
   {
     n: '3',
+    icon: 'nugget',
     title: 'Draft, review & export',
     body: 'Review AI-generated content, apply compliant templates, and export a submission-ready proposal with forms and attachments.',
   },
@@ -63,6 +72,20 @@ const stats = [
   { value: `${formatUsd(PRICE_RANGE.low)}/mo`, label: 'Starting price' },
   { value: `${TRIAL_DAYS} days`, label: 'Free trial, no card' },
   { value: 'Federal · state · local', label: 'Solicitations supported' },
+];
+
+// Brands whose contracts GovHub proposal work has supported (owner-provided).
+const proofBrands = [
+  { name: 'Lockheed Martin' },
+  { name: 'Boeing' },
+  { name: 'Raytheon' },
+  { name: 'SpaceX' },
+  { name: 'BAE Systems' },
+  { name: 'General Dynamics' },
+  { name: 'Sentinel Health' },
+  { name: 'Woodborne Solutions' },
+  { name: 'Trident AI Solutions' },
+  { name: 'Cardinality.ai' },
 ];
 
 const homeFaqs = faqsForPage('/');
@@ -90,33 +113,38 @@ const homeFaqs = faqsForPage('/');
     <Hero
       eyebrow="AI proposal software for government contractors"
       title={PRIMARY_KEYWORD.h1}
-      lede="Draft, review, and submit federal, state, and local RFP responses without the overhead of a full proposal team. GovHub understands Section L/M, FAR/DFARS, and Section 508 out of the box."
+      lede="Upload the RFP. GovHub finds every requirement, fills the forms, and drafts a compliant proposal that sounds like your firm — in minutes, not weekends."
       primaryHref={SIGNUP_URL}
       primaryLabel="Start free trial"
       secondaryHref="/solutions/compliance-matrix-generator/"
       secondaryLabel="Try the free compliance matrix tool →"
-      trust={`No credit card required · ${TRIAL_DAYS}-day free trial · Built for government contractors`}
-      image={heroImage}
-      imageAlt="Government contractors collaborating on a proposal"
+      trust="Section L/M · FAR/DFARS · Section 508 — handled."
+      art="/brand/page-graphics/home-hero-strike-gold.svg"
     />
+
+    <SocialProofMarquee brands={proofBrands} />
 
     <StatRow stats={stats} />
 
     <section class="block">
-      <h2>No fluff. Compliance-grade content.</h2>
+      <h2>Everything a proposal shop does — without hiring one</h2>
       <p class="section-lede">
-        Built around FAR compliance, technical evaluation criteria, and what
-        actually wins contracts — not generic marketing copy.
+        Shredding, drafting, compliance checks, forms, and formatting — the work
+        that used to take a proposal team, built into one tool.
       </p>
       <FeatureGrid features={features} />
     </section>
 
     <section class="block">
       <h2>From RFP to a winning proposal in three steps</h2>
+      <div class="gh-journey" aria-hidden="true"></div>
       <div class="steps">
         {steps.map((s) => (
           <div class="step">
-            <span class="num">{s.n}</span>
+            <div class="step-head">
+              <span class="num">{s.n}</span>
+              <Icon name={s.icon} size={26} />
+            </div>
             <h3>{s.title}</h3>
             <p>{s.body}</p>
           </div>
@@ -127,8 +155,8 @@ const homeFaqs = faqsForPage('/');
     <section class="block">
       <h2>An end-to-end contract acquisition platform</h2>
       <p class="section-lede">
-        From shredding the solicitation to a submission-ready package, GovHub
-        covers the response workflow.
+        From shredding the solicitation to a submission-ready package — GovHub
+        covers the whole response.
       </p>
       <SolutionsGrid mode="featured" />
       <p class="more-link"><a href="/solutions/">See all solutions →</a></p>
@@ -151,8 +179,8 @@ const homeFaqs = faqsForPage('/');
     )}
 
     <CTABand
-      heading="Win more government contracts with AI"
-      sub={`Start a free ${TRIAL_DAYS}-day trial, or try the free compliance matrix generator — no login required.`}
+      heading="Dig up your next contract."
+      sub="14 days free, no card — your first proposal is ready before the trial ends."
       secondaryHref="/pricing/"
       secondaryLabel="See pricing"
     />
@@ -183,10 +211,16 @@ const homeFaqs = faqsForPage('/');
   }
   .step {
     background: var(--bg-elevated);
-    border: 1px solid var(--border);
-    border-radius: 0.75rem;
+    border: 1.5px solid var(--border);
+    border-radius: var(--gh-radius-md);
     padding: 1.5rem;
     box-shadow: var(--shadow);
+  }
+  .step-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.75rem;
   }
   .num {
     display: inline-flex;
@@ -195,10 +229,10 @@ const homeFaqs = faqsForPage('/');
     width: 2rem;
     height: 2rem;
     border-radius: 50%;
-    background: var(--accent);
+    background: var(--gh-navy-600);
     color: #fff;
+    font-family: var(--gh-font-brand);
     font-weight: 700;
-    margin-bottom: 0.75rem;
   }
   .step h3 {
     margin: 0 0 0.4rem;

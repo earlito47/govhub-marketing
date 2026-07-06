@@ -1,0 +1,120 @@
+---
+/**
+ * Continuously scrolling social-proof strip. Names render as styled text
+ * wordmarks — official brand logo files need each brand's permission, so the
+ * component accepts an optional `logo` path per entry to swap licensed SVGs
+ * in later without markup changes.
+ */
+interface Brand {
+  name: string;
+  logo?: string;
+}
+
+interface Props {
+  lead?: string;
+  brands: Brand[];
+}
+
+const {
+  lead = 'Proposal work built with GovHub has supported contracts for',
+  brands,
+} = Astro.props;
+---
+
+<section class="marquee-section" aria-label="Brands whose contracts GovHub proposal work has supported">
+  <p class="lead">{lead}</p>
+  <div class="viewport">
+    <div class="track">
+      <ul>
+        {brands.map((b) => (
+          <li>{b.logo ? <img src={b.logo} alt={b.name} height="28" /> : b.name}</li>
+        ))}
+      </ul>
+      <ul aria-hidden="true">
+        {brands.map((b) => (
+          <li>{b.logo ? <img src={b.logo} alt="" height="28" /> : b.name}</li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</section>
+
+<style>
+  .marquee-section {
+    margin: 2.5rem 0 1rem;
+  }
+  .lead {
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--gh-ink-500);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-family: var(--gh-font-brand);
+    margin: 0 0 1rem;
+  }
+  .viewport {
+    overflow: hidden;
+    /* Soft fade at both edges so names glide in and out. */
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+    mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+  }
+  .track {
+    display: flex;
+    width: max-content;
+    animation: marquee 40s linear infinite;
+  }
+  .viewport:hover .track,
+  .viewport:focus-within .track {
+    animation-play-state: paused;
+  }
+  ul {
+    display: flex;
+    align-items: center;
+    gap: 3.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0 1.75rem;
+  }
+  li {
+    font-family: var(--gh-font-brand);
+    font-weight: 600;
+    font-size: 1.05rem;
+    color: var(--gh-ink-500);
+    white-space: nowrap;
+  }
+  li img {
+    display: block;
+    height: 28px;
+    width: auto;
+  }
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+  /* Reduced motion: no scroll — show every name as a static wrapped row.
+     (tokens.css also zeroes animation durations globally, but layout must
+     degrade to wrap, not clip.) */
+  @media (prefers-reduced-motion: reduce) {
+    .track {
+      animation: none;
+      width: auto;
+      flex-direction: column;
+    }
+    .track ul {
+      flex-wrap: wrap;
+      justify-content: center;
+      row-gap: 0.75rem;
+    }
+    .track ul[aria-hidden='true'] {
+      display: none;
+    }
+    .viewport {
+      -webkit-mask-image: none;
+      mask-image: none;
+    }
+  }
+</style>
