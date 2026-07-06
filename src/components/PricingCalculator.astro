@@ -1,0 +1,148 @@
+---
+/**
+ * What does manual proposal writing cost you? Client-side only, like
+ * ComplianceMatrixTool — no data leaves the browser. Literal language per the
+ * brand guide (no metaphor in pricing claims).
+ */
+import { PLANS, formatUsd } from '../data/pricing';
+import { SIGNUP_URL } from '../config';
+import Icon from './Icon.astro';
+
+const planData = PLANS.map((p) => ({
+  name: p.name,
+  monthlyUsd: p.monthlyUsd,
+  proposals: p.proposalsPerMonth,
+}));
+---
+
+<section class="calc" aria-labelledby="calc-heading">
+  <div class="head">
+    <Icon name="chart" size={28} />
+    <h2 id="calc-heading">What does writing them by hand cost you?</h2>
+  </div>
+  <p class="sub">
+    Industry rule of thumb: a compliant federal response takes 40–100+ hours of
+    writing, compliance checking, and formatting. Compare that against a plan.
+  </p>
+  <form class="inputs">
+    <label>
+      Proposals per month
+      <input id="calc-proposals" type="number" min="1" max="50" value="2" inputmode="numeric" />
+    </label>
+    <label>
+      Hours per proposal
+      <input id="calc-hours" type="number" min="10" max="200" value="80" inputmode="numeric" />
+    </label>
+    <label>
+      Loaded cost per hour ($)
+      <input id="calc-rate" type="number" min="25" max="300" value="85" inputmode="numeric" />
+    </label>
+  </form>
+  <div class="result" id="calc-result" aria-live="polite"></div>
+  <a class="cta" href={SIGNUP_URL}>Start free trial</a>
+</section>
+
+<script define:vars={{ planData }}>
+  const $ = (id) => document.getElementById(id);
+  const fmt = (n) => '$' + Math.round(n).toLocaleString('en-US');
+
+  function update() {
+    const proposals = Math.max(1, Number($('calc-proposals').value) || 1);
+    const hours = Math.max(1, Number($('calc-hours').value) || 80);
+    const rate = Math.max(1, Number($('calc-rate').value) || 85);
+
+    const manual = proposals * hours * rate;
+    const plan =
+      planData.find((p) => proposals <= p.proposals) ?? planData[planData.length - 1];
+
+    $('calc-result').innerHTML =
+      '<p class="line">Manual writing cost: <strong>' + fmt(manual) + '/month</strong>' +
+      ' <span class="muted">(' + proposals * hours + ' hours)</span></p>' +
+      '<p class="line">GovHub ' + plan.name + ': <strong>' + fmt(plan.monthlyUsd) + '/month</strong></p>' +
+      '<p class="line saving">Keep the difference: <strong>' + fmt(Math.max(0, manual - plan.monthlyUsd)) + '/month</strong>' +
+      ' — and most of those hours.</p>';
+  }
+
+  for (const id of ['calc-proposals', 'calc-hours', 'calc-rate']) {
+    $(id).addEventListener('input', update);
+  }
+  update();
+</script>
+
+<style>
+  .calc {
+    margin: 3rem 0;
+    background: var(--bg-elevated);
+    border: 1.5px solid var(--border);
+    border-radius: var(--gh-radius-md);
+    padding: 2rem;
+    box-shadow: var(--shadow);
+  }
+  .head {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .head h2 {
+    margin: 0;
+    font-size: 1.4rem;
+  }
+  .sub {
+    color: var(--fg-muted);
+    max-width: 40rem;
+    margin: 0.75rem 0 1.5rem;
+  }
+  .inputs {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    margin: 0 0 1.5rem;
+  }
+  label {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--fg);
+  }
+  input {
+    padding: 0.6rem 0.75rem;
+    border: 1.5px solid var(--border);
+    border-radius: var(--gh-radius-sm);
+    font: inherit;
+    font-weight: 400;
+    background: var(--bg);
+    color: var(--fg);
+  }
+  .result :global(.line) {
+    margin: 0.35rem 0;
+    color: var(--fg-muted);
+  }
+  .result :global(.line strong) {
+    color: var(--fg);
+  }
+  .result :global(.saving strong) {
+    color: var(--gh-teal-700);
+  }
+  .result :global(.muted) {
+    color: var(--gh-ink-500);
+    font-size: 0.9em;
+  }
+  .cta {
+    display: inline-block;
+    margin-top: 1.25rem;
+    padding: 0.7rem 1.5rem;
+    background: var(--gh-maroon-600);
+    color: #fff;
+    border-radius: var(--gh-radius-pill);
+    font-family: var(--gh-font-brand);
+    font-weight: 600;
+    transition: background var(--gh-dur-fast) var(--gh-ease), transform var(--gh-dur-fast) var(--gh-ease);
+  }
+  .cta:hover {
+    background: var(--gh-maroon-700);
+    transform: translateY(-1px);
+    text-decoration: none;
+  }
+</style>

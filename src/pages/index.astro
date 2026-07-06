@@ -162,6 +162,20 @@ const homeFaqs = faqsForPage('/');
       <p class="more-link"><a href="/solutions/">See all solutions →</a></p>
     </section>
 
+    <section class="block tool-teaser">
+      <div class="teaser-card">
+        <Icon name="pan" size={32} />
+        <div>
+          <h2>Try the free compliance matrix generator — right now</h2>
+          <p>
+            Paste an RFP and get a compliance matrix in seconds. It runs in your
+            browser — no login, nothing is uploaded.
+          </p>
+        </div>
+        <a class="teaser-cta" href="/solutions/compliance-matrix-generator/">Open the free tool</a>
+      </div>
+    </section>
+
     <section class="block audience">
       <h2>Built for your side of the table</h2>
       <ul>
@@ -257,5 +271,43 @@ const homeFaqs = faqsForPage('/');
   }
   .audience a {
     font-weight: 600;
+  }
+  .teaser-card {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    background: var(--gh-tint-sun);
+    border: 1.5px solid var(--border);
+    border-radius: var(--gh-radius-md);
+    padding: 1.75rem 2rem;
+  }
+  .teaser-card div {
+    flex: 1;
+    min-width: 16rem;
+  }
+  .teaser-card h2 {
+    margin: 0 0 0.4rem;
+    font-size: 1.35rem;
+  }
+  .teaser-card p {
+    margin: 0;
+    color: var(--fg-muted);
+  }
+  .teaser-cta {
+    display: inline-block;
+    padding: 0.7rem 1.5rem;
+    background: var(--gh-maroon-600);
+    color: #fff;
+    border-radius: var(--gh-radius-pill);
+    font-family: var(--gh-font-brand);
+    font-weight: 600;
+    white-space: nowrap;
+    transition: background var(--gh-dur-fast) var(--gh-ease), transform var(--gh-dur-fast) var(--gh-ease);
+  }
+  .teaser-cta:hover {
+    background: var(--gh-maroon-700);
+    transform: translateY(-1px);
+    text-decoration: none;
   }
 </style>

@@ -4,6 +4,7 @@ import SchemaOrg from '../components/seo/SchemaOrg.astro';
 import PricingTable from '../components/PricingTable.astro';
 import FAQSchema from '../components/seo/FAQSchema.astro';
 import CTABand from '../components/CTABand.astro';
+import PricingCalculator from '../components/PricingCalculator.astro';
 import { PLANS, PRICE_RANGE, TRIAL_DAYS, formatUsd } from '../data/pricing';
 import { faqsForPage } from '../data/faqs';
 import PageHero from '../components/PageHero.astro';
@@ -69,6 +70,8 @@ const pricingFaqs = [
       {formatUsd(PRICE_RANGE.high)}/month (Team), with a {formatUsd(PLANS[1].monthlyUsd)}/month
       Pro plan for teams responding regularly.
     </p>
+
+    <PricingCalculator />
 
     <FAQSchema faqs={pricingFaqs} heading="Pricing FAQ" />
 
