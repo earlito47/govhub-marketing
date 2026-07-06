@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import FAQSchema from '../../components/seo/FAQSchema.astro';
 import Breadcrumbs from '../../components/seo/Breadcrumbs.astro';
+import CTABand from '../../components/CTABand.astro';
 
 const faqs = [
   {
@@ -66,6 +67,12 @@ const faqs = [
     </article>
 
     <FAQSchema faqs={faqs} heading="Template generator — FAQ" />
+
+    <CTABand
+      heading="Turn your next draft into a submission-ready document."
+      secondaryHref="/pricing/"
+      secondaryLabel="See pricing"
+    />
   </main>
 </BaseLayout>
 

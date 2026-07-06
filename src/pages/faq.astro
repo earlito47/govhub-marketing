@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import FAQSchema from '../components/seo/FAQSchema.astro';
 import { faqs } from '../data/faqs';
 import PageHero from '../components/PageHero.astro';
+import CTABand from '../components/CTABand.astro';
 ---
 
 <BaseLayout
@@ -21,6 +22,13 @@ import PageHero from '../components/PageHero.astro';
     </PageHero>
 
     <FAQSchema faqs={faqs} heading="All FAQs" />
+
+    <CTABand
+      heading="Answered everything? Try it on a real RFP."
+      sub="Start a free 14-day trial and see the first draft on your own solicitation."
+      secondaryHref="/pricing/"
+      secondaryLabel="See pricing"
+    />
   </main>
 </BaseLayout>
 

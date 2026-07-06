@@ -4,6 +4,8 @@ import FAQSchema from '../../components/seo/FAQSchema.astro';
 import Breadcrumbs from '../../components/seo/Breadcrumbs.astro';
 import { audiences, type Audience } from '../../data/audiences';
 import PageHero from '../../components/PageHero.astro';
+import CTABand from '../../components/CTABand.astro';
+import { SIGNUP_URL } from '../../config';
 
 export function getStaticPaths() {
   return audiences.map((a) => ({
@@ -55,12 +57,19 @@ const description = `${audience.headline} GovHub is the AI proposal platform des
         ))}
       </div>
 
-      <p class="cta">
-        <a href="/pricing/">See pricing →</a>
+      <p class="cta-pair">
+        <a class="primary" href={SIGNUP_URL}>Start free trial</a>
+        <a class="secondary" href="/pricing/">See pricing</a>
       </p>
     </article>
 
     <FAQSchema faqs={audience.faqs} heading={`${audience.name} — FAQ`} />
+
+    <CTABand
+      heading={`Write your next proposal with GovHub`}
+      secondaryHref="/pricing/"
+      secondaryLabel="See pricing"
+    />
   </main>
 </BaseLayout>
 
@@ -125,6 +134,38 @@ const description = `${audience.headline} GovHub is the AI proposal platform des
   }
   .cta a:hover {
     background: var(--accent-soft);
+    text-decoration: none;
+  }
+  .cta-pair {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 2.5rem;
+  }
+  .cta-pair .primary {
+    display: inline-block;
+    padding: 0.75rem 1.6rem;
+    background: var(--gh-maroon-600);
+    color: #fff;
+    border-radius: var(--gh-radius-pill);
+    font-family: var(--gh-font-brand);
+    font-weight: 600;
+  }
+  .cta-pair .primary:hover {
+    background: var(--gh-maroon-700);
+    text-decoration: none;
+  }
+  .cta-pair .secondary {
+    display: inline-block;
+    padding: 0.75rem 1.6rem;
+    border: 2px solid var(--gh-navy-600);
+    color: var(--gh-navy-600);
+    border-radius: var(--gh-radius-pill);
+    font-family: var(--gh-font-brand);
+    font-weight: 600;
+  }
+  .cta-pair .secondary:hover {
+    background: rgba(33, 75, 137, 0.07);
     text-decoration: none;
   }
 </style>

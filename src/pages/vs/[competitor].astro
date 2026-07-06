@@ -5,6 +5,8 @@ import Breadcrumbs from '../../components/seo/Breadcrumbs.astro';
 import SchemaOrg from '../../components/seo/SchemaOrg.astro';
 import { competitors, type Competitor } from '../../data/competitors';
 import PageHero from '../../components/PageHero.astro';
+import CTABand from '../../components/CTABand.astro';
+import { SIGNUP_URL } from '../../config';
 
 export function getStaticPaths() {
   return competitors.map((c) => ({
@@ -174,12 +176,20 @@ const description = isOpportunityIntel
         </>
       )}
 
-      <p class="cta">
-        <a href="/pricing/">See GovHub pricing →</a>
+      <p class="cta-pair">
+        <a class="primary" href={SIGNUP_URL}>Start free trial</a>
+        <a class="secondary" href="/pricing/">See pricing</a>
       </p>
     </article>
 
     <FAQSchema faqs={competitor.faqs} heading={`${title} — FAQ`} />
+
+    <CTABand
+      heading="Try the government-specific option"
+      sub="Bring your next solicitation — the first draft is ready before the trial ends."
+      secondaryHref="/pricing/"
+      secondaryLabel="See pricing"
+    />
   </main>
 </BaseLayout>
 
@@ -262,6 +272,38 @@ const description = isOpportunityIntel
   }
   .cta a:hover {
     background: var(--accent-soft);
+    text-decoration: none;
+  }
+  .cta-pair {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 2.5rem;
+  }
+  .cta-pair .primary {
+    display: inline-block;
+    padding: 0.75rem 1.6rem;
+    background: var(--gh-maroon-600);
+    color: #fff;
+    border-radius: var(--gh-radius-pill);
+    font-family: var(--gh-font-brand);
+    font-weight: 600;
+  }
+  .cta-pair .primary:hover {
+    background: var(--gh-maroon-700);
+    text-decoration: none;
+  }
+  .cta-pair .secondary {
+    display: inline-block;
+    padding: 0.75rem 1.6rem;
+    border: 2px solid var(--gh-navy-600);
+    color: var(--gh-navy-600);
+    border-radius: var(--gh-radius-pill);
+    font-family: var(--gh-font-brand);
+    font-weight: 600;
+  }
+  .cta-pair .secondary:hover {
+    background: rgba(33, 75, 137, 0.07);
     text-decoration: none;
   }
 </style>

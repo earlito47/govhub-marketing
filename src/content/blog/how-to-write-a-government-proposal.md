@@ -90,4 +90,4 @@ Understanding [why government proposals get rejected](/blog/why-proposals-get-re
 
 ---
 
-**The through-line:** compliance is the game. A matrix keeps you responsive, evaluation-focused drafting keeps you competitive, and disciplined reviews keep you winning. GovHub is built to run this entire workflow — from shredding the solicitation to a submission-ready package. [See how it works](/solutions/) or [start a free trial](/pricing/).
+**The through-line:** compliance is the game. A matrix keeps you responsive, evaluation-focused drafting keeps you competitive, and disciplined reviews keep you winning. GovHub is built to run this entire workflow — from shredding the solicitation to a submission-ready package. [See how it works](/solutions/) or [start a free trial](/signup).

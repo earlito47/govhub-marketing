@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import FAQSchema from '../../components/seo/FAQSchema.astro';
 import Breadcrumbs from '../../components/seo/Breadcrumbs.astro';
 import PageHero from '../../components/PageHero.astro';
+import CTABand from '../../components/CTABand.astro';
 import { competitors, type Competitor } from '../../data/competitors';
 
 export function getStaticPaths() {
@@ -172,6 +173,13 @@ const altFaqs = isOpportunityIntel
     </article>
 
     <FAQSchema faqs={altFaqs} heading={`${competitor.name} — FAQ`} />
+
+    <CTABand
+      heading="Try the government-specific alternative"
+      sub="Bring your next solicitation — the first draft is ready before the trial ends."
+      secondaryHref="/pricing/"
+      secondaryLabel="See pricing"
+    />
   </main>
 </BaseLayout>
 

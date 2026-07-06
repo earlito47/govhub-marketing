@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import FAQSchema from '../../components/seo/FAQSchema.astro';
 import Breadcrumbs from '../../components/seo/Breadcrumbs.astro';
 import PageHero from '../../components/PageHero.astro';
+import CTABand from '../../components/CTABand.astro';
 
 const faqs = [
   {
@@ -81,6 +82,12 @@ const faqs = [
     </article>
 
     <FAQSchema faqs={faqs} heading="AI proposal generator — FAQ" />
+
+    <CTABand
+      heading="See the first draft on your own solicitation."
+      secondaryHref="/pricing/"
+      secondaryLabel="See pricing"
+    />
   </main>
 </BaseLayout>
 
