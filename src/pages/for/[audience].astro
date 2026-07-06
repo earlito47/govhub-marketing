@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import FAQSchema from '../../components/seo/FAQSchema.astro';
 import Breadcrumbs from '../../components/seo/Breadcrumbs.astro';
 import { audiences, type Audience } from '../../data/audiences';
+import PageHero from '../../components/PageHero.astro';
 
 export function getStaticPaths() {
   return audiences.map((a) => ({
@@ -30,11 +31,15 @@ const description = `${audience.headline} GovHub is the AI proposal platform des
       ]}
     />
 
-    <article class="prose">
-      <p class="eyebrow">For {audience.name.toLowerCase()}</p>
-      <h1>{audience.headline}</h1>
-      <p class="lede">{audience.intro}</p>
+    <PageHero art={audience.art}>
+      <header class="prose">
+        <p class="eyebrow">For {audience.name.toLowerCase()}</p>
+        <h1>{audience.headline}</h1>
+        <p class="lede">{audience.intro}</p>
+      </header>
+    </PageHero>
 
+    <article class="prose">
       <h2>The problem</h2>
       <ul class="problems">
         {audience.problems.map((p) => <li>{p}</li>)}

@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/seo/Breadcrumbs.astro';
 import { CONTACT_EMAIL, SIGNUP_URL } from '../config';
+import PageHero from '../components/PageHero.astro';
 ---
 
 <BaseLayout
@@ -11,12 +12,17 @@ import { CONTACT_EMAIL, SIGNUP_URL } from '../config';
   <main class="container">
     <Breadcrumbs items={[{ name: 'Home', url: '/' }, { name: 'Contact', url: '/contact/' }]} />
 
+    <PageHero art="/brand/page-graphics/contact-signal-beacon.svg">
+      <header class="prose">
+        <h1>Contact GovHub</h1>
+        <p class="lede">
+          Questions about GovHub, a demo, or how it fits your pursuits? We'd like to
+          help.
+        </p>
+      </header>
+    </PageHero>
+
     <article class="prose">
-      <h1>Contact GovHub</h1>
-      <p class="lede">
-        Questions about GovHub, a demo, or how it fits your pursuits? We'd like to
-        help.
-      </p>
 
       <div class="cards">
         <div class="card">

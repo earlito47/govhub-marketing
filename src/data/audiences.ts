@@ -5,6 +5,7 @@ export interface Audience {
   intro: string;
   problems: string[];
   solutions: Array<{ title: string; description: string }>;
+  art?: string; // Gold Country hero scene (public/brand/page-graphics/)
   faqs: Array<{ question: string; answer: string }>;
 }
 
@@ -15,6 +16,7 @@ export interface Audience {
 export const audiences: Audience[] = [
   {
     slug: 'small-business-contractors',
+    art: '/brand/page-graphics/for-small-business-basecamp-climb.svg',
     name: 'Small business contractors',
     headline: 'Win more federal work without hiring a proposal team.',
     intro:
@@ -63,6 +65,7 @@ export const audiences: Audience[] = [
 
   {
     slug: 'system-integrators',
+    art: '/brand/page-graphics/for-system-integrators-rail-network.svg',
     name: 'System integrators',
     headline: 'Coordinate large multi-team proposals without losing days to formatting.',
     intro:

@@ -5,6 +5,7 @@ import FAQSchema from '../../components/seo/FAQSchema.astro';
 import CTABand from '../../components/CTABand.astro';
 import { getSolution } from '../../data/solutions';
 import { faqsForPage } from '../../data/faqs';
+import PageHero from '../../components/PageHero.astro';
 
 const solution = getSolution('rfp-shredding')!;
 const faqs = [
@@ -32,13 +33,18 @@ const faqs = [
       ]}
     />
 
+    <PageHero art="/brand/page-graphics/solution-rfp-shredding-strata.svg">
+      <header class="prose">
+        <h1>RFP shredding software for government proposals</h1>
+        <p class="lede">
+          GovHub "shreds" a government solicitation — automatically breaking it into
+          every discrete requirement, instruction, and evaluation factor so nothing
+          slips through before you start writing.
+        </p>
+      </header>
+    </PageHero>
+
     <article class="prose">
-      <h1>RFP shredding software for government proposals</h1>
-      <p class="lede">
-        GovHub "shreds" a government solicitation — automatically breaking it into
-        every discrete requirement, instruction, and evaluation factor so nothing
-        slips through before you start writing.
-      </p>
 
       <h2>What is RFP shredding?</h2>
       <p>

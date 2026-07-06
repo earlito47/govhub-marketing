@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import FAQSchema from '../../components/seo/FAQSchema.astro';
 import Breadcrumbs from '../../components/seo/Breadcrumbs.astro';
+import PageHero from '../../components/PageHero.astro';
 
 const faqs = [
   {
@@ -35,13 +36,18 @@ const faqs = [
       ]}
     />
 
+    <PageHero art="/brand/page-graphics/solution-form-autofiller.svg">
+      <header class="prose">
+        <h1>Government form autofiller</h1>
+        <p class="lede">
+          Standard federal forms — SF-33, SF-1449, reps & certs, small-business
+          representations — autofill from your GovHub company profile. Fill once,
+          reuse on every response.
+        </p>
+      </header>
+    </PageHero>
+
     <article class="prose">
-      <h1>Government form autofiller</h1>
-      <p class="lede">
-        Standard federal forms — SF-33, SF-1449, reps & certs, small-business
-        representations — autofill from your GovHub company profile. Fill once,
-        reuse on every response.
-      </p>
 
       <h2>Forms and representations covered</h2>
       <ul>

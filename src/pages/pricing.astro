@@ -6,6 +6,7 @@ import FAQSchema from '../components/seo/FAQSchema.astro';
 import CTABand from '../components/CTABand.astro';
 import { PLANS, PRICE_RANGE, TRIAL_DAYS, formatUsd } from '../data/pricing';
 import { faqsForPage } from '../data/faqs';
+import PageHero from '../components/PageHero.astro';
 
 // Cost FAQ comes from the shared data (single source of truth); the rest are
 // pricing-page specific.
@@ -49,6 +50,7 @@ const pricingFaqs = [
   />
 
   <main class="container">
+    <PageHero art="/brand/page-graphics/pricing-three-peaks.svg">
     <header class="prose">
       <h1>Simple pricing for government proposal software</h1>
       <p class="lede">
@@ -58,6 +60,7 @@ const pricingFaqs = [
         trial and no credit card required.
       </p>
     </header>
+    </PageHero>
 
     <PricingTable />
 

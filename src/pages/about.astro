@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/seo/Breadcrumbs.astro';
 import CTABand from '../components/CTABand.astro';
+import PageHero from '../components/PageHero.astro';
 ---
 
 <BaseLayout
@@ -11,13 +12,18 @@ import CTABand from '../components/CTABand.astro';
   <main class="container">
     <Breadcrumbs items={[{ name: 'Home', url: '/' }, { name: 'About', url: '/about/' }]} />
 
+    <PageHero art="/brand/page-graphics/about-basecamp-dusk.svg">
+      <header class="prose">
+        <h1>About GovHub</h1>
+        <p class="lede">
+          GovHub is AI proposal software built specifically for government
+          contractors — so a small team can compete on quality against firms many
+          times its size.
+        </p>
+      </header>
+    </PageHero>
+
     <article class="prose">
-      <h1>About GovHub</h1>
-      <p class="lede">
-        GovHub is AI proposal software built specifically for government
-        contractors — so a small team can compete on quality against firms many
-        times its size.
-      </p>
 
       <h2>The problem we're solving</h2>
       <p>
@@ -39,6 +45,16 @@ import CTABand from '../components/CTABand.astro';
         time, without cutting corners.
       </p>
 
+      <img
+        class="team-illo"
+        src="/brand/illustrations/illo-team-standup.svg"
+        alt="A small team planning their next proposal pursuit together"
+        width="720"
+        height="420"
+        loading="lazy"
+        decoding="async"
+      />
+
       <h2>How we approach it</h2>
       <ul>
         <li><strong>Government-specific, not general-purpose.</strong> Section L/M structure, FAR/DFARS awareness, and compliance are the design center — not a configuration afterthought.</li>
@@ -58,6 +74,11 @@ import CTABand from '../components/CTABand.astro';
 </BaseLayout>
 
 <style>
+  .team-illo {
+    width: 100%;
+    height: auto;
+    margin: 1.5rem 0 0.5rem;
+  }
   main { padding: 1rem 1.5rem 2rem; }
   .prose { max-width: 46rem; margin: 1rem 0; }
   .lede { font-size: 1.15rem; color: var(--fg-muted); }

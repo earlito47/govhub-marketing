@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/seo/Breadcrumbs.astro';
 import { competitors } from '../../data/competitors';
+import PageHero from '../../components/PageHero.astro';
 ---
 
 <BaseLayout
@@ -16,6 +17,7 @@ import { competitors } from '../../data/competitors';
       ]}
     />
 
+    <PageHero art="/brand/page-graphics/compare-weigh-options.svg">
     <header class="prose">
       <h1>Government-specific alternatives to the general-purpose tools</h1>
       <p class="lede">
@@ -24,6 +26,7 @@ import { competitors } from '../../data/competitors';
         start here.
       </p>
     </header>
+    </PageHero>
 
     <ul class="cards">
       {competitors.map((c) => (

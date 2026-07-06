@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import FAQSchema from '../components/seo/FAQSchema.astro';
 import { faqs } from '../data/faqs';
+import PageHero from '../components/PageHero.astro';
 ---
 
 <BaseLayout
@@ -9,6 +10,7 @@ import { faqs } from '../data/faqs';
   description="Answers to common questions about GovHub — the AI proposal writing platform for government contractors."
 >
   <main class="container">
+    <PageHero art="/brand/page-graphics/faq-signpost.svg">
     <header class="prose">
       <h1>Frequently asked questions</h1>
       <p class="lede">
@@ -16,6 +18,7 @@ import { faqs } from '../data/faqs';
         and pricing.
       </p>
     </header>
+    </PageHero>
 
     <FAQSchema faqs={faqs} heading="All FAQs" />
   </main>

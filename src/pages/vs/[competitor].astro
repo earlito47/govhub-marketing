@@ -4,6 +4,7 @@ import FAQSchema from '../../components/seo/FAQSchema.astro';
 import Breadcrumbs from '../../components/seo/Breadcrumbs.astro';
 import SchemaOrg from '../../components/seo/SchemaOrg.astro';
 import { competitors, type Competitor } from '../../data/competitors';
+import PageHero from '../../components/PageHero.astro';
 
 export function getStaticPaths() {
   return competitors.map((c) => ({
@@ -46,8 +47,13 @@ const description = isOpportunityIntel
       ]}
     />
 
+    <PageHero art="/brand/page-graphics/compare-weigh-options.svg">
+      <header class="prose">
+        <h1>{title}</h1>
+      </header>
+    </PageHero>
+
     <article class="prose">
-      <h1>{title}</h1>
 
       {isOpportunityIntel ? (
         <p class="lede">

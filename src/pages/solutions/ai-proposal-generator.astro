@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import FAQSchema from '../../components/seo/FAQSchema.astro';
 import Breadcrumbs from '../../components/seo/Breadcrumbs.astro';
+import PageHero from '../../components/PageHero.astro';
 
 const faqs = [
   {
@@ -35,14 +36,19 @@ const faqs = [
       ]}
     />
 
+    <PageHero art="/brand/page-graphics/solution-ai-generator-cart.svg">
+      <header class="prose">
+        <h1>AI proposal generator for government contractors</h1>
+        <p class="lede">
+          GovHub's AI proposal generator drafts full government RFP responses —
+          Section L structure, Section M alignment, FAR/DFARS clause awareness, and
+          Section 508 conformance — from the solicitation and your own knowledge
+          base.
+        </p>
+      </header>
+    </PageHero>
+
     <article class="prose">
-      <h1>AI proposal generator for government contractors</h1>
-      <p class="lede">
-        GovHub's AI proposal generator drafts full government RFP responses —
-        Section L structure, Section M alignment, FAR/DFARS clause awareness, and
-        Section 508 conformance — from the solicitation and your own knowledge
-        base.
-      </p>
 
       <h2>How it works</h2>
       <ol>

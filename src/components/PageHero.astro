@@ -1,0 +1,54 @@
+---
+/**
+ * Interior-page header: the page's own H1/lede go in the slot, with an
+ * optional Gold Country scene on the right. Metaphor scenes are decorative
+ * (aria-hidden); people illustrations pass artAlt to be announced.
+ * Art stacks above the copy on small screens per the brand guide.
+ */
+interface Props {
+  art?: string;
+  artAlt?: string;
+  artWidth?: number;
+  artHeight?: number;
+}
+
+const { art, artAlt, artWidth = 720, artHeight = 480 } = Astro.props;
+---
+
+<div class:list={['page-hero', art && 'has-art']}>
+  <div class="copy"><slot /></div>
+  {art && (
+    <img
+      src={art}
+      alt={artAlt ?? ''}
+      aria-hidden={artAlt ? undefined : 'true'}
+      width={artWidth}
+      height={artHeight}
+      loading="eager"
+      decoding="async"
+    />
+  )}
+</div>
+
+<style>
+  .page-hero.has-art {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 2.5rem;
+    align-items: center;
+  }
+  .page-hero img {
+    width: 100%;
+    height: auto;
+  }
+  @media (max-width: 900px) {
+    .page-hero.has-art {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    .page-hero img {
+      order: -1;
+      max-width: 22rem;
+    }
+  }
+</style>

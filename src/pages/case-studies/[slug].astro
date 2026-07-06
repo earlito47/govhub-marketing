@@ -53,6 +53,7 @@ const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? '';
       <p class="eyebrow">{study.industry} · {study.customer}</p>
       <h1>{study.title}</h1>
       <p class="outcome">{study.outcome}</p>
+      <div class="gh-divider-ridge" aria-hidden="true"></div>
 
       {study.representative && (
         <p class="disclaimer" role="note">
