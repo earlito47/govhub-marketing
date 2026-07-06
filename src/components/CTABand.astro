@@ -35,12 +35,13 @@ const {
 </section>
 
 <style>
+  /* Night ridge, lantern lit — the guide's CTA band on every page. */
   .cta-band {
     margin: 4rem 0 1rem;
-    background: var(--accent-soft);
-    border: 1px solid var(--border);
-    border-radius: 1rem;
-    padding: 3rem 1.5rem;
+    background: var(--gh-navy-800) url('/brand/page-graphics/cta-band-night-mountains.svg') center / cover no-repeat;
+    border-radius: var(--gh-radius-lg);
+    padding: 3.5rem 1.5rem;
+    color: var(--gh-ink-inverse);
   }
   .inner {
     max-width: 40rem;
@@ -49,9 +50,10 @@ const {
   }
   h2 {
     margin: 0 0 0.75rem;
+    color: var(--gh-ink-inverse);
   }
   p {
-    color: var(--fg-muted);
+    color: rgba(250, 245, 236, 0.85);
     margin: 0 auto 1.5rem;
     max-width: 34rem;
   }
@@ -63,30 +65,35 @@ const {
   }
   .primary {
     display: inline-block;
-    padding: 0.75rem 1.5rem;
-    background: var(--accent);
+    padding: 0.75rem 1.6rem;
+    background: var(--gh-maroon-600);
     color: #fff;
-    border-radius: 0.5rem;
+    border-radius: var(--gh-radius-pill);
+    font-family: var(--gh-font-brand);
     font-weight: 600;
+    transition: background var(--gh-dur-fast) var(--gh-ease), transform var(--gh-dur-fast) var(--gh-ease);
   }
   .primary:hover {
-    background: var(--accent-hover);
+    background: var(--gh-maroon-700);
+    transform: translateY(-1px);
     text-decoration: none;
   }
   .secondary {
     display: inline-block;
-    padding: 0.75rem 1.5rem;
-    border: 1px solid var(--accent);
-    border-radius: 0.5rem;
-    color: var(--accent);
+    padding: 0.75rem 1.6rem;
+    border: 2px solid var(--gh-ink-inverse);
+    border-radius: var(--gh-radius-pill);
+    color: var(--gh-ink-inverse);
+    font-family: var(--gh-font-brand);
     font-weight: 600;
   }
   .secondary:hover {
-    background: var(--bg-elevated);
+    background: rgba(250, 245, 236, 0.12);
     text-decoration: none;
   }
   .trust {
     font-size: 0.85rem;
+    color: var(--gh-ink-inverse-soft);
     margin: 1.5rem 0 0;
   }
 </style>

@@ -10,6 +10,8 @@ const blog = defineCollection({
     updatedDate: z.date().optional(),
     author: z.string().default('GovHub team'),
     pillarSlug: z.string().optional(),
+    cover: z.string().optional(), // /brand/... path; defaults to the trail map in the layout
+    coverAlt: z.string().default(''),
     draft: z.boolean().default(false),
   }),
 });

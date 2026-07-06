@@ -14,6 +14,8 @@ The SF330 is the standard form architect-engineer firms use to submit qualificat
 
 Federal agencies select A-E firms based on qualifications, not price. The SF330 is how you present those qualifications: your team, your relevant projects, and your firm's overall capabilities. A selection board scores submissions and shortlists firms for interviews and negotiations.
 
+<img class="post-figure" src="/brand/page-graphics/solution-form-autofiller.svg" alt="" aria-hidden="true" width="720" height="480" loading="lazy" decoding="async" />
+
 ## Part I: Contract-Specific Qualifications
 
 Part I is tailored to a single solicitation and runs from Section A through Section H:

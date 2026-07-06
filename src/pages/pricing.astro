@@ -4,8 +4,10 @@ import SchemaOrg from '../components/seo/SchemaOrg.astro';
 import PricingTable from '../components/PricingTable.astro';
 import FAQSchema from '../components/seo/FAQSchema.astro';
 import CTABand from '../components/CTABand.astro';
+import PricingCalculator from '../components/PricingCalculator.astro';
 import { PLANS, PRICE_RANGE, TRIAL_DAYS, formatUsd } from '../data/pricing';
 import { faqsForPage } from '../data/faqs';
+import PageHero from '../components/PageHero.astro';
 
 // Cost FAQ comes from the shared data (single source of truth); the rest are
 // pricing-page specific.
@@ -31,7 +33,7 @@ const pricingFaqs = [
 <BaseLayout
   title="Pricing Plans for AI Proposal Software | GovHub"
   description="Compare GovHub pricing for AI government proposal writing, form autofill, and compliance automation. Plans from $129/month with a 14-day free trial — no credit card required."
->
+ ogImage="/brand/page-graphics/pricing-three-peaks@2x.png">
   <SchemaOrg
     type="SoftwareApplication"
     data={{
@@ -49,6 +51,7 @@ const pricingFaqs = [
   />
 
   <main class="container">
+    <PageHero art="/brand/page-graphics/pricing-three-peaks.svg">
     <header class="prose">
       <h1>Simple pricing for government proposal software</h1>
       <p class="lede">
@@ -58,6 +61,7 @@ const pricingFaqs = [
         trial and no credit card required.
       </p>
     </header>
+    </PageHero>
 
     <PricingTable />
 
@@ -66,6 +70,8 @@ const pricingFaqs = [
       {formatUsd(PRICE_RANGE.high)}/month (Team), with a {formatUsd(PLANS[1].monthlyUsd)}/month
       Pro plan for teams responding regularly.
     </p>
+
+    <PricingCalculator />
 
     <FAQSchema faqs={pricingFaqs} heading="Pricing FAQ" />
 

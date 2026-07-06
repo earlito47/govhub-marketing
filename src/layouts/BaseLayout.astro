@@ -2,11 +2,11 @@
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 import SchemaOrg from '../components/seo/SchemaOrg.astro';
-// Self-hosted Inter (no render-blocking Google Fonts request).
-import '@fontsource/inter/400.css';
-import '@fontsource/inter/500.css';
-import '@fontsource/inter/600.css';
-import '@fontsource/inter/700.css';
+// Self-hosted Gold Country type (no render-blocking Google Fonts request).
+// Fraunces needs full.css for the SOFT/WONK axes the brand guide pins.
+import '@fontsource-variable/fraunces/full.css';
+import '@fontsource-variable/bricolage-grotesque';
+import '@fontsource-variable/figtree';
 
 interface Props {
   title: string;
@@ -20,7 +20,7 @@ const {
   title,
   description = 'GovHub — AI proposal writing for government contractors. Draft, review, and submit federal, state, and local RFP responses faster.',
   canonical,
-  ogImage = '/og-default.png',
+  ogImage = '/brand/social/og-default-1200x630.png',
   noindex = false,
 } = Astro.props;
 
@@ -50,10 +50,23 @@ const fullOgImage = new URL(ogImage, Astro.site).toString();
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={fullOgImage} />
 
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/brand/logos/govhub-favicon.svg" />
     <link rel="sitemap" href="/sitemap-index.xml" />
+    <link rel="stylesheet" href="/brand/tokens/tokens.css" />
 
     <SchemaOrg type="Organization" />
+
+    {/* Cloudflare Web Analytics — renders nothing until PUBLIC_CF_BEACON_TOKEN
+        is set (Cloudflare Pages → Settings → Environment variables; token from
+        CF dashboard → Web Analytics → add site). Measures the trial CTAs. */}
+    {import.meta.env.PUBLIC_CF_BEACON_TOKEN && (
+      <script
+        is:inline
+        defer
+        src="https://static.cloudflareinsights.com/beacon.min.js"
+        data-cf-beacon={JSON.stringify({ token: import.meta.env.PUBLIC_CF_BEACON_TOKEN })}
+      />
+    )}
   </head>
   <body>
     <Nav />
@@ -64,16 +77,17 @@ const fullOgImage = new URL(ogImage, Astro.site).toString();
 
 <style is:global>
   :root {
-    /* Light, modernized brand palette (primary blue #357EDD on soft-gray). */
-    --bg: #f5f6fa;
-    --bg-elevated: #ffffff;
-    --fg: #1f2933;
-    --fg-muted: #5b6472;
-    --accent: #357edd;
-    --accent-hover: #2b6bc0;
-    --accent-soft: rgba(53, 126, 221, 0.1);
-    --border: rgba(15, 23, 42, 0.1);
-    --shadow: 0 1px 2px rgba(15, 23, 42, 0.04), 0 8px 24px rgba(15, 23, 42, 0.06);
+    /* Gold Country palette — legacy var names remapped onto the brand tokens
+       (loaded from /brand/tokens/tokens.css) so every scoped style keeps working. */
+    --bg: var(--gh-oat);
+    --bg-elevated: var(--gh-surface);
+    --fg: var(--gh-ink-900);
+    --fg-muted: var(--gh-ink-700);
+    --accent: var(--gh-maroon-600);
+    --accent-hover: var(--gh-maroon-700);
+    --accent-soft: rgba(160, 58, 44, 0.08);
+    --border: var(--gh-line);
+    --shadow: var(--gh-shadow-card);
     --max-width: 72rem;
     --content-width: 42rem;
   }
@@ -88,20 +102,21 @@ const fullOgImage = new URL(ogImage, Astro.site).toString();
     padding: 0;
     background: var(--bg);
     color: var(--fg);
-    font-family:
-      'Inter',
-      system-ui,
-      -apple-system,
-      BlinkMacSystemFont,
-      'Segoe UI',
-      Roboto,
-      sans-serif;
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
   }
 
+  body {
+    /* Fontsource variable families register with a " Variable" suffix, so
+       re-point the token font vars here (body beats :root for inheritance). */
+    --gh-font-display: 'Fraunces Variable', Georgia, serif;
+    --gh-font-brand: 'Bricolage Grotesque Variable', 'Figtree Variable', sans-serif;
+    --gh-font-body: 'Figtree Variable', -apple-system, 'Segoe UI', sans-serif;
+    font-family: var(--gh-font-body);
+  }
+
   a {
-    color: var(--accent);
+    color: var(--gh-teal-700);
     text-decoration: none;
   }
 
@@ -112,8 +127,12 @@ const fullOgImage = new URL(ogImage, Astro.site).toString();
   h1,
   h2,
   h3 {
-    line-height: 1.2;
-    letter-spacing: -0.015em;
+    font-family: var(--gh-font-display);
+    font-variation-settings: 'SOFT' 100, 'WONK' 0;
+    font-weight: 600;
+    color: var(--gh-ink-900);
+    line-height: 1.15;
+    letter-spacing: 0;
   }
 
   h1 {

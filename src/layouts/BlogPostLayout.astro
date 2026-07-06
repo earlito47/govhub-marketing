@@ -11,9 +11,20 @@ interface Props {
   author: string;
   slug: string;
   pillarSlug?: string;
+  cover?: string;
+  coverAlt?: string;
 }
 
-const { title, description, publishDate, updatedDate, author, slug } = Astro.props;
+const {
+  title,
+  description,
+  publishDate,
+  updatedDate,
+  author,
+  slug,
+  cover = '/brand/page-graphics/blog-trail-map.svg',
+  coverAlt = '',
+} = Astro.props;
 const url = new URL(`/blog/${slug}/`, Astro.site).toString();
 ---
 
@@ -54,6 +65,16 @@ const url = new URL(`/blog/${slug}/`, Astro.site).toString();
             </>
           )}
         </p>
+        <img
+          class="cover"
+          src={cover}
+          alt={coverAlt}
+          aria-hidden={coverAlt ? undefined : 'true'}
+          width="820"
+          height="460"
+          loading="eager"
+          decoding="async"
+        />
       </header>
       <slot />
     </article>
@@ -67,6 +88,16 @@ const url = new URL(`/blog/${slug}/`, Astro.site).toString();
   .byline {
     color: var(--fg-muted);
     font-size: 0.95rem;
-    margin: 0.5rem 0 2.5rem;
+    margin: 0.5rem 0 1.5rem;
+  }
+  .cover {
+    width: 100%;
+    height: auto;
+    margin: 0 0 2rem;
+  }
+  .post :global(.post-figure) {
+    width: 100%;
+    height: auto;
+    margin: 1.75rem 0;
   }
 </style>

@@ -2,12 +2,13 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/seo/Breadcrumbs.astro';
 import { competitors } from '../../data/competitors';
+import PageHero from '../../components/PageHero.astro';
 ---
 
 <BaseLayout
   title="GovHub compared: Loopio, Responsive & GovWin IQ | GovHub"
   description="How GovHub compares to Loopio, Responsive (RFPIO), and Deltek GovWin IQ for government contractors. See where each tool fits and which is right for your team."
->
+ ogImage="/brand/page-graphics/compare-weigh-options@2x.png">
   <main class="container">
     <Breadcrumbs
       items={[
@@ -16,6 +17,7 @@ import { competitors } from '../../data/competitors';
       ]}
     />
 
+    <PageHero art="/brand/page-graphics/compare-weigh-options.svg">
     <header class="prose">
       <h1>How GovHub compares</h1>
       <p class="lede">
@@ -24,6 +26,7 @@ import { competitors } from '../../data/competitors';
         government-specific design wins.
       </p>
     </header>
+    </PageHero>
 
     <ul class="cards">
       {competitors.map((c) => (

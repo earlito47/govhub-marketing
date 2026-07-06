@@ -4,6 +4,7 @@ import Breadcrumbs from '../components/seo/Breadcrumbs.astro';
 import FAQSchema from '../components/seo/FAQSchema.astro';
 import CTABand from '../components/CTABand.astro';
 import { CONTACT_EMAIL } from '../config';
+import PageHero from '../components/PageHero.astro';
 
 const faqs = [
   {
@@ -27,17 +28,22 @@ const faqs = [
 <BaseLayout
   title="Compliance in GovHub — FAR, DFARS & Section 508"
   description="How GovHub keeps government proposals compliant: FAR/DFARS clause awareness, Section L/M compliance matrices, and Section 508 conformance checks built into the workflow."
->
+ ogImage="/brand/page-graphics/compliance-survey-checkpoint@2x.png">
   <main class="container">
     <Breadcrumbs items={[{ name: 'Home', url: '/' }, { name: 'Compliance', url: '/compliance/' }]} />
 
+    <PageHero art="/brand/page-graphics/compliance-survey-checkpoint.svg">
+      <header class="prose">
+        <h1>Compliance is the point, not an afterthought</h1>
+        <p class="lede">
+          Most government proposals are lost on compliance, not on ideas. GovHub is
+          built around the regulations and evaluation structure that decide whether a
+          proposal is even read on the merits.
+        </p>
+      </header>
+    </PageHero>
+
     <article class="prose">
-      <h1>Compliance is the point, not an afterthought</h1>
-      <p class="lede">
-        Most government proposals are lost on compliance, not on ideas. GovHub is
-        built around the regulations and evaluation structure that decide whether a
-        proposal is even read on the merits.
-      </p>
 
       <h2>Regulatory awareness built into the workflow</h2>
       <ul>

@@ -2,6 +2,8 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import FAQSchema from '../../components/seo/FAQSchema.astro';
 import Breadcrumbs from '../../components/seo/Breadcrumbs.astro';
+import PageHero from '../../components/PageHero.astro';
+import CTABand from '../../components/CTABand.astro';
 import { competitors, type Competitor } from '../../data/competitors';
 
 export function getStaticPaths() {
@@ -53,7 +55,7 @@ const altFaqs = isOpportunityIntel
     ];
 ---
 
-<BaseLayout title={`${title} — Compare & switch to GovHub`} description={description}>
+<BaseLayout title={`${title} — Compare & switch to GovHub`} description={description} ogImage="/brand/page-graphics/compare-weigh-options@2x.png">
   <main class="container">
     <Breadcrumbs
       items={[
@@ -63,8 +65,13 @@ const altFaqs = isOpportunityIntel
       ]}
     />
 
+    <PageHero art="/brand/page-graphics/compare-weigh-options.svg">
+      <header class="prose">
+        <h1>{title}</h1>
+      </header>
+    </PageHero>
+
     <article class="prose">
-      <h1>{title}</h1>
 
       {isOpportunityIntel ? (
         <>
@@ -166,6 +173,13 @@ const altFaqs = isOpportunityIntel
     </article>
 
     <FAQSchema faqs={altFaqs} heading={`${competitor.name} — FAQ`} />
+
+    <CTABand
+      heading="Try the government-specific alternative"
+      sub="Bring your next solicitation — the first draft is ready before the trial ends."
+      secondaryHref="/pricing/"
+      secondaryLabel="See pricing"
+    />
   </main>
 </BaseLayout>
 

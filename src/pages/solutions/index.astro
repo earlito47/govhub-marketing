@@ -3,12 +3,13 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/seo/Breadcrumbs.astro';
 import SolutionsGrid from '../../components/SolutionsGrid.astro';
 import CTABand from '../../components/CTABand.astro';
+import PageHero from '../../components/PageHero.astro';
 ---
 
 <BaseLayout
   title="Government Contracting Solutions & AI Tools | GovHub"
   description="Explore GovHub's AI solutions for government contractors: proposal generation, RFP shredding, compliance matrices, form autofill, SF330, and technical review — in one platform."
->
+ ogImage="/brand/page-graphics/solutions-index-toolkit@2x.png">
   <main class="container">
     <Breadcrumbs
       items={[
@@ -17,6 +18,7 @@ import CTABand from '../../components/CTABand.astro';
       ]}
     />
 
+    <PageHero art="/brand/page-graphics/solutions-index-toolkit.svg">
     <header class="prose">
       <h1>Everything you need to draft and win a government proposal</h1>
       <p class="lede">
@@ -26,6 +28,7 @@ import CTABand from '../../components/CTABand.astro';
         the structure of federal, state, and local proposals.
       </p>
     </header>
+    </PageHero>
 
     <SolutionsGrid mode="all" />
 

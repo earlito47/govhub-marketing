@@ -2,13 +2,16 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import FAQSchema from '../components/seo/FAQSchema.astro';
 import { faqs } from '../data/faqs';
+import PageHero from '../components/PageHero.astro';
+import CTABand from '../components/CTABand.astro';
 ---
 
 <BaseLayout
   title="FAQ — GovHub"
   description="Answers to common questions about GovHub — the AI proposal writing platform for government contractors."
->
+ ogImage="/brand/page-graphics/faq-signpost@2x.png">
   <main class="container">
+    <PageHero art="/brand/page-graphics/faq-signpost.svg">
     <header class="prose">
       <h1>Frequently asked questions</h1>
       <p class="lede">
@@ -16,8 +19,16 @@ import { faqs } from '../data/faqs';
         and pricing.
       </p>
     </header>
+    </PageHero>
 
     <FAQSchema faqs={faqs} heading="All FAQs" />
+
+    <CTABand
+      heading="Answered everything? Try it on a real RFP."
+      sub="Start a free 14-day trial and see the first draft on your own solicitation."
+      secondaryHref="/pricing/"
+      secondaryLabel="See pricing"
+    />
   </main>
 </BaseLayout>
 

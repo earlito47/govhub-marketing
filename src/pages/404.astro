@@ -1,0 +1,60 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Page not found — GovHub" description="This page doesn't exist. Head back to the trail." noindex={true}>
+  <main class="container">
+    <div class="wrap">
+      <img
+        src="/brand/page-graphics/404-no-gold-here.svg"
+        alt=""
+        aria-hidden="true"
+        width="560"
+        height="380"
+        loading="eager"
+        decoding="async"
+      />
+      <h1>No gold here</h1>
+      <p>The page you're looking for doesn't exist or has moved. Back to the trail:</p>
+      <a class="home" href="/">Back to home</a>
+    </div>
+  </main>
+</BaseLayout>
+
+<style>
+  main {
+    padding: 0 1.5rem 4rem;
+  }
+  .wrap {
+    max-width: 34rem;
+    margin: 3rem auto 0;
+    text-align: center;
+  }
+  img {
+    width: 100%;
+    max-width: 26rem;
+    height: auto;
+  }
+  h1 {
+    margin: 1.5rem 0 0.5rem;
+  }
+  p {
+    color: var(--fg-muted);
+    margin: 0 0 1.75rem;
+  }
+  .home {
+    display: inline-block;
+    padding: 0.75rem 1.6rem;
+    background: var(--gh-maroon-600);
+    color: #fff;
+    border-radius: var(--gh-radius-pill);
+    font-family: var(--gh-font-brand);
+    font-weight: 600;
+    transition: background var(--gh-dur-fast) var(--gh-ease), transform var(--gh-dur-fast) var(--gh-ease);
+  }
+  .home:hover {
+    background: var(--gh-maroon-700);
+    transform: translateY(-1px);
+    text-decoration: none;
+  }
+</style>

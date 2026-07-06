@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import FAQSchema from '../../components/seo/FAQSchema.astro';
 import Breadcrumbs from '../../components/seo/Breadcrumbs.astro';
+import CTABand from '../../components/CTABand.astro';
 
 const faqs = [
   {
@@ -42,6 +43,7 @@ const faqs = [
         outline, Section M alignment, compliance matrix, and per-section page
         budget — generated in minutes, not days.
       </p>
+      <div class="gh-divider-ridge" aria-hidden="true"></div>
 
       <h2>What each generated template includes</h2>
       <ul>
@@ -65,6 +67,12 @@ const faqs = [
     </article>
 
     <FAQSchema faqs={faqs} heading="Template generator — FAQ" />
+
+    <CTABand
+      heading="Turn your next draft into a submission-ready document."
+      secondaryHref="/pricing/"
+      secondaryLabel="See pricing"
+    />
   </main>
 </BaseLayout>
 

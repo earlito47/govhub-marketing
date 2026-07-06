@@ -58,8 +58,8 @@ const mainEntity = faqs.map((f) => ({
     gap: 0.5rem;
   }
   details {
-    border: 1px solid var(--border);
-    border-radius: 0.5rem;
+    border: 1.5px solid var(--border);
+    border-radius: var(--gh-radius-sm);
     background: var(--bg-elevated);
     padding: 0;
   }
@@ -78,7 +78,7 @@ const mainEntity = faqs.map((f) => ({
   }
   summary::after {
     content: '+';
-    color: var(--fg-muted);
+    color: var(--gh-teal-700);
     font-size: 1.25rem;
     margin-left: 1rem;
   }

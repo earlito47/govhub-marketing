@@ -1,5 +1,6 @@
 ---
 import { solutions, featuredSolutions, type Solution } from '../data/solutions';
+import Icon from './Icon.astro';
 
 interface Props {
   /** 'featured' shows only homepage-featured solutions; 'all' shows every one. */
@@ -13,6 +14,7 @@ const items: Solution[] = mode === 'featured' ? featuredSolutions() : solutions;
 <div class="solutions-grid">
   {items.map((s) => (
     <a class="card" href={`/solutions/${s.slug}/`}>
+      {s.icon && <Icon name={s.icon} size={28} class="card-icon" />}
       <h3>{s.name}</h3>
       <p>{s.summary}</p>
       <span class="more">Learn more →</span>
@@ -31,19 +33,24 @@ const items: Solution[] = mode === 'featured' ? featuredSolutions() : solutions;
     display: flex;
     flex-direction: column;
     background: var(--bg-elevated);
-    border: 1px solid var(--border);
-    border-radius: 0.75rem;
+    border: 1.5px solid var(--border);
+    border-radius: var(--gh-radius-md);
     padding: 1.5rem;
     color: inherit;
     box-shadow: var(--shadow);
     transition:
-      border-color 0.15s ease,
-      transform 0.15s ease;
+      border-color var(--gh-dur-fast) var(--gh-ease),
+      transform var(--gh-dur-med) var(--gh-ease),
+      box-shadow var(--gh-dur-med) var(--gh-ease);
   }
   .card:hover {
-    border-color: var(--accent);
+    border-color: var(--gh-teal-600);
     text-decoration: none;
-    transform: translateY(-2px);
+    transform: translateY(-3px);
+    box-shadow: var(--gh-shadow-raised);
+  }
+  .card :global(.card-icon) {
+    margin-bottom: 0.75rem;
   }
   h3 {
     margin: 0 0 0.5rem;
@@ -57,7 +64,8 @@ const items: Solution[] = mode === 'featured' ? featuredSolutions() : solutions;
     flex-grow: 1;
   }
   .more {
-    color: var(--accent);
+    color: var(--gh-teal-700);
+    font-family: var(--gh-font-brand);
     font-weight: 600;
     font-size: 0.9rem;
   }

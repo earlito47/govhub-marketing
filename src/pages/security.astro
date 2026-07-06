@@ -4,6 +4,7 @@ import Breadcrumbs from '../components/seo/Breadcrumbs.astro';
 import FAQSchema from '../components/seo/FAQSchema.astro';
 import CTABand from '../components/CTABand.astro';
 import { CONTACT_EMAIL } from '../config';
+import PageHero from '../components/PageHero.astro';
 
 const faqs = [
   {
@@ -32,16 +33,21 @@ const faqs = [
 <BaseLayout
   title="Security at GovHub — How We Protect Your Data"
   description="How GovHub secures government proposal data: encryption in transit and at rest, role-based access, tenant isolation, audit logging, SSO, and a no-model-training commitment."
->
+ ogImage="/brand/page-graphics/security-mountain-vault@2x.png">
   <main class="container">
     <Breadcrumbs items={[{ name: 'Home', url: '/' }, { name: 'Security', url: '/security/' }]} />
 
+    <PageHero art="/brand/page-graphics/security-mountain-vault.svg">
+      <header class="prose">
+        <h1>Security at GovHub</h1>
+        <p class="lede">
+          Government contractors handle sensitive, sometimes controlled information.
+          Security isn't a feature we bolted on — it's how the product is built.
+        </p>
+      </header>
+    </PageHero>
+
     <article class="prose">
-      <h1>Security at GovHub</h1>
-      <p class="lede">
-        Government contractors handle sensitive, sometimes controlled information.
-        Security isn't a feature we bolted on — it's how the product is built.
-      </p>
 
       <h2>How we protect your data</h2>
       <ul>

@@ -9,7 +9,7 @@ const { heading = 'What contractors say' } = Astro.props;
 ---
 
 {testimonials.length > 0 && (
-  <section class="testimonials">
+  <section class="testimonials gh-section-confetti">
     <h2>{heading}</h2>
     <div class="grid">
       {testimonials.map((t) => (
@@ -27,8 +27,11 @@ const { heading = 'What contractors say' } = Astro.props;
 )}
 
 <style>
+  /* .gh-section-confetti (tokens.css) lays the nugget-confetti tile behind the quotes. */
   .testimonials {
     margin: 4rem 0;
+    padding: 2rem 1.5rem;
+    border-radius: var(--gh-radius-lg);
   }
   .testimonials h2 {
     margin: 0 0 1.5rem;
@@ -41,8 +44,9 @@ const { heading = 'What contractors say' } = Astro.props;
   figure {
     margin: 0;
     background: var(--bg-elevated);
-    border: 1px solid var(--border);
-    border-radius: 0.75rem;
+    border: 1.5px solid var(--border);
+    border-left: 4px solid var(--gh-gold-400);
+    border-radius: var(--gh-radius-md);
     padding: 1.5rem;
     box-shadow: var(--shadow);
   }
@@ -68,7 +72,7 @@ const { heading = 'What contractors say' } = Astro.props;
     font-size: 0.85rem;
   }
   .metric {
-    color: var(--accent);
+    color: var(--gh-teal-700);
     font-weight: 600;
   }
 </style>

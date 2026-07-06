@@ -6,6 +6,7 @@ import CTABand from '../../components/CTABand.astro';
 import ComplianceMatrixTool from '../../components/ComplianceMatrixTool.astro';
 import { getSolution } from '../../data/solutions';
 import { faqsForPage } from '../../data/faqs';
+import PageHero from '../../components/PageHero.astro';
 
 const solution = getSolution('compliance-matrix-generator')!;
 const faqs = [
@@ -23,7 +24,7 @@ const faqs = [
 ];
 ---
 
-<BaseLayout title={solution.title} description={solution.description}>
+<BaseLayout title={solution.title} description={solution.description} ogImage="/brand/page-graphics/solution-compliance-matrix-pan@2x.png">
   <main class="container">
     <Breadcrumbs
       items={[
@@ -33,14 +34,19 @@ const faqs = [
       ]}
     />
 
+    <PageHero art="/brand/page-graphics/solution-compliance-matrix-pan.svg">
+      <header class="prose">
+        <h1>Free RFP compliance matrix generator</h1>
+        <p class="lede">
+          Paste your government solicitation below and GovHub extracts every
+          requirement — the "shall," "must," and "will" statements — into a
+          structured compliance matrix you can export to CSV. Free, no login, and it
+          runs entirely in your browser.
+        </p>
+      </header>
+    </PageHero>
+
     <article class="prose">
-      <h1>Free RFP compliance matrix generator</h1>
-      <p class="lede">
-        Paste your government solicitation below and GovHub extracts every
-        requirement — the "shall," "must," and "will" statements — into a
-        structured compliance matrix you can export to CSV. Free, no login, and it
-        runs entirely in your browser.
-      </p>
     </article>
 
     <ComplianceMatrixTool />

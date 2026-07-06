@@ -4,12 +4,13 @@ import Breadcrumbs from '../../components/seo/Breadcrumbs.astro';
 import CTABand from '../../components/CTABand.astro';
 import CaseStudyCharts from '../../components/CaseStudyCharts.astro';
 import { caseStudies } from '../../data/case-studies';
+import PageHero from '../../components/PageHero.astro';
 ---
 
 <BaseLayout
   title="Case Studies: Small Businesses Winning Federal Contracts | GovHub"
   description="How small businesses use GovHub to win federal contracts — from a $1.79M Air Force STTR to a ~$49M SBA IT vehicle. Representative scenarios grounded in public award data."
->
+ ogImage="/brand/page-graphics/case-studies-carts-of-proof@2x.png">
   <main class="container">
     <Breadcrumbs
       items={[
@@ -18,6 +19,7 @@ import { caseStudies } from '../../data/case-studies';
       ]}
     />
 
+    <PageHero art="/brand/page-graphics/case-studies-carts-of-proof.svg">
     <header class="prose">
       <h1>Small businesses winning federal contracts with GovHub</h1>
       <p class="lede">
@@ -33,6 +35,7 @@ import { caseStudies } from '../../data/case-studies';
         claims that specific named companies are customers.
       </p>
     </header>
+    </PageHero>
 
     <CaseStudyCharts />
 

@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { SIGNUP_URL } from '../../config';
 import Breadcrumbs from '../../components/seo/Breadcrumbs.astro';
 import SchemaOrg from '../../components/seo/SchemaOrg.astro';
 import { caseStudies, type CaseStudy } from '../../data/case-studies';
@@ -53,6 +54,7 @@ const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? '';
       <p class="eyebrow">{study.industry} · {study.customer}</p>
       <h1>{study.title}</h1>
       <p class="outcome">{study.outcome}</p>
+      <div class="gh-divider-ridge" aria-hidden="true"></div>
 
       {study.representative && (
         <p class="disclaimer" role="note">
@@ -98,7 +100,10 @@ const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? '';
         <li>Purpose-built for <a href="/for/small-business-contractors/">small-business contractors</a>.</li>
       </ul>
 
-      <p class="cta"><a href="/pricing/">See GovHub pricing →</a></p>
+      <p class="cta-pair">
+        <a class="primary" href={SIGNUP_URL}>Start free trial</a>
+        <a class="secondary" href="/pricing/">See pricing</a>
+      </p>
     </article>
   </main>
 </BaseLayout>
@@ -195,6 +200,38 @@ const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? '';
   }
   .cta a:hover {
     background: var(--accent-soft);
+    text-decoration: none;
+  }
+  .cta-pair {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 2.5rem;
+  }
+  .cta-pair .primary {
+    display: inline-block;
+    padding: 0.75rem 1.6rem;
+    background: var(--gh-maroon-600);
+    color: #fff;
+    border-radius: var(--gh-radius-pill);
+    font-family: var(--gh-font-brand);
+    font-weight: 600;
+  }
+  .cta-pair .primary:hover {
+    background: var(--gh-maroon-700);
+    text-decoration: none;
+  }
+  .cta-pair .secondary {
+    display: inline-block;
+    padding: 0.75rem 1.6rem;
+    border: 2px solid var(--gh-navy-600);
+    color: var(--gh-navy-600);
+    border-radius: var(--gh-radius-pill);
+    font-family: var(--gh-font-brand);
+    font-weight: 600;
+  }
+  .cta-pair .secondary:hover {
+    background: rgba(33, 75, 137, 0.07);
     text-decoration: none;
   }
 </style>

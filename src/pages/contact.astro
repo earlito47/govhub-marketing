@@ -2,21 +2,27 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/seo/Breadcrumbs.astro';
 import { CONTACT_EMAIL, SIGNUP_URL } from '../config';
+import PageHero from '../components/PageHero.astro';
 ---
 
 <BaseLayout
   title="Contact GovHub — Talk to Our Team"
   description="Get in touch with GovHub for demos, support, or questions about AI-powered government proposal writing and compliance automation."
->
+ ogImage="/brand/page-graphics/contact-signal-beacon@2x.png">
   <main class="container">
     <Breadcrumbs items={[{ name: 'Home', url: '/' }, { name: 'Contact', url: '/contact/' }]} />
 
+    <PageHero art="/brand/page-graphics/contact-signal-beacon.svg">
+      <header class="prose">
+        <h1>Contact GovHub</h1>
+        <p class="lede">
+          Questions about GovHub, a demo, or how it fits your pursuits? We'd like to
+          help.
+        </p>
+      </header>
+    </PageHero>
+
     <article class="prose">
-      <h1>Contact GovHub</h1>
-      <p class="lede">
-        Questions about GovHub, a demo, or how it fits your pursuits? We'd like to
-        help.
-      </p>
 
       <div class="cards">
         <div class="card">

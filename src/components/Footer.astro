@@ -3,11 +3,14 @@ import { CONTACT_EMAIL } from '../config';
 const year = new Date().getFullYear();
 ---
 
+<div class="gh-footer-ridge" aria-hidden="true"></div>
 <footer class="site-footer">
   <div class="container">
     <div class="cols">
       <div>
-        <p class="brand">GovHub</p>
+        <p class="brand">
+          <img src="/brand/logos/govhub-logo-horizontal-white.svg" alt="GovHub" height="26" />
+        </p>
         <p class="muted">AI proposal writing for government contractors.</p>
       </div>
       <div>
@@ -54,11 +57,14 @@ const year = new Date().getFullYear();
 </footer>
 
 <style>
-  .site-footer {
-    border-top: 1px solid var(--border);
-    background: var(--bg-elevated);
-    padding: 3rem 0 2rem;
+  /* Teal/navy ridgeline sits flush above the navy-800 night footer. */
+  .gh-footer-ridge {
     margin-top: 5rem;
+  }
+  .site-footer {
+    background: var(--gh-navy-800);
+    color: var(--gh-ink-inverse);
+    padding: 3rem 0 2rem;
   }
   .cols {
     display: grid;
@@ -67,17 +73,21 @@ const year = new Date().getFullYear();
     margin-bottom: 2.5rem;
   }
   .brand {
-    font-weight: 700;
-    color: var(--fg);
-    margin: 0 0 0.5rem;
+    margin: 0 0 0.75rem;
+  }
+  .brand img {
+    height: 26px;
+    width: auto;
+    display: block;
   }
   .muted {
-    color: var(--fg-muted);
+    color: rgba(250, 245, 236, 0.7);
     font-size: 0.9rem;
     margin: 0;
   }
   .heading {
-    color: var(--fg);
+    color: var(--gh-ink-inverse-soft);
+    font-family: var(--gh-font-brand);
     font-size: 0.85rem;
     font-weight: 600;
     text-transform: uppercase;
@@ -93,11 +103,11 @@ const year = new Date().getFullYear();
     margin: 0.4rem 0;
   }
   li a {
-    color: var(--fg-muted);
+    color: rgba(250, 245, 236, 0.7);
     font-size: 0.9rem;
   }
   li a:hover {
-    color: var(--fg);
+    color: var(--gh-ink-inverse);
     text-decoration: none;
   }
   .bottom {
@@ -106,11 +116,11 @@ const year = new Date().getFullYear();
     justify-content: space-between;
     gap: 1rem;
     padding-top: 1.5rem;
-    border-top: 1px solid var(--border);
+    border-top: 1px solid rgba(250, 245, 236, 0.15);
   }
   .copyright,
   .legal {
-    color: var(--fg-muted);
+    color: rgba(250, 245, 236, 0.7);
     font-size: 0.85rem;
     margin: 0;
   }
@@ -119,10 +129,10 @@ const year = new Date().getFullYear();
     gap: 1.25rem;
   }
   .legal a {
-    color: var(--fg-muted);
+    color: rgba(250, 245, 236, 0.7);
   }
   .legal a:hover {
-    color: var(--fg);
+    color: var(--gh-ink-inverse);
     text-decoration: none;
   }
 </style>

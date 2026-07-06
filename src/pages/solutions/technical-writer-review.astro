@@ -2,6 +2,8 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import FAQSchema from '../../components/seo/FAQSchema.astro';
 import Breadcrumbs from '../../components/seo/Breadcrumbs.astro';
+import PageHero from '../../components/PageHero.astro';
+import CTABand from '../../components/CTABand.astro';
 
 const faqs = [
   {
@@ -35,14 +37,19 @@ const faqs = [
       ]}
     />
 
+    <PageHero art="/brand/illustrations/illo-review-together.svg" artAlt="Two colleagues reviewing a proposal draft together">
+      <header class="prose">
+        <h1>Technical writer review, on demand</h1>
+        <p class="lede">
+          Automated technical writer review for government proposals — surfaces
+          compliance drift, misaligned evaluation-criteria framing, weak
+          claim-evidence pairing, and page-limit issues before your human reviewers
+          see the draft.
+        </p>
+      </header>
+    </PageHero>
+
     <article class="prose">
-      <h1>Technical writer review, on demand</h1>
-      <p class="lede">
-        Automated technical writer review for government proposals — surfaces
-        compliance drift, misaligned evaluation-criteria framing, weak
-        claim-evidence pairing, and page-limit issues before your human reviewers
-        see the draft.
-      </p>
 
       <h2>What the review checks</h2>
       <ul>
@@ -67,6 +74,12 @@ const faqs = [
     </article>
 
     <FAQSchema faqs={faqs} heading="Technical writer review — FAQ" />
+
+    <CTABand
+      heading="Get a senior-reviewer pass on every draft."
+      secondaryHref="/pricing/"
+      secondaryLabel="See pricing"
+    />
   </main>
 </BaseLayout>
 

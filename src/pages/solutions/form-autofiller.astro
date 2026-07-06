@@ -2,6 +2,8 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import FAQSchema from '../../components/seo/FAQSchema.astro';
 import Breadcrumbs from '../../components/seo/Breadcrumbs.astro';
+import PageHero from '../../components/PageHero.astro';
+import CTABand from '../../components/CTABand.astro';
 
 const faqs = [
   {
@@ -25,7 +27,7 @@ const faqs = [
 <BaseLayout
   title="Government form autofiller — GovHub"
   description="Autofill SF-33, SF-1449, reps & certs, and small-business set-aside certifications across every federal RFP response. Built into GovHub."
->
+ ogImage="/brand/page-graphics/solution-form-autofiller@2x.png">
   <main class="container">
     <Breadcrumbs
       items={[
@@ -35,13 +37,18 @@ const faqs = [
       ]}
     />
 
+    <PageHero art="/brand/page-graphics/solution-form-autofiller.svg">
+      <header class="prose">
+        <h1>Government form autofiller</h1>
+        <p class="lede">
+          Standard federal forms — SF-33, SF-1449, reps & certs, small-business
+          representations — autofill from your GovHub company profile. Fill once,
+          reuse on every response.
+        </p>
+      </header>
+    </PageHero>
+
     <article class="prose">
-      <h1>Government form autofiller</h1>
-      <p class="lede">
-        Standard federal forms — SF-33, SF-1449, reps & certs, small-business
-        representations — autofill from your GovHub company profile. Fill once,
-        reuse on every response.
-      </p>
 
       <h2>Forms and representations covered</h2>
       <ul>
@@ -63,6 +70,12 @@ const faqs = [
     </article>
 
     <FAQSchema faqs={faqs} heading="Form autofiller — FAQ" />
+
+    <CTABand
+      heading="Stop retyping the same company data."
+      secondaryHref="/pricing/"
+      secondaryLabel="See pricing"
+    />
   </main>
 </BaseLayout>
 

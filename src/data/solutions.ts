@@ -17,6 +17,7 @@ export interface Solution {
   featured?: boolean; // surfaced on the homepage grid
   relatedSlugs?: string[]; // sibling solution slugs
   relatedPosts?: string[]; // blog spoke slugs (bidirectional linking)
+  icon?: string; // Gold Country brand icon (public/brand/icons/icon-<name>.svg)
 }
 
 export const solutions: Solution[] = [
@@ -33,6 +34,7 @@ export const solutions: Solution[] = [
     featured: true,
     relatedSlugs: ['rfp-shredding', 'ai-proposal-generator'],
     relatedPosts: ['what-is-a-compliance-matrix', 'what-are-section-l-and-m'],
+    icon: 'pan',
   },
   {
     slug: 'rfp-shredding',
@@ -47,6 +49,7 @@ export const solutions: Solution[] = [
     featured: true,
     relatedSlugs: ['compliance-matrix-generator', 'ai-proposal-generator'],
     relatedPosts: ['what-is-rfp-shredding', 'what-are-section-l-and-m'],
+    icon: 'pickaxe',
   },
   {
     slug: 'ai-proposal-generator',
@@ -61,6 +64,7 @@ export const solutions: Solution[] = [
     featured: true,
     relatedSlugs: ['proposal-sections', 'technical-writer-review'],
     relatedPosts: ['how-to-write-a-government-proposal', 'what-are-section-l-and-m'],
+    icon: 'cart',
   },
   {
     slug: 'form-autofiller',
@@ -75,6 +79,7 @@ export const solutions: Solution[] = [
     featured: true,
     relatedSlugs: ['sf330', 'ai-proposal-generator'],
     relatedPosts: ['how-to-fill-out-sf330'],
+    icon: 'checklist',
   },
   {
     slug: 'sf330',
@@ -88,6 +93,7 @@ export const solutions: Solution[] = [
     wave: 2,
     relatedSlugs: ['form-autofiller'],
     relatedPosts: ['how-to-fill-out-sf330'],
+    icon: 'doc-search',
   },
   {
     slug: 'technical-writer-review',
@@ -101,6 +107,7 @@ export const solutions: Solution[] = [
     wave: 3,
     relatedSlugs: ['ai-proposal-generator', 'proposal-sections'],
     relatedPosts: ['color-team-reviews-pink-red-gold', 'why-proposals-get-rejected'],
+    icon: 'pen',
   },
   {
     slug: 'template-generator',
@@ -114,6 +121,7 @@ export const solutions: Solution[] = [
     wave: 3,
     relatedSlugs: ['ai-proposal-generator'],
     relatedPosts: [],
+    icon: 'library',
   },
   {
     slug: 'proposal-sections',
@@ -127,6 +135,7 @@ export const solutions: Solution[] = [
     wave: 3,
     relatedSlugs: ['ai-proposal-generator', 'technical-writer-review'],
     relatedPosts: ['how-to-write-a-government-proposal'],
+    icon: 'workflow',
   },
 ];
 

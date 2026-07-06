@@ -1,0 +1,41 @@
+---
+/**
+ * Inlines a Gold Country brand icon (public/brand/icons/icon-<name>.svg) at
+ * build time. The icons are currentColor stroke SVGs, so they must be inlined
+ * to tint — an <img> would render them black. A bad name fails the build
+ * loudly (ENOENT), which is what we want.
+ */
+import { readFileSync } from 'node:fs';
+import { resolve } from 'node:path';
+
+interface Props {
+  name: string;
+  size?: number;
+  class?: string;
+}
+
+const { name, size = 24, class: className } = Astro.props;
+
+// Module-scope cache: each icon file is read once per build.
+const cache = ((globalThis as unknown as { __ghIconCache?: Map<string, string> }).__ghIconCache ??= new Map());
+if (!cache.has(name)) {
+  cache.set(name, readFileSync(resolve(`public/brand/icons/icon-${name}.svg`), 'utf-8'));
+}
+const svg = cache.get(name)!;
+---
+
+<span class:list={['gh-icon', className]} style={`--icon-size:${size}px`} aria-hidden="true" set:html={svg} />
+
+<style>
+  .gh-icon {
+    display: inline-flex;
+    width: var(--icon-size);
+    height: var(--icon-size);
+    color: var(--gh-navy-600);
+    flex-shrink: 0;
+  }
+  .gh-icon :global(svg) {
+    width: 100%;
+    height: 100%;
+  }
+</style>

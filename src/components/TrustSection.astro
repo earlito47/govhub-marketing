@@ -28,6 +28,7 @@ const points = [
   <div class="grid">
     {points.map((p) => (
       <article>
+        <span class="gh-sticker" aria-hidden="true"></span>
         <h3>{p.title}</h3>
         <p>{p.body}</p>
       </article>
@@ -60,10 +61,18 @@ const points = [
   }
   article {
     background: var(--bg-elevated);
-    border: 1px solid var(--border);
-    border-radius: 0.75rem;
+    border: 1.5px solid var(--border);
+    border-radius: var(--gh-radius-md);
     padding: 1.5rem;
     box-shadow: var(--shadow);
+  }
+  /* Teal check seal from the kit (sized down from the 56px helper default). */
+  article :global(.gh-sticker),
+  article .gh-sticker {
+    display: block;
+    width: 44px;
+    height: 44px;
+    margin-bottom: 0.75rem;
   }
   article h3 {
     margin: 0 0 0.5rem;
@@ -82,6 +91,8 @@ const points = [
     margin: 1.75rem 0 0;
   }
   .links a {
+    color: var(--gh-teal-700);
+    font-family: var(--gh-font-brand);
     font-weight: 600;
     font-size: 0.95rem;
   }

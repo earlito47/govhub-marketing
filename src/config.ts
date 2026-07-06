@@ -33,7 +33,10 @@ export const CONTACT_EMAIL = 'hello@govhub.online';
  * edit required — no template or layout changes.
  */
 export const PRIMARY_KEYWORD = {
-  h1: 'AI-powered government proposal software',
+  // h1 leads with the exact primary phrase but reads as a pitch, not a label.
+  // title stays pure exact-match — the two are deliberately decoupled.
+  h1: 'Government proposal software that does the digging for you',
+  title: 'AI-powered government proposal software | GovHub',
   primary: 'government proposal software',
   fallback: 'government proposal software for small business',
 };
