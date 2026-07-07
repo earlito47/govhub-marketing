@@ -75,17 +75,18 @@ const stats = [
 ];
 
 // Brands whose contracts GovHub proposal work has supported (owner-provided).
+// Woodborne Solutions renders as a text wordmark until its logo is supplied.
 const proofBrands = [
-  { name: 'Lockheed Martin' },
-  { name: 'Boeing' },
-  { name: 'Raytheon' },
-  { name: 'SpaceX' },
-  { name: 'BAE Systems' },
-  { name: 'General Dynamics' },
-  { name: 'Sentinel Health' },
+  { name: 'Lockheed Martin', logo: '/brand/logos/social-proof/lockheed-martin.png' },
+  { name: 'Boeing', logo: '/brand/logos/social-proof/boeing.png' },
+  { name: 'Raytheon', logo: '/brand/logos/social-proof/raytheon.png' },
+  { name: 'SpaceX', logo: '/brand/logos/social-proof/spacex.png' },
+  { name: 'BAE Systems', logo: '/brand/logos/social-proof/bae-systems.png' },
+  { name: 'General Dynamics', logo: '/brand/logos/social-proof/general-dynamics.png' },
+  { name: 'Sentinel Health', logo: '/brand/logos/social-proof/sentinel-health.png' },
   { name: 'Woodborne Solutions' },
-  { name: 'Trident AI Solutions' },
-  { name: 'Cardinality.ai' },
+  { name: 'Trident AI Solutions', logo: '/brand/logos/social-proof/trident-ai.png' },
+  { name: 'Cardinality.ai', logo: '/brand/logos/social-proof/cardinality-ai.svg' },
 ];
 
 const homeFaqs = faqsForPage('/');
@@ -118,13 +119,10 @@ const homeFaqs = faqsForPage('/');
       primaryLabel="Start free trial"
       secondaryHref="/solutions/compliance-matrix-generator/"
       secondaryLabel="Try the free compliance matrix tool →"
-      trust="Section L/M · FAR/DFARS · Section 508 — handled."
       art="/brand/page-graphics/home-hero-strike-gold.svg"
     />
 
     <SocialProofMarquee brands={proofBrands} />
-
-    <StatRow stats={stats} />
 
     <section class="block">
       <h2>Everything a proposal shop does — without hiring one</h2>
@@ -191,6 +189,8 @@ const homeFaqs = faqsForPage('/');
     {homeFaqs.length > 0 && (
       <FAQSchema faqs={homeFaqs} heading="Frequently asked questions" />
     )}
+
+    <StatRow stats={stats} />
 
     <CTABand
       heading="Dig up your next contract."
