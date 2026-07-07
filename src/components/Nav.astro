@@ -26,9 +26,55 @@ const links = [
     <div class="actions">
       <a class="signin" href={SIGNIN_URL}>Sign in</a>
       <a class="cta" href={SIGNUP_URL}>Start free trial</a>
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+        aria-label="Open menu"
+      >
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </div>
+
+  <div class="mobile-menu" id="mobile-menu" hidden>
+    <ul>
+      {links.map((l) => (
+        <li><a href={l.href}>{l.label}</a></li>
+      ))}
+      <li><a href={SIGNIN_URL}>Sign in</a></li>
+    </ul>
+    <a class="cta menu-cta" href={SIGNUP_URL}>Start free trial</a>
+  </div>
 </header>
+
+<script>
+  const toggle = document.querySelector<HTMLButtonElement>('.menu-toggle');
+  const menu = document.getElementById('mobile-menu');
+  if (toggle && menu) {
+    const close = () => {
+      menu.hidden = true;
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.setAttribute('aria-label', 'Open menu');
+    };
+    toggle.addEventListener('click', () => {
+      const open = menu.hidden;
+      menu.hidden = !open;
+      toggle.setAttribute('aria-expanded', String(open));
+      toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    });
+    menu.addEventListener('click', (e) => {
+      if ((e.target as HTMLElement).closest('a')) close();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !menu.hidden) {
+        close();
+        toggle.focus();
+      }
+    });
+  }
+</script>
 
 <style>
   .site-header {
@@ -103,12 +149,68 @@ const links = [
     transform: translateY(-1px);
     text-decoration: none;
   }
+  .menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 44px;
+    height: 44px;
+    margin: -6px -8px -6px 0;
+    background: none;
+    border: 0;
+    border-radius: var(--gh-radius-sm);
+    cursor: pointer;
+  }
+  .menu-toggle span {
+    width: 22px;
+    height: 2px;
+    background: var(--gh-ink-900);
+    border-radius: 2px;
+  }
+  .mobile-menu {
+    border-top: 1px solid var(--border);
+    padding: 1rem 1.5rem 1.5rem;
+    text-align: center;
+  }
+  .mobile-menu ul {
+    list-style: none;
+    margin: 0 0 1rem;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+  }
+  .mobile-menu li a {
+    display: block;
+    padding: 0.6rem 1rem;
+    color: var(--fg);
+    font-family: var(--gh-font-brand);
+    font-size: 1.05rem;
+  }
+  .mobile-menu li a:hover {
+    text-decoration: none;
+    color: var(--gh-teal-700);
+  }
+  .menu-cta {
+    display: inline-block;
+  }
+  @media (min-width: 761px) {
+    .mobile-menu {
+      display: none !important;
+    }
+  }
   @media (max-width: 760px) {
     nav {
       display: none;
     }
     .signin {
       display: none;
+    }
+    .menu-toggle {
+      display: inline-flex;
     }
   }
 </style>

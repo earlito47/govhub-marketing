@@ -37,8 +37,13 @@ const { art, artAlt, artWidth = 720, artHeight = 480 } = Astro.props;
     gap: 2.5rem;
     align-items: center;
   }
+  /* Allow shrinking below the art's intrinsic width (no mobile overflow). */
+  .page-hero.has-art > * {
+    min-width: 0;
+  }
   .page-hero img {
     width: 100%;
+    max-width: 100%;
     height: auto;
   }
   @media (max-width: 900px) {
