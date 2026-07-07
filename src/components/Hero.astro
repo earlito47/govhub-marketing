@@ -70,6 +70,11 @@ const {
     gap: 3rem;
     align-items: center;
   }
+  /* Grid items must be allowed to shrink below the art's intrinsic width,
+     or the 900px scene forces horizontal overflow on small screens. */
+  .hero.has-image > * {
+    min-width: 0;
+  }
   .copy {
     max-width: 40rem;
   }
