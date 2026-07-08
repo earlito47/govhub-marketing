@@ -1,6 +1,6 @@
 ---
 title: What Is a Compliance Matrix (and How to Build One)?
-description: A compliance matrix maps every requirement in a government RFP to where your proposal answers it. Here's what it includes, why it matters, and how to build one fast.
+description: A compliance matrix maps every requirement in a government RFP to where your proposal answers it — what it includes, why it matters, and how to build one fast.
 publishDate: 2026-07-01
 updatedDate: 2026-07-01
 author: GovHub team

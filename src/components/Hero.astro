@@ -13,8 +13,10 @@ interface Props {
   trust?: string;
   image?: ImageMetadata;
   imageAlt?: string;
-  /** Decorative brand scene from public/ (SVG preferred) — always aria-hidden. */
+  /** Brand scene from public/ (SVG preferred). Decorative (aria-hidden) unless artAlt is set. */
   art?: string;
+  /** Describe the art when it carries meaning; omit to keep it decorative. */
+  artAlt?: string;
   artWidth?: number;
   artHeight?: number;
 }
@@ -31,6 +33,7 @@ const {
   image,
   imageAlt = '',
   art,
+  artAlt,
   artWidth = 900,
   artHeight = 640,
 } = Astro.props;
@@ -51,7 +54,7 @@ const {
   </div>
   {art ? (
     <div class="media art">
-      <img src={art} alt="" aria-hidden="true" width={artWidth} height={artHeight} loading="eager" decoding="async" />
+      <img src={art} alt={artAlt ?? ''} aria-hidden={artAlt ? undefined : 'true'} width={artWidth} height={artHeight} loading="eager" decoding="async" />
     </div>
   ) : image && (
     <div class="media">

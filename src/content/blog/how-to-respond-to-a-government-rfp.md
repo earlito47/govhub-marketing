@@ -1,6 +1,6 @@
 ---
 title: How to Respond to a Government RFP (Step by Step)
-description: A practical, step-by-step process for responding to a government RFP — from solicitation intake and compliance matrix through drafting, reviews, and on-time submission.
+description: A practical process for responding to a government RFP — from solicitation intake and compliance matrix through drafting, reviews, and submission.
 publishDate: 2026-07-01
 updatedDate: 2026-07-01
 author: GovHub team

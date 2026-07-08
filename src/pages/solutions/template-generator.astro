@@ -3,6 +3,9 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import FAQSchema from '../../components/seo/FAQSchema.astro';
 import Breadcrumbs from '../../components/seo/Breadcrumbs.astro';
 import CTABand from '../../components/CTABand.astro';
+import { getSolution } from '../../data/solutions';
+
+const solution = getSolution('template-generator')!;
 
 const faqs = [
   {
@@ -23,10 +26,7 @@ const faqs = [
 ];
 ---
 
-<BaseLayout
-  title="Proposal template generator — GovHub"
-  description="Generate compliant government proposal templates automatically from any solicitation. Section L outline, Section M alignment, and compliance matrix included."
->
+<BaseLayout title={solution.title} description={solution.description}>
   <main class="container">
     <Breadcrumbs
       items={[

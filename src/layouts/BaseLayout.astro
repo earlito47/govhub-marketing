@@ -13,6 +13,9 @@ interface Props {
   description?: string;
   canonical?: string;
   ogImage?: string;
+  ogImageAlt?: string;
+  /** og:type — pass 'article' from blog/case-study detail layouts. */
+  ogType?: 'website' | 'article';
   noindex?: boolean;
 }
 
@@ -21,6 +24,8 @@ const {
   description = 'GovHub — AI proposal writing for government contractors. Draft, review, and submit federal, state, and local RFP responses faster.',
   canonical,
   ogImage = '/brand/social/og-default-1200x630.png',
+  ogImageAlt = 'GovHub — AI proposal software for government contractors',
+  ogType = 'website',
   noindex = false,
 } = Astro.props;
 
@@ -40,17 +45,23 @@ const fullOgImage = new URL(ogImage, Astro.site).toString();
     <link rel="canonical" href={canonicalUrl} />
     {noindex && <meta name="robots" content="noindex,nofollow" />}
 
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:site_name" content="GovHub" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:image" content={fullOgImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={ogImageAlt} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={fullOgImage} />
 
     <link rel="icon" type="image/svg+xml" href="/brand/logos/govhub-favicon.svg" />
+    <link rel="apple-touch-icon" href="/brand/logos/govhub-app-icon-512.png" />
+    <meta name="theme-color" content="#faf5ec" />
     <link rel="sitemap" href="/sitemap-index.xml" />
     <link rel="stylesheet" href="/brand/tokens/tokens.css" />
 
@@ -66,6 +77,27 @@ const fullOgImage = new URL(ogImage, Astro.site).toString();
         src="https://static.cloudflareinsights.com/beacon.min.js"
         data-cf-beacon={JSON.stringify({ token: import.meta.env.PUBLIC_CF_BEACON_TOKEN })}
       />
+    )}
+
+    {/* GA4 — renders nothing until PUBLIC_GA_MEASUREMENT_ID is set (Cloudflare
+        Pages → Settings → Environment variables). Get the ID from Google
+        Analytics → Admin → Data Streams → your web stream → Measurement ID
+        (G-XXXXXXXXXX). Runs alongside Cloudflare Web Analytics above — GA4
+        and CF Analytics measure independently, keep both. */}
+    {import.meta.env.PUBLIC_GA_MEASUREMENT_ID && (
+      <>
+        <script
+          is:inline
+          async
+          src={`https://www.googletagmanager.com/gtag/js?id=${import.meta.env.PUBLIC_GA_MEASUREMENT_ID}`}
+        />
+        <script is:inline define:vars={{ gaId: import.meta.env.PUBLIC_GA_MEASUREMENT_ID }}>
+          window.dataLayer = window.dataLayer || [];
+          function gtag() { dataLayer.push(arguments); }
+          gtag('js', new Date());
+          gtag('config', gaId);
+        </script>
+      </>
     )}
   </head>
   <body>

@@ -1,6 +1,6 @@
 ---
 title: Why Do Government Proposals Get Rejected?
-description: Most government proposals are rejected for compliance failures, not weak ideas. Here are the most common reasons proposals get thrown out — and how to avoid each one.
+description: Most government proposals are rejected for compliance failures, not weak ideas. The most common reasons proposals get thrown out — and how to avoid them.
 publishDate: 2026-07-01
 updatedDate: 2026-07-01
 author: GovHub team

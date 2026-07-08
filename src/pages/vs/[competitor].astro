@@ -26,12 +26,19 @@ const title = isOpportunityIntel
   ? `GovHub and ${competitor.name}: how they compare`
   : `GovHub vs ${competitor.name}`;
 
+// <title> uses the compact competitor name and a short qualifier to stay
+// within the ~60-char SERP budget; the H1 keeps the full name.
+const shortName = competitor.shortName ?? competitor.name;
+const metaTitle = isOpportunityIntel
+  ? `GovHub and ${shortName}: how they compare`
+  : `GovHub vs ${shortName} — government proposal software`;
+
 const description = isOpportunityIntel
-  ? `${competitor.name} and GovHub solve different parts of the government contracting workflow. See how they compare, and why many teams use both.`
-  : `Direct comparison of GovHub and ${competitor.name} for government contractors. See where each tool fits, how they differ on compliance and AI drafting, and which is right for your team.`;
+  ? `${shortName} and GovHub solve different parts of the government contracting workflow. See how they compare, and why many teams use both.`
+  : `Direct comparison of GovHub and ${shortName} for government contractors — where each fits, compliance and AI drafting differences, and which is right for you.`;
 ---
 
-<BaseLayout title={`${title} — Government proposal software comparison`} description={description} ogImage="/brand/page-graphics/compare-weigh-options@2x.png">
+<BaseLayout title={metaTitle} description={description} ogImage="/brand/page-graphics/compare-weigh-options@2x.png">
   <SchemaOrg
     type="SoftwareApplication"
     data={{
