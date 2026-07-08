@@ -18,7 +18,8 @@ import { faqsForPage } from '../data/faqs';
 // Primary term is single-sourced — see src/config.ts PRIMARY_KEYWORD.
 // <title> keeps the exact-match phrase; the H1 carries it inside a real pitch.
 const title = PRIMARY_KEYWORD.title;
-const description = `GovHub is ${PRIMARY_KEYWORD.primary} built for federal, state, and local contractors — draft compliant RFP responses, autofill contract forms, and check Section L/M and FAR/DFARS compliance.`;
+// Rendered length must stay ≤160 chars (SERP truncation point).
+const description = `GovHub is ${PRIMARY_KEYWORD.primary} for federal, state, and local contractors — draft RFP responses, autofill forms, and check Section L/M compliance.`;
 
 const features = [
   {
@@ -120,6 +121,7 @@ const homeFaqs = faqsForPage('/');
       secondaryHref="/solutions/compliance-matrix-generator/"
       secondaryLabel="Try the free compliance matrix tool →"
       art="/brand/page-graphics/home-hero-strike-gold.svg"
+      artAlt="Illustration of a prospector striking gold in a mountain stream — GovHub's Gold Country brand scene"
     />
 
     <SocialProofMarquee brands={proofBrands} />

@@ -1,4 +1,10 @@
 # Cloudflare Pages redirects.
+# Crawlers and SEO tools probe the conventional /sitemap.xml path, but
+# @astrojs/sitemap only emits /sitemap-index.xml. The absolute apex rule must
+# sit above the apex wildcard so those probes resolve in a single hop.
+https://govhub.online/sitemap.xml  https://www.govhub.online/sitemap-index.xml  301
+/sitemap.xml  /sitemap-index.xml  301
+
 # Apex → www so the canonical host (www.govhub.online) and the served host agree.
 https://govhub.online/*  https://www.govhub.online/:splat  301
 

@@ -1,6 +1,6 @@
 ---
 title: What Is RFP Shredding? (And Why It Wins Proposals)
-description: RFP shredding breaks a government solicitation into every discrete requirement so nothing is missed. Here's what it means, how it works, and why it's step one of a compliant response.
+description: RFP shredding breaks a government solicitation into every requirement so nothing is missed — what it means and why it's step one of a compliant response.
 publishDate: 2026-07-01
 updatedDate: 2026-07-01
 author: GovHub team

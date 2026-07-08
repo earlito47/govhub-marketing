@@ -7,6 +7,8 @@ export interface CaseStudyMetrics {
 export interface CaseStudy {
   slug: string;
   title: string;
+  /** Compact <title> tag (≤60 chars incl. "| GovHub"); the H1 keeps the narrative title. */
+  metaTitle: string;
   customer: string; // anonymized descriptor, e.g. "A cybersecurity subcontractor"
   industry: string;
   contractValue?: string;
@@ -38,6 +40,7 @@ export const caseStudies: CaseStudy[] = [
   {
     slug: 'air-force-sttr-phase-ii',
     title: 'How a small AI firm won a $1.79M Air Force STTR Phase II',
+    metaTitle: 'Case study: $1.79M Air Force STTR Phase II win | GovHub',
     customer: 'A New York-based AI & document-intelligence small business',
     industry: 'AI & Document Intelligence',
     contractValue: '$1,794,424',
@@ -61,6 +64,7 @@ export const caseStudies: CaseStudy[] = [
   {
     slug: 'dha-financial-program-management',
     title: 'How a Native-owned firm won an $11.6M Defense Health Agency award',
+    metaTitle: "Case study: Native-owned firm's $11.6M DHA award | GovHub",
     customer: 'A Native American-owned financial & program management firm',
     industry: 'Financial & Program Management',
     contractValue: '$11,637,792',
@@ -84,6 +88,7 @@ export const caseStudies: CaseStudy[] = [
   {
     slug: 'sba-it-service-desk',
     title: 'How a woman-owned 8(a) IT firm won a ~$49M SBA IT services contract',
+    metaTitle: "Case study: 8(a) firm's ~$49M SBA IT services win | GovHub",
     customer: 'An 8(a), woman-owned IT services firm',
     industry: 'IT & Cybersecurity',
     contractValue: '~$49,000,000 (base + four option years)',
@@ -107,6 +112,7 @@ export const caseStudies: CaseStudy[] = [
   {
     slug: 'commerce-it-modernization',
     title: 'How a HUBZone firm won a $6.5M Commerce IT modernization contract',
+    metaTitle: "Case study: HUBZone firm's $6.5M Commerce IT win | GovHub",
     customer: 'A HUBZone-certified IT & data-analytics firm',
     industry: 'IT Modernization & Analytics',
     contractValue: '$6,500,000',
@@ -130,6 +136,7 @@ export const caseStudies: CaseStudy[] = [
   {
     slug: 'va-cybersecurity-sdvosb',
     title: 'How an SDVOSB won a $9.8M VA cybersecurity contract',
+    metaTitle: "Case study: SDVOSB's $9.8M VA cybersecurity win | GovHub",
     customer: 'A Service-Disabled Veteran-Owned Small Business (SDVOSB) cybersecurity firm',
     industry: 'Cybersecurity',
     contractValue: '$9,800,000',

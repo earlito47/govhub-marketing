@@ -1,6 +1,6 @@
 ---
 title: How to Fill Out an SF330 Form (Parts I and II)
-description: A step-by-step guide to completing the SF330 architect-engineer qualifications form — what goes in Part I and Part II, section by section, and how to avoid common mistakes.
+description: A step-by-step guide to the SF330 architect-engineer qualifications form — what goes in Parts I and II, and how to avoid common mistakes.
 publishDate: 2026-07-01
 updatedDate: 2026-07-01
 author: GovHub team

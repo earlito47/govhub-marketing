@@ -26,7 +26,7 @@ export const solutions: Solution[] = [
     name: 'Compliance matrix generator',
     title: 'Free RFP Compliance Matrix Generator | GovHub',
     description:
-      'Turn any government RFP into a Section L/M compliance matrix in seconds. Free, browser-based — paste your solicitation, export the matrix. No login, nothing leaves your machine.',
+      'Turn any government RFP into a Section L/M compliance matrix in seconds. Free and browser-based — paste your solicitation, export the matrix. No login.',
     primaryKeyword: 'RFP compliance matrix generator',
     summary:
       'Paste an RFP and get a structured compliance matrix — requirement, section, L/M category — you can export to CSV. Free and runs entirely in your browser.',
@@ -41,7 +41,7 @@ export const solutions: Solution[] = [
     name: 'RFP shredding',
     title: 'RFP Shredding Software for Government Proposals | GovHub',
     description:
-      "GovHub 'shreds' government solicitations — extracting every requirement, instruction, and evaluation factor into a structured compliance matrix. Purpose-built for federal RFPs.",
+      "GovHub 'shreds' government solicitations — extracting every requirement, instruction, and evaluation factor into a structured compliance matrix.",
     primaryKeyword: 'RFP shredding software',
     summary:
       'Automatically break a solicitation down into every "shall," instruction, and evaluation factor — the first step to a compliant response.',
@@ -114,7 +114,7 @@ export const solutions: Solution[] = [
     name: 'Template generator',
     title: 'Proposal Template Design Generator | GovHub',
     description:
-      'Apply agency-ready, compliant proposal templates instantly. Produce polished government proposal documents — correct formatting, section numbering, page budgets — without a designer.',
+      'Apply agency-ready, compliant proposal templates instantly — correct formatting, section numbering, and page budgets without a designer.',
     primaryKeyword: 'government proposal template software',
     summary:
       'Compliant formatting, section numbering, and page-limit budgets applied automatically — turn a draft into a submission-ready document.',
@@ -126,7 +126,7 @@ export const solutions: Solution[] = [
   {
     slug: 'proposal-sections',
     name: 'Proposal section generators',
-    title: 'Proposal Section Generators (Exec Summary, Tech Approach) | GovHub',
+    title: 'Proposal Section Generators for Government RFPs | GovHub',
     description:
       "Generate executive summaries, technical and management approach, and staffing narratives tailored to your RFP's evaluation criteria with GovHub.",
     primaryKeyword: 'proposal executive summary generator',

@@ -28,7 +28,7 @@ const {
 const url = new URL(`/blog/${slug}/`, Astro.site).toString();
 ---
 
-<BaseLayout title={`${title} — GovHub`} description={description} canonical={url}>
+<BaseLayout title={`${title} — GovHub`} description={description} canonical={url} ogType="article">
   <SchemaOrg
     type="Article"
     data={{

@@ -20,6 +20,8 @@ type SchemaType =
   | 'FAQPage'
   | 'BreadcrumbList';
 
+import { SOCIAL_LINKS } from '../../config';
+
 interface Props {
   type: SchemaType;
   data?: Record<string, unknown>;
@@ -35,7 +37,7 @@ const defaultsByType: Record<SchemaType, Record<string, unknown>> = {
     url: siteUrl,
     logo: `${siteUrl}/brand/logos/govhub-app-icon-512.png`,
     description: 'AI proposal writing platform for government contractors.',
-    sameAs: [],
+    sameAs: SOCIAL_LINKS.map((s) => s.href),
   },
   SoftwareApplication: {
     name: 'GovHub',

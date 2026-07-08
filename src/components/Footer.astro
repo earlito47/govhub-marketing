@@ -1,5 +1,5 @@
 ---
-import { CONTACT_EMAIL } from '../config';
+import { CONTACT_EMAIL, SOCIAL_LINKS } from '../config';
 const year = new Date().getFullYear();
 ---
 
@@ -47,6 +47,13 @@ const year = new Date().getFullYear();
     </div>
     <div class="bottom">
       <p class="copyright">© {year} GovHub. All rights reserved.</p>
+      {SOCIAL_LINKS.length > 0 && (
+        <p class="social">
+          {SOCIAL_LINKS.map((s) => (
+            <a href={s.href} rel="me noopener" target="_blank">{s.label}</a>
+          ))}
+        </p>
+      )}
       <p class="legal">
         <a href="/privacy/">Privacy</a>
         <a href="/terms/">Terms</a>
@@ -119,10 +126,18 @@ const year = new Date().getFullYear();
     border-top: 1px solid rgba(250, 245, 236, 0.15);
   }
   .copyright,
-  .legal {
+  .legal,
+  .social {
     color: rgba(250, 245, 236, 0.7);
     font-size: 0.85rem;
     margin: 0;
+  }
+  .social {
+    display: flex;
+    gap: 1.25rem;
+  }
+  .social a {
+    color: rgba(250, 245, 236, 0.7);
   }
   .legal {
     display: flex;

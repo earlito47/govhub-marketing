@@ -8,6 +8,8 @@
 export interface Competitor {
   slug: string;
   name: string;
+  /** Compact name for <title> tags (SERP budget is ~60 chars); falls back to name. */
+  shortName?: string;
   category: 'response-platform' | 'opportunity-intelligence'; // GovWin IQ is a different category — see note below
   tagline: string; // one-line description of what the competitor actually does
   pricingEstimate: string; // always phrase as "estimated" — none publish list pricing
@@ -85,6 +87,7 @@ export const competitors: Competitor[] = [
   {
     slug: 'responsive',
     name: 'Responsive (formerly RFPIO)',
+    shortName: 'Responsive',
     category: 'response-platform',
     tagline:
       'Enterprise Strategic Response Management platform for high-volume RFPs, RFIs, DDQs, and security questionnaires.',
@@ -145,6 +148,7 @@ export const competitors: Competitor[] = [
   {
     slug: 'govwin-iq',
     name: 'Deltek GovWin IQ',
+    shortName: 'GovWin IQ',
     category: 'opportunity-intelligence',
     tagline:
       'Government contract opportunity intelligence and market research platform — not a proposal writing tool.',

@@ -1,6 +1,6 @@
 ---
 title: How to Write a Government Proposal (The Complete Guide)
-description: A step-by-step guide to writing a winning government proposal — from the bid/no-bid decision and compliance matrix through drafting, color-team reviews, production, and submission.
+description: A step-by-step guide to writing a winning government proposal — from bid/no-bid and compliance matrix through drafting, reviews, and submission.
 publishDate: 2026-07-01
 updatedDate: 2026-07-01
 author: GovHub team

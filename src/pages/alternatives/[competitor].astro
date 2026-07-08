@@ -24,9 +24,16 @@ const title = isOpportunityIntel
   ? `Looking for a proposal writing tool, not just ${competitor.name}?`
   : `${competitor.name} alternatives for government contractors`;
 
+// <title>/description use the compact competitor name to stay inside the
+// ~60/~160-char SERP budgets; the H1 keeps the full name.
+const shortName = competitor.shortName ?? competitor.name;
+const metaTitle = isOpportunityIntel
+  ? `Looking for a proposal writing tool, not just ${shortName}?`
+  : `${shortName} alternatives for government contractors | GovHub`;
+
 const description = isOpportunityIntel
-  ? `${competitor.name} helps you find government opportunities, but it doesn't write proposals. If you need a proposal writing platform to pair with (or replace) it, see how GovHub fits.`
-  : `Looking for a ${competitor.name} alternative? See why government contractors are choosing GovHub — an AI proposal platform purpose-built for federal, state, and local RFPs.`;
+  ? `${shortName} finds government opportunities but doesn't write proposals. See how GovHub pairs with (or replaces) it for proposal writing.`
+  : `Looking for a ${shortName} alternative? See why government contractors choose GovHub — an AI proposal platform built for federal, state, and local RFPs.`;
 
 // Alternatives-page-specific FAQs — reframe the existing set toward
 // alternative-seeking search intent.
@@ -55,7 +62,7 @@ const altFaqs = isOpportunityIntel
     ];
 ---
 
-<BaseLayout title={`${title} — Compare & switch to GovHub`} description={description} ogImage="/brand/page-graphics/compare-weigh-options@2x.png">
+<BaseLayout title={metaTitle} description={description} ogImage="/brand/page-graphics/compare-weigh-options@2x.png">
   <main class="container">
     <Breadcrumbs
       items={[

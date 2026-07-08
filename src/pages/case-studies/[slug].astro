@@ -21,8 +21,9 @@ const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? '';
 ---
 
 <BaseLayout
-  title={`${study.title} — GovHub case study`}
+  title={study.metaTitle}
   description={study.outcome}
+  ogType="article"
 >
   <SchemaOrg
     type="Article"
@@ -35,7 +36,7 @@ const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? '';
       publisher: {
         '@type': 'Organization',
         name: 'GovHub',
-        logo: { '@type': 'ImageObject', url: `${siteUrl}/logo.png` },
+        logo: { '@type': 'ImageObject', url: `${siteUrl}/brand/logos/govhub-app-icon-512.png` },
       },
       mainEntityOfPage: `${siteUrl}/case-studies/${study.slug}/`,
     }}

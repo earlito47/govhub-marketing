@@ -36,9 +36,18 @@ export const PRIMARY_KEYWORD = {
   // h1 leads with the exact primary phrase but reads as a pitch, not a label.
   // title stays pure exact-match — the two are deliberately decoupled.
   h1: 'Government proposal software that wins you more contracts',
-  title: 'AI-powered government proposal software | GovHub',
+  // 50–60 chars incl. spaces — the SERP-title sweet spot SEO tools check for.
+  title: 'AI-powered government proposal software & RFP tools | GovHub',
   primary: 'government proposal software',
   fallback: 'government proposal software for small business',
 };
 
 export const TRIAL_DAYS = 14;
+
+/**
+ * Social profile URLs — rendered in the Footer and emitted as Organization
+ * `sameAs` schema. Empty until real profiles exist: nothing renders and no
+ * schema entry is emitted, so this is safe to ship blank. Add entries like
+ * { label: 'LinkedIn', href: 'https://www.linkedin.com/company/…' }.
+ */
+export const SOCIAL_LINKS: { label: string; href: string }[] = [];

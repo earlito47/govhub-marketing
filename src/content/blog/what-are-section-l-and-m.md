@@ -1,6 +1,6 @@
 ---
 title: What Are Section L and Section M in a Government RFP?
-description: A plain-English explainer of Section L (instructions) and Section M (evaluation factors) in a government RFP — what each contains, how they work together, and why they decide who wins.
+description: A plain-English explainer of Section L (instructions) and Section M (evaluation factors) in a government RFP — and why they decide who wins.
 publishDate: 2026-07-01
 updatedDate: 2026-07-01
 author: GovHub team
