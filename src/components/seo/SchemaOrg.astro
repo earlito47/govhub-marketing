@@ -43,7 +43,10 @@ const defaultsByType: Record<SchemaType, Record<string, unknown>> = {
     name: 'GovHub',
     applicationCategory: 'BusinessApplication',
     operatingSystem: 'Web',
-    offers: { '@type': 'Offer', priceCurrency: 'USD' },
+    // `price` is required for Offer to validate in Google's Rich Results
+    // Test; pages with real pricing (index, pricing) override this whole
+    // `offers` block with an AggregateOffer.
+    offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
   },
   Article: {},
   FAQPage: { mainEntity: [] },
