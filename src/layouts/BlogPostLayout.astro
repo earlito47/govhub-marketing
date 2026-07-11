@@ -26,6 +26,10 @@ const {
   coverAlt = '',
 } = Astro.props;
 const url = new URL(`/blog/${slug}/`, Astro.site).toString();
+// Article's `image` is a required field for Google's rich-results validator.
+// Post covers are decorative SVGs; the site default OG image is the
+// guaranteed-present raster asset at the recommended 1200x630 size.
+const schemaImage = new URL('/brand/social/og-default-1200x630.png', Astro.site).toString();
 ---
 
 <BaseLayout title={`${title} — GovHub`} description={description} canonical={url} ogType="article">
@@ -34,6 +38,7 @@ const url = new URL(`/blog/${slug}/`, Astro.site).toString();
     data={{
       headline: title,
       description,
+      image: schemaImage,
       datePublished: publishDate.toISOString(),
       dateModified: (updatedDate ?? publishDate).toISOString(),
       author: { '@type': 'Person', name: author },

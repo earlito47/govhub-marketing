@@ -30,6 +30,8 @@ const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? '';
     data={{
       headline: study.title,
       description: study.outcome,
+      // Required for Google's Article rich-results validator.
+      image: `${siteUrl}/brand/social/og-default-1200x630.png`,
       datePublished: study.publishDate,
       articleSection: 'Case study',
       author: { '@type': 'Organization', name: 'GovHub' },

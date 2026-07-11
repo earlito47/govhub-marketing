@@ -57,7 +57,7 @@ export const caseStudies: CaseStudy[] = [
     ],
     metrics: { timeSaved: '~65% faster', result: '$1.79M awarded' },
     outcome:
-      'A lean AI firm won a $1.79M Air Force STTR Phase II, cutting proposal time roughly 65% with GovHub.',
+      'A lean AI and document-intelligence firm won a competitive $1.79M Air Force STTR Phase II award, cutting proposal development time roughly 65% with GovHub.',
     publishDate: '2026-07-02',
     representative: true,
   },
