@@ -1,0 +1,74 @@
+# GovHub Insights — weekly data refresh (spec Section 13).
+#
+# Every Monday this fetches fresh federal contracting data from USAspending,
+# recomputes every dashboard, runs the commit gate, confirms the site still
+# builds, and commits the refreshed JSON to main — which triggers the normal
+# Cloudflare Pages deploy. Zero manual steps.
+#
+# Setup (one-time, by a maintainer):
+#   - No API key is needed: the USAspending API is public and unauthenticated.
+#   - This job commits to `main`. If branch protection is enabled, allow the
+#     GitHub Actions bot to push (or point the deploy at the committed data).
+#   - Confirm Cloudflare Pages deploys this repo via GitHub push-to-deploy
+#     (spec Section 3). If it uses direct upload instead, add a final
+#     `cloudflare/wrangler-action` step with `wrangler pages deploy ./dist`
+#     and the CLOUDFLARE_API_TOKEN / CLOUDFLARE_ACCOUNT_ID secrets.
+#   - OPENAI_API_KEY is not used yet; it is added when the LLM narrative stage
+#     (generate-narratives.mjs) lands.
+#
+# Trigger it manually first (Actions → weekly-insights → Run workflow) and
+# confirm a clean run before relying on the schedule. A failed run commits
+# nothing, so the site keeps serving last week's data, and GitHub emails the
+# failure by default.
+
+name: weekly-insights
+
+on:
+  schedule:
+    - cron: "0 9 * * 1" # Mondays 09:00 UTC (early morning US)
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: weekly-insights
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Refresh Insights data (fetch + compute)
+        run: npm run insights:weekly
+
+      - name: Validate (commit gate)
+        run: npm run insights:validate
+
+      - name: Verify the site still builds
+        run: npm run build
+
+      - name: Commit refreshed data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/data/insights
+          if git diff --cached --quiet; then
+            echo "No data changes this week — nothing to commit."
+          else
+            git commit -m "insights: weekly data refresh $(date -u +%F)"
+            git push
+          fi

@@ -15,6 +15,7 @@
     "verify": "npm run check && npm run build && npm run guard && npm run check:meta",
     "insights:pilot": "node scripts/insights/run-pilot.mjs",
     "insights:entities": "node scripts/insights/run-entities.mjs",
+    "insights:weekly": "node scripts/insights/run-weekly.mjs",
     "insights:validate": "node scripts/insights/validate.mjs"
   },
   "dependencies": {

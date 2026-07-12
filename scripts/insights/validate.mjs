@@ -183,7 +183,8 @@ function walkJson(dir) {
   for (const name of readdirSync(dir)) {
     const p = path.join(dir, name);
     if (statSync(p).isDirectory()) out.push(...walkJson(p));
-    else if (name.endsWith('.json')) out.push(p);
+    // meta.json is a pipeline metadata file, not an entity page — skip it.
+    else if (name.endsWith('.json') && name !== 'meta.json') out.push(p);
   }
   return out;
 }

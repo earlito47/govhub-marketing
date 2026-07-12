@@ -66,14 +66,9 @@ async function generate({ kind, slug, fetchFn, computeFn, asOfDate, summary }) {
   console.log(`[ok]   ${kind}/${slug} — ${formatUsdCompact(page.stats.totalObligations)}, ${page.stats.awardCount ?? '?'} awards`);
 }
 
-async function main() {
-  const asOfDate = process.argv[2] && /^\d{4}-\d{2}-\d{2}$/.test(process.argv[2]) ? process.argv[2] : new Date().toISOString().slice(0, 10);
-  const only = parseOnly(process.argv[3]);
-  const client = new UsaSpendingClient();
-  const summary = { written: 0, skipped: [] };
-
-  console.log(`[run-entities] as of ${asOfDate}${only ? ` (filtered)` : ''} — network required`);
-
+// Generate agency + state pages with a shared (rate-limited) client. Reused by
+// run-weekly.mjs so the whole weekly run stays under one politeness budget.
+export async function generateEntities({ client, asOfDate, only = null, summary }) {
   for (const slug of AGENCY_SLUGS) {
     if (!wanted(only, 'agency', slug)) continue;
     await generate({
@@ -97,6 +92,17 @@ async function main() {
       summary,
     });
   }
+  return summary;
+}
+
+async function main() {
+  const asOfDate = process.argv[2] && /^\d{4}-\d{2}-\d{2}$/.test(process.argv[2]) ? process.argv[2] : new Date().toISOString().slice(0, 10);
+  const only = parseOnly(process.argv[3]);
+  const client = new UsaSpendingClient();
+  const summary = { written: 0, skipped: [] };
+
+  console.log(`[run-entities] as of ${asOfDate}${only ? ` (filtered)` : ''} — network required`);
+  await generateEntities({ client, asOfDate, only, summary });
 
   console.log(
     `\n[run-entities] Done. ${summary.written} pages written, ${summary.skipped.length} skipped, ${client.requestCount} API requests.`
@@ -104,8 +110,11 @@ async function main() {
   if (summary.skipped.length) console.log(`[run-entities] Skipped:\n  ${summary.skipped.join('\n  ')}`);
 }
 
-main().catch((err) => {
-  console.error('[run-entities] FAILED — partial data may exist; do not commit a failed run.');
-  console.error(err);
-  process.exit(1);
-});
+// Only run as a CLI when invoked directly (not when imported by run-weekly).
+if (process.argv[1] === __filename) {
+  main().catch((err) => {
+    console.error('[run-entities] FAILED — partial data may exist; do not commit a failed run.');
+    console.error(err);
+    process.exit(1);
+  });
+}
