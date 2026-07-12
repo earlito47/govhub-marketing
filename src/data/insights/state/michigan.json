@@ -1,0 +1,609 @@
+{
+  "pageType": "state",
+  "slug": "michigan",
+  "title": "Michigan Federal Contracts: $4.8B in FY2026",
+  "h1": "Federal Contracts in Michigan: Spending, Agencies & Vendors",
+  "metaDescription": "Federal agencies obligated $4.8B to contractors in Michigan in FY2026 to date. See top buying agencies, top vendors, and industries.",
+  "updated": "2026-07-12",
+  "fyWindow": {
+    "label": "FY2026 to date",
+    "start": "2025-10-01",
+    "end": "2026-07-12"
+  },
+  "stats": {
+    "totalObligations": 4750280338.81,
+    "awardCount": 135211,
+    "yoyGrowthPct": -28.1,
+    "avgAwardSize": 35132,
+    "smallBusinessSharePct": null
+  },
+  "charts": [
+    {
+      "id": "michigan-trend",
+      "type": "line",
+      "title": "Obligations by fiscal year",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "FY21",
+              6791064580.48
+            ],
+            [
+              "FY22",
+              9042035970.34
+            ],
+            [
+              "FY23",
+              8392098196.37
+            ],
+            [
+              "FY24",
+              8037872902.43
+            ],
+            [
+              "FY25",
+              6607573448.94
+            ],
+            [
+              "FY26",
+              4750280338.81
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Obligations fell 28.1% year over year, from $6.6B in FY2025 to $4.8B in FY2026 to date."
+    },
+    {
+      "id": "michigan-top-agencies",
+      "type": "bar",
+      "title": "Top 10 buying agencies, FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "Department of Defense",
+              2251632624.67
+            ],
+            [
+              "General Services Administration",
+              1752600028.7
+            ],
+            [
+              "Department of Veterans Affairs",
+              171319101.41
+            ],
+            [
+              "Department of Homeland Security",
+              152539552.91
+            ],
+            [
+              "Department of Agriculture",
+              95673803.77
+            ],
+            [
+              "Department of Health and Human Services",
+              92464122.31
+            ],
+            [
+              "Department of Justice",
+              51174649.65
+            ],
+            [
+              "Department of Commerce",
+              45379340.21
+            ],
+            [
+              "Environmental Protection Agency",
+              40564464.96
+            ],
+            [
+              "Department of Housing and Urban Development",
+              28211299.52
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Department of Defense was the top federal buyer in Michigan, obligating $2.3B (47.4% of the state total)."
+    },
+    {
+      "id": "michigan-top-vendors",
+      "type": "bar",
+      "title": "Top 10 vendors, FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "GENERAL DYNAMICS LAND SYSTEMS INC.",
+              1099128634.81
+            ],
+            [
+              "FORD MOTOR CO",
+              608314143
+            ],
+            [
+              "GENERAL MOTORS LLC",
+              592392830
+            ],
+            [
+              "FCA US LLC",
+              484553533
+            ],
+            [
+              "AVFUEL CORP",
+              121159876.15
+            ],
+            [
+              "AMERICAN RHEINMETALL VEHICLES, LLC",
+              113076122.22
+            ],
+            [
+              "ROLLS-ROYCE SOLUTIONS AMERICA INC",
+              100906861.84
+            ],
+            [
+              "RENK AMERICA LLC",
+              82298461
+            ],
+            [
+              "THE GEO GROUP, INC.",
+              63078003.31
+            ],
+            [
+              "AAR MANUFACTURING, INC.",
+              62479695.86
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "GENERAL DYNAMICS LAND SYSTEMS INC. led all contractors in Michigan with $1.1B, 23.1% of the state total."
+    },
+    {
+      "id": "michigan-top-naics",
+      "type": "bar",
+      "title": "Top 10 industries (NAICS), FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "Automobile Manufacturing",
+              1685260506
+            ],
+            [
+              "Military Armored Vehicle, Tank, and Tank Component Manufacturing",
+              1131566651.83
+            ],
+            [
+              "Other Engine Equipment Manufacturing",
+              148278848.35
+            ],
+            [
+              "Petroleum Refineries",
+              121215014.1
+            ],
+            [
+              "Other Heavy and Civil Engineering Construction",
+              83431858.76
+            ],
+            [
+              "Engineering Services",
+              80767129.99
+            ],
+            [
+              "Security Guards and Patrol Services",
+              71942990.34
+            ],
+            [
+              "Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology)",
+              69095192.78
+            ],
+            [
+              "General Automotive Repair",
+              67818673.34
+            ],
+            [
+              "Other Scientific and Technical Consulting Services",
+              61833539.41
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Automobile Manufacturing was the largest industry in Michigan, with $1.7B obligated."
+    }
+  ],
+  "tables": [
+    {
+      "title": "Top 10 vendors",
+      "columns": [
+        "Rank",
+        "Vendor",
+        "Obligations"
+      ],
+      "rows": [
+        [
+          1,
+          {
+            "text": "GENERAL DYNAMICS LAND SYSTEMS INC.",
+            "href": "https://www.usaspending.gov/recipient/99938bc0-e262-06ff-9f94-386fd3da88dc-C/latest/"
+          },
+          1099128634.81
+        ],
+        [
+          2,
+          {
+            "text": "FORD MOTOR CO",
+            "href": "https://www.usaspending.gov/recipient/4a8a3973-3640-6b1b-95a5-c93d26884389-C/latest/"
+          },
+          608314143
+        ],
+        [
+          3,
+          {
+            "text": "GENERAL MOTORS LLC",
+            "href": "https://www.usaspending.gov/recipient/2a839246-22d5-baf9-2c2f-aa4b3b9dc37f-C/latest/"
+          },
+          592392830
+        ],
+        [
+          4,
+          {
+            "text": "FCA US LLC",
+            "href": "https://www.usaspending.gov/recipient/fca82c16-eea0-87aa-760c-e419b390d40b-C/latest/"
+          },
+          484553533
+        ],
+        [
+          5,
+          {
+            "text": "AVFUEL CORP",
+            "href": "https://www.usaspending.gov/recipient/1e5032cf-11df-a3bf-4240-6dda5f6d45ff-C/latest/"
+          },
+          121159876.15
+        ],
+        [
+          6,
+          {
+            "text": "AMERICAN RHEINMETALL VEHICLES, LLC",
+            "href": "https://www.usaspending.gov/recipient/e768e508-b641-3656-ba6a-e975bb7b03f8-C/latest/"
+          },
+          113076122.22
+        ],
+        [
+          7,
+          {
+            "text": "ROLLS-ROYCE SOLUTIONS AMERICA INC",
+            "href": "https://www.usaspending.gov/recipient/5c4bd5bf-add7-c689-16da-6932fd09f92b-C/latest/"
+          },
+          100906861.84
+        ],
+        [
+          8,
+          {
+            "text": "RENK AMERICA LLC",
+            "href": "https://www.usaspending.gov/recipient/ce489b14-e371-f3d0-034c-dc3a0d9e6d6d-C/latest/"
+          },
+          82298461
+        ],
+        [
+          9,
+          {
+            "text": "THE GEO GROUP, INC.",
+            "href": "https://www.usaspending.gov/recipient/9b308edb-a62c-659b-704b-ef4e5cf3f795-C/latest/"
+          },
+          63078003.31
+        ],
+        [
+          10,
+          {
+            "text": "AAR MANUFACTURING, INC.",
+            "href": "https://www.usaspending.gov/recipient/5df535f5-c39c-2bc0-95cc-17e253f33798-C/latest/"
+          },
+          62479695.86
+        ]
+      ]
+    },
+    {
+      "title": "Largest awards, FY2026 to date",
+      "columns": [
+        "Rank",
+        "Recipient",
+        "Award Amount",
+        "Awarding Agency"
+      ],
+      "rows": [
+        [
+          1,
+          {
+            "text": "KOKOSING ALBERICI TRAYLOR, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W911XK22C0006_9700_-NONE-_-NONE-/"
+          },
+          1937992178.61,
+          "Department of Defense"
+        ],
+        [
+          2,
+          {
+            "text": "GENERAL DYNAMICS LAND SYSTEMS INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W56HZV19C0036_9700_-NONE-_-NONE-/"
+          },
+          1354513227.42,
+          "Department of Defense"
+        ],
+        [
+          3,
+          {
+            "text": "GENERAL DYNAMICS LAND SYSTEMS INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W56HZV22F0353_9700_W56HZV21D0001_9700/"
+          },
+          1167042893.71,
+          "Department of Defense"
+        ],
+        [
+          4,
+          {
+            "text": "GENERAL DYNAMICS LAND SYSTEMS INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W56HZV22C0012_9700_-NONE-_-NONE-/"
+          },
+          1145640166.9,
+          "Department of Defense"
+        ],
+        [
+          5,
+          {
+            "text": "RENK AMERICA LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W56HZV20C0124_9700_-NONE-_-NONE-/"
+          },
+          902580413.82,
+          "Department of Defense"
+        ],
+        [
+          6,
+          {
+            "text": "GENERAL DYNAMICS LAND SYSTEMS INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W56HZV17C0067_9700_-NONE-_-NONE-/"
+          },
+          761980861.65,
+          "Department of Defense"
+        ],
+        [
+          7,
+          {
+            "text": "GENERAL DYNAMICS LAND SYSTEMS INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W56HZV23F0159_9700_W56HZV20D0005_9700/"
+          },
+          713398489.52,
+          "Department of Defense"
+        ],
+        [
+          8,
+          {
+            "text": "AMERICAN RHEINMETALL VEHICLES, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W56HZV23C0026_9700_-NONE-_-NONE-/"
+          },
+          697724218.37,
+          "Department of Defense"
+        ],
+        [
+          9,
+          {
+            "text": "GENERAL DYNAMICS LAND SYSTEMS INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W56HZV23C0025_9700_-NONE-_-NONE-/"
+          },
+          677963730.5,
+          "Department of Defense"
+        ],
+        [
+          10,
+          {
+            "text": "GENERAL DYNAMICS LAND SYSTEMS INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W56HZV22F0035_9700_W56HZV20D0005_9700/"
+          },
+          524265742.29,
+          "Department of Defense"
+        ],
+        [
+          11,
+          {
+            "text": "GENERAL DYNAMICS LAND SYSTEMS INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_0003_9700_W56HZV18D0012_9700/"
+          },
+          488611676.51,
+          "Department of Defense"
+        ],
+        [
+          12,
+          {
+            "text": "GENERAL DYNAMICS LAND SYSTEMS INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W912CH25C0055_9700_-NONE-_-NONE-/"
+          },
+          465220000,
+          "Department of Defense"
+        ],
+        [
+          13,
+          {
+            "text": "GENERAL DYNAMICS LAND SYSTEMS INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W56HZV24F0030_9700_W56HZV21D0001_9700/"
+          },
+          433242912,
+          "Department of Defense"
+        ],
+        [
+          14,
+          {
+            "text": "GENERAL DYNAMICS LAND SYSTEMS INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W56HZV23F0005_9700_W56HZV21D0001_9700/"
+          },
+          410874277.46,
+          "Department of Defense"
+        ],
+        [
+          15,
+          {
+            "text": "GENERAL DYNAMICS LAND SYSTEMS INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W56HZV22F0141_9700_W56HZV21D0001_9700/"
+          },
+          390723556.45,
+          "Department of Defense"
+        ],
+        [
+          16,
+          {
+            "text": "GENERAL DYNAMICS LAND SYSTEMS INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W56HZV17C0188_9700_-NONE-_-NONE-/"
+          },
+          378527341.7,
+          "Department of Defense"
+        ],
+        [
+          17,
+          {
+            "text": "GENERAL DYNAMICS LAND SYSTEMS INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W56HZV22F0140_9700_W56HZV21D0001_9700/"
+          },
+          375674183.27,
+          "Department of Defense"
+        ],
+        [
+          18,
+          {
+            "text": "BAE SYSTEMS LAND AND ARMAMENTS L.P.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W56HZV19C0035_9700_-NONE-_-NONE-/"
+          },
+          365481972.86,
+          "Department of Defense"
+        ],
+        [
+          19,
+          {
+            "text": "GENERAL DYNAMICS LAND SYSTEMS INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W56HZV22C0005_9700_-NONE-_-NONE-/"
+          },
+          362507270.17,
+          "Department of Defense"
+        ],
+        [
+          20,
+          {
+            "text": "LOC PERFORMANCE PRODUCTS LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W15QKN18C0073_9700_-NONE-_-NONE-/"
+          },
+          293756629.83,
+          "Department of Defense"
+        ],
+        [
+          21,
+          {
+            "text": "GENERAL DYNAMICS LAND SYSTEMS INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W56HZV24F0149_9700_W56HZV21D0001_9700/"
+          },
+          292155765.22,
+          "Department of Defense"
+        ],
+        [
+          22,
+          {
+            "text": "GENERAL DYNAMICS LAND SYSTEMS INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W56HZV19F0162_9700_W56HZV19D0046_9700/"
+          },
+          277726120.15,
+          "Department of Defense"
+        ],
+        [
+          23,
+          {
+            "text": "GENERAL DYNAMICS LAND SYSTEMS INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W31P4Q24F0183_9700_W31P4Q20D0039_9700/"
+          },
+          275188341.2,
+          "Department of Defense"
+        ],
+        [
+          24,
+          {
+            "text": "GENERAL DYNAMICS LAND SYSTEMS INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W56HZV24F0155_9700_W56HZV24D0031_9700/"
+          },
+          210389367,
+          "Department of Defense"
+        ],
+        [
+          25,
+          {
+            "text": "GENERAL DYNAMICS LAND SYSTEMS INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W912CH26F0026_9700_W56HZV21D0001_9700/"
+          },
+          210349721.67,
+          "Department of Defense"
+        ]
+      ]
+    }
+  ],
+  "narrative": {
+    "intro": "In FY2026 to date, federal agencies obligated $4.8B across 135,211 contract awards. That is down 28.1% year over year. The average award size was $35.1K.",
+    "sections": [
+      {
+        "heading": "Which agencies award the most contracts in Michigan?",
+        "body": "Department of Defense was the largest federal buyer in Michigan, obligating $2.3B in FY2026 to date, or 47.4% of the state total."
+      },
+      {
+        "heading": "Who are the top federal contractors in Michigan?",
+        "body": "GENERAL DYNAMICS LAND SYSTEMS INC. led all contractors performing work in Michigan with $1.1B in obligations during FY2026 to date."
+      }
+    ]
+  },
+  "faq": [
+    {
+      "q": "How much federal contract money goes to Michigan?",
+      "a": "Federal agencies obligated $4.8B to contractors performing work in Michigan in FY2026 to date, across 135,211 awards."
+    },
+    {
+      "q": "Which agencies award the most contracts in Michigan?",
+      "a": "Department of Defense is the largest federal buyer in Michigan, with $2.3B obligated in FY2026 to date."
+    },
+    {
+      "q": "Who are the largest federal contractors in Michigan?",
+      "a": "GENERAL DYNAMICS LAND SYSTEMS INC. is the largest federal contractor performing work in Michigan by obligated dollars in FY2026 to date, with $1.1B."
+    }
+  ],
+  "related": [
+    {
+      "label": "Alabama federal contracts",
+      "href": "/insights/state/alabama/"
+    },
+    {
+      "label": "Alaska federal contracts",
+      "href": "/insights/state/alaska/"
+    },
+    {
+      "label": "Arizona federal contracts",
+      "href": "/insights/state/arizona/"
+    },
+    {
+      "label": "Arkansas federal contracts",
+      "href": "/insights/state/arkansas/"
+    },
+    {
+      "label": "California federal contracts",
+      "href": "/insights/state/california/"
+    },
+    {
+      "label": "Colorado federal contracts",
+      "href": "/insights/state/colorado/"
+    }
+  ],
+  "sources": [
+    {
+      "label": "USAspending.gov award data",
+      "href": "https://www.usaspending.gov"
+    }
+  ]
+}

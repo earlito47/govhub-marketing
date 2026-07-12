@@ -11,12 +11,13 @@ import '@fontsource-variable/figtree';
 import '@fontsource-variable/bricolage-grotesque';
 
 export const getStaticPaths = (() => {
-  const files = import.meta.glob<{ default: InsightsPage }>('../../data/insights/naics/*.json', { eager: true });
-  const paths: { params: { chartId: string }; props: { chart: Chart; parentSlug: string } }[] = [];
+  const files = import.meta.glob<{ default: InsightsPage }>('../../data/insights/*/*.json', { eager: true });
+  const paths: { params: { chartId: string }; props: { chart: Chart; parentPath: string } }[] = [];
   for (const mod of Object.values(files)) {
     const page = mod.default;
+    const parentPath = `/insights/${page.pageType}/${page.slug}/`;
     for (const chart of page.charts) {
-      paths.push({ params: { chartId: chart.id }, props: { chart, parentSlug: page.slug } });
+      paths.push({ params: { chartId: chart.id }, props: { chart, parentPath } });
     }
   }
   return paths;
@@ -24,11 +25,11 @@ export const getStaticPaths = (() => {
 
 interface Props {
   chart: Chart;
-  parentSlug: string;
+  parentPath: string;
 }
 
-const { chart, parentSlug } = Astro.props;
-const parentUrl = `${SITE_URL}/insights/naics/${parentSlug}/?utm_source=embed`;
+const { chart, parentPath } = Astro.props;
+const parentUrl = `${SITE_URL}${parentPath}?utm_source=embed`;
 ---
 
 <!doctype html>

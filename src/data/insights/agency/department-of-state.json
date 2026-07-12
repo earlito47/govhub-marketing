@@ -1,0 +1,529 @@
+{
+  "pageType": "agency",
+  "slug": "department-of-state",
+  "title": "State Dept. Federal Contracts: $4.6B in FY2026",
+  "h1": "Department of State: Federal Contract Spending & Top Vendors",
+  "metaDescription": "Department of State obligated $4.6B in federal contracts in FY2026 to date. See what it buys, its top vendors, and multi-year trend.",
+  "updated": "2026-07-12",
+  "fyWindow": {
+    "label": "FY2026 to date",
+    "start": "2025-10-01",
+    "end": "2026-07-12"
+  },
+  "stats": {
+    "totalObligations": 4613883404.87,
+    "awardCount": 15391,
+    "yoyGrowthPct": -53.2,
+    "avgAwardSize": 299778,
+    "smallBusinessSharePct": null
+  },
+  "charts": [
+    {
+      "id": "department-of-state-trend",
+      "type": "line",
+      "title": "Obligations by fiscal year",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "FY21",
+              9548265829.45
+            ],
+            [
+              "FY22",
+              11949275875.47
+            ],
+            [
+              "FY23",
+              11663998808.69
+            ],
+            [
+              "FY24",
+              11655435576.34
+            ],
+            [
+              "FY25",
+              9868477401.54
+            ],
+            [
+              "FY26",
+              4613883404.87
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Obligations fell 53.2% year over year, from $9.9B in FY2025 to $4.6B in FY2026 to date."
+    },
+    {
+      "id": "department-of-state-top-naics",
+      "type": "bar",
+      "title": "Top 10 categories (NAICS), FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "Security Guards and Patrol Services",
+              760235339.16
+            ],
+            [
+              "Other Computer Related Services",
+              564228770.83
+            ],
+            [
+              "Computer Systems Design Services",
+              510016154.61
+            ],
+            [
+              "Administrative Management and General Management Consulting Services",
+              364914589.56
+            ],
+            [
+              "Facilities Support Services",
+              292943087.72
+            ],
+            [
+              "Computer Facilities Management Services",
+              252612875.94
+            ],
+            [
+              "Process, Physical Distribution, and Logistics Consulting Services",
+              154166662.13
+            ],
+            [
+              "Commercial Banking",
+              134035735
+            ],
+            [
+              "Engineering Services",
+              114473411.9
+            ],
+            [
+              "All Other Miscellaneous Manufacturing",
+              95187328.46
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Security Guards and Patrol Services was State's largest contract category, with $760M obligated (16.5% of contract spending)."
+    },
+    {
+      "id": "department-of-state-top-vendors",
+      "type": "bar",
+      "title": "Top 10 vendors, FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "CGI FEDERAL INC.",
+              164415857.77
+            ],
+            [
+              "TRIPLE CANOPY INC",
+              142457256.4
+            ],
+            [
+              "INTER-CON SECURITY SYSTEMS, INC.",
+              142053619.68
+            ],
+            [
+              "CITIBANK, N.A.",
+              134065795.78
+            ],
+            [
+              "MINBURN TECHNOLOGY GROUP, LLC",
+              132091154.06
+            ],
+            [
+              "MISCELLANEOUS FOREIGN AWARDEES",
+              126249969.03
+            ],
+            [
+              "ACCENTURE FEDERAL SERVICES LLC",
+              121340489.29
+            ],
+            [
+              "GENERAL DYNAMICS INFORMATION TECHNOLOGY, INC.",
+              113633810.4
+            ],
+            [
+              "GUIDEHOUSE LLP",
+              101104334.56
+            ],
+            [
+              "PAE GOVERNMENT SERVICES, INC.",
+              98459993.94
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "CGI FEDERAL INC. led all State contractors with $164M, 3.6% of obligations."
+    }
+  ],
+  "tables": [
+    {
+      "title": "Top 10 vendors",
+      "columns": [
+        "Rank",
+        "Vendor",
+        "Obligations"
+      ],
+      "rows": [
+        [
+          1,
+          {
+            "text": "CGI FEDERAL INC.",
+            "href": "https://www.usaspending.gov/recipient/d86df7af-f6c1-a07a-ccc4-ec74331bafc5-C/latest/"
+          },
+          164415857.77
+        ],
+        [
+          2,
+          {
+            "text": "TRIPLE CANOPY INC",
+            "href": "https://www.usaspending.gov/recipient/b9a8aca3-3402-7ba5-301b-8cabbaf8b523-C/latest/"
+          },
+          142457256.4
+        ],
+        [
+          3,
+          {
+            "text": "INTER-CON SECURITY SYSTEMS, INC.",
+            "href": "https://www.usaspending.gov/recipient/d980dbd4-7628-6bf4-7e48-301f8a222324-C/latest/"
+          },
+          142053619.68
+        ],
+        [
+          4,
+          {
+            "text": "CITIBANK, N.A.",
+            "href": "https://www.usaspending.gov/recipient/9b96a5e8-7aa6-15db-84f2-0c3878e4aaba-C/latest/"
+          },
+          134065795.78
+        ],
+        [
+          5,
+          {
+            "text": "MINBURN TECHNOLOGY GROUP, LLC",
+            "href": "https://www.usaspending.gov/recipient/625ff1da-e9a2-cbdc-c8b3-fdd521fd1efc-C/latest/"
+          },
+          132091154.06
+        ],
+        [
+          6,
+          {
+            "text": "MISCELLANEOUS FOREIGN AWARDEES",
+            "href": "https://www.usaspending.gov/recipient/123456787/latest/"
+          },
+          126249969.03
+        ],
+        [
+          7,
+          {
+            "text": "ACCENTURE FEDERAL SERVICES LLC",
+            "href": "https://www.usaspending.gov/recipient/d41a6b8a-9d6a-0d28-7e24-989e31731aad-C/latest/"
+          },
+          121340489.29
+        ],
+        [
+          8,
+          {
+            "text": "GENERAL DYNAMICS INFORMATION TECHNOLOGY, INC.",
+            "href": "https://www.usaspending.gov/recipient/455555be-773d-eab1-1e6b-7b94400b757e-C/latest/"
+          },
+          113633810.4
+        ],
+        [
+          9,
+          {
+            "text": "GUIDEHOUSE LLP",
+            "href": "https://www.usaspending.gov/recipient/69d37197-a2a1-070a-a9a4-8f4dadcb5835-C/latest/"
+          },
+          101104334.56
+        ],
+        [
+          10,
+          {
+            "text": "PAE GOVERNMENT SERVICES, INC.",
+            "href": "https://www.usaspending.gov/recipient/fd602973-d119-7ced-a3e7-11ecee5a9318-C/latest/"
+          },
+          98459993.94
+        ]
+      ]
+    },
+    {
+      "title": "Largest awards, FY2026 to date",
+      "columns": [
+        "Rank",
+        "Recipient",
+        "Award Amount"
+      ],
+      "rows": [
+        [
+          1,
+          {
+            "text": "XATOR LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_19AQMM23F0766_1900_19AQMM19D0119_1900/"
+          },
+          2309491422.64
+        ],
+        [
+          2,
+          {
+            "text": "GENERAL DYNAMICS INFORMATION TECHNOLOGY, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_19AQMM18C0185_1900_-NONE-_-NONE-/"
+          },
+          1585600444.54
+        ],
+        [
+          3,
+          {
+            "text": "BL HARBERT INTERNATIONAL LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_19AQMM22C0048_1900_-NONE-_-NONE-/"
+          },
+          818669847
+        ],
+        [
+          4,
+          {
+            "text": "SCIENCE APPLICATIONS INTERNATIONAL CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_19AQMM21F2945_1900_47QTCK18D0001_4732/"
+          },
+          805559930.65
+        ],
+        [
+          5,
+          {
+            "text": "PAE GOVERNMENT SERVICES, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_SAQMMA14F0721_1900_SAQMMA13D0120_1900/"
+          },
+          770308766.05
+        ],
+        [
+          6,
+          {
+            "text": "BL HARBERT INTERNATIONAL LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_SAQMMA17C0079_1900_-NONE-_-NONE-/"
+          },
+          732735780
+        ],
+        [
+          7,
+          {
+            "text": "CADDELL CONSTRUCTION CO. (DE), LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_19AQMM22C0162_1900_-NONE-_-NONE-/"
+          },
+          698875764.99
+        ],
+        [
+          8,
+          {
+            "text": "BL HARBERT INTERNATIONAL LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_19AQMM18C0242_1900_-NONE-_-NONE-/"
+          },
+          685131614.13
+        ],
+        [
+          9,
+          {
+            "text": "INTER-CON SECURITY SYSTEMS, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_19AQMM21C0066_1900_-NONE-_-NONE-/"
+          },
+          650326852.97
+        ],
+        [
+          10,
+          {
+            "text": "CGI FEDERAL INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_SAQMMA17F3765_1900_SAQMMA17D0109_1900/"
+          },
+          619973465.14
+        ],
+        [
+          11,
+          {
+            "text": "CADDELL CONSTRUCTION CO. (DE), LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_19AQMM22C0159_1900_-NONE-_-NONE-/"
+          },
+          614652572.45
+        ],
+        [
+          12,
+          {
+            "text": "TRIPLE CANOPY INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_19AQMM22F0469_1900_19AQMM21D0011_1900/"
+          },
+          588873862.49
+        ],
+        [
+          13,
+          {
+            "text": "XATOR LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_19AQMM20C0016_1900_-NONE-_-NONE-/"
+          },
+          574931092.35
+        ],
+        [
+          14,
+          {
+            "text": "LDRM LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_19AQMM19C0135_1900_-NONE-_-NONE-/"
+          },
+          567710595.23
+        ],
+        [
+          15,
+          {
+            "text": "BL HARBERT INTERNATIONAL LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_19AQMM22C0144_1900_-NONE-_-NONE-/"
+          },
+          544658997
+        ],
+        [
+          16,
+          {
+            "text": "MANTECH ADVANCED SYSTEMS INTERNATIONAL, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_SAQMMA17C0178_1900_-NONE-_-NONE-/"
+          },
+          525051705.62
+        ],
+        [
+          17,
+          {
+            "text": "PAE GOVERNMENT SERVICES, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_SAQMMA14F0762_1900_SAQMMA13D0120_1900/"
+          },
+          496420027.65
+        ],
+        [
+          18,
+          {
+            "text": "PAE GOVERNMENT SERVICES, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_SAQMMA13F2194_1900_SAQMMA12D0165_1900/"
+          },
+          467634621.86
+        ],
+        [
+          19,
+          {
+            "text": "AAR GOVERNMENT SERVICES, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_19AQMM21F1511_1900_SAQMMA16D0136_1900/"
+          },
+          448872514.35
+        ],
+        [
+          20,
+          {
+            "text": "BL HARBERT INTERNATIONAL LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_19AQMM20C0041_1900_-NONE-_-NONE-/"
+          },
+          442260483.69
+        ],
+        [
+          21,
+          {
+            "text": "PAE GOVERNMENT SERVICES, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_SAQMMA14F0096_1900_SAQMMA12D0165_1900/"
+          },
+          412278415.37
+        ],
+        [
+          22,
+          {
+            "text": "CGI FEDERAL INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_19AQMM18C0013_1900_-NONE-_-NONE-/"
+          },
+          401923760.48
+        ],
+        [
+          23,
+          {
+            "text": "GARDAWORLD FEDERAL SERVICES LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_19AQMM22F3446_1900_19AQMM21D0008_1900/"
+          },
+          397372690.66
+        ],
+        [
+          24,
+          {
+            "text": "CGI FEDERAL INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_19AQMM24C0062_1900_-NONE-_-NONE-/"
+          },
+          396674888.73
+        ],
+        [
+          25,
+          {
+            "text": "CADDELL CONSTRUCTION CO. (DE), LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_19AQMM22C0102_1900_-NONE-_-NONE-/"
+          },
+          376452420.97
+        ]
+      ]
+    }
+  ],
+  "narrative": {
+    "intro": "In FY2026 to date, Department of State obligated $4.6B across 15,391 contract awards. That is down 53.2% year over year. The average award size was $300K.",
+    "sections": [
+      {
+        "heading": "What does State buy?",
+        "body": "Security Guards and Patrol Services was Department of State's largest contract category in FY2026 to date, with $760M obligated, or 16.5% of its contract spending."
+      },
+      {
+        "heading": "Who are State's largest contractors?",
+        "body": "CGI FEDERAL INC. led all Department of State contractors with $164M in obligations during FY2026 to date, a 3.6% share."
+      }
+    ]
+  },
+  "faq": [
+    {
+      "q": "How much does Department of State spend on contracts?",
+      "a": "Department of State obligated $4.6B on federal contracts in FY2026 to date, across 15,391 awards."
+    },
+    {
+      "q": "What does State buy?",
+      "a": "State's largest contract category is Security Guards and Patrol Services, with $760M obligated in FY2026 to date."
+    },
+    {
+      "q": "Who are State's largest contractors?",
+      "a": "CGI FEDERAL INC. is State's largest contractor by obligated dollars in FY2026 to date, with $164M."
+    }
+  ],
+  "related": [
+    {
+      "label": "Department of Defense",
+      "href": "/insights/agency/department-of-defense/"
+    },
+    {
+      "label": "Department of Veterans Affairs",
+      "href": "/insights/agency/department-of-veterans-affairs/"
+    },
+    {
+      "label": "Department of Homeland Security",
+      "href": "/insights/agency/department-of-homeland-security/"
+    },
+    {
+      "label": "Department of Health and Human Services",
+      "href": "/insights/agency/department-of-health-and-human-services/"
+    },
+    {
+      "label": "General Services Administration",
+      "href": "/insights/agency/general-services-administration/"
+    },
+    {
+      "label": "National Aeronautics and Space Administration",
+      "href": "/insights/agency/national-aeronautics-and-space-administration/"
+    }
+  ],
+  "sources": [
+    {
+      "label": "USAspending.gov award data",
+      "href": "https://www.usaspending.gov"
+    }
+  ]
+}

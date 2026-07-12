@@ -1,0 +1,609 @@
+{
+  "pageType": "state",
+  "slug": "missouri",
+  "title": "Missouri Federal Contracts: $8.3B in FY2026",
+  "h1": "Federal Contracts in Missouri: Spending, Agencies & Vendors",
+  "metaDescription": "Federal agencies obligated $8.3B to contractors in Missouri in FY2026 to date. See top buying agencies, top vendors, and industries.",
+  "updated": "2026-07-12",
+  "fyWindow": {
+    "label": "FY2026 to date",
+    "start": "2025-10-01",
+    "end": "2026-07-12"
+  },
+  "stats": {
+    "totalObligations": 8333090780,
+    "awardCount": 84575,
+    "yoyGrowthPct": -40.4,
+    "avgAwardSize": 98529,
+    "smallBusinessSharePct": null
+  },
+  "charts": [
+    {
+      "id": "missouri-trend",
+      "type": "line",
+      "title": "Obligations by fiscal year",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "FY21",
+              13278866239.83
+            ],
+            [
+              "FY22",
+              11153198850.63
+            ],
+            [
+              "FY23",
+              15555998373.28
+            ],
+            [
+              "FY24",
+              16182667544.99
+            ],
+            [
+              "FY25",
+              13971470765.75
+            ],
+            [
+              "FY26",
+              8333090780
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Obligations fell 40.4% year over year, from $14B in FY2025 to $8.3B in FY2026 to date."
+    },
+    {
+      "id": "missouri-top-agencies",
+      "type": "bar",
+      "title": "Top 10 buying agencies, FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "Department of Defense",
+              5469017610.09
+            ],
+            [
+              "Department of Energy",
+              2044924320.13
+            ],
+            [
+              "Department of Veterans Affairs",
+              193845536.56
+            ],
+            [
+              "Department of Agriculture",
+              185388175.84
+            ],
+            [
+              "Department of Homeland Security",
+              177795785.86
+            ],
+            [
+              "Department of Justice",
+              63929364.14
+            ],
+            [
+              "General Services Administration",
+              49590956.64
+            ],
+            [
+              "Department of Transportation",
+              43263523.33
+            ],
+            [
+              "Department of Health and Human Services",
+              28331015
+            ],
+            [
+              "Department of Labor",
+              17351652.36
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Department of Defense was the top federal buyer in Missouri, obligating $5.5B (65.6% of the state total)."
+    },
+    {
+      "id": "missouri-top-vendors",
+      "type": "bar",
+      "title": "Top 10 vendors, FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "THE BOEING COMPANY",
+              3538611502.18
+            ],
+            [
+              "HONEYWELL FEDERAL MANUFACTURING & TECHNOLOGIES, LLC",
+              2035920872.4
+            ],
+            [
+              "EVERNORTH FEDERAL SERVICES INC",
+              642499936.84
+            ],
+            [
+              "THE BOEING COMPANY",
+              624580474.33
+            ],
+            [
+              "WORLD WIDE TECHNOLOGY LLC",
+              133454451.68
+            ],
+            [
+              "OLIN WINCHESTER LLC",
+              78381697.02
+            ],
+            [
+              "VENDTECH-SGI LLC",
+              74028929.94
+            ],
+            [
+              "GC & V CONSTRUCTION LLC",
+              59890000
+            ],
+            [
+              "MERIDIAN MEDICAL TECHNOLOGIES, LLC",
+              53300137.55
+            ],
+            [
+              "SKYMARK REFUELERS LLC",
+              49145018.76
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "THE BOEING COMPANY led all contractors in Missouri with $3.5B, 42.5% of the state total."
+    },
+    {
+      "id": "missouri-top-naics",
+      "type": "bar",
+      "title": "Top 10 industries (NAICS), FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "Aircraft Manufacturing",
+              2441519311.54
+            ],
+            [
+              "Facilities Support Services",
+              2128757475.98
+            ],
+            [
+              "Direct Health and Medical Insurance Carriers",
+              642499936.84
+            ],
+            [
+              "Ammunition (except Small Arms) Manufacturing",
+              632503967.05
+            ],
+            [
+              "Other Aircraft Parts and Auxiliary Equipment Manufacturing",
+              499414433.89
+            ],
+            [
+              "Engineering Services",
+              272050395.31
+            ],
+            [
+              "Aircraft Engine and Engine Parts Manufacturing",
+              198843620.58
+            ],
+            [
+              "Other Computer Related Services",
+              172868823.85
+            ],
+            [
+              "Security Guards and Patrol Services",
+              102059739.66
+            ],
+            [
+              "Other Heavy and Civil Engineering Construction",
+              91921787.26
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Aircraft Manufacturing was the largest industry in Missouri, with $2.4B obligated."
+    }
+  ],
+  "tables": [
+    {
+      "title": "Top 10 vendors",
+      "columns": [
+        "Rank",
+        "Vendor",
+        "Obligations"
+      ],
+      "rows": [
+        [
+          1,
+          {
+            "text": "THE BOEING COMPANY",
+            "href": "https://www.usaspending.gov/recipient/9ab85632-42cc-5fa4-2a9c-d734034ddd33-C/latest/"
+          },
+          3538611502.18
+        ],
+        [
+          2,
+          {
+            "text": "HONEYWELL FEDERAL MANUFACTURING & TECHNOLOGIES, LLC",
+            "href": "https://www.usaspending.gov/recipient/9e9725ba-e023-684e-6d7f-f9de4201578f-C/latest/"
+          },
+          2035920872.4
+        ],
+        [
+          3,
+          {
+            "text": "EVERNORTH FEDERAL SERVICES INC",
+            "href": "https://www.usaspending.gov/recipient/5648a09f-c8b7-40e5-0768-a87d491a0e21-C/latest/"
+          },
+          642499936.84
+        ],
+        [
+          4,
+          {
+            "text": "THE BOEING COMPANY",
+            "href": "https://www.usaspending.gov/recipient/241d908a-e5e9-f275-b625-6b1f76859002-C/latest/"
+          },
+          624580474.33
+        ],
+        [
+          5,
+          {
+            "text": "WORLD WIDE TECHNOLOGY LLC",
+            "href": "https://www.usaspending.gov/recipient/d96a4bfd-2da7-00c1-948d-44005efba1a1-C/latest/"
+          },
+          133454451.68
+        ],
+        [
+          6,
+          {
+            "text": "OLIN WINCHESTER LLC",
+            "href": "https://www.usaspending.gov/recipient/616bca4f-e2ec-546a-f5a9-246df427d803-C/latest/"
+          },
+          78381697.02
+        ],
+        [
+          7,
+          {
+            "text": "VENDTECH-SGI LLC",
+            "href": "https://www.usaspending.gov/recipient/3a920b33-b31c-84ef-f06d-bd73ad931a06-C/latest/"
+          },
+          74028929.94
+        ],
+        [
+          8,
+          {
+            "text": "GC & V CONSTRUCTION LLC",
+            "href": "https://www.usaspending.gov/recipient/9590d8ec-fca2-bc85-d5b9-a57f376f1ee2-C/latest/"
+          },
+          59890000
+        ],
+        [
+          9,
+          {
+            "text": "MERIDIAN MEDICAL TECHNOLOGIES, LLC",
+            "href": "https://www.usaspending.gov/recipient/8ae912b6-454c-ece3-7b6d-27a1d552273e-C/latest/"
+          },
+          53300137.55
+        ],
+        [
+          10,
+          {
+            "text": "SKYMARK REFUELERS LLC",
+            "href": "https://www.usaspending.gov/recipient/b3b9e426-125c-9879-feee-02808cf3150c-C/latest/"
+          },
+          49145018.76
+        ]
+      ]
+    },
+    {
+      "title": "Largest awards, FY2026 to date",
+      "columns": [
+        "Rank",
+        "Recipient",
+        "Award Amount",
+        "Awarding Agency"
+      ],
+      "rows": [
+        [
+          1,
+          {
+            "text": "HONEYWELL FEDERAL MANUFACTURING & TECHNOLOGIES, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_DENA0002839_8900_-NONE-_-NONE-/"
+          },
+          17488650862.28,
+          "Department of Energy"
+        ],
+        [
+          2,
+          {
+            "text": "THE BOEING COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA863418C2701_9700_-NONE-_-NONE-/"
+          },
+          6986382395.76,
+          "Department of Defense"
+        ],
+        [
+          3,
+          {
+            "text": "THE BOEING COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0001918C1046_9700_-NONE-_-NONE-/"
+          },
+          5496533530.53,
+          "Department of Defense"
+        ],
+        [
+          4,
+          {
+            "text": "THE BOEING COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA863423F0048_9700_FA863420D2704_9700/"
+          },
+          3933015048.3,
+          "Department of Defense"
+        ],
+        [
+          5,
+          {
+            "text": "THE BOEING COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0001917C0003_9700_-NONE-_-NONE-/"
+          },
+          2444992704.44,
+          "Department of Defense"
+        ],
+        [
+          6,
+          {
+            "text": "EVERNORTH FEDERAL SERVICES INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_HT940221C0007_9700_-NONE-_-NONE-/"
+          },
+          2329596114.83,
+          "Department of Defense"
+        ],
+        [
+          7,
+          {
+            "text": "THE BOEING COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0001920C0003_9700_-NONE-_-NONE-/"
+          },
+          2058655011.17,
+          "Department of Defense"
+        ],
+        [
+          8,
+          {
+            "text": "THE BOEING COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA863422F0035_9700_FA863420D2704_9700/"
+          },
+          2039776433.36,
+          "Department of Defense"
+        ],
+        [
+          9,
+          {
+            "text": "THE BOEING COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0001918C1012_9700_-NONE-_-NONE-/"
+          },
+          1806623532.79,
+          "Department of Defense"
+        ],
+        [
+          10,
+          {
+            "text": "THE BOEING COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0001922F0030_9700_N0001921G0006_9700/"
+          },
+          1553797869.15,
+          "Department of Defense"
+        ],
+        [
+          11,
+          {
+            "text": "THE BOEING COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0001918C1060_9700_-NONE-_-NONE-/"
+          },
+          1518660771,
+          "Department of Defense"
+        ],
+        [
+          12,
+          {
+            "text": "THE BOEING COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA863416C2653_9700_-NONE-_-NONE-/"
+          },
+          1397282803.14,
+          "Department of Defense"
+        ],
+        [
+          13,
+          {
+            "text": "THE BOEING COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA863422C2705_9700_-NONE-_-NONE-/"
+          },
+          1340601122.71,
+          "Department of Defense"
+        ],
+        [
+          14,
+          {
+            "text": "THE BOEING COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0001918C1025_9700_-NONE-_-NONE-/"
+          },
+          1125466003.92,
+          "Department of Defense"
+        ],
+        [
+          15,
+          {
+            "text": "THE BOEING COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA863421F0023_9700_FA863420D2704_9700/"
+          },
+          1117048124.02,
+          "Department of Defense"
+        ],
+        [
+          16,
+          {
+            "text": "THE BOEING COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA863420F0022_9700_FA863420D2704_9700/"
+          },
+          1070907248.41,
+          "Department of Defense"
+        ],
+        [
+          17,
+          {
+            "text": "THE BOEING COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA863421F0026_9700_FA863420D2704_9700/"
+          },
+          1061341626.5,
+          "Department of Defense"
+        ],
+        [
+          18,
+          {
+            "text": "THE BOEING COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA821318F1001_9700_FA821315D0002_9700/"
+          },
+          1001652302.71,
+          "Department of Defense"
+        ],
+        [
+          19,
+          {
+            "text": "THE BOEING COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0001919C0016_9700_-NONE-_-NONE-/"
+          },
+          990630605.22,
+          "Department of Defense"
+        ],
+        [
+          20,
+          {
+            "text": "THE BOEING COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA863421C2702_9700_-NONE-_-NONE-/"
+          },
+          935740846.61,
+          "Department of Defense"
+        ],
+        [
+          21,
+          {
+            "text": "THE BOEING COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA861718F8001_9700_FA861718D6219_9700/"
+          },
+          913084290.62,
+          "Department of Defense"
+        ],
+        [
+          22,
+          {
+            "text": "THE BOEING COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA821319F1002_9700_FA821315D0002_9700/"
+          },
+          878270765.2,
+          "Department of Defense"
+        ],
+        [
+          23,
+          {
+            "text": "THE BOEING COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA863426CB001_9700_-NONE-_-NONE-/"
+          },
+          840000000,
+          "Department of Defense"
+        ],
+        [
+          24,
+          {
+            "text": "THE BOEING COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA863417C2650_9700_-NONE-_-NONE-/"
+          },
+          782544027.89,
+          "Department of Defense"
+        ],
+        [
+          25,
+          {
+            "text": "MCCARTHY HITT - NEXT NGA WEST JOINT VENTURE",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W912DQ19C7001_9700_-NONE-_-NONE-/"
+          },
+          769843658.22,
+          "Department of Defense"
+        ]
+      ]
+    }
+  ],
+  "narrative": {
+    "intro": "In FY2026 to date, federal agencies obligated $8.3B across 84,575 contract awards. That is down 40.4% year over year. The average award size was $98.5K.",
+    "sections": [
+      {
+        "heading": "Which agencies award the most contracts in Missouri?",
+        "body": "Department of Defense was the largest federal buyer in Missouri, obligating $5.5B in FY2026 to date, or 65.6% of the state total."
+      },
+      {
+        "heading": "Who are the top federal contractors in Missouri?",
+        "body": "THE BOEING COMPANY led all contractors performing work in Missouri with $3.5B in obligations during FY2026 to date."
+      }
+    ]
+  },
+  "faq": [
+    {
+      "q": "How much federal contract money goes to Missouri?",
+      "a": "Federal agencies obligated $8.3B to contractors performing work in Missouri in FY2026 to date, across 84,575 awards."
+    },
+    {
+      "q": "Which agencies award the most contracts in Missouri?",
+      "a": "Department of Defense is the largest federal buyer in Missouri, with $5.5B obligated in FY2026 to date."
+    },
+    {
+      "q": "Who are the largest federal contractors in Missouri?",
+      "a": "THE BOEING COMPANY is the largest federal contractor performing work in Missouri by obligated dollars in FY2026 to date, with $3.5B."
+    }
+  ],
+  "related": [
+    {
+      "label": "Alabama federal contracts",
+      "href": "/insights/state/alabama/"
+    },
+    {
+      "label": "Alaska federal contracts",
+      "href": "/insights/state/alaska/"
+    },
+    {
+      "label": "Arizona federal contracts",
+      "href": "/insights/state/arizona/"
+    },
+    {
+      "label": "Arkansas federal contracts",
+      "href": "/insights/state/arkansas/"
+    },
+    {
+      "label": "California federal contracts",
+      "href": "/insights/state/california/"
+    },
+    {
+      "label": "Colorado federal contracts",
+      "href": "/insights/state/colorado/"
+    }
+  ],
+  "sources": [
+    {
+      "label": "USAspending.gov award data",
+      "href": "https://www.usaspending.gov"
+    }
+  ]
+}

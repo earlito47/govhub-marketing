@@ -1,0 +1,529 @@
+{
+  "pageType": "agency",
+  "slug": "department-of-the-interior",
+  "title": "Interior Dept. Federal Contracts: $3.8B in FY2026",
+  "h1": "Department of the Interior: Federal Contract Spending & Top Vendors",
+  "metaDescription": "Department of the Interior obligated $3.8B in federal contracts in FY2026 to date. See what it buys, its top vendors, and multi-year trend.",
+  "updated": "2026-07-12",
+  "fyWindow": {
+    "label": "FY2026 to date",
+    "start": "2025-10-01",
+    "end": "2026-07-12"
+  },
+  "stats": {
+    "totalObligations": 3762634475.15,
+    "awardCount": 17525,
+    "yoyGrowthPct": -42.2,
+    "avgAwardSize": 214701,
+    "smallBusinessSharePct": null
+  },
+  "charts": [
+    {
+      "id": "department-of-the-interior-trend",
+      "type": "line",
+      "title": "Obligations by fiscal year",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "FY21",
+              5082951629.48
+            ],
+            [
+              "FY22",
+              6518213911.27
+            ],
+            [
+              "FY23",
+              7641526477.06
+            ],
+            [
+              "FY24",
+              8121228109.48
+            ],
+            [
+              "FY25",
+              6514123245.15
+            ],
+            [
+              "FY26",
+              3762634475.15
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Obligations fell 42.2% year over year, from $6.5B in FY2025 to $3.8B in FY2026 to date."
+    },
+    {
+      "id": "department-of-the-interior-top-naics",
+      "type": "bar",
+      "title": "Top 10 categories (NAICS), FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "Water and Sewer Line and Related Structures Construction",
+              521619392.25
+            ],
+            [
+              "Other Heavy and Civil Engineering Construction",
+              379703567.21
+            ],
+            [
+              "Computer Systems Design Services",
+              327037239.4
+            ],
+            [
+              "Other Computer Related Services",
+              286297801.06
+            ],
+            [
+              "Commercial and Institutional Building Construction",
+              273529904.3
+            ],
+            [
+              "Administrative Management and General Management Consulting Services",
+              169424361.06
+            ],
+            [
+              "Support Activities for Forestry",
+              128846263.37
+            ],
+            [
+              "Custom Computer Programming Services",
+              113586939.49
+            ],
+            [
+              "Engineering Services",
+              85015937.01
+            ],
+            [
+              "Geophysical Surveying and Mapping Services",
+              76010153.65
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Water and Sewer Line and Related Structures Construction was Interior's largest contract category, with $522M obligated (13.9% of contract spending)."
+    },
+    {
+      "id": "department-of-the-interior-top-vendors",
+      "type": "bar",
+      "title": "Top 10 vendors, FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "GENERAL DYNAMICS INFORMATION TECHNOLOGY, INC.",
+              132584804.71
+            ],
+            [
+              "AMES FEDERAL CONTRACTING GROUP LLC",
+              132400050.53
+            ],
+            [
+              "RECORD STEEL AND CONSTRUCTION, INC.",
+              129224295
+            ],
+            [
+              "NW CONSTRUCTION, INC",
+              125910728.35
+            ],
+            [
+              "G.S.E. CONSTRUCTION COMPANY, INC.",
+              109487800
+            ],
+            [
+              "KIEWIT INFRASTRUCTURE WEST CO.",
+              103809488
+            ],
+            [
+              "GUIDEHOUSE INC.",
+              85187491.4
+            ],
+            [
+              "FLATLAND ENERGY SERVICES LLC",
+              75532921
+            ],
+            [
+              "OLSSON INDUSTRIAL ELECTRIC, INC",
+              68735483
+            ],
+            [
+              "KBR WYLE SERVICES, LLC",
+              66978809.81
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "GENERAL DYNAMICS INFORMATION TECHNOLOGY, INC. led all Interior contractors with $133M, 3.5% of obligations."
+    }
+  ],
+  "tables": [
+    {
+      "title": "Top 10 vendors",
+      "columns": [
+        "Rank",
+        "Vendor",
+        "Obligations"
+      ],
+      "rows": [
+        [
+          1,
+          {
+            "text": "GENERAL DYNAMICS INFORMATION TECHNOLOGY, INC.",
+            "href": "https://www.usaspending.gov/recipient/455555be-773d-eab1-1e6b-7b94400b757e-C/latest/"
+          },
+          132584804.71
+        ],
+        [
+          2,
+          {
+            "text": "AMES FEDERAL CONTRACTING GROUP LLC",
+            "href": "https://www.usaspending.gov/recipient/fb2de91e-4643-f712-a8fb-9659424f527d-C/latest/"
+          },
+          132400050.53
+        ],
+        [
+          3,
+          {
+            "text": "RECORD STEEL AND CONSTRUCTION, INC.",
+            "href": "https://www.usaspending.gov/recipient/a0c4db84-5a51-9128-a33d-a27a13b317b1-C/latest/"
+          },
+          129224295
+        ],
+        [
+          4,
+          {
+            "text": "NW CONSTRUCTION, INC",
+            "href": "https://www.usaspending.gov/recipient/e130b27b-e353-3fa4-e8d1-31e07705bef6-C/latest/"
+          },
+          125910728.35
+        ],
+        [
+          5,
+          {
+            "text": "G.S.E. CONSTRUCTION COMPANY, INC.",
+            "href": "https://www.usaspending.gov/recipient/42800bf0-ed89-8bcd-aedc-feaf70997738-C/latest/"
+          },
+          109487800
+        ],
+        [
+          6,
+          {
+            "text": "KIEWIT INFRASTRUCTURE WEST CO.",
+            "href": "https://www.usaspending.gov/recipient/d0dc1da3-ded5-f485-0458-2b2a216eab92-C/latest/"
+          },
+          103809488
+        ],
+        [
+          7,
+          {
+            "text": "GUIDEHOUSE INC.",
+            "href": "https://www.usaspending.gov/recipient/a0cb5664-8703-c7dc-a188-4a96f90a16c9-C/latest/"
+          },
+          85187491.4
+        ],
+        [
+          8,
+          {
+            "text": "FLATLAND ENERGY SERVICES LLC",
+            "href": "https://www.usaspending.gov/recipient/16596635-6143-006e-a244-d98b90b645d2-C/latest/"
+          },
+          75532921
+        ],
+        [
+          9,
+          {
+            "text": "OLSSON INDUSTRIAL ELECTRIC, INC",
+            "href": "https://www.usaspending.gov/recipient/bd8f3f52-d1d0-e055-6076-593ab043aa7a-C/latest/"
+          },
+          68735483
+        ],
+        [
+          10,
+          {
+            "text": "KBR WYLE SERVICES, LLC",
+            "href": "https://www.usaspending.gov/recipient/eb13e842-2068-e3ee-0453-d02b9582e5cd-C/latest/"
+          },
+          66978809.81
+        ]
+      ]
+    },
+    {
+      "title": "Largest awards, FY2026 to date",
+      "columns": [
+        "Rank",
+        "Recipient",
+        "Award Amount"
+      ],
+      "rows": [
+        [
+          1,
+          {
+            "text": "ACACIA CENTER FOR JUSTICE",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_140D0422C0009_1406_-NONE-_-NONE-/"
+          },
+          832386515.82
+        ],
+        [
+          2,
+          {
+            "text": "GUIDEHOUSE INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_140D0423F0882_1406_HHSN316201200040W_7529/"
+          },
+          403073999.7
+        ],
+        [
+          3,
+          {
+            "text": "CDM CONSTRUCTORS INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_INR17PC00023_1425_-NONE-_-NONE-/"
+          },
+          357651641
+        ],
+        [
+          4,
+          {
+            "text": "FAMILY ENDEAVORS, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_140D0424F0005_1406_140D0423D0063_1406/"
+          },
+          346530745.39
+        ],
+        [
+          5,
+          {
+            "text": "DEEP MILE NETWORKS LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_140D0423F0030_1406_GS02Q16DCR0076_4732/"
+          },
+          331678388.21
+        ],
+        [
+          6,
+          {
+            "text": "THE PROVIDENCIA GROUP LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_140D0422C0037_1406_-NONE-_-NONE-/"
+          },
+          270411982.16
+        ],
+        [
+          7,
+          {
+            "text": "JACOBS PROJECT MANAGEMENT CO.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_140R4024C0013_1425_-NONE-_-NONE-/"
+          },
+          270116820.76
+        ],
+        [
+          8,
+          {
+            "text": "NW CONSTRUCTION, INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_140R2025C0004_1425_-NONE-_-NONE-/"
+          },
+          257269309
+        ],
+        [
+          9,
+          {
+            "text": "BOOZ ALLEN HAMILTON INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_IND15PD01062_1406_HHSN316201200008W_7529/"
+          },
+          244961186.29
+        ],
+        [
+          10,
+          {
+            "text": "LUMEN TECHNOLOGIES GOVERNMENT SOLUTIONS, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_140D0419F0326_1406_GS00Q17NSD3006_4732/"
+          },
+          243521064.34
+        ],
+        [
+          11,
+          {
+            "text": "TEPA EC, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_140A1624F0105_1450_140A1623D0026_1450/"
+          },
+          219625318.16
+        ],
+        [
+          12,
+          {
+            "text": "STRONGHOLD ENGINEERING INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_140P2023C0001_1443_-NONE-_-NONE-/"
+          },
+          218141868
+        ],
+        [
+          13,
+          {
+            "text": "KIEWIT INFRASTRUCTURE WEST CO.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_140P2025C0038_1443_-NONE-_-NONE-/"
+          },
+          217742923
+        ],
+        [
+          14,
+          {
+            "text": "PLANET TECHNOLOGIES, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_140D0419F0183_1406_47QTCA19D0036_4732/"
+          },
+          201569596.46
+        ],
+        [
+          15,
+          {
+            "text": "BWI TPC, A JOINT VENTURE",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_140R2022C0001_1425_-NONE-_-NONE-/"
+          },
+          186972653.69
+        ],
+        [
+          16,
+          {
+            "text": "DLH, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_140D0420F0422_1406_GS00F062CA_4732/"
+          },
+          180029198.46
+        ],
+        [
+          17,
+          {
+            "text": "CGI FEDERAL INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_140D0419F0357_1406_IND13PC00021_1406/"
+          },
+          162705698.39
+        ],
+        [
+          18,
+          {
+            "text": "DEPLOYED SERVICES, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_140D0423F1122_1406_140D0423D0059_1406/"
+          },
+          156848246.42
+        ],
+        [
+          19,
+          {
+            "text": "MAGELLAN FEDERAL, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_140D0423F0623_1406_GS02F013BA_4732/"
+          },
+          151744103.02
+        ],
+        [
+          20,
+          {
+            "text": "NW CONSTRUCTION, INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_140R2022C0007_1425_-NONE-_-NONE-/"
+          },
+          139347477.87
+        ],
+        [
+          21,
+          {
+            "text": "GENERAL DYNAMICS INFORMATION TECHNOLOGY, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_140D0425F0041_1406_140D0424D0001_1406/"
+          },
+          138049220.59
+        ],
+        [
+          22,
+          {
+            "text": "OSCAR RENDA CONTRACTING INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_140R6024C0015_1425_-NONE-_-NONE-/"
+          },
+          131868925.35
+        ],
+        [
+          23,
+          {
+            "text": "RECORD STEEL AND CONSTRUCTION, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_140P2026C0016_1443_-NONE-_-NONE-/"
+          },
+          129150000
+        ],
+        [
+          24,
+          {
+            "text": "CENTERPOINT LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_140D0420F0335_1406_GS35F515DA_4732/"
+          },
+          126253491.63
+        ],
+        [
+          25,
+          {
+            "text": "HENSEL PHELPS CONSTRUCTION CO",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_140G0322C0005_1434_-NONE-_-NONE-/"
+          },
+          117001937.46
+        ]
+      ]
+    }
+  ],
+  "narrative": {
+    "intro": "In FY2026 to date, Department of the Interior obligated $3.8B across 17,525 contract awards. That is down 42.2% year over year. The average award size was $215K.",
+    "sections": [
+      {
+        "heading": "What does Interior buy?",
+        "body": "Water and Sewer Line and Related Structures Construction was Department of the Interior's largest contract category in FY2026 to date, with $522M obligated, or 13.9% of its contract spending."
+      },
+      {
+        "heading": "Who are Interior's largest contractors?",
+        "body": "GENERAL DYNAMICS INFORMATION TECHNOLOGY, INC. led all Department of the Interior contractors with $133M in obligations during FY2026 to date, a 3.5% share."
+      }
+    ]
+  },
+  "faq": [
+    {
+      "q": "How much does Department of the Interior spend on contracts?",
+      "a": "Department of the Interior obligated $3.8B on federal contracts in FY2026 to date, across 17,525 awards."
+    },
+    {
+      "q": "What does Interior buy?",
+      "a": "Interior's largest contract category is Water and Sewer Line and Related Structures Construction, with $522M obligated in FY2026 to date."
+    },
+    {
+      "q": "Who are Interior's largest contractors?",
+      "a": "GENERAL DYNAMICS INFORMATION TECHNOLOGY, INC. is Interior's largest contractor by obligated dollars in FY2026 to date, with $133M."
+    }
+  ],
+  "related": [
+    {
+      "label": "Department of Defense",
+      "href": "/insights/agency/department-of-defense/"
+    },
+    {
+      "label": "Department of Veterans Affairs",
+      "href": "/insights/agency/department-of-veterans-affairs/"
+    },
+    {
+      "label": "Department of Homeland Security",
+      "href": "/insights/agency/department-of-homeland-security/"
+    },
+    {
+      "label": "Department of Health and Human Services",
+      "href": "/insights/agency/department-of-health-and-human-services/"
+    },
+    {
+      "label": "General Services Administration",
+      "href": "/insights/agency/general-services-administration/"
+    },
+    {
+      "label": "National Aeronautics and Space Administration",
+      "href": "/insights/agency/national-aeronautics-and-space-administration/"
+    }
+  ],
+  "sources": [
+    {
+      "label": "USAspending.gov award data",
+      "href": "https://www.usaspending.gov"
+    }
+  ]
+}

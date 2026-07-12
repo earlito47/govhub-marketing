@@ -1,0 +1,529 @@
+{
+  "pageType": "agency",
+  "slug": "department-of-energy",
+  "title": "DOE Federal Contracts: $45.7B in FY2026",
+  "h1": "Department of Energy: Federal Contract Spending & Top Vendors",
+  "metaDescription": "Department of Energy obligated $45.7B in federal contracts in FY2026 to date. See what it buys, its top vendors, and multi-year trend.",
+  "updated": "2026-07-12",
+  "fyWindow": {
+    "label": "FY2026 to date",
+    "start": "2025-10-01",
+    "end": "2026-07-12"
+  },
+  "stats": {
+    "totalObligations": 45717820631.05,
+    "awardCount": 3729,
+    "yoyGrowthPct": -5.8,
+    "avgAwardSize": 12260075,
+    "smallBusinessSharePct": null
+  },
+  "charts": [
+    {
+      "id": "department-of-energy-trend",
+      "type": "line",
+      "title": "Obligations by fiscal year",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "FY21",
+              37721319442.61
+            ],
+            [
+              "FY22",
+              41183259285.6
+            ],
+            [
+              "FY23",
+              44603688671.33
+            ],
+            [
+              "FY24",
+              46043810154.91
+            ],
+            [
+              "FY25",
+              48549337828.87
+            ],
+            [
+              "FY26",
+              45717820631.05
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Obligations fell 5.8% year over year, from $48.5B in FY2025 to $45.7B in FY2026 to date."
+    },
+    {
+      "id": "department-of-energy-top-naics",
+      "type": "bar",
+      "title": "Top 10 categories (NAICS), FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "Facilities Support Services",
+              23243153582.52
+            ],
+            [
+              "Research and Development in the Physical, Engineering, and Life Sciences",
+              6913755163.29
+            ],
+            [
+              "Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology)",
+              3405599187.22
+            ],
+            [
+              "Remediation Services",
+              2872429721.6
+            ],
+            [
+              "Other Basic Inorganic Chemical Manufacturing",
+              2822472255.2
+            ],
+            [
+              "All Other Professional, Scientific, and Technical Services",
+              1923416598.98
+            ],
+            [
+              "Research and Development in the Physical, Engineering, and Life Sciences (except Biotechnology)",
+              775577420.27
+            ],
+            [
+              "Unknown",
+              627000000
+            ],
+            [
+              "Hazardous Waste Treatment and Disposal",
+              605110608.77
+            ],
+            [
+              "Research and Development in Biotechnology",
+              489987170.65
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Facilities Support Services was Energy's largest contract category, with $23.2B obligated (50.8% of contract spending)."
+    },
+    {
+      "id": "department-of-energy-top-vendors",
+      "type": "bar",
+      "title": "Top 10 vendors, FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "TRIAD NATIONAL SECURITY, LLC",
+              5117188851.9
+            ],
+            [
+              "NATIONAL TECHNOLOGY & ENGINEERING SOLUTIONS OF SANDIA, LLC",
+              4537005905.79
+            ],
+            [
+              "SAVANNAH RIVER NUCLEAR SOLUTIONS LLC",
+              3335233273.33
+            ],
+            [
+              "LAWRENCE LIVERMORE NATIONAL SECURITY, LLC",
+              3264187182.08
+            ],
+            [
+              "CONSOLIDATED NUCLEAR SECURITY, LLC",
+              2931709064.03
+            ],
+            [
+              "UT-BATTELLE LLC",
+              2419040597.28
+            ],
+            [
+              "HONEYWELL FEDERAL MANUFACTURING & TECHNOLOGIES, LLC",
+              2035920872.4
+            ],
+            [
+              "FLUOR MARINE PROPULSION, LLC",
+              1973493715.81
+            ],
+            [
+              "BATTELLE ENERGY ALLIANCE, LLC",
+              1802876828.93
+            ],
+            [
+              "PANTEXAS DETERRENCE, LLC",
+              1602699239.37
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "TRIAD NATIONAL SECURITY, LLC led all Energy contractors with $5.1B, 11.2% of obligations."
+    }
+  ],
+  "tables": [
+    {
+      "title": "Top 10 vendors",
+      "columns": [
+        "Rank",
+        "Vendor",
+        "Obligations"
+      ],
+      "rows": [
+        [
+          1,
+          {
+            "text": "TRIAD NATIONAL SECURITY, LLC",
+            "href": "https://www.usaspending.gov/recipient/59ab4d30-abec-ded6-33c4-5d9f37fd2da0-C/latest/"
+          },
+          5117188851.9
+        ],
+        [
+          2,
+          {
+            "text": "NATIONAL TECHNOLOGY & ENGINEERING SOLUTIONS OF SANDIA, LLC",
+            "href": "https://www.usaspending.gov/recipient/b52d549e-73f7-a818-8c63-4a75904c9df5-C/latest/"
+          },
+          4537005905.79
+        ],
+        [
+          3,
+          {
+            "text": "SAVANNAH RIVER NUCLEAR SOLUTIONS LLC",
+            "href": "https://www.usaspending.gov/recipient/f59302ac-85a9-ee1a-4813-9b07f3377a40-C/latest/"
+          },
+          3335233273.33
+        ],
+        [
+          4,
+          {
+            "text": "LAWRENCE LIVERMORE NATIONAL SECURITY, LLC",
+            "href": "https://www.usaspending.gov/recipient/6d990129-9566-ff86-e9ae-7c6eeef1df7c-C/latest/"
+          },
+          3264187182.08
+        ],
+        [
+          5,
+          {
+            "text": "CONSOLIDATED NUCLEAR SECURITY, LLC",
+            "href": "https://www.usaspending.gov/recipient/3c1a340d-2613-1609-93ce-eb1aba0559b5-C/latest/"
+          },
+          2931709064.03
+        ],
+        [
+          6,
+          {
+            "text": "UT-BATTELLE LLC",
+            "href": "https://www.usaspending.gov/recipient/c236f280-8198-3109-89dd-96eca764ec43-C/latest/"
+          },
+          2419040597.28
+        ],
+        [
+          7,
+          {
+            "text": "HONEYWELL FEDERAL MANUFACTURING & TECHNOLOGIES, LLC",
+            "href": "https://www.usaspending.gov/recipient/9e9725ba-e023-684e-6d7f-f9de4201578f-C/latest/"
+          },
+          2035920872.4
+        ],
+        [
+          8,
+          {
+            "text": "FLUOR MARINE PROPULSION, LLC",
+            "href": "https://www.usaspending.gov/recipient/27de0316-220e-8297-411f-f99b6f60443a-C/latest/"
+          },
+          1973493715.81
+        ],
+        [
+          9,
+          {
+            "text": "BATTELLE ENERGY ALLIANCE, LLC",
+            "href": "https://www.usaspending.gov/recipient/094b64c8-bbe6-5af3-2b26-c52e97d87eba-C/latest/"
+          },
+          1802876828.93
+        ],
+        [
+          10,
+          {
+            "text": "PANTEXAS DETERRENCE, LLC",
+            "href": "https://www.usaspending.gov/recipient/eb9633b3-ae3d-e77a-dcb7-80d93fab5b0e-C/latest/"
+          },
+          1602699239.37
+        ]
+      ]
+    },
+    {
+      "title": "Largest awards, FY2026 to date",
+      "columns": [
+        "Rank",
+        "Recipient",
+        "Award Amount"
+      ],
+      "rows": [
+        [
+          1,
+          {
+            "text": "LOCKHEED MARTIN CORP",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_DEAC0494AL85000_8900_-NONE-_-NONE-/"
+          },
+          48063737196.35
+        ],
+        [
+          2,
+          {
+            "text": "NATIONAL TECHNOLOGY & ENGINEERING SOLUTIONS OF SANDIA, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_DENA0003525_8900_-NONE-_-NONE-/"
+          },
+          42571358867.68
+        ],
+        [
+          3,
+          {
+            "text": "UT-BATTELLE LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_DEAC0500OR22725_8900_-NONE-_-NONE-/"
+          },
+          42096094266.96
+        ],
+        [
+          4,
+          {
+            "text": "LAWRENCE LIVERMORE NATIONAL SECURITY, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_DEAC5207NA27344_8900_-NONE-_-NONE-/"
+          },
+          41152283440.62
+        ],
+        [
+          5,
+          {
+            "text": "REGENTS OF THE UNIVERSITY OF CALIFORNIA, THE",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_DEAC3243AL00036_8900_-NONE-_-NONE-/"
+          },
+          35295925219.18
+        ],
+        [
+          6,
+          {
+            "text": "TRIAD NATIONAL SECURITY, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_89233218CNA000001_8900_-NONE-_-NONE-/"
+          },
+          35040435873.75
+        ],
+        [
+          7,
+          {
+            "text": "CONSOLIDATED NUCLEAR SECURITY, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_DENA0001942_8900_-NONE-_-NONE-/"
+          },
+          34256470772.89
+        ],
+        [
+          8,
+          {
+            "text": "BATTELLE MEMORIAL INSTITUTE",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_DEAC0576RL01830_8900_-NONE-_-NONE-/"
+          },
+          30543975956.39
+        ],
+        [
+          9,
+          {
+            "text": "SAVANNAH RIVER NUCLEAR SOLUTIONS LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_DEAC0908SR22470_8900_-NONE-_-NONE-/"
+          },
+          27551935999.46
+        ],
+        [
+          10,
+          {
+            "text": "LOS ALAMOS NATIONAL SECURITY LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_DEAC5206NA25396_8900_-NONE-_-NONE-/"
+          },
+          27420180285.12
+        ],
+        [
+          11,
+          {
+            "text": "BATTELLE ENERGY ALLIANCE, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_DEAC0705ID14517_8900_-NONE-_-NONE-/"
+          },
+          26114643335.95
+        ],
+        [
+          12,
+          {
+            "text": "LOCKHEED MARTIN SERVICES, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_DEAC0584OR21400_8900_-NONE-_-NONE-/"
+          },
+          20646113720.09
+        ],
+        [
+          13,
+          {
+            "text": "THE REGENTS OF THE UNIVERSITY OF CALIFORNIA",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_DEAC0205CH11231_8900_-NONE-_-NONE-/"
+          },
+          19743215928.42
+        ],
+        [
+          14,
+          {
+            "text": "THE REGENTS OF THE UNIVERSITY OF CALIFORNIA",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_DEAC0343SF00048_8900_-NONE-_-NONE-/"
+          },
+          18009881071.27
+        ],
+        [
+          15,
+          {
+            "text": "HONEYWELL FEDERAL MANUFACTURING & TECHNOLOGIES, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_DENA0002839_8900_-NONE-_-NONE-/"
+          },
+          17488650862.28
+        ],
+        [
+          16,
+          {
+            "text": "BECHTEL NATIONAL, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_DEAC2701RV14136_8900_-NONE-_-NONE-/"
+          },
+          17319586105.74
+        ],
+        [
+          17,
+          {
+            "text": "UCHICAGO ARGONNE, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_DEAC0206CH11357_8900_-NONE-_-NONE-/"
+          },
+          17318912548.91
+        ],
+        [
+          18,
+          {
+            "text": "THE LELAND STANFORD JUNIOR UNIVERSITY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_DEAC0276SF00515_8900_-NONE-_-NONE-/"
+          },
+          14884413468.37
+        ],
+        [
+          19,
+          {
+            "text": "FLUOR MARINE PROPULSION, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_89233018CNR000004_8900_-NONE-_-NONE-/"
+          },
+          14785385287.21
+        ],
+        [
+          20,
+          {
+            "text": "ALLIANCE FOR ENERGY INNOVATION, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_DEAC3608GO28308_8900_-NONE-_-NONE-/"
+          },
+          10790056186.9
+        ],
+        [
+          21,
+          {
+            "text": "WASHINGTON RIVER PROTECTION SOLUTIONS LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_DEAC2708RV14800_8900_-NONE-_-NONE-/"
+          },
+          10572204771.54
+        ],
+        [
+          22,
+          {
+            "text": "BROOKHAVEN SCIENCE ASSOCIATES LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_DESC0012704_8900_-NONE-_-NONE-/"
+          },
+          8561512218.42
+        ],
+        [
+          23,
+          {
+            "text": "MISSION SUPPORT & TEST SERVICES LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_DENA0003624_8900_-NONE-_-NONE-/"
+          },
+          7621715102.82
+        ],
+        [
+          24,
+          {
+            "text": "NATIONAL SECURITY TECHNOLOGIES, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_DEAC5206NA25946_8900_-NONE-_-NONE-/"
+          },
+          5633229761.95
+        ],
+        [
+          25,
+          {
+            "text": "FLUOR-BWXT PORTSMOUTH LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_DEAC3010CC40017_8900_-NONE-_-NONE-/"
+          },
+          4465824270.16
+        ]
+      ]
+    }
+  ],
+  "narrative": {
+    "intro": "In FY2026 to date, Department of Energy obligated $45.7B across 3,729 contract awards. That is down 5.8% year over year. The average award size was $12.3M.",
+    "sections": [
+      {
+        "heading": "What does Energy buy?",
+        "body": "Facilities Support Services was Department of Energy's largest contract category in FY2026 to date, with $23.2B obligated, or 50.8% of its contract spending."
+      },
+      {
+        "heading": "Who are Energy's largest contractors?",
+        "body": "TRIAD NATIONAL SECURITY, LLC led all Department of Energy contractors with $5.1B in obligations during FY2026 to date, a 11.2% share."
+      }
+    ]
+  },
+  "faq": [
+    {
+      "q": "How much does Department of Energy spend on contracts?",
+      "a": "Department of Energy obligated $45.7B on federal contracts in FY2026 to date, across 3,729 awards."
+    },
+    {
+      "q": "What does Energy buy?",
+      "a": "Energy's largest contract category is Facilities Support Services, with $23.2B obligated in FY2026 to date."
+    },
+    {
+      "q": "Who are Energy's largest contractors?",
+      "a": "TRIAD NATIONAL SECURITY, LLC is Energy's largest contractor by obligated dollars in FY2026 to date, with $5.1B."
+    }
+  ],
+  "related": [
+    {
+      "label": "Department of Defense",
+      "href": "/insights/agency/department-of-defense/"
+    },
+    {
+      "label": "Department of Veterans Affairs",
+      "href": "/insights/agency/department-of-veterans-affairs/"
+    },
+    {
+      "label": "Department of Homeland Security",
+      "href": "/insights/agency/department-of-homeland-security/"
+    },
+    {
+      "label": "Department of Health and Human Services",
+      "href": "/insights/agency/department-of-health-and-human-services/"
+    },
+    {
+      "label": "General Services Administration",
+      "href": "/insights/agency/general-services-administration/"
+    },
+    {
+      "label": "National Aeronautics and Space Administration",
+      "href": "/insights/agency/national-aeronautics-and-space-administration/"
+    }
+  ],
+  "sources": [
+    {
+      "label": "USAspending.gov award data",
+      "href": "https://www.usaspending.gov"
+    }
+  ]
+}

@@ -1,12 +1,12 @@
 ---
-// NAICS entity dashboard — one page per file in src/data/insights/naics/.
+// State entity dashboard — one page per file in src/data/insights/state/.
 import type { GetStaticPaths } from 'astro';
 import type { InsightsPage } from '../../../lib/insightsTypes';
 import InsightsLayout from '../../../components/insights/InsightsLayout.astro';
 import EntityDashboard from '../../../components/insights/EntityDashboard.astro';
 
 export const getStaticPaths = (() => {
-  const files = import.meta.glob<{ default: InsightsPage }>('../../../data/insights/naics/*.json', { eager: true });
+  const files = import.meta.glob<{ default: InsightsPage }>('../../../data/insights/state/*.json', { eager: true });
   return Object.entries(files).map(([path, mod]) => {
     const slug = path.split('/').pop()!.replace('.json', '');
     return { params: { slug }, props: { page: mod.default } };
@@ -18,14 +18,15 @@ interface Props {
 }
 
 const { page } = Astro.props;
-const canonical = new URL(`/insights/naics/${page.slug}/`, Astro.site).toString();
+const canonical = new URL(`/insights/state/${page.slug}/`, Astro.site).toString();
+const stateLabel = page.h1.replace(/^Federal Contracts in /, '').split(':')[0];
 ---
 
 <InsightsLayout
   title={page.title}
   description={page.metaDescription}
   dataset={{
-    name: `Federal contract obligations — NAICS ${page.slug}`,
+    name: `Federal contract obligations — ${stateLabel}`,
     description: page.metaDescription,
     dateModified: page.updated,
     temporalCoverage: `${page.fyWindow.start}/${page.fyWindow.end}`,
@@ -37,9 +38,12 @@ const canonical = new URL(`/insights/naics/${page.slug}/`, Astro.site).toString(
     breadcrumbs={[
       { name: 'Home', url: '/' },
       { name: 'Insights', url: '/insights/' },
-      { name: `NAICS ${page.slug}`, url: `/insights/naics/${page.slug}/` },
+      { name: 'States', url: '/insights/#states' },
+      { name: stateLabel, url: `/insights/state/${page.slug}/` },
     ]}
-    eyebrow={`Federal contract market · NAICS ${page.slug}`}
-    campaign="naics"
+    eyebrow="Federal contracts by state"
+    campaign="state"
+    dodLag={true}
+    relatedHeading="Other states"
   />
 </InsightsLayout>

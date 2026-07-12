@@ -1,0 +1,529 @@
+{
+  "pageType": "agency",
+  "slug": "department-of-the-treasury",
+  "title": "Treasury Federal Contracts: $4.5B in FY2026",
+  "h1": "Department of the Treasury: Federal Contract Spending & Top Vendors",
+  "metaDescription": "Department of the Treasury obligated $4.5B in federal contracts in FY2026 to date. See what it buys, its top vendors, and multi-year trend.",
+  "updated": "2026-07-12",
+  "fyWindow": {
+    "label": "FY2026 to date",
+    "start": "2025-10-01",
+    "end": "2026-07-12"
+  },
+  "stats": {
+    "totalObligations": 4453000620.16,
+    "awardCount": 6571,
+    "yoyGrowthPct": -48,
+    "avgAwardSize": 677675,
+    "smallBusinessSharePct": null
+  },
+  "charts": [
+    {
+      "id": "department-of-the-treasury-trend",
+      "type": "line",
+      "title": "Obligations by fiscal year",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "FY21",
+              9566791887.66
+            ],
+            [
+              "FY22",
+              9306547378.56
+            ],
+            [
+              "FY23",
+              10257464984.41
+            ],
+            [
+              "FY24",
+              9292223027.83
+            ],
+            [
+              "FY25",
+              8555511333.75
+            ],
+            [
+              "FY26",
+              4453000620.16
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Obligations fell 48.0% year over year, from $8.6B in FY2025 to $4.5B in FY2026 to date."
+    },
+    {
+      "id": "department-of-the-treasury-top-naics",
+      "type": "bar",
+      "title": "Top 10 categories (NAICS), FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "Nonferrous Metal (except Aluminum) Smelting and Refining",
+              912834030.59
+            ],
+            [
+              "Other Computer Related Services",
+              891870746.28
+            ],
+            [
+              "Computer Systems Design Services",
+              418800490.73
+            ],
+            [
+              "Nonferrous Metal (except Copper and Aluminum) Rolling, Drawing, and Extruding",
+              338729145.24
+            ],
+            [
+              "Copper Rolling, Drawing, Extruding, and Alloying",
+              248369880.17
+            ],
+            [
+              "Custom Computer Programming Services",
+              241750051.4
+            ],
+            [
+              "Paper (except Newsprint) Mills",
+              125210315.54
+            ],
+            [
+              "Collection Agencies",
+              118205659.56
+            ],
+            [
+              "Electronic Computer Manufacturing",
+              100081876.23
+            ],
+            [
+              "Software Publishers",
+              94989412.53
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Nonferrous Metal (except Aluminum) Smelting and Refining was Treasury's largest contract category, with $913M obligated (20.5% of contract spending)."
+    },
+    {
+      "id": "department-of-the-treasury-top-vendors",
+      "type": "bar",
+      "title": "Top 10 vendors, FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "STONEX FINANCIAL LTD",
+              826741081.66
+            ],
+            [
+              "ASAHI REFINING USA INC",
+              333737227.84
+            ],
+            [
+              "FCN, INC.",
+              182655782.59
+            ],
+            [
+              "WIELAND ROLLED PRODUCTS NORTH AMERICA, LLC",
+              145335740.65
+            ],
+            [
+              "CRANE & CO., INC.",
+              125210315.54
+            ],
+            [
+              "SCIENCE APPLICATIONS INTERNATIONAL CORPORATION",
+              118253495.51
+            ],
+            [
+              "PMX INDUSTRIES, INC.",
+              103034139.52
+            ],
+            [
+              "ACCENTURE FEDERAL SERVICES LLC",
+              100922050.54
+            ],
+            [
+              "AMENTUM SERVICES, INC.",
+              81946461.53
+            ],
+            [
+              "LANCER INFORMATION SOLUTIONS, LLC",
+              79477080.81
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "STONEX FINANCIAL LTD led all Treasury contractors with $827M, 18.6% of obligations."
+    }
+  ],
+  "tables": [
+    {
+      "title": "Top 10 vendors",
+      "columns": [
+        "Rank",
+        "Vendor",
+        "Obligations"
+      ],
+      "rows": [
+        [
+          1,
+          {
+            "text": "STONEX FINANCIAL LTD",
+            "href": "https://www.usaspending.gov/recipient/9e88e310-e87a-d26a-2ddb-dd18f27b49a5-C/latest/"
+          },
+          826741081.66
+        ],
+        [
+          2,
+          {
+            "text": "ASAHI REFINING USA INC",
+            "href": "https://www.usaspending.gov/recipient/bb19d6bf-9975-f10a-ee78-4404ebdc6d61-C/latest/"
+          },
+          333737227.84
+        ],
+        [
+          3,
+          {
+            "text": "FCN, INC.",
+            "href": "https://www.usaspending.gov/recipient/3792ca7f-d5d2-d89c-872b-8c64e4e6390e-C/latest/"
+          },
+          182655782.59
+        ],
+        [
+          4,
+          {
+            "text": "WIELAND ROLLED PRODUCTS NORTH AMERICA, LLC",
+            "href": "https://www.usaspending.gov/recipient/f5c94e5f-0c97-f038-ac92-9f0668fd7115-C/latest/"
+          },
+          145335740.65
+        ],
+        [
+          5,
+          {
+            "text": "CRANE & CO., INC.",
+            "href": "https://www.usaspending.gov/recipient/57d990eb-6c0b-82fd-a854-5b67e14a3b54-C/latest/"
+          },
+          125210315.54
+        ],
+        [
+          6,
+          {
+            "text": "SCIENCE APPLICATIONS INTERNATIONAL CORPORATION",
+            "href": "https://www.usaspending.gov/recipient/20af0683-f17d-1f8f-38ee-2f11bd124559-C/latest/"
+          },
+          118253495.51
+        ],
+        [
+          7,
+          {
+            "text": "PMX INDUSTRIES, INC.",
+            "href": "https://www.usaspending.gov/recipient/7ac9c230-cad5-6fc9-a095-a7f14a4f5665-C/latest/"
+          },
+          103034139.52
+        ],
+        [
+          8,
+          {
+            "text": "ACCENTURE FEDERAL SERVICES LLC",
+            "href": "https://www.usaspending.gov/recipient/d41a6b8a-9d6a-0d28-7e24-989e31731aad-C/latest/"
+          },
+          100922050.54
+        ],
+        [
+          9,
+          {
+            "text": "AMENTUM SERVICES, INC.",
+            "href": "https://www.usaspending.gov/recipient/fe5366b4-84c8-12ff-126f-f123de29819c-C/latest/"
+          },
+          81946461.53
+        ],
+        [
+          10,
+          {
+            "text": "LANCER INFORMATION SOLUTIONS, LLC",
+            "href": "https://www.usaspending.gov/recipient/ebab4895-f155-392d-b3ec-fca286753df2-C/latest/"
+          },
+          79477080.81
+        ]
+      ]
+    },
+    {
+      "title": "Largest awards, FY2026 to date",
+      "columns": [
+        "Rank",
+        "Recipient",
+        "Award Amount"
+      ],
+      "rows": [
+        [
+          1,
+          {
+            "text": "AT&T ENTERPRISES, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_2032H521F00050_2050_GS00Q17NSD3000_4732/"
+          },
+          320206879.61
+        ],
+        [
+          2,
+          {
+            "text": "LANCER INFORMATION SOLUTIONS, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_2032H325F00032_2001_NNG15SD29B_8000/"
+          },
+          316242190.14
+        ],
+        [
+          3,
+          {
+            "text": "PERATON ENTERPRISE SOLUTIONS LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_2032H521F00298_2050_HHSN316201500009W_7529/"
+          },
+          294428423.66
+        ],
+        [
+          4,
+          {
+            "text": "VERIZON BUSINESS NETWORK SERVICES LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_2032H519F00641_2050_GS00Q17NSD3009_4732/"
+          },
+          264558691.09
+        ],
+        [
+          5,
+          {
+            "text": "FOUR LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_2032H523F00382_2050_NNG15SC73B_8000/"
+          },
+          259389462.26
+        ],
+        [
+          6,
+          {
+            "text": "FCN, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_2032H523F00058_2050_47QTCA19D00CB_4732/"
+          },
+          242713808.56
+        ],
+        [
+          7,
+          {
+            "text": "MINBURN TECHNOLOGY GROUP, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_2032H524F00310_2050_2032H524A00003_2050/"
+          },
+          241619624.08
+        ],
+        [
+          8,
+          {
+            "text": "ACCENTURE FEDERAL SERVICES LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_2032H522F00497_2050_TIRNO17D00004_2050/"
+          },
+          192221740.89
+        ],
+        [
+          9,
+          {
+            "text": "COUNTERTRADE PRODUCTS, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_2032H325F00025_2001_NNG15SC05B_8000/"
+          },
+          182442070.23
+        ],
+        [
+          10,
+          {
+            "text": "THE CBE GROUP, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_2032H521F00136_2050_GS23F0230P_4730/"
+          },
+          182317769.42
+        ],
+        [
+          11,
+          {
+            "text": "MAXIMUS FEDERAL SERVICES, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_2032H519F00785_2050_47QTCK18D0044_4732/"
+          },
+          171182965.52
+        ],
+        [
+          12,
+          {
+            "text": "ACCENTURE FEDERAL SERVICES LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_2032H521F00077_2050_47QTCK18D0036_4732/"
+          },
+          157733845.06
+        ],
+        [
+          13,
+          {
+            "text": "ACCENTURE FEDERAL SERVICES LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_205AE925F00190_2050_47QTCK18D0036_4732/"
+          },
+          147253387.28
+        ],
+        [
+          14,
+          {
+            "text": "SCIENCE APPLICATIONS INTERNATIONAL CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_2032H525F00053_2050_2032H523A00010_2050/"
+          },
+          145527763.17
+        ],
+        [
+          15,
+          {
+            "text": "DELL FEDERAL SYSTEMS L.P",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_2032H520F00082_2050_GS35F0884P_4730/"
+          },
+          139390665.42
+        ],
+        [
+          16,
+          {
+            "text": "CONTINENTAL SERVICE GROUP, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_2032H521F00138_2050_GS23F0084P_4730/"
+          },
+          136266292.01
+        ],
+        [
+          17,
+          {
+            "text": "KOENIG & BAUER BANKNOTE SOLUTIONS SA",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_2031ZA17C00174_2041_-NONE-_-NONE-/"
+          },
+          128453348.6
+        ],
+        [
+          18,
+          {
+            "text": "COAST PROFESSIONAL, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_2032H521F00137_2050_GS23F0009U_4730/"
+          },
+          128051734.64
+        ],
+        [
+          19,
+          {
+            "text": "SCIENCE APPLICATIONS INTERNATIONAL CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_2032H524F00353_2050_2032H523A00010_2050/"
+          },
+          125764362.71
+        ],
+        [
+          20,
+          {
+            "text": "DELOITTE CONSULTING LLP",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_2031ZB21F00015_2041_47QTCK18D0029_4732/"
+          },
+          124376878.75
+        ],
+        [
+          21,
+          {
+            "text": "KOENIG & BAUER BANKNOTE SOLUTIONS SA",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_2031ZA24C00044_2041_-NONE-_-NONE-/"
+          },
+          122168466.8
+        ],
+        [
+          22,
+          {
+            "text": "N.S.P. VENTURES CORP.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_2031JG20C00001_2044_-NONE-_-NONE-/"
+          },
+          113986369.9
+        ],
+        [
+          23,
+          {
+            "text": "MAXIMUS FEDERAL SERVICES, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_2032H521F00346_2050_47QTCK18D0044_4732/"
+          },
+          112456030.92
+        ],
+        [
+          24,
+          {
+            "text": "INTERNATIONAL BUSINESS MACHINES CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_2032H520F00469_2050_47QTCK18D0014_4732/"
+          },
+          110364715.16
+        ],
+        [
+          25,
+          {
+            "text": "KOENIG & BAUER BANKNOTE SOLUTIONS SA",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_2031ZA22C00388_2041_-NONE-_-NONE-/"
+          },
+          95291212.95
+        ]
+      ]
+    }
+  ],
+  "narrative": {
+    "intro": "In FY2026 to date, Department of the Treasury obligated $4.5B across 6,571 contract awards. That is down 48.0% year over year. The average award size was $678K.",
+    "sections": [
+      {
+        "heading": "What does Treasury buy?",
+        "body": "Nonferrous Metal (except Aluminum) Smelting and Refining was Department of the Treasury's largest contract category in FY2026 to date, with $913M obligated, or 20.5% of its contract spending."
+      },
+      {
+        "heading": "Who are Treasury's largest contractors?",
+        "body": "STONEX FINANCIAL LTD led all Department of the Treasury contractors with $827M in obligations during FY2026 to date, a 18.6% share."
+      }
+    ]
+  },
+  "faq": [
+    {
+      "q": "How much does Department of the Treasury spend on contracts?",
+      "a": "Department of the Treasury obligated $4.5B on federal contracts in FY2026 to date, across 6,571 awards."
+    },
+    {
+      "q": "What does Treasury buy?",
+      "a": "Treasury's largest contract category is Nonferrous Metal (except Aluminum) Smelting and Refining, with $913M obligated in FY2026 to date."
+    },
+    {
+      "q": "Who are Treasury's largest contractors?",
+      "a": "STONEX FINANCIAL LTD is Treasury's largest contractor by obligated dollars in FY2026 to date, with $827M."
+    }
+  ],
+  "related": [
+    {
+      "label": "Department of Defense",
+      "href": "/insights/agency/department-of-defense/"
+    },
+    {
+      "label": "Department of Veterans Affairs",
+      "href": "/insights/agency/department-of-veterans-affairs/"
+    },
+    {
+      "label": "Department of Homeland Security",
+      "href": "/insights/agency/department-of-homeland-security/"
+    },
+    {
+      "label": "Department of Health and Human Services",
+      "href": "/insights/agency/department-of-health-and-human-services/"
+    },
+    {
+      "label": "General Services Administration",
+      "href": "/insights/agency/general-services-administration/"
+    },
+    {
+      "label": "National Aeronautics and Space Administration",
+      "href": "/insights/agency/national-aeronautics-and-space-administration/"
+    }
+  ],
+  "sources": [
+    {
+      "label": "USAspending.gov award data",
+      "href": "https://www.usaspending.gov"
+    }
+  ]
+}

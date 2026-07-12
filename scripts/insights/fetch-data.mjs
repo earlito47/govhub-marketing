@@ -116,6 +116,75 @@ export async function fetchPilotRawData({ asOfDate, client } = {}) {
   return { raw, requestCount: activeClient.requestCount };
 }
 
+// ---- Generic entity fetch (agency, state, and any future dimension) --------
+// `baseFilter` is the dimension filter (e.g. { agencies: [...] } or
+// { place_of_performance_locations: [...] }); `categoryDims` is the ordered
+// list of spending_by_category dimensions to pull as ranking charts.
+function withContract(baseFilter, timePeriod) {
+  return {
+    award_type_codes: CONTRACT_AWARD_TYPE_CODES,
+    ...baseFilter,
+    time_period: [timePeriod],
+  };
+}
+
+export async function fetchEntityRaw(client, { kind, slug, name, baseFilter, categoryDims, asOfDate, trendYears = 6 }) {
+  const currentFy = fiscalYearOf(asOfDate);
+  const currentFyRange = fiscalYearRange(currentFy);
+  const fyTp = { start_date: currentFyRange.start, end_date: currentFyRange.end };
+  const trendTp = { start_date: fiscalYearRange(currentFy - trendYears + 1).start, end_date: currentFyRange.end };
+  const isoWeek = isoWeekString(new Date(`${asOfDate}T00:00:00Z`));
+  const label = (n) => `${kind}/${slug}/${n}/${isoWeek}`;
+
+  const trend = await cachedCall(client, isoWeek, label('trend'), () =>
+    client.spendingOverTime({ group: 'fiscal_year', filters: withContract(baseFilter, trendTp) })
+  );
+
+  const cats = {};
+  for (const cat of categoryDims) {
+    cats[cat] = await cachedCall(client, isoWeek, label(`cat-${cat}`), () =>
+      client.spendingByCategory(cat, withContract(baseFilter, fyTp), { limit: 10 })
+    );
+  }
+
+  const largestAwards = await cachedCall(client, isoWeek, label('largest-awards'), () =>
+    client.spendingByAward({
+      filters: withContract(baseFilter, fyTp),
+      fields: AWARD_FIELDS,
+      sort: 'Award Amount',
+      order: 'desc',
+      limit: 25,
+    })
+  );
+
+  const awardCount = await cachedCall(client, isoWeek, label('award-count'), () =>
+    client.spendingByAwardCount(withContract(baseFilter, fyTp))
+  );
+
+  return { kind, slug, name, asOfDate, currentFy, currentFyRange, trend, cats, largestAwards, awardCount };
+}
+
+const CATEGORY_DIMS = {
+  agency: ['naics', 'recipient_duns'],
+  state: ['awarding_agency', 'recipient_duns', 'naics'],
+};
+
+export function agencyBaseFilter(name) {
+  return { agencies: [{ type: 'awarding', tier: 'toptier', name }] };
+}
+
+export function stateBaseFilter(code) {
+  return { place_of_performance_locations: [{ country: 'USA', state: code }] };
+}
+
+export async function fetchAgencyRaw(client, { slug, name, asOfDate }) {
+  return fetchEntityRaw(client, { kind: 'agency', slug, name, baseFilter: agencyBaseFilter(name), categoryDims: CATEGORY_DIMS.agency, asOfDate });
+}
+
+export async function fetchStateRaw(client, { slug, name, code, asOfDate }) {
+  return fetchEntityRaw(client, { kind: 'state', slug, name, baseFilter: stateBaseFilter(code), categoryDims: CATEGORY_DIMS.state, asOfDate });
+}
+
 async function main() {
   const asOfDate = process.argv[2] ?? new Date().toISOString().slice(0, 10);
   console.log(`[fetch-data] Fetching pilot NAICS raw data as of ${asOfDate} (network required)...`);

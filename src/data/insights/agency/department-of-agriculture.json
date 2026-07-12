@@ -1,0 +1,529 @@
+{
+  "pageType": "agency",
+  "slug": "department-of-agriculture",
+  "title": "USDA Federal Contracts: $6.3B in FY2026",
+  "h1": "Department of Agriculture: Federal Contract Spending & Top Vendors",
+  "metaDescription": "Department of Agriculture obligated $6.3B in federal contracts in FY2026 to date. See what it buys, its top vendors, and multi-year trend.",
+  "updated": "2026-07-12",
+  "fyWindow": {
+    "label": "FY2026 to date",
+    "start": "2025-10-01",
+    "end": "2026-07-12"
+  },
+  "stats": {
+    "totalObligations": 6337516632.22,
+    "awardCount": 16591,
+    "yoyGrowthPct": -33.8,
+    "avgAwardSize": 381985,
+    "smallBusinessSharePct": null
+  },
+  "charts": [
+    {
+      "id": "department-of-agriculture-trend",
+      "type": "line",
+      "title": "Obligations by fiscal year",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "FY21",
+              9729368981.37
+            ],
+            [
+              "FY22",
+              10036371505.35
+            ],
+            [
+              "FY23",
+              11456707248.25
+            ],
+            [
+              "FY24",
+              11597474819.05
+            ],
+            [
+              "FY25",
+              9569126030.28
+            ],
+            [
+              "FY26",
+              6337516632.22
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Obligations fell 33.8% year over year, from $9.6B in FY2025 to $6.3B in FY2026 to date."
+    },
+    {
+      "id": "department-of-agriculture-top-naics",
+      "type": "bar",
+      "title": "Top 10 categories (NAICS), FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "Nonscheduled Chartered Freight Air Transportation",
+              671729800.2
+            ],
+            [
+              "Highway, Street, and Bridge Construction",
+              420352727.91
+            ],
+            [
+              "Animal (except Poultry) Slaughtering",
+              406314406.71
+            ],
+            [
+              "Fruit and Vegetable Canning",
+              392430485.43
+            ],
+            [
+              "Poultry Processing",
+              356072134.86
+            ],
+            [
+              "Computer Systems Design Services",
+              309351580.31
+            ],
+            [
+              "Other Computer Related Services",
+              308806262
+            ],
+            [
+              "Cheese Manufacturing",
+              305679000.78
+            ],
+            [
+              "Support Activities for Forestry",
+              239756875.1
+            ],
+            [
+              "All Other Miscellaneous Food Manufacturing",
+              218300083.8
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Nonscheduled Chartered Freight Air Transportation was Agriculture's largest contract category, with $672M obligated (10.6% of contract spending)."
+    },
+    {
+      "id": "department-of-agriculture-top-vendors",
+      "type": "bar",
+      "title": "Top 10 vendors, FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "KIEWIT INFRASTRUCTURE SOUTH CO",
+              260562774.7
+            ],
+            [
+              "TYSON FOODS INC.",
+              156680508
+            ],
+            [
+              "PALANTIR TECHNOLOGIES INC.",
+              129416051.52
+            ],
+            [
+              "HELICOPTER TRANSPORT SERVICES, LLC",
+              115685262.33
+            ],
+            [
+              "PACIFIC COAST PRODUCERS",
+              105558252.33
+            ],
+            [
+              "CARAHSOFT TECHNOLOGY CORP",
+              91851974.55
+            ],
+            [
+              "CENTRAL VALLEY MEAT CO., INC.",
+              84361560.56
+            ],
+            [
+              "CHS INC.",
+              76885862.22
+            ],
+            [
+              "ASSOCIATED MILK PRODUCERS INC",
+              73814319.22
+            ],
+            [
+              "CALIFORNIA DAIRIES INC",
+              72929043.78
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "KIEWIT INFRASTRUCTURE SOUTH CO led all Agriculture contractors with $261M, 4.1% of obligations."
+    }
+  ],
+  "tables": [
+    {
+      "title": "Top 10 vendors",
+      "columns": [
+        "Rank",
+        "Vendor",
+        "Obligations"
+      ],
+      "rows": [
+        [
+          1,
+          {
+            "text": "KIEWIT INFRASTRUCTURE SOUTH CO",
+            "href": "https://www.usaspending.gov/recipient/6bd90847-e06b-5fac-f78d-b0e185bc2ff6-C/latest/"
+          },
+          260562774.7
+        ],
+        [
+          2,
+          {
+            "text": "TYSON FOODS INC.",
+            "href": "https://www.usaspending.gov/recipient/388ab88d-74c2-54ac-19e4-cb2df60ad520-C/latest/"
+          },
+          156680508
+        ],
+        [
+          3,
+          {
+            "text": "PALANTIR TECHNOLOGIES INC.",
+            "href": "https://www.usaspending.gov/recipient/1ea8a9a4-3726-3491-9040-66950bb67606-C/latest/"
+          },
+          129416051.52
+        ],
+        [
+          4,
+          {
+            "text": "HELICOPTER TRANSPORT SERVICES, LLC",
+            "href": "https://www.usaspending.gov/recipient/fdc7f8b9-3fcc-9602-e0b3-c331c283d5d2-C/latest/"
+          },
+          115685262.33
+        ],
+        [
+          5,
+          {
+            "text": "PACIFIC COAST PRODUCERS",
+            "href": "https://www.usaspending.gov/recipient/c273eb48-d122-a5f1-8037-040e89c0d237-C/latest/"
+          },
+          105558252.33
+        ],
+        [
+          6,
+          {
+            "text": "CARAHSOFT TECHNOLOGY CORP",
+            "href": "https://www.usaspending.gov/recipient/4e74aeb5-dd21-20a7-63bd-e9f934d69583-C/latest/"
+          },
+          91851974.55
+        ],
+        [
+          7,
+          {
+            "text": "CENTRAL VALLEY MEAT CO., INC.",
+            "href": "https://www.usaspending.gov/recipient/562e02cd-f995-bb32-e730-4a413d1b34ae-C/latest/"
+          },
+          84361560.56
+        ],
+        [
+          8,
+          {
+            "text": "CHS INC.",
+            "href": "https://www.usaspending.gov/recipient/f51e2247-e31c-b816-3208-6dac92a0e54c-C/latest/"
+          },
+          76885862.22
+        ],
+        [
+          9,
+          {
+            "text": "ASSOCIATED MILK PRODUCERS INC",
+            "href": "https://www.usaspending.gov/recipient/a9414861-272b-30e3-68c7-b2551f46810a-C/latest/"
+          },
+          73814319.22
+        ],
+        [
+          10,
+          {
+            "text": "CALIFORNIA DAIRIES INC",
+            "href": "https://www.usaspending.gov/recipient/567e4ccc-b06e-6133-40c0-7eecba67dc9e-C/latest/"
+          },
+          72929043.78
+        ]
+      ]
+    },
+    {
+      "title": "Largest awards, FY2026 to date",
+      "columns": [
+        "Rank",
+        "Recipient",
+        "Award Amount"
+      ],
+      "rows": [
+        [
+          1,
+          {
+            "text": "ACCENTURE FEDERAL SERVICES LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_12314418F0020_1205_HHSN316201200002W_7529/"
+          },
+          344946887.32
+        ],
+        [
+          2,
+          {
+            "text": "SYNERGY BUSINESS INNOVATION & SOLUTIONS INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_12314421F0279_1205_75N98119D00005_7529/"
+          },
+          306775775.24
+        ],
+        [
+          3,
+          {
+            "text": "CARAHSOFT TECHNOLOGY CORP",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_12314420F0355_1205_NNG15SC27B_8000/"
+          },
+          294589912.53
+        ],
+        [
+          4,
+          {
+            "text": "KIEWIT INFRASTRUCTURE SOUTH CO",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_12445126C0001_12C2_-NONE-_-NONE-/"
+          },
+          260562774.7
+        ],
+        [
+          5,
+          {
+            "text": "DAWSON'S REALTY & MORTGAGES, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_12SAD223F0014_12E3_12SAD223D0001_12E3/"
+          },
+          248737969.04
+        ],
+        [
+          6,
+          {
+            "text": "MINBURN TECHNOLOGY GROUP, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_12314422C0055_1205_-NONE-_-NONE-/"
+          },
+          234662303.95
+        ],
+        [
+          7,
+          {
+            "text": "INFORMATION SYSTEMS & NETWORKS CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_12SAD223F0015_12E3_12SAD223D0004_12E3/"
+          },
+          224870576.48
+        ],
+        [
+          8,
+          {
+            "text": "LUMEN TECHNOLOGIES GOVERNMENT SOLUTIONS, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_12314422F0069_1205_GS00Q17NSD3006_4732/"
+          },
+          183384821.89
+        ],
+        [
+          9,
+          {
+            "text": "AT&T ENTERPRISES, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_12314423C0069_1205_-NONE-_-NONE-/"
+          },
+          155297859.29
+        ],
+        [
+          10,
+          {
+            "text": "M. A. MORTENSON COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_AG3K25C170001_12H2_-NONE-_-NONE-/"
+          },
+          149565662
+        ],
+        [
+          11,
+          {
+            "text": "NATIONAL RURAL WATER ASSOCIATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_12SAD121C0001_12E3_-NONE-_-NONE-/"
+          },
+          121215475.62
+        ],
+        [
+          12,
+          {
+            "text": "GRUNLEY CONSTRUCTION CO., INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_12314422C0098_1205_-NONE-_-NONE-/"
+          },
+          119536274.26
+        ],
+        [
+          13,
+          {
+            "text": "CONDUENT FEDERAL SOLUTIONS LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_AG3144D160336_1205_HHSN316201200003W_7529/"
+          },
+          109296377.07
+        ],
+        [
+          14,
+          {
+            "text": "ASRC FEDERAL HIGHLAND TECHNOLOGY, INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_12314422F0384_1205_12314420A0067_1205/"
+          },
+          107940664.1
+        ],
+        [
+          15,
+          {
+            "text": "CARAHSOFT TECHNOLOGY CORP",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_12314425F0188_1205_12314424G0013_1205/"
+          },
+          104394358.1
+        ],
+        [
+          16,
+          {
+            "text": "DELOITTE CONSULTING LLP",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_12319822F0019_12F2_GS00Q14OADU113_4732/"
+          },
+          99440632.77
+        ],
+        [
+          17,
+          {
+            "text": "TECHNOLOGY SOLUTIONS PROVIDER, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_12314422F0387_1205_12314420A0071_1205/"
+          },
+          96572467.12
+        ],
+        [
+          18,
+          {
+            "text": "PALANTIR TECHNOLOGIES INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_12314426F0126_1205_12314426A0009_1205/"
+          },
+          94687811.42
+        ],
+        [
+          19,
+          {
+            "text": "SIERRA TAHOE ENVIRONMENTAL MANAGEMENT, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_12363N24C4002_12C2_-NONE-_-NONE-/"
+          },
+          85826031.96
+        ],
+        [
+          20,
+          {
+            "text": "EPSILON INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_12314422F0642_1205_47QTCH18D0014_4732/"
+          },
+          83416921.71
+        ],
+        [
+          21,
+          {
+            "text": "DYNAMO TECHNOLOGIES, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_12314422F0296_1205_12760420A0008_12C2/"
+          },
+          78644664.63
+        ],
+        [
+          22,
+          {
+            "text": "ENVIRONMENTAL SYSTEMS RESEARCH INSTITUTE, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_12314423F0369_1205_GS35F253CA_4732/"
+          },
+          76184973.45
+        ],
+        [
+          23,
+          {
+            "text": "MICROSOFT CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_12314424F0350_1205_12314424G0011_1205/"
+          },
+          75959064.11
+        ],
+        [
+          24,
+          {
+            "text": "CALIFORNIA DAIRIES INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_123J1426C0923_12K2_-NONE-_-NONE-/"
+          },
+          70561235.29
+        ],
+        [
+          25,
+          {
+            "text": "STEAMPUNK, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_12314421F0796_1205_75N98120D00251_7529/"
+          },
+          64045036.15
+        ]
+      ]
+    }
+  ],
+  "narrative": {
+    "intro": "In FY2026 to date, Department of Agriculture obligated $6.3B across 16,591 contract awards. That is down 33.8% year over year. The average award size was $382K.",
+    "sections": [
+      {
+        "heading": "What does Agriculture buy?",
+        "body": "Nonscheduled Chartered Freight Air Transportation was Department of Agriculture's largest contract category in FY2026 to date, with $672M obligated, or 10.6% of its contract spending."
+      },
+      {
+        "heading": "Who are Agriculture's largest contractors?",
+        "body": "KIEWIT INFRASTRUCTURE SOUTH CO led all Department of Agriculture contractors with $261M in obligations during FY2026 to date, a 4.1% share."
+      }
+    ]
+  },
+  "faq": [
+    {
+      "q": "How much does Department of Agriculture spend on contracts?",
+      "a": "Department of Agriculture obligated $6.3B on federal contracts in FY2026 to date, across 16,591 awards."
+    },
+    {
+      "q": "What does Agriculture buy?",
+      "a": "Agriculture's largest contract category is Nonscheduled Chartered Freight Air Transportation, with $672M obligated in FY2026 to date."
+    },
+    {
+      "q": "Who are Agriculture's largest contractors?",
+      "a": "KIEWIT INFRASTRUCTURE SOUTH CO is Agriculture's largest contractor by obligated dollars in FY2026 to date, with $261M."
+    }
+  ],
+  "related": [
+    {
+      "label": "Department of Defense",
+      "href": "/insights/agency/department-of-defense/"
+    },
+    {
+      "label": "Department of Veterans Affairs",
+      "href": "/insights/agency/department-of-veterans-affairs/"
+    },
+    {
+      "label": "Department of Homeland Security",
+      "href": "/insights/agency/department-of-homeland-security/"
+    },
+    {
+      "label": "Department of Health and Human Services",
+      "href": "/insights/agency/department-of-health-and-human-services/"
+    },
+    {
+      "label": "General Services Administration",
+      "href": "/insights/agency/general-services-administration/"
+    },
+    {
+      "label": "National Aeronautics and Space Administration",
+      "href": "/insights/agency/national-aeronautics-and-space-administration/"
+    }
+  ],
+  "sources": [
+    {
+      "label": "USAspending.gov award data",
+      "href": "https://www.usaspending.gov"
+    }
+  ]
+}

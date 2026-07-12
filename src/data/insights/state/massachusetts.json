@@ -1,0 +1,609 @@
+{
+  "pageType": "state",
+  "slug": "massachusetts",
+  "title": "Massachusetts Federal Contracts: $11.4B in FY2026",
+  "h1": "Federal Contracts in Massachusetts: Spending, Agencies & Vendors",
+  "metaDescription": "Federal agencies obligated $11.4B to contractors in Massachusetts in FY2026 to date. See top buying agencies, top vendors, and industries.",
+  "updated": "2026-07-12",
+  "fyWindow": {
+    "label": "FY2026 to date",
+    "start": "2025-10-01",
+    "end": "2026-07-12"
+  },
+  "stats": {
+    "totalObligations": 11384589391.61,
+    "awardCount": 68323,
+    "yoyGrowthPct": -41.1,
+    "avgAwardSize": 166629,
+    "smallBusinessSharePct": null
+  },
+  "charts": [
+    {
+      "id": "massachusetts-trend",
+      "type": "line",
+      "title": "Obligations by fiscal year",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "FY21",
+              24230999549.31
+            ],
+            [
+              "FY22",
+              17913182603.82
+            ],
+            [
+              "FY23",
+              18288321106.43
+            ],
+            [
+              "FY24",
+              17816339833.4
+            ],
+            [
+              "FY25",
+              19327839929.76
+            ],
+            [
+              "FY26",
+              11384589391.61
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Obligations fell 41.1% year over year, from $19.3B in FY2025 to $11.4B in FY2026 to date."
+    },
+    {
+      "id": "massachusetts-top-agencies",
+      "type": "bar",
+      "title": "Top 10 buying agencies, FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "Department of Defense",
+              8562402525.45
+            ],
+            [
+              "Department of Veterans Affairs",
+              698822764.25
+            ],
+            [
+              "Department of Transportation",
+              697710394.13
+            ],
+            [
+              "Department of Health and Human Services",
+              404300540.86
+            ],
+            [
+              "Department of Homeland Security",
+              316478041.75
+            ],
+            [
+              "Department of the Treasury",
+              195074527.15
+            ],
+            [
+              "General Services Administration",
+              107049999.99
+            ],
+            [
+              "Environmental Protection Agency",
+              77419210.13
+            ],
+            [
+              "National Aeronautics and Space Administration",
+              75417488.83
+            ],
+            [
+              "Department of Justice",
+              71830365.43
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Department of Defense was the top federal buyer in Massachusetts, obligating $8.6B (75.2% of the state total)."
+    },
+    {
+      "id": "massachusetts-top-vendors",
+      "type": "bar",
+      "title": "Top 10 vendors, FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "RAYTHEON COMPANY",
+              2099252861.2
+            ],
+            [
+              "GENERAL ELECTRIC COMPANY",
+              1185071820.06
+            ],
+            [
+              "RAYTHEON COMPANY",
+              994874096.86
+            ],
+            [
+              "MASSACHUSETTS INSTITUTE OF TECHNOLOGY",
+              708476633.68
+            ],
+            [
+              "THE CHARLES STARK DRAPER LABORATORY, INC.",
+              536337735.12
+            ],
+            [
+              "RAYTHEON COMPANY",
+              380423460.79
+            ],
+            [
+              "RAYTHEON COMPANY",
+              335656683.44
+            ],
+            [
+              "THE MITRE CORPORATION",
+              304185762.08
+            ],
+            [
+              "GENERAL DYNAMICS MISSION SYSTEMS, INC.",
+              289234402.18
+            ],
+            [
+              "FRESENIUS MEDICAL CARE HOLDINGS INC",
+              268719804.76
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "RAYTHEON COMPANY led all contractors in Massachusetts with $2.1B, 18.4% of the state total."
+    },
+    {
+      "id": "massachusetts-top-naics",
+      "type": "bar",
+      "title": "Top 10 industries (NAICS), FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "Search, Detection, Navigation, Guidance, Aeronautical, and Nautical System and Instrument Manufacturing",
+              1984314439.23
+            ],
+            [
+              "Engineering Services",
+              1393189070.73
+            ],
+            [
+              "Aircraft Engine and Engine Parts Manufacturing",
+              1103189781.72
+            ],
+            [
+              "Research and Development in the Physical, Engineering, and Life Sciences (except Biotechnology)",
+              1085307599.07
+            ],
+            [
+              "Other Guided Missile and Space Vehicle Parts and Auxiliary Equipment Manufacturing",
+              932278141.36
+            ],
+            [
+              "Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology)",
+              432281482.07
+            ],
+            [
+              "All Other Professional, Scientific, and Technical Services",
+              388275152.73
+            ],
+            [
+              "Guided Missile and Space Vehicle Manufacturing",
+              337881958.52
+            ],
+            [
+              "Kidney Dialysis Centers",
+              300841158.06
+            ],
+            [
+              "Other Communications Equipment Manufacturing",
+              199002026.78
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Search, Detection, Navigation, Guidance, Aeronautical, and Nautical System and Instrument Manufacturing was the largest industry in Massachusetts, with $2B obligated."
+    }
+  ],
+  "tables": [
+    {
+      "title": "Top 10 vendors",
+      "columns": [
+        "Rank",
+        "Vendor",
+        "Obligations"
+      ],
+      "rows": [
+        [
+          1,
+          {
+            "text": "RAYTHEON COMPANY",
+            "href": "https://www.usaspending.gov/recipient/cce9df51-3950-87f4-0b34-4353d5a08f32-C/latest/"
+          },
+          2099252861.2
+        ],
+        [
+          2,
+          {
+            "text": "GENERAL ELECTRIC COMPANY",
+            "href": "https://www.usaspending.gov/recipient/66092799-9c72-fde6-e008-9d381191aed2-C/latest/"
+          },
+          1185071820.06
+        ],
+        [
+          3,
+          {
+            "text": "RAYTHEON COMPANY",
+            "href": "https://www.usaspending.gov/recipient/b91e6418-aa27-f6c2-90a9-1545753a6d15-C/latest/"
+          },
+          994874096.86
+        ],
+        [
+          4,
+          {
+            "text": "MASSACHUSETTS INSTITUTE OF TECHNOLOGY",
+            "href": "https://www.usaspending.gov/recipient/00129762-bb69-300b-a2fb-ff1b071b1e42-C/latest/"
+          },
+          708476633.68
+        ],
+        [
+          5,
+          {
+            "text": "THE CHARLES STARK DRAPER LABORATORY, INC.",
+            "href": "https://www.usaspending.gov/recipient/875a4072-7b37-6250-a5ab-8428c8e47565-C/latest/"
+          },
+          536337735.12
+        ],
+        [
+          6,
+          {
+            "text": "RAYTHEON COMPANY",
+            "href": "https://www.usaspending.gov/recipient/b20b122a-596c-14ad-0033-6e5bc41f4768-C/latest/"
+          },
+          380423460.79
+        ],
+        [
+          7,
+          {
+            "text": "RAYTHEON COMPANY",
+            "href": "https://www.usaspending.gov/recipient/f321e226-c4b2-f29f-443b-86843ff28e53-C/latest/"
+          },
+          335656683.44
+        ],
+        [
+          8,
+          {
+            "text": "THE MITRE CORPORATION",
+            "href": "https://www.usaspending.gov/recipient/d8b4e294-638c-065b-3660-76b4d196e819-C/latest/"
+          },
+          304185762.08
+        ],
+        [
+          9,
+          {
+            "text": "GENERAL DYNAMICS MISSION SYSTEMS, INC.",
+            "href": "https://www.usaspending.gov/recipient/09f25d0c-0e54-1095-0191-a9797ddbaf68-C/latest/"
+          },
+          289234402.18
+        ],
+        [
+          10,
+          {
+            "text": "FRESENIUS MEDICAL CARE HOLDINGS INC",
+            "href": "https://www.usaspending.gov/recipient/04fb53b7-8e6a-01c9-c7cc-5e29d89ee4be-C/latest/"
+          },
+          268719804.76
+        ]
+      ]
+    },
+    {
+      "title": "Largest awards, FY2026 to date",
+      "columns": [
+        "Rank",
+        "Recipient",
+        "Award Amount",
+        "Awarding Agency"
+      ],
+      "rows": [
+        [
+          1,
+          {
+            "text": "RAYTHEON COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W31P4Q15C0022_9700_-NONE-_-NONE-/"
+          },
+          5607558999.34,
+          "Department of Defense"
+        ],
+        [
+          2,
+          {
+            "text": "RAYTHEON COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002422C5500_9700_-NONE-_-NONE-/"
+          },
+          3265755418.12,
+          "Department of Defense"
+        ],
+        [
+          3,
+          {
+            "text": "RAYTHEON COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_HQ086220C0002_9700_-NONE-_-NONE-/"
+          },
+          2738715982.65,
+          "Department of Defense"
+        ],
+        [
+          4,
+          {
+            "text": "RAYTHEON COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W31P4Q24C0024_9700_-NONE-_-NONE-/"
+          },
+          2141322930,
+          "Department of Defense"
+        ],
+        [
+          5,
+          {
+            "text": "RAYTHEON COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002414C5315_9700_-NONE-_-NONE-/"
+          },
+          1671263971.83,
+          "Department of Defense"
+        ],
+        [
+          6,
+          {
+            "text": "RAYTHEON COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W31P4Q23C0036_9700_-NONE-_-NONE-/"
+          },
+          1607872304.74,
+          "Department of Defense"
+        ],
+        [
+          7,
+          {
+            "text": "MASSACHUSETTS INSTITUTE OF TECHNOLOGY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA870219F0001_9700_FA870215D0001_9700/"
+          },
+          1489876491.6,
+          "Department of Defense"
+        ],
+        [
+          8,
+          {
+            "text": "SEQIRUS INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_HHSO100200900101C_7505_-NONE-_-NONE-/"
+          },
+          1430622665,
+          "Department of Health and Human Services"
+        ],
+        [
+          9,
+          {
+            "text": "SMITHSONIAN INSTITUTION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_MSFC0200308DNAS803060_8000_-NONE-_-NONE-/"
+          },
+          1347228052,
+          "National Aeronautics and Space Administration"
+        ],
+        [
+          10,
+          {
+            "text": "RAYTHEON COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA873017C0010_9700_-NONE-_-NONE-/"
+          },
+          1342453948.6,
+          "Department of Defense"
+        ],
+        [
+          11,
+          {
+            "text": "RAYTHEON COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_HQ014712C0006_9700_-NONE-_-NONE-/"
+          },
+          1327248619.9,
+          "Department of Defense"
+        ],
+        [
+          12,
+          {
+            "text": "RAYTHEON COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W31P4Q23C0021_9700_-NONE-_-NONE-/"
+          },
+          1226657656.16,
+          "Department of Defense"
+        ],
+        [
+          13,
+          {
+            "text": "THE CHARLES STARK DRAPER LABORATORY, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0003024C6001_9700_-NONE-_-NONE-/"
+          },
+          1181853321.21,
+          "Department of Defense"
+        ],
+        [
+          14,
+          {
+            "text": "MASSACHUSETTS INSTITUTE OF TECHNOLOGY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_0010_9700_FA870215D0001_9700/"
+          },
+          1141237221.77,
+          "Department of Defense"
+        ],
+        [
+          15,
+          {
+            "text": "RAYTHEON COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002419C5501_9700_-NONE-_-NONE-/"
+          },
+          1057024778.37,
+          "Department of Defense"
+        ],
+        [
+          16,
+          {
+            "text": "RAYTHEON COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W31P4Q04C0020_9700_-NONE-_-NONE-/"
+          },
+          1039368009.67,
+          "Department of Defense"
+        ],
+        [
+          17,
+          {
+            "text": "MASSACHUSETTS INSTITUTE OF TECHNOLOGY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA870218F0004_9700_FA870215D0001_9700/"
+          },
+          1016687363.9,
+          "Department of Defense"
+        ],
+        [
+          18,
+          {
+            "text": "MASSACHUSETTS INSTITUTE OF TECHNOLOGY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_0002_9700_FA870215D0001_9700/"
+          },
+          917990550.64,
+          "Department of Defense"
+        ],
+        [
+          19,
+          {
+            "text": "MASSACHUSETTS INSTITUTE OF TECHNOLOGY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA870217F0001_9700_FA870215D0001_9700/"
+          },
+          884849634.71,
+          "Department of Defense"
+        ],
+        [
+          20,
+          {
+            "text": "MASSACHUSETTS INSTITUTE OF TECHNOLOGY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_0006_9700_FA870215D0001_9700/"
+          },
+          853889532.81,
+          "Department of Defense"
+        ],
+        [
+          21,
+          {
+            "text": "RAYTHEON COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W31P4Q26C0004_9700_-NONE-_-NONE-/"
+          },
+          841682105.81,
+          "Department of Defense"
+        ],
+        [
+          22,
+          {
+            "text": "GENERAL ELECTRIC COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0001918C1061_9700_-NONE-_-NONE-/"
+          },
+          833800020,
+          "Department of Defense"
+        ],
+        [
+          23,
+          {
+            "text": "RAYTHEON COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002417C5145_9700_-NONE-_-NONE-/"
+          },
+          774039836.53,
+          "Department of Defense"
+        ],
+        [
+          24,
+          {
+            "text": "GENERAL ELECTRIC COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0001923C0013_9700_-NONE-_-NONE-/"
+          },
+          673140164.34,
+          "Department of Defense"
+        ],
+        [
+          25,
+          {
+            "text": "RAYTHEON COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W31P4Q24C0003_9700_-NONE-_-NONE-/"
+          },
+          664276159,
+          "Department of Defense"
+        ]
+      ]
+    }
+  ],
+  "narrative": {
+    "intro": "In FY2026 to date, federal agencies obligated $11.4B across 68,323 contract awards. That is down 41.1% year over year. The average award size was $167K.",
+    "sections": [
+      {
+        "heading": "Which agencies award the most contracts in Massachusetts?",
+        "body": "Department of Defense was the largest federal buyer in Massachusetts, obligating $8.6B in FY2026 to date, or 75.2% of the state total."
+      },
+      {
+        "heading": "Who are the top federal contractors in Massachusetts?",
+        "body": "RAYTHEON COMPANY led all contractors performing work in Massachusetts with $2.1B in obligations during FY2026 to date."
+      }
+    ]
+  },
+  "faq": [
+    {
+      "q": "How much federal contract money goes to Massachusetts?",
+      "a": "Federal agencies obligated $11.4B to contractors performing work in Massachusetts in FY2026 to date, across 68,323 awards."
+    },
+    {
+      "q": "Which agencies award the most contracts in Massachusetts?",
+      "a": "Department of Defense is the largest federal buyer in Massachusetts, with $8.6B obligated in FY2026 to date."
+    },
+    {
+      "q": "Who are the largest federal contractors in Massachusetts?",
+      "a": "RAYTHEON COMPANY is the largest federal contractor performing work in Massachusetts by obligated dollars in FY2026 to date, with $2.1B."
+    }
+  ],
+  "related": [
+    {
+      "label": "Alabama federal contracts",
+      "href": "/insights/state/alabama/"
+    },
+    {
+      "label": "Alaska federal contracts",
+      "href": "/insights/state/alaska/"
+    },
+    {
+      "label": "Arizona federal contracts",
+      "href": "/insights/state/arizona/"
+    },
+    {
+      "label": "Arkansas federal contracts",
+      "href": "/insights/state/arkansas/"
+    },
+    {
+      "label": "California federal contracts",
+      "href": "/insights/state/california/"
+    },
+    {
+      "label": "Colorado federal contracts",
+      "href": "/insights/state/colorado/"
+    }
+  ],
+  "sources": [
+    {
+      "label": "USAspending.gov award data",
+      "href": "https://www.usaspending.gov"
+    }
+  ]
+}

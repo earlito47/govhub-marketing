@@ -1,0 +1,609 @@
+{
+  "pageType": "state",
+  "slug": "illinois",
+  "title": "Illinois Federal Contracts: $7.7B in FY2026",
+  "h1": "Federal Contracts in Illinois: Spending, Agencies & Vendors",
+  "metaDescription": "Federal agencies obligated $7.7B to contractors in Illinois in FY2026 to date. See top buying agencies, top vendors, and industries.",
+  "updated": "2026-07-12",
+  "fyWindow": {
+    "label": "FY2026 to date",
+    "start": "2025-10-01",
+    "end": "2026-07-12"
+  },
+  "stats": {
+    "totalObligations": 7685500474.5,
+    "awardCount": 331046,
+    "yoyGrowthPct": -37.9,
+    "avgAwardSize": 23216,
+    "smallBusinessSharePct": null
+  },
+  "charts": [
+    {
+      "id": "illinois-trend",
+      "type": "line",
+      "title": "Obligations by fiscal year",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "FY21",
+              11966431079.9
+            ],
+            [
+              "FY22",
+              13600262158.26
+            ],
+            [
+              "FY23",
+              12991282195.42
+            ],
+            [
+              "FY24",
+              13387230468.08
+            ],
+            [
+              "FY25",
+              12373847115.26
+            ],
+            [
+              "FY26",
+              7685500474.5
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Obligations fell 37.9% year over year, from $12.4B in FY2025 to $7.7B in FY2026 to date."
+    },
+    {
+      "id": "illinois-top-agencies",
+      "type": "bar",
+      "title": "Top 10 buying agencies, FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "Department of Defense",
+              3668303984.5
+            ],
+            [
+              "Department of Energy",
+              1578148153.25
+            ],
+            [
+              "Department of Veterans Affairs",
+              1459298582.82
+            ],
+            [
+              "General Services Administration",
+              361482982.53
+            ],
+            [
+              "Department of Agriculture",
+              163690564.98
+            ],
+            [
+              "Department of Health and Human Services",
+              156369276.58
+            ],
+            [
+              "Department of Homeland Security",
+              68303661.28
+            ],
+            [
+              "Department of Justice",
+              63736734.34
+            ],
+            [
+              "Department of the Treasury",
+              24451406.1
+            ],
+            [
+              "Environmental Protection Agency",
+              23827615.6
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Department of Defense was the top federal buyer in Illinois, obligating $3.7B (47.7% of the state total)."
+    },
+    {
+      "id": "illinois-top-vendors",
+      "type": "bar",
+      "title": "Top 10 vendors, FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "UCHICAGO ARGONNE, LLC",
+              907369723.38
+            ],
+            [
+              "W S DARLEY & CO",
+              746955052.26
+            ],
+            [
+              "MEDLINE INDUSTRIES, LP",
+              691001267.62
+            ],
+            [
+              "FERMI FORWARD DISCOVERY GROUP, LLC",
+              670693109.87
+            ],
+            [
+              "NORTHROP GRUMMAN SYSTEMS CORPORATION",
+              385047684.65
+            ],
+            [
+              "SUPPLYCORE LLC",
+              340114003.83
+            ],
+            [
+              "DDB CHICAGO INC.",
+              283867919.71
+            ],
+            [
+              "W.W. GRAINGER, INC.",
+              214598531.77
+            ],
+            [
+              "CARDINAL HEALTH 200, LLC",
+              191675860.8
+            ],
+            [
+              "US FOODS INC",
+              162603530.84
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "UCHICAGO ARGONNE, LLC led all contractors in Illinois with $907M, 11.8% of the state total."
+    },
+    {
+      "id": "illinois-top-naics",
+      "type": "bar",
+      "title": "Top 10 industries (NAICS), FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "Research and Development in the Physical, Engineering, and Life Sciences",
+              907369723.38
+            ],
+            [
+              "Medical, Dental, and Hospital Equipment and Supplies Merchant Wholesalers",
+              882301333.1
+            ],
+            [
+              "Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology)",
+              711017763.27
+            ],
+            [
+              "Service Establishment Equipment and Supplies Merchant Wholesalers",
+              481008891.83
+            ],
+            [
+              "All Other Miscellaneous Manufacturing",
+              404006906.31
+            ],
+            [
+              "Search, Detection, Navigation, Guidance, Aeronautical, and Nautical System and Instrument Manufacturing",
+              288589031.05
+            ],
+            [
+              "Advertising Agencies",
+              284020393.46
+            ],
+            [
+              "Home Centers",
+              213952312.11
+            ],
+            [
+              "Computer Systems Design Services",
+              168614446.64
+            ],
+            [
+              "All Other Miscellaneous Food Manufacturing",
+              165516105.17
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Research and Development in the Physical, Engineering, and Life Sciences was the largest industry in Illinois, with $907M obligated."
+    }
+  ],
+  "tables": [
+    {
+      "title": "Top 10 vendors",
+      "columns": [
+        "Rank",
+        "Vendor",
+        "Obligations"
+      ],
+      "rows": [
+        [
+          1,
+          {
+            "text": "UCHICAGO ARGONNE, LLC",
+            "href": "https://www.usaspending.gov/recipient/41abc24e-d794-7e40-35af-944b40645d57-C/latest/"
+          },
+          907369723.38
+        ],
+        [
+          2,
+          {
+            "text": "W S DARLEY & CO",
+            "href": "https://www.usaspending.gov/recipient/b60fab9a-d60a-1c33-1470-2729b041737f-C/latest/"
+          },
+          746955052.26
+        ],
+        [
+          3,
+          {
+            "text": "MEDLINE INDUSTRIES, LP",
+            "href": "https://www.usaspending.gov/recipient/e69126ba-ae4e-13a4-4552-7eae9f4ad09d-C/latest/"
+          },
+          691001267.62
+        ],
+        [
+          4,
+          {
+            "text": "FERMI FORWARD DISCOVERY GROUP, LLC",
+            "href": "https://www.usaspending.gov/recipient/3789bad9-1be1-43a1-47b9-7430a6b8978e-C/latest/"
+          },
+          670693109.87
+        ],
+        [
+          5,
+          {
+            "text": "NORTHROP GRUMMAN SYSTEMS CORPORATION",
+            "href": "https://www.usaspending.gov/recipient/75dec7b1-56eb-4770-da4b-ac736121ab61-C/latest/"
+          },
+          385047684.65
+        ],
+        [
+          6,
+          {
+            "text": "SUPPLYCORE LLC",
+            "href": "https://www.usaspending.gov/recipient/038feb1d-f65f-cb60-0833-9e70db12d7b7-C/latest/"
+          },
+          340114003.83
+        ],
+        [
+          7,
+          {
+            "text": "DDB CHICAGO INC.",
+            "href": "https://www.usaspending.gov/recipient/b002b486-6a1f-efce-20d4-13fef59093fe-C/latest/"
+          },
+          283867919.71
+        ],
+        [
+          8,
+          {
+            "text": "W.W. GRAINGER, INC.",
+            "href": "https://www.usaspending.gov/recipient/02d96557-827b-7983-b39e-007f84487932-C/latest/"
+          },
+          214598531.77
+        ],
+        [
+          9,
+          {
+            "text": "CARDINAL HEALTH 200, LLC",
+            "href": "https://www.usaspending.gov/recipient/f10ee812-1419-69f4-1cc5-85651ce21e16-C/latest/"
+          },
+          191675860.8
+        ],
+        [
+          10,
+          {
+            "text": "US FOODS INC",
+            "href": "https://www.usaspending.gov/recipient/657d0048-0716-b5a7-a210-b775c051562f-C/latest/"
+          },
+          162603530.84
+        ]
+      ]
+    },
+    {
+      "title": "Largest awards, FY2026 to date",
+      "columns": [
+        "Rank",
+        "Recipient",
+        "Award Amount",
+        "Awarding Agency"
+      ],
+      "rows": [
+        [
+          1,
+          {
+            "text": "UCHICAGO ARGONNE, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_DEAC0206CH11357_8900_-NONE-_-NONE-/"
+          },
+          17318912548.91,
+          "Department of Energy"
+        ],
+        [
+          2,
+          {
+            "text": "FERMI FORWARD DISCOVERY GROUP, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_89243024CSC000002_8900_-NONE-_-NONE-/"
+          },
+          2404483872.69,
+          "Department of Energy"
+        ],
+        [
+          3,
+          {
+            "text": "GOODWILL INDUSTRIES OF SOUTHEASTERN WISCONSIN, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0018918CZ053_9700_-NONE-_-NONE-/"
+          },
+          777577151.51,
+          "Department of Defense"
+        ],
+        [
+          4,
+          {
+            "text": "NORTHROP GRUMMAN SYSTEMS CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0001922C0042_9700_-NONE-_-NONE-/"
+          },
+          509720114.42,
+          "Department of Defense"
+        ],
+        [
+          5,
+          {
+            "text": "GENERAL DYNAMICS ORDNANCE AND TACTICAL SYSTEMS, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W15QKN24F0392_9700_W15QKN23D0054_9700/"
+          },
+          403323854.35,
+          "Department of Defense"
+        ],
+        [
+          6,
+          {
+            "text": "NORTHROP GRUMMAN SYSTEMS CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0001919C0011_9700_-NONE-_-NONE-/"
+          },
+          364797791.68,
+          "Department of Defense"
+        ],
+        [
+          7,
+          {
+            "text": "CDW GOVERNMENT LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_19AQMM19F0913_1900_NNG15SC28B_8000/"
+          },
+          340169525.67,
+          "Department of State"
+        ],
+        [
+          8,
+          {
+            "text": "NORTHROP GRUMMAN SYSTEMS CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0001917C0037_9700_-NONE-_-NONE-/"
+          },
+          334433477.93,
+          "Department of Defense"
+        ],
+        [
+          9,
+          {
+            "text": "GENERAL DYNAMICS ORDNANCE & TACTICAL SYSTEMS, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W519TC24F0161_9700_W519TC24D0009_9700/"
+          },
+          280072242.5,
+          "Department of Defense"
+        ],
+        [
+          10,
+          {
+            "text": "ITILITY, L.L.C",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_47QFCA21F0004_4732_47QTCH18D0033_4732/"
+          },
+          226231755.1,
+          "General Services Administration"
+        ],
+        [
+          11,
+          {
+            "text": "DDB CHICAGO INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W9124D24F0010_9700_W9124D19D0001_9700/"
+          },
+          198669562.38,
+          "Department of Defense"
+        ],
+        [
+          12,
+          {
+            "text": "NORTHROP GRUMMAN SYSTEMS CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W58RGZ25F0074_9700_W58RGZ21D0028_9700/"
+          },
+          165758323.65,
+          "Department of Defense"
+        ],
+        [
+          13,
+          {
+            "text": "NORTHROP GRUMMAN SYSTEMS CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA863823F0026_9700_FA863819D0001_9700/"
+          },
+          158703646.68,
+          "Department of Defense"
+        ],
+        [
+          14,
+          {
+            "text": "ACCENTURE FEDERAL SERVICES LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_2032H521F00077_2050_47QTCK18D0036_4732/"
+          },
+          157733845.06,
+          "Department of the Treasury"
+        ],
+        [
+          15,
+          {
+            "text": "NORTHROP GRUMMAN SYSTEMS CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA863820F0042_9700_FA863819D0001_9700/"
+          },
+          154828577.72,
+          "Department of Defense"
+        ],
+        [
+          16,
+          {
+            "text": "NORTHROP GRUMMAN SYSTEMS CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0001923C0001_9700_-NONE-_-NONE-/"
+          },
+          153846127.91,
+          "Department of Defense"
+        ],
+        [
+          17,
+          {
+            "text": "NORTHROP GRUMMAN SYSTEMS CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W58RGZ24F0073_9700_W58RGZ21D0028_9700/"
+          },
+          150694298.5,
+          "Department of Defense"
+        ],
+        [
+          18,
+          {
+            "text": "KORTE -RIVER CITY JV",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W912QR22C0002_9700_-NONE-_-NONE-/"
+          },
+          149771384.24,
+          "Department of Defense"
+        ],
+        [
+          19,
+          {
+            "text": "NORTHROP GRUMMAN SYSTEMS CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA854019F0070_9700_FA854019D0001_9700/"
+          },
+          147847599.34,
+          "Department of Defense"
+        ],
+        [
+          20,
+          {
+            "text": "NORTHROP GRUMMAN SYSTEMS CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA863824FB005_9700_FA863819D0001_9700/"
+          },
+          146099074.43,
+          "Department of Defense"
+        ],
+        [
+          21,
+          {
+            "text": "NORTHROP GRUMMAN SYSTEMS CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA863822F0025_9700_FA863819D0001_9700/"
+          },
+          143805486.5,
+          "Department of Defense"
+        ],
+        [
+          22,
+          {
+            "text": "IMT DEFENSE CORP",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W15QKN23F0483_9700_W15QKN23D0026_9700/"
+          },
+          139755850.92,
+          "Department of Defense"
+        ],
+        [
+          23,
+          {
+            "text": "NATIONAL OPINION RESEARCH CENTER",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75FCMC21F0001_7530_75FCMC19D0092_7530/"
+          },
+          139004271.2,
+          "Department of Health and Human Services"
+        ],
+        [
+          24,
+          {
+            "text": "NORTHROP GRUMMAN SYSTEMS CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W58RGZ26C0009_9700_-NONE-_-NONE-/"
+          },
+          119685716,
+          "Department of Defense"
+        ],
+        [
+          25,
+          {
+            "text": "J. F. BRENNAN COMPANY, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W912EK26CA004_9700_-NONE-_-NONE-/"
+          },
+          113853380,
+          "Department of Defense"
+        ]
+      ]
+    }
+  ],
+  "narrative": {
+    "intro": "In FY2026 to date, federal agencies obligated $7.7B across 331,046 contract awards. That is down 37.9% year over year. The average award size was $23.2K.",
+    "sections": [
+      {
+        "heading": "Which agencies award the most contracts in Illinois?",
+        "body": "Department of Defense was the largest federal buyer in Illinois, obligating $3.7B in FY2026 to date, or 47.7% of the state total."
+      },
+      {
+        "heading": "Who are the top federal contractors in Illinois?",
+        "body": "UCHICAGO ARGONNE, LLC led all contractors performing work in Illinois with $907M in obligations during FY2026 to date."
+      }
+    ]
+  },
+  "faq": [
+    {
+      "q": "How much federal contract money goes to Illinois?",
+      "a": "Federal agencies obligated $7.7B to contractors performing work in Illinois in FY2026 to date, across 331,046 awards."
+    },
+    {
+      "q": "Which agencies award the most contracts in Illinois?",
+      "a": "Department of Defense is the largest federal buyer in Illinois, with $3.7B obligated in FY2026 to date."
+    },
+    {
+      "q": "Who are the largest federal contractors in Illinois?",
+      "a": "UCHICAGO ARGONNE, LLC is the largest federal contractor performing work in Illinois by obligated dollars in FY2026 to date, with $907M."
+    }
+  ],
+  "related": [
+    {
+      "label": "Alabama federal contracts",
+      "href": "/insights/state/alabama/"
+    },
+    {
+      "label": "Alaska federal contracts",
+      "href": "/insights/state/alaska/"
+    },
+    {
+      "label": "Arizona federal contracts",
+      "href": "/insights/state/arizona/"
+    },
+    {
+      "label": "Arkansas federal contracts",
+      "href": "/insights/state/arkansas/"
+    },
+    {
+      "label": "California federal contracts",
+      "href": "/insights/state/california/"
+    },
+    {
+      "label": "Colorado federal contracts",
+      "href": "/insights/state/colorado/"
+    }
+  ],
+  "sources": [
+    {
+      "label": "USAspending.gov award data",
+      "href": "https://www.usaspending.gov"
+    }
+  ]
+}

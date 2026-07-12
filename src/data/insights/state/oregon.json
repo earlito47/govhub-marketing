@@ -1,0 +1,609 @@
+{
+  "pageType": "state",
+  "slug": "oregon",
+  "title": "Oregon Federal Contracts: $1.2B in FY2026",
+  "h1": "Federal Contracts in Oregon: Spending, Agencies & Vendors",
+  "metaDescription": "Federal agencies obligated $1.2B to contractors in Oregon in FY2026 to date. See top buying agencies, top vendors, and industries.",
+  "updated": "2026-07-12",
+  "fyWindow": {
+    "label": "FY2026 to date",
+    "start": "2025-10-01",
+    "end": "2026-07-12"
+  },
+  "stats": {
+    "totalObligations": 1234535121.52,
+    "awardCount": 6725,
+    "yoyGrowthPct": -40.7,
+    "avgAwardSize": 183574,
+    "smallBusinessSharePct": null
+  },
+  "charts": [
+    {
+      "id": "oregon-trend",
+      "type": "line",
+      "title": "Obligations by fiscal year",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "FY21",
+              1790165268.06
+            ],
+            [
+              "FY22",
+              1901588127.98
+            ],
+            [
+              "FY23",
+              2548652255.01
+            ],
+            [
+              "FY24",
+              2445082668.67
+            ],
+            [
+              "FY25",
+              2081469698.58
+            ],
+            [
+              "FY26",
+              1234535121.52
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Obligations fell 40.7% year over year, from $2.1B in FY2025 to $1.2B in FY2026 to date."
+    },
+    {
+      "id": "oregon-top-agencies",
+      "type": "bar",
+      "title": "Top 10 buying agencies, FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "Department of Defense",
+              622361198.5
+            ],
+            [
+              "Department of Agriculture",
+              154338929.11
+            ],
+            [
+              "Department of Transportation",
+              129127681.12
+            ],
+            [
+              "Department of Veterans Affairs",
+              108639283.19
+            ],
+            [
+              "Department of Homeland Security",
+              57463424.13
+            ],
+            [
+              "Department of the Interior",
+              51196297.15
+            ],
+            [
+              "Department of Energy",
+              18361907.32
+            ],
+            [
+              "Department of Health and Human Services",
+              17549729.3
+            ],
+            [
+              "Department of Justice",
+              16068677.03
+            ],
+            [
+              "Department of Labor",
+              15611585.91
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Department of Defense was the top federal buyer in Oregon, obligating $622M (50.4% of the state total)."
+    },
+    {
+      "id": "oregon-top-vendors",
+      "type": "bar",
+      "title": "Top 10 vendors, FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "VIGOR MARINE LLC",
+              310300148.16
+            ],
+            [
+              "COLLINS ELBIT VISION SYSTEMS, LLC",
+              70894997.76
+            ],
+            [
+              "GE RENEWABLES US LLC",
+              66749203.5
+            ],
+            [
+              "KEYSTONE SHIPPING SERVICES, INC.",
+              42833836.27
+            ],
+            [
+              "STRIDER CONSTRUCTION CO INC",
+              36477635
+            ],
+            [
+              "KNIGHT CONST. & SUPPLY, INC",
+              28319711.6
+            ],
+            [
+              "MANSON CONSTRUCTION CO",
+              27302346.1
+            ],
+            [
+              "TOTE SERVICES, LLC",
+              21980994.84
+            ],
+            [
+              "OREGON HEALTH & SCIENCE UNIVERSITY",
+              20946759.9
+            ],
+            [
+              "GLOBAL ENGINEERING SERVICES INC",
+              18980995.14
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "VIGOR MARINE LLC led all contractors in Oregon with $310M, 25.1% of the state total."
+    },
+    {
+      "id": "oregon-top-naics",
+      "type": "bar",
+      "title": "Top 10 industries (NAICS), FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "Ship Building and Repairing",
+              323487833.74
+            ],
+            [
+              "Other Heavy and Civil Engineering Construction",
+              145405773.87
+            ],
+            [
+              "Other Aircraft Parts and Auxiliary Equipment Manufacturing",
+              78291575.14
+            ],
+            [
+              "Deep Sea Freight Transportation",
+              64812120.73
+            ],
+            [
+              "Nonscheduled Chartered Freight Air Transportation",
+              60469008.13
+            ],
+            [
+              "Highway, Street, and Bridge Construction",
+              55107493.36
+            ],
+            [
+              "Support Activities for Forestry",
+              46763241.47
+            ],
+            [
+              "Commercial and Institutional Building Construction",
+              43583827.32
+            ],
+            [
+              "Remediation Services",
+              22989776.09
+            ],
+            [
+              "Other Computer Related Services",
+              21000269.71
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Ship Building and Repairing was the largest industry in Oregon, with $323M obligated."
+    }
+  ],
+  "tables": [
+    {
+      "title": "Top 10 vendors",
+      "columns": [
+        "Rank",
+        "Vendor",
+        "Obligations"
+      ],
+      "rows": [
+        [
+          1,
+          {
+            "text": "VIGOR MARINE LLC",
+            "href": "https://www.usaspending.gov/recipient/1d4b036b-803c-6344-53e6-6fde8206978c-C/latest/"
+          },
+          310300148.16
+        ],
+        [
+          2,
+          {
+            "text": "COLLINS ELBIT VISION SYSTEMS, LLC",
+            "href": "https://www.usaspending.gov/recipient/767471cc-9b5d-249c-b438-33486157e36b-C/latest/"
+          },
+          70894997.76
+        ],
+        [
+          3,
+          {
+            "text": "GE RENEWABLES US LLC",
+            "href": "https://www.usaspending.gov/recipient/8ab45095-888a-2d03-c47d-988261118cec-C/latest/"
+          },
+          66749203.5
+        ],
+        [
+          4,
+          {
+            "text": "KEYSTONE SHIPPING SERVICES, INC.",
+            "href": "https://www.usaspending.gov/recipient/84c018e3-8e82-3916-f7b2-b22e73842306-C/latest/"
+          },
+          42833836.27
+        ],
+        [
+          5,
+          {
+            "text": "STRIDER CONSTRUCTION CO INC",
+            "href": "https://www.usaspending.gov/recipient/933f6195-6b99-cd6a-12e7-e171a7b35112-C/latest/"
+          },
+          36477635
+        ],
+        [
+          6,
+          {
+            "text": "KNIGHT CONST. & SUPPLY, INC",
+            "href": "https://www.usaspending.gov/recipient/226ad698-10b3-9da8-ee6f-34172f363e61-C/latest/"
+          },
+          28319711.6
+        ],
+        [
+          7,
+          {
+            "text": "MANSON CONSTRUCTION CO",
+            "href": "https://www.usaspending.gov/recipient/54aa8711-d13e-9d80-45f0-605318253bc6-C/latest/"
+          },
+          27302346.1
+        ],
+        [
+          8,
+          {
+            "text": "TOTE SERVICES, LLC",
+            "href": "https://www.usaspending.gov/recipient/6c48f956-83a6-813a-8495-68275f67c840-C/latest/"
+          },
+          21980994.84
+        ],
+        [
+          9,
+          {
+            "text": "OREGON HEALTH & SCIENCE UNIVERSITY",
+            "href": "https://www.usaspending.gov/recipient/27f21ab2-7b66-cad9-be60-5f435f28b02f-C/latest/"
+          },
+          20946759.9
+        ],
+        [
+          10,
+          {
+            "text": "GLOBAL ENGINEERING SERVICES INC",
+            "href": "https://www.usaspending.gov/recipient/97d49418-2de1-bd57-2ade-1118c3a30c75-C/latest/"
+          },
+          18980995.14
+        ]
+      ]
+    },
+    {
+      "title": "Largest awards, FY2026 to date",
+      "columns": [
+        "Rank",
+        "Recipient",
+        "Award Amount",
+        "Awarding Agency"
+      ],
+      "rows": [
+        [
+          1,
+          {
+            "text": "GE RENEWABLES US LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W912EF18C0001_9700_-NONE-_-NONE-/"
+          },
+          157776351.78,
+          "Department of Defense"
+        ],
+        [
+          2,
+          {
+            "text": "VIGOR MARINE LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002424C4407_9700_-NONE-_-NONE-/"
+          },
+          101126600.49,
+          "Department of Defense"
+        ],
+        [
+          3,
+          {
+            "text": "JAG ALASKA INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_1305M225C0004_1330_-NONE-_-NONE-/"
+          },
+          95408666,
+          "Department of Commerce"
+        ],
+        [
+          4,
+          {
+            "text": "VIGOR MARINE LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N3220526C0006_9700_-NONE-_-NONE-/"
+          },
+          89003482.07,
+          "Department of Defense"
+        ],
+        [
+          5,
+          {
+            "text": "VIGOR MARINE LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002425C4409_9700_-NONE-_-NONE-/"
+          },
+          88454240.65,
+          "Department of Defense"
+        ],
+        [
+          6,
+          {
+            "text": "MANAGEMENT & TRAINING CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_1605JW21C0019_1605_-NONE-_-NONE-/"
+          },
+          86855244.87,
+          "Department of Labor"
+        ],
+        [
+          7,
+          {
+            "text": "CAYUSE TECHNOLOGIES, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_19AQMM21C0104_1900_-NONE-_-NONE-/"
+          },
+          83840637.75,
+          "Department of State"
+        ],
+        [
+          8,
+          {
+            "text": "KNIGHT CONST. & SUPPLY, INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W912EF22C0004_9700_-NONE-_-NONE-/"
+          },
+          81778688.6,
+          "Department of Defense"
+        ],
+        [
+          9,
+          {
+            "text": "VIGOR MARINE LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N3220526C1223_9700_-NONE-_-NONE-/"
+          },
+          73424356.37,
+          "Department of Defense"
+        ],
+        [
+          10,
+          {
+            "text": "COLLINS ELBIT VISION SYSTEMS, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0001926F0254_9700_N0001926D0004_9700/"
+          },
+          70894997.76,
+          "Department of Defense"
+        ],
+        [
+          11,
+          {
+            "text": "VIGOR WORKS LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_H9240520F0022_9700_H9222211D0080_9700/"
+          },
+          66875826.02,
+          "Department of Defense"
+        ],
+        [
+          12,
+          {
+            "text": "VIGOR MARINE LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002425C4420_9700_-NONE-_-NONE-/"
+          },
+          58272011.33,
+          "Department of Defense"
+        ],
+        [
+          13,
+          {
+            "text": "STEVE MANNING CONSTRUCTION INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_69056723C000017_6925_-NONE-_-NONE-/"
+          },
+          58172609.15,
+          "Department of Transportation"
+        ],
+        [
+          14,
+          {
+            "text": "TRADE WEST CONSTRUCTION, INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W9127N23C0017_9700_-NONE-_-NONE-/"
+          },
+          55103940,
+          "Department of Defense"
+        ],
+        [
+          15,
+          {
+            "text": "RECONCRAFT, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002423C2201_9700_-NONE-_-NONE-/"
+          },
+          55048603,
+          "Department of Defense"
+        ],
+        [
+          16,
+          {
+            "text": "SLAYDEN CONSTRUCTORS INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W9127N23C0006_9700_-NONE-_-NONE-/"
+          },
+          50043649,
+          "Department of Defense"
+        ],
+        [
+          17,
+          {
+            "text": "GUNDERSON MARINE LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W912BU24C0046_9700_-NONE-_-NONE-/"
+          },
+          49793885.55,
+          "Department of Defense"
+        ],
+        [
+          18,
+          {
+            "text": "CDM FEDERAL PROGRAMS CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_68HE0720F0078_6800_68HE0318D0003_6800/"
+          },
+          48940983.02,
+          "Environmental Protection Agency"
+        ],
+        [
+          19,
+          {
+            "text": "OLSSON INDUSTRIAL ELECTRIC, INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W912EF21C0010_9700_-NONE-_-NONE-/"
+          },
+          47374728.04,
+          "Department of Defense"
+        ],
+        [
+          20,
+          {
+            "text": "VIGOR MARINE LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N3220525C2148_9700_-NONE-_-NONE-/"
+          },
+          46695549.8,
+          "Department of Defense"
+        ],
+        [
+          21,
+          {
+            "text": "VIGOR MARINE LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N3220526C1201_9700_-NONE-_-NONE-/"
+          },
+          44180298.99,
+          "Department of Defense"
+        ],
+        [
+          22,
+          {
+            "text": "VIGOR MARINE LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N3220525C4008_9700_-NONE-_-NONE-/"
+          },
+          42591524.5,
+          "Department of Defense"
+        ],
+        [
+          23,
+          {
+            "text": "NORTH WIND GENERAL CONTRACTORS LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_89243324CFE000093_8900_-NONE-_-NONE-/"
+          },
+          38004718.76,
+          "Department of Energy"
+        ],
+        [
+          24,
+          {
+            "text": "VIGOR MARINE LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N3220525C4115_9700_-NONE-_-NONE-/"
+          },
+          37553000.73,
+          "Department of Defense"
+        ],
+        [
+          25,
+          {
+            "text": "STRIDER CONSTRUCTION CO INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_69056726C000005_6925_-NONE-_-NONE-/"
+          },
+          36477635,
+          "Department of Transportation"
+        ]
+      ]
+    }
+  ],
+  "narrative": {
+    "intro": "In FY2026 to date, federal agencies obligated $1.2B across 6,725 contract awards. That is down 40.7% year over year. The average award size was $184K.",
+    "sections": [
+      {
+        "heading": "Which agencies award the most contracts in Oregon?",
+        "body": "Department of Defense was the largest federal buyer in Oregon, obligating $622M in FY2026 to date, or 50.4% of the state total."
+      },
+      {
+        "heading": "Who are the top federal contractors in Oregon?",
+        "body": "VIGOR MARINE LLC led all contractors performing work in Oregon with $310M in obligations during FY2026 to date."
+      }
+    ]
+  },
+  "faq": [
+    {
+      "q": "How much federal contract money goes to Oregon?",
+      "a": "Federal agencies obligated $1.2B to contractors performing work in Oregon in FY2026 to date, across 6,725 awards."
+    },
+    {
+      "q": "Which agencies award the most contracts in Oregon?",
+      "a": "Department of Defense is the largest federal buyer in Oregon, with $622M obligated in FY2026 to date."
+    },
+    {
+      "q": "Who are the largest federal contractors in Oregon?",
+      "a": "VIGOR MARINE LLC is the largest federal contractor performing work in Oregon by obligated dollars in FY2026 to date, with $310M."
+    }
+  ],
+  "related": [
+    {
+      "label": "Alabama federal contracts",
+      "href": "/insights/state/alabama/"
+    },
+    {
+      "label": "Alaska federal contracts",
+      "href": "/insights/state/alaska/"
+    },
+    {
+      "label": "Arizona federal contracts",
+      "href": "/insights/state/arizona/"
+    },
+    {
+      "label": "Arkansas federal contracts",
+      "href": "/insights/state/arkansas/"
+    },
+    {
+      "label": "California federal contracts",
+      "href": "/insights/state/california/"
+    },
+    {
+      "label": "Colorado federal contracts",
+      "href": "/insights/state/colorado/"
+    }
+  ],
+  "sources": [
+    {
+      "label": "USAspending.gov award data",
+      "href": "https://www.usaspending.gov"
+    }
+  ]
+}

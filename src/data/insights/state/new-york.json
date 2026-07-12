@@ -1,0 +1,609 @@
+{
+  "pageType": "state",
+  "slug": "new-york",
+  "title": "New York Federal Contracts: $6.5B in FY2026",
+  "h1": "Federal Contracts in New York: Spending, Agencies & Vendors",
+  "metaDescription": "Federal agencies obligated $6.5B to contractors in New York in FY2026 to date. See top buying agencies, top vendors, and industries.",
+  "updated": "2026-07-12",
+  "fyWindow": {
+    "label": "FY2026 to date",
+    "start": "2025-10-01",
+    "end": "2026-07-12"
+  },
+  "stats": {
+    "totalObligations": 6525733648.95,
+    "awardCount": 202469,
+    "yoyGrowthPct": -46,
+    "avgAwardSize": 32231,
+    "smallBusinessSharePct": null
+  },
+  "charts": [
+    {
+      "id": "new-york-trend",
+      "type": "line",
+      "title": "Obligations by fiscal year",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "FY21",
+              30829386369.02
+            ],
+            [
+              "FY22",
+              29406826073.35
+            ],
+            [
+              "FY23",
+              16493394129.46
+            ],
+            [
+              "FY24",
+              15080838040.73
+            ],
+            [
+              "FY25",
+              12075920459.43
+            ],
+            [
+              "FY26",
+              6525733648.95
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Obligations fell 46.0% year over year, from $12.1B in FY2025 to $6.5B in FY2026 to date."
+    },
+    {
+      "id": "new-york-top-agencies",
+      "type": "bar",
+      "title": "Top 10 buying agencies, FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "Department of Defense",
+              3379963088.4
+            ],
+            [
+              "Department of Energy",
+              763428483.92
+            ],
+            [
+              "Department of Veterans Affairs",
+              597913441.77
+            ],
+            [
+              "General Services Administration",
+              453180086.18
+            ],
+            [
+              "Department of Homeland Security",
+              339614200.68
+            ],
+            [
+              "Department of Transportation",
+              205639900.81
+            ],
+            [
+              "Department of Health and Human Services",
+              186773040.88
+            ],
+            [
+              "Department of the Treasury",
+              117476837.01
+            ],
+            [
+              "Department of Justice",
+              103532794.59
+            ],
+            [
+              "Department of State",
+              81467550.14
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Department of Defense was the top federal buyer in New York, obligating $3.4B (51.8% of the state total)."
+    },
+    {
+      "id": "new-york-top-vendors",
+      "type": "bar",
+      "title": "Top 10 vendors, FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "BROOKHAVEN SCIENCE ASSOCIATES LLC",
+              774646656.42
+            ],
+            [
+              "LOCKHEED MARTIN CORPORATION",
+              461884836.18
+            ],
+            [
+              "L3HARRIS GLOBAL COMMUNICATIONS, INC.",
+              426087567.7
+            ],
+            [
+              "LOCKHEED MARTIN CORPORATION",
+              236431077.72
+            ],
+            [
+              "L3HARRIS TECHNOLOGIES, INC.",
+              171642495.78
+            ],
+            [
+              "SAAB INC",
+              124047744.93
+            ],
+            [
+              "SVCMC, INC.",
+              121900000
+            ],
+            [
+              "JAMAICA BEARINGS CO., INC.",
+              118552843.68
+            ],
+            [
+              "BOOZ ALLEN HAMILTON INC",
+              103559146.75
+            ],
+            [
+              "LOCKHEED MARTIN CORPORATION",
+              92233135
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "BROOKHAVEN SCIENCE ASSOCIATES LLC led all contractors in New York with $775M, 11.9% of the state total."
+    },
+    {
+      "id": "new-york-top-naics",
+      "type": "bar",
+      "title": "Top 10 industries (NAICS), FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "Research and Development in the Physical, Engineering, and Life Sciences (except Biotechnology)",
+              774768063.65
+            ],
+            [
+              "Other Aircraft Parts and Auxiliary Equipment Manufacturing",
+              649073801.57
+            ],
+            [
+              "Search, Detection, Navigation, Guidance, Aeronautical, and Nautical System and Instrument Manufacturing",
+              454393030.89
+            ],
+            [
+              "Other Communications Equipment Manufacturing",
+              452216854.55
+            ],
+            [
+              "Commercial and Institutional Building Construction",
+              400364800.24
+            ],
+            [
+              "Engineering Services",
+              309760905.2
+            ],
+            [
+              "Radio and Television Broadcasting and Wireless Communications Equipment Manufacturing",
+              234204844.08
+            ],
+            [
+              "Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology)",
+              194346726.71
+            ],
+            [
+              "Facilities Support Services",
+              175298873.91
+            ],
+            [
+              "Security Guards and Patrol Services",
+              158724237.36
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Research and Development in the Physical, Engineering, and Life Sciences (except Biotechnology) was the largest industry in New York, with $775M obligated."
+    }
+  ],
+  "tables": [
+    {
+      "title": "Top 10 vendors",
+      "columns": [
+        "Rank",
+        "Vendor",
+        "Obligations"
+      ],
+      "rows": [
+        [
+          1,
+          {
+            "text": "BROOKHAVEN SCIENCE ASSOCIATES LLC",
+            "href": "https://www.usaspending.gov/recipient/a5024890-88ca-4c65-a382-b8beefb2111d-C/latest/"
+          },
+          774646656.42
+        ],
+        [
+          2,
+          {
+            "text": "LOCKHEED MARTIN CORPORATION",
+            "href": "https://www.usaspending.gov/recipient/5ad7895c-192b-21cd-8baf-92c6dce0b593-C/latest/"
+          },
+          461884836.18
+        ],
+        [
+          3,
+          {
+            "text": "L3HARRIS GLOBAL COMMUNICATIONS, INC.",
+            "href": "https://www.usaspending.gov/recipient/fe1273eb-82d1-0fbe-536c-7bb59157c827-C/latest/"
+          },
+          426087567.7
+        ],
+        [
+          4,
+          {
+            "text": "LOCKHEED MARTIN CORPORATION",
+            "href": "https://www.usaspending.gov/recipient/687c4cc7-53f1-d028-875d-2fc73de19122-C/latest/"
+          },
+          236431077.72
+        ],
+        [
+          5,
+          {
+            "text": "L3HARRIS TECHNOLOGIES, INC.",
+            "href": "https://www.usaspending.gov/recipient/ff82f82d-0b7f-0534-6465-02811ca0e11a-C/latest/"
+          },
+          171642495.78
+        ],
+        [
+          6,
+          {
+            "text": "SAAB INC",
+            "href": "https://www.usaspending.gov/recipient/d75bbade-7d65-0bab-0b94-6aa05ac819ed-C/latest/"
+          },
+          124047744.93
+        ],
+        [
+          7,
+          {
+            "text": "SVCMC, INC.",
+            "href": "https://www.usaspending.gov/recipient/ded23aa0-ccac-366d-5981-8d3ada27aeec-C/latest/"
+          },
+          121900000
+        ],
+        [
+          8,
+          {
+            "text": "JAMAICA BEARINGS CO., INC.",
+            "href": "https://www.usaspending.gov/recipient/82f222d8-322d-fc4f-0a95-cb390a9ce29f-C/latest/"
+          },
+          118552843.68
+        ],
+        [
+          9,
+          {
+            "text": "BOOZ ALLEN HAMILTON INC",
+            "href": "https://www.usaspending.gov/recipient/ffca72e5-fba2-798a-6969-2a6c45e9f985-C/latest/"
+          },
+          103559146.75
+        ],
+        [
+          10,
+          {
+            "text": "LOCKHEED MARTIN CORPORATION",
+            "href": "https://www.usaspending.gov/recipient/0701db1f-8045-4e60-83f7-5fd066cdf38d-C/latest/"
+          },
+          92233135
+        ]
+      ]
+    },
+    {
+      "title": "Largest awards, FY2026 to date",
+      "columns": [
+        "Rank",
+        "Recipient",
+        "Award Amount",
+        "Awarding Agency"
+      ],
+      "rows": [
+        [
+          1,
+          {
+            "text": "BROOKHAVEN SCIENCE ASSOCIATES LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_DESC0012704_8900_-NONE-_-NONE-/"
+          },
+          8561512218.42,
+          "Department of Energy"
+        ],
+        [
+          2,
+          {
+            "text": "LOCKHEED MARTIN CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0001919C0013_9700_-NONE-_-NONE-/"
+          },
+          2356006918.46,
+          "Department of Defense"
+        ],
+        [
+          3,
+          {
+            "text": "CH2M HILL BWXT WEST VALLEY, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_DEEM0001529_8900_-NONE-_-NONE-/"
+          },
+          990004957.81,
+          "Department of Energy"
+        ],
+        [
+          4,
+          {
+            "text": "IPG DXTRA, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75FCMC22F0003_7530_75FCMC18D0046_7530/"
+          },
+          819898146.22,
+          "Department of Health and Human Services"
+        ],
+        [
+          5,
+          {
+            "text": "CLASSIC AIR CHARTER INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70CDCR18FR0000002_7012_GS33F004DA_4732/"
+          },
+          794320929.55,
+          "Department of Homeland Security"
+        ],
+        [
+          6,
+          {
+            "text": "LOCKHEED MARTIN CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002423C6411_9700_-NONE-_-NONE-/"
+          },
+          728545701.32,
+          "Department of Defense"
+        ],
+        [
+          7,
+          {
+            "text": "LOCKHEED MARTIN CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W31P4Q19C0058_9700_-NONE-_-NONE-/"
+          },
+          685666325.34,
+          "Department of Defense"
+        ],
+        [
+          8,
+          {
+            "text": "BOOZ ALLEN HAMILTON INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_47QFNA21F0001_4732_47QTCK18D0004_4732/"
+          },
+          653158212.93,
+          "General Services Administration"
+        ],
+        [
+          9,
+          {
+            "text": "LOCKHEED MARTIN CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0001922F2291_9700_N0001921G0017_9700/"
+          },
+          581427300,
+          "Department of Defense"
+        ],
+        [
+          10,
+          {
+            "text": "LOCKHEED MARTIN CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA873021C0022_9700_-NONE-_-NONE-/"
+          },
+          580730298.21,
+          "Department of Defense"
+        ],
+        [
+          11,
+          {
+            "text": "LOCKHEED MARTIN CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0001921F0841_9700_N0001921G0017_9700/"
+          },
+          574897718.99,
+          "Department of Defense"
+        ],
+        [
+          12,
+          {
+            "text": "INTERNATIONAL BUSINESS MACHINES CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_SS001730048_2800_GS35F110DA_4732/"
+          },
+          525446095.96,
+          "Social Security Administration"
+        ],
+        [
+          13,
+          {
+            "text": "LOCKHEED MARTIN CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0003020C0045_9700_-NONE-_-NONE-/"
+          },
+          510558452.28,
+          "Department of Defense"
+        ],
+        [
+          14,
+          {
+            "text": "NORTHROP GRUMMAN SYSTEMS CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002417C6311_9700_-NONE-_-NONE-/"
+          },
+          499096519.48,
+          "Department of Defense"
+        ],
+        [
+          15,
+          {
+            "text": "KIEWIT INFRASTRUCTURE CO.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W912DS19C0015_9700_-NONE-_-NONE-/"
+          },
+          450073674,
+          "Department of Defense"
+        ],
+        [
+          16,
+          {
+            "text": "LOCKHEED MARTIN CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0001924F2566_9700_N0001921G0017_9700/"
+          },
+          432239028,
+          "Department of Defense"
+        ],
+        [
+          17,
+          {
+            "text": "LOCKHEED MARTIN CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0001924F5567_9700_N0001921G0017_9700/"
+          },
+          418783898,
+          "Department of Defense"
+        ],
+        [
+          18,
+          {
+            "text": "SVCMC, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_HT940223C0009_9700_-NONE-_-NONE-/"
+          },
+          380504300,
+          "Department of Defense"
+        ],
+        [
+          19,
+          {
+            "text": "LOCKHEED MARTIN CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W56KGY23F0001_9700_W56KGY22D0001_9700/"
+          },
+          374711786.33,
+          "Department of Defense"
+        ],
+        [
+          20,
+          {
+            "text": "L3HARRIS TECHNOLOGIES, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_80GSFC19C0021_8000_-NONE-_-NONE-/"
+          },
+          372589497,
+          "National Aeronautics and Space Administration"
+        ],
+        [
+          21,
+          {
+            "text": "ASRC FEDERAL FIELD SERVICES, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70RSAT18FR0000005_7001_70RSAT18D00000001_7001/"
+          },
+          368187349.59,
+          "Department of Homeland Security"
+        ],
+        [
+          22,
+          {
+            "text": "LOCKHEED MARTIN CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W56KGY24F0001_9700_W56KGY22D0001_9700/"
+          },
+          343967457.09,
+          "Department of Defense"
+        ],
+        [
+          23,
+          {
+            "text": "LOCKHEED MARTIN CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0038326F0W00_9700_N0038320DW001_9700/"
+          },
+          328690253.29,
+          "Department of Defense"
+        ],
+        [
+          24,
+          {
+            "text": "LOCKHEED MARTIN CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0003023C6045_9700_-NONE-_-NONE-/"
+          },
+          322208532,
+          "Department of Defense"
+        ],
+        [
+          25,
+          {
+            "text": "CACI, INC. - FEDERAL",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_47QFCA21F0019_4732_47QTCK18D0009_4732/"
+          },
+          290691769.03,
+          "General Services Administration"
+        ]
+      ]
+    }
+  ],
+  "narrative": {
+    "intro": "In FY2026 to date, federal agencies obligated $6.5B across 202,469 contract awards. That is down 46.0% year over year. The average award size was $32.2K.",
+    "sections": [
+      {
+        "heading": "Which agencies award the most contracts in New York?",
+        "body": "Department of Defense was the largest federal buyer in New York, obligating $3.4B in FY2026 to date, or 51.8% of the state total."
+      },
+      {
+        "heading": "Who are the top federal contractors in New York?",
+        "body": "BROOKHAVEN SCIENCE ASSOCIATES LLC led all contractors performing work in New York with $775M in obligations during FY2026 to date."
+      }
+    ]
+  },
+  "faq": [
+    {
+      "q": "How much federal contract money goes to New York?",
+      "a": "Federal agencies obligated $6.5B to contractors performing work in New York in FY2026 to date, across 202,469 awards."
+    },
+    {
+      "q": "Which agencies award the most contracts in New York?",
+      "a": "Department of Defense is the largest federal buyer in New York, with $3.4B obligated in FY2026 to date."
+    },
+    {
+      "q": "Who are the largest federal contractors in New York?",
+      "a": "BROOKHAVEN SCIENCE ASSOCIATES LLC is the largest federal contractor performing work in New York by obligated dollars in FY2026 to date, with $775M."
+    }
+  ],
+  "related": [
+    {
+      "label": "Alabama federal contracts",
+      "href": "/insights/state/alabama/"
+    },
+    {
+      "label": "Alaska federal contracts",
+      "href": "/insights/state/alaska/"
+    },
+    {
+      "label": "Arizona federal contracts",
+      "href": "/insights/state/arizona/"
+    },
+    {
+      "label": "Arkansas federal contracts",
+      "href": "/insights/state/arkansas/"
+    },
+    {
+      "label": "California federal contracts",
+      "href": "/insights/state/california/"
+    },
+    {
+      "label": "Colorado federal contracts",
+      "href": "/insights/state/colorado/"
+    }
+  ],
+  "sources": [
+    {
+      "label": "USAspending.gov award data",
+      "href": "https://www.usaspending.gov"
+    }
+  ]
+}

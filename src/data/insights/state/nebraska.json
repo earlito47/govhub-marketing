@@ -1,0 +1,609 @@
+{
+  "pageType": "state",
+  "slug": "nebraska",
+  "title": "Nebraska Federal Contracts: $902M in FY2026",
+  "h1": "Federal Contracts in Nebraska: Spending, Agencies & Vendors",
+  "metaDescription": "Federal agencies obligated $902M to contractors in Nebraska in FY2026 to date. See top buying agencies, top vendors, and industries.",
+  "updated": "2026-07-12",
+  "fyWindow": {
+    "label": "FY2026 to date",
+    "start": "2025-10-01",
+    "end": "2026-07-12"
+  },
+  "stats": {
+    "totalObligations": 901816236.57,
+    "awardCount": 12819,
+    "yoyGrowthPct": -28.8,
+    "avgAwardSize": 70350,
+    "smallBusinessSharePct": null
+  },
+  "charts": [
+    {
+      "id": "nebraska-trend",
+      "type": "line",
+      "title": "Obligations by fiscal year",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "FY21",
+              1255999874.39
+            ],
+            [
+              "FY22",
+              1306563265.94
+            ],
+            [
+              "FY23",
+              2031302278.87
+            ],
+            [
+              "FY24",
+              1291835887.63
+            ],
+            [
+              "FY25",
+              1266217228.48
+            ],
+            [
+              "FY26",
+              901816236.57
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Obligations fell 28.8% year over year, from $1.3B in FY2025 to $902M in FY2026 to date."
+    },
+    {
+      "id": "nebraska-top-agencies",
+      "type": "bar",
+      "title": "Top 10 buying agencies, FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "Department of Defense",
+              321240052.98
+            ],
+            [
+              "Department of Education",
+              289198255.46
+            ],
+            [
+              "General Services Administration",
+              131615948.66
+            ],
+            [
+              "Department of Veterans Affairs",
+              77991147.6
+            ],
+            [
+              "Department of Agriculture",
+              23002721.58
+            ],
+            [
+              "Department of Justice",
+              16140773.69
+            ],
+            [
+              "Department of State",
+              15686161.29
+            ],
+            [
+              "Department of Homeland Security",
+              9270355.8
+            ],
+            [
+              "Department of the Interior",
+              5484656.08
+            ],
+            [
+              "Department of Transportation",
+              3064201.56
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Department of Defense was the top federal buyer in Nebraska, obligating $321M (35.6% of the state total)."
+    },
+    {
+      "id": "nebraska-top-vendors",
+      "type": "bar",
+      "title": "Top 10 vendors, FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "NELNET SERVICING LLC",
+              289049844.46
+            ],
+            [
+              "GENERAL DYNAMICS INFORMATION TECHNOLOGY, INC.",
+              120627826
+            ],
+            [
+              "HENDRICKSON TRANSPORTATION LLC",
+              43724248.6
+            ],
+            [
+              "S365 INC",
+              34067798.71
+            ],
+            [
+              "EA-BAKER PARTNERS JV",
+              31938929
+            ],
+            [
+              "METGREEN SOLUTIONS INC",
+              30731947.33
+            ],
+            [
+              "APOGEE ENGINEERING, LLC",
+              27336860.14
+            ],
+            [
+              "CALVERT SYSTEMS ENGINEERING, INC",
+              19584058.79
+            ],
+            [
+              "PERATON INC.",
+              17943849
+            ],
+            [
+              "HCI MANAGEMENT SERVICES COMPANY",
+              15975131.51
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "NELNET SERVICING LLC led all contractors in Nebraska with $289M, 32.1% of the state total."
+    },
+    {
+      "id": "nebraska-top-naics",
+      "type": "bar",
+      "title": "Top 10 industries (NAICS), FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "Other Activities Related to Credit Intermediation",
+              289049844.46
+            ],
+            [
+              "Computer Systems Design Services",
+              154032780.45
+            ],
+            [
+              "Engineering Services",
+              84068289.2
+            ],
+            [
+              "Other Heavy and Civil Engineering Construction",
+              47871778.08
+            ],
+            [
+              "Other Computer Related Services",
+              37607737.35
+            ],
+            [
+              "Hotels (except Casino Hotels) and Motels",
+              34012349.11
+            ],
+            [
+              "Facilities Support Services",
+              27139307.59
+            ],
+            [
+              "Commercial and Institutional Building Construction",
+              23583044.59
+            ],
+            [
+              "All Other Professional, Scientific, and Technical Services",
+              18322724.55
+            ],
+            [
+              "Flight Training",
+              10808365
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Other Activities Related to Credit Intermediation was the largest industry in Nebraska, with $289M obligated."
+    }
+  ],
+  "tables": [
+    {
+      "title": "Top 10 vendors",
+      "columns": [
+        "Rank",
+        "Vendor",
+        "Obligations"
+      ],
+      "rows": [
+        [
+          1,
+          {
+            "text": "NELNET SERVICING LLC",
+            "href": "https://www.usaspending.gov/recipient/cd787d0c-db43-3ebb-f395-dc3ed272e5e9-C/latest/"
+          },
+          289049844.46
+        ],
+        [
+          2,
+          {
+            "text": "GENERAL DYNAMICS INFORMATION TECHNOLOGY, INC.",
+            "href": "https://www.usaspending.gov/recipient/455555be-773d-eab1-1e6b-7b94400b757e-C/latest/"
+          },
+          120627826
+        ],
+        [
+          3,
+          {
+            "text": "HENDRICKSON TRANSPORTATION LLC",
+            "href": "https://www.usaspending.gov/recipient/f61a816e-ef70-bc84-6c7e-0efe3a8ca337-C/latest/"
+          },
+          43724248.6
+        ],
+        [
+          4,
+          {
+            "text": "S365 INC",
+            "href": "https://www.usaspending.gov/recipient/b5be2789-61c4-0cb5-4f32-0ef593d22623-C/latest/"
+          },
+          34067798.71
+        ],
+        [
+          5,
+          {
+            "text": "EA-BAKER PARTNERS JV",
+            "href": "https://www.usaspending.gov/recipient/346991d5-5121-a491-b891-84e08e2b2f04-C/latest/"
+          },
+          31938929
+        ],
+        [
+          6,
+          {
+            "text": "METGREEN SOLUTIONS INC",
+            "href": "https://www.usaspending.gov/recipient/2f9b400e-dc80-c49f-f49b-d0f639359e45-C/latest/"
+          },
+          30731947.33
+        ],
+        [
+          7,
+          {
+            "text": "APOGEE ENGINEERING, LLC",
+            "href": "https://www.usaspending.gov/recipient/a8900b38-e12f-d284-884f-969f6021c9c0-C/latest/"
+          },
+          27336860.14
+        ],
+        [
+          8,
+          {
+            "text": "CALVERT SYSTEMS ENGINEERING, INC",
+            "href": "https://www.usaspending.gov/recipient/f3d27100-b698-7d27-3601-a760bfe75945-C/latest/"
+          },
+          19584058.79
+        ],
+        [
+          9,
+          {
+            "text": "PERATON INC.",
+            "href": "https://www.usaspending.gov/recipient/129fccb1-783c-9fd1-7b6d-6ddea65ace79-C/latest/"
+          },
+          17943849
+        ],
+        [
+          10,
+          {
+            "text": "HCI MANAGEMENT SERVICES COMPANY",
+            "href": "https://www.usaspending.gov/recipient/44fe4d69-db0e-7016-8dfa-cf625e2b2d82-C/latest/"
+          },
+          15975131.51
+        ]
+      ]
+    },
+    {
+      "title": "Largest awards, FY2026 to date",
+      "columns": [
+        "Rank",
+        "Recipient",
+        "Award Amount",
+        "Awarding Agency"
+      ],
+      "rows": [
+        [
+          1,
+          {
+            "text": "TURNER CONSTRUCTION COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W9128F23C0023_9700_-NONE-_-NONE-/"
+          },
+          393059687,
+          "Department of Defense"
+        ],
+        [
+          2,
+          {
+            "text": "NELNET SERVICING LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_91003126F0022_9100_91003123D0005_9100/"
+          },
+          206790690.3,
+          "Department of Education"
+        ],
+        [
+          3,
+          {
+            "text": "GENERAL DYNAMICS INFORMATION TECHNOLOGY, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_47QFCA25F0018_4732_47QTCK18D0003_4732/"
+          },
+          158222000,
+          "General Services Administration"
+        ],
+        [
+          4,
+          {
+            "text": "NELNET SERVICING LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_91003125F0044_9100_91003123D0005_9100/"
+          },
+          155995860.88,
+          "Department of Education"
+        ],
+        [
+          5,
+          {
+            "text": "WALSH FEDERAL LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W9128F23C0013_9700_-NONE-_-NONE-/"
+          },
+          155587845,
+          "Department of Defense"
+        ],
+        [
+          6,
+          {
+            "text": "WALSH FEDERAL LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W9128F23C0015_9700_-NONE-_-NONE-/"
+          },
+          107705496,
+          "Department of Defense"
+        ],
+        [
+          7,
+          {
+            "text": "PERATON ENTERPRISE SOLUTIONS LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA460021F0047_9700_FA460021D0001_9700/"
+          },
+          88640980.28,
+          "Department of Defense"
+        ],
+        [
+          8,
+          {
+            "text": "M. A. MORTENSON COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W9128F22C0027_9700_-NONE-_-NONE-/"
+          },
+          75103571,
+          "Department of Defense"
+        ],
+        [
+          9,
+          {
+            "text": "APOGEE ENGINEERING, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA873021F8501_9700_47QRAD19D3001_4732/"
+          },
+          67131539.3,
+          "Department of Defense"
+        ],
+        [
+          10,
+          {
+            "text": "MILSUP LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA489021C0001_9700_-NONE-_-NONE-/"
+          },
+          63259136.09,
+          "Department of Defense"
+        ],
+        [
+          11,
+          {
+            "text": "PERATON INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA221724FB001_9700_47QTCK18D0011_4732/"
+          },
+          45389085,
+          "Department of Defense"
+        ],
+        [
+          12,
+          {
+            "text": "HENDRICKSON TRANSPORTATION LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W9128F26CA001_9700_-NONE-_-NONE-/"
+          },
+          43724248.6,
+          "Department of Defense"
+        ],
+        [
+          13,
+          {
+            "text": "SCIENCE APPLICATIONS INTERNATIONAL CORP",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA460024F0001_9700_FA460020D0002_9700/"
+          },
+          40383941.06,
+          "Department of Defense"
+        ],
+        [
+          14,
+          {
+            "text": "APOGEE ENGINEERING, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA460023F0011_9700_47QRAD19D3001_4732/"
+          },
+          40061744.7,
+          "Department of Defense"
+        ],
+        [
+          15,
+          {
+            "text": "OMAHA PUBLIC POWER DISTRICT",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA460015C0002_9700_-NONE-_-NONE-/"
+          },
+          38229372.53,
+          "Department of Defense"
+        ],
+        [
+          16,
+          {
+            "text": "AC JV ONE LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C77623C0094_3600_-NONE-_-NONE-/"
+          },
+          36371031.53,
+          "Department of Veterans Affairs"
+        ],
+        [
+          17,
+          {
+            "text": "G4S SECURE INTEGRATION LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_19AQMM19C0059_1900_-NONE-_-NONE-/"
+          },
+          34906606.16,
+          "Department of State"
+        ],
+        [
+          18,
+          {
+            "text": "NORTHROP GRUMMAN SYSTEMS CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA873022C8510_9700_-NONE-_-NONE-/"
+          },
+          34372141.64,
+          "Department of Defense"
+        ],
+        [
+          19,
+          {
+            "text": "EA-BAKER PARTNERS JV",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W9128F26FA014_9700_W9128F24D0019_9700/"
+          },
+          31938929,
+          "Department of Defense"
+        ],
+        [
+          20,
+          {
+            "text": "METGREEN SOLUTIONS INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10B24F0145_3600_NNG15SD87B_8000/"
+          },
+          31718000,
+          "Department of Veterans Affairs"
+        ],
+        [
+          21,
+          {
+            "text": "PERATON ENTERPRISE SOLUTIONS LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA460021F0064_9700_FA460021D0001_9700/"
+          },
+          30646362.37,
+          "Department of Defense"
+        ],
+        [
+          22,
+          {
+            "text": "CLIENT/SERVER SOFTWARE SOLUTIONS INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA460023F0006_9700_47QRAD20D3089_4732/"
+          },
+          29694959.73,
+          "Department of Defense"
+        ],
+        [
+          23,
+          {
+            "text": "S365 INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W912L726FA011_9700_W912L726DA007_9700/"
+          },
+          27610389.11,
+          "Department of Defense"
+        ],
+        [
+          24,
+          {
+            "text": "GCH CONSTRUCTION COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C26322C0094_3600_-NONE-_-NONE-/"
+          },
+          27383910,
+          "Department of Veterans Affairs"
+        ],
+        [
+          25,
+          {
+            "text": "MCCALLIE ASSOCIATES, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA852521C0001_9700_-NONE-_-NONE-/"
+          },
+          27101235.58,
+          "Department of Defense"
+        ]
+      ]
+    }
+  ],
+  "narrative": {
+    "intro": "In FY2026 to date, federal agencies obligated $902M across 12,819 contract awards. That is down 28.8% year over year. The average award size was $70.3K.",
+    "sections": [
+      {
+        "heading": "Which agencies award the most contracts in Nebraska?",
+        "body": "Department of Defense was the largest federal buyer in Nebraska, obligating $321M in FY2026 to date, or 35.6% of the state total."
+      },
+      {
+        "heading": "Who are the top federal contractors in Nebraska?",
+        "body": "NELNET SERVICING LLC led all contractors performing work in Nebraska with $289M in obligations during FY2026 to date."
+      }
+    ]
+  },
+  "faq": [
+    {
+      "q": "How much federal contract money goes to Nebraska?",
+      "a": "Federal agencies obligated $902M to contractors performing work in Nebraska in FY2026 to date, across 12,819 awards."
+    },
+    {
+      "q": "Which agencies award the most contracts in Nebraska?",
+      "a": "Department of Defense is the largest federal buyer in Nebraska, with $321M obligated in FY2026 to date."
+    },
+    {
+      "q": "Who are the largest federal contractors in Nebraska?",
+      "a": "NELNET SERVICING LLC is the largest federal contractor performing work in Nebraska by obligated dollars in FY2026 to date, with $289M."
+    }
+  ],
+  "related": [
+    {
+      "label": "Alabama federal contracts",
+      "href": "/insights/state/alabama/"
+    },
+    {
+      "label": "Alaska federal contracts",
+      "href": "/insights/state/alaska/"
+    },
+    {
+      "label": "Arizona federal contracts",
+      "href": "/insights/state/arizona/"
+    },
+    {
+      "label": "Arkansas federal contracts",
+      "href": "/insights/state/arkansas/"
+    },
+    {
+      "label": "California federal contracts",
+      "href": "/insights/state/california/"
+    },
+    {
+      "label": "Colorado federal contracts",
+      "href": "/insights/state/colorado/"
+    }
+  ],
+  "sources": [
+    {
+      "label": "USAspending.gov award data",
+      "href": "https://www.usaspending.gov"
+    }
+  ]
+}

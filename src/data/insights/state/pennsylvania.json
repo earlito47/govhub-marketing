@@ -1,0 +1,609 @@
+{
+  "pageType": "state",
+  "slug": "pennsylvania",
+  "title": "Pennsylvania Federal Contracts: $17.8B in FY2026",
+  "h1": "Federal Contracts in Pennsylvania: Spending, Agencies & Vendors",
+  "metaDescription": "Federal agencies obligated $17.8B to contractors in Pennsylvania in FY2026 to date. See top buying agencies, top vendors, and industries.",
+  "updated": "2026-07-12",
+  "fyWindow": {
+    "label": "FY2026 to date",
+    "start": "2025-10-01",
+    "end": "2026-07-12"
+  },
+  "stats": {
+    "totalObligations": 17792387818,
+    "awardCount": 330159,
+    "yoyGrowthPct": -34,
+    "avgAwardSize": 53890,
+    "smallBusinessSharePct": null
+  },
+  "charts": [
+    {
+      "id": "pennsylvania-trend",
+      "type": "line",
+      "title": "Obligations by fiscal year",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "FY21",
+              17563087679.7
+            ],
+            [
+              "FY22",
+              19710523770.83
+            ],
+            [
+              "FY23",
+              23264658518.5
+            ],
+            [
+              "FY24",
+              26573957351.15
+            ],
+            [
+              "FY25",
+              26955761640.54
+            ],
+            [
+              "FY26",
+              17792387818
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Obligations fell 34.0% year over year, from $27B in FY2025 to $17.8B in FY2026 to date."
+    },
+    {
+      "id": "pennsylvania-top-agencies",
+      "type": "bar",
+      "title": "Top 10 buying agencies, FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "Department of Defense",
+              14175547279.22
+            ],
+            [
+              "Department of Energy",
+              2024387696.03
+            ],
+            [
+              "Department of Veterans Affairs",
+              571584128.47
+            ],
+            [
+              "Department of Commerce",
+              216476065.89
+            ],
+            [
+              "Department of Agriculture",
+              183845367.98
+            ],
+            [
+              "Department of Health and Human Services",
+              180549490.84
+            ],
+            [
+              "General Services Administration",
+              77679756.79
+            ],
+            [
+              "Department of Justice",
+              72725282.5
+            ],
+            [
+              "National Aeronautics and Space Administration",
+              62665480.37
+            ],
+            [
+              "Department of Homeland Security",
+              56762056.6
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Department of Defense was the top federal buyer in Pennsylvania, obligating $14.2B (79.7% of the state total)."
+    },
+    {
+      "id": "pennsylvania-top-vendors",
+      "type": "bar",
+      "title": "Top 10 vendors, FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "AMERISOURCEBERGEN DRUG CORP",
+              4150240069.59
+            ],
+            [
+              "FLUOR MARINE PROPULSION, LLC",
+              3755500881.88
+            ],
+            [
+              "BECHTEL PLANT MACHINERY, INC.",
+              2068310419
+            ],
+            [
+              "THE BOEING COMPANY",
+              1818991846.37
+            ],
+            [
+              "LOCKHEED MARTIN CORP",
+              628035003.61
+            ],
+            [
+              "BAE SYSTEMS LAND & ARMAMENTS L.P.",
+              516476852.63
+            ],
+            [
+              "BAE SYSTEMS LAND AND ARMAMENTS L.P.",
+              388453481.19
+            ],
+            [
+              "UNITED CONCORDIA COMPANIES, INC.",
+              339293191.63
+            ],
+            [
+              "THE PENNSYLVANIA STATE UNIVERSITY",
+              233150478.23
+            ],
+            [
+              "REED TECHNOLOGY AND INFORMATION SERVICES LLC",
+              213376277.69
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "AMERISOURCEBERGEN DRUG CORP led all contractors in Pennsylvania with $4.2B, 23.3% of the state total."
+    },
+    {
+      "id": "pennsylvania-top-naics",
+      "type": "bar",
+      "title": "Top 10 industries (NAICS), FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology)",
+              4168977584.89
+            ],
+            [
+              "Medicinal and Botanical Manufacturing",
+              2824907029.52
+            ],
+            [
+              "Power Boiler and Heat Exchanger Manufacturing",
+              2070375786.17
+            ],
+            [
+              "Aircraft Manufacturing",
+              1622609168.89
+            ],
+            [
+              "Drugs and Druggists' Sundries Merchant Wholesalers",
+              1325980471.81
+            ],
+            [
+              "Military Armored Vehicle, Tank, and Tank Component Manufacturing",
+              963754125.02
+            ],
+            [
+              "Engineering Services",
+              881534625.33
+            ],
+            [
+              "Direct Health and Medical Insurance Carriers",
+              513286434.83
+            ],
+            [
+              "Other Computer Related Services",
+              224244272.39
+            ],
+            [
+              "All Other Publishers",
+              213376277.69
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology) was the largest industry in Pennsylvania, with $4.2B obligated."
+    }
+  ],
+  "tables": [
+    {
+      "title": "Top 10 vendors",
+      "columns": [
+        "Rank",
+        "Vendor",
+        "Obligations"
+      ],
+      "rows": [
+        [
+          1,
+          {
+            "text": "AMERISOURCEBERGEN DRUG CORP",
+            "href": "https://www.usaspending.gov/recipient/edc402f7-abac-eafe-2aae-3fdcd8d1bb8a-C/latest/"
+          },
+          4150240069.59
+        ],
+        [
+          2,
+          {
+            "text": "FLUOR MARINE PROPULSION, LLC",
+            "href": "https://www.usaspending.gov/recipient/27de0316-220e-8297-411f-f99b6f60443a-C/latest/"
+          },
+          3755500881.88
+        ],
+        [
+          3,
+          {
+            "text": "BECHTEL PLANT MACHINERY, INC.",
+            "href": "https://www.usaspending.gov/recipient/2564523b-4d13-da43-99e7-d2fb15569c2d-C/latest/"
+          },
+          2068310419
+        ],
+        [
+          4,
+          {
+            "text": "THE BOEING COMPANY",
+            "href": "https://www.usaspending.gov/recipient/f9736fab-29cf-0248-a01b-aea3ad360ecc-C/latest/"
+          },
+          1818991846.37
+        ],
+        [
+          5,
+          {
+            "text": "LOCKHEED MARTIN CORP",
+            "href": "https://www.usaspending.gov/recipient/ec40d701-df42-cef7-1247-f7307851485d-C/latest/"
+          },
+          628035003.61
+        ],
+        [
+          6,
+          {
+            "text": "BAE SYSTEMS LAND & ARMAMENTS L.P.",
+            "href": "https://www.usaspending.gov/recipient/aac98290-78f5-735a-8f80-d06daa6e4c59-C/latest/"
+          },
+          516476852.63
+        ],
+        [
+          7,
+          {
+            "text": "BAE SYSTEMS LAND AND ARMAMENTS L.P.",
+            "href": "https://www.usaspending.gov/recipient/4e82bc60-9b65-7c43-0d5f-4d41ace9f16b-C/latest/"
+          },
+          388453481.19
+        ],
+        [
+          8,
+          {
+            "text": "UNITED CONCORDIA COMPANIES, INC.",
+            "href": "https://www.usaspending.gov/recipient/351af436-ab50-8ae3-488e-d632247d8d45-C/latest/"
+          },
+          339293191.63
+        ],
+        [
+          9,
+          {
+            "text": "THE PENNSYLVANIA STATE UNIVERSITY",
+            "href": "https://www.usaspending.gov/recipient/f12508df-b414-7a41-54a0-3351d8ed6cb0-C/latest/"
+          },
+          233150478.23
+        ],
+        [
+          10,
+          {
+            "text": "REED TECHNOLOGY AND INFORMATION SERVICES LLC",
+            "href": "https://www.usaspending.gov/recipient/d47bd370-ec68-903e-abd0-30da9aa1c18e-C/latest/"
+          },
+          213376277.69
+        ]
+      ]
+    },
+    {
+      "title": "Largest awards, FY2026 to date",
+      "columns": [
+        "Rank",
+        "Recipient",
+        "Award Amount",
+        "Awarding Agency"
+      ],
+      "rows": [
+        [
+          1,
+          {
+            "text": "FLUOR MARINE PROPULSION, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_89233018CNR000004_8900_-NONE-_-NONE-/"
+          },
+          14785385287.21,
+          "Department of Energy"
+        ],
+        [
+          2,
+          {
+            "text": "FLUOR MARINE PROPULSION, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002418C2130_9700_-NONE-_-NONE-/"
+          },
+          14426090803.57,
+          "Department of Defense"
+        ],
+        [
+          3,
+          {
+            "text": "THE BOEING COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W58RGZ13C0002_9700_-NONE-_-NONE-/"
+          },
+          4864238445.89,
+          "Department of Defense"
+        ],
+        [
+          4,
+          {
+            "text": "BAE SYSTEMS LAND AND ARMAMENTS L.P.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_M6785416C0006_9700_-NONE-_-NONE-/"
+          },
+          3744444171,
+          "Department of Defense"
+        ],
+        [
+          5,
+          {
+            "text": "BECHTEL PLANT MACHINERY, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002424C2115_9700_-NONE-_-NONE-/"
+          },
+          2975601797,
+          "Department of Defense"
+        ],
+        [
+          6,
+          {
+            "text": "BAE SYSTEMS LAND & ARMAMENTS L.P.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W56HZV17C0001_9700_-NONE-_-NONE-/"
+          },
+          2875232202.19,
+          "Department of Defense"
+        ],
+        [
+          7,
+          {
+            "text": "BECHTEL PLANT MACHINERY, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002416C2106_9700_-NONE-_-NONE-/"
+          },
+          2708595970,
+          "Department of Defense"
+        ],
+        [
+          8,
+          {
+            "text": "BECHTEL PLANT MACHINERY, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002424C2114_9700_-NONE-_-NONE-/"
+          },
+          2542667076,
+          "Department of Defense"
+        ],
+        [
+          9,
+          {
+            "text": "BAE SYSTEMS LAND & ARMAMENTS L.P.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W56HZV23C0024_9700_-NONE-_-NONE-/"
+          },
+          2479580090,
+          "Department of Defense"
+        ],
+        [
+          10,
+          {
+            "text": "BAE SYSTEMS LAND AND ARMAMENTS L.P.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W56HZV15CA001_9700_-NONE-_-NONE-/"
+          },
+          2006654646.36,
+          "Department of Defense"
+        ],
+        [
+          11,
+          {
+            "text": "THE BOEING COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA873918C5030_9700_-NONE-_-NONE-/"
+          },
+          1391899887.04,
+          "Department of Defense"
+        ],
+        [
+          12,
+          {
+            "text": "LOCKHEED MARTIN CORP",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA821924C0001_9700_-NONE-_-NONE-/"
+          },
+          1213349262.88,
+          "Department of Defense"
+        ],
+        [
+          13,
+          {
+            "text": "BAE SYSTEMS LAND & ARMAMENTS L.P.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W912CH25F0096_9700_W56HZV22D0083_9700/"
+          },
+          1080945590.25,
+          "Department of Defense"
+        ],
+        [
+          14,
+          {
+            "text": "THE BOEING COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W58RGZ26C0003_9700_-NONE-_-NONE-/"
+          },
+          995270007,
+          "Department of Defense"
+        ],
+        [
+          15,
+          {
+            "text": "NOVITAS SOLUTIONS, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75FCMC19C0018_7530_-NONE-_-NONE-/"
+          },
+          921080481.92,
+          "Department of Health and Human Services"
+        ],
+        [
+          16,
+          {
+            "text": "REED TECHNOLOGY AND INFORMATION SERVICES LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_1333BJ21C00151002_1344_-NONE-_-NONE-/"
+          },
+          908135173.67,
+          "Department of Commerce"
+        ],
+        [
+          17,
+          {
+            "text": "BAE SYSTEMS LAND & ARMAMENTS L.P.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W56HZV23F0395_9700_W56HZV22D0083_9700/"
+          },
+          895701647.68,
+          "Department of Defense"
+        ],
+        [
+          18,
+          {
+            "text": "NOVITAS SOLUTIONS, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_HHSM5002012M0001Z_7530_-NONE-_-NONE-/"
+          },
+          861099849.72,
+          "Department of Health and Human Services"
+        ],
+        [
+          19,
+          {
+            "text": "BAE SYSTEMS LAND & ARMAMENTS L.P.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W56HZV18C0133_9700_-NONE-_-NONE-/"
+          },
+          816970968,
+          "Department of Defense"
+        ],
+        [
+          20,
+          {
+            "text": "TRUMBULL CORPORATION AND BRAYMAN CONSTRUCTION CORPORATION, A JOINT VENTURE",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W911WN24C8011_9700_-NONE-_-NONE-/"
+          },
+          805891610.68,
+          "Department of Defense"
+        ],
+        [
+          21,
+          {
+            "text": "THE BOEING COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_H9224122F0002_9700_W9121516G0001_9700/"
+          },
+          780361826,
+          "Department of Defense"
+        ],
+        [
+          22,
+          {
+            "text": "THE BOEING COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_H9224122F0073_9700_W9121516G0001_9700/"
+          },
+          728075478.43,
+          "Department of Defense"
+        ],
+        [
+          23,
+          {
+            "text": "GENERAL DYNAMICS OTS (WILKES BARRE), LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W15QKN24F0527_9700_W15QKN24D0052_9700/"
+          },
+          700062444,
+          "Department of Defense"
+        ],
+        [
+          24,
+          {
+            "text": "AGUSTAWESTLAND PHILADELPHIA CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N6134020C0007_9700_-NONE-_-NONE-/"
+          },
+          664729967.51,
+          "Department of Defense"
+        ],
+        [
+          25,
+          {
+            "text": "BAE SYSTEMS LAND & ARMAMENTS L.P.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W56HZV07C0256_9700_-NONE-_-NONE-/"
+          },
+          615111655.79,
+          "Department of Defense"
+        ]
+      ]
+    }
+  ],
+  "narrative": {
+    "intro": "In FY2026 to date, federal agencies obligated $17.8B across 330,159 contract awards. That is down 34.0% year over year. The average award size was $53.9K.",
+    "sections": [
+      {
+        "heading": "Which agencies award the most contracts in Pennsylvania?",
+        "body": "Department of Defense was the largest federal buyer in Pennsylvania, obligating $14.2B in FY2026 to date, or 79.7% of the state total."
+      },
+      {
+        "heading": "Who are the top federal contractors in Pennsylvania?",
+        "body": "AMERISOURCEBERGEN DRUG CORP led all contractors performing work in Pennsylvania with $4.2B in obligations during FY2026 to date."
+      }
+    ]
+  },
+  "faq": [
+    {
+      "q": "How much federal contract money goes to Pennsylvania?",
+      "a": "Federal agencies obligated $17.8B to contractors performing work in Pennsylvania in FY2026 to date, across 330,159 awards."
+    },
+    {
+      "q": "Which agencies award the most contracts in Pennsylvania?",
+      "a": "Department of Defense is the largest federal buyer in Pennsylvania, with $14.2B obligated in FY2026 to date."
+    },
+    {
+      "q": "Who are the largest federal contractors in Pennsylvania?",
+      "a": "AMERISOURCEBERGEN DRUG CORP is the largest federal contractor performing work in Pennsylvania by obligated dollars in FY2026 to date, with $4.2B."
+    }
+  ],
+  "related": [
+    {
+      "label": "Alabama federal contracts",
+      "href": "/insights/state/alabama/"
+    },
+    {
+      "label": "Alaska federal contracts",
+      "href": "/insights/state/alaska/"
+    },
+    {
+      "label": "Arizona federal contracts",
+      "href": "/insights/state/arizona/"
+    },
+    {
+      "label": "Arkansas federal contracts",
+      "href": "/insights/state/arkansas/"
+    },
+    {
+      "label": "California federal contracts",
+      "href": "/insights/state/california/"
+    },
+    {
+      "label": "Colorado federal contracts",
+      "href": "/insights/state/colorado/"
+    }
+  ],
+  "sources": [
+    {
+      "label": "USAspending.gov award data",
+      "href": "https://www.usaspending.gov"
+    }
+  ]
+}

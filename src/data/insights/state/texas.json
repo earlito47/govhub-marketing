@@ -1,0 +1,609 @@
+{
+  "pageType": "state",
+  "slug": "texas",
+  "title": "Texas Federal Contracts: $69.1B in FY2026",
+  "h1": "Federal Contracts in Texas: Spending, Agencies & Vendors",
+  "metaDescription": "Federal agencies obligated $69.1B to contractors in Texas in FY2026 to date. See top buying agencies, top vendors, and industries.",
+  "updated": "2026-07-12",
+  "fyWindow": {
+    "label": "FY2026 to date",
+    "start": "2025-10-01",
+    "end": "2026-07-12"
+  },
+  "stats": {
+    "totalObligations": 69053874853.04,
+    "awardCount": 142957,
+    "yoyGrowthPct": -20,
+    "avgAwardSize": 483039,
+    "smallBusinessSharePct": null
+  },
+  "charts": [
+    {
+      "id": "texas-trend",
+      "type": "line",
+      "title": "Obligations by fiscal year",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "FY21",
+              55097448795.49
+            ],
+            [
+              "FY22",
+              67579721051.91
+            ],
+            [
+              "FY23",
+              81862890883.04
+            ],
+            [
+              "FY24",
+              59276631123.99
+            ],
+            [
+              "FY25",
+              86346425660.73
+            ],
+            [
+              "FY26",
+              69053874853.04
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Obligations fell 20.0% year over year, from $86.3B in FY2025 to $69.1B in FY2026 to date."
+    },
+    {
+      "id": "texas-top-agencies",
+      "type": "bar",
+      "title": "Top 10 buying agencies, FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "Department of Defense",
+              27659570398.19
+            ],
+            [
+              "Department of Homeland Security",
+              21924271124.46
+            ],
+            [
+              "Department of Veterans Affairs",
+              14732976440.67
+            ],
+            [
+              "Department of Energy",
+              1688747551.6
+            ],
+            [
+              "National Aeronautics and Space Administration",
+              1130093922.99
+            ],
+            [
+              "Department of Justice",
+              535107676.32
+            ],
+            [
+              "General Services Administration",
+              365738480.88
+            ],
+            [
+              "Department of Agriculture",
+              213054825.82
+            ],
+            [
+              "Department of Transportation",
+              140421714.53
+            ],
+            [
+              "Department of the Treasury",
+              123249706.03
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Department of Defense was the top federal buyer in Texas, obligating $27.7B (40.1% of the state total)."
+    },
+    {
+      "id": "texas-top-vendors",
+      "type": "bar",
+      "title": "Top 10 vendors, FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "LOCKHEED MARTIN CORPORATION",
+              10001015349.42
+            ],
+            [
+              "MCKESSON CORPORATION",
+              9744137848.49
+            ],
+            [
+              "LOCKHEED MARTIN CORPORATION",
+              6056883263.43
+            ],
+            [
+              "FISHER SAND & GRAVEL CO",
+              4591954440
+            ],
+            [
+              "BARNARD CONSTRUCTION COMPANY, INCORPORATED",
+              4543151503.7
+            ],
+            [
+              "SPENCER CONSTRUCTION LLC",
+              2359541157.42
+            ],
+            [
+              "SOUTHWEST VALLEY CONSTRUCTORS CO",
+              2243969041
+            ],
+            [
+              "QTC MEDICAL SERVICES INC",
+              1767697842.69
+            ],
+            [
+              "VETERANS EVALUATION SERVICES, INC",
+              1656440212.06
+            ],
+            [
+              "BELL TEXTRON INC",
+              1620560437.37
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "LOCKHEED MARTIN CORPORATION led all contractors in Texas with $10B, 14.5% of the state total."
+    },
+    {
+      "id": "texas-top-naics",
+      "type": "bar",
+      "title": "Top 10 industries (NAICS), FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "Commercial and Institutional Building Construction",
+              17455870339.53
+            ],
+            [
+              "Pharmaceutical Preparation Manufacturing",
+              9756863510.17
+            ],
+            [
+              "Guided Missile and Space Vehicle Manufacturing",
+              9704052280.73
+            ],
+            [
+              "Aircraft Manufacturing",
+              8002072492.16
+            ],
+            [
+              "Offices of Physicians (except Mental Health Specialists)",
+              3512501729.2
+            ],
+            [
+              "Other Aircraft Parts and Auxiliary Equipment Manufacturing",
+              2352185634.43
+            ],
+            [
+              "Process, Physical Distribution, and Logistics Consulting Services",
+              2126415352.21
+            ],
+            [
+              "Facilities Support Services",
+              1965719198.4
+            ],
+            [
+              "Petroleum Refineries",
+              1571132878.38
+            ],
+            [
+              "Ship Building and Repairing",
+              989239392.87
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Commercial and Institutional Building Construction was the largest industry in Texas, with $17.5B obligated."
+    }
+  ],
+  "tables": [
+    {
+      "title": "Top 10 vendors",
+      "columns": [
+        "Rank",
+        "Vendor",
+        "Obligations"
+      ],
+      "rows": [
+        [
+          1,
+          {
+            "text": "LOCKHEED MARTIN CORPORATION",
+            "href": "https://www.usaspending.gov/recipient/779b3e3e-364f-7cbc-28a4-a2b4484b86f4-C/latest/"
+          },
+          10001015349.42
+        ],
+        [
+          2,
+          {
+            "text": "MCKESSON CORPORATION",
+            "href": "https://www.usaspending.gov/recipient/b54de748-ee64-a1e6-546e-e7007b054797-C/latest/"
+          },
+          9744137848.49
+        ],
+        [
+          3,
+          {
+            "text": "LOCKHEED MARTIN CORPORATION",
+            "href": "https://www.usaspending.gov/recipient/6cf5fb1b-4988-d087-5dc1-70939d8fc6c4-C/latest/"
+          },
+          6056883263.43
+        ],
+        [
+          4,
+          {
+            "text": "FISHER SAND & GRAVEL CO",
+            "href": "https://www.usaspending.gov/recipient/fa0b2d2c-6660-adbe-e0ea-4035b15e4cbd-C/latest/"
+          },
+          4591954440
+        ],
+        [
+          5,
+          {
+            "text": "BARNARD CONSTRUCTION COMPANY, INCORPORATED",
+            "href": "https://www.usaspending.gov/recipient/cbd00b80-79b9-687c-5847-be4d1bf8750e-C/latest/"
+          },
+          4543151503.7
+        ],
+        [
+          6,
+          {
+            "text": "SPENCER CONSTRUCTION LLC",
+            "href": "https://www.usaspending.gov/recipient/148518d6-82fd-540c-2ffd-74c9fad5b562-C/latest/"
+          },
+          2359541157.42
+        ],
+        [
+          7,
+          {
+            "text": "SOUTHWEST VALLEY CONSTRUCTORS CO",
+            "href": "https://www.usaspending.gov/recipient/50730e17-bc78-a2a6-9220-91b71f88258c-C/latest/"
+          },
+          2243969041
+        ],
+        [
+          8,
+          {
+            "text": "QTC MEDICAL SERVICES INC",
+            "href": "https://www.usaspending.gov/recipient/bed6217b-c46e-3951-fe4c-dab140bb2125-C/latest/"
+          },
+          1767697842.69
+        ],
+        [
+          9,
+          {
+            "text": "VETERANS EVALUATION SERVICES, INC",
+            "href": "https://www.usaspending.gov/recipient/3a7a135e-cda1-0c2c-9d9b-8d44ffede757-C/latest/"
+          },
+          1656440212.06
+        ],
+        [
+          10,
+          {
+            "text": "BELL TEXTRON INC",
+            "href": "https://www.usaspending.gov/recipient/9f062daf-f500-7d41-53d7-5248be76b69f-C/latest/"
+          },
+          1620560437.37
+        ]
+      ]
+    },
+    {
+      "title": "Largest awards, FY2026 to date",
+      "columns": [
+        "Rank",
+        "Recipient",
+        "Award Amount",
+        "Awarding Agency"
+      ],
+      "rows": [
+        [
+          1,
+          {
+            "text": "LOCKHEED MARTIN CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0001920C0009_9700_-NONE-_-NONE-/"
+          },
+          30140182630.06,
+          "Department of Defense"
+        ],
+        [
+          2,
+          {
+            "text": "LOCKHEED MARTIN CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0001923C0003_9700_-NONE-_-NONE-/"
+          },
+          24500661983,
+          "Department of Defense"
+        ],
+        [
+          3,
+          {
+            "text": "THE BOEING COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_NAS1510000_8000_-NONE-_-NONE-/"
+          },
+          22437793940.54,
+          "National Aeronautics and Space Administration"
+        ],
+        [
+          4,
+          {
+            "text": "LOCKHEED MARTIN CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0001916C0033_9700_-NONE-_-NONE-/"
+          },
+          12269145508.23,
+          "Department of Defense"
+        ],
+        [
+          5,
+          {
+            "text": "LOCKHEED MARTIN CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W31P4Q20C0023_9700_-NONE-_-NONE-/"
+          },
+          10478694385.9,
+          "Department of Defense"
+        ],
+        [
+          6,
+          {
+            "text": "LOCKHEED MARTIN CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W31P4Q24C0022_9700_-NONE-_-NONE-/"
+          },
+          9886435432.47,
+          "Department of Defense"
+        ],
+        [
+          7,
+          {
+            "text": "LOCKHEED MARTIN CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_HQ014717C0032_9700_-NONE-_-NONE-/"
+          },
+          9080516982.62,
+          "Department of Defense"
+        ],
+        [
+          8,
+          {
+            "text": "LOCKHEED MARTIN CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA861108C2897_9700_-NONE-_-NONE-/"
+          },
+          8821412144.17,
+          "Department of Defense"
+        ],
+        [
+          9,
+          {
+            "text": "BELL BOEING JOINT PROJECT OFFICE",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0001912C2001_9700_-NONE-_-NONE-/"
+          },
+          7337457221.95,
+          "Department of Defense"
+        ],
+        [
+          10,
+          {
+            "text": "LOCKHEED MARTIN CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0001911C0083_9700_-NONE-_-NONE-/"
+          },
+          7186135705.16,
+          "Department of Defense"
+        ],
+        [
+          11,
+          {
+            "text": "LOCKHEED MARTIN CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0001914C0002_9700_-NONE-_-NONE-/"
+          },
+          6998362070.51,
+          "Department of Defense"
+        ],
+        [
+          12,
+          {
+            "text": "BELL BOEING JOINT PROJECT OFFICE",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0001917C0015_9700_-NONE-_-NONE-/"
+          },
+          6586446775.37,
+          "Department of Defense"
+        ],
+        [
+          13,
+          {
+            "text": "LOCKHEED MARTIN CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA861520F0001_9700_FA861520D6052_9700/"
+          },
+          5214634803.32,
+          "Department of Defense"
+        ],
+        [
+          14,
+          {
+            "text": "LOCKHEED MARTIN CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W31P4Q26C0013_9700_-NONE-_-NONE-/"
+          },
+          4761000000,
+          "Department of Defense"
+        ],
+        [
+          15,
+          {
+            "text": "LOCKHEED MARTIN CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W31P4Q19C0011_9700_-NONE-_-NONE-/"
+          },
+          4583057418.88,
+          "Department of Defense"
+        ],
+        [
+          16,
+          {
+            "text": "LOCKHEED MARTIN CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0001919C0010_9700_-NONE-_-NONE-/"
+          },
+          4329669752.97,
+          "Department of Defense"
+        ],
+        [
+          17,
+          {
+            "text": "LOCKHEED MARTIN CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0001925C0070_9700_-NONE-_-NONE-/"
+          },
+          4144374176,
+          "Department of Defense"
+        ],
+        [
+          18,
+          {
+            "text": "BELL TEXTRON INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W58RGZ23C0001_9700_-NONE-_-NONE-/"
+          },
+          3969930856.64,
+          "Department of Defense"
+        ],
+        [
+          19,
+          {
+            "text": "LOCKHEED MARTIN CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0001908C0028_9700_-NONE-_-NONE-/"
+          },
+          3829164350.67,
+          "Department of Defense"
+        ],
+        [
+          20,
+          {
+            "text": "LOCKHEED MARTIN AERONAUTICAL SYSTEMS SUPPORT COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_F3365791C0006_9700_-NONE-_-NONE-/"
+          },
+          3693487225,
+          "Department of Defense"
+        ],
+        [
+          21,
+          {
+            "text": "LOCKHEED MARTIN CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA820518F0001_9700_FA820518D0001_9700/"
+          },
+          3667251155.64,
+          "Department of Defense"
+        ],
+        [
+          22,
+          {
+            "text": "PANTEXAS DETERRENCE, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_89233224CNA000004_8900_-NONE-_-NONE-/"
+          },
+          3537634605.97,
+          "Department of Energy"
+        ],
+        [
+          23,
+          {
+            "text": "RAPID DEPLOYMENT INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75ACF121C00020_7590_-NONE-_-NONE-/"
+          },
+          3516373308.21,
+          "Department of Health and Human Services"
+        ],
+        [
+          24,
+          {
+            "text": "LOCKHEED MARTIN CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA820523F0501_9700_FA820518D0001_9700/"
+          },
+          3150012905.32,
+          "Department of Defense"
+        ],
+        [
+          25,
+          {
+            "text": "LOCKHEED MARTIN CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W31P4Q18C0049_9700_-NONE-_-NONE-/"
+          },
+          3058790659.63,
+          "Department of Defense"
+        ]
+      ]
+    }
+  ],
+  "narrative": {
+    "intro": "In FY2026 to date, federal agencies obligated $69.1B across 142,957 contract awards. That is down 20.0% year over year. The average award size was $483K.",
+    "sections": [
+      {
+        "heading": "Which agencies award the most contracts in Texas?",
+        "body": "Department of Defense was the largest federal buyer in Texas, obligating $27.7B in FY2026 to date, or 40.1% of the state total."
+      },
+      {
+        "heading": "Who are the top federal contractors in Texas?",
+        "body": "LOCKHEED MARTIN CORPORATION led all contractors performing work in Texas with $10B in obligations during FY2026 to date."
+      }
+    ]
+  },
+  "faq": [
+    {
+      "q": "How much federal contract money goes to Texas?",
+      "a": "Federal agencies obligated $69.1B to contractors performing work in Texas in FY2026 to date, across 142,957 awards."
+    },
+    {
+      "q": "Which agencies award the most contracts in Texas?",
+      "a": "Department of Defense is the largest federal buyer in Texas, with $27.7B obligated in FY2026 to date."
+    },
+    {
+      "q": "Who are the largest federal contractors in Texas?",
+      "a": "LOCKHEED MARTIN CORPORATION is the largest federal contractor performing work in Texas by obligated dollars in FY2026 to date, with $10B."
+    }
+  ],
+  "related": [
+    {
+      "label": "Alabama federal contracts",
+      "href": "/insights/state/alabama/"
+    },
+    {
+      "label": "Alaska federal contracts",
+      "href": "/insights/state/alaska/"
+    },
+    {
+      "label": "Arizona federal contracts",
+      "href": "/insights/state/arizona/"
+    },
+    {
+      "label": "Arkansas federal contracts",
+      "href": "/insights/state/arkansas/"
+    },
+    {
+      "label": "California federal contracts",
+      "href": "/insights/state/california/"
+    },
+    {
+      "label": "Colorado federal contracts",
+      "href": "/insights/state/colorado/"
+    }
+  ],
+  "sources": [
+    {
+      "label": "USAspending.gov award data",
+      "href": "https://www.usaspending.gov"
+    }
+  ]
+}

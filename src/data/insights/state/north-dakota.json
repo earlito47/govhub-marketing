@@ -1,0 +1,609 @@
+{
+  "pageType": "state",
+  "slug": "north-dakota",
+  "title": "North Dakota Federal Contracts: $582M in FY2026",
+  "h1": "Federal Contracts in North Dakota: Spending, Agencies & Vendors",
+  "metaDescription": "Federal agencies obligated $582M to contractors in North Dakota in FY2026 to date. See top buying agencies, top vendors, and industries.",
+  "updated": "2026-07-12",
+  "fyWindow": {
+    "label": "FY2026 to date",
+    "start": "2025-10-01",
+    "end": "2026-07-12"
+  },
+  "stats": {
+    "totalObligations": 581793114.4,
+    "awardCount": 1850,
+    "yoyGrowthPct": -29.2,
+    "avgAwardSize": 314483,
+    "smallBusinessSharePct": null
+  },
+  "charts": [
+    {
+      "id": "north-dakota-trend",
+      "type": "line",
+      "title": "Obligations by fiscal year",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "FY21",
+              779989690.06
+            ],
+            [
+              "FY22",
+              972597485.45
+            ],
+            [
+              "FY23",
+              802955256.4
+            ],
+            [
+              "FY24",
+              979558496.58
+            ],
+            [
+              "FY25",
+              821177228.6
+            ],
+            [
+              "FY26",
+              581793114.4
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Obligations fell 29.2% year over year, from $821M in FY2025 to $582M in FY2026 to date."
+    },
+    {
+      "id": "north-dakota-top-agencies",
+      "type": "bar",
+      "title": "Top 10 buying agencies, FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "Department of Health and Human Services",
+              271840725.71
+            ],
+            [
+              "Department of Defense",
+              132137013.43
+            ],
+            [
+              "Department of Transportation",
+              86074866.57
+            ],
+            [
+              "Department of Veterans Affairs",
+              33222224.24
+            ],
+            [
+              "Department of Agriculture",
+              26216965.44
+            ],
+            [
+              "Department of the Interior",
+              9745148.35
+            ],
+            [
+              "General Services Administration",
+              5827752.66
+            ],
+            [
+              "Department of Labor",
+              5307640.88
+            ],
+            [
+              "Department of Justice",
+              4581860.88
+            ],
+            [
+              "Department of Homeland Security",
+              2385605.26
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Department of Health and Human Services was the top federal buyer in North Dakota, obligating $272M (46.7% of the state total)."
+    },
+    {
+      "id": "north-dakota-top-vendors",
+      "type": "bar",
+      "title": "Top 10 vendors, FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "NORIDIAN HEALTHCARE SOLUTIONS, LLC",
+              255937052.7
+            ],
+            [
+              "WALSH FEDERAL LLC",
+              74426000.01
+            ],
+            [
+              "PACKET DIGITAL LLC",
+              26999998.6
+            ],
+            [
+              "GREENSTONE CONSTRUCTION, INC.",
+              15169810.4
+            ],
+            [
+              "BASE UTILITIES INC",
+              14493949.68
+            ],
+            [
+              "INDYNE, INC.",
+              11897783.66
+            ],
+            [
+              "HSG PARK JOINT VENTURE 2, LLC",
+              9359570.62
+            ],
+            [
+              "LEGUME MATRIX LLC",
+              6898240.94
+            ],
+            [
+              "KORTE CONSTRUCTION COMPANY",
+              6779282.86
+            ],
+            [
+              "VERENDRYE ELECTRIC COOPERATIVE INC",
+              5748644.16
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "NORIDIAN HEALTHCARE SOLUTIONS, LLC led all contractors in North Dakota with $256M, 44.0% of the state total."
+    },
+    {
+      "id": "north-dakota-top-naics",
+      "type": "bar",
+      "title": "Top 10 industries (NAICS), FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "Direct Health and Medical Insurance Carriers",
+              219021930
+            ],
+            [
+              "Commercial and Institutional Building Construction",
+              104147670.58
+            ],
+            [
+              "All Other Professional, Scientific, and Technical Services",
+              37082858.22
+            ],
+            [
+              "Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology)",
+              29160756.38
+            ],
+            [
+              "All Other Miscellaneous Food Manufacturing",
+              19617149.56
+            ],
+            [
+              "Water Supply and Irrigation Systems",
+              14571765.27
+            ],
+            [
+              "All Other Telecommunications",
+              14258715.77
+            ],
+            [
+              "Other Heavy and Civil Engineering Construction",
+              13628758.82
+            ],
+            [
+              "Engineering Services",
+              11871193.96
+            ],
+            [
+              "Electric Power Distribution",
+              9003264.68
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Direct Health and Medical Insurance Carriers was the largest industry in North Dakota, with $219M obligated."
+    }
+  ],
+  "tables": [
+    {
+      "title": "Top 10 vendors",
+      "columns": [
+        "Rank",
+        "Vendor",
+        "Obligations"
+      ],
+      "rows": [
+        [
+          1,
+          {
+            "text": "NORIDIAN HEALTHCARE SOLUTIONS, LLC",
+            "href": "https://www.usaspending.gov/recipient/f3fe6b22-862f-e8d8-8cbf-bd0912f6c89e-C/latest/"
+          },
+          255937052.7
+        ],
+        [
+          2,
+          {
+            "text": "WALSH FEDERAL LLC",
+            "href": "https://www.usaspending.gov/recipient/05ed5d46-f203-4dc6-623a-3f47ed6933dd-C/latest/"
+          },
+          74426000.01
+        ],
+        [
+          3,
+          {
+            "text": "PACKET DIGITAL LLC",
+            "href": "https://www.usaspending.gov/recipient/fca8bff7-b31b-2d02-f261-e5ebef0eb1dd-C/latest/"
+          },
+          26999998.6
+        ],
+        [
+          4,
+          {
+            "text": "GREENSTONE CONSTRUCTION, INC.",
+            "href": "https://www.usaspending.gov/recipient/22483d49-dc26-1b8c-75a8-91ed5beaf839-C/latest/"
+          },
+          15169810.4
+        ],
+        [
+          5,
+          {
+            "text": "BASE UTILITIES INC",
+            "href": "https://www.usaspending.gov/recipient/1cb94639-8718-c433-1869-912f5107ab40-C/latest/"
+          },
+          14493949.68
+        ],
+        [
+          6,
+          {
+            "text": "INDYNE, INC.",
+            "href": "https://www.usaspending.gov/recipient/9d2e145d-1304-d618-4f91-aa2548b815a1-C/latest/"
+          },
+          11897783.66
+        ],
+        [
+          7,
+          {
+            "text": "HSG PARK JOINT VENTURE 2, LLC",
+            "href": "https://www.usaspending.gov/recipient/751cc921-1dad-607c-5082-97cfb54abffd-C/latest/"
+          },
+          9359570.62
+        ],
+        [
+          8,
+          {
+            "text": "LEGUME MATRIX LLC",
+            "href": "https://www.usaspending.gov/recipient/e8f5d874-0359-1af5-4798-e56d2dc185bb-C/latest/"
+          },
+          6898240.94
+        ],
+        [
+          9,
+          {
+            "text": "KORTE CONSTRUCTION COMPANY",
+            "href": "https://www.usaspending.gov/recipient/56a056b7-6afa-4ef0-a5a4-8e8e235c1f39-C/latest/"
+          },
+          6779282.86
+        ],
+        [
+          10,
+          {
+            "text": "VERENDRYE ELECTRIC COOPERATIVE INC",
+            "href": "https://www.usaspending.gov/recipient/51ab6856-3c03-f9a0-7524-8f744eb2c817-C/latest/"
+          },
+          5748644.16
+        ]
+      ]
+    },
+    {
+      "title": "Largest awards, FY2026 to date",
+      "columns": [
+        "Rank",
+        "Recipient",
+        "Award Amount",
+        "Awarding Agency"
+      ],
+      "rows": [
+        [
+          1,
+          {
+            "text": "NORIDIAN HEALTHCARE SOLUTIONS, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75FCMC21C0003_7530_-NONE-_-NONE-/"
+          },
+          599989351,
+          "Department of Health and Human Services"
+        ],
+        [
+          2,
+          {
+            "text": "NORIDIAN HEALTHCARE SOLUTIONS, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75FCMC18C0029_7530_-NONE-_-NONE-/"
+          },
+          471193972.75,
+          "Department of Health and Human Services"
+        ],
+        [
+          3,
+          {
+            "text": "NORIDIAN HEALTHCARE SOLUTIONS, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75FCMC18F0001_7530_HHSM500201600082I_7530/"
+          },
+          407443548.16,
+          "Department of Health and Human Services"
+        ],
+        [
+          4,
+          {
+            "text": "BARNARD CONSTRUCTION COMPANY, INCORPORATED",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W9128F22C0034_9700_-NONE-_-NONE-/"
+          },
+          201017659.88,
+          "Department of Defense"
+        ],
+        [
+          5,
+          {
+            "text": "FEDERAL CONTRACTING INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W9128F23C0009_9700_-NONE-_-NONE-/"
+          },
+          133411921,
+          "Department of Defense"
+        ],
+        [
+          6,
+          {
+            "text": "AMES CONSTRUCTION, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W912ES22C0003_9700_-NONE-_-NONE-/"
+          },
+          117556153.43,
+          "Department of Defense"
+        ],
+        [
+          7,
+          {
+            "text": "MCGOUGH CONSTRUCTION CO., LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_47PJ0024C0031_4740_-NONE-_-NONE-/"
+          },
+          92523323.21,
+          "General Services Administration"
+        ],
+        [
+          8,
+          {
+            "text": "WALSH FEDERAL LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_697DCK26C00134_6920_-NONE-_-NONE-/"
+          },
+          74426000.01,
+          "Department of Transportation"
+        ],
+        [
+          9,
+          {
+            "text": "BASE UTILITIES INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_SP060018C8322_9700_-NONE-_-NONE-/"
+          },
+          74101613.31,
+          "Department of Defense"
+        ],
+        [
+          10,
+          {
+            "text": "BASE UTILITIES INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_SP060013C8280_9700_-NONE-_-NONE-/"
+          },
+          67321681.81,
+          "Department of Defense"
+        ],
+        [
+          11,
+          {
+            "text": "NORIDIAN HEALTHCARE SOLUTIONS, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75FCMC24C0011_7530_-NONE-_-NONE-/"
+          },
+          64626451,
+          "Department of Health and Human Services"
+        ],
+        [
+          12,
+          {
+            "text": "KORTE CONSTRUCTION COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W9128F24C0033_9700_-NONE-_-NONE-/"
+          },
+          63352277.86,
+          "Department of Defense"
+        ],
+        [
+          13,
+          {
+            "text": "R. J. ZAVORAL & SONS, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W912ES24C0009_9700_-NONE-_-NONE-/"
+          },
+          58816273.54,
+          "Department of Defense"
+        ],
+        [
+          14,
+          {
+            "text": "NORIDIAN HEALTHCARE SOLUTIONS, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75FCMC25CJ010_7530_-NONE-_-NONE-/"
+          },
+          56177370,
+          "Department of Health and Human Services"
+        ],
+        [
+          15,
+          {
+            "text": "VERENDRYE ELECTRIC COOPERATIVE INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_SP060011C8274_9700_-NONE-_-NONE-/"
+          },
+          55513977.7,
+          "Department of Defense"
+        ],
+        [
+          16,
+          {
+            "text": "CONTI FEDERAL SERVICES, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W9128F23C0034_9700_-NONE-_-NONE-/"
+          },
+          44582090.3,
+          "Department of Defense"
+        ],
+        [
+          17,
+          {
+            "text": "INDYNE, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA251823C0002_9700_-NONE-_-NONE-/"
+          },
+          42697809.33,
+          "Department of Defense"
+        ],
+        [
+          18,
+          {
+            "text": "HUMAN LEARNING SYSTEMS LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_1605JW22C0001_1605_-NONE-_-NONE-/"
+          },
+          39423277.44,
+          "Department of Labor"
+        ],
+        [
+          19,
+          {
+            "text": "THE ARMORED GROUP LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_47QSWC25F0162_4732_47QSWC23D0001_4732/"
+          },
+          29206032.45,
+          "General Services Administration"
+        ],
+        [
+          20,
+          {
+            "text": "NORIDIAN HEALTHCARE SOLUTIONS, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75FCMC25C0003_7530_-NONE-_-NONE-/"
+          },
+          28713735,
+          "Department of Health and Human Services"
+        ],
+        [
+          21,
+          {
+            "text": "HSG PARK JOINT VENTURE 2, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W912ES25C0003_9700_-NONE-_-NONE-/"
+          },
+          28049302.17,
+          "Department of Defense"
+        ],
+        [
+          22,
+          {
+            "text": "PACKET DIGITAL LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N6833526F1047_9700_N6833522G0020_9700/"
+          },
+          26999998.6,
+          "Department of Defense"
+        ],
+        [
+          23,
+          {
+            "text": "CGH-GLOBAL EMERGENCY MANAGEMENT STRATEGIES LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA465922C0001_9700_-NONE-_-NONE-/"
+          },
+          25113849,
+          "Department of Defense"
+        ],
+        [
+          24,
+          {
+            "text": "DUBUQUE BARGE AND FLEETING SERVICE CO",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W9128F25C0017_9700_-NONE-_-NONE-/"
+          },
+          24852906.4,
+          "Department of Defense"
+        ],
+        [
+          25,
+          {
+            "text": "NODAK ELECTRIC COOPERATIVE INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_SP060018C8321_9700_-NONE-_-NONE-/"
+          },
+          22125709.11,
+          "Department of Defense"
+        ]
+      ]
+    }
+  ],
+  "narrative": {
+    "intro": "In FY2026 to date, federal agencies obligated $582M across 1,850 contract awards. That is down 29.2% year over year. The average award size was $314K.",
+    "sections": [
+      {
+        "heading": "Which agencies award the most contracts in North Dakota?",
+        "body": "Department of Health and Human Services was the largest federal buyer in North Dakota, obligating $272M in FY2026 to date, or 46.7% of the state total."
+      },
+      {
+        "heading": "Who are the top federal contractors in North Dakota?",
+        "body": "NORIDIAN HEALTHCARE SOLUTIONS, LLC led all contractors performing work in North Dakota with $256M in obligations during FY2026 to date."
+      }
+    ]
+  },
+  "faq": [
+    {
+      "q": "How much federal contract money goes to North Dakota?",
+      "a": "Federal agencies obligated $582M to contractors performing work in North Dakota in FY2026 to date, across 1,850 awards."
+    },
+    {
+      "q": "Which agencies award the most contracts in North Dakota?",
+      "a": "Department of Health and Human Services is the largest federal buyer in North Dakota, with $272M obligated in FY2026 to date."
+    },
+    {
+      "q": "Who are the largest federal contractors in North Dakota?",
+      "a": "NORIDIAN HEALTHCARE SOLUTIONS, LLC is the largest federal contractor performing work in North Dakota by obligated dollars in FY2026 to date, with $256M."
+    }
+  ],
+  "related": [
+    {
+      "label": "Alabama federal contracts",
+      "href": "/insights/state/alabama/"
+    },
+    {
+      "label": "Alaska federal contracts",
+      "href": "/insights/state/alaska/"
+    },
+    {
+      "label": "Arizona federal contracts",
+      "href": "/insights/state/arizona/"
+    },
+    {
+      "label": "Arkansas federal contracts",
+      "href": "/insights/state/arkansas/"
+    },
+    {
+      "label": "California federal contracts",
+      "href": "/insights/state/california/"
+    },
+    {
+      "label": "Colorado federal contracts",
+      "href": "/insights/state/colorado/"
+    }
+  ],
+  "sources": [
+    {
+      "label": "USAspending.gov award data",
+      "href": "https://www.usaspending.gov"
+    }
+  ]
+}

@@ -1,0 +1,609 @@
+{
+  "pageType": "state",
+  "slug": "delaware",
+  "title": "Delaware Federal Contracts: $142M in FY2026",
+  "h1": "Federal Contracts in Delaware: Spending, Agencies & Vendors",
+  "metaDescription": "Federal agencies obligated $142M to contractors in Delaware in FY2026 to date. See top buying agencies, top vendors, and industries.",
+  "updated": "2026-07-12",
+  "fyWindow": {
+    "label": "FY2026 to date",
+    "start": "2025-10-01",
+    "end": "2026-07-12"
+  },
+  "stats": {
+    "totalObligations": 142052455.38,
+    "awardCount": 2499,
+    "yoyGrowthPct": -61.4,
+    "avgAwardSize": 56844,
+    "smallBusinessSharePct": null
+  },
+  "charts": [
+    {
+      "id": "delaware-trend",
+      "type": "line",
+      "title": "Obligations by fiscal year",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "FY21",
+              321049747.83
+            ],
+            [
+              "FY22",
+              81317836.97
+            ],
+            [
+              "FY23",
+              325435387.89
+            ],
+            [
+              "FY24",
+              337436452.59
+            ],
+            [
+              "FY25",
+              368091017.01
+            ],
+            [
+              "FY26",
+              142052455.38
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Obligations fell 61.4% year over year, from $368M in FY2025 to $142M in FY2026 to date."
+    },
+    {
+      "id": "delaware-top-agencies",
+      "type": "bar",
+      "title": "Top 10 buying agencies, FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "Department of Defense",
+              60133595.75
+            ],
+            [
+              "Department of Veterans Affairs",
+              30494898.63
+            ],
+            [
+              "Department of Health and Human Services",
+              16063862.29
+            ],
+            [
+              "Department of Homeland Security",
+              8537390.91
+            ],
+            [
+              "Department of Justice",
+              6516969.85
+            ],
+            [
+              "Department of Labor",
+              5081525.06
+            ],
+            [
+              "National Aeronautics and Space Administration",
+              4521198.79
+            ],
+            [
+              "General Services Administration",
+              3349599.19
+            ],
+            [
+              "Environmental Protection Agency",
+              2905121.3
+            ],
+            [
+              "Department of the Interior",
+              1798515.57
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Department of Defense was the top federal buyer in Delaware, obligating $60.1M (42.3% of the state total)."
+    },
+    {
+      "id": "delaware-top-vendors",
+      "type": "bar",
+      "title": "Top 10 vendors, FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "AQUIA NAVA II LLC",
+              11761044.38
+            ],
+            [
+              "CORBALT, LLC",
+              10760123.52
+            ],
+            [
+              "STONEWIN INTERNATIONAL, LLC",
+              10056678.23
+            ],
+            [
+              "ROSHEL LLC",
+              7234926.2
+            ],
+            [
+              "SNA INTERNATIONAL LLC",
+              5280870.8
+            ],
+            [
+              "EDUCATION & TRAINING RESOURCES LLC",
+              5001798.06
+            ],
+            [
+              "BLUELINE GLOBAL TECHNOLOGIES LLC",
+              4774359
+            ],
+            [
+              "AGILENT TECHNOLOGIES INC",
+              4680388.44
+            ],
+            [
+              "HEROX, PBC",
+              3922852
+            ],
+            [
+              "FUTURE TECHNOLOGIES, INC.",
+              3665588
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "AQUIA NAVA II LLC led all contractors in Delaware with $11.8M, 8.3% of the state total."
+    },
+    {
+      "id": "delaware-top-naics",
+      "type": "bar",
+      "title": "Top 10 industries (NAICS), FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "Other Computer Related Services",
+              17704043.2
+            ],
+            [
+              "Custom Computer Programming Services",
+              10935635.52
+            ],
+            [
+              "Petroleum Refineries",
+              10056678.23
+            ],
+            [
+              "Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology)",
+              7433263.84
+            ],
+            [
+              "Military Armored Vehicle, Tank, and Tank Component Manufacturing",
+              7234926.2
+            ],
+            [
+              "Analytical Laboratory Instrument Manufacturing",
+              6733451.28
+            ],
+            [
+              "Research and Development in Biotechnology (except Nanobiotechnology)",
+              5296207.3
+            ],
+            [
+              "Engineering Services",
+              5030790.91
+            ],
+            [
+              "Other Technical and Trade Schools",
+              5001798.06
+            ],
+            [
+              "Nursing Care Facilities (Skilled Nursing Facilities)",
+              4914329.75
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Other Computer Related Services was the largest industry in Delaware, with $17.7M obligated."
+    }
+  ],
+  "tables": [
+    {
+      "title": "Top 10 vendors",
+      "columns": [
+        "Rank",
+        "Vendor",
+        "Obligations"
+      ],
+      "rows": [
+        [
+          1,
+          {
+            "text": "AQUIA NAVA II LLC",
+            "href": "https://www.usaspending.gov/recipient/6bad6a39-5fd4-43ba-aacd-d2d716f0ce2b-C/latest/"
+          },
+          11761044.38
+        ],
+        [
+          2,
+          {
+            "text": "CORBALT, LLC",
+            "href": "https://www.usaspending.gov/recipient/8b9da68d-3a32-f2d1-e2c8-f6c70ac2a037-C/latest/"
+          },
+          10760123.52
+        ],
+        [
+          3,
+          {
+            "text": "STONEWIN INTERNATIONAL, LLC",
+            "href": "https://www.usaspending.gov/recipient/ce707c88-0aa9-39f3-8f95-e169b1cfd544-C/latest/"
+          },
+          10056678.23
+        ],
+        [
+          4,
+          {
+            "text": "ROSHEL LLC",
+            "href": "https://www.usaspending.gov/recipient/2703e6e0-e329-d11c-5bd9-c3cd8dc61250-C/latest/"
+          },
+          7234926.2
+        ],
+        [
+          5,
+          {
+            "text": "SNA INTERNATIONAL LLC",
+            "href": "https://www.usaspending.gov/recipient/981c2cef-e8eb-6e6c-10b9-4b71aa2a282b-C/latest/"
+          },
+          5280870.8
+        ],
+        [
+          6,
+          {
+            "text": "EDUCATION & TRAINING RESOURCES LLC",
+            "href": "https://www.usaspending.gov/recipient/820ce97d-63fc-474b-e4cd-464a693e2781-C/latest/"
+          },
+          5001798.06
+        ],
+        [
+          7,
+          {
+            "text": "BLUELINE GLOBAL TECHNOLOGIES LLC",
+            "href": "https://www.usaspending.gov/recipient/ab165aed-7c82-9be9-3339-c5f2b570b040-C/latest/"
+          },
+          4774359
+        ],
+        [
+          8,
+          {
+            "text": "AGILENT TECHNOLOGIES INC",
+            "href": "https://www.usaspending.gov/recipient/3b7c33cb-1410-1afe-4cdf-a4176221b83f-C/latest/"
+          },
+          4680388.44
+        ],
+        [
+          9,
+          {
+            "text": "HEROX, PBC",
+            "href": "https://www.usaspending.gov/recipient/1339eef0-feff-c27f-5485-6092c47d2ee9-C/latest/"
+          },
+          3922852
+        ],
+        [
+          10,
+          {
+            "text": "FUTURE TECHNOLOGIES, INC.",
+            "href": "https://www.usaspending.gov/recipient/ae14d3d4-6e51-1773-7a58-22dfe17188d1-C/latest/"
+          },
+          3665588
+        ]
+      ]
+    },
+    {
+      "title": "Largest awards, FY2026 to date",
+      "columns": [
+        "Rank",
+        "Recipient",
+        "Award Amount",
+        "Awarding Agency"
+      ],
+      "rows": [
+        [
+          1,
+          {
+            "text": "DOBCO INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W912BU19C0017_9700_-NONE-_-NONE-/"
+          },
+          50038455.02,
+          "Department of Defense"
+        ],
+        [
+          2,
+          {
+            "text": "EDUCATION & TRAINING RESOURCES LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_1605JE21C0004_1605_-NONE-_-NONE-/"
+          },
+          34729082.24,
+          "Department of Labor"
+        ],
+        [
+          3,
+          {
+            "text": "CORBALT, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75FCMC24F0077_7530_47QTCA21D00AC_4732/"
+          },
+          29429307.58,
+          "Department of Health and Human Services"
+        ],
+        [
+          4,
+          {
+            "text": "AQUIA NAVA II LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10B25N00020002_3600_36C10B25D0002_3600/"
+          },
+          24039303.39,
+          "Department of Veterans Affairs"
+        ],
+        [
+          5,
+          {
+            "text": "FDCD II JOINT VENTURE, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C77625C0125_3600_-NONE-_-NONE-/"
+          },
+          18885000,
+          "Department of Veterans Affairs"
+        ],
+        [
+          6,
+          {
+            "text": "HERMAN/JCG CO JV",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA449723F0034_9700_FA890317D0029_9700/"
+          },
+          17730490.68,
+          "Department of Defense"
+        ],
+        [
+          7,
+          {
+            "text": "CMS CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA890324F0094_9700_FA890317D0027_9700/"
+          },
+          16346210,
+          "Department of Defense"
+        ],
+        [
+          8,
+          {
+            "text": "SENATE BUILDERS & CONSTRUCTION MANAGERS, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C24420C0082_3600_-NONE-_-NONE-/"
+          },
+          13809465.01,
+          "Department of Veterans Affairs"
+        ],
+        [
+          9,
+          {
+            "text": "CAESAR RODNEY SCHOOL DISTRICT",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_HE125425FE649_9700_HE125425DE027_9700/"
+          },
+          11977355.82,
+          "Department of Defense"
+        ],
+        [
+          10,
+          {
+            "text": "EA ENGINEERING, SCIENCE, AND TECHNOLOGY, INC., PBC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_68HE0325F0092_6800_68HERH19D0008_6800/"
+          },
+          11393748.6,
+          "Environmental Protection Agency"
+        ],
+        [
+          11,
+          {
+            "text": "CURTIN MARITIME CORP",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W912BU25CA039_9700_-NONE-_-NONE-/"
+          },
+          10833195.04,
+          "Department of Defense"
+        ],
+        [
+          12,
+          {
+            "text": "LASSO INFORMATICS US INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75N95024C00011_7529_-NONE-_-NONE-/"
+          },
+          9353400.57,
+          "Department of Health and Human Services"
+        ],
+        [
+          13,
+          {
+            "text": "KALITTA CHARTERS, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_HTC71124CCC01_9700_-NONE-_-NONE-/"
+          },
+          8895887.33,
+          "Department of Defense"
+        ],
+        [
+          14,
+          {
+            "text": "KENT COUNTY GOVERNMENT",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA449708C0018_9700_-NONE-_-NONE-/"
+          },
+          8450360.39,
+          "Department of Defense"
+        ],
+        [
+          15,
+          {
+            "text": "GREAT LAKES DREDGE & DOCK CO, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W912BU25CA014_9700_-NONE-_-NONE-/"
+          },
+          8110544.15,
+          "Department of Defense"
+        ],
+        [
+          16,
+          {
+            "text": "BENAKA, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA449723F0035_9700_FA449721D0006_9700/"
+          },
+          7592345.51,
+          "Department of Defense"
+        ],
+        [
+          17,
+          {
+            "text": "AGILENT TECHNOLOGIES INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70T04025C7573N001_7013_-NONE-_-NONE-/"
+          },
+          7498510.26,
+          "Department of Homeland Security"
+        ],
+        [
+          18,
+          {
+            "text": "ROSHEL LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70CMSW26FR0000002_7012_47QSWA22D001R_4732/"
+          },
+          7234926.2,
+          "Department of Homeland Security"
+        ],
+        [
+          19,
+          {
+            "text": "FUTURE TECHNOLOGIES, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_HT942525F0144_9700_47QRAA18D0040_4732/"
+          },
+          7234360,
+          "Department of Defense"
+        ],
+        [
+          20,
+          {
+            "text": "PHASE SENSITIVE INNOVATIONS INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA239424CB006_9700_-NONE-_-NONE-/"
+          },
+          6799997,
+          "Department of Defense"
+        ],
+        [
+          21,
+          {
+            "text": "WYANDOTTE TECHNOLOGIES",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA449721C0008_9700_-NONE-_-NONE-/"
+          },
+          5846670.66,
+          "Department of Defense"
+        ],
+        [
+          22,
+          {
+            "text": "TIDEWATER UTILITIES INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA449714C0008_9700_-NONE-_-NONE-/"
+          },
+          5555879.65,
+          "Department of Defense"
+        ],
+        [
+          23,
+          {
+            "text": "SNA INTERNATIONAL LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_HT942726CE001_9700_-NONE-_-NONE-/"
+          },
+          5280870.8,
+          "Department of Defense"
+        ],
+        [
+          24,
+          {
+            "text": "FDCD II JOINT VENTURE, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C77624C0207_3600_-NONE-_-NONE-/"
+          },
+          5276722,
+          "Department of Veterans Affairs"
+        ],
+        [
+          25,
+          {
+            "text": "SWAN CONTRACTING LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70Z08323CCLEV0006_7008_-NONE-_-NONE-/"
+          },
+          5205139,
+          "Department of Homeland Security"
+        ]
+      ]
+    }
+  ],
+  "narrative": {
+    "intro": "In FY2026 to date, federal agencies obligated $142M across 2,499 contract awards. That is down 61.4% year over year. The average award size was $56.8K.",
+    "sections": [
+      {
+        "heading": "Which agencies award the most contracts in Delaware?",
+        "body": "Department of Defense was the largest federal buyer in Delaware, obligating $60.1M in FY2026 to date, or 42.3% of the state total."
+      },
+      {
+        "heading": "Who are the top federal contractors in Delaware?",
+        "body": "AQUIA NAVA II LLC led all contractors performing work in Delaware with $11.8M in obligations during FY2026 to date."
+      }
+    ]
+  },
+  "faq": [
+    {
+      "q": "How much federal contract money goes to Delaware?",
+      "a": "Federal agencies obligated $142M to contractors performing work in Delaware in FY2026 to date, across 2,499 awards."
+    },
+    {
+      "q": "Which agencies award the most contracts in Delaware?",
+      "a": "Department of Defense is the largest federal buyer in Delaware, with $60.1M obligated in FY2026 to date."
+    },
+    {
+      "q": "Who are the largest federal contractors in Delaware?",
+      "a": "AQUIA NAVA II LLC is the largest federal contractor performing work in Delaware by obligated dollars in FY2026 to date, with $11.8M."
+    }
+  ],
+  "related": [
+    {
+      "label": "Alabama federal contracts",
+      "href": "/insights/state/alabama/"
+    },
+    {
+      "label": "Alaska federal contracts",
+      "href": "/insights/state/alaska/"
+    },
+    {
+      "label": "Arizona federal contracts",
+      "href": "/insights/state/arizona/"
+    },
+    {
+      "label": "Arkansas federal contracts",
+      "href": "/insights/state/arkansas/"
+    },
+    {
+      "label": "California federal contracts",
+      "href": "/insights/state/california/"
+    },
+    {
+      "label": "Colorado federal contracts",
+      "href": "/insights/state/colorado/"
+    }
+  ],
+  "sources": [
+    {
+      "label": "USAspending.gov award data",
+      "href": "https://www.usaspending.gov"
+    }
+  ]
+}

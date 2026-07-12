@@ -1,0 +1,609 @@
+{
+  "pageType": "state",
+  "slug": "kentucky",
+  "title": "Kentucky Federal Contracts: $6.8B in FY2026",
+  "h1": "Federal Contracts in Kentucky: Spending, Agencies & Vendors",
+  "metaDescription": "Federal agencies obligated $6.8B to contractors in Kentucky in FY2026 to date. See top buying agencies, top vendors, and industries.",
+  "updated": "2026-07-12",
+  "fyWindow": {
+    "label": "FY2026 to date",
+    "start": "2025-10-01",
+    "end": "2026-07-12"
+  },
+  "stats": {
+    "totalObligations": 6775677863.06,
+    "awardCount": 65578,
+    "yoyGrowthPct": -35,
+    "avgAwardSize": 103322,
+    "smallBusinessSharePct": null
+  },
+  "charts": [
+    {
+      "id": "kentucky-trend",
+      "type": "line",
+      "title": "Obligations by fiscal year",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "FY21",
+              11806127103.75
+            ],
+            [
+              "FY22",
+              11855222524.21
+            ],
+            [
+              "FY23",
+              12539252414.21
+            ],
+            [
+              "FY24",
+              12307057420.39
+            ],
+            [
+              "FY25",
+              10422792761.55
+            ],
+            [
+              "FY26",
+              6775677863.06
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Obligations fell 35.0% year over year, from $10.4B in FY2025 to $6.8B in FY2026 to date."
+    },
+    {
+      "id": "kentucky-top-agencies",
+      "type": "bar",
+      "title": "Top 10 buying agencies, FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "Department of Defense",
+              6161472377.5
+            ],
+            [
+              "Department of the Treasury",
+              161328965.38
+            ],
+            [
+              "Department of Veterans Affairs",
+              130929969.95
+            ],
+            [
+              "Department of Justice",
+              124039602.75
+            ],
+            [
+              "General Services Administration",
+              45210657.28
+            ],
+            [
+              "Department of Homeland Security",
+              40407216.48
+            ],
+            [
+              "Department of Agriculture",
+              28698330.39
+            ],
+            [
+              "Department of Transportation",
+              21614994.15
+            ],
+            [
+              "Department of Energy",
+              12851875.45
+            ],
+            [
+              "Department of Labor",
+              10874827.47
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Department of Defense was the top federal buyer in Kentucky, obligating $6.2B (90.9% of the state total)."
+    },
+    {
+      "id": "kentucky-top-vendors",
+      "type": "bar",
+      "title": "Top 10 vendors, FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "HUMANA GOVERNMENT BUSINESS INC",
+              4564434088.21
+            ],
+            [
+              "LOCKHEED MARTIN CORPORATION",
+              451107971.23
+            ],
+            [
+              "THALLE - BAUER LLC",
+              320385195
+            ],
+            [
+              "BAE SYSTEMS LAND & ARMAMENTS L.P.",
+              146545167.08
+            ],
+            [
+              "WIELAND ROLLED PRODUCTS NORTH AMERICA, LLC",
+              145336840.69
+            ],
+            [
+              "UNITED PARCEL SERVICE CO.",
+              50608685.17
+            ],
+            [
+              "BECHTEL PARSONS BLUE GRASS, A JOINT VENTURE",
+              50000000
+            ],
+            [
+              "DISMAS CHARITIES INC",
+              48923875.93
+            ],
+            [
+              "PDS CONSULTANTS, INC",
+              36619492.61
+            ],
+            [
+              "CREATION GARDENS, INC",
+              34298415.1
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "HUMANA GOVERNMENT BUSINESS INC led all contractors in Kentucky with $4.6B, 67.4% of the state total."
+    },
+    {
+      "id": "kentucky-top-naics",
+      "type": "bar",
+      "title": "Top 10 industries (NAICS), FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "Direct Health and Medical Insurance Carriers",
+              4564434088.21
+            ],
+            [
+              "All Other Support Services",
+              452076312.78
+            ],
+            [
+              "Other Heavy and Civil Engineering Construction",
+              340808105.95
+            ],
+            [
+              "Iron and Steel Forging",
+              145830390.84
+            ],
+            [
+              "Copper Rolling, Drawing, Extruding, and Alloying",
+              145337723.77
+            ],
+            [
+              "Other Computer Related Services",
+              84192000.34
+            ],
+            [
+              "Commercial and Institutional Building Construction",
+              75211588.68
+            ],
+            [
+              "Other Aircraft Parts and Auxiliary Equipment Manufacturing",
+              57407622.11
+            ],
+            [
+              "Couriers and Express Delivery Services",
+              50585626.18
+            ],
+            [
+              "Hazardous Waste Treatment and Disposal",
+              50386540.24
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Direct Health and Medical Insurance Carriers was the largest industry in Kentucky, with $4.6B obligated."
+    }
+  ],
+  "tables": [
+    {
+      "title": "Top 10 vendors",
+      "columns": [
+        "Rank",
+        "Vendor",
+        "Obligations"
+      ],
+      "rows": [
+        [
+          1,
+          {
+            "text": "HUMANA GOVERNMENT BUSINESS INC",
+            "href": "https://www.usaspending.gov/recipient/1068e466-707d-6b6f-367f-0255fab79b8c-C/latest/"
+          },
+          4564434088.21
+        ],
+        [
+          2,
+          {
+            "text": "LOCKHEED MARTIN CORPORATION",
+            "href": "https://www.usaspending.gov/recipient/622f0580-7b5e-83b3-fedc-ebc6a2dee446-C/latest/"
+          },
+          451107971.23
+        ],
+        [
+          3,
+          {
+            "text": "THALLE - BAUER LLC",
+            "href": "https://www.usaspending.gov/recipient/8d0e7c28-08e2-0e9e-a2c4-75de0102587c-C/latest/"
+          },
+          320385195
+        ],
+        [
+          4,
+          {
+            "text": "BAE SYSTEMS LAND & ARMAMENTS L.P.",
+            "href": "https://www.usaspending.gov/recipient/b5ca9859-c0d6-48c3-60a8-d8ccf2343a45-C/latest/"
+          },
+          146545167.08
+        ],
+        [
+          5,
+          {
+            "text": "WIELAND ROLLED PRODUCTS NORTH AMERICA, LLC",
+            "href": "https://www.usaspending.gov/recipient/f5c94e5f-0c97-f038-ac92-9f0668fd7115-C/latest/"
+          },
+          145336840.69
+        ],
+        [
+          6,
+          {
+            "text": "UNITED PARCEL SERVICE CO.",
+            "href": "https://www.usaspending.gov/recipient/a8e90c7c-8175-41a5-b841-5b038f67a07d-C/latest/"
+          },
+          50608685.17
+        ],
+        [
+          7,
+          {
+            "text": "BECHTEL PARSONS BLUE GRASS, A JOINT VENTURE",
+            "href": "https://www.usaspending.gov/recipient/1a013712-3dae-504d-6387-80cb82004002-C/latest/"
+          },
+          50000000
+        ],
+        [
+          8,
+          {
+            "text": "DISMAS CHARITIES INC",
+            "href": "https://www.usaspending.gov/recipient/2df3efb5-a82f-690f-d027-cd1964a46c6a-C/latest/"
+          },
+          48923875.93
+        ],
+        [
+          9,
+          {
+            "text": "PDS CONSULTANTS, INC",
+            "href": "https://www.usaspending.gov/recipient/ce4a7714-d97d-ddd7-307e-6b02b759368b-C/latest/"
+          },
+          36619492.61
+        ],
+        [
+          10,
+          {
+            "text": "CREATION GARDENS, INC",
+            "href": "https://www.usaspending.gov/recipient/3bdab6ef-2099-f3f7-122e-10d6734d8f1e-C/latest/"
+          },
+          34298415.1
+        ]
+      ]
+    },
+    {
+      "title": "Largest awards, FY2026 to date",
+      "columns": [
+        "Rank",
+        "Recipient",
+        "Award Amount",
+        "Awarding Agency"
+      ],
+      "rows": [
+        [
+          1,
+          {
+            "text": "HUMANA GOVERNMENT BUSINESS INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_HT940216C0001_9700_-NONE-_-NONE-/"
+          },
+          51269205263.03,
+          "Department of Defense"
+        ],
+        [
+          2,
+          {
+            "text": "HUMANA GOVERNMENT BUSINESS INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_HT940223C0001_9700_-NONE-_-NONE-/"
+          },
+          8303615720.37,
+          "Department of Defense"
+        ],
+        [
+          3,
+          {
+            "text": "BECHTEL PARSONS BLUE GRASS, A JOINT VENTURE",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W52P1J09C0013_9700_-NONE-_-NONE-/"
+          },
+          5030576178.6,
+          "Department of Defense"
+        ],
+        [
+          4,
+          {
+            "text": "WALSH - TURNER JV II",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W912QR21C0027_9700_-NONE-_-NONE-/"
+          },
+          954910876,
+          "Department of Defense"
+        ],
+        [
+          5,
+          {
+            "text": "THALLE CONSTRUCTION CO INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W912P521C0015_9700_-NONE-_-NONE-/"
+          },
+          405048868.38,
+          "Department of Defense"
+        ],
+        [
+          6,
+          {
+            "text": "RAYTHEON COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002419C5406_9700_-NONE-_-NONE-/"
+          },
+          344863709.9,
+          "Department of Defense"
+        ],
+        [
+          7,
+          {
+            "text": "THALLE - BAUER LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W912QR26CA005_9700_-NONE-_-NONE-/"
+          },
+          320385195,
+          "Department of Defense"
+        ],
+        [
+          8,
+          {
+            "text": "BAE SYSTEMS LAND & ARMAMENTS L.P.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002415C4103_9700_-NONE-_-NONE-/"
+          },
+          205806201.69,
+          "Department of Defense"
+        ],
+        [
+          9,
+          {
+            "text": "BAE SYSTEMS LAND & ARMAMENTS L.P.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0017415C0009_9700_-NONE-_-NONE-/"
+          },
+          203974135.05,
+          "Department of Defense"
+        ],
+        [
+          10,
+          {
+            "text": "AMENTUM SERVICES, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_0001_9700_W52P1J17G0091_9700/"
+          },
+          189956904.62,
+          "Department of Defense"
+        ],
+        [
+          11,
+          {
+            "text": "BAE SYSTEMS LAND & ARMAMENTS L.P.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W15QKN26F0126_9700_W15QKN26D0006_9700/"
+          },
+          145830000,
+          "Department of Defense"
+        ],
+        [
+          12,
+          {
+            "text": "CONCO, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W15QKN23F0428_9700_W15QKN20D0003_9700/"
+          },
+          137057367.8,
+          "Department of Defense"
+        ],
+        [
+          13,
+          {
+            "text": "BOEING SIKORSKY AIRCRAFT SUPPORT, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_H9224123F0071_9700_H9224119D0003_9700/"
+          },
+          124121429.32,
+          "Department of Defense"
+        ],
+        [
+          14,
+          {
+            "text": "LOCKHEED MARTIN CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_H9225424F2807_9700_H9225417D0001_9700/"
+          },
+          117769113,
+          "Department of Defense"
+        ],
+        [
+          15,
+          {
+            "text": "AMERICAN BRIDGE COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W912P522C0009_9700_-NONE-_-NONE-/"
+          },
+          117535682.64,
+          "Department of Defense"
+        ],
+        [
+          16,
+          {
+            "text": "CITY LIGHT & POWER FTC LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_SP060017C8325_9700_-NONE-_-NONE-/"
+          },
+          111729512.5,
+          "Department of Defense"
+        ],
+        [
+          17,
+          {
+            "text": "HARDIN COUNTY WATER DISTRICT NO. 1",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_SP060011C8271_9700_-NONE-_-NONE-/"
+          },
+          92982921.5,
+          "Department of Defense"
+        ],
+        [
+          18,
+          {
+            "text": "ANDRITZ HYDRO CORP",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W912P520C0018_9700_-NONE-_-NONE-/"
+          },
+          79453448.35,
+          "Department of Defense"
+        ],
+        [
+          19,
+          {
+            "text": "LOCKHEED MARTIN CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_H9225420F2324_9700_H9225417D0001_9700/"
+          },
+          79425496.37,
+          "Department of Defense"
+        ],
+        [
+          20,
+          {
+            "text": "BAE SYSTEMS LAND & ARMAMENTS L.P.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002424F5322_9700_N0002423G5305_9700/"
+          },
+          73991898.36,
+          "Department of Defense"
+        ],
+        [
+          21,
+          {
+            "text": "LOCKHEED MARTIN CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_H9225423F2661_9700_H9225417D0001_9700/"
+          },
+          72625995,
+          "Department of Defense"
+        ],
+        [
+          22,
+          {
+            "text": "LOCKHEED MARTIN CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_H9225423F2612_9700_H9225417D0001_9700/"
+          },
+          69925535.16,
+          "Department of Defense"
+        ],
+        [
+          23,
+          {
+            "text": "LOCKHEED MARTIN CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_H9225421F2519_9700_H9225417D0001_9700/"
+          },
+          63793534.3,
+          "Department of Defense"
+        ],
+        [
+          24,
+          {
+            "text": "CHOCTAW PREMIER SERVICES LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W9124D25CA008_9700_-NONE-_-NONE-/"
+          },
+          62703389.01,
+          "Department of Defense"
+        ],
+        [
+          25,
+          {
+            "text": "MESSER CONSTRUCTION CO",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W912QR21C0033_9700_-NONE-_-NONE-/"
+          },
+          62428301.81,
+          "Department of Defense"
+        ]
+      ]
+    }
+  ],
+  "narrative": {
+    "intro": "In FY2026 to date, federal agencies obligated $6.8B across 65,578 contract awards. That is down 35.0% year over year. The average award size was $103K.",
+    "sections": [
+      {
+        "heading": "Which agencies award the most contracts in Kentucky?",
+        "body": "Department of Defense was the largest federal buyer in Kentucky, obligating $6.2B in FY2026 to date, or 90.9% of the state total."
+      },
+      {
+        "heading": "Who are the top federal contractors in Kentucky?",
+        "body": "HUMANA GOVERNMENT BUSINESS INC led all contractors performing work in Kentucky with $4.6B in obligations during FY2026 to date."
+      }
+    ]
+  },
+  "faq": [
+    {
+      "q": "How much federal contract money goes to Kentucky?",
+      "a": "Federal agencies obligated $6.8B to contractors performing work in Kentucky in FY2026 to date, across 65,578 awards."
+    },
+    {
+      "q": "Which agencies award the most contracts in Kentucky?",
+      "a": "Department of Defense is the largest federal buyer in Kentucky, with $6.2B obligated in FY2026 to date."
+    },
+    {
+      "q": "Who are the largest federal contractors in Kentucky?",
+      "a": "HUMANA GOVERNMENT BUSINESS INC is the largest federal contractor performing work in Kentucky by obligated dollars in FY2026 to date, with $4.6B."
+    }
+  ],
+  "related": [
+    {
+      "label": "Alabama federal contracts",
+      "href": "/insights/state/alabama/"
+    },
+    {
+      "label": "Alaska federal contracts",
+      "href": "/insights/state/alaska/"
+    },
+    {
+      "label": "Arizona federal contracts",
+      "href": "/insights/state/arizona/"
+    },
+    {
+      "label": "Arkansas federal contracts",
+      "href": "/insights/state/arkansas/"
+    },
+    {
+      "label": "California federal contracts",
+      "href": "/insights/state/california/"
+    },
+    {
+      "label": "Colorado federal contracts",
+      "href": "/insights/state/colorado/"
+    }
+  ],
+  "sources": [
+    {
+      "label": "USAspending.gov award data",
+      "href": "https://www.usaspending.gov"
+    }
+  ]
+}

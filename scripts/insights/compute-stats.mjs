@@ -11,7 +11,17 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { fallbackNaicsNarrative } from './lib/fallback-narrative.mjs';
 import { fiscalYearLabel, formatPercent, formatUsdCompact } from './lib/format.mjs';
-import { naicsHref, naicsTitle, relatedNaicsLinks } from './lib/slugs.mjs';
+import {
+  naicsHref,
+  naicsTitle,
+  relatedNaicsLinks,
+  agencyName,
+  agencyShort,
+  agencyAbbr,
+  relatedAgencyLinks,
+  stateName,
+  relatedStateLinks,
+} from './lib/slugs.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 
@@ -152,14 +162,8 @@ export function computeNaicsPage({ naicsCode, raw, updated }) {
         unit: 'usd',
         takeaway: trendTakeaway,
       },
-      {
-        id: `${naicsCode}-top-vendors`,
-        type: 'bar',
-        title: `Top 10 vendors, ${fyLabel}`,
-        series: [{ label: 'Obligations', points: vendors.map((v) => [v.name, v.amount]) }],
-        unit: 'usd',
-        takeaway: vendorTakeaway,
-      },
+      // Agencies before vendors so charts[1..] align 1:1 with the narrative
+      // sections ([agencies, vendors]) the shared EntityDashboard interleaves.
       {
         id: `${naicsCode}-top-agencies`,
         type: 'bar',
@@ -167,6 +171,14 @@ export function computeNaicsPage({ naicsCode, raw, updated }) {
         series: [{ label: 'Obligations', points: agencies.map((a) => [a.name, a.amount]) }],
         unit: 'usd',
         takeaway: agencyTakeaway,
+      },
+      {
+        id: `${naicsCode}-top-vendors`,
+        type: 'bar',
+        title: `Top 10 vendors, ${fyLabel}`,
+        series: [{ label: 'Obligations', points: vendors.map((v) => [v.name, v.amount]) }],
+        unit: 'usd',
+        takeaway: vendorTakeaway,
       },
     ],
     tables: [
@@ -180,6 +192,296 @@ export function computeNaicsPage({ naicsCode, raw, updated }) {
     faq,
     related: relatedNaicsLinks(naicsCode),
     sources: [{ label: 'USAspending.gov award data', href: 'https://www.usaspending.gov' }],
+  };
+}
+
+// --- Generic entity pages (agency, state) ----------------------------------
+// Agency and state dashboards share Template A's shape but differ in dimension
+// and copy. Everything below is built from the generic raw object fetch-data's
+// fetchEntityRaw produces: { kind, slug, name, currentFy, currentFyRange,
+// asOfDate, trend, cats:{<category>:resp}, largestAwards, awardCount }.
+const SOURCES = [{ label: 'USAspending.gov award data', href: 'https://www.usaspending.gov' }];
+
+function entityStats(raw) {
+  const fyLabel = `${fiscalYearLabel(raw.currentFy)} to date`;
+  const trend = trendPoints(raw.trend);
+  const currentPoint = trend.find((r) => r.fy === raw.currentFy) ?? trend[trend.length - 1];
+  const priorPoint = trend.find((r) => r.fy === raw.currentFy - 1);
+  const totalObligations = currentPoint?.amount ?? 0;
+  const awardCount = raw.awardCount?.results?.contracts ?? null;
+  const yoyGrowthPct =
+    priorPoint && priorPoint.amount > 0 ? round1(((totalObligations - priorPoint.amount) / priorPoint.amount) * 100) : null;
+  const avgAwardSize = awardCount ? Math.round(totalObligations / awardCount) : null;
+  return { fyLabel, trend, currentPoint, priorPoint, totalObligations, awardCount, yoyGrowthPct, avgAwardSize, currentFy: raw.currentFy };
+}
+
+// One dimension (a spending_by_category response) → rows + the top row's share.
+function dimOf(raw, catKey, totalObligations) {
+  const rows = categoryRows(raw.cats?.[catKey]);
+  const top = rows[0]
+    ? { ...rows[0], sharePct: totalObligations > 0 ? round1((rows[0].amount / totalObligations) * 100) : null }
+    : null;
+  return { rows, top };
+}
+
+function trendChart(slug, ctx, fallbackLead) {
+  const takeaway =
+    ctx.priorPoint && ctx.priorPoint.amount > 0 && ctx.yoyGrowthPct !== null
+      ? `Obligations ${ctx.yoyGrowthPct >= 0 ? 'grew' : 'fell'} ${formatPercent(Math.abs(ctx.yoyGrowthPct))} year over year, from ${formatUsdCompact(
+          ctx.priorPoint.amount
+        )} in ${fiscalYearLabel(ctx.currentFy - 1)} to ${formatUsdCompact(ctx.totalObligations)} in ${ctx.fyLabel}.`
+      : ctx.totalObligations > 0
+        ? `${fallbackLead} ${formatUsdCompact(ctx.totalObligations)} in ${ctx.fyLabel}.`
+        : null;
+  return {
+    id: `${slug}-trend`,
+    type: 'line',
+    title: 'Obligations by fiscal year',
+    series: [{ label: 'Obligations', points: ctx.trend.map((r) => [`FY${String(r.fy).slice(-2)}`, r.amount]) }],
+    unit: 'usd',
+    takeaway,
+  };
+}
+
+function barChart(id, title, dim, takeaway) {
+  return {
+    id,
+    type: 'bar',
+    title,
+    series: [{ label: 'Obligations', points: dim.rows.map((r) => [r.name, r.amount]) }],
+    unit: 'usd',
+    takeaway,
+  };
+}
+
+function vendorTable(dim) {
+  const rows = dim.rows.map((v, i) => [
+    i + 1,
+    { text: v.name, href: v.id ? `https://www.usaspending.gov/recipient/${v.id}/latest/` : null },
+    v.amount,
+  ]);
+  return { title: 'Top 10 vendors', columns: ['Rank', 'Vendor', 'Obligations'], rows };
+}
+
+function largestAwardsTable(raw, fyLabel, includeAgencyCol) {
+  const rows = (raw.largestAwards?.results ?? []).map((r, i) => {
+    const internalId = r.generated_internal_id ?? null;
+    const row = [
+      i + 1,
+      { text: r['Recipient Name'] ?? 'Unknown', href: internalId ? `https://www.usaspending.gov/award/${internalId}/` : null },
+      parseAmount(r['Award Amount']),
+    ];
+    if (includeAgencyCol) row.push(r['Awarding Agency'] ?? null);
+    return row;
+  });
+  const columns = includeAgencyCol
+    ? ['Rank', 'Recipient', 'Award Amount', 'Awarding Agency']
+    : ['Rank', 'Recipient', 'Award Amount'];
+  return { title: `Largest awards, ${fyLabel}`, columns, rows };
+}
+
+function buildIntro(lead, ctx) {
+  const parts = [
+    ctx.awardCount
+      ? `${lead} ${formatUsdCompact(ctx.totalObligations)} across ${ctx.awardCount.toLocaleString('en-US')} contract awards.`
+      : `${lead} ${formatUsdCompact(ctx.totalObligations)}.`,
+  ];
+  if (ctx.yoyGrowthPct !== null && ctx.yoyGrowthPct !== undefined) {
+    parts.push(`That is ${ctx.yoyGrowthPct >= 0 ? 'up' : 'down'} ${formatPercent(Math.abs(ctx.yoyGrowthPct))} year over year.`);
+  }
+  if (ctx.avgAwardSize !== null && ctx.avgAwardSize !== undefined) {
+    parts.push(`The average award size was ${formatUsdCompact(ctx.avgAwardSize)}.`);
+  }
+  return parts.join(' ');
+}
+
+export function computeAgencyPage({ slug, raw, updated }) {
+  const name = agencyName(slug);
+  const short = agencyShort(slug);
+  const abbr = agencyAbbr(slug);
+  const ctx = entityStats(raw);
+  const total$ = formatUsdCompact(ctx.totalObligations);
+  const naics = dimOf(raw, 'naics', ctx.totalObligations);
+  const vendors = dimOf(raw, 'recipient_duns', ctx.totalObligations);
+
+  const charts = [
+    trendChart(slug, ctx, `${name} obligated`),
+    barChart(
+      `${slug}-top-naics`,
+      `Top 10 categories (NAICS), ${ctx.fyLabel}`,
+      naics,
+      naics.top
+        ? `${naics.top.name} was ${short}'s largest contract category, with ${formatUsdCompact(naics.top.amount)} obligated${
+            naics.top.sharePct ? ` (${formatPercent(naics.top.sharePct)} of contract spending)` : ''
+          }.`
+        : null
+    ),
+    barChart(
+      `${slug}-top-vendors`,
+      `Top 10 vendors, ${ctx.fyLabel}`,
+      vendors,
+      vendors.top
+        ? `${vendors.top.name} led all ${short} contractors with ${formatUsdCompact(vendors.top.amount)}${
+            vendors.top.sharePct ? `, ${formatPercent(vendors.top.sharePct)} of obligations` : ''
+          }.`
+        : null
+    ),
+  ];
+
+  const sections = [];
+  if (naics.top) {
+    sections.push({
+      heading: `What does ${short} buy?`,
+      body: `${naics.top.name} was ${name}'s largest contract category in ${ctx.fyLabel}, with ${formatUsdCompact(
+        naics.top.amount
+      )} obligated${naics.top.sharePct ? `, or ${formatPercent(naics.top.sharePct)} of its contract spending` : ''}.`,
+    });
+  }
+  if (vendors.top) {
+    sections.push({
+      heading: `Who are ${short}'s largest contractors?`,
+      body: `${vendors.top.name} led all ${name} contractors with ${formatUsdCompact(
+        vendors.top.amount
+      )} in obligations during ${ctx.fyLabel}${vendors.top.sharePct ? `, a ${formatPercent(vendors.top.sharePct)} share` : ''}.`,
+    });
+  }
+
+  const awardsClause = ctx.awardCount ? `, across ${ctx.awardCount.toLocaleString('en-US')} awards` : '';
+  const faq = [
+    { q: `How much does ${name} spend on contracts?`, a: `${name} obligated ${total$} on federal contracts in ${ctx.fyLabel}${awardsClause}.` },
+    naics.top && {
+      q: `What does ${short} buy?`,
+      a: `${short}'s largest contract category is ${naics.top.name}, with ${formatUsdCompact(naics.top.amount)} obligated in ${ctx.fyLabel}.`,
+    },
+    vendors.top && {
+      q: `Who are ${short}'s largest contractors?`,
+      a: `${vendors.top.name} is ${short}'s largest contractor by obligated dollars in ${ctx.fyLabel}, with ${formatUsdCompact(vendors.top.amount)}.`,
+    },
+  ].filter(Boolean);
+
+  return {
+    pageType: 'agency',
+    slug,
+    title: `${abbr} Federal Contracts: ${total$ ?? 'FY Data'} in ${fiscalYearLabel(ctx.currentFy)}`,
+    h1: `${name}: Federal Contract Spending & Top Vendors`,
+    metaDescription: `${name} obligated ${
+      total$ ?? 'contract dollars'
+    } in federal contracts in ${ctx.fyLabel}. See what it buys, its top vendors, and multi-year trend.`.slice(0, 158),
+    updated,
+    fyWindow: { label: ctx.fyLabel, start: raw.currentFyRange.start, end: raw.asOfDate },
+    stats: {
+      totalObligations: ctx.totalObligations,
+      awardCount: ctx.awardCount,
+      yoyGrowthPct: ctx.yoyGrowthPct,
+      avgAwardSize: ctx.avgAwardSize,
+      smallBusinessSharePct: null,
+    },
+    charts,
+    tables: [vendorTable(vendors), largestAwardsTable(raw, ctx.fyLabel, false)],
+    narrative: { intro: buildIntro(`In ${ctx.fyLabel}, ${name} obligated`, ctx), sections },
+    faq,
+    related: relatedAgencyLinks(slug),
+    sources: SOURCES,
+  };
+}
+
+export function computeStatePage({ slug, raw, updated }) {
+  const name = stateName(slug);
+  const ctx = entityStats(raw);
+  const total$ = formatUsdCompact(ctx.totalObligations);
+  const agencies = dimOf(raw, 'awarding_agency', ctx.totalObligations);
+  const vendors = dimOf(raw, 'recipient_duns', ctx.totalObligations);
+  const naics = dimOf(raw, 'naics', ctx.totalObligations);
+
+  const charts = [
+    trendChart(slug, ctx, `Federal agencies obligated`),
+    barChart(
+      `${slug}-top-agencies`,
+      `Top 10 buying agencies, ${ctx.fyLabel}`,
+      agencies,
+      agencies.top
+        ? `${agencies.top.name} was the top federal buyer in ${name}, obligating ${formatUsdCompact(agencies.top.amount)}${
+            agencies.top.sharePct ? ` (${formatPercent(agencies.top.sharePct)} of the state total)` : ''
+          }.`
+        : null
+    ),
+    barChart(
+      `${slug}-top-vendors`,
+      `Top 10 vendors, ${ctx.fyLabel}`,
+      vendors,
+      vendors.top
+        ? `${vendors.top.name} led all contractors in ${name} with ${formatUsdCompact(vendors.top.amount)}${
+            vendors.top.sharePct ? `, ${formatPercent(vendors.top.sharePct)} of the state total` : ''
+          }.`
+        : null
+    ),
+    barChart(
+      `${slug}-top-naics`,
+      `Top 10 industries (NAICS), ${ctx.fyLabel}`,
+      naics,
+      naics.top ? `${naics.top.name} was the largest industry in ${name}, with ${formatUsdCompact(naics.top.amount)} obligated.` : null
+    ),
+  ];
+
+  const sections = [];
+  if (agencies.top) {
+    sections.push({
+      heading: `Which agencies award the most contracts in ${name}?`,
+      body: `${agencies.top.name} was the largest federal buyer in ${name}, obligating ${formatUsdCompact(
+        agencies.top.amount
+      )} in ${ctx.fyLabel}${agencies.top.sharePct ? `, or ${formatPercent(agencies.top.sharePct)} of the state total` : ''}.`,
+    });
+  }
+  if (vendors.top) {
+    sections.push({
+      heading: `Who are the top federal contractors in ${name}?`,
+      body: `${vendors.top.name} led all contractors performing work in ${name} with ${formatUsdCompact(
+        vendors.top.amount
+      )} in obligations during ${ctx.fyLabel}.`,
+    });
+  }
+
+  const awardsClause = ctx.awardCount ? `, across ${ctx.awardCount.toLocaleString('en-US')} awards` : '';
+  const faq = [
+    {
+      q: `How much federal contract money goes to ${name}?`,
+      a: `Federal agencies obligated ${total$} to contractors performing work in ${name} in ${ctx.fyLabel}${awardsClause}.`,
+    },
+    agencies.top && {
+      q: `Which agencies award the most contracts in ${name}?`,
+      a: `${agencies.top.name} is the largest federal buyer in ${name}, with ${formatUsdCompact(agencies.top.amount)} obligated in ${ctx.fyLabel}.`,
+    },
+    vendors.top && {
+      q: `Who are the largest federal contractors in ${name}?`,
+      a: `${vendors.top.name} is the largest federal contractor performing work in ${name} by obligated dollars in ${ctx.fyLabel}, with ${formatUsdCompact(
+        vendors.top.amount
+      )}.`,
+    },
+  ].filter(Boolean);
+
+  return {
+    pageType: 'state',
+    slug,
+    title: `${name} Federal Contracts: ${total$ ?? 'FY Data'} in ${fiscalYearLabel(ctx.currentFy)}`,
+    h1: `Federal Contracts in ${name}: Spending, Agencies & Vendors`,
+    metaDescription: `Federal agencies obligated ${
+      total$ ?? 'contract dollars'
+    } to contractors in ${name} in ${ctx.fyLabel}. See top buying agencies, top vendors, and industries.`.slice(0, 158),
+    updated,
+    fyWindow: { label: ctx.fyLabel, start: raw.currentFyRange.start, end: raw.asOfDate },
+    stats: {
+      totalObligations: ctx.totalObligations,
+      awardCount: ctx.awardCount,
+      yoyGrowthPct: ctx.yoyGrowthPct,
+      avgAwardSize: ctx.avgAwardSize,
+      smallBusinessSharePct: null,
+    },
+    charts,
+    tables: [vendorTable(vendors), largestAwardsTable(raw, ctx.fyLabel, true)],
+    narrative: { intro: buildIntro(`In ${ctx.fyLabel}, federal agencies obligated`, ctx), sections },
+    faq,
+    related: relatedStateLinks(slug),
+    sources: SOURCES,
   };
 }
 
