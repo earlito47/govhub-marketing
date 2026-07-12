@@ -1,17 +1,25 @@
 // USAspending API v2 client — no API key required.
 //
-// Verification status (2026-07-12): this session's outbound network policy
-// blocks every external host, including api.usaspending.gov and the docs site
-// itself (confirmed via the proxy status endpoint — even example.com was
-// denied), so the endpoints below could NOT be checked live against
-// https://api.usaspending.gov/docs/endpoints/ as the spec requires. They are
-// implemented from the request/response shapes given verbatim in the build
-// spec (Section 4.1) plus long-standing, stable public documentation for this
-// specific API. Each function below states its confidence. Before this file
-// is trusted for a real weekly run, execute it once via `workflow_dispatch`
-// (GitHub Actions runners have full internet) and diff the response shapes
-// against what's assumed here — treat that first run as the real
-// verification step the spec asked for.
+// Verification status (2026-07-12): checked against both the canonical API
+// contracts in fedspendingtransparency/usaspending-api
+// (usaspending_api/api_contracts/contracts/v2/) and live curl calls to
+// api.usaspending.gov. Endpoint paths, spending_over_time/spending_by_award/
+// spending_by_award_count/toptier_agencies shapes, and spending_by_award
+// field names all matched the contracts verbatim and returned real data live.
+//
+// Two things the first (offline) draft guessed were adjusted to match the
+// documented contract, even though live testing showed the deployed API
+// currently accepts both forms (it's more lenient than the docs — the old
+// forms return identical results to the new ones):
+//   - `spending_by_category`'s `category` path segment doc'd enum has no
+//     plain "recipient" (it's `recipient_duns` / `recipient_parent_duns`);
+//     "recipient" happens to work today as an undocumented alias but isn't
+//     something to depend on.
+//   - `naics_codes` in AdvancedFilterObject is documented as a NAICSCodeObject
+//     ({ require: [...], exclude: [...] }); a bare array of code strings also
+//     works today but isn't the contract shape.
+// Using the documented forms here since undocumented aliases are the kind of
+// thing that gets removed without notice.
 
 const BASE_URL = 'https://api.usaspending.gov';
 
@@ -102,11 +110,15 @@ export class UsaSpendingClient {
   }
 
   /**
-   * Confidence: HIGH. Matches the spec's own worked example verbatim
-   * (Section 4.1): POST /api/v2/search/spending_by_category/{category}/
-   * with `category` as a URL path segment, not a body field.
-   * category ∈ awarding_agency | funding_agency | recipient | naics | psc |
-   *            state_territory | county | district | cfda | federal_account
+   * Verified against the API contract: POST
+   * /api/v2/search/spending_by_category/{category}/ with `category` as a URL
+   * path segment, not a body field.
+   * category ∈ awarding_agency | awarding_subagency | cfda | country | county |
+   *            defc | district | federal_account | funding_agency |
+   *            funding_subagency | naics | object_class | program_activity |
+   *            psc | recipient_duns | recipient_parent_duns |
+   *            state_territory | tas
+   * (there is no plain "recipient" category — use recipient_duns.)
    */
   async spendingByCategory(category, filters, { limit = 10, page = 1 } = {}) {
     return this._request(`/api/v2/search/spending_by_category/${category}/`, {
@@ -115,9 +127,9 @@ export class UsaSpendingClient {
   }
 
   /**
-   * Confidence: HIGH. group ∈ fiscal_year | quarter | month.
+   * Verified. group ∈ calendar_year | fiscal_year | quarter | month.
    * Response: { results: [{ time_period: { fiscal_year: "2021", ... },
-   *                          aggregated_amount: number }, ...] }
+   *                          aggregated_amount: number, ... }, ...] }
    */
   async spendingOverTime({ group = 'fiscal_year', filters }) {
     return this._request('/api/v2/search/spending_over_time/', {
@@ -126,13 +138,12 @@ export class UsaSpendingClient {
   }
 
   /**
-   * Confidence: MEDIUM-HIGH. `fields` must be chosen from USAspending's
-   * allowed field list for the award-type family being queried; the contract
-   * field names below (Award ID / Recipient Name / Award Amount / Start Date /
-   * End Date / Awarding Agency / Awarding Sub Agency / Description /
-   * generated_internal_id) match long-standing published examples. Confirm on
-   * first live run — an unrecognized field name is a 422 from the API, not a
-   * silent wrong value, so this fails loudly rather than corrupting data.
+   * Verified against the contract's own worked example body. `fields` must be
+   * chosen from USAspending's allowed field list for the award-type family
+   * being queried (base fields: Award ID, Recipient Name, Awarding Agency,
+   * Awarding Sub Agency, Description, generated_internal_id, etc.; contract-
+   * specific: Start Date, End Date, Award Amount, NAICS, PSC, ...). An
+   * unrecognized field name is a 422 from the API, not a silent wrong value.
    */
   async spendingByAward({ filters, fields, sort, order = 'desc', limit = 25, page = 1, subawards = false }) {
     return this._request('/api/v2/search/spending_by_award/', {
@@ -141,10 +152,10 @@ export class UsaSpendingClient {
   }
 
   /**
-   * Confidence: HIGH. Response: { results: { contracts, idvs, loans, grants,
-   * direct_payments, other } }. With award_type_codes restricted to A/B/C/D
-   * (definitive contracts only, no IDVs), `results.contracts` is the award
-   * count for our filter set.
+   * Verified. Response: { results: { grants, loans, contracts,
+   * direct_payments, other, idvs } }. With award_type_codes restricted to
+   * A/B/C/D (definitive contracts only, no IDVs), `results.contracts` is the
+   * award count for our filter set.
    */
   async spendingByAwardCount(filters) {
     return this._request('/api/v2/search/spending_by_award_count/', { body: filters ? { filters } : {} });

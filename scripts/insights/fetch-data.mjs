@@ -26,8 +26,8 @@ const AWARD_FIELDS = [
   'generated_internal_id',
 ];
 
-function contractFilters(extra) {
-  return { award_type_codes: CONTRACT_AWARD_TYPE_CODES, ...extra };
+function contractFilters({ naicsCode, ...extra }) {
+  return { award_type_codes: CONTRACT_AWARD_TYPE_CODES, naics_codes: { require: [naicsCode] }, ...extra };
 }
 
 async function cachedCall(client, isoWeek, endpointLabel, fn) {
@@ -57,16 +57,16 @@ export async function fetchNaicsRaw(client, { naicsCode, asOfDate, trendYears = 
       client.spendingOverTime({
         group: 'fiscal_year',
         filters: contractFilters({
-          naics_codes: [naicsCode],
+          naicsCode,
           time_period: [{ start_date: trendRange.start, end_date: trendRange.end }],
         }),
       })
     ),
     cachedCall(client, isoWeek, label('top-vendors'), () =>
       client.spendingByCategory(
-        'recipient',
+        'recipient_duns',
         contractFilters({
-          naics_codes: [naicsCode],
+          naicsCode,
           time_period: [{ start_date: currentFyRange.start, end_date: currentFyRange.end }],
         }),
         { limit: 10 }
@@ -76,7 +76,7 @@ export async function fetchNaicsRaw(client, { naicsCode, asOfDate, trendYears = 
       client.spendingByCategory(
         'awarding_agency',
         contractFilters({
-          naics_codes: [naicsCode],
+          naicsCode,
           time_period: [{ start_date: currentFyRange.start, end_date: currentFyRange.end }],
         }),
         { limit: 10 }
@@ -85,7 +85,7 @@ export async function fetchNaicsRaw(client, { naicsCode, asOfDate, trendYears = 
     cachedCall(client, isoWeek, label('largest-awards'), () =>
       client.spendingByAward({
         filters: contractFilters({
-          naics_codes: [naicsCode],
+          naicsCode,
           time_period: [{ start_date: currentFyRange.start, end_date: currentFyRange.end }],
         }),
         fields: AWARD_FIELDS,
@@ -97,7 +97,7 @@ export async function fetchNaicsRaw(client, { naicsCode, asOfDate, trendYears = 
     cachedCall(client, isoWeek, label('award-count'), () =>
       client.spendingByAwardCount(
         contractFilters({
-          naics_codes: [naicsCode],
+          naicsCode,
           time_period: [{ start_date: currentFyRange.start, end_date: currentFyRange.end }],
         })
       )
