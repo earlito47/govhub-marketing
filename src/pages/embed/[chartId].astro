@@ -1,0 +1,68 @@
+---
+// Bare embeddable chart page (spec Section 11). No nav, no CTA — just the
+// chart and a source footer that links back to the parent page with
+// utm_source=embed. noindex: the parent page is the canonical citation target;
+// embeds exist to generate the footer backlink.
+import type { GetStaticPaths } from 'astro';
+import type { InsightsPage, Chart } from '../../lib/insightsTypes';
+import { SITE_URL } from '../../config';
+import SvgChart from '../../components/insights/SvgChart.astro';
+import '@fontsource-variable/figtree';
+import '@fontsource-variable/bricolage-grotesque';
+
+export const getStaticPaths = (() => {
+  const files = import.meta.glob<{ default: InsightsPage }>('../../data/insights/naics/*.json', { eager: true });
+  const paths: { params: { chartId: string }; props: { chart: Chart; parentSlug: string } }[] = [];
+  for (const mod of Object.values(files)) {
+    const page = mod.default;
+    for (const chart of page.charts) {
+      paths.push({ params: { chartId: chart.id }, props: { chart, parentSlug: page.slug } });
+    }
+  }
+  return paths;
+}) satisfies GetStaticPaths;
+
+interface Props {
+  chart: Chart;
+  parentSlug: string;
+}
+
+const { chart, parentSlug } = Astro.props;
+const parentUrl = `${SITE_URL}/insights/naics/${parentSlug}/?utm_source=embed`;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{chart.title} — GovHub Insights</title>
+    <meta name="description" content={`${chart.title} — federal contract data from GovHub Insights, sourced from USAspending.gov.`} />
+    <meta name="robots" content="noindex" />
+    <link rel="stylesheet" href="/brand/tokens/tokens.css" />
+  </head>
+  <body>
+    <main class="embed-page">
+      <SvgChart chart={chart} />
+      <footer class="embed-footer">
+        <a href={parentUrl} target="_blank" rel="noopener">Source: GovHub Insights →</a>
+      </footer>
+    </main>
+
+    <style is:global>
+      html, body { margin: 0; padding: 0; background: var(--gh-oat); }
+      body {
+        --gh-font-body: 'Figtree Variable', -apple-system, 'Segoe UI', sans-serif;
+        --gh-font-brand: 'Bricolage Grotesque Variable', 'Figtree Variable', sans-serif;
+        --gh-font-display: 'Fraunces', Georgia, serif;
+        font-family: var(--gh-font-body);
+        color: var(--gh-ink-900);
+      }
+      * { box-sizing: border-box; }
+      .embed-page { padding: 12px; }
+      .embed-footer { margin-top: 8px; text-align: right; font-size: 0.8rem; }
+      .embed-footer a { color: var(--gh-teal-700); text-decoration: none; font-weight: 600; }
+      .embed-footer a:hover { text-decoration: underline; }
+    </style>
+  </body>
+</html>

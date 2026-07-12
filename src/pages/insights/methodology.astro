@@ -1,0 +1,138 @@
+---
+// Static, hand-written methodology page — the trust anchor every Insights page
+// links to (hard constraint #6). Evergreen; no pipeline data.
+import InsightsLayout from '../../components/insights/InsightsLayout.astro';
+import Breadcrumbs from '../../components/seo/Breadcrumbs.astro';
+import FAQSchema from '../../components/seo/FAQSchema.astro';
+
+const faqs = [
+  {
+    question: 'What is the difference between obligations and outlays?',
+    answer:
+      'An obligation is money the government has legally committed on an award; an outlay is money actually disbursed. GovHub Insights reports obligations, which are the standard measure of contract award activity. Outlays can lag obligations by months or years.',
+  },
+  {
+    question: 'Where does GovHub Insights data come from?',
+    answer:
+      'All figures come from USAspending.gov, the U.S. government’s official open-data source for federal awards, retrieved through its public API. GovHub analyzes and republishes the data; the underlying records are U.S. federal public domain.',
+  },
+  {
+    question: 'Why do current fiscal-year totals look lower than last year?',
+    answer:
+      'Current-year figures cover the fiscal year to date — a partial year — so they are compared against a completed prior year. A partial year will almost always show a lower total until the year closes on September 30.',
+  },
+];
+---
+
+<InsightsLayout
+  title="Methodology — GovHub Insights"
+  description="How GovHub Insights builds federal contract market data: sources, definitions (obligations vs. outlays), fiscal-year windows, and known reporting caveats."
+>
+  <Breadcrumbs
+    items={[
+      { name: 'Home', url: '/' },
+      { name: 'Insights', url: '/insights/' },
+      { name: 'Methodology', url: '/insights/methodology/' },
+    ]}
+  />
+
+  <article class="prose methodology">
+    <p class="eyebrow">GovHub Insights</p>
+    <h1>Methodology</h1>
+    <p class="lede">
+      GovHub Insights turns public federal spending records into readable market intelligence. This
+      page explains exactly what the numbers mean, where they come from, and where their limits are —
+      so you can cite them with confidence.
+    </p>
+
+    <h2>Source</h2>
+    <p>
+      Every figure on GovHub Insights is derived from <a href="https://www.usaspending.gov" rel="noopener" target="_blank">USAspending.gov</a>,
+      the U.S. government's official source of record for federal award data, retrieved through its
+      public API. The underlying data is U.S. federal government public domain. GovHub analyzes,
+      aggregates, and republishes it; we do not alter the underlying records.
+    </p>
+
+    <h2>What we count</h2>
+    <p>
+      Unless a page states otherwise, all figures are contract <strong>obligations</strong> on
+      definitive contracts — federal award types A, B, C, and D. We exclude grants, loans, direct
+      payments, and indefinite-delivery vehicles (IDVs) so that "contract spending" means what
+      contractors expect it to mean: dollars committed to buy goods and services.
+    </p>
+
+    <h2>Obligations, outlays, and ceilings</h2>
+    <p>
+      These three are not interchangeable. An <strong>obligation</strong> is money the government has
+      legally committed on an award. An <strong>outlay</strong> is money actually paid out, which can
+      lag obligations by months or years. A contract <strong>ceiling</strong> is the maximum an award
+      could reach, not what has been committed. GovHub Insights reports obligations, the standard
+      measure of award activity.
+    </p>
+
+    <h2>Fiscal years and "to date"</h2>
+    <p>
+      The federal fiscal year runs October 1 through September 30 — FY2026 began October 1, 2025.
+      Current-year totals are labeled "FY-to-date" and reflect only the portion of the year that has
+      been reported. Because a partial year is compared against a completed prior year, year-over-year
+      changes for the current year understate the eventual full-year figure and should be read as a
+      running comparison, not a final one.
+    </p>
+
+    <h2>Vendor names</h2>
+    <p>
+      Federal recipient data is messy: the same company can appear under subsidiaries, DBA names, and
+      recipient hierarchies. We use USAspending's own recipient aggregation as-is and link vendor names
+      to their USAspending recipient profiles rather than attempting our own entity resolution, so you
+      can always trace a number back to its source.
+    </p>
+
+    <h2>Reporting lag</h2>
+    <p>
+      Agencies report transactions on a delay; the Department of Defense in particular reports to the
+      federal system on roughly a 90-day lag. Recent-period figures therefore undercount activity,
+      especially for DoD, and are best read as "newly reported" rather than complete.
+    </p>
+
+    <h2>Which entities get a page</h2>
+    <p>
+      To avoid thin, low-signal pages, GovHub Insights builds a dedicated dashboard for an entity only
+      when it clears meaningful volume thresholds in obligations, award count, and years of available
+      trend data. Smaller entities still appear in ranking tables but do not get a standalone page.
+    </p>
+
+    <h2>Updates</h2>
+    <p>
+      Evergreen dashboards refresh on a weekly cadence, and each page shows the date its data was last
+      current. If a refresh fails, the site keeps serving the last good dataset rather than publishing
+      partial numbers.
+    </p>
+
+    <h2>Attribution</h2>
+    <p>
+      Source: USAspending.gov data, analyzed by GovHub. You are welcome to cite, link, and embed these
+      charts; embedded charts carry an automatic link back to their source page.
+    </p>
+  </article>
+
+  <FAQSchema faqs={faqs} />
+</InsightsLayout>
+
+<style>
+  .methodology {
+    margin-top: 0.5rem;
+  }
+  .methodology h1 {
+    margin: 0.25rem 0 0.75rem;
+  }
+  .methodology h2 {
+    margin-top: 2.25rem;
+  }
+  .methodology .lede {
+    font-size: 1.15rem;
+    color: var(--fg-muted);
+  }
+  .methodology p {
+    color: var(--fg-muted);
+  }
+</style>

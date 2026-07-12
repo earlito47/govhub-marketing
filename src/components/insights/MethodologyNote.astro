@@ -1,0 +1,55 @@
+---
+/**
+ * Attribution + methodology disclosure shown near the foot of every Insights
+ * page (hard constraint #6). Carries the partial-fiscal-year caveat so the
+ * year-over-year figures are never read as apples-to-apples, and an optional
+ * DoD reporting-lag disclosure for pages that lean on recent activity.
+ */
+interface Props {
+  updated: string;
+  fyLabel: string;
+  dodLag?: boolean;
+}
+
+const { updated, fyLabel, dodLag = false } = Astro.props;
+---
+
+<aside class="methodology-note" aria-label="Methodology and sources">
+  <p>
+    <strong>Source:</strong> USAspending.gov award data, analyzed by GovHub. All figures are contract
+    <em>obligations</em> (award types A/B/C/D — definitive contracts) and exclude grants and loans.
+    Data through {updated}. See the <a href="/insights/methodology/">full methodology</a> for definitions.
+  </p>
+  <p>
+    Current-year totals cover {fyLabel} — a partial fiscal year — so year-over-year comparisons weigh
+    a partial year against a completed one and understate the full-year figure.
+  </p>
+  {dodLag && (
+    <p>
+      The Department of Defense reports transactions to the federal system on roughly a 90-day delay,
+      so the most recent weeks undercount DoD activity.
+    </p>
+  )}
+</aside>
+
+<style>
+  .methodology-note {
+    margin: 2.5rem 0 0;
+    padding: 1.1rem 1.25rem;
+    background: var(--gh-tint-sky);
+    border: 1px solid var(--gh-line);
+    border-radius: var(--gh-radius-md);
+    font-size: 0.9rem;
+    color: var(--fg-muted);
+    max-width: 46rem;
+  }
+  .methodology-note p {
+    margin: 0 0 0.6rem;
+  }
+  .methodology-note p:last-child {
+    margin-bottom: 0;
+  }
+  .methodology-note strong {
+    color: var(--fg);
+  }
+</style>

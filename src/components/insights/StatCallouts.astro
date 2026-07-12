@@ -1,0 +1,116 @@
+---
+/**
+ * Big-number stat row rendered as a semantic <dl> (spec 9.3: callouts must be
+ * real HTML text, never baked into SVG). Deltas use teal ▲ for growth and
+ * terracotta ▼ for decline — never red/green (brand rule, Section 10).
+ */
+import type { InsightsStats } from '../../lib/insightsTypes';
+import { formatUsdCompact, formatInt, formatPercent } from '../../lib/insightsFormat';
+
+interface Props {
+  stats: InsightsStats;
+  /** e.g. "FY2026 to date" — used to label the headline metric. */
+  fyLabel: string;
+}
+
+const { stats, fyLabel } = Astro.props;
+
+interface Callout {
+  label: string;
+  value: string;
+  delta?: { text: string; dir: 'up' | 'down' } | null;
+}
+
+const callouts: Callout[] = [];
+
+const obligations = formatUsdCompact(stats.totalObligations);
+if (obligations) callouts.push({ label: `Obligations, ${fyLabel}`, value: obligations });
+
+const awards = formatInt(stats.awardCount);
+if (awards) callouts.push({ label: 'Contract awards', value: awards });
+
+const avg = formatUsdCompact(stats.avgAwardSize);
+if (avg) callouts.push({ label: 'Average award size', value: avg });
+
+if (stats.yoyGrowthPct !== null && stats.yoyGrowthPct !== undefined) {
+  const up = stats.yoyGrowthPct >= 0;
+  callouts.push({
+    label: 'vs. prior full fiscal year',
+    value: formatPercent(Math.abs(stats.yoyGrowthPct)) ?? '—',
+    delta: { text: up ? 'growth' : 'decline', dir: up ? 'up' : 'down' },
+  });
+}
+
+if (stats.smallBusinessSharePct !== null && stats.smallBusinessSharePct !== undefined) {
+  callouts.push({ label: 'Small-business share', value: formatPercent(stats.smallBusinessSharePct) ?? '—' });
+}
+---
+
+<dl class="stat-callouts">
+  {callouts.map((c) => (
+    <div class="stat">
+      <dt>{c.label}</dt>
+      <dd>
+        {c.delta && (
+          <span class:list={['arrow', c.delta.dir]} aria-hidden="true">{c.delta.dir === 'up' ? '▲' : '▼'}</span>
+        )}
+        <span class="num">{c.value}</span>
+        {c.delta && <span class="delta-word"> {c.delta.text}</span>}
+      </dd>
+    </div>
+  ))}
+</dl>
+
+<style>
+  .stat-callouts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1rem;
+    margin: 1.75rem 0 0;
+    padding: 0;
+  }
+  .stat {
+    background: var(--gh-surface);
+    border: 1px solid var(--gh-line);
+    border-radius: var(--gh-radius-md);
+    padding: 1.1rem 1.25rem;
+    box-shadow: var(--gh-shadow-card);
+  }
+  dt {
+    font-size: 0.8rem;
+    color: var(--fg-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    font-family: var(--gh-font-brand);
+    font-weight: 600;
+  }
+  dd {
+    margin: 0.35rem 0 0;
+    display: flex;
+    align-items: baseline;
+    gap: 0.3rem;
+    flex-wrap: wrap;
+  }
+  .num {
+    font-family: var(--gh-font-display);
+    font-variation-settings: 'SOFT' 100, 'WONK' 0;
+    font-size: 1.85rem;
+    font-weight: 600;
+    color: var(--gh-ink-900);
+    line-height: 1.05;
+  }
+  .arrow {
+    font-size: 1.1rem;
+    line-height: 1;
+  }
+  .arrow.up {
+    color: var(--gh-teal-600);
+  }
+  .arrow.down {
+    color: var(--gh-maroon-600);
+  }
+  .delta-word {
+    font-size: 0.85rem;
+    color: var(--fg-muted);
+  }
+</style>
