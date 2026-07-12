@@ -1,0 +1,29 @@
+---
+/**
+ * Article JSON-LD for dated weekly report pages (spec 9.2). Recency + a
+ * datePublished are citation-ranking signals for answer engines.
+ */
+interface Props {
+  headline: string;
+  description: string;
+  datePublished: string;
+  url: string;
+}
+
+const { headline, description, datePublished, url } = Astro.props;
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline,
+  description,
+  datePublished,
+  dateModified: datePublished,
+  url,
+  isBasedOn: 'https://www.usaspending.gov',
+  author: { '@type': 'Organization', name: 'GovHub' },
+  publisher: { '@type': 'Organization', name: 'GovHub' },
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

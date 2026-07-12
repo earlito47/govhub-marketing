@@ -14,6 +14,7 @@ import { UsaSpendingClient } from './lib/usaspending.mjs';
 import { fetchNaicsRaw } from './fetch-data.mjs';
 import { computeNaicsPage } from './compute-stats.mjs';
 import { generateEntities } from './run-entities.mjs';
+import { buildWeeklyReports } from './build-weekly-report.mjs';
 import { PILOT_NAICS_CODES } from './lib/slugs.mjs';
 import { fiscalYearOf, fiscalYearRange, fiscalYearLabel } from './lib/format.mjs';
 
@@ -48,6 +49,10 @@ async function main() {
   console.log(`[run-weekly] Refreshing all Insights data as of ${asOfDate} — network required`);
   await generateNaics({ client, asOfDate, summary });
   await generateEntities({ client, asOfDate, summary });
+
+  // Weekly reports — 4 dated, immutable pages for the current week (spec 6.5).
+  const report = await buildWeeklyReports({ client, asOfDate });
+  console.log(`[ok]   reports/${report.week} — ${report.count} reports (week of ${report.label})`);
 
   // meta.json powers the audit trail and the honest "data through {date}" line
   // even on a skipped week (spec Sections 5, 14). Lives at the data-dir root, so

@@ -11,14 +11,21 @@ import '@fontsource-variable/figtree';
 import '@fontsource-variable/bricolage-grotesque';
 
 export const getStaticPaths = (() => {
-  const files = import.meta.glob<{ default: InsightsPage }>('../../data/insights/*/*.json', { eager: true });
+  // Entity pages live at data/insights/<kind>/<slug>.json; reports one level
+  // deeper at data/insights/reports/<week>/<slug>.json — glob both.
+  const entityFiles = import.meta.glob<{ default: InsightsPage }>('../../data/insights/*/*.json', { eager: true });
+  const reportFiles = import.meta.glob<{ default: InsightsPage }>('../../data/insights/reports/*/*.json', { eager: true });
   const paths: { params: { chartId: string }; props: { chart: Chart; parentPath: string } }[] = [];
-  for (const mod of Object.values(files)) {
+  const add = (page: InsightsPage, parentPath: string) => {
+    for (const chart of page.charts) paths.push({ params: { chartId: chart.id }, props: { chart, parentPath } });
+  };
+  for (const mod of Object.values(entityFiles)) {
     const page = mod.default;
-    const parentPath = `/insights/${page.pageType}/${page.slug}/`;
-    for (const chart of page.charts) {
-      paths.push({ params: { chartId: chart.id }, props: { chart, parentPath } });
-    }
+    add(page, `/insights/${page.pageType}/${page.slug}/`);
+  }
+  for (const mod of Object.values(reportFiles)) {
+    const page = mod.default;
+    add(page, `/insights/reports/${page.week}/${page.slug}/`);
   }
   return paths;
 }) satisfies GetStaticPaths;
@@ -30,6 +37,8 @@ interface Props {
 
 const { chart, parentPath } = Astro.props;
 const parentUrl = `${SITE_URL}${parentPath}?utm_source=embed`;
+// noindex page, but keep <title> within the site's meta-guard budget (≤70).
+const pageTitle = chart.title.length > 66 ? `${chart.title.slice(0, 65)}…` : chart.title;
 ---
 
 <!doctype html>
@@ -37,8 +46,8 @@ const parentUrl = `${SITE_URL}${parentPath}?utm_source=embed`;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{chart.title} — GovHub Insights</title>
-    <meta name="description" content={`${chart.title} — federal contract data from GovHub Insights, sourced from USAspending.gov.`} />
+    <title>{pageTitle}</title>
+    <meta name="description" content={`${pageTitle} — federal contract data from GovHub Insights, sourced from USAspending.gov.`} />
     <meta name="robots" content="noindex" />
     <link rel="stylesheet" href="/brand/tokens/tokens.css" />
   </head>

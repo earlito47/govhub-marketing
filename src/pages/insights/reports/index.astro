@@ -1,0 +1,95 @@
+---
+// Weekly report archive — reverse-chronological, accumulates every week.
+import type { InsightsPage } from '../../../lib/insightsTypes';
+import { SIGNUP_URL } from '../../../config';
+import InsightsLayout from '../../../components/insights/InsightsLayout.astro';
+import Breadcrumbs from '../../../components/seo/Breadcrumbs.astro';
+import CTABand from '../../../components/CTABand.astro';
+
+const files = import.meta.glob<{ default: InsightsPage }>('../../../data/insights/reports/*/*.json', { eager: true });
+
+interface WeekGroup {
+  week: string;
+  label: string;
+  published: string;
+  reports: { slug: string; short: string; href: string }[];
+}
+
+const SHORT: Record<string, string> = {
+  'top-agencies': 'Top agencies',
+  'largest-awards': 'Largest awards',
+  'most-active-naics': 'Most active markets',
+  'state-movers': 'Top states',
+};
+const ORDER = ['top-agencies', 'largest-awards', 'most-active-naics', 'state-movers'];
+
+const groups = new Map<string, WeekGroup>();
+for (const mod of Object.values(files)) {
+  const p = mod.default;
+  const week = p.week ?? '';
+  if (!groups.has(week)) {
+    groups.set(week, { week, label: p.fyWindow.label, published: p.publishedDate ?? p.updated, reports: [] });
+  }
+  groups.get(week)!.reports.push({ slug: p.slug, short: SHORT[p.slug] ?? p.slug, href: `/insights/reports/${week}/${p.slug}/` });
+}
+
+const weeks = [...groups.values()].sort((a, b) => b.published.localeCompare(a.published));
+for (const g of weeks) g.reports.sort((a, b) => ORDER.indexOf(a.slug) - ORDER.indexOf(b.slug));
+---
+
+<InsightsLayout
+  title="Weekly Federal Contracting Reports | GovHub Insights"
+  description="Dated weekly snapshots of federal contract activity — top agencies, largest awards, most active markets, and top states — from USAspending.gov data."
+>
+  <Breadcrumbs items={[{ name: 'Home', url: '/' }, { name: 'Insights', url: '/insights/' }, { name: 'Weekly reports', url: '/insights/reports/' }]} />
+
+  <header class="ins-header">
+    <p class="eyebrow">GovHub Insights</p>
+    <h1>Weekly federal contracting reports</h1>
+    <p class="lede">
+      A dated snapshot every week: which agencies and states reported the most new contract activity,
+      the largest awards in motion, and the most active markets. Each report is permanent — an
+      append-only record of the federal market week by week. <a href="/insights/reports/rss.xml">RSS feed</a>.
+    </p>
+  </header>
+
+  {weeks.length === 0 ? (
+    <p>The first weekly report publishes with the next data refresh.</p>
+  ) : (
+    <div class="weeks">
+      {weeks.map((g) => (
+        <section class="week">
+          <h2>Week of {g.label.replace('Week of ', '')}</h2>
+          <ul>
+            {g.reports.map((r) => (<li><a href={r.href}>{r.short}</a></li>))}
+          </ul>
+        </section>
+      ))}
+    </div>
+  )}
+
+  <CTABand
+    heading="Go from the weekly read to a winning bid"
+    sub="GovHub turns federal market intelligence into compliant, submitted proposals — with AI drafting on top of this data."
+    primaryHref={`${SIGNUP_URL}?utm_source=insights&utm_campaign=reports-archive`}
+    primaryLabel="Start free trial"
+  />
+</InsightsLayout>
+
+<style>
+  .ins-header h1 { margin: 0.25rem 0 0.75rem; }
+  .weeks { display: flex; flex-direction: column; gap: 1rem; margin-top: 2rem; }
+  .week {
+    background: var(--gh-surface);
+    border: 1px solid var(--gh-line);
+    border-radius: var(--gh-radius-md);
+    padding: 1.25rem 1.5rem;
+    box-shadow: var(--gh-shadow-card);
+  }
+  .week h2 { margin: 0 0 0.75rem; font-size: 1.2rem; }
+  .week ul {
+    list-style: none; padding: 0; margin: 0;
+    display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem;
+  }
+  .week a { color: var(--gh-teal-700); font-weight: 600; }
+</style>

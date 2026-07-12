@@ -41,6 +41,22 @@ function load(
 const naicsPages = import.meta.glob<{ default: InsightsPage }>('../../data/insights/naics/*.json', { eager: true });
 const agencyPages = import.meta.glob<{ default: InsightsPage }>('../../data/insights/agency/*.json', { eager: true });
 const statePages = import.meta.glob<{ default: InsightsPage }>('../../data/insights/state/*.json', { eager: true });
+const reportPages = import.meta.glob<{ default: InsightsPage }>('../../data/insights/reports/*/*.json', { eager: true });
+
+// Latest week's reports for the "this week" strip on the hub.
+const REPORT_SHORT: Record<string, string> = {
+  'top-agencies': 'Top agencies',
+  'largest-awards': 'Largest awards',
+  'most-active-naics': 'Most active markets',
+  'state-movers': 'Top states',
+};
+const REPORT_ORDER = ['top-agencies', 'largest-awards', 'most-active-naics', 'state-movers'];
+const allReports = Object.values(reportPages).map((m) => m.default);
+const latestWeek = allReports.map((r) => r.publishedDate ?? r.updated).sort().at(-1) ?? '';
+const latestReports = allReports
+  .filter((r) => (r.publishedDate ?? r.updated) === latestWeek)
+  .sort((a, b) => REPORT_ORDER.indexOf(a.slug) - REPORT_ORDER.indexOf(b.slug));
+const latestReportLabel = latestReports[0]?.fyWindow.label.replace('Week of ', '') ?? '';
 
 const naicsCards = load(naicsPages, 'naics', (p) => p.h1.split(': ')[1]?.split(' — ')[0] ?? `NAICS ${p.slug}`, (p) => `NAICS ${p.slug}`).sort(
   (a, b) => a.slug.localeCompare(b.slug)
@@ -70,6 +86,21 @@ const updated = [...Object.values(agencyPages), ...Object.values(statePages), ..
     </p>
     {updated && <p class="updated-line">{totalPages} dashboards · data through {updated}</p>}
   </header>
+
+  {latestReports.length > 0 && (
+    <section id="reports" class="reports-strip" aria-labelledby="reports-heading">
+      <div class="reports-head">
+        <h2 id="reports-heading">This week in federal contracting</h2>
+        <a class="see-all" href="/insights/reports/">All weekly reports →</a>
+      </div>
+      <p class="section-lede">Week of {latestReportLabel} — the latest snapshot of where new contract activity landed.</p>
+      <ul class="report-links">
+        {latestReports.map((r) => (
+          <li><a href={`/insights/reports/${r.week}/${r.slug}/`}>{REPORT_SHORT[r.slug] ?? r.slug}</a></li>
+        ))}
+      </ul>
+    </section>
+  )}
 
   {agencyCards.length > 0 && (
     <section id="agencies" aria-labelledby="agencies-heading">
@@ -145,6 +176,21 @@ const updated = [...Object.values(agencyPages), ...Object.values(statePages), ..
 <style>
   .ins-header h1 { margin: 0.25rem 0 0.75rem; }
   section { margin-top: 3rem; scroll-margin-top: 1.5rem; }
+  .reports-strip {
+    margin-top: 2rem;
+    padding: 1.25rem 1.5rem;
+    background: var(--gh-tint-sun);
+    border: 1px solid var(--gh-line);
+    border-radius: var(--gh-radius-md);
+  }
+  .reports-head { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+  .reports-head h2 { margin: 0; font-size: 1.3rem; }
+  .see-all { color: var(--gh-teal-700); font-weight: 600; font-size: 0.9rem; white-space: nowrap; }
+  .report-links {
+    list-style: none; padding: 0; margin: 0.75rem 0 0;
+    display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem;
+  }
+  .report-links a { color: var(--gh-maroon-600); font-weight: 600; }
   .section-lede { color: var(--fg-muted); max-width: 44rem; margin: 0.35rem 0 0; }
   .card-grid {
     list-style: none;
