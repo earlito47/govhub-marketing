@@ -1,7 +1,6 @@
 ---
 // Insights hub. Links every entity page that exists (internal-link hub role,
-// spec 9.5). At launch that's the three pilot NAICS dashboards; agency, state,
-// and ranking pages slot into this same grid as they come online.
+// spec 9.5): NAICS market dashboards, agency profiles, and state pages.
 import type { InsightsPage } from '../../lib/insightsTypes';
 import { SIGNUP_URL } from '../../config';
 import InsightsLayout from '../../components/insights/InsightsLayout.astro';
@@ -9,25 +8,55 @@ import Breadcrumbs from '../../components/seo/Breadcrumbs.astro';
 import CTABand from '../../components/CTABand.astro';
 import { formatUsdCompact } from '../../lib/insightsFormat';
 
-const files = import.meta.glob<{ default: InsightsPage }>('../../data/insights/naics/*.json', { eager: true });
-const naicsPages = Object.values(files)
-  .map((m) => m.default)
-  .sort((a, b) => a.slug.localeCompare(b.slug));
+interface Card {
+  slug: string;
+  eyebrow: string;
+  name: string;
+  amount: number;
+  obligations: string | null;
+  fyLabel: string;
+  href: string;
+}
 
-const cards = naicsPages.map((p) => ({
-  slug: p.slug,
-  name: p.h1.split(': ')[1]?.split(' — ')[0] ?? `NAICS ${p.slug}`,
-  obligations: formatUsdCompact(p.stats.totalObligations),
-  fyLabel: p.fyWindow.label,
-  href: `/insights/naics/${p.slug}/`,
-}));
+function load(
+  glob: Record<string, { default: InsightsPage }>,
+  kind: string,
+  nameOf: (p: InsightsPage) => string,
+  eyebrowOf: (p: InsightsPage) => string
+): Card[] {
+  return Object.values(glob).map((m) => {
+    const p = m.default;
+    return {
+      slug: p.slug,
+      eyebrow: eyebrowOf(p),
+      name: nameOf(p),
+      amount: p.stats.totalObligations,
+      obligations: formatUsdCompact(p.stats.totalObligations),
+      fyLabel: p.fyWindow.label,
+      href: `/insights/${kind}/${p.slug}/`,
+    };
+  });
+}
 
-const updated = naicsPages[0]?.updated ?? '';
+const naicsPages = import.meta.glob<{ default: InsightsPage }>('../../data/insights/naics/*.json', { eager: true });
+const agencyPages = import.meta.glob<{ default: InsightsPage }>('../../data/insights/agency/*.json', { eager: true });
+const statePages = import.meta.glob<{ default: InsightsPage }>('../../data/insights/state/*.json', { eager: true });
+
+const naicsCards = load(naicsPages, 'naics', (p) => p.h1.split(': ')[1]?.split(' — ')[0] ?? `NAICS ${p.slug}`, (p) => `NAICS ${p.slug}`).sort(
+  (a, b) => a.slug.localeCompare(b.slug)
+);
+const agencyCards = load(agencyPages, 'agency', (p) => p.h1.split(':')[0], () => 'Agency').sort((a, b) => b.amount - a.amount);
+const stateCards = load(statePages, 'state', (p) => p.h1.replace(/^Federal Contracts in /, '').split(':')[0], () => 'State').sort((a, b) =>
+  a.name.localeCompare(b.name)
+);
+
+const totalPages = naicsCards.length + agencyCards.length + stateCards.length;
+const updated = [...Object.values(agencyPages), ...Object.values(statePages), ...Object.values(naicsPages)][0]?.default.updated ?? '';
 ---
 
 <InsightsLayout
   title="GovHub Insights: Federal Contract Market Data"
-  description="Free federal contracting market intelligence from USAspending.gov data — spending by NAICS code, top vendors, and top agencies, refreshed weekly by GovHub."
+  description="Free federal contracting market intelligence from USAspending.gov — spending by NAICS code, agency, and state, with top vendors and multi-year trends."
 >
   <Breadcrumbs items={[{ name: 'Home', url: '/' }, { name: 'Insights', url: '/insights/' }]} />
 
@@ -35,27 +64,64 @@ const updated = naicsPages[0]?.updated ?? '';
     <p class="eyebrow">GovHub Insights</p>
     <h1>Federal contract market intelligence</h1>
     <p class="lede">
-      Where the federal money goes — by industry, agency, and vendor. Every chart is built from
-      public USAspending.gov award data, refreshed weekly, and free to read and embed. This is the
-      open layer beneath GovHub's proposal platform.
+      Where the federal money goes — by industry, agency, and state. Every chart is built from public
+      USAspending.gov award data, refreshed weekly, and free to read and embed. This is the open layer
+      beneath GovHub's proposal platform.
     </p>
-    {updated && <p class="updated-line">Data through {updated}</p>}
+    {updated && <p class="updated-line">{totalPages} dashboards · data through {updated}</p>}
   </header>
 
-  <section aria-labelledby="naics-heading">
-    <h2 id="naics-heading">Market dashboards by NAICS code</h2>
-    <ul class="card-grid">
-      {cards.map((c) => (
-        <li>
-          <a href={c.href}>
-            <span class="card-eyebrow">NAICS {c.slug}</span>
-            <span class="card-name">{c.name}</span>
-            {c.obligations && <span class="card-stat">{c.obligations} <small>obligated, {c.fyLabel}</small></span>}
-          </a>
-        </li>
-      ))}
-    </ul>
-  </section>
+  {agencyCards.length > 0 && (
+    <section id="agencies" aria-labelledby="agencies-heading">
+      <h2 id="agencies-heading">Federal agencies</h2>
+      <p class="section-lede">What each agency buys, who it buys from, and how its contract spending is trending.</p>
+      <ul class="card-grid">
+        {agencyCards.map((c) => (
+          <li>
+            <a href={c.href}>
+              <span class="card-name">{c.name}</span>
+              {c.obligations && <span class="card-stat">{c.obligations} <small>obligated, {c.fyLabel}</small></span>}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </section>
+  )}
+
+  {stateCards.length > 0 && (
+    <section id="states" aria-labelledby="states-heading">
+      <h2 id="states-heading">Federal contracts by state</h2>
+      <p class="section-lede">Where contract dollars land: the top buying agencies, vendors, and industries in each state.</p>
+      <ul class="card-grid compact">
+        {stateCards.map((c) => (
+          <li>
+            <a href={c.href}>
+              <span class="card-name">{c.name}</span>
+              {c.obligations && <span class="card-stat sm">{c.obligations}</span>}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </section>
+  )}
+
+  {naicsCards.length > 0 && (
+    <section id="naics" aria-labelledby="naics-heading">
+      <h2 id="naics-heading">Market dashboards by NAICS code</h2>
+      <p class="section-lede">Contract market size, top vendors, and buying agencies for a given industry code.</p>
+      <ul class="card-grid">
+        {naicsCards.map((c) => (
+          <li>
+            <a href={c.href}>
+              <span class="card-eyebrow">{c.eyebrow}</span>
+              <span class="card-name">{c.name}</span>
+              {c.obligations && <span class="card-stat">{c.obligations} <small>obligated, {c.fyLabel}</small></span>}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </section>
+  )}
 
   <section class="about">
     <h2>How this data works</h2>
@@ -78,6 +144,8 @@ const updated = naicsPages[0]?.updated ?? '';
 
 <style>
   .ins-header h1 { margin: 0.25rem 0 0.75rem; }
+  section { margin-top: 3rem; scroll-margin-top: 1.5rem; }
+  .section-lede { color: var(--fg-muted); max-width: 44rem; margin: 0.35rem 0 0; }
   .card-grid {
     list-style: none;
     padding: 0;
@@ -85,6 +153,10 @@ const updated = naicsPages[0]?.updated ?? '';
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 1rem;
+  }
+  .card-grid.compact {
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 0.75rem;
   }
   .card-grid a {
     display: flex;
@@ -98,6 +170,7 @@ const updated = naicsPages[0]?.updated ?? '';
     box-shadow: var(--gh-shadow-card);
     color: var(--fg);
   }
+  .card-grid.compact a { padding: 0.9rem 1rem; }
   .card-grid a:hover {
     text-decoration: none;
     border-color: var(--gh-teal-600);
@@ -114,10 +187,11 @@ const updated = naicsPages[0]?.updated ?? '';
   }
   .card-name {
     font-family: var(--gh-font-display);
-    font-size: 1.15rem;
+    font-size: 1.12rem;
     font-weight: 600;
     line-height: 1.25;
   }
+  .compact .card-name { font-size: 1rem; }
   .card-stat {
     margin-top: auto;
     font-family: var(--gh-font-display);
@@ -125,6 +199,7 @@ const updated = naicsPages[0]?.updated ?? '';
     font-weight: 600;
     color: var(--gh-maroon-600);
   }
+  .card-stat.sm { font-size: 1.15rem; }
   .card-stat small {
     display: block;
     font-family: var(--gh-font-body);
@@ -132,11 +207,6 @@ const updated = naicsPages[0]?.updated ?? '';
     font-weight: 400;
     color: var(--fg-muted);
   }
-  .about {
-    max-width: 46rem;
-  }
-  .about p {
-    color: var(--fg-muted);
-    font-size: 1.05rem;
-  }
+  .about { max-width: 46rem; }
+  .about p { color: var(--fg-muted); font-size: 1.05rem; }
 </style>

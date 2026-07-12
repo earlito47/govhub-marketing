@@ -1,0 +1,609 @@
+{
+  "pageType": "state",
+  "slug": "new-mexico",
+  "title": "New Mexico Federal Contracts: $13.1B in FY2026",
+  "h1": "Federal Contracts in New Mexico: Spending, Agencies & Vendors",
+  "metaDescription": "Federal agencies obligated $13.1B to contractors in New Mexico in FY2026 to date. See top buying agencies, top vendors, and industries.",
+  "updated": "2026-07-12",
+  "fyWindow": {
+    "label": "FY2026 to date",
+    "start": "2025-10-01",
+    "end": "2026-07-12"
+  },
+  "stats": {
+    "totalObligations": 13107634067.79,
+    "awardCount": 6862,
+    "yoyGrowthPct": -2.9,
+    "avgAwardSize": 1910177,
+    "smallBusinessSharePct": null
+  },
+  "charts": [
+    {
+      "id": "new-mexico-trend",
+      "type": "line",
+      "title": "Obligations by fiscal year",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "FY21",
+              11608884133.95
+            ],
+            [
+              "FY22",
+              11656946759.87
+            ],
+            [
+              "FY23",
+              12363470858.49
+            ],
+            [
+              "FY24",
+              13103413922.24
+            ],
+            [
+              "FY25",
+              13498747485.33
+            ],
+            [
+              "FY26",
+              13107634067.79
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Obligations fell 2.9% year over year, from $13.5B in FY2025 to $13.1B in FY2026 to date."
+    },
+    {
+      "id": "new-mexico-top-agencies",
+      "type": "bar",
+      "title": "Top 10 buying agencies, FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "Department of Energy",
+              9757984953.58
+            ],
+            [
+              "Department of Homeland Security",
+              1918717562.66
+            ],
+            [
+              "Department of Defense",
+              741162329.64
+            ],
+            [
+              "Department of the Interior",
+              297850544.94
+            ],
+            [
+              "Department of Health and Human Services",
+              136762420.81
+            ],
+            [
+              "Department of Agriculture",
+              130148714.9
+            ],
+            [
+              "Department of Veterans Affairs",
+              53953657.42
+            ],
+            [
+              "General Services Administration",
+              25565796.28
+            ],
+            [
+              "Department of Transportation",
+              12622412.23
+            ],
+            [
+              "Department of Labor",
+              11602858.41
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Department of Energy was the top federal buyer in New Mexico, obligating $9.8B (74.4% of the state total)."
+    },
+    {
+      "id": "new-mexico-top-vendors",
+      "type": "bar",
+      "title": "Top 10 vendors, FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "TRIAD NATIONAL SECURITY, LLC",
+              5117188851.9
+            ],
+            [
+              "NATIONAL TECHNOLOGY & ENGINEERING SOLUTIONS OF SANDIA, LLC",
+              4537005905.79
+            ],
+            [
+              "FISHER SAND & GRAVEL CO",
+              1787500000
+            ],
+            [
+              "AMES FEDERAL CONTRACTING GROUP LLC",
+              129487962.44
+            ],
+            [
+              "BFBC LLC",
+              78914116
+            ],
+            [
+              "APPLIED RESEARCH ASSOCIATES, INC.",
+              75768207.82
+            ],
+            [
+              "FLATLAND ENERGY SERVICES LLC",
+              75532921
+            ],
+            [
+              "LEPRINO FOODS DAIRY PRODUCTS CO",
+              71308505.04
+            ],
+            [
+              "BOOZ ALLEN HAMILTON INC",
+              58781710.75
+            ],
+            [
+              "AVIATION TRAINING CONSULTING, LLC",
+              58040756.31
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "TRIAD NATIONAL SECURITY, LLC led all contractors in New Mexico with $5.1B, 39.0% of the state total."
+    },
+    {
+      "id": "new-mexico-top-naics",
+      "type": "bar",
+      "title": "Top 10 industries (NAICS), FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "Facilities Support Services",
+              9699389385.4
+            ],
+            [
+              "Commercial and Institutional Building Construction",
+              1830398477.8
+            ],
+            [
+              "Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology)",
+              223437279.74
+            ],
+            [
+              "Water and Sewer Line and Related Structures Construction",
+              223159752.38
+            ],
+            [
+              "Engineering Services",
+              123969422.54
+            ],
+            [
+              "Highway, Street, and Bridge Construction",
+              98091316.57
+            ],
+            [
+              "Other Aircraft Parts and Auxiliary Equipment Manufacturing",
+              71540863.55
+            ],
+            [
+              "Cheese Manufacturing",
+              71308505.04
+            ],
+            [
+              "Temporary Help Services",
+              50064011.7
+            ],
+            [
+              "Research and Development in the Physical, Engineering, and Life Sciences (except Biotechnology)",
+              44524704.98
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Facilities Support Services was the largest industry in New Mexico, with $9.7B obligated."
+    }
+  ],
+  "tables": [
+    {
+      "title": "Top 10 vendors",
+      "columns": [
+        "Rank",
+        "Vendor",
+        "Obligations"
+      ],
+      "rows": [
+        [
+          1,
+          {
+            "text": "TRIAD NATIONAL SECURITY, LLC",
+            "href": "https://www.usaspending.gov/recipient/59ab4d30-abec-ded6-33c4-5d9f37fd2da0-C/latest/"
+          },
+          5117188851.9
+        ],
+        [
+          2,
+          {
+            "text": "NATIONAL TECHNOLOGY & ENGINEERING SOLUTIONS OF SANDIA, LLC",
+            "href": "https://www.usaspending.gov/recipient/b52d549e-73f7-a818-8c63-4a75904c9df5-C/latest/"
+          },
+          4537005905.79
+        ],
+        [
+          3,
+          {
+            "text": "FISHER SAND & GRAVEL CO",
+            "href": "https://www.usaspending.gov/recipient/fa0b2d2c-6660-adbe-e0ea-4035b15e4cbd-C/latest/"
+          },
+          1787500000
+        ],
+        [
+          4,
+          {
+            "text": "AMES FEDERAL CONTRACTING GROUP LLC",
+            "href": "https://www.usaspending.gov/recipient/fb2de91e-4643-f712-a8fb-9659424f527d-C/latest/"
+          },
+          129487962.44
+        ],
+        [
+          5,
+          {
+            "text": "BFBC LLC",
+            "href": "https://www.usaspending.gov/recipient/5b635ea2-34a3-fe02-8c33-d5cec21c3486-C/latest/"
+          },
+          78914116
+        ],
+        [
+          6,
+          {
+            "text": "APPLIED RESEARCH ASSOCIATES, INC.",
+            "href": "https://www.usaspending.gov/recipient/e4f166e8-db1c-b7aa-1fa5-f9bd4d7879f5-C/latest/"
+          },
+          75768207.82
+        ],
+        [
+          7,
+          {
+            "text": "FLATLAND ENERGY SERVICES LLC",
+            "href": "https://www.usaspending.gov/recipient/16596635-6143-006e-a244-d98b90b645d2-C/latest/"
+          },
+          75532921
+        ],
+        [
+          8,
+          {
+            "text": "LEPRINO FOODS DAIRY PRODUCTS CO",
+            "href": "https://www.usaspending.gov/recipient/7fe7157c-07fe-8d49-d54a-a415e23b9aad-C/latest/"
+          },
+          71308505.04
+        ],
+        [
+          9,
+          {
+            "text": "BOOZ ALLEN HAMILTON INC",
+            "href": "https://www.usaspending.gov/recipient/ffca72e5-fba2-798a-6969-2a6c45e9f985-C/latest/"
+          },
+          58781710.75
+        ],
+        [
+          10,
+          {
+            "text": "AVIATION TRAINING CONSULTING, LLC",
+            "href": "https://www.usaspending.gov/recipient/88b90220-e8da-9361-f245-9d8e52bb1d39-C/latest/"
+          },
+          58040756.31
+        ]
+      ]
+    },
+    {
+      "title": "Largest awards, FY2026 to date",
+      "columns": [
+        "Rank",
+        "Recipient",
+        "Award Amount",
+        "Awarding Agency"
+      ],
+      "rows": [
+        [
+          1,
+          {
+            "text": "LOCKHEED MARTIN CORP",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_DEAC0494AL85000_8900_-NONE-_-NONE-/"
+          },
+          48063737196.35,
+          "Department of Energy"
+        ],
+        [
+          2,
+          {
+            "text": "NATIONAL TECHNOLOGY & ENGINEERING SOLUTIONS OF SANDIA, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_DENA0003525_8900_-NONE-_-NONE-/"
+          },
+          42571358867.68,
+          "Department of Energy"
+        ],
+        [
+          3,
+          {
+            "text": "REGENTS OF THE UNIVERSITY OF CALIFORNIA, THE",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_DEAC3243AL00036_8900_-NONE-_-NONE-/"
+          },
+          35295925219.18,
+          "Department of Energy"
+        ],
+        [
+          4,
+          {
+            "text": "TRIAD NATIONAL SECURITY, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_89233218CNA000001_8900_-NONE-_-NONE-/"
+          },
+          35040435873.75,
+          "Department of Energy"
+        ],
+        [
+          5,
+          {
+            "text": "LOS ALAMOS NATIONAL SECURITY LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_DEAC5206NA25396_8900_-NONE-_-NONE-/"
+          },
+          27420180285.12,
+          "Department of Energy"
+        ],
+        [
+          6,
+          {
+            "text": "WASHINGTON TRU SOLUTIONS LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_DEAC2901AL66444_8900_-NONE-_-NONE-/"
+          },
+          2007900739.8,
+          "Department of Energy"
+        ],
+        [
+          7,
+          {
+            "text": "FISHER SAND & GRAVEL CO",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70B01C26F00000073_7014_70B01C26D00000012_7014/"
+          },
+          1787500000,
+          "Department of Homeland Security"
+        ],
+        [
+          8,
+          {
+            "text": "SOUTHWEST RANGE SERVICES LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W9115119C0008_9700_-NONE-_-NONE-/"
+          },
+          444557557.04,
+          "Department of Defense"
+        ],
+        [
+          9,
+          {
+            "text": "CDM CONSTRUCTORS INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_INR17PC00023_1425_-NONE-_-NONE-/"
+          },
+          357651641,
+          "Department of the Interior"
+        ],
+        [
+          10,
+          {
+            "text": "FLUOR INTERCONTINENTAL, INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA805121F0060_9700_FA805120D0004_9700/"
+          },
+          352227282.87,
+          "Department of Defense"
+        ],
+        [
+          11,
+          {
+            "text": "CREW TRAINING INTERNATIONAL, INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA489019C0003_9700_-NONE-_-NONE-/"
+          },
+          285139481.19,
+          "Department of Defense"
+        ],
+        [
+          12,
+          {
+            "text": "M1 SUPPORT SERVICES, L.P.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA489016C0012_9700_-NONE-_-NONE-/"
+          },
+          272436066.35,
+          "Department of Defense"
+        ],
+        [
+          13,
+          {
+            "text": "JACOBS PROJECT MANAGEMENT CO.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_140R4024C0013_1425_-NONE-_-NONE-/"
+          },
+          270116820.76,
+          "Department of the Interior"
+        ],
+        [
+          14,
+          {
+            "text": "NETCENTRIC TECHNOLOGY, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA940121F0011_9700_47QRAD20D1129_4732/"
+          },
+          230170142.65,
+          "Department of Defense"
+        ],
+        [
+          15,
+          {
+            "text": "BOOZ ALLEN HAMILTON INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA807520F0076_9700_FA807518D0004_9700/"
+          },
+          219124267.81,
+          "Department of Defense"
+        ],
+        [
+          16,
+          {
+            "text": "AMENTUM TECHNOLOGY, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_NNJ06HC01C_8000_-NONE-_-NONE-/"
+          },
+          178876187.69,
+          "National Aeronautics and Space Administration"
+        ],
+        [
+          17,
+          {
+            "text": "AVIATION TRAINING CONSULTING, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA862124FB003_9700_FA862115D6254_9700/"
+          },
+          107667679.8,
+          "Department of Defense"
+        ],
+        [
+          18,
+          {
+            "text": "SLSCO, LTD.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70B03C24F00001030_7014_70B01C23D00000012_7014/"
+          },
+          104353045.04,
+          "Department of Homeland Security"
+        ],
+        [
+          19,
+          {
+            "text": "HONEYWELL INTERNATIONAL INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA820624F0009_9700_SPRPA118D001U_9700/"
+          },
+          103886697.84,
+          "Department of Defense"
+        ],
+        [
+          20,
+          {
+            "text": "FLUOR FEDERAL SERVICES INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70FB8024F00000039_7022_70FB8024D00000003_7022/"
+          },
+          102520254.28,
+          "Department of Homeland Security"
+        ],
+        [
+          21,
+          {
+            "text": "BOOZ ALLEN HAMILTON INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA807525F0041_9700_FA807518D0004_9700/"
+          },
+          97000060.87,
+          "Department of Defense"
+        ],
+        [
+          22,
+          {
+            "text": "CH2M HILL - CDM PA-TAC RECOVERY SERVICES",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70FB8023F00000034_7022_70FB8018D00000003_7022/"
+          },
+          94743378.59,
+          "Department of Homeland Security"
+        ],
+        [
+          23,
+          {
+            "text": "ROCKHILL GROUP, INC., THE",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA489016C0011_9700_-NONE-_-NONE-/"
+          },
+          90282722.85,
+          "Department of Defense"
+        ],
+        [
+          24,
+          {
+            "text": "TNT PREMIER PARTNERSHIP LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W9115118C0013_9700_-NONE-_-NONE-/"
+          },
+          81372567.07,
+          "Department of Defense"
+        ],
+        [
+          25,
+          {
+            "text": "S.J. LOUIS CONSTRUCTION, INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_140R4022C0001_1425_-NONE-_-NONE-/"
+          },
+          79890509.04,
+          "Department of the Interior"
+        ]
+      ]
+    }
+  ],
+  "narrative": {
+    "intro": "In FY2026 to date, federal agencies obligated $13.1B across 6,862 contract awards. That is down 2.9% year over year. The average award size was $1.9M.",
+    "sections": [
+      {
+        "heading": "Which agencies award the most contracts in New Mexico?",
+        "body": "Department of Energy was the largest federal buyer in New Mexico, obligating $9.8B in FY2026 to date, or 74.4% of the state total."
+      },
+      {
+        "heading": "Who are the top federal contractors in New Mexico?",
+        "body": "TRIAD NATIONAL SECURITY, LLC led all contractors performing work in New Mexico with $5.1B in obligations during FY2026 to date."
+      }
+    ]
+  },
+  "faq": [
+    {
+      "q": "How much federal contract money goes to New Mexico?",
+      "a": "Federal agencies obligated $13.1B to contractors performing work in New Mexico in FY2026 to date, across 6,862 awards."
+    },
+    {
+      "q": "Which agencies award the most contracts in New Mexico?",
+      "a": "Department of Energy is the largest federal buyer in New Mexico, with $9.8B obligated in FY2026 to date."
+    },
+    {
+      "q": "Who are the largest federal contractors in New Mexico?",
+      "a": "TRIAD NATIONAL SECURITY, LLC is the largest federal contractor performing work in New Mexico by obligated dollars in FY2026 to date, with $5.1B."
+    }
+  ],
+  "related": [
+    {
+      "label": "Alabama federal contracts",
+      "href": "/insights/state/alabama/"
+    },
+    {
+      "label": "Alaska federal contracts",
+      "href": "/insights/state/alaska/"
+    },
+    {
+      "label": "Arizona federal contracts",
+      "href": "/insights/state/arizona/"
+    },
+    {
+      "label": "Arkansas federal contracts",
+      "href": "/insights/state/arkansas/"
+    },
+    {
+      "label": "California federal contracts",
+      "href": "/insights/state/california/"
+    },
+    {
+      "label": "Colorado federal contracts",
+      "href": "/insights/state/colorado/"
+    }
+  ],
+  "sources": [
+    {
+      "label": "USAspending.gov award data",
+      "href": "https://www.usaspending.gov"
+    }
+  ]
+}

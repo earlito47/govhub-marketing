@@ -1,0 +1,609 @@
+{
+  "pageType": "state",
+  "slug": "maryland",
+  "title": "Maryland Federal Contracts: $22.5B in FY2026",
+  "h1": "Federal Contracts in Maryland: Spending, Agencies & Vendors",
+  "metaDescription": "Federal agencies obligated $22.5B to contractors in Maryland in FY2026 to date. See top buying agencies, top vendors, and industries.",
+  "updated": "2026-07-12",
+  "fyWindow": {
+    "label": "FY2026 to date",
+    "start": "2025-10-01",
+    "end": "2026-07-12"
+  },
+  "stats": {
+    "totalObligations": 22459088882.75,
+    "awardCount": 63320,
+    "yoyGrowthPct": -43.4,
+    "avgAwardSize": 354692,
+    "smallBusinessSharePct": null
+  },
+  "charts": [
+    {
+      "id": "maryland-trend",
+      "type": "line",
+      "title": "Obligations by fiscal year",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "FY21",
+              39170938715.25
+            ],
+            [
+              "FY22",
+              42107052159.45
+            ],
+            [
+              "FY23",
+              41660996148.52
+            ],
+            [
+              "FY24",
+              46265303598.79
+            ],
+            [
+              "FY25",
+              39688637291.11
+            ],
+            [
+              "FY26",
+              22459088882.75
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Obligations fell 43.4% year over year, from $39.7B in FY2025 to $22.5B in FY2026 to date."
+    },
+    {
+      "id": "maryland-top-agencies",
+      "type": "bar",
+      "title": "Top 10 buying agencies, FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "Department of Defense",
+              8668209481.71
+            ],
+            [
+              "Department of Health and Human Services",
+              4441862280.09
+            ],
+            [
+              "Department of Energy",
+              1871892372.51
+            ],
+            [
+              "Department of Homeland Security",
+              1263665160.6
+            ],
+            [
+              "National Aeronautics and Space Administration",
+              1192769412.31
+            ],
+            [
+              "Department of Commerce",
+              906912901.82
+            ],
+            [
+              "Department of Transportation",
+              896393417.9
+            ],
+            [
+              "General Services Administration",
+              852027685.26
+            ],
+            [
+              "Department of Veterans Affairs",
+              474084394.85
+            ],
+            [
+              "Social Security Administration",
+              419747602.3
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Department of Defense was the top federal buyer in Maryland, obligating $8.7B (38.6% of the state total)."
+    },
+    {
+      "id": "maryland-top-vendors",
+      "type": "bar",
+      "title": "Top 10 vendors, FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "THE JOHNS HOPKINS UNIVERSITY APPLIED PHYSICS LABORATORY LLC",
+              1211446223.9
+            ],
+            [
+              "ORANO FEDERAL SERVICES LLC",
+              900000000
+            ],
+            [
+              "AMERICAN CENTRIFUGE OPERATING, LLC",
+              900000000
+            ],
+            [
+              "LEIDOS, INC.",
+              563785809.65
+            ],
+            [
+              "THE JOHNS HOPKINS MEDICAL SERVICES CORPORATION",
+              495050000
+            ],
+            [
+              "GENERAL DYNAMICS INFORMATION TECHNOLOGY, INC.",
+              455396493.86
+            ],
+            [
+              "NORTHROP GRUMMAN SYSTEMS CORPORATION",
+              451220738.28
+            ],
+            [
+              "ROHDE & SCHWARZ USA, INC.",
+              406446509.72
+            ],
+            [
+              "BAE SYSTEMS TECHNOLOGY SOLUTIONS & SERVICES INC.",
+              364628005.85
+            ],
+            [
+              "BOOZ ALLEN HAMILTON INC",
+              315797242.39
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "THE JOHNS HOPKINS UNIVERSITY APPLIED PHYSICS LABORATORY LLC led all contractors in Maryland with $1.2B, 5.4% of the state total."
+    },
+    {
+      "id": "maryland-top-naics",
+      "type": "bar",
+      "title": "Top 10 industries (NAICS), FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology)",
+              2440673904.13
+            ],
+            [
+              "Computer Systems Design Services",
+              2323680982.41
+            ],
+            [
+              "Engineering Services",
+              2290636054.33
+            ],
+            [
+              "Other Computer Related Services",
+              2276475661.03
+            ],
+            [
+              "Other Basic Inorganic Chemical Manufacturing",
+              1800028125.69
+            ],
+            [
+              "Custom Computer Programming Services",
+              1113494612.49
+            ],
+            [
+              "Administrative Management and General Management Consulting Services",
+              669958636.41
+            ],
+            [
+              "Search, Detection, Navigation, Guidance, Aeronautical, and Nautical System and Instrument Manufacturing",
+              663019020.19
+            ],
+            [
+              "Commercial and Institutional Building Construction",
+              572867599.72
+            ],
+            [
+              "Telephone Apparatus Manufacturing",
+              570354719.99
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology) was the largest industry in Maryland, with $2.4B obligated."
+    }
+  ],
+  "tables": [
+    {
+      "title": "Top 10 vendors",
+      "columns": [
+        "Rank",
+        "Vendor",
+        "Obligations"
+      ],
+      "rows": [
+        [
+          1,
+          {
+            "text": "THE JOHNS HOPKINS UNIVERSITY APPLIED PHYSICS LABORATORY LLC",
+            "href": "https://www.usaspending.gov/recipient/4eae43e5-e1f1-0e77-b2fe-09a12a9a552c-C/latest/"
+          },
+          1211446223.9
+        ],
+        [
+          2,
+          {
+            "text": "ORANO FEDERAL SERVICES LLC",
+            "href": "https://www.usaspending.gov/recipient/672134e5-1420-82f2-0227-283f296d94c6-C/latest/"
+          },
+          900000000
+        ],
+        [
+          3,
+          {
+            "text": "AMERICAN CENTRIFUGE OPERATING, LLC",
+            "href": "https://www.usaspending.gov/recipient/d527144c-7fea-82ff-aff0-e95e5fd6e488-C/latest/"
+          },
+          900000000
+        ],
+        [
+          4,
+          {
+            "text": "LEIDOS, INC.",
+            "href": "https://www.usaspending.gov/recipient/5ddb264f-234b-872c-2571-4731fde123c6-C/latest/"
+          },
+          563785809.65
+        ],
+        [
+          5,
+          {
+            "text": "THE JOHNS HOPKINS MEDICAL SERVICES CORPORATION",
+            "href": "https://www.usaspending.gov/recipient/81fdb5c6-e1df-cea3-949b-1f69661fa81b-C/latest/"
+          },
+          495050000
+        ],
+        [
+          6,
+          {
+            "text": "GENERAL DYNAMICS INFORMATION TECHNOLOGY, INC.",
+            "href": "https://www.usaspending.gov/recipient/455555be-773d-eab1-1e6b-7b94400b757e-C/latest/"
+          },
+          455396493.86
+        ],
+        [
+          7,
+          {
+            "text": "NORTHROP GRUMMAN SYSTEMS CORPORATION",
+            "href": "https://www.usaspending.gov/recipient/714e4813-7667-ae43-50eb-73dcba4aa3d9-C/latest/"
+          },
+          451220738.28
+        ],
+        [
+          8,
+          {
+            "text": "ROHDE & SCHWARZ USA, INC.",
+            "href": "https://www.usaspending.gov/recipient/088e65c2-2b0e-9b5c-d6fd-207142152cda-C/latest/"
+          },
+          406446509.72
+        ],
+        [
+          9,
+          {
+            "text": "BAE SYSTEMS TECHNOLOGY SOLUTIONS & SERVICES INC.",
+            "href": "https://www.usaspending.gov/recipient/2e141abe-fe8f-7ddc-e6a3-8bb2165836be-C/latest/"
+          },
+          364628005.85
+        ],
+        [
+          10,
+          {
+            "text": "BOOZ ALLEN HAMILTON INC",
+            "href": "https://www.usaspending.gov/recipient/ffca72e5-fba2-798a-6969-2a6c45e9f985-C/latest/"
+          },
+          315797242.39
+        ]
+      ]
+    },
+    {
+      "title": "Largest awards, FY2026 to date",
+      "columns": [
+        "Rank",
+        "Recipient",
+        "Award Amount",
+        "Awarding Agency"
+      ],
+      "rows": [
+        [
+          1,
+          {
+            "text": "LOCKHEED MARTIN CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002411C2300_9700_-NONE-_-NONE-/"
+          },
+          4980508595.15,
+          "Department of Defense"
+        ],
+        [
+          2,
+          {
+            "text": "LOCKHEED MARTIN CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002418C2301_9700_-NONE-_-NONE-/"
+          },
+          3358164279.83,
+          "Department of Defense"
+        ],
+        [
+          3,
+          {
+            "text": "ASSOCIATION OF UNIVERSITIES FOR RESEARCH IN ASTRONOMY, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_GSFC0198106DNAS526555_8000_-NONE-_-NONE-/"
+          },
+          2517978040,
+          "National Aeronautics and Space Administration"
+        ],
+        [
+          4,
+          {
+            "text": "BAE SYSTEMS TECHNOLOGY SOLUTIONS & SERVICES INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA821413C0001_9700_-NONE-_-NONE-/"
+          },
+          2263408339.73,
+          "Department of Defense"
+        ],
+        [
+          5,
+          {
+            "text": "LEIDOS BIOMEDICAL RESEARCH INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75N91020F00003_7529_75N91019D00024_7529/"
+          },
+          1775380496.13,
+          "Department of Health and Human Services"
+        ],
+        [
+          6,
+          {
+            "text": "NORTHROP GRUMMAN SYSTEMS CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA861517C6047_9700_-NONE-_-NONE-/"
+          },
+          1730517759.3,
+          "Department of Defense"
+        ],
+        [
+          7,
+          {
+            "text": "LOCKHEED MARTIN CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002418C2300_9700_-NONE-_-NONE-/"
+          },
+          1629900048.52,
+          "Department of Defense"
+        ],
+        [
+          8,
+          {
+            "text": "VERTEX AEROSPACE LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N6852022F7005_9700_N6134019D1010_9700/"
+          },
+          1617638447.88,
+          "Department of Defense"
+        ],
+        [
+          9,
+          {
+            "text": "ASSOCIATION OF UNIVERSITIES FOR RESEARCH IN ASTRONOMY, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_NAS503127_8000_-NONE-_-NONE-/"
+          },
+          1549311664.49,
+          "National Aeronautics and Space Administration"
+        ],
+        [
+          10,
+          {
+            "text": "NORTHROP GRUMMAN SYSTEMS CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_M6785419C0043_9700_-NONE-_-NONE-/"
+          },
+          1511353721.66,
+          "Department of Defense"
+        ],
+        [
+          11,
+          {
+            "text": "THE JOHNS HOPKINS MEDICAL SERVICES CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_HT940223C0006_9700_-NONE-_-NONE-/"
+          },
+          1480800000,
+          "Department of Defense"
+        ],
+        [
+          12,
+          {
+            "text": "NORTHROP GRUMMAN SYSTEMS CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002420C5519_9700_-NONE-_-NONE-/"
+          },
+          1409895949.82,
+          "Department of Defense"
+        ],
+        [
+          13,
+          {
+            "text": "THE JOHNS HOPKINS UNIVERSITY APPLIED PHYSICS LABORATORY LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_80MSFC22F0048_8000_80MSFC20D0004_8000/"
+          },
+          1334597995,
+          "National Aeronautics and Space Administration"
+        ],
+        [
+          14,
+          {
+            "text": "LEIDOS, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_28321322FDS030130_2800_SS001760016_2800/"
+          },
+          1063049268.31,
+          "Social Security Administration"
+        ],
+        [
+          15,
+          {
+            "text": "AMERICAN CENTRIFUGE OPERATING, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_89243226FNE400212_8900_89243225DNE000022_8900/"
+          },
+          900000000,
+          "Department of Energy"
+        ],
+        [
+          16,
+          {
+            "text": "ORANO FEDERAL SERVICES LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_89243226FNE400214_8900_89243225DNE000031_8900/"
+          },
+          900000000,
+          "Department of Energy"
+        ],
+        [
+          17,
+          {
+            "text": "THE JOHNS HOPKINS UNIVERSITY APPLIED PHYSICS LABORATORY LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_NNN10AA08T_8000_NNN06AA01C_8000/"
+          },
+          894500235,
+          "National Aeronautics and Space Administration"
+        ],
+        [
+          18,
+          {
+            "text": "LEIDOS, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_693KA721C00014_6920_-NONE-_-NONE-/"
+          },
+          890859511.57,
+          "Department of Transportation"
+        ],
+        [
+          19,
+          {
+            "text": "EMERGENT PRODUCT DEVELOPMENT GAITHERSBURG INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75A50119C00071_7505_-NONE-_-NONE-/"
+          },
+          857637641.46,
+          "Department of Health and Human Services"
+        ],
+        [
+          20,
+          {
+            "text": "GENERAL DYNAMICS INFORMATION TECHNOLOGY, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_47QFCA21F0051_4732_GS00Q14OADU317_4732/"
+          },
+          842767636.41,
+          "General Services Administration"
+        ],
+        [
+          21,
+          {
+            "text": "MANTECH ADVANCED SYSTEMS INTERNATIONAL, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_47QFCA22F0056_4732_47QFCA22D0163_4732/"
+          },
+          781847944.51,
+          "General Services Administration"
+        ],
+        [
+          22,
+          {
+            "text": "LEIDOS, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_HC102820F0032_9700_HC102820D0001_9700/"
+          },
+          773457384.17,
+          "Department of Defense"
+        ],
+        [
+          23,
+          {
+            "text": "HENSEL PHELPS CONSTRUCTION CO",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75N99022F00003_7529_75N99019D00016_7529/"
+          },
+          760083862,
+          "Department of Health and Human Services"
+        ],
+        [
+          24,
+          {
+            "text": "HENSEL PHELPS CONSTRUCTION CO",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W912DR19C0013_9700_-NONE-_-NONE-/"
+          },
+          711803054.9,
+          "Department of Defense"
+        ],
+        [
+          25,
+          {
+            "text": "BALFOUR BEATTY CONSTRUCTION, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W912DR22C0012_9700_-NONE-_-NONE-/"
+          },
+          701639637.13,
+          "Department of Defense"
+        ]
+      ]
+    }
+  ],
+  "narrative": {
+    "intro": "In FY2026 to date, federal agencies obligated $22.5B across 63,320 contract awards. That is down 43.4% year over year. The average award size was $355K.",
+    "sections": [
+      {
+        "heading": "Which agencies award the most contracts in Maryland?",
+        "body": "Department of Defense was the largest federal buyer in Maryland, obligating $8.7B in FY2026 to date, or 38.6% of the state total."
+      },
+      {
+        "heading": "Who are the top federal contractors in Maryland?",
+        "body": "THE JOHNS HOPKINS UNIVERSITY APPLIED PHYSICS LABORATORY LLC led all contractors performing work in Maryland with $1.2B in obligations during FY2026 to date."
+      }
+    ]
+  },
+  "faq": [
+    {
+      "q": "How much federal contract money goes to Maryland?",
+      "a": "Federal agencies obligated $22.5B to contractors performing work in Maryland in FY2026 to date, across 63,320 awards."
+    },
+    {
+      "q": "Which agencies award the most contracts in Maryland?",
+      "a": "Department of Defense is the largest federal buyer in Maryland, with $8.7B obligated in FY2026 to date."
+    },
+    {
+      "q": "Who are the largest federal contractors in Maryland?",
+      "a": "THE JOHNS HOPKINS UNIVERSITY APPLIED PHYSICS LABORATORY LLC is the largest federal contractor performing work in Maryland by obligated dollars in FY2026 to date, with $1.2B."
+    }
+  ],
+  "related": [
+    {
+      "label": "Alabama federal contracts",
+      "href": "/insights/state/alabama/"
+    },
+    {
+      "label": "Alaska federal contracts",
+      "href": "/insights/state/alaska/"
+    },
+    {
+      "label": "Arizona federal contracts",
+      "href": "/insights/state/arizona/"
+    },
+    {
+      "label": "Arkansas federal contracts",
+      "href": "/insights/state/arkansas/"
+    },
+    {
+      "label": "California federal contracts",
+      "href": "/insights/state/california/"
+    },
+    {
+      "label": "Colorado federal contracts",
+      "href": "/insights/state/colorado/"
+    }
+  ],
+  "sources": [
+    {
+      "label": "USAspending.gov award data",
+      "href": "https://www.usaspending.gov"
+    }
+  ]
+}

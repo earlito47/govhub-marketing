@@ -1,0 +1,609 @@
+{
+  "pageType": "state",
+  "slug": "minnesota",
+  "title": "Minnesota Federal Contracts: $1.3B in FY2026",
+  "h1": "Federal Contracts in Minnesota: Spending, Agencies & Vendors",
+  "metaDescription": "Federal agencies obligated $1.3B to contractors in Minnesota in FY2026 to date. See top buying agencies, top vendors, and industries.",
+  "updated": "2026-07-12",
+  "fyWindow": {
+    "label": "FY2026 to date",
+    "start": "2025-10-01",
+    "end": "2026-07-12"
+  },
+  "stats": {
+    "totalObligations": 1305716487.15,
+    "awardCount": 21321,
+    "yoyGrowthPct": -47.5,
+    "avgAwardSize": 61241,
+    "smallBusinessSharePct": null
+  },
+  "charts": [
+    {
+      "id": "minnesota-trend",
+      "type": "line",
+      "title": "Obligations by fiscal year",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "FY21",
+              2628503977.66
+            ],
+            [
+              "FY22",
+              2435903705.77
+            ],
+            [
+              "FY23",
+              2726224048.56
+            ],
+            [
+              "FY24",
+              2970871069.69
+            ],
+            [
+              "FY25",
+              2488654015
+            ],
+            [
+              "FY26",
+              1305716487.15
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Obligations fell 47.5% year over year, from $2.5B in FY2025 to $1.3B in FY2026 to date."
+    },
+    {
+      "id": "minnesota-top-agencies",
+      "type": "bar",
+      "title": "Top 10 buying agencies, FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "Department of Defense",
+              419096949.71
+            ],
+            [
+              "Department of Agriculture",
+              221547079.15
+            ],
+            [
+              "Department of Veterans Affairs",
+              218561009.37
+            ],
+            [
+              "General Services Administration",
+              139156121.07
+            ],
+            [
+              "Department of Health and Human Services",
+              110843037.91
+            ],
+            [
+              "Department of Justice",
+              61596678.08
+            ],
+            [
+              "Department of Homeland Security",
+              33153228.08
+            ],
+            [
+              "Department of the Interior",
+              30467368.85
+            ],
+            [
+              "Social Security Administration",
+              17639052.92
+            ],
+            [
+              "Environmental Protection Agency",
+              10184405.82
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Department of Defense was the top federal buyer in Minnesota, obligating $419M (32.1% of the state total)."
+    },
+    {
+      "id": "minnesota-top-vendors",
+      "type": "bar",
+      "title": "Top 10 vendors, FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "NORTHROP GRUMMAN SYSTEMS CORPORATION",
+              160257817.14
+            ],
+            [
+              "MCGOUGH CONSTRUCTION CO., LLC",
+              106162917
+            ],
+            [
+              "BAE SYSTEMS LAND & ARMAMENTS L.P.",
+              71586726.66
+            ],
+            [
+              "AGILITI HEALTH INC",
+              61357127.18
+            ],
+            [
+              "CUMMINS POWER GENERATION INC.",
+              51540153.92
+            ],
+            [
+              "ASSOCIATED MILK PRODUCERS INC",
+              48280492.32
+            ],
+            [
+              "JENNIE-O TURKEY STORE INC",
+              39676304.22
+            ],
+            [
+              "BONGARDS CREAMERIES",
+              31684572.35
+            ],
+            [
+              "HONEYWELL INTERNATIONAL INC.",
+              30807000
+            ],
+            [
+              "WESCOTT AGRI PRODUCTS, INC",
+              28558862.36
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "NORTHROP GRUMMAN SYSTEMS CORPORATION led all contractors in Minnesota with $160M, 12.3% of the state total."
+    },
+    {
+      "id": "minnesota-top-naics",
+      "type": "bar",
+      "title": "Top 10 industries (NAICS), FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "Ammunition (except Small Arms) Manufacturing",
+              160522871.44
+            ],
+            [
+              "Commercial and Institutional Building Construction",
+              123818255.06
+            ],
+            [
+              "Cheese Manufacturing",
+              85841680.43
+            ],
+            [
+              "Electronic and Precision Equipment Repair and Maintenance",
+              61732332.18
+            ],
+            [
+              "Engineering Services",
+              51357084.12
+            ],
+            [
+              "Other Aircraft Parts and Auxiliary Equipment Manufacturing",
+              47096165.63
+            ],
+            [
+              "Electromedical and Electrotherapeutic Apparatus Manufacturing",
+              41609439.87
+            ],
+            [
+              "Poultry Processing",
+              40187284.22
+            ],
+            [
+              "Other Heavy and Civil Engineering Construction",
+              37077571.62
+            ],
+            [
+              "Motor and Generator Manufacturing",
+              34443467.42
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Ammunition (except Small Arms) Manufacturing was the largest industry in Minnesota, with $161M obligated."
+    }
+  ],
+  "tables": [
+    {
+      "title": "Top 10 vendors",
+      "columns": [
+        "Rank",
+        "Vendor",
+        "Obligations"
+      ],
+      "rows": [
+        [
+          1,
+          {
+            "text": "NORTHROP GRUMMAN SYSTEMS CORPORATION",
+            "href": "https://www.usaspending.gov/recipient/a7284824-a186-1d38-f257-0fd2f2e09ff5-C/latest/"
+          },
+          160257817.14
+        ],
+        [
+          2,
+          {
+            "text": "MCGOUGH CONSTRUCTION CO., LLC",
+            "href": "https://www.usaspending.gov/recipient/9e53bac7-498b-1cc1-0485-3b8780a6ef1c-C/latest/"
+          },
+          106162917
+        ],
+        [
+          3,
+          {
+            "text": "BAE SYSTEMS LAND & ARMAMENTS L.P.",
+            "href": "https://www.usaspending.gov/recipient/b5ca9859-c0d6-48c3-60a8-d8ccf2343a45-C/latest/"
+          },
+          71586726.66
+        ],
+        [
+          4,
+          {
+            "text": "AGILITI HEALTH INC",
+            "href": "https://www.usaspending.gov/recipient/4a29d26a-81e5-2457-0c71-72f8353fd712-C/latest/"
+          },
+          61357127.18
+        ],
+        [
+          5,
+          {
+            "text": "CUMMINS POWER GENERATION INC.",
+            "href": "https://www.usaspending.gov/recipient/9e483c5d-7352-28b3-89dd-33052a121331-C/latest/"
+          },
+          51540153.92
+        ],
+        [
+          6,
+          {
+            "text": "ASSOCIATED MILK PRODUCERS INC",
+            "href": "https://www.usaspending.gov/recipient/a9414861-272b-30e3-68c7-b2551f46810a-C/latest/"
+          },
+          48280492.32
+        ],
+        [
+          7,
+          {
+            "text": "JENNIE-O TURKEY STORE INC",
+            "href": "https://www.usaspending.gov/recipient/959e51f8-6ee6-b66f-eaa3-fe8dfe13afbb-C/latest/"
+          },
+          39676304.22
+        ],
+        [
+          8,
+          {
+            "text": "BONGARDS CREAMERIES",
+            "href": "https://www.usaspending.gov/recipient/52c30402-8c7a-bfb2-3d4f-40a7b1ef4d90-C/latest/"
+          },
+          31684572.35
+        ],
+        [
+          9,
+          {
+            "text": "HONEYWELL INTERNATIONAL INC.",
+            "href": "https://www.usaspending.gov/recipient/62c486be-b101-ea2f-e0c1-4f3bf00a305b-C/latest/"
+          },
+          30807000
+        ],
+        [
+          10,
+          {
+            "text": "WESCOTT AGRI PRODUCTS, INC",
+            "href": "https://www.usaspending.gov/recipient/c69a8aab-6413-1451-2bde-11c2f2b1d632-C/latest/"
+          },
+          28558862.36
+        ]
+      ]
+    },
+    {
+      "title": "Largest awards, FY2026 to date",
+      "columns": [
+        "Rank",
+        "Recipient",
+        "Award Amount",
+        "Awarding Agency"
+      ],
+      "rows": [
+        [
+          1,
+          {
+            "text": "UNITEDHEALTH MILITARY & VETERANS SERVICES, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_HT940212C0001_9700_-NONE-_-NONE-/"
+          },
+          13145560374.49,
+          "Department of Defense"
+        ],
+        [
+          2,
+          {
+            "text": "NORTHROP GRUMMAN SYSTEMS CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W15QKN13C0074_9700_-NONE-_-NONE-/"
+          },
+          1490942764.8,
+          "Department of Defense"
+        ],
+        [
+          3,
+          {
+            "text": "BAE SYSTEMS LAND & ARMAMENTS L.P.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002420C5380_9700_-NONE-_-NONE-/"
+          },
+          589010821.02,
+          "Department of Defense"
+        ],
+        [
+          4,
+          {
+            "text": "AGILITI HEALTH INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75A50323C00003_7505_-NONE-_-NONE-/"
+          },
+          382619955.66,
+          "Department of Health and Human Services"
+        ],
+        [
+          5,
+          {
+            "text": "NORTHROP GRUMMAN SYSTEMS CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W52P1J22C0024_9700_-NONE-_-NONE-/"
+          },
+          377728772.42,
+          "Department of Defense"
+        ],
+        [
+          6,
+          {
+            "text": "NORTHROP GRUMMAN SYSTEMS CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W519TC24F0158_9700_W519TC24D0007_9700/"
+          },
+          273530052.49,
+          "Department of Defense"
+        ],
+        [
+          7,
+          {
+            "text": "BAE SYSTEMS LAND & ARMAMENTS L.P.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0017419C0004_9700_-NONE-_-NONE-/"
+          },
+          247723584.1,
+          "Department of Defense"
+        ],
+        [
+          8,
+          {
+            "text": "ALLIANT TECHSYSTEMS OPERATIONS LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W15QKN15C0066_9700_-NONE-_-NONE-/"
+          },
+          223619804.39,
+          "Department of Defense"
+        ],
+        [
+          9,
+          {
+            "text": "ALLIANT TECHSYSTEMS OPERATIONS LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W52P1J17C0025_9700_-NONE-_-NONE-/"
+          },
+          222947801.93,
+          "Department of Defense"
+        ],
+        [
+          10,
+          {
+            "text": "BAE SYSTEMS LAND & ARMAMENTS L.P.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002412C5311_9700_-NONE-_-NONE-/"
+          },
+          202998675.31,
+          "Department of Defense"
+        ],
+        [
+          11,
+          {
+            "text": "BAE SYSTEMS LAND & ARMAMENTS L.P.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002413C5325_9700_-NONE-_-NONE-/"
+          },
+          176289537.88,
+          "Department of Defense"
+        ],
+        [
+          12,
+          {
+            "text": "NORTHROP GRUMMAN SYSTEMS CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W15QKN26F0108_9700_W15QKN26D0003_9700/"
+          },
+          159161173.44,
+          "Department of Defense"
+        ],
+        [
+          13,
+          {
+            "text": "BAE SYSTEMS LAND & ARMAMENTS L.P.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002421C5393_9700_-NONE-_-NONE-/"
+          },
+          157503586.02,
+          "Department of Defense"
+        ],
+        [
+          14,
+          {
+            "text": "BAE SYSTEMS LAND & ARMAMENTS L.P.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002424C5324_9700_-NONE-_-NONE-/"
+          },
+          147017092,
+          "Department of Defense"
+        ],
+        [
+          15,
+          {
+            "text": "NORTHROP GRUMMAN SYSTEMS CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W52P1J18F0332_9700_W52P1J18D0092_9700/"
+          },
+          130975569.2,
+          "Department of Defense"
+        ],
+        [
+          16,
+          {
+            "text": "BAE SYSTEMS LAND & ARMAMENTS L.P.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002420C5300_9700_-NONE-_-NONE-/"
+          },
+          109973746.99,
+          "Department of Defense"
+        ],
+        [
+          17,
+          {
+            "text": "MCGOUGH CONSTRUCTION CO., LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_47PB5226C0001_4740_-NONE-_-NONE-/"
+          },
+          106162917,
+          "General Services Administration"
+        ],
+        [
+          18,
+          {
+            "text": "NORTHROP GRUMMAN SYSTEMS CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W519TC25F0378_9700_W519TC24D0007_9700/"
+          },
+          99889779.26,
+          "Department of Defense"
+        ],
+        [
+          19,
+          {
+            "text": "BAE SYSTEMS LAND & ARMAMENTS L.P.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002421C4106_9700_-NONE-_-NONE-/"
+          },
+          85214571.25,
+          "Department of Defense"
+        ],
+        [
+          20,
+          {
+            "text": "GENERAL DYNAMICS MISSION SYSTEMS, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA823217C0001_9700_-NONE-_-NONE-/"
+          },
+          73643094.82,
+          "Department of Defense"
+        ],
+        [
+          21,
+          {
+            "text": "NORTHROP GRUMMAN SYSTEMS CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W52P1J19F0433_9700_W52P1J18D0092_9700/"
+          },
+          71003083.68,
+          "Department of Defense"
+        ],
+        [
+          22,
+          {
+            "text": "NORTHROP GRUMMAN SYSTEMS CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W15QKN24C0041_9700_-NONE-_-NONE-/"
+          },
+          66327309.6,
+          "Department of Defense"
+        ],
+        [
+          23,
+          {
+            "text": "NORTHROP GRUMMAN SYSTEMS CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W519TC24F0190_9700_W519TC24D0007_9700/"
+          },
+          62279414.74,
+          "Department of Defense"
+        ],
+        [
+          24,
+          {
+            "text": "EDUCATION & TRAINING RESOURCES LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_1605JW21C0006_1605_-NONE-_-NONE-/"
+          },
+          56424612.38,
+          "Department of Labor"
+        ],
+        [
+          25,
+          {
+            "text": "BAE SYSTEMS LAND & ARMAMENTS L.P.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W15QKN23C0001_9700_-NONE-_-NONE-/"
+          },
+          51097742,
+          "Department of Defense"
+        ]
+      ]
+    }
+  ],
+  "narrative": {
+    "intro": "In FY2026 to date, federal agencies obligated $1.3B across 21,321 contract awards. That is down 47.5% year over year. The average award size was $61.2K.",
+    "sections": [
+      {
+        "heading": "Which agencies award the most contracts in Minnesota?",
+        "body": "Department of Defense was the largest federal buyer in Minnesota, obligating $419M in FY2026 to date, or 32.1% of the state total."
+      },
+      {
+        "heading": "Who are the top federal contractors in Minnesota?",
+        "body": "NORTHROP GRUMMAN SYSTEMS CORPORATION led all contractors performing work in Minnesota with $160M in obligations during FY2026 to date."
+      }
+    ]
+  },
+  "faq": [
+    {
+      "q": "How much federal contract money goes to Minnesota?",
+      "a": "Federal agencies obligated $1.3B to contractors performing work in Minnesota in FY2026 to date, across 21,321 awards."
+    },
+    {
+      "q": "Which agencies award the most contracts in Minnesota?",
+      "a": "Department of Defense is the largest federal buyer in Minnesota, with $419M obligated in FY2026 to date."
+    },
+    {
+      "q": "Who are the largest federal contractors in Minnesota?",
+      "a": "NORTHROP GRUMMAN SYSTEMS CORPORATION is the largest federal contractor performing work in Minnesota by obligated dollars in FY2026 to date, with $160M."
+    }
+  ],
+  "related": [
+    {
+      "label": "Alabama federal contracts",
+      "href": "/insights/state/alabama/"
+    },
+    {
+      "label": "Alaska federal contracts",
+      "href": "/insights/state/alaska/"
+    },
+    {
+      "label": "Arizona federal contracts",
+      "href": "/insights/state/arizona/"
+    },
+    {
+      "label": "Arkansas federal contracts",
+      "href": "/insights/state/arkansas/"
+    },
+    {
+      "label": "California federal contracts",
+      "href": "/insights/state/california/"
+    },
+    {
+      "label": "Colorado federal contracts",
+      "href": "/insights/state/colorado/"
+    }
+  ],
+  "sources": [
+    {
+      "label": "USAspending.gov award data",
+      "href": "https://www.usaspending.gov"
+    }
+  ]
+}

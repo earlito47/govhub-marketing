@@ -1,0 +1,609 @@
+{
+  "pageType": "state",
+  "slug": "washington",
+  "title": "Washington Federal Contracts: $12.1B in FY2026",
+  "h1": "Federal Contracts in Washington: Spending, Agencies & Vendors",
+  "metaDescription": "Federal agencies obligated $12.1B to contractors in Washington in FY2026 to date. See top buying agencies, top vendors, and industries.",
+  "updated": "2026-07-12",
+  "fyWindow": {
+    "label": "FY2026 to date",
+    "start": "2025-10-01",
+    "end": "2026-07-12"
+  },
+  "stats": {
+    "totalObligations": 12112619370.62,
+    "awardCount": 71223,
+    "yoyGrowthPct": -23.4,
+    "avgAwardSize": 170066,
+    "smallBusinessSharePct": null
+  },
+  "charts": [
+    {
+      "id": "washington-trend",
+      "type": "line",
+      "title": "Obligations by fiscal year",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "FY21",
+              15601006891.87
+            ],
+            [
+              "FY22",
+              12073161380.9
+            ],
+            [
+              "FY23",
+              12980649603.75
+            ],
+            [
+              "FY24",
+              15355441861.51
+            ],
+            [
+              "FY25",
+              15816410484.44
+            ],
+            [
+              "FY26",
+              12112619370.62
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Obligations fell 23.4% year over year, from $15.8B in FY2025 to $12.1B in FY2026 to date."
+    },
+    {
+      "id": "washington-top-agencies",
+      "type": "bar",
+      "title": "Top 10 buying agencies, FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "Department of Defense",
+              8171639880.11
+            ],
+            [
+              "Department of Energy",
+              2821345787.77
+            ],
+            [
+              "Department of Veterans Affairs",
+              243936416.44
+            ],
+            [
+              "Department of Agriculture",
+              241353712.5
+            ],
+            [
+              "Department of Homeland Security",
+              195301264.41
+            ],
+            [
+              "Department of the Interior",
+              80957772.67
+            ],
+            [
+              "Department of Health and Human Services",
+              70787075.33
+            ],
+            [
+              "General Services Administration",
+              69869003.93
+            ],
+            [
+              "Department of Transportation",
+              64985715.46
+            ],
+            [
+              "Department of Commerce",
+              62941853.36
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Department of Defense was the top federal buyer in Washington, obligating $8.2B (67.5% of the state total)."
+    },
+    {
+      "id": "washington-top-vendors",
+      "type": "bar",
+      "title": "Top 10 vendors, FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "THE BOEING COMPANY",
+              5808641460.16
+            ],
+            [
+              "BATTELLE MEMORIAL INSTITUTE",
+              1089584906.23
+            ],
+            [
+              "BECHTEL NATIONAL, INC.",
+              627000000
+            ],
+            [
+              "HANFORD TANK WASTE OPERATIONS & CLOSURE, LLC",
+              596274958.82
+            ],
+            [
+              "CENTRAL PLATEAU CLEANUP COMPANY, LLC",
+              382086776.02
+            ],
+            [
+              "KIEWIT-ALBERICI SIOP MACC AJV",
+              227000000
+            ],
+            [
+              "PACMED CLINICS",
+              179864465.82
+            ],
+            [
+              "FLATIRON-AECON JOINT VENTURE",
+              175187169.69
+            ],
+            [
+              "SKOOKUM EDUCATIONAL PROGRAMS",
+              127653235.96
+            ],
+            [
+              "THE BOEING COMPANY",
+              117281878.22
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "THE BOEING COMPANY led all contractors in Washington with $5.8B, 48.0% of the state total."
+    },
+    {
+      "id": "washington-top-naics",
+      "type": "bar",
+      "title": "Top 10 industries (NAICS), FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "Aircraft Manufacturing",
+              5824043488
+            ],
+            [
+              "Research and Development in the Physical, Engineering, and Life Sciences",
+              1089584906.23
+            ],
+            [
+              "Unknown",
+              627000000
+            ],
+            [
+              "Hazardous Waste Treatment and Disposal",
+              602580244.7
+            ],
+            [
+              "Other Heavy and Civil Engineering Construction",
+              519060927.76
+            ],
+            [
+              "Remediation Services",
+              513309917.2
+            ],
+            [
+              "Commercial and Institutional Building Construction",
+              332393068.1
+            ],
+            [
+              "Ship Building and Repairing",
+              227154307.03
+            ],
+            [
+              "Facilities Support Services",
+              192857641.36
+            ],
+            [
+              "Direct Health and Medical Insurance Carriers",
+              179864465.82
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Aircraft Manufacturing was the largest industry in Washington, with $5.8B obligated."
+    }
+  ],
+  "tables": [
+    {
+      "title": "Top 10 vendors",
+      "columns": [
+        "Rank",
+        "Vendor",
+        "Obligations"
+      ],
+      "rows": [
+        [
+          1,
+          {
+            "text": "THE BOEING COMPANY",
+            "href": "https://www.usaspending.gov/recipient/22d282c6-4508-7d30-97f1-7401ea73b12a-C/latest/"
+          },
+          5808641460.16
+        ],
+        [
+          2,
+          {
+            "text": "BATTELLE MEMORIAL INSTITUTE",
+            "href": "https://www.usaspending.gov/recipient/74457bb7-b18d-9762-896e-e575e7a4ed82-C/latest/"
+          },
+          1089584906.23
+        ],
+        [
+          3,
+          {
+            "text": "BECHTEL NATIONAL, INC.",
+            "href": "https://www.usaspending.gov/recipient/b6a8698b-7697-5e4e-ef6c-df5f47158506-C/latest/"
+          },
+          627000000
+        ],
+        [
+          4,
+          {
+            "text": "HANFORD TANK WASTE OPERATIONS & CLOSURE, LLC",
+            "href": "https://www.usaspending.gov/recipient/b8db5aa0-8953-edc9-33e9-0ba2f6d5563f-C/latest/"
+          },
+          596274958.82
+        ],
+        [
+          5,
+          {
+            "text": "CENTRAL PLATEAU CLEANUP COMPANY, LLC",
+            "href": "https://www.usaspending.gov/recipient/dc1dd035-91a6-af48-2614-9e83723ee374-C/latest/"
+          },
+          382086776.02
+        ],
+        [
+          6,
+          {
+            "text": "KIEWIT-ALBERICI SIOP MACC AJV",
+            "href": "https://www.usaspending.gov/recipient/40d8ab7c-f234-91ff-7a7d-fc4a7a5d8f94-C/latest/"
+          },
+          227000000
+        ],
+        [
+          7,
+          {
+            "text": "PACMED CLINICS",
+            "href": "https://www.usaspending.gov/recipient/1805cb44-84c3-5dde-569d-2017ba1f0fa8-C/latest/"
+          },
+          179864465.82
+        ],
+        [
+          8,
+          {
+            "text": "FLATIRON-AECON JOINT VENTURE",
+            "href": "https://www.usaspending.gov/recipient/cfeaea2b-6091-48d2-cbfc-592dc2a534f9-C/latest/"
+          },
+          175187169.69
+        ],
+        [
+          9,
+          {
+            "text": "SKOOKUM EDUCATIONAL PROGRAMS",
+            "href": "https://www.usaspending.gov/recipient/e41e79be-776c-8091-7dc2-b77c7f687af0-C/latest/"
+          },
+          127653235.96
+        ],
+        [
+          10,
+          {
+            "text": "THE BOEING COMPANY",
+            "href": "https://www.usaspending.gov/recipient/9ab85632-42cc-5fa4-2a9c-d734034ddd33-C/latest/"
+          },
+          117281878.22
+        ]
+      ]
+    },
+    {
+      "title": "Largest awards, FY2026 to date",
+      "columns": [
+        "Rank",
+        "Recipient",
+        "Award Amount",
+        "Awarding Agency"
+      ],
+      "rows": [
+        [
+          1,
+          {
+            "text": "THE BOEING COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA862511C6600_9700_-NONE-_-NONE-/"
+          },
+          31972918249.03,
+          "Department of Defense"
+        ],
+        [
+          2,
+          {
+            "text": "BATTELLE MEMORIAL INSTITUTE",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_DEAC0576RL01830_8900_-NONE-_-NONE-/"
+          },
+          30543975956.39,
+          "Department of Energy"
+        ],
+        [
+          3,
+          {
+            "text": "THE BOEING COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0001914C0067_9700_-NONE-_-NONE-/"
+          },
+          18111838529.78,
+          "Department of Defense"
+        ],
+        [
+          4,
+          {
+            "text": "BECHTEL NATIONAL, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_DEAC2701RV14136_8900_-NONE-_-NONE-/"
+          },
+          17319586105.74,
+          "Department of Energy"
+        ],
+        [
+          5,
+          {
+            "text": "WASHINGTON RIVER PROTECTION SOLUTIONS LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_DEAC2708RV14800_8900_-NONE-_-NONE-/"
+          },
+          10572204771.54,
+          "Department of Energy"
+        ],
+        [
+          6,
+          {
+            "text": "THE BOEING COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0001912C0112_9700_-NONE-_-NONE-/"
+          },
+          5544117634.23,
+          "Department of Defense"
+        ],
+        [
+          7,
+          {
+            "text": "THE BOEING COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA862516C6599_9700_-NONE-_-NONE-/"
+          },
+          3954807167.81,
+          "Department of Defense"
+        ],
+        [
+          8,
+          {
+            "text": "THE BOEING COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0001924C0025_9700_-NONE-_-NONE-/"
+          },
+          2739718834,
+          "Department of Defense"
+        ],
+        [
+          9,
+          {
+            "text": "THE BOEING COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA873023C0025_9700_-NONE-_-NONE-/"
+          },
+          2733467927,
+          "Department of Defense"
+        ],
+        [
+          10,
+          {
+            "text": "CENTRAL PLATEAU CLEANUP COMPANY, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_89303921FEM400037_8900_89303320DEM000030_8900/"
+          },
+          1701793004.73,
+          "Department of Energy"
+        ],
+        [
+          11,
+          {
+            "text": "THE BOEING COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA860926FB002_9700_FA860919D0007_9700/"
+          },
+          1484114000,
+          "Department of Defense"
+        ],
+        [
+          12,
+          {
+            "text": "HANFORD TANK WASTE OPERATIONS & CLOSURE, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_89303925FEM400064_8900_89303324DEM000096_8900/"
+          },
+          1385702409.03,
+          "Department of Energy"
+        ],
+        [
+          13,
+          {
+            "text": "THE BOEING COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA860918F0006_9700_FA860918G0002_9700/"
+          },
+          1305571332,
+          "Department of Defense"
+        ],
+        [
+          14,
+          {
+            "text": "CENTRAL PLATEAU CLEANUP COMPANY, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_89303924FEM400054_8900_89303320DEM000030_8900/"
+          },
+          945862221.97,
+          "Department of Energy"
+        ],
+        [
+          15,
+          {
+            "text": "THE BOEING COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA860922F0001_9700_FA860919D0007_9700/"
+          },
+          861170193,
+          "Department of Defense"
+        ],
+        [
+          16,
+          {
+            "text": "PACMED CLINICS",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_HT940223C0008_9700_-NONE-_-NONE-/"
+          },
+          539264465.82,
+          "Department of Defense"
+        ],
+        [
+          17,
+          {
+            "text": "HANFORD LABORATORY MANAGEMENT AND INTEGRATION LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_89303320CEM000075_8900_-NONE-_-NONE-/"
+          },
+          523182823.31,
+          "Department of Energy"
+        ],
+        [
+          18,
+          {
+            "text": "THE BOEING COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0001920F0647_9700_N0001916G0001_9700/"
+          },
+          497182185,
+          "Department of Defense"
+        ],
+        [
+          19,
+          {
+            "text": "KIEWIT-ALBERICI SIOP MACC AJV",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N4425525F0229_9700_N6274222D1313_9700/"
+          },
+          452700000,
+          "Department of Defense"
+        ],
+        [
+          20,
+          {
+            "text": "VIGOR MARINE LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002419C4447_9700_-NONE-_-NONE-/"
+          },
+          443725248.51,
+          "Department of Defense"
+        ],
+        [
+          21,
+          {
+            "text": "THE BOEING COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_2005_9700_N0001916G0001_9700/"
+          },
+          353694495.25,
+          "Department of Defense"
+        ],
+        [
+          22,
+          {
+            "text": "VIGOR MARINE LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002425C4402_9700_-NONE-_-NONE-/"
+          },
+          274774398,
+          "Department of Defense"
+        ],
+        [
+          23,
+          {
+            "text": "WSM PACIFIC SIOP, A JOINT VENTURE",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N4425522F4035_9700_N6274221D0001_9700/"
+          },
+          248436002.02,
+          "Department of Defense"
+        ],
+        [
+          24,
+          {
+            "text": "AEROJET ROCKETDYNE, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_NNC16CA21C_8000_-NONE-_-NONE-/"
+          },
+          232928991.82,
+          "National Aeronautics and Space Administration"
+        ],
+        [
+          25,
+          {
+            "text": "LOCKHEED MARTIN ACULIGHT CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002418C5392_9700_-NONE-_-NONE-/"
+          },
+          225364711.29,
+          "Department of Defense"
+        ]
+      ]
+    }
+  ],
+  "narrative": {
+    "intro": "In FY2026 to date, federal agencies obligated $12.1B across 71,223 contract awards. That is down 23.4% year over year. The average award size was $170K.",
+    "sections": [
+      {
+        "heading": "Which agencies award the most contracts in Washington?",
+        "body": "Department of Defense was the largest federal buyer in Washington, obligating $8.2B in FY2026 to date, or 67.5% of the state total."
+      },
+      {
+        "heading": "Who are the top federal contractors in Washington?",
+        "body": "THE BOEING COMPANY led all contractors performing work in Washington with $5.8B in obligations during FY2026 to date."
+      }
+    ]
+  },
+  "faq": [
+    {
+      "q": "How much federal contract money goes to Washington?",
+      "a": "Federal agencies obligated $12.1B to contractors performing work in Washington in FY2026 to date, across 71,223 awards."
+    },
+    {
+      "q": "Which agencies award the most contracts in Washington?",
+      "a": "Department of Defense is the largest federal buyer in Washington, with $8.2B obligated in FY2026 to date."
+    },
+    {
+      "q": "Who are the largest federal contractors in Washington?",
+      "a": "THE BOEING COMPANY is the largest federal contractor performing work in Washington by obligated dollars in FY2026 to date, with $5.8B."
+    }
+  ],
+  "related": [
+    {
+      "label": "Alabama federal contracts",
+      "href": "/insights/state/alabama/"
+    },
+    {
+      "label": "Alaska federal contracts",
+      "href": "/insights/state/alaska/"
+    },
+    {
+      "label": "Arizona federal contracts",
+      "href": "/insights/state/arizona/"
+    },
+    {
+      "label": "Arkansas federal contracts",
+      "href": "/insights/state/arkansas/"
+    },
+    {
+      "label": "California federal contracts",
+      "href": "/insights/state/california/"
+    },
+    {
+      "label": "Colorado federal contracts",
+      "href": "/insights/state/colorado/"
+    }
+  ],
+  "sources": [
+    {
+      "label": "USAspending.gov award data",
+      "href": "https://www.usaspending.gov"
+    }
+  ]
+}

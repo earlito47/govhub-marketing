@@ -1,0 +1,529 @@
+{
+  "pageType": "agency",
+  "slug": "department-of-veterans-affairs",
+  "title": "VA Federal Contracts: $51.1B in FY2026",
+  "h1": "Department of Veterans Affairs: Federal Contract Spending & Top Vendors",
+  "metaDescription": "Department of Veterans Affairs obligated $51.1B in federal contracts in FY2026 to date. See what it buys, its top vendors, and multi-year trend.",
+  "updated": "2026-07-12",
+  "fyWindow": {
+    "label": "FY2026 to date",
+    "start": "2025-10-01",
+    "end": "2026-07-12"
+  },
+  "stats": {
+    "totalObligations": 51080646913.32,
+    "awardCount": 54728,
+    "yoyGrowthPct": -34.8,
+    "avgAwardSize": 933355,
+    "smallBusinessSharePct": null
+  },
+  "charts": [
+    {
+      "id": "department-of-veterans-affairs-trend",
+      "type": "line",
+      "title": "Obligations by fiscal year",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "FY21",
+              47672670901.19
+            ],
+            [
+              "FY22",
+              56365225323.08
+            ],
+            [
+              "FY23",
+              61681150342.69
+            ],
+            [
+              "FY24",
+              66876840652.42
+            ],
+            [
+              "FY25",
+              78307392502.43
+            ],
+            [
+              "FY26",
+              51080646913.32
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Obligations fell 34.8% year over year, from $78.3B in FY2025 to $51.1B in FY2026 to date."
+    },
+    {
+      "id": "department-of-veterans-affairs-top-naics",
+      "type": "bar",
+      "title": "Top 10 categories (NAICS), FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "Direct Health and Medical Insurance Carriers",
+              14368525002.35
+            ],
+            [
+              "Pharmaceutical Preparation Manufacturing",
+              9889459310.67
+            ],
+            [
+              "Offices of Physicians (except Mental Health Specialists)",
+              7585591175.09
+            ],
+            [
+              "Computer Systems Design Services",
+              2891850814.38
+            ],
+            [
+              "Commercial and Institutional Building Construction",
+              1982590468.75
+            ],
+            [
+              "Other Computer Related Services",
+              1796961141.74
+            ],
+            [
+              "Medical, Dental, and Hospital Equipment and Supplies Merchant Wholesalers",
+              819037027.03
+            ],
+            [
+              "Custom Computer Programming Services",
+              749879022.78
+            ],
+            [
+              "Surgical and Medical Instrument Manufacturing",
+              630445505.89
+            ],
+            [
+              "Software Publishers",
+              579658226.07
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Direct Health and Medical Insurance Carriers was Veterans Affairs's largest contract category, with $14.4B obligated (28.1% of contract spending)."
+    },
+    {
+      "id": "department-of-veterans-affairs-top-vendors",
+      "type": "bar",
+      "title": "Top 10 vendors, FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "MCKESSON CORPORATION",
+              9615006960.54
+            ],
+            [
+              "TRIWEST HEALTHCARE ALLIANCE CORP",
+              7945494562.65
+            ],
+            [
+              "OPTUM PUBLIC SECTOR SOLUTIONS, INC.",
+              6649478208.08
+            ],
+            [
+              "QTC MEDICAL SERVICES INC",
+              2238001090.14
+            ],
+            [
+              "OPTUMSERVE HEALTH SERVICES, INC.",
+              1851338200.25
+            ],
+            [
+              "LOYAL SOURCE GOVERNMENT SERVICES LLC",
+              1768618893.8
+            ],
+            [
+              "VETERANS EVALUATION SERVICES, INC",
+              1656440212.06
+            ],
+            [
+              "ORACLE HEALTH GOVERNMENT SERVICES, INC.",
+              1266321880.71
+            ],
+            [
+              "MEDLINE INDUSTRIES, LP",
+              682669000.59
+            ],
+            [
+              "DELL FEDERAL SYSTEMS L.P",
+              511486478.21
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "MCKESSON CORPORATION led all Veterans Affairs contractors with $9.6B, 18.8% of obligations."
+    }
+  ],
+  "tables": [
+    {
+      "title": "Top 10 vendors",
+      "columns": [
+        "Rank",
+        "Vendor",
+        "Obligations"
+      ],
+      "rows": [
+        [
+          1,
+          {
+            "text": "MCKESSON CORPORATION",
+            "href": "https://www.usaspending.gov/recipient/b54de748-ee64-a1e6-546e-e7007b054797-C/latest/"
+          },
+          9615006960.54
+        ],
+        [
+          2,
+          {
+            "text": "TRIWEST HEALTHCARE ALLIANCE CORP",
+            "href": "https://www.usaspending.gov/recipient/bf1220c1-2373-042a-e8e1-33d5a29639d0-C/latest/"
+          },
+          7945494562.65
+        ],
+        [
+          3,
+          {
+            "text": "OPTUM PUBLIC SECTOR SOLUTIONS, INC.",
+            "href": "https://www.usaspending.gov/recipient/41694631-0b0f-72ed-221b-29193c88f0d2-C/latest/"
+          },
+          6649478208.08
+        ],
+        [
+          4,
+          {
+            "text": "QTC MEDICAL SERVICES INC",
+            "href": "https://www.usaspending.gov/recipient/bed6217b-c46e-3951-fe4c-dab140bb2125-C/latest/"
+          },
+          2238001090.14
+        ],
+        [
+          5,
+          {
+            "text": "OPTUMSERVE HEALTH SERVICES, INC.",
+            "href": "https://www.usaspending.gov/recipient/f14c78b7-70f6-df32-45ed-a5f56e1b9f70-C/latest/"
+          },
+          1851338200.25
+        ],
+        [
+          6,
+          {
+            "text": "LOYAL SOURCE GOVERNMENT SERVICES LLC",
+            "href": "https://www.usaspending.gov/recipient/a11a2c49-b200-c5b0-6719-7b2d0bb9764c-C/latest/"
+          },
+          1768618893.8
+        ],
+        [
+          7,
+          {
+            "text": "VETERANS EVALUATION SERVICES, INC",
+            "href": "https://www.usaspending.gov/recipient/3a7a135e-cda1-0c2c-9d9b-8d44ffede757-C/latest/"
+          },
+          1656440212.06
+        ],
+        [
+          8,
+          {
+            "text": "ORACLE HEALTH GOVERNMENT SERVICES, INC.",
+            "href": "https://www.usaspending.gov/recipient/9232b26d-789d-bdd2-5a6d-28714f1dfa2c-C/latest/"
+          },
+          1266321880.71
+        ],
+        [
+          9,
+          {
+            "text": "MEDLINE INDUSTRIES, LP",
+            "href": "https://www.usaspending.gov/recipient/e69126ba-ae4e-13a4-4552-7eae9f4ad09d-C/latest/"
+          },
+          682669000.59
+        ],
+        [
+          10,
+          {
+            "text": "DELL FEDERAL SYSTEMS L.P",
+            "href": "https://www.usaspending.gov/recipient/3612de0a-9635-3846-a5a1-7f555fba52df-C/latest/"
+          },
+          511486478.21
+        ]
+      ]
+    },
+    {
+      "title": "Largest awards, FY2026 to date",
+      "columns": [
+        "Rank",
+        "Recipient",
+        "Award Amount"
+      ],
+      "rows": [
+        [
+          1,
+          {
+            "text": "DELL FEDERAL SYSTEMS L.P",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10B22F0089_3600_47QTCA22D003G_4732/"
+          },
+          1590136261.87
+        ],
+        [
+          2,
+          {
+            "text": "ORACLE HEALTH GOVERNMENT SERVICES, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10B18N0003_3600_36C10B18D5000_3600/"
+          },
+          1496628663.21
+        ],
+        [
+          3,
+          {
+            "text": "ORACLE HEALTH GOVERNMENT SERVICES, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10B22N0051EHRM_3600_36C10B18D5000_3600/"
+          },
+          1424879474.43
+        ],
+        [
+          4,
+          {
+            "text": "MCKESSON CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C24026K1002_3600_36W79720D0001_3600/"
+          },
+          1406868182.35
+        ],
+        [
+          5,
+          {
+            "text": "MCKESSON CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C24026K1008_3600_36W79720D0001_3600/"
+          },
+          1398025092.11
+        ],
+        [
+          6,
+          {
+            "text": "BOOZ ALLEN HAMILTON INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10B21N10070021_3600_VA11816D1007_3600/"
+          },
+          1365285599.63
+        ],
+        [
+          7,
+          {
+            "text": "AT&T ENTERPRISES, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10A20F0309_3600_GS00Q17NSD3000_4732/"
+          },
+          1291242178.79
+        ],
+        [
+          8,
+          {
+            "text": "MCKESSON CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C24026K1007_3600_36W79720D0001_3600/"
+          },
+          1191348080.87
+        ],
+        [
+          9,
+          {
+            "text": "MCKESSON CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C24026K1001_3600_36W79720D0001_3600/"
+          },
+          1184200532.33
+        ],
+        [
+          10,
+          {
+            "text": "MCKESSON CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C24026K1006_3600_36W79720D0001_3600/"
+          },
+          1175683450.7
+        ],
+        [
+          11,
+          {
+            "text": "MCKESSON CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C24026K1003_3600_36W79720D0001_3600/"
+          },
+          1110402103.93
+        ],
+        [
+          12,
+          {
+            "text": "OPTUM PUBLIC SECTOR SOLUTIONS, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10G26K0209_3600_36C79119D0006_3600/"
+          },
+          1102850655.28
+        ],
+        [
+          13,
+          {
+            "text": "MCKESSON CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C24026K1004_3600_36W79720D0001_3600/"
+          },
+          1087989765.81
+        ],
+        [
+          14,
+          {
+            "text": "TRIWEST HEALTHCARE ALLIANCE CORP",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10G26K0213_3600_36C10G19D0038_3600/"
+          },
+          1062977660.85
+        ],
+        [
+          15,
+          {
+            "text": "MCKESSON CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C24026K1005_3600_36W79720D0001_3600/"
+          },
+          1060268795.34
+        ],
+        [
+          16,
+          {
+            "text": "DELL FEDERAL SYSTEMS L.P",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10B25F0093_3600_47QTCA22D003G_4732/"
+          },
+          1033180705.45
+        ],
+        [
+          17,
+          {
+            "text": "TRIWEST HEALTHCARE ALLIANCE CORP",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10G26K0268_3600_36C10G19D0038_3600/"
+          },
+          928900085.55
+        ],
+        [
+          18,
+          {
+            "text": "TRIWEST HEALTHCARE ALLIANCE CORP",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10G26K0135_3600_36C10G19D0038_3600/"
+          },
+          928047789.91
+        ],
+        [
+          19,
+          {
+            "text": "TRIWEST HEALTHCARE ALLIANCE CORP",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10G26K0282_3600_36C10G19D0038_3600/"
+          },
+          902853622.76
+        ],
+        [
+          20,
+          {
+            "text": "OPTUM PUBLIC SECTOR SOLUTIONS, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10G26K0211_3600_36C79119D0006_3600/"
+          },
+          894515798.08
+        ],
+        [
+          21,
+          {
+            "text": "TRIWEST HEALTHCARE ALLIANCE CORP",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10G26K0281_3600_36C10G19D0038_3600/"
+          },
+          873917489.62
+        ],
+        [
+          22,
+          {
+            "text": "BOOZ ALLEN HAMILTON INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10B22N10070023_3600_VA11816D1007_3600/"
+          },
+          859686306.3
+        ],
+        [
+          23,
+          {
+            "text": "TRIWEST HEALTHCARE ALLIANCE CORP",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10G26K0254_3600_36C10G19D0038_3600/"
+          },
+          837271971.2
+        ],
+        [
+          24,
+          {
+            "text": "TRIWEST HEALTHCARE ALLIANCE CORP",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10G26K0266_3600_36C10G19D0038_3600/"
+          },
+          819701546.68
+        ],
+        [
+          25,
+          {
+            "text": "BOOZ ALLEN HAMILTON INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10B19N10070015_3600_VA11816D1007_3600/"
+          },
+          809754946.8
+        ]
+      ]
+    }
+  ],
+  "narrative": {
+    "intro": "In FY2026 to date, Department of Veterans Affairs obligated $51.1B across 54,728 contract awards. That is down 34.8% year over year. The average award size was $933K.",
+    "sections": [
+      {
+        "heading": "What does Veterans Affairs buy?",
+        "body": "Direct Health and Medical Insurance Carriers was Department of Veterans Affairs's largest contract category in FY2026 to date, with $14.4B obligated, or 28.1% of its contract spending."
+      },
+      {
+        "heading": "Who are Veterans Affairs's largest contractors?",
+        "body": "MCKESSON CORPORATION led all Department of Veterans Affairs contractors with $9.6B in obligations during FY2026 to date, a 18.8% share."
+      }
+    ]
+  },
+  "faq": [
+    {
+      "q": "How much does Department of Veterans Affairs spend on contracts?",
+      "a": "Department of Veterans Affairs obligated $51.1B on federal contracts in FY2026 to date, across 54,728 awards."
+    },
+    {
+      "q": "What does Veterans Affairs buy?",
+      "a": "Veterans Affairs's largest contract category is Direct Health and Medical Insurance Carriers, with $14.4B obligated in FY2026 to date."
+    },
+    {
+      "q": "Who are Veterans Affairs's largest contractors?",
+      "a": "MCKESSON CORPORATION is Veterans Affairs's largest contractor by obligated dollars in FY2026 to date, with $9.6B."
+    }
+  ],
+  "related": [
+    {
+      "label": "Department of Defense",
+      "href": "/insights/agency/department-of-defense/"
+    },
+    {
+      "label": "Department of Homeland Security",
+      "href": "/insights/agency/department-of-homeland-security/"
+    },
+    {
+      "label": "Department of Health and Human Services",
+      "href": "/insights/agency/department-of-health-and-human-services/"
+    },
+    {
+      "label": "General Services Administration",
+      "href": "/insights/agency/general-services-administration/"
+    },
+    {
+      "label": "National Aeronautics and Space Administration",
+      "href": "/insights/agency/national-aeronautics-and-space-administration/"
+    },
+    {
+      "label": "Department of Energy",
+      "href": "/insights/agency/department-of-energy/"
+    }
+  ],
+  "sources": [
+    {
+      "label": "USAspending.gov award data",
+      "href": "https://www.usaspending.gov"
+    }
+  ]
+}

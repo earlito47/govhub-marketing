@@ -1,0 +1,609 @@
+{
+  "pageType": "state",
+  "slug": "wyoming",
+  "title": "Wyoming Federal Contracts: $508M in FY2026",
+  "h1": "Federal Contracts in Wyoming: Spending, Agencies & Vendors",
+  "metaDescription": "Federal agencies obligated $508M to contractors in Wyoming in FY2026 to date. See top buying agencies, top vendors, and industries.",
+  "updated": "2026-07-12",
+  "fyWindow": {
+    "label": "FY2026 to date",
+    "start": "2025-10-01",
+    "end": "2026-07-12"
+  },
+  "stats": {
+    "totalObligations": 508215705.94,
+    "awardCount": 1687,
+    "yoyGrowthPct": 2.3,
+    "avgAwardSize": 301254,
+    "smallBusinessSharePct": null
+  },
+  "charts": [
+    {
+      "id": "wyoming-trend",
+      "type": "line",
+      "title": "Obligations by fiscal year",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "FY21",
+              389644230.35
+            ],
+            [
+              "FY22",
+              559182583.09
+            ],
+            [
+              "FY23",
+              469953941.17
+            ],
+            [
+              "FY24",
+              532289141.08
+            ],
+            [
+              "FY25",
+              496865115.18
+            ],
+            [
+              "FY26",
+              508215705.94
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Obligations grew 2.3% year over year, from $497M in FY2025 to $508M in FY2026 to date."
+    },
+    {
+      "id": "wyoming-top-agencies",
+      "type": "bar",
+      "title": "Top 10 buying agencies, FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "Department of the Interior",
+              307775731.78
+            ],
+            [
+              "Department of Defense",
+              74118939.89
+            ],
+            [
+              "Department of Veterans Affairs",
+              41683132.14
+            ],
+            [
+              "Department of Transportation",
+              37573129.44
+            ],
+            [
+              "General Services Administration",
+              26737469.84
+            ],
+            [
+              "Department of Agriculture",
+              22108711.2
+            ],
+            [
+              "Department of Labor",
+              5582708.69
+            ],
+            [
+              "Department of Justice",
+              1117772.87
+            ],
+            [
+              "Environmental Protection Agency",
+              400000
+            ],
+            [
+              "Department of Energy",
+              219112.5
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Department of the Interior was the top federal buyer in Wyoming, obligating $308M (60.6% of the state total)."
+    },
+    {
+      "id": "wyoming-top-vendors",
+      "type": "bar",
+      "title": "Top 10 vendors, FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "RECORD STEEL AND CONSTRUCTION, INC.",
+              129224295
+            ],
+            [
+              "G.S.E. CONSTRUCTION COMPANY, INC.",
+              109487800
+            ],
+            [
+              "THE ARMORED GROUP LLC",
+              26424505.55
+            ],
+            [
+              "AECOM + TETRA TECH JOINT VENTURE",
+              22684359.88
+            ],
+            [
+              "OFTEDAL CONSTRUCTION, INC.",
+              21139487.36
+            ],
+            [
+              "PARAMOUNT CONSTRUCTION GROUP, LLC",
+              11792716
+            ],
+            [
+              "STEVE MANNING CONSTRUCTION INC",
+              9441749
+            ],
+            [
+              "MISSOURI RIVER CONTRACTORS, LLC",
+              9039261
+            ],
+            [
+              "E CORP",
+              8298013
+            ],
+            [
+              "HENSEL PHELPS CONSTRUCTION CO",
+              8079657
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "RECORD STEEL AND CONSTRUCTION, INC. led all contractors in Wyoming with $129M, 25.4% of the state total."
+    },
+    {
+      "id": "wyoming-top-naics",
+      "type": "bar",
+      "title": "Top 10 industries (NAICS), FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "Water and Sewer Line and Related Structures Construction",
+              246008918.12
+            ],
+            [
+              "Highway, Street, and Bridge Construction",
+              62171929.24
+            ],
+            [
+              "Commercial and Institutional Building Construction",
+              52810803.92
+            ],
+            [
+              "Engineering Services",
+              31976799.56
+            ],
+            [
+              "Automobile and Light Duty Motor Vehicle Manufacturing",
+              26424505.55
+            ],
+            [
+              "Support Activities for Forestry",
+              7044216.09
+            ],
+            [
+              "Nonscheduled Chartered Freight Air Transportation",
+              6707222.3
+            ],
+            [
+              "Support Activities for Animal Production",
+              6052492.83
+            ],
+            [
+              "Other Technical and Trade Schools",
+              5582708.69
+            ],
+            [
+              "Medical, Dental, and Hospital Equipment and Supplies Merchant Wholesalers",
+              4827500.98
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Water and Sewer Line and Related Structures Construction was the largest industry in Wyoming, with $246M obligated."
+    }
+  ],
+  "tables": [
+    {
+      "title": "Top 10 vendors",
+      "columns": [
+        "Rank",
+        "Vendor",
+        "Obligations"
+      ],
+      "rows": [
+        [
+          1,
+          {
+            "text": "RECORD STEEL AND CONSTRUCTION, INC.",
+            "href": "https://www.usaspending.gov/recipient/a0c4db84-5a51-9128-a33d-a27a13b317b1-C/latest/"
+          },
+          129224295
+        ],
+        [
+          2,
+          {
+            "text": "G.S.E. CONSTRUCTION COMPANY, INC.",
+            "href": "https://www.usaspending.gov/recipient/42800bf0-ed89-8bcd-aedc-feaf70997738-C/latest/"
+          },
+          109487800
+        ],
+        [
+          3,
+          {
+            "text": "THE ARMORED GROUP LLC",
+            "href": "https://www.usaspending.gov/recipient/062cb616-b1c6-324a-7c5e-57ff763ac029-C/latest/"
+          },
+          26424505.55
+        ],
+        [
+          4,
+          {
+            "text": "AECOM + TETRA TECH JOINT VENTURE",
+            "href": "https://www.usaspending.gov/recipient/b02361d4-8de4-4ce7-9e73-ab5ea4bffce1-C/latest/"
+          },
+          22684359.88
+        ],
+        [
+          5,
+          {
+            "text": "OFTEDAL CONSTRUCTION, INC.",
+            "href": "https://www.usaspending.gov/recipient/228df9e8-c76c-1532-1d4d-9e3abcba7866-C/latest/"
+          },
+          21139487.36
+        ],
+        [
+          6,
+          {
+            "text": "PARAMOUNT CONSTRUCTION GROUP, LLC",
+            "href": "https://www.usaspending.gov/recipient/d0d42a06-f25a-b570-293c-37b95b0eb935-C/latest/"
+          },
+          11792716
+        ],
+        [
+          7,
+          {
+            "text": "STEVE MANNING CONSTRUCTION INC",
+            "href": "https://www.usaspending.gov/recipient/cced7702-bb60-dece-c94d-0835d542432e-C/latest/"
+          },
+          9441749
+        ],
+        [
+          8,
+          {
+            "text": "MISSOURI RIVER CONTRACTORS, LLC",
+            "href": "https://www.usaspending.gov/recipient/99a855ea-428f-13e6-f304-74994abdf754-C/latest/"
+          },
+          9039261
+        ],
+        [
+          9,
+          {
+            "text": "E CORP",
+            "href": "https://www.usaspending.gov/recipient/6bebbbc6-0adb-1ed5-49e1-f9615b10bcb3-C/latest/"
+          },
+          8298013
+        ],
+        [
+          10,
+          {
+            "text": "HENSEL PHELPS CONSTRUCTION CO",
+            "href": "https://www.usaspending.gov/recipient/37c2461c-00d3-c639-feb1-26ec6e6da3f6-C/latest/"
+          },
+          8079657
+        ]
+      ]
+    },
+    {
+      "title": "Largest awards, FY2026 to date",
+      "columns": [
+        "Rank",
+        "Recipient",
+        "Award Amount",
+        "Awarding Agency"
+      ],
+      "rows": [
+        [
+          1,
+          {
+            "text": "FLUOR FEDERAL SOLUTIONS, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W9128F19C0005_9700_-NONE-_-NONE-/"
+          },
+          162280306.8,
+          "Department of Defense"
+        ],
+        [
+          2,
+          {
+            "text": "CONTI FEDERAL SERVICES, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W9128F22C0029_9700_-NONE-_-NONE-/"
+          },
+          133858927.33,
+          "Department of Defense"
+        ],
+        [
+          3,
+          {
+            "text": "RECORD STEEL AND CONSTRUCTION, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_140P2026C0016_1443_-NONE-_-NONE-/"
+          },
+          129150000,
+          "Department of the Interior"
+        ],
+        [
+          4,
+          {
+            "text": "HENSEL PHELPS CONSTRUCTION CO",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W9128F24C0009_9700_-NONE-_-NONE-/"
+          },
+          115341138,
+          "Department of Defense"
+        ],
+        [
+          5,
+          {
+            "text": "G.S.E. CONSTRUCTION COMPANY, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_140P2026C0017_1443_-NONE-_-NONE-/"
+          },
+          109487800,
+          "Department of the Interior"
+        ],
+        [
+          6,
+          {
+            "text": "KREW HEAVY CIVIL LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_140R6018C0015_1425_-NONE-_-NONE-/"
+          },
+          108991096.04,
+          "Department of the Interior"
+        ],
+        [
+          7,
+          {
+            "text": "FEDERAL CONTRACTING INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W9128F24C0011_9700_-NONE-_-NONE-/"
+          },
+          57966218.89,
+          "Department of Defense"
+        ],
+        [
+          8,
+          {
+            "text": "RECORD STEEL AND CONSTRUCTION, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_140P2025C0040_1443_-NONE-_-NONE-/"
+          },
+          45609435,
+          "Department of the Interior"
+        ],
+        [
+          9,
+          {
+            "text": "H-K CONTRACTORS, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_69056722F000034_6925_69056719D000006_6925/"
+          },
+          44450172.5,
+          "Department of Transportation"
+        ],
+        [
+          10,
+          {
+            "text": "COMPASS PTS JV, THE",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70FA6018F00000034_7022_HSFE6015D0003_7022/"
+          },
+          42995466.59,
+          "Department of Homeland Security"
+        ],
+        [
+          11,
+          {
+            "text": "COMPASS PTS JV, THE",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70FA6019F00000036_7022_HSFE6015D0003_7022/"
+          },
+          40602636.66,
+          "Department of Homeland Security"
+        ],
+        [
+          12,
+          {
+            "text": "HIGH WEST ENERGY, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA251708C6901_9700_-NONE-_-NONE-/"
+          },
+          37275602.72,
+          "Department of Defense"
+        ],
+        [
+          13,
+          {
+            "text": "ALTERNATE PERSPECTIVES INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_1605JW20C0001_1605_-NONE-_-NONE-/"
+          },
+          35217438.35,
+          "Department of Labor"
+        ],
+        [
+          14,
+          {
+            "text": "M.A. DEATLEY CONSTRUCTION, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_69056722F000073_6925_69056719D000005_6925/"
+          },
+          33964645.28,
+          "Department of Transportation"
+        ],
+        [
+          15,
+          {
+            "text": "ARBOR E & T LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_1605JW23F00008_1605_1605JE22D0017_1605/"
+          },
+          33468660.12,
+          "Department of Labor"
+        ],
+        [
+          16,
+          {
+            "text": "AECOM + TETRA TECH JOINT VENTURE",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W9128F25FA079_9700_W912DY20D0013_9700/"
+          },
+          28354015.47,
+          "Department of Defense"
+        ],
+        [
+          17,
+          {
+            "text": "TETRA TECH, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W9128F25FA032_9700_W9128F24D0018_9700/"
+          },
+          27397707.66,
+          "Department of Defense"
+        ],
+        [
+          18,
+          {
+            "text": "THE ARMORED GROUP LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_47QSWC26F0083_4732_47QSWC23D0001_4732/"
+          },
+          26424505.55,
+          "General Services Administration"
+        ],
+        [
+          19,
+          {
+            "text": "PAULSEN CONSTRUCTION, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_140P2024C0070_1443_-NONE-_-NONE-/"
+          },
+          26297847.1,
+          "Department of the Interior"
+        ],
+        [
+          20,
+          {
+            "text": "COMPASS PTS JV, THE",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70FA6021F00000007_7022_HSFE6015D0003_7022/"
+          },
+          24553412.59,
+          "Department of Homeland Security"
+        ],
+        [
+          21,
+          {
+            "text": "OFTEDAL CONSTRUCTION, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_69056726F00033N_6925_69056724D000013_6925/"
+          },
+          21830562.8,
+          "Department of Transportation"
+        ],
+        [
+          22,
+          {
+            "text": "BRIDGER NATIONAL CONSTRUCTION LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C77625C0014_3600_-NONE-_-NONE-/"
+          },
+          21190712,
+          "Department of Veterans Affairs"
+        ],
+        [
+          23,
+          {
+            "text": "RECCO INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W50S8W25CA004_9700_-NONE-_-NONE-/"
+          },
+          17336000,
+          "Department of Defense"
+        ],
+        [
+          24,
+          {
+            "text": "RESPEC COMPANY, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W9128F25CA020_9700_-NONE-_-NONE-/"
+          },
+          16782392.89,
+          "Department of Defense"
+        ],
+        [
+          25,
+          {
+            "text": "OFTEDAL CONSTRUCTION, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_69056722F000069_6925_69056719D000003_6925/"
+          },
+          16424301.76,
+          "Department of Transportation"
+        ]
+      ]
+    }
+  ],
+  "narrative": {
+    "intro": "In FY2026 to date, federal agencies obligated $508M across 1,687 contract awards. That is up 2.3% year over year. The average award size was $301K.",
+    "sections": [
+      {
+        "heading": "Which agencies award the most contracts in Wyoming?",
+        "body": "Department of the Interior was the largest federal buyer in Wyoming, obligating $308M in FY2026 to date, or 60.6% of the state total."
+      },
+      {
+        "heading": "Who are the top federal contractors in Wyoming?",
+        "body": "RECORD STEEL AND CONSTRUCTION, INC. led all contractors performing work in Wyoming with $129M in obligations during FY2026 to date."
+      }
+    ]
+  },
+  "faq": [
+    {
+      "q": "How much federal contract money goes to Wyoming?",
+      "a": "Federal agencies obligated $508M to contractors performing work in Wyoming in FY2026 to date, across 1,687 awards."
+    },
+    {
+      "q": "Which agencies award the most contracts in Wyoming?",
+      "a": "Department of the Interior is the largest federal buyer in Wyoming, with $308M obligated in FY2026 to date."
+    },
+    {
+      "q": "Who are the largest federal contractors in Wyoming?",
+      "a": "RECORD STEEL AND CONSTRUCTION, INC. is the largest federal contractor performing work in Wyoming by obligated dollars in FY2026 to date, with $129M."
+    }
+  ],
+  "related": [
+    {
+      "label": "Alabama federal contracts",
+      "href": "/insights/state/alabama/"
+    },
+    {
+      "label": "Alaska federal contracts",
+      "href": "/insights/state/alaska/"
+    },
+    {
+      "label": "Arizona federal contracts",
+      "href": "/insights/state/arizona/"
+    },
+    {
+      "label": "Arkansas federal contracts",
+      "href": "/insights/state/arkansas/"
+    },
+    {
+      "label": "California federal contracts",
+      "href": "/insights/state/california/"
+    },
+    {
+      "label": "Colorado federal contracts",
+      "href": "/insights/state/colorado/"
+    }
+  ],
+  "sources": [
+    {
+      "label": "USAspending.gov award data",
+      "href": "https://www.usaspending.gov"
+    }
+  ]
+}

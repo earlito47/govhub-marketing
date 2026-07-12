@@ -1,0 +1,609 @@
+{
+  "pageType": "state",
+  "slug": "south-carolina",
+  "title": "South Carolina Federal Contracts: $7.3B in FY2026",
+  "h1": "Federal Contracts in South Carolina: Spending, Agencies & Vendors",
+  "metaDescription": "Federal agencies obligated $7.3B to contractors in South Carolina in FY2026 to date. See top buying agencies, top vendors, and industries.",
+  "updated": "2026-07-12",
+  "fyWindow": {
+    "label": "FY2026 to date",
+    "start": "2025-10-01",
+    "end": "2026-07-12"
+  },
+  "stats": {
+    "totalObligations": 7341713281.22,
+    "awardCount": 13256,
+    "yoyGrowthPct": -11.8,
+    "avgAwardSize": 553841,
+    "smallBusinessSharePct": null
+  },
+  "charts": [
+    {
+      "id": "south-carolina-trend",
+      "type": "line",
+      "title": "Obligations by fiscal year",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "FY21",
+              6671868300.04
+            ],
+            [
+              "FY22",
+              7163068753.76
+            ],
+            [
+              "FY23",
+              10146292756.98
+            ],
+            [
+              "FY24",
+              10622310271.87
+            ],
+            [
+              "FY25",
+              8326807297.28
+            ],
+            [
+              "FY26",
+              7341713281.22
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Obligations fell 11.8% year over year, from $8.3B in FY2025 to $7.3B in FY2026 to date."
+    },
+    {
+      "id": "south-carolina-top-agencies",
+      "type": "bar",
+      "title": "Top 10 buying agencies, FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "Department of Energy",
+              4462846716.65
+            ],
+            [
+              "Department of Defense",
+              1444112497.45
+            ],
+            [
+              "Department of Homeland Security",
+              492014896.85
+            ],
+            [
+              "Department of Health and Human Services",
+              429740104.79
+            ],
+            [
+              "Department of Veterans Affairs",
+              286388866.19
+            ],
+            [
+              "Department of Agriculture",
+              68469213.07
+            ],
+            [
+              "Department of State",
+              36706253.75
+            ],
+            [
+              "Department of Justice",
+              34589811.94
+            ],
+            [
+              "Department of Transportation",
+              30849307.16
+            ],
+            [
+              "General Services Administration",
+              24120664.54
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Department of Energy was the top federal buyer in South Carolina, obligating $4.5B (60.8% of the state total)."
+    },
+    {
+      "id": "south-carolina-top-vendors",
+      "type": "bar",
+      "title": "Top 10 vendors, FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "SAVANNAH RIVER NUCLEAR SOLUTIONS LLC",
+              3335233273.33
+            ],
+            [
+              "SAVANNAH RIVER MISSION COMPLETION, LLC",
+              812393947.17
+            ],
+            [
+              "BRASFIELD & GORRIE LLC",
+              325538222
+            ],
+            [
+              "BATTELLE SAVANNAH RIVER ALLIANCE, LLC",
+              274094948.92
+            ],
+            [
+              "ADVANCED TECHNOLOGY INTERNATIONAL",
+              238026199.75
+            ],
+            [
+              "DETYENS SHIPYARDS INC",
+              176968629.55
+            ],
+            [
+              "SO-PAK-CO, INC",
+              165144970.43
+            ],
+            [
+              "COMPANION DATA SERVICES LLC",
+              153962362
+            ],
+            [
+              "WHITING-TURNER CONTRACTING COMPANY, THE",
+              149166763.82
+            ],
+            [
+              "FEDEX SUPPLY CHAIN DISTRIBUTION SYSTEM, INC.",
+              100453522.52
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "SAVANNAH RIVER NUCLEAR SOLUTIONS LLC led all contractors in South Carolina with $3.3B, 45.4% of the state total."
+    },
+    {
+      "id": "south-carolina-top-naics",
+      "type": "bar",
+      "title": "Top 10 industries (NAICS), FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "Facilities Support Services",
+              3520444906.42
+            ],
+            [
+              "Remediation Services",
+              826213613.22
+            ],
+            [
+              "Commercial and Institutional Building Construction",
+              545264437.64
+            ],
+            [
+              "Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology)",
+              345625784.75
+            ],
+            [
+              "Engineering Services",
+              336418953.83
+            ],
+            [
+              "Biological Product (except Diagnostic) Manufacturing",
+              224999997
+            ],
+            [
+              "Ship Building and Repairing",
+              195172606.78
+            ],
+            [
+              "Computer Systems Design Services",
+              173681427.79
+            ],
+            [
+              "Fruit and Vegetable Canning",
+              141595073.12
+            ],
+            [
+              "All Other Business Support Services",
+              100610528.27
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Facilities Support Services was the largest industry in South Carolina, with $3.5B obligated."
+    }
+  ],
+  "tables": [
+    {
+      "title": "Top 10 vendors",
+      "columns": [
+        "Rank",
+        "Vendor",
+        "Obligations"
+      ],
+      "rows": [
+        [
+          1,
+          {
+            "text": "SAVANNAH RIVER NUCLEAR SOLUTIONS LLC",
+            "href": "https://www.usaspending.gov/recipient/f59302ac-85a9-ee1a-4813-9b07f3377a40-C/latest/"
+          },
+          3335233273.33
+        ],
+        [
+          2,
+          {
+            "text": "SAVANNAH RIVER MISSION COMPLETION, LLC",
+            "href": "https://www.usaspending.gov/recipient/90e60416-b082-1719-66b0-5aa4a6026c8b-C/latest/"
+          },
+          812393947.17
+        ],
+        [
+          3,
+          {
+            "text": "BRASFIELD & GORRIE LLC",
+            "href": "https://www.usaspending.gov/recipient/a4499a6f-2139-8774-afa2-247720ff681c-C/latest/"
+          },
+          325538222
+        ],
+        [
+          4,
+          {
+            "text": "BATTELLE SAVANNAH RIVER ALLIANCE, LLC",
+            "href": "https://www.usaspending.gov/recipient/9a7b543a-2b81-001e-d309-3a0f027dff01-C/latest/"
+          },
+          274094948.92
+        ],
+        [
+          5,
+          {
+            "text": "ADVANCED TECHNOLOGY INTERNATIONAL",
+            "href": "https://www.usaspending.gov/recipient/2308f9b4-daa6-7448-2621-356e83baa206-C/latest/"
+          },
+          238026199.75
+        ],
+        [
+          6,
+          {
+            "text": "DETYENS SHIPYARDS INC",
+            "href": "https://www.usaspending.gov/recipient/5ea95424-348d-c9fa-169a-c0d1cadb40fe-C/latest/"
+          },
+          176968629.55
+        ],
+        [
+          7,
+          {
+            "text": "SO-PAK-CO, INC",
+            "href": "https://www.usaspending.gov/recipient/790ab0e4-8810-b98e-75a7-33df1a6e9588-C/latest/"
+          },
+          165144970.43
+        ],
+        [
+          8,
+          {
+            "text": "COMPANION DATA SERVICES LLC",
+            "href": "https://www.usaspending.gov/recipient/0b22b365-b4ae-4eef-1792-b31b435ca131-C/latest/"
+          },
+          153962362
+        ],
+        [
+          9,
+          {
+            "text": "WHITING-TURNER CONTRACTING COMPANY, THE",
+            "href": "https://www.usaspending.gov/recipient/71cf1e91-51f2-f450-1fe3-3576b19bb828-C/latest/"
+          },
+          149166763.82
+        ],
+        [
+          10,
+          {
+            "text": "FEDEX SUPPLY CHAIN DISTRIBUTION SYSTEM, INC.",
+            "href": "https://www.usaspending.gov/recipient/5196bee3-3520-4d0f-a473-5763e5da1b05-C/latest/"
+          },
+          100453522.52
+        ]
+      ]
+    },
+    {
+      "title": "Largest awards, FY2026 to date",
+      "columns": [
+        "Rank",
+        "Recipient",
+        "Award Amount",
+        "Awarding Agency"
+      ],
+      "rows": [
+        [
+          1,
+          {
+            "text": "SAVANNAH RIVER NUCLEAR SOLUTIONS LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_DEAC0908SR22470_8900_-NONE-_-NONE-/"
+          },
+          27551935999.46,
+          "Department of Energy"
+        ],
+        [
+          2,
+          {
+            "text": "SAVANNAH RIVER MISSION COMPLETION, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_89303723FEM400292_8900_89303322DEM000068_8900/"
+          },
+          2373363818.72,
+          "Department of Energy"
+        ],
+        [
+          3,
+          {
+            "text": "BATTELLE SAVANNAH RIVER ALLIANCE, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_89303321CEM000080_8900_-NONE-_-NONE-/"
+          },
+          1593068301.18,
+          "Department of Energy"
+        ],
+        [
+          4,
+          {
+            "text": "ADVANCED TECHNOLOGY INTERNATIONAL",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75A50123F61001_7505_75A50123D00005_7505/"
+          },
+          795000000,
+          "Department of Health and Human Services"
+        ],
+        [
+          5,
+          {
+            "text": "ADVANCED TECHNOLOGY INTERNATIONAL",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75A50123F61003_7505_75A50123D00005_7505/"
+          },
+          723524000,
+          "Department of Health and Human Services"
+        ],
+        [
+          6,
+          {
+            "text": "PALMETTO GBA, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75FCMC22C0037_7530_-NONE-_-NONE-/"
+          },
+          635742430,
+          "Department of Health and Human Services"
+        ],
+        [
+          7,
+          {
+            "text": "COMPANION DATA SERVICES LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75FCMC23F0002_7530_HHSM500201600016I_7530/"
+          },
+          550120874.53,
+          "Department of Health and Human Services"
+        ],
+        [
+          8,
+          {
+            "text": "KBR WYLE SERVICES, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_0002_9700_W52P1J12G0061_9700/"
+          },
+          484920080,
+          "Department of Defense"
+        ],
+        [
+          9,
+          {
+            "text": "ADVANCED TECHNOLOGY INTERNATIONAL",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75A50124F61002_7505_75A50123D00003_7505/"
+          },
+          303999997,
+          "Department of Health and Human Services"
+        ],
+        [
+          10,
+          {
+            "text": "SAVANNAH RIVER MISSION COMPLETION, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_89303723FEM400293_8900_89303322DEM000068_8900/"
+          },
+          297667560,
+          "Department of Energy"
+        ],
+        [
+          11,
+          {
+            "text": "SAVANNAH RIVER MISSION COMPLETION, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_89303722FEM400210_8900_89303322DEM000068_8900/"
+          },
+          280174768,
+          "Department of Energy"
+        ],
+        [
+          12,
+          {
+            "text": "SCIENTIFIC RESEARCH CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N6523620F3907_9700_N6523619D4809_9700/"
+          },
+          234752258.62,
+          "Department of Defense"
+        ],
+        [
+          13,
+          {
+            "text": "AMENTUM SERVICES, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N6523617F3083_9700_N0017804D4042_9700/"
+          },
+          233021511.26,
+          "Department of Defense"
+        ],
+        [
+          14,
+          {
+            "text": "BRASFIELD & GORRIE LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70Z04726FPCNI0010_7008_70Z04723DPCNI0001_7008/"
+          },
+          230000000,
+          "Department of Homeland Security"
+        ],
+        [
+          15,
+          {
+            "text": "ATLAS TECHNOLOGIES, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N6523621F3003_9700_N0017819D7193_9700/"
+          },
+          222504607.93,
+          "Department of Defense"
+        ],
+        [
+          16,
+          {
+            "text": "ADAPT FORWARD LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N6523621F3002_9700_N0017819D7035_9700/"
+          },
+          186066683.52,
+          "Department of Defense"
+        ],
+        [
+          17,
+          {
+            "text": "PALMETTO GBA, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_RRB12C011_6000_-NONE-_-NONE-/"
+          },
+          181001205.32,
+          "Railroad Retirement Board"
+        ],
+        [
+          18,
+          {
+            "text": "KBR WYLE SERVICES, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N6523619F3501_9700_N0017819D7949_9700/"
+          },
+          178590327.66,
+          "Department of Defense"
+        ],
+        [
+          19,
+          {
+            "text": "CHUGACH TECHNICAL SOLUTIONS LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N6523621F3024_9700_N0017819D7349_9700/"
+          },
+          168617126.07,
+          "Department of Defense"
+        ],
+        [
+          20,
+          {
+            "text": "CACI NSS, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA489021F0010_9700_FA873215D0044_9700/"
+          },
+          168044664.36,
+          "Department of Defense"
+        ],
+        [
+          21,
+          {
+            "text": "BL HARBERT INTERNATIONAL LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W912HP24C2000_9700_-NONE-_-NONE-/"
+          },
+          162042052,
+          "Department of Defense"
+        ],
+        [
+          22,
+          {
+            "text": "ADVANCED TECHNOLOGY INTERNATIONAL",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75A50123F61005_7505_75A50123D00005_7505/"
+          },
+          161082263,
+          "Department of Health and Human Services"
+        ],
+        [
+          23,
+          {
+            "text": "SCIENTIFIC RESEARCH CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N6523620F3910_9700_N6523619D4809_9700/"
+          },
+          143996587.83,
+          "Department of Defense"
+        ],
+        [
+          24,
+          {
+            "text": "PALMETTO GBA, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75FCMC24C0023_7530_-NONE-_-NONE-/"
+          },
+          142435081.99,
+          "Department of Health and Human Services"
+        ],
+        [
+          25,
+          {
+            "text": "ADVANCED TECHNOLOGY INTERNATIONAL",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75A50124F61005_7505_75A50123D00003_7505/"
+          },
+          141320194,
+          "Department of Health and Human Services"
+        ]
+      ]
+    }
+  ],
+  "narrative": {
+    "intro": "In FY2026 to date, federal agencies obligated $7.3B across 13,256 contract awards. That is down 11.8% year over year. The average award size was $554K.",
+    "sections": [
+      {
+        "heading": "Which agencies award the most contracts in South Carolina?",
+        "body": "Department of Energy was the largest federal buyer in South Carolina, obligating $4.5B in FY2026 to date, or 60.8% of the state total."
+      },
+      {
+        "heading": "Who are the top federal contractors in South Carolina?",
+        "body": "SAVANNAH RIVER NUCLEAR SOLUTIONS LLC led all contractors performing work in South Carolina with $3.3B in obligations during FY2026 to date."
+      }
+    ]
+  },
+  "faq": [
+    {
+      "q": "How much federal contract money goes to South Carolina?",
+      "a": "Federal agencies obligated $7.3B to contractors performing work in South Carolina in FY2026 to date, across 13,256 awards."
+    },
+    {
+      "q": "Which agencies award the most contracts in South Carolina?",
+      "a": "Department of Energy is the largest federal buyer in South Carolina, with $4.5B obligated in FY2026 to date."
+    },
+    {
+      "q": "Who are the largest federal contractors in South Carolina?",
+      "a": "SAVANNAH RIVER NUCLEAR SOLUTIONS LLC is the largest federal contractor performing work in South Carolina by obligated dollars in FY2026 to date, with $3.3B."
+    }
+  ],
+  "related": [
+    {
+      "label": "Alabama federal contracts",
+      "href": "/insights/state/alabama/"
+    },
+    {
+      "label": "Alaska federal contracts",
+      "href": "/insights/state/alaska/"
+    },
+    {
+      "label": "Arizona federal contracts",
+      "href": "/insights/state/arizona/"
+    },
+    {
+      "label": "Arkansas federal contracts",
+      "href": "/insights/state/arkansas/"
+    },
+    {
+      "label": "California federal contracts",
+      "href": "/insights/state/california/"
+    },
+    {
+      "label": "Colorado federal contracts",
+      "href": "/insights/state/colorado/"
+    }
+  ],
+  "sources": [
+    {
+      "label": "USAspending.gov award data",
+      "href": "https://www.usaspending.gov"
+    }
+  ]
+}

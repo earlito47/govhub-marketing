@@ -1,0 +1,609 @@
+{
+  "pageType": "state",
+  "slug": "indiana",
+  "title": "Indiana Federal Contracts: $2.7B in FY2026",
+  "h1": "Federal Contracts in Indiana: Spending, Agencies & Vendors",
+  "metaDescription": "Federal agencies obligated $2.7B to contractors in Indiana in FY2026 to date. See top buying agencies, top vendors, and industries.",
+  "updated": "2026-07-12",
+  "fyWindow": {
+    "label": "FY2026 to date",
+    "start": "2025-10-01",
+    "end": "2026-07-12"
+  },
+  "stats": {
+    "totalObligations": 2745296886.67,
+    "awardCount": 13491,
+    "yoyGrowthPct": -60.8,
+    "avgAwardSize": 203491,
+    "smallBusinessSharePct": null
+  },
+  "charts": [
+    {
+      "id": "indiana-trend",
+      "type": "line",
+      "title": "Obligations by fiscal year",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "FY21",
+              6294850885.57
+            ],
+            [
+              "FY22",
+              8165935917.13
+            ],
+            [
+              "FY23",
+              5980193271.36
+            ],
+            [
+              "FY24",
+              5284728776.11
+            ],
+            [
+              "FY25",
+              7003610011.43
+            ],
+            [
+              "FY26",
+              2745296886.67
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Obligations fell 60.8% year over year, from $7B in FY2025 to $2.7B in FY2026 to date."
+    },
+    {
+      "id": "indiana-top-agencies",
+      "type": "bar",
+      "title": "Top 10 buying agencies, FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "Department of Defense",
+              1926731098.72
+            ],
+            [
+              "Department of Homeland Security",
+              205386663.9
+            ],
+            [
+              "Department of Health and Human Services",
+              168016739.28
+            ],
+            [
+              "Department of Veterans Affairs",
+              150437426.35
+            ],
+            [
+              "General Services Administration",
+              69829661.76
+            ],
+            [
+              "Department of Agriculture",
+              66996997.78
+            ],
+            [
+              "Department of Justice",
+              59818400.13
+            ],
+            [
+              "National Aeronautics and Space Administration",
+              42732462.83
+            ],
+            [
+              "Department of Commerce",
+              16212687.64
+            ],
+            [
+              "Department of the Interior",
+              11106106.31
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Department of Defense was the top federal buyer in Indiana, obligating $1.9B (70.2% of the state total)."
+    },
+    {
+      "id": "indiana-top-vendors",
+      "type": "bar",
+      "title": "Top 10 vendors, FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "ROLLS-ROYCE CORPORATION",
+              587040024.34
+            ],
+            [
+              "UNDERSEA SENSOR SYSTEMS, INC.",
+              242858582.35
+            ],
+            [
+              "LMI CONSULTING, LLC",
+              171986331.34
+            ],
+            [
+              "NATIONAL GOVERNMENT SERVICES, INC.",
+              161703622
+            ],
+            [
+              "AMERIQUAL GROUP LLC",
+              158902521.26
+            ],
+            [
+              "SPARTON DELEON SPRINGS, LLC",
+              91880000
+            ],
+            [
+              "AM GENERAL LLC",
+              84698694.54
+            ],
+            [
+              "SCIENCE APPLICATIONS INTERNATIONAL CORPORATION",
+              62322722.32
+            ],
+            [
+              "ROCHE DIAGNOSTICS CORPORATION",
+              52451801.44
+            ],
+            [
+              "AMENTUM SERVICES, INC.",
+              48812845.38
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "ROLLS-ROYCE CORPORATION led all contractors in Indiana with $587M, 21.4% of the state total."
+    },
+    {
+      "id": "indiana-top-naics",
+      "type": "bar",
+      "title": "Top 10 industries (NAICS), FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "Aircraft Engine and Engine Parts Manufacturing",
+              550992736.01
+            ],
+            [
+              "Search, Detection, Navigation, Guidance, Aeronautical, and Nautical System and Instrument Manufacturing",
+              331112897.94
+            ],
+            [
+              "Engineering Services",
+              238269606.36
+            ],
+            [
+              "Administrative Management and General Management Consulting Services",
+              178384130.39
+            ],
+            [
+              "Fruit and Vegetable Canning",
+              163209594.2
+            ],
+            [
+              "Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology)",
+              107905482.68
+            ],
+            [
+              "Direct Health and Medical Insurance Carriers",
+              104419906
+            ],
+            [
+              "Truck Trailer Manufacturing",
+              92238953.12
+            ],
+            [
+              "Computer Systems Design Services",
+              81944297.5
+            ],
+            [
+              "Other Aircraft Parts and Auxiliary Equipment Manufacturing",
+              54548877.83
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Aircraft Engine and Engine Parts Manufacturing was the largest industry in Indiana, with $551M obligated."
+    }
+  ],
+  "tables": [
+    {
+      "title": "Top 10 vendors",
+      "columns": [
+        "Rank",
+        "Vendor",
+        "Obligations"
+      ],
+      "rows": [
+        [
+          1,
+          {
+            "text": "ROLLS-ROYCE CORPORATION",
+            "href": "https://www.usaspending.gov/recipient/ae61fda0-8744-9361-a177-0ffcabb70c2e-C/latest/"
+          },
+          587040024.34
+        ],
+        [
+          2,
+          {
+            "text": "UNDERSEA SENSOR SYSTEMS, INC.",
+            "href": "https://www.usaspending.gov/recipient/a9a93357-4d33-62df-2eb5-f1e6a7297dda-C/latest/"
+          },
+          242858582.35
+        ],
+        [
+          3,
+          {
+            "text": "LMI CONSULTING, LLC",
+            "href": "https://www.usaspending.gov/recipient/9291f485-a281-155d-c22c-1821a912cefe-C/latest/"
+          },
+          171986331.34
+        ],
+        [
+          4,
+          {
+            "text": "NATIONAL GOVERNMENT SERVICES, INC.",
+            "href": "https://www.usaspending.gov/recipient/9668679c-e45b-76b9-c5c8-62cd7c157d08-C/latest/"
+          },
+          161703622
+        ],
+        [
+          5,
+          {
+            "text": "AMERIQUAL GROUP LLC",
+            "href": "https://www.usaspending.gov/recipient/cc47cdf0-bfe0-401b-3aa5-29a0e1545ec0-C/latest/"
+          },
+          158902521.26
+        ],
+        [
+          6,
+          {
+            "text": "SPARTON DELEON SPRINGS, LLC",
+            "href": "https://www.usaspending.gov/recipient/13c8b5ab-4fff-69fd-2232-aa37d916b8ae-C/latest/"
+          },
+          91880000
+        ],
+        [
+          7,
+          {
+            "text": "AM GENERAL LLC",
+            "href": "https://www.usaspending.gov/recipient/8af25486-0968-17b8-5802-b353f36e9374-C/latest/"
+          },
+          84698694.54
+        ],
+        [
+          8,
+          {
+            "text": "SCIENCE APPLICATIONS INTERNATIONAL CORPORATION",
+            "href": "https://www.usaspending.gov/recipient/20af0683-f17d-1f8f-38ee-2f11bd124559-C/latest/"
+          },
+          62322722.32
+        ],
+        [
+          9,
+          {
+            "text": "ROCHE DIAGNOSTICS CORPORATION",
+            "href": "https://www.usaspending.gov/recipient/421d7508-3321-6311-abf5-e50fdddfd818-C/latest/"
+          },
+          52451801.44
+        ],
+        [
+          10,
+          {
+            "text": "AMENTUM SERVICES, INC.",
+            "href": "https://www.usaspending.gov/recipient/fe5366b4-84c8-12ff-126f-f123de29819c-C/latest/"
+          },
+          48812845.38
+        ]
+      ]
+    },
+    {
+      "title": "Largest awards, FY2026 to date",
+      "columns": [
+        "Rank",
+        "Recipient",
+        "Award Amount",
+        "Awarding Agency"
+      ],
+      "rows": [
+        [
+          1,
+          {
+            "text": "L3HARRIS TECHNOLOGIES, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_NNG04HZ07C_8000_-NONE-_-NONE-/"
+          },
+          1035791035,
+          "National Aeronautics and Space Administration"
+        ],
+        [
+          2,
+          {
+            "text": "L3HARRIS TECHNOLOGIES, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_NNG10XA06C_8000_-NONE-_-NONE-/"
+          },
+          814435946,
+          "National Aeronautics and Space Administration"
+        ],
+        [
+          3,
+          {
+            "text": "AM GENERAL LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W912CH24F0207_9700_W56HZV23D0008_9700/"
+          },
+          689345431.33,
+          "Department of Defense"
+        ],
+        [
+          4,
+          {
+            "text": "AM GENERAL LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W56HZV23F0294_9700_W56HZV23D0008_9700/"
+          },
+          580247501.17,
+          "Department of Defense"
+        ],
+        [
+          5,
+          {
+            "text": "NATIONAL GOVERNMENT SERVICES, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_HHSM500201700002C_7530_-NONE-_-NONE-/"
+          },
+          505264738,
+          "Department of Health and Human Services"
+        ],
+        [
+          6,
+          {
+            "text": "NATIONAL GOVERNMENT SERVICES, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75FCMC22C0003_7530_-NONE-_-NONE-/"
+          },
+          475626274.85,
+          "Department of Health and Human Services"
+        ],
+        [
+          7,
+          {
+            "text": "NATIONAL GOVERNMENT SERVICES, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75FCMC20C0026_7530_-NONE-_-NONE-/"
+          },
+          473691959.07,
+          "Department of Health and Human Services"
+        ],
+        [
+          8,
+          {
+            "text": "AM GENERAL LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W912CH24F0229_9700_W56HZV17D0071_9700/"
+          },
+          416071683.57,
+          "Department of Defense"
+        ],
+        [
+          9,
+          {
+            "text": "AM GENERAL LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W56HZV22F0412_9700_W56HZV22D0002_9700/"
+          },
+          416010021.31,
+          "Department of Defense"
+        ],
+        [
+          10,
+          {
+            "text": "L3HARRIS TECHNOLOGIES, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_80GSFC23CA044_8000_-NONE-_-NONE-/"
+          },
+          343955638,
+          "National Aeronautics and Space Administration"
+        ],
+        [
+          11,
+          {
+            "text": "ERAPSCO",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0001923F0321_9700_N0001919D0032_9700/"
+          },
+          305907210,
+          "Department of Defense"
+        ],
+        [
+          12,
+          {
+            "text": "AM GENERAL LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W56HZV22F0497_9700_W56HZV17D0071_9700/"
+          },
+          302323583.23,
+          "Department of Defense"
+        ],
+        [
+          13,
+          {
+            "text": "AM GENERAL LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W56HZV21F0298_9700_W56HZV17D0071_9700/"
+          },
+          269965370.78,
+          "Department of Defense"
+        ],
+        [
+          14,
+          {
+            "text": "UNDERSEA SENSOR SYSTEMS, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0001925F2168_9700_N0001922D0018_9700/"
+          },
+          257197986.84,
+          "Department of Defense"
+        ],
+        [
+          15,
+          {
+            "text": "ROLLS-ROYCE CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002425C2405_9700_-NONE-_-NONE-/"
+          },
+          241205705.5,
+          "Department of Defense"
+        ],
+        [
+          16,
+          {
+            "text": "UNDERSEA SENSOR SYSTEMS, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0001926F1065_9700_N0001922D0018_9700/"
+          },
+          240781195.41,
+          "Department of Defense"
+        ],
+        [
+          17,
+          {
+            "text": "ROLLS-ROYCE CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0001925F0187_9700_N0001925D0002_9700/"
+          },
+          237997371.68,
+          "Department of Defense"
+        ],
+        [
+          18,
+          {
+            "text": "AM GENERAL LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W56HZV23F0081_9700_W56HZV23D0008_9700/"
+          },
+          221251502.18,
+          "Department of Defense"
+        ],
+        [
+          19,
+          {
+            "text": "AMERESCO INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_47PF0025F0227_4740_DEEE0008027_8900/"
+          },
+          217262240,
+          "General Services Administration"
+        ],
+        [
+          20,
+          {
+            "text": "HII MISSION TECHNOLOGIES CORP",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA807521F0038_9700_FA807518D0002_9700/"
+          },
+          213642883.73,
+          "Department of Defense"
+        ],
+        [
+          21,
+          {
+            "text": "AM GENERAL LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W56HZV24F0136_9700_W56HZV22D0002_9700/"
+          },
+          173797286.86,
+          "Department of Defense"
+        ],
+        [
+          22,
+          {
+            "text": "LMI CONSULTING, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70B01C26F00000320_7014_GS00F041GA_4732/"
+          },
+          171986331.34,
+          "Department of Homeland Security"
+        ],
+        [
+          23,
+          {
+            "text": "ROLLS-ROYCE CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA812426FB007_9700_FA812423D0002_9700/"
+          },
+          167514310.2,
+          "Department of Defense"
+        ],
+        [
+          24,
+          {
+            "text": "AM GENERAL LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W912CH24F0125_9700_W56HZV23D0008_9700/"
+          },
+          164173142.66,
+          "Department of Defense"
+        ],
+        [
+          25,
+          {
+            "text": "ROLLS-ROYCE CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0001924F1885_9700_N0001922D0042_9700/"
+          },
+          162729986.57,
+          "Department of Defense"
+        ]
+      ]
+    }
+  ],
+  "narrative": {
+    "intro": "In FY2026 to date, federal agencies obligated $2.7B across 13,491 contract awards. That is down 60.8% year over year. The average award size was $203K.",
+    "sections": [
+      {
+        "heading": "Which agencies award the most contracts in Indiana?",
+        "body": "Department of Defense was the largest federal buyer in Indiana, obligating $1.9B in FY2026 to date, or 70.2% of the state total."
+      },
+      {
+        "heading": "Who are the top federal contractors in Indiana?",
+        "body": "ROLLS-ROYCE CORPORATION led all contractors performing work in Indiana with $587M in obligations during FY2026 to date."
+      }
+    ]
+  },
+  "faq": [
+    {
+      "q": "How much federal contract money goes to Indiana?",
+      "a": "Federal agencies obligated $2.7B to contractors performing work in Indiana in FY2026 to date, across 13,491 awards."
+    },
+    {
+      "q": "Which agencies award the most contracts in Indiana?",
+      "a": "Department of Defense is the largest federal buyer in Indiana, with $1.9B obligated in FY2026 to date."
+    },
+    {
+      "q": "Who are the largest federal contractors in Indiana?",
+      "a": "ROLLS-ROYCE CORPORATION is the largest federal contractor performing work in Indiana by obligated dollars in FY2026 to date, with $587M."
+    }
+  ],
+  "related": [
+    {
+      "label": "Alabama federal contracts",
+      "href": "/insights/state/alabama/"
+    },
+    {
+      "label": "Alaska federal contracts",
+      "href": "/insights/state/alaska/"
+    },
+    {
+      "label": "Arizona federal contracts",
+      "href": "/insights/state/arizona/"
+    },
+    {
+      "label": "Arkansas federal contracts",
+      "href": "/insights/state/arkansas/"
+    },
+    {
+      "label": "California federal contracts",
+      "href": "/insights/state/california/"
+    },
+    {
+      "label": "Colorado federal contracts",
+      "href": "/insights/state/colorado/"
+    }
+  ],
+  "sources": [
+    {
+      "label": "USAspending.gov award data",
+      "href": "https://www.usaspending.gov"
+    }
+  ]
+}

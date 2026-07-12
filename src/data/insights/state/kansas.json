@@ -1,0 +1,609 @@
+{
+  "pageType": "state",
+  "slug": "kansas",
+  "title": "Kansas Federal Contracts: $2.5B in FY2026",
+  "h1": "Federal Contracts in Kansas: Spending, Agencies & Vendors",
+  "metaDescription": "Federal agencies obligated $2.5B to contractors in Kansas in FY2026 to date. See top buying agencies, top vendors, and industries.",
+  "updated": "2026-07-12",
+  "fyWindow": {
+    "label": "FY2026 to date",
+    "start": "2025-10-01",
+    "end": "2026-07-12"
+  },
+  "stats": {
+    "totalObligations": 2461888353.28,
+    "awardCount": 17185,
+    "yoyGrowthPct": -31.3,
+    "avgAwardSize": 143258,
+    "smallBusinessSharePct": null
+  },
+  "charts": [
+    {
+      "id": "kansas-trend",
+      "type": "line",
+      "title": "Obligations by fiscal year",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "FY21",
+              2918971478.87
+            ],
+            [
+              "FY22",
+              4202971701.61
+            ],
+            [
+              "FY23",
+              3025716129.64
+            ],
+            [
+              "FY24",
+              3328471925.51
+            ],
+            [
+              "FY25",
+              3581990628.03
+            ],
+            [
+              "FY26",
+              2461888353.28
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Obligations fell 31.3% year over year, from $3.6B in FY2025 to $2.5B in FY2026 to date."
+    },
+    {
+      "id": "kansas-top-agencies",
+      "type": "bar",
+      "title": "Top 10 buying agencies, FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "Department of Veterans Affairs",
+              1457883408.52
+            ],
+            [
+              "Department of Transportation",
+              454806581.48
+            ],
+            [
+              "Department of Defense",
+              407872900.94
+            ],
+            [
+              "Department of Agriculture",
+              95557481.35
+            ],
+            [
+              "Department of the Interior",
+              21990243.8
+            ],
+            [
+              "Environmental Protection Agency",
+              21970841.13
+            ],
+            [
+              "General Services Administration",
+              14520171.44
+            ],
+            [
+              "Department of Justice",
+              12263693.21
+            ],
+            [
+              "Department of Labor",
+              4348183.61
+            ],
+            [
+              "Social Security Administration",
+              4136522.98
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Department of Veterans Affairs was the top federal buyer in Kansas, obligating $1.5B (59.2% of the state total)."
+    },
+    {
+      "id": "kansas-top-vendors",
+      "type": "bar",
+      "title": "Top 10 vendors, FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "ORACLE HEALTH GOVERNMENT SERVICES, INC.",
+              1286376755.71
+            ],
+            [
+              "INDRA AIR TRAFFIC, INC.",
+              374201025.83
+            ],
+            [
+              "TEXTRON AVIATION INC",
+              82209525.54
+            ],
+            [
+              "ENVISION XPRESS INC",
+              67913754.89
+            ],
+            [
+              "FEDERAL EXPRESS CORPORATION",
+              52633177.8
+            ],
+            [
+              "FEDEX SUPPLY CHAIN DISTRIBUTION SYSTEM, INC.",
+              39141770.07
+            ],
+            [
+              "NORTHROP GRUMMAN SYSTEMS CORPORATION",
+              36166132.23
+            ],
+            [
+              "KPB SERVICES LLC",
+              35859864.15
+            ],
+            [
+              "LEADING TECHNOLOGY COMPOSITES INC",
+              25952980.85
+            ],
+            [
+              "TEXTRON AVIATION DEFENSE LLC",
+              23902887.25
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "ORACLE HEALTH GOVERNMENT SERVICES, INC. led all contractors in Kansas with $1.3B, 52.3% of the state total."
+    },
+    {
+      "id": "kansas-top-naics",
+      "type": "bar",
+      "title": "Top 10 industries (NAICS), FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "Computer Systems Design Services",
+              1289226535.65
+            ],
+            [
+              "Search, Detection, Navigation, Guidance, Aeronautical, and Nautical System and Instrument Manufacturing",
+              372666224.64
+            ],
+            [
+              "Aircraft Manufacturing",
+              91720328.17
+            ],
+            [
+              "Other Support Activities for Air Transportation",
+              76324014.76
+            ],
+            [
+              "Couriers and Express Delivery Services",
+              53051230.34
+            ],
+            [
+              "Commercial and Institutional Building Construction",
+              52683920.79
+            ],
+            [
+              "Other Aircraft Parts and Auxiliary Equipment Manufacturing",
+              49591449.65
+            ],
+            [
+              "Other Computer Related Services",
+              43465672.22
+            ],
+            [
+              "All Other Business Support Services",
+              39161325.96
+            ],
+            [
+              "Offices of Real Estate Agents and Brokers",
+              35859864.15
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Computer Systems Design Services was the largest industry in Kansas, with $1.3B obligated."
+    }
+  ],
+  "tables": [
+    {
+      "title": "Top 10 vendors",
+      "columns": [
+        "Rank",
+        "Vendor",
+        "Obligations"
+      ],
+      "rows": [
+        [
+          1,
+          {
+            "text": "ORACLE HEALTH GOVERNMENT SERVICES, INC.",
+            "href": "https://www.usaspending.gov/recipient/9232b26d-789d-bdd2-5a6d-28714f1dfa2c-C/latest/"
+          },
+          1286376755.71
+        ],
+        [
+          2,
+          {
+            "text": "INDRA AIR TRAFFIC, INC.",
+            "href": "https://www.usaspending.gov/recipient/73e43c03-597d-d518-375c-733e7b610d9c-C/latest/"
+          },
+          374201025.83
+        ],
+        [
+          3,
+          {
+            "text": "TEXTRON AVIATION INC",
+            "href": "https://www.usaspending.gov/recipient/e91d8566-9d98-0b52-e41f-3afaebeaa161-C/latest/"
+          },
+          82209525.54
+        ],
+        [
+          4,
+          {
+            "text": "ENVISION XPRESS INC",
+            "href": "https://www.usaspending.gov/recipient/cbe3439d-1a5b-ff06-b581-628af24cd02e-C/latest/"
+          },
+          67913754.89
+        ],
+        [
+          5,
+          {
+            "text": "FEDERAL EXPRESS CORPORATION",
+            "href": "https://www.usaspending.gov/recipient/079718fe-322b-0b89-6522-302314b5d75f-C/latest/"
+          },
+          52633177.8
+        ],
+        [
+          6,
+          {
+            "text": "FEDEX SUPPLY CHAIN DISTRIBUTION SYSTEM, INC.",
+            "href": "https://www.usaspending.gov/recipient/5196bee3-3520-4d0f-a473-5763e5da1b05-C/latest/"
+          },
+          39141770.07
+        ],
+        [
+          7,
+          {
+            "text": "NORTHROP GRUMMAN SYSTEMS CORPORATION",
+            "href": "https://www.usaspending.gov/recipient/20e2511b-72bb-ef09-f739-ac4bc059bafb-C/latest/"
+          },
+          36166132.23
+        ],
+        [
+          8,
+          {
+            "text": "KPB SERVICES LLC",
+            "href": "https://www.usaspending.gov/recipient/7847e029-99a9-f947-9e4a-a4f40bf42da0-C/latest/"
+          },
+          35859864.15
+        ],
+        [
+          9,
+          {
+            "text": "LEADING TECHNOLOGY COMPOSITES INC",
+            "href": "https://www.usaspending.gov/recipient/c7daa823-ca6b-1388-8611-ba10e51c8dec-C/latest/"
+          },
+          25952980.85
+        ],
+        [
+          10,
+          {
+            "text": "TEXTRON AVIATION DEFENSE LLC",
+            "href": "https://www.usaspending.gov/recipient/d6740fa2-bd78-bc2f-e76f-2fb34872ba55-C/latest/"
+          },
+          23902887.25
+        ]
+      ]
+    },
+    {
+      "title": "Largest awards, FY2026 to date",
+      "columns": [
+        "Rank",
+        "Recipient",
+        "Award Amount",
+        "Awarding Agency"
+      ],
+      "rows": [
+        [
+          1,
+          {
+            "text": "ORACLE HEALTH GOVERNMENT SERVICES, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10B18N0003_3600_36C10B18D5000_3600/"
+          },
+          1496628663.21,
+          "Department of Veterans Affairs"
+        ],
+        [
+          2,
+          {
+            "text": "ORACLE HEALTH GOVERNMENT SERVICES, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10B22N0051EHRM_3600_36C10B18D5000_3600/"
+          },
+          1424879474.43,
+          "Department of Veterans Affairs"
+        ],
+        [
+          3,
+          {
+            "text": "ORACLE HEALTH GOVERNMENT SERVICES, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10B22N0047EHRM_3600_36C10B18D5000_3600/"
+          },
+          735950421.88,
+          "Department of Veterans Affairs"
+        ],
+        [
+          4,
+          {
+            "text": "TEXTRON AVIATION INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0001923C0020_9700_-NONE-_-NONE-/"
+          },
+          675131274,
+          "Department of Defense"
+        ],
+        [
+          5,
+          {
+            "text": "ORACLE HEALTH GOVERNMENT SERVICES, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10B19N0008_3600_36C10B18D5000_3600/"
+          },
+          516296507.91,
+          "Department of Veterans Affairs"
+        ],
+        [
+          6,
+          {
+            "text": "ORACLE HEALTH GOVERNMENT SERVICES, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10B21N0048EHRM_3600_36C10B18D5000_3600/"
+          },
+          502408524.86,
+          "Department of Veterans Affairs"
+        ],
+        [
+          7,
+          {
+            "text": "SERCO INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W911S018C0004_9700_-NONE-_-NONE-/"
+          },
+          491820073.13,
+          "Department of Defense"
+        ],
+        [
+          8,
+          {
+            "text": "ORACLE HEALTH GOVERNMENT SERVICES, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10B22N0045EHRM_3600_36C10B18D5000_3600/"
+          },
+          423192138.04,
+          "Department of Veterans Affairs"
+        ],
+        [
+          9,
+          {
+            "text": "INDRA AIR TRAFFIC, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_693KA726C00050_6920_-NONE-_-NONE-/"
+          },
+          370672391.1,
+          "Department of Transportation"
+        ],
+        [
+          10,
+          {
+            "text": "ORACLE HEALTH GOVERNMENT SERVICES, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10B24N0063EHRM_3600_36C10B18D5000_3600/"
+          },
+          299999848.61,
+          "Department of Veterans Affairs"
+        ],
+        [
+          11,
+          {
+            "text": "THE LANE CONSTRUCTION CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W912DQ21C1027_9700_-NONE-_-NONE-/"
+          },
+          278770795.61,
+          "Department of Defense"
+        ],
+        [
+          12,
+          {
+            "text": "ORACLE HEALTH GOVERNMENT SERVICES, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10B20N0028EHRM_3600_36C10B18D5000_3600/"
+          },
+          252662240.49,
+          "Department of Veterans Affairs"
+        ],
+        [
+          13,
+          {
+            "text": "ORACLE HEALTH GOVERNMENT SERVICES, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10B22N0056EHRM_3600_36C10B18D5000_3600/"
+          },
+          236503603.1,
+          "Department of Veterans Affairs"
+        ],
+        [
+          14,
+          {
+            "text": "TEXTRON AVIATION INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_6973GH26F00864_6920_6973GH23D00122_6920/"
+          },
+          181129206.7,
+          "Department of Transportation"
+        ],
+        [
+          15,
+          {
+            "text": "ORACLE HEALTH GOVERNMENT SERVICES, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10B25N0064EHRM_3600_36C10B18D5000_3600/"
+          },
+          171895730.4,
+          "Department of Veterans Affairs"
+        ],
+        [
+          16,
+          {
+            "text": "GENERAL ELECTRIC COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_SPRTA124F0352_9700_SPE4AX24D9418_9700/"
+          },
+          171876373.54,
+          "Department of Defense"
+        ],
+        [
+          17,
+          {
+            "text": "ORACLE HEALTH GOVERNMENT SERVICES, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10B20N0036EHRM_3600_36C10B18D5000_3600/"
+          },
+          170259387.32,
+          "Department of Veterans Affairs"
+        ],
+        [
+          18,
+          {
+            "text": "ORACLE HEALTH GOVERNMENT SERVICES, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10B20N0034EHRM_3600_36C10B18D5000_3600/"
+          },
+          155882857.18,
+          "Department of Veterans Affairs"
+        ],
+        [
+          19,
+          {
+            "text": "ORACLE HEALTH GOVERNMENT SERVICES, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10B21N0052EHRM_3600_36C10B18D5000_3600/"
+          },
+          155361306.11,
+          "Department of Veterans Affairs"
+        ],
+        [
+          20,
+          {
+            "text": "FORT RILEY UTILITY SERVICES INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_SP060017C8328_9700_-NONE-_-NONE-/"
+          },
+          146018967.73,
+          "Department of Defense"
+        ],
+        [
+          21,
+          {
+            "text": "TEXTRON AVIATION DEFENSE LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA861722C6238_9700_-NONE-_-NONE-/"
+          },
+          138987571.34,
+          "Department of Defense"
+        ],
+        [
+          22,
+          {
+            "text": "ORACLE HEALTH GOVERNMENT SERVICES, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10B19N0021EHRM_3600_36C10B18D5000_3600/"
+          },
+          135572988,
+          "Department of Veterans Affairs"
+        ],
+        [
+          23,
+          {
+            "text": "INDRA AIR TRAFFIC, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_693KA825F00290_6920_693KA824D00016_6920/"
+          },
+          121703368.45,
+          "Department of Transportation"
+        ],
+        [
+          24,
+          {
+            "text": "ORACLE HEALTH GOVERNMENT SERVICES, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10B21N0044EHRM_3600_36C10B18D5000_3600/"
+          },
+          115521340.2,
+          "Department of Veterans Affairs"
+        ],
+        [
+          25,
+          {
+            "text": "TEXTRON AVIATION DEFENSE LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA861721C6235_9700_-NONE-_-NONE-/"
+          },
+          109208039.77,
+          "Department of Defense"
+        ]
+      ]
+    }
+  ],
+  "narrative": {
+    "intro": "In FY2026 to date, federal agencies obligated $2.5B across 17,185 contract awards. That is down 31.3% year over year. The average award size was $143K.",
+    "sections": [
+      {
+        "heading": "Which agencies award the most contracts in Kansas?",
+        "body": "Department of Veterans Affairs was the largest federal buyer in Kansas, obligating $1.5B in FY2026 to date, or 59.2% of the state total."
+      },
+      {
+        "heading": "Who are the top federal contractors in Kansas?",
+        "body": "ORACLE HEALTH GOVERNMENT SERVICES, INC. led all contractors performing work in Kansas with $1.3B in obligations during FY2026 to date."
+      }
+    ]
+  },
+  "faq": [
+    {
+      "q": "How much federal contract money goes to Kansas?",
+      "a": "Federal agencies obligated $2.5B to contractors performing work in Kansas in FY2026 to date, across 17,185 awards."
+    },
+    {
+      "q": "Which agencies award the most contracts in Kansas?",
+      "a": "Department of Veterans Affairs is the largest federal buyer in Kansas, with $1.5B obligated in FY2026 to date."
+    },
+    {
+      "q": "Who are the largest federal contractors in Kansas?",
+      "a": "ORACLE HEALTH GOVERNMENT SERVICES, INC. is the largest federal contractor performing work in Kansas by obligated dollars in FY2026 to date, with $1.3B."
+    }
+  ],
+  "related": [
+    {
+      "label": "Alabama federal contracts",
+      "href": "/insights/state/alabama/"
+    },
+    {
+      "label": "Alaska federal contracts",
+      "href": "/insights/state/alaska/"
+    },
+    {
+      "label": "Arizona federal contracts",
+      "href": "/insights/state/arizona/"
+    },
+    {
+      "label": "Arkansas federal contracts",
+      "href": "/insights/state/arkansas/"
+    },
+    {
+      "label": "California federal contracts",
+      "href": "/insights/state/california/"
+    },
+    {
+      "label": "Colorado federal contracts",
+      "href": "/insights/state/colorado/"
+    }
+  ],
+  "sources": [
+    {
+      "label": "USAspending.gov award data",
+      "href": "https://www.usaspending.gov"
+    }
+  ]
+}

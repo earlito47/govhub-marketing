@@ -1,0 +1,609 @@
+{
+  "pageType": "state",
+  "slug": "vermont",
+  "title": "Vermont Federal Contracts: $321M in FY2026",
+  "h1": "Federal Contracts in Vermont: Spending, Agencies & Vendors",
+  "metaDescription": "Federal agencies obligated $321M to contractors in Vermont in FY2026 to date. See top buying agencies, top vendors, and industries.",
+  "updated": "2026-07-12",
+  "fyWindow": {
+    "label": "FY2026 to date",
+    "start": "2025-10-01",
+    "end": "2026-07-12"
+  },
+  "stats": {
+    "totalObligations": 321092537.5,
+    "awardCount": 3516,
+    "yoyGrowthPct": -63.4,
+    "avgAwardSize": 91323,
+    "smallBusinessSharePct": null
+  },
+  "charts": [
+    {
+      "id": "vermont-trend",
+      "type": "line",
+      "title": "Obligations by fiscal year",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "FY21",
+              393542285.53
+            ],
+            [
+              "FY22",
+              505742450.05
+            ],
+            [
+              "FY23",
+              423884052.13
+            ],
+            [
+              "FY24",
+              920231717.09
+            ],
+            [
+              "FY25",
+              877134072.79
+            ],
+            [
+              "FY26",
+              321092537.5
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Obligations fell 63.4% year over year, from $877M in FY2025 to $321M in FY2026 to date."
+    },
+    {
+      "id": "vermont-top-agencies",
+      "type": "bar",
+      "title": "Top 10 buying agencies, FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "Department of Defense",
+              201678392.63
+            ],
+            [
+              "Department of Veterans Affairs",
+              51230646.37
+            ],
+            [
+              "Department of Homeland Security",
+              33666585.23
+            ],
+            [
+              "Department of Labor",
+              12032797.25
+            ],
+            [
+              "General Services Administration",
+              6103321.73
+            ],
+            [
+              "Environmental Protection Agency",
+              4289498.46
+            ],
+            [
+              "Department of Health and Human Services",
+              3739132.19
+            ],
+            [
+              "Department of Transportation",
+              3364589.78
+            ],
+            [
+              "Department of Agriculture",
+              2056195.33
+            ],
+            [
+              "Department of Justice",
+              1797566.91
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Department of Defense was the top federal buyer in Vermont, obligating $202M (62.8% of the state total)."
+    },
+    {
+      "id": "vermont-top-vendors",
+      "type": "bar",
+      "title": "Top 10 vendors, FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "GLOBALFOUNDRIES U.S. 2 LLC",
+              82458266
+            ],
+            [
+              "SCIENCE APPLICATIONS INTERNATIONAL CORPORATION",
+              45036285.14
+            ],
+            [
+              "MIND COMPUTING, INC.",
+              28108879.07
+            ],
+            [
+              "SWISH DATA CORPORATION",
+              18857489.34
+            ],
+            [
+              "EDUCATION & TRAINING RESOURCES LLC",
+              12032797.25
+            ],
+            [
+              "INTERNATIONAL BUSINESS MACHINES CORPORATION",
+              10606621
+            ],
+            [
+              "GENERAL DYNAMICS-OTS, INC.",
+              10180936.58
+            ],
+            [
+              "CONCEPTS NREC, LLC",
+              10028799.14
+            ],
+            [
+              "SIMMONDS PRECISION PRODUCTS INC",
+              9257752.26
+            ],
+            [
+              "NORWICH UNIVERSITY",
+              7058136.88
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "GLOBALFOUNDRIES U.S. 2 LLC led all contractors in Vermont with $82.5M, 25.7% of the state total."
+    },
+    {
+      "id": "vermont-top-naics",
+      "type": "bar",
+      "title": "Top 10 industries (NAICS), FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "Semiconductor and Related Device Manufacturing",
+              82458266
+            ],
+            [
+              "Engineering Services",
+              54334362.31
+            ],
+            [
+              "Other Computer Related Services",
+              29023127.25
+            ],
+            [
+              "Custom Computer Programming Services",
+              16201886.85
+            ],
+            [
+              "Other Technical and Trade Schools",
+              16067497.25
+            ],
+            [
+              "Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology)",
+              14166101.56
+            ],
+            [
+              "Other Aircraft Parts and Auxiliary Equipment Manufacturing",
+              13693379.72
+            ],
+            [
+              "Computer Systems Design Services",
+              11639803.22
+            ],
+            [
+              "Commercial and Institutional Building Construction",
+              9351826.93
+            ],
+            [
+              "Small Arms, Ordnance, and Ordnance Accessories Manufacturing",
+              8429104.12
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Semiconductor and Related Device Manufacturing was the largest industry in Vermont, with $82.5M obligated."
+    }
+  ],
+  "tables": [
+    {
+      "title": "Top 10 vendors",
+      "columns": [
+        "Rank",
+        "Vendor",
+        "Obligations"
+      ],
+      "rows": [
+        [
+          1,
+          {
+            "text": "GLOBALFOUNDRIES U.S. 2 LLC",
+            "href": "https://www.usaspending.gov/recipient/7a59fb88-f5b6-cf5a-9b66-75103cf2c1b1-C/latest/"
+          },
+          82458266
+        ],
+        [
+          2,
+          {
+            "text": "SCIENCE APPLICATIONS INTERNATIONAL CORPORATION",
+            "href": "https://www.usaspending.gov/recipient/20af0683-f17d-1f8f-38ee-2f11bd124559-C/latest/"
+          },
+          45036285.14
+        ],
+        [
+          3,
+          {
+            "text": "MIND COMPUTING, INC.",
+            "href": "https://www.usaspending.gov/recipient/b711937f-d893-0f50-0d73-b5a8e8ed5bf5-C/latest/"
+          },
+          28108879.07
+        ],
+        [
+          4,
+          {
+            "text": "SWISH DATA CORPORATION",
+            "href": "https://www.usaspending.gov/recipient/84a05e3b-8abe-6d1d-7ed7-2027ad5179fc-C/latest/"
+          },
+          18857489.34
+        ],
+        [
+          5,
+          {
+            "text": "EDUCATION & TRAINING RESOURCES LLC",
+            "href": "https://www.usaspending.gov/recipient/820ce97d-63fc-474b-e4cd-464a693e2781-C/latest/"
+          },
+          12032797.25
+        ],
+        [
+          6,
+          {
+            "text": "INTERNATIONAL BUSINESS MACHINES CORPORATION",
+            "href": "https://www.usaspending.gov/recipient/cae13eb7-b259-520c-9ae0-a46eb3ea2acd-C/latest/"
+          },
+          10606621
+        ],
+        [
+          7,
+          {
+            "text": "GENERAL DYNAMICS-OTS, INC.",
+            "href": "https://www.usaspending.gov/recipient/3a02f6ab-9df3-cbfd-b60f-1542efce4906-C/latest/"
+          },
+          10180936.58
+        ],
+        [
+          8,
+          {
+            "text": "CONCEPTS NREC, LLC",
+            "href": "https://www.usaspending.gov/recipient/245b5a62-6fda-d4b8-a8fe-efc55177719f-C/latest/"
+          },
+          10028799.14
+        ],
+        [
+          9,
+          {
+            "text": "SIMMONDS PRECISION PRODUCTS INC",
+            "href": "https://www.usaspending.gov/recipient/fadcc7d8-2f96-e742-6560-d10a767c21cc-C/latest/"
+          },
+          9257752.26
+        ],
+        [
+          10,
+          {
+            "text": "NORWICH UNIVERSITY",
+            "href": "https://www.usaspending.gov/recipient/2f593b8a-8f39-461c-09fc-6624a552d423-C/latest/"
+          },
+          7058136.88
+        ]
+      ]
+    },
+    {
+      "title": "Largest awards, FY2026 to date",
+      "columns": [
+        "Rank",
+        "Recipient",
+        "Award Amount",
+        "Awarding Agency"
+      ],
+      "rows": [
+        [
+          1,
+          {
+            "text": "GENERAL DYNAMICS-OTS, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W31P4Q14C0154_9700_-NONE-_-NONE-/"
+          },
+          815735406.6,
+          "Department of Defense"
+        ],
+        [
+          2,
+          {
+            "text": "GENERAL DYNAMICS-OTS, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_SPRRA225F0197_9700_SPRRA225D0009_9700/"
+          },
+          383499742.55,
+          "Department of Defense"
+        ],
+        [
+          3,
+          {
+            "text": "GENERAL DYNAMICS ONE SOURCE LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_47QFCA18F0018_4732_GS00Q09BGD0030_4735/"
+          },
+          224880318.21,
+          "General Services Administration"
+        ],
+        [
+          4,
+          {
+            "text": "GENERAL DYNAMICS-OTS, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_SPRRA224C0029_9700_-NONE-_-NONE-/"
+          },
+          191191997.67,
+          "Department of Defense"
+        ],
+        [
+          5,
+          {
+            "text": "SCIENCE APPLICATIONS INTERNATIONAL CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N6523623F3026_9700_N0017819D8470_9700/"
+          },
+          186268225.05,
+          "Department of Defense"
+        ],
+        [
+          6,
+          {
+            "text": "LANTANA CONSULTING GROUP, INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75D30122F15322_7523_47QTCA21D001V_4732/"
+          },
+          81460584.75,
+          "Department of Health and Human Services"
+        ],
+        [
+          7,
+          {
+            "text": "GLOBALFOUNDRIES U.S. 2 LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_HQ072725FE022_9700_HQ072723D0003_9700/"
+          },
+          65082312,
+          "Department of Defense"
+        ],
+        [
+          8,
+          {
+            "text": "SCIENCE APPLICATIONS INTERNATIONAL CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA807520F0077_9700_FA807518D0007_9700/"
+          },
+          53298358.7,
+          "Department of Defense"
+        ],
+        [
+          9,
+          {
+            "text": "EDUCATION & TRAINING RESOURCES LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_1605JE22C0010_1605_-NONE-_-NONE-/"
+          },
+          47507439.82,
+          "Department of Labor"
+        ],
+        [
+          10,
+          {
+            "text": "SCIENCE APPLICATIONS INTERNATIONAL CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA807523F0035_9700_FA807518D0007_9700/"
+          },
+          45924851.2,
+          "Department of Defense"
+        ],
+        [
+          11,
+          {
+            "text": "MCLAUGHLIN RESEARCH CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N6660419F3002_9700_N0017804D4083_9700/"
+          },
+          42688855.42,
+          "Department of Defense"
+        ],
+        [
+          12,
+          {
+            "text": "MCLAUGHLIN RESEARCH CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0025321F3002_9700_N0017819D8089_9700/"
+          },
+          38084551.62,
+          "Department of Defense"
+        ],
+        [
+          13,
+          {
+            "text": "SCIENCE APPLICATIONS INTERNATIONAL CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N6600122F3509_9700_N0017819D8470_9700/"
+          },
+          37860524.4,
+          "Department of Defense"
+        ],
+        [
+          14,
+          {
+            "text": "GENERAL DYNAMICS-OTS, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002423F5304_9700_N0002420D5109_9700/"
+          },
+          35814965.79,
+          "Department of Defense"
+        ],
+        [
+          15,
+          {
+            "text": "GLOBALFOUNDRIES U.S. 2 LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_HQ072725FE031_9700_HQ072723D0003_9700/"
+          },
+          30153652,
+          "Department of Defense"
+        ],
+        [
+          16,
+          {
+            "text": "INTERNATIONAL BUSINESS MACHINES CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_HQ072724F4002_9700_HQ072724D0002_9700/"
+          },
+          30017300.75,
+          "Department of Defense"
+        ],
+        [
+          17,
+          {
+            "text": "MIND COMPUTING, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10B25F0083_3600_47QTCA22D0076_4732/"
+          },
+          28753089.61,
+          "Department of Veterans Affairs"
+        ],
+        [
+          18,
+          {
+            "text": "INTERNATIONAL BUSINESS MACHINES CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70SBUR25F00000032_7003_47QTCK18D0014_4732/"
+          },
+          27584513.8,
+          "Department of Homeland Security"
+        ],
+        [
+          19,
+          {
+            "text": "HGL-ER JV LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W912WJ24F0061_9700_W912WJ24D0007_9700/"
+          },
+          24806974.44,
+          "Department of Defense"
+        ],
+        [
+          20,
+          {
+            "text": "SCIENCE APPLICATIONS INTERNATIONAL CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0016417F3002_9700_N0017804D4119_9700/"
+          },
+          24659623.08,
+          "Department of Defense"
+        ],
+        [
+          21,
+          {
+            "text": "STANLEY ASSOCIATES, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_HSSCCG10J00245_7003_HSSCCG07D00007_7003/"
+          },
+          22993530.39,
+          "Department of Homeland Security"
+        ],
+        [
+          22,
+          {
+            "text": "SIMMONDS PRECISION PRODUCTS INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0001924C0028_9700_-NONE-_-NONE-/"
+          },
+          18826681.41,
+          "Department of Defense"
+        ],
+        [
+          23,
+          {
+            "text": "ENGELBERTH CONSTRUCTION, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C24123C0087_3600_-NONE-_-NONE-/"
+          },
+          18200938.14,
+          "Department of Veterans Affairs"
+        ],
+        [
+          24,
+          {
+            "text": "SWISH DATA CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70SBUR26F00000145_7003_NNG15SC91B_8000/"
+          },
+          17572435.96,
+          "Department of Homeland Security"
+        ],
+        [
+          25,
+          {
+            "text": "GLOBALFOUNDRIES U.S. 2 LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_HQ072726FE051_9700_HQ072723D0003_9700/"
+          },
+          17100000,
+          "Department of Defense"
+        ]
+      ]
+    }
+  ],
+  "narrative": {
+    "intro": "In FY2026 to date, federal agencies obligated $321M across 3,516 contract awards. That is down 63.4% year over year. The average award size was $91.3K.",
+    "sections": [
+      {
+        "heading": "Which agencies award the most contracts in Vermont?",
+        "body": "Department of Defense was the largest federal buyer in Vermont, obligating $202M in FY2026 to date, or 62.8% of the state total."
+      },
+      {
+        "heading": "Who are the top federal contractors in Vermont?",
+        "body": "GLOBALFOUNDRIES U.S. 2 LLC led all contractors performing work in Vermont with $82.5M in obligations during FY2026 to date."
+      }
+    ]
+  },
+  "faq": [
+    {
+      "q": "How much federal contract money goes to Vermont?",
+      "a": "Federal agencies obligated $321M to contractors performing work in Vermont in FY2026 to date, across 3,516 awards."
+    },
+    {
+      "q": "Which agencies award the most contracts in Vermont?",
+      "a": "Department of Defense is the largest federal buyer in Vermont, with $202M obligated in FY2026 to date."
+    },
+    {
+      "q": "Who are the largest federal contractors in Vermont?",
+      "a": "GLOBALFOUNDRIES U.S. 2 LLC is the largest federal contractor performing work in Vermont by obligated dollars in FY2026 to date, with $82.5M."
+    }
+  ],
+  "related": [
+    {
+      "label": "Alabama federal contracts",
+      "href": "/insights/state/alabama/"
+    },
+    {
+      "label": "Alaska federal contracts",
+      "href": "/insights/state/alaska/"
+    },
+    {
+      "label": "Arizona federal contracts",
+      "href": "/insights/state/arizona/"
+    },
+    {
+      "label": "Arkansas federal contracts",
+      "href": "/insights/state/arkansas/"
+    },
+    {
+      "label": "California federal contracts",
+      "href": "/insights/state/california/"
+    },
+    {
+      "label": "Colorado federal contracts",
+      "href": "/insights/state/colorado/"
+    }
+  ],
+  "sources": [
+    {
+      "label": "USAspending.gov award data",
+      "href": "https://www.usaspending.gov"
+    }
+  ]
+}

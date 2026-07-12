@@ -1,0 +1,609 @@
+{
+  "pageType": "state",
+  "slug": "mississippi",
+  "title": "Mississippi Federal Contracts: $3.6B in FY2026",
+  "h1": "Federal Contracts in Mississippi: Spending, Agencies & Vendors",
+  "metaDescription": "Federal agencies obligated $3.6B to contractors in Mississippi in FY2026 to date. See top buying agencies, top vendors, and industries.",
+  "updated": "2026-07-12",
+  "fyWindow": {
+    "label": "FY2026 to date",
+    "start": "2025-10-01",
+    "end": "2026-07-12"
+  },
+  "stats": {
+    "totalObligations": 3598584268.18,
+    "awardCount": 66700,
+    "yoyGrowthPct": -55,
+    "avgAwardSize": 53952,
+    "smallBusinessSharePct": null
+  },
+  "charts": [
+    {
+      "id": "mississippi-trend",
+      "type": "line",
+      "title": "Obligations by fiscal year",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "FY21",
+              4865574993.48
+            ],
+            [
+              "FY22",
+              4994954582.33
+            ],
+            [
+              "FY23",
+              8702580817.71
+            ],
+            [
+              "FY24",
+              6529464281.59
+            ],
+            [
+              "FY25",
+              8002646764.62
+            ],
+            [
+              "FY26",
+              3598584268.18
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Obligations fell 55.0% year over year, from $8B in FY2025 to $3.6B in FY2026 to date."
+    },
+    {
+      "id": "mississippi-top-agencies",
+      "type": "bar",
+      "title": "Top 10 buying agencies, FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "Department of Defense",
+              2958135038.22
+            ],
+            [
+              "National Aeronautics and Space Administration",
+              198834768.44
+            ],
+            [
+              "Department of Veterans Affairs",
+              140511318.93
+            ],
+            [
+              "Department of Homeland Security",
+              58696984.96
+            ],
+            [
+              "Department of Agriculture",
+              53350341.52
+            ],
+            [
+              "Department of Justice",
+              40618708.03
+            ],
+            [
+              "General Services Administration",
+              37667329.24
+            ],
+            [
+              "Department of Commerce",
+              35693254.03
+            ],
+            [
+              "Department of Labor",
+              20028324.81
+            ],
+            [
+              "Environmental Protection Agency",
+              17250180.94
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Department of Defense was the top federal buyer in Mississippi, obligating $3B (82.2% of the state total)."
+    },
+    {
+      "id": "mississippi-top-vendors",
+      "type": "bar",
+      "title": "Top 10 vendors, FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "HUNTINGTON INGALLS INCORPORATED",
+              1902499080
+            ],
+            [
+              "VERTEX AEROSPACE LLC",
+              412195143.52
+            ],
+            [
+              "M1 SUPPORT SERVICES, L.P.",
+              83024511.01
+            ],
+            [
+              "NOVA SPACE SOLUTIONS, LLC",
+              65975082.73
+            ],
+            [
+              "TAYLOR DEFENSE PRODUCTS, LLC",
+              57559325.58
+            ],
+            [
+              "BAE SYSTEMS TECHNOLOGY SOLUTIONS & SERVICES INC.",
+              38888062.58
+            ],
+            [
+              "JBW GROUP LLC",
+              37101236.65
+            ],
+            [
+              "TENAX AEROSPACE LLC",
+              36534208.92
+            ],
+            [
+              "ADVON CORPORATION",
+              33802940
+            ],
+            [
+              "AKIMA INTRA-DATA, LLC",
+              27715641.15
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "HUNTINGTON INGALLS INCORPORATED led all contractors in Mississippi with $1.9B, 52.9% of the state total."
+    },
+    {
+      "id": "mississippi-top-naics",
+      "type": "bar",
+      "title": "Top 10 industries (NAICS), FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "Ship Building and Repairing",
+              1960737673.8
+            ],
+            [
+              "Other Support Activities for Air Transportation",
+              463650706.73
+            ],
+            [
+              "Other Heavy and Civil Engineering Construction",
+              120066226.51
+            ],
+            [
+              "Facilities Support Services",
+              110901760.5
+            ],
+            [
+              "Commercial and Institutional Building Construction",
+              72424120.24
+            ],
+            [
+              "Construction Machinery Manufacturing",
+              58658899.16
+            ],
+            [
+              "Industrial Building Construction",
+              49423625.78
+            ],
+            [
+              "Computer Systems Design Services",
+              45479092.46
+            ],
+            [
+              "Custom Computer Programming Services",
+              41730614.32
+            ],
+            [
+              "Commercial Air, Rail, and Water Transportation Equipment Rental and Leasing",
+              37223574.27
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Ship Building and Repairing was the largest industry in Mississippi, with $2B obligated."
+    }
+  ],
+  "tables": [
+    {
+      "title": "Top 10 vendors",
+      "columns": [
+        "Rank",
+        "Vendor",
+        "Obligations"
+      ],
+      "rows": [
+        [
+          1,
+          {
+            "text": "HUNTINGTON INGALLS INCORPORATED",
+            "href": "https://www.usaspending.gov/recipient/1eb5d9d6-aabf-3228-e6ab-79cf9729c9d7-C/latest/"
+          },
+          1902499080
+        ],
+        [
+          2,
+          {
+            "text": "VERTEX AEROSPACE LLC",
+            "href": "https://www.usaspending.gov/recipient/fb63ba18-02ee-d557-7366-681926c60e0d-C/latest/"
+          },
+          412195143.52
+        ],
+        [
+          3,
+          {
+            "text": "M1 SUPPORT SERVICES, L.P.",
+            "href": "https://www.usaspending.gov/recipient/f4832a42-513d-107f-4852-9539b2c518e1-C/latest/"
+          },
+          83024511.01
+        ],
+        [
+          4,
+          {
+            "text": "NOVA SPACE SOLUTIONS, LLC",
+            "href": "https://www.usaspending.gov/recipient/3375aa27-1225-18d6-7c4b-a7f4a005ef92-C/latest/"
+          },
+          65975082.73
+        ],
+        [
+          5,
+          {
+            "text": "TAYLOR DEFENSE PRODUCTS, LLC",
+            "href": "https://www.usaspending.gov/recipient/959efc9f-eb45-c5c9-ec3c-ac4319f9d6d5-C/latest/"
+          },
+          57559325.58
+        ],
+        [
+          6,
+          {
+            "text": "BAE SYSTEMS TECHNOLOGY SOLUTIONS & SERVICES INC.",
+            "href": "https://www.usaspending.gov/recipient/2e141abe-fe8f-7ddc-e6a3-8bb2165836be-C/latest/"
+          },
+          38888062.58
+        ],
+        [
+          7,
+          {
+            "text": "JBW GROUP LLC",
+            "href": "https://www.usaspending.gov/recipient/82a5a405-f704-9692-1f5d-f13d307a5f80-C/latest/"
+          },
+          37101236.65
+        ],
+        [
+          8,
+          {
+            "text": "TENAX AEROSPACE LLC",
+            "href": "https://www.usaspending.gov/recipient/1ee6edf8-2db3-d98f-9f0a-a86b2b9f0821-C/latest/"
+          },
+          36534208.92
+        ],
+        [
+          9,
+          {
+            "text": "ADVON CORPORATION",
+            "href": "https://www.usaspending.gov/recipient/f7044c1f-ceec-deec-a7b3-169166f9032e-C/latest/"
+          },
+          33802940
+        ],
+        [
+          10,
+          {
+            "text": "AKIMA INTRA-DATA, LLC",
+            "href": "https://www.usaspending.gov/recipient/553844fa-d67e-0f41-6d29-776f781e9576-C/latest/"
+          },
+          27715641.15
+        ]
+      ]
+    },
+    {
+      "title": "Largest awards, FY2026 to date",
+      "columns": [
+        "Rank",
+        "Recipient",
+        "Award Amount",
+        "Awarding Agency"
+      ],
+      "rows": [
+        [
+          1,
+          {
+            "text": "HUNTINGTON INGALLS INCORPORATED",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002423C2307_9700_-NONE-_-NONE-/"
+          },
+          6988080141.83,
+          "Department of Defense"
+        ],
+        [
+          2,
+          {
+            "text": "HUNTINGTON INGALLS INCORPORATED",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002418C2307_9700_-NONE-_-NONE-/"
+          },
+          6890356010.74,
+          "Department of Defense"
+        ],
+        [
+          3,
+          {
+            "text": "HUNTINGTON INGALLS INCORPORATED",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002418C2406_9700_-NONE-_-NONE-/"
+          },
+          4722995757,
+          "Department of Defense"
+        ],
+        [
+          4,
+          {
+            "text": "HUNTINGTON INGALLS INCORPORATED",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002416C2427_9700_-NONE-_-NONE-/"
+          },
+          3372939545.4,
+          "Department of Defense"
+        ],
+        [
+          5,
+          {
+            "text": "HUNTINGTON INGALLS INCORPORATED",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002413C2307_9700_-NONE-_-NONE-/"
+          },
+          3345822881,
+          "Department of Defense"
+        ],
+        [
+          6,
+          {
+            "text": "HUNTINGTON INGALLS INCORPORATED",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002420C2437_9700_-NONE-_-NONE-/"
+          },
+          3155693794,
+          "Department of Defense"
+        ],
+        [
+          7,
+          {
+            "text": "HUNTINGTON INGALLS INCORPORATED",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002424C2473_9700_-NONE-_-NONE-/"
+          },
+          2067000000,
+          "Department of Defense"
+        ],
+        [
+          8,
+          {
+            "text": "BOLLINGER MISSISSIPPI SHIPBUILDING, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002419C2210_9700_-NONE-_-NONE-/"
+          },
+          2019738356.06,
+          "Department of Defense"
+        ],
+        [
+          9,
+          {
+            "text": "SYNCOM SPACE SERVICES LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_NNS15AA77T_8000_NNS15AA01C_8000/"
+          },
+          817366040.07,
+          "National Aeronautics and Space Administration"
+        ],
+        [
+          10,
+          {
+            "text": "HUNTINGTON INGALLS INCORPORATED",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002424C2467_9700_-NONE-_-NONE-/"
+          },
+          806951059,
+          "Department of Defense"
+        ],
+        [
+          11,
+          {
+            "text": "VERTEX AEROSPACE LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA810618C0001_9700_-NONE-_-NONE-/"
+          },
+          560040621.6,
+          "Department of Defense"
+        ],
+        [
+          12,
+          {
+            "text": "VERTEX AEROSPACE LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N6134021F0007_9700_N6134019D1010_9700/"
+          },
+          531199717.1,
+          "Department of Defense"
+        ],
+        [
+          13,
+          {
+            "text": "SYNCOM SPACE SERVICES LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_NNS15AA75T_8000_NNS15AA01C_8000/"
+          },
+          391751302.29,
+          "National Aeronautics and Space Administration"
+        ],
+        [
+          14,
+          {
+            "text": "BAE SYSTEMS TECHNOLOGY SOLUTIONS & SERVICES INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W912DY22F0105_9700_47QTCK18D0053_4732/"
+          },
+          360726634.84,
+          "Department of Defense"
+        ],
+        [
+          15,
+          {
+            "text": "HUNTINGTON INGALLS INCORPORATED",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002421C4205_9700_-NONE-_-NONE-/"
+          },
+          353096924.7,
+          "Department of Defense"
+        ],
+        [
+          16,
+          {
+            "text": "BOLLINGER MISSISSIPPI SHIPBUILDING, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002418C2230_9700_-NONE-_-NONE-/"
+          },
+          336504825,
+          "Department of Defense"
+        ],
+        [
+          17,
+          {
+            "text": "HUNTINGTON INGALLS INCORPORATED",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002423C2324_9700_-NONE-_-NONE-/"
+          },
+          328854777,
+          "Department of Defense"
+        ],
+        [
+          18,
+          {
+            "text": "M1 SUPPORT SERVICES, L.P.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA300219F0050_9700_N6134019D1012_9700/"
+          },
+          310004094.55,
+          "Department of Defense"
+        ],
+        [
+          19,
+          {
+            "text": "OLIN WINCHESTER, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W52P1J21C0016_9700_-NONE-_-NONE-/"
+          },
+          309756353.38,
+          "Department of Defense"
+        ],
+        [
+          20,
+          {
+            "text": "HUNTINGTON INGALLS INCORPORATED",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002422C2300_9700_-NONE-_-NONE-/"
+          },
+          305851639,
+          "Department of Defense"
+        ],
+        [
+          21,
+          {
+            "text": "RAYTHEON COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_H9240821C0001_9700_-NONE-_-NONE-/"
+          },
+          278221227.8,
+          "Department of Defense"
+        ],
+        [
+          22,
+          {
+            "text": "M1 SUPPORT SERVICES, L.P.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA300223F0071_9700_FA300220D0015_9700/"
+          },
+          240073670.89,
+          "Department of Defense"
+        ],
+        [
+          23,
+          {
+            "text": "VERTEX AEROSPACE LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_15DDHQ19C00000002_1524_-NONE-_-NONE-/"
+          },
+          223067839.47,
+          "Department of Justice"
+        ],
+        [
+          24,
+          {
+            "text": "HUNTINGTON INGALLS INCORPORATED",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002419C4313_9700_-NONE-_-NONE-/"
+          },
+          190763274.51,
+          "Department of Defense"
+        ],
+        [
+          25,
+          {
+            "text": "VERTEX AEROSPACE LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0042124F0048_9700_N0042124D0003_9700/"
+          },
+          182860721.44,
+          "Department of Defense"
+        ]
+      ]
+    }
+  ],
+  "narrative": {
+    "intro": "In FY2026 to date, federal agencies obligated $3.6B across 66,700 contract awards. That is down 55.0% year over year. The average award size was $54K.",
+    "sections": [
+      {
+        "heading": "Which agencies award the most contracts in Mississippi?",
+        "body": "Department of Defense was the largest federal buyer in Mississippi, obligating $3B in FY2026 to date, or 82.2% of the state total."
+      },
+      {
+        "heading": "Who are the top federal contractors in Mississippi?",
+        "body": "HUNTINGTON INGALLS INCORPORATED led all contractors performing work in Mississippi with $1.9B in obligations during FY2026 to date."
+      }
+    ]
+  },
+  "faq": [
+    {
+      "q": "How much federal contract money goes to Mississippi?",
+      "a": "Federal agencies obligated $3.6B to contractors performing work in Mississippi in FY2026 to date, across 66,700 awards."
+    },
+    {
+      "q": "Which agencies award the most contracts in Mississippi?",
+      "a": "Department of Defense is the largest federal buyer in Mississippi, with $3B obligated in FY2026 to date."
+    },
+    {
+      "q": "Who are the largest federal contractors in Mississippi?",
+      "a": "HUNTINGTON INGALLS INCORPORATED is the largest federal contractor performing work in Mississippi by obligated dollars in FY2026 to date, with $1.9B."
+    }
+  ],
+  "related": [
+    {
+      "label": "Alabama federal contracts",
+      "href": "/insights/state/alabama/"
+    },
+    {
+      "label": "Alaska federal contracts",
+      "href": "/insights/state/alaska/"
+    },
+    {
+      "label": "Arizona federal contracts",
+      "href": "/insights/state/arizona/"
+    },
+    {
+      "label": "Arkansas federal contracts",
+      "href": "/insights/state/arkansas/"
+    },
+    {
+      "label": "California federal contracts",
+      "href": "/insights/state/california/"
+    },
+    {
+      "label": "Colorado federal contracts",
+      "href": "/insights/state/colorado/"
+    }
+  ],
+  "sources": [
+    {
+      "label": "USAspending.gov award data",
+      "href": "https://www.usaspending.gov"
+    }
+  ]
+}

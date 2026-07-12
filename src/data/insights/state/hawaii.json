@@ -1,0 +1,609 @@
+{
+  "pageType": "state",
+  "slug": "hawaii",
+  "title": "Hawaii Federal Contracts: $2.1B in FY2026",
+  "h1": "Federal Contracts in Hawaii: Spending, Agencies & Vendors",
+  "metaDescription": "Federal agencies obligated $2.1B to contractors in Hawaii in FY2026 to date. See top buying agencies, top vendors, and industries.",
+  "updated": "2026-07-12",
+  "fyWindow": {
+    "label": "FY2026 to date",
+    "start": "2025-10-01",
+    "end": "2026-07-12"
+  },
+  "stats": {
+    "totalObligations": 2094592166.3,
+    "awardCount": 18699,
+    "yoyGrowthPct": -62,
+    "avgAwardSize": 112016,
+    "smallBusinessSharePct": null
+  },
+  "charts": [
+    {
+      "id": "hawaii-trend",
+      "type": "line",
+      "title": "Obligations by fiscal year",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "FY21",
+              2825854743.13
+            ],
+            [
+              "FY22",
+              3519023953.42
+            ],
+            [
+              "FY23",
+              4410963073.02
+            ],
+            [
+              "FY24",
+              6653542718.43
+            ],
+            [
+              "FY25",
+              5514960690.82
+            ],
+            [
+              "FY26",
+              2094592166.3
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Obligations fell 62.0% year over year, from $5.5B in FY2025 to $2.1B in FY2026 to date."
+    },
+    {
+      "id": "hawaii-top-agencies",
+      "type": "bar",
+      "title": "Top 10 buying agencies, FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "Department of Defense",
+              1631727332.19
+            ],
+            [
+              "General Services Administration",
+              248386897.8
+            ],
+            [
+              "Department of Homeland Security",
+              101825881.15
+            ],
+            [
+              "Department of Veterans Affairs",
+              39220880.66
+            ],
+            [
+              "Department of the Interior",
+              32314347.73
+            ],
+            [
+              "Department of Transportation",
+              11937646.92
+            ],
+            [
+              "Department of Labor",
+              9780694.46
+            ],
+            [
+              "Department of Commerce",
+              8955994
+            ],
+            [
+              "Department of Health and Human Services",
+              4395987.78
+            ],
+            [
+              "Department of Justice",
+              4087859.23
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Department of Defense was the top federal buyer in Hawaii, obligating $1.6B (77.9% of the state total)."
+    },
+    {
+      "id": "hawaii-top-vendors",
+      "type": "bar",
+      "title": "Top 10 vendors, FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "DRAGADOS/HAWAIIAN DREDGING/ORION JV",
+              353974367
+            ],
+            [
+              "NAN INC",
+              271737198.03
+            ],
+            [
+              "CONTI FEDERAL SERVICES, LLC",
+              97283947
+            ],
+            [
+              "LEIDOS, INC.",
+              83953782.65
+            ],
+            [
+              "HAWAII HARBORS CONSTRUCTORS JV",
+              61369885
+            ],
+            [
+              "KOA LANI JV LLC",
+              56710962.89
+            ],
+            [
+              "AMENTUM SERVICES, INC.",
+              46835741
+            ],
+            [
+              "DELOITTE CONSULTING LLP",
+              42041547
+            ],
+            [
+              "DAWSON TECHNICAL, INC.",
+              41600000
+            ],
+            [
+              "LIMA CHARLIE, INC",
+              29216383.11
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "DRAGADOS/HAWAIIAN DREDGING/ORION JV led all contractors in Hawaii with $354M, 16.9% of the state total."
+    },
+    {
+      "id": "hawaii-top-naics",
+      "type": "bar",
+      "title": "Top 10 industries (NAICS), FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "Other Heavy and Civil Engineering Construction",
+              601867038.88
+            ],
+            [
+              "Commercial and Institutional Building Construction",
+              361646152.52
+            ],
+            [
+              "Engineering Services",
+              243526807.37
+            ],
+            [
+              "Computer Systems Design Services",
+              128119249.6
+            ],
+            [
+              "Facilities Support Services",
+              95727732.03
+            ],
+            [
+              "Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology)",
+              56343041.69
+            ],
+            [
+              "Residential Property Managers",
+              51821312.9
+            ],
+            [
+              "Ship Building and Repairing",
+              47904986.57
+            ],
+            [
+              "Deep Sea Freight Transportation",
+              33970525.44
+            ],
+            [
+              "Janitorial Services",
+              26386851.58
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Other Heavy and Civil Engineering Construction was the largest industry in Hawaii, with $602M obligated."
+    }
+  ],
+  "tables": [
+    {
+      "title": "Top 10 vendors",
+      "columns": [
+        "Rank",
+        "Vendor",
+        "Obligations"
+      ],
+      "rows": [
+        [
+          1,
+          {
+            "text": "DRAGADOS/HAWAIIAN DREDGING/ORION JV",
+            "href": "https://www.usaspending.gov/recipient/15879ec6-1b21-46be-308d-e9dc98e307c2-C/latest/"
+          },
+          353974367
+        ],
+        [
+          2,
+          {
+            "text": "NAN INC",
+            "href": "https://www.usaspending.gov/recipient/59a43f23-38e4-9f4d-cf6c-43d185e9419e-C/latest/"
+          },
+          271737198.03
+        ],
+        [
+          3,
+          {
+            "text": "CONTI FEDERAL SERVICES, LLC",
+            "href": "https://www.usaspending.gov/recipient/32bfdd74-df48-7d09-1af8-fc9916ce367f-C/latest/"
+          },
+          97283947
+        ],
+        [
+          4,
+          {
+            "text": "LEIDOS, INC.",
+            "href": "https://www.usaspending.gov/recipient/e77c753b-6638-3d5b-442e-c1225ca669d6-C/latest/"
+          },
+          83953782.65
+        ],
+        [
+          5,
+          {
+            "text": "HAWAII HARBORS CONSTRUCTORS JV",
+            "href": "https://www.usaspending.gov/recipient/0690e3aa-f0fc-6a5a-b5a2-aecd6923be23-C/latest/"
+          },
+          61369885
+        ],
+        [
+          6,
+          {
+            "text": "KOA LANI JV LLC",
+            "href": "https://www.usaspending.gov/recipient/cc4826b9-10cb-4788-5a62-fc66ad4b9e69-C/latest/"
+          },
+          56710962.89
+        ],
+        [
+          7,
+          {
+            "text": "AMENTUM SERVICES, INC.",
+            "href": "https://www.usaspending.gov/recipient/fe5366b4-84c8-12ff-126f-f123de29819c-C/latest/"
+          },
+          46835741
+        ],
+        [
+          8,
+          {
+            "text": "DELOITTE CONSULTING LLP",
+            "href": "https://www.usaspending.gov/recipient/92663aec-4451-0476-502b-d8c6919e98e0-C/latest/"
+          },
+          42041547
+        ],
+        [
+          9,
+          {
+            "text": "DAWSON TECHNICAL, INC.",
+            "href": "https://www.usaspending.gov/recipient/af528a59-0e62-4957-1087-ce3a579cc8b7-C/latest/"
+          },
+          41600000
+        ],
+        [
+          10,
+          {
+            "text": "LIMA CHARLIE, INC",
+            "href": "https://www.usaspending.gov/recipient/61f65f0d-396b-29b0-d24f-28ea74ce71be-C/latest/"
+          },
+          29216383.11
+        ]
+      ]
+    },
+    {
+      "title": "Largest awards, FY2026 to date",
+      "columns": [
+        "Rank",
+        "Recipient",
+        "Award Amount",
+        "Awarding Agency"
+      ],
+      "rows": [
+        [
+          1,
+          {
+            "text": "DRAGADOS/HAWAIIAN DREDGING/ORION JV",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N6274223F4007_9700_N6274222D1311_9700/"
+          },
+          3071962135.15,
+          "Department of Defense"
+        ],
+        [
+          2,
+          {
+            "text": "HENSEL PHELPS CONSTRUCTION CO",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N6247821F4079_9700_N6247820D4003_9700/"
+          },
+          378779367,
+          "Department of Defense"
+        ],
+        [
+          3,
+          {
+            "text": "ECC CONSTRUCTORS LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W9128A24F0011_9700_W912EK22D0004_9700/"
+          },
+          373314199.4,
+          "Department of Defense"
+        ],
+        [
+          4,
+          {
+            "text": "HUI HULIAU TECHNOLOGY SERVICES LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W9128A24C0006_9700_-NONE-_-NONE-/"
+          },
+          223275753.31,
+          "Department of Defense"
+        ],
+        [
+          5,
+          {
+            "text": "INNOVATIVE MANAGEMENT CONCEPTS, INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_47QFCA20F0066_4732_47QTCH18D0028_4732/"
+          },
+          222949281.37,
+          "General Services Administration"
+        ],
+        [
+          6,
+          {
+            "text": "ECC CONSTRUCTORS LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W9128A24C0017_9700_-NONE-_-NONE-/"
+          },
+          210389514.01,
+          "Department of Defense"
+        ],
+        [
+          7,
+          {
+            "text": "AMENTUM SERVICES, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_47QFCA23F0046_4732_GS00Q14OADU140_4732/"
+          },
+          198757846,
+          "General Services Administration"
+        ],
+        [
+          8,
+          {
+            "text": "HAWAII HARBORS CONSTRUCTORS JV",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N6247825F0061_9700_N6247822D4006_9700/"
+          },
+          197969875,
+          "Department of Defense"
+        ],
+        [
+          9,
+          {
+            "text": "NAN INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N6247823F4226_9700_N6247820D4014_9700/"
+          },
+          174470644,
+          "Department of Defense"
+        ],
+        [
+          10,
+          {
+            "text": "IES DOWNSTREAM LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_SPE60323C5000_9700_-NONE-_-NONE-/"
+          },
+          172206114.24,
+          "Department of Defense"
+        ],
+        [
+          11,
+          {
+            "text": "LEIDOS, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_47QFCA24F0039_4732_47QTCK18D0008_4732/"
+          },
+          164568730.65,
+          "General Services Administration"
+        ],
+        [
+          12,
+          {
+            "text": "KOA LANI JV LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0060421FB050_9700_N0060421D4000_9700/"
+          },
+          149418366.51,
+          "Department of Defense"
+        ],
+        [
+          13,
+          {
+            "text": "LEIDOS, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_47QFPA23F0014_4732_47QFPA22D0003_4732/"
+          },
+          141380932.04,
+          "General Services Administration"
+        ],
+        [
+          14,
+          {
+            "text": "NAN INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N6247825F0093_9700_N6247822D4009_9700/"
+          },
+          134496543.45,
+          "Department of Defense"
+        ],
+        [
+          15,
+          {
+            "text": "KGJJ ENGINEERING SOLUTIONS, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W9127S24F0100_9700_W9127S23D6026_9700/"
+          },
+          131553741.7,
+          "Department of Defense"
+        ],
+        [
+          16,
+          {
+            "text": "AMENTUM SERVICES, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_47QFCA19F0011_4732_GS00Q14OADU140_4732/"
+          },
+          130020359.1,
+          "General Services Administration"
+        ],
+        [
+          17,
+          {
+            "text": "MNDPI PACIFIC JV",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N6274221F0302_9700_N6274220D0004_9700/"
+          },
+          120179177,
+          "Department of Defense"
+        ],
+        [
+          18,
+          {
+            "text": "BOOZ ALLEN HAMILTON INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA807522F0062_9700_FA807518D0004_9700/"
+          },
+          117461209.38,
+          "Department of Defense"
+        ],
+        [
+          19,
+          {
+            "text": "HENSEL PHELPS CONSTRUCTION CO",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_140G0322C0005_1434_-NONE-_-NONE-/"
+          },
+          117001937.46,
+          "Department of the Interior"
+        ],
+        [
+          20,
+          {
+            "text": "CONTI FEDERAL SERVICES, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W9128A26CA002_9700_-NONE-_-NONE-/"
+          },
+          97283947,
+          "Department of Defense"
+        ],
+        [
+          21,
+          {
+            "text": "U.S. MARINE MANAGEMENT, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N3220523C4035_9700_-NONE-_-NONE-/"
+          },
+          96098818.23,
+          "Department of Defense"
+        ],
+        [
+          22,
+          {
+            "text": "HENSEL PHELPS CONSTRUCTION CO",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W9128A25C0002_9700_-NONE-_-NONE-/"
+          },
+          94795436,
+          "Department of Defense"
+        ],
+        [
+          23,
+          {
+            "text": "NAN INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N6247826F0064_9700_N6247822D4009_9700/"
+          },
+          86105241.76,
+          "Department of Defense"
+        ],
+        [
+          24,
+          {
+            "text": "HENSEL PHELPS CONSTRUCTION CO",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N6247825F0135_9700_N6247825D4045_9700/"
+          },
+          82752000,
+          "Department of Defense"
+        ],
+        [
+          25,
+          {
+            "text": "HENSEL PHELPS CONSTRUCTION CO",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W9128A21C0007_9700_-NONE-_-NONE-/"
+          },
+          82172429,
+          "Department of Defense"
+        ]
+      ]
+    }
+  ],
+  "narrative": {
+    "intro": "In FY2026 to date, federal agencies obligated $2.1B across 18,699 contract awards. That is down 62.0% year over year. The average award size was $112K.",
+    "sections": [
+      {
+        "heading": "Which agencies award the most contracts in Hawaii?",
+        "body": "Department of Defense was the largest federal buyer in Hawaii, obligating $1.6B in FY2026 to date, or 77.9% of the state total."
+      },
+      {
+        "heading": "Who are the top federal contractors in Hawaii?",
+        "body": "DRAGADOS/HAWAIIAN DREDGING/ORION JV led all contractors performing work in Hawaii with $354M in obligations during FY2026 to date."
+      }
+    ]
+  },
+  "faq": [
+    {
+      "q": "How much federal contract money goes to Hawaii?",
+      "a": "Federal agencies obligated $2.1B to contractors performing work in Hawaii in FY2026 to date, across 18,699 awards."
+    },
+    {
+      "q": "Which agencies award the most contracts in Hawaii?",
+      "a": "Department of Defense is the largest federal buyer in Hawaii, with $1.6B obligated in FY2026 to date."
+    },
+    {
+      "q": "Who are the largest federal contractors in Hawaii?",
+      "a": "DRAGADOS/HAWAIIAN DREDGING/ORION JV is the largest federal contractor performing work in Hawaii by obligated dollars in FY2026 to date, with $354M."
+    }
+  ],
+  "related": [
+    {
+      "label": "Alabama federal contracts",
+      "href": "/insights/state/alabama/"
+    },
+    {
+      "label": "Alaska federal contracts",
+      "href": "/insights/state/alaska/"
+    },
+    {
+      "label": "Arizona federal contracts",
+      "href": "/insights/state/arizona/"
+    },
+    {
+      "label": "Arkansas federal contracts",
+      "href": "/insights/state/arkansas/"
+    },
+    {
+      "label": "California federal contracts",
+      "href": "/insights/state/california/"
+    },
+    {
+      "label": "Colorado federal contracts",
+      "href": "/insights/state/colorado/"
+    }
+  ],
+  "sources": [
+    {
+      "label": "USAspending.gov award data",
+      "href": "https://www.usaspending.gov"
+    }
+  ]
+}

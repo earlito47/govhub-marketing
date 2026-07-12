@@ -1,0 +1,609 @@
+{
+  "pageType": "state",
+  "slug": "alabama",
+  "title": "Alabama Federal Contracts: $9.6B in FY2026",
+  "h1": "Federal Contracts in Alabama: Spending, Agencies & Vendors",
+  "metaDescription": "Federal agencies obligated $9.6B to contractors in Alabama in FY2026 to date. See top buying agencies, top vendors, and industries.",
+  "updated": "2026-07-12",
+  "fyWindow": {
+    "label": "FY2026 to date",
+    "start": "2025-10-01",
+    "end": "2026-07-12"
+  },
+  "stats": {
+    "totalObligations": 9631550878.05,
+    "awardCount": 71395,
+    "yoyGrowthPct": -46.9,
+    "avgAwardSize": 134905,
+    "smallBusinessSharePct": null
+  },
+  "charts": [
+    {
+      "id": "alabama-trend",
+      "type": "line",
+      "title": "Obligations by fiscal year",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "FY21",
+              13129252930.54
+            ],
+            [
+              "FY22",
+              14097173090.78
+            ],
+            [
+              "FY23",
+              14875927065
+            ],
+            [
+              "FY24",
+              17347998697
+            ],
+            [
+              "FY25",
+              18143921873.76
+            ],
+            [
+              "FY26",
+              9631550878.05
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Obligations fell 46.9% year over year, from $18.1B in FY2025 to $9.6B in FY2026 to date."
+    },
+    {
+      "id": "alabama-top-agencies",
+      "type": "bar",
+      "title": "Top 10 buying agencies, FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "Department of Defense",
+              6819689119.55
+            ],
+            [
+              "National Aeronautics and Space Administration",
+              1502245607.34
+            ],
+            [
+              "Department of Homeland Security",
+              370297763.8
+            ],
+            [
+              "General Services Administration",
+              350530311.8
+            ],
+            [
+              "Department of Veterans Affairs",
+              239720644.26
+            ],
+            [
+              "Department of Justice",
+              222834644.08
+            ],
+            [
+              "Department of Agriculture",
+              42363345.32
+            ],
+            [
+              "Department of Labor",
+              22019637.91
+            ],
+            [
+              "Department of the Interior",
+              14483524.06
+            ],
+            [
+              "Department of Commerce",
+              10903339.09
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Department of Defense was the top federal buyer in Alabama, obligating $6.8B (70.8% of the state total)."
+    },
+    {
+      "id": "alabama-top-vendors",
+      "type": "bar",
+      "title": "Top 10 vendors, FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "LOCKHEED MARTIN CORPORATION",
+              1043650581.63
+            ],
+            [
+              "THE BOEING COMPANY",
+              1019568055.52
+            ],
+            [
+              "NORTHROP GRUMMAN SYSTEMS CORPORATION",
+              435416615.66
+            ],
+            [
+              "SCIENCE APPLICATIONS INTERNATIONAL CORPORATION",
+              409245510.33
+            ],
+            [
+              "M1 SUPPORT SERVICES, L.P.",
+              334904741.71
+            ],
+            [
+              "AUSTAL USA, LLC",
+              323288262.38
+            ],
+            [
+              "BLUE ORIGIN MANUFACTURING, LLC",
+              301561071.5
+            ],
+            [
+              "DYNETICS, INC.",
+              290606428.97
+            ],
+            [
+              "DELL MARKETING L.P.",
+              287938472.32
+            ],
+            [
+              "TORCH TECHNOLOGIES INC",
+              233172832.72
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "LOCKHEED MARTIN CORPORATION led all contractors in Alabama with $1B, 10.8% of the state total."
+    },
+    {
+      "id": "alabama-top-naics",
+      "type": "bar",
+      "title": "Top 10 industries (NAICS), FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology)",
+              3053243698.16
+            ],
+            [
+              "Guided Missile and Space Vehicle Manufacturing",
+              1190028797.69
+            ],
+            [
+              "Engineering Services",
+              841859169.34
+            ],
+            [
+              "Ship Building and Repairing",
+              579678233
+            ],
+            [
+              "Commercial and Institutional Building Construction",
+              369978043.7
+            ],
+            [
+              "Other Support Activities for Air Transportation",
+              359229373.46
+            ],
+            [
+              "Other Aircraft Parts and Auxiliary Equipment Manufacturing",
+              323076482.63
+            ],
+            [
+              "Custom Computer Programming Services",
+              308418945.69
+            ],
+            [
+              "Software Publishers",
+              300174027.87
+            ],
+            [
+              "Research and Development in the Physical, Engineering, and Life Sciences (except Biotechnology)",
+              255353832.32
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology) was the largest industry in Alabama, with $3.1B obligated."
+    }
+  ],
+  "tables": [
+    {
+      "title": "Top 10 vendors",
+      "columns": [
+        "Rank",
+        "Vendor",
+        "Obligations"
+      ],
+      "rows": [
+        [
+          1,
+          {
+            "text": "LOCKHEED MARTIN CORPORATION",
+            "href": "https://www.usaspending.gov/recipient/894dbedb-aca8-9b52-0a82-3b0fd8713b6d-C/latest/"
+          },
+          1043650581.63
+        ],
+        [
+          2,
+          {
+            "text": "THE BOEING COMPANY",
+            "href": "https://www.usaspending.gov/recipient/3632dc26-45b8-9d0e-1128-63e866708c8f-C/latest/"
+          },
+          1019568055.52
+        ],
+        [
+          3,
+          {
+            "text": "NORTHROP GRUMMAN SYSTEMS CORPORATION",
+            "href": "https://www.usaspending.gov/recipient/a4c9e27d-cd85-f35f-2202-78864868ed6e-C/latest/"
+          },
+          435416615.66
+        ],
+        [
+          4,
+          {
+            "text": "SCIENCE APPLICATIONS INTERNATIONAL CORPORATION",
+            "href": "https://www.usaspending.gov/recipient/20af0683-f17d-1f8f-38ee-2f11bd124559-C/latest/"
+          },
+          409245510.33
+        ],
+        [
+          5,
+          {
+            "text": "M1 SUPPORT SERVICES, L.P.",
+            "href": "https://www.usaspending.gov/recipient/f4832a42-513d-107f-4852-9539b2c518e1-C/latest/"
+          },
+          334904741.71
+        ],
+        [
+          6,
+          {
+            "text": "AUSTAL USA, LLC",
+            "href": "https://www.usaspending.gov/recipient/099794ca-0664-2157-ef0e-3ae0148aef77-C/latest/"
+          },
+          323288262.38
+        ],
+        [
+          7,
+          {
+            "text": "BLUE ORIGIN MANUFACTURING, LLC",
+            "href": "https://www.usaspending.gov/recipient/1bc6570e-8b90-8bba-adc9-a6e5069bcfd3-C/latest/"
+          },
+          301561071.5
+        ],
+        [
+          8,
+          {
+            "text": "DYNETICS, INC.",
+            "href": "https://www.usaspending.gov/recipient/83f39725-68ce-aaf2-164d-475e790e2b8e-C/latest/"
+          },
+          290606428.97
+        ],
+        [
+          9,
+          {
+            "text": "DELL MARKETING L.P.",
+            "href": "https://www.usaspending.gov/recipient/d49f36ae-b747-42e3-5257-6787a69e51e9-C/latest/"
+          },
+          287938472.32
+        ],
+        [
+          10,
+          {
+            "text": "TORCH TECHNOLOGIES INC",
+            "href": "https://www.usaspending.gov/recipient/4185d6ab-6726-b8f6-b5f8-8d839ccb063c-C/latest/"
+          },
+          233172832.72
+        ]
+      ]
+    },
+    {
+      "title": "Largest awards, FY2026 to date",
+      "columns": [
+        "Rank",
+        "Recipient",
+        "Award Amount",
+        "Awarding Agency"
+      ],
+      "rows": [
+        [
+          1,
+          {
+            "text": "THE BOEING COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_NNM07AB03C_8000_-NONE-_-NONE-/"
+          },
+          10513304426,
+          "National Aeronautics and Space Administration"
+        ],
+        [
+          2,
+          {
+            "text": "THE BOEING COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_HQ014712C0004_9700_-NONE-_-NONE-/"
+          },
+          6466627868.26,
+          "Department of Defense"
+        ],
+        [
+          3,
+          {
+            "text": "LOCKHEED MARTIN CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_HQ085621C0001_9700_-NONE-_-NONE-/"
+          },
+          5087761430.18,
+          "Department of Defense"
+        ],
+        [
+          4,
+          {
+            "text": "M1 SUPPORT SERVICES, L.P.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W9124G17C0104_9700_-NONE-_-NONE-/"
+          },
+          4496402102.33,
+          "Department of Defense"
+        ],
+        [
+          5,
+          {
+            "text": "THE BOEING COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_HQ014719C0004_9700_-NONE-_-NONE-/"
+          },
+          4442838457.3,
+          "Department of Defense"
+        ],
+        [
+          6,
+          {
+            "text": "AUSTAL USA, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002417C2301_9700_-NONE-_-NONE-/"
+          },
+          2809728836.4,
+          "Department of Defense"
+        ],
+        [
+          7,
+          {
+            "text": "THE BOEING COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_80MSFC20C0052_8000_-NONE-_-NONE-/"
+          },
+          2593215439,
+          "National Aeronautics and Space Administration"
+        ],
+        [
+          8,
+          {
+            "text": "BLUE ORIGIN MANUFACTURING, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_80MSFC23CA014_8000_-NONE-_-NONE-/"
+          },
+          1988511190.15,
+          "National Aeronautics and Space Administration"
+        ],
+        [
+          9,
+          {
+            "text": "AMENTUM TECHNOLOGY, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_80MSFC18C0011_8000_-NONE-_-NONE-/"
+          },
+          1940536081.05,
+          "National Aeronautics and Space Administration"
+        ],
+        [
+          10,
+          {
+            "text": "SCIENCE APPLICATIONS INTERNATIONAL CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_47QFSA20F0057_4732_GS00Q14OADU428_4732/"
+          },
+          1432945155.91,
+          "General Services Administration"
+        ],
+        [
+          11,
+          {
+            "text": "AUSTAL USA, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70Z02322C93220001_7008_-NONE-_-NONE-/"
+          },
+          1402839310.77,
+          "Department of Homeland Security"
+        ],
+        [
+          12,
+          {
+            "text": "THE BOEING COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_NNM12AA82C_8000_-NONE-_-NONE-/"
+          },
+          1287720376,
+          "National Aeronautics and Space Administration"
+        ],
+        [
+          13,
+          {
+            "text": "AUSTAL USA, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002419C2227_9700_-NONE-_-NONE-/"
+          },
+          1250352710,
+          "Department of Defense"
+        ],
+        [
+          14,
+          {
+            "text": "PARSONS GOVERNMENT SERVICES INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_HQ085821C0015_9700_-NONE-_-NONE-/"
+          },
+          1153574982.73,
+          "Department of Defense"
+        ],
+        [
+          15,
+          {
+            "text": "RAYTHEON COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W31P4Q23C0002_9700_-NONE-_-NONE-/"
+          },
+          1001495234.73,
+          "Department of Defense"
+        ],
+        [
+          16,
+          {
+            "text": "NORTHROP GRUMMAN SYSTEMS CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W31P4Q19C0003_9700_-NONE-_-NONE-/"
+          },
+          879779236.43,
+          "Department of Defense"
+        ],
+        [
+          17,
+          {
+            "text": "GENERAL ELECTRIC COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W58RGZ19C0003_9700_-NONE-_-NONE-/"
+          },
+          862954254.99,
+          "Department of Defense"
+        ],
+        [
+          18,
+          {
+            "text": "NORTHROP GRUMMAN SYSTEMS CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W31P4Q22F0031_9700_W31P4Q22D0004_9700/"
+          },
+          849153445.63,
+          "Department of Defense"
+        ],
+        [
+          19,
+          {
+            "text": "SCIENCE APPLICATIONS INTERNATIONAL CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W31P4Q21F0095_9700_GS00Q14OADU428_4732/"
+          },
+          777669589.49,
+          "Department of Defense"
+        ],
+        [
+          20,
+          {
+            "text": "AUSTAL USA, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002423C2203_9700_-NONE-_-NONE-/"
+          },
+          631815731,
+          "Department of Defense"
+        ],
+        [
+          21,
+          {
+            "text": "AMENTUM SERVICES, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W9124G17C0005_9700_-NONE-_-NONE-/"
+          },
+          613022910.65,
+          "Department of Defense"
+        ],
+        [
+          22,
+          {
+            "text": "TORCH TECHNOLOGIES INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W31P4Q21F0038_9700_GS00Q14OADS621_4732/"
+          },
+          587507905.01,
+          "Department of Defense"
+        ],
+        [
+          23,
+          {
+            "text": "SCIENCE APPLICATIONS INTERNATIONAL CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_47QFCA25F0009_4732_47QFCA22D0337_4732/"
+          },
+          582202206.55,
+          "General Services Administration"
+        ],
+        [
+          24,
+          {
+            "text": "LOCKHEED MARTIN CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W31P4Q23C0008_9700_-NONE-_-NONE-/"
+          },
+          564129520.89,
+          "Department of Defense"
+        ],
+        [
+          25,
+          {
+            "text": "NORTHROP GRUMMAN SYSTEMS CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_HQ085622F0001_9700_HQ085622D0001_9700/"
+          },
+          557874612.71,
+          "Department of Defense"
+        ]
+      ]
+    }
+  ],
+  "narrative": {
+    "intro": "In FY2026 to date, federal agencies obligated $9.6B across 71,395 contract awards. That is down 46.9% year over year. The average award size was $135K.",
+    "sections": [
+      {
+        "heading": "Which agencies award the most contracts in Alabama?",
+        "body": "Department of Defense was the largest federal buyer in Alabama, obligating $6.8B in FY2026 to date, or 70.8% of the state total."
+      },
+      {
+        "heading": "Who are the top federal contractors in Alabama?",
+        "body": "LOCKHEED MARTIN CORPORATION led all contractors performing work in Alabama with $1B in obligations during FY2026 to date."
+      }
+    ]
+  },
+  "faq": [
+    {
+      "q": "How much federal contract money goes to Alabama?",
+      "a": "Federal agencies obligated $9.6B to contractors performing work in Alabama in FY2026 to date, across 71,395 awards."
+    },
+    {
+      "q": "Which agencies award the most contracts in Alabama?",
+      "a": "Department of Defense is the largest federal buyer in Alabama, with $6.8B obligated in FY2026 to date."
+    },
+    {
+      "q": "Who are the largest federal contractors in Alabama?",
+      "a": "LOCKHEED MARTIN CORPORATION is the largest federal contractor performing work in Alabama by obligated dollars in FY2026 to date, with $1B."
+    }
+  ],
+  "related": [
+    {
+      "label": "Alaska federal contracts",
+      "href": "/insights/state/alaska/"
+    },
+    {
+      "label": "Arizona federal contracts",
+      "href": "/insights/state/arizona/"
+    },
+    {
+      "label": "Arkansas federal contracts",
+      "href": "/insights/state/arkansas/"
+    },
+    {
+      "label": "California federal contracts",
+      "href": "/insights/state/california/"
+    },
+    {
+      "label": "Colorado federal contracts",
+      "href": "/insights/state/colorado/"
+    },
+    {
+      "label": "Connecticut federal contracts",
+      "href": "/insights/state/connecticut/"
+    }
+  ],
+  "sources": [
+    {
+      "label": "USAspending.gov award data",
+      "href": "https://www.usaspending.gov"
+    }
+  ]
+}

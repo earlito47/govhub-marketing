@@ -1,0 +1,609 @@
+{
+  "pageType": "state",
+  "slug": "oklahoma",
+  "title": "Oklahoma Federal Contracts: $3.2B in FY2026",
+  "h1": "Federal Contracts in Oklahoma: Spending, Agencies & Vendors",
+  "metaDescription": "Federal agencies obligated $3.2B to contractors in Oklahoma in FY2026 to date. See top buying agencies, top vendors, and industries.",
+  "updated": "2026-07-12",
+  "fyWindow": {
+    "label": "FY2026 to date",
+    "start": "2025-10-01",
+    "end": "2026-07-12"
+  },
+  "stats": {
+    "totalObligations": 3248308943.68,
+    "awardCount": 14251,
+    "yoyGrowthPct": -52.2,
+    "avgAwardSize": 227936,
+    "smallBusinessSharePct": null
+  },
+  "charts": [
+    {
+      "id": "oklahoma-trend",
+      "type": "line",
+      "title": "Obligations by fiscal year",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "FY21",
+              4515705460.28
+            ],
+            [
+              "FY22",
+              4992438979.78
+            ],
+            [
+              "FY23",
+              4946899886.56
+            ],
+            [
+              "FY24",
+              5453130209.33
+            ],
+            [
+              "FY25",
+              6801263807.11
+            ],
+            [
+              "FY26",
+              3248308943.68
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Obligations fell 52.2% year over year, from $6.8B in FY2025 to $3.2B in FY2026 to date."
+    },
+    {
+      "id": "oklahoma-top-agencies",
+      "type": "bar",
+      "title": "Top 10 buying agencies, FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "Department of Defense",
+              2048297365.78
+            ],
+            [
+              "Department of Transportation",
+              456117217.5
+            ],
+            [
+              "Department of Health and Human Services",
+              212809484.64
+            ],
+            [
+              "General Services Administration",
+              188614412.04
+            ],
+            [
+              "Department of Veterans Affairs",
+              109049699.29
+            ],
+            [
+              "Department of the Interior",
+              49069642.2
+            ],
+            [
+              "Department of Agriculture",
+              47827784.24
+            ],
+            [
+              "Department of Justice",
+              28082529.01
+            ],
+            [
+              "Department of Housing and Urban Development",
+              23510898.46
+            ],
+            [
+              "Department of Labor",
+              21066721.21
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Department of Defense was the top federal buyer in Oklahoma, obligating $2B (63.1% of the state total)."
+    },
+    {
+      "id": "oklahoma-top-vendors",
+      "type": "bar",
+      "title": "Top 10 vendors, FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "THE BOEING COMPANY",
+              590310798.51
+            ],
+            [
+              "MCKESSON CORPORATION",
+              148686730.95
+            ],
+            [
+              "THE BOEING COMPANY",
+              143266606.29
+            ],
+            [
+              "VERTEX AEROSPACE LLC",
+              102413326.56
+            ],
+            [
+              "BOOZ ALLEN HAMILTON INC",
+              85915037.12
+            ],
+            [
+              "CARTER CHEVROLET AGENCY, L.L.C.",
+              66253290.08
+            ],
+            [
+              "ALBERICI CONSTRUCTORS INC",
+              63796000
+            ],
+            [
+              "AMENTUM SERVICES, INC.",
+              63326147.12
+            ],
+            [
+              "CHEROKEE STRATEGIC SOLUTIONS, L.L.C.",
+              60439272.22
+            ],
+            [
+              "ALUTIIQ OPERATIONS SERVICES, LLC",
+              54549047.2
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "THE BOEING COMPANY led all contractors in Oklahoma with $590M, 18.2% of the state total."
+    },
+    {
+      "id": "oklahoma-top-naics",
+      "type": "bar",
+      "title": "Top 10 industries (NAICS), FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "Aircraft Manufacturing",
+              457580494.26
+            ],
+            [
+              "Engineering Services",
+              331962068.92
+            ],
+            [
+              "Other Support Activities for Air Transportation",
+              300005822.63
+            ],
+            [
+              "Other Aircraft Parts and Auxiliary Equipment Manufacturing",
+              234830322.62
+            ],
+            [
+              "Facilities Support Services",
+              186393951.28
+            ],
+            [
+              "Commercial and Institutional Building Construction",
+              135437162.88
+            ],
+            [
+              "Computer Systems Design Services",
+              134098490.71
+            ],
+            [
+              "Pharmaceutical Preparation Manufacturing",
+              96863330.93
+            ],
+            [
+              "Automobile and Light Duty Motor Vehicle Manufacturing",
+              96144222.63
+            ],
+            [
+              "Highway, Street, and Bridge Construction",
+              80210553.03
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Aircraft Manufacturing was the largest industry in Oklahoma, with $458M obligated."
+    }
+  ],
+  "tables": [
+    {
+      "title": "Top 10 vendors",
+      "columns": [
+        "Rank",
+        "Vendor",
+        "Obligations"
+      ],
+      "rows": [
+        [
+          1,
+          {
+            "text": "THE BOEING COMPANY",
+            "href": "https://www.usaspending.gov/recipient/e2d7a16e-029f-ce0e-97dc-8b32fa6dc1d1-C/latest/"
+          },
+          590310798.51
+        ],
+        [
+          2,
+          {
+            "text": "MCKESSON CORPORATION",
+            "href": "https://www.usaspending.gov/recipient/b54de748-ee64-a1e6-546e-e7007b054797-C/latest/"
+          },
+          148686730.95
+        ],
+        [
+          3,
+          {
+            "text": "THE BOEING COMPANY",
+            "href": "https://www.usaspending.gov/recipient/15a7d2ee-b7aa-fe37-36ec-ff299338b908-C/latest/"
+          },
+          143266606.29
+        ],
+        [
+          4,
+          {
+            "text": "VERTEX AEROSPACE LLC",
+            "href": "https://www.usaspending.gov/recipient/fb63ba18-02ee-d557-7366-681926c60e0d-C/latest/"
+          },
+          102413326.56
+        ],
+        [
+          5,
+          {
+            "text": "BOOZ ALLEN HAMILTON INC",
+            "href": "https://www.usaspending.gov/recipient/ffca72e5-fba2-798a-6969-2a6c45e9f985-C/latest/"
+          },
+          85915037.12
+        ],
+        [
+          6,
+          {
+            "text": "CARTER CHEVROLET AGENCY, L.L.C.",
+            "href": "https://www.usaspending.gov/recipient/2006f328-cfcd-ebbe-8a70-ead0519ba6c6-C/latest/"
+          },
+          66253290.08
+        ],
+        [
+          7,
+          {
+            "text": "ALBERICI CONSTRUCTORS INC",
+            "href": "https://www.usaspending.gov/recipient/1cb56494-426d-195b-a813-40b809e439d1-C/latest/"
+          },
+          63796000
+        ],
+        [
+          8,
+          {
+            "text": "AMENTUM SERVICES, INC.",
+            "href": "https://www.usaspending.gov/recipient/fe5366b4-84c8-12ff-126f-f123de29819c-C/latest/"
+          },
+          63326147.12
+        ],
+        [
+          9,
+          {
+            "text": "CHEROKEE STRATEGIC SOLUTIONS, L.L.C.",
+            "href": "https://www.usaspending.gov/recipient/bb20cfab-44bf-c9cd-202f-f877971c28ec-C/latest/"
+          },
+          60439272.22
+        ],
+        [
+          10,
+          {
+            "text": "ALUTIIQ OPERATIONS SERVICES, LLC",
+            "href": "https://www.usaspending.gov/recipient/9ef75e33-90af-5d98-01e0-3dbf7c3db734-C/latest/"
+          },
+          54549047.2
+        ]
+      ]
+    },
+    {
+      "title": "Largest awards, FY2026 to date",
+      "columns": [
+        "Rank",
+        "Recipient",
+        "Award Amount",
+        "Awarding Agency"
+      ],
+      "rows": [
+        [
+          1,
+          {
+            "text": "THE BOEING COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA810720F0001_9700_FA862819D1000_9700/"
+          },
+          1295577140.8,
+          "Department of Defense"
+        ],
+        [
+          2,
+          {
+            "text": "THE BOEING COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA810616C0001_9700_-NONE-_-NONE-/"
+          },
+          1172254546.31,
+          "Department of Defense"
+        ],
+        [
+          3,
+          {
+            "text": "THE BOEING COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA862821F1006_9700_FA862819D1000_9700/"
+          },
+          774835826.24,
+          "Department of Defense"
+        ],
+        [
+          4,
+          {
+            "text": "VERTEX AEROSPACE LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0001921F0094_9700_N6134019D1010_9700/"
+          },
+          727484452.02,
+          "Department of Defense"
+        ],
+        [
+          5,
+          {
+            "text": "THE BOEING COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA873015C0003_9700_-NONE-_-NONE-/"
+          },
+          440616752.79,
+          "Department of Defense"
+        ],
+        [
+          6,
+          {
+            "text": "THE BOEING COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA873022C0011_9700_-NONE-_-NONE-/"
+          },
+          429399679,
+          "Department of Defense"
+        ],
+        [
+          7,
+          {
+            "text": "THE BOEING COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA813423F0001_9700_FA810616D0002_9700/"
+          },
+          334151447.65,
+          "Department of Defense"
+        ],
+        [
+          8,
+          {
+            "text": "AMENTUM SERVICES, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA300221F0119_9700_FA300220D0010_9700/"
+          },
+          334023703.49,
+          "Department of Defense"
+        ],
+        [
+          9,
+          {
+            "text": "THE BOEING COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA810721F0008_9700_FA862819D1000_9700/"
+          },
+          325994038.22,
+          "Department of Defense"
+        ],
+        [
+          10,
+          {
+            "text": "THE BOEING COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA873018C0003_9700_-NONE-_-NONE-/"
+          },
+          302294994.04,
+          "Department of Defense"
+        ],
+        [
+          11,
+          {
+            "text": "CHEROKEE NATION MANAGEMENT & CONSULTING, L.L.C..",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_19AQMM21F3648_1900_19AQMM21D0125_1900/"
+          },
+          287009120.42,
+          "Department of State"
+        ],
+        [
+          12,
+          {
+            "text": "CYMSTAR LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA862117F6255_9700_FA862115D6257_9700/"
+          },
+          272457989.98,
+          "Department of Defense"
+        ],
+        [
+          13,
+          {
+            "text": "THE BOEING COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA873018C0001_9700_-NONE-_-NONE-/"
+          },
+          241138873.04,
+          "Department of Defense"
+        ],
+        [
+          14,
+          {
+            "text": "BL HARBERT INTERNATIONAL LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W912BV25C0016_9700_-NONE-_-NONE-/"
+          },
+          227627901,
+          "Department of Defense"
+        ],
+        [
+          15,
+          {
+            "text": "ASRC FEDERAL GULF STATE CONSTRUCTORS LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA302923C0001_9700_-NONE-_-NONE-/"
+          },
+          207763391.46,
+          "Department of Defense"
+        ],
+        [
+          16,
+          {
+            "text": "THE BOEING COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA810722F0002_9700_FA862819D1000_9700/"
+          },
+          191230959.74,
+          "Department of Defense"
+        ],
+        [
+          17,
+          {
+            "text": "ASRC FEDERAL FIELD SERVICES, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA300221C0003_9700_-NONE-_-NONE-/"
+          },
+          174242353.6,
+          "Department of Defense"
+        ],
+        [
+          18,
+          {
+            "text": "AKIMA RANGE READINESS OPERATIONS LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA813722C0031_9700_-NONE-_-NONE-/"
+          },
+          172155530.95,
+          "Department of Defense"
+        ],
+        [
+          19,
+          {
+            "text": "THE BOEING COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA813421F0001_9700_FA810616D0002_9700/"
+          },
+          158636357.66,
+          "Department of Defense"
+        ],
+        [
+          20,
+          {
+            "text": "PROFESSIONAL CONTRACT SERVICES, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W9124L17C0005_9700_-NONE-_-NONE-/"
+          },
+          155080657.26,
+          "Department of Defense"
+        ],
+        [
+          21,
+          {
+            "text": "THE BOEING COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_HC101321C0003_9700_-NONE-_-NONE-/"
+          },
+          147185562.49,
+          "Department of Defense"
+        ],
+        [
+          22,
+          {
+            "text": "CHENEGA FACILITIES MANAGEMENT LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_0005_9700_W52P1J14G0034_9700/"
+          },
+          145456050.37,
+          "Department of Defense"
+        ],
+        [
+          23,
+          {
+            "text": "NORTHROP GRUMMAN SYSTEMS CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_SPRTA116F0353_9700_SPE4AX16D9479_9700/"
+          },
+          141405496.45,
+          "Department of Defense"
+        ],
+        [
+          24,
+          {
+            "text": "BOOZ ALLEN HAMILTON INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_47QFWA20F0023_4732_47QTCK18D0004_4732/"
+          },
+          138057294.74,
+          "General Services Administration"
+        ],
+        [
+          25,
+          {
+            "text": "OKLAHOMA CITY WATER UTILITIES TRUST",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_SP060020C8331_9700_-NONE-_-NONE-/"
+          },
+          134499102.71,
+          "Department of Defense"
+        ]
+      ]
+    }
+  ],
+  "narrative": {
+    "intro": "In FY2026 to date, federal agencies obligated $3.2B across 14,251 contract awards. That is down 52.2% year over year. The average award size was $228K.",
+    "sections": [
+      {
+        "heading": "Which agencies award the most contracts in Oklahoma?",
+        "body": "Department of Defense was the largest federal buyer in Oklahoma, obligating $2B in FY2026 to date, or 63.1% of the state total."
+      },
+      {
+        "heading": "Who are the top federal contractors in Oklahoma?",
+        "body": "THE BOEING COMPANY led all contractors performing work in Oklahoma with $590M in obligations during FY2026 to date."
+      }
+    ]
+  },
+  "faq": [
+    {
+      "q": "How much federal contract money goes to Oklahoma?",
+      "a": "Federal agencies obligated $3.2B to contractors performing work in Oklahoma in FY2026 to date, across 14,251 awards."
+    },
+    {
+      "q": "Which agencies award the most contracts in Oklahoma?",
+      "a": "Department of Defense is the largest federal buyer in Oklahoma, with $2B obligated in FY2026 to date."
+    },
+    {
+      "q": "Who are the largest federal contractors in Oklahoma?",
+      "a": "THE BOEING COMPANY is the largest federal contractor performing work in Oklahoma by obligated dollars in FY2026 to date, with $590M."
+    }
+  ],
+  "related": [
+    {
+      "label": "Alabama federal contracts",
+      "href": "/insights/state/alabama/"
+    },
+    {
+      "label": "Alaska federal contracts",
+      "href": "/insights/state/alaska/"
+    },
+    {
+      "label": "Arizona federal contracts",
+      "href": "/insights/state/arizona/"
+    },
+    {
+      "label": "Arkansas federal contracts",
+      "href": "/insights/state/arkansas/"
+    },
+    {
+      "label": "California federal contracts",
+      "href": "/insights/state/california/"
+    },
+    {
+      "label": "Colorado federal contracts",
+      "href": "/insights/state/colorado/"
+    }
+  ],
+  "sources": [
+    {
+      "label": "USAspending.gov award data",
+      "href": "https://www.usaspending.gov"
+    }
+  ]
+}

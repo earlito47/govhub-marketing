@@ -1,0 +1,609 @@
+{
+  "pageType": "state",
+  "slug": "arizona",
+  "title": "Arizona Federal Contracts: $20.9B in FY2026",
+  "h1": "Federal Contracts in Arizona: Spending, Agencies & Vendors",
+  "metaDescription": "Federal agencies obligated $20.9B to contractors in Arizona in FY2026 to date. See top buying agencies, top vendors, and industries.",
+  "updated": "2026-07-12",
+  "fyWindow": {
+    "label": "FY2026 to date",
+    "start": "2025-10-01",
+    "end": "2026-07-12"
+  },
+  "stats": {
+    "totalObligations": 20930354398.9,
+    "awardCount": 13510,
+    "yoyGrowthPct": -10.2,
+    "avgAwardSize": 1549249,
+    "smallBusinessSharePct": null
+  },
+  "charts": [
+    {
+      "id": "arizona-trend",
+      "type": "line",
+      "title": "Obligations by fiscal year",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "FY21",
+              16460421097.89
+            ],
+            [
+              "FY22",
+              15339711280.57
+            ],
+            [
+              "FY23",
+              19763258724.64
+            ],
+            [
+              "FY24",
+              18046953105.9
+            ],
+            [
+              "FY25",
+              23317512767.58
+            ],
+            [
+              "FY26",
+              20930354398.9
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Obligations fell 10.2% year over year, from $23.3B in FY2025 to $20.9B in FY2026 to date."
+    },
+    {
+      "id": "arizona-top-agencies",
+      "type": "bar",
+      "title": "Top 10 buying agencies, FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "Department of Defense",
+              13774627173.62
+            ],
+            [
+              "Department of Homeland Security",
+              6006226185.59
+            ],
+            [
+              "Department of Veterans Affairs",
+              345838607.29
+            ],
+            [
+              "General Services Administration",
+              183529733.41
+            ],
+            [
+              "Department of Health and Human Services",
+              160332772.4
+            ],
+            [
+              "Department of the Interior",
+              120026106.02
+            ],
+            [
+              "Department of the Treasury",
+              102094562.31
+            ],
+            [
+              "Department of Agriculture",
+              61479250.8
+            ],
+            [
+              "Department of Justice",
+              50447043.41
+            ],
+            [
+              "National Aeronautics and Space Administration",
+              36294765.63
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Department of Defense was the top federal buyer in Arizona, obligating $13.8B (65.8% of the state total)."
+    },
+    {
+      "id": "arizona-top-vendors",
+      "type": "bar",
+      "title": "Top 10 vendors, FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "RAYTHEON COMPANY",
+              4669639688.29
+            ],
+            [
+              "TRIWEST HEALTHCARE ALLIANCE CORP",
+              4629594120.2
+            ],
+            [
+              "FISHER SAND & GRAVEL CO",
+              4502175411.7
+            ],
+            [
+              "THE BOEING COMPANY",
+              2421309013.17
+            ],
+            [
+              "SLS FEDERAL SERVICES LLC",
+              1313227200
+            ],
+            [
+              "GENERAL DYNAMICS MISSION SYSTEMS, INC.",
+              313923197.89
+            ],
+            [
+              "HONEYWELL INTERNATIONAL INC.",
+              262242470.65
+            ],
+            [
+              "THE BOEING COMPANY",
+              254090465.44
+            ],
+            [
+              "NORTHROP GRUMMAN SYSTEMS CORPORATION",
+              199794718.13
+            ],
+            [
+              "MODERN TECHNOLOGY SOLUTIONS, INC.",
+              99873508.1
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "RAYTHEON COMPANY led all contractors in Arizona with $4.7B, 22.3% of the state total."
+    },
+    {
+      "id": "arizona-top-naics",
+      "type": "bar",
+      "title": "Top 10 industries (NAICS), FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "Commercial and Institutional Building Construction",
+              6006607081.08
+            ],
+            [
+              "Direct Health and Medical Insurance Carriers",
+              4629594120.2
+            ],
+            [
+              "Guided Missile and Space Vehicle Manufacturing",
+              3649675590.47
+            ],
+            [
+              "Aircraft Manufacturing",
+              2568774019.68
+            ],
+            [
+              "Ammunition (except Small Arms) Manufacturing",
+              788854610.99
+            ],
+            [
+              "Engineering Services",
+              459979866.66
+            ],
+            [
+              "Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology)",
+              380550800.79
+            ],
+            [
+              "Other Aircraft Parts and Auxiliary Equipment Manufacturing",
+              204275977.62
+            ],
+            [
+              "Other Computer Related Services",
+              185180557.15
+            ],
+            [
+              "Military Armored Vehicle, Tank, and Tank Component Manufacturing",
+              152842793.92
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Commercial and Institutional Building Construction was the largest industry in Arizona, with $6B obligated."
+    }
+  ],
+  "tables": [
+    {
+      "title": "Top 10 vendors",
+      "columns": [
+        "Rank",
+        "Vendor",
+        "Obligations"
+      ],
+      "rows": [
+        [
+          1,
+          {
+            "text": "RAYTHEON COMPANY",
+            "href": "https://www.usaspending.gov/recipient/01c4a3a3-b4c5-ce4e-822b-d17f09985001-C/latest/"
+          },
+          4669639688.29
+        ],
+        [
+          2,
+          {
+            "text": "TRIWEST HEALTHCARE ALLIANCE CORP",
+            "href": "https://www.usaspending.gov/recipient/bf1220c1-2373-042a-e8e1-33d5a29639d0-C/latest/"
+          },
+          4629594120.2
+        ],
+        [
+          3,
+          {
+            "text": "FISHER SAND & GRAVEL CO",
+            "href": "https://www.usaspending.gov/recipient/fa0b2d2c-6660-adbe-e0ea-4035b15e4cbd-C/latest/"
+          },
+          4502175411.7
+        ],
+        [
+          4,
+          {
+            "text": "THE BOEING COMPANY",
+            "href": "https://www.usaspending.gov/recipient/27b04395-cee8-a47d-2a5c-3e2b78dc7b0a-C/latest/"
+          },
+          2421309013.17
+        ],
+        [
+          5,
+          {
+            "text": "SLS FEDERAL SERVICES LLC",
+            "href": "https://www.usaspending.gov/recipient/fdc361df-c43a-750c-1330-a98395979fe8-C/latest/"
+          },
+          1313227200
+        ],
+        [
+          6,
+          {
+            "text": "GENERAL DYNAMICS MISSION SYSTEMS, INC.",
+            "href": "https://www.usaspending.gov/recipient/f09ed3a7-cbd4-f4d6-046d-eb0780590412-C/latest/"
+          },
+          313923197.89
+        ],
+        [
+          7,
+          {
+            "text": "HONEYWELL INTERNATIONAL INC.",
+            "href": "https://www.usaspending.gov/recipient/360760cb-a2ed-6aa4-2d81-a7909557d12c-C/latest/"
+          },
+          262242470.65
+        ],
+        [
+          8,
+          {
+            "text": "THE BOEING COMPANY",
+            "href": "https://www.usaspending.gov/recipient/34db6aa4-6de2-9e0f-6ccb-8ba1fc9e4ba9-C/latest/"
+          },
+          254090465.44
+        ],
+        [
+          9,
+          {
+            "text": "NORTHROP GRUMMAN SYSTEMS CORPORATION",
+            "href": "https://www.usaspending.gov/recipient/3ae62382-e723-2359-a5c9-5c26f274b88c-C/latest/"
+          },
+          199794718.13
+        ],
+        [
+          10,
+          {
+            "text": "MODERN TECHNOLOGY SOLUTIONS, INC.",
+            "href": "https://www.usaspending.gov/recipient/b4ef6003-1f01-d9c4-b29f-b4e2015f014e-C/latest/"
+          },
+          99873508.1
+        ]
+      ]
+    },
+    {
+      "title": "Largest awards, FY2026 to date",
+      "columns": [
+        "Rank",
+        "Recipient",
+        "Award Amount",
+        "Awarding Agency"
+      ],
+      "rows": [
+        [
+          1,
+          {
+            "text": "TRIWEST HEALTHCARE ALLIANCE CORP",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_HT940223C0002_9700_-NONE-_-NONE-/"
+          },
+          8304608415.2,
+          "Department of Defense"
+        ],
+        [
+          2,
+          {
+            "text": "THE BOEING COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W58RGZ16C0023_9700_-NONE-_-NONE-/"
+          },
+          7465915207.31,
+          "Department of Defense"
+        ],
+        [
+          3,
+          {
+            "text": "THE BOEING COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W58RGZ21C0015_9700_-NONE-_-NONE-/"
+          },
+          3473342446.55,
+          "Department of Defense"
+        ],
+        [
+          4,
+          {
+            "text": "RAYTHEON COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_HQ085124C0001_9700_-NONE-_-NONE-/"
+          },
+          3298946355,
+          "Department of Defense"
+        ],
+        [
+          5,
+          {
+            "text": "FISHER SAND & GRAVEL CO",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70B01C26F00000017_7014_70B01C26D00000012_7014/"
+          },
+          2832999611.7,
+          "Department of Homeland Security"
+        ],
+        [
+          6,
+          {
+            "text": "RAYTHEON COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_HQ027615C0003_9700_-NONE-_-NONE-/"
+          },
+          2760634389.93,
+          "Department of Defense"
+        ],
+        [
+          7,
+          {
+            "text": "RAYTHEON COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA867523C0037_9700_-NONE-_-NONE-/"
+          },
+          2512922035.4,
+          "Department of Defense"
+        ],
+        [
+          8,
+          {
+            "text": "THE BOEING COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W58RGZ26C0002_9700_-NONE-_-NONE-/"
+          },
+          2295831204,
+          "Department of Defense"
+        ],
+        [
+          9,
+          {
+            "text": "RAYTHEON COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA865925CB003_9700_-NONE-_-NONE-/"
+          },
+          2248982500.3,
+          "Department of Defense"
+        ],
+        [
+          10,
+          {
+            "text": "RAYTHEON COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA867521C0034_9700_-NONE-_-NONE-/"
+          },
+          2177560015.51,
+          "Department of Defense"
+        ],
+        [
+          11,
+          {
+            "text": "RAYTHEON COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_HQ085120C0002_9700_-NONE-_-NONE-/"
+          },
+          2147446227.49,
+          "Department of Defense"
+        ],
+        [
+          12,
+          {
+            "text": "RAYTHEON COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_HQ027610C0005_9700_-NONE-_-NONE-/"
+          },
+          2141151663.63,
+          "Department of Defense"
+        ],
+        [
+          13,
+          {
+            "text": "RAYTHEON COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0001924C0032_9700_-NONE-_-NONE-/"
+          },
+          2037514988,
+          "Department of Defense"
+        ],
+        [
+          14,
+          {
+            "text": "RAYTHEON COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002407C6119_9700_-NONE-_-NONE-/"
+          },
+          1904305418.03,
+          "Department of Defense"
+        ],
+        [
+          15,
+          {
+            "text": "RAYTHEON COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_HQ027615C0005_9700_-NONE-_-NONE-/"
+          },
+          1861040363.03,
+          "Department of Defense"
+        ],
+        [
+          16,
+          {
+            "text": "RAYTHEON COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA867515C0022_9700_-NONE-_-NONE-/"
+          },
+          1769825200.93,
+          "Department of Defense"
+        ],
+        [
+          17,
+          {
+            "text": "RAYTHEON/LOCKHEED MARTIN JAVELIN JV",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W31P4Q19C0076_9700_-NONE-_-NONE-/"
+          },
+          1694838191.74,
+          "Department of Defense"
+        ],
+        [
+          18,
+          {
+            "text": "FISHER SAND & GRAVEL CO",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70B01C26F00000044_7014_70B01C26D00000012_7014/"
+          },
+          1650754000,
+          "Department of Homeland Security"
+        ],
+        [
+          19,
+          {
+            "text": "NORTHROP GRUMMAN SYSTEMS CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_HQ014711C0006_9700_-NONE-_-NONE-/"
+          },
+          1510737189.71,
+          "Department of Defense"
+        ],
+        [
+          20,
+          {
+            "text": "RAYTHEON COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002420C5405_9700_-NONE-_-NONE-/"
+          },
+          1418484083.6,
+          "Department of Defense"
+        ],
+        [
+          21,
+          {
+            "text": "RAYTHEON COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA865622FA071_9700_FA865621DA004_9700/"
+          },
+          1411745212.76,
+          "Department of Defense"
+        ],
+        [
+          22,
+          {
+            "text": "RAYTHEON COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002421C5408_9700_-NONE-_-NONE-/"
+          },
+          1398663146.82,
+          "Department of Defense"
+        ],
+        [
+          23,
+          {
+            "text": "RAYTHEON COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002424C5408_9700_-NONE-_-NONE-/"
+          },
+          1380494831.69,
+          "Department of Defense"
+        ],
+        [
+          24,
+          {
+            "text": "RAYTHEON COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0001921C0723_9700_-NONE-_-NONE-/"
+          },
+          1368878887,
+          "Department of Defense"
+        ],
+        [
+          25,
+          {
+            "text": "RAYTHEON COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W31P4Q17C0194_9700_-NONE-_-NONE-/"
+          },
+          1360500677.86,
+          "Department of Defense"
+        ]
+      ]
+    }
+  ],
+  "narrative": {
+    "intro": "In FY2026 to date, federal agencies obligated $20.9B across 13,510 contract awards. That is down 10.2% year over year. The average award size was $1.5M.",
+    "sections": [
+      {
+        "heading": "Which agencies award the most contracts in Arizona?",
+        "body": "Department of Defense was the largest federal buyer in Arizona, obligating $13.8B in FY2026 to date, or 65.8% of the state total."
+      },
+      {
+        "heading": "Who are the top federal contractors in Arizona?",
+        "body": "RAYTHEON COMPANY led all contractors performing work in Arizona with $4.7B in obligations during FY2026 to date."
+      }
+    ]
+  },
+  "faq": [
+    {
+      "q": "How much federal contract money goes to Arizona?",
+      "a": "Federal agencies obligated $20.9B to contractors performing work in Arizona in FY2026 to date, across 13,510 awards."
+    },
+    {
+      "q": "Which agencies award the most contracts in Arizona?",
+      "a": "Department of Defense is the largest federal buyer in Arizona, with $13.8B obligated in FY2026 to date."
+    },
+    {
+      "q": "Who are the largest federal contractors in Arizona?",
+      "a": "RAYTHEON COMPANY is the largest federal contractor performing work in Arizona by obligated dollars in FY2026 to date, with $4.7B."
+    }
+  ],
+  "related": [
+    {
+      "label": "Alabama federal contracts",
+      "href": "/insights/state/alabama/"
+    },
+    {
+      "label": "Alaska federal contracts",
+      "href": "/insights/state/alaska/"
+    },
+    {
+      "label": "Arkansas federal contracts",
+      "href": "/insights/state/arkansas/"
+    },
+    {
+      "label": "California federal contracts",
+      "href": "/insights/state/california/"
+    },
+    {
+      "label": "Colorado federal contracts",
+      "href": "/insights/state/colorado/"
+    },
+    {
+      "label": "Connecticut federal contracts",
+      "href": "/insights/state/connecticut/"
+    }
+  ],
+  "sources": [
+    {
+      "label": "USAspending.gov award data",
+      "href": "https://www.usaspending.gov"
+    }
+  ]
+}

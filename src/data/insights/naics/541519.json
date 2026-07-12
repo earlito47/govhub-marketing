@@ -57,60 +57,6 @@
       "takeaway": "Obligations fell 47.1% year over year, from $24.9B in FY2025 to $13.1B in FY2026 to date."
     },
     {
-      "id": "541519-top-vendors",
-      "type": "bar",
-      "title": "Top 10 vendors, FY2026 to date",
-      "series": [
-        {
-          "label": "Obligations",
-          "points": [
-            [
-              "THUNDERCAT TECHNOLOGY, LLC",
-              648533650.08
-            ],
-            [
-              "FOUR POINTS TECHNOLOGY, L.L.C.",
-              633227509.33
-            ],
-            [
-              "V3GATE, LLC",
-              551068914.72
-            ],
-            [
-              "FCN, INC.",
-              487433102.57
-            ],
-            [
-              "CGI FEDERAL INC.",
-              420587083.74
-            ],
-            [
-              "MINBURN TECHNOLOGY GROUP, LLC",
-              381140931.88
-            ],
-            [
-              "DELOITTE & TOUCHE LLP",
-              259869262.66
-            ],
-            [
-              "EMERGENT, LLC",
-              236194972.29
-            ],
-            [
-              "NEW TECH SOLUTIONS, INC.",
-              188713780.25
-            ],
-            [
-              "CARAHSOFT TECHNOLOGY CORP",
-              182901089.11
-            ]
-          ]
-        }
-      ],
-      "unit": "usd",
-      "takeaway": "THUNDERCAT TECHNOLOGY, LLC led all vendors with $649M in obligations, 4.9% of the market."
-    },
-    {
       "id": "541519-top-agencies",
       "type": "bar",
       "title": "Top 10 buying agencies, FY2026 to date",
@@ -163,6 +109,60 @@
       ],
       "unit": "usd",
       "takeaway": "Department of Defense was the top buyer, obligating $3.4B (26.1% of all obligations)."
+    },
+    {
+      "id": "541519-top-vendors",
+      "type": "bar",
+      "title": "Top 10 vendors, FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "THUNDERCAT TECHNOLOGY, LLC",
+              648533650.08
+            ],
+            [
+              "FOUR POINTS TECHNOLOGY, L.L.C.",
+              633227509.33
+            ],
+            [
+              "V3GATE, LLC",
+              551068914.72
+            ],
+            [
+              "FCN, INC.",
+              487433102.57
+            ],
+            [
+              "CGI FEDERAL INC.",
+              420587083.74
+            ],
+            [
+              "MINBURN TECHNOLOGY GROUP, LLC",
+              381140931.88
+            ],
+            [
+              "DELOITTE & TOUCHE LLP",
+              259869262.66
+            ],
+            [
+              "EMERGENT, LLC",
+              236194972.29
+            ],
+            [
+              "NEW TECH SOLUTIONS, INC.",
+              188713780.25
+            ],
+            [
+              "CARAHSOFT TECHNOLOGY CORP",
+              182901089.11
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "THUNDERCAT TECHNOLOGY, LLC led all vendors with $649M in obligations, 4.9% of the market."
     }
   ],
   "tables": [

@@ -1,0 +1,609 @@
+{
+  "pageType": "state",
+  "slug": "new-jersey",
+  "title": "New Jersey Federal Contracts: $5B in FY2026",
+  "h1": "Federal Contracts in New Jersey: Spending, Agencies & Vendors",
+  "metaDescription": "Federal agencies obligated $5B to contractors in New Jersey in FY2026 to date. See top buying agencies, top vendors, and industries.",
+  "updated": "2026-07-12",
+  "fyWindow": {
+    "label": "FY2026 to date",
+    "start": "2025-10-01",
+    "end": "2026-07-12"
+  },
+  "stats": {
+    "totalObligations": 5035326752.69,
+    "awardCount": 280763,
+    "yoyGrowthPct": -46,
+    "avgAwardSize": 17934,
+    "smallBusinessSharePct": null
+  },
+  "charts": [
+    {
+      "id": "new-jersey-trend",
+      "type": "line",
+      "title": "Obligations by fiscal year",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "FY21",
+              8896529924.32
+            ],
+            [
+              "FY22",
+              9287808314.68
+            ],
+            [
+              "FY23",
+              9164325904.93
+            ],
+            [
+              "FY24",
+              9812705180.93
+            ],
+            [
+              "FY25",
+              9331283431.84
+            ],
+            [
+              "FY26",
+              5035326752.69
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Obligations fell 46.0% year over year, from $9.3B in FY2025 to $5B in FY2026 to date."
+    },
+    {
+      "id": "new-jersey-top-agencies",
+      "type": "bar",
+      "title": "Top 10 buying agencies, FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "Department of Defense",
+              3030651074.61
+            ],
+            [
+              "Department of Veterans Affairs",
+              598640079.56
+            ],
+            [
+              "Department of Homeland Security",
+              549654174.42
+            ],
+            [
+              "Department of Transportation",
+              218987060.09
+            ],
+            [
+              "Department of Energy",
+              143531399.82
+            ],
+            [
+              "Department of Health and Human Services",
+              140137779.48
+            ],
+            [
+              "Department of Justice",
+              84718839.44
+            ],
+            [
+              "Department of Agriculture",
+              74902993.82
+            ],
+            [
+              "General Services Administration",
+              62309793.34
+            ],
+            [
+              "National Aeronautics and Space Administration",
+              42522140.75
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Department of Defense was the top federal buyer in New Jersey, obligating $3B (60.2% of the state total)."
+    },
+    {
+      "id": "new-jersey-top-vendors",
+      "type": "bar",
+      "title": "Top 10 vendors, FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "LOCKHEED MARTIN CORPORATION",
+              972233934.15
+            ],
+            [
+              "WHITING-TURNER CONTRACTING COMPANY, THE",
+              400000000
+            ],
+            [
+              "ASRC FEDERAL FACILITIES LOGISTICS, LLC",
+              394971800.96
+            ],
+            [
+              "BOOZ ALLEN HAMILTON INC",
+              260758311.48
+            ],
+            [
+              "THE TRUSTEES OF PRINCETON UNIVERSITY",
+              174599945.61
+            ],
+            [
+              "ICF MERCANTILE LLC",
+              149999999.97
+            ],
+            [
+              "SHIONOGI INC",
+              119160691
+            ],
+            [
+              "TRIMAN INDUSTRIES INC",
+              105505131.52
+            ],
+            [
+              "L3HARRIS TECHNOLOGIES, INC.",
+              100207620.37
+            ],
+            [
+              "L3 TECHNOLOGIES, INC.",
+              49505813.94
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "LOCKHEED MARTIN CORPORATION led all contractors in New Jersey with $972M, 19.3% of the state total."
+    },
+    {
+      "id": "new-jersey-top-naics",
+      "type": "bar",
+      "title": "Top 10 industries (NAICS), FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "Search, Detection, Navigation, Guidance, Aeronautical, and Nautical System and Instrument Manufacturing",
+              690512935.18
+            ],
+            [
+              "Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology)",
+              560035283.41
+            ],
+            [
+              "Commercial and Institutional Building Construction",
+              482834410.86
+            ],
+            [
+              "Computer Systems Design Services",
+              298183582.06
+            ],
+            [
+              "Engineering Services",
+              279661977.38
+            ],
+            [
+              "Other Warehousing and Storage",
+              151167822.95
+            ],
+            [
+              "Artificial and Synthetic Fibers and Filaments Manufacturing",
+              149999999.97
+            ],
+            [
+              "Colleges, Universities, and Professional Schools",
+              143082637.51
+            ],
+            [
+              "Research and Development in Biotechnology (except Nanobiotechnology)",
+              137099197.06
+            ],
+            [
+              "Other Aircraft Parts and Auxiliary Equipment Manufacturing",
+              128775294.87
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Search, Detection, Navigation, Guidance, Aeronautical, and Nautical System and Instrument Manufacturing was the largest industry in New Jersey, with $691M obligated."
+    }
+  ],
+  "tables": [
+    {
+      "title": "Top 10 vendors",
+      "columns": [
+        "Rank",
+        "Vendor",
+        "Obligations"
+      ],
+      "rows": [
+        [
+          1,
+          {
+            "text": "LOCKHEED MARTIN CORPORATION",
+            "href": "https://www.usaspending.gov/recipient/d7df489c-5a15-3e1b-e7fa-0e93eb94a166-C/latest/"
+          },
+          972233934.15
+        ],
+        [
+          2,
+          {
+            "text": "WHITING-TURNER CONTRACTING COMPANY, THE",
+            "href": "https://www.usaspending.gov/recipient/71cf1e91-51f2-f450-1fe3-3576b19bb828-C/latest/"
+          },
+          400000000
+        ],
+        [
+          3,
+          {
+            "text": "ASRC FEDERAL FACILITIES LOGISTICS, LLC",
+            "href": "https://www.usaspending.gov/recipient/bf9cd280-b7a0-642a-5795-f5156204f71a-C/latest/"
+          },
+          394971800.96
+        ],
+        [
+          4,
+          {
+            "text": "BOOZ ALLEN HAMILTON INC",
+            "href": "https://www.usaspending.gov/recipient/30b32b62-ffbf-d7e6-5b9d-95a295b95a6d-C/latest/"
+          },
+          260758311.48
+        ],
+        [
+          5,
+          {
+            "text": "THE TRUSTEES OF PRINCETON UNIVERSITY",
+            "href": "https://www.usaspending.gov/recipient/9c1ec395-7a2e-ac81-70e3-371cfa83f023-C/latest/"
+          },
+          174599945.61
+        ],
+        [
+          6,
+          {
+            "text": "ICF MERCANTILE LLC",
+            "href": "https://www.usaspending.gov/recipient/a0e30153-e4fe-6e93-f239-67a231b89eb7-C/latest/"
+          },
+          149999999.97
+        ],
+        [
+          7,
+          {
+            "text": "SHIONOGI INC",
+            "href": "https://www.usaspending.gov/recipient/94738b42-d910-d858-37e3-b80706e632d1-C/latest/"
+          },
+          119160691
+        ],
+        [
+          8,
+          {
+            "text": "TRIMAN INDUSTRIES INC",
+            "href": "https://www.usaspending.gov/recipient/58066858-87e7-cdb8-6f7e-de093686ad6e-C/latest/"
+          },
+          105505131.52
+        ],
+        [
+          9,
+          {
+            "text": "L3HARRIS TECHNOLOGIES, INC.",
+            "href": "https://www.usaspending.gov/recipient/8beded26-8074-58f5-93e9-67ed780b7ac4-C/latest/"
+          },
+          100207620.37
+        ],
+        [
+          10,
+          {
+            "text": "L3 TECHNOLOGIES, INC.",
+            "href": "https://www.usaspending.gov/recipient/a7fcc56d-a9b9-2518-3763-f96f3085abf1-C/latest/"
+          },
+          49505813.94
+        ]
+      ]
+    },
+    {
+      "title": "Largest awards, FY2026 to date",
+      "columns": [
+        "Rank",
+        "Recipient",
+        "Award Amount",
+        "Awarding Agency"
+      ],
+      "rows": [
+        [
+          1,
+          {
+            "text": "LOCKHEED MARTIN CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_HQ027610C0001_9700_-NONE-_-NONE-/"
+          },
+          3095877436.03,
+          "Department of Defense"
+        ],
+        [
+          2,
+          {
+            "text": "THE TRUSTEES OF PRINCETON UNIVERSITY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_DEAC0209CH11466_8900_-NONE-_-NONE-/"
+          },
+          2170949215.38,
+          "Department of Energy"
+        ],
+        [
+          3,
+          {
+            "text": "LOCKHEED MARTIN CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002413C5116_9700_-NONE-_-NONE-/"
+          },
+          1812244593.06,
+          "Department of Defense"
+        ],
+        [
+          4,
+          {
+            "text": "LOCKHEED MARTIN CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_HQ085121C0001_9700_-NONE-_-NONE-/"
+          },
+          1453527651.73,
+          "Department of Defense"
+        ],
+        [
+          5,
+          {
+            "text": "LOCKHEED MARTIN CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_HQ085121C0002_9700_-NONE-_-NONE-/"
+          },
+          1402409868.51,
+          "Department of Defense"
+        ],
+        [
+          6,
+          {
+            "text": "LOCKHEED MARTIN CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_HQ014716C0011_9700_-NONE-_-NONE-/"
+          },
+          1374406844.38,
+          "Department of Defense"
+        ],
+        [
+          7,
+          {
+            "text": "BOOZ ALLEN HAMILTON INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10B21N10070021_3600_VA11816D1007_3600/"
+          },
+          1365285599.63,
+          "Department of Veterans Affairs"
+        ],
+        [
+          8,
+          {
+            "text": "LOCKHEED MARTIN CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002423C5123_9700_-NONE-_-NONE-/"
+          },
+          1106442081.18,
+          "Department of Defense"
+        ],
+        [
+          9,
+          {
+            "text": "URS FEDERAL SERVICES INTERNATIONAL, INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA805121F0058_9700_FA805120D0001_9700/"
+          },
+          932247928.51,
+          "Department of Defense"
+        ],
+        [
+          10,
+          {
+            "text": "BOOZ ALLEN HAMILTON INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10B22N10070023_3600_VA11816D1007_3600/"
+          },
+          859686306.3,
+          "Department of Veterans Affairs"
+        ],
+        [
+          11,
+          {
+            "text": "BOOZ ALLEN HAMILTON INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10B19N10070015_3600_VA11816D1007_3600/"
+          },
+          809754946.8,
+          "Department of Veterans Affairs"
+        ],
+        [
+          12,
+          {
+            "text": "LOCKHEED MARTIN CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_HQ086222F0007_9700_HQ014718D0011_9700/"
+          },
+          629705482.31,
+          "Department of Defense"
+        ],
+        [
+          13,
+          {
+            "text": "LOCKHEED MARTIN CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002421C5119_9700_-NONE-_-NONE-/"
+          },
+          594963222.05,
+          "Department of Defense"
+        ],
+        [
+          14,
+          {
+            "text": "L3HARRIS TECHNOLOGIES, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0001917C0090_9700_-NONE-_-NONE-/"
+          },
+          542172679.04,
+          "Department of Defense"
+        ],
+        [
+          15,
+          {
+            "text": "LOCKHEED MARTIN CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002415C5151_9700_-NONE-_-NONE-/"
+          },
+          523925411.81,
+          "Department of Defense"
+        ],
+        [
+          16,
+          {
+            "text": "LOCKHEED MARTIN CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002409C2303_9700_-NONE-_-NONE-/"
+          },
+          498061225,
+          "Department of Defense"
+        ],
+        [
+          17,
+          {
+            "text": "LOCKHEED MARTIN CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002423C5101_9700_-NONE-_-NONE-/"
+          },
+          491131370,
+          "Department of Defense"
+        ],
+        [
+          18,
+          {
+            "text": "BAE SYSTEMS INFORMATION AND ELECTRONIC SYSTEMS INTEGRATION INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_SPRWA119F0049_9700_SPE4AX15D9441_9700/"
+          },
+          453253549.6,
+          "Department of Defense"
+        ],
+        [
+          19,
+          {
+            "text": "LOCKHEED MARTIN CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002419C5102_9700_-NONE-_-NONE-/"
+          },
+          448457123.38,
+          "Department of Defense"
+        ],
+        [
+          20,
+          {
+            "text": "LOCKHEED MARTIN CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002423C5325_9700_-NONE-_-NONE-/"
+          },
+          441756474.53,
+          "Department of Defense"
+        ],
+        [
+          21,
+          {
+            "text": "LOCKHEED MARTIN CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002420C5105_9700_-NONE-_-NONE-/"
+          },
+          430832700,
+          "Department of Defense"
+        ],
+        [
+          22,
+          {
+            "text": "LOCKHEED MARTIN CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002420C5101_9700_-NONE-_-NONE-/"
+          },
+          417787684.28,
+          "Department of Defense"
+        ],
+        [
+          23,
+          {
+            "text": "LOCKHEED MARTIN CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002416C5102_9700_-NONE-_-NONE-/"
+          },
+          406299426.11,
+          "Department of Defense"
+        ],
+        [
+          24,
+          {
+            "text": "LOCKHEED MARTIN CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002419C5603_9700_-NONE-_-NONE-/"
+          },
+          405053014.12,
+          "Department of Defense"
+        ],
+        [
+          25,
+          {
+            "text": "WHITING-TURNER CONTRACTING COMPANY, THE",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70Z04726FPCNI0009_7008_70Z04723DPCNI0006_7008/"
+          },
+          400000000,
+          "Department of Homeland Security"
+        ]
+      ]
+    }
+  ],
+  "narrative": {
+    "intro": "In FY2026 to date, federal agencies obligated $5B across 280,763 contract awards. That is down 46.0% year over year. The average award size was $17.9K.",
+    "sections": [
+      {
+        "heading": "Which agencies award the most contracts in New Jersey?",
+        "body": "Department of Defense was the largest federal buyer in New Jersey, obligating $3B in FY2026 to date, or 60.2% of the state total."
+      },
+      {
+        "heading": "Who are the top federal contractors in New Jersey?",
+        "body": "LOCKHEED MARTIN CORPORATION led all contractors performing work in New Jersey with $972M in obligations during FY2026 to date."
+      }
+    ]
+  },
+  "faq": [
+    {
+      "q": "How much federal contract money goes to New Jersey?",
+      "a": "Federal agencies obligated $5B to contractors performing work in New Jersey in FY2026 to date, across 280,763 awards."
+    },
+    {
+      "q": "Which agencies award the most contracts in New Jersey?",
+      "a": "Department of Defense is the largest federal buyer in New Jersey, with $3B obligated in FY2026 to date."
+    },
+    {
+      "q": "Who are the largest federal contractors in New Jersey?",
+      "a": "LOCKHEED MARTIN CORPORATION is the largest federal contractor performing work in New Jersey by obligated dollars in FY2026 to date, with $972M."
+    }
+  ],
+  "related": [
+    {
+      "label": "Alabama federal contracts",
+      "href": "/insights/state/alabama/"
+    },
+    {
+      "label": "Alaska federal contracts",
+      "href": "/insights/state/alaska/"
+    },
+    {
+      "label": "Arizona federal contracts",
+      "href": "/insights/state/arizona/"
+    },
+    {
+      "label": "Arkansas federal contracts",
+      "href": "/insights/state/arkansas/"
+    },
+    {
+      "label": "California federal contracts",
+      "href": "/insights/state/california/"
+    },
+    {
+      "label": "Colorado federal contracts",
+      "href": "/insights/state/colorado/"
+    }
+  ],
+  "sources": [
+    {
+      "label": "USAspending.gov award data",
+      "href": "https://www.usaspending.gov"
+    }
+  ]
+}

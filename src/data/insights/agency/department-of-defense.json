@@ -1,0 +1,529 @@
+{
+  "pageType": "agency",
+  "slug": "department-of-defense",
+  "title": "DoD Federal Contracts: $239B in FY2026",
+  "h1": "Department of Defense: Federal Contract Spending & Top Vendors",
+  "metaDescription": "Department of Defense obligated $239B in federal contracts in FY2026 to date. See what it buys, its top vendors, and multi-year trend.",
+  "updated": "2026-07-12",
+  "fyWindow": {
+    "label": "FY2026 to date",
+    "start": "2025-10-01",
+    "end": "2026-07-12"
+  },
+  "stats": {
+    "totalObligations": 238617208309.69,
+    "awardCount": 2048079,
+    "yoyGrowthPct": -51.5,
+    "avgAwardSize": 116508,
+    "smallBusinessSharePct": null
+  },
+  "charts": [
+    {
+      "id": "department-of-defense-trend",
+      "type": "line",
+      "title": "Obligations by fiscal year",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "FY21",
+              386942289651.74
+            ],
+            [
+              "FY22",
+              414376039275.46
+            ],
+            [
+              "FY23",
+              456815967991.81
+            ],
+            [
+              "FY24",
+              445943191536.49
+            ],
+            [
+              "FY25",
+              491658805241.87
+            ],
+            [
+              "FY26",
+              238617208309.69
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Obligations fell 51.5% year over year, from $492B in FY2025 to $239B in FY2026 to date."
+    },
+    {
+      "id": "department-of-defense-top-naics",
+      "type": "bar",
+      "title": "Top 10 categories (NAICS), FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "Aircraft Manufacturing",
+              31069829437.9
+            ],
+            [
+              "Engineering Services",
+              22771576197.71
+            ],
+            [
+              "Guided Missile and Space Vehicle Manufacturing",
+              21574067816.23
+            ],
+            [
+              "Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology)",
+              16232712546.07
+            ],
+            [
+              "Direct Health and Medical Insurance Carriers",
+              11835773861.44
+            ],
+            [
+              "Ship Building and Repairing",
+              10755263541.48
+            ],
+            [
+              "Other Aircraft Parts and Auxiliary Equipment Manufacturing",
+              9803187546.89
+            ],
+            [
+              "Search, Detection, Navigation, Guidance, Aeronautical, and Nautical System and Instrument Manufacturing",
+              6886882517.69
+            ],
+            [
+              "Commercial and Institutional Building Construction",
+              6623631493.63
+            ],
+            [
+              "Other Heavy and Civil Engineering Construction",
+              6039563585.39
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Aircraft Manufacturing was Defense's largest contract category, with $31.1B obligated (13.0% of contract spending)."
+    },
+    {
+      "id": "department-of-defense-top-vendors",
+      "type": "bar",
+      "title": "Top 10 vendors, FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "LOCKHEED MARTIN CORPORATION",
+              9992934678.16
+            ],
+            [
+              "LOCKHEED MARTIN CORPORATION",
+              8813712133.39
+            ],
+            [
+              "ELECTRIC BOAT CORPORATION",
+              8320799133.4
+            ],
+            [
+              "THE BOEING COMPANY",
+              5810770430.12
+            ],
+            [
+              "RAYTHEON COMPANY",
+              4772989431.79
+            ],
+            [
+              "TRIWEST HEALTHCARE ALLIANCE CORP",
+              4629594120.2
+            ],
+            [
+              "HUMANA GOVERNMENT BUSINESS INC",
+              4564434088.21
+            ],
+            [
+              "THE BOEING COMPANY",
+              4261035916.17
+            ],
+            [
+              "AMERISOURCEBERGEN DRUG CORP",
+              4149894023.99
+            ],
+            [
+              "RTX CORPORATION",
+              3014664965.04
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "LOCKHEED MARTIN CORPORATION led all Defense contractors with $10B, 4.2% of obligations."
+    }
+  ],
+  "tables": [
+    {
+      "title": "Top 10 vendors",
+      "columns": [
+        "Rank",
+        "Vendor",
+        "Obligations"
+      ],
+      "rows": [
+        [
+          1,
+          {
+            "text": "LOCKHEED MARTIN CORPORATION",
+            "href": "https://www.usaspending.gov/recipient/779b3e3e-364f-7cbc-28a4-a2b4484b86f4-C/latest/"
+          },
+          9992934678.16
+        ],
+        [
+          2,
+          {
+            "text": "LOCKHEED MARTIN CORPORATION",
+            "href": "https://www.usaspending.gov/recipient/6cf5fb1b-4988-d087-5dc1-70939d8fc6c4-C/latest/"
+          },
+          8813712133.39
+        ],
+        [
+          3,
+          {
+            "text": "ELECTRIC BOAT CORPORATION",
+            "href": "https://www.usaspending.gov/recipient/d5ab5f51-db3a-a26f-96a1-1b24c3e2802c-C/latest/"
+          },
+          8320799133.4
+        ],
+        [
+          4,
+          {
+            "text": "THE BOEING COMPANY",
+            "href": "https://www.usaspending.gov/recipient/22d282c6-4508-7d30-97f1-7401ea73b12a-C/latest/"
+          },
+          5810770430.12
+        ],
+        [
+          5,
+          {
+            "text": "RAYTHEON COMPANY",
+            "href": "https://www.usaspending.gov/recipient/01c4a3a3-b4c5-ce4e-822b-d17f09985001-C/latest/"
+          },
+          4772989431.79
+        ],
+        [
+          6,
+          {
+            "text": "TRIWEST HEALTHCARE ALLIANCE CORP",
+            "href": "https://www.usaspending.gov/recipient/bf1220c1-2373-042a-e8e1-33d5a29639d0-C/latest/"
+          },
+          4629594120.2
+        ],
+        [
+          7,
+          {
+            "text": "HUMANA GOVERNMENT BUSINESS INC",
+            "href": "https://www.usaspending.gov/recipient/1068e466-707d-6b6f-367f-0255fab79b8c-C/latest/"
+          },
+          4564434088.21
+        ],
+        [
+          8,
+          {
+            "text": "THE BOEING COMPANY",
+            "href": "https://www.usaspending.gov/recipient/9ab85632-42cc-5fa4-2a9c-d734034ddd33-C/latest/"
+          },
+          4261035916.17
+        ],
+        [
+          9,
+          {
+            "text": "AMERISOURCEBERGEN DRUG CORP",
+            "href": "https://www.usaspending.gov/recipient/edc402f7-abac-eafe-2aae-3fdcd8d1bb8a-C/latest/"
+          },
+          4149894023.99
+        ],
+        [
+          10,
+          {
+            "text": "RTX CORPORATION",
+            "href": "https://www.usaspending.gov/recipient/62e141b3-4887-5b39-6b75-eace9326395c-C/latest/"
+          },
+          3014664965.04
+        ]
+      ]
+    },
+    {
+      "title": "Largest awards, FY2026 to date",
+      "columns": [
+        "Rank",
+        "Recipient",
+        "Award Amount"
+      ],
+      "rows": [
+        [
+          1,
+          {
+            "text": "HUMANA GOVERNMENT BUSINESS INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_HT940216C0001_9700_-NONE-_-NONE-/"
+          },
+          51269205263.03
+        ],
+        [
+          2,
+          {
+            "text": "ELECTRIC BOAT CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002417C2100_9700_-NONE-_-NONE-/"
+          },
+          34940169713
+        ],
+        [
+          3,
+          {
+            "text": "THE BOEING COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA862511C6600_9700_-NONE-_-NONE-/"
+          },
+          31972918249.03
+        ],
+        [
+          4,
+          {
+            "text": "ELECTRIC BOAT CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002417C2117_9700_-NONE-_-NONE-/"
+          },
+          30979375853
+        ],
+        [
+          5,
+          {
+            "text": "LOCKHEED MARTIN CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0001920C0009_9700_-NONE-_-NONE-/"
+          },
+          30140182630.06
+        ],
+        [
+          6,
+          {
+            "text": "LOCKHEED MARTIN CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0001923C0003_9700_-NONE-_-NONE-/"
+          },
+          24500661983
+        ],
+        [
+          7,
+          {
+            "text": "HEALTH NET FEDERAL SERVICES, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_HT940216C0002_9700_-NONE-_-NONE-/"
+          },
+          23492532994.12
+        ],
+        [
+          8,
+          {
+            "text": "ELECTRIC BOAT CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002412C2115_9700_-NONE-_-NONE-/"
+          },
+          20197574938
+        ],
+        [
+          9,
+          {
+            "text": "THE BOEING COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0001914C0067_9700_-NONE-_-NONE-/"
+          },
+          18111838529.78
+        ],
+        [
+          10,
+          {
+            "text": "ELECTRIC BOAT CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002409C2104_9700_-NONE-_-NONE-/"
+          },
+          16238775949
+        ],
+        [
+          11,
+          {
+            "text": "FLUOR MARINE PROPULSION, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002418C2130_9700_-NONE-_-NONE-/"
+          },
+          14426090803.57
+        ],
+        [
+          12,
+          {
+            "text": "NORTHROP GRUMMAN SYSTEMS CORP",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA821920C0006_9700_-NONE-_-NONE-/"
+          },
+          13396478923.19
+        ],
+        [
+          13,
+          {
+            "text": "UNITEDHEALTH MILITARY & VETERANS SERVICES, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_HT940212C0001_9700_-NONE-_-NONE-/"
+          },
+          13145560374.49
+        ],
+        [
+          14,
+          {
+            "text": "HUNTINGTON INGALLS INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002416C2116_9700_-NONE-_-NONE-/"
+          },
+          12721654557.85
+        ],
+        [
+          15,
+          {
+            "text": "LOCKHEED MARTIN CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0001916C0033_9700_-NONE-_-NONE-/"
+          },
+          12269145508.23
+        ],
+        [
+          16,
+          {
+            "text": "LOCKHEED MARTIN CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W31P4Q20C0023_9700_-NONE-_-NONE-/"
+          },
+          10478694385.9
+        ],
+        [
+          17,
+          {
+            "text": "NORTHROP GRUMMAN SYSTEMS CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_F4261098C0001_9700_-NONE-_-NONE-/"
+          },
+          10008567439.01
+        ],
+        [
+          18,
+          {
+            "text": "LOCKHEED MARTIN CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W31P4Q24C0022_9700_-NONE-_-NONE-/"
+          },
+          9886435432.47
+        ],
+        [
+          19,
+          {
+            "text": "LOCKHEED MARTIN CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_HQ014717C0032_9700_-NONE-_-NONE-/"
+          },
+          9080516982.62
+        ],
+        [
+          20,
+          {
+            "text": "LOCKHEED MARTIN CORP",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_F0470102C0002_9700_-NONE-_-NONE-/"
+          },
+          9032605785.68
+        ],
+        [
+          21,
+          {
+            "text": "LOCKHEED MARTIN CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA861108C2897_9700_-NONE-_-NONE-/"
+          },
+          8821412144.17
+        ],
+        [
+          22,
+          {
+            "text": "NORTHROP GRUMMAN SYSTEMS CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0001918C1037_9700_-NONE-_-NONE-/"
+          },
+          8478209531.67
+        ],
+        [
+          23,
+          {
+            "text": "THE AEROSPACE CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA880219C0001_9700_-NONE-_-NONE-/"
+          },
+          8435320333.07
+        ],
+        [
+          24,
+          {
+            "text": "TRIWEST HEALTHCARE ALLIANCE CORP",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_HT940223C0002_9700_-NONE-_-NONE-/"
+          },
+          8304608415.2
+        ],
+        [
+          25,
+          {
+            "text": "HUMANA GOVERNMENT BUSINESS INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_HT940223C0001_9700_-NONE-_-NONE-/"
+          },
+          8303615720.37
+        ]
+      ]
+    }
+  ],
+  "narrative": {
+    "intro": "In FY2026 to date, Department of Defense obligated $239B across 2,048,079 contract awards. That is down 51.5% year over year. The average award size was $117K.",
+    "sections": [
+      {
+        "heading": "What does Defense buy?",
+        "body": "Aircraft Manufacturing was Department of Defense's largest contract category in FY2026 to date, with $31.1B obligated, or 13.0% of its contract spending."
+      },
+      {
+        "heading": "Who are Defense's largest contractors?",
+        "body": "LOCKHEED MARTIN CORPORATION led all Department of Defense contractors with $10B in obligations during FY2026 to date, a 4.2% share."
+      }
+    ]
+  },
+  "faq": [
+    {
+      "q": "How much does Department of Defense spend on contracts?",
+      "a": "Department of Defense obligated $239B on federal contracts in FY2026 to date, across 2,048,079 awards."
+    },
+    {
+      "q": "What does Defense buy?",
+      "a": "Defense's largest contract category is Aircraft Manufacturing, with $31.1B obligated in FY2026 to date."
+    },
+    {
+      "q": "Who are Defense's largest contractors?",
+      "a": "LOCKHEED MARTIN CORPORATION is Defense's largest contractor by obligated dollars in FY2026 to date, with $10B."
+    }
+  ],
+  "related": [
+    {
+      "label": "Department of Veterans Affairs",
+      "href": "/insights/agency/department-of-veterans-affairs/"
+    },
+    {
+      "label": "Department of Homeland Security",
+      "href": "/insights/agency/department-of-homeland-security/"
+    },
+    {
+      "label": "Department of Health and Human Services",
+      "href": "/insights/agency/department-of-health-and-human-services/"
+    },
+    {
+      "label": "General Services Administration",
+      "href": "/insights/agency/general-services-administration/"
+    },
+    {
+      "label": "National Aeronautics and Space Administration",
+      "href": "/insights/agency/national-aeronautics-and-space-administration/"
+    },
+    {
+      "label": "Department of Energy",
+      "href": "/insights/agency/department-of-energy/"
+    }
+  ],
+  "sources": [
+    {
+      "label": "USAspending.gov award data",
+      "href": "https://www.usaspending.gov"
+    }
+  ]
+}

@@ -1,0 +1,529 @@
+{
+  "pageType": "agency",
+  "slug": "department-of-transportation",
+  "title": "DOT Federal Contracts: $8.7B in FY2026",
+  "h1": "Department of Transportation: Federal Contract Spending & Top Vendors",
+  "metaDescription": "Department of Transportation obligated $8.7B in federal contracts in FY2026 to date. See what it buys, its top vendors, and multi-year trend.",
+  "updated": "2026-07-12",
+  "fyWindow": {
+    "label": "FY2026 to date",
+    "start": "2025-10-01",
+    "end": "2026-07-12"
+  },
+  "stats": {
+    "totalObligations": 8702843563.38,
+    "awardCount": 10665,
+    "yoyGrowthPct": -3.5,
+    "avgAwardSize": 816019,
+    "smallBusinessSharePct": null
+  },
+  "charts": [
+    {
+      "id": "department-of-transportation-trend",
+      "type": "line",
+      "title": "Obligations by fiscal year",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "FY21",
+              6972039767.94
+            ],
+            [
+              "FY22",
+              7960687196.1
+            ],
+            [
+              "FY23",
+              8692390255.63
+            ],
+            [
+              "FY24",
+              8564937483.21
+            ],
+            [
+              "FY25",
+              9022873788.6
+            ],
+            [
+              "FY26",
+              8702843563.38
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Obligations fell 3.5% year over year, from $9B in FY2025 to $8.7B in FY2026 to date."
+    },
+    {
+      "id": "department-of-transportation-top-naics",
+      "type": "bar",
+      "title": "Top 10 categories (NAICS), FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "Engineering Services",
+              1314070654.35
+            ],
+            [
+              "Search, Detection, Navigation, Guidance, Aeronautical, and Nautical System and Instrument Manufacturing",
+              1023308298.51
+            ],
+            [
+              "Telecommunications Resellers",
+              895735996.72
+            ],
+            [
+              "Telephone Apparatus Manufacturing",
+              564361353.39
+            ],
+            [
+              "Highway, Street, and Bridge Construction",
+              550651557.13
+            ],
+            [
+              "Deep Sea Freight Transportation",
+              540411742.43
+            ],
+            [
+              "Computer Systems Design Services",
+              504377194.14
+            ],
+            [
+              "All Other Professional, Scientific, and Technical Services",
+              346176822.3
+            ],
+            [
+              "Computing Infrastructure Providers, Data Processing, Web Hosting, and Related Services",
+              270205172.4
+            ],
+            [
+              "Air Traffic Control",
+              260502392.03
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Engineering Services was Transportation's largest contract category, with $1.3B obligated (15.1% of contract spending)."
+    },
+    {
+      "id": "department-of-transportation-top-vendors",
+      "type": "bar",
+      "title": "Top 10 vendors, FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "HARRIS CORPORATION",
+              895735996.72
+            ],
+            [
+              "RAYTHEON COMPANY",
+              643376069.37
+            ],
+            [
+              "ROHDE & SCHWARZ USA, INC.",
+              403341041.73
+            ],
+            [
+              "INDRA AIR TRAFFIC, INC.",
+              376504324.23
+            ],
+            [
+              "PTSI MANAGED SERVICES INC",
+              215423199.69
+            ],
+            [
+              "PERATON INC.",
+              201057609.13
+            ],
+            [
+              "TOTE SERVICES, LLC",
+              199431598.13
+            ],
+            [
+              "FREQUENTIS USA, INC",
+              169032598.24
+            ],
+            [
+              "LEIDOS, INC.",
+              130932445.19
+            ],
+            [
+              "THE MITRE CORPORATION",
+              127767529.11
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "HARRIS CORPORATION led all Transportation contractors with $896M, 10.3% of obligations."
+    }
+  ],
+  "tables": [
+    {
+      "title": "Top 10 vendors",
+      "columns": [
+        "Rank",
+        "Vendor",
+        "Obligations"
+      ],
+      "rows": [
+        [
+          1,
+          {
+            "text": "HARRIS CORPORATION",
+            "href": "https://www.usaspending.gov/recipient/0fee4ffe-0a02-2e9b-6dad-4bb544bb2ac9-C/latest/"
+          },
+          895735996.72
+        ],
+        [
+          2,
+          {
+            "text": "RAYTHEON COMPANY",
+            "href": "https://www.usaspending.gov/recipient/b91e6418-aa27-f6c2-90a9-1545753a6d15-C/latest/"
+          },
+          643376069.37
+        ],
+        [
+          3,
+          {
+            "text": "ROHDE & SCHWARZ USA, INC.",
+            "href": "https://www.usaspending.gov/recipient/088e65c2-2b0e-9b5c-d6fd-207142152cda-C/latest/"
+          },
+          403341041.73
+        ],
+        [
+          4,
+          {
+            "text": "INDRA AIR TRAFFIC, INC.",
+            "href": "https://www.usaspending.gov/recipient/73e43c03-597d-d518-375c-733e7b610d9c-C/latest/"
+          },
+          376504324.23
+        ],
+        [
+          5,
+          {
+            "text": "PTSI MANAGED SERVICES INC",
+            "href": "https://www.usaspending.gov/recipient/1b34c273-b52d-9dd4-5c61-1098530dd984-C/latest/"
+          },
+          215423199.69
+        ],
+        [
+          6,
+          {
+            "text": "PERATON INC.",
+            "href": "https://www.usaspending.gov/recipient/129fccb1-783c-9fd1-7b6d-6ddea65ace79-C/latest/"
+          },
+          201057609.13
+        ],
+        [
+          7,
+          {
+            "text": "TOTE SERVICES, LLC",
+            "href": "https://www.usaspending.gov/recipient/6c48f956-83a6-813a-8495-68275f67c840-C/latest/"
+          },
+          199431598.13
+        ],
+        [
+          8,
+          {
+            "text": "FREQUENTIS USA, INC",
+            "href": "https://www.usaspending.gov/recipient/18631843-bc06-8595-d577-8bae98c7e6c4-C/latest/"
+          },
+          169032598.24
+        ],
+        [
+          9,
+          {
+            "text": "LEIDOS, INC.",
+            "href": "https://www.usaspending.gov/recipient/5ddb264f-234b-872c-2571-4731fde123c6-C/latest/"
+          },
+          130932445.19
+        ],
+        [
+          10,
+          {
+            "text": "THE MITRE CORPORATION",
+            "href": "https://www.usaspending.gov/recipient/3903ae3c-2661-60bb-cdd3-1f26ad214167-C/latest/"
+          },
+          127767529.11
+        ]
+      ]
+    },
+    {
+      "title": "Largest awards, FY2026 to date",
+      "columns": [
+        "Rank",
+        "Recipient",
+        "Award Amount"
+      ],
+      "rows": [
+        [
+          1,
+          {
+            "text": "HARRIS CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_693KA821F00222_6920_DTFA0102D03006_6920/"
+          },
+          2099573343.09
+        ],
+        [
+          2,
+          {
+            "text": "THE MITRE CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_DTFAWA10C00080_6920_-NONE-_-NONE-/"
+          },
+          1701696966.84
+        ],
+        [
+          3,
+          {
+            "text": "HARRIS CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_DTFA0102D03006CALL0001_6920_DTFA0102D03006_6920/"
+          },
+          1568875082.68
+        ],
+        [
+          4,
+          {
+            "text": "PARSONS GOVERNMENT SERVICES INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_DTFAWA12C00064_6920_-NONE-_-NONE-/"
+          },
+          1501103618.93
+        ],
+        [
+          5,
+          {
+            "text": "HARRIS CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_DTFA0102D03006CALL0016_6920_DTFA0102D03006_6920/"
+          },
+          1240364575.99
+        ],
+        [
+          6,
+          {
+            "text": "LEIDOS, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_693KA721C00014_6920_-NONE-_-NONE-/"
+          },
+          890859511.57
+        ],
+        [
+          7,
+          {
+            "text": "THE MITRE CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_693KA822C00001_6920_-NONE-_-NONE-/"
+          },
+          754431186.96
+        ],
+        [
+          8,
+          {
+            "text": "LEIDOS, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_DTFA0101CA0065CALL0001_6920_DTFA0101CA0065_6920/"
+          },
+          667433933.93
+        ],
+        [
+          9,
+          {
+            "text": "LEIDOS, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_693KA720C00002_6920_-NONE-_-NONE-/"
+          },
+          659210904.61
+        ],
+        [
+          10,
+          {
+            "text": "HARRIS CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_DTFA0102D03006CALL0002_6920_DTFA0102D03006_6920/"
+          },
+          652892384.77
+        ],
+        [
+          11,
+          {
+            "text": "PTSI MANAGED SERVICES INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_693KA923F00076_6920_693KA923D00005_6920/"
+          },
+          591008013.53
+        ],
+        [
+          12,
+          {
+            "text": "LEIDOS, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_DTFAWA16C00021_6920_-NONE-_-NONE-/"
+          },
+          580559196.04
+        ],
+        [
+          13,
+          {
+            "text": "HARRIS CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_DTFA0102D03006CALL0010_6920_DTFA0102D03006_6920/"
+          },
+          575692001.51
+        ],
+        [
+          14,
+          {
+            "text": "LOCKHEED MARTIN SERVICES, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_DTFAWA10C00052_6920_-NONE-_-NONE-/"
+          },
+          494427737.99
+        ],
+        [
+          15,
+          {
+            "text": "RAYTHEON COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_693KA726C00051_6920_-NONE-_-NONE-/"
+          },
+          423372756.88
+        ],
+        [
+          16,
+          {
+            "text": "ROHDE & SCHWARZ USA, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_693KA826F00088_6920_693KA826D00002_6920/"
+          },
+          389941323.85
+        ],
+        [
+          17,
+          {
+            "text": "GENERAL DYNAMICS MISSION SYSTEMS, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_DTFAWA12C00040_6920_-NONE-_-NONE-/"
+          },
+          386470668.46
+        ],
+        [
+          18,
+          {
+            "text": "INDRA AIR TRAFFIC, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_693KA726C00050_6920_-NONE-_-NONE-/"
+          },
+          370672391.1
+        ],
+        [
+          19,
+          {
+            "text": "L3HARRIS TECHNOLOGIES, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_DTFAWA07C00014CALL0001_6920_DTFAWA07C00014_6920/"
+          },
+          338571299
+        ],
+        [
+          20,
+          {
+            "text": "TOTE SERVICES, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_693JF722F000044_6938_693JF719D000002_6938/"
+          },
+          309561461
+        ],
+        [
+          21,
+          {
+            "text": "NOBLIS, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_0005_6920_DTFAWA17D00014_6920/"
+          },
+          281897958.1
+        ],
+        [
+          22,
+          {
+            "text": "GENERAL DYNAMICS INFORMATION TECHNOLOGY, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_DTFAWA10D00003CALL0004_6920_DTFAWA10D00003_6920/"
+          },
+          277976190.24
+        ],
+        [
+          23,
+          {
+            "text": "RAYTHEON COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_693KA721F00005_6920_693KA721D00001_6920/"
+          },
+          241790386
+        ],
+        [
+          24,
+          {
+            "text": "KARSUN SOLUTIONS LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_0008_6920_DTFACT17D00007_6920/"
+          },
+          234982794.83
+        ],
+        [
+          25,
+          {
+            "text": "RAYTHEON COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_DTFAWA12C00061_6920_-NONE-_-NONE-/"
+          },
+          231311891.43
+        ]
+      ]
+    }
+  ],
+  "narrative": {
+    "intro": "In FY2026 to date, Department of Transportation obligated $8.7B across 10,665 contract awards. That is down 3.5% year over year. The average award size was $816K.",
+    "sections": [
+      {
+        "heading": "What does Transportation buy?",
+        "body": "Engineering Services was Department of Transportation's largest contract category in FY2026 to date, with $1.3B obligated, or 15.1% of its contract spending."
+      },
+      {
+        "heading": "Who are Transportation's largest contractors?",
+        "body": "HARRIS CORPORATION led all Department of Transportation contractors with $896M in obligations during FY2026 to date, a 10.3% share."
+      }
+    ]
+  },
+  "faq": [
+    {
+      "q": "How much does Department of Transportation spend on contracts?",
+      "a": "Department of Transportation obligated $8.7B on federal contracts in FY2026 to date, across 10,665 awards."
+    },
+    {
+      "q": "What does Transportation buy?",
+      "a": "Transportation's largest contract category is Engineering Services, with $1.3B obligated in FY2026 to date."
+    },
+    {
+      "q": "Who are Transportation's largest contractors?",
+      "a": "HARRIS CORPORATION is Transportation's largest contractor by obligated dollars in FY2026 to date, with $896M."
+    }
+  ],
+  "related": [
+    {
+      "label": "Department of Defense",
+      "href": "/insights/agency/department-of-defense/"
+    },
+    {
+      "label": "Department of Veterans Affairs",
+      "href": "/insights/agency/department-of-veterans-affairs/"
+    },
+    {
+      "label": "Department of Homeland Security",
+      "href": "/insights/agency/department-of-homeland-security/"
+    },
+    {
+      "label": "Department of Health and Human Services",
+      "href": "/insights/agency/department-of-health-and-human-services/"
+    },
+    {
+      "label": "General Services Administration",
+      "href": "/insights/agency/general-services-administration/"
+    },
+    {
+      "label": "National Aeronautics and Space Administration",
+      "href": "/insights/agency/national-aeronautics-and-space-administration/"
+    }
+  ],
+  "sources": [
+    {
+      "label": "USAspending.gov award data",
+      "href": "https://www.usaspending.gov"
+    }
+  ]
+}

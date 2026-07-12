@@ -1,0 +1,609 @@
+{
+  "pageType": "state",
+  "slug": "iowa",
+  "title": "Iowa Federal Contracts: $1.2B in FY2026",
+  "h1": "Federal Contracts in Iowa: Spending, Agencies & Vendors",
+  "metaDescription": "Federal agencies obligated $1.2B to contractors in Iowa in FY2026 to date. See top buying agencies, top vendors, and industries.",
+  "updated": "2026-07-12",
+  "fyWindow": {
+    "label": "FY2026 to date",
+    "start": "2025-10-01",
+    "end": "2026-07-12"
+  },
+  "stats": {
+    "totalObligations": 1193284415.59,
+    "awardCount": 16435,
+    "yoyGrowthPct": -66.8,
+    "avgAwardSize": 72606,
+    "smallBusinessSharePct": null
+  },
+  "charts": [
+    {
+      "id": "iowa-trend",
+      "type": "line",
+      "title": "Obligations by fiscal year",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "FY21",
+              2541881384.75
+            ],
+            [
+              "FY22",
+              2720761117.41
+            ],
+            [
+              "FY23",
+              3374659396.69
+            ],
+            [
+              "FY24",
+              3021983788.64
+            ],
+            [
+              "FY25",
+              3597160661.61
+            ],
+            [
+              "FY26",
+              1193284415.59
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Obligations fell 66.8% year over year, from $3.6B in FY2025 to $1.2B in FY2026 to date."
+    },
+    {
+      "id": "iowa-top-agencies",
+      "type": "bar",
+      "title": "Top 10 buying agencies, FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "Department of Defense",
+              766809043.88
+            ],
+            [
+              "Department of the Treasury",
+              157988407.11
+            ],
+            [
+              "Department of Agriculture",
+              95745174.31
+            ],
+            [
+              "Department of Veterans Affairs",
+              40280654.67
+            ],
+            [
+              "Department of Energy",
+              28977017.39
+            ],
+            [
+              "General Services Administration",
+              25634165.37
+            ],
+            [
+              "Department of Transportation",
+              18246826.92
+            ],
+            [
+              "Department of Justice",
+              10808170.94
+            ],
+            [
+              "Department of Health and Human Services",
+              8904049.73
+            ],
+            [
+              "Department of Labor",
+              8622059.49
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Department of Defense was the top federal buyer in Iowa, obligating $767M (64.3% of the state total)."
+    },
+    {
+      "id": "iowa-top-vendors",
+      "type": "bar",
+      "title": "Top 10 vendors, FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "ROCKWELL COLLINS, INC.",
+              288135421.32
+            ],
+            [
+              "DATA LINK SOLUTIONS LLC",
+              247698637.86
+            ],
+            [
+              "PMX INDUSTRIES, INC.",
+              103034139.52
+            ],
+            [
+              "ROCKWELL COLLINS, INC.",
+              66152453.04
+            ],
+            [
+              "AMERICAN ORDNANCE LLC",
+              56327117.83
+            ],
+            [
+              "THE CBE GROUP, INC.",
+              55105645.28
+            ],
+            [
+              "DEAN SNYDER CONSTRUCTION CO.",
+              32815572.94
+            ],
+            [
+              "IOWA STATE UNIVERSITY OF SCIENCE AND TECHNOLOGY",
+              29653652.01
+            ],
+            [
+              "BAE SYSTEMS INFORMATION AND ELECTRONIC SYSTEMS INTEGRATION INC.",
+              25769029
+            ],
+            [
+              "FLEETSIDE FORD, LLC.",
+              23532632.3
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "ROCKWELL COLLINS, INC. led all contractors in Iowa with $288M, 24.1% of the state total."
+    },
+    {
+      "id": "iowa-top-naics",
+      "type": "bar",
+      "title": "Top 10 industries (NAICS), FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "Other Communications Equipment Manufacturing",
+              255729765.21
+            ],
+            [
+              "Copper Rolling, Drawing, Extruding, and Alloying",
+              103034639.52
+            ],
+            [
+              "Radio and Television Broadcasting and Wireless Communications Equipment Manufacturing",
+              98863305.65
+            ],
+            [
+              "Engineering Services",
+              96385250.77
+            ],
+            [
+              "Other Aircraft Parts and Auxiliary Equipment Manufacturing",
+              92713681.27
+            ],
+            [
+              "Search, Detection, Navigation, Guidance, Aeronautical, and Nautical System and Instrument Manufacturing",
+              89120045.84
+            ],
+            [
+              "Commercial and Institutional Building Construction",
+              39176606.48
+            ],
+            [
+              "Offices of Certified Public Accountants",
+              34733458.09
+            ],
+            [
+              "Ammunition (except Small Arms) Manufacturing",
+              30967945.76
+            ],
+            [
+              "Facilities Support Services",
+              29830411.44
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Other Communications Equipment Manufacturing was the largest industry in Iowa, with $256M obligated."
+    }
+  ],
+  "tables": [
+    {
+      "title": "Top 10 vendors",
+      "columns": [
+        "Rank",
+        "Vendor",
+        "Obligations"
+      ],
+      "rows": [
+        [
+          1,
+          {
+            "text": "ROCKWELL COLLINS, INC.",
+            "href": "https://www.usaspending.gov/recipient/fbaf2f7a-d2a8-a4b8-2388-3abc483658a7-C/latest/"
+          },
+          288135421.32
+        ],
+        [
+          2,
+          {
+            "text": "DATA LINK SOLUTIONS LLC",
+            "href": "https://www.usaspending.gov/recipient/c98b136d-0e1d-f50a-801c-a39f5aca7224-C/latest/"
+          },
+          247698637.86
+        ],
+        [
+          3,
+          {
+            "text": "PMX INDUSTRIES, INC.",
+            "href": "https://www.usaspending.gov/recipient/7ac9c230-cad5-6fc9-a095-a7f14a4f5665-C/latest/"
+          },
+          103034139.52
+        ],
+        [
+          4,
+          {
+            "text": "ROCKWELL COLLINS, INC.",
+            "href": "https://www.usaspending.gov/recipient/a4c28996-484c-cf28-76b4-8e46e982c93e-C/latest/"
+          },
+          66152453.04
+        ],
+        [
+          5,
+          {
+            "text": "AMERICAN ORDNANCE LLC",
+            "href": "https://www.usaspending.gov/recipient/1286c0e7-b6b5-8c72-2905-d83a8bb61653-C/latest/"
+          },
+          56327117.83
+        ],
+        [
+          6,
+          {
+            "text": "THE CBE GROUP, INC.",
+            "href": "https://www.usaspending.gov/recipient/231c3fa2-4f14-06be-083b-5b27d19525fa-C/latest/"
+          },
+          55105645.28
+        ],
+        [
+          7,
+          {
+            "text": "DEAN SNYDER CONSTRUCTION CO.",
+            "href": "https://www.usaspending.gov/recipient/ac9f13b1-e9a1-a1a4-4337-b4e006bf714f-C/latest/"
+          },
+          32815572.94
+        ],
+        [
+          8,
+          {
+            "text": "IOWA STATE UNIVERSITY OF SCIENCE AND TECHNOLOGY",
+            "href": "https://www.usaspending.gov/recipient/7148b6ec-c422-d557-aa04-0c8488cc6775-C/latest/"
+          },
+          29653652.01
+        ],
+        [
+          9,
+          {
+            "text": "BAE SYSTEMS INFORMATION AND ELECTRONIC SYSTEMS INTEGRATION INC.",
+            "href": "https://www.usaspending.gov/recipient/d288137a-df06-a6a2-d760-b57726572a8b-C/latest/"
+          },
+          25769029
+        ],
+        [
+          10,
+          {
+            "text": "FLEETSIDE FORD, LLC.",
+            "href": "https://www.usaspending.gov/recipient/41cc5c4e-08af-496a-1c00-56667fe06689-C/latest/"
+          },
+          23532632.3
+        ]
+      ]
+    },
+    {
+      "title": "Largest awards, FY2026 to date",
+      "columns": [
+        "Rank",
+        "Recipient",
+        "Award Amount",
+        "Awarding Agency"
+      ],
+      "rows": [
+        [
+          1,
+          {
+            "text": "IOWA STATE UNIVERSITY OF SCIENCE AND TECHNOLOGY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_DEAC0207CH11358_8900_-NONE-_-NONE-/"
+          },
+          1118127580.26,
+          "Department of Energy"
+        ],
+        [
+          2,
+          {
+            "text": "MSM GROUP NORTH AMERICA INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W519TC25C0032_9700_-NONE-_-NONE-/"
+          },
+          635200000,
+          "Department of Defense"
+        ],
+        [
+          3,
+          {
+            "text": "ROCKWELL COLLINS, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N6134017C0007_9700_-NONE-_-NONE-/"
+          },
+          401212314.92,
+          "Department of Defense"
+        ],
+        [
+          4,
+          {
+            "text": "DATA LINK SOLUTIONS LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0003925F4045_9700_N0003924D4004_9700/"
+          },
+          361358858,
+          "Department of Defense"
+        ],
+        [
+          5,
+          {
+            "text": "BAE SYSTEMS INFORMATION AND ELECTRONIC SYSTEMS INTEGRATION INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA880721C0003_9700_-NONE-_-NONE-/"
+          },
+          358920400.69,
+          "Department of Defense"
+        ],
+        [
+          6,
+          {
+            "text": "ROCKWELL COLLINS SIMULATION & TRAINING SOLUTIONS LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N6134021C0017_9700_-NONE-_-NONE-/"
+          },
+          330158192.43,
+          "Department of Defense"
+        ],
+        [
+          7,
+          {
+            "text": "AMERICAN ORDNANCE LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W52P1J20C0035_9700_-NONE-_-NONE-/"
+          },
+          229346069.5,
+          "Department of Defense"
+        ],
+        [
+          8,
+          {
+            "text": "BAE SYSTEMS INFORMATION AND ELECTRONIC SYSTEMS INTEGRATION INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA880712C0013_9700_-NONE-_-NONE-/"
+          },
+          228649044.66,
+          "Department of Defense"
+        ],
+        [
+          9,
+          {
+            "text": "AMERICAN ORDNANCE LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W519TC25F0357_9700_W519TC23D0014_9700/"
+          },
+          197387637.76,
+          "Department of Defense"
+        ],
+        [
+          10,
+          {
+            "text": "AMERICAN ORDNANCE LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W15QKN23F0559_9700_W15QKN23D0056_9700/"
+          },
+          192591076.69,
+          "Department of Defense"
+        ],
+        [
+          11,
+          {
+            "text": "THE UNIVERSITY OF IOWA",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_80GSFC18C0008_8000_-NONE-_-NONE-/"
+          },
+          184007563.63,
+          "National Aeronautics and Space Administration"
+        ],
+        [
+          12,
+          {
+            "text": "THE CBE GROUP, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_2032H521F00136_2050_GS23F0230P_4730/"
+          },
+          182317769.42,
+          "Department of the Treasury"
+        ],
+        [
+          13,
+          {
+            "text": "ROCKWELL COLLINS, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W15P7T23F0041_9700_W15P7T16D0003_9700/"
+          },
+          179421276.21,
+          "Department of Defense"
+        ],
+        [
+          14,
+          {
+            "text": "AMERICAN ORDNANCE LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W519TC24F0399_9700_W519TC23D0014_9700/"
+          },
+          157650954.78,
+          "Department of Defense"
+        ],
+        [
+          15,
+          {
+            "text": "DATA LINK SOLUTIONS LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0003924F4054_9700_N0003924D4004_9700/"
+          },
+          157554907,
+          "Department of Defense"
+        ],
+        [
+          16,
+          {
+            "text": "ROCKWELL COLLINS, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W15P7T24F0062_9700_W15P7T16D0003_9700/"
+          },
+          142537095.91,
+          "Department of Defense"
+        ],
+        [
+          17,
+          {
+            "text": "ROCKWELL COLLINS, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W15P7T21F0083_9700_W15P7T16D0003_9700/"
+          },
+          138956120.49,
+          "Department of Defense"
+        ],
+        [
+          18,
+          {
+            "text": "DATA LINK SOLUTIONS LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0003921F1045_9700_N0003920D0057_9700/"
+          },
+          134182201,
+          "Department of Defense"
+        ],
+        [
+          19,
+          {
+            "text": "ROCKWELL COLLINS, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W15P7T25F0068_9700_W15P7T16D0003_9700/"
+          },
+          133975380,
+          "Department of Defense"
+        ],
+        [
+          20,
+          {
+            "text": "RYAN COMPANIES US INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_47PG0218C0003_4740_-NONE-_-NONE-/"
+          },
+          126837558.95,
+          "General Services Administration"
+        ],
+        [
+          21,
+          {
+            "text": "ROCKWELL COLLINS, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W15P7T22F0057_9700_W15P7T16D0003_9700/"
+          },
+          124850752,
+          "Department of Defense"
+        ],
+        [
+          22,
+          {
+            "text": "DATA LINK SOLUTIONS LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0003923F4030_9700_N0003920D0057_9700/"
+          },
+          124045448,
+          "Department of Defense"
+        ],
+        [
+          23,
+          {
+            "text": "GENERAL DYNAMICS-OTS, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W519TC23F0108_9700_W519TC23D0015_9700/"
+          },
+          121512745.38,
+          "Department of Defense"
+        ],
+        [
+          24,
+          {
+            "text": "DATA LINK SOLUTIONS LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0003925F4069_9700_N0003924D4004_9700/"
+          },
+          115281341.01,
+          "Department of Defense"
+        ],
+        [
+          25,
+          {
+            "text": "ROCKWELL COLLINS, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W15P7T20F0133_9700_W15P7T16D0003_9700/"
+          },
+          108065115.6,
+          "Department of Defense"
+        ]
+      ]
+    }
+  ],
+  "narrative": {
+    "intro": "In FY2026 to date, federal agencies obligated $1.2B across 16,435 contract awards. That is down 66.8% year over year. The average award size was $72.6K.",
+    "sections": [
+      {
+        "heading": "Which agencies award the most contracts in Iowa?",
+        "body": "Department of Defense was the largest federal buyer in Iowa, obligating $767M in FY2026 to date, or 64.3% of the state total."
+      },
+      {
+        "heading": "Who are the top federal contractors in Iowa?",
+        "body": "ROCKWELL COLLINS, INC. led all contractors performing work in Iowa with $288M in obligations during FY2026 to date."
+      }
+    ]
+  },
+  "faq": [
+    {
+      "q": "How much federal contract money goes to Iowa?",
+      "a": "Federal agencies obligated $1.2B to contractors performing work in Iowa in FY2026 to date, across 16,435 awards."
+    },
+    {
+      "q": "Which agencies award the most contracts in Iowa?",
+      "a": "Department of Defense is the largest federal buyer in Iowa, with $767M obligated in FY2026 to date."
+    },
+    {
+      "q": "Who are the largest federal contractors in Iowa?",
+      "a": "ROCKWELL COLLINS, INC. is the largest federal contractor performing work in Iowa by obligated dollars in FY2026 to date, with $288M."
+    }
+  ],
+  "related": [
+    {
+      "label": "Alabama federal contracts",
+      "href": "/insights/state/alabama/"
+    },
+    {
+      "label": "Alaska federal contracts",
+      "href": "/insights/state/alaska/"
+    },
+    {
+      "label": "Arizona federal contracts",
+      "href": "/insights/state/arizona/"
+    },
+    {
+      "label": "Arkansas federal contracts",
+      "href": "/insights/state/arkansas/"
+    },
+    {
+      "label": "California federal contracts",
+      "href": "/insights/state/california/"
+    },
+    {
+      "label": "Colorado federal contracts",
+      "href": "/insights/state/colorado/"
+    }
+  ],
+  "sources": [
+    {
+      "label": "USAspending.gov award data",
+      "href": "https://www.usaspending.gov"
+    }
+  ]
+}

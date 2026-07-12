@@ -1,0 +1,122 @@
+---
+// Template A — the shared entity dashboard body used by NAICS, agency, and
+// state pages. Renders the spec's block order (7.0): breadcrumbs → header →
+// stat callouts → primary (trend) chart → narrative intro → narrative sections
+// interleaved 1:1 with the category charts → tables → mid CTA → FAQ →
+// methodology → related → footer CTA. Contains no data logic beyond selecting
+// and ordering fields from the page JSON.
+import type { InsightsPage } from '../../lib/insightsTypes';
+import { SIGNUP_URL } from '../../config';
+import Breadcrumbs from '../seo/Breadcrumbs.astro';
+import FAQSchema from '../seo/FAQSchema.astro';
+import CTABand from '../CTABand.astro';
+import StatCallouts from './StatCallouts.astro';
+import SvgChart from './SvgChart.astro';
+import EmbedCode from './EmbedCode.astro';
+import DataTable from './DataTable.astro';
+import MethodologyNote from './MethodologyNote.astro';
+import RelatedPages from './RelatedPages.astro';
+
+interface Crumb {
+  name: string;
+  url: string;
+}
+
+interface Props {
+  page: InsightsPage;
+  breadcrumbs: Crumb[];
+  eyebrow: string;
+  /** utm_campaign value for the CTA links (e.g. "naics", "agency", "state"). */
+  campaign: string;
+  /** Show the DoD reporting-lag disclosure (agency/state pages). */
+  dodLag?: boolean;
+  relatedHeading?: string;
+}
+
+const { page, breadcrumbs, eyebrow, campaign, dodLag = false, relatedHeading } = Astro.props;
+
+const [primaryChart, ...categoryCharts] = page.charts;
+const sections = page.narrative.sections;
+const faqs = page.faq.map((f) => ({ question: f.q, answer: f.a }));
+const utm = (suffix: string) => `${SIGNUP_URL}?utm_source=insights&utm_campaign=${suffix}`;
+// Pair each narrative section with its category chart; some charts have no
+// paired section (they render on their own).
+const pairCount = Math.max(sections.length, categoryCharts.length);
+const pairs = Array.from({ length: pairCount }, (_, i) => ({ section: sections[i], chart: categoryCharts[i] }));
+---
+
+<Breadcrumbs items={breadcrumbs} />
+
+<header class="ins-header">
+  <p class="eyebrow">{eyebrow}</p>
+  <h1>{page.h1}</h1>
+  <p class="updated-line">Data through {page.updated} · {page.fyWindow.label}</p>
+</header>
+
+<StatCallouts stats={page.stats} fyLabel={page.fyWindow.label} />
+
+{primaryChart && (
+  <section aria-label={primaryChart.title}>
+    <SvgChart chart={primaryChart} />
+    <EmbedCode chartId={primaryChart.id} chartTitle={primaryChart.title} />
+  </section>
+)}
+
+<p class="lede">{page.narrative.intro}</p>
+
+{pairs.map(({ section, chart }) => (
+  <>
+    {section && (
+      <section>
+        <h2>{section.heading}</h2>
+        <p>{section.body}</p>
+      </section>
+    )}
+    {chart && (
+      <section aria-label={chart.title}>
+        <SvgChart chart={chart} />
+        <EmbedCode chartId={chart.id} chartTitle={chart.title} />
+      </section>
+    )}
+  </>
+))}
+
+{page.tables.map((t) => (
+  <section aria-label={t.title}>
+    <DataTable table={t} />
+  </section>
+))}
+
+<CTABand
+  heading="This is the free layer."
+  sub="GovHub customers get the live version — filters, exports, and AI proposal drafting on top of this data."
+  primaryHref={utm(campaign)}
+  primaryLabel="Start free"
+/>
+
+<FAQSchema faqs={faqs} />
+
+<MethodologyNote updated={page.updated} fyLabel={page.fyWindow.label} dodLag={dodLag} />
+
+<RelatedPages links={page.related} heading={relatedHeading} />
+
+<CTABand
+  heading="Found your market? GovHub writes the proposal."
+  sub="Turn this market intelligence into a submitted, compliant federal proposal — faster."
+  primaryHref={utm(`${campaign}-footer`)}
+  primaryLabel="Start free trial"
+/>
+
+<style>
+  .ins-header {
+    margin-top: 0.5rem;
+  }
+  .ins-header h1 {
+    margin: 0.25rem 0 0;
+  }
+  section p {
+    color: var(--fg-muted);
+    font-size: 1.05rem;
+    max-width: 46rem;
+  }
+</style>

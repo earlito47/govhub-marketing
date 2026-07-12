@@ -1,0 +1,609 @@
+{
+  "pageType": "state",
+  "slug": "maine",
+  "title": "Maine Federal Contracts: $1.2B in FY2026",
+  "h1": "Federal Contracts in Maine: Spending, Agencies & Vendors",
+  "metaDescription": "Federal agencies obligated $1.2B to contractors in Maine in FY2026 to date. See top buying agencies, top vendors, and industries.",
+  "updated": "2026-07-12",
+  "fyWindow": {
+    "label": "FY2026 to date",
+    "start": "2025-10-01",
+    "end": "2026-07-12"
+  },
+  "stats": {
+    "totalObligations": 1178148065.88,
+    "awardCount": 6284,
+    "yoyGrowthPct": -70,
+    "avgAwardSize": 187484,
+    "smallBusinessSharePct": null
+  },
+  "charts": [
+    {
+      "id": "maine-trend",
+      "type": "line",
+      "title": "Obligations by fiscal year",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "FY21",
+              2418362685.92
+            ],
+            [
+              "FY22",
+              2747113789.99
+            ],
+            [
+              "FY23",
+              3717485535.85
+            ],
+            [
+              "FY24",
+              3685845906.29
+            ],
+            [
+              "FY25",
+              3927718416.83
+            ],
+            [
+              "FY26",
+              1178148065.88
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Obligations fell 70.0% year over year, from $3.9B in FY2025 to $1.2B in FY2026 to date."
+    },
+    {
+      "id": "maine-top-agencies",
+      "type": "bar",
+      "title": "Top 10 buying agencies, FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "Department of Defense",
+              1095841010.16
+            ],
+            [
+              "Department of Veterans Affairs",
+              22864377.79
+            ],
+            [
+              "Department of Agriculture",
+              18375486.03
+            ],
+            [
+              "Department of Labor",
+              13278293.36
+            ],
+            [
+              "General Services Administration",
+              9718916.25
+            ],
+            [
+              "Department of Homeland Security",
+              6883848.31
+            ],
+            [
+              "Department of the Interior",
+              4932859.1
+            ],
+            [
+              "Department of Health and Human Services",
+              2295650.17
+            ],
+            [
+              "Department of Justice",
+              1691216.11
+            ],
+            [
+              "Department of Energy",
+              1260000
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Department of Defense was the top federal buyer in Maine, obligating $1.1B (93.0% of the state total)."
+    },
+    {
+      "id": "maine-top-vendors",
+      "type": "bar",
+      "title": "Top 10 vendors, FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "BATH IRON WORKS CORPORATION",
+              445459798.74
+            ],
+            [
+              "MARTINS POINT HEALTH CARE INC",
+              433486774
+            ],
+            [
+              "381 CONSTRUCTORS",
+              63906681.5
+            ],
+            [
+              "MOHAWK NORTHEAST INC",
+              24434100
+            ],
+            [
+              "CIANBRO CORPORATION",
+              18579885
+            ],
+            [
+              "MCCAIN FOODS USA, INC.",
+              16119234.42
+            ],
+            [
+              "AGATE CONSTRUCTION COMPANY, INC.",
+              10617500
+            ],
+            [
+              "ORBIS SIBRO INC",
+              8927011.44
+            ],
+            [
+              "KING CONSTRUCTION SERVICES INC",
+              7524142.09
+            ],
+            [
+              "STANTEC CONSULTING SERVICES INC.",
+              7476839
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "BATH IRON WORKS CORPORATION led all contractors in Maine with $445M, 37.8% of the state total."
+    },
+    {
+      "id": "maine-top-naics",
+      "type": "bar",
+      "title": "Top 10 industries (NAICS), FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "Ship Building and Repairing",
+              454720160.4
+            ],
+            [
+              "Direct Health and Medical Insurance Carriers",
+              433437382.16
+            ],
+            [
+              "Other Heavy and Civil Engineering Construction",
+              99097409.97
+            ],
+            [
+              "Engineering Services",
+              25077626.94
+            ],
+            [
+              "Other Building Equipment Contractors",
+              18772387.99
+            ],
+            [
+              "Perishable Prepared Food Manufacturing",
+              18566388.8
+            ],
+            [
+              "Facilities Support Services",
+              13290544.22
+            ],
+            [
+              "Other Technical and Trade Schools",
+              12538237.36
+            ],
+            [
+              "Commercial and Institutional Building Construction",
+              11223725.52
+            ],
+            [
+              "Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology)",
+              7533022.19
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Ship Building and Repairing was the largest industry in Maine, with $455M obligated."
+    }
+  ],
+  "tables": [
+    {
+      "title": "Top 10 vendors",
+      "columns": [
+        "Rank",
+        "Vendor",
+        "Obligations"
+      ],
+      "rows": [
+        [
+          1,
+          {
+            "text": "BATH IRON WORKS CORPORATION",
+            "href": "https://www.usaspending.gov/recipient/7e9ba6ab-3f37-4abd-4708-bdeecb64ea02-C/latest/"
+          },
+          445459798.74
+        ],
+        [
+          2,
+          {
+            "text": "MARTINS POINT HEALTH CARE INC",
+            "href": "https://www.usaspending.gov/recipient/64576063-8876-08ef-f170-c6182195039b-C/latest/"
+          },
+          433486774
+        ],
+        [
+          3,
+          {
+            "text": "381 CONSTRUCTORS",
+            "href": "https://www.usaspending.gov/recipient/2ba8f2b3-d34a-f139-cbc0-e9c7fdb38f38-C/latest/"
+          },
+          63906681.5
+        ],
+        [
+          4,
+          {
+            "text": "MOHAWK NORTHEAST INC",
+            "href": "https://www.usaspending.gov/recipient/8007dfa2-a8c5-cc03-9ace-fe72dee00154-C/latest/"
+          },
+          24434100
+        ],
+        [
+          5,
+          {
+            "text": "CIANBRO CORPORATION",
+            "href": "https://www.usaspending.gov/recipient/e544a31a-bb33-4028-888a-7e86afa740a6-C/latest/"
+          },
+          18579885
+        ],
+        [
+          6,
+          {
+            "text": "MCCAIN FOODS USA, INC.",
+            "href": "https://www.usaspending.gov/recipient/90f8bba2-a4ea-8c98-a090-3840faa73ce7-C/latest/"
+          },
+          16119234.42
+        ],
+        [
+          7,
+          {
+            "text": "AGATE CONSTRUCTION COMPANY, INC.",
+            "href": "https://www.usaspending.gov/recipient/b43558bd-9d90-7ab4-3032-fa0a6686da2f-C/latest/"
+          },
+          10617500
+        ],
+        [
+          8,
+          {
+            "text": "ORBIS SIBRO INC",
+            "href": "https://www.usaspending.gov/recipient/40f37309-0c69-3f3e-1cae-9fe2d23dae62-C/latest/"
+          },
+          8927011.44
+        ],
+        [
+          9,
+          {
+            "text": "KING CONSTRUCTION SERVICES INC",
+            "href": "https://www.usaspending.gov/recipient/96b00546-0887-8c7a-12e3-d519f8c4c489-C/latest/"
+          },
+          7524142.09
+        ],
+        [
+          10,
+          {
+            "text": "STANTEC CONSULTING SERVICES INC.",
+            "href": "https://www.usaspending.gov/recipient/99222ab6-52b4-ead3-4cda-3ba1a3d76a7e-C/latest/"
+          },
+          7476839
+        ]
+      ]
+    },
+    {
+      "title": "Largest awards, FY2026 to date",
+      "columns": [
+        "Rank",
+        "Recipient",
+        "Award Amount",
+        "Awarding Agency"
+      ],
+      "rows": [
+        [
+          1,
+          {
+            "text": "BATH IRON WORKS CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002418C2305_9700_-NONE-_-NONE-/"
+          },
+          5481122144.86,
+          "Department of Defense"
+        ],
+        [
+          2,
+          {
+            "text": "BATH IRON WORKS CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002423C2305_9700_-NONE-_-NONE-/"
+          },
+          5075716991,
+          "Department of Defense"
+        ],
+        [
+          3,
+          {
+            "text": "BATH IRON WORKS CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002413C2305_9700_-NONE-_-NONE-/"
+          },
+          4943797753.56,
+          "Department of Defense"
+        ],
+        [
+          4,
+          {
+            "text": "BATH IRON WORKS CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002406C2303_9700_-NONE-_-NONE-/"
+          },
+          3309817048.63,
+          "Department of Defense"
+        ],
+        [
+          5,
+          {
+            "text": "BATH IRON WORKS CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002411C2306_9700_-NONE-_-NONE-/"
+          },
+          2551316435,
+          "Department of Defense"
+        ],
+        [
+          6,
+          {
+            "text": "381 CONSTRUCTORS",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N4008521C0077_9700_-NONE-_-NONE-/"
+          },
+          1820300099.37,
+          "Department of Defense"
+        ],
+        [
+          7,
+          {
+            "text": "MARTINS POINT HEALTH CARE INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_HT940223C0007_9700_-NONE-_-NONE-/"
+          },
+          1292986774,
+          "Department of Defense"
+        ],
+        [
+          8,
+          {
+            "text": "BATH IRON WORKS CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002419C4452_9700_-NONE-_-NONE-/"
+          },
+          779034743,
+          "Department of Defense"
+        ],
+        [
+          9,
+          {
+            "text": "BATH IRON WORKS CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002424C4212_9700_-NONE-_-NONE-/"
+          },
+          344242125,
+          "Department of Defense"
+        ],
+        [
+          10,
+          {
+            "text": "BATH IRON WORKS CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002419C2322_9700_-NONE-_-NONE-/"
+          },
+          286484091,
+          "Department of Defense"
+        ],
+        [
+          11,
+          {
+            "text": "BATH IRON WORKS CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002424C2331_9700_-NONE-_-NONE-/"
+          },
+          226765576,
+          "Department of Defense"
+        ],
+        [
+          12,
+          {
+            "text": "BATH IRON WORKS CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002424C2313_9700_-NONE-_-NONE-/"
+          },
+          185701009,
+          "Department of Defense"
+        ],
+        [
+          13,
+          {
+            "text": "CIANBRO CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N6247025C4000_9700_-NONE-_-NONE-/"
+          },
+          99571975.96,
+          "Department of Defense"
+        ],
+        [
+          14,
+          {
+            "text": "CAREER SYSTEMS DEVELOPMENT CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_1630J119C0004_1605_-NONE-_-NONE-/"
+          },
+          58706106.22,
+          "Department of Labor"
+        ],
+        [
+          15,
+          {
+            "text": "BATH IRON WORKS CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002422C2318_9700_-NONE-_-NONE-/"
+          },
+          55111483,
+          "Department of Defense"
+        ],
+        [
+          16,
+          {
+            "text": "CAREER SYSTEMS DEVELOPMENT CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_1605JE21C0010_1605_-NONE-_-NONE-/"
+          },
+          49277907.57,
+          "Department of Labor"
+        ],
+        [
+          17,
+          {
+            "text": "CONSIGLI CONSTRUCTION CO., INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_47PB0023C0008_4740_-NONE-_-NONE-/"
+          },
+          40850834,
+          "General Services Administration"
+        ],
+        [
+          18,
+          {
+            "text": "AMERICAN RHEINMETALL SYSTEMS LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0017421C0013_9700_-NONE-_-NONE-/"
+          },
+          37007914.89,
+          "Department of Defense"
+        ],
+        [
+          19,
+          {
+            "text": "NICKERSON & O'DAY, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_140P2023C0014_1443_-NONE-_-NONE-/"
+          },
+          35293452.62,
+          "Department of the Interior"
+        ],
+        [
+          20,
+          {
+            "text": "BOLLINGER SHIPYARDS LOCKPORT, L.L.C.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N4008522C0010_9700_-NONE-_-NONE-/"
+          },
+          35259369,
+          "Department of Defense"
+        ],
+        [
+          21,
+          {
+            "text": "STANTEC CONSULTING SERVICES INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N4008521F6284_9700_N4008520D0141_9700/"
+          },
+          35079224.71,
+          "Department of Defense"
+        ],
+        [
+          22,
+          {
+            "text": "AMERESCO INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N3943020F9904_9700_DEAM3609GO29029_8900/"
+          },
+          31229342,
+          "Department of Defense"
+        ],
+        [
+          23,
+          {
+            "text": "MOHAWK NORTHEAST INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W912WJ26CA001_9700_-NONE-_-NONE-/"
+          },
+          24434100,
+          "Department of Defense"
+        ],
+        [
+          24,
+          {
+            "text": "ARBOR E & T LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_1605JE24C0011_1605_-NONE-_-NONE-/"
+          },
+          23804866.89,
+          "Department of Labor"
+        ],
+        [
+          25,
+          {
+            "text": "PREVAILANCE, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0018919F3005_9700_N0017815D8373_9700/"
+          },
+          22582997.11,
+          "Department of Defense"
+        ]
+      ]
+    }
+  ],
+  "narrative": {
+    "intro": "In FY2026 to date, federal agencies obligated $1.2B across 6,284 contract awards. That is down 70.0% year over year. The average award size was $187K.",
+    "sections": [
+      {
+        "heading": "Which agencies award the most contracts in Maine?",
+        "body": "Department of Defense was the largest federal buyer in Maine, obligating $1.1B in FY2026 to date, or 93.0% of the state total."
+      },
+      {
+        "heading": "Who are the top federal contractors in Maine?",
+        "body": "BATH IRON WORKS CORPORATION led all contractors performing work in Maine with $445M in obligations during FY2026 to date."
+      }
+    ]
+  },
+  "faq": [
+    {
+      "q": "How much federal contract money goes to Maine?",
+      "a": "Federal agencies obligated $1.2B to contractors performing work in Maine in FY2026 to date, across 6,284 awards."
+    },
+    {
+      "q": "Which agencies award the most contracts in Maine?",
+      "a": "Department of Defense is the largest federal buyer in Maine, with $1.1B obligated in FY2026 to date."
+    },
+    {
+      "q": "Who are the largest federal contractors in Maine?",
+      "a": "BATH IRON WORKS CORPORATION is the largest federal contractor performing work in Maine by obligated dollars in FY2026 to date, with $445M."
+    }
+  ],
+  "related": [
+    {
+      "label": "Alabama federal contracts",
+      "href": "/insights/state/alabama/"
+    },
+    {
+      "label": "Alaska federal contracts",
+      "href": "/insights/state/alaska/"
+    },
+    {
+      "label": "Arizona federal contracts",
+      "href": "/insights/state/arizona/"
+    },
+    {
+      "label": "Arkansas federal contracts",
+      "href": "/insights/state/arkansas/"
+    },
+    {
+      "label": "California federal contracts",
+      "href": "/insights/state/california/"
+    },
+    {
+      "label": "Colorado federal contracts",
+      "href": "/insights/state/colorado/"
+    }
+  ],
+  "sources": [
+    {
+      "label": "USAspending.gov award data",
+      "href": "https://www.usaspending.gov"
+    }
+  ]
+}

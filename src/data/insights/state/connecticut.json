@@ -1,0 +1,609 @@
+{
+  "pageType": "state",
+  "slug": "connecticut",
+  "title": "Connecticut Federal Contracts: $14.5B in FY2026",
+  "h1": "Federal Contracts in Connecticut: Spending, Agencies & Vendors",
+  "metaDescription": "Federal agencies obligated $14.5B to contractors in Connecticut in FY2026 to date. See top buying agencies, top vendors, and industries.",
+  "updated": "2026-07-12",
+  "fyWindow": {
+    "label": "FY2026 to date",
+    "start": "2025-10-01",
+    "end": "2026-07-12"
+  },
+  "stats": {
+    "totalObligations": 14477506713.7,
+    "awardCount": 19278,
+    "yoyGrowthPct": -58.8,
+    "avgAwardSize": 750986,
+    "smallBusinessSharePct": null
+  },
+  "charts": [
+    {
+      "id": "connecticut-trend",
+      "type": "line",
+      "title": "Obligations by fiscal year",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "FY21",
+              18381592541.1
+            ],
+            [
+              "FY22",
+              22335368250.05
+            ],
+            [
+              "FY23",
+              25996917306.55
+            ],
+            [
+              "FY24",
+              20002778831.63
+            ],
+            [
+              "FY25",
+              35140898533.16
+            ],
+            [
+              "FY26",
+              14477506713.7
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Obligations fell 58.8% year over year, from $35.1B in FY2025 to $14.5B in FY2026 to date."
+    },
+    {
+      "id": "connecticut-top-agencies",
+      "type": "bar",
+      "title": "Top 10 buying agencies, FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "Department of Defense",
+              14161832576.79
+            ],
+            [
+              "Department of Veterans Affairs",
+              104507139.66
+            ],
+            [
+              "Department of Homeland Security",
+              102145178.15
+            ],
+            [
+              "Department of Justice",
+              27137861.89
+            ],
+            [
+              "Department of Labor",
+              12530791.25
+            ],
+            [
+              "National Aeronautics and Space Administration",
+              10942714.63
+            ],
+            [
+              "Department of Health and Human Services",
+              10688397.28
+            ],
+            [
+              "General Services Administration",
+              6613982.62
+            ],
+            [
+              "Department of State",
+              5938973.75
+            ],
+            [
+              "Department of Agriculture",
+              4981454.41
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Department of Defense was the top federal buyer in Connecticut, obligating $14.2B (97.8% of the state total)."
+    },
+    {
+      "id": "connecticut-top-vendors",
+      "type": "bar",
+      "title": "Top 10 vendors, FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "ELECTRIC BOAT CORPORATION",
+              8320789072.55
+            ],
+            [
+              "RTX CORPORATION",
+              3013984661.54
+            ],
+            [
+              "SIKORSKY AIRCRAFT CORPORATION",
+              2326511825.05
+            ],
+            [
+              "HAMILTON SUNDSTRAND CORPORATION",
+              79766702.25
+            ],
+            [
+              "LOCKHEED MARTIN CORPORATION",
+              63286446.27
+            ],
+            [
+              "DANBURY MISSION TECHNOLOGIES, LLC",
+              57107107.9
+            ],
+            [
+              "SONALYSTS INC",
+              42346712.26
+            ],
+            [
+              "EMPRISE CORPORATION",
+              33677885.29
+            ],
+            [
+              "BRICAN, INC.",
+              27242648.56
+            ],
+            [
+              "TRIUMPH ENGINE CONTROL SYSTEMS LLC",
+              19338265.79
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "ELECTRIC BOAT CORPORATION led all contractors in Connecticut with $8.3B, 57.5% of the state total."
+    },
+    {
+      "id": "connecticut-top-naics",
+      "type": "bar",
+      "title": "Top 10 industries (NAICS), FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "Engineering Services",
+              6821479949.84
+            ],
+            [
+              "Aircraft Manufacturing",
+              2581232329.01
+            ],
+            [
+              "Ship Building and Repairing",
+              1559184949.89
+            ],
+            [
+              "Aircraft Engine and Engine Parts Manufacturing",
+              1226274377.33
+            ],
+            [
+              "Other Aircraft Parts and Auxiliary Equipment Manufacturing",
+              1183601541.2
+            ],
+            [
+              "Other Support Activities for Air Transportation",
+              466066766.56
+            ],
+            [
+              "Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology)",
+              110492395.63
+            ],
+            [
+              "Commercial and Institutional Building Construction",
+              68723868.1
+            ],
+            [
+              "Search, Detection, Navigation, Guidance, Aeronautical, and Nautical System and Instrument Manufacturing",
+              64494472.41
+            ],
+            [
+              "Remediation Services",
+              26439380.64
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Engineering Services was the largest industry in Connecticut, with $6.8B obligated."
+    }
+  ],
+  "tables": [
+    {
+      "title": "Top 10 vendors",
+      "columns": [
+        "Rank",
+        "Vendor",
+        "Obligations"
+      ],
+      "rows": [
+        [
+          1,
+          {
+            "text": "ELECTRIC BOAT CORPORATION",
+            "href": "https://www.usaspending.gov/recipient/d5ab5f51-db3a-a26f-96a1-1b24c3e2802c-C/latest/"
+          },
+          8320789072.55
+        ],
+        [
+          2,
+          {
+            "text": "RTX CORPORATION",
+            "href": "https://www.usaspending.gov/recipient/62e141b3-4887-5b39-6b75-eace9326395c-C/latest/"
+          },
+          3013984661.54
+        ],
+        [
+          3,
+          {
+            "text": "SIKORSKY AIRCRAFT CORPORATION",
+            "href": "https://www.usaspending.gov/recipient/d64537c9-5482-dd40-cdd4-5cf07b66329d-C/latest/"
+          },
+          2326511825.05
+        ],
+        [
+          4,
+          {
+            "text": "HAMILTON SUNDSTRAND CORPORATION",
+            "href": "https://www.usaspending.gov/recipient/464a5b15-000e-8668-246a-c4067a6f0452-C/latest/"
+          },
+          79766702.25
+        ],
+        [
+          5,
+          {
+            "text": "LOCKHEED MARTIN CORPORATION",
+            "href": "https://www.usaspending.gov/recipient/5ad7895c-192b-21cd-8baf-92c6dce0b593-C/latest/"
+          },
+          63286446.27
+        ],
+        [
+          6,
+          {
+            "text": "DANBURY MISSION TECHNOLOGIES, LLC",
+            "href": "https://www.usaspending.gov/recipient/705a8230-a978-0784-7de9-6545180421bd-C/latest/"
+          },
+          57107107.9
+        ],
+        [
+          7,
+          {
+            "text": "SONALYSTS INC",
+            "href": "https://www.usaspending.gov/recipient/03397dc3-2f44-2913-d25e-0aad8387886f-C/latest/"
+          },
+          42346712.26
+        ],
+        [
+          8,
+          {
+            "text": "EMPRISE CORPORATION",
+            "href": "https://www.usaspending.gov/recipient/3c69ad1b-c1dc-25c1-ccbb-df04753db179-C/latest/"
+          },
+          33677885.29
+        ],
+        [
+          9,
+          {
+            "text": "BRICAN, INC.",
+            "href": "https://www.usaspending.gov/recipient/705e87db-413b-ab78-d28f-11d86412c003-C/latest/"
+          },
+          27242648.56
+        ],
+        [
+          10,
+          {
+            "text": "TRIUMPH ENGINE CONTROL SYSTEMS LLC",
+            "href": "https://www.usaspending.gov/recipient/3529d996-5eb3-f400-a6e6-0d532fb99ae3-C/latest/"
+          },
+          19338265.79
+        ]
+      ]
+    },
+    {
+      "title": "Largest awards, FY2026 to date",
+      "columns": [
+        "Rank",
+        "Recipient",
+        "Award Amount",
+        "Awarding Agency"
+      ],
+      "rows": [
+        [
+          1,
+          {
+            "text": "ELECTRIC BOAT CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002417C2100_9700_-NONE-_-NONE-/"
+          },
+          34940169713,
+          "Department of Defense"
+        ],
+        [
+          2,
+          {
+            "text": "ELECTRIC BOAT CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002417C2117_9700_-NONE-_-NONE-/"
+          },
+          30979375853,
+          "Department of Defense"
+        ],
+        [
+          3,
+          {
+            "text": "ELECTRIC BOAT CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002412C2115_9700_-NONE-_-NONE-/"
+          },
+          20197574938,
+          "Department of Defense"
+        ],
+        [
+          4,
+          {
+            "text": "ELECTRIC BOAT CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002409C2104_9700_-NONE-_-NONE-/"
+          },
+          16238775949,
+          "Department of Defense"
+        ],
+        [
+          5,
+          {
+            "text": "RTX CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0001920C0011_9700_-NONE-_-NONE-/"
+          },
+          7498605067.74,
+          "Department of Defense"
+        ],
+        [
+          6,
+          {
+            "text": "SIKORSKY AIRCRAFT CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0001906C0081_9700_-NONE-_-NONE-/"
+          },
+          6103285531.96,
+          "Department of Defense"
+        ],
+        [
+          7,
+          {
+            "text": "SIKORSKY AIRCRAFT CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA862914C2403_9700_-NONE-_-NONE-/"
+          },
+          6006448628.04,
+          "Department of Defense"
+        ],
+        [
+          8,
+          {
+            "text": "SIKORSKY AIRCRAFT CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W58RGZ17C0009_9700_-NONE-_-NONE-/"
+          },
+          5584742286.87,
+          "Department of Defense"
+        ],
+        [
+          9,
+          {
+            "text": "RTX CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0001921C0011_9700_-NONE-_-NONE-/"
+          },
+          4865962075.84,
+          "Department of Defense"
+        ],
+        [
+          10,
+          {
+            "text": "SIKORSKY AIRCRAFT CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W58RGZ22C0010_9700_-NONE-_-NONE-/"
+          },
+          4695788015.84,
+          "Department of Defense"
+        ],
+        [
+          11,
+          {
+            "text": "ELECTRIC BOAT CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002420C2120_9700_-NONE-_-NONE-/"
+          },
+          4537040890.5,
+          "Department of Defense"
+        ],
+        [
+          12,
+          {
+            "text": "SIKORSKY AIRCRAFT CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0001924C0009_9700_-NONE-_-NONE-/"
+          },
+          3605014855.38,
+          "Department of Defense"
+        ],
+        [
+          13,
+          {
+            "text": "SIKORSKY AIRCRAFT CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_DAAH2302C0006_9700_-NONE-_-NONE-/"
+          },
+          3518890935.97,
+          "Department of Defense"
+        ],
+        [
+          14,
+          {
+            "text": "SIKORSKY AIRCRAFT CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0001922C0004_9700_-NONE-_-NONE-/"
+          },
+          3423079306.96,
+          "Department of Defense"
+        ],
+        [
+          15,
+          {
+            "text": "ELECTRIC BOAT CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002413C2128_9700_-NONE-_-NONE-/"
+          },
+          3145999614,
+          "Department of Defense"
+        ],
+        [
+          16,
+          {
+            "text": "RTX CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0001923C0030_9700_-NONE-_-NONE-/"
+          },
+          2802401490.66,
+          "Department of Defense"
+        ],
+        [
+          17,
+          {
+            "text": "RTX CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0001917C0020_9700_-NONE-_-NONE-/"
+          },
+          2682738779.93,
+          "Department of Defense"
+        ],
+        [
+          18,
+          {
+            "text": "SIKORSKY AIRCRAFT CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0001916C0048_9700_-NONE-_-NONE-/"
+          },
+          2659159500.79,
+          "Department of Defense"
+        ],
+        [
+          19,
+          {
+            "text": "SIKORSKY AIRCRAFT CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0001920C0047_9700_-NONE-_-NONE-/"
+          },
+          2310726485.75,
+          "Department of Defense"
+        ],
+        [
+          20,
+          {
+            "text": "RTX CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA861120F1010_9700_FA861118D2850_9700/"
+          },
+          1573148446.22,
+          "Department of Defense"
+        ],
+        [
+          21,
+          {
+            "text": "ELECTRIC BOAT CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002416C2111_9700_-NONE-_-NONE-/"
+          },
+          1469859369,
+          "Department of Defense"
+        ],
+        [
+          22,
+          {
+            "text": "ELECTRIC BOAT CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002410C2118_9700_-NONE-_-NONE-/"
+          },
+          1418130936,
+          "Department of Defense"
+        ],
+        [
+          23,
+          {
+            "text": "ELECTRIC BOAT CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002419C2125_9700_-NONE-_-NONE-/"
+          },
+          1367326119,
+          "Department of Defense"
+        ],
+        [
+          24,
+          {
+            "text": "ELECTRIC BOAT CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002420C4312_9700_-NONE-_-NONE-/"
+          },
+          1332958326,
+          "Department of Defense"
+        ],
+        [
+          25,
+          {
+            "text": "RTX CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA812425F0001_9700_FA812418D0001_9700/"
+          },
+          1078914542.46,
+          "Department of Defense"
+        ]
+      ]
+    }
+  ],
+  "narrative": {
+    "intro": "In FY2026 to date, federal agencies obligated $14.5B across 19,278 contract awards. That is down 58.8% year over year. The average award size was $751K.",
+    "sections": [
+      {
+        "heading": "Which agencies award the most contracts in Connecticut?",
+        "body": "Department of Defense was the largest federal buyer in Connecticut, obligating $14.2B in FY2026 to date, or 97.8% of the state total."
+      },
+      {
+        "heading": "Who are the top federal contractors in Connecticut?",
+        "body": "ELECTRIC BOAT CORPORATION led all contractors performing work in Connecticut with $8.3B in obligations during FY2026 to date."
+      }
+    ]
+  },
+  "faq": [
+    {
+      "q": "How much federal contract money goes to Connecticut?",
+      "a": "Federal agencies obligated $14.5B to contractors performing work in Connecticut in FY2026 to date, across 19,278 awards."
+    },
+    {
+      "q": "Which agencies award the most contracts in Connecticut?",
+      "a": "Department of Defense is the largest federal buyer in Connecticut, with $14.2B obligated in FY2026 to date."
+    },
+    {
+      "q": "Who are the largest federal contractors in Connecticut?",
+      "a": "ELECTRIC BOAT CORPORATION is the largest federal contractor performing work in Connecticut by obligated dollars in FY2026 to date, with $8.3B."
+    }
+  ],
+  "related": [
+    {
+      "label": "Alabama federal contracts",
+      "href": "/insights/state/alabama/"
+    },
+    {
+      "label": "Alaska federal contracts",
+      "href": "/insights/state/alaska/"
+    },
+    {
+      "label": "Arizona federal contracts",
+      "href": "/insights/state/arizona/"
+    },
+    {
+      "label": "Arkansas federal contracts",
+      "href": "/insights/state/arkansas/"
+    },
+    {
+      "label": "California federal contracts",
+      "href": "/insights/state/california/"
+    },
+    {
+      "label": "Colorado federal contracts",
+      "href": "/insights/state/colorado/"
+    }
+  ],
+  "sources": [
+    {
+      "label": "USAspending.gov award data",
+      "href": "https://www.usaspending.gov"
+    }
+  ]
+}

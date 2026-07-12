@@ -1,0 +1,609 @@
+{
+  "pageType": "state",
+  "slug": "alaska",
+  "title": "Alaska Federal Contracts: $2.8B in FY2026",
+  "h1": "Federal Contracts in Alaska: Spending, Agencies & Vendors",
+  "metaDescription": "Federal agencies obligated $2.8B to contractors in Alaska in FY2026 to date. See top buying agencies, top vendors, and industries.",
+  "updated": "2026-07-12",
+  "fyWindow": {
+    "label": "FY2026 to date",
+    "start": "2025-10-01",
+    "end": "2026-07-12"
+  },
+  "stats": {
+    "totalObligations": 2769036785.58,
+    "awardCount": 7305,
+    "yoyGrowthPct": -28.1,
+    "avgAwardSize": 379060,
+    "smallBusinessSharePct": null
+  },
+  "charts": [
+    {
+      "id": "alaska-trend",
+      "type": "line",
+      "title": "Obligations by fiscal year",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "FY21",
+              2334751036.48
+            ],
+            [
+              "FY22",
+              3306063620.17
+            ],
+            [
+              "FY23",
+              3838596039.27
+            ],
+            [
+              "FY24",
+              3826457176.85
+            ],
+            [
+              "FY25",
+              3849970408.05
+            ],
+            [
+              "FY26",
+              2769036785.58
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Obligations fell 28.1% year over year, from $3.8B in FY2025 to $2.8B in FY2026 to date."
+    },
+    {
+      "id": "alaska-top-agencies",
+      "type": "bar",
+      "title": "Top 10 buying agencies, FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "Department of Defense",
+              1007499830.7
+            ],
+            [
+              "Department of Homeland Security",
+              537176458.35
+            ],
+            [
+              "General Services Administration",
+              479656020.82
+            ],
+            [
+              "Department of Veterans Affairs",
+              237051266.6
+            ],
+            [
+              "Department of Commerce",
+              128461302.92
+            ],
+            [
+              "Department of Agriculture",
+              88637212.41
+            ],
+            [
+              "Department of the Interior",
+              81750694.98
+            ],
+            [
+              "Department of Justice",
+              56596130.36
+            ],
+            [
+              "Department of State",
+              46324992.7
+            ],
+            [
+              "Department of Transportation",
+              38516474.21
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Department of Defense was the top federal buyer in Alaska, obligating $1B (36.4% of the state total)."
+    },
+    {
+      "id": "alaska-top-vendors",
+      "type": "bar",
+      "title": "Top 10 vendors, FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "DAVIS CONSTRUCTORS & ENGINEERS, INC.",
+              464329366.32
+            ],
+            [
+              "TRIWEST HEALTHCARE ALLIANCE CORP",
+              227016132.1
+            ],
+            [
+              "TUTOR PERINI CORPORATION",
+              225263514
+            ],
+            [
+              "ASRC BUILDERS-CADDELL, LLC",
+              128794668
+            ],
+            [
+              "JAG KETCHIKAN, LLC",
+              107709549
+            ],
+            [
+              "DOYON UTILITIES, LLC",
+              71675344.47
+            ],
+            [
+              "PETRO STAR INC.",
+              70724782.26
+            ],
+            [
+              "PARAGON PROFESSIONAL SERVICES LLC",
+              62173029.7
+            ],
+            [
+              "NOVA GROUP, INC.",
+              57956500
+            ],
+            [
+              "TATITLEK FEDERAL SERVICES LLC",
+              51553731.6
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "DAVIS CONSTRUCTORS & ENGINEERS, INC. led all contractors in Alaska with $464M, 16.8% of the state total."
+    },
+    {
+      "id": "alaska-top-naics",
+      "type": "bar",
+      "title": "Top 10 industries (NAICS), FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "Commercial and Institutional Building Construction",
+              928980195.97
+            ],
+            [
+              "Pharmacy Benefit Management and Other Third Party Administration of Insurance and Pension Funds",
+              226955585.71
+            ],
+            [
+              "Facilities Support Services",
+              180090895.22
+            ],
+            [
+              "Security Guards and Patrol Services",
+              161795707.02
+            ],
+            [
+              "Ship Building and Repairing",
+              128090938.47
+            ],
+            [
+              "Engineering Services",
+              119670715.45
+            ],
+            [
+              "Other Heavy and Civil Engineering Construction",
+              93393841.15
+            ],
+            [
+              "Petroleum Refineries",
+              82196396.89
+            ],
+            [
+              "Fossil Fuel Electric Power Generation",
+              72820344.47
+            ],
+            [
+              "Oil and Gas Pipeline and Related Structures Construction",
+              58969795
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Commercial and Institutional Building Construction was the largest industry in Alaska, with $929M obligated."
+    }
+  ],
+  "tables": [
+    {
+      "title": "Top 10 vendors",
+      "columns": [
+        "Rank",
+        "Vendor",
+        "Obligations"
+      ],
+      "rows": [
+        [
+          1,
+          {
+            "text": "DAVIS CONSTRUCTORS & ENGINEERS, INC.",
+            "href": "https://www.usaspending.gov/recipient/6ea5e0ab-5ba0-77f4-31c9-b76202c11ed2-C/latest/"
+          },
+          464329366.32
+        ],
+        [
+          2,
+          {
+            "text": "TRIWEST HEALTHCARE ALLIANCE CORP",
+            "href": "https://www.usaspending.gov/recipient/bf1220c1-2373-042a-e8e1-33d5a29639d0-C/latest/"
+          },
+          227016132.1
+        ],
+        [
+          3,
+          {
+            "text": "TUTOR PERINI CORPORATION",
+            "href": "https://www.usaspending.gov/recipient/655f88c1-de1a-f9fa-0855-037592b2db30-C/latest/"
+          },
+          225263514
+        ],
+        [
+          4,
+          {
+            "text": "ASRC BUILDERS-CADDELL, LLC",
+            "href": "https://www.usaspending.gov/recipient/92bd7fd1-a96d-c202-6b47-b94c19f4d92a-C/latest/"
+          },
+          128794668
+        ],
+        [
+          5,
+          {
+            "text": "JAG KETCHIKAN, LLC",
+            "href": "https://www.usaspending.gov/recipient/e2447480-e9c8-2ea1-e433-a7850084e3db-C/latest/"
+          },
+          107709549
+        ],
+        [
+          6,
+          {
+            "text": "DOYON UTILITIES, LLC",
+            "href": "https://www.usaspending.gov/recipient/0eacde34-4ffa-c716-c7ce-47b3cf863da8-C/latest/"
+          },
+          71675344.47
+        ],
+        [
+          7,
+          {
+            "text": "PETRO STAR INC.",
+            "href": "https://www.usaspending.gov/recipient/8b371384-dcf2-537a-8e1a-b8a8bc3513fa-C/latest/"
+          },
+          70724782.26
+        ],
+        [
+          8,
+          {
+            "text": "PARAGON PROFESSIONAL SERVICES LLC",
+            "href": "https://www.usaspending.gov/recipient/a2a0931c-b3fd-8737-f260-ffb2cba740b1-C/latest/"
+          },
+          62173029.7
+        ],
+        [
+          9,
+          {
+            "text": "NOVA GROUP, INC.",
+            "href": "https://www.usaspending.gov/recipient/f96b6645-bd05-9f9f-ec11-f9c82aae3c2b-C/latest/"
+          },
+          57956500
+        ],
+        [
+          10,
+          {
+            "text": "TATITLEK FEDERAL SERVICES LLC",
+            "href": "https://www.usaspending.gov/recipient/ae620f7d-58b4-c0c1-d12e-6863436b29f1-C/latest/"
+          },
+          51553731.6
+        ]
+      ]
+    },
+    {
+      "title": "Largest awards, FY2026 to date",
+      "columns": [
+        "Rank",
+        "Recipient",
+        "Award Amount",
+        "Awarding Agency"
+      ],
+      "rows": [
+        [
+          1,
+          {
+            "text": "DOYON UTILITIES, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_SP060007C8263_9700_-NONE-_-NONE-/"
+          },
+          883552251.3,
+          "Department of Defense"
+        ],
+        [
+          2,
+          {
+            "text": "DOYON UTILITIES, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_SP060007C8262_9700_-NONE-_-NONE-/"
+          },
+          543106305.41,
+          "Department of Defense"
+        ],
+        [
+          3,
+          {
+            "text": "DAVIS CONSTRUCTORS & ENGINEERS, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_47PB5326C0006_4740_-NONE-_-NONE-/"
+          },
+          464329366.32,
+          "General Services Administration"
+        ],
+        [
+          4,
+          {
+            "text": "ARCTEC ALASKA JV",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA521514C7007_9700_-NONE-_-NONE-/"
+          },
+          435818704.89,
+          "Department of Defense"
+        ],
+        [
+          5,
+          {
+            "text": "KIEWIT INFRASTRUCTURE WEST CO.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W911KB25CA010_9700_-NONE-_-NONE-/"
+          },
+          399443425,
+          "Department of Defense"
+        ],
+        [
+          6,
+          {
+            "text": "KIEWIT INFRASTRUCTURE WEST CO.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W911KB22C0012_9700_-NONE-_-NONE-/"
+          },
+          377705522.78,
+          "Department of Defense"
+        ],
+        [
+          7,
+          {
+            "text": "ASRC BUILDERS-CADDELL, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W911KB25CA005_9700_-NONE-_-NONE-/"
+          },
+          239756668,
+          "Department of Defense"
+        ],
+        [
+          8,
+          {
+            "text": "GRANITE CONSTRUCTION COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_69056723C000008_6925_-NONE-_-NONE-/"
+          },
+          214934133.09,
+          "Department of Transportation"
+        ],
+        [
+          9,
+          {
+            "text": "DOYON UTILITIES, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_SP060007C8261_9700_-NONE-_-NONE-/"
+          },
+          209639846.37,
+          "Department of Defense"
+        ],
+        [
+          10,
+          {
+            "text": "WOLF CREEK FEDERAL SERVICES LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W9126015C0001_9700_-NONE-_-NONE-/"
+          },
+          178003827.46,
+          "Department of Defense"
+        ],
+        [
+          11,
+          {
+            "text": "BRICE TURNAGAIN JV LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W911KB22C0021_9700_-NONE-_-NONE-/"
+          },
+          177808093,
+          "Department of Defense"
+        ],
+        [
+          12,
+          {
+            "text": "UNIT-ASRC CONSTRUCTION, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W911KB19C0001_9700_-NONE-_-NONE-/"
+          },
+          142434687.56,
+          "Department of Defense"
+        ],
+        [
+          13,
+          {
+            "text": "GILBANE FEDERAL",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70Z05023F43000012_7008_70Z04718DGILBAN00_7008/"
+          },
+          131262824.75,
+          "Department of Homeland Security"
+        ],
+        [
+          14,
+          {
+            "text": "NEESER CONSTRUCTION, INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W911KB19C0006_9700_-NONE-_-NONE-/"
+          },
+          112163845,
+          "Department of Defense"
+        ],
+        [
+          15,
+          {
+            "text": "KONIAG MANAGEMENT SOLUTIONS LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_19AQMM21C0118_1900_-NONE-_-NONE-/"
+          },
+          102851938.43,
+          "Department of State"
+        ],
+        [
+          16,
+          {
+            "text": "BAUER FOUNDATION CORP",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W911KB21C0030_9700_-NONE-_-NONE-/"
+          },
+          100700063.08,
+          "Department of Defense"
+        ],
+        [
+          17,
+          {
+            "text": "JAG KETCHIKAN, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_1305M226C0015_1330_-NONE-_-NONE-/"
+          },
+          99637544,
+          "Department of Commerce"
+        ],
+        [
+          18,
+          {
+            "text": "KADIAK LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_89303021CIM000006_8900_-NONE-_-NONE-/"
+          },
+          87378018.23,
+          "Department of Energy"
+        ],
+        [
+          19,
+          {
+            "text": "ASRC COMMUNICATIONS, LTD.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA521524C0036_9700_-NONE-_-NONE-/"
+          },
+          86792917.99,
+          "Department of Defense"
+        ],
+        [
+          20,
+          {
+            "text": "TUTOR PERINI CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70Z05026F43000011_7008_70Z04718DTUTPER00_7008/"
+          },
+          81833273,
+          "Department of Homeland Security"
+        ],
+        [
+          21,
+          {
+            "text": "TUTOR PERINI CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70Z05026F43000012_7008_70Z04723DPCNI0004_7008/"
+          },
+          81833273,
+          "Department of Homeland Security"
+        ],
+        [
+          22,
+          {
+            "text": "EAGLE HARBOR, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_15A00024FAQ000034_1560_15A00023DAQA00029_1560/"
+          },
+          72419470.6,
+          "Department of Justice"
+        ],
+        [
+          23,
+          {
+            "text": "UNIT COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W911KB23C0013_9700_-NONE-_-NONE-/"
+          },
+          67871672.67,
+          "Department of Defense"
+        ],
+        [
+          24,
+          {
+            "text": "TEYA ENTERPRISES LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W9124D21C0007_9700_-NONE-_-NONE-/"
+          },
+          62877921.19,
+          "Department of Defense"
+        ],
+        [
+          25,
+          {
+            "text": "PARAGON PROFESSIONAL SERVICES LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70CDCR25FR0000112_7012_70CDCR22D00000012_7012/"
+          },
+          62347415.71,
+          "Department of Homeland Security"
+        ]
+      ]
+    }
+  ],
+  "narrative": {
+    "intro": "In FY2026 to date, federal agencies obligated $2.8B across 7,305 contract awards. That is down 28.1% year over year. The average award size was $379K.",
+    "sections": [
+      {
+        "heading": "Which agencies award the most contracts in Alaska?",
+        "body": "Department of Defense was the largest federal buyer in Alaska, obligating $1B in FY2026 to date, or 36.4% of the state total."
+      },
+      {
+        "heading": "Who are the top federal contractors in Alaska?",
+        "body": "DAVIS CONSTRUCTORS & ENGINEERS, INC. led all contractors performing work in Alaska with $464M in obligations during FY2026 to date."
+      }
+    ]
+  },
+  "faq": [
+    {
+      "q": "How much federal contract money goes to Alaska?",
+      "a": "Federal agencies obligated $2.8B to contractors performing work in Alaska in FY2026 to date, across 7,305 awards."
+    },
+    {
+      "q": "Which agencies award the most contracts in Alaska?",
+      "a": "Department of Defense is the largest federal buyer in Alaska, with $1B obligated in FY2026 to date."
+    },
+    {
+      "q": "Who are the largest federal contractors in Alaska?",
+      "a": "DAVIS CONSTRUCTORS & ENGINEERS, INC. is the largest federal contractor performing work in Alaska by obligated dollars in FY2026 to date, with $464M."
+    }
+  ],
+  "related": [
+    {
+      "label": "Alabama federal contracts",
+      "href": "/insights/state/alabama/"
+    },
+    {
+      "label": "Arizona federal contracts",
+      "href": "/insights/state/arizona/"
+    },
+    {
+      "label": "Arkansas federal contracts",
+      "href": "/insights/state/arkansas/"
+    },
+    {
+      "label": "California federal contracts",
+      "href": "/insights/state/california/"
+    },
+    {
+      "label": "Colorado federal contracts",
+      "href": "/insights/state/colorado/"
+    },
+    {
+      "label": "Connecticut federal contracts",
+      "href": "/insights/state/connecticut/"
+    }
+  ],
+  "sources": [
+    {
+      "label": "USAspending.gov award data",
+      "href": "https://www.usaspending.gov"
+    }
+  ]
+}
