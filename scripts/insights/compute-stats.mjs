@@ -10,7 +10,7 @@
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { fallbackNaicsNarrative } from './lib/fallback-narrative.mjs';
-import { fiscalYearLabel, formatUsdCompact } from './lib/format.mjs';
+import { fiscalYearLabel, formatPercent, formatUsdCompact } from './lib/format.mjs';
 import { naicsHref, naicsTitle, relatedNaicsLinks } from './lib/slugs.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -82,6 +82,27 @@ export function computeNaicsPage({ naicsCode, raw, updated }) {
     topAgency,
   });
 
+  // One plain-text takeaway per chart (AEO requirement, spec Section 9.3):
+  // AI crawlers can't read the SVG, so the citable fact lives in this sentence.
+  const trendTakeaway =
+    priorPoint && priorPoint.amount > 0 && yoyGrowthPct !== null
+      ? `Obligations ${yoyGrowthPct >= 0 ? 'grew' : 'fell'} ${formatPercent(Math.abs(yoyGrowthPct))} year over year, from ${formatUsdCompact(
+          priorPoint.amount
+        )} in ${fiscalYearLabel(raw.currentFy - 1)} to ${formatUsdCompact(totalObligations)} in ${fyLabel}.`
+      : totalObligations > 0
+        ? `Federal agencies obligated ${formatUsdCompact(totalObligations)} on ${entityLabel} contracts in ${fyLabel}.`
+        : null;
+  const vendorTakeaway = topVendor
+    ? `${topVendor.name} led all vendors with ${formatUsdCompact(topVendor.amount)} in obligations${
+        topVendor.sharePct ? `, ${formatPercent(topVendor.sharePct)} of the market` : ''
+      }.`
+    : null;
+  const agencyTakeaway = topAgency
+    ? `${topAgency.name} was the top buyer, obligating ${formatUsdCompact(topAgency.amount)}${
+        topAgency.sharePct ? ` (${formatPercent(topAgency.sharePct)} of all obligations)` : ''
+      }.`
+    : null;
+
   const faq = [
     { q: `How much does the federal government spend on ${entityLabel}?`, a: narrative.faqAnswers.howMuchSpend },
     topAgency && { q: `Which agencies buy the most ${entityLabel} services?`, a: narrative.faqAnswers.whichAgencies },
@@ -111,7 +132,9 @@ export function computeNaicsPage({ naicsCode, raw, updated }) {
   return {
     pageType: 'naics',
     slug: naicsCode,
-    title: `NAICS ${naicsCode}: ${title} Government Contracts — FY${raw.currentFy} Market Data`,
+    // Title kept ≤60 chars with the headline number as a CTR asset (spec 9.1);
+    // the site's check-meta guard fails any <title> over 70 chars.
+    title: `NAICS ${naicsCode} Government Contracts: ${formatUsdCompact(totalObligations) ?? 'FY Data'} in ${fiscalYearLabel(raw.currentFy)}`,
     h1: `NAICS ${naicsCode}: ${title} — Federal Contract Market`,
     metaDescription: `Federal agencies obligated ${
       formatUsdCompact(totalObligations) ?? 'contract dollars'
@@ -124,22 +147,26 @@ export function computeNaicsPage({ naicsCode, raw, updated }) {
         id: `${naicsCode}-trend`,
         type: 'line',
         title: 'Obligations by fiscal year',
-        series: [{ label: 'Obligations', points: trend.map((r) => [`FY${String(r.fy).slice(-2)}`, round1(r.amount / 1e9)]) }],
-        unit: '$B',
+        // points carry raw dollars; templates format via lib/format.mjs.
+        series: [{ label: 'Obligations', points: trend.map((r) => [`FY${String(r.fy).slice(-2)}`, r.amount]) }],
+        unit: 'usd',
+        takeaway: trendTakeaway,
       },
       {
         id: `${naicsCode}-top-vendors`,
         type: 'bar',
         title: `Top 10 vendors, ${fyLabel}`,
-        series: [{ label: 'Obligations', points: vendors.map((v) => [v.name, round1(v.amount / 1e9)]) }],
-        unit: '$B',
+        series: [{ label: 'Obligations', points: vendors.map((v) => [v.name, v.amount]) }],
+        unit: 'usd',
+        takeaway: vendorTakeaway,
       },
       {
         id: `${naicsCode}-top-agencies`,
         type: 'bar',
         title: `Top 10 buying agencies, ${fyLabel}`,
-        series: [{ label: 'Obligations', points: agencies.map((a) => [a.name, round1(a.amount / 1e9)]) }],
-        unit: '$B',
+        series: [{ label: 'Obligations', points: agencies.map((a) => [a.name, a.amount]) }],
+        unit: 'usd',
+        takeaway: agencyTakeaway,
       },
     ],
     tables: [

@@ -1,0 +1,57 @@
+---
+/**
+ * Data-driven internal links (spec 9.5). Related targets come from the page
+ * JSON's `related` array, so linking is deterministic, not editorial.
+ */
+import type { RelatedLink } from '../../lib/insightsTypes';
+
+interface Props {
+  links: RelatedLink[];
+  heading?: string;
+}
+
+const { links, heading = 'Related market data' } = Astro.props;
+---
+
+{links.length > 0 && (
+  <nav class="related" aria-labelledby="related-heading">
+    <h2 id="related-heading">{heading}</h2>
+    <ul>
+      {links.map((l) => (
+        <li><a href={l.href}>{l.label}</a></li>
+      ))}
+    </ul>
+  </nav>
+)}
+
+<style>
+  .related {
+    margin: 2.5rem 0 0;
+  }
+  .related h2 {
+    font-size: 1.3rem;
+    margin: 0 0 1rem;
+  }
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 0.6rem;
+  }
+  li a {
+    display: block;
+    padding: 0.85rem 1rem;
+    background: var(--gh-surface);
+    border: 1px solid var(--gh-line);
+    border-radius: var(--gh-radius-sm);
+    color: var(--gh-teal-700);
+    font-weight: 600;
+    box-shadow: var(--gh-shadow-card);
+  }
+  li a:hover {
+    text-decoration: none;
+    border-color: var(--gh-teal-600);
+  }
+</style>

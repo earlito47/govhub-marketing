@@ -1,0 +1,104 @@
+---
+/**
+ * "Embed this chart" block (spec Section 11) — the passive backlink engine.
+ * Ships a copy-ready iframe snippet pointing at /embed/{chartId}. The copy
+ * button is progressive enhancement only (allowed JS exception, constraint #3);
+ * the snippet is fully readable and selectable without JavaScript.
+ */
+import { SITE_URL } from '../../config';
+
+interface Props {
+  chartId: string;
+  chartTitle: string;
+}
+
+const { chartId, chartTitle } = Astro.props;
+const src = `${SITE_URL}/embed/${chartId}/`;
+const snippet = `<iframe src="${src}" width="100%" height="480" frameborder="0" title="${chartTitle} — GovHub Insights"></iframe>`;
+---
+
+<details class="embed">
+  <summary>Embed this chart</summary>
+  <div class="embed-body">
+    <p>Free to embed on your site. Attribution links back to this page automatically.</p>
+    <div class="embed-row">
+      <code class="snippet" data-embed-snippet>{snippet}</code>
+      <button type="button" class="copy-btn" data-embed-copy hidden>Copy</button>
+    </div>
+    <p class="fallback">Or link to the <a href={src}>standalone chart</a>.</p>
+  </div>
+</details>
+
+<script>
+  // Progressive enhancement: reveal + wire the copy button only where the
+  // Clipboard API exists. Without JS the snippet is still selectable.
+  document.querySelectorAll<HTMLElement>('.embed').forEach((el) => {
+    const btn = el.querySelector<HTMLButtonElement>('[data-embed-copy]');
+    const code = el.querySelector<HTMLElement>('[data-embed-snippet]');
+    if (!btn || !code || !navigator.clipboard) return;
+    btn.hidden = false;
+    btn.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(code.textContent ?? '');
+        btn.textContent = 'Copied';
+        setTimeout(() => (btn.textContent = 'Copy'), 1600);
+      } catch {
+        /* clipboard blocked — user can still select the text manually */
+      }
+    });
+  });
+</script>
+
+<style>
+  .embed {
+    margin: 1rem 0 0;
+    font-size: 0.88rem;
+  }
+  summary {
+    cursor: pointer;
+    color: var(--gh-teal-700);
+    font-weight: 600;
+    width: fit-content;
+  }
+  .embed-body {
+    margin-top: 0.75rem;
+  }
+  .embed-body p {
+    color: var(--fg-muted);
+    margin: 0 0 0.6rem;
+  }
+  .embed-row {
+    display: flex;
+    gap: 0.5rem;
+    align-items: stretch;
+  }
+  .snippet {
+    flex: 1;
+    display: block;
+    padding: 0.6rem 0.75rem;
+    background: var(--gh-ink-900);
+    color: var(--gh-ink-inverse);
+    border-radius: var(--gh-radius-sm);
+    font-size: 0.78rem;
+    white-space: pre-wrap;
+    word-break: break-all;
+    overflow-x: auto;
+  }
+  .copy-btn {
+    padding: 0.5rem 0.9rem;
+    background: var(--gh-maroon-600);
+    color: #fff;
+    border: none;
+    border-radius: var(--gh-radius-sm);
+    font-family: var(--gh-font-brand);
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  .copy-btn:hover {
+    background: var(--gh-maroon-700);
+  }
+  .fallback {
+    margin-top: 0.6rem !important;
+  }
+</style>

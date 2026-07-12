@@ -1,0 +1,110 @@
+---
+/**
+ * Semantic data table (spec 9.3: <caption>, <th scope>). Cells are scalars or
+ * { text, href } link objects. Numeric cells in money columns are formatted as
+ * compact USD via the shared formatter; rank/count columns stay as integers.
+ */
+import type { DataTableSpec, TableCell } from '../../lib/insightsTypes';
+import { formatUsdCompact, formatInt } from '../../lib/insightsFormat';
+
+interface Props {
+  table: DataTableSpec;
+}
+
+const { table } = Astro.props;
+const MONEY = /obligation|amount|value|dollar|spend|ceiling/i;
+const NUMERIC_ALIGN = new Set(table.columns.map((c, i) => (MONEY.test(c) || /^rank$|awards?$|count/i.test(c) ? i : -1)));
+
+function renderCell(cell: TableCell, colIndex: number): { html: string | number; href?: string | null; align: boolean } {
+  const colName = table.columns[colIndex] ?? '';
+  const align = NUMERIC_ALIGN.has(colIndex);
+  if (cell === null || cell === undefined) return { html: '—', align };
+  if (typeof cell === 'object') return { html: cell.text, href: cell.href, align };
+  if (typeof cell === 'number') {
+    if (MONEY.test(colName)) return { html: formatUsdCompact(cell) ?? '—', align: true };
+    return { html: formatInt(cell) ?? String(cell), align: true };
+  }
+  return { html: cell, align };
+}
+
+const isExternal = (href: string | null | undefined): boolean => !!href && /^https?:\/\//.test(href);
+---
+
+<figure class="ins-table">
+  <table>
+    <caption>{table.title}</caption>
+    <thead>
+      <tr>
+        {table.columns.map((col, i) => (
+          <th scope="col" class:list={{ num: NUMERIC_ALIGN.has(i) }}>{col}</th>
+        ))}
+      </tr>
+    </thead>
+    <tbody>
+      {table.rows.map((row) => (
+        <tr>
+          {row.map((cell, ci) => {
+            const c = renderCell(cell, ci);
+            return (
+              <td class:list={{ num: c.align }}>
+                {c.href ? (
+                  <a href={c.href} rel={isExternal(c.href) ? 'noopener nofollow' : undefined} target={isExternal(c.href) ? '_blank' : undefined}>{c.html}</a>
+                ) : (
+                  c.html
+                )}
+              </td>
+            );
+          })}
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</figure>
+
+<style>
+  .ins-table {
+    margin: 1.25rem 0 0;
+    overflow-x: auto;
+    border: 1px solid var(--gh-line);
+    border-radius: var(--gh-radius-md);
+    background: var(--gh-surface);
+    box-shadow: var(--gh-shadow-card);
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+  }
+  caption {
+    text-align: left;
+    font-family: var(--gh-font-brand);
+    font-weight: 700;
+    color: var(--fg);
+    padding: 1rem 1.1rem 0.75rem;
+    font-size: 1.02rem;
+  }
+  th, td {
+    padding: 0.65rem 1.1rem;
+    text-align: left;
+    border-top: 1px solid var(--gh-line);
+  }
+  th {
+    background: var(--gh-oat);
+    color: var(--fg-muted);
+    font-family: var(--gh-font-brand);
+    font-weight: 600;
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .num {
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+  }
+  tbody tr:hover {
+    background: var(--gh-oat);
+  }
+  td a {
+    color: var(--gh-teal-700);
+  }
+</style>

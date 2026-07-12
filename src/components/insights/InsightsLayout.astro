@@ -1,0 +1,84 @@
+---
+/**
+ * Thin wrapper around the site's BaseLayout for all /insights/ pages.
+ * Adds nothing global — reuses BaseLayout's <head>, Nav, Footer, and global
+ * CSS (hard constraint #1: nothing existing is modified). Optionally emits a
+ * Dataset JSON-LD block when `dataset` is supplied.
+ */
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SchemaJsonLd from './SchemaJsonLd.astro';
+
+interface DatasetMeta {
+  name: string;
+  description: string;
+  dateModified: string;
+  temporalCoverage: string;
+  url: string;
+}
+
+interface Props {
+  title: string;
+  description?: string;
+  canonical?: string;
+  ogType?: 'website' | 'article';
+  noindex?: boolean;
+  dataset?: DatasetMeta;
+}
+
+const { title, description, canonical, ogType = 'website', noindex = false, dataset } = Astro.props;
+---
+
+<BaseLayout title={title} description={description} canonical={canonical} ogType={ogType} noindex={noindex}>
+  {dataset && (
+    <SchemaJsonLd
+      name={dataset.name}
+      description={dataset.description}
+      dateModified={dataset.dateModified}
+      temporalCoverage={dataset.temporalCoverage}
+      url={dataset.url}
+    />
+  )}
+  <main class="container insights">
+    <slot />
+  </main>
+</BaseLayout>
+
+<style is:global>
+  /* Scoped to the Insights section only (prefixed .insights). Purely additive —
+     no existing global selectors are touched. */
+  .insights {
+    padding-bottom: 2rem;
+  }
+  .insights .eyebrow {
+    font-family: var(--gh-font-brand);
+    font-size: var(--gh-text-eyebrow);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--gh-gold-600);
+    font-weight: 700;
+    margin: 0 0 0.5rem;
+  }
+  .insights .updated-line {
+    color: var(--fg-muted);
+    font-size: 0.9rem;
+    margin: 0.25rem 0 0;
+  }
+  .insights .lede {
+    font-size: 1.15rem;
+    color: var(--fg-muted);
+    max-width: 46rem;
+    line-height: 1.55;
+  }
+  .insights h2 {
+    margin-top: 2.75rem;
+  }
+  .insights .chart-takeaway {
+    color: var(--fg);
+    font-size: 0.98rem;
+    margin: 0.6rem 0 0;
+  }
+  .insights .source-line {
+    color: var(--fg-muted);
+    font-size: 0.8rem;
+  }
+</style>

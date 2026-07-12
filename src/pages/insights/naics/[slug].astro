@@ -1,0 +1,143 @@
+---
+// Template A — NAICS entity dashboard. One page per file in
+// src/data/insights/naics/. Templates contain no logic beyond selecting and
+// formatting data from the page JSON (spec 6.2).
+import type { GetStaticPaths } from 'astro';
+import type { InsightsPage } from '../../../lib/insightsTypes';
+import { SIGNUP_URL } from '../../../config';
+import InsightsLayout from '../../../components/insights/InsightsLayout.astro';
+import Breadcrumbs from '../../../components/seo/Breadcrumbs.astro';
+import FAQSchema from '../../../components/seo/FAQSchema.astro';
+import CTABand from '../../../components/CTABand.astro';
+import StatCallouts from '../../../components/insights/StatCallouts.astro';
+import SvgChart from '../../../components/insights/SvgChart.astro';
+import EmbedCode from '../../../components/insights/EmbedCode.astro';
+import DataTable from '../../../components/insights/DataTable.astro';
+import MethodologyNote from '../../../components/insights/MethodologyNote.astro';
+import RelatedPages from '../../../components/insights/RelatedPages.astro';
+
+export const getStaticPaths = (() => {
+  const files = import.meta.glob<{ default: InsightsPage }>('../../../data/insights/naics/*.json', { eager: true });
+  return Object.entries(files).map(([path, mod]) => {
+    const slug = path.split('/').pop()!.replace('.json', '');
+    return { params: { slug }, props: { page: mod.default } };
+  });
+}) satisfies GetStaticPaths;
+
+interface Props {
+  page: InsightsPage;
+}
+
+const { page } = Astro.props;
+const trend = page.charts.find((c) => c.id.endsWith('-trend'));
+const vendorsChart = page.charts.find((c) => c.id.endsWith('-top-vendors'));
+const agenciesChart = page.charts.find((c) => c.id.endsWith('-top-agencies'));
+const [agencySection, vendorSection] = page.narrative.sections;
+
+const canonical = new URL(`/insights/naics/${page.slug}/`, Astro.site).toString();
+const faqs = page.faq.map((f) => ({ question: f.q, answer: f.a }));
+const utm = (campaign: string) => `${SIGNUP_URL}?utm_source=insights&utm_campaign=${campaign}`;
+---
+
+<InsightsLayout
+  title={page.title}
+  description={page.metaDescription}
+  dataset={{
+    name: `Federal contract obligations — NAICS ${page.slug}`,
+    description: page.metaDescription,
+    dateModified: page.updated,
+    temporalCoverage: `${page.fyWindow.start}/${page.fyWindow.end}`,
+    url: canonical,
+  }}
+>
+  <Breadcrumbs
+    items={[
+      { name: 'Home', url: '/' },
+      { name: 'Insights', url: '/insights/' },
+      { name: `NAICS ${page.slug}`, url: `/insights/naics/${page.slug}/` },
+    ]}
+  />
+
+  <header class="ins-header">
+    <p class="eyebrow">Federal contract market · NAICS {page.slug}</p>
+    <h1>{page.h1}</h1>
+    <p class="updated-line">Data through {page.updated} · {page.fyWindow.label}</p>
+  </header>
+
+  <StatCallouts stats={page.stats} fyLabel={page.fyWindow.label} />
+
+  {trend && (
+    <section aria-label="Spending trend">
+      <SvgChart chart={trend} />
+      <EmbedCode chartId={trend.id} chartTitle={trend.title} />
+    </section>
+  )}
+
+  <p class="lede">{page.narrative.intro}</p>
+
+  {agencySection && (
+    <section>
+      <h2>{agencySection.heading}</h2>
+      <p>{agencySection.body}</p>
+    </section>
+  )}
+  {agenciesChart && (
+    <section aria-label="Top agencies">
+      <SvgChart chart={agenciesChart} />
+      <EmbedCode chartId={agenciesChart.id} chartTitle={agenciesChart.title} />
+    </section>
+  )}
+
+  {vendorSection && (
+    <section>
+      <h2>{vendorSection.heading}</h2>
+      <p>{vendorSection.body}</p>
+    </section>
+  )}
+  {vendorsChart && (
+    <section aria-label="Top vendors">
+      <SvgChart chart={vendorsChart} />
+      <EmbedCode chartId={vendorsChart.id} chartTitle={vendorsChart.title} />
+    </section>
+  )}
+
+  {page.tables.map((t) => (
+    <section aria-label={t.title}>
+      <DataTable table={t} />
+    </section>
+  ))}
+
+  <CTABand
+    heading="This is the free layer."
+    sub="GovHub customers get the live version — filters, exports, and AI proposal drafting on top of this data."
+    primaryHref={utm('naics')}
+    primaryLabel="Start free"
+  />
+
+  <FAQSchema faqs={faqs} />
+
+  <MethodologyNote updated={page.updated} fyLabel={page.fyWindow.label} />
+
+  <RelatedPages links={page.related} />
+
+  <CTABand
+    heading="Found your market? GovHub writes the proposal."
+    sub="Turn this market intelligence into a submitted, compliant federal proposal — faster."
+    primaryHref={utm('naics-footer')}
+    primaryLabel="Start free trial"
+  />
+</InsightsLayout>
+
+<style>
+  .ins-header {
+    margin-top: 0.5rem;
+  }
+  .ins-header h1 {
+    margin: 0.25rem 0 0;
+  }
+  section p {
+    color: var(--fg-muted);
+    font-size: 1.05rem;
+    max-width: 46rem;
+  }
+</style>

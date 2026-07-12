@@ -1,0 +1,142 @@
+---
+// Insights hub. Links every entity page that exists (internal-link hub role,
+// spec 9.5). At launch that's the three pilot NAICS dashboards; agency, state,
+// and ranking pages slot into this same grid as they come online.
+import type { InsightsPage } from '../../lib/insightsTypes';
+import { SIGNUP_URL } from '../../config';
+import InsightsLayout from '../../components/insights/InsightsLayout.astro';
+import Breadcrumbs from '../../components/seo/Breadcrumbs.astro';
+import CTABand from '../../components/CTABand.astro';
+import { formatUsdCompact } from '../../lib/insightsFormat';
+
+const files = import.meta.glob<{ default: InsightsPage }>('../../data/insights/naics/*.json', { eager: true });
+const naicsPages = Object.values(files)
+  .map((m) => m.default)
+  .sort((a, b) => a.slug.localeCompare(b.slug));
+
+const cards = naicsPages.map((p) => ({
+  slug: p.slug,
+  name: p.h1.split(': ')[1]?.split(' — ')[0] ?? `NAICS ${p.slug}`,
+  obligations: formatUsdCompact(p.stats.totalObligations),
+  fyLabel: p.fyWindow.label,
+  href: `/insights/naics/${p.slug}/`,
+}));
+
+const updated = naicsPages[0]?.updated ?? '';
+---
+
+<InsightsLayout
+  title="GovHub Insights: Federal Contract Market Data"
+  description="Free federal contracting market intelligence from USAspending.gov data — spending by NAICS code, top vendors, and top agencies, refreshed weekly by GovHub."
+>
+  <Breadcrumbs items={[{ name: 'Home', url: '/' }, { name: 'Insights', url: '/insights/' }]} />
+
+  <header class="ins-header">
+    <p class="eyebrow">GovHub Insights</p>
+    <h1>Federal contract market intelligence</h1>
+    <p class="lede">
+      Where the federal money goes — by industry, agency, and vendor. Every chart is built from
+      public USAspending.gov award data, refreshed weekly, and free to read and embed. This is the
+      open layer beneath GovHub's proposal platform.
+    </p>
+    {updated && <p class="updated-line">Data through {updated}</p>}
+  </header>
+
+  <section aria-labelledby="naics-heading">
+    <h2 id="naics-heading">Market dashboards by NAICS code</h2>
+    <ul class="card-grid">
+      {cards.map((c) => (
+        <li>
+          <a href={c.href}>
+            <span class="card-eyebrow">NAICS {c.slug}</span>
+            <span class="card-name">{c.name}</span>
+            {c.obligations && <span class="card-stat">{c.obligations} <small>obligated, {c.fyLabel}</small></span>}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <section class="about">
+    <h2>How this data works</h2>
+    <p>
+      All figures are federal contract <em>obligations</em> — the dollars agencies have committed on
+      definitive contracts (award types A–D), excluding grants and loans. Numbers come directly from
+      USAspending.gov, the U.S. government's official source for federal award data, and are analyzed
+      and republished by GovHub. Read the <a href="/insights/methodology/">methodology</a> for
+      definitions, the fiscal-year window, and known reporting caveats.
+    </p>
+  </section>
+
+  <CTABand
+    heading="Go from market data to a winning proposal"
+    sub="GovHub turns federal market intelligence into compliant, submitted proposals — with AI drafting, filters, and exports on top of this data."
+    primaryHref={`${SIGNUP_URL}?utm_source=insights&utm_campaign=hub`}
+    primaryLabel="Start free trial"
+  />
+</InsightsLayout>
+
+<style>
+  .ins-header h1 { margin: 0.25rem 0 0.75rem; }
+  .card-grid {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1rem;
+  }
+  .card-grid a {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    height: 100%;
+    padding: 1.25rem;
+    background: var(--gh-surface);
+    border: 1px solid var(--gh-line);
+    border-radius: var(--gh-radius-md);
+    box-shadow: var(--gh-shadow-card);
+    color: var(--fg);
+  }
+  .card-grid a:hover {
+    text-decoration: none;
+    border-color: var(--gh-teal-600);
+    transform: translateY(-2px);
+    transition: transform var(--gh-dur-fast) var(--gh-ease);
+  }
+  .card-eyebrow {
+    font-family: var(--gh-font-brand);
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--gh-gold-600);
+    font-weight: 700;
+  }
+  .card-name {
+    font-family: var(--gh-font-display);
+    font-size: 1.15rem;
+    font-weight: 600;
+    line-height: 1.25;
+  }
+  .card-stat {
+    margin-top: auto;
+    font-family: var(--gh-font-display);
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--gh-maroon-600);
+  }
+  .card-stat small {
+    display: block;
+    font-family: var(--gh-font-body);
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: var(--fg-muted);
+  }
+  .about {
+    max-width: 46rem;
+  }
+  .about p {
+    color: var(--fg-muted);
+    font-size: 1.05rem;
+  }
+</style>

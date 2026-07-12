@@ -1,0 +1,38 @@
+---
+/**
+ * Emits a schema.org Dataset JSON-LD block for an Insights page (spec 9.2).
+ * BreadcrumbList and FAQPage are emitted by the shared seo/Breadcrumbs and
+ * seo/FAQSchema components, so this only covers Dataset (and, later, Article
+ * for weekly reports). The underlying USAspending data is US-government public
+ * domain; `creator` is GovHub, the party that analyzed and republished it.
+ */
+
+interface Props {
+  name: string;
+  description: string;
+  /** ISO date the data was last refreshed. */
+  dateModified: string;
+  /** e.g. "2020-10-01/2026-07-12" — the covered spending window. */
+  temporalCoverage: string;
+  /** Canonical URL of the page this dataset backs. */
+  url: string;
+}
+
+const { name, description, dateModified, temporalCoverage, url } = Astro.props;
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Dataset',
+  name,
+  description,
+  url,
+  dateModified,
+  temporalCoverage,
+  isBasedOn: 'https://www.usaspending.gov',
+  creator: { '@type': 'Organization', name: 'GovHub' },
+  license: 'https://www.usaspending.gov/db_info', // underlying federal data is US public domain
+  isAccessibleForFree: true,
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />
