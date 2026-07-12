@@ -19,3 +19,6 @@ pnpm-debug.log*
 
 # misc
 .DS_Store
+
+# Insights pipeline: cached raw API responses, never committed
+.cache/

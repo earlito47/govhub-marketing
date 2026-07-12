@@ -12,7 +12,8 @@
     "check": "astro check",
     "guard": "grep -rl '{{STAT\\|{{VERIFY' dist/ && echo 'UNRESOLVED TOKENS IN dist/ — fix before shipping' && exit 1 || echo 'token guard: clean'",
     "check:meta": "node scripts/check-meta.mjs",
-    "verify": "npm run check && npm run build && npm run guard && npm run check:meta"
+    "verify": "npm run check && npm run build && npm run guard && npm run check:meta",
+    "insights:pilot": "node scripts/insights/run-pilot.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.4.0",
