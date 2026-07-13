@@ -1,0 +1,48 @@
+---
+// Set-aside program dashboard — one page per file in src/data/insights/setaside/.
+import type { GetStaticPaths } from 'astro';
+import type { InsightsPage } from '../../../lib/insightsTypes';
+import InsightsLayout from '../../../components/insights/InsightsLayout.astro';
+import EntityDashboard from '../../../components/insights/EntityDashboard.astro';
+
+export const getStaticPaths = (() => {
+  const files = import.meta.glob<{ default: InsightsPage }>('../../../data/insights/setaside/*.json', { eager: true });
+  return Object.entries(files).map(([path, mod]) => {
+    const slug = path.split('/').pop()!.replace('.json', '');
+    return { params: { slug }, props: { page: mod.default } };
+  });
+}) satisfies GetStaticPaths;
+
+interface Props {
+  page: InsightsPage;
+}
+
+const { page } = Astro.props;
+const canonical = new URL(`/insights/set-aside/${page.slug}/`, Astro.site).toString();
+---
+
+<InsightsLayout
+  title={page.title}
+  description={page.metaDescription}
+  dataset={{
+    name: `Federal set-aside contract obligations — ${page.h1}`,
+    description: page.metaDescription,
+    dateModified: page.updated,
+    temporalCoverage: `${page.fyWindow.start}/${page.fyWindow.end}`,
+    url: canonical,
+  }}
+>
+  <EntityDashboard
+    page={page}
+    breadcrumbs={[
+      { name: 'Home', url: '/' },
+      { name: 'Insights', url: '/insights/' },
+      { name: 'Set-asides', url: '/insights/#set-asides' },
+      { name: page.h1, url: `/insights/set-aside/${page.slug}/` },
+    ]}
+    eyebrow="Small-business set-aside program"
+    campaign="set-aside"
+    dodLag={true}
+    relatedHeading="Other set-aside programs"
+  />
+</InsightsLayout>

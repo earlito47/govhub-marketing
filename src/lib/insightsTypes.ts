@@ -62,7 +62,7 @@ export interface SourceLink {
 }
 
 export interface InsightsPage {
-  pageType: 'naics' | 'agency' | 'state' | 'ranking' | 'report';
+  pageType: 'naics' | 'agency' | 'state' | 'setaside' | 'ranking' | 'report';
   slug: string;
   title: string;
   h1: string;

@@ -13,10 +13,18 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { mkdir, writeFile } from 'node:fs/promises';
 import { UsaSpendingClient } from './lib/usaspending.mjs';
-import { fetchAgencyRaw, fetchStateRaw } from './fetch-data.mjs';
-import { computeAgencyPage, computeStatePage } from './compute-stats.mjs';
+import { fetchAgencyRaw, fetchStateRaw, fetchSetasideRaw } from './fetch-data.mjs';
+import { computeAgencyPage, computeStatePage, computeSetasidePage } from './compute-stats.mjs';
 import { formatUsdCompact } from './lib/format.mjs';
-import { AGENCY_SLUGS, agencyName, STATE_SLUGS, stateName, stateCode } from './lib/slugs.mjs';
+import {
+  AGENCY_SLUGS,
+  agencyName,
+  STATE_SLUGS,
+  stateName,
+  stateCode,
+  SET_ASIDE_SLUGS,
+  setaside,
+} from './lib/slugs.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 const REPO_ROOT = path.resolve(path.dirname(__filename), '../..');
@@ -88,6 +96,19 @@ export async function generateEntities({ client, asOfDate, only = null, summary 
       slug,
       fetchFn: () => fetchStateRaw(client, { slug, name: stateName(slug), code: stateCode(slug), asOfDate }),
       computeFn: computeStatePage,
+      asOfDate,
+      summary,
+    });
+  }
+
+  for (const slug of SET_ASIDE_SLUGS) {
+    if (!wanted(only, 'setaside', slug)) continue;
+    const meta = setaside(slug);
+    await generate({
+      kind: 'setaside',
+      slug,
+      fetchFn: () => fetchSetasideRaw(client, { slug, name: meta.name, codes: meta.codes, asOfDate }),
+      computeFn: computeSetasidePage,
       asOfDate,
       summary,
     });

@@ -41,6 +41,7 @@ function load(
 const naicsPages = import.meta.glob<{ default: InsightsPage }>('../../data/insights/naics/*.json', { eager: true });
 const agencyPages = import.meta.glob<{ default: InsightsPage }>('../../data/insights/agency/*.json', { eager: true });
 const statePages = import.meta.glob<{ default: InsightsPage }>('../../data/insights/state/*.json', { eager: true });
+const setasidePages = import.meta.glob<{ default: InsightsPage }>('../../data/insights/setaside/*.json', { eager: true });
 const reportPages = import.meta.glob<{ default: InsightsPage }>('../../data/insights/reports/*/*.json', { eager: true });
 const rankingPages = import.meta.glob<{ default: InsightsPage }>('../../data/insights/rankings/*.json', { eager: true });
 
@@ -76,6 +77,12 @@ const naicsCards = load(naicsPages, 'naics', (p) => p.h1.split(': ')[1]?.split('
   (a, b) => a.slug.localeCompare(b.slug)
 );
 const agencyCards = load(agencyPages, 'agency', (p) => p.h1.split(':')[0], () => 'Agency').sort((a, b) => b.amount - a.amount);
+const setasideCards = load(
+  setasidePages,
+  'set-aside',
+  (p) => p.h1.replace(/ Set-Aside Federal Contracts$/, ''),
+  () => 'Set-aside program'
+).sort((a, b) => b.amount - a.amount);
 const stateCards = load(statePages, 'state', (p) => p.h1.replace(/^Federal Contracts in /, '').split(':')[0], () => 'State').sort((a, b) =>
   a.name.localeCompare(b.name)
 );
@@ -122,6 +129,24 @@ const updated = [...Object.values(agencyPages), ...Object.values(statePages), ..
       <p class="section-lede">The big picture: who wins the most, which agencies and states spend the most, and the largest contracts in play.</p>
       <ul class="ranking-links">
         {rankingCards.map((c) => (<li><a href={c.href}>{c.label}</a></li>))}
+      </ul>
+    </section>
+  )}
+
+  {setasideCards.length > 0 && (
+    <section id="set-asides" aria-labelledby="setasides-heading">
+      <h2 id="setasides-heading">Small-business set-aside programs</h2>
+      <p class="section-lede">How much flows through each set-aside channel — 8(a), WOSB, SDVOSB, and HUBZone — plus the agencies and vendors winning that work.</p>
+      <ul class="card-grid">
+        {setasideCards.map((c) => (
+          <li>
+            <a href={c.href}>
+              <span class="card-eyebrow">{c.eyebrow}</span>
+              <span class="card-name">{c.name}</span>
+              {c.obligations && <span class="card-stat">{c.obligations} <small>set aside, {c.fyLabel}</small></span>}
+            </a>
+          </li>
+        ))}
       </ul>
     </section>
   )}
