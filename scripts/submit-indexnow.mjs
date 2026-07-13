@@ -7,8 +7,8 @@
 // so IndexNow can confirm we own the host. Regenerating the key means deleting
 // the old .txt file and updating KEY/KEY_LOCATION below together.
 //
-// Run manually after a deploy: node scripts/submit-indexnow.mjs
-// To automate, call this from a Cloudflare Pages deploy hook or CI step.
+// Runs automatically on every push to main via .github/workflows/indexnow.yml.
+// Can also be run manually after a deploy: node scripts/submit-indexnow.mjs
 import { readFileSync } from 'node:fs';
 
 const HOST = 'www.govhub.online';
