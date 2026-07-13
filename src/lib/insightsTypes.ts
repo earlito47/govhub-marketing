@@ -68,6 +68,9 @@ export interface InsightsPage {
   h1: string;
   metaDescription: string;
   updated: string;
+  /** Reports only: ISO week key (e.g. "2026-w28") and publish date. */
+  week?: string;
+  publishedDate?: string;
   fyWindow: { label: string; start: string; end: string };
   stats: InsightsStats;
   charts: Chart[];

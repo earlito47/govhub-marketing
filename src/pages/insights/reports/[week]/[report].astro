@@ -1,0 +1,44 @@
+---
+// Dated weekly report page (Template D). One page per file in
+// src/data/insights/reports/<week>/. Immutable once published.
+import type { GetStaticPaths } from 'astro';
+import type { InsightsPage } from '../../../../lib/insightsTypes';
+import InsightsLayout from '../../../../components/insights/InsightsLayout.astro';
+import WeeklyReport from '../../../../components/insights/WeeklyReport.astro';
+
+export const getStaticPaths = (() => {
+  const files = import.meta.glob<{ default: InsightsPage }>('../../../../data/insights/reports/*/*.json', { eager: true });
+  return Object.entries(files).map(([p, mod]) => {
+    const parts = p.split('/');
+    const report = parts.pop()!.replace('.json', '');
+    const week = parts.pop()!;
+    return { params: { week, report }, props: { page: mod.default } };
+  });
+}) satisfies GetStaticPaths;
+
+interface Props {
+  page: InsightsPage;
+}
+
+const { page } = Astro.props;
+
+const SHORT: Record<string, string> = {
+  'top-agencies': 'Top agencies',
+  'largest-awards': 'Largest awards',
+  'most-active-naics': 'Most active markets',
+  'state-movers': 'Top states',
+};
+const shortLabel = SHORT[page.slug] ?? page.slug;
+---
+
+<InsightsLayout title={page.title} description={page.metaDescription} ogType="article">
+  <WeeklyReport
+    page={page}
+    breadcrumbs={[
+      { name: 'Home', url: '/' },
+      { name: 'Insights', url: '/insights/' },
+      { name: 'Weekly reports', url: '/insights/reports/' },
+      { name: `${shortLabel}, ${page.fyWindow.label.replace('Week of ', '')}`, url: `/insights/reports/${page.week}/${page.slug}/` },
+    ]}
+  />
+</InsightsLayout>

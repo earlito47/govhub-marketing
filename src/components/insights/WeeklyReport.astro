@@ -1,0 +1,78 @@
+---
+// Template D — dated weekly report body (spec 7.4). Immutable once published.
+// Reuses the shared chart/table/methodology/CTA components; adds an Article
+// JSON-LD block and a prominent published-date line.
+import type { InsightsPage } from '../../lib/insightsTypes';
+import { SIGNUP_URL, SITE_URL } from '../../config';
+import Breadcrumbs from '../seo/Breadcrumbs.astro';
+import CTABand from '../CTABand.astro';
+import SvgChart from './SvgChart.astro';
+import EmbedCode from './EmbedCode.astro';
+import DataTable from './DataTable.astro';
+import MethodologyNote from './MethodologyNote.astro';
+import RelatedPages from './RelatedPages.astro';
+import ArticleJsonLd from './ArticleJsonLd.astro';
+
+interface Crumb {
+  name: string;
+  url: string;
+}
+
+interface Props {
+  page: InsightsPage;
+  breadcrumbs: Crumb[];
+}
+
+const { page, breadcrumbs } = Astro.props;
+const chart = page.charts[0];
+const canonical = `${SITE_URL}/insights/reports/${page.week}/${page.slug}/`;
+---
+
+<ArticleJsonLd headline={page.h1} description={page.metaDescription} datePublished={page.publishedDate ?? page.updated} url={canonical} />
+
+<Breadcrumbs items={breadcrumbs} />
+
+<header class="ins-header">
+  <p class="eyebrow">Weekly report · {page.fyWindow.label}</p>
+  <h1>{page.h1}</h1>
+  <p class="updated-line">Published {page.publishedDate ?? page.updated} · trailing 7-day window</p>
+</header>
+
+<p class="lede">{page.narrative.intro}</p>
+
+{chart && (
+  <section aria-label={chart.title}>
+    <SvgChart chart={chart} />
+    <EmbedCode chartId={chart.id} chartTitle={chart.title} />
+  </section>
+)}
+
+{page.tables.map((t) => (
+  <section aria-label={t.title}>
+    <DataTable table={t} />
+  </section>
+))}
+
+{page.narrative.sections.map((s) => (
+  <section>
+    <h2>{s.heading}</h2>
+    <p>{s.body}</p>
+  </section>
+))}
+
+<CTABand
+  heading="Track this market as it moves"
+  sub="GovHub customers get live award feeds, saved searches, and AI proposal drafting on top of this data."
+  primaryHref={`${SIGNUP_URL}?utm_source=insights&utm_campaign=report`}
+  primaryLabel="Start free"
+/>
+
+<MethodologyNote updated={page.updated} fyLabel={page.fyWindow.label} dodLag={true} />
+
+<RelatedPages links={page.related} heading="Explore the market" />
+
+<style>
+  .ins-header { margin-top: 0.5rem; }
+  .ins-header h1 { margin: 0.25rem 0 0; }
+  section p { color: var(--fg-muted); font-size: 1.05rem; max-width: 46rem; }
+</style>
