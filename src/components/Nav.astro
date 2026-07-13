@@ -5,6 +5,7 @@ const links = [
   { href: '/solutions/', label: 'Solutions' },
   { href: '/pricing/', label: 'Pricing' },
   { href: '/vs/', label: 'Compare' },
+  { href: '/insights/', label: 'Federal Contract Data' },
   { href: '/case-studies/', label: 'Case studies' },
   { href: '/blog/', label: 'Blog' },
   { href: '/faq/', label: 'FAQ' },
@@ -113,6 +114,7 @@ const links = [
     color: var(--fg-muted);
     font-family: var(--gh-font-brand);
     font-size: 0.95rem;
+    white-space: nowrap;
   }
   nav a:hover {
     color: var(--gh-ink-900);
@@ -127,6 +129,7 @@ const links = [
     color: var(--fg-muted);
     font-family: var(--gh-font-brand);
     font-size: 0.95rem;
+    white-space: nowrap;
   }
   .signin:hover {
     color: var(--gh-ink-900);
@@ -197,12 +200,15 @@ const links = [
   .menu-cta {
     display: inline-block;
   }
-  @media (min-width: 761px) {
+  /* The 7-item primary nav (now including "Federal Contract Data") needs room
+     to sit on one line; below this width it collapses to the hamburger menu,
+     which shows every item — long labels included — as a clean vertical list. */
+  @media (min-width: 1100px) {
     .mobile-menu {
       display: none !important;
     }
   }
-  @media (max-width: 760px) {
+  @media (max-width: 1099px) {
     nav {
       display: none;
     }
