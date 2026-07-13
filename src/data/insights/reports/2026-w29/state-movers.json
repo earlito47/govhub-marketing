@@ -1,0 +1,212 @@
+{
+  "pageType": "report",
+  "slug": "state-movers",
+  "week": "2026-w29",
+  "publishedDate": "2026-07-13",
+  "title": "Top States This Week — Jul 7–13, 2026",
+  "h1": "Top states by newly reported federal obligations — week of Jul 7–13, 2026",
+  "metaDescription": "The states with the most newly reported federal contract obligations the week of Jul 7–13, 2026, led by Virginia.",
+  "updated": "2026-07-13",
+  "fyWindow": {
+    "label": "Week of Jul 7–13, 2026",
+    "start": "2026-07-07",
+    "end": "2026-07-13"
+  },
+  "stats": {
+    "totalObligations": 1711467838.38,
+    "awardCount": null,
+    "yoyGrowthPct": null,
+    "avgAwardSize": null,
+    "smallBusinessSharePct": null
+  },
+  "charts": [
+    {
+      "id": "2026-w29-state-movers",
+      "type": "bar",
+      "title": "Top states by newly reported obligations, week of Jul 7–13, 2026",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "Virginia",
+              453696875.99
+            ],
+            [
+              "Maryland",
+              364122681.51
+            ],
+            [
+              "District Of Columbia",
+              257784618.74
+            ],
+            [
+              "Massachusetts",
+              164416221.7
+            ],
+            [
+              "California",
+              109638850.05
+            ],
+            [
+              "Missouri",
+              97020752
+            ],
+            [
+              "Idaho",
+              77714176.94
+            ],
+            [
+              "Florida",
+              73069445.39
+            ],
+            [
+              "New York",
+              57520971.95
+            ],
+            [
+              "Georgia",
+              56483244.11
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Virginia saw the most newly reported federal contract activity, with $454M obligated."
+    }
+  ],
+  "tables": [
+    {
+      "title": "Top states, week of Jul 7–13, 2026",
+      "columns": [
+        "Rank",
+        "State",
+        "Obligations"
+      ],
+      "rows": [
+        [
+          1,
+          {
+            "text": "Virginia",
+            "href": "/insights/state/virginia/"
+          },
+          453696875.99
+        ],
+        [
+          2,
+          {
+            "text": "Maryland",
+            "href": "/insights/state/maryland/"
+          },
+          364122681.51
+        ],
+        [
+          3,
+          {
+            "text": "District Of Columbia",
+            "href": "/insights/state/district-of-columbia/"
+          },
+          257784618.74
+        ],
+        [
+          4,
+          {
+            "text": "Massachusetts",
+            "href": "/insights/state/massachusetts/"
+          },
+          164416221.7
+        ],
+        [
+          5,
+          {
+            "text": "California",
+            "href": "/insights/state/california/"
+          },
+          109638850.05
+        ],
+        [
+          6,
+          {
+            "text": "Missouri",
+            "href": "/insights/state/missouri/"
+          },
+          97020752
+        ],
+        [
+          7,
+          {
+            "text": "Idaho",
+            "href": "/insights/state/idaho/"
+          },
+          77714176.94
+        ],
+        [
+          8,
+          {
+            "text": "Florida",
+            "href": "/insights/state/florida/"
+          },
+          73069445.39
+        ],
+        [
+          9,
+          {
+            "text": "New York",
+            "href": "/insights/state/new-york/"
+          },
+          57520971.95
+        ],
+        [
+          10,
+          {
+            "text": "Georgia",
+            "href": "/insights/state/georgia/"
+          },
+          56483244.11
+        ]
+      ]
+    }
+  ],
+  "narrative": {
+    "intro": "Contractors performing work in Virginia saw the most newly reported federal obligations the week of Jul 7–13, 2026 — $454M. The top ten states accounted for $1.7B combined.",
+    "sections": []
+  },
+  "faq": [
+    {
+      "q": "Which state saw the most federal contract activity the week of Jul 7–13, 2026?",
+      "a": "Virginia, with $454M in newly reported obligations."
+    }
+  ],
+  "related": [
+    {
+      "label": "Virginia federal contracts",
+      "href": "/insights/state/virginia/"
+    },
+    {
+      "label": "Maryland federal contracts",
+      "href": "/insights/state/maryland/"
+    },
+    {
+      "label": "District Of Columbia federal contracts",
+      "href": "/insights/state/district-of-columbia/"
+    },
+    {
+      "label": "Massachusetts federal contracts",
+      "href": "/insights/state/massachusetts/"
+    },
+    {
+      "label": "California federal contracts",
+      "href": "/insights/state/california/"
+    },
+    {
+      "label": "Missouri federal contracts",
+      "href": "/insights/state/missouri/"
+    }
+  ],
+  "sources": [
+    {
+      "label": "USAspending.gov award data",
+      "href": "https://www.usaspending.gov"
+    }
+  ]
+}

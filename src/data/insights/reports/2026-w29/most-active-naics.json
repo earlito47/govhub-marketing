@@ -1,0 +1,195 @@
+{
+  "pageType": "report",
+  "slug": "most-active-naics",
+  "week": "2026-w29",
+  "publishedDate": "2026-07-13",
+  "title": "Most Active Federal Markets This Week — Jul 7–13, 2026",
+  "h1": "Most active federal contract markets — week of Jul 7–13, 2026",
+  "metaDescription": "The most active federal contract industries (by newly reported obligations) the week of Jul 7–13, 2026, led by Engineering Services.",
+  "updated": "2026-07-13",
+  "fyWindow": {
+    "label": "Week of Jul 7–13, 2026",
+    "start": "2026-07-07",
+    "end": "2026-07-13"
+  },
+  "stats": {
+    "totalObligations": 1484058571.3900003,
+    "awardCount": null,
+    "yoyGrowthPct": null,
+    "avgAwardSize": null,
+    "smallBusinessSharePct": null
+  },
+  "charts": [
+    {
+      "id": "2026-w29-most-active-naics",
+      "type": "bar",
+      "title": "Most active industries (NAICS) by obligations, week of Jul 7–13, 2026",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "Engineering Services",
+              278785984.68
+            ],
+            [
+              "Commercial and Institutional Building Construction",
+              207529973.79
+            ],
+            [
+              "Other Computer Related Services",
+              206667894.29
+            ],
+            [
+              "Computer Systems Design Services",
+              199890764.58
+            ],
+            [
+              "Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology)",
+              175059515.8
+            ],
+            [
+              "Facilities Support Services",
+              111350842.76
+            ],
+            [
+              "Custom Computer Programming Services",
+              95634250.14
+            ],
+            [
+              "Remediation Services",
+              86058839.51
+            ],
+            [
+              "Administrative Management and General Management Consulting Services",
+              73079663.63
+            ],
+            [
+              "Other Technical and Trade Schools",
+              50000842.21
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Engineering Services was the most active market, with $279M in newly reported obligations."
+    }
+  ],
+  "tables": [
+    {
+      "title": "Most active industries, week of Jul 7–13, 2026",
+      "columns": [
+        "Rank",
+        "Industry (NAICS)",
+        "Obligations"
+      ],
+      "rows": [
+        [
+          1,
+          {
+            "text": "Engineering Services (541330)",
+            "href": null
+          },
+          278785984.68
+        ],
+        [
+          2,
+          {
+            "text": "Commercial and Institutional Building Construction (236220)",
+            "href": null
+          },
+          207529973.79
+        ],
+        [
+          3,
+          {
+            "text": "Other Computer Related Services (541519)",
+            "href": "/insights/naics/541519/"
+          },
+          206667894.29
+        ],
+        [
+          4,
+          {
+            "text": "Computer Systems Design Services (541512)",
+            "href": "/insights/naics/541512/"
+          },
+          199890764.58
+        ],
+        [
+          5,
+          {
+            "text": "Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology) (541715)",
+            "href": null
+          },
+          175059515.8
+        ],
+        [
+          6,
+          {
+            "text": "Facilities Support Services (561210)",
+            "href": null
+          },
+          111350842.76
+        ],
+        [
+          7,
+          {
+            "text": "Custom Computer Programming Services (541511)",
+            "href": "/insights/naics/541511/"
+          },
+          95634250.14
+        ],
+        [
+          8,
+          {
+            "text": "Remediation Services (562910)",
+            "href": null
+          },
+          86058839.51
+        ],
+        [
+          9,
+          {
+            "text": "Administrative Management and General Management Consulting Services (541611)",
+            "href": null
+          },
+          73079663.63
+        ],
+        [
+          10,
+          {
+            "text": "Other Technical and Trade Schools (611519)",
+            "href": null
+          },
+          50000842.21
+        ]
+      ]
+    }
+  ],
+  "narrative": {
+    "intro": "Engineering Services was the most active federal contract market the week of Jul 7–13, 2026, with $279M in newly reported obligations. The ten most active industries obligated $1.5B combined.",
+    "sections": []
+  },
+  "faq": [],
+  "related": [
+    {
+      "label": "NAICS 541519: Other Computer Related Services",
+      "href": "/insights/naics/541519/"
+    },
+    {
+      "label": "NAICS 541512: Computer Systems Design Services",
+      "href": "/insights/naics/541512/"
+    },
+    {
+      "label": "NAICS 541511: Custom Computer Programming Services",
+      "href": "/insights/naics/541511/"
+    }
+  ],
+  "sources": [
+    {
+      "label": "USAspending.gov award data",
+      "href": "https://www.usaspending.gov"
+    }
+  ]
+}
