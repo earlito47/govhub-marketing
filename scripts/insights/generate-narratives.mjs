@@ -51,17 +51,19 @@ function factsFor(page) {
     figures.yearOverYearChange = `${s.yoyGrowthPct >= 0 ? 'up ' : 'down '}${formatPercent(Math.abs(s.yoyGrowthPct))}`;
   }
   const rankings = (page.charts ?? [])
-    .filter((c) => c.unit === 'usd')
+    .filter((c) => c.unit === 'usd' || c.unit === 'pct')
     .map((c) => ({
       title: c.title,
-      items: (c.series?.[0]?.points ?? []).slice(0, 10).map(([name, amount]) => ({ name, amount: formatUsdCompact(amount) })),
+      items: (c.series?.[0]?.points ?? [])
+        .slice(0, 10)
+        .map(([name, amount]) => ({ name, value: c.unit === 'pct' ? formatPercent(amount) : formatUsdCompact(amount) })),
     }));
   return {
     page: page.h1,
     pageType: page.pageType,
     period: page.fyWindow?.label,
     note:
-      page.pageType === 'ranking' || page.slug === 'largest-federal-contracts-fy2026'
+      page.slug === 'largest-federal-contracts-fy2026'
         ? 'Total award value figures are full contract values, not single-year obligations.'
         : 'All figures are contract obligations; current-year totals are partial (fiscal year to date).',
     figures,

@@ -12,7 +12,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { mkdir, writeFile } from 'node:fs/promises';
 import { UsaSpendingClient, CONTRACT_AWARD_TYPE_CODES } from './lib/usaspending.mjs';
-import { fiscalYearOf, fiscalYearRange, fiscalYearLabel, formatUsdCompact } from './lib/format.mjs';
+import { fiscalYearOf, fiscalYearRange, fiscalYearLabel, formatUsdCompact, formatPercent } from './lib/format.mjs';
 import {
   AGENCY_SLUGS,
   agencyHref,
@@ -37,6 +37,7 @@ const FLAGSHIPS = [
   { slug: 'federal-spending-by-state', label: 'Federal spending by state' },
   { slug: 'government-contracts-by-naics', label: 'Government contracts by NAICS' },
   { slug: 'largest-federal-contracts-fy2026', label: 'Largest federal contracts this year' },
+  { slug: 'fastest-growing-federal-markets', label: 'Fastest-growing federal markets' },
 ];
 const relatedFlagships = (self) => FLAGSHIPS.filter((f) => f.slug !== self).map((f) => ({ label: f.label, href: `/insights/${f.slug}/` }));
 
@@ -44,6 +45,20 @@ function parseAmount(v) {
   if (v === null || v === undefined) return 0;
   const n = typeof v === 'string' ? Number.parseFloat(v) : v;
   return Number.isFinite(n) ? n : 0;
+}
+
+function round1(n) {
+  return Math.round(n * 10) / 10;
+}
+
+// The same calendar window one year earlier — Oct 1 (prior FY) through the same
+// month/day as `asOfDate`, so growth is measured apples-to-apples rather than
+// partial-year vs. full-year.
+function priorSamePeriod(asOfDate, currentFy) {
+  const start = fiscalYearRange(currentFy - 1).start;
+  const d = new Date(`${asOfDate}T00:00:00Z`);
+  d.setUTCFullYear(d.getUTCFullYear() - 1);
+  return { start, end: d.toISOString().slice(0, 10) };
 }
 
 function fyContext(asOfDate) {
@@ -210,7 +225,7 @@ function buildByState(ctx, resp) {
   const faq = top
     ? [{ q: `Which state gets the most federal contract money?`, a: `${top.name}, with ${formatUsdCompact(top.amount)} in federal contract obligations in ${ctx.fyLabel}.` }]
     : [];
-  return rankingPage({
+  const page = rankingPage({
     ctx,
     slug: 'federal-spending-by-state',
     title: `Federal Spending by State — ${fiscalYearLabel(ctx.currentFy)}`,
@@ -222,6 +237,11 @@ function buildByState(ctx, resp) {
     faq,
     combined,
   });
+  // Full state list (code + name + value) drives the choropleth map.
+  page.mapData = (resp?.results ?? [])
+    .filter((r) => r.code)
+    .map((r) => ({ code: r.code, name: r.name ?? r.code, value: parseAmount(r.amount) }));
+  return page;
 }
 
 function buildByNaics(ctx, resp) {
@@ -311,18 +331,104 @@ function buildLargestContracts(ctx, resp) {
   });
 }
 
+function buildFastestGrowing(ctx, currentResp, priorResp) {
+  const MIN = 100e6; // floor in BOTH periods so a small base can't distort growth
+  const priorMap = new Map((priorResp?.results ?? []).map((r) => [r.code, parseAmount(r.amount)]));
+  const rows = (currentResp?.results ?? [])
+    .map((r) => {
+      const cur = parseAmount(r.amount);
+      const prior = priorMap.get(r.code) ?? 0;
+      return {
+        name: r.name ?? r.code ?? 'Unknown',
+        code: r.code ?? null,
+        cur,
+        prior,
+        growth: prior > 0 ? round1(((cur - prior) / prior) * 100) : null,
+        href: r.code && PILOT_NAICS_CODES.includes(r.code) ? naicsHref(r.code) : null,
+      };
+    })
+    .filter((r) => r.growth !== null && r.cur >= MIN && r.prior >= MIN)
+    .sort((a, b) => b.growth - a.growth)
+    .slice(0, 25);
+  const top = rows[0];
+  const combined = rows.reduce((a, r) => a + r.cur, 0);
+
+  const chart = {
+    id: 'fastest-growing-federal-markets-bar',
+    type: 'bar',
+    title: `Fastest-growing federal markets (year-over-year, same period), ${ctx.fyLabel}`,
+    series: [{ label: 'Year-over-year growth', points: rows.slice(0, 10).map((r) => [r.name, r.growth]) }],
+    unit: 'pct',
+    takeaway: top
+      ? `${top.name} was the fastest-growing established federal market, up ${formatPercent(top.growth)} versus the same period a year earlier.`
+      : null,
+  };
+  const table = {
+    title: `Fastest-growing federal markets, ${ctx.fyLabel}`,
+    columns: ['Rank', 'Industry (NAICS)', 'FY2026 obligations', 'Prior-year obligations', 'Growth'],
+    rows: rows.map((r, i) => [
+      i + 1,
+      { text: r.code ? `${r.name} (${r.code})` : r.name, href: r.href },
+      r.cur,
+      r.prior,
+      formatPercent(r.growth, { signed: true }),
+    ]),
+  };
+  const intro = top
+    ? `These are the fastest-growing established federal contract markets, comparing ${ctx.fyLabel} against the same calendar window a year earlier — an apples-to-apples measure that avoids the partial-vs-full-year distortion. ${top.name} leads, up ${formatPercent(
+        top.growth
+      )} year over year, from ${formatUsdCompact(top.prior)} to ${formatUsdCompact(
+        top.cur
+      )}. Rankings cover established industries with at least 100 million dollars of obligations in both periods, so a small base can't inflate the growth rate.`
+    : `Not enough same-period data is available to rank market growth for ${ctx.fyLabel}.`;
+  const faq = top
+    ? [
+        {
+          q: `What are the fastest-growing federal contract markets?`,
+          a: `By same-period year-over-year growth, ${top.name} leads — up ${formatPercent(top.growth)} versus a year earlier, from ${formatUsdCompact(
+            top.prior
+          )} to ${formatUsdCompact(top.cur)}.`,
+        },
+        {
+          q: `How is market growth measured here?`,
+          a: `Each market's ${ctx.fyLabel} obligations are compared to the same calendar window one fiscal year earlier — not the full prior year — among industries with at least 100 million dollars of obligations in both periods.`,
+        },
+      ]
+    : [];
+  return rankingPage({
+    ctx,
+    slug: 'fastest-growing-federal-markets',
+    title: `Fastest-Growing Federal Markets — ${fiscalYearLabel(ctx.currentFy)}`,
+    h1: `Fastest-growing federal contract markets — ${ctx.fyLabel}`,
+    metaDescription: `The fastest-growing federal contract markets by same-period year-over-year growth in ${ctx.fyLabel}, from USAspending.gov. Led by ${
+      top?.name ?? 'n/a'
+    }.`,
+    chart,
+    table,
+    intro,
+    faq,
+    combined,
+  });
+}
+
 // ---- Orchestration --------------------------------------------------------
 export async function buildRankings({ client, asOfDate }) {
   const ctx = fyContext(asOfDate);
   const AWARD_FIELDS = ['Award ID', 'Recipient Name', 'Award Amount', 'Awarding Agency', 'generated_internal_id'];
+  const prior = priorSamePeriod(asOfDate, ctx.currentFy);
+  const priorFilters = { award_type_codes: CONTRACT_AWARD_TYPE_CODES, time_period: [{ start_date: prior.start, end_date: prior.end }] };
 
-  const [contractors, smallBiz, agencies, states, naics, awards] = await Promise.all([
+  const [contractors, smallBiz, agencies, states, naics, awards, growthCurrent, growthPrior] = await Promise.all([
     client.spendingByCategory('recipient_duns', ctx.filters(), { limit: 50 }),
     client.spendingByCategory('recipient_duns', ctx.filters({ recipient_type_names: ['small_business'] }), { limit: 50 }),
     client.spendingByCategory('awarding_agency', ctx.filters(), { limit: 25 }),
     client.spendingByCategory('state_territory', ctx.filters(), { limit: 51 }),
     client.spendingByCategory('naics', ctx.filters(), { limit: 30 }),
     client.spendingByAward({ filters: ctx.filters(), fields: AWARD_FIELDS, sort: 'Award Amount', order: 'desc', limit: 50 }),
+    // Growth ranking: current top-75 NAICS vs. the same period a year earlier
+    // (100 is the API's max page size, wide enough to match most current codes).
+    client.spendingByCategory('naics', ctx.filters(), { limit: 75 }),
+    client.spendingByCategory('naics', priorFilters, { limit: 100 }),
   ]);
 
   const pages = [
@@ -332,6 +438,7 @@ export async function buildRankings({ client, asOfDate }) {
     buildByState(ctx, states),
     buildByNaics(ctx, naics),
     buildLargestContracts(ctx, awards),
+    buildFastestGrowing(ctx, growthCurrent, growthPrior),
   ];
 
   await mkdir(OUT_DIR, { recursive: true });

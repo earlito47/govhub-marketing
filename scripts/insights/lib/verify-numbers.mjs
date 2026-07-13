@@ -32,6 +32,12 @@ export function allowedNumberStrings(page) {
   addMoney(page.stats?.avgAwardSize);
   for (const c of page.charts ?? []) {
     if (c.unit === 'usd') for (const [, v] of c.series?.[0]?.points ?? []) addMoney(v);
+    // Percent-unit charts (e.g. growth rankings) contribute their values to the
+    // allowed percentage set so a narrative may cite them.
+    if (c.unit === 'pct')
+      for (const [, v] of c.series?.[0]?.points ?? []) {
+        if (typeof v === 'number') { const p = formatPercent(v); if (p) pct.add(p); }
+      }
   }
   for (const t of page.tables ?? []) {
     const moneyCols = t.columns.map((c) => MONEY_COL.test(c));
