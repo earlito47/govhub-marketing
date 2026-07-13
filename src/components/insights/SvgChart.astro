@@ -7,7 +7,7 @@
  * one-sentence takeaway. Brand: gold primary series, charcoal text/axes.
  */
 import type { Chart } from '../../lib/insightsTypes';
-import { formatUsdCompact } from '../../lib/insightsFormat';
+import { formatUsdCompact, formatPercent } from '../../lib/insightsFormat';
 
 interface Props {
   chart: Chart;
@@ -16,7 +16,9 @@ interface Props {
 const { chart } = Astro.props;
 const points = chart.series[0]?.points ?? [];
 const isUsd = chart.unit === 'usd';
-const fmt = (v: number): string => (isUsd ? (formatUsdCompact(v) ?? String(v)) : String(v));
+const isPct = chart.unit === 'pct';
+const fmt = (v: number): string =>
+  isUsd ? (formatUsdCompact(v) ?? String(v)) : isPct ? (formatPercent(v) ?? String(v)) : String(v);
 
 const ariaLabel = chart.takeaway ?? `${chart.title}: ${points.length} data points.`;
 
