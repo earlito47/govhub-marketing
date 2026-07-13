@@ -225,7 +225,7 @@ function buildByState(ctx, resp) {
   const faq = top
     ? [{ q: `Which state gets the most federal contract money?`, a: `${top.name}, with ${formatUsdCompact(top.amount)} in federal contract obligations in ${ctx.fyLabel}.` }]
     : [];
-  return rankingPage({
+  const page = rankingPage({
     ctx,
     slug: 'federal-spending-by-state',
     title: `Federal Spending by State — ${fiscalYearLabel(ctx.currentFy)}`,
@@ -237,6 +237,11 @@ function buildByState(ctx, resp) {
     faq,
     combined,
   });
+  // Full state list (code + name + value) drives the choropleth map.
+  page.mapData = (resp?.results ?? [])
+    .filter((r) => r.code)
+    .map((r) => ({ code: r.code, name: r.name ?? r.code, value: parseAmount(r.amount) }));
+  return page;
 }
 
 function buildByNaics(ctx, resp) {

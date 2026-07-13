@@ -11,6 +11,7 @@ import EmbedCode from './EmbedCode.astro';
 import DataTable from './DataTable.astro';
 import MethodologyNote from './MethodologyNote.astro';
 import RelatedPages from './RelatedPages.astro';
+import UsChoropleth from './UsChoropleth.astro';
 
 interface Crumb {
   name: string;
@@ -36,6 +37,12 @@ const faqs = page.faq.map((f) => ({ question: f.q, answer: f.a }));
 </header>
 
 <p class="lede">{page.narrative.intro}</p>
+
+{page.mapData && page.mapData.length > 0 && (
+  <section aria-label="Federal contract obligations by state, map">
+    <UsChoropleth data={page.mapData} title={`Federal contract obligations by state, ${page.fyWindow.label}`} />
+  </section>
+)}
 
 {chart && (
   <section aria-label={chart.title}>

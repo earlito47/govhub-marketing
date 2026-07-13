@@ -71,6 +71,8 @@ export interface InsightsPage {
   /** Reports only: ISO week key (e.g. "2026-w28") and publish date. */
   week?: string;
   publishedDate?: string;
+  /** by-state ranking only: full state list for the choropleth map. */
+  mapData?: { code: string; name: string; value: number }[];
   fyWindow: { label: string; start: string; end: string };
   stats: InsightsStats;
   charts: Chart[];
