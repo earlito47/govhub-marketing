@@ -1,0 +1,77 @@
+---
+// Template B — flagship ranking body (spec 7.2): ranked bar (top 10) + full
+// table (top 25–50) + narrative + FAQ. Evergreen; refreshed weekly.
+import type { InsightsPage } from '../../lib/insightsTypes';
+import { SIGNUP_URL } from '../../config';
+import Breadcrumbs from '../seo/Breadcrumbs.astro';
+import FAQSchema from '../seo/FAQSchema.astro';
+import CTABand from '../CTABand.astro';
+import SvgChart from './SvgChart.astro';
+import EmbedCode from './EmbedCode.astro';
+import DataTable from './DataTable.astro';
+import MethodologyNote from './MethodologyNote.astro';
+import RelatedPages from './RelatedPages.astro';
+
+interface Crumb {
+  name: string;
+  url: string;
+}
+
+interface Props {
+  page: InsightsPage;
+  breadcrumbs: Crumb[];
+}
+
+const { page, breadcrumbs } = Astro.props;
+const chart = page.charts[0];
+const faqs = page.faq.map((f) => ({ question: f.q, answer: f.a }));
+---
+
+<Breadcrumbs items={breadcrumbs} />
+
+<header class="ins-header">
+  <p class="eyebrow">Flagship ranking · {page.fyWindow.label}</p>
+  <h1>{page.h1}</h1>
+  <p class="updated-line">Data through {page.updated}</p>
+</header>
+
+<p class="lede">{page.narrative.intro}</p>
+
+{chart && (
+  <section aria-label={chart.title}>
+    <SvgChart chart={chart} />
+    <EmbedCode chartId={chart.id} chartTitle={chart.title} />
+  </section>
+)}
+
+{page.tables.map((t) => (
+  <section aria-label={t.title}>
+    <DataTable table={t} />
+  </section>
+))}
+
+{page.narrative.sections.map((s) => (
+  <section>
+    <h2>{s.heading}</h2>
+    <p>{s.body}</p>
+  </section>
+))}
+
+<CTABand
+  heading="Find your market, then win it"
+  sub="GovHub pairs this market intelligence with AI proposal drafting, filters, and exports — the fastest path from research to a submitted bid."
+  primaryHref={`${SIGNUP_URL}?utm_source=insights&utm_campaign=ranking`}
+  primaryLabel="Start free"
+/>
+
+{faqs.length > 0 && <FAQSchema faqs={faqs} />}
+
+<MethodologyNote updated={page.updated} fyLabel={page.fyWindow.label} />
+
+<RelatedPages links={page.related} heading="More market rankings" />
+
+<style>
+  .ins-header { margin-top: 0.5rem; }
+  .ins-header h1 { margin: 0.25rem 0 0; }
+  section p { color: var(--fg-muted); font-size: 1.05rem; max-width: 46rem; }
+</style>

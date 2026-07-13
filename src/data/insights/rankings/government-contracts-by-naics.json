@@ -1,0 +1,379 @@
+{
+  "pageType": "ranking",
+  "slug": "government-contracts-by-naics",
+  "title": "Government Contracts by NAICS — FY2026",
+  "h1": "Government contracts by NAICS code — FY2026 to date",
+  "metaDescription": "The largest federal contract markets by NAICS industry code in FY2026 to date, from USAspending.gov. Led by Commercial and Institutional Building Construction",
+  "updated": "2026-07-12",
+  "fyWindow": {
+    "label": "FY2026 to date",
+    "start": "2025-10-01",
+    "end": "2026-07-12"
+  },
+  "stats": {
+    "totalObligations": 368532302699.43,
+    "awardCount": null,
+    "yoyGrowthPct": null,
+    "avgAwardSize": null,
+    "smallBusinessSharePct": null
+  },
+  "charts": [
+    {
+      "id": "government-contracts-by-naics-bar",
+      "type": "bar",
+      "title": "Largest federal contract markets by NAICS, FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "Commercial and Institutional Building Construction",
+              39696345620.32
+            ],
+            [
+              "Aircraft Manufacturing",
+              31572162919.19
+            ],
+            [
+              "Facilities Support Services",
+              30334370368.3
+            ],
+            [
+              "Engineering Services",
+              30133394635.88
+            ],
+            [
+              "Direct Health and Medical Insurance Carriers",
+              26995589295.63
+            ],
+            [
+              "Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology)",
+              25443254813.23
+            ],
+            [
+              "Guided Missile and Space Vehicle Manufacturing",
+              23071316672.04
+            ],
+            [
+              "Computer Systems Design Services",
+              18481803172.45
+            ],
+            [
+              "Ship Building and Repairing",
+              15248193906.28
+            ],
+            [
+              "Other Computer Related Services",
+              13140763242.4
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Commercial and Institutional Building Construction was the largest federal contract market in FY2026 to date, with $39.7B obligated."
+    }
+  ],
+  "tables": [
+    {
+      "title": "Federal contract obligations by NAICS, FY2026 to date",
+      "columns": [
+        "Rank",
+        "Industry (NAICS)",
+        "Obligations"
+      ],
+      "rows": [
+        [
+          1,
+          {
+            "text": "Commercial and Institutional Building Construction (236220)",
+            "href": null
+          },
+          39696345620.32
+        ],
+        [
+          2,
+          {
+            "text": "Aircraft Manufacturing (336411)",
+            "href": null
+          },
+          31572162919.19
+        ],
+        [
+          3,
+          {
+            "text": "Facilities Support Services (561210)",
+            "href": null
+          },
+          30334370368.3
+        ],
+        [
+          4,
+          {
+            "text": "Engineering Services (541330)",
+            "href": null
+          },
+          30133394635.88
+        ],
+        [
+          5,
+          {
+            "text": "Direct Health and Medical Insurance Carriers (524114)",
+            "href": null
+          },
+          26995589295.63
+        ],
+        [
+          6,
+          {
+            "text": "Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology) (541715)",
+            "href": null
+          },
+          25443254813.23
+        ],
+        [
+          7,
+          {
+            "text": "Guided Missile and Space Vehicle Manufacturing (336414)",
+            "href": null
+          },
+          23071316672.04
+        ],
+        [
+          8,
+          {
+            "text": "Computer Systems Design Services (541512)",
+            "href": "/insights/naics/541512/"
+          },
+          18481803172.45
+        ],
+        [
+          9,
+          {
+            "text": "Ship Building and Repairing (336611)",
+            "href": null
+          },
+          15248193906.28
+        ],
+        [
+          10,
+          {
+            "text": "Other Computer Related Services (541519)",
+            "href": "/insights/naics/541519/"
+          },
+          13140763242.4
+        ],
+        [
+          11,
+          {
+            "text": "Pharmaceutical Preparation Manufacturing (325412)",
+            "href": null
+          },
+          10656651809.63
+        ],
+        [
+          12,
+          {
+            "text": "Other Aircraft Parts and Auxiliary Equipment Manufacturing (336413)",
+            "href": null
+          },
+          9996675123.63
+        ],
+        [
+          13,
+          {
+            "text": "Search, Detection, Navigation, Guidance, Aeronautical, and Nautical System and Instrument Manufacturing (334511)",
+            "href": null
+          },
+          8866228264.41
+        ],
+        [
+          14,
+          {
+            "text": "Offices of Physicians (except Mental Health Specialists) (621111)",
+            "href": null
+          },
+          7924888647.55
+        ],
+        [
+          15,
+          {
+            "text": "Research and Development in the Physical, Engineering, and Life Sciences (541710)",
+            "href": null
+          },
+          7258229987.17
+        ],
+        [
+          16,
+          {
+            "text": "Custom Computer Programming Services (541511)",
+            "href": "/insights/naics/541511/"
+          },
+          7094299601.44
+        ],
+        [
+          17,
+          {
+            "text": "All Other Professional, Scientific, and Technical Services (541990)",
+            "href": null
+          },
+          6914746439.49
+        ],
+        [
+          18,
+          {
+            "text": "Other Heavy and Civil Engineering Construction (237990)",
+            "href": null
+          },
+          6595122704.21
+        ],
+        [
+          19,
+          {
+            "text": "Petroleum Refineries (324110)",
+            "href": null
+          },
+          5603659370.56
+        ],
+        [
+          20,
+          {
+            "text": "Security Guards and Patrol Services (561612)",
+            "href": null
+          },
+          5428093576.76
+        ],
+        [
+          21,
+          {
+            "text": "Administrative Management and General Management Consulting Services (541611)",
+            "href": null
+          },
+          5265130073.04
+        ],
+        [
+          22,
+          {
+            "text": "Other Support Activities for Air Transportation (488190)",
+            "href": null
+          },
+          5041910597.64
+        ],
+        [
+          23,
+          {
+            "text": "Research and Development in the Physical, Engineering, and Life Sciences (except Biotechnology) (541712)",
+            "href": null
+          },
+          4538198016.9
+        ],
+        [
+          24,
+          {
+            "text": "Aircraft Engine and Engine Parts Manufacturing (336412)",
+            "href": null
+          },
+          4211240194.81
+        ],
+        [
+          25,
+          {
+            "text": "Remediation Services (562910)",
+            "href": null
+          },
+          3728687823.47
+        ],
+        [
+          26,
+          {
+            "text": "Software Publishers (511210)",
+            "href": null
+          },
+          3464834103.07
+        ],
+        [
+          27,
+          {
+            "text": "Process, Physical Distribution, and Logistics Consulting Services (541614)",
+            "href": null
+          },
+          3243642740.91
+        ],
+        [
+          28,
+          {
+            "text": "Military Armored Vehicle, Tank, and Tank Component Manufacturing (336992)",
+            "href": null
+          },
+          2868335461.86
+        ],
+        [
+          29,
+          {
+            "text": "Medicinal and Botanical Manufacturing (325411)",
+            "href": null
+          },
+          2867274451.02
+        ],
+        [
+          30,
+          {
+            "text": "Other Basic Inorganic Chemical Manufacturing (325180)",
+            "href": null
+          },
+          2847259066.14
+        ]
+      ]
+    }
+  ],
+  "narrative": {
+    "intro": "Total federal obligations for FY2026 to date were $369B. The largest NAICS markets by contract value are led by Commercial and Institutional Building Construction at $39.7B, followed by Aircraft Manufacturing at $31.6B, Facilities Support Services at $30.3B, and Engineering Services at $30.1B. Other significant sectors include Direct Health and Medical Insurance Carriers ($27B), Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology) ($25.4B), and Guided Missile and Space Vehicle Manufacturing ($23.1B). Computer Systems Design Services ($18.5B), Ship Building and Repairing ($15.2B), and Other Computer Related Services ($13.1B) round out the top ten. These figures represent total award values, which are full contract values and not single-year obligations. The ranking reflects where federal contract dollars have been allocated by NAICS through FY2026 to date and shows concentration in construction, aerospace, services, and R&D-related manufacturing and services.",
+    "sections": [
+      {
+        "heading": "Which NAICS sectors received the most federal contract dollars?",
+        "body": "Commercial and Institutional Building Construction received $39.7B, the largest single-sector contract total. Aerospace-related manufacturing appears prominently with Aircraft Manufacturing at $31.6B and Guided Missile and Space Vehicle Manufacturing at $23.1B. Service and professional sectors also account for large totals, including Facilities Support Services at $30.3B and Engineering Services at $30.1B."
+      },
+      {
+        "heading": "How concentrated are federal contracts across the top NAICS markets?",
+        "body": "The top ten NAICS markets together account for substantial portions of total obligations, with individual sector totals ranging from $39.7B down to $13.1B. The list includes construction, manufacturing, health insurance carriers, R&D, systems design, shipbuilding, and related services, indicating spending across both goods and services categories. Remember that the reported amounts are full contract values, not single-year obligations."
+      }
+    ]
+  },
+  "faq": [
+    {
+      "q": "What are the biggest federal contracting industries?",
+      "a": "The biggest federal contracting industries by contract value include Commercial and Institutional Building Construction ($39.7B), Aircraft Manufacturing ($31.6B), Facilities Support Services ($30.3B), and Engineering Services ($30.1B). Other top industries are Direct Health and Medical Insurance Carriers ($27B), Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology) ($25.4B), Guided Missile and Space Vehicle Manufacturing ($23.1B), Computer Systems Design Services ($18.5B), Ship Building and Repairing ($15.2B), and Other Computer Related Services ($13.1B). These figures are total award values, representing full contract values rather than single-year obligations."
+    }
+  ],
+  "related": [
+    {
+      "label": "NAICS 541511",
+      "href": "/insights/naics/541511/"
+    },
+    {
+      "label": "NAICS 541512",
+      "href": "/insights/naics/541512/"
+    },
+    {
+      "label": "NAICS 541519",
+      "href": "/insights/naics/541519/"
+    },
+    {
+      "label": "Top government contractors",
+      "href": "/insights/top-government-contractors/"
+    },
+    {
+      "label": "Top small-business contractors",
+      "href": "/insights/top-small-business-government-contractors/"
+    },
+    {
+      "label": "Federal spending by agency",
+      "href": "/insights/federal-spending-by-agency/"
+    }
+  ],
+  "sources": [
+    {
+      "label": "USAspending.gov award data",
+      "href": "https://www.usaspending.gov"
+    }
+  ]
+}

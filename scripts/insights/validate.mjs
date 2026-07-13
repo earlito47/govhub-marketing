@@ -13,7 +13,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { readFileSync, readdirSync, statSync, existsSync } from 'node:fs';
 import { execFileSync } from 'node:child_process';
-import { formatUsdCompact, formatPercent, formatInt } from './lib/format.mjs';
+import { findNumberViolations, narrativeText } from './lib/verify-numbers.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 const REPO_ROOT = path.resolve(path.dirname(__filename), '../..');
@@ -21,12 +21,6 @@ const DATA_DIR = path.join(REPO_ROOT, 'src/data/insights');
 
 const CHART_TYPES = new Set(['line', 'bar']);
 const PAGE_TYPES = new Set(['naics', 'agency', 'state', 'ranking', 'report']);
-const MONEY_COL = /obligation|amount|value|dollar|spend|ceiling/i;
-
-function round1(n) {
-  return Math.round(n * 10) / 10;
-}
-
 // ---- Schema validation ----------------------------------------------------
 function validateSchema(page, id) {
   const e = [];
@@ -62,73 +56,6 @@ function validateSchema(page, id) {
   if (!Array.isArray(page.faq)) e.push(`${id}: faq must be an array`);
   if (!Array.isArray(page.sources) || page.sources.length === 0) e.push(`${id}: sources must be a non-empty array`);
   return e;
-}
-
-// ---- Number verification (anti-hallucination) -----------------------------
-// Build the set of number strings the page's own facts can justify, then require
-// every $/%/comma-grouped token in the narrative to be one of them.
-function allowedNumberStrings(page) {
-  const money = new Set();
-  const pct = new Set();
-  const ints = new Set();
-  const total = page.stats?.totalObligations ?? 0;
-
-  const addMoney = (v) => {
-    if (typeof v === 'number' && Number.isFinite(v)) {
-      const f = formatUsdCompact(v);
-      if (f) money.add(f);
-      if (total > 0) {
-        const p = formatPercent(round1((Math.abs(v) / total) * 100));
-        if (p) pct.add(p);
-      }
-    }
-  };
-
-  addMoney(page.stats?.totalObligations);
-  addMoney(page.stats?.avgAwardSize);
-  for (const c of page.charts ?? []) {
-    if (c.unit === 'usd') for (const [, v] of c.series?.[0]?.points ?? []) addMoney(v);
-  }
-  for (const t of page.tables ?? []) {
-    const moneyCols = t.columns.map((c) => MONEY_COL.test(c));
-    for (const row of t.rows) row.forEach((cell, i) => { if (moneyCols[i] && typeof cell === 'number') addMoney(cell); });
-  }
-
-  for (const k of ['yoyGrowthPct', 'smallBusinessSharePct']) {
-    const v = page.stats?.[k];
-    if (typeof v === 'number') { const p = formatPercent(Math.abs(v)); if (p) pct.add(p); }
-  }
-  const ac = formatInt(page.stats?.awardCount);
-  if (ac) ints.add(ac);
-
-  return { money, pct, ints };
-}
-
-function narrativeText(page) {
-  const parts = [page.narrative?.intro ?? ''];
-  for (const s of page.narrative?.sections ?? []) parts.push(s.heading, s.body);
-  for (const f of page.faq ?? []) parts.push(f.q, f.a);
-  for (const c of page.charts ?? []) if (c.takeaway) parts.push(c.takeaway);
-  return parts.join('  ');
-}
-
-function verifyNumbers(page, id) {
-  const { money, pct, ints } = allowedNumberStrings(page);
-  const text = narrativeText(page);
-  const violations = [];
-
-  const norm = (s) => s.replace(/\s/g, '').toUpperCase();
-  const moneyAllowed = new Set([...money].map(norm));
-  for (const tok of text.match(/\$\s?\d[\d,]*(?:\.\d+)?\s?[BMK]?/g) ?? []) {
-    if (!moneyAllowed.has(norm(tok))) violations.push(`${id}: unverifiable dollar figure "${tok.trim()}"`);
-  }
-  for (const tok of text.match(/\d+(?:\.\d+)?%/g) ?? []) {
-    if (!pct.has(tok)) violations.push(`${id}: unverifiable percentage "${tok}"`);
-  }
-  for (const tok of text.match(/\b\d{1,3}(?:,\d{3})+\b/g) ?? []) {
-    if (!ints.has(tok)) violations.push(`${id}: unverifiable figure "${tok}"`);
-  }
-  return violations;
 }
 
 // ---- Regression vs the committed baseline ---------------------------------
@@ -208,10 +135,10 @@ function runSelfTest() {
     faq: [],
     sources: [{ label: 'x', href: 'y' }],
   };
-  const clean = verifyNumbers(validPage, 'valid');
+  const clean = findNumberViolations(narrativeText(validPage), validPage);
   const poisoned = structuredClone(validPage);
   poisoned.narrative.intro = 'Federal agencies obligated $999B across 4,110 contract awards, a 250% surge.';
-  const dirty = verifyNumbers(poisoned, 'poison');
+  const dirty = findNumberViolations(narrativeText(poisoned), poisoned);
 
   const okClean = clean.length === 0;
   const okPoison = dirty.length > 0;
@@ -248,7 +175,7 @@ function main() {
       continue;
     }
     errors.push(...validateSchema(page, id));
-    errors.push(...verifyNumbers(page, id));
+    errors.push(...findNumberViolations(narrativeText(page), page).map((v) => `${id}: ${v}`));
   }
   errors.push(...checkRegression(files));
 

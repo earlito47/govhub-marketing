@@ -42,6 +42,19 @@ const naicsPages = import.meta.glob<{ default: InsightsPage }>('../../data/insig
 const agencyPages = import.meta.glob<{ default: InsightsPage }>('../../data/insights/agency/*.json', { eager: true });
 const statePages = import.meta.glob<{ default: InsightsPage }>('../../data/insights/state/*.json', { eager: true });
 const reportPages = import.meta.glob<{ default: InsightsPage }>('../../data/insights/reports/*/*.json', { eager: true });
+const rankingPages = import.meta.glob<{ default: InsightsPage }>('../../data/insights/rankings/*.json', { eager: true });
+
+const RANKING_ORDER = [
+  'top-government-contractors',
+  'federal-spending-by-agency',
+  'federal-spending-by-state',
+  'top-small-business-government-contractors',
+  'government-contracts-by-naics',
+  'largest-federal-contracts-fy2026',
+];
+const rankingCards = Object.values(rankingPages)
+  .map((m) => ({ slug: m.default.slug, label: m.default.h1.split(' — ')[0], href: `/insights/${m.default.slug}/` }))
+  .sort((a, b) => RANKING_ORDER.indexOf(a.slug) - RANKING_ORDER.indexOf(b.slug));
 
 // Latest week's reports for the "this week" strip on the hub.
 const REPORT_SHORT: Record<string, string> = {
@@ -98,6 +111,16 @@ const updated = [...Object.values(agencyPages), ...Object.values(statePages), ..
         {latestReports.map((r) => (
           <li><a href={`/insights/reports/${r.week}/${r.slug}/`}>{REPORT_SHORT[r.slug] ?? r.slug}</a></li>
         ))}
+      </ul>
+    </section>
+  )}
+
+  {rankingCards.length > 0 && (
+    <section id="rankings" aria-labelledby="rankings-heading">
+      <h2 id="rankings-heading">Featured rankings</h2>
+      <p class="section-lede">The big picture: who wins the most, which agencies and states spend the most, and the largest contracts in play.</p>
+      <ul class="ranking-links">
+        {rankingCards.map((c) => (<li><a href={c.href}>{c.label}</a></li>))}
       </ul>
     </section>
   )}
@@ -191,6 +214,17 @@ const updated = [...Object.values(agencyPages), ...Object.values(statePages), ..
     display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem;
   }
   .report-links a { color: var(--gh-maroon-600); font-weight: 600; }
+  .ranking-links {
+    list-style: none; padding: 0; margin: 1.25rem 0 0;
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 0.6rem;
+  }
+  .ranking-links a {
+    display: block; padding: 0.9rem 1.1rem;
+    background: var(--gh-surface); border: 1px solid var(--gh-line);
+    border-radius: var(--gh-radius-sm); box-shadow: var(--gh-shadow-card);
+    color: var(--gh-teal-700); font-weight: 600;
+  }
+  .ranking-links a:hover { text-decoration: none; border-color: var(--gh-teal-600); }
   .section-lede { color: var(--fg-muted); max-width: 44rem; margin: 0.35rem 0 0; }
   .card-grid {
     list-style: none;
