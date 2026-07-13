@@ -16,6 +16,7 @@
     "insights:pilot": "node scripts/insights/run-pilot.mjs",
     "insights:entities": "node scripts/insights/run-entities.mjs",
     "insights:rankings": "node scripts/insights/build-rankings.mjs",
+    "insights:narratives": "node scripts/insights/generate-narratives.mjs",
     "insights:weekly": "node scripts/insights/run-weekly.mjs",
     "insights:validate": "node scripts/insights/validate.mjs"
   },

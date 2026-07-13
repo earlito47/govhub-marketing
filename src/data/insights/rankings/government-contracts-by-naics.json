@@ -326,13 +326,22 @@
     }
   ],
   "narrative": {
-    "intro": "The largest federal contract markets by industry (NAICS) in FY2026 to date, led by Commercial and Institutional Building Construction at $39.7B. The top 30 industries account for $369B in obligations. Explore any market for its top vendors, buying agencies, and multi-year trend.",
-    "sections": []
+    "intro": "Total federal obligations for FY2026 to date were $369B. The largest NAICS markets by contract value are led by Commercial and Institutional Building Construction at $39.7B, followed by Aircraft Manufacturing at $31.6B, Facilities Support Services at $30.3B, and Engineering Services at $30.1B. Other significant sectors include Direct Health and Medical Insurance Carriers ($27B), Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology) ($25.4B), and Guided Missile and Space Vehicle Manufacturing ($23.1B). Computer Systems Design Services ($18.5B), Ship Building and Repairing ($15.2B), and Other Computer Related Services ($13.1B) round out the top ten. These figures represent total award values, which are full contract values and not single-year obligations. The ranking reflects where federal contract dollars have been allocated by NAICS through FY2026 to date and shows concentration in construction, aerospace, services, and R&D-related manufacturing and services.",
+    "sections": [
+      {
+        "heading": "Which NAICS sectors received the most federal contract dollars?",
+        "body": "Commercial and Institutional Building Construction received $39.7B, the largest single-sector contract total. Aerospace-related manufacturing appears prominently with Aircraft Manufacturing at $31.6B and Guided Missile and Space Vehicle Manufacturing at $23.1B. Service and professional sectors also account for large totals, including Facilities Support Services at $30.3B and Engineering Services at $30.1B."
+      },
+      {
+        "heading": "How concentrated are federal contracts across the top NAICS markets?",
+        "body": "The top ten NAICS markets together account for substantial portions of total obligations, with individual sector totals ranging from $39.7B down to $13.1B. The list includes construction, manufacturing, health insurance carriers, R&D, systems design, shipbuilding, and related services, indicating spending across both goods and services categories. Remember that the reported amounts are full contract values, not single-year obligations."
+      }
+    ]
   },
   "faq": [
     {
       "q": "What are the biggest federal contracting industries?",
-      "a": "By obligations in FY2026 to date, Commercial and Institutional Building Construction leads with $39.7B. Rankings use NAICS industry codes from USAspending.gov."
+      "a": "The biggest federal contracting industries by contract value include Commercial and Institutional Building Construction ($39.7B), Aircraft Manufacturing ($31.6B), Facilities Support Services ($30.3B), and Engineering Services ($30.1B). Other top industries are Direct Health and Medical Insurance Carriers ($27B), Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology) ($25.4B), Guided Missile and Space Vehicle Manufacturing ($23.1B), Computer Systems Design Services ($18.5B), Ship Building and Repairing ($15.2B), and Other Computer Related Services ($13.1B). These figures are total award values, representing full contract values rather than single-year obligations."
     }
   ],
   "related": [

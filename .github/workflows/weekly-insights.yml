@@ -13,8 +13,10 @@
 #     (spec Section 3). If it uses direct upload instead, add a final
 #     `cloudflare/wrangler-action` step with `wrangler pages deploy ./dist`
 #     and the CLOUDFLARE_API_TOKEN / CLOUDFLARE_ACCOUNT_ID secrets.
-#   - OPENAI_API_KEY is not used yet; it is added when the LLM narrative stage
-#     (generate-narratives.mjs) lands.
+#   - OPENAI_API_KEY (optional): add it as a repo Actions secret to enable the
+#     LLM narrative stage. Without it the pipeline runs fine on deterministic
+#     fallback narratives — the LLM stage self-skips. Use a low monthly spend
+#     cap; ~75 short generations/week is cents.
 #
 # Trigger it manually first (Actions → weekly-insights → Run workflow) and
 # confirm a clean run before relying on the schedule. A failed run commits
@@ -52,8 +54,13 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Refresh Insights data (fetch + compute)
+      - name: Refresh Insights data (fetch + compute + LLM narratives)
         run: npm run insights:weekly
+        env:
+          # Optional: enables the LLM narrative stage. Absent → deterministic
+          # fallbacks (the stage self-skips). Every LLM number is verified or
+          # discarded, and validate.mjs re-checks below.
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
 
       - name: Validate (commit gate)
         run: npm run insights:validate
