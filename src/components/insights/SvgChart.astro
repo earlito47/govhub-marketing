@@ -36,13 +36,42 @@ const barPlotW = BW - plotX - valueColW;
 const barMax = Math.max(...points.map((p) => p[1]), 1);
 const BH = padTop + points.length * rowStride + padBottom;
 
+// Federal contractor/agency legal names routinely run 30–45 chars, which a
+// single truncated line would clip ("TRIWEST HEALTHCARE ALLI…"). Instead wrap
+// long labels onto up to two lines at word boundaries so the full name shows;
+// only an extreme third-line overflow (very rare) falls back to an ellipsis.
+const LABEL_MAX_LINE = 28;
+const wrapLabel = (s: string): string[] => {
+  if (s.length <= LABEL_MAX_LINE) return [s];
+  const words = s.split(' ');
+  const lines: string[] = [];
+  let cur = '';
+  for (const word of words) {
+    const next = cur ? `${cur} ${word}` : word;
+    if (cur && next.length > LABEL_MAX_LINE) {
+      lines.push(cur);
+      cur = word;
+    } else {
+      cur = next;
+    }
+  }
+  if (cur) lines.push(cur);
+  if (lines.length > 2) {
+    // Collapse any overflow into the second line, then ellipsize if needed.
+    let second = lines.slice(1).join(' ');
+    if (second.length > LABEL_MAX_LINE) second = `${second.slice(0, LABEL_MAX_LINE - 1)}…`;
+    return [lines[0], second];
+  }
+  return lines;
+};
+
 const bars = points.map((p, i) => {
   const rowY = padTop + i * rowStride;
   const cy = rowY + rowStride / 2;
   const w = barPlotW * (p[1] / barMax);
   const rawLabel = p[0];
-  const label = rawLabel.length > 24 ? `${rawLabel.slice(0, 23)}…` : rawLabel;
-  return { i, cy, barY: cy - barH / 2, w, label, rawLabel, value: fmt(p[1]) };
+  const lines = wrapLabel(rawLabel);
+  return { i, cy, barY: cy - barH / 2, w, lines, rawLabel, value: fmt(p[1]) };
 });
 
 // ---- Line (trend) geometry ----
@@ -86,7 +115,14 @@ const last = linePts[n - 1];
           ) : (
             <text class="rank-plain" x="18" y={b.cy} text-anchor="middle" dominant-baseline="central">{b.i + 1}</text>
           )}
-          <text class="bar-label" x="40" y={b.cy} dominant-baseline="central">{b.label}</text>
+          {b.lines.length === 1 ? (
+            <text class="bar-label" x="40" y={b.cy} dominant-baseline="central">{b.lines[0]}</text>
+          ) : (
+            <text class="bar-label" x="40" y={b.cy} dominant-baseline="central">
+              <tspan x="40" dy="-0.55em">{b.lines[0]}</tspan>
+              <tspan x="40" dy="1.1em">{b.lines[1]}</tspan>
+            </text>
+          )}
           <rect class="bar-track" x={plotX} y={b.barY} width={barPlotW} height={barH} rx="5" />
           <rect class="bar-fill" x={plotX} y={b.barY} width={Math.max(b.w, 2)} height={barH} rx="5" style={`animation-delay:${b.i * 40}ms`} />
           <text class="bar-value" x={plotX + Math.max(b.w, 2) + 8} y={b.cy} dominant-baseline="central">{b.value}</text>
@@ -155,7 +191,7 @@ const last = linePts[n - 1];
   /* Bars */
   .bar-track { fill: var(--gh-ink-900); opacity: 0.06; }
   .bar-fill { fill: var(--gh-gold-400); }
-  .bar-label { fill: var(--gh-ink-900); font-size: 13px; font-weight: 500; }
+  .bar-label { fill: var(--gh-ink-900); font-size: 12px; font-weight: 500; }
   .bar-value { fill: var(--gh-ink-900); font-size: 14px; font-weight: 700; }
   .rank-badge { fill: var(--gh-gold-400); }
   .rank-badge-num { fill: var(--gh-ink-900); font-size: 12px; font-weight: 700; }

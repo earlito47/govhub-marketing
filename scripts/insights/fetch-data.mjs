@@ -167,6 +167,7 @@ export async function fetchEntityRaw(client, { kind, slug, name, baseFilter, cat
 const CATEGORY_DIMS = {
   agency: ['naics', 'recipient_duns'],
   state: ['awarding_agency', 'recipient_duns', 'naics'],
+  setaside: ['awarding_agency', 'recipient_duns', 'naics'],
 };
 
 export function agencyBaseFilter(name) {
@@ -177,12 +178,20 @@ export function stateBaseFilter(code) {
   return { place_of_performance_locations: [{ country: 'USA', state: code }] };
 }
 
+export function setasideBaseFilter(codes) {
+  return { set_aside_type_codes: codes };
+}
+
 export async function fetchAgencyRaw(client, { slug, name, asOfDate }) {
   return fetchEntityRaw(client, { kind: 'agency', slug, name, baseFilter: agencyBaseFilter(name), categoryDims: CATEGORY_DIMS.agency, asOfDate });
 }
 
 export async function fetchStateRaw(client, { slug, name, code, asOfDate }) {
   return fetchEntityRaw(client, { kind: 'state', slug, name, baseFilter: stateBaseFilter(code), categoryDims: CATEGORY_DIMS.state, asOfDate });
+}
+
+export async function fetchSetasideRaw(client, { slug, name, codes, asOfDate }) {
+  return fetchEntityRaw(client, { kind: 'setaside', slug, name, baseFilter: setasideBaseFilter(codes), categoryDims: CATEGORY_DIMS.setaside, asOfDate });
 }
 
 async function main() {

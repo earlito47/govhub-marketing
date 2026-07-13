@@ -21,6 +21,8 @@ import {
   relatedAgencyLinks,
   stateName,
   relatedStateLinks,
+  setaside,
+  relatedSetasideLinks,
 } from './lib/slugs.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -481,6 +483,119 @@ export function computeStatePage({ slug, raw, updated }) {
     narrative: { intro: buildIntro(`In ${ctx.fyLabel}, federal agencies obligated`, ctx), sections },
     faq,
     related: relatedStateLinks(slug),
+    sources: SOURCES,
+  };
+}
+
+export function computeSetasidePage({ slug, raw, updated }) {
+  const meta = setaside(slug);
+  const name = meta?.name ?? slug;
+  const abbr = meta?.abbr ?? slug;
+  const blurb = meta?.blurb ?? 'set-aside contracts';
+  // Avoid redundant "HUBZone (HUBZone)" / "8(a) Business Development (8(a))".
+  const fullName = abbr && abbr !== name && !name.includes(abbr) ? `${name} (${abbr})` : name;
+  const ctx = entityStats(raw);
+  const total$ = formatUsdCompact(ctx.totalObligations);
+  const agencies = dimOf(raw, 'awarding_agency', ctx.totalObligations);
+  const vendors = dimOf(raw, 'recipient_duns', ctx.totalObligations);
+  const naics = dimOf(raw, 'naics', ctx.totalObligations);
+
+  const charts = [
+    trendChart(slug, ctx, `Federal agencies obligated`),
+    barChart(
+      `${slug}-top-agencies`,
+      `Top 10 buying agencies, ${ctx.fyLabel}`,
+      agencies,
+      agencies.top
+        ? `${agencies.top.name} awarded the most ${abbr} set-aside dollars, obligating ${formatUsdCompact(agencies.top.amount)}${
+            agencies.top.sharePct ? ` (${formatPercent(agencies.top.sharePct)} of the program total)` : ''
+          }.`
+        : null
+    ),
+    barChart(
+      `${slug}-top-vendors`,
+      `Top 10 vendors, ${ctx.fyLabel}`,
+      vendors,
+      vendors.top
+        ? `${vendors.top.name} led all ${abbr} set-aside contractors with ${formatUsdCompact(vendors.top.amount)}${
+            vendors.top.sharePct ? `, ${formatPercent(vendors.top.sharePct)} of the program total` : ''
+          }.`
+        : null
+    ),
+    barChart(
+      `${slug}-top-naics`,
+      `Top 10 industries (NAICS), ${ctx.fyLabel}`,
+      naics,
+      naics.top ? `${naics.top.name} was the largest ${abbr} set-aside industry, with ${formatUsdCompact(naics.top.amount)} obligated.` : null
+    ),
+  ];
+
+  const sections = [];
+  if (agencies.top) {
+    sections.push({
+      heading: `Which agencies award the most ${abbr} set-aside contracts?`,
+      body: `${agencies.top.name} awarded the most dollars through ${name} set-asides in ${ctx.fyLabel}, obligating ${formatUsdCompact(
+        agencies.top.amount
+      )}${agencies.top.sharePct ? `, or ${formatPercent(agencies.top.sharePct)} of the program total` : ''}.`,
+    });
+  }
+  if (vendors.top) {
+    sections.push({
+      heading: `Who are the top ${abbr} set-aside contractors?`,
+      body: `${vendors.top.name} led all ${name} set-aside contractors with ${formatUsdCompact(
+        vendors.top.amount
+      )} in obligations during ${ctx.fyLabel}${vendors.top.sharePct ? `, a ${formatPercent(vendors.top.sharePct)} share` : ''}.`,
+    });
+  }
+  if (naics.top) {
+    sections.push({
+      heading: `What is bought through ${abbr} set-asides?`,
+      body: `${naics.top.name} was the largest industry awarded under ${name} set-asides in ${ctx.fyLabel}, with ${formatUsdCompact(
+        naics.top.amount
+      )} obligated${naics.top.sharePct ? `, or ${formatPercent(naics.top.sharePct)} of the program total` : ''}.`,
+    });
+  }
+
+  const awardsClause = ctx.awardCount ? `, across ${ctx.awardCount.toLocaleString('en-US')} awards` : '';
+  const faq = [
+    {
+      q: `How much does the federal government award through ${abbr} set-asides?`,
+      a: `Federal agencies obligated ${total$} through ${fullName} set-aside contracts in ${ctx.fyLabel}${awardsClause}.`,
+    },
+    agencies.top && {
+      q: `Which agencies use ${abbr} set-asides the most?`,
+      a: `${agencies.top.name} awarded the most ${abbr} set-aside dollars in ${ctx.fyLabel}, with ${formatUsdCompact(agencies.top.amount)} obligated.`,
+    },
+    vendors.top && {
+      q: `Who are the largest ${abbr} set-aside contractors?`,
+      a: `${vendors.top.name} is the largest ${name} set-aside contractor by obligated dollars in ${ctx.fyLabel}, with ${formatUsdCompact(
+        vendors.top.amount
+      )}.`,
+    },
+  ].filter(Boolean);
+
+  return {
+    pageType: 'setaside',
+    slug,
+    title: `${abbr} Set-Aside Contracts: ${total$ ?? 'FY Data'} in ${fiscalYearLabel(ctx.currentFy)}`,
+    h1: `${name} Set-Aside Federal Contracts`,
+    metaDescription: `Federal agencies obligated ${
+      total$ ?? 'contract dollars'
+    } through ${fullName} set-aside contracts in ${ctx.fyLabel} — ${blurb}. See top agencies, vendors, and industries.`.slice(0, 158),
+    updated,
+    fyWindow: { label: ctx.fyLabel, start: raw.currentFyRange.start, end: raw.asOfDate },
+    stats: {
+      totalObligations: ctx.totalObligations,
+      awardCount: ctx.awardCount,
+      yoyGrowthPct: ctx.yoyGrowthPct,
+      avgAwardSize: ctx.avgAwardSize,
+      smallBusinessSharePct: null,
+    },
+    charts,
+    tables: [vendorTable(vendors), largestAwardsTable(raw, ctx.fyLabel, true)],
+    narrative: { intro: buildIntro(`In ${ctx.fyLabel}, federal agencies obligated`, ctx), sections },
+    faq,
+    related: relatedSetasideLinks(slug),
     sources: SOURCES,
   };
 }

@@ -20,7 +20,7 @@ const REPO_ROOT = path.resolve(path.dirname(__filename), '../..');
 const DATA_DIR = path.join(REPO_ROOT, 'src/data/insights');
 
 const CHART_TYPES = new Set(['line', 'bar']);
-const PAGE_TYPES = new Set(['naics', 'agency', 'state', 'ranking', 'report']);
+const PAGE_TYPES = new Set(['naics', 'agency', 'state', 'setaside', 'ranking', 'report']);
 // ---- Schema validation ----------------------------------------------------
 function validateSchema(page, id) {
   const e = [];

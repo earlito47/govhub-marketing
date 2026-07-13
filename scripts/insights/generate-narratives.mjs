@@ -21,7 +21,7 @@ const REPO_ROOT = path.resolve(path.dirname(__filename), '../..');
 const DATA_DIR = path.join(REPO_ROOT, 'src/data/insights');
 // Reports are deterministic + immutable; only enrich the evergreen page types.
 // INSIGHTS_KINDS can narrow the set (comma-separated) for testing.
-const KINDS = process.env.INSIGHTS_KINDS ? process.env.INSIGHTS_KINDS.split(',') : ['naics', 'agency', 'state', 'rankings'];
+const KINDS = process.env.INSIGHTS_KINDS ? process.env.INSIGHTS_KINDS.split(',') : ['naics', 'agency', 'state', 'setaside', 'rankings'];
 const MODEL = process.env.INSIGHTS_LLM_MODEL || 'gpt-5-mini';
 const CONCURRENCY = 4;
 

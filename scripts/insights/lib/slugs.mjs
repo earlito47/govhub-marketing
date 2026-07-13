@@ -4,13 +4,48 @@
 // (so the `agencies` filter matches exactly); state codes are USPS two-letter.
 
 // ---- NAICS ----------------------------------------------------------------
+// Census 2022 classification titles. Codes chosen for federal-contracting
+// weight across the major buying families — IT/professional services (541),
+// facilities/support (561), construction (23), defense manufacturing (334/336),
+// and health (325/339/621). Every code was verified to return non-zero FY2026
+// obligations live before being added.
 export const NAICS_TITLES = {
+  // Professional, scientific & technical services (541)
   '541511': 'Custom Computer Programming Services',
   '541512': 'Computer Systems Design Services',
   '541519': 'Other Computer Related Services',
+  '541330': 'Engineering Services',
+  '541715': 'Research and Development in the Physical, Engineering, and Life Sciences',
+  '541611': 'Administrative Management and General Management Consulting Services',
+  '541618': 'Other Management Consulting Services',
+  '541690': 'Other Scientific and Technical Consulting Services',
+  '541990': 'All Other Professional, Scientific, and Technical Services',
+  '541380': 'Testing Laboratories',
+  // Administrative & support services (561)
+  '561210': 'Facilities Support Services',
+  '561612': 'Security Guards and Patrol Services',
+  '561720': 'Janitorial Services',
+  '561110': 'Office Administrative Services',
+  // Construction (23)
+  '236220': 'Commercial and Institutional Building Construction',
+  '237310': 'Highway, Street, and Bridge Construction',
+  '238210': 'Electrical Contractors and Other Wiring Installation Contractors',
+  // Defense & transportation-equipment manufacturing (334/336)
+  '336411': 'Aircraft Manufacturing',
+  '336412': 'Aircraft Engine and Engine Parts Manufacturing',
+  '336611': 'Ship Building and Repairing',
+  '334511': 'Search, Detection, Navigation, Guidance, Aeronautical, and Nautical System and Instrument Manufacturing',
+  // Health & life sciences (325/339/621)
+  '325412': 'Pharmaceutical Preparation Manufacturing',
+  '339112': 'Surgical and Medical Instrument Manufacturing',
+  '621511': 'Medical Laboratories',
+  // Education & training (611)
+  '611430': 'Professional and Management Development Training',
 };
 
-export const PILOT_NAICS_CODES = Object.keys(NAICS_TITLES);
+export const NAICS_CODES = Object.keys(NAICS_TITLES);
+// Back-compat alias: the pipeline entry points still import this name.
+export const PILOT_NAICS_CODES = NAICS_CODES;
 
 export function naicsHref(code) {
   return `/insights/naics/${code}/`;
@@ -20,8 +55,14 @@ export function naicsTitle(code) {
   return NAICS_TITLES[code] ?? code;
 }
 
-export function relatedNaicsLinks(code) {
-  return PILOT_NAICS_CODES.filter((c) => c !== code).map((c) => ({
+export function relatedNaicsLinks(code, limit = 6) {
+  // Prefer codes in the same 3-digit subsector (e.g. all 541xxx together), then
+  // fill the rest from other families, so the block is relevant but capped.
+  const prefix = code.slice(0, 3);
+  const others = NAICS_CODES.filter((c) => c !== code);
+  const sameFamily = others.filter((c) => c.slice(0, 3) === prefix);
+  const rest = others.filter((c) => c.slice(0, 3) !== prefix);
+  return [...sameFamily, ...rest].slice(0, limit).map((c) => ({
     label: `NAICS ${c}: ${naicsTitle(c)}`,
     href: naicsHref(c),
   }));
@@ -171,4 +212,65 @@ export function relatedStateLinks(slug, limit = 6) {
   return STATE_SLUGS.filter((s) => s !== slug)
     .slice(0, limit)
     .map((s) => ({ label: `${stateName(s)} federal contracts`, href: stateHref(s) }));
+}
+
+// ---- Set-aside programs (typeofsetaside) -----------------------------------
+// slug -> program metadata. `codes` are the FPDS type-of-set-aside codes the
+// USAspending `set_aside_type_codes` filter accepts (verified live 2026-07-13:
+// each group returned non-zero FY2026 obligations). `name` is the full program
+// name; `short`/`abbr` drive SERP titles and breadcrumbs.
+export const SET_ASIDES = {
+  '8a': {
+    name: '8(a) Business Development',
+    short: '8(a)',
+    abbr: '8(a)',
+    codes: ['8A', '8AN'],
+    blurb:
+      'contracts reserved for firms in the SBA 8(a) Business Development program (set-aside and sole-source)',
+  },
+  wosb: {
+    name: 'Women-Owned Small Business',
+    short: 'WOSB',
+    abbr: 'WOSB',
+    codes: ['WOSB', 'WOSBSS', 'EDWOSB', 'EDWOSBSS'],
+    blurb:
+      'contracts set aside for women-owned and economically disadvantaged women-owned small businesses (WOSB/EDWOSB)',
+  },
+  sdvosb: {
+    name: 'Service-Disabled Veteran-Owned Small Business',
+    short: 'SDVOSB',
+    abbr: 'SDVOSB',
+    codes: ['SDVOSBC', 'SDVOSBS'],
+    blurb:
+      'contracts set aside for service-disabled veteran-owned small businesses (set-aside and sole-source)',
+  },
+  hubzone: {
+    name: 'HUBZone',
+    short: 'HUBZone',
+    abbr: 'HUBZone',
+    codes: ['HZC', 'HZS'],
+    blurb:
+      'contracts set aside for firms certified in the SBA HUBZone program (set-aside and sole-source)',
+  },
+};
+
+export const SET_ASIDE_SLUGS = Object.keys(SET_ASIDES);
+
+export function setasideHref(slug) {
+  return `/insights/set-aside/${slug}/`;
+}
+
+export function setaside(slug) {
+  return SET_ASIDES[slug] ?? null;
+}
+
+export function setasideName(slug) {
+  return SET_ASIDES[slug]?.name ?? slug;
+}
+
+export function relatedSetasideLinks(slug) {
+  return SET_ASIDE_SLUGS.filter((s) => s !== slug).map((s) => ({
+    label: `${SET_ASIDES[s].name} set-aside contracts`,
+    href: setasideHref(s),
+  }));
 }

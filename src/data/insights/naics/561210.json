@@ -1,0 +1,555 @@
+{
+  "pageType": "naics",
+  "slug": "561210",
+  "title": "NAICS 561210 Government Contracts: $30.3B in FY2026",
+  "h1": "NAICS 561210: Facilities Support Services — Federal Contract Market",
+  "metaDescription": "Federal agencies obligated $30.3B on Facilities Support Services (NAICS 561210) in FY2026 to date. See top vendors, top agencies, and trends.",
+  "updated": "2026-07-13",
+  "fyWindow": {
+    "label": "FY2026 to date",
+    "start": "2025-10-01",
+    "end": "2026-07-13"
+  },
+  "stats": {
+    "totalObligations": 30334374006.44,
+    "awardCount": 10509,
+    "yoyGrowthPct": -18.2,
+    "avgAwardSize": 2886514,
+    "smallBusinessSharePct": null
+  },
+  "charts": [
+    {
+      "id": "561210-trend",
+      "type": "line",
+      "title": "Obligations by fiscal year",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "FY21",
+              31791942023.44
+            ],
+            [
+              "FY22",
+              34051249434.71
+            ],
+            [
+              "FY23",
+              36514226494.2
+            ],
+            [
+              "FY24",
+              37500411779.02
+            ],
+            [
+              "FY25",
+              37098820121.65
+            ],
+            [
+              "FY26",
+              30334374006.44
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Obligations fell 18.2% year over year, from $37.1B in FY2025 to $30.3B in FY2026 to date."
+    },
+    {
+      "id": "561210-top-agencies",
+      "type": "bar",
+      "title": "Top 10 buying agencies, FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "Department of Energy",
+              23243153582.52
+            ],
+            [
+              "Department of Defense",
+              4400312592.16
+            ],
+            [
+              "General Services Administration",
+              533841713.63
+            ],
+            [
+              "Department of Homeland Security",
+              426343495.28
+            ],
+            [
+              "National Aeronautics and Space Administration",
+              315455843.99
+            ],
+            [
+              "Department of Veterans Affairs",
+              309465324.66
+            ],
+            [
+              "Department of State",
+              292943087.72
+            ],
+            [
+              "Department of Health and Human Services",
+              204829565.63
+            ],
+            [
+              "Department of Justice",
+              202628586.88
+            ],
+            [
+              "National Science Foundation",
+              98135418.07
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Department of Energy was the top buyer, obligating $23.2B (76.6% of all obligations)."
+    },
+    {
+      "id": "561210-top-vendors",
+      "type": "bar",
+      "title": "Top 10 vendors, FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "TRIAD NATIONAL SECURITY, LLC",
+              5117188851.9
+            ],
+            [
+              "NATIONAL TECHNOLOGY & ENGINEERING SOLUTIONS OF SANDIA, LLC",
+              4537005905.79
+            ],
+            [
+              "SAVANNAH RIVER NUCLEAR SOLUTIONS LLC",
+              3335233273.33
+            ],
+            [
+              "CONSOLIDATED NUCLEAR SECURITY, LLC",
+              2931709064.03
+            ],
+            [
+              "UT-BATTELLE LLC",
+              2419040597.28
+            ],
+            [
+              "HONEYWELL FEDERAL MANUFACTURING & TECHNOLOGIES, LLC",
+              2035920872.4
+            ],
+            [
+              "PANTEXAS DETERRENCE, LLC",
+              1602699239.37
+            ],
+            [
+              "MISSION SUPPORT & TEST SERVICES LLC",
+              913416389.65
+            ],
+            [
+              "VECTRUS SYSTEMS LLC",
+              585989071.24
+            ],
+            [
+              "STRATEGIC STORAGE PARTNERS, LLC.",
+              424026016.47
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "TRIAD NATIONAL SECURITY, LLC led all vendors with $5.1B in obligations, 16.9% of the market."
+    }
+  ],
+  "tables": [
+    {
+      "title": "Top 10 vendors",
+      "columns": [
+        "Rank",
+        "Vendor",
+        "Obligations"
+      ],
+      "rows": [
+        [
+          1,
+          {
+            "text": "TRIAD NATIONAL SECURITY, LLC",
+            "href": "https://www.usaspending.gov/recipient/59ab4d30-abec-ded6-33c4-5d9f37fd2da0-C/latest/"
+          },
+          5117188851.9
+        ],
+        [
+          2,
+          {
+            "text": "NATIONAL TECHNOLOGY & ENGINEERING SOLUTIONS OF SANDIA, LLC",
+            "href": "https://www.usaspending.gov/recipient/b52d549e-73f7-a818-8c63-4a75904c9df5-C/latest/"
+          },
+          4537005905.79
+        ],
+        [
+          3,
+          {
+            "text": "SAVANNAH RIVER NUCLEAR SOLUTIONS LLC",
+            "href": "https://www.usaspending.gov/recipient/f59302ac-85a9-ee1a-4813-9b07f3377a40-C/latest/"
+          },
+          3335233273.33
+        ],
+        [
+          4,
+          {
+            "text": "CONSOLIDATED NUCLEAR SECURITY, LLC",
+            "href": "https://www.usaspending.gov/recipient/3c1a340d-2613-1609-93ce-eb1aba0559b5-C/latest/"
+          },
+          2931709064.03
+        ],
+        [
+          5,
+          {
+            "text": "UT-BATTELLE LLC",
+            "href": "https://www.usaspending.gov/recipient/c236f280-8198-3109-89dd-96eca764ec43-C/latest/"
+          },
+          2419040597.28
+        ],
+        [
+          6,
+          {
+            "text": "HONEYWELL FEDERAL MANUFACTURING & TECHNOLOGIES, LLC",
+            "href": "https://www.usaspending.gov/recipient/9e9725ba-e023-684e-6d7f-f9de4201578f-C/latest/"
+          },
+          2035920872.4
+        ],
+        [
+          7,
+          {
+            "text": "PANTEXAS DETERRENCE, LLC",
+            "href": "https://www.usaspending.gov/recipient/eb9633b3-ae3d-e77a-dcb7-80d93fab5b0e-C/latest/"
+          },
+          1602699239.37
+        ],
+        [
+          8,
+          {
+            "text": "MISSION SUPPORT & TEST SERVICES LLC",
+            "href": "https://www.usaspending.gov/recipient/f624bb0c-c85e-d8e7-ce74-b8080a10bce6-C/latest/"
+          },
+          913416389.65
+        ],
+        [
+          9,
+          {
+            "text": "VECTRUS SYSTEMS LLC",
+            "href": "https://www.usaspending.gov/recipient/385c148c-559c-6218-53ff-80836c64dc4c-C/latest/"
+          },
+          585989071.24
+        ],
+        [
+          10,
+          {
+            "text": "STRATEGIC STORAGE PARTNERS, LLC.",
+            "href": "https://www.usaspending.gov/recipient/29f8770f-29d1-0aa4-1daa-18700b83e162-C/latest/"
+          },
+          424026016.47
+        ]
+      ]
+    },
+    {
+      "title": "Largest awards, FY2026 to date",
+      "columns": [
+        "Rank",
+        "Recipient",
+        "Award Amount",
+        "Awarding Agency"
+      ],
+      "rows": [
+        [
+          1,
+          {
+            "text": "LOCKHEED MARTIN CORP",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_DEAC0494AL85000_8900_-NONE-_-NONE-/"
+          },
+          48063737196.35,
+          "Department of Energy"
+        ],
+        [
+          2,
+          {
+            "text": "NATIONAL TECHNOLOGY & ENGINEERING SOLUTIONS OF SANDIA, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_DENA0003525_8900_-NONE-_-NONE-/"
+          },
+          42571358867.68,
+          "Department of Energy"
+        ],
+        [
+          3,
+          {
+            "text": "UT-BATTELLE LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_DEAC0500OR22725_8900_-NONE-_-NONE-/"
+          },
+          42096094266.96,
+          "Department of Energy"
+        ],
+        [
+          4,
+          {
+            "text": "TRIAD NATIONAL SECURITY, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_89233218CNA000001_8900_-NONE-_-NONE-/"
+          },
+          35040435873.75,
+          "Department of Energy"
+        ],
+        [
+          5,
+          {
+            "text": "CONSOLIDATED NUCLEAR SECURITY, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_DENA0001942_8900_-NONE-_-NONE-/"
+          },
+          34256470772.89,
+          "Department of Energy"
+        ],
+        [
+          6,
+          {
+            "text": "SAVANNAH RIVER NUCLEAR SOLUTIONS LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_DEAC0908SR22470_8900_-NONE-_-NONE-/"
+          },
+          27551935999.46,
+          "Department of Energy"
+        ],
+        [
+          7,
+          {
+            "text": "LOS ALAMOS NATIONAL SECURITY LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_DEAC5206NA25396_8900_-NONE-_-NONE-/"
+          },
+          27420180285.12,
+          "Department of Energy"
+        ],
+        [
+          8,
+          {
+            "text": "LOCKHEED MARTIN SERVICES, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_DEAC0584OR21400_8900_-NONE-_-NONE-/"
+          },
+          20646113720.09,
+          "Department of Energy"
+        ],
+        [
+          9,
+          {
+            "text": "HONEYWELL FEDERAL MANUFACTURING & TECHNOLOGIES, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_DENA0002839_8900_-NONE-_-NONE-/"
+          },
+          17488650862.28,
+          "Department of Energy"
+        ],
+        [
+          10,
+          {
+            "text": "MISSION SUPPORT & TEST SERVICES LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_DENA0003624_8900_-NONE-_-NONE-/"
+          },
+          7621715102.82,
+          "Department of Energy"
+        ],
+        [
+          11,
+          {
+            "text": "AMENTUM SERVICES, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_0004_9700_W52P1J07D0007_9700/"
+          },
+          7376022275.01,
+          "Department of Defense"
+        ],
+        [
+          12,
+          {
+            "text": "NATIONAL SECURITY TECHNOLOGIES, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_DEAC5206NA25946_8900_-NONE-_-NONE-/"
+          },
+          5633229761.95,
+          "Department of Energy"
+        ],
+        [
+          13,
+          {
+            "text": "VECTRUS SYSTEMS LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W52P1J10C0062_9700_-NONE-_-NONE-/"
+          },
+          4815704492.89,
+          "Department of Defense"
+        ],
+        [
+          14,
+          {
+            "text": "PANTEXAS DETERRENCE, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_89233224CNA000004_8900_-NONE-_-NONE-/"
+          },
+          3537634605.97,
+          "Department of Energy"
+        ],
+        [
+          15,
+          {
+            "text": "LEIDOS, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_NSFDACS1219442_4900_-NONE-_-NONE-/"
+          },
+          3088721029.93,
+          "National Science Foundation"
+        ],
+        [
+          16,
+          {
+            "text": "BAE SYSTEMS ORDNANCE SYSTEMS INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_DAAA0998E0006_9700_-NONE-_-NONE-/"
+          },
+          2318321852.92,
+          "Department of Defense"
+        ],
+        [
+          17,
+          {
+            "text": "XATOR LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_19AQMM23F0766_1900_19AQMM19D0119_1900/"
+          },
+          2309491422.64,
+          "Department of State"
+        ],
+        [
+          18,
+          {
+            "text": "KBR SERVICES, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W52P1J19F0394_9700_W52P1J19D0044_9700/"
+          },
+          2292772781.18,
+          "Department of Defense"
+        ],
+        [
+          19,
+          {
+            "text": "VECTRUS SYSTEMS LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W52P1J19F0400_9700_W52P1J19D0045_9700/"
+          },
+          2203610702.76,
+          "Department of Defense"
+        ],
+        [
+          20,
+          {
+            "text": "WASHINGTON TRU SOLUTIONS LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_DEAC2901AL66444_8900_-NONE-_-NONE-/"
+          },
+          2007900739.8,
+          "Department of Energy"
+        ],
+        [
+          21,
+          {
+            "text": "FLUOR FEDERAL PETROLEUM OPERATIONS, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_DEFE0011020_8900_-NONE-_-NONE-/"
+          },
+          1996329703.46,
+          "Department of Energy"
+        ],
+        [
+          22,
+          {
+            "text": "KBR SERVICES, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W52P1J21F0454_9700_W52P1J19D0044_9700/"
+          },
+          1654082845.44,
+          "Department of Defense"
+        ],
+        [
+          23,
+          {
+            "text": "VECTRUS SYSTEMS LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W52P1J19F0402_9700_W52P1J19D0045_9700/"
+          },
+          1493875576.56,
+          "Department of Defense"
+        ],
+        [
+          24,
+          {
+            "text": "AMENTUM SERVICES, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_0003_9700_W52P1J12G0028_9700/"
+          },
+          1263404926.59,
+          "Department of Defense"
+        ],
+        [
+          25,
+          {
+            "text": "AMENTUM SERVICES, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_0002_9700_W52P1J12G0028_9700/"
+          },
+          1196275495.68,
+          "Department of Defense"
+        ]
+      ]
+    }
+  ],
+  "narrative": {
+    "intro": "NAICS 561210 federal contract obligations total $30.3B in FY2026 to date. Obligations fell 18.2% year over year. The market delivered 10,509 awards so far this fiscal year, with an average award size of $2.9M. Year-to-year totals peaked earlier in the decade at $37.5B in FY24 and recorded $37.1B in FY25; FY23, FY22, and FY21 were $36.5B, $34.1B, and $31.8B respectively. The FY2026 to date total of $30.3B is lower than each of the previous five fiscal years listed. Large departmental concentrations are evident in the buyer list, with a single agency accounting for the majority of FY2026 to date obligations. The top vendors list shows several multi-billion-dollar incumbents active in this NAICS, alongside smaller firms with obligations in the hundreds of millions. These figures reflect contract obligations only and represent fiscal year to date totals for the current year.",
+    "sections": [
+      {
+        "heading": "Which agencies are the largest buyers of NAICS 561210 services?",
+        "body": "The Department of Energy is the largest buyer, with $23.2B in FY2026 to date obligations. The Department of Defense follows with $4.4B, and the General Services Administration accounts for $534M. Other notable buyers include the Department of Homeland Security at $426M and NASA at $315M."
+      },
+      {
+        "heading": "Who are the largest contractors in the NAICS 561210 federal market?",
+        "body": "TRIAD NATIONAL SECURITY, LLC is the largest contractor with $5.1B in FY2026 to date obligations. Other top contractors include NATIONAL TECHNOLOGY & ENGINEERING SOLUTIONS OF SANDIA, LLC with $4.5B and SAVANNAH RIVER NUCLEAR SOLUTIONS LLC with $3.3B. Additional major vendors are CONSOLIDATED NUCLEAR SECURITY, LLC at $2.9B and UT-BATTELLE LLC at $2.4B."
+      }
+    ]
+  },
+  "faq": [
+    {
+      "q": "How much does the federal government spend on NAICS 561210?",
+      "a": "The federal government has obligated $30.3B on NAICS 561210 in FY2026 to date. There were 10,509 awards and the average award size was $2.9M; obligations are down 18.2% year over year. Historical annual obligations were $37.5B in FY24, $37.1B in FY25, $36.5B in FY23, $34.1B in FY22, and $31.8B in FY21."
+    },
+    {
+      "q": "Which agencies buy the most NAICS 561210 services?",
+      "a": "The Department of Energy, with $23.2B in FY2026 to date obligations, is the largest buyer of NAICS 561210 services. The Department of Defense follows with $4.4B, then the General Services Administration with $534M, and other buyers include DHS ($426M) and NASA ($315M)."
+    },
+    {
+      "q": "Who are the largest NAICS 561210 government contractors?",
+      "a": "TRIAD NATIONAL SECURITY, LLC is the largest NAICS 561210 contractor with $5.1B in FY2026 to date obligations. Other leading contractors include NATIONAL TECHNOLOGY & ENGINEERING SOLUTIONS OF SANDIA, LLC ($4.5B), SAVANNAH RIVER NUCLEAR SOLUTIONS LLC ($3.3B), and CONSOLIDATED NUCLEAR SECURITY, LLC ($2.9B)."
+    }
+  ],
+  "related": [
+    {
+      "label": "NAICS 561110: Office Administrative Services",
+      "href": "/insights/naics/561110/"
+    },
+    {
+      "label": "NAICS 561612: Security Guards and Patrol Services",
+      "href": "/insights/naics/561612/"
+    },
+    {
+      "label": "NAICS 561720: Janitorial Services",
+      "href": "/insights/naics/561720/"
+    },
+    {
+      "label": "NAICS 236220: Commercial and Institutional Building Construction",
+      "href": "/insights/naics/236220/"
+    },
+    {
+      "label": "NAICS 237310: Highway, Street, and Bridge Construction",
+      "href": "/insights/naics/237310/"
+    },
+    {
+      "label": "NAICS 238210: Electrical Contractors and Other Wiring Installation Contractors",
+      "href": "/insights/naics/238210/"
+    }
+  ],
+  "sources": [
+    {
+      "label": "USAspending.gov award data",
+      "href": "https://www.usaspending.gov"
+    }
+  ]
+}
