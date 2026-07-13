@@ -1,0 +1,45 @@
+---
+// Flagship ranking pages at clean top-level URLs (/insights/<slug>/), spec
+// Section 8. One page per file in src/data/insights/rankings/. Static routes
+// (index, methodology) take priority; this only generates the ranking slugs.
+import type { GetStaticPaths } from 'astro';
+import type { InsightsPage } from '../../lib/insightsTypes';
+import InsightsLayout from '../../components/insights/InsightsLayout.astro';
+import RankingPage from '../../components/insights/RankingPage.astro';
+
+export const getStaticPaths = (() => {
+  const files = import.meta.glob<{ default: InsightsPage }>('../../data/insights/rankings/*.json', { eager: true });
+  return Object.entries(files).map(([p, mod]) => {
+    const slug = p.split('/').pop()!.replace('.json', '');
+    return { params: { ranking: slug }, props: { page: mod.default } };
+  });
+}) satisfies GetStaticPaths;
+
+interface Props {
+  page: InsightsPage;
+}
+
+const { page } = Astro.props;
+const canonical = new URL(`/insights/${page.slug}/`, Astro.site).toString();
+---
+
+<InsightsLayout
+  title={page.title}
+  description={page.metaDescription}
+  dataset={{
+    name: page.h1,
+    description: page.metaDescription,
+    dateModified: page.updated,
+    temporalCoverage: `${page.fyWindow.start}/${page.fyWindow.end}`,
+    url: canonical,
+  }}
+>
+  <RankingPage
+    page={page}
+    breadcrumbs={[
+      { name: 'Home', url: '/' },
+      { name: 'Insights', url: '/insights/' },
+      { name: page.h1.split(' — ')[0], url: `/insights/${page.slug}/` },
+    ]}
+  />
+</InsightsLayout>

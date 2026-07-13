@@ -14,6 +14,7 @@ import { UsaSpendingClient } from './lib/usaspending.mjs';
 import { fetchNaicsRaw } from './fetch-data.mjs';
 import { computeNaicsPage } from './compute-stats.mjs';
 import { generateEntities } from './run-entities.mjs';
+import { buildRankings } from './build-rankings.mjs';
 import { buildWeeklyReports } from './build-weekly-report.mjs';
 import { PILOT_NAICS_CODES } from './lib/slugs.mjs';
 import { fiscalYearOf, fiscalYearRange, fiscalYearLabel } from './lib/format.mjs';
@@ -50,6 +51,10 @@ async function main() {
   await generateNaics({ client, asOfDate, summary });
   await generateEntities({ client, asOfDate, summary });
 
+  // Flagship rankings — evergreen top-N pages, refreshed each week (spec 7.2).
+  const rankings = await buildRankings({ client, asOfDate });
+  console.log(`[ok]   rankings — ${rankings.count} flagship pages`);
+
   // Weekly reports — 4 dated, immutable pages for the current week (spec 6.5).
   const report = await buildWeeklyReports({ client, asOfDate });
   console.log(`[ok]   reports/${report.week} — ${report.count} reports (week of ${report.label})`);
@@ -59,12 +64,17 @@ async function main() {
   // it is not picked up by the per-type page globs or the validator.
   const currentFy = fiscalYearOf(asOfDate);
   const fyRange = fiscalYearRange(currentFy);
-  const counts = { naics: countPages('naics'), agency: countPages('agency'), state: countPages('state') };
+  const counts = {
+    naics: countPages('naics'),
+    agency: countPages('agency'),
+    state: countPages('state'),
+    rankings: countPages('rankings'),
+  };
   const meta = {
     lastSuccessfulRun: asOfDate,
     fyWindow: { label: `${fiscalYearLabel(currentFy)} to date`, start: fyRange.start, end: asOfDate },
     pipelineVersion: PIPELINE_VERSION,
-    counts: { ...counts, total: counts.naics + counts.agency + counts.state },
+    counts: { ...counts, total: counts.naics + counts.agency + counts.state + counts.rankings },
   };
   await writeFile(path.join(DATA_DIR, 'meta.json'), JSON.stringify(meta, null, 2), 'utf8');
 

@@ -21,7 +21,10 @@ export const getStaticPaths = (() => {
   };
   for (const mod of Object.values(entityFiles)) {
     const page = mod.default;
-    add(page, `/insights/${page.pageType}/${page.slug}/`);
+    // Rankings live at clean top-level URLs (/insights/<slug>/); entity pages
+    // are nested under their kind (/insights/<kind>/<slug>/).
+    const parentPath = page.pageType === 'ranking' ? `/insights/${page.slug}/` : `/insights/${page.pageType}/${page.slug}/`;
+    add(page, parentPath);
   }
   for (const mod of Object.values(reportFiles)) {
     const page = mod.default;
