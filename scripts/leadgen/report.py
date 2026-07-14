@@ -10,11 +10,24 @@ COVERAGE_FIELDS = ["email", "phone", "contact_person", "website",
                    "sba_certs", "poc_name", "uei"]
 
 
+def _fmt_phone(v):
+    """Digit strings -> '(xxx) xxx-xxxx' text so Excel can't mangle them into floats."""
+    s = str(v or "").strip()
+    d = re.sub(r"\D", "", s.split(".")[0])
+    if len(d) == 11 and d.startswith("1"):
+        d = d[1:]
+    if len(d) == 10:
+        return f"({d[:3]}) {d[3:6]}-{d[6:]}"
+    return s
+
+
 def _clean(df):
     df = df.copy()
     for col in df.columns:
         if df[col].dtype == object:
             df[col] = df[col].map(lambda v: _ILLEGAL.sub("", v) if isinstance(v, str) else v)
+    if "phone" in df.columns:
+        df["phone"] = df["phone"].map(_fmt_phone)
     return df
 
 

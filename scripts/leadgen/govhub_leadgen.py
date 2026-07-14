@@ -222,8 +222,8 @@ def enrich(df, top_n, use_sam=True, use_tomba=True, tomba_budget=80, verbose=Tru
                 sub.at[idx, "email"], sub.at[idx, "email_source"] = t["email"], "tomba"
                 if t.get("email_name") and not sub.at[idx, "contact_person"]:
                     sub.at[idx, "contact_person"] = t["email_name"]
-                sub.at[idx, "tomba_position"] = t.get("email_position", "")
-                sub.at[idx, "tomba_score"] = t.get("email_score", "")
+                sub.at[idx, "tomba_position"] = str(t.get("email_position") or "")
+                sub.at[idx, "tomba_score"] = str(t.get("email_score") or "")
                 sub.at[idx, "tomba_accept_all"] = "Y" if t.get("accept_all") else ""
         if verbose:
             print(f"    Tomba searches spent this run: <= {spent}", flush=True)
