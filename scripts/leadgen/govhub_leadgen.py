@@ -1,17 +1,25 @@
 #!/usr/bin/env python3
 """GovHub Lead Engine — ICP company list + contacts from free federal data.
 
-Layer 1   USASpending (no key)      WHO wins contracts, how often, how big
+Layer 1   USASpending (no key)      WHO wins contracts (prime + sub), how often
 Layer 2   SBA certification search  email / phone / contact person (free, no key)
 Layer 2b  SAM.gov entity API        website / certs / POC name (needs SAM_API_KEY;
                                     POC email+phone are FOUO-gated on public keys)
 Layer 3   Tomba domain search       fallback emails where registries had none
                                     (TOMBA_API_KEY, budget-capped)
 
+Segments (--segment):
+  primes      serial bidders, 18mo lookback, $100k-25M       (tiers A/B/C/D)
+  new-primes  small biz whose FIRST award landed in the last
+              12 months, $100k-2M                            (tier N)
+  subs        subcontractors from FSRS subaward reports,
+              12 months; sub-only firms sorted first         (tiers S/SP)
+  all         all three, cross-deduped, one tab each
+
     pip install -r requirements.txt
-    python govhub_leadgen.py --probe        # tiny sample, shows real field yields first
-    python govhub_leadgen.py --count        # volume only, no rows
-    python govhub_leadgen.py --full --enrich-top 500 --tomba-budget 80 -o out/leads.xlsx
+    python govhub_leadgen.py --probe [--segment subs]
+    python govhub_leadgen.py --count --segment all
+    python govhub_leadgen.py --full --segment all --enrich-top 500 -o out/leads.xlsx
 """
 import argparse
 import json
@@ -45,7 +53,7 @@ NAICS = [
     "236220",  # Commercial Building Construction
     "237310",  # Highway/Street/Bridge Construction
     "238220",  # Plumbing/HVAC Contractors
-    "621111",  # Offices of Physicians (VA work)
+    "621111",  # Offices of Physicians (VA work; NB pulls individual doctors too)
     "611430",  # Professional & Management Training
 ]
 
@@ -53,6 +61,20 @@ NAICS = [
 # Above the ceiling: they have a captured proposal team and use Deltek.
 MIN_AWARD = 100_000
 MAX_AWARD = 25_000_000
+
+NEW_PRIME_BAND = (100_000, 2_000_000)  # server-side rough cut; re-gated client-side
+SUB_BAND = (30_000, 5_000_000)         # client-side only (server ignores it on subs)
+
+TIER_ORDER = [
+    "N - new prime",       # first prime win in the last 12 months
+    "S - sub only",        # subcontractor, zero prime awards ever (prime-curious)
+    "A - serial bidder",   # 3+ prime wins in window
+    "B - repeat bidder",
+    "SP - sub + prime",
+    "S? - unknown",        # sub without UEI; prime history unverifiable
+    "C - occasional",
+    "D - review",
+]
 
 # ---------------------------------------------------------------------------
 
@@ -76,8 +98,17 @@ def _naics_code(v):
     return str(v or "")
 
 
+def sort_tiered(df, cadence_col="award_count", amount_col="total_awarded"):
+    df = df.copy()
+    df["_rank"] = df["tier"].map(lambda t: TIER_ORDER.index(t) if t in TIER_ORDER else 99)
+    df = (df.sort_values(["_rank", cadence_col, amount_col],
+                         ascending=[True, False, False])
+            .drop(columns="_rank").reset_index(drop=True))
+    return df
+
+
 def roll_up(award_rows):
-    """Awards -> one row per company (keyed by UEI), with a proposal-cadence signal."""
+    """Prime awards -> one row per company (keyed by UEI), with a cadence signal."""
     seen_awards = set()
     by = defaultdict(lambda: {
         "name": "", "uei": "", "recipient_id": "", "awards": 0, "total": 0.0,
@@ -96,7 +127,6 @@ def roll_up(award_rows):
         c = by[key]
         c["name"] = c["name"] or name
         c["uei"] = c["uei"] or uei
-        c["recipient_id"] = c["recipient_id"] or (a.get("recipient_id") or "")
         c["awards"] += 1
         c["total"] += float(a.get("Award Amount") or 0)
         if a.get("Awarding Agency"):
@@ -126,9 +156,80 @@ def roll_up(award_rows):
             "tier": tier_of(c["awards"], c["total"]),
         })
     df = pd.DataFrame(out)
+    return df if df.empty else sort_tiered(df)
+
+
+def roll_up_subs(sub_rows, min_sub=SUB_BAND[0], max_sub=SUB_BAND[1]):
+    """Subaward rows -> one row per subcontractor. Dollar band applied here
+    because the server ignores award_amount on subaward queries."""
+    seen = set()
+    by = defaultdict(lambda: {
+        "name": "", "uei": "", "count": 0, "total": 0.0,
+        "primes": set(), "agencies": set(), "naics": set(), "last": "",
+    })
+    for a in sub_rows:
+        rid = f"{a.get('internal_id')}|{a.get('prime_award_internal_id')}"
+        if rid in seen:
+            continue
+        seen.add(rid)
+        amt = float(a.get("Sub-Award Amount") or 0)
+        if not (min_sub <= amt <= max_sub):
+            continue
+        name = (a.get("Sub-Awardee Name") or "").strip()
+        if not name:
+            continue
+        uei = (a.get("Sub-Recipient UEI") or "").strip()
+        c = by[uei or name.upper()]
+        c["name"] = c["name"] or name
+        c["uei"] = c["uei"] or uei
+        c["count"] += 1
+        c["total"] += amt
+        if a.get("Prime Recipient Name"):
+            c["primes"].add(a["Prime Recipient Name"])
+        if a.get("Awarding Agency"):
+            c["agencies"].add(a["Awarding Agency"])
+        code = _naics_code(a.get("NAICS"))
+        if code:
+            c["naics"].add(code)
+        sd = a.get("Sub-Award Date") or ""
+        if sd > c["last"]:
+            c["last"] = sd
+
+    out = []
+    for c in by.values():
+        out.append({
+            "company": c["name"],
+            "uei": c["uei"],
+            "sub_award_count": c["count"],
+            "sub_total": round(c["total"], 2),
+            "last_sub_date": c["last"],
+            "primes_worked_under": "; ".join(sorted(c["primes"]))[:250],
+            "agency_count": len(c["agencies"]),
+            "agencies": "; ".join(sorted(c["agencies"]))[:250],
+            "naics": "; ".join(sorted(c["naics"]))[:120],
+            "never_prime": "",
+            "tier": "",
+        })
+    df = pd.DataFrame(out)
     if df.empty:
         return df
-    return df.sort_values(["tier", "award_count"], ascending=[True, False]).reset_index(drop=True)
+    return df.sort_values(["sub_award_count", "sub_total"],
+                          ascending=[False, False]).reset_index(drop=True)
+
+
+def tier_subs(cands, verbose=True):
+    """1 cached count-request per sub: has this company EVER won a prime?"""
+    for i, (idx, row) in enumerate(cands.iterrows(), 1):
+        pc = usaspending.prime_award_count(row["uei"])
+        if pc == 0:
+            cands.at[idx, "tier"], cands.at[idx, "never_prime"] = "S - sub only", "Y"
+        elif pc is None:
+            cands.at[idx, "tier"], cands.at[idx, "never_prime"] = "S? - unknown", ""
+        else:
+            cands.at[idx, "tier"], cands.at[idx, "never_prime"] = "SP - sub + prime", "N"
+        if verbose and i % 100 == 0:
+            print(f"    {i}/{len(cands)} prime-history checks", flush=True)
+    return sort_tiered(cands, "sub_award_count", "sub_total")
 
 
 # --- enrichment waterfall ---------------------------------------------------
@@ -139,36 +240,43 @@ CONTACT_COLS = ["email", "email_source", "phone", "phone_source", "contact_perso
                 "tomba_accept_all"]
 
 
-def enrich(df, top_n, use_sam=True, use_tomba=True, tomba_budget=80, verbose=True):
-    sub = df.head(top_n).copy()
+def enrich_contacts(sub, use_sam=True, use_tomba=True, tomba_budget=80,
+                    name_fallback=False, verbose=True):
+    """Waterfall over an already-sliced candidate df:
+    SBA by UEI -> SBA by exact name (subs) -> SAM (if key+quota) -> Tomba."""
+    sub = sub.copy()
     for col in CONTACT_COLS:
         sub[col] = ""
     sub["email_source"] = "none"
     sub["phone_source"] = "none"
 
-    # Layer 2: SBA certification search (free) — the primary email/phone source
     if verbose:
-        print(f"\n  SBA lookups on {len(sub)} companies (free, cached)...", flush=True)
+        print(f"  SBA lookups on {len(sub)} companies (free, cached)...", flush=True)
     sba_hits = 0
     for i, (idx, row) in enumerate(sub.iterrows(), 1):
+        src = "sba"
         p = enrich_sba.sba_profile(row["uei"])
+        if not p.get("found") and name_fallback:
+            p = enrich_sba.match_by_name(row["company"])
+            src = "sba-name"
         if p.get("found"):
             sba_hits += 1
             if p.get("email"):
-                sub.at[idx, "email"], sub.at[idx, "email_source"] = p["email"], "sba"
+                sub.at[idx, "email"], sub.at[idx, "email_source"] = p["email"], src
             if p.get("phone"):
-                sub.at[idx, "phone"], sub.at[idx, "phone_source"] = p["phone"], "sba"
+                sub.at[idx, "phone"], sub.at[idx, "phone_source"] = p["phone"], src
             sub.at[idx, "contact_person"] = p.get("contact_person", "")
             sub.at[idx, "website"] = p.get("website", "")
             sub.at[idx, "sba_certs"] = "; ".join(p.get("certs") or [])
             sub.at[idx, "city"] = p.get("city", "")
             sub.at[idx, "state_hq"] = p.get("state", "")
-        if verbose and i % 50 == 0:
+            if not sub.at[idx, "uei"] and p.get("uei"):
+                sub.at[idx, "uei"] = p["uei"]
+        if verbose and i % 100 == 0:
             print(f"    {i}/{len(sub)} ({sba_hits} SBA profiles found)", flush=True)
     if verbose:
         print(f"    done: {sba_hits}/{len(sub)} have an SBA profile", flush=True)
 
-    # Layer 2b: SAM.gov — only if a key is present; fills website/POC/certs gaps
     key = enrich_sam.sam_key()
     if use_sam and key:
         todo = [r["uei"] for _, r in sub.iterrows() if r["uei"] and not r["website"]]
@@ -195,9 +303,8 @@ def enrich(df, top_n, use_sam=True, use_tomba=True, tomba_budget=80, verbose=Tru
         except enrich_sam.SamQuota as e:
             print(f"  ! SAM quota reached, continuing without it: {e}", file=sys.stderr)
     elif use_sam and verbose:
-        print("  SAM layer dormant (no SAM_API_KEY set) — websites/POC names skipped for non-SBA firms.")
+        print("  SAM layer dormant (no SAM_API_KEY set).")
 
-    # Layer 3: Tomba — only for rows that still lack an email but have a domain
     kv = enrich_tomba.creds() if use_tomba else None
     if kv:
         q = enrich_tomba.quota(kv)
@@ -233,6 +340,53 @@ def enrich(df, top_n, use_sam=True, use_tomba=True, tomba_budget=80, verbose=Tru
     return sub
 
 
+# --- segment builders --------------------------------------------------------
+
+def build_primes(args):
+    print(f"  primes: {len(NAICS)} NAICS x up to {args.pages_per_naics or 30} pages, "
+          f"{args.months}mo, ${MIN_AWARD:,}-${MAX_AWARD:,}")
+    awards = usaspending.pull_awards(NAICS, args.months, MIN_AWARD, MAX_AWARD,
+                                     pages_per_naics=args.pages_per_naics or 30,
+                                     states=args.states)
+    cos = roll_up(awards)
+    print(f"  {len(awards):,} award rows -> {len(cos):,} unique companies")
+    return cos
+
+
+def build_new_primes(args):
+    lo, hi = NEW_PRIME_BAND
+    pages = args.pages_per_naics or 170
+    print(f"  new-primes: 12mo, ${lo:,}-${hi:,}, small_business + new_awards_only, "
+          f"up to {pages} pages/NAICS")
+    awards = usaspending.pull_awards(NAICS, 12, lo, hi, pages_per_naics=pages,
+                                     states=args.states, date_type="new_awards_only",
+                                     recipient_types=["small_business"])
+    cos = roll_up(awards)
+    if cos.empty:
+        return cos
+    # server band is loose ($0 and >cap rows slip through) -> re-gate client-side
+    cos = cos[cos["total_awarded"] > 0].copy()
+    one = (cos["award_count"] == 1) & (cos["total_awarded"] < hi)
+    cos.loc[one, "tier"] = "N - new prime"
+    cos = sort_tiered(cos)
+    print(f"  {len(awards):,} award rows -> {len(cos):,} companies "
+          f"({int(one.sum()):,} are 1-award new primes)")
+    return cos
+
+
+def build_subs(args):
+    pages = args.pages_per_naics or 60
+    print(f"  subs: 12mo of FSRS subawards, band ${SUB_BAND[0]:,}-${SUB_BAND[1]:,} "
+          f"client-side, up to {pages} pages/NAICS")
+    rows = usaspending.pull_subawards(NAICS, 12, pages_per_naics=pages)
+    cos = roll_up_subs(rows)
+    print(f"  {len(rows):,} subaward rows -> {len(cos):,} unique subcontractors")
+    return cos
+
+
+SEGMENT_TABS = {"primes": "Companies", "new-primes": "New Primes", "subs": "Subcontractors"}
+
+
 # --- CLI modes ---------------------------------------------------------------
 
 def cmd_probe(args):
@@ -241,7 +395,8 @@ def cmd_probe(args):
                                      pages_per_naics=3)
     print(f"  got {len(awards)} award rows")
     if not awards:
-        print("  ! nothing came back — check filters/network"); return
+        print("  ! nothing came back — check filters/network")
+        return
     print("\n  sample award row:")
     print("  " + json.dumps(awards[0], indent=2, default=str)[:700].replace("\n", "\n  "))
 
@@ -252,17 +407,30 @@ def cmd_probe(args):
              .to_string(index=False))
 
     print("\n  SBA probe on 8 UEIs — WATCH email/phone:")
-    shown_keys = False
     for _, r in cos[cos["uei"] != ""].head(8).iterrows():
         p = enrich_sba.sba_profile(r["uei"])
-        if p.get("found") and not shown_keys:
-            print(f"    [profile fields available: {', '.join(p.get('raw_keys') or [])[:400]}]")
-            shown_keys = True
         status = ("NOT IN DSBS" if p.get("not_found")
                   else f"email={p.get('email') or '(none)'}  phone={p.get('phone') or '(none)'}  "
                        f"contact={p.get('contact_person') or '(none)'}  certs={','.join(p.get('certs') or []) or '-'}"
                   if p.get("found") else f"ERROR {p.get('error')}")
         print(f"    {r['company'][:38]:<40} {status}")
+
+    if args.segment in ("subs", "all"):
+        print("\n  SUBAWARD probe — 1 page of NAICS 541512 subs:")
+        srows = usaspending.pull_subawards(["541512"], 12, pages_per_naics=1, verbose=False)
+        print(f"    got {len(srows)} sub rows")
+        for a in srows[:3]:
+            print(f"    {str(a.get('Sub-Awardee Name'))[:34]:<36} uei={a.get('Sub-Recipient UEI')} "
+                  f"${float(a.get('Sub-Award Amount') or 0):,.0f} under {str(a.get('Prime Recipient Name'))[:24]}")
+        # page 1 desc is all mega-subs; skip the band here just to demo the flow
+        subs = roll_up_subs(srows, min_sub=0, max_sub=float("inf"))
+        if subs.empty:
+            print("    (roll-up empty)")
+        for _, r in subs[subs["uei"] != ""].head(3).iterrows():
+            pc = usaspending.prime_award_count(r["uei"])
+            p = enrich_sba.sba_profile(r["uei"])
+            email = p.get("email") if p.get("found") else "(no SBA profile)"
+            print(f"    {r['company'][:34]:<36} primes_ever={pc} sba_email={email or '(none)'}")
 
     key = enrich_sam.sam_key()
     if key:
@@ -292,33 +460,82 @@ def cmd_probe(args):
 
 
 def cmd_count(args):
-    print("COUNT — matching award volume (no row pulls)...")
-    total = usaspending.count_awards(NAICS, args.months, MIN_AWARD, MAX_AWARD, args.states)
-    print(f"  all 14 NAICS combined: {json.dumps(total)}")
-    for code in NAICS:
-        c = usaspending.count_awards([code], args.months, MIN_AWARD, MAX_AWARD, args.states)
-        print(f"  {code}: {c.get('contracts', 0):>8,} contracts")
+    print("COUNT — matching volumes (no row pulls)...")
+    if args.segment in ("primes", "all"):
+        c = usaspending.count_awards(NAICS, args.months, MIN_AWARD, MAX_AWARD, args.states)
+        print(f"  primes ({args.months}mo, $100k-25M):            {c.get('contracts', 0):>8,} contracts")
+    if args.segment in ("new-primes", "all"):
+        lo, hi = NEW_PRIME_BAND
+        c = usaspending.count_awards(NAICS, 12, lo, hi, args.states,
+                                     date_type="new_awards_only",
+                                     recipient_types=["small_business"])
+        print(f"  new-primes (12mo, $100k-2M, small biz, new):    {c.get('contracts', 0):>8,} contracts")
+    if args.segment in ("subs", "all"):
+        c = usaspending.count_subawards(NAICS, 12)
+        print(f"  subs (12mo FSRS subawards, pre-band):           {c.get('subcontracts', c.get('contracts', 0)):>8,} subawards")
+    if args.segment != "all":
+        print("  per-NAICS:")
+        for code in NAICS:
+            if args.segment == "subs":
+                c = usaspending.count_subawards([code], 12)
+                n = c.get("subcontracts", c.get("contracts", 0))
+            elif args.segment == "new-primes":
+                lo, hi = NEW_PRIME_BAND
+                c = usaspending.count_awards([code], 12, lo, hi, args.states,
+                                             date_type="new_awards_only",
+                                             recipient_types=["small_business"])
+                n = c.get("contracts", 0)
+            else:
+                c = usaspending.count_awards([code], args.months, MIN_AWARD, MAX_AWARD, args.states)
+                n = c.get("contracts", 0)
+            print(f"    {code}: {n:>8,}")
 
 
 def cmd_full(args):
-    print(f"FULL PULL — {len(NAICS)} NAICS x up to {args.pages_per_naics} pages each")
-    awards = usaspending.pull_awards(NAICS, args.months, MIN_AWARD, MAX_AWARD,
-                                     pages_per_naics=args.pages_per_naics, states=args.states)
-    cos = roll_up(awards)
-    print(f"  {len(awards):,} award rows -> {len(cos):,} unique companies")
-    print(cos["tier"].value_counts().to_string())
+    segs = ["primes", "new-primes", "subs"] if args.segment == "all" else [args.segment]
+    sheets, universes = {}, []
+    seen_ueis = set()
 
-    enriched = enrich(cos, args.enrich_top, use_sam=not args.no_sam,
-                      use_tomba=not args.no_tomba, tomba_budget=args.tomba_budget)
+    for seg in segs:
+        print(f"\n=== SEGMENT: {seg} ===")
+        df = {"primes": build_primes, "new-primes": build_new_primes,
+              "subs": build_subs}[seg](args)
+        if df.empty:
+            print("  (no rows)")
+            continue
+        if seen_ueis:
+            before = len(df)
+            df = df[(df["uei"] == "") | ~df["uei"].isin(seen_ueis)].reset_index(drop=True)
+            if len(df) != before:
+                print(f"  cross-segment dedupe: dropped {before - len(df):,} "
+                      f"companies already enriched in an earlier tab")
 
+        cands = df.head(args.enrich_top).copy()
+        rest = df.iloc[len(cands):]
+        if seg == "subs":
+            print(f"  prime-history check on {len(cands)} subs (1 cached request each)...")
+            cands = tier_subs(cands)
+            print(cands["tier"].value_counts().to_string())
+        else:
+            print(cands["tier"].value_counts().to_string())
+
+        enriched = enrich_contacts(cands, use_sam=not args.no_sam,
+                                   use_tomba=not args.no_tomba,
+                                   tomba_budget=args.tomba_budget,
+                                   name_fallback=(seg == "subs"))
+        seen_ueis.update(u for u in enriched["uei"] if u)
+        sheets[SEGMENT_TABS[seg]] = enriched
+        r = rest.copy()
+        r.insert(0, "segment", SEGMENT_TABS[seg])
+        universes.append(r)
+
+    if not sheets:
+        print("nothing to write")
+        return
     out = Path(args.out)
     out.parent.mkdir(parents=True, exist_ok=True)
-    # full universe on one tab is too big to be useful; ship enriched + the rest compactly
-    rest = cos.iloc[len(enriched):]
-    cov = report.build_workbook(enriched, out)
-    if not rest.empty:
-        with pd.ExcelWriter(out, engine="openpyxl", mode="a") as xl:
-            rest.to_excel(xl, sheet_name="Universe (unenriched)", index=False)
+    universe = pd.concat(universes, ignore_index=True) if universes else None
+    cov = report.build_workbook(sheets, out, universe=universe)
 
     print(f"\n  wrote {out}")
     print("\nCOVERAGE (the honesty tab):")
@@ -326,17 +543,23 @@ def cmd_full(args):
 
 
 def main():
-    ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap = argparse.ArgumentParser(description=__doc__,
+                                 formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--probe", action="store_true", help="tiny sample + live field-yield check")
     ap.add_argument("--count", action="store_true", help="award volumes only")
     ap.add_argument("--full", action="store_true", help="the real pull + enrichment + workbook")
-    ap.add_argument("--enrich-top", type=int, default=500)
-    ap.add_argument("--tomba-budget", type=int, default=80, help="max Tomba domain searches this run")
+    ap.add_argument("--segment", choices=["primes", "new-primes", "subs", "all"],
+                    default="primes")
+    ap.add_argument("--enrich-top", type=int, default=500, help="companies enriched per segment")
+    ap.add_argument("--tomba-budget", type=int, default=80,
+                    help="max Tomba domain searches per segment run")
     ap.add_argument("--no-sam", action="store_true")
     ap.add_argument("--no-tomba", action="store_true")
-    ap.add_argument("--months", type=int, default=18)
-    ap.add_argument("--pages-per-naics", type=int, default=30)
-    ap.add_argument("--states", nargs="*", default=None, help='e.g. --states GA TX VA MD')
+    ap.add_argument("--months", type=int, default=18,
+                    help="primes lookback (new-primes/subs are fixed at 12)")
+    ap.add_argument("--pages-per-naics", type=int, default=None,
+                    help="page cap per NAICS (defaults: primes 30, new-primes 170, subs 60)")
+    ap.add_argument("--states", nargs="*", default=None, help="e.g. --states GA TX VA MD")
     ap.add_argument("-o", "--out", default="out/govhub_leads.xlsx")
     args = ap.parse_args()
 
