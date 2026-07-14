@@ -1,0 +1,45 @@
+# Submits the sitemap to IndexNow (api.indexnow.org) after every push to main,
+# so Bing/Yandex/etc. learn about new and changed pages right away instead of
+# waiting for a sitemap re-fetch. Google ignores IndexNow — GSC covers Google.
+#
+# The same push also triggers the Cloudflare Pages deploy. We don't need to
+# wait for that deploy to finish: the verification key file is static and
+# already live, and participating engines crawl the submitted URLs minutes to
+# hours later, well after Pages has finished (typically under two minutes).
+#
+# No secrets required — the IndexNow key is public by design (it's served at
+# https://www.govhub.online/ee8d6b02d6564ed095a46c902816d279.txt).
+
+name: indexnow
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: {}
+
+concurrency:
+  group: indexnow
+  cancel-in-progress: true
+
+jobs:
+  submit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build (produces dist/sitemap-0.xml)
+        run: npm run build
+
+      - name: Submit sitemap URLs to IndexNow
+        run: node scripts/submit-indexnow.mjs
