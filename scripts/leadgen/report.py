@@ -1,5 +1,6 @@
 """Workbook + coverage reporting. The Coverage tab is the honesty tab:
-per-field populated counts and the source each email/phone came from."""
+per-field populated counts and the source each email/phone came from,
+broken out per segment."""
 import re
 
 import pandas as pd
@@ -53,14 +54,23 @@ def coverage_table(df):
     return pd.DataFrame(rows)
 
 
-def build_workbook(df, out_path):
-    df = _clean(df)
-    cov = coverage_table(df)
+def build_workbook(sheets, out_path, universe=None):
+    """sheets: {tab_name: enriched df}. Optional `universe` df gets its own tab."""
+    covs, tiers = [], []
     with pd.ExcelWriter(out_path, engine="openpyxl") as xl:
-        df.to_excel(xl, sheet_name="Companies", index=False)
-        cov.to_excel(xl, sheet_name="Coverage", index=False)
-        if "tier" in df.columns:
-            (df["tier"].value_counts().rename_axis("tier")
-               .reset_index(name="companies")
-               .to_excel(xl, sheet_name="Tiers", index=False))
-    return cov
+        for name, df in sheets.items():
+            _clean(df).to_excel(xl, sheet_name=name[:31], index=False)
+            c = coverage_table(df)
+            c.insert(0, "segment", name)
+            covs.append(c)
+            if "tier" in df.columns:
+                t = df["tier"].value_counts().rename_axis("tier").reset_index(name="companies")
+                t.insert(0, "segment", name)
+                tiers.append(t)
+        cov_all = pd.concat(covs, ignore_index=True) if covs else pd.DataFrame()
+        cov_all.to_excel(xl, sheet_name="Coverage", index=False)
+        if tiers:
+            pd.concat(tiers, ignore_index=True).to_excel(xl, sheet_name="Tiers", index=False)
+        if universe is not None and not universe.empty:
+            _clean(universe).to_excel(xl, sheet_name="Universe (unenriched)", index=False)
+    return cov_all
