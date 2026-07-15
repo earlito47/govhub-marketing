@@ -20,6 +20,9 @@ export const SIGNIN_URL = `${APP_URL}/auth`;
 /** Primary contact address. {{VERIFY: real inbound address}} */
 export const CONTACT_EMAIL = 'hello@govhub.online';
 
+/** Calendly booking page — powers the site-wide "Book a Demo" badge widget. */
+export const CALENDLY_URL = 'https://calendly.com/earljknight/30min';
+
 /**
  * Homepage H1 / primary keyword — the #1 term on the "VALIDATE IN AHREFS" list.
  * Volume/KD are unconfirmed (keyword APIs are plan-gated), so this is isolated

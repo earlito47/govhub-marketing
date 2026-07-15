@@ -2,6 +2,7 @@
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 import SchemaOrg from '../components/seo/SchemaOrg.astro';
+import { CALENDLY_URL } from '../config';
 // Self-hosted Gold Country type (no render-blocking Google Fonts request).
 // Fraunces needs full.css for the SOFT/WONK axes the brand guide pins.
 import '@fontsource-variable/fraunces/full.css';
@@ -99,6 +100,26 @@ const fullOgImage = new URL(ogImage, Astro.site).toString();
         </script>
       </>
     )}
+
+    {/* Calendly "Book a Demo" floating badge — site-wide. addEventListener
+        (not window.onload=) so other load handlers keep working; async
+        scripts delay the load event, so widget.js is executed by then. The
+        Calendly guard covers ad-blockers eating widget.js. */}
+    <link rel="stylesheet" href="https://assets.calendly.com/assets/external/widget.css" />
+    <script is:inline async src="https://assets.calendly.com/assets/external/widget.js"></script>
+    <script is:inline define:vars={{ calendlyUrl: CALENDLY_URL }}>
+      window.addEventListener('load', function () {
+        if (window.Calendly) {
+          window.Calendly.initBadgeWidget({
+            url: calendlyUrl,
+            text: 'Book a Demo',
+            color: '#A03A2C', /* --gh-maroon-600 */
+            textColor: '#ffffff',
+            branding: true,
+          });
+        }
+      });
+    </script>
   </head>
   <body>
     <Nav />
