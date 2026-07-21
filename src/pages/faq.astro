@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import FAQSchema from '../components/seo/FAQSchema.astro';
 import { faqs } from '../data/faqs';
+import { faqPages } from '../data/faqPages';
 import PageHero from '../components/PageHero.astro';
 import CTABand from '../components/CTABand.astro';
 ---
@@ -22,6 +23,17 @@ import CTABand from '../components/CTABand.astro';
     </PageHero>
 
     <FAQSchema faqs={faqs} heading="All FAQs" />
+
+    <section class="in-depth">
+      <h2>Federal contracting questions, answered in full</h2>
+      <p>Each of these has its own page, so you can link to it or find it the moment it comes up.</p>
+      <ul>
+        {faqPages.map((f) => (
+          <li><a href={`/faq/${f.slug}/`}>{f.question}</a></li>
+        ))}
+      </ul>
+      <p class="glossary-link">Prefer definitions? See the <a href="/glossary/">federal contracting glossary</a>.</p>
+    </section>
 
     <CTABand
       heading="Answered everything? Try it on a real RFP."
@@ -44,5 +56,39 @@ import CTABand from '../components/CTABand.astro';
     font-size: 1.1rem;
     color: var(--fg-muted);
     margin-top: 1rem;
+  }
+  .in-depth {
+    max-width: 42rem;
+    margin: 3rem 0 0;
+  }
+  .in-depth h2 {
+    font-size: 1.4rem;
+  }
+  .in-depth > p {
+    color: var(--fg-muted);
+  }
+  .in-depth ul {
+    list-style: none;
+    margin: 1.25rem 0 0;
+    padding: 0;
+    display: grid;
+    gap: 0.5rem;
+  }
+  .in-depth li a {
+    display: block;
+    padding: 0.85rem 1rem;
+    background: var(--gh-surface);
+    border: 1px solid var(--gh-line);
+    border-radius: var(--gh-radius-sm);
+    color: var(--gh-teal-700);
+    font-weight: 600;
+  }
+  .in-depth li a:hover {
+    border-color: var(--gh-teal-600);
+    text-decoration: none;
+  }
+  .glossary-link {
+    margin-top: 1.25rem;
+    color: var(--fg-muted);
   }
 </style>
