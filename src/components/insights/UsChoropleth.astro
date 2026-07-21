@@ -15,9 +15,24 @@ interface Props {
   data: Datum[];
   title: string;
   sourceLabel?: string;
+  /** Link each state tile to its /insights/state/<slug>/ page (default on). */
+  linkStates?: boolean;
 }
 
-const { data, title, sourceLabel = 'Source: USAspending.gov · GovHub Insights' } = Astro.props;
+const { data, title, sourceLabel = 'Source: USAspending.gov · GovHub Insights', linkStates = true } = Astro.props;
+
+// USPS code -> state page slug, so every tile can deep-link to its dashboard.
+const STATE_SLUG: Record<string, string> = {
+  AK: "alaska", AL: "alabama", AR: "arkansas", AZ: "arizona", CA: "california", CO: "colorado",
+  CT: "connecticut", DC: "district-of-columbia", DE: "delaware", FL: "florida", GA: "georgia", HI: "hawaii",
+  IA: "iowa", ID: "idaho", IL: "illinois", IN: "indiana", KS: "kansas", KY: "kentucky",
+  LA: "louisiana", MA: "massachusetts", MD: "maryland", ME: "maine", MI: "michigan", MN: "minnesota",
+  MO: "missouri", MS: "mississippi", MT: "montana", NC: "north-carolina", ND: "north-dakota", NE: "nebraska",
+  NH: "new-hampshire", NJ: "new-jersey", NM: "new-mexico", NV: "nevada", NY: "new-york", OH: "ohio",
+  OK: "oklahoma", OR: "oregon", PA: "pennsylvania", RI: "rhode-island", SC: "south-carolina", SD: "south-dakota",
+  TN: "tennessee", TX: "texas", UT: "utah", VA: "virginia", VT: "vermont", WA: "washington",
+  WI: "wisconsin", WV: "west-virginia", WY: "wyoming",
+};
 
 // (row, col) tile positions — 8 rows × 11 cols, 50 states + DC.
 const GRID: Record<string, [number, number]> = {
@@ -59,6 +74,7 @@ const tiles = Object.entries(GRID).map(([code, [row, col]]) => {
     dark: bin >= 3,
     name: d?.name ?? code,
     value: d ? (formatUsdCompact(d.value) ?? '—') : 'n/a',
+    href: linkStates && STATE_SLUG[code] ? `/insights/state/${STATE_SLUG[code]}/` : null,
   };
 });
 
@@ -74,19 +90,22 @@ const legend = RAMP.map((color, i) => ({
   <figcaption><strong>{title}</strong></figcaption>
   <svg viewBox={`0 0 ${W} ${H}`} role="img" aria-label={`${title}. Choropleth map of US states shaded by value.`}>
     <title>{title}</title>
-    {tiles.map((t) => (
-      <g class="tile">
-        <title>{t.name}: {t.value}</title>
-        <rect x={t.x} y={t.y} width={TILE} height={TILE} rx="6" fill={t.fill} />
-        <text
-          x={t.x + TILE / 2}
-          y={t.y + TILE / 2}
-          text-anchor="middle"
-          dominant-baseline="central"
-          class:list={['abbr', { dark: t.dark }]}
-        >{t.code}</text>
-      </g>
-    ))}
+    {tiles.map((t) => {
+      const tile = (
+        <g class="tile">
+          <title>{t.name}: {t.value}</title>
+          <rect x={t.x} y={t.y} width={TILE} height={TILE} rx="6" fill={t.fill} />
+          <text
+            x={t.x + TILE / 2}
+            y={t.y + TILE / 2}
+            text-anchor="middle"
+            dominant-baseline="central"
+            class:list={['abbr', { dark: t.dark }]}
+          >{t.code}</text>
+        </g>
+      );
+      return t.href ? <a href={t.href} class="tile-link" aria-label={`${t.name} federal contracts`}>{tile}</a> : tile;
+    })}
     {/* Legend */}
     {legend.map((l) => (
       <g>
@@ -125,7 +144,11 @@ const legend = RAMP.map((color, i) => ({
   svg { width: 100%; height: auto; display: block; font-family: var(--gh-font-body); max-width: 640px; margin: 0 auto; }
   .abbr { font-size: 15px; font-weight: 600; fill: var(--gh-ink-900); }
   .abbr.dark { fill: var(--gh-ink-inverse); }
-  .tile rect { stroke: rgba(255,255,255,0.65); stroke-width: 1; }
+  .tile rect { stroke: rgba(255,255,255,0.65); stroke-width: 1; transition: stroke 0.12s; }
+  .tile-link { cursor: pointer; }
+  .tile-link:hover rect,
+  .tile-link:focus-visible rect { stroke: var(--gh-ink-900); stroke-width: 2; }
+  .tile-link:focus-visible { outline: none; }
   .legend-tick { font-size: 12px; fill: var(--fg-muted); }
   .legend-end { font-size: 12px; fill: var(--fg-muted); font-weight: 600; }
   .source-line { color: var(--fg-muted); font-size: 0.8rem; margin-top: 0.5rem; }
