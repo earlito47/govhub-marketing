@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import FAQSchema from '../../components/seo/FAQSchema.astro';
 import Breadcrumbs from '../../components/seo/Breadcrumbs.astro';
 import PageHero from '../../components/PageHero.astro';
+import Tldr from '../../components/Tldr.astro';
 import CTABand from '../../components/CTABand.astro';
 import { getSolution } from '../../data/solutions';
 
@@ -51,6 +52,12 @@ const faqs = [
         </p>
       </header>
     </PageHero>
+
+    <Tldr
+      what="An AI writer that drafts compliant, RFP-tailored government proposal sections."
+      who="Government contractors drafting technical, management, and past-performance narratives."
+      answer="Point it at your solicitation and knowledge base for a first draft aware of Section L/M, FAR/DFARS, and Section 508."
+    />
 
     <article class="prose">
 

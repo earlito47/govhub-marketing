@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/seo/Breadcrumbs.astro';
+import Tldr from '../../components/Tldr.astro';
 import FAQSchema from '../../components/seo/FAQSchema.astro';
 import CTABand from '../../components/CTABand.astro';
 import { getSolution } from '../../data/solutions';
@@ -59,6 +60,13 @@ const faqs = [
         drafts each one against your solicitation’s evaluation criteria, so your
         team refines substance instead of starting from a blank page.
       </p>
+
+      <Tldr
+        what="Section-by-section generators for executive summary, technical, management, and staffing narratives."
+        who="Proposal writers building each section against the evaluation criteria."
+        answer="Each section is written to your RFP's Section M factors, not a generic template."
+      />
+
       <div class="gh-divider-ridge" aria-hidden="true"></div>
 
       <h2>Sections GovHub drafts</h2>

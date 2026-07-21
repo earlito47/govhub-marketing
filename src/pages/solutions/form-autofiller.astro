@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import FAQSchema from '../../components/seo/FAQSchema.astro';
 import Breadcrumbs from '../../components/seo/Breadcrumbs.astro';
 import PageHero from '../../components/PageHero.astro';
+import Tldr from '../../components/Tldr.astro';
 import CTABand from '../../components/CTABand.astro';
 import { getSolution } from '../../data/solutions';
 
@@ -51,6 +52,12 @@ const faqs = [
         </p>
       </header>
     </PageHero>
+
+    <Tldr
+      what="A tool that auto-fills SF330s, L-forms, and federal compliance attachments from your company profile."
+      who="Anyone retyping the same reps, certs, and company data on every submission."
+      answer="Build one profile and GovHub populates SF-33, SF-1449, and SF330 for you."
+    />
 
     <article class="prose">
 
