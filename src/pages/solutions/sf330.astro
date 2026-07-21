@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/seo/Breadcrumbs.astro';
+import Tldr from '../../components/Tldr.astro';
 import FAQSchema from '../../components/seo/FAQSchema.astro';
 import CTABand from '../../components/CTABand.astro';
 import { getSolution } from '../../data/solutions';
@@ -40,6 +41,13 @@ const faqs = [
         and past-performance data, so you assemble the form instead of retyping
         the same information on every submission.
       </p>
+
+      <Tldr
+        what="A dedicated workflow for the SF330 architect-engineer qualifications form."
+        who="A-E firms completing SF330 Parts I and II for federal design contracts."
+        answer="GovHub autofills Parts I and II from your profile, resume library, and project data."
+      />
+
       <div class="gh-divider-ridge" aria-hidden="true"></div>
 
       <h2>What is the SF330?</h2>

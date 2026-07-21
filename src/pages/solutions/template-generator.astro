@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import FAQSchema from '../../components/seo/FAQSchema.astro';
 import Breadcrumbs from '../../components/seo/Breadcrumbs.astro';
+import Tldr from '../../components/Tldr.astro';
 import CTABand from '../../components/CTABand.astro';
 import { getSolution } from '../../data/solutions';
 
@@ -43,6 +44,13 @@ const faqs = [
         outline, Section M alignment, compliance matrix, and per-section page
         budget, generated in minutes, not days.
       </p>
+
+      <Tldr
+        what="A generator that applies compliant, agency-ready proposal formatting and templates."
+        who="Contractors who need correct formatting and page budgets without a designer."
+        answer="Turn a solicitation into a ready-to-draft template with section numbering and page limits applied."
+      />
+
       <div class="gh-divider-ridge" aria-hidden="true"></div>
 
       <h2>What each generated template includes</h2>

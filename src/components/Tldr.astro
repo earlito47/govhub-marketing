@@ -1,0 +1,71 @@
+---
+/**
+ * Above-the-fold TL;DR for buyer-intent pages. Procurement buyers scan for
+ * specifics, so lead with a plain three-line answer: what it is, who it's for,
+ * and the concrete answer. Voice standard applies (no em dashes).
+ */
+interface Props {
+  what: string;
+  who: string;
+  answer: string;
+}
+const { what, who, answer } = Astro.props;
+---
+
+<aside class="tldr" aria-label="Summary">
+  <p class="tldr-eyebrow">TL;DR</p>
+  <dl>
+    <div><dt>What it is</dt><dd>{what}</dd></div>
+    <div><dt>Who it's for</dt><dd>{who}</dd></div>
+    <div><dt>The answer</dt><dd>{answer}</dd></div>
+  </dl>
+</aside>
+
+<style>
+  .tldr {
+    margin: 1.5rem 0 0;
+    padding: 1.25rem 1.5rem;
+    background: var(--accent-soft);
+    border: 1px solid var(--gh-line);
+    border-left: 4px solid var(--accent);
+    border-radius: var(--gh-radius-md);
+    max-width: 46rem;
+  }
+  .tldr-eyebrow {
+    margin: 0 0 0.6rem;
+    font-family: var(--gh-font-brand);
+    font-weight: 700;
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  dl {
+    margin: 0;
+    display: grid;
+    gap: 0.55rem;
+  }
+  dl div {
+    display: grid;
+    grid-template-columns: 8.5rem 1fr;
+    gap: 0.75rem;
+    align-items: baseline;
+  }
+  dt {
+    font-weight: 700;
+    color: var(--fg);
+    font-size: 0.92rem;
+  }
+  dd {
+    margin: 0;
+    color: var(--fg-muted);
+    font-size: 0.98rem;
+    line-height: 1.5;
+  }
+  @media (max-width: 34rem) {
+    dl div {
+      grid-template-columns: 1fr;
+      gap: 0.1rem;
+    }
+  }
+</style>
