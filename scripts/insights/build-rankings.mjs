@@ -21,6 +21,7 @@ import {
   stateHref,
   PILOT_NAICS_CODES,
   naicsHref,
+  naicsTitle,
 } from './lib/slugs.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -79,7 +80,7 @@ function fyContext(asOfDate) {
 // Shared assembler so every flagship conforms to the InsightsPage schema and
 // clears the validator's number-verification (spec 6.4). stats.totalObligations
 // is the combined value of the shown rows, so an intro may cite that sum.
-function rankingPage({ ctx, slug, title, h1, metaDescription, chart, table, intro, sections, faq, related, combined }) {
+function rankingPage({ ctx, slug, title, h1, metaDescription, chart, table, intro, sections, faq, related, crossLinks, combined }) {
   return {
     pageType: 'ranking',
     slug,
@@ -94,6 +95,10 @@ function rankingPage({ ctx, slug, title, h1, metaDescription, chart, table, intr
     narrative: { intro, sections: sections ?? [] },
     faq: faq ?? [],
     related: related ?? relatedFlagships(slug),
+    // Optional "browse every entity" block: the ranking table only links the
+    // rows that happen to be published pages, so a flagship can otherwise fail
+    // to link most of its own cluster (the by-NAICS table linked 3 of 25).
+    ...(crossLinks && crossLinks.length ? { crossLinks } : {}),
     sources: SOURCES,
   };
 }
@@ -267,8 +272,10 @@ function buildByNaics(ctx, resp) {
   const faq = top
     ? [{ q: `What are the biggest federal contracting industries?`, a: `By obligations in ${ctx.fyLabel}, ${top.name} leads with ${formatUsdCompact(top.amount)}. Rankings use NAICS industry codes from USAspending.gov.` }]
     : [];
-  // Deep-link the NAICS dashboards that exist.
-  const naicsLinks = PILOT_NAICS_CODES.map((c) => ({ label: `NAICS ${c}`, href: naicsHref(c) }));
+  // Deep-link every NAICS dashboard that exists as a "browse all" block: the
+  // ranking table only links the top rows that are published pages, so without
+  // this most of the 25 industry pages get no link from their own flagship.
+  const naicsLinks = PILOT_NAICS_CODES.map((c) => ({ label: `NAICS ${c}: ${naicsTitle(c)}`, href: naicsHref(c) }));
   return rankingPage({
     ctx,
     slug: 'government-contracts-by-naics',
@@ -280,7 +287,8 @@ function buildByNaics(ctx, resp) {
     intro,
     faq,
     combined,
-    related: [...naicsLinks, ...relatedFlagships('government-contracts-by-naics')].slice(0, 6),
+    related: relatedFlagships('government-contracts-by-naics'),
+    crossLinks: naicsLinks,
   });
 }
 

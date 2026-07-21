@@ -75,6 +75,10 @@ const faqs = page.faq.map((f) => ({ question: f.q, answer: f.a }));
 
 <MethodologyNote updated={page.updated} fyLabel={page.fyWindow.label} />
 
+{page.crossLinks && page.crossLinks.length > 0 && (
+  <RelatedPages links={page.crossLinks} heading="Browse every industry" />
+)}
+
 <RelatedPages links={page.related} heading="More market rankings" />
 
 <style>
