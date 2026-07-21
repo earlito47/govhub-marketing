@@ -76,6 +76,17 @@ for (const e of entities) {
     if (!inbound.has(r.href)) continue;
     inbound.get(r.href).crossType++;
   }
+  // Table-cell links are real links Google follows — the by-state ranking table
+  // links every state, the agency ranking links every agency, etc. Count them.
+  for (const t of e.raw.tables || []) {
+    for (const row of t.rows || []) {
+      if (!Array.isArray(row)) continue;
+      for (const cell of row) {
+        const href = cell && typeof cell === 'object' ? cell.href : null;
+        if (href && inbound.has(href)) inbound.get(href).crossType++;
+      }
+    }
+  }
 }
 
 // Any link into an entity URL from a MARKETING page (blog/solutions/home/etc.)?
