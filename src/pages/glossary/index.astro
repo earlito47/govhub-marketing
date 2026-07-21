@@ -1,0 +1,110 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/seo/Breadcrumbs.astro';
+import CTABand from '../../components/CTABand.astro';
+import { glossary } from '../../data/glossary';
+import { SIGNUP_URL } from '../../config';
+
+const title = 'Federal contracting glossary: terms and definitions';
+const description =
+  'Plain-English definitions of federal contracting terms: NAICS, CAGE, UEI, IDIQ, GWAC, set-asides, RFP, compliance matrix, and more. One term per page.';
+
+// Preserve a sensible category order for the page, alphabetical within each.
+const CATEGORY_ORDER = [
+  'Solicitations',
+  'Proposal artifacts',
+  'Evaluation',
+  'Set-asides',
+  'Contract vehicles',
+  'Registration & IDs',
+];
+const grouped = CATEGORY_ORDER.map((cat) => ({
+  category: cat,
+  terms: glossary.filter((t) => t.category === cat).sort((a, b) => a.term.localeCompare(b.term)),
+})).filter((g) => g.terms.length > 0);
+---
+
+<BaseLayout title={title} description={description}>
+  <main class="container">
+    <Breadcrumbs items={[{ name: 'Home', url: '/' }, { name: 'Glossary', url: '/glossary/' }]} />
+
+    <header class="prose">
+      <h1>Federal contracting glossary</h1>
+      <p class="lede">
+        The terms you hit in solicitations, registrations, and evaluations, explained
+        in plain language. Each one has its own page, so you can link to it or find it
+        the moment it comes up.
+      </p>
+    </header>
+
+    {grouped.map((g) => (
+      <section class="group" aria-label={g.category}>
+        <h2>{g.category}</h2>
+        <ul>
+          {g.terms.map((t) => (
+            <li>
+              <a href={`/glossary/${t.slug}/`}>
+                <strong>{t.term}</strong>
+                <span>{t.short}</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
+    ))}
+  </main>
+
+  <CTABand
+    heading="Know the terms? Now win the work."
+    sub="GovHub turns a solicitation into a compliant, submitted proposal, faster."
+    primaryHref={`${SIGNUP_URL}?utm_source=glossary`}
+    primaryLabel="Start free trial"
+    secondaryHref="/solutions/"
+  />
+</BaseLayout>
+
+<style>
+  header.prose {
+    margin: 1rem 0 2rem;
+  }
+  .group {
+    margin: 2.25rem 0 0;
+  }
+  .group h2 {
+    font-size: 1.35rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid var(--gh-line);
+  }
+  .group ul {
+    list-style: none;
+    margin: 1rem 0 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 0.75rem;
+  }
+  .group li a {
+    display: block;
+    height: 100%;
+    padding: 1rem 1.1rem;
+    background: var(--gh-surface);
+    border: 1px solid var(--gh-line);
+    border-radius: var(--gh-radius-sm);
+    box-shadow: var(--gh-shadow-card);
+  }
+  .group li a:hover {
+    border-color: var(--gh-teal-600);
+    text-decoration: none;
+  }
+  .group strong {
+    display: block;
+    color: var(--gh-teal-700);
+    margin-bottom: 0.25rem;
+  }
+  .group span {
+    display: block;
+    color: var(--fg-muted);
+    font-size: 0.92rem;
+    line-height: 1.45;
+  }
+</style>
