@@ -13,10 +13,15 @@ https://govhub.online/*  https://www.govhub.online/:splat  301
 /alternatives/deltek-govwin-iq/*  /alternatives/govwin-iq/:splat  301
 
 # Old app deep-links (from the previous combined site) → the app subdomain,
-# so bookmarks and stale links don't 404 on the marketing site.
+# so bookmarks and stale links don't 404 on the marketing site. Both the bare
+# and trailing-slash forms are mapped: the app subdomain links to /signup and
+# /auth without a slash, and crawlers probe the /signup/ and /auth/ forms.
 /auth       https://app.govhub.online/auth          301
+/auth/      https://app.govhub.online/auth          301
 /signup     https://app.govhub.online/signup        301
+/signup/    https://app.govhub.online/signup        301
 /login      https://app.govhub.online/auth          301
+/login/     https://app.govhub.online/auth          301
 /v2/*       https://app.govhub.online/v2/:splat      301
 
 # Marketing slugs that changed (old Lovable site → new Astro site).
