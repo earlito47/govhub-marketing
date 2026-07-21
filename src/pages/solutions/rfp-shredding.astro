@@ -6,6 +6,7 @@ import CTABand from '../../components/CTABand.astro';
 import { getSolution } from '../../data/solutions';
 import { faqsForPage } from '../../data/faqs';
 import PageHero from '../../components/PageHero.astro';
+import Tldr from '../../components/Tldr.astro';
 
 const solution = getSolution('rfp-shredding')!;
 const faqs = [
@@ -43,6 +44,12 @@ const faqs = [
         </p>
       </header>
     </PageHero>
+
+    <Tldr
+      what="Software that shreds a government solicitation into every requirement, instruction, and evaluation factor."
+      who="Teams that need a complete, structured compliance matrix from a long RFP quickly."
+      answer="Import the RFP and GovHub extracts every shall statement and maps it to Section L and Section M."
+    />
 
     <article class="prose">
 

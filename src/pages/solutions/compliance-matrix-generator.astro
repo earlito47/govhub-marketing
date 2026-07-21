@@ -7,6 +7,7 @@ import ComplianceMatrixTool from '../../components/ComplianceMatrixTool.astro';
 import { getSolution } from '../../data/solutions';
 import { faqsForPage } from '../../data/faqs';
 import PageHero from '../../components/PageHero.astro';
+import Tldr from '../../components/Tldr.astro';
 
 const solution = getSolution('compliance-matrix-generator')!;
 const faqs = [
@@ -45,6 +46,12 @@ const faqs = [
         </p>
       </header>
     </PageHero>
+
+    <Tldr
+      what="A free browser tool that turns a government RFP into a Section L/M compliance matrix."
+      who="Proposal and capture teams responding to federal, state, or local solicitations."
+      answer="Paste the solicitation and export a requirement-by-requirement matrix to CSV. No login, and nothing leaves your browser."
+    />
 
     <article class="prose">
     </article>

@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import FAQSchema from '../../components/seo/FAQSchema.astro';
 import Breadcrumbs from '../../components/seo/Breadcrumbs.astro';
 import PageHero from '../../components/PageHero.astro';
+import Tldr from '../../components/Tldr.astro';
 import CTABand from '../../components/CTABand.astro';
 import { getSolution } from '../../data/solutions';
 
@@ -48,6 +49,12 @@ const faqs = [
         </p>
       </header>
     </PageHero>
+
+    <Tldr
+      what="An AI review that checks a government proposal for compliance drift and clarity before you submit."
+      who="Teams without a senior reviewer available for every color-team pass."
+      answer="It flags Section M misalignment, page-limit issues, and unclear passages section by section."
+    />
 
     <article class="prose">
 
