@@ -1,0 +1,188 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/seo/Breadcrumbs.astro';
+import CTABand from '../../components/CTABand.astro';
+import { glossary, getTerm, type GlossaryTerm } from '../../data/glossary';
+import { SIGNUP_URL } from '../../config';
+
+export function getStaticPaths() {
+  return glossary.map((t) => ({ params: { slug: t.slug }, props: { term: t } }));
+}
+
+interface Props {
+  term: GlossaryTerm;
+}
+
+const { term } = Astro.props;
+const title = `${term.term}: federal contracting definition`;
+const description = term.short.slice(0, 158);
+const canonical = new URL(`/glossary/${term.slug}/`, Astro.site).toString();
+
+// Related terms, resolved to their display names.
+const related = (term.related ?? []).map((s) => getTerm(s)).filter(Boolean) as GlossaryTerm[];
+
+const definedTerm = {
+  '@context': 'https://schema.org',
+  '@type': 'DefinedTerm',
+  name: term.term,
+  description: term.short,
+  inDefinedTermSet: {
+    '@type': 'DefinedTermSet',
+    name: 'GovHub Federal Contracting Glossary',
+    url: new URL('/glossary/', Astro.site).toString(),
+  },
+  url: canonical,
+};
+---
+
+<BaseLayout title={title} description={description}>
+  <main class="container">
+    <Breadcrumbs
+      items={[
+        { name: 'Home', url: '/' },
+        { name: 'Glossary', url: '/glossary/' },
+        { name: term.term, url: `/glossary/${term.slug}/` },
+      ]}
+    />
+
+    <article class="term prose">
+      <p class="eyebrow">{term.category}</p>
+      <h1>{term.term}</h1>
+      {term.aka && term.aka.length > 0 && <p class="aka">Also: {term.aka.join(' · ')}</p>}
+
+      <p class="answer">{term.short}</p>
+
+      {term.body.map((p) => <p>{p}</p>)}
+
+      {(term.solutions?.length || term.insight) && (
+        <div class="use">
+          <h2>Put it to work</h2>
+          <ul>
+            {term.solutions?.map((l) => (<li><a href={l.href}>{l.label}</a></li>))}
+            {term.insight && (<li><a href={term.insight.href}>{term.insight.label}</a></li>)}
+          </ul>
+        </div>
+      )}
+    </article>
+
+    {related.length > 0 && (
+      <nav class="related" aria-labelledby="related-heading">
+        <h2 id="related-heading">Related terms</h2>
+        <ul>
+          {related.map((r) => (
+            <li>
+              <a href={`/glossary/${r.slug}/`}>
+                <strong>{r.term}</strong>
+                <span>{r.short}</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    )}
+
+    <p class="back"><a href="/glossary/">All glossary terms</a></p>
+  </main>
+
+  <CTABand
+    heading="From RFP to submitted proposal, faster"
+    sub="GovHub shreds the solicitation, builds the compliance matrix, and drafts the response."
+    primaryHref={`${SIGNUP_URL}?utm_source=glossary`}
+    primaryLabel="Start free trial"
+    secondaryHref="/solutions/"
+  />
+
+  <script type="application/ld+json" set:html={JSON.stringify(definedTerm)} />
+</BaseLayout>
+
+<style>
+  .term {
+    margin-top: 1rem;
+  }
+  .eyebrow {
+    font-family: var(--gh-font-brand);
+    font-weight: 700;
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 0.25rem;
+  }
+  .term h1 {
+    margin: 0.1rem 0 0.35rem;
+  }
+  .aka {
+    color: var(--fg-muted);
+    font-size: 0.95rem;
+    margin: 0 0 1rem;
+  }
+  .answer {
+    font-size: 1.25rem;
+    line-height: 1.5;
+    color: var(--fg);
+    font-weight: 500;
+    border-left: 4px solid var(--accent);
+    padding-left: 1rem;
+    margin: 0 0 1.5rem;
+  }
+  .use {
+    margin: 2rem 0 0;
+    padding: 1.25rem 1.5rem;
+    background: var(--accent-soft);
+    border-radius: var(--gh-radius-md);
+  }
+  .use h2 {
+    font-size: 1.1rem;
+    margin: 0 0 0.6rem;
+  }
+  .use ul {
+    margin: 0;
+    padding-left: 1.1rem;
+  }
+  .use li {
+    margin: 0.3rem 0;
+  }
+  .related {
+    margin: 2.5rem auto 0;
+    max-width: var(--content-width);
+  }
+  .related h2 {
+    font-size: 1.3rem;
+    margin: 0 0 1rem;
+  }
+  .related ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 0.75rem;
+  }
+  .related li a {
+    display: block;
+    padding: 1rem;
+    background: var(--gh-surface);
+    border: 1px solid var(--gh-line);
+    border-radius: var(--gh-radius-sm);
+    box-shadow: var(--gh-shadow-card);
+  }
+  .related li a:hover {
+    border-color: var(--gh-teal-600);
+    text-decoration: none;
+  }
+  .related strong {
+    display: block;
+    color: var(--gh-teal-700);
+    margin-bottom: 0.2rem;
+  }
+  .related span {
+    display: block;
+    color: var(--fg-muted);
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+  .back {
+    margin: 2rem auto 0;
+    max-width: var(--content-width);
+  }
+</style>
