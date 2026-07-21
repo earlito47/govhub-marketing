@@ -84,5 +84,9 @@ export interface InsightsPage {
    * data (state -> agencies + NAICS, agency -> NAICS, NAICS -> agencies).
    * Optional: ranking/report pages don't carry it. */
   crossLinks?: RelatedLink[];
+  /** Set by the pipeline guardrails when a page clears the hard thin-content
+   * floor but is weak for searchers: published for users, kept out of the
+   * index and the sitemap. */
+  noindex?: boolean;
   sources: SourceLink[];
 }

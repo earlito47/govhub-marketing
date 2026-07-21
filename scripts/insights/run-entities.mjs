@@ -12,10 +12,12 @@
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { mkdir, writeFile } from 'node:fs/promises';
+import { existsSync, readdirSync } from 'node:fs';
 import { UsaSpendingClient } from './lib/usaspending.mjs';
 import { fetchAgencyRaw, fetchStateRaw, fetchSetasideRaw } from './fetch-data.mjs';
 import { computeAgencyPage, computeStatePage, computeSetasidePage } from './compute-stats.mjs';
 import { formatUsdCompact } from './lib/format.mjs';
+import { classifyEntity, makeBudget } from './lib/guardrails.mjs';
 import {
   AGENCY_SLUGS,
   agencyName,
@@ -29,14 +31,51 @@ import {
 const __filename = fileURLToPath(import.meta.url);
 const REPO_ROOT = path.resolve(path.dirname(__filename), '../..');
 
-// Thin-content thresholds (spec 9.6): a dedicated page needs real volume.
-function thresholdSkipReason(page) {
-  const { totalObligations, awardCount } = page.stats;
-  const trendPoints = page.charts.find((c) => c.id.endsWith('-trend'))?.series[0]?.points.length ?? 0;
-  if (totalObligations < 50e6) return `below $50M (${formatUsdCompact(totalObligations)})`;
-  if (awardCount !== null && awardCount < 100) return `below 100 awards (${awardCount})`;
-  if (trendPoints < 3) return `under 3 years of trend (${trendPoints})`;
-  return null;
+const ENTITY_KINDS = ['naics', 'agency', 'state', 'setaside'];
+
+// Count entity pages already on disk, so the throttle budget scales with the
+// current footprint and only brand-new slugs count against it.
+export function countExistingEntities() {
+  return ENTITY_KINDS.reduce((total, kind) => {
+    const dir = path.join(REPO_ROOT, 'src/data/insights', kind);
+    return total + (existsSync(dir) ? readdirSync(dir).filter((f) => f.endsWith('.json')).length : 0);
+  }, 0);
+}
+
+// A summary with the guardrail buckets, so nothing is capped silently.
+export function newSummary() {
+  return { written: 0, skipped: [], deferred: [], noindexed: [] };
+}
+
+// Shared publish step used by every entity type (agency/state/setaside here,
+// NAICS in run-weekly): apply the scaled-content guardrails, then write.
+export async function publishEntity({ kind, slug, page, budget, summary }) {
+  const outDir = path.join(REPO_ROOT, 'src/data/insights', kind);
+  const outFile = path.join(outDir, `${slug}.json`);
+  const exists = existsSync(outFile);
+  const { action, reason } = classifyEntity({ page, exists, budget });
+
+  if (action === 'skip') {
+    summary.skipped.push(`${kind}/${slug} — ${reason}`);
+    console.log(`[skip]  ${kind}/${slug} — ${reason}`);
+    return;
+  }
+  if (action === 'defer') {
+    summary.deferred.push(`${kind}/${slug} — ${reason}`);
+    console.log(`[defer] ${kind}/${slug} — ${reason}`);
+    return;
+  }
+  if (action === 'noindex') {
+    page.noindex = true;
+    summary.noindexed.push(`${kind}/${slug} — ${reason}`);
+  }
+  if (!exists && budget) budget.consumeNew();
+
+  await mkdir(outDir, { recursive: true });
+  await writeFile(outFile, JSON.stringify(page, null, 2), 'utf8');
+  summary.written += 1;
+  const tag = action === 'noindex' ? ' (noindex)' : exists ? '' : ' (new)';
+  console.log(`[ok]    ${kind}/${slug} — ${formatUsdCompact(page.stats.totalObligations)}, ${page.stats.awardCount ?? '?'} awards${tag}`);
 }
 
 function parseOnly(arg) {
@@ -58,25 +97,17 @@ function wanted(only, kind, slug) {
   return only.slugs.size === 0 && only.kinds.size === 0;
 }
 
-async function generate({ kind, slug, fetchFn, computeFn, asOfDate, summary }) {
+async function generate({ kind, slug, fetchFn, computeFn, asOfDate, budget, summary }) {
   const raw = await fetchFn();
   const page = computeFn({ slug, raw, updated: asOfDate });
-  const skip = thresholdSkipReason(page);
-  if (skip) {
-    summary.skipped.push(`${kind}/${slug} — ${skip}`);
-    console.log(`[skip] ${kind}/${slug} — ${skip}`);
-    return;
-  }
-  const outDir = path.join(REPO_ROOT, 'src/data/insights', kind);
-  await mkdir(outDir, { recursive: true });
-  await writeFile(path.join(outDir, `${slug}.json`), JSON.stringify(page, null, 2), 'utf8');
-  summary.written += 1;
-  console.log(`[ok]   ${kind}/${slug} — ${formatUsdCompact(page.stats.totalObligations)}, ${page.stats.awardCount ?? '?'} awards`);
+  await publishEntity({ kind, slug, page, budget, summary });
 }
 
 // Generate agency + state pages with a shared (rate-limited) client. Reused by
 // run-weekly.mjs so the whole weekly run stays under one politeness budget.
-export async function generateEntities({ client, asOfDate, only = null, summary }) {
+// `budget` throttles brand-new pages across the run (guardrails); when omitted
+// (standalone filtered runs) new pages are not throttled.
+export async function generateEntities({ client, asOfDate, only = null, budget = null, summary }) {
   for (const slug of AGENCY_SLUGS) {
     if (!wanted(only, 'agency', slug)) continue;
     await generate({
@@ -85,6 +116,7 @@ export async function generateEntities({ client, asOfDate, only = null, summary 
       fetchFn: () => fetchAgencyRaw(client, { slug, name: agencyName(slug), asOfDate }),
       computeFn: computeAgencyPage,
       asOfDate,
+      budget,
       summary,
     });
   }
@@ -97,6 +129,7 @@ export async function generateEntities({ client, asOfDate, only = null, summary 
       fetchFn: () => fetchStateRaw(client, { slug, name: stateName(slug), code: stateCode(slug), asOfDate }),
       computeFn: computeStatePage,
       asOfDate,
+      budget,
       summary,
     });
   }
@@ -110,6 +143,7 @@ export async function generateEntities({ client, asOfDate, only = null, summary 
       fetchFn: () => fetchSetasideRaw(client, { slug, name: meta.name, codes: meta.codes, asOfDate }),
       computeFn: computeSetasidePage,
       asOfDate,
+      budget,
       summary,
     });
   }
@@ -120,15 +154,24 @@ async function main() {
   const asOfDate = process.argv[2] && /^\d{4}-\d{2}-\d{2}$/.test(process.argv[2]) ? process.argv[2] : new Date().toISOString().slice(0, 10);
   const only = parseOnly(process.argv[3]);
   const client = new UsaSpendingClient();
-  const summary = { written: 0, skipped: [] };
+  const summary = newSummary();
+  const budget = makeBudget({ existingTotal: countExistingEntities() });
 
-  console.log(`[run-entities] as of ${asOfDate}${only ? ` (filtered)` : ''} — network required`);
-  await generateEntities({ client, asOfDate, only, summary });
+  console.log(`[run-entities] as of ${asOfDate}${only ? ` (filtered)` : ''} — network required (new-page budget: ${budget.allowance})`);
+  await generateEntities({ client, asOfDate, only, budget, summary });
 
+  reportSummary('run-entities', summary, budget, client);
+}
+
+// Print the guardrail buckets so a throttle/noindex is never silent.
+export function reportSummary(label, summary, budget, client) {
   console.log(
-    `\n[run-entities] Done. ${summary.written} pages written, ${summary.skipped.length} skipped, ${client.requestCount} API requests.`
+    `\n[${label}] Done. ${summary.written} written, ${summary.noindexed.length} noindex, ${summary.deferred.length} deferred (throttle), ${summary.skipped.length} skipped (thin). ${client.requestCount} API requests.`
   );
-  if (summary.skipped.length) console.log(`[run-entities] Skipped:\n  ${summary.skipped.join('\n  ')}`);
+  if (summary.noindexed.length) console.log(`[${label}] noindex (weak for search):\n  ${summary.noindexed.join('\n  ')}`);
+  if (summary.deferred.length)
+    console.log(`[${label}] deferred to a later run (velocity throttle, budget ${budget?.allowance ?? 'n/a'}):\n  ${summary.deferred.join('\n  ')}`);
+  if (summary.skipped.length) console.log(`[${label}] skipped (below hard floor):\n  ${summary.skipped.join('\n  ')}`);
 }
 
 // Only run as a CLI when invoked directly (not when imported by run-weekly).

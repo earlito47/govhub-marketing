@@ -24,6 +24,7 @@ const stateLabel = page.h1.replace(/^Federal Contracts in /, '').split(':')[0];
 
 <InsightsLayout
   title={page.title}
+  noindex={page.noindex}
   description={page.metaDescription}
   dataset={{
     name: `Federal contract obligations: ${stateLabel}`,
