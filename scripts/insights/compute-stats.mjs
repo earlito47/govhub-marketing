@@ -24,6 +24,7 @@ import {
   setaside,
   relatedSetasideLinks,
 } from './lib/slugs.mjs';
+import { entityTitle, computeCrossLinks } from './lib/interlink.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 
@@ -141,48 +142,52 @@ export function computeNaicsPage({ naicsCode, raw, updated }) {
     v.amount,
   ]);
 
+  const charts = [
+    {
+      id: `${naicsCode}-trend`,
+      type: 'line',
+      title: 'Obligations by fiscal year',
+      // points carry raw dollars; templates format via lib/format.mjs.
+      series: [{ label: 'Obligations', points: trend.map((r) => [`FY${String(r.fy).slice(-2)}`, r.amount]) }],
+      unit: 'usd',
+      takeaway: trendTakeaway,
+    },
+    // Agencies before vendors so charts[1..] align 1:1 with the narrative
+    // sections ([agencies, vendors]) the shared EntityDashboard interleaves.
+    {
+      id: `${naicsCode}-top-agencies`,
+      type: 'bar',
+      title: `Top 10 buying agencies, ${fyLabel}`,
+      series: [{ label: 'Obligations', points: agencies.map((a) => [a.name, a.amount]) }],
+      unit: 'usd',
+      takeaway: agencyTakeaway,
+    },
+    {
+      id: `${naicsCode}-top-vendors`,
+      type: 'bar',
+      title: `Top 10 vendors, ${fyLabel}`,
+      series: [{ label: 'Obligations', points: vendors.map((v) => [v.name, v.amount]) }],
+      unit: 'usd',
+      takeaway: vendorTakeaway,
+    },
+  ];
+
   return {
     pageType: 'naics',
     slug: naicsCode,
-    // Title kept ≤60 chars with the headline number as a CTR asset (spec 9.1);
-    // the site's check-meta guard fails any <title> over 70 chars.
-    title: `NAICS ${naicsCode} Government Contracts: ${formatUsdCompact(totalObligations) ?? 'FY Data'} in ${fiscalYearLabel(raw.currentFy)}`,
-    h1: `NAICS ${naicsCode}: ${title} — Federal Contract Market`,
+    // Title varied by slug (see interlink.mjs) so the 25 NAICS pages don't all
+    // share one shape; kept ≤60 chars with the headline number as a CTR asset.
+    // The check-meta guard fails any <title> over 70 chars.
+    title: entityTitle({ pageType: 'naics', slug: naicsCode, total$: formatUsdCompact(totalObligations) ?? 'FY Data', fy: fiscalYearLabel(raw.currentFy) }),
+    h1: `${title} (NAICS ${naicsCode}): Federal Contract Market`,
     metaDescription: `Federal agencies obligated ${
       formatUsdCompact(totalObligations) ?? 'contract dollars'
     } on ${title} (NAICS ${naicsCode}) in ${fyLabel}. See top vendors, top agencies, and trends.`.slice(0, 155),
     updated,
     fyWindow: { label: fyLabel, start: raw.currentFyRange.start, end: raw.asOfDate },
     stats: { totalObligations, awardCount, yoyGrowthPct, avgAwardSize, smallBusinessSharePct: null },
-    charts: [
-      {
-        id: `${naicsCode}-trend`,
-        type: 'line',
-        title: 'Obligations by fiscal year',
-        // points carry raw dollars; templates format via lib/format.mjs.
-        series: [{ label: 'Obligations', points: trend.map((r) => [`FY${String(r.fy).slice(-2)}`, r.amount]) }],
-        unit: 'usd',
-        takeaway: trendTakeaway,
-      },
-      // Agencies before vendors so charts[1..] align 1:1 with the narrative
-      // sections ([agencies, vendors]) the shared EntityDashboard interleaves.
-      {
-        id: `${naicsCode}-top-agencies`,
-        type: 'bar',
-        title: `Top 10 buying agencies, ${fyLabel}`,
-        series: [{ label: 'Obligations', points: agencies.map((a) => [a.name, a.amount]) }],
-        unit: 'usd',
-        takeaway: agencyTakeaway,
-      },
-      {
-        id: `${naicsCode}-top-vendors`,
-        type: 'bar',
-        title: `Top 10 vendors, ${fyLabel}`,
-        series: [{ label: 'Obligations', points: vendors.map((v) => [v.name, v.amount]) }],
-        unit: 'usd',
-        takeaway: vendorTakeaway,
-      },
-    ],
+    charts,
+    crossLinks: computeCrossLinks({ pageType: 'naics', slug: naicsCode, charts }),
     tables: [
       // "Awards" count per vendor is intentionally omitted: spending_by_category
       // returns an obligation amount per recipient but no award count, and this
@@ -364,7 +369,7 @@ export function computeAgencyPage({ slug, raw, updated }) {
   return {
     pageType: 'agency',
     slug,
-    title: `${abbr} Federal Contracts: ${total$ ?? 'FY Data'} in ${fiscalYearLabel(ctx.currentFy)}`,
+    title: entityTitle({ pageType: 'agency', slug, total$: total$ ?? 'FY Data', fy: fiscalYearLabel(ctx.currentFy) }),
     h1: `${name}: Federal Contract Spending & Top Vendors`,
     metaDescription: `${name} obligated ${
       total$ ?? 'contract dollars'
@@ -379,6 +384,7 @@ export function computeAgencyPage({ slug, raw, updated }) {
       smallBusinessSharePct: null,
     },
     charts,
+    crossLinks: computeCrossLinks({ pageType: 'agency', slug, charts }),
     tables: [vendorTable(vendors), largestAwardsTable(raw, ctx.fyLabel, false)],
     narrative: { intro: buildIntro(`In ${ctx.fyLabel}, ${name} obligated`, ctx), sections },
     faq,
@@ -464,7 +470,7 @@ export function computeStatePage({ slug, raw, updated }) {
   return {
     pageType: 'state',
     slug,
-    title: `${name} Federal Contracts: ${total$ ?? 'FY Data'} in ${fiscalYearLabel(ctx.currentFy)}`,
+    title: entityTitle({ pageType: 'state', slug, total$: total$ ?? 'FY Data', fy: fiscalYearLabel(ctx.currentFy) }),
     h1: `Federal Contracts in ${name}: Spending, Agencies & Vendors`,
     metaDescription: `Federal agencies obligated ${
       total$ ?? 'contract dollars'
@@ -479,6 +485,7 @@ export function computeStatePage({ slug, raw, updated }) {
       smallBusinessSharePct: null,
     },
     charts,
+    crossLinks: computeCrossLinks({ pageType: 'state', slug, charts }),
     tables: [vendorTable(vendors), largestAwardsTable(raw, ctx.fyLabel, true)],
     narrative: { intro: buildIntro(`In ${ctx.fyLabel}, federal agencies obligated`, ctx), sections },
     faq,
@@ -577,11 +584,11 @@ export function computeSetasidePage({ slug, raw, updated }) {
   return {
     pageType: 'setaside',
     slug,
-    title: `${abbr} Set-Aside Contracts: ${total$ ?? 'FY Data'} in ${fiscalYearLabel(ctx.currentFy)}`,
+    title: entityTitle({ pageType: 'setaside', slug, total$: total$ ?? 'FY Data', fy: fiscalYearLabel(ctx.currentFy) }),
     h1: `${name} Set-Aside Federal Contracts`,
     metaDescription: `Federal agencies obligated ${
       total$ ?? 'contract dollars'
-    } through ${fullName} set-aside contracts in ${ctx.fyLabel} — ${blurb}. See top agencies, vendors, and industries.`.slice(0, 158),
+    } through ${fullName} set-aside contracts in ${ctx.fyLabel} (${blurb}). See top agencies, vendors, and industries.`.slice(0, 158),
     updated,
     fyWindow: { label: ctx.fyLabel, start: raw.currentFyRange.start, end: raw.asOfDate },
     stats: {
@@ -592,6 +599,7 @@ export function computeSetasidePage({ slug, raw, updated }) {
       smallBusinessSharePct: null,
     },
     charts,
+    crossLinks: computeCrossLinks({ pageType: 'setaside', slug, charts }),
     tables: [vendorTable(vendors), largestAwardsTable(raw, ctx.fyLabel, true)],
     narrative: { intro: buildIntro(`In ${ctx.fyLabel}, federal agencies obligated`, ctx), sections },
     faq,

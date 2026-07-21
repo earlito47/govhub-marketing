@@ -26,7 +26,7 @@ const stateLabel = page.h1.replace(/^Federal Contracts in /, '').split(':')[0];
   title={page.title}
   description={page.metaDescription}
   dataset={{
-    name: `Federal contract obligations — ${stateLabel}`,
+    name: `Federal contract obligations: ${stateLabel}`,
     description: page.metaDescription,
     dateModified: page.updated,
     temporalCoverage: `${page.fyWindow.start}/${page.fyWindow.end}`,

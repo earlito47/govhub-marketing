@@ -22,8 +22,11 @@ export const getStaticPaths = (() => {
   for (const mod of Object.values(entityFiles)) {
     const page = mod.default;
     // Rankings live at clean top-level URLs (/insights/<slug>/); entity pages
-    // are nested under their kind (/insights/<kind>/<slug>/).
-    const parentPath = page.pageType === 'ranking' ? `/insights/${page.slug}/` : `/insights/${page.pageType}/${page.slug}/`;
+    // are nested under their kind (/insights/<kind>/<slug>/). The set-aside
+    // route segment is hyphenated ("set-aside") while pageType is "setaside",
+    // so map it explicitly or the embed backlink 404s.
+    const kindSegment = page.pageType === 'setaside' ? 'set-aside' : page.pageType;
+    const parentPath = page.pageType === 'ranking' ? `/insights/${page.slug}/` : `/insights/${kindSegment}/${page.slug}/`;
     add(page, parentPath);
   }
   for (const mod of Object.values(reportFiles)) {
@@ -50,7 +53,7 @@ const pageTitle = chart.title.length > 66 ? `${chart.title.slice(0, 65)}…` : c
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{pageTitle}</title>
-    <meta name="description" content={`${pageTitle} — federal contract data from GovHub Insights, sourced from USAspending.gov.`} />
+    <meta name="description" content={`${pageTitle}: federal contract data from GovHub Insights, sourced from USAspending.gov.`} />
     <meta name="robots" content="noindex" />
     <link rel="stylesheet" href="/brand/tokens/tokens.css" />
   </head>

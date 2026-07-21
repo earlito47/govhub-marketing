@@ -8,7 +8,7 @@ pillarSlug: how-to-write-a-government-proposal
 draft: false
 ---
 
-A bid/no-bid decision is the deliberate go/no-go call on whether to pursue a specific opportunity. Because a serious government proposal can consume dozens of hours of senior time, the discipline of saying "no" to the wrong opportunities is what protects your capacity — and your win rate — for the right ones.
+A bid/no-bid decision is the deliberate go/no-go call on whether to pursue a specific opportunity. Because a serious government proposal can consume dozens of hours of senior time, the discipline of saying "no" to the wrong opportunities is what protects your capacity, and your win rate, for the right ones.
 
 ## Why the bid/no-bid decision matters
 
@@ -25,7 +25,7 @@ Weigh a handful of factors honestly:
 - **Resources:** do you have the people and time to produce a compliant, competitive response by the deadline?
 - **Win probability vs. cost to pursue:** be realistic about both.
 
-If most of these point the wrong way, a no-bid is the disciplined choice — not a failure.
+If most of these point the wrong way, a no-bid is the disciplined choice, not a failure.
 
 ## Read Sections L and M first
 

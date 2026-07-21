@@ -60,7 +60,7 @@ const planData = PLANS.map((p) => ({
       ' <span class="muted">(' + proposals * hours + ' hours)</span></p>' +
       '<p class="line">GovHub ' + plan.name + ': <strong>' + fmt(plan.monthlyUsd) + '/month</strong></p>' +
       '<p class="line saving">Keep the difference: <strong>' + fmt(Math.max(0, manual - plan.monthlyUsd)) + '/month</strong>' +
-      ' — and most of those hours.</p>';
+      ', and most of those hours.</p>';
   }
 
   for (const id of ['calc-proposals', 'calc-hours', 'calc-rate']) {

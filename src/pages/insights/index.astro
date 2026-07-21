@@ -93,7 +93,7 @@ const updated = [...Object.values(agencyPages), ...Object.values(statePages), ..
 
 <InsightsLayout
   title="GovHub Insights: Federal Contract Market Data"
-  description="Free federal contracting market intelligence from USAspending.gov — spending by NAICS code, agency, and state, with top vendors and multi-year trends."
+  description="Free federal contracting market intelligence from USAspending.gov, spending by NAICS code, agency, and state, with top vendors and multi-year trends."
 >
   <Breadcrumbs items={[{ name: 'Home', url: '/' }, { name: 'Insights', url: '/insights/' }]} />
 
@@ -101,7 +101,7 @@ const updated = [...Object.values(agencyPages), ...Object.values(statePages), ..
     <p class="eyebrow">GovHub Insights</p>
     <h1>Federal contract market intelligence</h1>
     <p class="lede">
-      Where the federal money goes — by industry, agency, and state. Every chart is built from public
+      Where the federal money goes, by industry, agency, and state. Every chart is built from public
       USAspending.gov award data, refreshed weekly, and free to read and embed. This is the open layer
       beneath GovHub's proposal platform.
     </p>
@@ -114,7 +114,7 @@ const updated = [...Object.values(agencyPages), ...Object.values(statePages), ..
         <h2 id="reports-heading">This week in federal contracting</h2>
         <a class="see-all" href="/insights/reports/">All weekly reports →</a>
       </div>
-      <p class="section-lede">Week of {latestReportLabel} — the latest snapshot of where new contract activity landed.</p>
+      <p class="section-lede">Week of {latestReportLabel}, the latest snapshot of where new contract activity landed.</p>
       <ul class="report-links">
         {latestReports.map((r) => (
           <li><a href={`/insights/reports/${r.week}/${r.slug}/`}>{REPORT_SHORT[r.slug] ?? r.slug}</a></li>
@@ -136,7 +136,7 @@ const updated = [...Object.values(agencyPages), ...Object.values(statePages), ..
   {setasideCards.length > 0 && (
     <section id="set-asides" aria-labelledby="setasides-heading">
       <h2 id="setasides-heading">Small-business set-aside programs</h2>
-      <p class="section-lede">How much flows through each set-aside channel — 8(a), WOSB, SDVOSB, and HUBZone — plus the agencies and vendors winning that work.</p>
+      <p class="section-lede">How much flows through each set-aside channel (8(a), WOSB, SDVOSB, and HUBZone) plus the agencies and vendors winning that work.</p>
       <ul class="card-grid">
         {setasideCards.map((c) => (
           <li>
@@ -206,7 +206,7 @@ const updated = [...Object.values(agencyPages), ...Object.values(statePages), ..
   <section class="about">
     <h2>How this data works</h2>
     <p>
-      All figures are federal contract <em>obligations</em> — the dollars agencies have committed on
+      All figures are federal contract <em>obligations</em>, the dollars agencies have committed on
       definitive contracts (award types A–D), excluding grants and loans. Numbers come directly from
       USAspending.gov, the U.S. government's official source for federal award data, and are analyzed
       and republished by GovHub. Read the <a href="/insights/methodology/">methodology</a> for
@@ -216,7 +216,7 @@ const updated = [...Object.values(agencyPages), ...Object.values(statePages), ..
 
   <CTABand
     heading="Go from market data to a winning proposal"
-    sub="GovHub turns federal market intelligence into compliant, submitted proposals — with AI drafting, filters, and exports on top of this data."
+    sub="GovHub turns federal market intelligence into compliant, submitted proposals, with AI drafting, filters, and exports on top of this data."
     primaryHref={`${SIGNUP_URL}?utm_source=insights&utm_campaign=hub`}
     primaryLabel="Start free trial"
   />

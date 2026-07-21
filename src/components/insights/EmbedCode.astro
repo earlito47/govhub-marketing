@@ -14,7 +14,7 @@ interface Props {
 
 const { chartId, chartTitle } = Astro.props;
 const src = `${SITE_URL}/embed/${chartId}/`;
-const snippet = `<iframe src="${src}" width="100%" height="480" frameborder="0" title="${chartTitle} — GovHub Insights"></iframe>`;
+const snippet = `<iframe src="${src}" width="100%" height="480" frameborder="0" title="${chartTitle}: GovHub Insights"></iframe>`;
 ---
 
 <details class="embed">

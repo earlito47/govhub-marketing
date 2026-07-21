@@ -20,7 +20,7 @@ export const audiences: Audience[] = [
     name: 'Small business contractors',
     headline: 'Win more federal work without hiring a proposal team.',
     intro:
-      'Small business contractors — SBA 8(a), WOSB, SDVOSB, HUBZone, and general small business — face the same 50-to-500-page RFPs as prime contractors, without the same overhead. GovHub compresses the drafting and review work so a two-person shop can compete on quality against firms ten times their size.',
+      'Small business contractors (SBA 8(a), WOSB, SDVOSB, HUBZone, and general small business) face the same 50-to-500-page RFPs as prime contractors, without the same overhead. GovHub compresses the drafting and review work so a two-person shop can compete on quality against firms ten times their size.',
     problems: [
       'A single federal response can eat an entire month of principal time.',
       'Hiring a dedicated proposal writer rarely pencils out until you are bidding steadily throughout the year.',
@@ -31,7 +31,7 @@ export const audiences: Audience[] = [
       {
         title: 'AI-drafted responses from your prior work',
         description:
-          'GovHub reads the solicitation, checks it against your past-performance library, and drafts the technical narrative in your voice — not a generic template.',
+          'GovHub reads the solicitation, checks it against your past-performance library, and drafts the technical narrative in your voice, not a generic template.',
       },
       {
         title: 'Automated compliance checking',
@@ -69,7 +69,7 @@ export const audiences: Audience[] = [
     name: 'System integrators',
     headline: 'Coordinate large multi-team proposals without losing days to formatting.',
     intro:
-      "System integrators run the largest, most complex government pursuits — multi-hundred-page responses with contributions from dozens of subject matter experts, subcontractors, and pricing teams. GovHub is the coordination layer that keeps a distributed team's content, compliance, and formatting in sync.",
+      "System integrators run the largest, most complex government pursuits, multi-hundred-page responses with contributions from dozens of subject matter experts, subcontractors, and pricing teams. GovHub is the coordination layer that keeps a distributed team's content, compliance, and formatting in sync.",
     problems: [
       'A single response can involve dozens of SMEs across multiple subcontractors; version control breaks down fast.',
       'Compliance matrices drift out of sync with the narrative as sections get rewritten.',
@@ -90,7 +90,7 @@ export const audiences: Audience[] = [
       {
         title: 'Enterprise SSO and audit trail',
         description:
-          "SAML SSO, role-based access, and a full audit trail on every edit — built for larger organizations' compliance requirements.",
+          "SAML SSO, role-based access, and a full audit trail on every edit, built for larger organizations' compliance requirements.",
       },
     ],
     faqs: [

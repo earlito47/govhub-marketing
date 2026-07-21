@@ -23,7 +23,7 @@ const title = `GovHub for ${audience.name.toLowerCase()}`;
 const description = `${audience.headline} GovHub is the AI proposal platform designed for ${audience.name.toLowerCase()}.`;
 ---
 
-<BaseLayout title={`${title} — AI proposal writing`} description={description}>
+<BaseLayout title={`${title}: AI proposal writing`} description={description}>
   <main class="container">
     <Breadcrumbs
       items={[
@@ -63,7 +63,7 @@ const description = `${audience.headline} GovHub is the AI proposal platform des
       </p>
     </article>
 
-    <FAQSchema faqs={audience.faqs} heading={`${audience.name} — FAQ`} />
+    <FAQSchema faqs={audience.faqs} heading={`${audience.name}: FAQ`} />
 
     <CTABand
       heading={`Write your next proposal with GovHub`}

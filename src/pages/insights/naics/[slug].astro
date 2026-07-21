@@ -25,7 +25,7 @@ const canonical = new URL(`/insights/naics/${page.slug}/`, Astro.site).toString(
   title={page.title}
   description={page.metaDescription}
   dataset={{
-    name: `Federal contract obligations — NAICS ${page.slug}`,
+    name: `Federal contract obligations: NAICS ${page.slug}`,
     description: page.metaDescription,
     dateModified: page.updated,
     temporalCoverage: `${page.fyWindow.start}/${page.fyWindow.end}`,

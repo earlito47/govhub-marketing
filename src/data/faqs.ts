@@ -59,7 +59,7 @@ export const faqs: FAQ[] = [
     category: 'Product',
     question: 'What is the best AI software for writing government proposals?',
     answer:
-      'The best fit depends on your work. GovHub is purpose-built for government contractors — it drafts federal, state, and local RFP responses with Section L/M structure, FAR/DFARS awareness, and compliance matrices built in, rather than being a general-purpose sales-RFP tool adapted to government use.',
+      'The best fit depends on your work. GovHub is purpose-built for government contractors, it drafts federal, state, and local RFP responses with Section L/M structure, FAR/DFARS awareness, and compliance matrices built in, rather than being a general-purpose sales-RFP tool adapted to government use.',
     pages: ['/'],
   },
   {
@@ -73,56 +73,56 @@ export const faqs: FAQ[] = [
     category: 'Product',
     question: 'Is there software that writes RFP responses automatically?',
     answer:
-      "Yes. GovHub's AI proposal generator drafts full narrative sections — technical approach, management approach, past performance — from the solicitation and your knowledge base. It produces a first draft your team reviews and finalizes: it removes the blank page and the mechanical work, not the human judgment.",
+      "Yes. GovHub's AI proposal generator drafts full narrative sections (technical approach, management approach, past performance) from the solicitation and your knowledge base. It produces a first draft your team reviews and finalizes: it removes the blank page and the mechanical work, not the human judgment.",
     pages: ['/', '/solutions/ai-proposal-generator/'],
   },
   {
     category: 'Compliance',
     question: 'How do I create a compliance matrix for a government RFP?',
     answer:
-      "Extract every requirement and instruction from Section L and every evaluation factor from Section M, then map each to a response location and owner. GovHub's free compliance matrix generator does this automatically — paste the solicitation and export a structured matrix in seconds.",
+      "Extract every requirement and instruction from Section L and every evaluation factor from Section M, then map each to a response location and owner. GovHub's free compliance matrix generator does this automatically, paste the solicitation and export a structured matrix in seconds.",
     pages: ['/solutions/compliance-matrix-generator/'],
   },
   {
     category: 'Product',
     question: 'What is RFP shredding and how does it work?',
     answer:
-      "RFP shredding breaks a solicitation into every discrete requirement — 'shall,' 'must,' and 'will' statements, submission instructions, and evaluation factors — so nothing is missed. GovHub shreds the document automatically and turns it into a compliance matrix you build your response around.",
+      "RFP shredding breaks a solicitation into every discrete requirement ('shall,' 'must,' and 'will' statements, submission instructions, and evaluation factors) so nothing is missed. GovHub shreds the document automatically and turns it into a compliance matrix you build your response around.",
     pages: ['/solutions/rfp-shredding/'],
   },
   {
     category: 'Compliance',
     question: 'What are Section L and Section M in a government RFP?',
     answer:
-      'Section L contains the instructions for preparing and submitting your proposal; Section M defines the factors the government uses to evaluate it. Together they dictate how you must structure your response and what actually wins — read both before writing anything.',
+      'Section L contains the instructions for preparing and submitting your proposal; Section M defines the factors the government uses to evaluate it. Together they dictate how you must structure your response and what actually wins, read both before writing anything.',
     pages: ['/faq/'],
   },
   {
     category: 'Compliance',
     question: 'Can AI write a federal proposal that is compliant?',
     answer:
-      'AI can draft compliant content when it is built around government requirements and paired with human review. GovHub is Section L/M- and FAR/DFARS-aware and flags compliance-relevant gaps, but a person still owns final compliance and quality control — the honest, defensible way to use AI on federal work.',
+      'AI can draft compliant content when it is built around government requirements and paired with human review. GovHub is Section L/M- and FAR/DFARS-aware and flags compliance-relevant gaps, but a person still owns final compliance and quality control, the honest, defensible way to use AI on federal work.',
     pages: ['/', '/solutions/ai-proposal-generator/'],
   },
   {
     category: 'Comparison',
     question: 'What is the difference between Loopio and government-specific proposal tools?',
     answer:
-      'Loopio is a general-purpose enterprise RFP platform, strong at content libraries and Q&A reuse. Government-specific tools like GovHub are built around the structure of federal responses — Section L/M, compliance matrices, FAR/DFARS, set-aside representations — instead of leaving that configuration to each customer.',
+      'Loopio is a general-purpose enterprise RFP platform, strong at content libraries and Q&A reuse. Government-specific tools like GovHub are built around the structure of federal responses (Section L/M, compliance matrices, FAR/DFARS, set-aside representations) instead of leaving that configuration to each customer.',
     pages: ['/vs/loopio/'],
   },
   {
     category: 'Comparison',
     question: 'Is GovWin IQ a proposal writing tool?',
     answer:
-      'No. Deltek GovWin IQ is a market-intelligence and opportunity-discovery platform — it helps you find and qualify opportunities but does not write proposals. GovHub handles drafting, review, and formatting after you decide to pursue an opportunity. Many contractors use both together.',
+      'No. Deltek GovWin IQ is a market-intelligence and opportunity-discovery platform, it helps you find and qualify opportunities but does not write proposals. GovHub handles drafting, review, and formatting after you decide to pursue an opportunity. Many contractors use both together.',
     pages: ['/vs/govwin-iq/'],
   },
   {
     category: 'Product',
     question: 'What software helps small businesses win government contracts?',
     answer:
-      'Small businesses need to compress proposal work without a large team. GovHub drafts responses, checks compliance, and autofills forms so an 8(a), WOSB, SDVOSB, or HUBZone firm can compete on quality against larger contractors — starting at a solo-consultant price point.',
+      'Small businesses need to compress proposal work without a large team. GovHub drafts responses, checks compliance, and autofills forms so an 8(a), WOSB, SDVOSB, or HUBZone firm can compete on quality against larger contractors, starting at a solo-consultant price point.',
     pages: ['/for/small-business-contractors/'],
   },
   {
@@ -157,7 +157,7 @@ export const faqs: FAQ[] = [
     category: 'Education',
     question: "What's the difference between an RFP, RFI, and RFQ?",
     answer:
-      'An RFI (request for information) gathers market information with no award. An RFQ (request for quotation) seeks pricing for defined requirements, usually simpler buys. An RFP (request for proposal) asks for a full technical and price proposal evaluated on stated criteria — the most involved to respond to.',
+      'An RFI (request for information) gathers market information with no award. An RFQ (request for quotation) seeks pricing for defined requirements, usually simpler buys. An RFP (request for proposal) asks for a full technical and price proposal evaluated on stated criteria, the most involved to respond to.',
     pages: ['/faq/'],
   },
 ];

@@ -25,7 +25,7 @@ const canonical = new URL(`/insights/agency/${page.slug}/`, Astro.site).toString
   title={page.title}
   description={page.metaDescription}
   dataset={{
-    name: `Federal contract obligations — ${page.h1.split(':')[0]}`,
+    name: `Federal contract obligations: ${page.h1.split(':')[0]}`,
     description: page.metaDescription,
     dateModified: page.updated,
     temporalCoverage: `${page.fyWindow.start}/${page.fyWindow.end}`,

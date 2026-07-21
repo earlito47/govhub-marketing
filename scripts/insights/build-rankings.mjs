@@ -152,7 +152,7 @@ function buildTopContractors(ctx, resp, { smallBiz }) {
     ctx,
     slug,
     title: `${label}: ${fiscalYearLabel(ctx.currentFy)} Rankings`,
-    h1: `${label} — ${ctx.fyLabel}`,
+    h1: `${label}, ${ctx.fyLabel}`,
     metaDescription: meta,
     chart,
     table,
@@ -178,7 +178,7 @@ function buildByAgency(ctx, resp) {
     rows: rows.map((r, i) => [i + 1, { text: r.name, href: r.href }, r.amount]),
   };
   const intro = top
-    ? `${top.name} obligated more on federal contracts than any other agency in ${ctx.fyLabel} — ${formatUsdCompact(
+    ? `${top.name} obligated more on federal contracts than any other agency in ${ctx.fyLabel}, ${formatUsdCompact(
         top.amount
       )}. Across the top ${rows.length} agencies, ${formatUsdCompact(combined)} was obligated.`
     : `No agency spending data is available for ${ctx.fyLabel}.`;
@@ -188,8 +188,8 @@ function buildByAgency(ctx, resp) {
   return rankingPage({
     ctx,
     slug: 'federal-spending-by-agency',
-    title: `Federal Spending by Agency — ${fiscalYearLabel(ctx.currentFy)}`,
-    h1: `Federal contract spending by agency — ${ctx.fyLabel}`,
+    title: `Federal Spending by Agency, ${fiscalYearLabel(ctx.currentFy)}`,
+    h1: `Federal contract spending by agency, ${ctx.fyLabel}`,
     metaDescription: `Which federal agencies spend the most on contracts in ${ctx.fyLabel}. Ranked by obligations from USAspending.gov, led by ${top?.name ?? 'n/a'}.`,
     chart,
     table,
@@ -218,7 +218,7 @@ function buildByState(ctx, resp) {
     rows: rows.map((r, i) => [i + 1, { text: r.name, href: r.href }, r.amount]),
   };
   const intro = top
-    ? `Contractors in ${top.name} were awarded more federal contract dollars than any other state in ${ctx.fyLabel} — ${formatUsdCompact(
+    ? `Contractors in ${top.name} were awarded more federal contract dollars than any other state in ${ctx.fyLabel}, ${formatUsdCompact(
         top.amount
       )}. The top ${rows.length} states accounted for ${formatUsdCompact(combined)} combined.`
     : `No state spending data is available for ${ctx.fyLabel}.`;
@@ -228,8 +228,8 @@ function buildByState(ctx, resp) {
   const page = rankingPage({
     ctx,
     slug: 'federal-spending-by-state',
-    title: `Federal Spending by State — ${fiscalYearLabel(ctx.currentFy)}`,
-    h1: `Federal contract spending by state — ${ctx.fyLabel}`,
+    title: `Federal Spending by State, ${fiscalYearLabel(ctx.currentFy)}`,
+    h1: `Federal contract spending by state, ${ctx.fyLabel}`,
     metaDescription: `Which states receive the most federal contract dollars in ${ctx.fyLabel}. Ranked by obligations from USAspending.gov, led by ${top?.name ?? 'n/a'}.`,
     chart,
     table,
@@ -272,8 +272,8 @@ function buildByNaics(ctx, resp) {
   return rankingPage({
     ctx,
     slug: 'government-contracts-by-naics',
-    title: `Government Contracts by NAICS — ${fiscalYearLabel(ctx.currentFy)}`,
-    h1: `Government contracts by NAICS code — ${ctx.fyLabel}`,
+    title: `Government Contracts by NAICS, ${fiscalYearLabel(ctx.currentFy)}`,
+    h1: `Government contracts by NAICS code, ${ctx.fyLabel}`,
     metaDescription: `The largest federal contract markets by NAICS industry code in ${ctx.fyLabel}, from USAspending.gov. Led by ${top?.name ?? 'n/a'}.`,
     chart,
     table,
@@ -312,16 +312,16 @@ function buildLargestContracts(ctx, resp) {
   const intro = top
     ? `The federal contracts with the largest total value active in ${ctx.fyLabel}, led by ${top.recipient} at ${formatUsdCompact(
         top.amount
-      )}. Total award value reflects the full contract, not a single year's obligation — the largest awards are typically long-running, multi-year vehicles.`
+      )}. Total award value reflects the full contract, not a single year's obligation, the largest awards are typically long-running, multi-year vehicles.`
     : `No award data is available for ${ctx.fyLabel}.`;
   const faq = top
-    ? [{ q: `What is the largest federal contract in ${fiscalYearLabel(ctx.currentFy)}?`, a: `By total award value, ${top.recipient}'s award — ${formatUsdCompact(top.amount)} — awarded by ${top.agency ?? 'a federal agency'}.` }]
+    ? [{ q: `What is the largest federal contract in ${fiscalYearLabel(ctx.currentFy)}?`, a: `By total award value, ${top.recipient}'s award (${formatUsdCompact(top.amount)}) awarded by ${top.agency ?? 'a federal agency'}.` }]
     : [];
   return rankingPage({
     ctx,
     slug: 'largest-federal-contracts-fy2026',
-    title: `Largest Federal Contracts — ${fiscalYearLabel(ctx.currentFy)}`,
-    h1: `Largest federal contracts by total value — ${ctx.fyLabel}`,
+    title: `Largest Federal Contracts, ${fiscalYearLabel(ctx.currentFy)}`,
+    h1: `Largest federal contracts by total value, ${ctx.fyLabel}`,
     metaDescription: `The federal contracts with the largest total award value active in ${ctx.fyLabel}, from USAspending.gov. Led by ${top?.recipient ?? 'n/a'}.`,
     chart,
     table,
@@ -375,7 +375,7 @@ function buildFastestGrowing(ctx, currentResp, priorResp) {
     ]),
   };
   const intro = top
-    ? `These are the fastest-growing established federal contract markets, comparing ${ctx.fyLabel} against the same calendar window a year earlier — an apples-to-apples measure that avoids the partial-vs-full-year distortion. ${top.name} leads, up ${formatPercent(
+    ? `These are the fastest-growing established federal contract markets, comparing ${ctx.fyLabel} against the same calendar window a year earlier, an apples-to-apples measure that avoids the partial-vs-full-year distortion. ${top.name} leads, up ${formatPercent(
         top.growth
       )} year over year, from ${formatUsdCompact(top.prior)} to ${formatUsdCompact(
         top.cur
@@ -385,21 +385,21 @@ function buildFastestGrowing(ctx, currentResp, priorResp) {
     ? [
         {
           q: `What are the fastest-growing federal contract markets?`,
-          a: `By same-period year-over-year growth, ${top.name} leads — up ${formatPercent(top.growth)} versus a year earlier, from ${formatUsdCompact(
+          a: `By same-period year-over-year growth, ${top.name} leads, up ${formatPercent(top.growth)} versus a year earlier, from ${formatUsdCompact(
             top.prior
           )} to ${formatUsdCompact(top.cur)}.`,
         },
         {
           q: `How is market growth measured here?`,
-          a: `Each market's ${ctx.fyLabel} obligations are compared to the same calendar window one fiscal year earlier — not the full prior year — among industries with at least 100 million dollars of obligations in both periods.`,
+          a: `Each market's ${ctx.fyLabel} obligations are compared to the same calendar window one fiscal year earlier, not the full prior year, among industries with at least 100 million dollars of obligations in both periods.`,
         },
       ]
     : [];
   return rankingPage({
     ctx,
     slug: 'fastest-growing-federal-markets',
-    title: `Fastest-Growing Federal Markets — ${fiscalYearLabel(ctx.currentFy)}`,
-    h1: `Fastest-growing federal contract markets — ${ctx.fyLabel}`,
+    title: `Fastest-Growing Federal Markets, ${fiscalYearLabel(ctx.currentFy)}`,
+    h1: `Fastest-growing federal contract markets, ${ctx.fyLabel}`,
     metaDescription: `The fastest-growing federal contract markets by same-period year-over-year growth in ${ctx.fyLabel}, from USAspending.gov. Led by ${
       top?.name ?? 'n/a'
     }.`,
