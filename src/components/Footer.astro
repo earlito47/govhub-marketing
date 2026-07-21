@@ -1,5 +1,5 @@
 ---
-import { CONTACT_EMAIL, SOCIAL_LINKS } from '../config';
+import { SOCIAL_LINKS } from '../config';
 const year = new Date().getFullYear();
 ---
 
@@ -58,7 +58,11 @@ const year = new Date().getFullYear();
       <p class="legal">
         <a href="/privacy/">Privacy</a>
         <a href="/terms/">Terms</a>
-        <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
+        {/* Link to /contact/ rather than a raw mailto: Cloudflare Email
+            Obfuscation rewrites any plaintext address (href AND visible text)
+            into a /cdn-cgi/l/email-protection link that 404s for crawlers.
+            The contact page keeps the real mailto for humans. */}
+        <a href="/contact/">Email us</a>
       </p>
     </div>
   </div>
