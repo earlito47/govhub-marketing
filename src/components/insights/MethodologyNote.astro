@@ -17,11 +17,11 @@ const { updated, fyLabel, dodLag = false } = Astro.props;
 <aside class="methodology-note" aria-label="Methodology and sources">
   <p>
     <strong>Source:</strong> USAspending.gov award data, analyzed by GovHub. All figures are contract
-    <em>obligations</em> (award types A/B/C/D — definitive contracts) and exclude grants and loans.
+    <em>obligations</em> (award types A/B/C/D, definitive contracts) and exclude grants and loans.
     Data through {updated}. See the <a href="/insights/methodology/">full methodology</a> for definitions.
   </p>
   <p>
-    Current-year totals cover {fyLabel} — a partial fiscal year — so year-over-year comparisons weigh
+    Current-year totals cover {fyLabel}, a partial fiscal year, so year-over-year comparisons weigh
     a partial year against a completed one and understate the full-year figure.
   </p>
   {dodLag && (

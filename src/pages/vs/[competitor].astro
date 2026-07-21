@@ -31,11 +31,11 @@ const title = isOpportunityIntel
 const shortName = competitor.shortName ?? competitor.name;
 const metaTitle = isOpportunityIntel
   ? `GovHub and ${shortName}: how they compare`
-  : `GovHub vs ${shortName} — government proposal software`;
+  : `GovHub vs ${shortName}: government proposal software`;
 
 const description = isOpportunityIntel
   ? `${shortName} and GovHub solve different parts of the government contracting workflow. See how they compare, and why many teams use both.`
-  : `Direct comparison of GovHub and ${shortName} for government contractors — where each fits, compliance and AI drafting differences, and which is right for you.`;
+  : `Direct comparison of GovHub and ${shortName} for government contractors, where each fits, compliance and AI drafting differences, and which is right for you.`;
 ---
 
 <BaseLayout title={metaTitle} description={description} ogImage="/brand/page-graphics/compare-weigh-options@2x.png">
@@ -68,7 +68,7 @@ const description = isOpportunityIntel
         <p class="lede">
           {competitor.name} is {competitor.tagline.toLowerCase().replace(/\.$/, '')}.
           GovHub is a proposal writing and compliance platform. These are
-          <strong> different tools that solve different problems</strong> — many
+          <strong> different tools that solve different problems</strong>, many
           govcon teams use a discovery tool like {competitor.name} to find
           opportunities and a response tool like GovHub to write the proposals
           themselves.
@@ -92,16 +92,16 @@ const description = isOpportunityIntel
         <>
           <h2>Do you need both, or one or the other?</h2>
           <p>
-            If your problem is <strong>finding opportunities</strong> — knowing
-            which federal contracts are coming 12–36 months ahead of the RFP —
+            If your problem is <strong>finding opportunities</strong>, knowing
+            which federal contracts are coming 12–36 months ahead of the RFP,
             {' '}{competitor.name} is designed for that. GovHub does not do
             opportunity discovery.
           </p>
           <p>
             If your problem is <strong>writing the proposal</strong> once you
-            have a solicitation to respond to — drafting compliant Section
+            have a solicitation to respond to, drafting compliant Section
             L/M-structured content, running compliance matrices, managing FAR
-            clause references — that's what GovHub is designed for.
+            clause references, that's what GovHub is designed for.
             {' '}{competitor.name} does not do proposal writing or content
             generation.
           </p>
@@ -117,9 +117,9 @@ const description = isOpportunityIntel
 
       {!isOpportunityIntel && (
         <p>
-          If your team primarily responds to <strong>government solicitations</strong> —
+          If your team primarily responds to <strong>government solicitations</strong>,
           federal RFPs, state and local RFQs, sources sought, or task orders on IDIQ
-          vehicles — GovHub is designed for that workflow end to end. {competitor.name} is
+          vehicles, GovHub is designed for that workflow end to end. {competitor.name} is
           a strong choice for {competitor.bestFor.toLowerCase().replace(/\.$/, '')},
           but government-specific requirements (Section L/M structure, FAR/DFARS
           compliance, Section 508 conformance, set-aside representations) are not
@@ -163,7 +163,7 @@ const description = isOpportunityIntel
         <>
           <h2>Can GovHub and {competitor.name} work together?</h2>
           <p>
-            Yes — and for many teams, that's the natural setup.
+            Yes, and for many teams, that's the natural setup.
             {' '}{competitor.name} handles the pre-solicitation intelligence
             work; GovHub handles the post-solicitation response work. The
             handoff point is the moment you decide to bid.
@@ -189,11 +189,11 @@ const description = isOpportunityIntel
       </p>
     </article>
 
-    <FAQSchema faqs={competitor.faqs} heading={`${title} — FAQ`} />
+    <FAQSchema faqs={competitor.faqs} heading={`${title}: FAQ`} />
 
     <CTABand
       heading="Try the government-specific option"
-      sub="Bring your next solicitation — the first draft is ready before the trial ends."
+      sub="Bring your next solicitation, the first draft is ready before the trial ends."
       secondaryHref="/pricing/"
       secondaryLabel="See pricing"
     />

@@ -32,7 +32,7 @@ const url = new URL(`/blog/${slug}/`, Astro.site).toString();
 const schemaImage = new URL('/brand/social/og-default-1200x630.png', Astro.site).toString();
 ---
 
-<BaseLayout title={`${title} — GovHub`} description={description} canonical={url} ogType="article">
+<BaseLayout title={title} description={description} canonical={url} ogType="article">
   <SchemaOrg
     type="Article"
     data={{

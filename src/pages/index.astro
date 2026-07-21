@@ -19,11 +19,11 @@ import { faqsForPage } from '../data/faqs';
 // <title> keeps the exact-match phrase; the H1 carries it inside a real pitch.
 const title = PRIMARY_KEYWORD.title;
 // Rendered length must stay ≤160 chars (SERP truncation point).
-const description = `GovHub is ${PRIMARY_KEYWORD.primary} for federal, state, and local contractors — draft RFP responses, autofill forms, and check Section L/M compliance.`;
+const description = `GovHub is ${PRIMARY_KEYWORD.primary} for federal, state, and local contractors, draft RFP responses, autofill forms, and check Section L/M compliance.`;
 
 const features = [
   {
-    title: 'Built for government work — not adapted to it',
+    title: 'Built for government work, not adapted to it',
     description:
       'Section L/M structure, evaluation-criteria alignment, and compliance matrices are the default, not a plugin bolted onto a commercial sales tool.',
     icon: 'capitol',
@@ -31,7 +31,7 @@ const features = [
   {
     title: 'Drafts that sound like your firm',
     description:
-      'GovHub learns from your past-performance library and technical narrative, so the first draft reads like your best writer — not a generic template.',
+      'GovHub learns from your past-performance library and technical narrative, so the first draft reads like your best writer, not a generic template.',
     icon: 'pen',
   },
   {
@@ -53,13 +53,13 @@ const steps = [
     n: '1',
     icon: 'map',
     title: 'Upload the RFP',
-    body: 'Import the solicitation (PDF, SAM.gov URL, or agency export). GovHub “shreds” it to surface every requirement, instruction, and evaluation factor — including easy-to-miss compliance criteria.',
+    body: 'Import the solicitation (PDF, SAM.gov URL, or agency export). GovHub “shreds” it to surface every requirement, instruction, and evaluation factor, including easy-to-miss compliance criteria.',
   },
   {
     n: '2',
     icon: 'shovel',
     title: 'Add your company info',
-    body: 'Look your company up — GovHub pulls your UEI, CAGE, NAICS, and certifications straight from SAM.gov and your website, or extracts them from your capability statements. It maps your strengths to the RFP’s requirements automatically.',
+    body: 'Look your company up, GovHub pulls your UEI, CAGE, NAICS, and certifications straight from SAM.gov and your website, or extracts them from your capability statements. It maps your strengths to the RFP’s requirements automatically.',
   },
   {
     n: '3',
@@ -115,21 +115,21 @@ const homeFaqs = faqsForPage('/');
     <Hero
       eyebrow="AI proposal software for government contractors"
       title={PRIMARY_KEYWORD.h1}
-      lede="Upload the RFP. GovHub finds every requirement, fills the forms, and drafts a compliant proposal that sounds like your firm — in minutes, not weekends."
+      lede="Upload the RFP. GovHub finds every requirement, fills the forms, and drafts a compliant proposal that sounds like your firm, in minutes, not weekends."
       primaryHref={SIGNUP_URL}
       primaryLabel="Start free trial"
       secondaryHref="/solutions/compliance-matrix-generator/"
       secondaryLabel="Try the free compliance matrix tool →"
       art="/brand/page-graphics/home-hero-strike-gold.svg"
-      artAlt="Illustration of a prospector striking gold in a mountain stream — GovHub's Gold Country brand scene"
+      artAlt="Illustration of a prospector striking gold in a mountain stream, GovHub's Gold Country brand scene"
     />
 
     <SocialProofMarquee brands={proofBrands} />
 
     <section class="block">
-      <h2>Everything a proposal shop does — without hiring one</h2>
+      <h2>Everything a proposal shop does, without hiring one</h2>
       <p class="section-lede">
-        Shredding, drafting, compliance checks, forms, and formatting — the work
+        Shredding, drafting, compliance checks, forms, and formatting, the work
         that used to take a proposal team, built into one tool.
       </p>
       <FeatureGrid features={features} />
@@ -155,7 +155,7 @@ const homeFaqs = faqsForPage('/');
     <section class="block">
       <h2>An end-to-end contract acquisition platform</h2>
       <p class="section-lede">
-        From shredding the solicitation to a submission-ready package — GovHub
+        From shredding the solicitation to a submission-ready package, GovHub
         covers the whole response.
       </p>
       <SolutionsGrid mode="featured" />
@@ -166,10 +166,10 @@ const homeFaqs = faqsForPage('/');
       <div class="teaser-card">
         <Icon name="pan" size={32} />
         <div>
-          <h2>Try the free compliance matrix generator — right now</h2>
+          <h2>Try the free compliance matrix generator, right now</h2>
           <p>
             Paste an RFP and get a compliance matrix in seconds. It runs in your
-            browser — no login, nothing is uploaded.
+            browser, no login, nothing is uploaded.
           </p>
         </div>
         <a class="teaser-cta" href="/solutions/compliance-matrix-generator/">Open the free tool</a>
@@ -196,7 +196,7 @@ const homeFaqs = faqsForPage('/');
 
     <CTABand
       heading="Dig up your next contract."
-      sub="14 days free, no card — your first proposal is ready before the trial ends."
+      sub="14 days free, no card, your first proposal is ready before the trial ends."
       secondaryHref="/pricing/"
       secondaryLabel="See pricing"
     />

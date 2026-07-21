@@ -24,12 +24,12 @@ export const solutions: Solution[] = [
   {
     slug: 'compliance-matrix-generator',
     name: 'Compliance matrix generator',
-    title: 'Free RFP Compliance Matrix Generator | GovHub',
+    title: 'Free RFP Compliance Matrix Generator',
     description:
-      'Turn any government RFP into a Section L/M compliance matrix in seconds. Free and browser-based — paste your solicitation, export the matrix. No login.',
+      'Turn any government RFP into a Section L/M compliance matrix in seconds. Free and browser-based, paste your solicitation, export the matrix. No login.',
     primaryKeyword: 'RFP compliance matrix generator',
     summary:
-      'Paste an RFP and get a structured compliance matrix — requirement, section, L/M category — you can export to CSV. Free and runs entirely in your browser.',
+      'Paste an RFP and get a structured compliance matrix, requirement, section, L/M category, you can export to CSV. Free and runs entirely in your browser.',
     wave: 1,
     featured: true,
     relatedSlugs: ['rfp-shredding', 'ai-proposal-generator'],
@@ -39,12 +39,12 @@ export const solutions: Solution[] = [
   {
     slug: 'rfp-shredding',
     name: 'RFP shredding',
-    title: 'RFP Shredding Software for Government Proposals | GovHub',
+    title: 'RFP Shredding Software for Government Proposals',
     description:
-      "GovHub 'shreds' government solicitations — extracting every requirement, instruction, and evaluation factor into a structured compliance matrix.",
+      "GovHub 'shreds' government solicitations, extracting every requirement, instruction, and evaluation factor into a structured compliance matrix.",
     primaryKeyword: 'RFP shredding software',
     summary:
-      'Automatically break a solicitation down into every "shall," instruction, and evaluation factor — the first step to a compliant response.',
+      'Automatically break a solicitation down into every "shall," instruction, and evaluation factor, the first step to a compliant response.',
     wave: 1,
     featured: true,
     relatedSlugs: ['compliance-matrix-generator', 'ai-proposal-generator'],
@@ -54,12 +54,12 @@ export const solutions: Solution[] = [
   {
     slug: 'ai-proposal-generator',
     name: 'AI proposal generator',
-    title: 'AI Proposal Generator for Govt Contracts | GovHub',
+    title: 'AI Proposal Generator for Govt Contracts',
     description:
-      "Draft compliant, RFP-tailored government proposal content in minutes with GovHub's AI proposal generator — Section L/M, FAR/DFARS, and Section 508 aware.",
+      "Draft compliant, RFP-tailored government proposal content in minutes with GovHub's AI proposal generator, Section L/M, FAR/DFARS, and Section 508 aware.",
     primaryKeyword: 'AI proposal writer for government contracts',
     summary:
-      'Drafts full narrative sections — technical approach, management approach, past performance — against your solicitation and knowledge base.',
+      'Drafts full narrative sections (technical approach, management approach, past performance) against your solicitation and knowledge base.',
     wave: 2,
     featured: true,
     relatedSlugs: ['proposal-sections', 'technical-writer-review'],
@@ -69,12 +69,12 @@ export const solutions: Solution[] = [
   {
     slug: 'form-autofiller',
     name: 'Form autofiller',
-    title: 'Government Form Autofiller (SF330, L-Forms) | GovHub',
+    title: 'Government Form Autofiller (SF330, L-Forms)',
     description:
       "Auto-fill SF330s, L-forms, and federal compliance attachments straight from your company profile with GovHub's form autofiller. End manual data entry.",
     primaryKeyword: 'government form autofill',
     summary:
-      'Reps & certs, SF-33, SF-1449, and SF330 autofilled from one shared company profile — no more retyping the same data on every response.',
+      'Reps & certs, SF-33, SF-1449, and SF330 autofilled from one shared company profile, no more retyping the same data on every response.',
     wave: 2,
     featured: true,
     relatedSlugs: ['sf330', 'ai-proposal-generator'],
@@ -84,12 +84,12 @@ export const solutions: Solution[] = [
   {
     slug: 'sf330',
     name: 'SF330 software',
-    title: 'SF330 Software — Automate the SF330 Form | GovHub',
+    title: 'SF330 Software: Automate the SF330 Form',
     description:
       'Complete the SF330 architect-engineer qualifications form faster. GovHub autofills Parts I and II from your company profile and past-performance library.',
     primaryKeyword: 'SF330 software',
     summary:
-      'A dedicated workflow for the SF330 A-E qualifications form — Parts I and II populated from your profile, resumes, and project data.',
+      'A dedicated workflow for the SF330 A-E qualifications form, Parts I and II populated from your profile, resumes, and project data.',
     wave: 2,
     relatedSlugs: ['form-autofiller'],
     relatedPosts: ['how-to-fill-out-sf330'],
@@ -98,12 +98,12 @@ export const solutions: Solution[] = [
   {
     slug: 'technical-writer-review',
     name: 'Technical writer review',
-    title: 'AI Technical Writer & Compliance Review | GovHub',
+    title: 'AI Technical Writer & Compliance Review',
     description:
       "GovHub's AI technical writing review checks government proposals for compliance drift, evaluation-criteria alignment, and clarity before you submit.",
     primaryKeyword: 'federal technical writing software',
     summary:
-      'Reviews every section for compliance drift, Section M alignment, page-limit adherence, and clarity — the pass a senior reviewer would make.',
+      'Reviews every section for compliance drift, Section M alignment, page-limit adherence, and clarity, the pass a senior reviewer would make.',
     wave: 3,
     relatedSlugs: ['ai-proposal-generator', 'proposal-sections'],
     relatedPosts: ['color-team-reviews-pink-red-gold', 'why-proposals-get-rejected'],
@@ -112,12 +112,12 @@ export const solutions: Solution[] = [
   {
     slug: 'template-generator',
     name: 'Template generator',
-    title: 'Proposal Template Design Generator | GovHub',
+    title: 'Proposal Template Design Generator',
     description:
-      'Apply agency-ready, compliant proposal templates instantly — correct formatting, section numbering, and page budgets without a designer.',
+      'Apply agency-ready, compliant proposal templates instantly, correct formatting, section numbering, and page budgets without a designer.',
     primaryKeyword: 'government proposal template software',
     summary:
-      'Compliant formatting, section numbering, and page-limit budgets applied automatically — turn a draft into a submission-ready document.',
+      'Compliant formatting, section numbering, and page-limit budgets applied automatically, turn a draft into a submission-ready document.',
     wave: 3,
     relatedSlugs: ['ai-proposal-generator'],
     relatedPosts: [],
@@ -126,12 +126,12 @@ export const solutions: Solution[] = [
   {
     slug: 'proposal-sections',
     name: 'Proposal section generators',
-    title: 'Proposal Section Generators for Government RFPs | GovHub',
+    title: 'Proposal Section Generators for Government RFPs',
     description:
       "Generate executive summaries, technical and management approach, and staffing narratives tailored to your RFP's evaluation criteria with GovHub.",
     primaryKeyword: 'proposal executive summary generator',
     summary:
-      'Section-by-section generators — executive summary, technical approach, management approach, staffing — each written to the evaluation factors.',
+      'Section-by-section generators, executive summary, technical approach, management approach, staffing, each written to the evaluation factors.',
     wave: 3,
     relatedSlugs: ['ai-proposal-generator', 'technical-writer-review'],
     relatedPosts: ['how-to-write-a-government-proposal'],

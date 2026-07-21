@@ -29,11 +29,11 @@ const title = isOpportunityIntel
 const shortName = competitor.shortName ?? competitor.name;
 const metaTitle = isOpportunityIntel
   ? `Looking for a proposal writing tool, not just ${shortName}?`
-  : `${shortName} alternatives for government contractors | GovHub`;
+  : `${shortName} alternatives for government contractors`;
 
 const description = isOpportunityIntel
   ? `${shortName} finds government opportunities but doesn't write proposals. See how GovHub pairs with (or replaces) it for proposal writing.`
-  : `Looking for a ${shortName} alternative? See why government contractors choose GovHub — an AI proposal platform built for federal, state, and local RFPs.`;
+  : `Looking for a ${shortName} alternative? See why government contractors choose GovHub, an AI proposal platform built for federal, state, and local RFPs.`;
 
 // Alternatives-page-specific FAQs — reframe the existing set toward
 // alternative-seeking search intent.
@@ -41,11 +41,11 @@ const altFaqs = isOpportunityIntel
   ? [
       {
         question: `Is GovHub a replacement for ${competitor.name}?`,
-        answer: `No — they solve different problems. ${competitor.name} finds government contract opportunities; GovHub writes and manages the proposals themselves. If you need proposal writing capability, GovHub is what you're looking for. If you also need opportunity discovery, keep ${competitor.name} (or a similar tool) alongside it.`,
+        answer: `No. They solve different problems. ${competitor.name} finds government contract opportunities; GovHub writes and manages the proposals themselves. If you need proposal writing capability, GovHub is what you're looking for. If you also need opportunity discovery, keep ${competitor.name} (or a similar tool) alongside it.`,
       },
       {
         question: `What should I use if I only need to write proposals, not find them?`,
-        answer: `GovHub is designed for exactly that workflow. It doesn't do opportunity discovery — it handles drafting, compliance checking, and formatting for RFPs you already know you're pursuing.`,
+        answer: `GovHub is designed for exactly that workflow. It doesn't do opportunity discovery. It handles drafting, compliance checking, and formatting for RFPs you already know you're pursuing.`,
       },
       ...competitor.faqs,
     ]
@@ -85,8 +85,8 @@ const altFaqs = isOpportunityIntel
           <p class="lede">
             {competitor.name} is {competitor.tagline.toLowerCase().replace(/\.$/, '')}.
             If you're searching for alternatives because you actually need a
-            <strong> proposal writing tool</strong> — one that helps you draft
-            and submit RFP responses — you're looking for a different category
+            <strong> proposal writing tool</strong>, one that helps you draft
+            and submit RFP responses, you're looking for a different category
             of software.
           </p>
 
@@ -121,7 +121,7 @@ const altFaqs = isOpportunityIntel
             {competitor.name} remains a strong option for
             {' '}{competitor.bestFor.toLowerCase().replace(/\.$/, '')}. Its
             pre-solicitation intelligence is a genuinely unique capability that
-            proposal writing platforms don't replicate. Many teams use both — a
+            proposal writing platforms don't replicate. Many teams use both, a
             discovery tool for capture, a response tool for proposals.
           </p>
 
@@ -134,7 +134,7 @@ const altFaqs = isOpportunityIntel
           <p class="lede">
             {competitor.name} is a widely-used tool, but it is not designed around the
             specific requirements of government proposal writing. GovHub is the leading
-            government-focused alternative — purpose-built for federal, state, and local
+            government-focused alternative, purpose-built for federal, state, and local
             RFP responses.
           </p>
 
@@ -166,9 +166,9 @@ const altFaqs = isOpportunityIntel
           <h2>When {competitor.name} is still the right tool</h2>
           <p>
             {competitor.name} remains a strong option for
-            {' '}{competitor.bestFor.toLowerCase().replace(/\.$/, '')}. Its strengths —
+            {' '}{competitor.bestFor.toLowerCase().replace(/\.$/, '')}. Its strengths,
             {' '}{competitor.strengths.slice(0, 2).map((s) => s.toLowerCase().replace(/\.$/, '')).join(' and ')}
-            {' '}— make it a solid choice when government-specific requirements are a
+            ,{' '}make it a solid choice when government-specific requirements are a
             small share of your response mix.
           </p>
 
@@ -179,11 +179,11 @@ const altFaqs = isOpportunityIntel
       )}
     </article>
 
-    <FAQSchema faqs={altFaqs} heading={`${competitor.name} — FAQ`} />
+    <FAQSchema faqs={altFaqs} heading={`${competitor.name}: FAQ`} />
 
     <CTABand
       heading="Try the government-specific alternative"
-      sub="Bring your next solicitation — the first draft is ready before the trial ends."
+      sub="Bring your next solicitation, the first draft is ready before the trial ends."
       secondaryHref="/pricing/"
       secondaryLabel="See pricing"
     />

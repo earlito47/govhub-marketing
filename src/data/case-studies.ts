@@ -46,12 +46,12 @@ export const caseStudies: CaseStudy[] = [
     contractValue: '$1,794,424',
     timeframe: '~4-week proposal cycle',
     challenge:
-      'STTR Phase II proposals are among the most technical and competitive in federal contracting — demanding a rigorous technical approach, a commercialization plan, a detailed work breakdown, data-rights assertions, and compliance with layered SBIR/STTR rules, DFARS clauses, and intellectual-property requirements. As a small research-focused team, the firm faced a tight timeline with little bandwidth for proposal production.',
+      'STTR Phase II proposals are among the most technical and competitive in federal contracting, demanding a rigorous technical approach, a commercialization plan, a detailed work breakdown, data-rights assertions, and compliance with layered SBIR/STTR rules, DFARS clauses, and intellectual-property requirements. As a small research-focused team, the firm faced a tight timeline with little bandwidth for proposal production.',
     solution:
-      'GovHub pulled historical SBIR/STTR award data and successful Phase II examples for similar AI and document-technology topics, benchmarked pricing and technical approaches, and auto-generated compliant sections — technical volume, commercialization strategy, and work breakdown — while scoring the draft in real time against STTR requirements and DFARS. Internal company data and research-partner information were integrated automatically, and the AI surfaced win themes around generative-AI innovation and DoD mission impact.',
+      'GovHub pulled historical SBIR/STTR award data and successful Phase II examples for similar AI and document-technology topics, benchmarked pricing and technical approaches, and auto-generated compliant sections (technical volume, commercialization strategy, and work breakdown) while scoring the draft in real time against STTR requirements and DFARS. Internal company data and research-partner information were integrated automatically, and the AI surfaced win themes around generative-AI innovation and DoD mission impact.',
     results: [
       'Won the competitive STTR Phase II award',
-      'Proposal development time cut roughly 65% — from a typical 10+ weeks to about four',
+      'Proposal development time cut roughly 65%, from a typical 10+ weeks to about four',
       'Strong technical evaluation score',
       'Validated the core technology and opened further DoD and dual-use commercialization',
     ],
@@ -72,7 +72,7 @@ export const caseStudies: CaseStudy[] = [
     challenge:
       'Follow-on and option work for the Defense Health Agency demands precise alignment with DHA-specific requirements, strong past-performance narratives, detailed management and quality plans, and competitive-yet-realistic pricing for professional-services labor categories. A small business has to differentiate while proving scalability, DoD financial-systems familiarity, and audit readiness.',
     solution:
-      'GovHub integrated real-time and historical SAM.gov/FPDS data on comparable DHA and DoD financial and program-management awards — including incumbent performance history and labor-rate benchmarks. It drafted customized past-performance volumes, generated tailored management and transition plans, and optimized the price proposal against comparable awards. Automated checks covered FAR Part 15, DFARS business-systems requirements, and small-business rules, while collaboration tools kept the lean team in sync.',
+      'GovHub integrated real-time and historical SAM.gov/FPDS data on comparable DHA and DoD financial and program-management awards, including incumbent performance history and labor-rate benchmarks. It drafted customized past-performance volumes, generated tailored management and transition plans, and optimized the price proposal against comparable awards. Automated checks covered FAR Part 15, DFARS business-systems requirements, and small-business rules, while collaboration tools kept the lean team in sync.',
     results: [
       'Secured the option exercise / continuation',
       'Proposal effort reduced roughly 50%',
@@ -94,7 +94,7 @@ export const caseStudies: CaseStudy[] = [
     contractValue: '~$49,000,000 (base + four option years)',
     timeframe: 'Compressed proposal timeline',
     challenge:
-      'A large IT-consolidation vehicle — 24/7 network monitoring, incident management, and full service-desk operations — requires a detailed technical solution, robust transition and quality-assurance plans, multi-agency past performance, and competitive pricing across a multi-year period. Teaming with a partner adds role-definition and compliance complexity.',
+      'A large IT-consolidation vehicle (24/7 network monitoring, incident management, and full service-desk operations) requires a detailed technical solution, robust transition and quality-assurance plans, multi-agency past performance, and competitive pricing across a multi-year period. Teaming with a partner adds role-definition and compliance complexity.',
     solution:
       'GovHub aggregated historical SBA and federal IT contract data from SAM.gov/FPDS, analyzed incumbent performance and pricing benchmarks, and pulled agency-specific evaluation criteria. It generated compliant technical volumes covering monitoring, incident management, and service-desk operations, plus management, quality, and transition approaches, and automatically mapped past performance across agencies. Real-time scoring kept the response aligned with FAR, SBA-specific, and cybersecurity requirements, while teaming tools streamlined coordination with the prime partner.',
     results: [
@@ -142,7 +142,7 @@ export const caseStudies: CaseStudy[] = [
     contractValue: '$9,800,000',
     timeframe: 'Faster proposal cycle for a lean team',
     challenge:
-      'VA cybersecurity work — vulnerability assessments, incident response, and security-operations-center support — demands deep alignment with VA-specific requirements, NIST frameworks, and VAAR clauses, plus proven incident-response capability. An SDVOSB set-aside adds socio-economic evaluation factors that must be documented compellingly.',
+      'VA cybersecurity work (vulnerability assessments, incident response, and security-operations-center support) demands deep alignment with VA-specific requirements, NIST frameworks, and VAAR clauses, plus proven incident-response capability. An SDVOSB set-aside adds socio-economic evaluation factors that must be documented compellingly.',
     solution:
       'GovHub integrated VA cybersecurity spending data, comparable SDVOSB award histories, and pricing benchmarks from SAM.gov/FPDS. It drafted strong veteran-owned and socio-economic narratives, generated technical volumes mapping capabilities to VA mission needs and NIST controls, and produced detailed management, quality, and transition plans. Automated checking covered VAAR, cybersecurity clauses, and small-business rules, and pricing was optimized against real comparable awards.',
     results: [

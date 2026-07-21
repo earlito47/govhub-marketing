@@ -1,6 +1,6 @@
 ---
 title: What Is RFP Shredding? (And Why It Wins Proposals)
-description: RFP shredding breaks a government solicitation into every requirement so nothing is missed — what it means and why it's step one of a compliant response.
+description: RFP shredding breaks a government solicitation into every requirement so nothing is missed, what it means and why it's step one of a compliant response.
 publishDate: 2026-07-01
 updatedDate: 2026-07-01
 author: GovHub team
@@ -8,7 +8,7 @@ pillarSlug: how-to-respond-to-a-government-rfp
 draft: false
 ---
 
-RFP shredding is the process of breaking a government solicitation down into every individual, trackable requirement — the "shall," "must," and "will" statements, the submission instructions, and the evaluation factors. It's insider proposal-shop jargon for the unglamorous first step that decides whether the rest of your response is compliant.
+RFP shredding is the process of breaking a government solicitation down into every individual, trackable requirement, the "shall," "must," and "will" statements, the submission instructions, and the evaluation factors. It's insider proposal-shop jargon for the unglamorous first step that decides whether the rest of your response is compliant.
 
 ## What does it mean to "shred" an RFP?
 
@@ -19,11 +19,11 @@ To shred an RFP is to read it line by line and pull out every discrete obligatio
 ## How does RFP shredding work?
 
 1. **Read for requirements, not narrative.** Every "shall," "must," "will," and "is required to" is a requirement to capture.
-2. **Capture instructions and constraints,** too — page limits, fonts, submission method, and format rules from Section L.
+2. **Capture instructions and constraints,** too, page limits, fonts, submission method, and format rules from Section L.
 3. **Note evaluation factors** from Section M so you know how each requirement will be scored.
 4. **Record each item** with its source section, producing a [compliance matrix](/blog/what-is-a-compliance-matrix/).
 
-Done manually, shredding a large RFP can take a senior proposal manager most of a day. Done with GovHub's [RFP shredding](/solutions/rfp-shredding/), it takes minutes — and the free [compliance matrix generator](/solutions/compliance-matrix-generator/) will shred pasted RFP text right in your browser.
+Done manually, shredding a large RFP can take a senior proposal manager most of a day. Done with GovHub's [RFP shredding](/solutions/rfp-shredding/), it takes minutes, and the free [compliance matrix generator](/solutions/compliance-matrix-generator/) will shred pasted RFP text right in your browser.
 
 ## Why is shredding worth the effort?
 

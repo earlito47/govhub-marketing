@@ -14,9 +14,9 @@ Color-team reviews are the structured review cycles used to improve a government
 
 The three most common reviews, in order:
 
-- **Pink team** — an early-draft review of approach and structure.
-- **Red team** — a near-final review that scores the proposal as a government evaluator would.
-- **Gold team** — the final executive sign-off before production.
+- **Pink team**, an early-draft review of approach and structure.
+- **Red team**, a near-final review that scores the proposal as a government evaluator would.
+- **Gold team**, the final executive sign-off before production.
 
 Some organizations add a **blue team** (early solution/win-strategy review, before drafting) and a **white glove** or green team (pricing review), but pink, red, and gold are the core three.
 
@@ -24,7 +24,7 @@ Some organizations add a **blue team** (early solution/win-strategy review, befo
 
 ## What does a pink team review catch?
 
-The pink team reviews an early, incomplete draft — often around 50–70% complete. It asks: *are we answering the right questions?* Is the approach sound, is the structure aligned to Section L, and are the win themes coming through? Pink team is about direction, not polish; finding a structural problem here is cheap, finding it at red team is expensive.
+The pink team reviews an early, incomplete draft, often around 50–70% complete. It asks: *are we answering the right questions?* Is the approach sound, is the structure aligned to Section L, and are the win themes coming through? Pink team is about direction, not polish; finding a structural problem here is cheap, finding it at red team is expensive.
 
 ## What does a red team review catch?
 
@@ -32,7 +32,7 @@ The red team reviews a near-final draft **as an evaluator would**, scoring again
 
 ## What does a gold team review do?
 
-The gold team is the final executive review and sign-off. Leadership confirms the proposal is compliant, competitive, and consistent with the company's risk and pricing position before it goes to production. By gold team, you're validating — not rewriting.
+The gold team is the final executive review and sign-off. Leadership confirms the proposal is compliant, competitive, and consistent with the company's risk and pricing position before it goes to production. By gold team, you're validating, not rewriting.
 
 ## Running color teams on a tight timeline
 
@@ -40,4 +40,4 @@ Small teams often can't spare a week per review. The fixes: schedule the reviews
 
 ---
 
-Color-team reviews are step six of a repeatable response process — see [how to respond to a government RFP](/blog/how-to-respond-to-a-government-rfp/) for the full workflow, and [why proposals get rejected](/blog/why-proposals-get-rejected/) for what these reviews are designed to prevent.
+Color-team reviews are step six of a repeatable response process, see [how to respond to a government RFP](/blog/how-to-respond-to-a-government-rfp/) for the full workflow, and [why proposals get rejected](/blog/why-proposals-get-rejected/) for what these reviews are designed to prevent.
