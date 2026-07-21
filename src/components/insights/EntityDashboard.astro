@@ -35,6 +35,51 @@ interface Props {
 
 const { page, breadcrumbs, eyebrow, campaign, dodLag = false, relatedHeading } = Astro.props;
 
+// Contextual "broad -> specific" links: every entity dashboard points at the
+// GovHub tools a reader in this market would actually reach for next. Before
+// this block, no programmatic page linked to a feature page, so 110 pages sat
+// in their own cluster with no path to a money page. Framing varies by type so
+// the anchor text is not identical across all 110 pages.
+const TOOL_LINKS: Record<string, { heading: string; intro: string; links: { href: string; label: string }[] }> = {
+  state: {
+    heading: 'Bid on the contracts behind these numbers',
+    intro: 'The vendors above won this work with compliant proposals. Here is what GovHub does when you go after the next one.',
+    links: [
+      { href: '/solutions/rfp-shredding/', label: 'Shred an RFP into a compliance matrix' },
+      { href: '/solutions/ai-proposal-generator/', label: 'Draft the proposal with AI' },
+      { href: '/pricing/', label: 'See plans and pricing' },
+    ],
+  },
+  agency: {
+    heading: 'Respond to this agency faster',
+    intro: 'Knowing what an agency buys is step one. GovHub handles the response.',
+    links: [
+      { href: '/solutions/compliance-matrix-generator/', label: 'Build the compliance matrix' },
+      { href: '/solutions/ai-proposal-generator/', label: 'Draft the proposal with AI' },
+      { href: '/pricing/', label: 'See plans and pricing' },
+    ],
+  },
+  naics: {
+    heading: 'Turn this market read into a submitted bid',
+    intro: 'Sized the opportunity in this industry? Here is how GovHub gets you to a compliant response.',
+    links: [
+      { href: '/solutions/template-generator/', label: 'Generate a proposal template' },
+      { href: '/solutions/rfp-shredding/', label: 'Shred an RFP into a compliance matrix' },
+      { href: '/pricing/', label: 'See plans and pricing' },
+    ],
+  },
+  setaside: {
+    heading: 'Win more set-aside work',
+    intro: 'Set-aside eligibility opens the door. GovHub helps you walk through it with a stronger proposal.',
+    links: [
+      { href: '/solutions/ai-proposal-generator/', label: 'Draft the proposal with AI' },
+      { href: '/solutions/compliance-matrix-generator/', label: 'Build the compliance matrix' },
+      { href: '/pricing/', label: 'See plans and pricing' },
+    ],
+  },
+};
+const toolBlock = TOOL_LINKS[campaign] ?? TOOL_LINKS.state;
+
 const [primaryChart, ...categoryCharts] = page.charts;
 const sections = page.narrative.sections;
 const faqs = page.faq.map((f) => ({ question: f.q, answer: f.a }));
@@ -87,6 +132,16 @@ const pairs = Array.from({ length: pairCount }, (_, i) => ({ section: sections[i
   </section>
 ))}
 
+<nav class="tools" aria-labelledby="tools-heading">
+  <h2 id="tools-heading">{toolBlock.heading}</h2>
+  <p>{toolBlock.intro}</p>
+  <ul>
+    {toolBlock.links.map((l) => (
+      <li><a href={l.href}>{l.label}</a></li>
+    ))}
+  </ul>
+</nav>
+
 <CTABand
   heading="This is the free layer."
   sub="GovHub customers get the live version — filters, exports, and AI proposal drafting on top of this data."
@@ -118,5 +173,42 @@ const pairs = Array.from({ length: pairCount }, (_, i) => ({ section: sections[i
     color: var(--fg-muted);
     font-size: 1.05rem;
     max-width: 46rem;
+  }
+  .tools {
+    margin: 2.5rem 0 0;
+    padding: 1.5rem;
+    background: var(--gh-surface);
+    border: 1px solid var(--gh-line);
+    border-radius: var(--gh-radius-md);
+  }
+  .tools h2 {
+    font-size: 1.3rem;
+    margin: 0 0 0.5rem;
+  }
+  .tools p {
+    color: var(--fg-muted);
+    margin: 0 0 1rem;
+    max-width: 46rem;
+  }
+  .tools ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 0.6rem;
+  }
+  .tools li a {
+    display: block;
+    padding: 0.85rem 1rem;
+    background: var(--bg);
+    border: 1px solid var(--gh-line);
+    border-radius: var(--gh-radius-sm);
+    color: var(--gh-teal-700);
+    font-weight: 600;
+  }
+  .tools li a:hover {
+    border-color: var(--gh-teal-600);
+    text-decoration: none;
   }
 </style>
