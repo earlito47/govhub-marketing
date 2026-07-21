@@ -153,6 +153,10 @@ const pairs = Array.from({ length: pairCount }, (_, i) => ({ section: sections[i
 
 <MethodologyNote updated={page.updated} fyLabel={page.fyWindow.label} dodLag={dodLag} />
 
+{page.crossLinks && page.crossLinks.length > 0 && (
+  <RelatedPages links={page.crossLinks} heading="Related agencies and industries" />
+)}
+
 <RelatedPages links={page.related} heading={relatedHeading} />
 
 <CTABand

@@ -80,5 +80,9 @@ export interface InsightsPage {
   narrative: { intro: string; sections: NarrativeSection[] };
   faq: FaqItem[];
   related: RelatedLink[];
+  /** Cross-cluster links mined from this page's own top-agency/top-industry
+   * data (state -> agencies + NAICS, agency -> NAICS, NAICS -> agencies).
+   * Optional: ranking/report pages don't carry it. */
+  crossLinks?: RelatedLink[];
   sources: SourceLink[];
 }

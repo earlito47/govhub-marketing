@@ -125,8 +125,8 @@ function buildTopAgencies(win, resp) {
   return reportPage({
     win,
     slug: 'top-agencies',
-    title: `Top Federal Agencies This Week — ${win.label}`,
-    h1: `Top agencies by newly reported contract obligations — week of ${win.label}`,
+    title: `Top Federal Agencies  This Week, ${win.label}`,
+    h1: `Top agencies by newly reported contract obligations, week of ${win.label}`,
     metaDescription: `The federal agencies with the most newly reported contract obligations the week of ${win.label}, led by ${top?.name ?? 'n/a'}.`,
     chart,
     table,
@@ -158,7 +158,7 @@ function buildStateMovers(win, resp) {
     rows: rows.map((r, i) => [i + 1, { text: r.name, href: r.slug ? stateHref(r.slug) : null }, r.amount]),
   };
   const intro = top
-    ? `Contractors performing work in ${top.name} saw the most newly reported federal obligations the week of ${win.label} — ${formatUsdCompact(
+    ? `Contractors performing work in ${top.name} saw the most newly reported federal obligations the week of ${win.label}, ${formatUsdCompact(
         top.amount
       )}. The top ten states accounted for ${formatUsdCompact(combined)} combined.`
     : `No state obligations were reported in the week of ${win.label}.`;
@@ -169,8 +169,8 @@ function buildStateMovers(win, resp) {
   return reportPage({
     win,
     slug: 'state-movers',
-    title: `Top States This Week — ${win.label}`,
-    h1: `Top states by newly reported federal obligations — week of ${win.label}`,
+    title: `Top States  This Week, ${win.label}`,
+    h1: `Top states by newly reported federal obligations, week of ${win.label}`,
     metaDescription: `The states with the most newly reported federal contract obligations the week of ${win.label}, led by ${top?.name ?? 'n/a'}.`,
     chart,
     table,
@@ -211,8 +211,8 @@ function buildMostActiveNaics(win, resp) {
   return reportPage({
     win,
     slug: 'most-active-naics',
-    title: `Most Active Federal Markets This Week — ${win.label}`,
-    h1: `Most active federal contract markets — week of ${win.label}`,
+    title: `Most Active Federal Markets  This Week, ${win.label}`,
+    h1: `Most active federal contract markets, week of ${win.label}`,
     metaDescription: `The most active federal contract industries (by newly reported obligations) the week of ${win.label}, led by ${top?.name ?? 'n/a'}.`,
     chart,
     table,
@@ -254,13 +254,13 @@ function buildLargestAwards(win, resp) {
   const intro = top
     ? `These are the federal awards with the largest total value that had new activity reported the week of ${win.label}. ${top.recipient} tops the list at ${formatUsdCompact(
         top.amount
-      )} in total award value. Total value reflects the full award, not a single week's obligation — a large figure often signals a modification to a long-running contract rather than new weekly spending.`
+      )} in total award value. Total value reflects the full award, not a single week's obligation. A large figure often signals a modification to a long-running contract rather than new weekly spending.`
     : `No award activity was reported the week of ${win.label}.`;
   return reportPage({
     win,
     slug: 'largest-awards',
-    title: `Largest Federal Awards This Week — ${win.label}`,
-    h1: `Largest federal awards with activity — week of ${win.label}`,
+    title: `Largest Federal Awards  This Week, ${win.label}`,
+    h1: `Largest federal awards with activity, week of ${win.label}`,
     metaDescription: `The federal contract awards with the largest total value that had new activity reported the week of ${win.label}.`,
     chart,
     table,
