@@ -13,7 +13,8 @@ import { existsSync, readdirSync } from 'node:fs';
 import { UsaSpendingClient } from './lib/usaspending.mjs';
 import { fetchNaicsRaw } from './fetch-data.mjs';
 import { computeNaicsPage } from './compute-stats.mjs';
-import { generateEntities } from './run-entities.mjs';
+import { generateEntities, publishEntity, countExistingEntities, newSummary, reportSummary } from './run-entities.mjs';
+import { makeBudget } from './lib/guardrails.mjs';
 import { buildRankings } from './build-rankings.mjs';
 import { buildWeeklyReports } from './build-weekly-report.mjs';
 import { enrichAll } from './generate-narratives.mjs';
@@ -25,15 +26,14 @@ const REPO_ROOT = path.resolve(path.dirname(__filename), '../..');
 const DATA_DIR = path.join(REPO_ROOT, 'src/data/insights');
 const PIPELINE_VERSION = 1;
 
-async function generateNaics({ client, asOfDate, summary }) {
-  const outDir = path.join(DATA_DIR, 'naics');
-  await mkdir(outDir, { recursive: true });
+async function generateNaics({ client, asOfDate, budget, summary }) {
   for (const naicsCode of PILOT_NAICS_CODES) {
     const raw = await fetchNaicsRaw(client, { naicsCode, asOfDate });
     const page = computeNaicsPage({ naicsCode, raw, updated: asOfDate });
-    await writeFile(path.join(outDir, `${naicsCode}.json`), JSON.stringify(page, null, 2), 'utf8');
-    summary.written += 1;
-    console.log(`[ok]   naics/${naicsCode} — ${page.stats.totalObligations > 0 ? 'ok' : 'ZERO'}`);
+    // NAICS now runs through the same guardrails as agency/state/setaside
+    // (thin skip, noindex, and the shared velocity throttle) instead of an
+    // unconditional write.
+    await publishEntity({ kind: 'naics', slug: naicsCode, page, budget, summary });
   }
 }
 
@@ -46,11 +46,14 @@ async function main() {
   const asOfDate =
     process.argv[2] && /^\d{4}-\d{2}-\d{2}$/.test(process.argv[2]) ? process.argv[2] : new Date().toISOString().slice(0, 10);
   const client = new UsaSpendingClient();
-  const summary = { written: 0, skipped: [] };
+  const summary = newSummary();
+  // One shared velocity budget for the whole run, so brand-new NAICS, agency,
+  // state, and set-aside pages together stay under the per-run / %-growth cap.
+  const budget = makeBudget({ existingTotal: countExistingEntities() });
 
-  console.log(`[run-weekly] Refreshing all Insights data as of ${asOfDate} — network required`);
-  await generateNaics({ client, asOfDate, summary });
-  await generateEntities({ client, asOfDate, summary });
+  console.log(`[run-weekly] Refreshing all Insights data as of ${asOfDate} — network required (new-page budget: ${budget.allowance})`);
+  await generateNaics({ client, asOfDate, budget, summary });
+  await generateEntities({ client, asOfDate, budget, summary });
 
   // Flagship rankings — evergreen top-N pages, refreshed each week (spec 7.2).
   const rankings = await buildRankings({ client, asOfDate });
@@ -84,10 +87,7 @@ async function main() {
   };
   await writeFile(path.join(DATA_DIR, 'meta.json'), JSON.stringify(meta, null, 2), 'utf8');
 
-  console.log(
-    `\n[run-weekly] Done. ${summary.written} pages written, ${summary.skipped.length} skipped, ${client.requestCount} API requests.`
-  );
-  if (summary.skipped.length) console.log(`[run-weekly] Skipped:\n  ${summary.skipped.join('\n  ')}`);
+  reportSummary('run-weekly', summary, budget, client);
 }
 
 main().catch((err) => {

@@ -23,6 +23,7 @@ const canonical = new URL(`/insights/set-aside/${page.slug}/`, Astro.site).toStr
 
 <InsightsLayout
   title={page.title}
+  noindex={page.noindex}
   description={page.metaDescription}
   dataset={{
     name: `Federal set-aside contract obligations: ${page.h1}`,

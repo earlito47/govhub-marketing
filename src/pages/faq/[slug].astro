@@ -1,0 +1,138 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/seo/Breadcrumbs.astro';
+import CTABand from '../../components/CTABand.astro';
+import { faqPages, getFaqPage, type FaqPage } from '../../data/faqPages';
+import { getTerm } from '../../data/glossary';
+import { SIGNUP_URL } from '../../config';
+
+export function getStaticPaths() {
+  return faqPages.map((f) => ({ params: { slug: f.slug }, props: { faq: f } }));
+}
+
+interface Props {
+  faq: FaqPage;
+}
+
+const { faq } = Astro.props;
+// One question per URL, so the question is the title. No brand suffix, and no
+// FAQPage schema: the page itself is the answer to this single query.
+const title = faq.question;
+const description = faq.short.slice(0, 158);
+
+const glossaryLinks = (faq.glossary ?? []).map((s) => getTerm(s)).filter(Boolean);
+const relatedFaqs = (faq.related ?? []).map((s) => getFaqPage(s)).filter(Boolean) as FaqPage[];
+---
+
+<BaseLayout title={title} description={description}>
+  <main class="container">
+    <Breadcrumbs
+      items={[
+        { name: 'Home', url: '/' },
+        { name: 'FAQ', url: '/faq/' },
+        { name: faq.question, url: `/faq/${faq.slug}/` },
+      ]}
+    />
+
+    <article class="qa prose">
+      <h1>{faq.question}</h1>
+      <p class="answer">{faq.short}</p>
+      {faq.body.map((p) => <p>{p}</p>)}
+
+      {(faq.solutions?.length || faq.more) && (
+        <div class="use">
+          <h2>Keep going</h2>
+          <ul>
+            {faq.solutions?.map((l) => (<li><a href={l.href}>{l.label}</a></li>))}
+            {faq.more && (<li><a href={faq.more.href}>{faq.more.label}</a></li>)}
+          </ul>
+        </div>
+      )}
+
+      {glossaryLinks.length > 0 && (
+        <p class="terms">
+          Related terms:{' '}
+          {glossaryLinks.map((t, i) => (
+            <>{i > 0 ? ', ' : ''}<a href={`/glossary/${t!.slug}/`}>{t!.term}</a></>
+          ))}
+        </p>
+      )}
+    </article>
+
+    {relatedFaqs.length > 0 && (
+      <nav class="related" aria-labelledby="related-heading">
+        <h2 id="related-heading">Related questions</h2>
+        <ul>
+          {relatedFaqs.map((r) => (
+            <li><a href={`/faq/${r.slug}/`}>{r.question}</a></li>
+          ))}
+        </ul>
+      </nav>
+    )}
+
+    <p class="back"><a href="/faq/">All questions</a></p>
+  </main>
+
+  <CTABand
+    heading="Stop researching, start responding"
+    sub="GovHub turns a solicitation into a compliant, submitted proposal, faster."
+    primaryHref={`${SIGNUP_URL}?utm_source=faq`}
+    primaryLabel="Start free trial"
+    secondaryHref="/solutions/"
+  />
+</BaseLayout>
+
+<style>
+  .qa {
+    margin-top: 1rem;
+  }
+  .qa h1 {
+    margin: 0.25rem 0 0.75rem;
+  }
+  .answer {
+    font-size: 1.25rem;
+    line-height: 1.5;
+    color: var(--fg);
+    font-weight: 500;
+    border-left: 4px solid var(--accent);
+    padding-left: 1rem;
+    margin: 0 0 1.5rem;
+  }
+  .use {
+    margin: 2rem 0 0;
+    padding: 1.25rem 1.5rem;
+    background: var(--accent-soft);
+    border-radius: var(--gh-radius-md);
+  }
+  .use h2 { font-size: 1.1rem; margin: 0 0 0.6rem; }
+  .use ul { margin: 0; padding-left: 1.1rem; }
+  .use li { margin: 0.3rem 0; }
+  .terms {
+    margin: 1.5rem 0 0;
+    font-size: 0.95rem;
+    color: var(--fg-muted);
+  }
+  .related {
+    margin: 2.5rem auto 0;
+    max-width: var(--content-width);
+  }
+  .related h2 { font-size: 1.3rem; margin: 0 0 1rem; }
+  .related ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 0.5rem;
+  }
+  .related li a {
+    display: block;
+    padding: 0.85rem 1rem;
+    background: var(--gh-surface);
+    border: 1px solid var(--gh-line);
+    border-radius: var(--gh-radius-sm);
+    color: var(--gh-teal-700);
+    font-weight: 600;
+  }
+  .related li a:hover { border-color: var(--gh-teal-600); text-decoration: none; }
+  .back { margin: 2rem auto 0; max-width: var(--content-width); }
+</style>
