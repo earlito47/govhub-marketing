@@ -1,7 +1,6 @@
 ---
 import { Image } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
-import { APP_URL } from '../config';
 
 interface Props {
   eyebrow?: string;
@@ -12,8 +11,6 @@ interface Props {
   secondaryHref?: string;
   secondaryLabel?: string;
   trust?: string;
-  /** Render the ChatGPT-style intake box in place of the CTA buttons (home only). */
-  intake?: boolean;
   image?: ImageMetadata;
   imageAlt?: string;
   /** Brand scene from public/ (SVG preferred). Decorative (aria-hidden) unless artAlt is set. */
@@ -33,7 +30,6 @@ const {
   secondaryHref,
   secondaryLabel,
   trust,
-  intake = false,
   image,
   imageAlt = '',
   art,
@@ -48,27 +44,12 @@ const {
     {eyebrow && <p class="eyebrow">{eyebrow}</p>}
     <h1>{title}</h1>
     <p class="lede">{lede}</p>
-    {intake ? (
-      <div class="intake">
-        <textarea
-          id="hero-intake-text"
-          class="intake-text"
-          rows="3"
-          placeholder="Paste your RFP here, or describe what you need. You'll attach the solicitation and any files on the next step."
-        ></textarea>
-        <div class="intake-row">
-          <span class="intake-hint">PDF, Word, Excel, or ZIP — attached on the next step</span>
-          <button type="button" id="hero-intake-go" class="primary intake-go">Analyze my RFP</button>
-        </div>
-      </div>
-    ) : (
-      <div class="ctas">
-        <a class="primary" href={primaryHref}>{primaryLabel}</a>
-        {secondaryHref && secondaryLabel && (
-          <a class="secondary" href={secondaryHref}>{secondaryLabel}</a>
-        )}
-      </div>
-    )}
+    <div class="ctas">
+      <a class="primary" href={primaryHref}>{primaryLabel}</a>
+      {secondaryHref && secondaryLabel && (
+        <a class="secondary" href={secondaryHref}>{secondaryLabel}</a>
+      )}
+    </div>
     {trust && <p class="trust">{trust}</p>}
   </div>
   {art ? (
@@ -81,29 +62,6 @@ const {
     </div>
   )}
 </section>
-
-<!-- Intake hand-off. Top-level (Astro hoists <script> at build time); the
-     null-guards make it a no-op on hero variants without the intake box. -->
-<script define:vars={{ appUrl: APP_URL }}>
-  // Hand the pasted text off to the app's /start intake. Short text rides a
-  // query param; long text / files are entered on the app origin (browser
-  // storage is origin-scoped, so a static page can't carry them across the
-  // subdomain). The app then decides signed-in → workspace vs signup+replay.
-  const btn = document.getElementById('hero-intake-go');
-  const ta = document.getElementById('hero-intake-text');
-  if (btn && ta) {
-    const go = () => {
-      const text = (ta.value || '').trim();
-      const base = appUrl + '/start';
-      const url = text && text.length <= 1500 ? base + '?text=' + encodeURIComponent(text) : base;
-      window.location.href = url;
-    };
-    btn.addEventListener('click', go);
-    ta.addEventListener('keydown', (e) => {
-      if ((e.metaKey || e.ctrlKey) && e.key === 'Enter') { e.preventDefault(); go(); }
-    });
-  }
-</script>
 
 <style>
   .hero {
@@ -145,53 +103,6 @@ const {
     gap: 1rem;
     align-items: center;
     flex-wrap: wrap;
-  }
-  /* ChatGPT-style intake box (home hero). */
-  .intake {
-    background: var(--gh-surface);
-    border: 1px solid var(--gh-line);
-    border-radius: var(--gh-radius-md);
-    box-shadow: var(--gh-shadow-card);
-    padding: 0.75rem 0.75rem 0.6rem;
-    max-width: 34rem;
-  }
-  .intake-text {
-    width: 100%;
-    border: 0;
-    resize: none;
-    background: transparent;
-    font-family: var(--gh-font-body);
-    font-size: 1rem;
-    color: var(--gh-ink-900);
-    line-height: 1.5;
-    padding: 0.25rem;
-  }
-  .intake-text:focus {
-    outline: none;
-  }
-  /* Light, on-brand hint text so users know how to use the box. */
-  .intake-text::placeholder {
-    color: var(--gh-ink-500);
-    opacity: 1;
-  }
-  .intake-row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 0.75rem;
-    margin-top: 0.4rem;
-    padding-top: 0.4rem;
-    border-top: 1px solid var(--gh-line);
-  }
-  .intake-hint {
-    font-size: 0.8rem;
-    color: var(--gh-ink-500);
-  }
-  .intake-go {
-    border: 0;
-    cursor: pointer;
-    font-size: 0.95rem;
-    white-space: nowrap;
   }
   .primary {
     display: inline-block;

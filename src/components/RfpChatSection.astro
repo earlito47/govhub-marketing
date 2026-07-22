@@ -1,0 +1,192 @@
+---
+// Standalone "chat" section (its own block below the hero) — a large, inviting
+// ChatGPT-style RFP box. On the static marketing site it's a launcher: it hands
+// the pasted text to the app's /start intake, where the real file attach +
+// analysis happen on the app origin (browser storage is origin-scoped, so a
+// static cross-subdomain page can't carry files). The + affordance and Send
+// both route into the app.
+import { APP_URL } from '../config';
+---
+
+<section class="block rfp-chat">
+  <div class="rfp-chat-head">
+    <h2>Paste your RFP. Get a compliant proposal.</h2>
+    <p class="section-lede">
+      Drop in the solicitation text or attach the files — PDF, Word, Excel, or a
+      ZIP. GovHub shreds every requirement, fills the forms, and drafts your
+      response.
+    </p>
+  </div>
+
+  <div class="chat">
+    <textarea
+      id="rfp-chat-text"
+      class="chat-text"
+      rows="4"
+      aria-label="Paste your RFP"
+      placeholder="Message GovHub…"
+    ></textarea>
+    <div class="chat-bar">
+      <button type="button" id="rfp-chat-plus" class="chat-plus" aria-label="Attach files">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <line x1="12" y1="5" x2="12" y2="19"></line>
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+        </svg>
+      </button>
+      <span class="chat-hint">PDF, Word, Excel, or ZIP</span>
+      <button type="button" id="rfp-chat-send" class="chat-send" aria-label="Analyze my RFP">
+        <span>Analyze</span>
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="12" y1="19" x2="12" y2="5"></line>
+          <polyline points="5 12 12 5 19 12"></polyline>
+        </svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<script define:vars={{ appUrl: APP_URL }}>
+  const ta = document.getElementById('rfp-chat-text');
+  const send = document.getElementById('rfp-chat-send');
+  const plus = document.getElementById('rfp-chat-plus');
+
+  // Hand off to the app's /start intake. Short pasted text rides ?text=; files
+  // and long text are entered on the app origin.
+  const go = () => {
+    const text = (ta && ta.value ? ta.value : '').trim();
+    const base = appUrl + '/start';
+    window.location.href = text && text.length <= 1500 ? base + '?text=' + encodeURIComponent(text) : base;
+  };
+  if (send) send.addEventListener('click', go);
+  if (plus) plus.addEventListener('click', go);
+  if (ta) ta.addEventListener('keydown', (e) => {
+    if ((e.metaKey || e.ctrlKey) && e.key === 'Enter') { e.preventDefault(); go(); }
+  });
+
+  // Typewriter placeholder — cycles example RFP instructions until the user
+  // interacts, so the empty box reads as "type your RFP here".
+  if (ta) {
+    const examples = [
+      'Paste the RFP for a $2.4M IT modernization contract…',
+      'Upload the SOW and I’ll surface every Section L & M requirement…',
+      'Drop in a state RFP — I’ll draft the technical response…',
+      'Analyze this sources-sought notice and tell me if we should bid…',
+    ];
+    let ei = 0, ci = 0, deleting = false, stopped = false;
+    const tick = () => {
+      if (stopped) return;
+      const full = examples[ei];
+      ci += deleting ? -1 : 1;
+      ta.setAttribute('placeholder', full.slice(0, ci) + (deleting ? '' : '│'));
+      let delay = deleting ? 30 : 55;
+      if (!deleting && ci === full.length) { deleting = true; delay = 1800; }
+      else if (deleting && ci === 0) { deleting = false; ei = (ei + 1) % examples.length; delay = 350; }
+      window.setTimeout(tick, delay);
+    };
+    const stop = () => { stopped = true; ta.setAttribute('placeholder', 'Message GovHub…'); };
+    ta.addEventListener('focus', stop, { once: true });
+    ta.addEventListener('input', stop, { once: true });
+    // Respect reduced-motion — leave a static placeholder.
+    const rm = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)');
+    if (!rm || !rm.matches) window.setTimeout(tick, 600);
+    else ta.setAttribute('placeholder', 'Paste your RFP, or attach the solicitation and any files…');
+  }
+</script>
+
+<style>
+  .rfp-chat {
+    text-align: center;
+  }
+  .rfp-chat-head {
+    max-width: 44rem;
+    margin: 0 auto 1.5rem;
+  }
+  .chat {
+    max-width: 44rem;
+    margin: 0 auto;
+    text-align: left;
+    background: var(--gh-surface);
+    border: 1px solid var(--gh-line);
+    border-radius: var(--gh-radius-lg);
+    box-shadow: var(--gh-shadow-raised);
+    padding: 1rem 1rem 0.75rem;
+    transition: border-color var(--gh-dur-fast) var(--gh-ease), box-shadow var(--gh-dur-fast) var(--gh-ease);
+  }
+  .chat:focus-within {
+    border-color: var(--gh-maroon-600);
+  }
+  .chat-text {
+    width: 100%;
+    border: 0;
+    resize: none;
+    background: transparent;
+    font-family: var(--gh-font-body);
+    font-size: 1.1rem;
+    line-height: 1.55;
+    color: var(--gh-ink-900);
+    min-height: 6.5rem;
+    padding: 0.25rem;
+  }
+  .chat-text:focus {
+    outline: none;
+  }
+  .chat-text::placeholder {
+    color: var(--gh-ink-500);
+    opacity: 1;
+  }
+  .chat-bar {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+    padding-top: 0.6rem;
+    border-top: 1px solid var(--gh-line);
+  }
+  .chat-plus {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.4rem;
+    height: 2.4rem;
+    border-radius: var(--gh-radius-pill);
+    border: 1px solid var(--gh-line);
+    background: var(--gh-surface);
+    color: var(--gh-ink-700);
+    cursor: pointer;
+    transition: background var(--gh-dur-fast) var(--gh-ease), border-color var(--gh-dur-fast) var(--gh-ease);
+  }
+  .chat-plus:hover {
+    background: var(--gh-tint-sun);
+    border-color: var(--gh-maroon-600);
+    color: var(--gh-maroon-700);
+  }
+  .chat-hint {
+    font-size: 0.85rem;
+    color: var(--gh-ink-500);
+  }
+  .chat-send {
+    margin-left: auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.6rem 1.15rem;
+    background: var(--gh-maroon-600);
+    color: #fff;
+    border: 0;
+    border-radius: var(--gh-radius-pill);
+    font-family: var(--gh-font-brand);
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: background var(--gh-dur-fast) var(--gh-ease), transform var(--gh-dur-fast) var(--gh-ease);
+  }
+  .chat-send:hover {
+    background: var(--gh-maroon-700);
+    transform: translateY(-1px);
+  }
+  @media (max-width: 560px) {
+    .chat-hint {
+      display: none;
+    }
+  }
+</style>

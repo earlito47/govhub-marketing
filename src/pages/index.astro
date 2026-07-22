@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import SchemaOrg from '../components/seo/SchemaOrg.astro';
 import Hero from '../components/Hero.astro';
+import RfpChatSection from '../components/RfpChatSection.astro';
 import FeatureGrid from '../components/FeatureGrid.astro';
 import SolutionsGrid from '../components/SolutionsGrid.astro';
 import SocialProofMarquee from '../components/SocialProofMarquee.astro';
@@ -115,8 +116,7 @@ const homeFaqs = faqsForPage('/');
     <Hero
       eyebrow="AI proposal software for government contractors"
       title={PRIMARY_KEYWORD.h1}
-      lede="Paste your RFP or upload the solicitation. GovHub finds every requirement, fills the forms, and drafts a compliant proposal that sounds like your firm, in minutes, not weekends."
-      intake={true}
+      lede="Upload the RFP. GovHub finds every requirement, fills the forms, and drafts a compliant proposal that sounds like your firm, in minutes, not weekends."
       primaryHref={SIGNUP_URL}
       primaryLabel="Start free trial"
       secondaryHref="/solutions/compliance-matrix-generator/"
@@ -124,6 +124,8 @@ const homeFaqs = faqsForPage('/');
       art="/brand/page-graphics/home-hero-strike-gold.svg"
       artAlt="Illustration of a prospector striking gold in a mountain stream, GovHub's Gold Country brand scene"
     />
+
+    <RfpChatSection />
 
     <SocialProofMarquee brands={proofBrands} />
 
