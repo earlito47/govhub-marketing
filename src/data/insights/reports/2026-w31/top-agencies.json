@@ -1,0 +1,212 @@
+{
+  "pageType": "report",
+  "slug": "top-agencies",
+  "week": "2026-w31",
+  "publishedDate": "2026-07-27",
+  "title": "Top Federal Agencies  This Week, Jul 21–27, 2026",
+  "h1": "Top agencies by newly reported contract obligations, week of Jul 21–27, 2026",
+  "metaDescription": "The federal agencies with the most newly reported contract obligations the week of Jul 21–27, 2026, led by Department of Homeland Security.",
+  "updated": "2026-07-27",
+  "fyWindow": {
+    "label": "Week of Jul 21–27, 2026",
+    "start": "2026-07-21",
+    "end": "2026-07-27"
+  },
+  "stats": {
+    "totalObligations": 1854701672.2200003,
+    "awardCount": null,
+    "yoyGrowthPct": null,
+    "avgAwardSize": null,
+    "smallBusinessSharePct": null
+  },
+  "charts": [
+    {
+      "id": "2026-w31-top-agencies",
+      "type": "bar",
+      "title": "Top agencies by newly reported obligations, week of Jul 21–27, 2026",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "Department of Homeland Security",
+              353555264.19
+            ],
+            [
+              "Department of Veterans Affairs",
+              287032197.84
+            ],
+            [
+              "Department of Health and Human Services",
+              278741302.26
+            ],
+            [
+              "Department of Transportation",
+              163167916.67
+            ],
+            [
+              "General Services Administration",
+              161874612.77
+            ],
+            [
+              "National Aeronautics and Space Administration",
+              161526757.74
+            ],
+            [
+              "Department of Energy",
+              153939473.41
+            ],
+            [
+              "Department of the Interior",
+              121571568.91
+            ],
+            [
+              "Department of Labor",
+              90056976.05
+            ],
+            [
+              "Department of Justice",
+              83235602.38
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Department of Homeland Security led all agencies with $354M in newly reported contract obligations."
+    }
+  ],
+  "tables": [
+    {
+      "title": "Top agencies, week of Jul 21–27, 2026",
+      "columns": [
+        "Rank",
+        "Agency",
+        "Obligations"
+      ],
+      "rows": [
+        [
+          1,
+          {
+            "text": "Department of Homeland Security",
+            "href": "/insights/agency/department-of-homeland-security/"
+          },
+          353555264.19
+        ],
+        [
+          2,
+          {
+            "text": "Department of Veterans Affairs",
+            "href": "/insights/agency/department-of-veterans-affairs/"
+          },
+          287032197.84
+        ],
+        [
+          3,
+          {
+            "text": "Department of Health and Human Services",
+            "href": "/insights/agency/department-of-health-and-human-services/"
+          },
+          278741302.26
+        ],
+        [
+          4,
+          {
+            "text": "Department of Transportation",
+            "href": "/insights/agency/department-of-transportation/"
+          },
+          163167916.67
+        ],
+        [
+          5,
+          {
+            "text": "General Services Administration",
+            "href": "/insights/agency/general-services-administration/"
+          },
+          161874612.77
+        ],
+        [
+          6,
+          {
+            "text": "National Aeronautics and Space Administration",
+            "href": "/insights/agency/national-aeronautics-and-space-administration/"
+          },
+          161526757.74
+        ],
+        [
+          7,
+          {
+            "text": "Department of Energy",
+            "href": "/insights/agency/department-of-energy/"
+          },
+          153939473.41
+        ],
+        [
+          8,
+          {
+            "text": "Department of the Interior",
+            "href": "/insights/agency/department-of-the-interior/"
+          },
+          121571568.91
+        ],
+        [
+          9,
+          {
+            "text": "Department of Labor",
+            "href": null
+          },
+          90056976.05
+        ],
+        [
+          10,
+          {
+            "text": "Department of Justice",
+            "href": "/insights/agency/department-of-justice/"
+          },
+          83235602.38
+        ]
+      ]
+    }
+  ],
+  "narrative": {
+    "intro": "In the week of Jul 21–27, 2026, Department of Homeland Security led all federal agencies with $354M in newly reported contract obligations. The ten most active agencies obligated $1.9B combined.",
+    "sections": []
+  },
+  "faq": [
+    {
+      "q": "Which federal agency reported the most contract obligations the week of Jul 21–27, 2026?",
+      "a": "Department of Homeland Security, with $354M in newly reported contract obligations."
+    }
+  ],
+  "related": [
+    {
+      "label": "Department of Homeland Security",
+      "href": "/insights/agency/department-of-homeland-security/"
+    },
+    {
+      "label": "Department of Veterans Affairs",
+      "href": "/insights/agency/department-of-veterans-affairs/"
+    },
+    {
+      "label": "Department of Health and Human Services",
+      "href": "/insights/agency/department-of-health-and-human-services/"
+    },
+    {
+      "label": "Department of Transportation",
+      "href": "/insights/agency/department-of-transportation/"
+    },
+    {
+      "label": "General Services Administration",
+      "href": "/insights/agency/general-services-administration/"
+    },
+    {
+      "label": "National Aeronautics and Space Administration",
+      "href": "/insights/agency/national-aeronautics-and-space-administration/"
+    }
+  ],
+  "sources": [
+    {
+      "label": "USAspending.gov award data",
+      "href": "https://www.usaspending.gov"
+    }
+  ]
+}

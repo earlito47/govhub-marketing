@@ -1,20 +1,20 @@
 {
   "pageType": "state",
   "slug": "south-dakota",
-  "title": "South Dakota Federal Contracts: $439M in FY2026",
+  "title": "South Dakota Federal Contracts: $478M in FY2026",
   "h1": "Federal Contracts in South Dakota: Spending, Agencies & Vendors",
-  "metaDescription": "Federal agencies obligated $439M to contractors in South Dakota in FY2026 to date. See top buying agencies, top vendors, and industries.",
-  "updated": "2026-07-13",
+  "metaDescription": "Federal agencies obligated $478M to contractors in South Dakota in FY2026 to date. See top buying agencies, top vendors, and industries.",
+  "updated": "2026-07-27",
   "fyWindow": {
     "label": "FY2026 to date",
     "start": "2025-10-01",
-    "end": "2026-07-13"
+    "end": "2026-07-27"
   },
   "stats": {
-    "totalObligations": 439115170.19,
-    "awardCount": 2535,
-    "yoyGrowthPct": -45.4,
-    "avgAwardSize": 173221,
+    "totalObligations": 477785639.97,
+    "awardCount": 2652,
+    "yoyGrowthPct": -40.6,
+    "avgAwardSize": 180160,
     "smallBusinessSharePct": null
   },
   "charts": [
@@ -48,13 +48,13 @@
             ],
             [
               "FY26",
-              439115170.19
+              477785639.97
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Obligations fell 45.4% year over year, from $804M in FY2025 to $439M in FY2026 to date."
+      "takeaway": "Obligations fell 40.6% year over year, from $804M in FY2025 to $478M in FY2026 to date."
     },
     {
       "id": "south-dakota-top-agencies",
@@ -66,27 +66,27 @@
           "points": [
             [
               "Department of Defense",
-              171839577.95
+              194639809.71
             ],
             [
               "Department of Health and Human Services",
-              96806964.89
+              100918829.08
             ],
             [
               "Department of the Interior",
-              82786268.06
+              86304856.12
             ],
             [
               "Department of Veterans Affairs",
-              50008872.1
+              52726461.01
             ],
             [
               "Department of Agriculture",
-              12458320.55
+              14005172.58
             ],
             [
               "Department of Justice",
-              8230714.96
+              9037957.24
             ],
             [
               "Department of the Treasury",
@@ -98,17 +98,17 @@
             ],
             [
               "General Services Administration",
-              3457369.21
+              3689004.55
             ],
             [
-              "Department of Energy",
-              2209170.23
+              "Department of Transportation",
+              2440354.43
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Department of Defense was the top federal buyer in South Dakota, obligating $172M (39.1% of the state total)."
+      "takeaway": "Department of Defense was the top federal buyer in South Dakota, obligating $195M (40.7% of the state total)."
     },
     {
       "id": "south-dakota-top-vendors",
@@ -120,31 +120,35 @@
           "points": [
             [
               "KBR WYLE SERVICES, LLC",
-              63337094.81
+              64926300.81
             ],
             [
               "FEDERAL CONTRACTING INC",
-              40288499.9
+              40406543.9
             ],
             [
               "BL HARBERT INTERNATIONAL LLC",
-              30671337.87
+              30918109.87
             ],
             [
               "BLACK HILLS SERVICE COMPANY, LLC",
-              29087894.62
+              29538910.81
             ],
             [
               "TRIBAL HEALTH, LLC",
-              20586364.99
+              20724854.99
+            ],
+            [
+              "VRC METAL SYSTEMS, LLC",
+              19350000
             ],
             [
               "STERLING COMPUTERS CORPORATION",
-              16960138.32
+              17455535.08
             ],
             [
               "LACREEK DEVELOPMENT CORP",
-              16688974.7
+              16922810.89
             ],
             [
               "PEDERSEN & RANGEL",
@@ -153,16 +157,12 @@
             [
               "ROSENBAUER AMERICA LLC",
               14961869.15
-            ],
-            [
-              "AEROSTAR INTERNATIONAL, LLC",
-              8303913.38
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "KBR WYLE SERVICES, LLC led all contractors in South Dakota with $63.3M, 14.4% of the state total."
+      "takeaway": "KBR WYLE SERVICES, LLC led all contractors in South Dakota with $64.9M, 13.6% of the state total."
     },
     {
       "id": "south-dakota-top-naics",
@@ -174,27 +174,31 @@
           "points": [
             [
               "Commercial and Institutional Building Construction",
-              92104273.03
+              94213847.35
             ],
             [
               "Computer Facilities Management Services",
-              63651777.13
+              65240983.13
             ],
             [
               "Electric Power Distribution",
-              29917151.17
+              30368167.36
             ],
             [
               "Offices of Physicians (except Mental Health Specialists)",
-              26831053.31
+              26772391.31
+            ],
+            [
+              "Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology)",
+              26342608.19
             ],
             [
               "Temporary Help Services",
-              22367184.17
+              24680397.63
             ],
             [
               "Other Heavy and Civil Engineering Construction",
-              19664488.72
+              20631371.72
             ],
             [
               "Construction Machinery Manufacturing",
@@ -202,21 +206,17 @@
             ],
             [
               "Electronic Computer Manufacturing",
-              13714542.23
+              14126097.93
             ],
             [
               "Engineering Services",
-              11782531.89
-            ],
-            [
-              "Nonscheduled Chartered Freight Air Transportation",
-              8189627.38
+              12263403.04
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Commercial and Institutional Building Construction was the largest industry in South Dakota, with $92.1M obligated."
+      "takeaway": "Commercial and Institutional Building Construction was the largest industry in South Dakota, with $94.2M obligated."
     }
   ],
   "crossLinks": [
@@ -241,6 +241,10 @@
       "href": "/insights/naics/236220/"
     },
     {
+      "label": "NAICS 541715: Research and Development in the Physical, Engineering, and Life Sciences",
+      "href": "/insights/naics/541715/"
+    },
+    {
       "label": "NAICS 541330: Engineering Services",
       "href": "/insights/naics/541330/"
     }
@@ -260,7 +264,7 @@
             "text": "KBR WYLE SERVICES, LLC",
             "href": "https://www.usaspending.gov/recipient/eb13e842-2068-e3ee-0453-d02b9582e5cd-C/latest/"
           },
-          63337094.81
+          64926300.81
         ],
         [
           2,
@@ -268,7 +272,7 @@
             "text": "FEDERAL CONTRACTING INC",
             "href": "https://www.usaspending.gov/recipient/f29549c8-b463-8ac6-8ee0-c8ebabdb6ea8-C/latest/"
           },
-          40288499.9
+          40406543.9
         ],
         [
           3,
@@ -276,7 +280,7 @@
             "text": "BL HARBERT INTERNATIONAL LLC",
             "href": "https://www.usaspending.gov/recipient/f9896eaa-17af-6d01-f48f-cda50097f023-C/latest/"
           },
-          30671337.87
+          30918109.87
         ],
         [
           4,
@@ -284,7 +288,7 @@
             "text": "BLACK HILLS SERVICE COMPANY, LLC",
             "href": "https://www.usaspending.gov/recipient/78a12dd2-7da1-7e05-f607-e54b9b68fe0e-C/latest/"
           },
-          29087894.62
+          29538910.81
         ],
         [
           5,
@@ -292,26 +296,34 @@
             "text": "TRIBAL HEALTH, LLC",
             "href": "https://www.usaspending.gov/recipient/5082f1ef-6d88-b98e-c80e-61e2d42bf656-C/latest/"
           },
-          20586364.99
+          20724854.99
         ],
         [
           6,
           {
-            "text": "STERLING COMPUTERS CORPORATION",
-            "href": "https://www.usaspending.gov/recipient/456a17c9-3bd9-f107-77ee-816e474d173e-C/latest/"
+            "text": "VRC METAL SYSTEMS, LLC",
+            "href": "https://www.usaspending.gov/recipient/8826e307-596a-dcea-c22a-5185fc852c44-C/latest/"
           },
-          16960138.32
+          19350000
         ],
         [
           7,
           {
-            "text": "LACREEK DEVELOPMENT CORP",
-            "href": "https://www.usaspending.gov/recipient/f80945c0-596e-de5e-c9fb-2c2110044d9b-C/latest/"
+            "text": "STERLING COMPUTERS CORPORATION",
+            "href": "https://www.usaspending.gov/recipient/456a17c9-3bd9-f107-77ee-816e474d173e-C/latest/"
           },
-          16688974.7
+          17455535.08
         ],
         [
           8,
+          {
+            "text": "LACREEK DEVELOPMENT CORP",
+            "href": "https://www.usaspending.gov/recipient/f80945c0-596e-de5e-c9fb-2c2110044d9b-C/latest/"
+          },
+          16922810.89
+        ],
+        [
+          9,
           {
             "text": "PEDERSEN & RANGEL",
             "href": "https://www.usaspending.gov/recipient/0718cd20-8059-f924-0b68-e2c8bf7ede29-C/latest/"
@@ -319,20 +331,12 @@
           15850000
         ],
         [
-          9,
+          10,
           {
             "text": "ROSENBAUER AMERICA LLC",
             "href": "https://www.usaspending.gov/recipient/d86122ba-4848-25b8-423a-f233152028b4-C/latest/"
           },
           14961869.15
-        ],
-        [
-          10,
-          {
-            "text": "AEROSTAR INTERNATIONAL, LLC",
-            "href": "https://www.usaspending.gov/recipient/443dda2b-49eb-c219-f2fc-63a5b4618965-C/latest/"
-          },
-          8303913.38
         ]
       ]
     },
@@ -351,7 +355,7 @@
             "text": "BL HARBERT INTERNATIONAL LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_W9128F24C0005_9700_-NONE-_-NONE-/"
           },
-          208414671.58,
+          208661443.58,
           "Department of Defense"
         ],
         [
@@ -369,7 +373,7 @@
             "text": "CONTI FEDERAL SERVICES, LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_W9128F24C0013_9700_-NONE-_-NONE-/"
           },
-          140413114,
+          140761739.47,
           "Department of Defense"
         ],
         [
@@ -378,7 +382,7 @@
             "text": "WALSH FEDERAL LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_W9128F21C0045_9700_-NONE-_-NONE-/"
           },
-          138633521.02,
+          138948623.02,
           "Department of Defense"
         ],
         [
@@ -387,7 +391,7 @@
             "text": "R. C. CONSTRUCTION CO., INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_W9128F24F0112_9700_W9128F21D0069_9700/"
           },
-          123046255,
+          123122433,
           "Department of Defense"
         ],
         [
@@ -396,7 +400,7 @@
             "text": "FEDERAL CONTRACTING INC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_W9128F22C0025_9700_-NONE-_-NONE-/"
           },
-          111569863.28,
+          111642985.28,
           "Department of Defense"
         ],
         [
@@ -405,7 +409,7 @@
             "text": "FEDERAL CONTRACTING INC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_W9128F22C0024_9700_-NONE-_-NONE-/"
           },
-          78383873.11,
+          78400284.11,
           "Department of Defense"
         ],
         [
@@ -414,7 +418,7 @@
             "text": "FEDERAL CONTRACTING INC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_W9128F23C0003_9700_-NONE-_-NONE-/"
           },
-          76367519,
+          76396030,
           "Department of Defense"
         ],
         [
@@ -423,7 +427,7 @@
             "text": "CONTI FEDERAL SERVICES, LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_W9128F23C0014_9700_-NONE-_-NONE-/"
           },
-          73697867.77,
+          73759870.65,
           "Department of Defense"
         ],
         [
@@ -432,7 +436,7 @@
             "text": "CONTI FEDERAL SERVICES, LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_W9128F24C0014_9700_-NONE-_-NONE-/"
           },
-          67201528,
+          67427817,
           "Department of Defense"
         ],
         [
@@ -459,7 +463,7 @@
             "text": "BLACK HILLS SERVICE COMPANY, LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C77624F0019_3600_47PA0419D0014_4740/"
           },
-          47559001.77,
+          48010017.96,
           "Department of Veterans Affairs"
         ],
         [
@@ -468,7 +472,7 @@
             "text": "CONTI FEDERAL SERVICES, LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_W9128F23C0033_9700_-NONE-_-NONE-/"
           },
-          45683931.19,
+          46695740.19,
           "Department of Defense"
         ],
         [
@@ -492,19 +496,19 @@
         [
           17,
           {
-            "text": "RICHARD GROUP LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C77622C0079_3600_-NONE-_-NONE-/"
+            "text": "SAW GREENLAND, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C26325C0059_3600_-NONE-_-NONE-/"
           },
-          34739656.33,
+          34638080,
           "Department of Veterans Affairs"
         ],
         [
           18,
           {
-            "text": "SAW GREENLAND, LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C26325C0059_3600_-NONE-_-NONE-/"
+            "text": "RICHARD GROUP LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C77622C0079_3600_-NONE-_-NONE-/"
           },
-          34638080,
+          34412926.33,
           "Department of Veterans Affairs"
         ],
         [
@@ -522,7 +526,7 @@
             "text": "R.C.S. CONSTRUCTION, INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_140P2025C0007_1443_-NONE-_-NONE-/"
           },
-          27004233.07,
+          27027907.07,
           "Department of the Interior"
         ],
         [
@@ -564,40 +568,40 @@
         [
           25,
           {
-            "text": "ROUNDHOUSE-MV JV",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_W9128F22C0032_9700_-NONE-_-NONE-/"
+            "text": "VRC METAL SYSTEMS, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W911QX26FA044_9700_W911QX23D0006_9700/"
           },
-          19155746.54,
+          19350000,
           "Department of Defense"
         ]
       ]
     }
   ],
   "narrative": {
-    "intro": "Federal contracting in South Dakota through FY2026 to date shows total obligations of $439M across 2,535 awards, with an average award size of $173K. Obligations are down 45.4% year over year. Fiscal-year history shows obligations of $624M in FY21, $1.2B in FY22, $1B in FY23, $1.3B in FY24, and $804M in FY25, with the current FY26 to date total at $439M. The Department of Defense is the largest buyer at $172M, followed by the Department of Health and Human Services at $96.8M and the Department of the Interior at $82.8M. Top vendors include KBR WYLE SERVICES, LLC at $63.3M and FEDERAL CONTRACTING INC at $40.3M. Leading industries by obligations are Commercial and Institutional Building Construction at $92.1M and Computer Facilities Management Services at $63.7M. All figures are contract obligations, and current-year totals are partial (fiscal year to date).",
+    "intro": "Federal contract obligations in South Dakota total $478M in FY2026 to date. Award activity so far includes 2,652 awards with an average award size of $180K, and obligations fell 40.6% year over year. Recent fiscal years were larger: FY21 was $624M, FY22 was $1.2B, FY23 was $1B, FY24 was $1.3B, and FY25 was $804M. The Department of Defense is the largest buyer in the state with $195M in obligations, followed by the Department of Health and Human Services with $101M and the Department of the Interior with $86.3M. Top vendors so far are KBR WYLE SERVICES, LLC with $64.9M and FEDERAL CONTRACTING INC with $40.4M. Industry obligations are concentrated in construction and IT-related NAICS, led by Commercial and Institutional Building Construction at $94.2M and Computer Facilities Management Services at $65.2M. All figures reported are contract obligations and current-year totals are partial, fiscal year to date.",
     "sections": [
       {
-        "heading": "What changed in South Dakota federal contracting recently?",
-        "body": "Obligations are down 45.4% year over year, with FY26 to date obligations at $439M compared with prior fiscal years. The recent pipeline shows variability: FY21 $624M, FY22 $1.2B, FY23 $1B, FY24 $1.3B, and FY25 $804M, indicating a pullback into the current fiscal year to date."
+        "heading": "Why are FY2026 obligations lower than recent years?",
+        "body": "Obligations fell 40.6% year over year, reflecting a sharp decline in FY2026 to date compared with the prior fiscal year total of $804M in FY25. FY26 at $478M is also below the peaks seen in FY22 and FY24, which were $1.2B and $1.3B respectively. The current-year totals are partial, fiscal year to date, so the year-to-date figure represents obligations recorded so far."
       },
       {
-        "heading": "Where are the largest opportunities by agency and industry?",
-        "body": "The largest buying agencies in FY2026 to date are the Department of Defense at $172M, the Department of Health and Human Services at $96.8M, and the Department of the Interior at $82.8M. Industry concentrations include Commercial and Institutional Building Construction at $92.1M and Computer Facilities Management Services at $63.7M, which represent the top sectors by obligations."
+        "heading": "Which agencies and vendors dominate federal spending in South Dakota?",
+        "body": "The Department of Defense accounts for $195M of FY2026 to date obligations, followed by the Department of Health and Human Services with $101M and the Department of the Interior with $86.3M. The largest contractors are KBR WYLE SERVICES, LLC at $64.9M and FEDERAL CONTRACTING INC at $40.4M. Industry concentration is highest in construction and IT services, led by Commercial and Institutional Building Construction at $94.2M and Computer Facilities Management Services at $65.2M."
       }
     ]
   },
   "faq": [
     {
       "q": "How much federal contract money goes to South Dakota?",
-      "a": "Total federal contract obligations to South Dakota are $439M in FY2026 to date across 2,535 awards with an average award size of $173K."
+      "a": "South Dakota received $478M in federal contract obligations in FY2026 to date. That total comes from 2,652 awards with an average award size of $180K, and obligations fell 40.6% year over year. Recent fiscal year totals were $804M in FY25, $1.3B in FY24, $1B in FY23, $1.2B in FY22, and $624M in FY21."
     },
     {
       "q": "Which agencies award the most contracts in South Dakota?",
-      "a": "The top buying agency in South Dakota is the Department of Defense at $172M; the next largest are the Department of Health and Human Services at $96.8M and the Department of the Interior at $82.8M."
+      "a": "The Department of Defense awards the most contracts in South Dakota with $195M in FY2026 to date. Other top buying agencies are the Department of Health and Human Services with $101M and the Department of the Interior with $86.3M."
     },
     {
       "q": "Who are the largest federal contractors in South Dakota?",
-      "a": "The largest federal contractors in South Dakota in FY2026 to date are KBR WYLE SERVICES, LLC at $63.3M and FEDERAL CONTRACTING INC at $40.3M; other top vendors include BL HARBERT INTERNATIONAL LLC at $30.7M and BLACK HILLS SERVICE COMPANY, LLC at $29.1M."
+      "a": "KBR WYLE SERVICES, LLC is the largest federal contractor in South Dakota at $64.9M in FY2026 to date. Other leading vendors include FEDERAL CONTRACTING INC at $40.4M, BL HARBERT INTERNATIONAL LLC at $30.9M, and BLACK HILLS SERVICE COMPANY, LLC at $29.5M."
     }
   ],
   "related": [

@@ -1,20 +1,20 @@
 {
   "pageType": "state",
   "slug": "colorado",
-  "title": "Federal Contracts in Colorado: $8.8B (FY2026)",
+  "title": "Federal Contracts in Colorado: $9.3B (FY2026)",
   "h1": "Federal Contracts in Colorado: Spending, Agencies & Vendors",
-  "metaDescription": "Federal agencies obligated $8.8B to contractors in Colorado in FY2026 to date. See top buying agencies, top vendors, and industries.",
-  "updated": "2026-07-13",
+  "metaDescription": "Federal agencies obligated $9.3B to contractors in Colorado in FY2026 to date. See top buying agencies, top vendors, and industries.",
+  "updated": "2026-07-27",
   "fyWindow": {
     "label": "FY2026 to date",
     "start": "2025-10-01",
-    "end": "2026-07-13"
+    "end": "2026-07-27"
   },
   "stats": {
-    "totalObligations": 8838319895.9,
-    "awardCount": 14667,
-    "yoyGrowthPct": -45.1,
-    "avgAwardSize": 602599,
+    "totalObligations": 9302899943.24,
+    "awardCount": 15725,
+    "yoyGrowthPct": -42.2,
+    "avgAwardSize": 591599,
     "smallBusinessSharePct": null
   },
   "charts": [
@@ -48,13 +48,13 @@
             ],
             [
               "FY26",
-              8838319895.9
+              9302899943.24
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Obligations fell 45.1% year over year, from $16.1B in FY2025 to $8.8B in FY2026 to date."
+      "takeaway": "Obligations fell 42.2% year over year, from $16.1B in FY2025 to $9.3B in FY2026 to date."
     },
     {
       "id": "colorado-top-agencies",
@@ -66,49 +66,49 @@
           "points": [
             [
               "Department of Defense",
-              5277051636.6
-            ],
-            [
-              "Department of Veterans Affairs",
-              743554775.45
+              5563050247.4
             ],
             [
               "National Aeronautics and Space Administration",
-              740040938.91
+              811666953.6
+            ],
+            [
+              "Department of Veterans Affairs",
+              752072398.28
             ],
             [
               "Department of Energy",
-              541845446.28
+              544614937.91
             ],
             [
               "General Services Administration",
-              354239253.43
-            ],
-            [
-              "Department of Agriculture",
-              310251799.03
+              371520533.07
             ],
             [
               "Department of Homeland Security",
-              306278179.39
+              333003399.82
+            ],
+            [
+              "Department of Agriculture",
+              331098324.52
             ],
             [
               "Department of the Interior",
-              226520669.09
+              233464964.35
             ],
             [
               "Department of Justice",
-              117859364.92
+              121241680.01
             ],
             [
               "Department of Health and Human Services",
-              62683821.8
+              65960379.73
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Department of Defense was the top federal buyer in Colorado, obligating $5.3B (59.7% of the state total)."
+      "takeaway": "Department of Defense was the top federal buyer in Colorado, obligating $5.6B (59.8% of the state total)."
     },
     {
       "id": "colorado-top-vendors",
@@ -120,31 +120,31 @@
           "points": [
             [
               "SIERRA NEVADA COMPANY, LLC",
-              1794223246.45
+              1819716483.68
             ],
             [
               "LOCKHEED MARTIN CORP",
-              1533803646.17
+              1630892936.53
             ],
             [
               "ALLIANCE FOR ENERGY INNOVATION, LLC",
-              489987170.65
+              493004655.09
             ],
             [
               "V3GATE, LLC",
-              375292797.24
-            ],
-            [
-              "AMENTUM TECHNOLOGY, INC.",
-              197795277.01
+              384720094.35
             ],
             [
               "BAE SYSTEMS SPACE & MISSION SYSTEMS INC.",
-              190332582.82
+              240225870.82
             ],
             [
-              "VECTRUS SYSTEMS LLC",
-              188589776.99
+              "AMENTUM TECHNOLOGY, INC.",
+              219524122.93
+            ],
+            [
+              "V2X SYSTEMS LLC",
+              198295325.76
             ],
             [
               "DAVITA INC.",
@@ -152,17 +152,17 @@
             ],
             [
               "L3HARRIS TECHNOLOGIES, INC.",
-              149416026.06
+              150875068
             ],
             [
-              "PALANTIR TECHNOLOGIES INC.",
-              133713081.36
+              "BLUESTAQ LLC",
+              135809028.03
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "SIERRA NEVADA COMPANY, LLC led all contractors in Colorado with $1.8B, 20.3% of the state total."
+      "takeaway": "SIERRA NEVADA COMPANY, LLC led all contractors in Colorado with $1.8B, 19.6% of the state total."
     },
     {
       "id": "colorado-top-naics",
@@ -178,39 +178,39 @@
             ],
             [
               "Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology)",
-              1074821405.27
+              1140809529.98
             ],
             [
               "Engineering Services",
-              724082410.14
+              799626497.99
             ],
             [
               "Guided Missile and Space Vehicle Manufacturing",
-              618253625.81
+              662671288.31
             ],
             [
               "Other Computer Related Services",
-              514176020.19
+              534190591.04
             ],
             [
               "Research and Development in Biotechnology",
-              489987170.65
+              493004655.09
             ],
             [
               "Facilities Support Services",
-              455910479.88
+              462370912.1
             ],
             [
               "All Other Professional, Scientific, and Technical Services",
-              401250340.88
+              432228829.9
             ],
             [
               "Research and Development in the Physical, Engineering, and Life Sciences (except Biotechnology)",
-              383505111.37
+              405708413.1
             ],
             [
               "Search, Detection, Navigation, Guidance, Aeronautical, and Nautical System and Instrument Manufacturing",
-              255750696.88
+              257634589.88
             ]
           ]
         }
@@ -225,12 +225,12 @@
       "href": "/insights/agency/department-of-defense/"
     },
     {
-      "label": "Department of Veterans Affairs contracts",
-      "href": "/insights/agency/department-of-veterans-affairs/"
-    },
-    {
       "label": "National Aeronautics and Space Administration contracts",
       "href": "/insights/agency/national-aeronautics-and-space-administration/"
+    },
+    {
+      "label": "Department of Veterans Affairs contracts",
+      "href": "/insights/agency/department-of-veterans-affairs/"
     },
     {
       "label": "Department of Energy contracts",
@@ -268,7 +268,7 @@
             "text": "SIERRA NEVADA COMPANY, LLC",
             "href": "https://www.usaspending.gov/recipient/fbd9af5f-b33e-9331-9063-295f6910ddf1-C/latest/"
           },
-          1794223246.45
+          1819716483.68
         ],
         [
           2,
@@ -276,7 +276,7 @@
             "text": "LOCKHEED MARTIN CORP",
             "href": "https://www.usaspending.gov/recipient/6e7a895c-aa57-8600-2a8a-4e237f6213f6-C/latest/"
           },
-          1533803646.17
+          1630892936.53
         ],
         [
           3,
@@ -284,7 +284,7 @@
             "text": "ALLIANCE FOR ENERGY INNOVATION, LLC",
             "href": "https://www.usaspending.gov/recipient/b5d8d22f-d83a-3e58-af13-5381d3c31019-C/latest/"
           },
-          489987170.65
+          493004655.09
         ],
         [
           4,
@@ -292,31 +292,31 @@
             "text": "V3GATE, LLC",
             "href": "https://www.usaspending.gov/recipient/d46ad2a7-ed19-9535-4f24-787705845610-C/latest/"
           },
-          375292797.24
+          384720094.35
         ],
         [
           5,
           {
-            "text": "AMENTUM TECHNOLOGY, INC.",
-            "href": "https://www.usaspending.gov/recipient/64d116c0-8e36-0200-3878-827560dca24a-C/latest/"
+            "text": "BAE SYSTEMS SPACE & MISSION SYSTEMS INC.",
+            "href": "https://www.usaspending.gov/recipient/f414ac71-05ca-f93c-6efa-a79cbe0dcfcd-C/latest/"
           },
-          197795277.01
+          240225870.82
         ],
         [
           6,
           {
-            "text": "BAE SYSTEMS SPACE & MISSION SYSTEMS INC.",
-            "href": "https://www.usaspending.gov/recipient/f414ac71-05ca-f93c-6efa-a79cbe0dcfcd-C/latest/"
+            "text": "AMENTUM TECHNOLOGY, INC.",
+            "href": "https://www.usaspending.gov/recipient/64d116c0-8e36-0200-3878-827560dca24a-C/latest/"
           },
-          190332582.82
+          219524122.93
         ],
         [
           7,
           {
-            "text": "VECTRUS SYSTEMS LLC",
+            "text": "V2X SYSTEMS LLC",
             "href": "https://www.usaspending.gov/recipient/385c148c-559c-6218-53ff-80836c64dc4c-C/latest/"
           },
-          188589776.99
+          198295325.76
         ],
         [
           8,
@@ -332,15 +332,15 @@
             "text": "L3HARRIS TECHNOLOGIES, INC.",
             "href": "https://www.usaspending.gov/recipient/a27d0b46-05ef-1c8c-c7b6-5cf7a5f57e7e-C/latest/"
           },
-          149416026.06
+          150875068
         ],
         [
           10,
           {
-            "text": "PALANTIR TECHNOLOGIES INC.",
-            "href": "https://www.usaspending.gov/recipient/1ea8a9a4-3726-3491-9040-66950bb67606-C/latest/"
+            "text": "BLUESTAQ LLC",
+            "href": "https://www.usaspending.gov/recipient/2a158929-2aa4-64c0-bde6-f28f2102a1b3-C/latest/"
           },
-          133713081.36
+          135809028.03
         ]
       ]
     },
@@ -359,7 +359,7 @@
             "text": "LOCKHEED MARTIN CORP",
             "href": "https://www.usaspending.gov/award/CONT_AWD_NNJ06TA25C_8000_-NONE-_-NONE-/"
           },
-          15555973334.93,
+          15578433007.93,
           "National Aeronautics and Space Administration"
         ],
         [
@@ -368,7 +368,7 @@
             "text": "ALLIANCE FOR ENERGY INNOVATION, LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_DEAC3608GO28308_8900_-NONE-_-NONE-/"
           },
-          10790056186.9,
+          10793073671.34,
           "Department of Energy"
         ],
         [
@@ -386,7 +386,7 @@
             "text": "BECHTEL NATIONAL, INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_W52P1J09C0012_9700_-NONE-_-NONE-/"
           },
-          4543287718.31,
+          4543913211.09,
           "Department of Defense"
         ],
         [
@@ -413,7 +413,7 @@
             "text": "LOCKHEED MARTIN CORP",
             "href": "https://www.usaspending.gov/award/CONT_AWD_N0003019C0025_9700_-NONE-_-NONE-/"
           },
-          4008737351.62,
+          4010693657.53,
           "Department of Defense"
         ],
         [
@@ -431,7 +431,7 @@
             "text": "LOCKHEED MARTIN CORP",
             "href": "https://www.usaspending.gov/award/CONT_AWD_N0003022C1025_9700_-NONE-_-NONE-/"
           },
-          2512869709.63,
+          2541139454.63,
           "Department of Defense"
         ],
         [
@@ -449,7 +449,7 @@
             "text": "LOCKHEED MARTIN CORP",
             "href": "https://www.usaspending.gov/award/CONT_AWD_FA882321C0001_9700_-NONE-_-NONE-/"
           },
-          1424651424.09,
+          1469069086.59,
           "Department of Defense"
         ],
         [
@@ -458,7 +458,7 @@
             "text": "L3HARRIS TECHNOLOGIES, INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_FA882320C0004_9700_-NONE-_-NONE-/"
           },
-          1319979762.76,
+          1321438804.7,
           "Department of Defense"
         ],
         [
@@ -548,7 +548,7 @@
             "text": "BLUESTAQ LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_47QFCA19C0016_4732_-NONE-_-NONE-/"
           },
-          515265630.7,
+          521260015.3,
           "General Services Administration"
         ],
         [
@@ -557,7 +557,7 @@
             "text": "BAE SYSTEMS SPACE & MISSION SYSTEMS INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_NNG10XA01C_8000_-NONE-_-NONE-/"
           },
-          481242149.65,
+          482892042.65,
           "National Aeronautics and Space Administration"
         ],
         [
@@ -582,30 +582,30 @@
     }
   ],
   "narrative": {
-    "intro": "Federal contract obligations to Colorado totaled $8.8B in FY2026 to date. Award activity comprised 14,667 contract actions with an average award size of $603K. Obligations are down 45.1% year over year and current-year totals are partial (fiscal year to date). Historical obligations show a peak of $16.1B in FY25 and a declining year-to-date total compared with prior full fiscal years: FY21 $12.8B, FY22 $14B, FY23 $14.9B, FY24 $15B, FY25 $16.1B, and FY26 $8.8B. The Department of Defense accounts for the largest share of buying activity at $5.3B, followed by civilian agencies including the Department of Veterans Affairs ($744M) and the National Aeronautics and Space Administration ($740M). Top vendor concentration includes prime awards to SIERRA NEVADA COMPANY, LLC ($1.8B) and LOCKHEED MARTIN CORP ($1.5B). Industry concentration centers on aerospace and R&D-related NAICS, led by Aircraft Manufacturing ($1.5B) and Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology) ($1.1B).",
+    "intro": "Federal contract obligations in Colorado for FY2026 to date total $9.3B. That total comes from 15,725 awards and an average award size of $592K. Obligations are down 42.2% year over year. The Department of Defense is the dominant buyer with $5.6B in obligations, and two vendors, SIERRA NEVADA COMPANY, LLC and LOCKHEED MARTIN CORP, account for $1.8B and $1.6B respectively. Key industries include Aircraft Manufacturing at $1.5B and Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology) at $1.1B. Other sizable sectors are Engineering Services at $800M and Guided Missile and Space Vehicle Manufacturing at $663M. FY2026 to date is a partial fiscal-year snapshot and follows five prior full fiscal years that ranged from $12.8B in FY21 to $16.1B in FY25. The concentration in defense buyers and aircraft and missile manufacturing stands out, while the mix of R&D and services shows continuing demand for technical and engineering work in the state.",
     "sections": [
       {
-        "heading": "How concentrated is federal contracting spending in Colorado?",
-        "body": "Spending is concentrated: the Department of Defense accounts for $5.3B of the $8.8B total in FY2026 to date. The two largest vendors together, SIERRA NEVADA COMPANY, LLC ($1.8B) and LOCKHEED MARTIN CORP ($1.5B), represent a substantial share of obligations. Aerospace and R&D NAICS dominate the industry mix, with Aircraft Manufacturing at $1.5B and major R&D categories totaling $1.1B and $490M."
+        "heading": "How concentrated is federal spending in Colorado?",
+        "body": "Spending is highly concentrated. The Department of Defense accounts for $5.6B of the $9.3B total. Two vendors, SIERRA NEVADA COMPANY, LLC and LOCKHEED MARTIN CORP, account for $1.8B and $1.6B respectively, so prime awards are clustered among a few large contractors."
       },
       {
-        "heading": "What does the FY2026 to date profile mean for vendor opportunities?",
-        "body": "Opportunities are concentrated in defense, aerospace, and research and development, reflected by the largest agencies and industry NAICS. The top vendors’ award totals indicate significant prime contract activity, while a broad award count of 14,667 and an average award size of $603K show numerous smaller actions alongside large primes. Obligations are down 45.1% year over year, and FY2026 totals are partial."
+        "heading": "What sectors and vendors dominate the market?",
+        "body": "Aircraft Manufacturing leads with $1.5B, followed by large R&D categories at $1.1B and $493M. Engineering Services and Guided Missile and Space Vehicle Manufacturing are also large at $800M and $663M. The top vendors include SIERRA NEVADA COMPANY, LLC at $1.8B and LOCKHEED MARTIN CORP at $1.6B."
       }
     ]
   },
   "faq": [
     {
       "q": "How much federal contract money goes to Colorado?",
-      "a": "Federal contract obligations to Colorado total $8.8B in FY2026 to date. Those obligations come from 14,667 awards with an average award size of $603K, and obligations are down 45.1% year over year compared with prior full fiscal years."
+      "a": "About $9.3B in federal contract obligations are recorded in Colorado for FY2026 to date. That total comes from 15,725 awards with an average award size of $592K. Obligations are down 42.2% year over year."
     },
     {
       "q": "Which agencies award the most contracts in Colorado?",
-      "a": "The top awarding agencies are the Department of Defense ($5.3B), the Department of Veterans Affairs ($744M), and the National Aeronautics and Space Administration ($740M). Other significant buyers in FY2026 to date include the Department of Energy ($542M) and the General Services Administration ($354M)."
+      "a": "The Department of Defense awards the most contracts in Colorado, with $5.6B in obligations for FY2026 to date. Other significant buying agencies are NASA at $812M and the Department of Veterans Affairs at $752M."
     },
     {
       "q": "Who are the largest federal contractors in Colorado?",
-      "a": "The largest federal contractors in Colorado are SIERRA NEVADA COMPANY, LLC ($1.8B), LOCKHEED MARTIN CORP ($1.5B), and ALLIANCE FOR ENERGY INNOVATION, LLC ($490M). Additional top vendors include V3GATE, LLC ($375M) and AMENTUM TECHNOLOGY, INC. ($198M)."
+      "a": "The largest federal contractors in Colorado are SIERRA NEVADA COMPANY, LLC at $1.8B and LOCKHEED MARTIN CORP at $1.6B. Other top vendors include ALLIANCE FOR ENERGY INNOVATION, LLC at $493M and V3GATE, LLC at $385M."
     }
   ],
   "related": [

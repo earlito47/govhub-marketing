@@ -1,20 +1,20 @@
 {
   "pageType": "agency",
   "slug": "department-of-agriculture",
-  "title": "USDA Contract Spending: $6.3B in FY2026",
+  "title": "USDA Contract Spending: $6.7B in FY2026",
   "h1": "Department of Agriculture: Federal Contract Spending & Top Vendors",
-  "metaDescription": "Department of Agriculture obligated $6.3B in federal contracts in FY2026 to date. See what it buys, its top vendors, and multi-year trend.",
-  "updated": "2026-07-13",
+  "metaDescription": "Department of Agriculture obligated $6.7B in federal contracts in FY2026 to date. See what it buys, its top vendors, and multi-year trend.",
+  "updated": "2026-07-27",
   "fyWindow": {
     "label": "FY2026 to date",
     "start": "2025-10-01",
-    "end": "2026-07-13"
+    "end": "2026-07-27"
   },
   "stats": {
-    "totalObligations": 6337754281.38,
-    "awardCount": 16594,
-    "yoyGrowthPct": -33.8,
-    "avgAwardSize": 381930,
+    "totalObligations": 6700172642.23,
+    "awardCount": 18184,
+    "yoyGrowthPct": -30,
+    "avgAwardSize": 368465,
     "smallBusinessSharePct": null
   },
   "charts": [
@@ -44,17 +44,17 @@
             ],
             [
               "FY25",
-              9569126030.28
+              9569150145.8
             ],
             [
               "FY26",
-              6337754281.38
+              6700172642.23
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Obligations fell 33.8% year over year, from $9.6B in FY2025 to $6.3B in FY2026 to date."
+      "takeaway": "Obligations fell 30.0% year over year, from $9.6B in FY2025 to $6.7B in FY2026 to date."
     },
     {
       "id": "department-of-agriculture-top-naics",
@@ -66,49 +66,49 @@
           "points": [
             [
               "Nonscheduled Chartered Freight Air Transportation",
-              671729800.2
+              723977070.15
             ],
             [
               "Highway, Street, and Bridge Construction",
-              420352727.91
+              439386918.47
             ],
             [
               "Animal (except Poultry) Slaughtering",
-              406314406.71
+              415894235.17
             ],
             [
               "Fruit and Vegetable Canning",
-              392430485.43
+              397256599.31
             ],
             [
               "Poultry Processing",
-              356072134.86
-            ],
-            [
-              "Computer Systems Design Services",
-              309351580.31
-            ],
-            [
-              "Other Computer Related Services",
-              308874181.16
+              361789632.96
             ],
             [
               "Cheese Manufacturing",
-              305679000.78
+              330326572.01
+            ],
+            [
+              "Computer Systems Design Services",
+              315679684.24
+            ],
+            [
+              "Other Computer Related Services",
+              313830241.32
             ],
             [
               "Support Activities for Forestry",
-              239766645.1
+              307035018.14
             ],
             [
               "All Other Miscellaneous Food Manufacturing",
-              218300083.8
+              219141986.4
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Nonscheduled Chartered Freight Air Transportation was Agriculture's largest contract category, with $672M obligated (10.6% of contract spending)."
+      "takeaway": "Nonscheduled Chartered Freight Air Transportation was Agriculture's largest contract category, with $724M obligated (10.8% of contract spending)."
     },
     {
       "id": "department-of-agriculture-top-vendors",
@@ -124,7 +124,7 @@
             ],
             [
               "TYSON FOODS INC.",
-              156680508
+              158140286.1
             ],
             [
               "PALANTIR TECHNOLOGIES INC.",
@@ -136,7 +136,11 @@
             ],
             [
               "PACIFIC COAST PRODUCERS",
-              105558252.33
+              108832943.61
+            ],
+            [
+              "PERIMETER SOLUTIONS LP",
+              107293140.1
             ],
             [
               "CARAHSOFT TECHNOLOGY CORP",
@@ -147,22 +151,18 @@
               84361560.56
             ],
             [
-              "CHS INC.",
-              76885862.22
-            ],
-            [
               "ASSOCIATED MILK PRODUCERS INC",
-              73814319.22
+              82804856.27
             ],
             [
-              "CALIFORNIA DAIRIES INC",
-              72929043.78
+              "LEPRINO FOODS DAIRY PRODUCTS CO",
+              79289313.02
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "KIEWIT INFRASTRUCTURE SOUTH CO led all Agriculture contractors with $261M, 4.1% of obligations."
+      "takeaway": "KIEWIT INFRASTRUCTURE SOUTH CO led all Agriculture contractors with $261M, 3.9% of obligations."
     }
   ],
   "crossLinks": [
@@ -202,7 +202,7 @@
             "text": "TYSON FOODS INC.",
             "href": "https://www.usaspending.gov/recipient/388ab88d-74c2-54ac-19e4-cb2df60ad520-C/latest/"
           },
-          156680508
+          158140286.1
         ],
         [
           3,
@@ -226,10 +226,18 @@
             "text": "PACIFIC COAST PRODUCERS",
             "href": "https://www.usaspending.gov/recipient/c273eb48-d122-a5f1-8037-040e89c0d237-C/latest/"
           },
-          105558252.33
+          108832943.61
         ],
         [
           6,
+          {
+            "text": "PERIMETER SOLUTIONS LP",
+            "href": "https://www.usaspending.gov/recipient/d7665c4a-faef-2a5a-e1c1-ac4f097e6df0-C/latest/"
+          },
+          107293140.1
+        ],
+        [
+          7,
           {
             "text": "CARAHSOFT TECHNOLOGY CORP",
             "href": "https://www.usaspending.gov/recipient/4e74aeb5-dd21-20a7-63bd-e9f934d69583-C/latest/"
@@ -237,7 +245,7 @@
           91851974.55
         ],
         [
-          7,
+          8,
           {
             "text": "CENTRAL VALLEY MEAT CO., INC.",
             "href": "https://www.usaspending.gov/recipient/562e02cd-f995-bb32-e730-4a413d1b34ae-C/latest/"
@@ -245,28 +253,20 @@
           84361560.56
         ],
         [
-          8,
-          {
-            "text": "CHS INC.",
-            "href": "https://www.usaspending.gov/recipient/f51e2247-e31c-b816-3208-6dac92a0e54c-C/latest/"
-          },
-          76885862.22
-        ],
-        [
           9,
           {
             "text": "ASSOCIATED MILK PRODUCERS INC",
             "href": "https://www.usaspending.gov/recipient/a9414861-272b-30e3-68c7-b2551f46810a-C/latest/"
           },
-          73814319.22
+          82804856.27
         ],
         [
           10,
           {
-            "text": "CALIFORNIA DAIRIES INC",
-            "href": "https://www.usaspending.gov/recipient/567e4ccc-b06e-6133-40c0-7eecba67dc9e-C/latest/"
+            "text": "LEPRINO FOODS DAIRY PRODUCTS CO",
+            "href": "https://www.usaspending.gov/recipient/7fe7157c-07fe-8d49-d54a-a415e23b9aad-C/latest/"
           },
-          72929043.78
+          79289313.02
         ]
       ]
     },
@@ -284,7 +284,7 @@
             "text": "ACCENTURE FEDERAL SERVICES LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_12314418F0020_1205_HHSN316201200002W_7529/"
           },
-          344946887.32
+          347648478.08
         ],
         [
           2,
@@ -292,7 +292,7 @@
             "text": "SYNERGY BUSINESS INNOVATION & SOLUTIONS INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_12314421F0279_1205_75N98119D00005_7529/"
           },
-          306775775.24
+          306963828
         ],
         [
           3,
@@ -444,7 +444,7 @@
             "text": "DYNAMO TECHNOLOGIES, LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_12314422F0296_1205_12760420A0008_12C2/"
           },
-          78644664.63
+          78600911.14
         ],
         [
           22,
@@ -468,7 +468,7 @@
             "text": "CALIFORNIA DAIRIES INC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_123J1426C0923_12K2_-NONE-_-NONE-/"
           },
-          70561235.29
+          70556712.79
         ],
         [
           25,
@@ -482,30 +482,30 @@
     }
   ],
   "narrative": {
-    "intro": "The Department of Agriculture has $6.3B in contract obligations for FY2026 to date across 16,594 awards, with an average award size of $382K. Obligations are down 33.8% year over year; current-year totals are partial (fiscal year to date). Spending has shifted across a mix of transportation, construction, food processing, and information technology categories. The largest single NAICS category to date is Nonscheduled Chartered Freight Air Transportation at $672M, followed by Highway, Street, and Bridge Construction at $420M and Animal (except Poultry) Slaughtering at $406M. Food manufacturing subcategories such as Fruit and Vegetable Canning ($392M), Poultry Processing ($356M), Cheese Manufacturing ($306M), and All Other Miscellaneous Food Manufacturing ($218M) also account for substantial obligations. Technology and services obligations appear in Computer Systems Design Services ($309M) and Other Computer Related Services ($309M). The top vendor list is led by KIEWIT INFRASTRUCTURE SOUTH CO ($261M), with major food and technology contractors including TYSON FOODS INC. ($157M) and PALANTIR TECHNOLOGIES INC. ($129M). This profile reflects the agency’s mix of logistics, infrastructure, food supply, and IT spending in the fiscal year to date.",
+    "intro": "The Department of Agriculture has $6.7B in contract obligations for FY2026 to date. Obligations fell 30.0% year over year. The agency has made 18,184 awards so far, and the average award size is $368K. FY2026 to date is lower than prior full fiscal years, following $9.6B in FY25, $11.6B in FY24, $11.5B in FY23, $10B in FY22, and $9.7B in FY21. Spending in FY2026 to date is concentrated in food and logistics industries as well as IT and forestry support. The largest category by obligations is Nonscheduled Chartered Freight Air Transportation at $724M, followed by Highway, Street, and Bridge Construction at $439M, and Animal (except Poultry) Slaughtering at $416M. Top vendors by obligations include KIEWIT INFRASTRUCTURE SOUTH CO at $261M, TYSON FOODS INC. at $158M, and PALANTIR TECHNOLOGIES INC. at $129M. These totals are contract obligations and the current-year figures are partial, fiscal year to date.",
     "sections": [
       {
-        "heading": "What are Agriculture's largest spending categories?",
-        "body": "The largest category by obligations is Nonscheduled Chartered Freight Air Transportation at $672M. Other major categories include Highway, Street, and Bridge Construction at $420M; Animal (except Poultry) Slaughtering at $406M; and Fruit and Vegetable Canning at $392M. Significant obligations also appear in Computer Systems Design Services ($309M), Other Computer Related Services ($309M), and Cheese Manufacturing ($306M)."
+        "heading": "How does FY2026 to date compare with recent years?",
+        "body": "FY2026 to date obligations are $6.7B, which is below the prior full-year totals. FY25 was $9.6B, FY24 was $11.6B, FY23 was $11.5B, FY22 was $10B, and FY21 was $9.7B. Obligations fell 30.0% year over year. The current total reflects partial, fiscal year to date obligations."
       },
       {
-        "heading": "Who are Agriculture's top vendors in FY2026 to date?",
-        "body": "KIEWIT INFRASTRUCTURE SOUTH CO leads vendors with $261M in obligations. Additional top contractors are TYSON FOODS INC. ($157M), PALANTIR TECHNOLOGIES INC. ($129M), and HELICOPTER TRANSPORT SERVICES, LLC ($116M). Other notable vendors include PACIFIC COAST PRODUCERS ($106M) and CARAHSOFT TECHNOLOGY CORP ($91.9M)."
+        "heading": "Where is Agriculture spending its contract dollars?",
+        "body": "The largest NAICS category in FY2026 to date is Nonscheduled Chartered Freight Air Transportation at $724M. Other major categories include Highway, Street, and Bridge Construction at $439M, Animal (except Poultry) Slaughtering at $416M, and Fruit and Vegetable Canning at $397M. Top vendors include KIEWIT INFRASTRUCTURE SOUTH CO at $261M and TYSON FOODS INC. at $158M."
       }
     ]
   },
   "faq": [
     {
       "q": "How much does Department of Agriculture spend on contracts?",
-      "a": "The Department of Agriculture has $6.3B in contract obligations for FY2026 to date. Those obligations are spread across 16,594 awards with an average award size of $382K, and obligations are down 33.8% year over year; current-year totals are partial (fiscal year to date)."
+      "a": "The Department of Agriculture has $6.7B in contract obligations for FY2026 to date. That total comes from 18,184 awards with an average award size of $368K. FY2026 to date obligations are down 30.0% year over year, and the current-year total is partial, fiscal year to date."
     },
     {
       "q": "What does Agriculture buy?",
-      "a": "Agriculture buys a mix of transportation, construction, food processing, forestry support, and IT services. Notable categories include Nonscheduled Chartered Freight Air Transportation ($672M), Highway, Street, and Bridge Construction ($420M), Animal (except Poultry) Slaughtering ($406M), Fruit and Vegetable Canning ($392M), Poultry Processing ($356M), Computer Systems Design Services ($309M), and Cheese Manufacturing ($306M)."
+      "a": "Agriculture buys a mix of food processing and logistics, construction, IT services, and forestry support. Leading NAICS categories in FY2026 to date include Nonscheduled Chartered Freight Air Transportation at $724M, Highway, Street, and Bridge Construction at $439M, Animal (except Poultry) Slaughtering at $416M, and Fruit and Vegetable Canning at $397M."
     },
     {
       "q": "Who are Agriculture's largest contractors?",
-      "a": "Agriculture's largest contractors by obligations in FY2026 to date include KIEWIT INFRASTRUCTURE SOUTH CO ($261M) and TYSON FOODS INC. ($157M). Other top vendors are PALANTIR TECHNOLOGIES INC. ($129M), HELICOPTER TRANSPORT SERVICES, LLC ($116M), PACIFIC COAST PRODUCERS ($106M), and CARAHSOFT TECHNOLOGY CORP ($91.9M)."
+      "a": "Agriculture's largest contractors by obligations in FY2026 to date include KIEWIT INFRASTRUCTURE SOUTH CO at $261M, TYSON FOODS INC. at $158M, and PALANTIR TECHNOLOGIES INC. at $129M. The top 10 vendors also include HELICOPTER TRANSPORT SERVICES, LLC at $116M and PACIFIC COAST PRODUCERS at $109M."
     }
   ],
   "related": [

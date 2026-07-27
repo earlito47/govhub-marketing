@@ -1,20 +1,20 @@
 {
   "pageType": "naics",
   "slug": "238210",
-  "title": "NAICS 238210: $370M in Federal Contracts, FY2026",
+  "title": "NAICS 238210: $405M in Federal Contracts, FY2026",
   "h1": "Electrical Contractors and Other Wiring Installation Contractors (NAICS 238210): Federal Contract Market",
-  "metaDescription": "Federal agencies obligated $370M on Electrical Contractors and Other Wiring Installation Contractors (NAICS 238210) in FY2026 to date. See top vendors, top",
-  "updated": "2026-07-13",
+  "metaDescription": "Federal agencies obligated $405M on Electrical Contractors and Other Wiring Installation Contractors (NAICS 238210) in FY2026 to date. See top vendors, top",
+  "updated": "2026-07-27",
   "fyWindow": {
     "label": "FY2026 to date",
     "start": "2025-10-01",
-    "end": "2026-07-13"
+    "end": "2026-07-27"
   },
   "stats": {
-    "totalObligations": 369987764.71,
-    "awardCount": 1758,
-    "yoyGrowthPct": -53.2,
-    "avgAwardSize": 210459,
+    "totalObligations": 405033577.53,
+    "awardCount": 1875,
+    "yoyGrowthPct": -48.8,
+    "avgAwardSize": 216018,
     "smallBusinessSharePct": null
   },
   "charts": [
@@ -44,17 +44,17 @@
             ],
             [
               "FY25",
-              790495822.39
+              790744712.39
             ],
             [
               "FY26",
-              369987764.71
+              405033577.53
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Obligations fell 53.2% year over year, from $790M in FY2025 to $370M in FY2026 to date."
+      "takeaway": "Obligations fell 48.8% year over year, from $791M in FY2025 to $405M in FY2026 to date."
     },
     {
       "id": "238210-top-agencies",
@@ -65,50 +65,50 @@
           "label": "Obligations",
           "points": [
             [
-              "Department of Veterans Affairs",
-              88637781.8
+              "Department of Defense",
+              97333589.91
             ],
             [
-              "Department of Defense",
-              76133597.64
+              "Department of Veterans Affairs",
+              94167412.99
             ],
             [
               "Department of State",
-              76122413.15
+              76623840.48
             ],
             [
               "Department of Transportation",
-              50387799.31
+              51164471.75
             ],
             [
               "Department of Homeland Security",
-              39493875.56
-            ],
-            [
-              "Department of the Interior",
-              9492969.52
+              39653570.22
             ],
             [
               "Department of Justice",
-              9191701.84
+              14736833.25
+            ],
+            [
+              "Department of the Interior",
+              9686656.26
             ],
             [
               "Department of Health and Human Services",
-              3965386.43
+              4174095.43
             ],
             [
               "National Gallery of Art",
-              3787121.08
+              4169391.08
             ],
             [
-              "Social Security Administration",
-              3035304.49
+              "General Services Administration",
+              3269537.89
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Department of Veterans Affairs was the top buyer, obligating $88.6M (24.0% of all obligations)."
+      "takeaway": "Department of Defense was the top buyer, obligating $97.3M (24.0% of all obligations)."
     },
     {
       "id": "238210-top-vendors",
@@ -135,44 +135,44 @@
               15322747.72
             ],
             [
+              "WSP USA SOLUTIONS INC",
+              15293279.51
+            ],
+            [
               "KAR CONTRACTING LLC",
               12950000
             ],
             [
-              "WSP USA SOLUTIONS INC",
-              10327711.73
+              "M. C. DEAN, INC.",
+              10615682.49
             ],
             [
               "OEG INC",
               9710670.51
             ],
             [
-              "M. C. DEAN, INC.",
-              9494091.32
+              "BARKLEY ANDROSS CORP.",
+              8367148
             ],
             [
               "JBW GROUP LLC",
               8182133.66
-            ],
-            [
-              "PEAK PERFORMANCE JV 1, LLC",
-              7494284
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "XATOR LLC led all vendors with $58.7M in obligations, 15.9% of the market."
+      "takeaway": "XATOR LLC led all vendors with $58.7M in obligations, 14.5% of the market."
     }
   ],
   "crossLinks": [
     {
-      "label": "Department of Veterans Affairs contracts",
-      "href": "/insights/agency/department-of-veterans-affairs/"
-    },
-    {
       "label": "Department of Defense contracts",
       "href": "/insights/agency/department-of-defense/"
+    },
+    {
+      "label": "Department of Veterans Affairs contracts",
+      "href": "/insights/agency/department-of-veterans-affairs/"
     },
     {
       "label": "Department of State contracts",
@@ -227,21 +227,29 @@
         [
           5,
           {
+            "text": "WSP USA SOLUTIONS INC",
+            "href": "https://www.usaspending.gov/recipient/ae51c293-1189-0536-8650-d1379c13a127-C/latest/"
+          },
+          15293279.51
+        ],
+        [
+          6,
+          {
             "text": "KAR CONTRACTING LLC",
             "href": "https://www.usaspending.gov/recipient/97576cff-1056-92b0-e87c-331b8ee1fb59-C/latest/"
           },
           12950000
         ],
         [
-          6,
+          7,
           {
-            "text": "WSP USA SOLUTIONS INC",
-            "href": "https://www.usaspending.gov/recipient/ae51c293-1189-0536-8650-d1379c13a127-C/latest/"
+            "text": "M. C. DEAN, INC.",
+            "href": "https://www.usaspending.gov/recipient/a81ae18c-cbc0-5d23-ac06-c9243fff1ad0-C/latest/"
           },
-          10327711.73
+          10615682.49
         ],
         [
-          7,
+          8,
           {
             "text": "OEG INC",
             "href": "https://www.usaspending.gov/recipient/f9e570e5-d21b-04f1-7001-0fed1e6f1826-C/latest/"
@@ -249,28 +257,20 @@
           9710670.51
         ],
         [
-          8,
+          9,
           {
-            "text": "M. C. DEAN, INC.",
-            "href": "https://www.usaspending.gov/recipient/a81ae18c-cbc0-5d23-ac06-c9243fff1ad0-C/latest/"
+            "text": "BARKLEY ANDROSS CORP.",
+            "href": "https://www.usaspending.gov/recipient/8d233e73-431f-f980-cde4-2d472724fcdb-C/latest/"
           },
-          9494091.32
+          8367148
         ],
         [
-          9,
+          10,
           {
             "text": "JBW GROUP LLC",
             "href": "https://www.usaspending.gov/recipient/82a5a405-f704-9692-1f5d-f13d307a5f80-C/latest/"
           },
           8182133.66
-        ],
-        [
-          10,
-          {
-            "text": "PEAK PERFORMANCE JV 1, LLC",
-            "href": "https://www.usaspending.gov/recipient/fbbc2428-69fc-f3bd-2d98-70064b18ec2f-C/latest/"
-          },
-          7494284
         ]
       ]
     },
@@ -307,7 +307,7 @@
             "text": "M. C. DEAN, INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_W912DR21C0023_9700_-NONE-_-NONE-/"
           },
-          208722618.02,
+          209357513.02,
           "Department of Defense"
         ],
         [
@@ -487,7 +487,7 @@
             "text": "SENTINEL POWER SERVICES, LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_6973GH24F00893_6920_6973GH22D00015_6920/"
           },
-          12140621.75,
+          12216935.07,
           "Department of Transportation"
         ],
         [
@@ -512,30 +512,30 @@
     }
   ],
   "narrative": {
-    "intro": "NAICS 238210 federal contract obligations for FY2026 to date total $370M across 1,758 awards, with an average award size of $210K. Obligations are down 53.2% year over year. Fiscal-year obligations have been: FY21 $792M, FY22 $853M, FY23 $945M, FY24 $824M, FY25 $790M, and FY26 $370M. FY2026 totals are partial and represent fiscal year to date activity. The distribution of FY2026 obligations is concentrated among the Department of Veterans Affairs ($88.6M), the Department of Defense ($76.1M), and the Department of State ($76.1M). Vendor concentration in FY2026 to date includes XATOR LLC at $58.7M and SINTELA INC at $36.3M, followed by smaller totals among the remaining top vendors. These figures describe current federal buying for electrical contractors and other wiring installation contractors through FY2026 to date.",
+    "intro": "Federal contract obligations for Electrical Contractors and Other Wiring Installation Contractors (NAICS 238210) total $405M in FY2026 to date. There are 1,875 awards with an average award size of $216K. Obligations are down 48.8% year over year. Looking at the fiscal-year series, FY21 was $792M, FY22 was $853M, FY23 was $945M, FY24 was $824M, FY25 was $791M, and FY26 is $405M. Buying in FY2026 to date is concentrated: Department of Defense leads with $97.3M, followed by Department of Veterans Affairs at $94.2M and Department of State at $76.6M. Other notable agency buyers include Department of Transportation at $51.2M, Department of Homeland Security at $39.7M, and Department of Justice at $14.7M. Vendor concentration is apparent: XATOR LLC has $58.7M in obligations and SINTELA INC has $36.3M, while the top ten vendors include J & J MECHANICAL AND CONSTRUCTION GROUP LLC at $19.2M and JBW GROUP LLC at $8.2M.",
     "sections": [
       {
-        "heading": "How has federal spending for NAICS 238210 trended recently?",
-        "body": "Obligations rose from FY21 $792M to FY23 $945M, then fell to FY24 $824M and FY25 $790M before reaching FY26 $370M. FY2026 obligations are down 53.2% year over year. FY26 totals are fiscal year to date and therefore partial."
+        "heading": "Why did obligations fall year over year?",
+        "body": "Obligations fell 48.8% year over year to $405M in FY2026 to date. Recent fiscal years were higher, with FY23 at $945M, FY24 at $824M, and FY25 at $791M, showing a clear decline into the current fiscal-year total. This fiscal-year total reflects current-year activity through the date shown and is lower than multiple prior years."
       },
       {
-        "heading": "Which agencies and vendors dominate FY2026 to date?",
-        "body": "The largest buying agencies in FY2026 to date are Department of Veterans Affairs $88.6M, Department of Defense $76.1M, and Department of State $76.1M. The top vendors in FY2026 to date are XATOR LLC $58.7M and SINTELA INC $36.3M, with additional notable vendors including J & J MECHANICAL AND CONSTRUCTION GROUP LLC $19.2M and WELLS GLOBAL, LLC $15.3M."
+        "heading": "Which agencies and vendors dominate FY2026 buying?",
+        "body": "Three agencies account for the largest shares: Department of Defense at $97.3M, Department of Veterans Affairs at $94.2M, and Department of State at $76.6M. On the vendor side, XATOR LLC leads with $58.7M and SINTELA INC follows with $36.3M, while the top ten vendors range down to JBW GROUP LLC at $8.2M."
       }
     ]
   },
   "faq": [
     {
       "q": "How much does the federal government spend on NAICS 238210?",
-      "a": "The federal government has obligated $370M on NAICS 238210 in FY2026 to date. Total obligations by fiscal year are FY21 $792M, FY22 $853M, FY23 $945M, FY24 $824M, FY25 $790M, and FY26 $370M, and FY2026 totals are partial."
+      "a": "The federal government has obligated $405M for NAICS 238210 in FY2026 to date. Prior fiscal-year totals were $792M in FY21, $853M in FY22, $945M in FY23, $824M in FY24, and $791M in FY25."
     },
     {
       "q": "Which agencies buy the most NAICS 238210 services?",
-      "a": "The agencies that buy the most NAICS 238210 services in FY2026 to date are the Department of Veterans Affairs $88.6M, the Department of Defense $76.1M, and the Department of State $76.1M. Other sizable buyers include the Department of Transportation $50.4M and the Department of Homeland Security $39.5M."
+      "a": "The largest buyers in FY2026 to date are the Department of Defense, the Department of Veterans Affairs, and the Department of State. Their obligations are $97.3M, $94.2M, and $76.6M respectively, followed by the Department of Transportation at $51.2M and the Department of Homeland Security at $39.7M."
     },
     {
       "q": "Who are the largest NAICS 238210 government contractors?",
-      "a": "The largest NAICS 238210 government contractors in FY2026 to date are XATOR LLC $58.7M and SINTELA INC $36.3M. Additional top vendors include J & J MECHANICAL AND CONSTRUCTION GROUP LLC $19.2M, WELLS GLOBAL, LLC $15.3M, and KAR CONTRACTING LLC $12.9M."
+      "a": "XATOR LLC and SINTELA INC are the largest government contractors in FY2026 to date. XATOR LLC has $58.7M in obligations and SINTELA INC has $36.3M, with the top ten vendors including J & J MECHANICAL AND CONSTRUCTION GROUP LLC at $19.2M and JBW GROUP LLC at $8.2M."
     }
   ],
   "related": [
