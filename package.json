@@ -12,14 +12,15 @@
     "check": "astro check",
     "guard": "grep -rl '{{STAT\\|{{VERIFY' dist/ && echo 'UNRESOLVED TOKENS IN dist/ — fix before shipping' && exit 1 || echo 'token guard: clean'",
     "check:meta": "node scripts/check-meta.mjs",
-    "verify": "npm run check && npm run build && npm run guard && npm run check:meta",
+    "verify": "npm run check && npm run build && npm run guard && npm run check:meta && npm run guard:emdash",
     "insights:pilot": "node scripts/insights/run-pilot.mjs",
     "insights:entities": "node scripts/insights/run-entities.mjs",
     "insights:rankings": "node scripts/insights/build-rankings.mjs",
     "insights:narratives": "node scripts/insights/generate-narratives.mjs",
     "insights:weekly": "node scripts/insights/run-weekly.mjs",
     "insights:validate": "node scripts/insights/validate.mjs",
-    "insights:guardrails-test": "node scripts/insights/guardrails.selftest.mjs"
+    "insights:guardrails-test": "node scripts/insights/guardrails.selftest.mjs",
+    "guard:emdash": "node scripts/check-emdash.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.4.0",

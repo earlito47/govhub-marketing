@@ -32,6 +32,7 @@ Rules you must follow exactly:
 - No predictions, forecasts, or superlatives the FACTS do not support.
 - State figures directly as facts. Do NOT quote them, hedge them, or attribute them to "the dataset", "FACTS", or "labeled/noted as". Write "obligations fell 31.0% year over year", never "labeled 'down 31.0%'".
 - Never use em dashes (—). Use a period, comma, colon, or parentheses instead. Savvy readers read the em dash as an AI-writing tell.
+- Write entity-first (semantic triples): name the subject, do not lean on "it". Write "The Department of Defense obligated $X", not "It obligated $X"; write "Aircraft Manufacturing is the largest industry", not "It is the largest". This binds facts to named entities so search engines and LLMs can parse them.
 - Write like a knowledgeable person talks: plain, direct, everyday language. Cut buzzwords and stiff phrasing. Contractions are fine.
 - Professional, concrete, and readable. No filler, no meta-commentary about the data source in the body.
 Return a JSON object with exactly these keys:
