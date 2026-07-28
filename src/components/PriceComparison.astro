@@ -1,0 +1,103 @@
+---
+/**
+ * GovHub-vs-competitor pricing table. Search Console shows real demand for
+ * "<competitor> pricing" queries where competitors hide their pricing, so this
+ * publishes GovHub's real tiers side by side in a table Google can lift into
+ * the SERP. Copy is entity-first (semantic triples) and carries no em dashes.
+ */
+import { PLANS, TRIAL_DAYS, formatUsd } from '../data/pricing';
+
+interface Props {
+  competitorName: string;
+  competitorEstimate: string;
+}
+const { competitorName, competitorEstimate } = Astro.props;
+const tiers = PLANS.map((p) => `${p.name} ${formatUsd(p.monthlyUsd)}/mo`).join(', ');
+---
+
+<section class="price-compare" aria-labelledby="price-compare-heading">
+  <h2 id="price-compare-heading">GovHub vs {competitorName}: pricing</h2>
+  <p>
+    GovHub publishes its pricing. {competitorName} does not, so the {competitorName} figures
+    below are third-party estimates from a sales-led quote process.
+  </p>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th scope="col">&nbsp;</th><th scope="col">GovHub</th><th scope="col">{competitorName}</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">Starting price</th>
+          <td>{formatUsd(PLANS[0].monthlyUsd)}/month, billed monthly</td>
+          <td>No public price (estimated below)</td>
+        </tr>
+        <tr>
+          <th scope="row">Published pricing</th>
+          <td>Yes, on this page and the pricing page</td>
+          <td>No, custom sales quote only</td>
+        </tr>
+        <tr>
+          <th scope="row">Plans</th>
+          <td>{tiers}</td>
+          <td>Annual contract, quoted per deal</td>
+        </tr>
+        <tr>
+          <th scope="row">Free trial</th>
+          <td>{TRIAL_DAYS}-day free trial, self-serve</td>
+          <td>Sales-led, varies</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="estimate"><strong>Estimated {competitorName} pricing:</strong> {competitorEstimate}</p>
+</section>
+
+<style>
+  .price-compare {
+    margin: 2.5rem 0 0;
+  }
+  .price-compare h2 {
+    font-size: 1.5rem;
+  }
+  .price-compare > p {
+    color: var(--fg-muted);
+    max-width: 46rem;
+  }
+  .table-wrap {
+    overflow-x: auto;
+    margin: 1rem 0;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.98rem;
+  }
+  th,
+  td {
+    text-align: left;
+    padding: 0.7rem 0.9rem;
+    border-bottom: 1px solid var(--gh-line);
+    vertical-align: top;
+  }
+  thead th {
+    font-family: var(--gh-font-brand);
+    background: var(--gh-surface);
+  }
+  thead th:nth-child(2) {
+    color: var(--accent);
+  }
+  tbody th[scope='row'] {
+    font-weight: 700;
+    color: var(--fg);
+    white-space: nowrap;
+  }
+  td {
+    color: var(--fg-muted);
+  }
+  .estimate {
+    font-size: 0.9rem;
+    color: var(--fg-muted);
+    max-width: 46rem;
+  }
+</style>

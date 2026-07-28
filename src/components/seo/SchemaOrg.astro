@@ -15,6 +15,7 @@
 
 type SchemaType =
   | 'Organization'
+  | 'WebSite'
   | 'SoftwareApplication'
   | 'Article'
   | 'FAQPage'
@@ -33,11 +34,29 @@ const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? 'https://www.govhub
 
 const defaultsByType: Record<SchemaType, Record<string, unknown>> = {
   Organization: {
+    '@id': `${siteUrl}/#organization`,
     name: 'GovHub',
+    // Brand-variant queries ("gov hub", "gob hub") should resolve to this entity.
+    alternateName: ['Gov Hub', 'GovHub.online'],
     url: siteUrl,
     logo: `${siteUrl}/brand/logos/govhub-app-icon-512.png`,
-    description: 'AI proposal writing platform for government contractors.',
+    description: 'GovHub is an AI proposal writing platform for government contractors.',
+    contactPoint: {
+      '@type': 'ContactPoint',
+      contactType: 'customer support',
+      email: 'hello@govhub.online',
+      url: `${siteUrl}/contact/`,
+    },
     sameAs: SOCIAL_LINKS.map((s) => s.href),
+  },
+  // Binds the domain to the organization so GovHub owns its own brand/domain
+  // SERP. No SearchAction: the site has no on-site search endpoint to point at.
+  WebSite: {
+    '@id': `${siteUrl}/#website`,
+    name: 'GovHub',
+    alternateName: 'Gov Hub',
+    url: siteUrl,
+    publisher: { '@id': `${siteUrl}/#organization` },
   },
   SoftwareApplication: {
     name: 'GovHub',

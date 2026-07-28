@@ -4,6 +4,7 @@ import FAQSchema from '../../components/seo/FAQSchema.astro';
 import Breadcrumbs from '../../components/seo/Breadcrumbs.astro';
 import PageHero from '../../components/PageHero.astro';
 import CTABand from '../../components/CTABand.astro';
+import PriceComparison from '../../components/PriceComparison.astro';
 import { competitors, type Competitor } from '../../data/competitors';
 
 export function getStaticPaths() {
@@ -90,9 +91,7 @@ const altFaqs = isOpportunityIntel
             of software.
           </p>
 
-          <div class="pricing-note" role="note">
-            <strong>Estimated pricing for {competitor.name}:</strong> {competitor.pricingEstimate}
-          </div>
+          <PriceComparison competitorName={competitor.name} competitorEstimate={competitor.pricingEstimate} />
 
           <h2>The short answer</h2>
           <p>
@@ -138,9 +137,7 @@ const altFaqs = isOpportunityIntel
             RFP responses.
           </p>
 
-          <div class="pricing-note" role="note">
-            <strong>Estimated pricing for {competitor.name}:</strong> {competitor.pricingEstimate}
-          </div>
+          <PriceComparison competitorName={competitor.name} competitorEstimate={competitor.pricingEstimate} />
 
           <h2>The short answer</h2>
           <p>

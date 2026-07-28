@@ -47,7 +47,7 @@ This is where an [AI proposal generator](/solutions/ai-proposal-generator/) earn
 
 ## 4. Past performance and personnel
 
-Past performance is frequently the highest-weighted non-price factor in Section M.
+[Past performance](/glossary/past-performance/) is frequently the highest-weighted non-price factor in Section M.
 
 - **Select relevant references** under the FAR 15.305 factors, relevance, recency, and quality of prior work of similar size and scope.
 - **Write past-performance narratives that map to the evaluation,** drawing an explicit line from what you did before to what this agency needs now.
@@ -62,6 +62,7 @@ Your price volume has to be defensible and internally consistent with the techni
 - **Build the price around your technical assumptions**, the labor mix and level of effort in the cost volume must match the approach you described.
 - **Write a clear basis of estimate.** Evaluators and auditors need to trace every number to a rationale.
 - **Watch the realism trap:** a price that's too low reads as a misunderstanding of scope; too high reads as poor value. Both cost points on Section M.
+- **Know how price is weighed:** whether the award is [LPTA or best value](/glossary/lpta-vs-best-value/) changes how aggressive your pricing should be.
 
 ## 6. Review cycles: pink, red, and gold teams
 
@@ -87,6 +88,8 @@ The work isn't done at submission.
 
 - **Request a debrief,** win or lose. Agencies are often required to provide one, and it's the cheapest market research you'll ever get.
 - **Turn losses into lessons.** Feed debrief findings back into your next bid/no-bid decision and your reusable content library.
+
+New to the terminology? The [federal contracting glossary](/glossary/) defines every term above, one per page, from [compliance matrix](/glossary/compliance-matrix/) to [sources sought](/glossary/sources-sought/).
 
 Understanding [why government proposals get rejected](/blog/why-proposals-get-rejected/) closes the loop, most rejections trace back to a compliance gap that a matrix and a disciplined review would have caught.
 
