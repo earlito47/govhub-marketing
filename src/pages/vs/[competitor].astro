@@ -6,6 +6,7 @@ import SchemaOrg from '../../components/seo/SchemaOrg.astro';
 import { competitors, type Competitor } from '../../data/competitors';
 import PageHero from '../../components/PageHero.astro';
 import CTABand from '../../components/CTABand.astro';
+import PriceComparison from '../../components/PriceComparison.astro';
 import { SIGNUP_URL } from '../../config';
 
 export function getStaticPaths() {
@@ -84,9 +85,7 @@ const description = isOpportunityIntel
         </p>
       )}
 
-      <div class="pricing-note" role="note">
-        <strong>Estimated pricing for {competitor.name}:</strong> {competitor.pricingEstimate}
-      </div>
+      <PriceComparison competitorName={competitor.name} competitorEstimate={competitor.pricingEstimate} />
 
       {isOpportunityIntel ? (
         <>
