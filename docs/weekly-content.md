@@ -103,7 +103,7 @@ automatically make this free.
 
 | Provider | Cost | Community Management API approval | Extra config |
 | --- | --- | --- | --- |
-| `postiz` | $29/mo cloud, or free self-hosted | Cloud: no. Self-hosted: **yes, you apply** | `POSTIZ_URL`, `POSTIZ_INTEGRATION_ID` |
+| `postiz` | $29/mo cloud, or free self-hosted | Cloud: no. Self-hosted: **yes, you apply** | `POSTIZ_INTEGRATION_ID`, `POSTIZ_POST_TYPE` |
 | `blotato` | $29/mo | No, they are an approved partner | `BLOTATO_ACCOUNT_ID`, `BLOTATO_PAGE_ID` |
 | `linkedin_direct` | Free | **Yes, you apply** | `LINKEDIN_ACCESS_TOKEN`, `LINKEDIN_ORG_ID` |
 
@@ -114,6 +114,51 @@ in parallel and it lands, switch `SOCIAL_PROVIDER` to `linkedin_direct` and the
 recurring cost goes to zero.
 
 Set `SOCIAL_API_KEY` to whichever provider's key you land on.
+
+### Postiz, as actually configured
+
+The GovHub LinkedIn page is connected as a Postiz channel. Settings, Secrets and
+variables, Actions:
+
+| Kind | Name | Value |
+| --- | --- | --- |
+| Variable | `SOCIAL_PROVIDER` | `postiz` |
+| Variable | `POSTIZ_INTEGRATION_ID` | the channel id from `GET /public/v1/integrations` |
+| Variable | `POSTIZ_POST_TYPE` | `draft` (default) or `now` |
+| Secret | `SOCIAL_API_KEY` | the Postiz API key |
+
+`POSTIZ_URL` is optional and defaults to `https://api.postiz.com`. Set it only
+when self-hosting.
+
+**`POSTIZ_POST_TYPE` defaults to `draft`.** Copy lands in the Postiz calendar
+and a human presses publish. A post to a company page cannot be meaningfully
+unpublished, so automatic publishing is opt-in: set the variable to `now`.
+
+Note that in draft mode the copy file still moves to `social/posted/`. The
+archive means "handed to Postiz", not "live on LinkedIn". The log line says
+which, and the publisher prints "Delivered" rather than "Posted" for that reason.
+
+Three things about this API that cost time to discover, recorded so they do not
+have to be discovered again:
+
+- **Auth takes the bare key.** `Authorization: <key>`, no `Bearer` prefix. The
+  Bearer form returns `401 Invalid API key`. Postiz's own MCP setup snippet uses
+  Bearer, which does not apply to the REST API.
+- **`date` is required on every post**, including `type: "now"`, where the
+  server then ignores it. `CreatePostRequest.required` is
+  `[type, date, shortLink, tags]`. Omitting it is a 400.
+- **`DELETE` returns `{"error": true}` with HTTP 200 on success.** Do not treat
+  the body as a failure signal; re-fetch to confirm.
+
+To find the integration id:
+
+```bash
+curl -sS -H "Authorization: $POSTIZ_API_KEY" \
+  https://api.postiz.com/public/v1/integrations
+```
+
+`identifier` in that response must match the `__type` the adapter sends, which
+is `linkedin-page` for a company page and `linkedin` for a personal profile.
 
 ## Why the workflows look the way they do
 
