@@ -29,6 +29,17 @@ npm run guard    # fail if unresolved {{STAT}}/{{VERIFY}} tokens ship to dist
 npm run verify   # check + build + guard
 ```
 
+## Automation
+
+Two scheduled pipelines run every Monday:
+
+- **`weekly-insights`** (09:00 UTC) refreshes the federal contracting data
+  behind `/insights/` from USAspending and commits it.
+- **`weekly-content`** (13:00 UTC) picks a blog topic from Search Console
+  striking-distance queries, writes the post and the LinkedIn copy, and opens a
+  PR for review. See [docs/weekly-content.md](docs/weekly-content.md) for setup
+  and the LinkedIn provider options.
+
 ## MCP setup (Cloudflare)
 
 This repo ships an `.mcp.json` that registers five Cloudflare MCP servers

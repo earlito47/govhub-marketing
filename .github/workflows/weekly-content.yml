@@ -1,0 +1,117 @@
+# Weekly blog post, chosen by search demand.
+#
+# Every Monday this reads Search Console, picks the query where we are closest
+# to real traffic and not yet ranking (position 4-20, "striking distance"),
+# writes the post, proves the site still builds, and opens a PR for review.
+# Nothing publishes until a human merges.
+#
+# Runs at 13:00 UTC, four hours after weekly-insights (09:00 UTC), so the two
+# Monday jobs never race for the same working tree.
+#
+# Setup (one-time, by a maintainer):
+#   Secrets:
+#     GSC_SERVICE_ACCOUNT_JSON  GCP service account key, as raw JSON. Create the
+#                               account, enable the Search Console API, then add
+#                               its email under GSC > Settings > Users and
+#                               permissions with Restricted access.
+#     ANTHROPIC_API_KEY         for the writing step.
+#   Variables (optional, defaults shown in the scripts):
+#     GSC_PROPERTY              default sc-domain:govhub.online. The domain
+#                               property covers both apex and www.
+#
+# Without GSC_SERVICE_ACCOUNT_JSON the picker falls back to its seed bank
+# rather than failing, so this workflow is safe to enable before the Google
+# side is wired up.
+
+name: weekly-content
+
+on:
+  schedule:
+    - cron: "0 13 * * 1" # Mondays 13:00 UTC (08:00 Central)
+  workflow_dispatch:
+    inputs:
+      force_query:
+        description: "Override the topic picker with a specific query"
+        required: false
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: weekly-content
+  cancel-in-progress: false
+
+jobs:
+  draft:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: |
+          pip install --quiet -r scripts/content/requirements.txt
+          npm ci
+
+      - name: Pick topic
+        env:
+          GSC_SERVICE_ACCOUNT_JSON: ${{ secrets.GSC_SERVICE_ACCOUNT_JSON }}
+          GSC_PROPERTY: ${{ vars.GSC_PROPERTY || 'sc-domain:govhub.online' }}
+          FORCE_QUERY: ${{ github.event.inputs.force_query }}
+        run: |
+          if [ -n "$FORCE_QUERY" ]; then
+            python - <<'PY'
+          import json, os
+          from datetime import date
+          json.dump({
+              "source": "manual_override",
+              "query": os.environ["FORCE_QUERY"],
+              "impressions": 0, "clicks": 0, "ctr": 0.0,
+              "position": None, "opportunity_clicks": 0.0,
+              "related_queries": [], "runner_up": None,
+              "pillar_hint": "how-to-respond-to-a-government-rfp",
+              "picked_on": date.today().isoformat(),
+          }, open("topic.json", "w"), indent=2)
+          PY
+          else
+            python scripts/content/pick_topic.py
+          fi
+
+      - name: Generate post
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          ANTHROPIC_MODEL: claude-sonnet-5
+        run: python scripts/content/generate_post.py
+
+      # The gate. astro check proves the generated frontmatter satisfies the
+      # blog collection schema, and the guards hold the new prose to the same
+      # em-dash and metadata standards as the hand-written posts. A draft that
+      # fails here never becomes a green PR.
+      - name: Verify the site still builds
+        run: npm run verify
+
+      - name: Open pull request
+        uses: peter-evans/create-pull-request@v6
+        with:
+          branch: content/weekly-${{ github.run_number }}
+          title: "Weekly post: draft ${{ github.run_number }}"
+          body-path: pr_body.md
+          commit-message: "content: weekly draft ${{ github.run_number }}"
+          labels: content, automated
+          add-paths: |
+            src/content/blog/**
+            social/**
+            data/covered-topics.json

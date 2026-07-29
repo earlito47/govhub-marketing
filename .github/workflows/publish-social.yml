@@ -1,0 +1,104 @@
+# Publishes the LinkedIn copy for a blog post, once the post is actually live.
+#
+# Fires when a merge to main adds a social/*.linkedin.txt file. It does not
+# publish on a timer: it polls the blog URL written at the bottom of the copy
+# and waits for a real 200 from Cloudflare Pages. Posting a link that 404s
+# because the deploy had not finished is worse than posting late.
+#
+# Setup (one-time, by a maintainer):
+#   Variables:
+#     SOCIAL_PROVIDER  dry_run (default) | postiz | blotato | linkedin_direct
+#   Secrets:
+#     SOCIAL_API_KEY   the provider's key
+#   Plus the provider's own ids, see the header of scripts/content/publish_social.py:
+#     postiz          POSTIZ_URL, POSTIZ_INTEGRATION_ID
+#     blotato         BLOTATO_ACCOUNT_ID, BLOTATO_PAGE_ID
+#     linkedin_direct LINKEDIN_ACCESS_TOKEN, LINKEDIN_ORG_ID
+#
+# It ships defaulting to dry_run, so merging a content PR before the social
+# side is configured logs the copy and posts nothing.
+
+name: publish-social
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "social/*.linkedin.txt"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: publish-social
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install --quiet requests
+
+      # Each copy file ends with its own canonical URL, so we poll exactly the
+      # page we are about to advertise rather than guessing a deploy duration.
+      - name: Wait for the post to be live
+        run: |
+          set -euo pipefail
+          shopt -s nullglob
+          urls=$(grep -ho 'https://[^ ]*' social/*.linkedin.txt | sort -u || true)
+          if [ -z "$urls" ]; then
+            echo "No URLs found in pending copy. Nothing to wait for."
+            exit 0
+          fi
+          for url in $urls; do
+            echo "Waiting for $url"
+            for attempt in $(seq 1 45); do
+              code=$(curl -sS -o /dev/null -w '%{http_code}' -L "$url" || echo 000)
+              if [ "$code" = "200" ]; then
+                echo "  live after $((attempt * 20))s"
+                break
+              fi
+              if [ "$attempt" = "45" ]; then
+                echo "  still $code after 15 minutes, refusing to post a dead link"
+                exit 1
+              fi
+              sleep 20
+            done
+          done
+
+      - name: Publish
+        env:
+          SOCIAL_PROVIDER: ${{ vars.SOCIAL_PROVIDER || 'dry_run' }}
+          SOCIAL_API_KEY: ${{ secrets.SOCIAL_API_KEY }}
+          POSTIZ_URL: ${{ vars.POSTIZ_URL }}
+          POSTIZ_INTEGRATION_ID: ${{ secrets.POSTIZ_INTEGRATION_ID }}
+          BLOTATO_ACCOUNT_ID: ${{ secrets.BLOTATO_ACCOUNT_ID }}
+          BLOTATO_PAGE_ID: ${{ secrets.BLOTATO_PAGE_ID }}
+          LINKEDIN_ACCESS_TOKEN: ${{ secrets.LINKEDIN_ACCESS_TOKEN }}
+          LINKEDIN_ORG_ID: ${{ secrets.LINKEDIN_ORG_ID }}
+        run: python scripts/content/publish_social.py
+
+      # Archiving to social/posted/ is what makes a rerun a no-op. [skip ci]
+      # keeps this commit from re-triggering the path filter above.
+      - name: Archive published copy
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add social/
+          if git diff --cached --quiet; then
+            echo "Nothing archived (dry run, or no successful posts)."
+          else
+            git commit -m "chore: archive published social copy [skip ci]"
+            git push
+          fi

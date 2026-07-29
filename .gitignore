@@ -22,3 +22,12 @@ pnpm-debug.log*
 
 # Insights pipeline: cached raw API responses, never committed
 .cache/
+
+# Weekly content pipeline: per-run scratch files. The post, the copy, and the
+# ledger are committed; these two are handoffs between steps of one run.
+topic.json
+pr_body.md
+
+# Python bytecode
+__pycache__/
+*.pyc
