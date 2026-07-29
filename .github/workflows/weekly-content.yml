@@ -14,7 +14,8 @@
 #                               account, enable the Search Console API, then add
 #                               its email under GSC > Settings > Users and
 #                               permissions with Restricted access.
-#     ANTHROPIC_API_KEY         for the writing step.
+#     OPENAI_API_KEY            for the writing step. Already present for the
+#                               weekly-insights narrative stage.
 #   Variables (optional, defaults shown in the scripts):
 #     GSC_PROPERTY              default sc-domain:govhub.online. The domain
 #                               property covers both apex and www.
@@ -92,8 +93,8 @@ jobs:
 
       - name: Generate post
         env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          ANTHROPIC_MODEL: claude-sonnet-5
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_MODEL: ${{ vars.OPENAI_MODEL || 'gpt-5' }}
         run: python scripts/content/generate_post.py
 
       # The gate. astro check proves the generated frontmatter satisfies the

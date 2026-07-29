@@ -77,7 +77,18 @@ both the apex and `www`, so one entry is enough. Override with the
 
 ### 2. Writing
 
-Add `ANTHROPIC_API_KEY` as a repo secret. That is the whole writing setup.
+Nothing to do. It uses `OPENAI_API_KEY`, the same secret the `weekly-insights`
+narrative stage already relies on.
+
+It calls `chat/completions` with `response_format: json_object` over raw HTTP,
+the same shape as `scripts/insights/generate-narratives.mjs`, so there is no
+extra SDK to install.
+
+The model defaults to `gpt-5`, not the `gpt-5-mini` the insights pipeline uses.
+Different job: this is one 1500-word post a week carrying the site's organic
+search, roughly four calls a month, so it is not worth economising on. Set the
+`OPENAI_MODEL` repo variable to `gpt-5-mini` if you want to anyway, and
+`OPENAI_REASONING` (default `medium`) to trade thinking time for cost.
 
 ### 3. LinkedIn
 
