@@ -21,6 +21,9 @@ Env (common):
 Env (postiz):
   POSTIZ_URL         default https://api.postiz.com
   POSTIZ_INTEGRATION_ID   the connected LinkedIn page channel
+  POSTIZ_POST_TYPE   draft (default) | now | schedule
+                     draft stages the copy in the Postiz calendar for a human
+                     to publish. Switch to now once you trust the output.
 
 Env (blotato):
   BLOTATO_ACCOUNT_ID
@@ -37,6 +40,7 @@ import os
 import re
 import shutil
 import sys
+from datetime import datetime, timezone
 from pathlib import Path
 
 import requests
@@ -44,6 +48,12 @@ import requests
 PROVIDER = os.environ.get("SOCIAL_PROVIDER", "dry_run").lower()
 API_KEY = os.environ.get("SOCIAL_API_KEY", "")
 TIMEOUT = 60
+
+# Defaults to draft on purpose. A post to a company page cannot be meaningfully
+# unpublished, so the safe default stages copy in the Postiz calendar and lets a
+# human press publish. Flip to "now" once the output has earned it.
+POSTIZ_POST_TYPES = ("draft", "schedule", "now")
+POSTIZ_POST_TYPE = os.environ.get("POSTIZ_POST_TYPE", "draft").lower()
 
 SOCIAL_DIR = Path("social")
 POSTED_DIR = SOCIAL_DIR / "posted"
@@ -57,24 +67,39 @@ def post_dry_run(text: str) -> dict:
 def post_postiz(text: str) -> dict:
     base = os.environ.get("POSTIZ_URL", "https://api.postiz.com").rstrip("/")
     integration_id = os.environ["POSTIZ_INTEGRATION_ID"]
+    if POSTIZ_POST_TYPE not in POSTIZ_POST_TYPES:
+        sys.exit(f"POSTIZ_POST_TYPE={POSTIZ_POST_TYPE!r} is not one of "
+                 f"{', '.join(POSTIZ_POST_TYPES)}.")
+
     r = requests.post(
         f"{base}/public/v1/posts",
-        # Postiz wants the raw key. A "Bearer " prefix here fails auth.
+        # Postiz wants the raw key. A "Bearer " prefix here returns
+        # 401 Invalid API key, despite what the MCP setup snippet uses.
         headers={"Authorization": API_KEY, "Content-Type": "application/json"},
         json={
-            "type": "now",
+            "type": POSTIZ_POST_TYPE,
+            # Required by CreatePostRequest for every type, including "now",
+            # where the server then ignores it. Omitting it is a 400.
+            "date": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%S.000Z"),
             "shortLink": False,
             "tags": [],
             "posts": [{
                 "integration": {"id": integration_id},
                 "value": [{"content": text, "image": []}],
-                "settings": {"__type": "linkedin-page"},
+                "settings": {
+                    "__type": "linkedin-page",
+                    "post_as_images_carousel": False,
+                },
             }],
         },
         timeout=TIMEOUT,
     )
     r.raise_for_status()
-    return r.json()
+    result = r.json() if r.content else {}
+    if POSTIZ_POST_TYPE == "draft":
+        print("  Staged as a Postiz draft. It is NOT live on LinkedIn until "
+              "you publish it from the Postiz calendar.")
+    return result
 
 
 def post_blotato(text: str) -> dict:
@@ -154,7 +179,8 @@ def main():
         print("Nothing to publish.")
         return
 
-    print(f"Provider: {PROVIDER}. {len(pending)} post(s) pending.")
+    mode = f" (type={POSTIZ_POST_TYPE})" if PROVIDER == "postiz" else ""
+    print(f"Provider: {PROVIDER}{mode}. {len(pending)} post(s) pending.")
     failures = 0
 
     for path in pending:
@@ -164,7 +190,10 @@ def main():
             continue
         try:
             result = ADAPTERS[PROVIDER](text)
-            print(f"Posted {path.name}: {json.dumps(result)[:300]}")
+            # "Delivered", not "Posted": in Postiz draft mode the provider
+            # accepted it but nothing is live yet, and the log should not
+            # claim otherwise.
+            print(f"Delivered {path.name}: {json.dumps(result)[:300]}")
             if PROVIDER != "dry_run":
                 # Move only after a confirmed post. A file that stays put gets
                 # retried next run; a file moved too early is a silent miss.

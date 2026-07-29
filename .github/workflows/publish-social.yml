@@ -11,9 +11,13 @@
 #   Secrets:
 #     SOCIAL_API_KEY   the provider's key
 #   Plus the provider's own ids, see the header of scripts/content/publish_social.py:
-#     postiz          POSTIZ_URL, POSTIZ_INTEGRATION_ID
+#     postiz          POSTIZ_INTEGRATION_ID (variable), POSTIZ_POST_TYPE,
+#                     POSTIZ_URL (optional, defaults to Postiz Cloud)
 #     blotato         BLOTATO_ACCOUNT_ID, BLOTATO_PAGE_ID
 #     linkedin_direct LINKEDIN_ACCESS_TOKEN, LINKEDIN_ORG_ID
+#
+# POSTIZ_POST_TYPE defaults to "draft": copy lands in the Postiz calendar and a
+# human presses publish. Set the variable to "now" to publish automatically.
 #
 # It ships defaulting to dry_run, so merging a content PR before the social
 # side is configured logs the copy and posts nothing.
@@ -82,7 +86,11 @@ jobs:
           SOCIAL_PROVIDER: ${{ vars.SOCIAL_PROVIDER || 'dry_run' }}
           SOCIAL_API_KEY: ${{ secrets.SOCIAL_API_KEY }}
           POSTIZ_URL: ${{ vars.POSTIZ_URL }}
-          POSTIZ_INTEGRATION_ID: ${{ secrets.POSTIZ_INTEGRATION_ID }}
+          # A variable, not a secret. It is an opaque channel id, not a
+          # credential, and the secret store masks values as *** in the log,
+          # which is exactly what made an earlier empty-secret diagnosis slow.
+          POSTIZ_INTEGRATION_ID: ${{ vars.POSTIZ_INTEGRATION_ID }}
+          POSTIZ_POST_TYPE: ${{ vars.POSTIZ_POST_TYPE || 'draft' }}
           BLOTATO_ACCOUNT_ID: ${{ secrets.BLOTATO_ACCOUNT_ID }}
           BLOTATO_PAGE_ID: ${{ secrets.BLOTATO_PAGE_ID }}
           LINKEDIN_ACCESS_TOKEN: ${{ secrets.LINKEDIN_ACCESS_TOKEN }}
