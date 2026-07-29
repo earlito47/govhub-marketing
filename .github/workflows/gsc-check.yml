@@ -33,35 +33,6 @@ jobs:
       - name: Install dependencies
         run: pip install --quiet -r scripts/content/requirements.txt
 
-      # A secret that resolves to empty and a secret that resolves to a real
-      # value look different in the log: a real one renders as ***, empty
-      # renders as nothing. So when the value is empty, the useful question is
-      # which names this repo actually has. toJSON(secrets) answers that. The
-      # values it contains are masked by the runner, and this step prints keys
-      # only, never values.
-      - name: List configured secret and variable names
-        env:
-          SECRET_BLOB: ${{ toJSON(secrets) }}
-          VAR_BLOB: ${{ toJSON(vars) }}
-        run: |
-          python - <<'PY'
-          import json, os
-          for label, raw in (("Secrets", os.environ["SECRET_BLOB"]),
-                             ("Variables", os.environ["VAR_BLOB"])):
-              try:
-                  names = sorted(json.loads(raw or "{}").keys())
-              except json.JSONDecodeError:
-                  names = None
-              if names is None:
-                  print(f"{label}: could not parse the context blob.")
-              elif names:
-                  print(f"{label} configured on this repo ({len(names)}):")
-                  for n in names:
-                      print(f"    {n}")
-              else:
-                  print(f"{label}: none configured on this repo.")
-          PY
-
       - name: Diagnose Search Console access
         env:
           GSC_SERVICE_ACCOUNT_JSON: ${{ secrets.GSC_SERVICE_ACCOUNT_JSON }}
