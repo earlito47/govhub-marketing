@@ -41,6 +41,26 @@ CONTENT_DIR = Path(os.environ.get("CONTENT_DIR", "src/content/blog"))
 LEDGER_PATH = Path(os.environ.get("COVERED_LEDGER", "data/covered-topics.json"))
 MIN_IMPRESSIONS = int(os.environ.get("MIN_IMPRESSIONS", "25"))
 LOOKBACK_DAYS = int(os.environ.get("LOOKBACK_DAYS", "28"))
+EMERGING_MIN_IMPRESSIONS = int(os.environ.get("EMERGING_MIN_IMPRESSIONS", "3"))
+EMERGING_MAX_POSITION = float(os.environ.get("EMERGING_MAX_POSITION", "50"))
+
+# Candidate bands, tried in order: (source label, min impressions, position range).
+#
+# The strict band is the one worth chasing, a query already on page one or two
+# with real volume. A young property has none of those, which is not a failure
+# of the query, it is the actual shape of the data. As of the first live run
+# govhub.online returned 439 queries and zero cleared the strict bar: the only
+# things ranking 4-20 with 25+ impressions were branded ("govhub", "gov hub"),
+# and everything non-branded sat at position 30-70 with 1-3 impressions.
+#
+# So rather than jumping straight to the seed bank and ignoring 439 real
+# searches, widen once. Thin demand from the actual audience still beats a
+# generic seed topic. As the site grows the strict band starts matching and the
+# loose one stops being reached, with no code change.
+TIERS = [
+    ("gsc_striking_distance", MIN_IMPRESSIONS, 4.0, 20.0),
+    ("gsc_emerging", EMERGING_MIN_IMPRESSIONS, 4.0, EMERGING_MAX_POSITION),
+]
 
 PAGES_DIR = Path("src/pages")
 DATA_DIR = Path("src/data")
@@ -255,20 +275,26 @@ def main():
         print(f"GSC fetch failed ({exc}); falling back to seed bank", file=sys.stderr)
         rows = []
 
-    pool = [
-        r for r in rows
-        if r["impressions"] >= MIN_IMPRESSIONS
-        and 4.0 <= r["position"] <= 20.0
-        and not is_branded(r["query"])
-    ]
-
-    candidates = []
-    for r in pool:
-        if already_covered(r["query"], sigs):
-            continue
-        s = score(r)
-        if s > 0:
-            candidates.append((s, r))
+    source, pool, candidates = None, [], []
+    for label, min_impr, pos_lo, pos_hi in TIERS:
+        pool = [
+            r for r in rows
+            if r["impressions"] >= min_impr
+            and pos_lo <= r["position"] <= pos_hi
+            and not is_branded(r["query"])
+        ]
+        candidates = []
+        for r in pool:
+            if already_covered(r["query"], sigs):
+                continue
+            s = score(r)
+            if s > 0:
+                candidates.append((s, r))
+        print(f"Tier {label}: {len(pool)} in band, {len(candidates)} uncovered "
+              f"and scoring above zero.", file=sys.stderr)
+        if candidates:
+            source = label
+            break
 
     if not candidates:
         topic = fallback_topic(sigs)
@@ -278,7 +304,7 @@ def main():
         best_score, winner = candidates[0]
         cluster = build_cluster(winner, pool)
         topic = {
-            "source": "gsc_striking_distance",
+            "source": source,
             "query": winner["query"],
             "impressions": winner["impressions"],
             "clicks": winner["clicks"],

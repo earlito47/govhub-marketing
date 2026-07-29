@@ -145,8 +145,13 @@ def link_inventory() -> str:
     return "\n".join(targets)
 
 
+def from_search_console(topic: dict) -> bool:
+    """True for any GSC-derived tier, strict or emerging."""
+    return str(topic.get("source", "")).startswith("gsc_")
+
+
 def format_search_data(topic: dict) -> str:
-    if topic.get("source") != "gsc_striking_distance":
+    if not from_search_console(topic):
         return ("No Search Console history for this query yet. This is a "
                 "proactive topic from the priority backlog. Write it as the "
                 "definitive answer.")
@@ -286,9 +291,10 @@ def main():
 
     links = post.get("internal_links_used", [])
     why = (
-        f"position {topic.get('position')}, {topic.get('impressions')} impressions, "
+        f"`{topic.get('source')}`, position {topic.get('position')}, "
+        f"{topic.get('impressions')} impressions, "
         f"est. +{topic.get('opportunity_clicks')} clicks/mo"
-        if topic.get("source") == "gsc_striking_distance"
+        if from_search_console(topic)
         else f"{topic.get('source')} (no Search Console history for this query)"
     )
 

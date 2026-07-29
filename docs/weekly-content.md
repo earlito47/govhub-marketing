@@ -37,6 +37,30 @@ If Search Console is unreachable or not yet configured, the picker falls back
 to a seed bank rather than failing the run, so the workflow is safe to turn on
 before the Google side is wired up.
 
+### Two bands, not one
+
+The strict band above is the one worth chasing. A young property has nothing in
+it, and that is the data, not a bug. The first live run against
+`sc-domain:govhub.online` returned **439 queries and zero cleared the strict
+bar**: the only things ranking 4 to 20 with 25+ impressions were branded
+(`govhub`, `gov hub`, `gov.hub`), and everything non-branded sat at position 30
+to 70 with 1 to 3 impressions.
+
+So the picker tries a second, wider band before giving up:
+
+| Tier | `source` | Position | Min impressions |
+| --- | --- | --- | --- |
+| Strict | `gsc_striking_distance` | 4 to 20 | 25 |
+| Emerging | `gsc_emerging` | 4 to 50 | 3 |
+| Backlog | `seed_bank` | n/a | n/a |
+
+Thin demand from your actual audience still beats a generic seed topic, and the
+PR body always names the tier the topic came from, so you can see how much
+weight to put on it. As traffic grows the strict band starts matching and the
+wider one stops being reached, with no code change. Both are tunable via the
+`MIN_IMPRESSIONS`, `EMERGING_MIN_IMPRESSIONS`, and `EMERGING_MAX_POSITION`
+environment variables.
+
 ## Setup
 
 ### 1. Search Console access
