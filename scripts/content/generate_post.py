@@ -13,8 +13,9 @@ src/content.config.ts exactly. `astro check` in the weekly workflow is the
 gate that proves it does.
 
 Env:
-  ANTHROPIC_API_KEY
-  ANTHROPIC_MODEL      default claude-sonnet-5
+  OPENAI_API_KEY
+  OPENAI_MODEL         default gpt-5
+  OPENAI_REASONING     default medium
   CONTENT_DIR          default src/content/blog
   SITE_URL             default https://www.govhub.online
 """
@@ -26,9 +27,19 @@ import sys
 from datetime import date
 from pathlib import Path
 
-import anthropic
+import requests
 
-MODEL = os.environ.get("ANTHROPIC_MODEL", "claude-sonnet-5")
+# Called via raw HTTP rather than the openai SDK, matching
+# scripts/insights/generate-narratives.mjs. requests is already a dependency
+# for publish_social.py, so this adds nothing to install.
+OPENAI_URL = "https://api.openai.com/v1/chat/completions"
+
+# The insights pipeline uses gpt-5-mini for short entity blurbs. This is a
+# different job: one 1500-word post a week that carries the site's organic
+# search, so it runs on the full model. That is roughly four calls a month.
+# Set OPENAI_MODEL=gpt-5-mini to trade quality for cost.
+MODEL = os.environ.get("OPENAI_MODEL", "gpt-5")
+REASONING_EFFORT = os.environ.get("OPENAI_REASONING", "medium")
 CONTENT_DIR = Path(os.environ.get("CONTENT_DIR", "src/content/blog"))
 SOCIAL_DIR = Path("social")
 LEDGER_PATH = Path(os.environ.get("COVERED_LEDGER", "data/covered-topics.json"))
@@ -194,27 +205,109 @@ def clean_json(raw: str) -> dict:
     return json.loads(raw)
 
 
-def generate(topic: dict) -> dict:
-    client = anthropic.Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
-    msg = client.messages.create(
-        model=MODEL,
-        max_tokens=8000,
-        system=SYSTEM,
-        messages=[{
-            "role": "user",
-            "content": USER_TEMPLATE.format(
-                query=topic["query"],
-                search_data=format_search_data(topic),
-                related=format_related(topic),
-                link_targets=link_inventory(),
-                title_max=TITLE_MAX,
-                desc_min=DESC_MIN,
-                desc_max=DESC_MAX,
-            ),
-        }],
+def call_openai(messages: list) -> dict:
+    api_key = os.environ.get("OPENAI_API_KEY")
+    if not api_key:
+        sys.exit("OPENAI_API_KEY is not set.")
+    r = requests.post(
+        OPENAI_URL,
+        headers={"Content-Type": "application/json",
+                 "Authorization": f"Bearer {api_key}"},
+        json={
+            "model": MODEL,
+            "messages": messages,
+            # Guarantees parseable JSON, so a stray prose preamble cannot
+            # break the run. The prompt still spells out the shape.
+            "response_format": {"type": "json_object"},
+            "reasoning_effort": REASONING_EFFORT,
+            # Reasoning tokens count against this, and the post alone is
+            # ~2k. Too low truncates mid-JSON, which reads as a parse error.
+            "max_completion_tokens": 16000,
+        },
+        timeout=300,
     )
-    text = "".join(b.text for b in msg.content if b.type == "text")
-    return clean_json(text)
+    if not r.ok:
+        raise RuntimeError(f"OpenAI {r.status_code}: {r.text[:300]}")
+    data = r.json()
+    choice = (data.get("choices") or [{}])[0]
+    if choice.get("finish_reason") == "length":
+        raise RuntimeError(
+            "OpenAI hit the token ceiling and returned truncated JSON. "
+            "Raise max_completion_tokens or lower OPENAI_REASONING."
+        )
+    content = (choice.get("message") or {}).get("content")
+    if not content:
+        raise RuntimeError("OpenAI returned empty content")
+    return clean_json(content)
+
+
+def repair_description(post: dict) -> dict:
+    """Re-ask for the meta description alone when it overshoots the budget.
+
+    Models reliably overrun a character target on this field: the first two
+    live runs came back at 163 and 165 characters against a 158 ceiling.
+    check-meta.mjs fails the build above 170, so left alone this would sit five
+    characters from breaking the weekly run. One tiny follow-up call is cheaper
+    than a red Monday.
+    """
+    desc = post.get("description", "")
+    if DESC_MIN <= len(desc) <= DESC_MAX:
+        return post
+
+    print(f"Description is {len(desc)} chars, outside {DESC_MIN}-{DESC_MAX}. "
+          f"Requesting a rewrite.", file=sys.stderr)
+    try:
+        fixed = call_openai([
+            {"role": "system", "content": "You write concise SEO meta descriptions. "
+                                          "Never use em dashes or en dashes."},
+            {"role": "user", "content":
+                f'Rewrite this meta description for a post titled '
+                f'"{post.get("title", "")}" so it is between {DESC_MIN} and '
+                f'{DESC_MAX} characters. Count the characters. Keep the meaning '
+                f'and the specifics. Return JSON: {{"description": "..."}}\n\n'
+                f'Current ({len(desc)} chars): {desc}'},
+        ]).get("description", "")
+    except Exception as exc:  # noqa: BLE001
+        print(f"Description rewrite failed ({exc}); keeping the original.",
+              file=sys.stderr)
+        return post
+
+    if DESC_MIN <= len(fixed) <= DESC_MAX:
+        print(f"Rewritten to {len(fixed)} chars.", file=sys.stderr)
+        post["description"] = fixed
+    else:
+        # Still out of budget. Keep whichever is closer to the ceiling without
+        # exceeding it, and let the PR body flag it for the reviewer.
+        print(f"Rewrite came back at {len(fixed)} chars, still outside the "
+              f"budget. Keeping the better of the two.", file=sys.stderr)
+        if len(desc) > DESC_MAX and len(fixed) < len(desc):
+            post["description"] = fixed
+    return post
+
+
+def generate(topic: dict) -> dict:
+    messages = [
+        {"role": "system", "content": SYSTEM},
+        {"role": "user", "content": USER_TEMPLATE.format(
+            query=topic["query"],
+            search_data=format_search_data(topic),
+            related=format_related(topic),
+            link_targets=link_inventory(),
+            title_max=TITLE_MAX,
+            desc_min=DESC_MIN,
+            desc_max=DESC_MAX,
+        )},
+    ]
+    # One retry. A malformed or truncated response is worth a second shot
+    # before failing the weekly run outright.
+    last = None
+    for attempt in (1, 2):
+        try:
+            return repair_description(call_openai(messages))
+        except (RuntimeError, json.JSONDecodeError, requests.RequestException) as exc:
+            last = exc
+            print(f"Generation attempt {attempt} failed: {exc}", file=sys.stderr)
+    raise SystemExit(f"Both generation attempts failed. Last error: {last}")
 
 
 def slugify(s: str) -> str:
