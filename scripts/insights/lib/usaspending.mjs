@@ -169,6 +169,17 @@ export class UsaSpendingClient {
   async toptierAgencies() {
     return this._request('/api/v2/references/toptier_agencies/', { method: 'GET' });
   }
+
+  /**
+   * Verified live (2026-07-30): GET /api/v2/recipient/duns/{recipient_id}/
+   * returns { name, alternate_names, uei, duns, recipient_level, parents,
+   * business_types, location, ... }. Despite the legacy "duns" path segment,
+   * the id is the recipient hash (uuid-C/-P/-R) that spending_by_category
+   * recipient_duns rows carry as `recipient_id`.
+   */
+  async recipientProfile(recipientId) {
+    return this._request(`/api/v2/recipient/duns/${encodeURIComponent(recipientId)}/`, { method: 'GET' });
+  }
 }
 
 export const CONTRACT_AWARD_TYPE_CODES = ['A', 'B', 'C', 'D'];

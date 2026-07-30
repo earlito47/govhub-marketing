@@ -42,6 +42,24 @@ export function fiscalYearLabel(fy) {
   return `FY${fy}`;
 }
 
+// ISO date + N calendar months, clamped by JS Date rollover semantics.
+// Used for the recompete end-date windows ("expiring in the next 12 months").
+export function addMonths(isoDate, months) {
+  const d = new Date(`${isoDate}T00:00:00Z`);
+  d.setUTCMonth(d.getUTCMonth() + months);
+  return d.toISOString().slice(0, 10);
+}
+
+// "2027-03-31" -> "March 2027". For prose around period-of-performance end
+// dates; bare month/year strings never trip the number-verification regexes.
+const MONTH_NAMES = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+export function formatMonthYear(isoDate) {
+  if (!isoDate || !/^\d{4}-\d{2}/.test(isoDate)) return null;
+  const month = Number.parseInt(isoDate.slice(5, 7), 10);
+  if (!(month >= 1 && month <= 12)) return null;
+  return `${MONTH_NAMES[month - 1]} ${isoDate.slice(0, 4)}`;
+}
+
 export function isoWeekString(date = new Date()) {
   const d = new Date(Date.UTC(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate()));
   const dayNum = d.getUTCDay() || 7;

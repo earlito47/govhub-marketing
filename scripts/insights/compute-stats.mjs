@@ -10,7 +10,8 @@
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { fallbackNaicsNarrative } from './lib/fallback-narrative.mjs';
-import { fiscalYearLabel, formatPercent, formatUsdCompact } from './lib/format.mjs';
+import { fiscalYearLabel, formatPercent, formatUsdCompact, addMonths, formatMonthYear } from './lib/format.mjs';
+import { relatedVendorLinks } from './lib/vendor-roster.mjs';
 import {
   naicsHref,
   naicsTitle,
@@ -604,6 +605,217 @@ export function computeSetasidePage({ slug, raw, updated }) {
     narrative: { intro: buildIntro(`In ${ctx.fyLabel}, federal agencies obligated`, ctx), sections },
     faq,
     related: relatedSetasideLinks(slug),
+    sources: SOURCES,
+  };
+}
+
+// --- Vendor profile pages (spec Phase 3) ------------------------------------
+// Same Template A dashboard as agency/state, plus two vendor-specific tables:
+// contracts expiring in the next 12 months (the recompete tie-in) and
+// registration details from the recipient profile endpoint. Raw shape comes
+// from fetch-data's fetchVendorRaw.
+
+// "corporate_entity_not_tax_exempt" -> "Corporate entity not tax exempt".
+function humanizeBusinessType(code) {
+  const s = String(code).replace(/_/g, ' ').trim();
+  return s.charAt(0).toUpperCase() + s.slice(1);
+}
+
+function titleCaseCity(s) {
+  return String(s)
+    .toLowerCase()
+    .replace(/\b[a-z]/g, (c) => c.toUpperCase());
+}
+
+export function computeVendorPage({ slug, vendor, roster, raw, updated }) {
+  const display = vendor.displayName || vendor.name;
+  const ctx = entityStats(raw);
+  const total$ = formatUsdCompact(ctx.totalObligations);
+  const agencies = dimOf(raw, 'awarding_agency', ctx.totalObligations);
+  const naics = dimOf(raw, 'naics', ctx.totalObligations);
+
+  // Category charts only render with >= 2 rows (the validator's per-chart
+  // floor): a defense-prime registration often has literally ONE buying agency
+  // or one market. The single-dominant-customer fact still ships — in the
+  // narrative section, FAQ, and takeaway-free prose — just not as a 1-bar chart.
+  const charts = [trendChart(slug, ctx, `${display} won`)];
+  if (agencies.rows.length >= 2) {
+    charts.push(
+      barChart(
+        `${slug}-top-agencies`,
+        `Top 10 buying agencies, ${ctx.fyLabel}`,
+        agencies,
+        agencies.top
+          ? `${agencies.top.name} is ${display}'s largest federal customer, with ${formatUsdCompact(agencies.top.amount)} obligated${
+              agencies.top.sharePct ? ` (${formatPercent(agencies.top.sharePct)} of the company's federal obligations)` : ''
+            }.`
+          : null
+      )
+    );
+  }
+  if (naics.rows.length >= 2) {
+    charts.push(
+      barChart(
+        `${slug}-top-naics`,
+        `Top 10 markets (NAICS), ${ctx.fyLabel}`,
+        naics,
+        naics.top ? `${naics.top.name} is ${display}'s largest federal market, with ${formatUsdCompact(naics.top.amount)} in obligations.` : null
+      )
+    );
+  }
+
+  // Largest awards: link text is the award id (every recipient here is the
+  // vendor itself), and the End Date fetch-data always requested is finally
+  // surfaced. "Ends" (a date string column) never feeds number verification.
+  const largestRows = (raw.largestAwards?.results ?? []).map((r, i) => {
+    const internalId = r.generated_internal_id ?? null;
+    return [
+      i + 1,
+      { text: r['Award ID'] ?? 'View award', href: internalId ? `https://www.usaspending.gov/award/${internalId}/` : null },
+      parseAmount(r['Award Amount']),
+      r['Awarding Agency'] ?? null,
+      r['End Date'] ?? null,
+    ];
+  });
+
+  // Recompete tie-in: End Date within the next 12 months, windowed here
+  // client-side (the API cannot filter on end dates), largest first.
+  const windowEnd = addMonths(raw.asOfDate, 12);
+  const expiring = (raw.expiringAwards?.results ?? [])
+    .map((r) => ({
+      awardId: r['Award ID'] ?? null,
+      amount: parseAmount(r['Award Amount']),
+      agency: r['Awarding Agency'] ?? null,
+      end: r['End Date'] ?? null,
+      internalId: r.generated_internal_id ?? null,
+    }))
+    .filter((r) => r.end && r.end >= raw.asOfDate && r.end <= windowEnd && r.amount > 0)
+    .sort((a, b) => b.amount - a.amount)
+    .slice(0, 10);
+  const topExpiring = expiring[0] ?? null;
+
+  const tables = [
+    {
+      title: `Largest awards, ${ctx.fyLabel}`,
+      columns: ['Rank', 'Award', 'Award Amount', 'Awarding Agency', 'Ends'],
+      rows: largestRows,
+    },
+  ];
+  if (expiring.length) {
+    tables.push({
+      title: 'Contracts expiring in the next 12 months',
+      columns: ['Award', 'Awarding Agency', 'Award Value', 'Ends'],
+      rows: expiring.map((r) => [
+        { text: r.awardId ?? 'View award', href: r.internalId ? `https://www.usaspending.gov/award/${r.internalId}/` : null },
+        r.agency,
+        r.amount,
+        r.end,
+      ]),
+    });
+  }
+
+  // Registration facts from the recipient profile endpoint (may be null: the
+  // page then simply ships without this table). Column names avoid the money
+  // words so no cell is ever treated as a citable dollar figure.
+  const p = raw.profile;
+  if (p) {
+    const hq = [p.location?.city_name ? titleCaseCity(p.location.city_name) : null, p.location?.state_code ?? null]
+      .filter(Boolean)
+      .join(', ');
+    const regRows = [
+      p.uei ? ['Unique Entity ID (UEI)', p.uei] : null,
+      hq ? ['Headquarters', hq] : null,
+      p.parent_name && p.parent_name !== p.name ? ['Parent company', p.parent_name] : null,
+      Array.isArray(p.business_types) && p.business_types.length
+        ? ['Business types', p.business_types.slice(0, 6).map(humanizeBusinessType).join('; ')]
+        : null,
+    ].filter(Boolean);
+    if (regRows.length) tables.push({ title: 'Registration details', columns: ['Detail', 'Registration'], rows: regRows });
+  }
+
+  const sections = [];
+  if (agencies.top) {
+    sections.push({
+      heading: `Which agencies buy from ${display}?`,
+      body: `${agencies.top.name} accounted for ${formatUsdCompact(agencies.top.amount)} of ${display}'s federal contract obligations in ${
+        ctx.fyLabel
+      }${agencies.top.sharePct ? `, or ${formatPercent(agencies.top.sharePct)} of the company's federal work` : ''}.`,
+    });
+  }
+  if (naics.top) {
+    sections.push({
+      heading: `What does ${display} sell to the government?`,
+      body: `${naics.top.name} is ${display}'s largest federal market by obligations, at ${formatUsdCompact(naics.top.amount)} in ${ctx.fyLabel}${
+        naics.top.sharePct ? `, a ${formatPercent(naics.top.sharePct)} share of its federal business` : ''
+      }.`,
+    });
+  }
+
+  const awardsClause = ctx.awardCount ? `, across ${ctx.awardCount.toLocaleString('en-US')} awards` : '';
+  const faq = [
+    {
+      q: `How much does ${display} make from federal contracts?`,
+      a: `${display} won ${total$} in federal contract obligations in ${ctx.fyLabel}${awardsClause}.`,
+    },
+    agencies.top && {
+      q: `Which agencies buy from ${display}?`,
+      a: `${agencies.top.name} is ${display}'s largest federal customer, with ${formatUsdCompact(agencies.top.amount)} obligated in ${ctx.fyLabel}.`,
+    },
+    naics.top && {
+      q: `What does ${display} sell to the government?`,
+      a: `${display}'s largest federal market is ${naics.top.name}, with ${formatUsdCompact(naics.top.amount)} in obligations in ${ctx.fyLabel}.`,
+    },
+    topExpiring
+      ? {
+          q: `Which ${display} contracts are expiring soon?`,
+          a: `${display}'s largest contract expiring in the next 12 months is a ${formatUsdCompact(topExpiring.amount)} award from ${
+            topExpiring.agency ?? 'a federal agency'
+          }, with a period of performance ending in ${formatMonthYear(topExpiring.end)}.`,
+        }
+      : {
+          q: `Which ${display} contracts are expiring soon?`,
+          a: `None of ${display}'s largest federal contracts have a period of performance ending in the next 12 months, based on currently reported end dates.`,
+        },
+  ].filter(Boolean);
+
+  // Title cascade: varied shape first, then progressively shorter forms so a
+  // long company name can never push past the 70-char build guard.
+  const fy = fiscalYearLabel(ctx.currentFy);
+  let title = entityTitle({ pageType: 'vendor', slug, name: display, total$: total$ ?? 'FY Data', fy });
+  if (!title || title.length > 68) title = `${display}: Federal Contracts ${fy}`;
+  if (title.length > 70) {
+    // Trim the name at a word boundary and drop a dangling connector so the
+    // shortest form never reads "…Solutions of : Federal Contracts".
+    const trimmed = display.slice(0, 50).replace(/\s+\S*$/, '').replace(/[\s,&-]+(of|and|the|for)$/i, '');
+    title = `${trimmed}: Federal Contracts`;
+  }
+
+  return {
+    pageType: 'vendor',
+    slug,
+    title,
+    h1: `${display}: Federal Contracts, Agencies & Awards`,
+    metaDescription: `${display} won ${
+      total$ ?? 'federal contract dollars'
+    } in federal contract obligations in ${ctx.fyLabel}. See its top agencies, markets, largest awards, and expiring contracts.`.slice(0, 158),
+    updated,
+    fyWindow: { label: ctx.fyLabel, start: raw.currentFyRange.start, end: raw.asOfDate },
+    stats: {
+      totalObligations: ctx.totalObligations,
+      awardCount: ctx.awardCount,
+      yoyGrowthPct: ctx.yoyGrowthPct,
+      avgAwardSize: ctx.avgAwardSize,
+      smallBusinessSharePct: null,
+    },
+    charts,
+    crossLinks: computeCrossLinks({ pageType: 'vendor', slug, charts }),
+    tables,
+    narrative: { intro: buildIntro(`In ${ctx.fyLabel}, ${display} won`, ctx), sections },
+    faq,
+    related: [
+      { label: 'Expiring federal contracts: recompete watch', href: '/insights/expiring-federal-contracts/' },
+      ...relatedVendorLinks(roster, slug),
+    ],
     sources: SOURCES,
   };
 }

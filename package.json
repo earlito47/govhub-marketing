@@ -18,6 +18,7 @@
     "insights:rankings": "node scripts/insights/build-rankings.mjs",
     "insights:narratives": "node scripts/insights/generate-narratives.mjs",
     "insights:weekly": "node scripts/insights/run-weekly.mjs",
+    "insights:vendors-daily": "node scripts/insights/run-vendor-daily.mjs",
     "insights:validate": "node scripts/insights/validate.mjs",
     "insights:guardrails-test": "node scripts/insights/guardrails.selftest.mjs",
     "guard:emdash": "node scripts/check-emdash.mjs"

@@ -17,6 +17,7 @@ import {
   naicsHref,
   stateName,
   stateHref,
+  vendorHref,
   SET_ASIDES,
 } from './slugs.mjs';
 import { formatUsdCompact } from './format.mjs';
@@ -51,20 +52,29 @@ const TITLE_VARIANTS = {
     ({ abbr, t, fy }) => `Federal ${abbr} Set-Aside Spending: ${t}, ${fy}`,
     ({ abbr, t, fy }) => `${abbr} Set-Asides: ${t} in Contracts (${fy})`,
   ],
+  // Vendor names vary in length; compute-stats applies a shorter fallback
+  // whenever the picked variant would break the 70-char title guard.
+  vendor: [
+    ({ name, t, fy }) => `${name} Federal Contracts: ${t} in ${fy}`,
+    ({ name, t, fy }) => `${name} Government Contracts: ${t} (${fy})`,
+    ({ name, t, fy }) => `Who Buys From ${name}: ${t} in ${fy}`,
+  ],
 };
 
 /**
  * De-templatized <title>. Same inputs the generator already has; the transform
  * derives `total$`/`fy` from the stored JSON so both produce identical output.
+ * `name` overrides the registry lookup for types with no static registry
+ * (vendor pages resolve their display name from the roster).
  */
-export function entityTitle({ pageType, slug, total$, fy }) {
+export function entityTitle({ pageType, slug, total$, fy, name = null }) {
   const variants = TITLE_VARIANTS[pageType];
   if (!variants) return null;
   const t = total$ || 'FY Data';
   const parts = {
     t,
     fy,
-    name: stateName(slug),
+    name: name ?? stateName(slug),
     code: slug,
     abbr: AGENCY_ABBR[slug] ?? SET_ASIDES[slug]?.abbr ?? slug,
   };
@@ -126,6 +136,8 @@ function selfHref(page) {
       return agencyHref(page.slug);
     case 'naics':
       return naicsHref(page.slug);
+    case 'vendor':
+      return vendorHref(page.slug);
     default:
       return null;
   }

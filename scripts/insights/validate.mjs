@@ -20,7 +20,9 @@ const REPO_ROOT = path.resolve(path.dirname(__filename), '../..');
 const DATA_DIR = path.join(REPO_ROOT, 'src/data/insights');
 
 const CHART_TYPES = new Set(['line', 'bar']);
-const PAGE_TYPES = new Set(['naics', 'agency', 'state', 'setaside', 'ranking', 'report']);
+const PAGE_TYPES = new Set(['naics', 'agency', 'state', 'setaside', 'vendor', 'ranking', 'report']);
+// Pipeline metadata files at the data-dir root — not entity pages, skipped.
+const NON_PAGE_FILES = new Set(['meta.json', 'vendor-roster.json']);
 // ---- Schema validation ----------------------------------------------------
 function validateSchema(page, id) {
   const e = [];
@@ -110,8 +112,7 @@ function walkJson(dir) {
   for (const name of readdirSync(dir)) {
     const p = path.join(dir, name);
     if (statSync(p).isDirectory()) out.push(...walkJson(p));
-    // meta.json is a pipeline metadata file, not an entity page — skip it.
-    else if (name.endsWith('.json') && name !== 'meta.json') out.push(p);
+    else if (name.endsWith('.json') && !NON_PAGE_FILES.has(name)) out.push(p);
   }
   return out;
 }
@@ -165,6 +166,10 @@ function main() {
   }
 
   const errors = [];
+  // Chart ids are GLOBAL route keys (/embed/{chartId}/): a duplicate across
+  // any two pages silently collapses two embeds into one route. Vendor slugs
+  // are data-derived, so this is enforced rather than assumed.
+  const chartIdOwners = new Map();
   for (const abs of files) {
     const id = path.relative(DATA_DIR, abs).replace('.json', '');
     let page;
@@ -176,6 +181,11 @@ function main() {
     }
     errors.push(...validateSchema(page, id));
     errors.push(...findNumberViolations(narrativeText(page), page).map((v) => `${id}: ${v}`));
+    for (const c of page.charts ?? []) {
+      if (!c.id) continue;
+      if (chartIdOwners.has(c.id)) errors.push(`${id}: chart id "${c.id}" already used by ${chartIdOwners.get(c.id)} (embed routes collide)`);
+      else chartIdOwners.set(c.id, id);
+    }
   }
   errors.push(...checkRegression(files));
 

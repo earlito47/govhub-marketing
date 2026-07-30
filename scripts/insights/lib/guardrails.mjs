@@ -31,6 +31,19 @@ export const GUARDRAILS = {
     softObligations: 100e6,
     softAwards: 150,
   },
+  // Per-kind overrides. The award-count floors were designed for MARKETS
+  // (a NAICS/state with 40 awards is thin); a single company is different —
+  // top contractors like national-lab operators or TRICARE administrators
+  // carry billions on 1-20 awards. Vendor pages gate on dollars + trend only.
+  thinByKind: {
+    vendor: {
+      hardObligations: 50e6,
+      hardAwards: 1,
+      hardTrendYears: 3,
+      softObligations: 100e6,
+      softAwards: 1,
+    },
+  },
 };
 
 function trendYearsOf(page) {
@@ -38,12 +51,13 @@ function trendYearsOf(page) {
 }
 
 /**
- * Decide what to do with a freshly computed entity page.
+ * Decide what to do with a freshly computed entity page. `kind` selects
+ * per-kind thin thresholds (thinByKind) where they exist.
  * @returns {{action: 'index'|'noindex'|'skip'|'defer', reason: string|null}}
  */
-export function classifyEntity({ page, exists, budget }) {
+export function classifyEntity({ page, exists, budget, kind = null }) {
   const { totalObligations, awardCount } = page.stats;
-  const t = GUARDRAILS.thin;
+  const t = (kind && GUARDRAILS.thinByKind?.[kind]) || GUARDRAILS.thin;
 
   // 1. Hard floor: skip entirely.
   if (totalObligations < t.hardObligations) return { action: 'skip', reason: `below $${t.hardObligations / 1e6}M obligations` };

@@ -28,6 +28,13 @@ check('weak awards -> noindex', classifyEntity({ page: page({ obligations: 300e6
 // Healthy -> index
 check('healthy -> index', classifyEntity({ page: page({ obligations: 300e6, awards: 500 }), exists: true, budget: freshBudget() }).action, 'index');
 
+// Vendor kind: award-count floors don't apply (a TRICARE administrator or
+// national-lab operator carries billions on 1-20 awards); dollars + trend do.
+check('vendor: few awards, big $ -> index', classifyEntity({ page: page({ obligations: 18e9, awards: 2 }), exists: true, budget: freshBudget(), kind: 'vendor' }).action, 'index');
+check('vendor: below hard $ -> skip', classifyEntity({ page: page({ obligations: 40e6, awards: 500 }), exists: true, budget: freshBudget(), kind: 'vendor' }).action, 'skip');
+check('vendor: short trend -> skip', classifyEntity({ page: page({ obligations: 18e9, awards: 50, trendYears: 2 }), exists: true, budget: freshBudget(), kind: 'vendor' }).action, 'skip');
+check('non-vendor kinds keep market floors', classifyEntity({ page: page({ obligations: 18e9, awards: 2 }), exists: true, budget: freshBudget(), kind: 'naics' }).action, 'skip');
+
 // Throttle: a brand-new healthy page defers once the budget is spent; existing
 // pages are never throttled.
 const b = makeBudget({ existingTotal: 110 }); // allowance 8

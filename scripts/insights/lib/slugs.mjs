@@ -214,6 +214,15 @@ export function relatedStateLinks(slug, limit = 6) {
     .map((s) => ({ label: `${stateName(s)} federal contracts`, href: stateHref(s) }));
 }
 
+// ---- Vendors ----------------------------------------------------------------
+// Vendor pages have no static registry here: the roster of published vendors is
+// data-driven and lives in src/data/insights/vendor-roster.json, managed by
+// lib/vendor-roster.mjs (stable slugs, append-only). Only the href shape is
+// defined here so every module builds vendor URLs one way.
+export function vendorHref(slug) {
+  return `/insights/vendor/${slug}/`;
+}
+
 // ---- Set-aside programs (typeofsetaside) -----------------------------------
 // slug -> program metadata. `codes` are the FPDS type-of-set-aside codes the
 // USAspending `set_aside_type_codes` filter accepts (verified live 2026-07-13:

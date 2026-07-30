@@ -62,7 +62,7 @@ export interface SourceLink {
 }
 
 export interface InsightsPage {
-  pageType: 'naics' | 'agency' | 'state' | 'setaside' | 'ranking' | 'report';
+  pageType: 'naics' | 'agency' | 'state' | 'setaside' | 'vendor' | 'ranking' | 'report';
   slug: string;
   title: string;
   h1: string;
@@ -82,8 +82,11 @@ export interface InsightsPage {
   related: RelatedLink[];
   /** Cross-cluster links mined from this page's own top-agency/top-industry
    * data (state -> agencies + NAICS, agency -> NAICS, NAICS -> agencies).
-   * Optional: ranking/report pages don't carry it. */
+   * Optional: report pages don't carry it. */
   crossLinks?: RelatedLink[];
+  /** Optional heading for the crossLinks block (ranking pages only; defaults
+   * to "Browse every industry" in RankingPage). */
+  crossLinksHeading?: string;
   /** Set by the pipeline guardrails when a page clears the hard thin-content
    * floor but is weak for searchers: published for users, kept out of the
    * index and the sitemap. */

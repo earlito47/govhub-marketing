@@ -24,7 +24,6 @@ interface Props {
 }
 
 const { page, breadcrumbs } = Astro.props;
-const chart = page.charts[0];
 const faqs = page.faq.map((f) => ({ question: f.q, answer: f.a }));
 ---
 
@@ -44,12 +43,12 @@ const faqs = page.faq.map((f) => ({ question: f.q, answer: f.a }));
   </section>
 )}
 
-{chart && (
+{page.charts.map((chart) => (
   <section aria-label={chart.title}>
     <SvgChart chart={chart} />
     <EmbedCode chartId={chart.id} chartTitle={chart.title} />
   </section>
-)}
+))}
 
 {page.tables.map((t) => (
   <section aria-label={t.title}>
@@ -76,7 +75,7 @@ const faqs = page.faq.map((f) => ({ question: f.q, answer: f.a }));
 <MethodologyNote updated={page.updated} fyLabel={page.fyWindow.label} />
 
 {page.crossLinks && page.crossLinks.length > 0 && (
-  <RelatedPages links={page.crossLinks} heading="Browse every industry" />
+  <RelatedPages links={page.crossLinks} heading={page.crossLinksHeading ?? 'Browse every industry'} />
 )}
 
 <RelatedPages links={page.related} heading="More market rankings" />

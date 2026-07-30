@@ -16,10 +16,11 @@ function noindexInsightPaths() {
     agency: '/insights/agency/',
     state: '/insights/state/',
     setaside: '/insights/set-aside/',
+    vendor: '/insights/vendor/',
     ranking: '/insights/',
   };
   const paths = new Set();
-  for (const kind of ['naics', 'agency', 'state', 'setaside', 'rankings']) {
+  for (const kind of ['naics', 'agency', 'state', 'setaside', 'vendor', 'rankings']) {
     const dir = `${dataDir}/${kind}`;
     if (!existsSync(dir)) continue;
     for (const file of readdirSync(dir)) {
