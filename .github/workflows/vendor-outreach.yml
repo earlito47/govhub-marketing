@@ -1,7 +1,8 @@
 # Vendor "claim your page" outreach — daily drip.
 #
 # For every vendor with a PUBLISHED profile page: resolve a contact (SBA
-# certification search, then Apollo), then send at most 10 plain-text notes
+# certification search, then Tomba, then Apollo), then send at most 10
+# plain-text notes
 # per day from Jerr inviting the vendor to review its page and reply with
 # edits. One email per vendor ever; data/vendor-outreach.json is the committed
 # ledger (idempotency + reply-based opt-out suppression). See the header of
@@ -13,7 +14,7 @@
 # dry run and a --test send.
 #
 # Setup (one-time, by a maintainer):
-#   Secrets:   RESEND_API_KEY, APOLLO_API_KEY
+#   Secrets:   RESEND_API_KEY, TOMBA_API_KEY, APOLLO_API_KEY
 #   Variables: OUTREACH_ENABLED ("true" to send)
 #              OUTREACH_POSTAL  (postal address for the signature; required)
 #              OUTREACH_FROM    (optional, default "Jerr at GovHub <hello@govhub.online>")
@@ -51,6 +52,7 @@ jobs:
       - name: Resolve contacts for newly published vendors
         run: node scripts/outreach/vendor-outreach.mjs --resolve --limit 15
         env:
+          TOMBA_API_KEY: ${{ secrets.TOMBA_API_KEY }}
           APOLLO_API_KEY: ${{ secrets.APOLLO_API_KEY }}
 
       - name: Dry run (always logged, the audit trail for what send would do)
