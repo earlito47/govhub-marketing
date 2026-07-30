@@ -1,0 +1,70 @@
+# One LinkedIn post per day for the GovHub company page, staged in Postiz.
+#
+# Unlike weekly-content this commits nothing and opens no PR, so it is not
+# affected by the "Actions can create pull requests" setting. The data is
+# already in the repo (refreshed every Monday by weekly-insights), the copy
+# goes to the Postiz calendar, and with POSTIZ_POST_TYPE=draft (the default)
+# a human presses publish.
+#
+# Rotation, so a week never repeats itself:
+#   Mon  largest awards last week        Fri  a flagship ranking
+#   Tue  top agencies by new money       Sat  a glossary term
+#   Wed  most active industries          Sun  an evergreen post resurfaced
+#   Thu  top states by new money
+#
+# Every dollar figure is verified against the source JSON before anything is
+# sent. Unverifiable copy fails the run rather than posting a wrong number.
+#
+# Setup: uses the same OPENAI_API_KEY / SOCIAL_API_KEY secrets and
+# POSTIZ_INTEGRATION_ID / POSTIZ_POST_TYPE variables as publish-social.
+
+name: daily-linkedin
+
+on:
+  schedule:
+    # 14:30 UTC = 9:30am ET / 8:30am Central, a decent LinkedIn hour.
+    # After weekly-insights (Mon 09:00) so Monday uses fresh data, and after
+    # weekly-content (Mon 13:00) so the Monday jobs never overlap.
+    - cron: "30 14 * * *"
+  workflow_dispatch:
+    inputs:
+      force_weekday:
+        description: "Override the rotation: 0=Mon ... 6=Sun"
+        required: false
+      dry_run:
+        description: "true = print the copy, send nothing to Postiz"
+        required: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: daily-linkedin
+  cancel-in-progress: false
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install --quiet requests
+
+      - name: Write and stage today's post
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_MODEL: ${{ vars.DAILY_OPENAI_MODEL || 'gpt-5-mini' }}
+          SOCIAL_API_KEY: ${{ secrets.SOCIAL_API_KEY }}
+          POSTIZ_INTEGRATION_ID: ${{ vars.POSTIZ_INTEGRATION_ID }}
+          POSTIZ_POST_TYPE: ${{ vars.POSTIZ_POST_TYPE || 'draft' }}
+          FORCE_WEEKDAY: ${{ github.event.inputs.force_weekday }}
+          DRY_RUN: ${{ github.event.inputs.dry_run }}
+        run: python scripts/content/daily_linkedin.py

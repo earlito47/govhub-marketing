@@ -1,16 +1,58 @@
-# Weekly content pipeline
+# Content pipelines
 
-A blog post a week, chosen by search demand rather than by whoever had an idea
-on Monday, plus matching LinkedIn copy for the GovHub company page.
+A blog post a week chosen by search demand, plus one LinkedIn post per day,
+both staged for the GovHub company page.
 
-Two workflows, deliberately split:
+Three workflows, deliberately split:
 
 | Workflow | Trigger | What it does |
 | --- | --- | --- |
-| `weekly-content` | Mon 13:00 UTC, or manual | Picks a topic, writes the post, verifies the build, opens a PR |
-| `publish-social` | Merge to `main` touching `social/*.linkedin.txt` | Waits for the page to be live, posts to LinkedIn |
+| `weekly-content` | Mon 13:00 UTC, or manual | Picks a topic from GSC, writes the post, verifies the build, opens a PR |
+| `publish-social` | Merge to `main` touching `social/*.linkedin.txt` | Waits for the page to be live, sends the copy to Postiz |
+| `daily-linkedin` | Every day 14:30 UTC | Writes one news post from the insights data, stages it in Postiz |
 
-Nothing publishes without a human merging the PR.
+Nothing publishes without a human: blog posts need a merged PR, and LinkedIn
+copy lands in the Postiz calendar as a draft (while `POSTIZ_POST_TYPE=draft`)
+for a person to press publish.
+
+## The daily LinkedIn post
+
+`scripts/content/daily_linkedin.py` commits nothing and opens no PR. It reads
+the federal contracting data that `weekly-insights` refreshes every Monday
+from USAspending, writes 80 to 150 words of copy, and stages it in Postiz. The
+rotation means a week never repeats itself:
+
+| Day | Source | Links to |
+| --- | --- | --- |
+| Mon | Largest awards with activity last week | `/insights/reports/<week>/largest-awards/` |
+| Tue | Top agencies by new obligations | `/insights/reports/<week>/top-agencies/` |
+| Wed | Most active industries (NAICS) | `/insights/reports/<week>/most-active-naics/` |
+| Thu | Top states by new obligations | `/insights/reports/<week>/state-movers/` |
+| Fri | A flagship ranking (rotates weekly) | `/insights/<slug>/` |
+| Sat | A glossary term (rotates through all 20) | `/glossary/<slug>/` |
+| Sun | An evergreen blog post resurfaced | `/blog/<slug>/` |
+
+**Numbers are verified, not trusted.** The script pre-formats every figure
+from the source JSON, instructs the model to use them verbatim, and rejects
+any output containing a dollar amount not in that allowed set. Three failed
+attempts fail the run; a red workflow beats a wrong number on the company
+page. Deliberately, the blog cadence stays weekly: the striking-distance data
+does not support a good post a day, and thin daily posts would erode the
+rankings the weekly pipeline is building.
+
+Test a specific day with the `force_weekday` input (0=Mon) and `dry_run=true`
+on manual dispatch. `DAILY_OPENAI_MODEL` (default `gpt-5-mini`) sets the model.
+
+## Media on generated posts
+
+`generate_post.py` offers the model the real brand SVG inventory
+(`public/brand/page-graphics/` and `illustrations/`, minus page furniture like
+the footer strip and 404 art) and asks for a cover, a cover alt sentence, and
+optionally one in-body figure. Only paths from the inventory survive
+validation; a hallucinated path falls back to the layout's default cover
+rather than shipping a broken image. The figure uses the same
+`<img class="post-figure" ...>` markup as the hand-written posts and is
+inserted before the second H2.
 
 ## How the topic gets picked
 

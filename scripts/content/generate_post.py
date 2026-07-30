@@ -99,6 +99,9 @@ three of the most relevant ones inside the body, in context, never as a link \
 dump at the end):
 {link_targets}
 
+BRAND MEDIA (the only image paths that exist; pick from this list only):
+{media_targets}
+
 Return ONLY a JSON object, no markdown fences, no preamble, with these keys:
   "title"            SEO title, at most {title_max} characters, contains the \
 target query or a close variant
@@ -113,6 +116,10 @@ words. Open with a specific claim or number, not a question. No hashtag \
 soup, three tags maximum at the end. Do not paste the article, give one \
 genuinely useful takeaway and let the link carry the rest.
   "internal_links_used"  array of the hrefs you actually linked to in the body
+  "cover_asset"      the BRAND MEDIA path most relevant to this post's topic
+  "cover_alt"        one plain sentence describing the cover for screen readers
+  "figure_asset"     a second, different BRAND MEDIA path to illustrate the \
+body, or null if nothing on the list genuinely fits
 """
 
 
@@ -159,6 +166,41 @@ def link_inventory() -> str:
 def from_search_console(topic: dict) -> bool:
     """True for any GSC-derived tier, strict or emerging."""
     return str(topic.get("source", "")).startswith("gsc_")
+
+
+# Brand art that is page furniture, not editorial illustration. Offering these
+# to the model just invites a footer strip as a blog cover.
+MEDIA_DENYLIST = ("404", "footer-", "cta-band", "home-hero", "og-", "linkedin-cover")
+
+DEFAULT_COVER = "/brand/page-graphics/blog-trail-map.svg"
+
+
+def media_inventory() -> list:
+    """Real brand SVGs the model may choose from. Same reasoning as
+    link_inventory: handing it the actual files beats validating inventions."""
+    assets = []
+    for subdir in ("page-graphics", "illustrations", "graphics"):
+        base = Path("public/brand") / subdir
+        if not base.exists():
+            continue
+        for f in sorted(base.glob("*.svg")):
+            if any(t in f.name for t in MEDIA_DENYLIST):
+                continue
+            hint = f.stem.replace("-", " ").replace("@2x", "")
+            assets.append({"path": f"/brand/{subdir}/{f.name}", "hint": hint})
+    return assets
+
+
+def format_media(assets: list) -> str:
+    return "\n".join(f"- {a['path']} ({a['hint']})" for a in assets)
+
+
+def resolve_asset(picked, assets: list):
+    """Only paths from the inventory survive. Anything else becomes None."""
+    if not picked:
+        return None
+    paths = {a["path"] for a in assets}
+    return picked if picked in paths else None
 
 
 def format_search_data(topic: dict) -> str:
@@ -285,7 +327,7 @@ def repair_description(post: dict) -> dict:
     return post
 
 
-def generate(topic: dict) -> dict:
+def generate(topic: dict, assets: list) -> dict:
     messages = [
         {"role": "system", "content": SYSTEM},
         {"role": "user", "content": USER_TEMPLATE.format(
@@ -293,6 +335,7 @@ def generate(topic: dict) -> dict:
             search_data=format_search_data(topic),
             related=format_related(topic),
             link_targets=link_inventory(),
+            media_targets=format_media(assets),
             title_max=TITLE_MAX,
             desc_min=DESC_MIN,
             desc_max=DESC_MAX,
@@ -319,7 +362,19 @@ def yaml_string(value: str) -> str:
     return '"' + value.replace("\\", "\\\\").replace('"', "'") + '"'
 
 
-def write_outputs(topic: dict, post: dict) -> tuple:
+def insert_figure(body: str, asset: str) -> str:
+    """Drop a decorative figure before the second H2, matching the exact
+    markup the hand-written posts use (see what-is-rfp-shredding.md)."""
+    img = (f'<img class="post-figure" src="{asset}" alt="" aria-hidden="true" '
+           f'width="720" height="480" loading="lazy" decoding="async" />')
+    headings = [m.start() for m in re.finditer(r"^## ", body, re.M)]
+    if len(headings) < 2:
+        return body + "\n\n" + img
+    cut = headings[1]
+    return body[:cut] + img + "\n\n" + body[cut:]
+
+
+def write_outputs(topic: dict, post: dict, assets: list) -> tuple:
     slug = slugify(post.get("slug") or post["title"])
     CONTENT_DIR.mkdir(parents=True, exist_ok=True)
     SOCIAL_DIR.mkdir(parents=True, exist_ok=True)
@@ -329,6 +384,14 @@ def write_outputs(topic: dict, post: dict) -> tuple:
     desc = strip_dashes(post["description"]).strip()
     body = strip_dashes(post["body_markdown"]).strip()
     today = date.today().isoformat()
+
+    # Media: only inventory paths survive; anything else falls back to the
+    # layout default so a hallucinated path can never ship a broken image.
+    cover = resolve_asset(post.get("cover_asset"), assets) or DEFAULT_COVER
+    cover_alt = strip_dashes(post.get("cover_alt") or "").strip()
+    figure = resolve_asset(post.get("figure_asset"), assets)
+    if figure and figure != cover:
+        body = insert_figure(body, figure)
 
     # Exactly the fields in src/content.config.ts. `tags` and the search
     # metrics are deliberately not here: they are not in the schema, Astro
@@ -341,6 +404,8 @@ def write_outputs(topic: dict, post: dict) -> tuple:
         f"updatedDate: {today}\n"
         "author: GovHub team\n"
         f"pillarSlug: {topic.get('pillar_hint', 'how-to-respond-to-a-government-rfp')}\n"
+        f"cover: {yaml_string(cover)}\n"
+        f"coverAlt: {yaml_string(cover_alt)}\n"
         "draft: false\n"
         "---\n\n"
     )
@@ -374,8 +439,9 @@ def write_outputs(topic: dict, post: dict) -> tuple:
 
 def main():
     topic = load_topic()
-    post = generate(topic)
-    slug, title, desc, url = write_outputs(topic, post)
+    assets = media_inventory()
+    post = generate(topic, assets)
+    slug, title, desc, url = write_outputs(topic, post, assets)
 
     # Surface the guard budgets in the PR so a near-miss is visible to a human
     # before the build complains.
@@ -399,7 +465,9 @@ def main():
         f"**Pillar:** `{topic.get('pillar_hint')}`  \n"
         f"**Live URL after merge:** {url}\n\n"
         f"**Metadata budgets:** title {len(title)}/{TITLE_MAX}{title_flag}, "
-        f"description {len(desc)} chars (target {DESC_MIN}-{DESC_MAX}){desc_flag}\n\n"
+        f"description {len(desc)} chars (target {DESC_MIN}-{DESC_MAX}){desc_flag}  \n"
+        f"**Cover:** `{resolve_asset(post.get('cover_asset'), assets) or DEFAULT_COVER + ' (default)'}`  \n"
+        f"**Body figure:** `{resolve_asset(post.get('figure_asset'), assets) or 'none'}`\n\n"
         f"**Internal links used:**\n"
         + ("\n".join(f"- {l}" for l in links) if links else "- (none)")
         + f"\n\n**LinkedIn copy** is in `social/{slug}.linkedin.txt`. It publishes "
