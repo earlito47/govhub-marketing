@@ -5,14 +5,17 @@ publishDate: 2026-07-29
 updatedDate: 2026-07-29
 author: GovHub team
 pillarSlug: how-to-respond-to-a-government-rfp
+cover: "/brand/page-graphics/compliance-survey-checkpoint.svg"
+coverAlt: "A surveyor checking requirements at a trail checkpoint"
 draft: false
 ---
-
 ## Start here: Section L tells you what to submit, Section M tells you how it will be scored
 
 Read Section L once for tasks and format, then Section M for scoring, then map them line by line. If L says “submit a 20 page Technical Volume with a Staffing Plan” and M scores “Technical Approach” and “Staffing,” you have two required sections in your outline. If M does not mention something L asks for, you still include it for compliance, but you do not waste pages on it. You spend pages on what M will score.
 
 Confirm the source clauses. For commercial items you will see FAR 52.212-1 and 52.212-2. For negotiated procurements you will see FAR 52.215-1 and Part 15 references. Identify LPTA under FAR 15.101-2 or Tradeoff under FAR 15.101-1. Then build a quick compliance matrix so nothing slips.
+
+<img class="post-figure" src="/brand/page-graphics/solution-compliance-matrix-pan.svg" alt="" aria-hidden="true" width="720" height="480" loading="lazy" decoding="async" />
 
 ## Where L and M live in the FAR
 

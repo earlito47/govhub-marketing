@@ -5,6 +5,8 @@ publishDate: 2026-07-01
 updatedDate: 2026-07-01
 author: GovHub team
 pillarSlug: how-to-write-a-government-proposal
+cover: "/brand/page-graphics/solution-compliance-matrix-pan.svg"
+coverAlt: "A gold pan sifting requirements into a matrix"
 draft: false
 ---
 

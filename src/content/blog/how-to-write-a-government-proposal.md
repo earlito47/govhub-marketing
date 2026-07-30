@@ -5,6 +5,8 @@ publishDate: 2026-07-01
 updatedDate: 2026-07-01
 author: GovHub team
 pillarSlug: how-to-write-a-government-proposal
+cover: "/brand/illustrations/illo-focus-work.svg"
+coverAlt: "A writer working heads-down at a desk"
 draft: false
 ---
 

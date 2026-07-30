@@ -390,6 +390,14 @@ def write_outputs(topic: dict, post: dict, assets: list) -> tuple:
     cover = resolve_asset(post.get("cover_asset"), assets) or DEFAULT_COVER
     cover_alt = strip_dashes(post.get("cover_alt") or "").strip()
     figure = resolve_asset(post.get("figure_asset"), assets)
+    if not figure or figure == cover:
+        # Every post ships at least one in-body visual. If the model declined
+        # or duplicated the cover, pick deterministically from the
+        # illustrations so the choice is stable across reruns of the same slug.
+        illos = [a["path"] for a in assets
+                 if "/illustrations/" in a["path"] and a["path"] != cover]
+        if illos:
+            figure = illos[sum(map(ord, slug)) % len(illos)]
     if figure and figure != cover:
         body = insert_figure(body, figure)
 

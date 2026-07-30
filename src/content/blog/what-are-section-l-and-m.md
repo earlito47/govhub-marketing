@@ -5,14 +5,17 @@ publishDate: 2026-07-01
 updatedDate: 2026-07-01
 author: GovHub team
 pillarSlug: how-to-write-a-government-proposal
+cover: "/brand/page-graphics/faq-signpost.svg"
+coverAlt: "A trail signpost pointing two directions"
 draft: false
 ---
-
 If you read only two sections of a government solicitation, read Section L and Section M. Together they tell you exactly how to write your proposal and how it will be scored. Everything else is context; these two are the rules of the game.
 
 ## What are Section L and Section M?
 
 In a federal solicitation organized under the Uniform Contract Format, **Section L contains the instructions** for preparing and submitting your proposal, and **Section M contains the factors** the government will use to evaluate it. Section L tells you *what to do*; Section M tells you *how you'll be judged*. Write to both, at the same time.
+
+<img class="post-figure" src="/brand/illustrations/illo-focus-work.svg" alt="" aria-hidden="true" width="720" height="480" loading="lazy" decoding="async" />
 
 ## What is in Section L?
 
