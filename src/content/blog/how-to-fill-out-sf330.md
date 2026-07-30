@@ -5,6 +5,8 @@ publishDate: 2026-07-01
 updatedDate: 2026-07-01
 author: GovHub team
 pillarSlug: how-to-respond-to-a-government-rfp
+cover: "/brand/page-graphics/solution-form-autofiller.svg"
+coverAlt: "A government form being filled in automatically"
 draft: false
 ---
 

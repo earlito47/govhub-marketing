@@ -5,6 +5,8 @@ publishDate: 2026-07-01
 updatedDate: 2026-07-01
 author: GovHub team
 pillarSlug: how-to-respond-to-a-government-rfp
+cover: "/brand/page-graphics/solution-rfp-shredding-strata.svg"
+coverAlt: "Rock strata layers representing a shredded RFP"
 draft: false
 ---
 

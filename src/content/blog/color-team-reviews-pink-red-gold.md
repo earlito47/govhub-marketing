@@ -5,6 +5,8 @@ publishDate: 2026-07-01
 updatedDate: 2026-07-01
 author: GovHub team
 pillarSlug: how-to-respond-to-a-government-rfp
+cover: "/brand/illustrations/illo-review-together.svg"
+coverAlt: "Two teammates reviewing a document together"
 draft: false
 ---
 

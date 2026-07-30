@@ -5,14 +5,17 @@ publishDate: 2026-07-01
 updatedDate: 2026-07-01
 author: GovHub team
 pillarSlug: how-to-respond-to-a-government-rfp
+cover: "/brand/page-graphics/about-basecamp-dusk.svg"
+coverAlt: "A quiet basecamp at dusk below an unclimbed summit"
 draft: false
 ---
-
 Most government proposals aren't rejected because the idea was bad. They're rejected because they were **non-responsive**, they missed a requirement, broke a format rule, or failed to address an evaluation factor, and never got a fair read on the merits. The good news: nearly all of these failures are preventable with discipline.
 
 ## Missing a Section L requirement
 
 The most common cause. Section L lists mandatory instructions and content, and omitting any of it can make a proposal non-responsive. The defense is a [compliance matrix](/blog/what-is-a-compliance-matrix/) that tracks every requirement to a response location, so nothing is left unanswered.
+
+<img class="post-figure" src="/brand/page-graphics/compliance-survey-checkpoint.svg" alt="" aria-hidden="true" width="720" height="480" loading="lazy" decoding="async" />
 
 ## Exceeding page limits or breaking format rules
 

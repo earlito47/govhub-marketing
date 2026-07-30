@@ -5,14 +5,17 @@ publishDate: 2026-07-01
 updatedDate: 2026-07-01
 author: GovHub team
 pillarSlug: how-to-write-a-government-proposal
+cover: "/brand/page-graphics/compare-weigh-options.svg"
+coverAlt: "A prospector weighing options on a balance scale"
 draft: false
 ---
-
 A bid/no-bid decision is the deliberate go/no-go call on whether to pursue a specific opportunity. Because a serious government proposal can consume dozens of hours of senior time, the discipline of saying "no" to the wrong opportunities is what protects your capacity, and your win rate, for the right ones.
 
 ## Why the bid/no-bid decision matters
 
 Every proposal you write has an opportunity cost: the pursuit you *didn't* work on instead. Teams that bid everything spread themselves thin and submit weaker proposals across the board. Teams that qualify hard put their full effort into fewer, more winnable pursuits. A structured decision keeps you in the second group.
+
+<img class="post-figure" src="/brand/illustrations/illo-team-standup.svg" alt="" aria-hidden="true" width="720" height="480" loading="lazy" decoding="async" />
 
 ## A practical bid/no-bid framework
 

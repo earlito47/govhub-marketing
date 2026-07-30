@@ -5,14 +5,17 @@ publishDate: 2026-07-29
 updatedDate: 2026-07-29
 author: GovHub team
 pillarSlug: how-to-respond-to-a-government-rfp
+cover: "/brand/page-graphics/pricing-three-peaks.svg"
+coverAlt: "Three mountain peaks representing pricing tiers"
 draft: false
 ---
-
 ## GovWin IQ pricing, what users actually pay
 
 For small and mid-size contractors, real quotes for GovWin IQ usually land in these ranges. Single federal seat, 4,500 to 7,500 dollars per year. Federal plus state and local, 7,000 to 12,000 dollars per year. Add a second or third seat, often 1,500 to 3,000 dollars per seat. Task order data for major IDIQs can add 1,500 to 4,000 dollars. Multi-year terms discount 10 to 20 percent. Month to month is not common. Most contracts are 12 months, billed annually, with auto renewal. Negotiated notices to cancel are typically 30 to 60 days before the term ends, check your order form.
 
 If your quote is outside those bands, it is likely a different module mix, a promotional rate, or you are being quoted enterprise support tiers. Ask for a line item breakdown by module and by seat.
+
+<img class="post-figure" src="/brand/page-graphics/compare-weigh-options.svg" alt="" aria-hidden="true" width="720" height="480" loading="lazy" decoding="async" />
 
 ## Deltek GovWin pricing tiers and modules explained
 

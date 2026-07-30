@@ -5,9 +5,10 @@ publishDate: 2026-07-01
 updatedDate: 2026-07-01
 author: GovHub team
 pillarSlug: how-to-respond-to-a-government-rfp
+cover: "/brand/page-graphics/home-journey-3-steps.svg"
+coverAlt: "A three-step trail from solicitation to submission"
 draft: false
 ---
-
 You've found a solicitation worth pursuing. Now you have a fixed deadline and a stack of requirements. Responding to a government RFP is a project-management problem as much as a writing one, and the teams that win are the ones with a repeatable process. This guide lays that process out end to end.
 
 If you're earlier in the journey and want the writing craft itself, start with the companion pillar on [how to write a government proposal](/blog/how-to-write-a-government-proposal/).
@@ -21,6 +22,8 @@ The response you owe depends on the vehicle:
 - **RFP (Request for Proposal):** the government wants a full technical and price proposal, evaluated against stated criteria. This is the most involved response and the focus of this guide.
 
 Misreading which one you're answering wastes days. When in doubt, the solicitation type and the evaluation language in Section M tell you.
+
+<img class="post-figure" src="/brand/page-graphics/solution-compliance-matrix-pan.svg" alt="" aria-hidden="true" width="720" height="480" loading="lazy" decoding="async" />
 
 ## Step 1: Intake and quick-look
 
