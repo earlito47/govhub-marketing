@@ -61,7 +61,7 @@ function trendPoints(raw) {
   return rows;
 }
 
-export function computeNaicsPage({ naicsCode, raw, updated }) {
+export function computeNaicsPage({ naicsCode, raw, updated, recompeteRows = null }) {
   const title = naicsTitle(naicsCode);
   const entityLabel = `NAICS ${naicsCode}`;
   const fyLabel = `${fiscalYearLabel(raw.currentFy)} to date`;
@@ -143,6 +143,23 @@ export function computeNaicsPage({ naicsCode, raw, updated }) {
     v.amount,
   ]);
 
+  // Recompete table rows come pre-windowed on End Date from the caller
+  // (run-weekly shares one recompete fetch across all markets); callers
+  // without them — the selftest fixture, standalone reruns — just get the
+  // page without this table.
+  const expiringRows = (recompeteRows ?? []).map((r, i) => {
+    const internalId = r.generated_internal_id ?? null;
+    const recipientId = r.recipient_id ?? null;
+    return [
+      i + 1,
+      { text: r['Award ID'] ?? 'View award', href: internalId ? `https://www.usaspending.gov/award/${internalId}/` : null },
+      { text: r['Recipient Name'] ?? 'Unknown', href: recipientId ? `https://www.usaspending.gov/recipient/${recipientId}/latest/` : null },
+      parseAmount(r['Award Amount']),
+      r['Awarding Agency'] ?? null,
+      r['End Date'] ?? null,
+    ];
+  });
+
   const charts = [
     {
       id: `${naicsCode}-trend`,
@@ -195,10 +212,22 @@ export function computeNaicsPage({ naicsCode, raw, updated }) {
       // pilot doesn't make the extra per-vendor call needed to compute one.
       { title: 'Top 10 vendors', columns: ['Rank', 'Vendor', 'Obligations'], rows: vendorRows },
       { title: `Largest awards, ${fyLabel}`, columns: ['Rank', 'Recipient', 'Award Amount', 'Awarding Agency'], rows: largestAwardRows },
+      ...(expiringRows.length
+        ? [{
+            title: 'Contracts expiring in the next 12 months',
+            columns: ['Rank', 'Contract', 'Incumbent', 'Award Value', 'Awarding Agency', 'Ends'],
+            rows: expiringRows,
+          }]
+        : []),
     ],
     narrative: { intro: narrative.intro, sections: narrative.sections },
     faq,
-    related: relatedNaicsLinks(naicsCode),
+    related: [
+      ...(expiringRows.length
+        ? [{ label: 'Recompete watch: expiring federal contracts', href: '/insights/expiring-federal-contracts/' }]
+        : []),
+      ...relatedNaicsLinks(naicsCode),
+    ],
     sources: [{ label: 'USAspending.gov award data', href: 'https://www.usaspending.gov' }],
   };
 }

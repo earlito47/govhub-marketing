@@ -11,7 +11,7 @@ import { fileURLToPath } from 'node:url';
 import { mkdir, writeFile } from 'node:fs/promises';
 import { existsSync, readdirSync } from 'node:fs';
 import { UsaSpendingClient } from './lib/usaspending.mjs';
-import { fetchNaicsRaw } from './fetch-data.mjs';
+import { fetchNaicsRaw, fetchRecompeteRaw, RECOMPETE_WINDOW_MONTHS } from './fetch-data.mjs';
 import { computeNaicsPage } from './compute-stats.mjs';
 import { generateEntities, publishEntity, countExistingEntities, newSummary, reportSummary } from './run-entities.mjs';
 import { makeBudget } from './lib/guardrails.mjs';
@@ -19,17 +19,44 @@ import { buildRankings } from './build-rankings.mjs';
 import { buildWeeklyReports } from './build-weekly-report.mjs';
 import { enrichAll } from './generate-narratives.mjs';
 import { PILOT_NAICS_CODES } from './lib/slugs.mjs';
-import { fiscalYearOf, fiscalYearRange, fiscalYearLabel } from './lib/format.mjs';
+import { fiscalYearOf, fiscalYearRange, fiscalYearLabel, addMonths } from './lib/format.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 const REPO_ROOT = path.resolve(path.dirname(__filename), '../..');
 const DATA_DIR = path.join(REPO_ROOT, 'src/data/insights');
 const PIPELINE_VERSION = 1;
 
+// Every market's "expiring in the next 12 months" table comes from one
+// recompete fetch (cached per ISO week — buildRankings pulls the same keys
+// later in the run at zero extra API cost). Rows are End-Date windowed here
+// because the API can't filter on end dates; see fetch-data's recompete notes.
+function expiringRowsByNaics(recompeteRaw, asOfDate) {
+  const windowEnd = addMonths(asOfDate, RECOMPETE_WINDOW_MONTHS);
+  const byNaics = new Map();
+  for (const r of recompeteRaw?.rows ?? []) {
+    const end = r['End Date'] ?? null;
+    if (!end || end < asOfDate || end > windowEnd) continue;
+    if (!((Number.parseFloat(r['Award Amount']) || 0) > 0)) continue;
+    const list = byNaics.get(r.sourceNaics) ?? [];
+    list.push(r);
+    byNaics.set(r.sourceNaics, list);
+  }
+  for (const list of byNaics.values()) {
+    list.sort((a, b) => (Number.parseFloat(b['Award Amount']) || 0) - (Number.parseFloat(a['Award Amount']) || 0));
+  }
+  return byNaics;
+}
+
 async function generateNaics({ client, asOfDate, budget, summary }) {
+  const expiringByNaics = expiringRowsByNaics(await fetchRecompeteRaw(client, { asOfDate }), asOfDate);
   for (const naicsCode of PILOT_NAICS_CODES) {
     const raw = await fetchNaicsRaw(client, { naicsCode, asOfDate });
-    const page = computeNaicsPage({ naicsCode, raw, updated: asOfDate });
+    const page = computeNaicsPage({
+      naicsCode,
+      raw,
+      updated: asOfDate,
+      recompeteRows: (expiringByNaics.get(naicsCode) ?? []).slice(0, 15),
+    });
     // NAICS now runs through the same guardrails as agency/state/setaside
     // (thin skip, noindex, and the shared velocity throttle) instead of an
     // unconditional write.

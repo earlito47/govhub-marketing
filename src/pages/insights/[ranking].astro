@@ -6,6 +6,7 @@ import type { GetStaticPaths } from 'astro';
 import type { InsightsPage } from '../../lib/insightsTypes';
 import InsightsLayout from '../../components/insights/InsightsLayout.astro';
 import RankingPage from '../../components/insights/RankingPage.astro';
+import RecompeteLookup from '../../components/insights/RecompeteLookup.astro';
 
 export const getStaticPaths = (() => {
   const files = import.meta.glob<{ default: InsightsPage }>('../../data/insights/rankings/*.json', { eager: true });
@@ -42,4 +43,5 @@ const canonical = new URL(`/insights/${page.slug}/`, Astro.site).toString();
       { name: page.h1.split(' — ')[0], url: `/insights/${page.slug}/` },
     ]}
   />
+  {page.slug === 'expiring-federal-contracts' && <RecompeteLookup />}
 </InsightsLayout>

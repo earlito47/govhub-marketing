@@ -1,0 +1,334 @@
+---
+// Live NAICS recompete lookup on the expiring-contracts flagship. The static
+// tables above it list only the 50 largest recompetes across the markets
+// GovHub tracks; this tool covers every NAICS code on demand. It queries
+// api.usaspending.gov straight from the browser (the API sends
+// access-control-allow-origin: *, verified live 2026-07-30) — no backend, no
+// key, no quota of ours. Same data caveat as the pipeline: the API cannot
+// filter on period-of-performance END dates (time_period matches action
+// dates), so the script pulls top awards by value and windows on End Date
+// client-side, exactly like scripts/insights/fetch-data.mjs does.
+import { PILOT_NAICS_CODES, naicsTitle, naicsHref } from '../../../scripts/insights/lib/slugs.mjs';
+
+const tracked = Object.fromEntries(PILOT_NAICS_CODES.map((code) => [code, { title: naicsTitle(code), href: naicsHref(code) }]));
+---
+
+<section class="lookup" aria-label="Expiring contracts by NAICS code" id="naics-lookup">
+  <h2>Look up expiring contracts in your market</h2>
+  <p class="lede-sm">
+    The tables above cover the largest recompetes in the markets GovHub tracks.
+    Enter any NAICS code (2, 4, or 6 digits) to pull the expiring contracts in
+    your market, live from USAspending.gov.
+  </p>
+  <form id="lookup-form">
+    <label for="naics-input">NAICS code</label>
+    <div class="row">
+      <input
+        id="naics-input"
+        name="naics"
+        inputmode="numeric"
+        pattern="([0-9]{2}|[0-9]{4}|[0-9]{6})"
+        minlength="2"
+        maxlength="6"
+        title="2, 4, or 6 digit NAICS code"
+        placeholder="e.g. 541512"
+        list="tracked-naics"
+        autocomplete="off"
+        required
+      />
+      <button type="submit" class="primary" id="lookup-btn">Show expiring contracts</button>
+    </div>
+    <datalist id="tracked-naics">
+      {PILOT_NAICS_CODES.map((code) => <option value={code}>{naicsTitle(code)}</option>)}
+    </datalist>
+  </form>
+
+  <p id="lookup-status" class="status" role="status" hidden></p>
+  <p id="lookup-market-link" class="market-link" hidden></p>
+
+  <div id="lookup-result" class="table-wrap" hidden>
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Contract</th>
+          <th>Incumbent</th>
+          <th>Awarding Agency</th>
+          <th>Award Value</th>
+          <th>Ends</th>
+        </tr>
+      </thead>
+      <tbody id="lookup-body"></tbody>
+    </table>
+  </div>
+  <div class="buttons">
+    <button type="button" class="ghost" id="lookup-more" hidden>Scan deeper for more</button>
+  </div>
+  <p class="privacy">
+    Queries run in your browser against the public USAspending.gov API, ranked
+    by total award value. Long tails of small awards may need several deeper
+    scans to surface.
+  </p>
+</section>
+
+<script type="application/json" id="tracked-naics-data" set:html={JSON.stringify(tracked)} />
+
+<script>
+  const API = 'https://api.usaspending.gov/api/v2/search/spending_by_award/';
+  const PAGES_PER_CLICK = 3; // 300 awards scanned per click keeps first paint fast
+  const MAX_PAGE = 100; // Elasticsearch stops serving past 10k rows anyway
+  const WINDOW_MONTHS = 12;
+
+  const tracked: Record<string, { title: string; href: string }> = JSON.parse(
+    document.getElementById('tracked-naics-data')?.textContent ?? '{}',
+  );
+
+  const form = document.getElementById('lookup-form') as HTMLFormElement;
+  const input = document.getElementById('naics-input') as HTMLInputElement;
+  const btn = document.getElementById('lookup-btn') as HTMLButtonElement;
+  const moreBtn = document.getElementById('lookup-more') as HTMLButtonElement;
+  const status = document.getElementById('lookup-status') as HTMLParagraphElement;
+  const marketLink = document.getElementById('lookup-market-link') as HTMLParagraphElement;
+  const result = document.getElementById('lookup-result') as HTMLElement;
+  const body = document.getElementById('lookup-body') as HTMLTableSectionElement;
+
+  const usd = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', notation: 'compact', maximumFractionDigits: 1 });
+  const dateFmt = new Intl.DateTimeFormat('en-US', { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
+
+  const iso = (d: Date) => d.toISOString().slice(0, 10);
+  const today = new Date();
+  const windowStart = iso(today);
+  const windowEnd = iso(new Date(Date.UTC(today.getUTCFullYear(), today.getUTCMonth() + WINDOW_MONTHS, today.getUTCDate())));
+  // Action-date lookback must be wide: a contract ending next year may have
+  // been signed a decade ago (same reasoning as the build pipeline).
+  const lookbackStart = `${today.getUTCFullYear() - 10}-10-01`;
+
+  type State = { code: string; page: number; scanned: number; shown: number; seen: Set<string>; exhausted: boolean };
+  let state: State | null = null;
+  let inFlight = false;
+
+  async function fetchPage(code: string, page: number) {
+    const resp = await fetch(API, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        filters: {
+          award_type_codes: ['A', 'B', 'C', 'D'],
+          naics_codes: { require: [code] },
+          time_period: [{ start_date: lookbackStart, end_date: windowEnd }],
+        },
+        fields: ['Award ID', 'Recipient Name', 'recipient_id', 'Award Amount', 'Awarding Agency', 'End Date', 'generated_internal_id'],
+        sort: 'Award Amount',
+        order: 'desc',
+        limit: 100,
+        page,
+      }),
+    });
+    if (!resp.ok) throw new Error(`USAspending returned HTTP ${resp.status}`);
+    return (await resp.json())?.results ?? [];
+  }
+
+  function addRow(r: Record<string, unknown>) {
+    if (!state) return;
+    state.shown += 1;
+    const tr = document.createElement('tr');
+    const cell = (text: string, href: string | null) => {
+      const td = document.createElement('td');
+      if (href) {
+        const a = document.createElement('a');
+        a.href = href;
+        a.target = '_blank';
+        a.rel = 'noopener';
+        a.textContent = text;
+        td.appendChild(a);
+      } else td.textContent = text;
+      return td;
+    };
+    const internalId = (r['generated_internal_id'] as string) ?? null;
+    const recipientId = (r['recipient_id'] as string) ?? null;
+    const num = document.createElement('td');
+    num.textContent = String(state.shown);
+    tr.appendChild(num);
+    tr.appendChild(cell((r['Award ID'] as string) ?? 'View award', internalId ? `https://www.usaspending.gov/award/${internalId}/` : null));
+    tr.appendChild(cell((r['Recipient Name'] as string) ?? 'Unknown', recipientId ? `https://www.usaspending.gov/recipient/${recipientId}/latest/` : null));
+    tr.appendChild(cell((r['Awarding Agency'] as string) ?? '—', null));
+    tr.appendChild(cell(usd.format(Number(r['Award Amount']) || 0), null));
+    tr.appendChild(cell(dateFmt.format(new Date(`${r['End Date']}T00:00:00Z`)), null));
+    body.appendChild(tr);
+  }
+
+  function setStatus(text: string) {
+    status.hidden = false;
+    status.textContent = text;
+  }
+
+  async function scan() {
+    if (!state || inFlight) return;
+    inFlight = true;
+    btn.disabled = true;
+    moreBtn.disabled = true;
+    const { code } = state;
+    try {
+      for (let i = 0; i < PAGES_PER_CLICK && !state.exhausted; i += 1) {
+        setStatus(`Scanning contracts in NAICS ${code}… (${state.scanned} checked, ${state.shown} expiring found)`);
+        const results = await fetchPage(code, state.page);
+        state.page += 1;
+        state.scanned += results.length;
+        for (const r of results) {
+          const id = (r['generated_internal_id'] as string) ?? `${r['Award ID']}-${r['End Date']}`;
+          if (state.seen.has(id)) continue;
+          state.seen.add(id);
+          const end = (r['End Date'] as string) ?? '';
+          if (end >= windowStart && end <= windowEnd && (Number(r['Award Amount']) || 0) > 0) addRow(r);
+        }
+        if (results.length < 100 || state.page > MAX_PAGE) state.exhausted = true;
+      }
+      result.hidden = state.shown === 0;
+      moreBtn.hidden = state.exhausted;
+      moreBtn.textContent = 'Scan deeper for more';
+      const label = tracked[code] ? `${tracked[code].title} (NAICS ${code})` : `NAICS ${code}`;
+      setStatus(
+        state.shown === 0
+          ? `No contracts in ${label} end between now and ${dateFmt.format(new Date(`${windowEnd}T00:00:00Z`))} among the top ${state.scanned} by value${state.exhausted ? '' : ' scanned so far — try a deeper scan'}.`
+          : `${state.shown} contract${state.shown === 1 ? '' : 's'} in ${label} end${state.shown === 1 ? 's' : ''} by ${dateFmt.format(new Date(`${windowEnd}T00:00:00Z`))}, out of the top ${state.scanned} by value${state.exhausted ? ' (full result set)' : ''}.`,
+      );
+    } catch (err) {
+      setStatus(`Lookup failed: ${err instanceof Error ? err.message : 'network error'}. USAspending.gov may be briefly unavailable — try again in a minute.`);
+    } finally {
+      inFlight = false;
+      btn.disabled = false;
+      moreBtn.disabled = false;
+    }
+  }
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const code = input.value.trim();
+    // The API only filters on 2, 4, and 6 digit codes (verified live: 3 and 5
+    // digit codes return HTTP 400).
+    if (!/^(\d{2}|\d{4}|\d{6})$/.test(code)) {
+      setStatus('Enter a 2, 4, or 6 digit NAICS code, like 54, 5415, or 541512.');
+      return;
+    }
+    state = { code, page: 1, scanned: 0, shown: 0, seen: new Set(), exhausted: false };
+    body.innerHTML = '';
+    result.hidden = true;
+    moreBtn.hidden = true;
+    if (tracked[code]) {
+      marketLink.hidden = false;
+      marketLink.innerHTML = '';
+      const a = document.createElement('a');
+      a.href = tracked[code].href;
+      a.textContent = `See the full ${tracked[code].title} market page →`;
+      marketLink.appendChild(a);
+    } else {
+      marketLink.hidden = true;
+    }
+    void scan();
+  });
+
+  moreBtn.addEventListener('click', () => void scan());
+</script>
+
+<style>
+  .lookup {
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-radius: 1rem;
+    padding: 1.75rem;
+    box-shadow: var(--shadow);
+    margin: 2.5rem 0;
+  }
+  .lookup h2 {
+    margin-top: 0;
+  }
+  .lede-sm {
+    color: var(--fg-muted);
+    margin: 0.5rem 0 1.25rem;
+  }
+  label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--fg);
+  }
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+  input {
+    font: inherit;
+    padding: 0.6rem 0.85rem;
+    border: 1px solid var(--border);
+    border-radius: 0.5rem;
+    background: var(--bg);
+    color: var(--fg);
+    width: 11rem;
+  }
+  button {
+    font: inherit;
+    font-weight: 600;
+    padding: 0.6rem 1.1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    border: 1px solid var(--accent);
+  }
+  button.primary {
+    background: var(--accent);
+    color: #fff;
+  }
+  button.primary:hover:not(:disabled) {
+    background: var(--accent-hover);
+  }
+  button.ghost {
+    background: transparent;
+    color: var(--accent);
+  }
+  button.ghost:hover:not(:disabled) {
+    background: var(--accent-soft);
+  }
+  button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  .status {
+    font-weight: 600;
+    margin: 1.25rem 0 0.5rem;
+  }
+  .market-link {
+    margin: 0.25rem 0 0.5rem;
+    font-size: 0.9rem;
+  }
+  .table-wrap {
+    overflow-x: auto;
+    margin-top: 0.75rem;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+  }
+  th,
+  td {
+    border: 1px solid var(--border);
+    padding: 0.5rem 0.65rem;
+    text-align: left;
+    vertical-align: top;
+  }
+  thead th {
+    background: var(--bg);
+    color: var(--fg);
+  }
+  td {
+    color: var(--fg-muted);
+  }
+  .buttons {
+    margin-top: 1rem;
+  }
+  .privacy {
+    font-size: 0.85rem;
+    color: var(--fg-muted);
+    margin: 1rem 0 0;
+  }
+</style>
