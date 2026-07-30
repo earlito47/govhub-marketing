@@ -34,13 +34,14 @@ permissions:
   contents: write
 
 concurrency:
-  group: weekly-insights
+  group: insights-pipeline # shared with daily-vendor-publish so runs never overlap
   cancel-in-progress: false
 
 jobs:
   refresh:
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    # 60 (was 45): headroom for the vendor-profile fetches as the roster grows.
+    timeout-minutes: 60
     steps:
       - name: Checkout
         uses: actions/checkout@v4

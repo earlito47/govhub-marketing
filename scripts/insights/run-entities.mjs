@@ -14,10 +14,11 @@ import { fileURLToPath } from 'node:url';
 import { mkdir, writeFile } from 'node:fs/promises';
 import { existsSync, readdirSync } from 'node:fs';
 import { UsaSpendingClient } from './lib/usaspending.mjs';
-import { fetchAgencyRaw, fetchStateRaw, fetchSetasideRaw } from './fetch-data.mjs';
-import { computeAgencyPage, computeStatePage, computeSetasidePage } from './compute-stats.mjs';
+import { fetchAgencyRaw, fetchStateRaw, fetchSetasideRaw, fetchVendorRaw, fetchTopRecipients } from './fetch-data.mjs';
+import { computeAgencyPage, computeStatePage, computeSetasidePage, computeVendorPage } from './compute-stats.mjs';
 import { formatUsdCompact } from './lib/format.mjs';
 import { classifyEntity, makeBudget } from './lib/guardrails.mjs';
+import { ensureRoster, loadRoster, rosterExists, saveRoster, vendorDueForRefresh, vendorPageExists } from './lib/vendor-roster.mjs';
 import {
   AGENCY_SLUGS,
   agencyName,
@@ -31,7 +32,7 @@ import {
 const __filename = fileURLToPath(import.meta.url);
 const REPO_ROOT = path.resolve(path.dirname(__filename), '../..');
 
-const ENTITY_KINDS = ['naics', 'agency', 'state', 'setaside'];
+const ENTITY_KINDS = ['naics', 'agency', 'state', 'setaside', 'vendor'];
 
 // Count entity pages already on disk, so the throttle budget scales with the
 // current footprint and only brand-new slugs count against it.
@@ -49,21 +50,23 @@ export function newSummary() {
 
 // Shared publish step used by every entity type (agency/state/setaside here,
 // NAICS in run-weekly): apply the scaled-content guardrails, then write.
+// Returns the guardrail action taken ('index' | 'noindex' | 'skip' | 'defer')
+// so roster-driven callers (vendor) can record the outcome.
 export async function publishEntity({ kind, slug, page, budget, summary }) {
   const outDir = path.join(REPO_ROOT, 'src/data/insights', kind);
   const outFile = path.join(outDir, `${slug}.json`);
   const exists = existsSync(outFile);
-  const { action, reason } = classifyEntity({ page, exists, budget });
+  const { action, reason } = classifyEntity({ page, exists, budget, kind });
 
   if (action === 'skip') {
     summary.skipped.push(`${kind}/${slug} — ${reason}`);
     console.log(`[skip]  ${kind}/${slug} — ${reason}`);
-    return;
+    return action;
   }
   if (action === 'defer') {
     summary.deferred.push(`${kind}/${slug} — ${reason}`);
     console.log(`[defer] ${kind}/${slug} — ${reason}`);
-    return;
+    return action;
   }
   if (action === 'noindex') {
     page.noindex = true;
@@ -76,6 +79,20 @@ export async function publishEntity({ kind, slug, page, budget, summary }) {
   summary.written += 1;
   const tag = action === 'noindex' ? ' (noindex)' : exists ? '' : ' (new)';
   console.log(`[ok]    ${kind}/${slug} — ${formatUsdCompact(page.stats.totalObligations)}, ${page.stats.awardCount ?? '?'} awards${tag}`);
+  return action;
+}
+
+// Publish one vendor from the roster and record the outcome on its entry.
+// Shared by the weekly run (via generateEntities) and the daily publisher.
+export async function publishVendor({ client, roster, slug, asOfDate, budget, summary }) {
+  const vendor = roster.vendors[slug];
+  const raw = await fetchVendorRaw(client, { slug, vendor, asOfDate });
+  const page = computeVendorPage({ slug, vendor, roster, raw, updated: asOfDate });
+  const action = await publishEntity({ kind: 'vendor', slug, page, budget, summary });
+  if (action === 'index' || action === 'noindex') vendor.status = 'published';
+  else if (action === 'skip') vendor.status = 'skipped';
+  // 'defer' leaves the entry pending for the next (daily) run.
+  return action;
 }
 
 function parseOnly(arg) {
@@ -146,6 +163,37 @@ export async function generateEntities({ client, asOfDate, only = null, budget =
       budget,
       summary,
     });
+  }
+
+  // Vendor profiles: roster-driven (no static registry). The weekly run
+  // expands the roster down the contractor rankings, publishes what the shared
+  // budget allows (the daily workflow drains the rest of the backlog), and
+  // refreshes published pages on the top-rank/rotation schedule so wall-clock
+  // stays bounded as the roster grows.
+  const vendorInScope = !only || only.kinds.has('vendor') || [...(only?.slugs ?? [])].some((s) => s.startsWith('vendor:'));
+  if (vendorInScope) {
+    // Roster expansion (walking down the rankings) happens only on the FULL
+    // weekly run — or as a bootstrap when no roster exists yet. Filtered
+    // ad-hoc runs must not grow the roster as a side effect.
+    const roster =
+      !only || !rosterExists()
+        ? await ensureRoster({ fetchPage: (page) => fetchTopRecipients(client, { asOfDate, page }), asOfDate })
+        : loadRoster();
+    const bySlugRank = Object.entries(roster.vendors).sort(([, a], [, b]) => (a.rank ?? Infinity) - (b.rank ?? Infinity));
+    for (const [slug, vendor] of bySlugRank) {
+      if (!wanted(only, 'vendor', slug)) continue;
+      if (!vendorDueForRefresh({ slug, vendor, asOfDate })) continue;
+      // Once the new-page budget is spent, a not-yet-published vendor would be
+      // deferred anyway — record the defer WITHOUT spending ~7 API calls on it.
+      // The daily publisher drains these through the week.
+      if (!vendorPageExists(slug) && budget && !budget.canPublishNew()) {
+        summary.deferred.push(`vendor/${slug} — throttled: new-page budget spent this run`);
+        console.log(`[defer] vendor/${slug} — throttled: new-page budget spent this run`);
+        continue;
+      }
+      await publishVendor({ client, roster, slug, asOfDate, budget, summary });
+    }
+    await saveRoster(roster);
   }
   return summary;
 }

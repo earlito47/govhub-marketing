@@ -77,8 +77,20 @@ const TOOL_LINKS: Record<string, { heading: string; intro: string; links: { href
       { href: '/pricing/', label: 'See plans and pricing' },
     ],
   },
+  vendor: {
+    heading: 'Compete with the incumbents',
+    intro: 'These are the companies winning the work. When their contracts come up for recompete, GovHub gets your challenge bid out faster.',
+    links: [
+      { href: '/solutions/rfp-shredding/', label: 'Shred an RFP into a compliance matrix' },
+      { href: '/solutions/ai-proposal-generator/', label: 'Draft the proposal with AI' },
+      { href: '/pricing/', label: 'See plans and pricing' },
+    ],
+  },
 };
-const toolBlock = TOOL_LINKS[campaign] ?? TOOL_LINKS.state;
+// The set-aside route passes campaign="set-aside" (its utm value) while the
+// key here is "setaside" — normalize hyphens so it stops silently falling
+// back to the state copy.
+const toolBlock = TOOL_LINKS[campaign] ?? TOOL_LINKS[campaign.replace(/-/g, '')] ?? TOOL_LINKS.state;
 
 const [primaryChart, ...categoryCharts] = page.charts;
 const sections = page.narrative.sections;

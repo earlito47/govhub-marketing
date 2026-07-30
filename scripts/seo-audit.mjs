@@ -20,6 +20,7 @@ const states = jsonDir('src/data/insights/state');
 const naics = jsonDir('src/data/insights/naics');
 const agency = jsonDir('src/data/insights/agency');
 const setaside = jsonDir('src/data/insights/setaside');
+const vendor = jsonDir('src/data/insights/vendor');
 const rankings = jsonDir('src/data/insights/rankings');
 const reports = existsSync(p('src/data/insights/reports'))
   ? readdirSync(p('src/data/insights/reports')).flatMap((wk) => {
@@ -34,6 +35,7 @@ const url = {
   naics: (s) => `/insights/naics/${s.slug}/`,
   agency: (s) => `/insights/agency/${s.slug}/`,
   setaside: (s) => `/insights/set-aside/${s.slug}/`,
+  vendor: (s) => `/insights/vendor/${s.slug}/`,
   ranking: (s) => `/insights/${s.slug}/`,
   report: (s) => `/insights/reports/${s._week}/${s._slug}/`,
 };
@@ -44,6 +46,7 @@ const entities = [
   ...naics.map((s) => mk('naics', url.naics(s), s)),
   ...agency.map((s) => mk('agency', url.agency(s), s)),
   ...setaside.map((s) => mk('setaside', url.setaside(s), s)),
+  ...vendor.map((s) => mk('vendor', url.vendor(s), s)),
   ...rankings.map((s) => mk('ranking', url.ranking(s), s)),
   ...reports.map((s) => mk('report', url.report(s), s)),
 ];

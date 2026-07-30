@@ -77,13 +77,14 @@ async function main() {
     agency: countPages('agency'),
     state: countPages('state'),
     setaside: countPages('setaside'),
+    vendor: countPages('vendor'),
     rankings: countPages('rankings'),
   };
   const meta = {
     lastSuccessfulRun: asOfDate,
     fyWindow: { label: `${fiscalYearLabel(currentFy)} to date`, start: fyRange.start, end: asOfDate },
     pipelineVersion: PIPELINE_VERSION,
-    counts: { ...counts, total: counts.naics + counts.agency + counts.state + counts.setaside + counts.rankings },
+    counts: { ...counts, total: counts.naics + counts.agency + counts.state + counts.setaside + counts.vendor + counts.rankings },
   };
   await writeFile(path.join(DATA_DIR, 'meta.json'), JSON.stringify(meta, null, 2), 'utf8');
 

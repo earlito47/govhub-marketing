@@ -26,6 +26,24 @@
 - [GovHub and Deltek GovWin IQ (different tools, often used together)](https://www.govhub.online/vs/govwin-iq/)
 - [Loopio alternatives](https://www.govhub.online/alternatives/loopio/)
 
+## Data (GovHub Insights)
+
+Free federal contract market data from USAspending.gov, refreshed weekly: spending by industry, agency, state, and set-aside program, plus contractor profiles and upcoming recompetes. Every figure is computed from public award data — see the methodology page for definitions and caveats.
+
+- [Insights hub](https://www.govhub.online/insights/): Every dashboard — markets by NAICS code, agencies, states, set-asides, and top contractors.
+- [Methodology](https://www.govhub.online/insights/methodology/): How the numbers are computed, what obligations mean, and known reporting caveats.
+- [Top government contractors](https://www.govhub.online/insights/top-government-contractors/): The largest federal contractors by obligations this fiscal year.
+- [Expiring federal contracts (recompete watch)](https://www.govhub.online/insights/expiring-federal-contracts/): The largest contracts ending in the next 12 months, by incumbent, agency, and market.
+- [Federal spending by agency](https://www.govhub.online/insights/federal-spending-by-agency/): Which agencies obligate the most on contracts.
+- [Federal spending by state](https://www.govhub.online/insights/federal-spending-by-state/): Where federal contract dollars land, with a state-by-state map.
+- [Government contracts by NAICS](https://www.govhub.online/insights/government-contracts-by-naics/): The largest federal contract markets by industry code, linking each market dashboard.
+- [Fastest-growing federal markets](https://www.govhub.online/insights/fastest-growing-federal-markets/): Same-period year-over-year growth by industry.
+- [Top small-business contractors](https://www.govhub.online/insights/top-small-business-government-contractors/): The largest small-business federal contractors.
+- [Largest federal contracts](https://www.govhub.online/insights/largest-federal-contracts-fy2026/): The biggest contracts by total award value active this year.
+- [Weekly reports](https://www.govhub.online/insights/reports/): Dated weekly snapshots of newly reported contract activity (RSS available).
+
+Vendor profiles live at /insights/vendor/{company}/ (top agencies, markets, largest awards, and expiring contracts per contractor); market dashboards at /insights/naics/{code}/, /insights/agency/{agency}/, /insights/state/{state}/, and /insights/set-aside/{program}/.
+
 ## Learn
 
 - [How to write a government proposal (pillar guide)](https://www.govhub.online/blog/how-to-write-a-government-proposal/)

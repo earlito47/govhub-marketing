@@ -42,11 +42,13 @@ const naicsPages = import.meta.glob<{ default: InsightsPage }>('../../data/insig
 const agencyPages = import.meta.glob<{ default: InsightsPage }>('../../data/insights/agency/*.json', { eager: true });
 const statePages = import.meta.glob<{ default: InsightsPage }>('../../data/insights/state/*.json', { eager: true });
 const setasidePages = import.meta.glob<{ default: InsightsPage }>('../../data/insights/setaside/*.json', { eager: true });
+const vendorPages = import.meta.glob<{ default: InsightsPage }>('../../data/insights/vendor/*.json', { eager: true });
 const reportPages = import.meta.glob<{ default: InsightsPage }>('../../data/insights/reports/*/*.json', { eager: true });
 const rankingPages = import.meta.glob<{ default: InsightsPage }>('../../data/insights/rankings/*.json', { eager: true });
 
 const RANKING_ORDER = [
   'top-government-contractors',
+  'expiring-federal-contracts',
   'federal-spending-by-agency',
   'federal-spending-by-state',
   'fastest-growing-federal-markets',
@@ -86,8 +88,9 @@ const setasideCards = load(
 const stateCards = load(statePages, 'state', (p) => p.h1.replace(/^Federal Contracts in /, '').split(':')[0], () => 'State').sort((a, b) =>
   a.name.localeCompare(b.name)
 );
+const vendorCards = load(vendorPages, 'vendor', (p) => p.h1.split(':')[0], () => 'Contractor').sort((a, b) => b.amount - a.amount);
 
-const totalPages = naicsCards.length + agencyCards.length + stateCards.length;
+const totalPages = naicsCards.length + agencyCards.length + stateCards.length + setasideCards.length + vendorCards.length;
 const updated = [...Object.values(agencyPages), ...Object.values(statePages), ...Object.values(naicsPages)][0]?.default.updated ?? '';
 ---
 
@@ -129,6 +132,24 @@ const updated = [...Object.values(agencyPages), ...Object.values(statePages), ..
       <p class="section-lede">The big picture: who wins the most, which agencies and states spend the most, and the largest contracts in play.</p>
       <ul class="ranking-links">
         {rankingCards.map((c) => (<li><a href={c.href}>{c.label}</a></li>))}
+      </ul>
+    </section>
+  )}
+
+  {vendorCards.length > 0 && (
+    <section id="vendors" aria-labelledby="vendors-heading">
+      <h2 id="vendors-heading">Top federal contractors</h2>
+      <p class="section-lede">Profiles of the companies winning the most federal work: who buys from them, what they sell, their largest awards, and which of their contracts are expiring next.</p>
+      <ul class="card-grid">
+        {vendorCards.map((c) => (
+          <li>
+            <a href={c.href}>
+              <span class="card-eyebrow">{c.eyebrow}</span>
+              <span class="card-name">{c.name}</span>
+              {c.obligations && <span class="card-stat">{c.obligations} <small>won, {c.fyLabel}</small></span>}
+            </a>
+          </li>
+        ))}
       </ul>
     </section>
   )}

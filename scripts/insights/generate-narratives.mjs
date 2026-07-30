@@ -21,7 +21,7 @@ const REPO_ROOT = path.resolve(path.dirname(__filename), '../..');
 const DATA_DIR = path.join(REPO_ROOT, 'src/data/insights');
 // Reports are deterministic + immutable; only enrich the evergreen page types.
 // INSIGHTS_KINDS can narrow the set (comma-separated) for testing.
-const KINDS = process.env.INSIGHTS_KINDS ? process.env.INSIGHTS_KINDS.split(',') : ['naics', 'agency', 'state', 'setaside', 'rankings'];
+const KINDS = process.env.INSIGHTS_KINDS ? process.env.INSIGHTS_KINDS.split(',') : ['naics', 'agency', 'state', 'setaside', 'vendor', 'rankings'];
 const MODEL = process.env.INSIGHTS_LLM_MODEL || 'gpt-5-mini';
 const CONCURRENCY = 4;
 
@@ -65,14 +65,28 @@ function factsFor(page) {
     page: page.h1,
     pageType: page.pageType,
     period: page.fyWindow?.label,
-    note:
-      page.slug === 'largest-federal-contracts-fy2026'
-        ? 'Total award value figures are full contract values, not single-year obligations.'
-        : 'All figures are contract obligations; current-year totals are partial (fiscal year to date).',
+    note: factsNote(page),
     figures,
     rankings,
     faqQuestions: (page.faq ?? []).map((f) => f.q),
   };
+}
+
+// Slug- and type-specific clarifications so the model never conflates total
+// award values with single-year obligations (the two number families that
+// coexist on recompete and vendor pages).
+const SLUG_NOTES = {
+  'largest-federal-contracts-fy2026': 'Total award value figures are full contract values, not single-year obligations.',
+  'expiring-federal-contracts':
+    'Award value figures are total contract values for contracts whose period of performance ends within the next 12 months, not single-year obligations. End dates can be extended by options and modifications.',
+};
+
+function factsNote(page) {
+  if (SLUG_NOTES[page.slug]) return SLUG_NOTES[page.slug];
+  if (page.pageType === 'vendor') {
+    return 'All figures are contract obligations except award-value figures in the largest-awards and expiring-contracts tables, which are total contract values. Current-year totals are partial (fiscal year to date).';
+  }
+  return 'All figures are contract obligations; current-year totals are partial (fiscal year to date).';
 }
 
 // ---- OpenAI call ----------------------------------------------------------
@@ -157,7 +171,10 @@ async function pMap(items, fn, concurrency) {
   return results;
 }
 
-export async function enrichAll({ skip = false } = {}) {
+// `files` (optional): restrict enrichment to an explicit list of page paths —
+// the daily vendor publisher passes just the pages it created, so it never
+// rewrites narratives on pages whose data did not change.
+export async function enrichAll({ skip = false, files: onlyFiles = null } = {}) {
   if (skip || process.argv.includes('--skip-llm')) {
     console.log('[narratives] --skip-llm: keeping deterministic fallback narratives.');
     return;
@@ -167,7 +184,11 @@ export async function enrichAll({ skip = false } = {}) {
     return;
   }
 
-  const files = pageFiles();
+  const files = onlyFiles ?? pageFiles();
+  if (files.length === 0) {
+    console.log('[narratives] nothing to enrich.');
+    return;
+  }
   console.log(`[narratives] Enriching ${files.length} pages with ${MODEL} (fallback on any unverifiable output)...`);
   const tally = {};
   await pMap(

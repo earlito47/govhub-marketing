@@ -12,7 +12,10 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { mkdir, writeFile } from 'node:fs/promises';
 import { UsaSpendingClient, CONTRACT_AWARD_TYPE_CODES } from './lib/usaspending.mjs';
-import { fiscalYearOf, fiscalYearRange, fiscalYearLabel, formatUsdCompact, formatPercent } from './lib/format.mjs';
+import { fetchRecompeteRaw, RECOMPETE_WINDOW_MONTHS } from './fetch-data.mjs';
+import { fiscalYearOf, fiscalYearRange, fiscalYearLabel, formatUsdCompact, formatPercent, addMonths, formatMonthYear } from './lib/format.mjs';
+import { loadRoster, vendorHrefForRecipient, vendorEntryForRecipient } from './lib/vendor-roster.mjs';
+import { vendorHref } from './lib/slugs.mjs';
 import {
   AGENCY_SLUGS,
   agencyHref,
@@ -39,7 +42,10 @@ const FLAGSHIPS = [
   { slug: 'government-contracts-by-naics', label: 'Government contracts by NAICS' },
   { slug: 'largest-federal-contracts-fy2026', label: 'Largest federal contracts this year' },
   { slug: 'fastest-growing-federal-markets', label: 'Fastest-growing federal markets' },
+  { slug: 'expiring-federal-contracts', label: 'Expiring federal contracts (recompete watch)' },
 ];
+// How many expiring contracts the recompete-watch tables list (ranked by value).
+const RECOMPETE_LIST_SIZE = 50;
 const relatedFlagships = (self) => FLAGSHIPS.filter((f) => f.slug !== self).map((f) => ({ label: f.label, href: `/insights/${f.slug}/` }));
 
 function parseAmount(v) {
@@ -80,7 +86,7 @@ function fyContext(asOfDate) {
 // Shared assembler so every flagship conforms to the InsightsPage schema and
 // clears the validator's number-verification (spec 6.4). stats.totalObligations
 // is the combined value of the shown rows, so an intro may cite that sum.
-function rankingPage({ ctx, slug, title, h1, metaDescription, chart, table, intro, sections, faq, related, crossLinks, combined }) {
+function rankingPage({ ctx, slug, title, h1, metaDescription, chart, charts, table, tables, intro, sections, faq, related, crossLinks, crossLinksHeading, combined }) {
   return {
     pageType: 'ranking',
     slug,
@@ -90,15 +96,15 @@ function rankingPage({ ctx, slug, title, h1, metaDescription, chart, table, intr
     updated: ctx.window.end,
     fyWindow: { label: ctx.fyLabel, start: ctx.window.start, end: ctx.window.end },
     stats: { totalObligations: combined, awardCount: null, yoyGrowthPct: null, avgAwardSize: null, smallBusinessSharePct: null },
-    charts: [chart],
-    tables: [table],
+    charts: charts ?? [chart],
+    tables: tables ?? [table],
     narrative: { intro, sections: sections ?? [] },
     faq: faq ?? [],
     related: related ?? relatedFlagships(slug),
     // Optional "browse every entity" block: the ranking table only links the
     // rows that happen to be published pages, so a flagship can otherwise fail
     // to link most of its own cluster (the by-NAICS table linked 3 of 25).
-    ...(crossLinks && crossLinks.length ? { crossLinks } : {}),
+    ...(crossLinks && crossLinks.length ? { crossLinks, ...(crossLinksHeading ? { crossLinksHeading } : {}) } : {}),
     sources: SOURCES,
   };
 }
@@ -107,7 +113,7 @@ function rankingPage({ ctx, slug, title, h1, metaDescription, chart, table, intr
 function categoryRanking(resp, hrefFor) {
   return (resp?.results ?? []).map((r) => {
     const name = r.name ?? r.code ?? 'Unknown';
-    return { name, code: r.code ?? null, recipientId: r.recipient_id ?? null, agencySlug: r.agency_slug ?? null, amount: parseAmount(r.amount), href: hrefFor(r) };
+    return { name, code: r.code ?? null, recipientId: r.recipient_id ?? null, uei: r.uei ?? null, agencySlug: r.agency_slug ?? null, amount: parseAmount(r.amount), href: hrefFor(r) };
   });
 }
 
@@ -123,10 +129,17 @@ function barFromRows(id, chartTitle, rows, takeaway, seriesLabel = 'Obligations'
 }
 
 // ---- Builders -------------------------------------------------------------
-function buildTopContractors(ctx, resp, { smallBiz }) {
+function buildTopContractors(ctx, resp, { smallBiz, roster }) {
   const slug = smallBiz ? 'top-small-business-government-contractors' : 'top-government-contractors';
   const noun = smallBiz ? 'small-business federal contractor' : 'federal contractor';
-  const rows = categoryRanking(resp, (r) => (r.recipient_id ? `https://www.usaspending.gov/recipient/${r.recipient_id}/latest/` : null));
+  // Vendors with a published profile page link internally (the flywheel);
+  // everyone else keeps the external usaspending.gov recipient link.
+  const rows = categoryRanking(
+    resp,
+    (r) =>
+      vendorHrefForRecipient(roster, { uei: r.uei, recipientId: r.recipient_id, name: r.name }) ??
+      (r.recipient_id ? `https://www.usaspending.gov/recipient/${r.recipient_id}/latest/` : null)
+  );
   const combined = rows.reduce((a, r) => a + r.amount, 0);
   const top = rows[0];
   const label = smallBiz ? 'Top small-business government contractors' : 'Top government contractors';
@@ -419,12 +432,181 @@ function buildFastestGrowing(ctx, currentResp, priorResp) {
   });
 }
 
+// ---- Recompete watch (spec Phase 3) ----------------------------------------
+// The largest contracts whose CURRENT period-of-performance End Date falls
+// within the next RECOMPETE_WINDOW_MONTHS, across every tracked NAICS market.
+// End-date windowing happens here, client-side (the API can't filter on it).
+// Failure mode is designed: an empty window would leave charts under 2 points,
+// validate.mjs fails, nothing commits, the site keeps last week's page.
+function buildRecompeteWatch(ctx, recompeteRaw, roster) {
+  const asOfDate = ctx.window.end;
+  const windowEnd = addMonths(asOfDate, RECOMPETE_WINDOW_MONTHS);
+  const midPoint = addMonths(asOfDate, 6);
+
+  const rows = (recompeteRaw?.rows ?? [])
+    .map((r) => ({
+      awardId: r['Award ID'] ?? null,
+      recipient: r['Recipient Name'] ?? 'Unknown',
+      uei: r['Recipient UEI'] ?? null,
+      recipientId: r.recipient_id ?? null,
+      amount: parseAmount(r['Award Amount']),
+      agency: r['Awarding Agency'] ?? null,
+      naics: r.sourceNaics,
+      end: r['End Date'] ?? null,
+      internalId: r.generated_internal_id ?? null,
+    }))
+    .filter((r) => r.end && r.end >= asOfDate && r.end <= windowEnd && r.amount > 0)
+    .sort((a, b) => b.amount - a.amount)
+    .slice(0, RECOMPETE_LIST_SIZE);
+
+  const combined = rows.reduce((a, r) => a + r.amount, 0);
+  const top = rows[0];
+
+  // Fixed calendar-quarter buckets across the whole window, zero-filled, so
+  // the chart always carries >= 4 points regardless of how the data lands.
+  const quarterLabel = (iso) => {
+    const y = iso.slice(0, 4);
+    const q = Math.floor((Number.parseInt(iso.slice(5, 7), 10) - 1) / 3);
+    return `${['Jan-Mar', 'Apr-Jun', 'Jul-Sep', 'Oct-Dec'][q]} ${y}`;
+  };
+  const quarters = [];
+  for (let cursor = asOfDate; cursor <= windowEnd; cursor = addMonths(cursor, 3)) {
+    const label = quarterLabel(cursor);
+    if (!quarters.some((q) => q.label === label)) quarters.push({ label, amount: 0 });
+  }
+  const endLabel = quarterLabel(windowEnd);
+  if (!quarters.some((q) => q.label === endLabel)) quarters.push({ label: endLabel, amount: 0 });
+  for (const r of rows) {
+    const q = quarters.find((x) => x.label === quarterLabel(r.end));
+    if (q) q.amount += r.amount;
+  }
+  const heaviest = [...quarters].sort((a, b) => b.amount - a.amount)[0];
+
+  const charts = [
+    {
+      id: 'expiring-federal-contracts-largest-bar',
+      type: 'bar',
+      title: `Largest contracts expiring by ${formatMonthYear(windowEnd)}`,
+      series: [{ label: 'Award value', points: rows.slice(0, 10).map((r) => [r.recipient, r.amount]) }],
+      unit: 'usd',
+      takeaway: top
+        ? `${top.recipient} holds the largest federal contract coming up for recompete, a ${formatUsdCompact(top.amount)} ${
+            top.agency ?? 'federal'
+          } award with a period of performance ending in ${formatMonthYear(top.end)}.`
+        : null,
+    },
+    {
+      id: 'expiring-federal-contracts-by-quarter-bar',
+      type: 'bar',
+      title: 'Expiring contract value by quarter of end date',
+      series: [{ label: 'Award value', points: quarters.map((q) => [q.label, q.amount]) }],
+      unit: 'usd',
+      takeaway:
+        heaviest && heaviest.amount > 0
+          ? `${heaviest.label} is the heaviest stretch, with ${formatUsdCompact(heaviest.amount)} in contract value reaching its end date.`
+          : null,
+    },
+  ];
+
+  const tableRows = (subset) =>
+    subset.map((r, i) => [
+      i + 1,
+      { text: r.awardId ?? 'View award', href: r.internalId ? `https://www.usaspending.gov/award/${r.internalId}/` : null },
+      {
+        text: r.recipient,
+        href:
+          vendorHrefForRecipient(roster, { uei: r.uei, recipientId: r.recipientId, name: r.recipient }) ??
+          (r.recipientId ? `https://www.usaspending.gov/recipient/${r.recipientId}/latest/` : null),
+      },
+      r.agency,
+      { text: `${naicsTitle(r.naics)} (${r.naics})`, href: naicsHref(r.naics) },
+      r.amount,
+      r.end,
+    ]);
+  const columns = ['Rank', 'Contract', 'Incumbent', 'Awarding Agency', 'Market (NAICS)', 'Award Value', 'Ends'];
+  const near = rows.filter((r) => r.end < midPoint);
+  const far = rows.filter((r) => r.end >= midPoint);
+  const tables = [
+    near.length ? { title: 'Expiring in the next 6 months', columns, rows: tableRows(near) } : null,
+    far.length ? { title: 'Expiring in 6 to 12 months', columns, rows: tableRows(far) } : null,
+  ].filter(Boolean);
+
+  const intro = top
+    ? `Federal contracts worth ${formatUsdCompact(combined)} combined reach the end of their current period of performance within the next 12 months, which puts each one on the recompete radar. ${
+        top.recipient
+      } holds the largest, a ${formatUsdCompact(top.amount)} contract awarded by ${top.agency ?? 'a federal agency'} that runs through ${formatMonthYear(
+        top.end
+      )}. The list below ranks the ${rows.length} largest expiring contracts across the ${PILOT_NAICS_CODES.length} industry markets GovHub tracks, split into a six-month and a twelve-month horizon.`
+    : `No tracked federal contracts have a period of performance ending in the next 12 months.`;
+
+  const sections = [
+    {
+      heading: 'What is a contract recompete?',
+      body: 'When a federal contract reaches the end of its period of performance, the agency must decide whether to exercise remaining options, extend the work, or compete the requirement again. That fresh competition is the recompete, and the incumbent has to defend the work. Expiring contracts are the clearest early signal of upcoming bid opportunities: the requirement is proven, funded, and has a track record a challenger can study.',
+    },
+    {
+      heading: 'How this list is built',
+      body: `The list ranks definitive federal contracts (award types A through D) by total award value where the currently reported period-of-performance end date falls within the next 12 months, drawn from the ${PILOT_NAICS_CODES.length} industry markets GovHub tracks. End dates move: agencies exercise options and issue modifications that extend performance, and the Department of Defense reports awards on a delay of roughly 90 days. Treat an end date as the signal to start positioning, not as a guaranteed solicitation date.`,
+    },
+  ];
+
+  const faq = top
+    ? [
+        {
+          q: 'Which large federal contracts are expiring soon?',
+          a: `${top.recipient}'s ${formatUsdCompact(top.amount)} contract with ${top.agency ?? 'a federal agency'} is the largest tracked federal contract ending in the next 12 months, with a period of performance that runs through ${formatMonthYear(top.end)}.`,
+        },
+        {
+          q: 'What is a contract recompete?',
+          a: 'A recompete is the new competition that happens when an existing federal contract reaches the end of its period of performance and the agency competes the requirement again. Incumbents must re-win the work, which makes expiring contracts a strong early signal of upcoming opportunities.',
+        },
+        {
+          q: 'How current is this recompete data?',
+          a: 'The list refreshes weekly from USAspending.gov award data and reflects currently reported period-of-performance end dates. End dates change when agencies exercise options or extend contracts, and Department of Defense awards are reported on a delay of roughly 90 days.',
+        },
+      ]
+    : [];
+
+  // Every incumbent with a published vendor profile, deduped — the flywheel's
+  // ranking-to-vendor direction. Links catch up weekly as profiles publish.
+  const seenHrefs = new Set();
+  const incumbentLinks = [];
+  for (const r of rows) {
+    const entry = vendorEntryForRecipient(roster, { uei: r.uei, recipientId: r.recipientId, name: r.recipient });
+    if (!entry) continue;
+    const href = vendorHref(entry.slug);
+    if (seenHrefs.has(href)) continue;
+    seenHrefs.add(href);
+    incumbentLinks.push({ label: `${entry.displayName} federal contracts`, href });
+  }
+
+  return rankingPage({
+    ctx,
+    slug: 'expiring-federal-contracts',
+    title: 'Expiring Federal Contracts: The Next 12 Months of Recompetes',
+    h1: 'Federal contracts expiring in the next 12 months: recompete watch',
+    metaDescription: `The largest federal contracts ending in the next 12 months, from USAspending.gov data. Track upcoming recompetes by incumbent, agency, and market.`,
+    charts,
+    tables,
+    intro,
+    sections,
+    faq,
+    crossLinks: incumbentLinks,
+    crossLinksHeading: 'Incumbent vendor profiles',
+    combined,
+  });
+}
+
 // ---- Orchestration --------------------------------------------------------
 export async function buildRankings({ client, asOfDate }) {
   const ctx = fyContext(asOfDate);
   const AWARD_FIELDS = ['Award ID', 'Recipient Name', 'Award Amount', 'Awarding Agency', 'generated_internal_id'];
   const prior = priorSamePeriod(asOfDate, ctx.currentFy);
   const priorFilters = { award_type_codes: CONTRACT_AWARD_TYPE_CODES, time_period: [{ start_date: prior.start, end_date: prior.end }] };
+  // The vendor roster resolves internal profile links on contractor and
+  // recompete rows. run-weekly builds it first; standalone runs degrade to
+  // external usaspending.gov links if the roster file is absent.
+  const roster = loadRoster();
 
   const [contractors, smallBiz, agencies, states, naics, awards, growthCurrent, growthPrior] = await Promise.all([
     client.spendingByCategory('recipient_duns', ctx.filters(), { limit: 50 }),
@@ -439,14 +621,18 @@ export async function buildRankings({ client, asOfDate }) {
     client.spendingByCategory('naics', priorFilters, { limit: 100 }),
   ]);
 
+  // Sequential and cached per ISO week (~75 calls on a cold week).
+  const recompeteRaw = await fetchRecompeteRaw(client, { asOfDate });
+
   const pages = [
-    buildTopContractors(ctx, contractors, { smallBiz: false }),
-    buildTopContractors(ctx, smallBiz, { smallBiz: true }),
+    buildTopContractors(ctx, contractors, { smallBiz: false, roster }),
+    buildTopContractors(ctx, smallBiz, { smallBiz: true, roster }),
     buildByAgency(ctx, agencies),
     buildByState(ctx, states),
     buildByNaics(ctx, naics),
     buildLargestContracts(ctx, awards),
     buildFastestGrowing(ctx, growthCurrent, growthPrior),
+    buildRecompeteWatch(ctx, recompeteRaw, roster),
   ];
 
   await mkdir(OUT_DIR, { recursive: true });
