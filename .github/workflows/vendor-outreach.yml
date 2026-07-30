@@ -1,0 +1,83 @@
+# Vendor "claim your page" outreach — daily drip.
+#
+# For every vendor with a PUBLISHED profile page: resolve a contact (SBA
+# certification search, then Apollo), then send at most 10 plain-text notes
+# per day from Jerr inviting the vendor to review its page and reply with
+# edits. One email per vendor ever; data/vendor-outreach.json is the committed
+# ledger (idempotency + reply-based opt-out suppression). See the header of
+# scripts/outreach/vendor-outreach.mjs for the full rules.
+#
+# SHIPS DISABLED. Until the repo variable OUTREACH_ENABLED is set to "true",
+# every run is a dry run that prints what would send and exits green — same
+# gate pattern as publish-social. Flip the variable only after reviewing a
+# dry run and a --test send.
+#
+# Setup (one-time, by a maintainer):
+#   Secrets:   RESEND_API_KEY, APOLLO_API_KEY
+#   Variables: OUTREACH_ENABLED ("true" to send)
+#              OUTREACH_POSTAL  (postal address for the signature; required)
+#              OUTREACH_FROM    (optional, default "Jerr at GovHub <hello@govhub.online>")
+#              OUTREACH_REPLY_TO (optional, default hello@govhub.online)
+
+name: vendor-outreach
+
+on:
+  schedule:
+    - cron: "15 15 * * *" # daily 15:15 UTC, after the 13:30 vendor publish
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: vendor-outreach
+  cancel-in-progress: false
+
+jobs:
+  outreach:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      # No npm ci: the script and the roster lib it imports are stdlib-only.
+
+      - name: Resolve contacts for newly published vendors
+        run: node scripts/outreach/vendor-outreach.mjs --resolve --limit 15
+        env:
+          APOLLO_API_KEY: ${{ secrets.APOLLO_API_KEY }}
+
+      - name: Dry run (always logged, the audit trail for what send would do)
+        run: node scripts/outreach/vendor-outreach.mjs
+        env:
+          OUTREACH_FROM: ${{ vars.OUTREACH_FROM }}
+          OUTREACH_POSTAL: ${{ vars.OUTREACH_POSTAL }}
+
+      - name: Send today's batch
+        if: vars.OUTREACH_ENABLED == 'true'
+        run: node scripts/outreach/vendor-outreach.mjs --send --limit 10
+        env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          OUTREACH_FROM: ${{ vars.OUTREACH_FROM }}
+          OUTREACH_REPLY_TO: ${{ vars.OUTREACH_REPLY_TO }}
+          OUTREACH_POSTAL: ${{ vars.OUTREACH_POSTAL }}
+
+      # The ledger is the send record — committing it is what makes tomorrow's
+      # run skip today's vendors. [skip ci] keeps this from triggering builds.
+      - name: Commit ledger
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/vendor-outreach.json
+          if git diff --cached --quiet; then
+            echo "Ledger unchanged."
+          else
+            git commit -m "outreach: ledger update $(date -u +%F) [skip ci]"
+            git push
+          fi

@@ -21,6 +21,7 @@
     "insights:vendors-daily": "node scripts/insights/run-vendor-daily.mjs",
     "insights:validate": "node scripts/insights/validate.mjs",
     "insights:guardrails-test": "node scripts/insights/guardrails.selftest.mjs",
+    "outreach": "node scripts/outreach/vendor-outreach.mjs",
     "guard:emdash": "node scripts/check-emdash.mjs"
   },
   "dependencies": {
