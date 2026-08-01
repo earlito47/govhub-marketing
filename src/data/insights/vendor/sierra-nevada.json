@@ -1,0 +1,603 @@
+{
+  "pageType": "vendor",
+  "slug": "sierra-nevada",
+  "title": "Sierra Nevada Federal Contracts: $1.9B in FY2026",
+  "h1": "Sierra Nevada: Federal Contracts, Agencies & Awards",
+  "metaDescription": "Sierra Nevada won $1.9B in federal contract obligations in FY2026 to date. See its top agencies, markets, largest awards, and expiring contracts.",
+  "updated": "2026-08-01",
+  "fyWindow": {
+    "label": "FY2026 to date",
+    "start": "2025-10-01",
+    "end": "2026-08-01"
+  },
+  "stats": {
+    "totalObligations": 1881156842.39,
+    "awardCount": 38,
+    "yoyGrowthPct": -16.2,
+    "avgAwardSize": 49504127,
+    "smallBusinessSharePct": null
+  },
+  "charts": [
+    {
+      "id": "sierra-nevada-trend",
+      "type": "line",
+      "title": "Obligations by fiscal year",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "FY21",
+              111742194.44
+            ],
+            [
+              "FY22",
+              539494198.62
+            ],
+            [
+              "FY23",
+              699058293.54
+            ],
+            [
+              "FY24",
+              1281145702.83
+            ],
+            [
+              "FY25",
+              2243556112.09
+            ],
+            [
+              "FY26",
+              1881156842.39
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Obligations fell 16.2% year over year, from $2.2B in FY2025 to $1.9B in FY2026 to date."
+    },
+    {
+      "id": "sierra-nevada-top-agencies",
+      "type": "bar",
+      "title": "Top 10 buying agencies, FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "Department of Defense",
+              1881121842.39
+            ],
+            [
+              "Department of Homeland Security",
+              35000
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Department of Defense is Sierra Nevada's largest federal customer, with $1.9B obligated (100.0% of the company's federal obligations)."
+    },
+    {
+      "id": "sierra-nevada-top-naics",
+      "type": "bar",
+      "title": "Top 10 markets (NAICS), FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "Aircraft Manufacturing",
+              1458973233.81
+            ],
+            [
+              "All Other Professional, Scientific, and Technical Services",
+              297364951.78
+            ],
+            [
+              "Search, Detection, Navigation, Guidance, Aeronautical, and Nautical System and Instrument Manufacturing",
+              113588865.98
+            ],
+            [
+              "Computer Systems Design Services",
+              4711624.29
+            ],
+            [
+              "All Other Telecommunications",
+              3797896.53
+            ],
+            [
+              "Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology)",
+              2700270
+            ],
+            [
+              "Other Guided Missile and Space Vehicle Parts and Auxiliary Equipment Manufacturing",
+              20000
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Aircraft Manufacturing is Sierra Nevada's largest federal market, with $1.5B in obligations."
+    }
+  ],
+  "crossLinks": [
+    {
+      "label": "Department of Defense contracts",
+      "href": "/insights/agency/department-of-defense/"
+    },
+    {
+      "label": "Department of Homeland Security contracts",
+      "href": "/insights/agency/department-of-homeland-security/"
+    },
+    {
+      "label": "NAICS 336411: Aircraft Manufacturing",
+      "href": "/insights/naics/336411/"
+    },
+    {
+      "label": "NAICS 541990: All Other Professional, Scientific, and Technical Services",
+      "href": "/insights/naics/541990/"
+    },
+    {
+      "label": "NAICS 334511: Search, Detection, Navigation, Guidance, Aeronautical, and Nautical System and Instrument Manufacturing",
+      "href": "/insights/naics/334511/"
+    },
+    {
+      "label": "NAICS 541512: Computer Systems Design Services",
+      "href": "/insights/naics/541512/"
+    }
+  ],
+  "tables": [
+    {
+      "title": "Largest awards, FY2026 to date",
+      "columns": [
+        "Rank",
+        "Award",
+        "Award Amount",
+        "Awarding Agency",
+        "Ends"
+      ],
+      "rows": [
+        [
+          1,
+          {
+            "text": "FA283424CB002",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA283424CB002_9700_-NONE-_-NONE-/"
+          },
+          3419264864.76,
+          "Department of Defense",
+          "2032-10-29"
+        ],
+        [
+          2,
+          {
+            "text": "H9240820C0004",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_H9240820C0004_9700_-NONE-_-NONE-/"
+          },
+          544162733.26,
+          "Department of Defense",
+          "2029-03-31"
+        ],
+        [
+          3,
+          {
+            "text": "FA862025FB029",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA862025FB029_9700_FA862021G4009_9700/"
+          },
+          276672918.4,
+          "Department of Defense",
+          "2026-10-31"
+        ],
+        [
+          4,
+          {
+            "text": "FA862023F4075",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA862023F4075_9700_FA862021G4009_9700/"
+          },
+          265631236,
+          "Department of Defense",
+          "2026-08-06"
+        ],
+        [
+          5,
+          {
+            "text": "FA862024FB024",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA862024FB024_9700_FA862021G4009_9700/"
+          },
+          158489765,
+          "Department of Defense",
+          "2028-01-31"
+        ],
+        [
+          6,
+          {
+            "text": "FA862025FB039",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA862025FB039_9700_FA862021G4009_9700/"
+          },
+          111644400,
+          "Department of Defense",
+          "2026-02-28"
+        ],
+        [
+          7,
+          {
+            "text": "FA862024F4030",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA862024F4030_9700_FA862021G4009_9700/"
+          },
+          92323692,
+          "Department of Defense",
+          "2024-11-30"
+        ],
+        [
+          8,
+          {
+            "text": "70B02C23C00000124",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70B02C23C00000124_7014_-NONE-_-NONE-/"
+          },
+          70314285.48,
+          "Department of Homeland Security",
+          "2027-03-31"
+        ],
+        [
+          9,
+          {
+            "text": "FA862024FB094",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA862024FB094_9700_FA862021G4009_9700/"
+          },
+          54803804.39,
+          "Department of Defense",
+          "2026-09-30"
+        ],
+        [
+          10,
+          {
+            "text": "FA862024F4090",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA862024F4090_9700_FA862021G4009_9700/"
+          },
+          52009988,
+          "Department of Defense",
+          "2025-10-31"
+        ],
+        [
+          11,
+          {
+            "text": "FA862025FB098",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA862025FB098_9700_FA862021G4009_9700/"
+          },
+          50508034,
+          "Department of Defense",
+          "2026-09-10"
+        ],
+        [
+          12,
+          {
+            "text": "FA862022F4022",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA862022F4022_9700_FA862021G4009_9700/"
+          },
+          46590891,
+          "Department of Defense",
+          "2026-06-30"
+        ],
+        [
+          13,
+          {
+            "text": "FA862026FB031",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA862026FB031_9700_FA862021G4009_9700/"
+          },
+          41659326,
+          "Department of Defense",
+          "2026-11-30"
+        ],
+        [
+          14,
+          {
+            "text": "FA862025FB122",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA862025FB122_9700_FA862021G4009_9700/"
+          },
+          37353901,
+          "Department of Defense",
+          "2027-04-14"
+        ],
+        [
+          15,
+          {
+            "text": "FA861625FB002",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA861625FB002_9700_FA861624GB001_9700/"
+          },
+          30846029.69,
+          "Department of Defense",
+          "2026-11-12"
+        ],
+        [
+          16,
+          {
+            "text": "FA862021F4088",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA862021F4088_9700_FA862021G4009_9700/"
+          },
+          24576322.24,
+          "Department of Defense",
+          "2024-03-31"
+        ],
+        [
+          17,
+          {
+            "text": "FA862026FB109",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA862026FB109_9700_FA862021G4009_9700/"
+          },
+          24353000,
+          "Department of Defense",
+          "2026-10-30"
+        ],
+        [
+          18,
+          {
+            "text": "FA862025FB067",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA862025FB067_9700_FA862021G4009_9700/"
+          },
+          23933641,
+          "Department of Defense",
+          "2026-07-17"
+        ],
+        [
+          19,
+          {
+            "text": "FA862023F4124",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA862023F4124_9700_FA862021G4009_9700/"
+          },
+          19469532,
+          "Department of Defense",
+          "2026-04-30"
+        ],
+        [
+          20,
+          {
+            "text": "FA862026FB111",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA862026FB111_9700_FA862021G4009_9700/"
+          },
+          16946650,
+          "Department of Defense",
+          "2027-03-10"
+        ],
+        [
+          21,
+          {
+            "text": "FA862024F4127",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA862024F4127_9700_FA862021G4009_9700/"
+          },
+          15820682.67,
+          "Department of Defense",
+          "2027-12-03"
+        ],
+        [
+          22,
+          {
+            "text": "N0042125C0043",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0042125C0043_9700_-NONE-_-NONE-/"
+          },
+          14997757,
+          "Department of Defense",
+          "2027-09-29"
+        ],
+        [
+          23,
+          {
+            "text": "FA862026FB049",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA862026FB049_9700_FA862021G4009_9700/"
+          },
+          13986850,
+          "Department of Defense",
+          "2027-03-30"
+        ],
+        [
+          24,
+          {
+            "text": "FA862025FB141",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA862025FB141_9700_FA862021G4009_9700/"
+          },
+          12097682.34,
+          "Department of Defense",
+          "2027-09-28"
+        ],
+        [
+          25,
+          {
+            "text": "FA862025FB113",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA862025FB113_9700_FA862021G4009_9700/"
+          },
+          11742903,
+          "Department of Defense",
+          "2026-08-28"
+        ]
+      ]
+    },
+    {
+      "title": "Contracts expiring in the next 12 months",
+      "columns": [
+        "Award",
+        "Awarding Agency",
+        "Award Value",
+        "Ends"
+      ],
+      "rows": [
+        [
+          {
+            "text": "FA862025FB029",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA862025FB029_9700_FA862021G4009_9700/"
+          },
+          "Department of Defense",
+          276672918.4,
+          "2026-10-31"
+        ],
+        [
+          {
+            "text": "FA862023F4075",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA862023F4075_9700_FA862021G4009_9700/"
+          },
+          "Department of Defense",
+          265631236,
+          "2026-08-06"
+        ],
+        [
+          {
+            "text": "FA862023F4105",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA862023F4105_9700_FA862021G4009_9700/"
+          },
+          "Department of Defense",
+          79243052.59,
+          "2026-10-31"
+        ],
+        [
+          {
+            "text": "70B02C23C00000124",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70B02C23C00000124_7014_-NONE-_-NONE-/"
+          },
+          "Department of Homeland Security",
+          70314285.48,
+          "2027-03-31"
+        ],
+        [
+          {
+            "text": "FA869124FB007",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA869124FB007_9700_FA869121D1020_9700/"
+          },
+          "Department of Defense",
+          58037831,
+          "2026-09-08"
+        ],
+        [
+          {
+            "text": "FA862025FB065",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA862025FB065_9700_FA862025DB002_9700/"
+          },
+          "Department of Defense",
+          56619008,
+          "2026-11-07"
+        ],
+        [
+          {
+            "text": "FA862024FB094",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA862024FB094_9700_FA862021G4009_9700/"
+          },
+          "Department of Defense",
+          54803804.39,
+          "2026-09-30"
+        ],
+        [
+          {
+            "text": "FA862025FB098",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA862025FB098_9700_FA862021G4009_9700/"
+          },
+          "Department of Defense",
+          50508034,
+          "2026-09-10"
+        ],
+        [
+          {
+            "text": "FA862026FB031",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA862026FB031_9700_FA862021G4009_9700/"
+          },
+          "Department of Defense",
+          41659326,
+          "2026-11-30"
+        ],
+        [
+          {
+            "text": "FA862025FB122",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA862025FB122_9700_FA862021G4009_9700/"
+          },
+          "Department of Defense",
+          37353901,
+          "2027-04-14"
+        ]
+      ]
+    },
+    {
+      "title": "Registration details",
+      "columns": [
+        "Detail",
+        "Registration"
+      ],
+      "rows": [
+        [
+          "Unique Entity ID (UEI)",
+          "N1PWVLN6F4U1"
+        ],
+        [
+          "Headquarters",
+          "Englewood, CO"
+        ],
+        [
+          "Business types",
+          "Category business; Corporate entity not tax exempt; Limited liability corporation; Manufacturer of goods; Other than small business; Special designations"
+        ]
+      ]
+    }
+  ],
+  "narrative": {
+    "intro": "Sierra Nevada obligated $1.9B in federal contracts in FY2026 to date. Sierra Nevada won 38 awards so far, with an average award size of $49.5M, and obligations are down 16.2% year over year. The Department of Defense is the dominant buyer, obligating $1.9B to Sierra Nevada. The Department of Homeland Security obligated $35K to Sierra Nevada. Aircraft Manufacturing is the largest market for Sierra Nevada, accounting for $1.5B in obligations. All Other Professional, Scientific, and Technical Services is the second-largest market for Sierra Nevada at $297M. Sierra Nevada also has obligations in Search, Detection, Navigation, Guidance, Aeronautical, and Nautical System and Instrument Manufacturing at $114M, and in Computer Systems Design Services at $4.7M. Historical obligations for Sierra Nevada rose from $112M in FY21 to $2.2B in FY25, then are $1.9B in FY26 to date. The fiscal totals are partial because FY2026 to date values are fiscal year to date and some tables report total contract values rather than obligations. This profile highlights where Sierra Nevada is concentrated by buyer and by NAICS market.",
+    "sections": [
+      {
+        "heading": "What are Sierra Nevada's recent contracting trends?",
+        "body": "Sierra Nevada obligated $1.9B in FY2026 to date, down 16.2% year over year. Sierra Nevada's award count is 38 and the average award size is $49.5M. Sierra Nevada's obligations rose from $112M in FY21 to $2.2B in FY25 before reaching $1.9B in FY26 to date. Sierra Nevada's portfolio includes both large aircraft-related awards and smaller technical and R&D awards."
+      },
+      {
+        "heading": "Who are Sierra Nevada's main buyers and markets?",
+        "body": "The Department of Defense obligated $1.9B to Sierra Nevada, making the DoD the primary buyer. The Department of Homeland Security obligated $35K to Sierra Nevada. Aircraft Manufacturing is the largest market for Sierra Nevada at $1.5B, followed by All Other Professional, Scientific, and Technical Services at $297M and Search, Detection, Navigation, Guidance, Aeronautical, and Nautical System and Instrument Manufacturing at $114M."
+      }
+    ]
+  },
+  "faq": [
+    {
+      "q": "How much does Sierra Nevada make from federal contracts?",
+      "a": "Sierra Nevada made $1.9B from federal contract obligations in FY2026 to date. Sierra Nevada's total for the period reflects 38 awards with an average award size of $49.5M, and obligations are down 16.2% year over year. Historical obligations for Sierra Nevada were $112M in FY21, $539M in FY22, $699M in FY23, $1.3B in FY24, and $2.2B in FY25. The FY2026 figure is fiscal year to date."
+    },
+    {
+      "q": "Which agencies buy from Sierra Nevada?",
+      "a": "The Department of Defense is the main buyer for Sierra Nevada and obligated $1.9B. The Department of Homeland Security obligated $35K. Those two agencies represent the top buying agencies for Sierra Nevada in FY2026 to date."
+    },
+    {
+      "q": "What does Sierra Nevada sell to the government?",
+      "a": "Sierra Nevada sells aircraft-related products and services and professional, technical, and systems work to the government. Aircraft Manufacturing is the largest market for Sierra Nevada at $1.5B, and All Other Professional, Scientific, and Technical Services accounts for $297M. Sierra Nevada also has obligations in Search, Detection, Navigation, Guidance, Aeronautical, and Nautical System and Instrument Manufacturing at $114M and in Computer Systems Design Services at $4.7M."
+    },
+    {
+      "q": "Which Sierra Nevada contracts are expiring soon?",
+      "a": "Contract expirations are not listed in the provided figures, so there is no expiring-contract dollar total to report. The available data lists obligations and market and agency breakdowns but does not include an expiring-contract table in the provided facts."
+    }
+  ],
+  "related": [
+    {
+      "label": "Expiring federal contracts: recompete watch",
+      "href": "/insights/expiring-federal-contracts/"
+    },
+    {
+      "label": "Honeywell Federal Manufacturing and Technologies federal contracts",
+      "href": "/insights/vendor/honeywell-federal-manufacturing-and-technologies/"
+    },
+    {
+      "label": "CACI Federal federal contracts",
+      "href": "/insights/vendor/caci-inc-federal/"
+    },
+    {
+      "label": "Bell Textron federal contracts",
+      "href": "/insights/vendor/bell-textron/"
+    },
+    {
+      "label": "Thalle Construction federal contracts",
+      "href": "/insights/vendor/thalle-construction/"
+    },
+    {
+      "label": "National Steel and Shipbuilding federal contracts",
+      "href": "/insights/vendor/national-steel-and-shipbuilding/"
+    },
+    {
+      "label": "OptumServe Health Services federal contracts",
+      "href": "/insights/vendor/optumserve-health-services/"
+    }
+  ],
+  "sources": [
+    {
+      "label": "USAspending.gov award data",
+      "href": "https://www.usaspending.gov"
+    }
+  ]
+}
