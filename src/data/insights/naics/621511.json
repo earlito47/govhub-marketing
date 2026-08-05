@@ -1,20 +1,20 @@
 {
   "pageType": "naics",
   "slug": "621511",
-  "title": "NAICS 621511: $150M in Federal Contracts, FY2026",
+  "title": "NAICS 621511: $157M in Federal Contracts, FY2026",
   "h1": "Medical Laboratories (NAICS 621511): Federal Contract Market",
-  "metaDescription": "Federal agencies obligated $150M on Medical Laboratories (NAICS 621511) in FY2026 to date. See top vendors, top agencies, and trends.",
-  "updated": "2026-07-27",
+  "metaDescription": "Federal agencies obligated $157M on Medical Laboratories (NAICS 621511) in FY2026 to date. See top vendors, top agencies, and trends.",
+  "updated": "2026-08-05",
   "fyWindow": {
     "label": "FY2026 to date",
     "start": "2025-10-01",
-    "end": "2026-07-27"
+    "end": "2026-08-05"
   },
   "stats": {
-    "totalObligations": 150253555.99,
-    "awardCount": 2025,
-    "yoyGrowthPct": -67.3,
-    "avgAwardSize": 74199,
+    "totalObligations": 157037574.03,
+    "awardCount": 2069,
+    "yoyGrowthPct": -65.8,
+    "avgAwardSize": 75900,
     "smallBusinessSharePct": null
   },
   "charts": [
@@ -32,7 +32,7 @@
             ],
             [
               "FY22",
-              1742498401.37
+              1742484601.37
             ],
             [
               "FY23",
@@ -48,13 +48,13 @@
             ],
             [
               "FY26",
-              150253555.99
+              157037574.03
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Obligations fell 67.3% year over year, from $460M in FY2025 to $150M in FY2026 to date."
+      "takeaway": "Obligations fell 65.8% year over year, from $460M in FY2025 to $157M in FY2026 to date."
     },
     {
       "id": "621511-top-agencies",
@@ -66,15 +66,15 @@
           "points": [
             [
               "Department of Veterans Affairs",
-              200491381.55
+              203574030.6
             ],
             [
               "Department of Defense",
-              78961966.38
+              82163523.4
             ],
             [
               "Department of Justice",
-              7293596.73
+              7292291.31
             ],
             [
               "Department of State",
@@ -108,7 +108,7 @@
         }
       ],
       "unit": "usd",
-      "takeaway": "Department of Veterans Affairs was the top buyer, obligating $200M (133.4% of all obligations)."
+      "takeaway": "Department of Veterans Affairs was the top buyer, obligating $204M (129.6% of all obligations)."
     },
     {
       "id": "621511-top-vendors",
@@ -120,23 +120,23 @@
           "points": [
             [
               "QUEST DIAGNOSTICS INCORPORATED",
-              51902062.25
+              53158333.75
             ],
             [
               "LABORATORY CORPORATION OF AMERICA",
-              43586583.65
+              43693976.76
+            ],
+            [
+              "ARUP LABORATORIES INC",
+              10634403.96
             ],
             [
               "COLLEGE OF AMERICAN PATHOLOGISTS",
               9721705.79
             ],
             [
-              "ARUP LABORATORIES INC",
-              9626518.46
-            ],
-            [
               "LABORATORY CORPORATION OF AMERICA",
-              6624346.13
+              6671743.49
             ],
             [
               "OREGON HEALTH & SCIENCE UNIVERSITY",
@@ -162,7 +162,7 @@
         }
       ],
       "unit": "usd",
-      "takeaway": "QUEST DIAGNOSTICS INCORPORATED led all vendors with $51.9M in obligations, 34.5% of the market."
+      "takeaway": "QUEST DIAGNOSTICS INCORPORATED led all vendors with $53.2M in obligations, 33.9% of the market."
     }
   ],
   "crossLinks": [
@@ -198,7 +198,7 @@
             "text": "QUEST DIAGNOSTICS INCORPORATED",
             "href": "https://www.usaspending.gov/recipient/a9415e64-b17c-f292-0379-5ac52f31d54a-C/latest/"
           },
-          51902062.25
+          53158333.75
         ],
         [
           2,
@@ -206,10 +206,18 @@
             "text": "LABORATORY CORPORATION OF AMERICA",
             "href": "https://www.usaspending.gov/recipient/43c3801f-7847-15fb-337a-8c20cb2a5e11-C/latest/"
           },
-          43586583.65
+          43693976.76
         ],
         [
           3,
+          {
+            "text": "ARUP LABORATORIES INC",
+            "href": "https://www.usaspending.gov/recipient/cb568a83-20c8-0444-a791-2ba5dfce1092-C/latest/"
+          },
+          10634403.96
+        ],
+        [
+          4,
           {
             "text": "COLLEGE OF AMERICAN PATHOLOGISTS",
             "href": "https://www.usaspending.gov/recipient/40abe0ed-a76a-1a98-54cb-950a0d7cf920-C/latest/"
@@ -217,20 +225,12 @@
           9721705.79
         ],
         [
-          4,
-          {
-            "text": "ARUP LABORATORIES INC",
-            "href": "https://www.usaspending.gov/recipient/cb568a83-20c8-0444-a791-2ba5dfce1092-C/latest/"
-          },
-          9626518.46
-        ],
-        [
           5,
           {
             "text": "LABORATORY CORPORATION OF AMERICA",
             "href": "https://www.usaspending.gov/recipient/99fe4469-1541-ae02-fe7b-ad5a0da62612-C/latest/"
           },
-          6624346.13
+          6671743.49
         ],
         [
           6,
@@ -502,43 +502,270 @@
         [
           25,
           {
-            "text": "QUEST DIAGNOSTICS INCORPORATED",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C24125P0001_3600_-NONE-_-NONE-/"
+            "text": "MARIANO PRIME LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_HT941023C0002_9700_-NONE-_-NONE-/"
           },
-          5408419.68,
-          "Department of Veterans Affairs"
+          5467966.24,
+          "Department of Defense"
+        ]
+      ]
+    },
+    {
+      "title": "Contracts expiring in the next 12 months",
+      "columns": [
+        "Rank",
+        "Contract",
+        "Incumbent",
+        "Award Value",
+        "Awarding Agency",
+        "Ends"
+      ],
+      "rows": [
+        [
+          1,
+          {
+            "text": "HT942523C0075",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_HT942523C0075_9700_-NONE-_-NONE-/"
+          },
+          {
+            "text": "THE HENRY M. JACKSON FOUNDATION FOR THE ADVANCEMENT OF MILITARY MEDICINE, INC.",
+            "href": "https://www.usaspending.gov/recipient/3e4caa6c-ea4b-e402-0001-860fad11861b-C/latest/"
+          },
+          33358153.76,
+          "Department of Defense",
+          "2026-08-31"
+        ],
+        [
+          2,
+          {
+            "text": "36C10G25F0019",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10G25F0019_3600_36C10G24D0059_3600/"
+          },
+          {
+            "text": "FOUNDATION MEDICINE, INC.",
+            "href": "https://www.usaspending.gov/recipient/7cb9321d-0162-4b81-d2e4-edb3c6ec300b-C/latest/"
+          },
+          21581260,
+          "Department of Veterans Affairs",
+          "2026-09-12"
+        ],
+        [
+          3,
+          {
+            "text": "36C10G25C0001",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10G25C0001_3600_-NONE-_-NONE-/"
+          },
+          {
+            "text": "COLLEGE OF AMERICAN PATHOLOGISTS",
+            "href": "https://www.usaspending.gov/recipient/40abe0ed-a76a-1a98-54cb-950a0d7cf920-C/latest/"
+          },
+          18440470,
+          "Department of Veterans Affairs",
+          "2027-01-02"
+        ],
+        [
+          4,
+          {
+            "text": "36C10X25N0264",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10X25N0264_3600_36C10X24D0027_3600/"
+          },
+          {
+            "text": "BAYLOR MIRACA GENETICS LABORATORIES LLC",
+            "href": "https://www.usaspending.gov/recipient/a8aced2a-6288-107a-be6b-490ae87622ef-C/latest/"
+          },
+          11387675,
+          "Department of Veterans Affairs",
+          "2026-09-29"
+        ],
+        [
+          5,
+          {
+            "text": "36C24125P0577",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C24125P0577_3600_-NONE-_-NONE-/"
+          },
+          {
+            "text": "QUEST DIAGNOSTICS INCORPORATED",
+            "href": "https://www.usaspending.gov/recipient/a9415e64-b17c-f292-0379-5ac52f31d54a-C/latest/"
+          },
+          8499999.94,
+          "Department of Veterans Affairs",
+          "2026-09-30"
+        ],
+        [
+          6,
+          {
+            "text": "W81K0423C0011",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W81K0423C0011_9700_-NONE-_-NONE-/"
+          },
+          {
+            "text": "TATITLEK FEDERAL SERVICES LLC",
+            "href": "https://www.usaspending.gov/recipient/ae620f7d-58b4-c0c1-d12e-6863436b29f1-C/latest/"
+          },
+          8387621.64,
+          "Department of Defense",
+          "2026-09-22"
+        ],
+        [
+          7,
+          {
+            "text": "HQ003425C0015",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_HQ003425C0015_9700_-NONE-_-NONE-/"
+          },
+          {
+            "text": "PEMBROOKE OCCUPATIONAL HEALTH, INC.",
+            "href": "https://www.usaspending.gov/recipient/e7f66e67-bb5a-dd77-5c57-196b22cc2690-C/latest/"
+          },
+          7243624.95,
+          "Department of Defense",
+          "2027-02-19"
+        ],
+        [
+          8,
+          {
+            "text": "36C10X25N0265",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10X25N0265_3600_36C10X24D0028_3600/"
+          },
+          {
+            "text": "FULGENT THERAPEUTICS LLC",
+            "href": "https://www.usaspending.gov/recipient/663fe1c4-ee41-d914-0a4a-d73840301d9c-C/latest/"
+          },
+          6573600,
+          "Department of Veterans Affairs",
+          "2026-09-29"
+        ],
+        [
+          9,
+          {
+            "text": "W81K0426FA088",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W81K0426FA088_9700_W81K0421D0001_9700/"
+          },
+          {
+            "text": "LABORATORY CORPORATION OF AMERICA",
+            "href": "https://www.usaspending.gov/recipient/43c3801f-7847-15fb-337a-8c20cb2a5e11-C/latest/"
+          },
+          6060000,
+          "Department of Defense",
+          "2027-03-31"
+        ],
+        [
+          10,
+          {
+            "text": "36C10G24N0060",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10G24N0060_3600_36C10G22D0004_3600/"
+          },
+          {
+            "text": "TEMPUS AI, INC",
+            "href": "https://www.usaspending.gov/recipient/9591870e-25fb-08ca-a7fa-2b614e25d829-C/latest/"
+          },
+          5999647,
+          "Department of Veterans Affairs",
+          "2027-01-27"
+        ],
+        [
+          11,
+          {
+            "text": "36C10G26N0028",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10G26N0028_3600_36C10G22D0004_3600/"
+          },
+          {
+            "text": "TEMPUS AI, INC",
+            "href": "https://www.usaspending.gov/recipient/9591870e-25fb-08ca-a7fa-2b614e25d829-C/latest/"
+          },
+          5525284,
+          "Department of Veterans Affairs",
+          "2027-01-27"
+        ],
+        [
+          12,
+          {
+            "text": "36C25926N0071",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C25926N0071_3600_36C25925A0020_3600/"
+          },
+          {
+            "text": "LABORATORY CORPORATION OF AMERICA",
+            "href": "https://www.usaspending.gov/recipient/43c3801f-7847-15fb-337a-8c20cb2a5e11-C/latest/"
+          },
+          5246000,
+          "Department of Veterans Affairs",
+          "2026-09-30"
+        ],
+        [
+          13,
+          {
+            "text": "36C24726P0300",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C24726P0300_3600_-NONE-_-NONE-/"
+          },
+          {
+            "text": "QUEST DIAGNOSTICS INCORPORATED",
+            "href": "https://www.usaspending.gov/recipient/a9415e64-b17c-f292-0379-5ac52f31d54a-C/latest/"
+          },
+          4696405.95,
+          "Department of Veterans Affairs",
+          "2026-08-31"
+        ],
+        [
+          14,
+          {
+            "text": "W81K0425FA207",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W81K0425FA207_9700_W81K0421D0001_9700/"
+          },
+          {
+            "text": "LABORATORY CORPORATION OF AMERICA",
+            "href": "https://www.usaspending.gov/recipient/43c3801f-7847-15fb-337a-8c20cb2a5e11-C/latest/"
+          },
+          4516584,
+          "Department of Defense",
+          "2026-09-29"
+        ],
+        [
+          15,
+          {
+            "text": "W912HQ24F0026",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W912HQ24F0026_9700_1401000199C02_1406/"
+          },
+          {
+            "text": "NWT INC.",
+            "href": "https://www.usaspending.gov/recipient/8787cd66-9916-1f01-2a30-9fa074756ce2-C/latest/"
+          },
+          4310880,
+          "Department of Defense",
+          "2026-12-31"
         ]
       ]
     }
   ],
   "narrative": {
-    "intro": "Federal contract obligations for NAICS 621511, Medical Laboratories, totaled $150M in FY2026 to date. There were 2,025 awards recorded, with an average award size of $74.2K. Obligations are down 67.3% year over year. Looking back, obligations were $2.6B in FY21, $1.7B in FY22, $418M in FY23, $398M in FY24, and $460M in FY25. The top buying agencies for FY2026 to date include the Department of Veterans Affairs at $200M and the Department of Defense at $79M. Leading vendors so far in FY2026 are QUEST DIAGNOSTICS INCORPORATED at $51.9M and LABORATORY CORPORATION OF AMERICA at $43.6M. The data show a sharp reduction in current-year obligations compared with earlier fiscal years and a concentrated set of buyers and suppliers in the market.",
+    "intro": "Medical Laboratories (NAICS 621511) federal contract obligations in FY2026 to date total $157M with 2,069 awards and an average award size of $75.9K. Obligations are down 65.8% year over year. Fiscal-year obligations show a peak in FY21 at $2.6B, followed by $1.7B in FY22, then $418M in FY23, $398M in FY24, $460M in FY25, and $157M in FY26. The Department of Veterans Affairs is the largest buying agency in FY2026 to date with $204M obligated. The Department of Defense follows with $82.2M, and the Department of Justice with $7.3M. QUEST DIAGNOSTICS INCORPORATED is the top vendor in FY2026 to date with $53.2M, followed by LABORATORY CORPORATION OF AMERICA with $43.7M and ARUP LABORATORIES INC with $10.6M. Contract activity has concentrated among a small set of large vendors and a few agencies. The FY2026 to date totals are partial, fiscal year to date, and the figures above reflect contract obligations recorded so far in the fiscal year.",
     "sections": [
       {
-        "heading": "What does the fiscal trend look like for NAICS 621511?",
-        "body": "Obligations peaked in FY21 at $2.6B and have declined each year to $150M in FY26 to date. FY22 obligations were $1.7B, FY23 were $418M, FY24 were $398M, and FY25 were $460M. The current-year total is down 67.3% year over year."
+        "heading": "How have obligations changed since FY2021?",
+        "body": "Fiscal-year obligations fell from $2.6B in FY21 to $1.7B in FY22, then to $418M in FY23. Fiscal-year obligations were $398M in FY24, $460M in FY25, and are $157M in FY26 to date. Obligations are down 65.8% year over year. The FY2026 to date total is partial, fiscal year to date."
       },
       {
-        "heading": "Which agencies and vendors dominate the FY2026 market?",
-        "body": "The Department of Veterans Affairs is the largest buyer at $200M, followed by the Department of Defense at $79M. QUEST DIAGNOSTICS INCORPORATED leads vendors at $51.9M and LABORATORY CORPORATION OF AMERICA follows at $43.6M. Several agencies report minimal or zero obligations in FY2026 to date, including the Environmental Protection Agency and Agency for International Development at $0."
+        "heading": "Who are the top buyers and vendors in FY2026 to date?",
+        "body": "The Department of Veterans Affairs obligated $204M and the Department of Defense obligated $82.2M in FY2026 to date. QUEST DIAGNOSTICS INCORPORATED obligated $53.2M and LABORATORY CORPORATION OF AMERICA obligated $43.7M in FY2026 to date. Other notable vendors include ARUP LABORATORIES INC with $10.6M and COLLEGE OF AMERICAN PATHOLOGISTS with $9.7M."
       }
     ]
   },
   "faq": [
     {
       "q": "How much does the federal government spend on NAICS 621511?",
-      "a": "The federal government has obligated $150M for NAICS 621511 in FY2026 to date. Historical totals show $2.6B in FY21, $1.7B in FY22, $418M in FY23, $398M in FY24, and $460M in FY25, and obligations are down 67.3% year over year."
+      "a": "The federal government spent $157M on NAICS 621511 in FY2026 to date. Fiscal-year obligations by year were $2.6B in FY21, $1.7B in FY22, $418M in FY23, $398M in FY24, $460M in FY25, and $157M in FY26 to date."
     },
     {
       "q": "Which agencies buy the most NAICS 621511 services?",
-      "a": "The Department of Veterans Affairs and the Department of Defense are the largest buyers in FY2026 to date. The Department of Veterans Affairs has $200M in obligations and the Department of Defense has $79M, followed by the Department of Justice at $7.3M and the Department of State at $1.3M."
+      "a": "The Department of Veterans Affairs, the Department of Defense, and the Department of Justice buy the most NAICS 621511 services in FY2026 to date. The Department of Veterans Affairs obligated $204M, the Department of Defense obligated $82.2M, and the Department of Justice obligated $7.3M in FY2026 to date."
     },
     {
       "q": "Who are the largest NAICS 621511 government contractors?",
-      "a": "QUEST DIAGNOSTICS INCORPORATED and LABORATORY CORPORATION OF AMERICA are the largest contractors for FY2026 to date. QUEST DIAGNOSTICS INCORPORATED has $51.9M in obligations and LABORATORY CORPORATION OF AMERICA has $43.6M in obligations, with other vendors like COLLEGE OF AMERICAN PATHOLOGISTS at $9.7M and ARUP LABORATORIES INC at $9.6M."
+      "a": "QUEST DIAGNOSTICS INCORPORATED, LABORATORY CORPORATION OF AMERICA, and ARUP LABORATORIES INC are the largest NAICS 621511 government contractors in FY2026 to date. QUEST DIAGNOSTICS INCORPORATED obligated $53.2M, LABORATORY CORPORATION OF AMERICA obligated $43.7M, and ARUP LABORATORIES INC obligated $10.6M in FY2026 to date."
     }
   ],
   "related": [
+    {
+      "label": "Recompete watch: expiring federal contracts",
+      "href": "/insights/expiring-federal-contracts/"
+    },
     {
       "label": "NAICS 236220: Commercial and Institutional Building Construction",
       "href": "/insights/naics/236220/"

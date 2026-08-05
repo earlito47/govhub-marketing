@@ -1,20 +1,20 @@
 {
   "pageType": "agency",
   "slug": "department-of-transportation",
-  "title": "DOT Federal Contracts: $9.1B in FY2026",
+  "title": "DOT Federal Contracts: $9.4B in FY2026",
   "h1": "Department of Transportation: Federal Contract Spending & Top Vendors",
-  "metaDescription": "Department of Transportation obligated $9.1B in federal contracts in FY2026 to date. See what it buys, its top vendors, and multi-year trend.",
-  "updated": "2026-07-27",
+  "metaDescription": "Department of Transportation obligated $9.4B in federal contracts in FY2026 to date. See what it buys, its top vendors, and multi-year trend.",
+  "updated": "2026-08-05",
   "fyWindow": {
     "label": "FY2026 to date",
     "start": "2025-10-01",
-    "end": "2026-07-27"
+    "end": "2026-08-05"
   },
   "stats": {
-    "totalObligations": 9099701904.54,
-    "awardCount": 11090,
-    "yoyGrowthPct": 0.9,
-    "avgAwardSize": 820532,
+    "totalObligations": 9427103814.42,
+    "awardCount": 11417,
+    "yoyGrowthPct": 4.5,
+    "avgAwardSize": 825708,
     "smallBusinessSharePct": null
   },
   "charts": [
@@ -44,17 +44,17 @@
             ],
             [
               "FY25",
-              9022873788.6
+              9022525885.22
             ],
             [
               "FY26",
-              9099701904.54
+              9427103814.42
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Obligations grew 0.9% year over year, from $9B in FY2025 to $9.1B in FY2026 to date."
+      "takeaway": "Obligations grew 4.5% year over year, from $9B in FY2025 to $9.4B in FY2026 to date."
     },
     {
       "id": "department-of-transportation-top-naics",
@@ -66,49 +66,49 @@
           "points": [
             [
               "Engineering Services",
-              1377851182.86
+              1409494462.64
             ],
             [
               "Search, Detection, Navigation, Guidance, Aeronautical, and Nautical System and Instrument Manufacturing",
-              1024536192.21
+              1024783463.92
             ],
             [
               "Telecommunications Resellers",
-              917163012.53
+              922316646.01
+            ],
+            [
+              "Highway, Street, and Bridge Construction",
+              663452279.87
+            ],
+            [
+              "Deep Sea Freight Transportation",
+              574719000.8
             ],
             [
               "Telephone Apparatus Manufacturing",
               566610817.39
             ],
             [
-              "Highway, Street, and Bridge Construction",
-              565311816.07
-            ],
-            [
-              "Deep Sea Freight Transportation",
-              559357769.65
-            ],
-            [
               "Computer Systems Design Services",
-              529233589.81
+              537901762.62
             ],
             [
               "All Other Professional, Scientific, and Technical Services",
-              412127395.96
+              435453235.75
             ],
             [
               "Other Computer Related Services",
-              283729504.3
+              294974967.89
             ],
             [
               "Computing Infrastructure Providers, Data Processing, Web Hosting, and Related Services",
-              270246861.13
+              270149400.21
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Engineering Services was Transportation's largest contract category, with $1.4B obligated (15.1% of contract spending)."
+      "takeaway": "Engineering Services was Transportation's largest contract category, with $1.4B obligated (15.0% of contract spending)."
     },
     {
       "id": "department-of-transportation-top-vendors",
@@ -120,11 +120,11 @@
           "points": [
             [
               "HARRIS CORPORATION",
-              917163012.53
+              922316646.01
             ],
             [
               "RAYTHEON COMPANY",
-              645071620.55
+              645132384.03
             ],
             [
               "ROHDE & SCHWARZ USA, INC.",
@@ -136,15 +136,15 @@
             ],
             [
               "PTSI MANAGED SERVICES INC",
-              274970831.15
+              297766810.89
+            ],
+            [
+              "TOTE SERVICES, LLC",
+              215085154.49
             ],
             [
               "PERATON INC.",
               210013286.21
-            ],
-            [
-              "TOTE SERVICES, LLC",
-              204114675.95
             ],
             [
               "FREQUENTIS USA, INC",
@@ -152,17 +152,17 @@
             ],
             [
               "CDW GOVERNMENT LLC",
-              137167016.8
+              145867949.86
             ],
             [
-              "LEIDOS, INC.",
-              130932445.19
+              "THE MITRE CORPORATION",
+              135070165.45
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "HARRIS CORPORATION led all Transportation contractors with $917M, 10.1% of obligations."
+      "takeaway": "HARRIS CORPORATION led all Transportation contractors with $922M, 9.8% of obligations."
     }
   ],
   "crossLinks": [
@@ -198,7 +198,7 @@
             "text": "HARRIS CORPORATION",
             "href": "https://www.usaspending.gov/recipient/0fee4ffe-0a02-2e9b-6dad-4bb544bb2ac9-C/latest/"
           },
-          917163012.53
+          922316646.01
         ],
         [
           2,
@@ -206,7 +206,7 @@
             "text": "RAYTHEON COMPANY",
             "href": "https://www.usaspending.gov/recipient/b91e6418-aa27-f6c2-90a9-1545753a6d15-C/latest/"
           },
-          645071620.55
+          645132384.03
         ],
         [
           3,
@@ -230,23 +230,23 @@
             "text": "PTSI MANAGED SERVICES INC",
             "href": "https://www.usaspending.gov/recipient/1b34c273-b52d-9dd4-5c61-1098530dd984-C/latest/"
           },
-          274970831.15
+          297766810.89
         ],
         [
           6,
+          {
+            "text": "TOTE SERVICES, LLC",
+            "href": "https://www.usaspending.gov/recipient/6c48f956-83a6-813a-8495-68275f67c840-C/latest/"
+          },
+          215085154.49
+        ],
+        [
+          7,
           {
             "text": "PERATON INC.",
             "href": "https://www.usaspending.gov/recipient/129fccb1-783c-9fd1-7b6d-6ddea65ace79-C/latest/"
           },
           210013286.21
-        ],
-        [
-          7,
-          {
-            "text": "TOTE SERVICES, LLC",
-            "href": "https://www.usaspending.gov/recipient/6c48f956-83a6-813a-8495-68275f67c840-C/latest/"
-          },
-          204114675.95
         ],
         [
           8,
@@ -262,15 +262,15 @@
             "text": "CDW GOVERNMENT LLC",
             "href": "https://www.usaspending.gov/recipient/5f4e5d33-10ef-b0cc-1f33-8835b33808f1-C/latest/"
           },
-          137167016.8
+          145867949.86
         ],
         [
           10,
           {
-            "text": "LEIDOS, INC.",
-            "href": "https://www.usaspending.gov/recipient/5ddb264f-234b-872c-2571-4731fde123c6-C/latest/"
+            "text": "THE MITRE CORPORATION",
+            "href": "https://www.usaspending.gov/recipient/3903ae3c-2661-60bb-cdd3-1f26ad214167-C/latest/"
           },
-          130932445.19
+          135070165.45
         ]
       ]
     },
@@ -336,7 +336,7 @@
             "text": "THE MITRE CORPORATION",
             "href": "https://www.usaspending.gov/award/CONT_AWD_693KA822C00001_6920_-NONE-_-NONE-/"
           },
-          754260780.3
+          761733823.3
         ],
         [
           8,
@@ -344,10 +344,18 @@
             "text": "LEIDOS, INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_DTFA0101CA0065CALL0001_6920_DTFA0101CA0065_6920/"
           },
-          677433933.93
+          683533933.93
         ],
         [
           9,
+          {
+            "text": "PTSI MANAGED SERVICES INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_693KA923F00076_6920_693KA923D00005_6920/"
+          },
+          673351624.73
+        ],
+        [
+          10,
           {
             "text": "LEIDOS, INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_693KA720C00002_6920_-NONE-_-NONE-/"
@@ -355,20 +363,12 @@
           659210904.61
         ],
         [
-          10,
+          11,
           {
             "text": "HARRIS CORPORATION",
             "href": "https://www.usaspending.gov/award/CONT_AWD_DTFA0102D03006CALL0002_6920_DTFA0102D03006_6920/"
           },
           652892384.77
-        ],
-        [
-          11,
-          {
-            "text": "PTSI MANAGED SERVICES INC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_693KA923F00076_6920_693KA923D00005_6920/"
-          },
-          650555644.99
         ],
         [
           12,
@@ -392,7 +392,7 @@
             "text": "LOCKHEED MARTIN SERVICES, LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_DTFAWA10C00052_6920_-NONE-_-NONE-/"
           },
-          494427737.99
+          494027737.99
         ],
         [
           15,
@@ -448,7 +448,7 @@
             "text": "NOBLIS, INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_0005_6920_DTFAWA17D00014_6920/"
           },
-          302598178.67
+          302773620.21
         ],
         [
           22,
@@ -486,30 +486,30 @@
     }
   ],
   "narrative": {
-    "intro": "The Department of Transportation obligated $9.1B in federal contracts in FY2026 to date. Those obligations came through 11,090 awards, with an average award size of $821K, and obligations are up 0.9% year over year. Yearly totals show a steady rise from $7B in FY21 to $9.1B in FY26, with FY22 at $8B, FY23 at $8.7B, FY24 at $8.6B, and FY25 at $9B. The largest spending categories in FY2026 to date are Engineering Services at $1.4B and Search, Detection, Navigation, Guidance, Aeronautical, and Nautical System and Instrument Manufacturing at $1B, followed by Telecommunications Resellers at $917M and Telephone Apparatus Manufacturing at $567M. The agency also directs significant dollars to Highway, Street, and Bridge Construction at $565M and Deep Sea Freight Transportation at $559M. On the vendor side, HARRIS CORPORATION is the top recipient at $917M, followed by RAYTHEON COMPANY at $645M and ROHDE & SCHWARZ USA, INC. at $403M. This snapshot covers contract obligations only and reflects fiscal year to date totals.",
+    "intro": "The Department of Transportation obligated $9.4B in FY2026 to date on federal contracts. The agency executed 11,417 awards, with an average award size of $826K, and obligations were up 4.5% year over year. Recent fiscal years show a steady increase from $7B in FY21 to $9.4B in FY26, with intermediate totals of $8B in FY22, $8.7B in FY23, $8.6B in FY24, and $9B in FY25. Engineering Services is the single largest NAICS category, receiving $1.4B in obligations in FY2026 to date. The Department of Transportation also obligated $1B to Search, Detection, Navigation, Guidance, Aeronautical, and Nautical System and Instrument Manufacturing and $922M to Telecommunications Resellers. The top vendors by obligations in FY2026 to date include HARRIS CORPORATION at $922M and RAYTHEON COMPANY at $645M. This profile reflects a mix of professional services, telecommunications and manufacturing, transportation construction, and IT and hosting services in the agency’s contract portfolio for the current fiscal year to date.",
     "sections": [
       {
-        "heading": "How has Transportation's contract spending changed year over year?",
-        "body": "Obligations are up 0.9% year over year. Annual totals rose from $7B in FY21 to $9.1B in FY26, with intermediate totals of $8B in FY22, $8.7B in FY23, $8.6B in FY24, and $9B in FY25. The FY2026 to date total is $9.1B, which is the current-year partial total."
+        "heading": "How has contract spending changed over recent years?",
+        "body": "The Department of Transportation obligated $9.4B in FY26 to date, up 4.5% year over year. Obligations rose from $7B in FY21 to $9.4B in FY26 with FY22 at $8B, FY23 at $8.7B, FY24 at $8.6B, and FY25 at $9B. The year-to-date total reflects partial fiscal-year activity and the agency’s multi-year upward trend in obligations."
       },
       {
-        "heading": "Where do the department's contract dollars go?",
-        "body": "Engineering Services leads at $1.4B, followed by Search, Detection, Navigation, Guidance, Aeronautical, and Nautical System and Instrument Manufacturing at $1B. Other top categories include Telecommunications Resellers at $917M, Telephone Apparatus Manufacturing at $567M, Highway, Street, and Bridge Construction at $565M, and Deep Sea Freight Transportation at $559M. The top vendors include HARRIS CORPORATION at $917M and RAYTHEON COMPANY at $645M."
+        "heading": "What are the largest buying categories and top suppliers?",
+        "body": "Engineering Services received $1.4B in FY2026 to date, making it the largest NAICS category by obligations. Other large categories include Search, Detection, Navigation, Guidance, Aeronautical, and Nautical System and Instrument Manufacturing at $1B and Telecommunications Resellers at $922M. HARRIS CORPORATION and RAYTHEON COMPANY lead vendors with $922M and $645M in obligations respectively."
       }
     ]
   },
   "faq": [
     {
       "q": "How much does Department of Transportation spend on contracts?",
-      "a": "The Department of Transportation spends $9.1B on contracts in FY2026 to date. That total comes from 11,090 awards with an average award size of $821K, and obligations are up 0.9% year over year."
+      "a": "The Department of Transportation obligated $9.4B in FY2026 to date. The agency executed 11,417 awards with an average award size of $826K, and obligations were up 4.5% year over year."
     },
     {
       "q": "What does Transportation buy?",
-      "a": "Transportation buys a mix of services and goods, led by Engineering Services at $1.4B and Search, Detection, Navigation, Guidance, Aeronautical, and Nautical System and Instrument Manufacturing at $1B. Other major categories include Telecommunications Resellers at $917M, Telephone Apparatus Manufacturing at $567M, Highway, Street, and Bridge Construction at $565M, and Deep Sea Freight Transportation at $559M."
+      "a": "The Department of Transportation buys a mix of services and products. Engineering Services received $1.4B, Search, Detection, Navigation, Guidance, Aeronautical, and Nautical System and Instrument Manufacturing received $1B, and Telecommunications Resellers received $922M in FY2026 to date, alongside construction, transportation, and IT-related categories."
     },
     {
       "q": "Who are Transportation's largest contractors?",
-      "a": "Transportation's largest contractors are HARRIS CORPORATION at $917M, RAYTHEON COMPANY at $645M, and ROHDE & SCHWARZ USA, INC. at $403M. Other top vendors in FY2026 to date include INDRA AIR TRAFFIC, INC. at $377M and PTSI MANAGED SERVICES INC at $275M."
+      "a": "HARRIS CORPORATION and RAYTHEON COMPANY are the largest contractors by obligations. HARRIS CORPORATION received $922M and RAYTHEON COMPANY received $645M in FY2026 to date, followed by ROHDE & SCHWARZ USA, INC. at $403M and INDRA AIR TRAFFIC, INC. at $377M."
     }
   ],
   "related": [

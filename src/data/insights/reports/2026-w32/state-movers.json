@@ -1,0 +1,212 @@
+{
+  "pageType": "report",
+  "slug": "state-movers",
+  "week": "2026-w32",
+  "publishedDate": "2026-08-05",
+  "title": "Top States This Week, Jul 30 – Aug 5, 2026",
+  "h1": "Top states by newly reported federal obligations, week of Jul 30 – Aug 5, 2026",
+  "metaDescription": "The states with the most newly reported federal contract obligations the week of Jul 30 – Aug 5, 2026, led by Virginia.",
+  "updated": "2026-08-05",
+  "fyWindow": {
+    "label": "Week of Jul 30 – Aug 5, 2026",
+    "start": "2026-07-30",
+    "end": "2026-08-05"
+  },
+  "stats": {
+    "totalObligations": 14041907230.369999,
+    "awardCount": null,
+    "yoyGrowthPct": null,
+    "avgAwardSize": null,
+    "smallBusinessSharePct": null
+  },
+  "charts": [
+    {
+      "id": "2026-w32-state-movers",
+      "type": "bar",
+      "title": "Top states by newly reported obligations, week of Jul 30 – Aug 5, 2026",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "Virginia",
+              8319929717.9
+            ],
+            [
+              "Texas",
+              2684911680.49
+            ],
+            [
+              "Louisiana",
+              884151989.93
+            ],
+            [
+              "California",
+              543365875.44
+            ],
+            [
+              "Tennessee",
+              338436884.52
+            ],
+            [
+              "New Mexico",
+              312015449.22
+            ],
+            [
+              "District Of Columbia",
+              294985997.5
+            ],
+            [
+              "Alabama",
+              258263226.07
+            ],
+            [
+              "Maryland",
+              227305647.89
+            ],
+            [
+              "Idaho",
+              178540761.41
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Virginia saw the most newly reported federal contract activity, with $8.3B obligated."
+    }
+  ],
+  "tables": [
+    {
+      "title": "Top states, week of Jul 30 – Aug 5, 2026",
+      "columns": [
+        "Rank",
+        "State",
+        "Obligations"
+      ],
+      "rows": [
+        [
+          1,
+          {
+            "text": "Virginia",
+            "href": "/insights/state/virginia/"
+          },
+          8319929717.9
+        ],
+        [
+          2,
+          {
+            "text": "Texas",
+            "href": "/insights/state/texas/"
+          },
+          2684911680.49
+        ],
+        [
+          3,
+          {
+            "text": "Louisiana",
+            "href": "/insights/state/louisiana/"
+          },
+          884151989.93
+        ],
+        [
+          4,
+          {
+            "text": "California",
+            "href": "/insights/state/california/"
+          },
+          543365875.44
+        ],
+        [
+          5,
+          {
+            "text": "Tennessee",
+            "href": "/insights/state/tennessee/"
+          },
+          338436884.52
+        ],
+        [
+          6,
+          {
+            "text": "New Mexico",
+            "href": "/insights/state/new-mexico/"
+          },
+          312015449.22
+        ],
+        [
+          7,
+          {
+            "text": "District Of Columbia",
+            "href": "/insights/state/district-of-columbia/"
+          },
+          294985997.5
+        ],
+        [
+          8,
+          {
+            "text": "Alabama",
+            "href": "/insights/state/alabama/"
+          },
+          258263226.07
+        ],
+        [
+          9,
+          {
+            "text": "Maryland",
+            "href": "/insights/state/maryland/"
+          },
+          227305647.89
+        ],
+        [
+          10,
+          {
+            "text": "Idaho",
+            "href": "/insights/state/idaho/"
+          },
+          178540761.41
+        ]
+      ]
+    }
+  ],
+  "narrative": {
+    "intro": "Contractors performing work in Virginia saw the most newly reported federal obligations the week of Jul 30 – Aug 5, 2026, $8.3B. The top ten states accounted for $14B combined.",
+    "sections": []
+  },
+  "faq": [
+    {
+      "q": "Which state saw the most federal contract activity the week of Jul 30 – Aug 5, 2026?",
+      "a": "Virginia, with $8.3B in newly reported obligations."
+    }
+  ],
+  "related": [
+    {
+      "label": "Virginia federal contracts",
+      "href": "/insights/state/virginia/"
+    },
+    {
+      "label": "Texas federal contracts",
+      "href": "/insights/state/texas/"
+    },
+    {
+      "label": "Louisiana federal contracts",
+      "href": "/insights/state/louisiana/"
+    },
+    {
+      "label": "California federal contracts",
+      "href": "/insights/state/california/"
+    },
+    {
+      "label": "Tennessee federal contracts",
+      "href": "/insights/state/tennessee/"
+    },
+    {
+      "label": "New Mexico federal contracts",
+      "href": "/insights/state/new-mexico/"
+    }
+  ],
+  "sources": [
+    {
+      "label": "USAspending.gov award data",
+      "href": "https://www.usaspending.gov"
+    }
+  ]
+}
