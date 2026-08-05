@@ -23,12 +23,20 @@
 
 const BASE_URL = 'https://api.usaspending.gov';
 
-const RETRY_DELAYS_MS = [1000, 4000, 15000];
+// The last two delays are deliberate cool-downs, not ordinary retries: the
+// weekly run died twice (2026-08-03 attempt 1, 2026-08-05 attempt 2) at the
+// same point ~3.5 minutes in, with USAspending's edge resetting connections
+// (UND_ERR_SOCKET, bytesRead 0) — a sustained-rate cutoff that outlasted the
+// old 20s ladder. A block like that clears in minutes, so wait minutes.
+const RETRY_DELAYS_MS = [1000, 4000, 15000, 60000, 180000];
 const RETRYABLE_STATUS = new Set([429, 500, 502, 503, 504]);
 
-// --- Concurrency limiter: max 3 in flight, 250ms minimum spacing between starts ---
+// --- Concurrency limiter: max in-flight + minimum spacing between starts.
+// Defaults keep sustained load ~2.5 req/s (the 3/250ms of the first weeks
+// peaked near 12 req/s, which is what tripped the edge's cutoff). Raise via
+// env only if USAspending demonstrably tolerates it.
 class RateLimiter {
-  constructor({ concurrency = 3, spacingMs = 250 } = {}) {
+  constructor({ concurrency = 2, spacingMs = 400 } = {}) {
     this.concurrency = concurrency;
     this.spacingMs = spacingMs;
     this.active = 0;
@@ -67,7 +75,12 @@ class RateLimiter {
 }
 
 export class UsaSpendingClient {
-  constructor({ fetchImpl = fetch, concurrency = 3, spacingMs = 250, onRequest } = {}) {
+  constructor({
+    fetchImpl = fetch,
+    concurrency = Number(process.env.INSIGHTS_HTTP_CONCURRENCY ?? 2),
+    spacingMs = Number(process.env.INSIGHTS_HTTP_SPACING_MS ?? 400),
+    onRequest,
+  } = {}) {
     this.fetchImpl = fetchImpl;
     this.limiter = new RateLimiter({ concurrency, spacingMs });
     this.requestCount = 0;
@@ -106,7 +119,11 @@ export class UsaSpendingClient {
         }
       }
     }
-    throw lastErr ?? new Error(`USAspending ${method} ${path} failed with no response`);
+    // Name the request in the failure: both 2026-08 weekly crashes logged a
+    // bare "fetch failed" that hid WHICH call died, slowing diagnosis.
+    throw new Error(`USAspending ${method} ${path} failed after ${RETRY_DELAYS_MS.length + 1} attempts: ${lastErr?.message ?? 'no response'}`, {
+      cause: lastErr,
+    });
   }
 
   /**
