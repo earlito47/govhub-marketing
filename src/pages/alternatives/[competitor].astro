@@ -26,11 +26,15 @@ const title = isOpportunityIntel
   : `${competitor.name} alternatives for government contractors`;
 
 // <title>/description use the compact competitor name to stay inside the
-// ~60/~160-char SERP budgets; the H1 keeps the full name.
+// ~60/~160-char SERP budgets; the H1 keeps the full name. Every variant
+// carries "alternatives" and a current-year modifier so this page type owns
+// the "<x> alternative" query pattern while /vs/ owns "<x> vs" — the
+// opportunity-intel title previously contained neither word (GSC 2026-08).
 const shortName = competitor.shortName ?? competitor.name;
+const YEAR = new Date().getFullYear();
 const metaTitle = isOpportunityIntel
-  ? `Looking for a proposal writing tool, not just ${shortName}?`
-  : `${shortName} alternatives for government contractors`;
+  ? `${shortName} alternatives: proposal-first options (${YEAR})`
+  : `${shortName} alternatives for government contractors (${YEAR})`;
 
 const description = isOpportunityIntel
   ? `${shortName} finds government opportunities but doesn't write proposals. See how GovHub pairs with (or replaces) it for proposal writing.`

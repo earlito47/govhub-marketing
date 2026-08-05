@@ -28,11 +28,16 @@ const title = isOpportunityIntel
   : `GovHub vs ${competitor.name}`;
 
 // <title> uses the compact competitor name and a short qualifier to stay
-// within the ~60-char SERP budget; the H1 keeps the full name.
+// within the ~60-char SERP budget; the H1 keeps the full name. Every variant
+// carries "vs" and a current-year modifier — the "<x> vs" query pattern is
+// this page type's money query (GSC 2026-08: /vs/govwin-iq/ pulled 305
+// impressions at position 26 while its title said neither "vs" nor a year).
+// The year comes from the build clock; weekly pipeline rebuilds keep it fresh.
 const shortName = competitor.shortName ?? competitor.name;
+const YEAR = new Date().getFullYear();
 const metaTitle = isOpportunityIntel
-  ? `GovHub and ${shortName}: how they compare`
-  : `GovHub vs ${shortName}: government proposal software`;
+  ? `GovHub vs ${shortName} (${YEAR}): do you need both?`
+  : `GovHub vs ${shortName} (${YEAR}): government proposal software`;
 
 const description = isOpportunityIntel
   ? `${shortName} and GovHub solve different parts of the government contracting workflow. See how they compare, and why many teams use both.`
