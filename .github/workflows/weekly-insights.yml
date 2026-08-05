@@ -55,6 +55,25 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      # USAspending's edge started (2026-08-03) resetting connections from
+      # GitHub-runner IPs after ~3.5 minutes of sustained querying — verified
+      # across three runs dying at the same elapsed time at two request rates,
+      # while the identical requests succeed from other networks. The response
+      # cache is keyed per ISO week, so persisting it across runs makes a
+      # re-run RESUME: each attempt spends its ~3.5-minute budget on new
+      # requests only, and one or two re-runs finish the week.
+      - name: Compute cache key (ISO week)
+        id: week
+        run: echo "week=$(date -u +%G-w%V)" >> "$GITHUB_OUTPUT"
+
+      - name: Restore USAspending response cache
+        uses: actions/cache/restore@v4
+        with:
+          path: .cache
+          key: insights-usaspending-${{ steps.week.outputs.week }}-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: |
+            insights-usaspending-${{ steps.week.outputs.week }}-
+
       - name: Refresh Insights data (fetch + compute + LLM narratives)
         run: npm run insights:weekly
         env:
@@ -62,6 +81,15 @@ jobs:
           # fallbacks (the stage self-skips). Every LLM number is verified or
           # discarded, and validate.mjs re-checks below.
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+
+      # Save even when the refresh failed — a failed run's partial cache is
+      # exactly what lets the next attempt get further.
+      - name: Save USAspending response cache
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: .cache
+          key: insights-usaspending-${{ steps.week.outputs.week }}-${{ github.run_id }}-${{ github.run_attempt }}
 
       - name: Validate (commit gate)
         run: npm run insights:validate

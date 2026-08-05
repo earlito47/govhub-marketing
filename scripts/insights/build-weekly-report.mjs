@@ -125,7 +125,7 @@ function buildTopAgencies(win, resp) {
   return reportPage({
     win,
     slug: 'top-agencies',
-    title: `Top Federal Agencies  This Week, ${win.label}`,
+    title: `Top Federal Agencies This Week, ${win.label}`,
     h1: `Top agencies by newly reported contract obligations, week of ${win.label}`,
     metaDescription: `The federal agencies with the most newly reported contract obligations the week of ${win.label}, led by ${top?.name ?? 'n/a'}.`,
     chart,
@@ -169,7 +169,7 @@ function buildStateMovers(win, resp) {
   return reportPage({
     win,
     slug: 'state-movers',
-    title: `Top States  This Week, ${win.label}`,
+    title: `Top States This Week, ${win.label}`,
     h1: `Top states by newly reported federal obligations, week of ${win.label}`,
     metaDescription: `The states with the most newly reported federal contract obligations the week of ${win.label}, led by ${top?.name ?? 'n/a'}.`,
     chart,
@@ -211,7 +211,7 @@ function buildMostActiveNaics(win, resp) {
   return reportPage({
     win,
     slug: 'most-active-naics',
-    title: `Most Active Federal Markets  This Week, ${win.label}`,
+    title: `Most Active Federal Markets This Week, ${win.label}`,
     h1: `Most active federal contract markets, week of ${win.label}`,
     metaDescription: `The most active federal contract industries (by newly reported obligations) the week of ${win.label}, led by ${top?.name ?? 'n/a'}.`,
     chart,
@@ -259,7 +259,7 @@ function buildLargestAwards(win, resp) {
   return reportPage({
     win,
     slug: 'largest-awards',
-    title: `Largest Federal Awards  This Week, ${win.label}`,
+    title: `Largest Federal Awards This Week, ${win.label}`,
     h1: `Largest federal awards with activity, week of ${win.label}`,
     metaDescription: `The federal contract awards with the largest total value that had new activity reported the week of ${win.label}.`,
     chart,

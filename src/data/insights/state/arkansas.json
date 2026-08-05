@@ -1,20 +1,20 @@
 {
   "pageType": "state",
   "slug": "arkansas",
-  "title": "Arkansas Federal Contracts: $638M in FY2026",
+  "title": "Arkansas Federal Contracts: $697M in FY2026",
   "h1": "Federal Contracts in Arkansas: Spending, Agencies & Vendors",
-  "metaDescription": "Federal agencies obligated $638M to contractors in Arkansas in FY2026 to date. See top buying agencies, top vendors, and industries.",
-  "updated": "2026-07-27",
+  "metaDescription": "Federal agencies obligated $697M to contractors in Arkansas in FY2026 to date. See top buying agencies, top vendors, and industries.",
+  "updated": "2026-08-05",
   "fyWindow": {
     "label": "FY2026 to date",
     "start": "2025-10-01",
-    "end": "2026-07-27"
+    "end": "2026-08-05"
   },
   "stats": {
-    "totalObligations": 637679009.97,
-    "awardCount": 13373,
-    "yoyGrowthPct": -49.5,
-    "avgAwardSize": 47684,
+    "totalObligations": 697352381.82,
+    "awardCount": 13562,
+    "yoyGrowthPct": -44.8,
+    "avgAwardSize": 51420,
     "smallBusinessSharePct": null
   },
   "charts": [
@@ -48,13 +48,13 @@
             ],
             [
               "FY26",
-              637679009.97
+              697352381.82
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Obligations fell 49.5% year over year, from $1.3B in FY2025 to $638M in FY2026 to date."
+      "takeaway": "Obligations fell 44.8% year over year, from $1.3B in FY2025 to $697M in FY2026 to date."
     },
     {
       "id": "arkansas-top-agencies",
@@ -66,11 +66,15 @@
           "points": [
             [
               "Department of Defense",
-              395846513.61
+              402558016.85
             ],
             [
               "Department of Veterans Affairs",
-              92252710.27
+              92905521.7
+            ],
+            [
+              "General Services Administration",
+              46781693.26
             ],
             [
               "Department of State",
@@ -78,37 +82,33 @@
             ],
             [
               "Department of Justice",
-              29599013.84
-            ],
-            [
-              "Department of Agriculture",
-              20872632.88
+              30336229.07
             ],
             [
               "Department of Energy",
-              19625771.22
+              23529986.35
             ],
             [
-              "Department of Transportation",
-              11990458.43
+              "Department of Agriculture",
+              21649662.38
             ],
             [
               "Department of the Interior",
-              10490710.5
+              16017594.18
             ],
             [
-              "General Services Administration",
-              9650682.58
+              "Department of Transportation",
+              12092744.29
             ],
             [
-              "Department of Homeland Security",
-              6190292.82
+              "Department of Labor",
+              7625785.81
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Department of Defense was the top federal buyer in Arkansas, obligating $396M (62.1% of the state total)."
+      "takeaway": "Department of Defense was the top federal buyer in Arkansas, obligating $403M (57.7% of the state total)."
     },
     {
       "id": "arkansas-top-vendors",
@@ -127,6 +127,10 @@
               68166000
             ],
             [
+              "ROSS GROUP CONSTRUCTION CORPORATION, LLC",
+              36203180
+            ],
+            [
               "CGI FEDERAL INC.",
               33481835.2
             ],
@@ -136,7 +140,7 @@
             ],
             [
               "ARMTEC COUNTERMEASURES CO",
-              29766520
+              29393872.23
             ],
             [
               "RIGID CONSTRUCTORS LLC",
@@ -144,25 +148,21 @@
             ],
             [
               "SHAVER FOODS LLC",
-              23489332.79
+              23648553.97
             ],
             [
               "RED EAGLE 3 JV",
               22859800
             ],
             [
-              "AMERICAN FUEL CELL AND COATED FABRICS COMPANY, LLC",
-              12014898.08
-            ],
-            [
-              "CONSOLIDATED LAND SERVICES, INC.",
-              10643302.68
+              "HENRYS AERIAL SERVICE INC",
+              13762501.03
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "BL HARBERT INTERNATIONAL LLC led all contractors in Arkansas with $102M, 16.0% of the state total."
+      "takeaway": "BL HARBERT INTERNATIONAL LLC led all contractors in Arkansas with $102M, 14.7% of the state total."
     },
     {
       "id": "arkansas-top-naics",
@@ -174,15 +174,15 @@
           "points": [
             [
               "Commercial and Institutional Building Construction",
-              155968171.37
+              193369813.36
             ],
             [
               "Other Heavy and Civil Engineering Construction",
-              117292413.3
+              118226714.86
             ],
             [
               "Water and Sewer Line and Related Structures Construction",
-              32987308.45
+              33168808.45
             ],
             [
               "Computer Facilities Management Services",
@@ -190,33 +190,33 @@
             ],
             [
               "All Other Miscellaneous Chemical Product and Preparation Manufacturing",
-              30054421.92
+              29681774.15
             ],
             [
               "Facilities Support Services",
-              26214449.3
+              27607642.44
             ],
             [
               "All Other Miscellaneous Food Manufacturing",
-              20724318.88
+              21019551.07
+            ],
+            [
+              "Support Activities for Forestry",
+              15786974.01
             ],
             [
               "Other Aircraft Parts and Auxiliary Equipment Manufacturing",
-              13810816.49
+              13862273.44
             ],
             [
-              "Highway, Street, and Bridge Construction",
-              11245174.92
-            ],
-            [
-              "Surveying and Mapping (except Geophysical) Services",
-              10699568.8
+              "Engineering Services",
+              12255456.99
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Commercial and Institutional Building Construction was the largest industry in Arkansas, with $156M obligated."
+      "takeaway": "Commercial and Institutional Building Construction was the largest industry in Arkansas, with $193M obligated."
     }
   ],
   "crossLinks": [
@@ -229,12 +229,12 @@
       "href": "/insights/agency/department-of-veterans-affairs/"
     },
     {
-      "label": "Department of State contracts",
-      "href": "/insights/agency/department-of-state/"
+      "label": "General Services Administration contracts",
+      "href": "/insights/agency/general-services-administration/"
     },
     {
-      "label": "Department of Justice contracts",
-      "href": "/insights/agency/department-of-justice/"
+      "label": "Department of State contracts",
+      "href": "/insights/agency/department-of-state/"
     },
     {
       "label": "NAICS 236220: Commercial and Institutional Building Construction",
@@ -245,8 +245,8 @@
       "href": "/insights/naics/561210/"
     },
     {
-      "label": "NAICS 237310: Highway, Street, and Bridge Construction",
-      "href": "/insights/naics/237310/"
+      "label": "NAICS 541330: Engineering Services",
+      "href": "/insights/naics/541330/"
     }
   ],
   "tables": [
@@ -277,13 +277,21 @@
         [
           3,
           {
+            "text": "ROSS GROUP CONSTRUCTION CORPORATION, LLC",
+            "href": "https://www.usaspending.gov/recipient/eeff3f5e-a517-60cf-0c32-e0783ee95384-C/latest/"
+          },
+          36203180
+        ],
+        [
+          4,
+          {
             "text": "CGI FEDERAL INC.",
             "href": "https://www.usaspending.gov/recipient/d86df7af-f6c1-a07a-ccc4-ec74331bafc5-C/latest/"
           },
           33481835.2
         ],
         [
-          4,
+          5,
           {
             "text": "BLUE CORD DESIGN AND CONSTRUCTION, LLC",
             "href": "https://www.usaspending.gov/recipient/41a4a29f-ecf4-5534-5441-0b5e6e3cdc9b-C/latest/"
@@ -291,15 +299,15 @@
           30995241
         ],
         [
-          5,
+          6,
           {
             "text": "ARMTEC COUNTERMEASURES CO",
             "href": "https://www.usaspending.gov/recipient/f0ddc48c-4847-3612-ab0d-df3f8abe73e7-C/latest/"
           },
-          29766520
+          29393872.23
         ],
         [
-          6,
+          7,
           {
             "text": "RIGID CONSTRUCTORS LLC",
             "href": "https://www.usaspending.gov/recipient/cf217ac7-5bc3-24d1-c261-d13811ddedf2-C/latest/"
@@ -307,15 +315,15 @@
           24602400
         ],
         [
-          7,
+          8,
           {
             "text": "SHAVER FOODS LLC",
             "href": "https://www.usaspending.gov/recipient/b9191be4-e258-2942-40a7-d5b727123098-C/latest/"
           },
-          23489332.79
+          23648553.97
         ],
         [
-          8,
+          9,
           {
             "text": "RED EAGLE 3 JV",
             "href": "https://www.usaspending.gov/recipient/c0fa7039-042c-3373-4459-99786c99af4f-C/latest/"
@@ -323,20 +331,12 @@
           22859800
         ],
         [
-          9,
-          {
-            "text": "AMERICAN FUEL CELL AND COATED FABRICS COMPANY, LLC",
-            "href": "https://www.usaspending.gov/recipient/b1a630df-c45f-bda3-83da-e79b67154e8b-C/latest/"
-          },
-          12014898.08
-        ],
-        [
           10,
           {
-            "text": "CONSOLIDATED LAND SERVICES, INC.",
-            "href": "https://www.usaspending.gov/recipient/f1b87f6d-a713-6a01-437e-0fd50e2b10c0-C/latest/"
+            "text": "HENRYS AERIAL SERVICE INC",
+            "href": "https://www.usaspending.gov/recipient/b49d191b-695e-d80d-d383-ef209723352d-C/latest/"
           },
-          10643302.68
+          13762501.03
         ]
       ]
     },
@@ -409,11 +409,20 @@
             "text": "BARNARD CONSTRUCTION COMPANY, INCORPORATED",
             "href": "https://www.usaspending.gov/award/CONT_AWD_W9127S25C0001_9700_-NONE-_-NONE-/"
           },
-          108639709,
+          109451911,
           "Department of Defense"
         ],
         [
           8,
+          {
+            "text": "ARMTEC COUNTERMEASURES CO",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W52P1J15C0005_9700_-NONE-_-NONE-/"
+          },
+          85078778.03,
+          "Department of Defense"
+        ],
+        [
+          9,
           {
             "text": "ALBERICI CONSTRUCTORS INC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_W9127S26FA016_9700_W9127S24D0001_9700/"
@@ -422,7 +431,7 @@
           "Department of Defense"
         ],
         [
-          9,
+          10,
           {
             "text": "BL HARBERT INTERNATIONAL LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_W9127S26CA001_9700_-NONE-_-NONE-/"
@@ -431,7 +440,7 @@
           "Department of Defense"
         ],
         [
-          10,
+          11,
           {
             "text": "VOITH HYDRO INC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_W9127S22C0005_9700_-NONE-_-NONE-/"
@@ -440,7 +449,7 @@
           "Department of Defense"
         ],
         [
-          11,
+          12,
           {
             "text": "PROJECT ENHANCEMENT CORPORATION",
             "href": "https://www.usaspending.gov/award/CONT_AWD_89233119FNA400238_8900_GS00F0004T_4730/"
@@ -449,7 +458,7 @@
           "Department of Energy"
         ],
         [
-          12,
+          13,
           {
             "text": "INNOVATIVE TECHNOLOGY PARTNERSHIPS LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_89233120FNA400264_8900_47QRAA18D008Z_4732/"
@@ -458,7 +467,7 @@
           "Department of Energy"
         ],
         [
-          13,
+          14,
           {
             "text": "SERRATO CORPORATION",
             "href": "https://www.usaspending.gov/award/CONT_AWD_1605JW20C0004_1605_-NONE-_-NONE-/"
@@ -467,7 +476,7 @@
           "Department of Labor"
         ],
         [
-          14,
+          15,
           {
             "text": "AMERIND BG JV, LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_75F40123C00057_7524_-NONE-_-NONE-/"
@@ -476,7 +485,7 @@
           "Department of Health and Human Services"
         ],
         [
-          15,
+          16,
           {
             "text": "GILBANE FEDERAL JV",
             "href": "https://www.usaspending.gov/award/CONT_AWD_W9127S24F6015_9700_W9126G24D0008_9700/"
@@ -485,22 +494,13 @@
           "Department of Defense"
         ],
         [
-          16,
+          17,
           {
             "text": "HURLEY JV, LLP",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C77625C0096_3600_-NONE-_-NONE-/"
           },
           42895816,
           "Department of Veterans Affairs"
-        ],
-        [
-          17,
-          {
-            "text": "CGI FEDERAL INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_19AQMM25C0286_1900_-NONE-_-NONE-/"
-          },
-          42156727.88,
-          "Department of State"
         ],
         [
           18,
@@ -517,11 +517,20 @@
             "text": "CERRIS BUILDERS, INC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_W9127S24F6031_9700_W9126G24D0010_9700/"
           },
-          37408319.86,
+          37342407.86,
           "Department of Defense"
         ],
         [
           20,
+          {
+            "text": "ROSS GROUP CONSTRUCTION CORPORATION, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_47PB5326F0007_4740_47PH0821D0012_4740/"
+          },
+          36203180,
+          "General Services Administration"
+        ],
+        [
+          21,
           {
             "text": "FAIRBANKS MORSE, LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_W912EQ23C0016_9700_-NONE-_-NONE-/"
@@ -530,7 +539,7 @@
           "Department of Defense"
         ],
         [
-          21,
+          22,
           {
             "text": "MEDVOLT - ROUNDHOUSE JV",
             "href": "https://www.usaspending.gov/award/CONT_AWD_140P2025C0054_1443_-NONE-_-NONE-/"
@@ -539,7 +548,7 @@
           "Department of the Interior"
         ],
         [
-          22,
+          23,
           {
             "text": "ODLE MANAGEMENT GROUP, L.L.C.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_DOLETA16C0084_1605_-NONE-_-NONE-/"
@@ -548,7 +557,7 @@
           "Department of Labor"
         ],
         [
-          23,
+          24,
           {
             "text": "BLUE CORD DESIGN AND CONSTRUCTION, LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C25626C0046_3600_-NONE-_-NONE-/"
@@ -557,51 +566,42 @@
           "Department of Veterans Affairs"
         ],
         [
-          24,
+          25,
           {
             "text": "ARMTEC COUNTERMEASURES CO",
             "href": "https://www.usaspending.gov/award/CONT_AWD_N0010426FZV05_9700_N0010422DZV01_9700/"
           },
           25471320,
           "Department of Defense"
-        ],
-        [
-          25,
-          {
-            "text": "C. J. MAHAN CONSTRUCTION COMPANY, LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_W912EQ24C0010_9700_-NONE-_-NONE-/"
-          },
-          24693661.36,
-          "Department of Defense"
         ]
       ]
     }
   ],
   "narrative": {
-    "intro": "Federal contract obligations in Arkansas for FY2026 to date total $638M. Award activity so far shows 13,373 awards, with an average award size of $47.7K. Obligations fell 49.5% year over year. Historical yearly obligations provide context: FY21 was $1.5B, FY22 was $1.4B, FY23 was $1.3B, FY24 was $1.9B, FY25 was $1.3B, and FY26 is $638M. The Department of Defense accounts for the largest share of buying agency obligations at $396M, followed by the Department of Veterans Affairs at $92.3M and the Department of State at $32.2M. On the vendor side, BL HARBERT INTERNATIONAL LLC leads with $102M in obligations, and ALBERICI CONSTRUCTORS INC follows with $68.2M. Construction and heavy civil work dominate the industry mix, led by Commercial and Institutional Building Construction at $156M and Other Heavy and Civil Engineering Construction at $117M. These figures are contract obligations; current-year totals are partial (fiscal year to date).",
+    "intro": "Arkansas has recorded $697M in federal contract obligations for FY2026 to date. Contract activity includes 13,562 awards with an average award size of $51.4K, and obligations fell 44.8% year over year. The Department of Defense is the largest buyer, obligating $403M, followed by the Department of Veterans Affairs with $92.9M and the General Services Administration with $46.8M. Construction-related industries lead the state award mix, with Commercial and Institutional Building Construction totaling $193M and Other Heavy and Civil Engineering Construction totaling $118M. Large prime awards are concentrated among a few vendors, including BL HARBERT INTERNATIONAL LLC at $102M and ALBERICI CONSTRUCTORS INC at $68.2M. Fiscal-year context shows higher totals in prior years, such as $1.9B in FY24 and $1.5B in FY21, which frames the current year-to-date figure as part of a variable multi-year pattern. These topline figures describe who is buying in Arkansas and which vendors and industries are receiving the largest shares so far in FY2026 to date.",
     "sections": [
       {
-        "heading": "What happened to federal contracting activity in Arkansas this fiscal year?",
-        "body": "Obligations fell 49.5% year over year. Total FY2026 to date obligations are $638M, compared with prior fiscal years that ranged from $1.3B to $1.9B. Award volume remains substantial at 13,373 awards, but the average award size is $47.7K, reflecting smaller per-award obligations so far."
+        "heading": "Who are the biggest federal buyers in Arkansas right now?",
+        "body": "The Department of Defense is the biggest buyer, obligating $403M in FY2026 to date. The Department of Veterans Affairs obligated $92.9M and the General Services Administration obligated $46.8M. The Department of State and the Department of Justice follow with $32.2M and $30.3M respectively."
       },
       {
-        "heading": "Which agencies, vendors, and industries are largest in Arkansas federal contracting?",
-        "body": "The Department of Defense is the largest buying agency with $396M in obligations, followed by the Department of Veterans Affairs at $92.3M and the Department of State at $32.2M. BL HARBERT INTERNATIONAL LLC is the top vendor with $102M, and ALBERICI CONSTRUCTORS INC is second with $68.2M. Industry spending is concentrated in construction: Commercial and Institutional Building Construction is $156M and Other Heavy and Civil Engineering Construction is $117M."
+        "heading": "Which vendors and industries are getting the most obligations in Arkansas?",
+        "body": "BL HARBERT INTERNATIONAL LLC received $102M and ALBERICI CONSTRUCTORS INC received $68.2M in FY2026 to date. Commercial and Institutional Building Construction is the largest industry with $193M, followed by Other Heavy and Civil Engineering Construction with $118M. Computer Facilities Management Services totaled $32.4M, and All Other Miscellaneous Chemical Product and Preparation Manufacturing totaled $29.7M."
       }
     ]
   },
   "faq": [
     {
       "q": "How much federal contract money goes to Arkansas?",
-      "a": "About $638M in federal contract obligations go to Arkansas for FY2026 to date. Total FY2026 to date obligations are $638M, with 13,373 awards and an average award size of $47.7K. Obligations fell 49.5% year over year."
+      "a": "The state received $697M in federal contract obligations for FY2026 to date. That total represents 13,562 awards and an average award size of $51.4K, and obligations fell 44.8% year over year. Prior-year fiscal totals include $1.9B in FY24 and $1.3B in FY25."
     },
     {
       "q": "Which agencies award the most contracts in Arkansas?",
-      "a": "The Department of Defense, the Department of Veterans Affairs, and the Department of State award the most contracts in Arkansas. The Department of Defense accounts for $396M in obligations, the Department of Veterans Affairs accounts for $92.3M, and the Department of State accounts for $32.2M."
+      "a": "The Department of Defense awards the most contracts in Arkansas, obligating $403M in FY2026 to date. The Department of Veterans Affairs follows with $92.9M and the General Services Administration follows with $46.8M. Other top buying agencies include the Department of State at $32.2M and the Department of Justice at $30.3M."
     },
     {
       "q": "Who are the largest federal contractors in Arkansas?",
-      "a": "BL HARBERT INTERNATIONAL LLC, ALBERICI CONSTRUCTORS INC, and CGI FEDERAL INC. are the largest federal contractors in Arkansas. BL HARBERT INTERNATIONAL LLC has $102M in obligations, ALBERICI CONSTRUCTORS INC has $68.2M, and CGI FEDERAL INC. has $33.5M."
+      "a": "BL HARBERT INTERNATIONAL LLC and ALBERICI CONSTRUCTORS INC are the largest federal contractors in Arkansas, with $102M and $68.2M in obligations respectively for FY2026 to date. Additional top vendors include ROSS GROUP CONSTRUCTION CORPORATION, LLC at $36.2M and CGI FEDERAL INC. at $33.5M."
     }
   ],
   "related": [
