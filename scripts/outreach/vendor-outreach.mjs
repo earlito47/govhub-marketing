@@ -14,9 +14,9 @@
 //     in the public bulk extracts alike, so contacts come from a layered
 //     resolver instead: SBA certification search first (keyless, covers small
 //     businesses — see scripts/leadgen/enrich_sba.py for the API's quirks),
-//     then Tomba domain search (TOMBA_API_KEY; published addresses on the
-//     company's own domain, see scripts/leadgen/enrich_tomba.py), then Apollo
-//     people search (APOLLO_API_KEY) for named contacts at the large primes.
+//     then Apollo people search (APOLLO_API_KEY) for named contacts at the
+//     large primes. (A Tomba domain-search tier sat between them until
+//     2026-08-05, removed by user decision — no Tomba subscription.)
 //   - Never the same inbox twice across vendors: Raytheon and RTX share
 //     rtx.com, so every tier skips an email some other vendor already holds.
 //
@@ -26,10 +26,9 @@
 //   --send    [--limit N]  send ready entries via Resend (default cap 10)
 //   --test <address>       send one rendered sample to your own inbox
 //
-// Env: RESEND_API_KEY (send/test), TOMBA_API_KEY (resolve tier 2),
-//      APOLLO_API_KEY (resolve tier 3), OUTREACH_FROM, OUTREACH_REPLY_TO,
-//      OUTREACH_POSTAL (postal address for the signature; required to --send,
-//      CAN-SPAM).
+// Env: RESEND_API_KEY (send/test), APOLLO_API_KEY (resolve tier 2),
+//      OUTREACH_FROM, OUTREACH_REPLY_TO, OUTREACH_POSTAL (postal address for
+//      the signature; required to --send, CAN-SPAM).
 
 import path from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
@@ -53,29 +52,6 @@ const APOLLO_TITLES = [
   'corporate communications',
   'marketing',
 ];
-
-// Company website domains for the Tomba tier, keyed by roster slug. The
-// roster carries no domain field, so this map is hand-extended as pages
-// publish; a vendor absent here just skips the tier. Raytheon and RTX
-// genuinely share a domain — the used-email guard keeps them apart.
-const KNOWN_DOMAINS = {
-  'amerisourcebergen-drug': 'cencora.com',
-  'barnard-construction': 'barnard-inc.com',
-  'boeing': 'boeing.com',
-  'booz-allen-hamilton': 'boozallen.com',
-  'electric-boat': 'gdeb.com',
-  'fisher-sand-and-gravel': 'fisherind.com',
-  'fluor-marine-propulsion': 'navalnuclearlab.energy.gov',
-  'humana-government-business': 'humanamilitary.com',
-  'lockheed-martin': 'lockheedmartin.com',
-  'mckesson': 'mckesson.com',
-  'national-technology-and-engineering-solutions-of-sandia': 'sandia.gov',
-  'optum-public-sector-solutions': 'optumserve.com',
-  'raytheon': 'rtx.com',
-  'rtx': 'rtx.com',
-  'triad-national-security': 'lanl.gov',
-  'triwest-healthcare-alliance': 'triwest.com',
-};
 
 // ---- Ledger ---------------------------------------------------------------
 function loadLedger() {
@@ -161,66 +137,7 @@ async function resolveSba(vendor) {
   };
 }
 
-// Tier 2: Tomba domain search — published addresses on the company's own
-// domain. Same endpoint and quirks as scripts/leadgen/enrich_tomba.py:
-// TOMBA_API_KEY holds base64("ta_<key>:ts_<secret>") or the raw colon pair, a
-// browser UA is required (Cloudflare blocks python/node defaults), and each
-// domain search spends monthly quota (trial: 200/month), which the resolve
-// cadence of ~15/day stays well inside.
-const TOMBA_PREFERRED = /ceo|president|owner|founder|principal|partner|business dev|capture|proposal|market|communications/i;
-
-function tombaCreds() {
-  const raw = (process.env.TOMBA_API_KEY || '').trim();
-  if (!raw) return null;
-  let pair = raw;
-  if (!pair.includes(':')) {
-    try {
-      pair = Buffer.from(raw + '='.repeat((4 - (raw.length % 4)) % 4), 'base64').toString('utf8').trim();
-    } catch {
-      return null;
-    }
-  }
-  const [key, secret] = pair.split(':').map((s) => s.trim());
-  if (!key?.startsWith('ta_') || !secret?.startsWith('ts_')) return null;
-  return { key, secret };
-}
-
-async function resolveTomba(vendor, usedEmails) {
-  const creds = tombaCreds();
-  if (!creds) return { skipped: true };
-  const domain = KNOWN_DOMAINS[vendor.slug];
-  if (!domain) {
-    console.log(`[resolve] ${vendor.slug}: no known domain for the Tomba tier`);
-    return null;
-  }
-  const resp = await fetch(`https://api.tomba.io/v1/domain-search?domain=${encodeURIComponent(domain)}&limit=10`, {
-    headers: {
-      'X-Tomba-Key': creds.key,
-      'X-Tomba-Secret': creds.secret,
-      'User-Agent': SBA_UA,
-      Accept: 'application/json',
-    },
-  }).catch(() => null);
-  if (!resp || !resp.ok) {
-    console.log(`[resolve] ${vendor.slug}: tomba HTTP ${resp?.status ?? 'error'}`);
-    return null;
-  }
-  const data = (await resp.json().catch(() => ({})))?.data ?? {};
-  const rank = (e) => [TOMBA_PREFERRED.test(String(e.position || '')) ? 0 : 1, -(e.score || 0)];
-  const candidates = (data.emails ?? [])
-    .filter((e) => String(e.email || '').includes('@') && !usedEmails.has(e.email))
-    .sort((a, b) => rank(a)[0] - rank(b)[0] || rank(a)[1] - rank(b)[1]);
-  const best = candidates[0];
-  if (!best) return null;
-  return {
-    email: best.email,
-    contactName: [best.first_name, best.last_name].filter(Boolean).join(' '),
-    contactTitle: best.position || '',
-    source: 'tomba',
-  };
-}
-
-// Tier 3: Apollo. Search people at the company by title, then a match call to
+// Tier 2: Apollo. Search people at the company by title, then a match call to
 // reveal the work email. Capped at 3 reveal attempts per vendor to keep credit
 // use predictable.
 async function apolloPost(key, endpoint, payload) {
@@ -278,12 +195,6 @@ async function runResolve(limit) {
     const company = vendor.displayName;
     let contact = await resolveSba(vendor);
     if (contact && usedEmails.has(contact.email)) contact = null;
-    let anySkipped = false;
-    if (!contact) {
-      const tomba = await resolveTomba(vendor, usedEmails);
-      if (tomba?.skipped) anySkipped = true;
-      else contact = tomba;
-    }
     let apolloSkipped = false;
     if (!contact) {
       const apollo = await resolveApollo(vendor, usedEmails).catch((e) => {
@@ -307,9 +218,9 @@ async function runResolve(limit) {
         notes: '',
       };
       console.log(`[resolve] ${vendor.slug}: ${contact.email} (${contact.source})`);
-    } else if (anySkipped || apolloSkipped) {
-      // A tier had no key configured — leave unresolved so a keyed run retries.
-      console.log(`[resolve] ${vendor.slug}: unresolved (a resolver tier is missing its API key)`);
+    } else if (apolloSkipped) {
+      // Apollo had no key configured — leave unresolved so a keyed run retries.
+      console.log(`[resolve] ${vendor.slug}: unresolved (APOLLO_API_KEY is not configured)`);
     } else {
       ledger.vendors[vendor.slug] = {
         company, contactName: '', contactTitle: '', email: '', source: '',
