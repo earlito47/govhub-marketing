@@ -156,15 +156,33 @@ function apolloCandidateRank(person) {
   return idx === -1 ? APOLLO_TITLES.length : idx;
 }
 
+// Loose company-name match between the roster displayName and an Apollo
+// person's employer. api_search has no organization-name filter (verified:
+// mixed_people/search returns HTTP 422 "deprecated for API callers" since
+// 2026-08), so the search runs on q_keywords and this guard rejects
+// keyword-fuzz candidates who work somewhere else. Containment either way
+// covers "Northrop Grumman" vs "Northrop Grumman Systems"; acronym-only
+// mismatches (SAIC) stay unresolved for hand entry rather than risking an
+// email to the wrong company.
+function sameCompany(displayName, orgName) {
+  const norm = (s) => String(s || '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
+  const a = norm(displayName);
+  const b = norm(orgName);
+  return Boolean(a && b && (a.includes(b) || b.includes(a)));
+}
+
 async function resolveApollo(vendor, usedEmails) {
   const key = process.env.APOLLO_API_KEY;
   if (!key) return { skipped: true };
-  const search = await apolloPost(key, 'mixed_people/search', {
-    q_organization_name: vendor.displayName,
+  const search = await apolloPost(key, 'mixed_people/api_search', {
+    q_keywords: vendor.displayName,
     person_titles: APOLLO_TITLES,
+    person_locations: ['United States'],
     per_page: 10,
   });
-  const people = (search?.people ?? []).sort((a, b) => apolloCandidateRank(a) - apolloCandidateRank(b));
+  const people = (search?.people ?? [])
+    .filter((p) => sameCompany(vendor.displayName, p.organization?.name))
+    .sort((a, b) => apolloCandidateRank(a) - apolloCandidateRank(b));
   for (const person of people.slice(0, 3)) {
     const match = await apolloPost(key, 'people/match', { id: person.id, reveal_personal_emails: false }).catch(() => null);
     const email = String(match?.person?.email || '').trim();
@@ -196,13 +214,16 @@ async function runResolve(limit) {
     let contact = await resolveSba(vendor);
     if (contact && usedEmails.has(contact.email)) contact = null;
     let apolloSkipped = false;
+    let apolloErrored = false;
     if (!contact) {
       const apollo = await resolveApollo(vendor, usedEmails).catch((e) => {
         console.log(`[resolve] ${vendor.slug}: ${e.message}`);
-        return { skipped: true };
+        return { skipped: true, errored: true };
       });
-      if (apollo?.skipped) apolloSkipped = true;
-      else contact = apollo;
+      if (apollo?.skipped) {
+        apolloSkipped = true;
+        apolloErrored = Boolean(apollo.errored);
+      } else contact = apollo;
     }
     if (contact) {
       usedEmails.add(contact.email);
@@ -219,8 +240,12 @@ async function runResolve(limit) {
       };
       console.log(`[resolve] ${vendor.slug}: ${contact.email} (${contact.source})`);
     } else if (apolloSkipped) {
-      // Apollo had no key configured — leave unresolved so a keyed run retries.
-      console.log(`[resolve] ${vendor.slug}: unresolved (APOLLO_API_KEY is not configured)`);
+      // Leave unresolved so a later run retries — and say WHY accurately: the
+      // 2026-08-05 stall was misdiagnosed for a day because an Apollo API
+      // error printed the missing-key message.
+      console.log(
+        `[resolve] ${vendor.slug}: unresolved (${apolloErrored ? 'Apollo errored this run' : 'APOLLO_API_KEY is not configured'})`,
+      );
     } else {
       ledger.vendors[vendor.slug] = {
         company, contactName: '', contactTitle: '', email: '', source: '',
