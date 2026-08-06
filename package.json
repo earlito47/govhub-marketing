@@ -22,6 +22,7 @@
     "insights:validate": "node scripts/insights/validate.mjs",
     "insights:guardrails-test": "node scripts/insights/guardrails.selftest.mjs",
     "outreach": "node scripts/outreach/vendor-outreach.mjs",
+    "digest": "node scripts/digest/marketing-digest.mjs",
     "guard:emdash": "node scripts/check-emdash.mjs"
   },
   "dependencies": {

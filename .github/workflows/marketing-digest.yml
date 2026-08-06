@@ -1,0 +1,62 @@
+# Marketing automation digest — the twice-weekly ops email to Jerr.
+#
+# Summarizes everything the marketing automation produced since the previous
+# digest (new pages with links and go-live times, LinkedIn copy, vendor
+# outreach emails, workflow successes/failures) and, up front, anything that
+# needs a human: a content PR waiting for merge, a failed run to re-run, a
+# disabled gate (SOCIAL_PROVIDER, OUTREACH_ENABLED).
+#
+# It always sends — a quiet window produces a short "nothing this period"
+# email, so a MISSING digest is itself the signal that automation broke.
+#
+# Setup:
+#   Secrets:   RESEND_API_KEY (already present for vendor-outreach)
+#   Variables: DIGEST_TO (optional, comma-separated; the script defaults to
+#              earljknight@gmail.com,earl@govhub.online)
+# GITHUB_TOKEN covers the run/PR/variable lookups — no extra secret.
+
+name: marketing-digest
+
+on:
+  schedule:
+    - cron: "0 20 * * 1,4" # Mon + Thu 20:00 UTC, after the day's automation
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+  actions: read
+  pull-requests: read
+
+concurrency:
+  group: marketing-digest
+  cancel-in-progress: false
+
+jobs:
+  digest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout (full history — the digest windows over git log)
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      # No npm ci: the script is stdlib-only.
+
+      - name: Dry run (audit copy in the job log)
+        run: node scripts/digest/marketing-digest.mjs --dry-run
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DIGEST_TO: ${{ vars.DIGEST_TO }}
+
+      - name: Send the digest
+        run: node scripts/digest/marketing-digest.mjs
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          DIGEST_TO: ${{ vars.DIGEST_TO }}
