@@ -1,0 +1,173 @@
+{
+  "pageType": "vendor",
+  "slug": "general-matter",
+  "title": "Who Buys From General Matter: $900M in FY2026",
+  "h1": "General Matter: Federal Contracts, Agencies & Awards",
+  "metaDescription": "General Matter won $900M in federal contract obligations in FY2026 to date. See its top agencies, markets, largest awards, and expiring contracts.",
+  "updated": "2026-08-08",
+  "fyWindow": {
+    "label": "FY2026 to date",
+    "start": "2025-10-01",
+    "end": "2026-08-08"
+  },
+  "stats": {
+    "totalObligations": 900000000,
+    "awardCount": 1,
+    "yoyGrowthPct": 179900,
+    "avgAwardSize": 900000000,
+    "smallBusinessSharePct": null
+  },
+  "charts": [
+    {
+      "id": "general-matter-trend",
+      "type": "line",
+      "title": "Obligations by fiscal year",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "FY21",
+              0
+            ],
+            [
+              "FY22",
+              0
+            ],
+            [
+              "FY23",
+              0
+            ],
+            [
+              "FY24",
+              0
+            ],
+            [
+              "FY25",
+              500000
+            ],
+            [
+              "FY26",
+              900000000
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Obligations grew 179900.0% year over year, from $500K in FY2025 to $900M in FY2026 to date."
+    }
+  ],
+  "crossLinks": [],
+  "tables": [
+    {
+      "title": "Largest awards, FY2026 to date",
+      "columns": [
+        "Rank",
+        "Award",
+        "Award Amount",
+        "Awarding Agency",
+        "Ends"
+      ],
+      "rows": [
+        [
+          1,
+          {
+            "text": "89243226FNE400213",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_89243226FNE400213_8900_89243225DNE000023_8900/"
+          },
+          900000000,
+          "Department of Energy",
+          "2036-03-14"
+        ]
+      ]
+    },
+    {
+      "title": "Registration details",
+      "columns": [
+        "Detail",
+        "Registration"
+      ],
+      "rows": [
+        [
+          "Unique Entity ID (UEI)",
+          "XFT2AME5FUB3"
+        ],
+        [
+          "Headquarters",
+          "San Francisco, CA"
+        ],
+        [
+          "Business types",
+          "Category business; Corporate entity not tax exempt; Small business; Special designations; Us owned business"
+        ]
+      ]
+    }
+  ],
+  "narrative": {
+    "intro": "In FY2026 to date, General Matter won $900M across 1 contract awards. That is up 179900.0% year over year. The average award size was $900M.",
+    "sections": [
+      {
+        "heading": "Which agencies buy from General Matter?",
+        "body": "Department of Energy accounted for $900M of General Matter's federal contract obligations in FY2026 to date, or 100.0% of the company's federal work."
+      },
+      {
+        "heading": "What does General Matter sell to the government?",
+        "body": "Other Basic Inorganic Chemical Manufacturing is General Matter's largest federal market by obligations, at $900M in FY2026 to date, a 100.0% share of its federal business."
+      }
+    ]
+  },
+  "faq": [
+    {
+      "q": "How much does General Matter make from federal contracts?",
+      "a": "General Matter won $900M in federal contract obligations in FY2026 to date, across 1 awards."
+    },
+    {
+      "q": "Which agencies buy from General Matter?",
+      "a": "Department of Energy is General Matter's largest federal customer, with $900M obligated in FY2026 to date."
+    },
+    {
+      "q": "What does General Matter sell to the government?",
+      "a": "General Matter's largest federal market is Other Basic Inorganic Chemical Manufacturing, with $900M in obligations in FY2026 to date."
+    },
+    {
+      "q": "Which General Matter contracts are expiring soon?",
+      "a": "None of General Matter's largest federal contracts have a period of performance ending in the next 12 months, based on currently reported end dates."
+    }
+  ],
+  "related": [
+    {
+      "label": "Expiring federal contracts: recompete watch",
+      "href": "/insights/expiring-federal-contracts/"
+    },
+    {
+      "label": "Cgi Federal federal contracts",
+      "href": "/insights/vendor/cgi-federal/"
+    },
+    {
+      "label": "Uchicago Argonne federal contracts",
+      "href": "/insights/vendor/uchicago-argonne/"
+    },
+    {
+      "label": "Mission Support and Test Services federal contracts",
+      "href": "/insights/vendor/mission-support-and-test-services/"
+    },
+    {
+      "label": "Harris federal contracts",
+      "href": "/insights/vendor/harris/"
+    },
+    {
+      "label": "American Centrifuge Operating federal contracts",
+      "href": "/insights/vendor/american-centrifuge-operating/"
+    },
+    {
+      "label": "Hii Mission Technologies federal contracts",
+      "href": "/insights/vendor/hii-mission-technologies/"
+    }
+  ],
+  "sources": [
+    {
+      "label": "USAspending.gov award data",
+      "href": "https://www.usaspending.gov"
+    }
+  ]
+}
