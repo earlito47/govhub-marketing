@@ -53,7 +53,10 @@ TIMEOUT = 60
 # unpublished, so the safe default stages copy in the Postiz calendar and lets a
 # human press publish. Flip to "now" once the output has earned it.
 POSTIZ_POST_TYPES = ("draft", "schedule", "now")
-POSTIZ_POST_TYPE = os.environ.get("POSTIZ_POST_TYPE", "draft").lower()
+# `or`, not a .get() default: the workflow passes unset repo variables as
+# EMPTY strings, which .get() happily returns (2026-08-04 failure: empty
+# POSTIZ_URL produced the URL "/public/v1/posts" and every post failed).
+POSTIZ_POST_TYPE = (os.environ.get("POSTIZ_POST_TYPE") or "draft").lower()
 
 SOCIAL_DIR = Path("social")
 POSTED_DIR = SOCIAL_DIR / "posted"
@@ -65,7 +68,7 @@ def post_dry_run(text: str) -> dict:
 
 
 def post_postiz(text: str) -> dict:
-    base = os.environ.get("POSTIZ_URL", "https://api.postiz.com").rstrip("/")
+    base = (os.environ.get("POSTIZ_URL") or "https://api.postiz.com").rstrip("/")
     integration_id = os.environ["POSTIZ_INTEGRATION_ID"]
     if POSTIZ_POST_TYPE not in POSTIZ_POST_TYPES:
         sys.exit(f"POSTIZ_POST_TYPE={POSTIZ_POST_TYPE!r} is not one of "

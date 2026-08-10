@@ -1,20 +1,20 @@
 {
   "pageType": "naics",
   "slug": "336611",
-  "title": "Federal Contracts in NAICS 336611: $20B (FY2026)",
+  "title": "Federal Contracts in NAICS 336611: $23.1B (FY2026)",
   "h1": "Ship Building and Repairing (NAICS 336611): Federal Contract Market",
-  "metaDescription": "Federal agencies obligated $20B on Ship Building and Repairing (NAICS 336611) in FY2026 to date. See top vendors, top agencies, and trends.",
-  "updated": "2026-08-05",
+  "metaDescription": "Federal agencies obligated $23.1B on Ship Building and Repairing (NAICS 336611) in FY2026 to date. See top vendors, top agencies, and trends.",
+  "updated": "2026-08-10",
   "fyWindow": {
     "label": "FY2026 to date",
     "start": "2025-10-01",
-    "end": "2026-08-05"
+    "end": "2026-08-10"
   },
   "stats": {
-    "totalObligations": 20043158694.14,
-    "awardCount": 4387,
-    "yoyGrowthPct": -46.1,
-    "avgAwardSize": 4568762,
+    "totalObligations": 23051459943.07,
+    "awardCount": 4482,
+    "yoyGrowthPct": -38,
+    "avgAwardSize": 5143119,
     "smallBusinessSharePct": null
   },
   "charts": [
@@ -36,25 +36,25 @@
             ],
             [
               "FY23",
-              26880806801.59
+              26905847983.14
             ],
             [
               "FY24",
-              24160436129.76
+              24190852699.38
             ],
             [
               "FY25",
-              37170306723.71
+              37201672554.47
             ],
             [
               "FY26",
-              20043158694.14
+              23051459943.07
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Obligations fell 46.1% year over year, from $37.2B in FY2025 to $20B in FY2026 to date."
+      "takeaway": "Obligations fell 38.0% year over year, from $37.2B in FY2025 to $23.1B in FY2026 to date."
     },
     {
       "id": "336611-top-agencies",
@@ -66,19 +66,19 @@
           "points": [
             [
               "Department of Defense",
-              12003166374.56
+              14964190338.53
             ],
             [
               "Department of Homeland Security",
-              7717219147.82
+              7738970183.26
             ],
             [
               "Department of Commerce",
-              148904966.25
+              150019621.9
             ],
             [
               "Department of Transportation",
-              70707849.47
+              95119443.34
             ],
             [
               "General Services Administration",
@@ -108,7 +108,7 @@
         }
       ],
       "unit": "usd",
-      "takeaway": "Department of Defense was the top buyer, obligating $12B (59.9% of all obligations)."
+      "takeaway": "Department of Defense was the top buyer, obligating $15B (64.9% of all obligations)."
     },
     {
       "id": "336611-top-vendors",
@@ -123,20 +123,24 @@
               3500000000
             ],
             [
+              "HUNTINGTON INGALLS INCORPORATED",
+              3494117531
+            ],
+            [
               "HUNTINGTON INGALLS INC",
-              2681988717.4
+              2729583354.4
             ],
             [
               "BOLLINGER SHIPYARDS LOCKPORT, L.L.C.",
-              2195099171.07
+              2208816932.07
             ],
             [
-              "HUNTINGTON INGALLS INCORPORATED",
-              2165242705
+              "BATH IRON WORKS CORPORATION",
+              1990777261.79
             ],
             [
               "NATIONAL STEEL AND SHIPBUILDING COMPANY",
-              1896292600.21
+              1910111102.16
             ],
             [
               "ELECTRIC BOAT CORPORATION",
@@ -148,21 +152,17 @@
             ],
             [
               "VIGOR MARINE LLC",
-              678036148.72
+              678349191.72
             ],
             [
               "BAE SYSTEMS MARITIME SOLUTIONS NORFOLK INC.",
-              499077937.2
-            ],
-            [
-              "BATH IRON WORKS CORPORATION",
-              475186786.79
+              498917903.42
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "DAVIE DEFENSE INC. led all vendors with $3.5B in obligations, 17.5% of the market."
+      "takeaway": "DAVIE DEFENSE INC. led all vendors with $3.5B in obligations, 15.2% of the market."
     }
   ],
   "crossLinks": [
@@ -203,37 +203,45 @@
         [
           2,
           {
-            "text": "HUNTINGTON INGALLS INC",
-            "href": "https://www.usaspending.gov/recipient/dde47d6b-a165-dbed-d5bd-a6e55ca6e591-C/latest/"
+            "text": "HUNTINGTON INGALLS INCORPORATED",
+            "href": "https://www.usaspending.gov/recipient/1eb5d9d6-aabf-3228-e6ab-79cf9729c9d7-C/latest/"
           },
-          2681988717.4
+          3494117531
         ],
         [
           3,
           {
-            "text": "BOLLINGER SHIPYARDS LOCKPORT, L.L.C.",
-            "href": "https://www.usaspending.gov/recipient/4499d230-8e56-a301-f0fa-ac4352a522c4-C/latest/"
+            "text": "HUNTINGTON INGALLS INC",
+            "href": "https://www.usaspending.gov/recipient/dde47d6b-a165-dbed-d5bd-a6e55ca6e591-C/latest/"
           },
-          2195099171.07
+          2729583354.4
         ],
         [
           4,
           {
-            "text": "HUNTINGTON INGALLS INCORPORATED",
-            "href": "https://www.usaspending.gov/recipient/1eb5d9d6-aabf-3228-e6ab-79cf9729c9d7-C/latest/"
+            "text": "BOLLINGER SHIPYARDS LOCKPORT, L.L.C.",
+            "href": "https://www.usaspending.gov/recipient/4499d230-8e56-a301-f0fa-ac4352a522c4-C/latest/"
           },
-          2165242705
+          2208816932.07
         ],
         [
           5,
           {
-            "text": "NATIONAL STEEL AND SHIPBUILDING COMPANY",
-            "href": "https://www.usaspending.gov/recipient/d3b182df-5daa-6f63-c00e-d99b7ba7875e-C/latest/"
+            "text": "BATH IRON WORKS CORPORATION",
+            "href": "https://www.usaspending.gov/recipient/7e9ba6ab-3f37-4abd-4708-bdeecb64ea02-C/latest/"
           },
-          1896292600.21
+          1990777261.79
         ],
         [
           6,
+          {
+            "text": "NATIONAL STEEL AND SHIPBUILDING COMPANY",
+            "href": "https://www.usaspending.gov/recipient/d3b182df-5daa-6f63-c00e-d99b7ba7875e-C/latest/"
+          },
+          1910111102.16
+        ],
+        [
+          7,
           {
             "text": "ELECTRIC BOAT CORPORATION",
             "href": "https://www.usaspending.gov/recipient/d5ab5f51-db3a-a26f-96a1-1b24c3e2802c-C/latest/"
@@ -241,7 +249,7 @@
           1719550490.74
         ],
         [
-          7,
+          8,
           {
             "text": "RAUMA MARINE CONSTRUCTIONS OY",
             "href": "https://www.usaspending.gov/recipient/034a63ea-a740-7158-6104-217442d63ef1-C/latest/"
@@ -249,28 +257,20 @@
           1122648775.26
         ],
         [
-          8,
+          9,
           {
             "text": "VIGOR MARINE LLC",
             "href": "https://www.usaspending.gov/recipient/1d4b036b-803c-6344-53e6-6fde8206978c-C/latest/"
           },
-          678036148.72
-        ],
-        [
-          9,
-          {
-            "text": "BAE SYSTEMS MARITIME SOLUTIONS NORFOLK INC.",
-            "href": "https://www.usaspending.gov/recipient/881cc7b1-1565-b245-1554-a9edc55a5f45-C/latest/"
-          },
-          499077937.2
+          678349191.72
         ],
         [
           10,
           {
-            "text": "BATH IRON WORKS CORPORATION",
-            "href": "https://www.usaspending.gov/recipient/7e9ba6ab-3f37-4abd-4708-bdeecb64ea02-C/latest/"
+            "text": "BAE SYSTEMS MARITIME SOLUTIONS NORFOLK INC.",
+            "href": "https://www.usaspending.gov/recipient/881cc7b1-1565-b245-1554-a9edc55a5f45-C/latest/"
           },
-          475186786.79
+          498917903.42
         ]
       ]
     },
@@ -316,7 +316,7 @@
             "text": "HUNTINGTON INGALLS INC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_N0002416C2116_9700_-NONE-_-NONE-/"
           },
-          12747474110.85,
+          12772630358.85,
           "Department of Defense"
         ],
         [
@@ -325,7 +325,7 @@
             "text": "HUNTINGTON INGALLS INCORPORATED",
             "href": "https://www.usaspending.gov/award/CONT_AWD_N0002423C2307_9700_-NONE-_-NONE-/"
           },
-          6988080141.83,
+          8313079132.83,
           "Department of Defense"
         ],
         [
@@ -334,7 +334,7 @@
             "text": "HUNTINGTON INGALLS INCORPORATED",
             "href": "https://www.usaspending.gov/award/CONT_AWD_N0002418C2307_9700_-NONE-_-NONE-/"
           },
-          6944031570.74,
+          6944181570.74,
           "Department of Defense"
         ],
         [
@@ -349,28 +349,28 @@
         [
           8,
           {
-            "text": "NATIONAL STEEL AND SHIPBUILDING COMPANY",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002416C2229_9700_-NONE-_-NONE-/"
+            "text": "BATH IRON WORKS CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002423C2305_9700_-NONE-_-NONE-/"
           },
-          5899193277.23,
+          6589808390,
           "Department of Defense"
         ],
         [
           9,
           {
-            "text": "BATH IRON WORKS CORPORATION",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002418C2305_9700_-NONE-_-NONE-/"
+            "text": "NATIONAL STEEL AND SHIPBUILDING COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002416C2229_9700_-NONE-_-NONE-/"
           },
-          5482147560.86,
+          5899576916.23,
           "Department of Defense"
         ],
         [
           10,
           {
             "text": "BATH IRON WORKS CORPORATION",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002423C2305_9700_-NONE-_-NONE-/"
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002418C2305_9700_-NONE-_-NONE-/"
           },
-          5075716991,
+          5482147560.86,
           "Department of Defense"
         ],
         [
@@ -388,7 +388,7 @@
             "text": "BATH IRON WORKS CORPORATION",
             "href": "https://www.usaspending.gov/award/CONT_AWD_N0002413C2305_9700_-NONE-_-NONE-/"
           },
-          4950625609.56,
+          4953015609.56,
           "Department of Defense"
         ],
         [
@@ -422,18 +422,18 @@
           16,
           {
             "text": "HUNTINGTON INGALLS INC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002409C2116_9700_-NONE-_-NONE-/"
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002415C2114_9700_-NONE-_-NONE-/"
           },
-          4517592663.83,
+          4534854202.12,
           "Department of Defense"
         ],
         [
           17,
           {
             "text": "HUNTINGTON INGALLS INC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002415C2114_9700_-NONE-_-NONE-/"
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002409C2116_9700_-NONE-_-NONE-/"
           },
-          4512854202.12,
+          4517862663.83,
           "Department of Defense"
         ],
         [
@@ -460,7 +460,7 @@
             "text": "HUNTINGTON INGALLS INCORPORATED",
             "href": "https://www.usaspending.gov/award/CONT_AWD_N0002416C2427_9700_-NONE-_-NONE-/"
           },
-          3372949545.4,
+          3373949545.4,
           "Department of Defense"
         ],
         [
@@ -524,6 +524,20 @@
         [
           1,
           {
+            "text": "N0002412C2115",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002412C2115_9700_-NONE-_-NONE-/"
+          },
+          {
+            "text": "ELECTRIC BOAT CORPORATION",
+            "href": "https://www.usaspending.gov/recipient/d5ab5f51-db3a-a26f-96a1-1b24c3e2802c-C/latest/"
+          },
+          20199842115,
+          "Department of Defense",
+          "2026-10-20"
+        ],
+        [
+          2,
+          {
             "text": "N0002411C2300",
             "href": "https://www.usaspending.gov/award/CONT_AWD_N0002411C2300_9700_-NONE-_-NONE-/"
           },
@@ -536,7 +550,7 @@
           "2026-12-31"
         ],
         [
-          2,
+          3,
           {
             "text": "N0002413C2305",
             "href": "https://www.usaspending.gov/award/CONT_AWD_N0002413C2305_9700_-NONE-_-NONE-/"
@@ -545,12 +559,12 @@
             "text": "BATH IRON WORKS CORPORATION",
             "href": "https://www.usaspending.gov/recipient/7e9ba6ab-3f37-4abd-4708-bdeecb64ea02-C/latest/"
           },
-          4950625609.56,
+          4953015609.56,
           "Department of Defense",
           "2027-01-31"
         ],
         [
-          3,
+          4,
           {
             "text": "N0002421C2106",
             "href": "https://www.usaspending.gov/award/CONT_AWD_N0002421C2106_9700_-NONE-_-NONE-/"
@@ -564,7 +578,7 @@
           "2026-10-06"
         ],
         [
-          4,
+          5,
           {
             "text": "N0002416C2427",
             "href": "https://www.usaspending.gov/award/CONT_AWD_N0002416C2427_9700_-NONE-_-NONE-/"
@@ -573,12 +587,12 @@
             "text": "HUNTINGTON INGALLS INCORPORATED",
             "href": "https://www.usaspending.gov/recipient/1eb5d9d6-aabf-3228-e6ab-79cf9729c9d7-C/latest/"
           },
-          3372949545.4,
+          3373949545.4,
           "Department of Defense",
           "2026-12-31"
         ],
         [
-          5,
+          6,
           {
             "text": "N0002413C2307",
             "href": "https://www.usaspending.gov/award/CONT_AWD_N0002413C2307_9700_-NONE-_-NONE-/"
@@ -592,7 +606,7 @@
           "2027-03-31"
         ],
         [
-          6,
+          7,
           {
             "text": "N0002418C2300",
             "href": "https://www.usaspending.gov/award/CONT_AWD_N0002418C2300_9700_-NONE-_-NONE-/"
@@ -606,7 +620,7 @@
           "2027-04-30"
         ],
         [
-          7,
+          8,
           {
             "text": "N0002415C4301",
             "href": "https://www.usaspending.gov/award/CONT_AWD_N0002415C4301_9700_-NONE-_-NONE-/"
@@ -615,23 +629,9 @@
             "text": "HUNTINGTON INGALLS INC",
             "href": "https://www.usaspending.gov/recipient/dde47d6b-a165-dbed-d5bd-a6e55ca6e591-C/latest/"
           },
-          1559555869,
+          1559803955,
           "Department of Defense",
           "2026-09-30"
-        ],
-        [
-          8,
-          {
-            "text": "N0002413C2112",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002413C2112_9700_-NONE-_-NONE-/"
-          },
-          {
-            "text": "HUNTINGTON INGALLS INC",
-            "href": "https://www.usaspending.gov/recipient/dde47d6b-a165-dbed-d5bd-a6e55ca6e591-C/latest/"
-          },
-          945341283,
-          "Department of Defense",
-          "2026-08-05"
         ],
         [
           9,
@@ -685,7 +685,7 @@
             "text": "BATH IRON WORKS CORPORATION",
             "href": "https://www.usaspending.gov/recipient/7e9ba6ab-3f37-4abd-4708-bdeecb64ea02-C/latest/"
           },
-          361849865,
+          362191969,
           "Department of Defense",
           "2027-07-31"
         ],
@@ -735,30 +735,30 @@
     }
   ],
   "narrative": {
-    "intro": "Ship Building and Repairing (NAICS 336611) shows $20B in federal contract obligations for FY2026 to date. The market posted 4,387 awards with an average award size of $4.6M, and obligations are down 46.1% year over year. Fiscal-year trends show previous totals of $20.7B in FY21, $22.3B in FY22, $26.9B in FY23, $24.2B in FY24, and $37.2B in FY25. The Department of Defense and the Department of Homeland Security are the largest buyers, accounting for $12B and $7.7B respectively in FY2026 to date. Major contractors captured sizable shares: DAVIE DEFENSE INC. at $3.5B, HUNTINGTON INGALLS INC at $2.7B, and BOLLINGER SHIPYARDS LOCKPORT, L.L.C. at $2.2B. The current-year totals are partial and represent fiscal year to date activity only.",
+    "intro": "Ship Building and Repairing (NAICS 336611) recorded $23.1B in federal contract obligations in FY2026 to date. The market produced 4,482 awards, with an average award size of $5.1M. Obligations are down 38.0% year over year. Historical fiscal-year totals show activity rising from $20.7B in FY21 to $37.2B in FY25, before the current FY26 total of $23.1B. The Department of Defense is the largest buyer with $15B in obligations, followed by the Department of Homeland Security with $7.7B. The vendor list is concentrated at the top, with DAVIE DEFENSE INC., HUNTINGTON INGALLS INCORPORATED, and HUNTINGTON INGALLS INC holding the largest shares at $3.5B, $3.5B, and $2.7B respectively. Other notable contractors include BOLLINGER SHIPYARDS LOCKPORT, L.L.C. at $2.2B and BATH IRON WORKS CORPORATION at $2B. The data reflect fiscal-year-to-date contract obligations and represent partial current-year totals.",
     "sections": [
       {
-        "heading": "What changed year over year?",
-        "body": "The market for NAICS 336611 obligations fell 46.1% year over year. The federal government obligated $20B in FY2026 to date after obligating $37.2B in FY25. The award count for FY2026 to date is 4,387 and the average award size is $4.6M."
+        "heading": "Who are the biggest buyers this fiscal year?",
+        "body": "The Department of Defense leads federal buying with $15B in obligations. The Department of Homeland Security is the second-largest buyer with $7.7B. Civilian agencies with notable obligations include the Department of Commerce at $150M and the Department of Transportation at $95.1M."
       },
       {
-        "heading": "Where is FY2026 spending concentrated?",
-        "body": "The Department of Defense leads buying with $12B in FY2026 to date, followed by the Department of Homeland Security with $7.7B. The largest contractors include DAVIE DEFENSE INC. at $3.5B, HUNTINGTON INGALLS INC at $2.7B, and BOLLINGER SHIPYARDS LOCKPORT, L.L.C. at $2.2B."
+        "heading": "Which firms capture the most contract dollars?",
+        "body": "DAVIE DEFENSE INC. and HUNTINGTON INGALLS INCORPORATED each captured $3.5B in obligations. HUNTINGTON INGALLS INC captured $2.7B, and BOLLINGER SHIPYARDS LOCKPORT, L.L.C. captured $2.2B. BATH IRON WORKS CORPORATION and NATIONAL STEEL AND SHIPBUILDING COMPANY captured $2B and $1.9B respectively."
       }
     ]
   },
   "faq": [
     {
       "q": "How much does the federal government spend on NAICS 336611?",
-      "a": "The federal government obligated $20B on NAICS 336611 in FY2026 to date. The market recorded 4,387 awards with an average award size of $4.6M. Obligations are down 46.1% compared with the prior year."
+      "a": "The federal government obligated $23.1B for NAICS 336611 in FY2026 to date. The market produced 4,482 awards with an average award size of $5.1M, and obligations are down 38.0% year over year. Fiscal-year history shows totals of $20.7B in FY21, $22.3B in FY22, $26.9B in FY23, $24.2B in FY24, and $37.2B in FY25."
     },
     {
       "q": "Which agencies buy the most NAICS 336611 services?",
-      "a": "The Department of Defense obligated $12B and the Department of Homeland Security obligated $7.7B in FY2026 to date. Other buyers with notable obligations include the Department of Commerce at $149M, the Department of Transportation at $70.7M, and the General Services Administration at $49.7M."
+      "a": "The Department of Defense buys the most NAICS 336611 services with $15B in obligations. The Department of Homeland Security is the next-largest buyer with $7.7B, followed by smaller obligations from agencies such as the Department of Commerce at $150M and the Department of Transportation at $95.1M."
     },
     {
       "q": "Who are the largest NAICS 336611 government contractors?",
-      "a": "DAVIE DEFENSE INC. received $3.5B in FY2026 to date. Other top vendors include HUNTINGTON INGALLS INC at $2.7B, BOLLINGER SHIPYARDS LOCKPORT, L.L.C. at $2.2B, HUNTINGTON INGALLS INCORPORATED at $2.2B, and NATIONAL STEEL AND SHIPBUILDING COMPANY at $1.9B."
+      "a": "DAVIE DEFENSE INC. and HUNTINGTON INGALLS INCORPORATED are the largest NAICS 336611 government contractors, each with $3.5B in obligations. HUNTINGTON INGALLS INC follows with $2.7B, and other top vendors include BOLLINGER SHIPYARDS LOCKPORT, L.L.C. at $2.2B and BATH IRON WORKS CORPORATION at $2B."
     }
   ],
   "related": [

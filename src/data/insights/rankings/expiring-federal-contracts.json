@@ -4,14 +4,14 @@
   "title": "Expiring Federal Contracts: The Next 12 Months of Recompetes",
   "h1": "Federal contracts expiring in the next 12 months: recompete watch",
   "metaDescription": "The largest federal contracts ending in the next 12 months, from USAspending.gov data. Track upcoming recompetes by incumbent, agency, and market.",
-  "updated": "2026-08-05",
+  "updated": "2026-08-10",
   "fyWindow": {
     "label": "FY2026 to date",
     "start": "2025-10-01",
-    "end": "2026-08-05"
+    "end": "2026-08-10"
   },
   "stats": {
-    "totalObligations": 231551149783.32004,
+    "totalObligations": 250342458496.21,
     "awardCount": null,
     "yoyGrowthPct": null,
     "avgAwardSize": null,
@@ -43,6 +43,10 @@
               20646113720.09
             ],
             [
+              "ELECTRIC BOAT CORPORATION",
+              20199842115
+            ],
+            [
               "THE BOEING COMPANY",
               7633729888.76
             ],
@@ -60,11 +64,7 @@
             ],
             [
               "BATH IRON WORKS CORPORATION",
-              4950625609.56
-            ],
-            [
-              "LOCKHEED MARTIN CORPORATION",
-              4577776198.83
+              4953015609.56
             ]
           ]
         }
@@ -82,15 +82,15 @@
           "points": [
             [
               "Jul-Sep 2026",
-              52906577188.71
+              51504025437.54
             ],
             [
               "Oct-Dec 2026",
-              42735269718.990005
+              62931913954.69
             ],
             [
               "Jan-Mar 2027",
-              40349385447.380005
+              40346601675.740005
             ],
             [
               "Apr-Jun 2027",
@@ -104,7 +104,7 @@
         }
       ],
       "unit": "usd",
-      "takeaway": "Apr-Jun 2027 is the heaviest stretch, with $61B in contract value reaching its end date."
+      "takeaway": "Oct-Dec 2026 is the heaviest stretch, with $62.9B in contract value reaching its end date."
     }
   ],
   "tables": [
@@ -141,6 +141,24 @@
         [
           2,
           {
+            "text": "N0002412C2115",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002412C2115_9700_-NONE-_-NONE-/"
+          },
+          {
+            "text": "ELECTRIC BOAT CORPORATION",
+            "href": "/insights/vendor/electric-boat/"
+          },
+          "Department of Defense",
+          {
+            "text": "Ship Building and Repairing (336611)",
+            "href": "/insights/naics/336611/"
+          },
+          20199842115,
+          "2026-10-20"
+        ],
+        [
+          3,
+          {
             "text": "N0001904C3146",
             "href": "https://www.usaspending.gov/award/CONT_AWD_N0001904C3146_9700_-NONE-_-NONE-/"
           },
@@ -157,7 +175,7 @@
           "2026-08-31"
         ],
         [
-          3,
+          4,
           {
             "text": "AIDOAATO1500007",
             "href": "https://www.usaspending.gov/award/CONT_AWD_AIDOAATO1500007_7200_AIDOAAI1500004_7200/"
@@ -175,7 +193,7 @@
           "2026-11-28"
         ],
         [
-          4,
+          5,
           {
             "text": "N0001913C9999",
             "href": "https://www.usaspending.gov/award/CONT_AWD_N0001913C9999_9700_-NONE-_-NONE-/"
@@ -193,7 +211,7 @@
           "2026-12-31"
         ],
         [
-          5,
+          6,
           {
             "text": "N0002411C2300",
             "href": "https://www.usaspending.gov/award/CONT_AWD_N0002411C2300_9700_-NONE-_-NONE-/"
@@ -211,25 +229,25 @@
           "2026-12-31"
         ],
         [
-          6,
+          7,
           {
             "text": "N0002413C2305",
             "href": "https://www.usaspending.gov/award/CONT_AWD_N0002413C2305_9700_-NONE-_-NONE-/"
           },
           {
             "text": "BATH IRON WORKS CORPORATION",
-            "href": "https://www.usaspending.gov/recipient/7e9ba6ab-3f37-4abd-4708-bdeecb64ea02-C/latest/"
+            "href": "/insights/vendor/bath-iron-works/"
           },
           "Department of Defense",
           {
             "text": "Ship Building and Repairing (336611)",
             "href": "/insights/naics/336611/"
           },
-          4950625609.56,
+          4953015609.56,
           "2027-01-31"
         ],
         [
-          7,
+          8,
           {
             "text": "N0002421C2106",
             "href": "https://www.usaspending.gov/award/CONT_AWD_N0002421C2106_9700_-NONE-_-NONE-/"
@@ -247,7 +265,7 @@
           "2026-10-06"
         ],
         [
-          8,
+          9,
           {
             "text": "N0002416C2427",
             "href": "https://www.usaspending.gov/award/CONT_AWD_N0002416C2427_9700_-NONE-_-NONE-/"
@@ -261,11 +279,11 @@
             "text": "Ship Building and Repairing (336611)",
             "href": "/insights/naics/336611/"
           },
-          3372949545.4,
+          3373949545.4,
           "2026-12-31"
         ],
         [
-          9,
+          10,
           {
             "text": "NSFDACS1219442",
             "href": "https://www.usaspending.gov/award/CONT_AWD_NSFDACS1219442_4900_-NONE-_-NONE-/"
@@ -283,7 +301,7 @@
           "2026-09-30"
         ],
         [
-          10,
+          11,
           {
             "text": "N0001914C0050",
             "href": "https://www.usaspending.gov/award/CONT_AWD_N0001914C0050_9700_-NONE-_-NONE-/"
@@ -301,7 +319,7 @@
           "2026-12-31"
         ],
         [
-          11,
+          12,
           {
             "text": "AIDOAATO1500009",
             "href": "https://www.usaspending.gov/award/CONT_AWD_AIDOAATO1500009_7200_AIDOAAI1500004_7200/"
@@ -319,7 +337,7 @@
           "2026-11-28"
         ],
         [
-          12,
+          13,
           {
             "text": "FA861512C6016",
             "href": "https://www.usaspending.gov/award/CONT_AWD_FA861512C6016_9700_-NONE-_-NONE-/"
@@ -337,7 +355,7 @@
           "2026-12-31"
         ],
         [
-          13,
+          14,
           {
             "text": "FA824018C7218",
             "href": "https://www.usaspending.gov/award/CONT_AWD_FA824018C7218_9700_-NONE-_-NONE-/"
@@ -355,7 +373,7 @@
           "2026-09-30"
         ],
         [
-          14,
+          15,
           {
             "text": "N0001916C0048",
             "href": "https://www.usaspending.gov/award/CONT_AWD_N0001916C0048_9700_-NONE-_-NONE-/"
@@ -373,7 +391,7 @@
           "2027-01-31"
         ],
         [
-          15,
+          16,
           {
             "text": "80MSFC18C0011",
             "href": "https://www.usaspending.gov/award/CONT_AWD_80MSFC18C0011_8000_-NONE-_-NONE-/"
@@ -391,7 +409,7 @@
           "2026-11-30"
         ],
         [
-          16,
+          17,
           {
             "text": "N0001915C0114",
             "href": "https://www.usaspending.gov/award/CONT_AWD_N0001915C0114_9700_-NONE-_-NONE-/"
@@ -409,7 +427,7 @@
           "2026-12-31"
         ],
         [
-          17,
+          18,
           {
             "text": "N0002415C4301",
             "href": "https://www.usaspending.gov/award/CONT_AWD_N0002415C4301_9700_-NONE-_-NONE-/"
@@ -423,11 +441,11 @@
             "text": "Ship Building and Repairing (336611)",
             "href": "/insights/naics/336611/"
           },
-          1559555869,
+          1559803955,
           "2026-09-30"
         ],
         [
-          18,
+          19,
           {
             "text": "N0002416C2111",
             "href": "https://www.usaspending.gov/award/CONT_AWD_N0002416C2111_9700_-NONE-_-NONE-/"
@@ -445,7 +463,7 @@
           "2026-12-31"
         ],
         [
-          19,
+          20,
           {
             "text": "36C10B22N0051EHRM",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C10B22N0051EHRM_3600_36C10B18D5000_3600/"
@@ -461,24 +479,6 @@
           },
           1424879474.43,
           "2026-10-24"
-        ],
-        [
-          20,
-          {
-            "text": "36C10B21N10070021",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10B21N10070021_3600_VA11816D1007_3600/"
-          },
-          {
-            "text": "BOOZ ALLEN HAMILTON INC",
-            "href": "/insights/vendor/booz-allen-hamilton/"
-          },
-          "Department of Veterans Affairs",
-          {
-            "text": "Computer Systems Design Services (541512)",
-            "href": "/insights/naics/541512/"
-          },
-          1365285599.63,
-          "2026-08-07"
         ],
         [
           21,
@@ -549,7 +549,7 @@
             "text": "Computer Systems Design Services (541512)",
             "href": "/insights/naics/541512/"
           },
-          1195945730.89,
+          1186157197.76,
           "2026-11-27"
         ],
         [
@@ -567,7 +567,7 @@
             "text": "Engineering Services (541330)",
             "href": "/insights/naics/541330/"
           },
-          1167667763.45,
+          1175671370.45,
           "2026-09-05"
         ],
         [
@@ -621,29 +621,11 @@
             "text": "Computer Systems Design Services (541512)",
             "href": "/insights/naics/541512/"
           },
-          968579250.54,
+          974169904.37,
           "2026-11-19"
         ],
         [
           29,
-          {
-            "text": "N0002413C2112",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002413C2112_9700_-NONE-_-NONE-/"
-          },
-          {
-            "text": "HUNTINGTON INGALLS INC",
-            "href": "/insights/vendor/huntington-ingalls/"
-          },
-          "Department of Defense",
-          {
-            "text": "Ship Building and Repairing (336611)",
-            "href": "/insights/naics/336611/"
-          },
-          945341283,
-          "2026-08-05"
-        ],
-        [
-          30,
           {
             "text": "47QFCA22F0051",
             "href": "https://www.usaspending.gov/award/CONT_AWD_47QFCA22F0051_4732_GS00Q14OADU122_4732/"
@@ -657,11 +639,11 @@
             "text": "Engineering Services (541330)",
             "href": "/insights/naics/541330/"
           },
-          912605172.5,
+          922574993.5,
           "2026-09-13"
         ],
         [
-          31,
+          30,
           {
             "text": "FA910124CB002",
             "href": "https://www.usaspending.gov/award/CONT_AWD_FA910124CB002_9700_-NONE-_-NONE-/"
@@ -676,6 +658,24 @@
             "href": "/insights/naics/541330/"
           },
           905184719.49,
+          "2026-09-30"
+        ],
+        [
+          31,
+          {
+            "text": "W52P1J19F0398",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W52P1J19F0398_9700_W52P1J19D0045_9700/"
+          },
+          {
+            "text": "V2X SYSTEMS LLC",
+            "href": "/insights/vendor/v2x-systems/"
+          },
+          "Department of Defense",
+          {
+            "text": "Facilities Support Services (561210)",
+            "href": "/insights/naics/561210/"
+          },
+          889853617.46,
           "2026-09-30"
         ]
       ]
@@ -862,7 +862,7 @@
           },
           {
             "text": "GENERAL ATOMICS AERONAUTICAL SYSTEMS, INC.",
-            "href": "https://www.usaspending.gov/recipient/e262465b-a9eb-8206-020a-98327ae917fa-C/latest/"
+            "href": "/insights/vendor/general-atomics-aeronautical-systems/"
           },
           "Department of Defense",
           {
@@ -905,7 +905,7 @@
             "text": "Research and Development in the Physical, Engineering, and Life Sciences (541715)",
             "href": "/insights/naics/541715/"
           },
-          1805581836.44,
+          1800062082.8,
           "2027-03-31"
         ],
         [
@@ -1013,7 +1013,7 @@
             "text": "Computer Systems Design Services (541512)",
             "href": "/insights/naics/541512/"
           },
-          941921933.41,
+          942267915.41,
           "2027-02-19"
         ],
         [
@@ -1038,30 +1038,30 @@
     }
   ],
   "narrative": {
-    "intro": "Total expiring federal contract value in the next 12 months is $232B. NATIONAL TECHNOLOGY & ENGINEERING SOLUTIONS OF SANDIA, LLC holds the single largest expiring contract value at $42.8B. THE BOEING COMPANY appears twice on the top list with expiring contract values of $32B and $7.6B. SAVANNAH RIVER NUCLEAR SOLUTIONS LLC has $27.6B in expiring contract value. LOCKHEED MARTIN Services and corporate entries appear with $20.6B, $5B, and $4.6B entries, and NORTHROP GRUMMAN SYSTEMS CORPORATION and BATH IRON WORKS CORPORATION appear with $5.4B and $5B respectively. CHEMONICS INTERNATIONAL, INC. is on the list with $6.7B. Quarter-by-quarter, the largest expiring totals fall in Apr-Jun 2027 at $61B, followed by Jul-Sep 2026 at $52.9B, Oct-Dec 2026 at $42.7B, Jan-Mar 2027 at $40.3B, and Jul-Sep 2027 at $34.6B. Note. Award value figures are total contract values for contracts whose period of performance ends within the next 12 months. End dates can be extended by options and modifications.",
+    "intro": "This report lists federal contracts whose periods of performance end within the next 12 months and therefore face upcoming recompete activity. The total contract value with end dates inside that window is $250B. The largest single expiring awards include NATIONAL TECHNOLOGY & ENGINEERING SOLUTIONS OF SANDIA, LLC ($42.8B), THE BOEING COMPANY ($32B), and SAVANNAH RIVER NUCLEAR SOLUTIONS LLC ($27.6B). Expiring contract value clusters by quarter: Jul-Sep 2026 accounts for $51.5B, Oct-Dec 2026 accounts for $62.9B, Jan-Mar 2027 accounts for $40.3B, Apr-Jun 2027 accounts for $61B, and Jul-Sep 2027 accounts for $34.6B. The list of largest expiring contracts also includes multiple entries for THE BOEING COMPANY ($7.6B), LOCKHEED MARTIN CORPORATION ($5B), and BATH IRON WORKS CORPORATION ($5B). Award values are total contract values for contracts whose period of performance ends within the next 12 months, and end dates can be extended by options and modifications.",
     "sections": [
       {
-        "heading": "Which contractors hold the largest expiring contracts?",
-        "body": "NATIONAL TECHNOLOGY & ENGINEERING SOLUTIONS OF SANDIA, LLC holds the largest expiring contract value at $42.8B. THE BOEING COMPANY holds $32B and a separate $7.6B expiring contract. SAVANNAH RIVER NUCLEAR SOLUTIONS LLC holds $27.6B, and LOCKHEED MARTIN SERVICES, LLC holds $20.6B. CHEMONICS INTERNATIONAL, INC., NORTHROP GRUMMAN SYSTEMS CORPORATION, LOCKHEED MARTIN CORPORATION, and BATH IRON WORKS CORPORATION appear on the top list with $6.7B, $5.4B, $5B, and $5B respectively."
+        "heading": "Which contractors hold the biggest expiring deals by August 2027?",
+        "body": "NATIONAL TECHNOLOGY & ENGINEERING SOLUTIONS OF SANDIA, LLC tops the list with $42.8B. THE BOEING COMPANY holds two expiring entries totaling $32B and $7.6B. Other major holders include SAVANNAH RIVER NUCLEAR SOLUTIONS LLC ($27.6B), LOCKHEED MARTIN SERVICES, LLC ($20.6B), and ELECTRIC BOAT CORPORATION ($20.2B)."
       },
       {
-        "heading": "When do the largest expiring contracts end by quarter?",
-        "body": "Apr-Jun 2027 has the largest expiring contract value at $61B. Jul-Sep 2026 has $52.9B, Oct-Dec 2026 has $42.7B, and Jan-Mar 2027 has $40.3B. Jul-Sep 2027 shows $34.6B in expiring contract value."
+        "heading": "When do most of these contracts expire over the next year?",
+        "body": "Oct-Dec 2026 and Apr-Jun 2027 are the largest quarterly buckets with $62.9B and $61B respectively. Jul-Sep 2026 contains $51.5B and Jan-Mar 2027 contains $40.3B. The Jul-Sep 2027 quarter contains $34.6B."
       }
     ]
   },
   "faq": [
     {
       "q": "Which large federal contracts are expiring soon?",
-      "a": "Large federal contracts expiring soon include a $42.8B contract held by NATIONAL TECHNOLOGY & ENGINEERING SOLUTIONS OF SANDIA, LLC and a $32B contract held by THE BOEING COMPANY. Additional large expiring contracts include $27.6B for SAVANNAH RIVER NUCLEAR SOLUTIONS LLC, $20.6B for LOCKHEED MARTIN SERVICES, LLC, $7.6B and $32B entries for THE BOEING COMPANY, $6.7B for CHEMONICS INTERNATIONAL, INC., $5.4B for NORTHROP GRUMMAN SYSTEMS CORPORATION, $5B entries for LOCKHEED MARTIN CORPORATION and BATH IRON WORKS CORPORATION, and a $4.6B entry for LOCKHEED MARTIN CORPORATION."
+      "a": "The largest expiring federal contracts include NATIONAL TECHNOLOGY & ENGINEERING SOLUTIONS OF SANDIA, LLC ($42.8B), THE BOEING COMPANY ($32B and $7.6B), and SAVANNAH RIVER NUCLEAR SOLUTIONS LLC ($27.6B). Additional large expiring contracts include LOCKHEED MARTIN SERVICES, LLC ($20.6B), ELECTRIC BOAT CORPORATION ($20.2B), CHEMONICS INTERNATIONAL, INC. ($6.7B), NORTHROP GRUMMAN SYSTEMS CORPORATION ($5.4B), LOCKHEED MARTIN CORPORATION ($5B), and BATH IRON WORKS CORPORATION ($5B)."
     },
     {
       "q": "What is a contract recompete?",
-      "a": "A contract recompete is the process agencies use to award a follow-on contract when a current contract is expiring. Agencies can run an open competition, limit competition, or extend the existing contract through options and modifications when determining the follow-on award."
+      "a": "A contract recompete is the competitive process that occurs when an existing contract’s period of performance ends and the government seeks a successor award. The process can involve full and open competition, restricted competition, or sole-source actions depending on procurement rules and the contracting agency’s strategy. Planning for a recompete typically considers performance history, requirements updates, and option periods."
     },
     {
       "q": "How current is this recompete data?",
-      "a": "This recompete data covers contracts with periods of performance ending within the next 12 months and is reported for FY2026 to date. The data lists total contract values for those expiring contracts and notes that end dates can be extended by options and modifications."
+      "a": "This report covers FY2026 to date. The award value figures are total contract values for contracts whose period of performance ends within the next 12 months, and end dates can be extended by options and modifications."
     }
   ],
   "related": [
@@ -1108,12 +1108,20 @@
       "href": "/insights/vendor/savannah-river-nuclear-solutions/"
     },
     {
+      "label": "Electric Boat federal contracts",
+      "href": "/insights/vendor/electric-boat/"
+    },
+    {
       "label": "Northrop Grumman Systems federal contracts",
       "href": "/insights/vendor/northrop-grumman-systems/"
     },
     {
       "label": "Lockheed Martin federal contracts",
       "href": "/insights/vendor/lockheed-martin/"
+    },
+    {
+      "label": "Bath Iron Works federal contracts",
+      "href": "/insights/vendor/bath-iron-works/"
     },
     {
       "label": "Huntington Ingalls federal contracts",
@@ -1132,20 +1140,16 @@
       "href": "/insights/vendor/fisher-sand-and-gravel/"
     },
     {
+      "label": "General Atomics Aeronautical Systems federal contracts",
+      "href": "/insights/vendor/general-atomics-aeronautical-systems/"
+    },
+    {
       "label": "Southwest Valley Constructors federal contracts",
       "href": "/insights/vendor/southwest-valley-constructors/"
     },
     {
-      "label": "Electric Boat federal contracts",
-      "href": "/insights/vendor/electric-boat/"
-    },
-    {
       "label": "Oracle Health Government Services federal contracts",
       "href": "/insights/vendor/oracle-health-government-services/"
-    },
-    {
-      "label": "Booz Allen Hamilton federal contracts",
-      "href": "/insights/vendor/booz-allen-hamilton/"
     },
     {
       "label": "Bell Textron federal contracts",
@@ -1154,6 +1158,10 @@
     {
       "label": "Science Applications International federal contracts",
       "href": "/insights/vendor/science-applications-international/"
+    },
+    {
+      "label": "Booz Allen Hamilton federal contracts",
+      "href": "/insights/vendor/booz-allen-hamilton/"
     },
     {
       "label": "CACI Federal federal contracts",
@@ -1170,6 +1178,10 @@
     {
       "label": "Raytheon federal contracts",
       "href": "/insights/vendor/raytheon/"
+    },
+    {
+      "label": "V2X Systems federal contracts",
+      "href": "/insights/vendor/v2x-systems/"
     }
   ],
   "crossLinksHeading": "Incumbent vendor profiles",

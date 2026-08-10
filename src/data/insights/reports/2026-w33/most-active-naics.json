@@ -1,0 +1,207 @@
+{
+  "pageType": "report",
+  "slug": "most-active-naics",
+  "week": "2026-w33",
+  "publishedDate": "2026-08-10",
+  "title": "Most Active Federal Markets This Week, Aug 4–10, 2026",
+  "h1": "Most active federal contract markets, week of Aug 4–10, 2026",
+  "metaDescription": "The most active federal contract industries (by newly reported obligations) the week of Aug 4–10, 2026, led by Engineering Services.",
+  "updated": "2026-08-10",
+  "fyWindow": {
+    "label": "Week of Aug 4–10, 2026",
+    "start": "2026-08-04",
+    "end": "2026-08-10"
+  },
+  "stats": {
+    "totalObligations": 2010803715.64,
+    "awardCount": null,
+    "yoyGrowthPct": null,
+    "avgAwardSize": null,
+    "smallBusinessSharePct": null
+  },
+  "charts": [
+    {
+      "id": "2026-w33-most-active-naics",
+      "type": "bar",
+      "title": "Most active industries (NAICS) by obligations, week of Aug 4–10, 2026",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "Engineering Services",
+              362787360.65
+            ],
+            [
+              "Computer Systems Design Services",
+              361682722.7
+            ],
+            [
+              "Other Computer Related Services",
+              263545767.99
+            ],
+            [
+              "Facilities Support Services",
+              197504446.39
+            ],
+            [
+              "Commercial and Institutional Building Construction",
+              170719113.66
+            ],
+            [
+              "Offices of Lawyers",
+              169678107.87
+            ],
+            [
+              "Research and Development in Biotechnology (except Nanobiotechnology)",
+              128200273.61
+            ],
+            [
+              "Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology)",
+              124784154.09
+            ],
+            [
+              "Custom Computer Programming Services",
+              116312524.03
+            ],
+            [
+              "Administrative Management and General Management Consulting Services",
+              115589244.65
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Engineering Services was the most active market, with $363M in newly reported obligations."
+    }
+  ],
+  "tables": [
+    {
+      "title": "Most active industries, week of Aug 4–10, 2026",
+      "columns": [
+        "Rank",
+        "Industry (NAICS)",
+        "Obligations"
+      ],
+      "rows": [
+        [
+          1,
+          {
+            "text": "Engineering Services (541330)",
+            "href": "/insights/naics/541330/"
+          },
+          362787360.65
+        ],
+        [
+          2,
+          {
+            "text": "Computer Systems Design Services (541512)",
+            "href": "/insights/naics/541512/"
+          },
+          361682722.7
+        ],
+        [
+          3,
+          {
+            "text": "Other Computer Related Services (541519)",
+            "href": "/insights/naics/541519/"
+          },
+          263545767.99
+        ],
+        [
+          4,
+          {
+            "text": "Facilities Support Services (561210)",
+            "href": "/insights/naics/561210/"
+          },
+          197504446.39
+        ],
+        [
+          5,
+          {
+            "text": "Commercial and Institutional Building Construction (236220)",
+            "href": "/insights/naics/236220/"
+          },
+          170719113.66
+        ],
+        [
+          6,
+          {
+            "text": "Offices of Lawyers (541110)",
+            "href": null
+          },
+          169678107.87
+        ],
+        [
+          7,
+          {
+            "text": "Research and Development in Biotechnology (except Nanobiotechnology) (541714)",
+            "href": null
+          },
+          128200273.61
+        ],
+        [
+          8,
+          {
+            "text": "Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology) (541715)",
+            "href": "/insights/naics/541715/"
+          },
+          124784154.09
+        ],
+        [
+          9,
+          {
+            "text": "Custom Computer Programming Services (541511)",
+            "href": "/insights/naics/541511/"
+          },
+          116312524.03
+        ],
+        [
+          10,
+          {
+            "text": "Administrative Management and General Management Consulting Services (541611)",
+            "href": "/insights/naics/541611/"
+          },
+          115589244.65
+        ]
+      ]
+    }
+  ],
+  "narrative": {
+    "intro": "Engineering Services was the most active federal contract market the week of Aug 4–10, 2026, with $363M in newly reported obligations. The ten most active industries obligated $2B combined.",
+    "sections": []
+  },
+  "faq": [],
+  "related": [
+    {
+      "label": "NAICS 541330: Engineering Services",
+      "href": "/insights/naics/541330/"
+    },
+    {
+      "label": "NAICS 541512: Computer Systems Design Services",
+      "href": "/insights/naics/541512/"
+    },
+    {
+      "label": "NAICS 541519: Other Computer Related Services",
+      "href": "/insights/naics/541519/"
+    },
+    {
+      "label": "NAICS 561210: Facilities Support Services",
+      "href": "/insights/naics/561210/"
+    },
+    {
+      "label": "NAICS 236220: Commercial and Institutional Building Construction",
+      "href": "/insights/naics/236220/"
+    },
+    {
+      "label": "NAICS 541715: Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology)",
+      "href": "/insights/naics/541715/"
+    }
+  ],
+  "sources": [
+    {
+      "label": "USAspending.gov award data",
+      "href": "https://www.usaspending.gov"
+    }
+  ]
+}
