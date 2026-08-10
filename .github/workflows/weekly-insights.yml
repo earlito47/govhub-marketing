@@ -44,10 +44,10 @@ jobs:
     timeout-minutes: 60
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Set up Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
           node-version: 20
           cache: npm
@@ -67,7 +67,7 @@ jobs:
         run: echo "week=$(date -u +%G-w%V)" >> "$GITHUB_OUTPUT"
 
       - name: Restore USAspending response cache
-        uses: actions/cache/restore@v4
+        uses: actions/cache/restore@v5
         with:
           path: .cache
           key: insights-usaspending-${{ steps.week.outputs.week }}-${{ github.run_id }}-${{ github.run_attempt }}
@@ -86,7 +86,7 @@ jobs:
       # exactly what lets the next attempt get further.
       - name: Save USAspending response cache
         if: always()
-        uses: actions/cache/save@v4
+        uses: actions/cache/save@v5
         with:
           path: .cache
           key: insights-usaspending-${{ steps.week.outputs.week }}-${{ github.run_id }}-${{ github.run_attempt }}
