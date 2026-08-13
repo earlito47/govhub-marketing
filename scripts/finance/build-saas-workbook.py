@@ -5,7 +5,7 @@ from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
 from openpyxl.utils import get_column_letter
 from openpyxl.comments import Comment
 
-OUT = "/tmp/claude-0/-home-user/d0066b2f-6ca2-5e2b-baa6-092f3522a712/scratchpad/GovHub_SaaS_Metrics_v2.xlsx"
+OUT = "/home/user/govhub-marketing/docs/GovHub_SaaS_Metrics_v2.xlsx"
 
 FONT = "Arial"
 BLUE   = Font(name=FONT, size=10, color="0000FF")            # hardcoded input
@@ -223,12 +223,11 @@ for t in [
     ws.cell(r, 2, t).font = SMALL; r += 1
 r += 1
 
-ws.cell(r, 2, "TWO OPEN ITEMS YOU NEED TO RESOLVE").font = H2; r += 1
+ws.cell(r, 2, "THE OPEN ITEM YOU NEED TO RESOLVE").font = H2; r += 1
 for t in [
   "1. Stripe is not wired up. Every row in the plans table has a null stripe_price_id (monthly and annual). There is no",
   "   code path that can take money today. Until that ships, trial → paid conversion is structurally 0%, not behaviourally 0%.",
-  "2. Supabase is not in your cost list. The GovProp project is ACTIVE_HEALTHY and serving production. If it is on the free",
-  "   tier, it is a capacity risk; if it is billed, it is a missing cost line. Expenses row is stubbed at $0 pending your answer.",
+  "   (Supabase was resolved 2026-08-13: $25.00/month, now booked on the Expenses tab.)",
 ]:
     ws.cell(r, 2, t).font = BLACK; r += 1
 
@@ -956,7 +955,7 @@ ops = [
   ("Resend", "$20.00 / month", 20.00, "Operational", "Fixed", "Founder-provided"),
   ("Cloudflare", "$5.00 / month", 5.00, "Operational", "Fixed", "Founder-provided"),
   ("govhub.online (main domain)", "$40.00 / year", None, "Operational", "Annual", "Renews 9/26 every year. Monthly figure is the $40 amortised."),
-  ("Supabase", "unknown", 0.00, "Operational", "OPEN ITEM", "NOT in the founder's cost list, but GovProp is ACTIVE_HEALTHY in production. Confirm tier."),
+  ("Supabase", "$25.00 / month", 25.00, "Operational", "Fixed", "Founder-provided. Hosts the GovProp production database."),
 ]
 mkt = [
   ("Postiz", "$29.00 / month", 29.00, "Marketing", "Fixed", "Founder-provided"),
@@ -1077,6 +1076,7 @@ r = datarow(ws, r, "Anthropic API", "v2_token_usage.est_cost_usd", API_COST, CUR
 r = datarow(ws, r, "Claude subscription", "Founder-provided run-rate", [None]*11+[100.00], CUR2)
 r = datarow(ws, r, "Resend", "Founder-provided run-rate", [None]*11+[20.00], CUR2)
 r = datarow(ws, r, "Cloudflare", "Founder-provided run-rate", [None]*11+[5.00], CUR2)
+r = datarow(ws, r, "Supabase", "Founder-provided run-rate", [None]*11+[25.00], CUR2)
 r = datarow(ws, r, "Postiz", "Founder-provided run-rate", [None]*11+[29.00], CUR2)
 r = datarow(ws, r, "Instantly.ai", "Founder-provided run-rate", [None]*11+[99.00], CUR2)
 r = datarow(ws, r, "Apollo", "Founder-provided run-rate", [None]*11+[59.00], CUR2)
@@ -1331,7 +1331,7 @@ bm = [
  ("Cold email","Follow-ups","2–3 touches; ~40%+ of replies come from follow-ups","Most senders quit after one email."),
  ("SEO","Time to compounding","6–12 months","You are at month 2 of real indexation. Judge on keywords, not revenue."),
  ("SEO","CTR by position","Position 1–3 ≈ 10–30%+; page 2+ ≈ ~0","'govwin' at position 23 earns almost nothing. Moving it is the whole game."),
- ("Cash","Runway","≥12 months","At ~$413/mo burn this is governed by your personal runway, not the company's."),
+ ("Cash","Runway","≥12 months","At ~$419/mo burn this is governed by your personal runway, not the company's."),
 ]
 for cat, metric, bench, why in bm:
     ws.cell(r, 1, cat).font = BOLD

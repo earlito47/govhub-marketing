@@ -86,27 +86,27 @@ webhooks into that table would fix it cheaply.
 ## Cost stack (founder-provided 2026-08-13)
 
 **Operational** — Claude $100.00/mo · Anthropic API variable · OpenAI API
-variable · Resend $20.00/mo · Cloudflare $5.00/mo · govhub.online $40.00/yr
-(renews 9/26).
+variable · Resend $20.00/mo · Cloudflare $5.00/mo · Supabase $25.00/mo ·
+govhub.online $40.00/yr (renews 9/26).
 
 **Marketing** — Postiz $29.00/mo · Instantly.ai $99.00/mo · Apollo $59.00/mo ·
 MillionVerifier $59.00/mo · 16 cold-email domains $141.00 first year, then
 $10.00/yr each ($160.00/yr).
 
-Total monthly burn at current run-rate: **$393.98** (operational $136.23 +
-marketing $257.75). Annualised: ~$4,728. Lovable is decommissioned and removed.
+Total monthly burn at current run-rate: **$418.98** (operational $161.23 +
+marketing $257.75). Annualised: ~$5,028. Lovable is decommissioned and removed.
 
 Apollo is flagged as uncertain — the workbook carries a scenario block for it
-at $0 / $59 / $159 per month.
+at $0 / $59 / $159 per month ($359.98 / $418.98 / $518.98 total burn).
 
-Two open items:
+One open item:
 
-1. **Supabase is not in the cost list** but the GovProp project is
-   `ACTIVE_HEALTHY` and serving production. Either it is on the free tier (a
-   capacity risk) or it is billed (a missing cost line). Stubbed at $0.
-2. **No labour cost is booked anywhere.** The Calculator imputes $5,000/mo of
+1. **No labour cost is booked anywhere.** The Calculator imputes $5,000/mo of
    founder time to sales & marketing by default, because at $0 the CAC is just
    the software bill and LTV:CAC comes out around 65x — not a number to present.
+
+Resolved 2026-08-13: Supabase is $25.00/month (founder-confirmed) and is now
+booked as an operational line rather than stubbed at $0.
 
 ## Modelled unit economics (Calculator defaults)
 
