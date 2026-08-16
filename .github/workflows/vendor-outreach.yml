@@ -48,6 +48,11 @@ jobs:
 
       # No npm ci: the script and the roster lib it imports are stdlib-only.
 
+      # Cheap and network-free, and it runs BEFORE any send: the company name
+      # and the greeting are the two things a vendor only ever sees once.
+      - name: Self-test the email rendering
+        run: node scripts/outreach/vendor-outreach.selftest.mjs
+
       - name: Resolve contacts for newly published vendors
         run: node scripts/outreach/vendor-outreach.mjs --resolve --limit 15
         env:
@@ -70,14 +75,34 @@ jobs:
 
       # The ledger is the send record — committing it is what makes tomorrow's
       # run skip today's vendors. [skip ci] keeps this from triggering builds.
+      #
+      # always(): a send that fails partway through has still mailed the
+      # vendors ahead of it in the batch. Leaving that uncommitted because the
+      # step went red is how a vendor gets a second email, which is the one
+      # thing this workflow must never do. The script records each send before
+      # it moves on, so the ledger is accurate even on a failed run.
+      #
+      # Rebase before pushing: main moves under this job (the vendor publish
+      # and the digest both commit), and a rejected push would lose the same
+      # record.
       - name: Commit ledger
+        if: always()
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/vendor-outreach.json
           if git diff --cached --quiet; then
             echo "Ledger unchanged."
-          else
-            git commit -m "outreach: ledger update $(date -u +%F) [skip ci]"
-            git push
+            exit 0
           fi
+          git commit -m "outreach: ledger update $(date -u +%F) [skip ci]"
+          for attempt in 1 2 3 4; do
+            if git push; then
+              exit 0
+            fi
+            echo "Push failed (attempt $attempt); rebasing onto origin and retrying."
+            sleep $((2 ** attempt))
+            git pull --rebase origin "${GITHUB_REF_NAME}"
+          done
+          echo "::error::Could not push the outreach ledger. Sends from this run are NOT recorded; do not re-run until it is committed by hand."
+          exit 1
