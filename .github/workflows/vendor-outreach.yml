@@ -53,6 +53,11 @@ jobs:
       - name: Self-test the email rendering
         run: node scripts/outreach/vendor-outreach.selftest.mjs
 
+      # Apollo bills a credit per company lookup that returns a result, and up
+      # to 3 more per vendor to reveal an email, so --limit is the daily credit
+      # ceiling: at most 15 lookups plus 45 reveals. Vendors neither tier can
+      # resolve come back around every 14 days rather than being retired, so
+      # this queue keeps moving instead of draining to nothing.
       - name: Resolve contacts for newly published vendors
         run: node scripts/outreach/vendor-outreach.mjs --resolve --limit 15
         env:
