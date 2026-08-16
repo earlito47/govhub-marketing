@@ -25,14 +25,16 @@
     },
     "aerospace": {
       "company": "Aerospace",
-      "contactName": "Matthew",
-      "contactTitle": "Capture Manager",
-      "email": "mpipes@fieldaero.com",
-      "source": "apollo",
-      "status": "sent",
-      "sentAt": "2026-08-11T16:10:58.508Z",
-      "resendId": "a234ff88-1d23-454f-ac6c-dc8a44d987fa",
-      "notes": ""
+      "contactName": "",
+      "contactTitle": "",
+      "email": "",
+      "source": "",
+      "status": "no-contact",
+      "sentAt": null,
+      "resendId": null,
+      "resolveAttempts": 0,
+      "lastResolveAt": null,
+      "notes": "reopened: the only send for this vendor went to mpipes@fieldaero.com, matched Field Aerospace, a different company, via the old substring company match; that address is suppressed"
     },
     "aerovironment": {
       "company": "Aerovironment",
@@ -685,14 +687,16 @@
     },
     "general-electric": {
       "company": "General Electric",
-      "contactName": "Theresa",
-      "contactTitle": "Business Development Manager",
-      "email": "theresa.beach@pgn.com",
-      "source": "apollo",
-      "status": "sent",
-      "sentAt": "2026-08-10T16:09:00.400Z",
-      "resendId": "e4dc5638-ed1f-4c5a-a3dd-9013913b35b4",
-      "notes": ""
+      "contactName": "",
+      "contactTitle": "",
+      "email": "",
+      "source": "",
+      "status": "no-contact",
+      "sentAt": null,
+      "resendId": null,
+      "resolveAttempts": 0,
+      "lastResolveAt": null,
+      "notes": "reopened: the only send for this vendor went to theresa.beach@pgn.com, matched Portland General Electric, a different company, via the old substring company match; that address is suppressed"
     },
     "general-matter": {
       "company": "General Matter",
@@ -1607,5 +1611,19 @@
       "resendId": null,
       "notes": ""
     }
-  }
+  },
+  "suppressed": [
+    {
+      "email": "mpipes@fieldaero.com",
+      "slug": "aerospace",
+      "reason": "misdirected send 2026-08-11T16:10:58.508Z (resend a234ff88-1d23-454f-ac6c-dc8a44d987fa): matched Field Aerospace, a different company, via the old substring company match",
+      "at": "2026-08-11T16:10:58.508Z"
+    },
+    {
+      "email": "theresa.beach@pgn.com",
+      "slug": "general-electric",
+      "reason": "misdirected send 2026-08-10T16:09:00.400Z (resend e4dc5638-ed1f-4c5a-a3dd-9013913b35b4): matched Portland General Electric, a different company, via the old substring company match",
+      "at": "2026-08-10T16:09:00.400Z"
+    }
+  ]
 }

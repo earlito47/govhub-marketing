@@ -5,7 +5,7 @@
 // Every case here is a real roster name or a real Apollo result. One email per
 // vendor ever means each of these is a mistake that cannot be taken back, so
 // they are pinned rather than eyeballed in a dry run.
-import { companyForEmail, renderEmail, sameCompany } from './vendor-outreach.mjs';
+import { companyForEmail, dueForResolve, renderEmail, sameCompany } from './vendor-outreach.mjs';
 
 let failures = 0;
 function check(name, actual, expected) {
@@ -64,6 +64,12 @@ check('reject: one shared word', sameCompany('SIERRA NEVADA COMPANY, LLC', 'Neva
 check('reject: unrelated', sameCompany('LEIDOS, INC.', 'Peraton'), false);
 check('reject: empty org', sameCompany('LEIDOS, INC.', ''), false);
 check('reject: single token, longer org', sameCompany('MITRE CORPORATION', 'Mitre Sports International'), false);
+// Known and deliberate: a company Apollo files under a trading name that
+// shares no token with the registered one does NOT auto-resolve, even when
+// Apollo's org search returns it. Trusting the search result here is exactly
+// what mailed Field Aerospace. The resolver logs the candidate it rejected
+// ("no Apollo org matched ... (saw SpaceX)") so the row can be filled by hand.
+check('reject: trading name, registered name', sameCompany('SPACE EXPLORATION TECHNOLOGIES CORP.', 'SpaceX'), false);
 
 // ---- Greeting --------------------------------------------------------------
 const greeting = (contactName) => renderEmail({ company: 'Acme', contactName }).body.split('\n')[0];
@@ -79,6 +85,21 @@ const subject = (company) => renderEmail({ company, contactName: '' }).subject;
 check('subject: possessive', subject('CGI Federal'), "CGI Federal's page on GovHub");
 check('subject: name ending in s', subject('BAE Systems'), "BAE Systems' page on GovHub");
 check('subject: ampersand survives', subject('AT&T Enterprises'), "AT&T Enterprises' page on GovHub");
+
+// ---- Retry eligibility -----------------------------------------------------
+// "no-contact" was terminal, which stranded 75 vendors — half the roster —
+// where no later fix could reach them.
+const NOW = Date.parse('2026-09-01T00:00:00Z');
+const days = (n) => new Date(NOW - n * 86400000).toISOString();
+check('retry: no ledger row', dueForResolve(undefined, NOW), true);
+check('retry: sent is final', dueForResolve({ status: 'sent' }, NOW), false);
+check('retry: ready is not re-resolved', dueForResolve({ status: 'ready' }, NOW), false);
+check('retry: opted-out is final', dueForResolve({ status: 'opted-out' }, NOW), false);
+// A legacy row predates the counter; it counts as one attempt already spent.
+check('retry: legacy no-contact row is due now', dueForResolve({ status: 'no-contact' }, NOW), true);
+check('retry: tried yesterday, too soon', dueForResolve({ status: 'no-contact', resolveAttempts: 1, lastResolveAt: days(1) }, NOW), false);
+check('retry: tried 20 days ago, due', dueForResolve({ status: 'no-contact', resolveAttempts: 1, lastResolveAt: days(20) }, NOW), true);
+check('retry: attempts exhausted', dueForResolve({ status: 'no-contact', resolveAttempts: 5, lastResolveAt: days(400) }, NOW), false);
 
 // ---- Body wrapping ---------------------------------------------------------
 // A long company name must not leave one line jutting out past the rest.

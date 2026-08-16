@@ -22,11 +22,15 @@
 //     in the public bulk extracts alike, so contacts come from a layered
 //     resolver instead: SBA certification search first (keyless, covers small
 //     businesses — see scripts/leadgen/enrich_sba.py for the API's quirks),
-//     then Apollo people search (APOLLO_API_KEY) for named contacts at the
-//     large primes. (A Tomba domain-search tier sat between them until
-//     2026-08-05, removed by user decision — no Tomba subscription.)
+//     then Apollo (APOLLO_API_KEY) for named contacts at the large primes:
+//     company name -> organization id, then people inside that organization.
+//     (A Tomba domain-search tier sat between them until 2026-08-05, removed
+//     by user decision — no Tomba subscription.)
+//   - A vendor neither tier can resolve is retried on a slow cadence rather
+//     than retired: Apollo's coverage of a company changes over months.
 //   - Never the same inbox twice across vendors: Raytheon and RTX share
-//     rtx.com, so every tier skips an email some other vendor already holds.
+//     rtx.com, so every tier skips an email some other vendor already holds,
+//     or that the ledger's `suppressed` list has retired.
 //
 // Modes:
 //   (no flag)            dry run: print every email that WOULD send, verbatim
@@ -61,15 +65,40 @@ const APOLLO_TITLES = [
   'marketing',
 ];
 
+// Apollo reveal attempts per vendor: each one is a credit.
+const APOLLO_REVEALS_PER_VENDOR = 3;
+// A vendor both tiers failed is retried, but slowly: Apollo's coverage of a
+// company changes over months, not overnight, and a daily retry of 75 dead
+// vendors would just burn a credit apiece every morning.
+const RETRY_AFTER_DAYS = 14;
+const MAX_RESOLVE_ATTEMPTS = 5;
+
 // ---- Ledger ---------------------------------------------------------------
 function loadLedger() {
-  if (!existsSync(LEDGER_PATH)) return { version: 1, vendors: {} };
-  return JSON.parse(readFileSync(LEDGER_PATH, 'utf8'));
+  if (!existsSync(LEDGER_PATH)) return { version: 1, vendors: {}, suppressed: [] };
+  const ledger = JSON.parse(readFileSync(LEDGER_PATH, 'utf8'));
+  ledger.suppressed ??= [];
+  return ledger;
 }
 
 async function saveLedger(ledger) {
   const sorted = Object.fromEntries(Object.entries(ledger.vendors).sort(([a], [b]) => a.localeCompare(b)));
-  await writeFile(LEDGER_PATH, `${JSON.stringify({ version: 1, vendors: sorted }, null, 2)}\n`, 'utf8');
+  // `suppressed` is written explicitly: an address that must never be mailed
+  // again outlives the vendor row it came from, so it cannot live inside
+  // `vendors` and must not be dropped by this rewrite.
+  const out = { version: 1, vendors: sorted, suppressed: ledger.suppressed ?? [] };
+  await writeFile(LEDGER_PATH, `${JSON.stringify(out, null, 2)}\n`, 'utf8');
+}
+
+// Every address the outreach must not use again: one already spoken for by
+// another vendor, and one explicitly retired (a contact resolved to the wrong
+// company, an opt-out). Raytheon and RTX share rtx.com, which is why this is
+// a global set rather than a per-vendor check.
+function usedEmailSet(ledger) {
+  return new Set([
+    ...Object.values(ledger.vendors).map((v) => v.email).filter(Boolean),
+    ...(ledger.suppressed ?? []).map((s) => s.email).filter(Boolean),
+  ]);
 }
 
 // ---- Company name for prose -----------------------------------------------
@@ -260,8 +289,9 @@ async function resolveSba(vendor) {
   };
 }
 
-// Tier 2: Apollo. Search people at the company by title, then a match call to
-// reveal the work email. Capped at 3 reveal attempts per vendor to keep credit
+// Tier 2: Apollo, in two steps — resolve the company to an organization id,
+// then search people inside that organization by title and reveal one work
+// email. Capped at APOLLO_REVEALS_PER_VENDOR reveals per vendor to keep credit
 // use predictable.
 async function apolloPost(key, endpoint, payload) {
   const resp = await fetch(`https://api.apollo.io/api/v1/${endpoint}`, {
@@ -279,12 +309,10 @@ function apolloCandidateRank(person) {
   return idx === -1 ? APOLLO_TITLES.length : idx;
 }
 
-// Company-name match between the roster name and an Apollo person's employer.
-// api_search has no organization-name filter (verified: mixed_people/search
-// returns HTTP 422 "deprecated for API callers" since 2026-08), so the search
-// runs on q_keywords and this guard rejects keyword-fuzz candidates who work
-// somewhere else. Acronym-only mismatches (SAIC) stay unresolved for hand
-// entry rather than risking an email to the wrong company.
+// Company-name match, used to confirm that the organization Apollo returned
+// for a name really is the vendor, and as a backstop on each person's
+// employer. Acronym-only mismatches (SAIC) stay unresolved for hand entry
+// rather than risking an email to the wrong company.
 //
 // The match is a PREFIX of the token list, not free containment. Extra tokens
 // on the end are the same company under a longer registration ("Northrop
@@ -308,19 +336,69 @@ export function sameCompany(vendorName, orgName) {
   return a.length === b.length || short.length >= 2;
 }
 
+// Step 1: the vendor's USAspending legal name -> an Apollo organization id.
+//
+// This step exists because searching people by company NAME does not work.
+// Apollo files companies under their trading name, and the roster carries the
+// registered one, so the old q_keywords search missed the company entirely or
+// surfaced somebody at a different one. Measured against the vendors this
+// resolver had given up on:
+//   "Carahsoft Technology"           -> 0 people;   carahsoft.com -> 332
+//   "Space Exploration Technologies" -> 1 person, at Lockheed Martin;
+//                                       spacex.com  -> 20
+// Both companies are in Apollo in force. The query was the problem.
+//
+// Costs one Apollo credit per call that returns a result, so it runs once per
+// vendor, after the keyless SBA tier has already had its turn, and only for
+// vendors the daily --limit lets through.
+async function apolloOrgId(key, vendor) {
+  const name = companyForEmail(vendor.name || vendor.displayName);
+  const search = await apolloPost(key, 'mixed_companies/search', {
+    q_organization_name: name,
+    per_page: 5,
+  });
+  // Two buckets, and the id to use differs: `organizations` (net new) carries
+  // the organization id as `id`, while `accounts` (already saved to the
+  // team) carries it as `organization_id` and uses `id` for the account.
+  const candidates = [
+    ...(search?.organizations ?? []).map((o) => ({ id: o.id, name: o.name })),
+    ...(search?.accounts ?? []).map((a) => ({ id: a.organization_id, name: a.name })),
+  ].filter((o) => o.id && o.name);
+  // Name search is fuzzy, so the same guard that keeps people at the wrong
+  // company out applies to the company itself.
+  const hit = candidates.find((o) => sameCompany(vendor.name || vendor.displayName, o.name));
+  if (!hit) {
+    console.log(`[resolve] ${vendor.slug}: no Apollo org matched "${name}"${candidates.length ? ` (saw ${candidates.map((c) => c.name).join(', ')})` : ''}`);
+    return null;
+  }
+  return hit;
+}
+
 async function resolveApollo(vendor, usedEmails) {
   const key = process.env.APOLLO_API_KEY;
   if (!key) return { skipped: true };
+  const org = await apolloOrgId(key, vendor);
+  if (!org) return null;
   const search = await apolloPost(key, 'mixed_people/api_search', {
-    q_keywords: vendor.displayName,
+    organization_ids: [org.id],
     person_titles: APOLLO_TITLES,
     person_locations: ['United States'],
-    per_page: 10,
+    per_page: 25,
   });
   const people = (search?.people ?? [])
-    .filter((p) => sameCompany(vendor.name || vendor.displayName, p.organization?.name))
+    // has_email is Apollo telling us, for free, whether it holds a work email
+    // for this person. Revealing one it does not have still spends a credit,
+    // so candidates without it go last rather than first.
+    .filter((p) => p.has_email !== false)
+    // The org-id filter should make this redundant. Keep it: a reveal is a
+    // credit, and an email to the wrong company cannot be taken back.
+    .filter((p) => !p.organization?.name || sameCompany(org.name, p.organization.name))
     .sort((a, b) => apolloCandidateRank(a) - apolloCandidateRank(b));
-  for (const person of people.slice(0, 3)) {
+  if (people.length === 0) {
+    console.log(`[resolve] ${vendor.slug}: Apollo org "${org.name}" has no titled contact with an email on file`);
+    return null;
+  }
+  for (const person of people.slice(0, APOLLO_REVEALS_PER_VENDOR)) {
     const match = await apolloPost(key, 'people/match', { id: person.id, reveal_personal_emails: false }).catch(() => null);
     const email = String(match?.person?.email || '').trim();
     if (email.includes('@') && !email.startsWith('email_not_unlocked') && !usedEmails.has(email)) {
@@ -335,17 +413,33 @@ async function resolveApollo(vendor, usedEmails) {
   return null;
 }
 
+// A vendor is due for a resolution attempt if it has never had one, or if
+// both tiers came up empty far enough back to be worth another look.
+//
+// "no-contact" used to be terminal: runResolve skipped every vendor that had
+// a ledger row at all, so the 75 vendors the old keyword search failed on
+// could never be reached again, no matter what got fixed afterwards. The
+// digest's "retries daily" only ever described vendors with no row.
+export function dueForResolve(entry, now) {
+  if (!entry) return true;
+  if (entry.status !== 'no-contact') return false;
+  if ((entry.resolveAttempts ?? 1) >= MAX_RESOLVE_ATTEMPTS) return false;
+  if (!entry.lastResolveAt) return true;
+  return now - Date.parse(entry.lastResolveAt) >= RETRY_AFTER_DAYS * 86400000;
+}
+
 async function runResolve(limit) {
   const ledger = loadLedger();
+  const now = Date.now();
   const published = rosterEntries(loadRoster())
-    .filter((v) => v.status === 'published' && !ledger.vendors[v.slug])
+    .filter((v) => v.status === 'published' && dueForResolve(ledger.vendors[v.slug], now))
     .sort((a, b) => (a.rank ?? Infinity) - (b.rank ?? Infinity))
     .slice(0, limit);
   if (published.length === 0) {
-    console.log('[resolve] nothing to do: every published vendor has a ledger entry');
+    console.log('[resolve] nothing to do: every published vendor is resolved or not yet due for a retry');
     return;
   }
-  const usedEmails = new Set(Object.values(ledger.vendors).map((v) => v.email).filter(Boolean));
+  const usedEmails = usedEmailSet(ledger);
   for (const vendor of published) {
     // The name the email will actually say, not the page-title displayName.
     const company = companyForEmail(vendor.name || vendor.displayName);
@@ -386,11 +480,19 @@ async function runResolve(limit) {
         `[resolve] ${vendor.slug}: unresolved (${apolloErrored ? 'Apollo errored this run' : 'APOLLO_API_KEY is not configured'})`,
       );
     } else {
+      // Not terminal any more: record the attempt so this vendor comes back
+      // around in RETRY_AFTER_DAYS, up to MAX_RESOLVE_ATTEMPTS.
+      const attempts = (ledger.vendors[vendor.slug]?.resolveAttempts ?? 0) + 1;
       ledger.vendors[vendor.slug] = {
         company, contactName: '', contactTitle: '', email: '', source: '',
         status: 'no-contact', sentAt: null, resendId: null, notes: '',
+        resolveAttempts: attempts,
+        lastResolveAt: new Date().toISOString(),
       };
-      console.log(`[resolve] ${vendor.slug}: no contact found (both tiers exhausted)`);
+      console.log(
+        `[resolve] ${vendor.slug}: no contact found (attempt ${attempts}/${MAX_RESOLVE_ATTEMPTS}` +
+        `${attempts >= MAX_RESOLVE_ATTEMPTS ? ', giving up' : `, retrying after ${RETRY_AFTER_DAYS}d`})`,
+      );
     }
     await saveLedger(ledger);
     await new Promise((r) => setTimeout(r, 600));
