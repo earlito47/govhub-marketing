@@ -110,7 +110,12 @@ function gatherOutreach() {
     const roster = JSON.parse(readFileSync(rosterPath, 'utf8')).vendors;
     backlog = Object.entries(roster).filter(([slug, v]) => v.status === 'published' && !cur[slug]).length;
   }
-  return { sent, resolved, backlog, totalSent: Object.values(cur).filter((v) => v.status === 'sent').length };
+  // Retired after MAX_SEND_ATTEMPTS. Nothing retries these, so they only ever
+  // surface here.
+  const sendFailed = Object.entries(cur)
+    .filter(([, v]) => v.status === 'send-failed')
+    .map(([slug, v]) => ({ slug, email: v.email, notes: v.notes }));
+  return { sent, resolved, backlog, sendFailed, totalSent: Object.values(cur).filter((v) => v.status === 'sent').length };
 }
 
 // ---- Stream 3: workflow health + action items (GitHub API) -----------------
@@ -164,6 +169,9 @@ async function gatherActions(outreach) {
   } catch { /* variables API unavailable — skip the gate checks */ }
   if (outreach?.backlog > 0) {
     items.push({ text: `${outreach.backlog} published vendor page(s) still need a contact resolved before they can be emailed (retries daily)`, url: null });
+  }
+  for (const v of outreach?.sendFailed ?? []) {
+    items.push({ text: `Outreach to ${v.slug} <${v.email}> gave up after repeated failures — ${v.notes || 'no detail recorded'}`, url: null });
   }
   return items;
 }
