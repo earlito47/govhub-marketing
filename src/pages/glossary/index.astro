@@ -2,26 +2,24 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/seo/Breadcrumbs.astro';
 import CTABand from '../../components/CTABand.astro';
-import { glossary } from '../../data/glossary';
+import { glossary, pillars, getTerm, hrefForTerm, type GlossaryTerm } from '../../data/glossary';
 import { SIGNUP_URL } from '../../config';
 
 const title = 'Federal contracting glossary: terms and definitions';
 const description =
   'Plain-English definitions of federal contracting terms: NAICS, CAGE, UEI, IDIQ, GWAC, set-asides, RFP, compliance matrix, and more. One term per page.';
 
-// Preserve a sensible category order for the page, alphabetical within each.
-const CATEGORY_ORDER = [
-  'Solicitations',
-  'Proposal artifacts',
-  'Evaluation',
-  'Set-asides',
-  'Contract vehicles',
-  'Registration & IDs',
-];
-const grouped = CATEGORY_ORDER.map((cat) => ({
-  category: cat,
-  terms: glossary.filter((t) => t.category === cat).sort((a, b) => a.term.localeCompare(b.term)),
-})).filter((g) => g.terms.length > 0);
+// The hub now indexes the pillar pages rather than one URL per term, but it
+// still lists every term so someone scanning for a word still finds it: each
+// links to its anchor on the pillar that covers it.
+const grouped = pillars.map((p) => ({
+  pillar: p,
+  terms: p.termSlugs.map((s) => getTerm(s)).filter(Boolean) as GlossaryTerm[],
+}));
+
+// Terms deliberately kept out of the pillars still deserve a row, pointing at
+// whatever page owns the topic. See defersTo in data/glossary.ts.
+const deferred = glossary.filter((t) => t.defersTo && !pillars.some((p) => p.termSlugs.includes(t.slug)));
 ---
 
 <BaseLayout title={title} description={description}>
@@ -32,18 +30,17 @@ const grouped = CATEGORY_ORDER.map((cat) => ({
       <h1>Federal contracting glossary</h1>
       <p class="lede">
         The terms you hit in solicitations, registrations, and evaluations, explained
-        in plain language. Each one has its own page, so you can link to it or find it
-        the moment it comes up.
+        in plain language, grouped so the terms you meet together are explained together.
       </p>
     </header>
 
     {grouped.map((g) => (
-      <section class="group" aria-label={g.category}>
-        <h2>{g.category}</h2>
+      <section class="group" aria-label={g.pillar.h1}>
+        <h2><a href={`/glossary/${g.pillar.slug}/`}>{g.pillar.h1}</a></h2>
         <ul>
           {g.terms.map((t) => (
             <li>
-              <a href={`/glossary/${t.slug}/`}>
+              <a href={hrefForTerm(t.slug)}>
                 <strong>{t.term}</strong>
                 <span>{t.short}</span>
               </a>
@@ -52,6 +49,22 @@ const grouped = CATEGORY_ORDER.map((cat) => ({
         </ul>
       </section>
     ))}
+
+    {deferred.length > 0 && (
+      <section class="group" aria-label="Also covered">
+        <h2>Also covered</h2>
+        <ul>
+          {deferred.map((t) => (
+            <li>
+              <a href={hrefForTerm(t.slug)}>
+                <strong>{t.term}</strong>
+                <span>{t.short}</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )}
   </main>
 
   <CTABand

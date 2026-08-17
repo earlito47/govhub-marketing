@@ -1,7 +1,7 @@
 ---
 import BlogPostLayout from '../../layouts/BlogPostLayout.astro';
 import { getCollection, render, type CollectionEntry } from 'astro:content';
-import { glossary, termsMentionedIn } from '../../data/glossary';
+import { glossary, termsMentionedIn, hrefForTerm } from '../../data/glossary';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog', ({ data }) => !data.draft);
@@ -57,7 +57,7 @@ const terms = termsMentionedIn(post.body ?? '', { exclude: selfTerms });
       <ul>
         {terms.map((t) => (
           <li>
-            <a href={t.defersTo?.href ?? `/glossary/${t.slug}/`}>{t.term}</a>
+            <a href={hrefForTerm(t.slug)}>{t.term}</a>
             <span>{t.short}</span>
           </li>
         ))}

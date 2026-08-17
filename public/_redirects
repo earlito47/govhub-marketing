@@ -27,3 +27,30 @@ https://govhub.online/*  https://www.govhub.online/:splat  301
 # Marketing slugs that changed (old Lovable site → new Astro site).
 /solutions/proposal-generator   /solutions/ai-proposal-generator/     301
 /solutions/technical-review     /solutions/technical-writer-review/   301
+
+# Glossary consolidation: 18 one-term pages became 5 pillar pages.
+# Each retired term keeps its own anchor on the pillar that absorbed it, so an
+# inbound link to a definition still lands on that definition.
+
+/glossary/sam-registration/            /glossary/registration-and-ids/#sam-registration 301
+/glossary/uei/                         /glossary/registration-and-ids/#uei           301
+/glossary/cage-code/                   /glossary/registration-and-ids/#cage-code     301
+/glossary/naics-code/                  /glossary/registration-and-ids/#naics-code    301
+/glossary/idiq/                        /glossary/contract-vehicles/#idiq             301
+/glossary/gwac/                        /glossary/contract-vehicles/#gwac             301
+/glossary/bpa/                         /glossary/contract-vehicles/#bpa              301
+/glossary/sources-sought/              /glossary/solicitation-types/#sources-sought  301
+/glossary/rfi/                         /glossary/solicitation-types/#rfi             301
+/glossary/rfp/                         /glossary/solicitation-types/#rfp             301
+/glossary/rfq/                         /glossary/solicitation-types/#rfq             301
+/glossary/set-aside/                   /glossary/set-asides/#set-aside               301
+/glossary/8a/                          /glossary/set-asides/#8a                      301
+/glossary/sole-source/                 /glossary/set-asides/#sole-source             301
+/glossary/lpta-vs-best-value/          /glossary/evaluation-criteria/#lpta-vs-best-value 301
+/glossary/past-performance/            /glossary/evaluation-criteria/#past-performance 301
+/glossary/cpars/                       /glossary/evaluation-criteria/#cpars          301
+
+# compliance-matrix had no pillar and lost to our own pages on every query it
+# shared with them, so it consolidates into the post that answers it.
+/glossary/compliance-matrix/    /blog/what-is-a-compliance-matrix/    301
+

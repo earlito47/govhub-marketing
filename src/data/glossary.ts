@@ -231,7 +231,7 @@ export const glossary: GlossaryTerm[] = [
   {
     slug: 'sole-source',
     term: 'Sole-source contract',
-    category: 'Contract vehicles',
+    category: 'Set-asides',
     short:
       'A contract awarded to one company without full competition, when the rules allow it.',
     body: [
@@ -310,6 +310,110 @@ export const glossary: GlossaryTerm[] = [
 ];
 
 export const getTerm = (slug: string) => glossary.find((t) => t.slug === slug);
+
+/**
+ * Pillar pages, each covering the terms that are genuinely used together.
+ *
+ * The glossary shipped as 18 one-term URLs averaging 125 words. None of them
+ * ranked: positions 53 to 87, 1,280 impressions and zero clicks over 28 days
+ * (GSC 2026-08). A 125-word page does not win "sole source procurement"
+ * against acquisition.gov, and splitting one subject across four URLs means
+ * none of them accumulates anything.
+ *
+ * Grouping follows the category each term already carried, so the structure is
+ * the one the content was written to. Every old term URL 301s to its anchor
+ * here (see public/_redirects); nothing is orphaned or dropped.
+ *
+ * compliance-matrix is deliberately absent. It was the only term in its
+ * category and it lost to two of our own pages on every shared query, so it
+ * redirects to the post that answers the same question instead of anchoring a
+ * one-term pillar. See its defersTo field.
+ */
+export interface GlossaryPillar {
+  slug: string;
+  h1: string;
+  metaTitle: string; // <=60 chars, see scripts/check-meta.mjs
+  metaDescription: string; // <=160 chars
+  /** Framing paragraphs: how these terms relate, which the term entries cannot say alone. */
+  intro: string[];
+  termSlugs: string[];
+}
+
+export const pillars: GlossaryPillar[] = [
+  {
+    slug: 'registration-and-ids',
+    h1: 'Federal contractor registration and IDs',
+    metaTitle: 'Federal contractor registration: SAM, UEI, CAGE, NAICS',
+    metaDescription:
+      'What SAM registration, your UEI, CAGE code, and NAICS codes each do, how they connect, and the order to get them in before you can win federal work.',
+    intro: [
+      'Before a federal agency can award you a contract or pay you for one, your business has to exist in the government\'s systems. That means one registration and three identifiers, and they are issued together rather than separately.',
+      'The order matters. You register in SAM.gov, which assigns your UEI and triggers your CAGE code, and during that registration you choose the NAICS codes that describe your business. Those codes then decide which set-aside opportunities you are eligible for, which is why picking the right primary code is not a formality.',
+    ],
+    termSlugs: ['sam-registration', 'uei', 'cage-code', 'naics-code'],
+  },
+  {
+    slug: 'contract-vehicles',
+    h1: 'Federal contract vehicles: IDIQ, GWAC, and BPA',
+    metaTitle: 'Federal contract vehicles: IDIQ, GWAC, and BPA',
+    metaDescription:
+      'How IDIQ, GWAC, and BPA vehicles work, what winning a seat actually gets you, and why the real competition happens at the task-order level.',
+    intro: [
+      'A contract vehicle is a pre-established arrangement an agency buys through, rather than running a full competition for every purchase. Getting onto one is a separate event from winning the work that flows through it.',
+      'That distinction catches new contractors out. A seat on an IDIQ or GWAC is permission to compete, not revenue. The money is awarded later, in task orders competed among the holders, which is where your proposal capacity actually gets tested.',
+    ],
+    termSlugs: ['idiq', 'gwac', 'bpa'],
+  },
+  {
+    slug: 'solicitation-types',
+    h1: 'Federal solicitation types: sources sought, RFI, RFP, and RFQ',
+    metaTitle: 'Solicitation types: sources sought, RFI, RFP, RFQ',
+    metaDescription:
+      'The difference between a sources sought notice, an RFI, an RFP, and an RFQ, what each one commits you to, and which ones are worth answering.',
+    intro: [
+      'Not every government notice is a request to bid. Agencies publish several kinds of document at different points in an acquisition, and answering the wrong one the wrong way wastes real time.',
+      'Roughly, the sequence runs from market research to award: sources sought notices and RFIs help the agency shape what it is going to buy and who can supply it, while RFQs and RFPs are the actual solicitations you respond to with pricing and a proposal. The early ones carry no award, but they are where a requirement can still be influenced.',
+    ],
+    termSlugs: ['sources-sought', 'rfi', 'rfp', 'rfq'],
+  },
+  {
+    slug: 'set-asides',
+    h1: 'Set-asides, the 8(a) program, and sole source awards',
+    metaTitle: 'Federal set-asides, the 8(a) program, and sole source',
+    metaDescription:
+      'How federal set-asides reserve contracts for small businesses, what the SBA 8(a) program adds, and when an agency can award sole source without competition.',
+    intro: [
+      'A large share of federal contract dollars is reserved, by statute, for small businesses and for specific socioeconomic categories within them. Set-asides are the mechanism, and they are the single biggest structural advantage a small contractor has.',
+      'The categories stack with the certifications you hold and the NAICS code on the opportunity, which is what determines whether you count as small for that particular contract. In some cases, including inside the 8(a) program, an agency can skip competition altogether and award sole source.',
+    ],
+    termSlugs: ['set-aside', '8a', 'sole-source'],
+  },
+  {
+    slug: 'evaluation-criteria',
+    h1: 'How federal proposals are evaluated',
+    metaTitle: 'Federal proposal evaluation: LPTA, CPARS, past performance',
+    metaDescription:
+      'How agencies score proposals: LPTA versus best value tradeoff, what past performance counts for, and how CPARS ratings follow you into the next bid.',
+    intro: [
+      'Two proposals can be equally compliant and still be scored completely differently, because the evaluation method is chosen before the solicitation goes out. Reading which one you are in is the first thing to do with a new RFP.',
+      'The method decides where effort pays. Under LPTA, past the technical threshold, only price moves the outcome. Under best value tradeoff, the government can pay more for a stronger offer, which makes your record on prior work worth writing carefully about, and that record is not only what you claim: agencies read your CPARS ratings directly.',
+    ],
+    termSlugs: ['lpta-vs-best-value', 'past-performance', 'cpars'],
+  },
+];
+
+export const pillarForTerm = (slug: string) => pillars.find((p) => p.termSlugs.includes(slug));
+
+/**
+ * Canonical on-site URL for a term. Terms in a pillar resolve to their anchor
+ * there; a term deliberately kept out of the pillars resolves to whatever page
+ * owns its topic instead.
+ */
+export const hrefForTerm = (slug: string): string => {
+  const pillar = pillarForTerm(slug);
+  if (pillar) return `/glossary/${pillar.slug}/#${slug}`;
+  return getTerm(slug)?.defersTo?.href ?? '/glossary/';
+};
 
 // Alphabetical by display term, for the hub listing.
 export const glossaryAlphabetical = () => [...glossary].sort((a, b) => a.term.localeCompare(b.term));
