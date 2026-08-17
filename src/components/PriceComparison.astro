@@ -4,22 +4,34 @@
  * "<competitor> pricing" queries where competitors hide their pricing, so this
  * publishes GovHub's real tiers side by side in a table Google can lift into
  * the SERP. Copy is entity-first (semantic triples) and carries no em dashes.
+ *
+ * That works until we publish a dedicated pricing page for the same
+ * competitor, at which point this block competes with it. Pass
+ * pricingCanonical to defer: the section keeps the buying-model comparison a
+ * visitor wants, but drops the exact-match "<name>: pricing" heading and the
+ * detailed estimate, and sends the pricing query to the canonical page. See
+ * the pricingCanonical docs in data/competitors.ts.
  */
 import { PLANS, TRIAL_DAYS, formatUsd } from '../data/pricing';
 
 interface Props {
   competitorName: string;
   competitorEstimate: string;
+  pricingCanonical?: { href: string; label: string };
 }
-const { competitorName, competitorEstimate } = Astro.props;
+const { competitorName, competitorEstimate, pricingCanonical } = Astro.props;
 const tiers = PLANS.map((p) => `${p.name} ${formatUsd(p.monthlyUsd)}/mo`).join(', ');
 ---
 
 <section class="price-compare" aria-labelledby="price-compare-heading">
-  <h2 id="price-compare-heading">GovHub vs {competitorName}: pricing</h2>
+  <h2 id="price-compare-heading">
+    {pricingCanonical
+      ? `How GovHub and ${competitorName} are sold`
+      : `GovHub vs ${competitorName}: pricing`}
+  </h2>
   <p>
-    GovHub publishes its pricing. {competitorName} does not, so the {competitorName} figures
-    below are third-party estimates from a sales-led quote process.
+    GovHub publishes its pricing. {competitorName} does not, so any {competitorName} figure
+    is a third-party estimate from a sales-led quote process.
   </p>
   <div class="table-wrap">
     <table>
@@ -30,7 +42,7 @@ const tiers = PLANS.map((p) => `${p.name} ${formatUsd(p.monthlyUsd)}/mo`).join('
         <tr>
           <th scope="row">Starting price</th>
           <td>{formatUsd(PLANS[0].monthlyUsd)}/month, billed monthly</td>
-          <td>No public price (estimated below)</td>
+          <td>{pricingCanonical ? 'No public price (see the full breakdown below)' : 'No public price (estimated below)'}</td>
         </tr>
         <tr>
           <th scope="row">Published pricing</th>
@@ -50,7 +62,15 @@ const tiers = PLANS.map((p) => `${p.name} ${formatUsd(p.monthlyUsd)}/mo`).join('
       </tbody>
     </table>
   </div>
-  <p class="estimate"><strong>Estimated {competitorName} pricing:</strong> {competitorEstimate}</p>
+  {pricingCanonical ? (
+    <p class="estimate">
+      We keep the {competitorName} numbers in one place rather than repeating them across
+      pages: <a href={pricingCanonical.href}>{pricingCanonical.label}</a> covers the seat
+      and module ranges, contract terms, renewal notice windows, and the ROI math.
+    </p>
+  ) : (
+    <p class="estimate"><strong>Estimated {competitorName} pricing:</strong> {competitorEstimate}</p>
+  )}
 </section>
 
 <style>
