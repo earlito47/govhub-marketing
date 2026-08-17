@@ -1,0 +1,233 @@
+---
+// One page per group of related terms, replacing the 18 one-term pages this
+// glossary shipped with. See the pillars docs in data/glossary.ts for why.
+// Every retired term URL 301s to its anchor here via public/_redirects.
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/seo/Breadcrumbs.astro';
+import CTABand from '../../components/CTABand.astro';
+import {
+  pillars,
+  getTerm,
+  hrefForTerm,
+  type GlossaryPillar,
+  type GlossaryTerm,
+} from '../../data/glossary';
+import { SIGNUP_URL } from '../../config';
+
+export function getStaticPaths() {
+  return pillars.map((p) => ({ params: { pillar: p.slug }, props: { pillar: p } }));
+}
+
+interface Props {
+  pillar: GlossaryPillar;
+}
+
+const { pillar } = Astro.props;
+const terms = pillar.termSlugs.map((s) => getTerm(s)).filter(Boolean) as GlossaryTerm[];
+const canonical = new URL(`/glossary/${pillar.slug}/`, Astro.site).toString();
+
+// Terms from the other pillars that these ones point at, so the cluster stays
+// connected now that "related" can cross a page boundary.
+const crossLinkSlugs = [
+  ...new Set(terms.flatMap((t) => t.related ?? []).filter((s) => !pillar.termSlugs.includes(s))),
+];
+const crossLinks = crossLinkSlugs
+  .map((s) => getTerm(s))
+  .filter((t): t is GlossaryTerm => Boolean(t));
+
+const definedTermSet = {
+  '@context': 'https://schema.org',
+  '@type': 'DefinedTermSet',
+  name: pillar.h1,
+  description: pillar.metaDescription,
+  url: canonical,
+  hasDefinedTerm: terms.map((t) => ({
+    '@type': 'DefinedTerm',
+    name: t.term,
+    description: t.short,
+    url: `${canonical}#${t.slug}`,
+  })),
+};
+---
+
+<BaseLayout title={pillar.metaTitle} description={pillar.metaDescription}>
+  <main class="container">
+    <Breadcrumbs
+      items={[
+        { name: 'Home', url: '/' },
+        { name: 'Glossary', url: '/glossary/' },
+        { name: pillar.h1, url: `/glossary/${pillar.slug}/` },
+      ]}
+    />
+
+    <article class="prose pillar">
+      <h1>{pillar.h1}</h1>
+      {pillar.intro.map((p) => <p class="lede">{p}</p>)}
+
+      <nav class="jump" aria-labelledby="jump-heading">
+        <h2 id="jump-heading">On this page</h2>
+        <ul>
+          {terms.map((t) => (
+            <li><a href={`#${t.slug}`}>{t.term}</a></li>
+          ))}
+        </ul>
+      </nav>
+
+      {terms.map((t) => (
+        <section class="term" id={t.slug}>
+          <h2>{t.term}</h2>
+          {t.aka && t.aka.length > 0 && <p class="aka">Also: {t.aka.join(' · ')}</p>}
+          <p class="answer">{t.short}</p>
+          {t.body.map((p) => <p>{p}</p>)}
+          {(t.solutions?.length || t.insight) && (
+            <ul class="use">
+              {t.solutions?.map((l) => (<li><a href={l.href}>{l.label}</a></li>))}
+              {t.insight && (<li><a href={t.insight.href}>{t.insight.label}</a></li>)}
+            </ul>
+          )}
+        </section>
+      ))}
+    </article>
+
+    {crossLinks.length > 0 && (
+      <nav class="related" aria-labelledby="related-heading">
+        <h2 id="related-heading">Related terms</h2>
+        <ul>
+          {crossLinks.map((r) => (
+            <li>
+              <a href={hrefForTerm(r.slug)}>
+                <strong>{r.term}</strong>
+                <span>{r.short}</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    )}
+
+    <p class="back"><a href="/glossary/">All glossary terms</a></p>
+  </main>
+
+  <CTABand
+    heading="From RFP to submitted proposal, faster"
+    sub="GovHub shreds the solicitation, builds the compliance matrix, and drafts the response."
+    primaryHref={`${SIGNUP_URL}?utm_source=glossary`}
+    primaryLabel="Start free trial"
+    secondaryHref="/solutions/"
+  />
+
+  <script type="application/ld+json" set:html={JSON.stringify(definedTermSet)} />
+</BaseLayout>
+
+<style>
+  .pillar {
+    margin-top: 1rem;
+  }
+  .pillar h1 {
+    margin: 0.1rem 0 1rem;
+  }
+  .lede {
+    font-size: 1.1rem;
+    color: var(--fg-muted);
+    line-height: 1.6;
+  }
+  .jump {
+    margin: 2rem 0 1rem;
+    padding: 1rem 1.25rem;
+    background: var(--gh-surface);
+    border: 1px solid var(--gh-line);
+    border-radius: var(--gh-radius-md);
+  }
+  .jump h2 {
+    font-size: 0.72rem;
+    font-family: var(--gh-font-brand);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--fg-muted);
+    margin: 0 0 0.6rem;
+  }
+  .jump ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 1.5rem;
+  }
+  .jump a {
+    font-weight: 600;
+  }
+  .term {
+    margin-top: 3rem;
+    scroll-margin-top: 1.5rem;
+  }
+  .term h2 {
+    margin: 0 0 0.35rem;
+  }
+  .aka {
+    color: var(--fg-muted);
+    font-size: 0.95rem;
+    margin: 0 0 1rem;
+  }
+  .answer {
+    font-size: 1.15rem;
+    line-height: 1.5;
+    color: var(--fg);
+    font-weight: 500;
+    border-left: 4px solid var(--accent);
+    padding-left: 1rem;
+    margin: 0 0 1.25rem;
+  }
+  .use {
+    margin: 1.25rem 0 0;
+    padding: 1rem 1.25rem 1rem 2.25rem;
+    background: var(--accent-soft);
+    border-radius: var(--gh-radius-md);
+  }
+  .use li {
+    margin: 0.25rem 0;
+  }
+  .related {
+    margin: 3rem auto 0;
+    max-width: var(--content-width);
+  }
+  .related h2 {
+    font-size: 1.3rem;
+    margin: 0 0 1rem;
+  }
+  .related ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 0.75rem;
+  }
+  .related li a {
+    display: block;
+    padding: 1rem;
+    background: var(--gh-surface);
+    border: 1px solid var(--gh-line);
+    border-radius: var(--gh-radius-sm);
+    box-shadow: var(--gh-shadow-card);
+  }
+  .related li a:hover {
+    border-color: var(--gh-teal-600);
+    text-decoration: none;
+  }
+  .related strong {
+    display: block;
+    color: var(--gh-teal-700);
+    margin-bottom: 0.2rem;
+  }
+  .related span {
+    display: block;
+    color: var(--fg-muted);
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+  .back {
+    margin: 2rem auto 0;
+    max-width: var(--content-width);
+  }
+</style>

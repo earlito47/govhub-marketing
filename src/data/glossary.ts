@@ -19,6 +19,35 @@ export interface GlossaryTerm {
   related?: string[]; // other glossary slugs
   solutions?: GlossaryLink[]; // relevant feature pages (glossary -> money page)
   insight?: GlossaryLink; // relevant Insights page
+  /**
+   * Too basic to define for this audience, so kept out of the automatic
+   * "terms used in this post" block. A federal proposal manager reading us
+   * does not need RFP explained, and linking it from all 13 posts pointed the
+   * most internal equity on the site at our weakest page: /glossary/rfp/ sits
+   * at position 77 against Wikipedia and Investopedia for a generic business
+   * term, drawing queries like "rfp meaning in construction" that are not
+   * govcon buyers at all (GSC 2026-08).
+   *
+   * The page stays live and indexed. It is a definition a visitor may still
+   * want; it just should not collect links meant for real federal jargon.
+   */
+  foundational?: boolean;
+  /**
+   * A stronger page of ours owns this topic, so the automatic "terms used in
+   * this post" block links there instead of at the glossary entry.
+   *
+   * Use it when the glossary page loses to our own pages on every shared
+   * query. GSC 2026-08 for the compliance matrix cluster: on "compliance
+   * matrix development" the glossary sat at 88.3, the blog post at 79.0 and
+   * the solutions page at 41.2; on "proposal compliance matrix" the glossary
+   * was at 82.5 against the solutions page at 52.2. Even "what is a compliance
+   * matrix" put the glossary at 86.7. Pointing a dozen internal links at the
+   * weakest of three pages on one topic just splits the signal further.
+   *
+   * The glossary page stays live and indexed and keeps its place in the hub;
+   * it simply stops collecting links that belong to the page that ranks.
+   */
+  defersTo?: GlossaryLink;
 }
 
 export const glossary: GlossaryTerm[] = [
@@ -202,7 +231,7 @@ export const glossary: GlossaryTerm[] = [
   {
     slug: 'sole-source',
     term: 'Sole-source contract',
-    category: 'Contract vehicles',
+    category: 'Set-asides',
     short:
       'A contract awarded to one company without full competition, when the rules allow it.',
     body: [
@@ -213,6 +242,7 @@ export const glossary: GlossaryTerm[] = [
   },
   {
     slug: 'rfi',
+    foundational: true,
     term: 'RFI',
     aka: ['Request for Information'],
     category: 'Solicitations',
@@ -226,6 +256,7 @@ export const glossary: GlossaryTerm[] = [
   },
   {
     slug: 'rfp',
+    foundational: true,
     term: 'RFP',
     aka: ['Request for Proposal'],
     category: 'Solicitations',
@@ -243,6 +274,7 @@ export const glossary: GlossaryTerm[] = [
   },
   {
     slug: 'rfq',
+    foundational: true,
     term: 'RFQ',
     aka: ['Request for Quotation'],
     category: 'Solicitations',
@@ -256,6 +288,10 @@ export const glossary: GlossaryTerm[] = [
   },
   {
     slug: 'compliance-matrix',
+    defersTo: {
+      label: 'Compliance matrix generator',
+      href: '/solutions/compliance-matrix-generator/',
+    },
     term: 'Compliance matrix',
     aka: ['requirements traceability matrix', 'compliance crosswalk'],
     category: 'Proposal artifacts',
@@ -275,5 +311,158 @@ export const glossary: GlossaryTerm[] = [
 
 export const getTerm = (slug: string) => glossary.find((t) => t.slug === slug);
 
+/**
+ * Pillar pages, each covering the terms that are genuinely used together.
+ *
+ * The glossary shipped as 18 one-term URLs averaging 125 words. None of them
+ * ranked: positions 53 to 87, 1,280 impressions and zero clicks over 28 days
+ * (GSC 2026-08). A 125-word page does not win "sole source procurement"
+ * against acquisition.gov, and splitting one subject across four URLs means
+ * none of them accumulates anything.
+ *
+ * Grouping follows the category each term already carried, so the structure is
+ * the one the content was written to. Every old term URL 301s to its anchor
+ * here (see public/_redirects); nothing is orphaned or dropped.
+ *
+ * compliance-matrix is deliberately absent. It was the only term in its
+ * category and it lost to two of our own pages on every shared query, so it
+ * redirects to the post that answers the same question instead of anchoring a
+ * one-term pillar. See its defersTo field.
+ */
+export interface GlossaryPillar {
+  slug: string;
+  h1: string;
+  metaTitle: string; // <=60 chars, see scripts/check-meta.mjs
+  metaDescription: string; // <=160 chars
+  /** Framing paragraphs: how these terms relate, which the term entries cannot say alone. */
+  intro: string[];
+  termSlugs: string[];
+}
+
+export const pillars: GlossaryPillar[] = [
+  {
+    slug: 'registration-and-ids',
+    h1: 'Federal contractor registration and IDs',
+    metaTitle: 'Federal contractor registration: SAM, UEI, CAGE, NAICS',
+    metaDescription:
+      'What SAM registration, your UEI, CAGE code, and NAICS codes each do, how they connect, and the order to get them in before you can win federal work.',
+    intro: [
+      'Before a federal agency can award you a contract or pay you for one, your business has to exist in the government\'s systems. That means one registration and three identifiers, and they are issued together rather than separately.',
+      'The order matters. You register in SAM.gov, which assigns your UEI and triggers your CAGE code, and during that registration you choose the NAICS codes that describe your business. Those codes then decide which set-aside opportunities you are eligible for, which is why picking the right primary code is not a formality.',
+    ],
+    termSlugs: ['sam-registration', 'uei', 'cage-code', 'naics-code'],
+  },
+  {
+    slug: 'contract-vehicles',
+    h1: 'Federal contract vehicles: IDIQ, GWAC, and BPA',
+    metaTitle: 'Federal contract vehicles: IDIQ, GWAC, and BPA',
+    metaDescription:
+      'How IDIQ, GWAC, and BPA vehicles work, what winning a seat actually gets you, and why the real competition happens at the task-order level.',
+    intro: [
+      'A contract vehicle is a pre-established arrangement an agency buys through, rather than running a full competition for every purchase. Getting onto one is a separate event from winning the work that flows through it.',
+      'That distinction catches new contractors out. A seat on an IDIQ or GWAC is permission to compete, not revenue. The money is awarded later, in task orders competed among the holders, which is where your proposal capacity actually gets tested.',
+    ],
+    termSlugs: ['idiq', 'gwac', 'bpa'],
+  },
+  {
+    slug: 'solicitation-types',
+    h1: 'Federal solicitation types: sources sought, RFI, RFP, and RFQ',
+    metaTitle: 'Solicitation types: sources sought, RFI, RFP, RFQ',
+    metaDescription:
+      'The difference between a sources sought notice, an RFI, an RFP, and an RFQ, what each one commits you to, and which ones are worth answering.',
+    intro: [
+      'Not every government notice is a request to bid. Agencies publish several kinds of document at different points in an acquisition, and answering the wrong one the wrong way wastes real time.',
+      'Roughly, the sequence runs from market research to award: sources sought notices and RFIs help the agency shape what it is going to buy and who can supply it, while RFQs and RFPs are the actual solicitations you respond to with pricing and a proposal. The early ones carry no award, but they are where a requirement can still be influenced.',
+    ],
+    termSlugs: ['sources-sought', 'rfi', 'rfp', 'rfq'],
+  },
+  {
+    slug: 'set-asides',
+    h1: 'Set-asides, the 8(a) program, and sole source awards',
+    metaTitle: 'Federal set-asides, the 8(a) program, and sole source',
+    metaDescription:
+      'How federal set-asides reserve contracts for small businesses, what the SBA 8(a) program adds, and when an agency can award sole source without competition.',
+    intro: [
+      'A large share of federal contract dollars is reserved, by statute, for small businesses and for specific socioeconomic categories within them. Set-asides are the mechanism, and they are the single biggest structural advantage a small contractor has.',
+      'The categories stack with the certifications you hold and the NAICS code on the opportunity, which is what determines whether you count as small for that particular contract. In some cases, including inside the 8(a) program, an agency can skip competition altogether and award sole source.',
+    ],
+    termSlugs: ['set-aside', '8a', 'sole-source'],
+  },
+  {
+    slug: 'evaluation-criteria',
+    h1: 'How federal proposals are evaluated',
+    metaTitle: 'Federal proposal evaluation: LPTA, CPARS, past performance',
+    metaDescription:
+      'How agencies score proposals: LPTA versus best value tradeoff, what past performance counts for, and how CPARS ratings follow you into the next bid.',
+    intro: [
+      'Two proposals can be equally compliant and still be scored completely differently, because the evaluation method is chosen before the solicitation goes out. Reading which one you are in is the first thing to do with a new RFP.',
+      'The method decides where effort pays. Under LPTA, past the technical threshold, only price moves the outcome. Under best value tradeoff, the government can pay more for a stronger offer, which makes your record on prior work worth writing carefully about, and that record is not only what you claim: agencies read your CPARS ratings directly.',
+    ],
+    termSlugs: ['lpta-vs-best-value', 'past-performance', 'cpars'],
+  },
+];
+
+export const pillarForTerm = (slug: string) => pillars.find((p) => p.termSlugs.includes(slug));
+
+/**
+ * Canonical on-site URL for a term. Terms in a pillar resolve to their anchor
+ * there; a term deliberately kept out of the pillars resolves to whatever page
+ * owns its topic instead.
+ */
+export const hrefForTerm = (slug: string): string => {
+  const pillar = pillarForTerm(slug);
+  if (pillar) return `/glossary/${pillar.slug}/#${slug}`;
+  return getTerm(slug)?.defersTo?.href ?? '/glossary/';
+};
+
 // Alphabetical by display term, for the hub listing.
 export const glossaryAlphabetical = () => [...glossary].sort((a, b) => a.term.localeCompare(b.term));
+
+/**
+ * Glossary terms a body of text actually mentions, so a post can link the
+ * jargon it uses without anyone maintaining the list by hand.
+ *
+ * The glossary was written as a discovery path but nothing pointed at it:
+ * 14 of the 18 term pages had zero inbound internal links and the other four
+ * had one each, which is why they sit at positions 53-87 (GSC 2026-08, 1,280
+ * impressions and no clicks). Posts are where the terms are already used, so
+ * that is where the links belong.
+ *
+ * Matching is deliberately conservative. Multi-word terms and expansions match
+ * case-insensitively; bare acronyms must match uppercase, so prose about "a
+ * bpa machine" or a stray "sam" cannot pull in a definition. Fenced code,
+ * inline code, existing link targets, and headings are stripped first so a
+ * match never comes from markup rather than prose.
+ */
+export function termsMentionedIn(
+  markdown: string,
+  { exclude = [], limit = 6 }: { exclude?: string[]; limit?: number } = {},
+): GlossaryTerm[] {
+  const prose = markdown
+    .replace(/```[\s\S]*?```/g, ' ') // fenced code
+    .replace(/`[^`]*`/g, ' ') // inline code
+    .replace(/\]\([^)]*\)/g, '] ') // link targets, keep the anchor text
+    .replace(/^#{1,6}\s.*$/gm, ' ') // headings
+    .replace(/^---[\s\S]*?^---/m, ' '); // frontmatter
+
+  const escape = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+
+  const matches = glossary.filter((t) => {
+    if (t.foundational) return false;
+    if (exclude.includes(t.slug)) return false;
+    return [t.term, ...(t.aka ?? [])].some((name) => {
+      const isAcronym = /^[A-Z0-9()]{2,6}$/.test(name);
+      const re = new RegExp(`(?<![\\w-])${escape(name)}(?![\\w-])`, isAcronym ? '' : 'i');
+      return re.test(prose);
+    });
+  });
+
+  // Densest mentions first, so the most relevant terms survive the cap.
+  const density = (t: GlossaryTerm) =>
+    [t.term, ...(t.aka ?? [])].reduce((n, name) => {
+      const re = new RegExp(`(?<![\\w-])${escape(name)}(?![\\w-])`, 'gi');
+      return n + (prose.match(re)?.length ?? 0);
+    }, 0);
+
+  return matches.sort((a, b) => density(b) - density(a)).slice(0, limit);
+}

@@ -3,7 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/seo/Breadcrumbs.astro';
 import CTABand from '../../components/CTABand.astro';
 import { faqPages, getFaqPage, type FaqPage } from '../../data/faqPages';
-import { getTerm } from '../../data/glossary';
+import { getTerm, hrefForTerm } from '../../data/glossary';
 import { SIGNUP_URL } from '../../config';
 
 export function getStaticPaths() {
@@ -53,7 +53,7 @@ const relatedFaqs = (faq.related ?? []).map((s) => getFaqPage(s)).filter(Boolean
         <p class="terms">
           Related terms:{' '}
           {glossaryLinks.map((t, i) => (
-            <>{i > 0 ? ', ' : ''}<a href={`/glossary/${t!.slug}/`}>{t!.term}</a></>
+            <>{i > 0 ? ', ' : ''}<a href={hrefForTerm(t!.slug)}>{t!.term}</a></>
           ))}
         </p>
       )}
