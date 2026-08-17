@@ -201,14 +201,29 @@ export const competitors: Competitor[] = [
   },
   {
     slug: 'govwin-iq',
-    priceHook: 'starts around $4,500/year per federal seat',
+    priceHook: 'starts around $6,000/year, most teams pay far more',
     name: 'Deltek GovWin IQ',
     shortName: 'GovWin IQ',
     category: 'opportunity-intelligence',
     tagline:
       'Government contract opportunity intelligence and market research platform, not a proposal writing tool.',
+    // Re-verified 2026-08-17 against public sources, because the figures here
+    // and in the pricing post had drifted apart and neither matched what is
+    // published. What the sources actually say:
+    //   ITQlick      ~$200/user/month; ~$21,600/yr for 10 users; $10k+/mo enterprise
+    //   Fed-Spend    $12,000-$15,000 starter, $12,000-$42,000 overall, 5-8% renewal uplift
+    //   widely cited $13,000-$119,000, avg $29,000, attributed to Vendr buyer data
+    //   Vendr itself $9,099-$39,500, avg $19,990, across ALL Deltek products
+    //                from 32 purchases, with no GovWin IQ breakout published
+    // The previous "$4,500-$7,500 single federal seat" claim matched none of
+    // them and understated the entry point; nothing public supports it. The
+    // widely-repeated $13k-$119k figure could not be confirmed on Vendr's own
+    // page, so it is no longer attributed to them by name.
+    // Sources disagree by a wide margin and Deltek publishes no list price, so
+    // copy must keep saying "reported" and "estimated" rather than stating a
+    // figure as fact.
     pricingEstimate:
-      'Across all segments, estimated $13,000–$119,000/year, averaging around $29,000/year, based on third-party deal benchmark data. That range is driven by enterprise deals; small and mid-size contractors quoting a single federal seat typically see $4,500–$7,500/year, or $7,000–$12,000/year with state and local added. Entry-level packages exist around $6,000/year but typically exclude the analyst-access features that are GovWin\'s core value.',
+      'Estimated $6,000–$15,000/year for an entry-level single federal seat, rising to $20,000–$42,000/year for the multi-seat, multi-module setup most teams need. Large primes are reported far higher, up to $119,000/year, with reported averages of $20,000–$29,000 across all deal sizes. Deltek publishes no list price and third-party sources disagree by a wide margin, so treat every figure as an estimate. The entry tier typically excludes the analyst-access features that are GovWin\'s core value.',
     bestFor:
       'Large federal prime contractors chasing $50M+ contracts who need analyst-verified opportunity intelligence 3–5 years ahead of RFP release, and who have budget for a dedicated business development research tool.',
     strengths: [
@@ -239,7 +254,7 @@ export const competitors: Competitor[] = [
       {
         label: 'Built for small business budgets',
         govhub: 'Yes',
-        competitor: 'Entry packages exist (~$6K/yr) but exclude core analyst features',
+        competitor: 'Entry packages reported from ~$6K/yr but exclude core analyst features',
       },
       {
         label: 'Use case',
@@ -256,7 +271,7 @@ export const competitors: Competitor[] = [
       {
         question: 'Is GovWin IQ worth it for a small business?',
         answer:
-          'Multiple verified small-business reviewers describe GovWin IQ\'s pricing as a financial strain, and Deltek\'s own entry-level tier typically excludes the analyst-access features that are the platform\'s main value. Small firms quoting a single federal seat typically see $4,500–$7,500/year, but the platform tends to make the most sense for larger contractors pursuing $50M+ opportunities, where deals run to an estimated $119,000/year.',
+          'Multiple verified small-business reviewers describe GovWin IQ\'s pricing as a financial strain, and Deltek\'s own entry-level tier typically excludes the analyst-access features that are the platform\'s main value. Entry-level packages are reported at $6,000–$15,000/year, but a setup with the modules that make the platform useful is reported at $20,000–$42,000, which is where the strain comes from. It tends to make the most sense for larger contractors pursuing $50M+ opportunities.',
       },
     ],
     deepDive: {

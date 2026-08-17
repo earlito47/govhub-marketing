@@ -11,25 +11,24 @@ draft: false
 ---
 ## How much does GovWin IQ cost?
 
-GovWin IQ costs roughly **4,500 to 7,500 dollars per year for a single federal seat**, and **7,000 to 12,000 dollars per year** if you add state and local coverage. Deltek does not publish list pricing, so every figure here comes from quotes small and mid-size contractors have actually received.
+GovWin IQ costs roughly **6,000 to 15,000 dollars per year for an entry-level single federal seat**, and **20,000 to 42,000 dollars per year** for the multi-seat, multi-module setup most teams end up needing. Deltek publishes no list price and there is no self-serve checkout, so every figure below is a third-party estimate, not a rate card.
 
-| What you are buying | Typical annual cost |
+| What you are buying | Reported annual cost |
 | --- | --- |
-| Single federal seat | 4,500 to 7,500 dollars |
-| Federal plus state and local | 7,000 to 12,000 dollars |
-| Each additional seat | 1,500 to 3,000 dollars |
-| Task order data for major IDIQs | 1,500 to 4,000 dollars |
-| Entry-level package | around 6,000 dollars, usually without analyst access |
+| Entry-level single federal seat | 6,000 to 15,000 dollars |
+| Working setup, several seats plus modules | 20,000 to 42,000 dollars |
+| Large prime, full team and integrations | 35,000 dollars and up, reported as high as 119,000 |
+| Reported average across all deal sizes | 20,000 to 29,000 dollars |
 
-Contracts run 12 months, billed annually, with auto renewal. Multi-year terms discount 10 to 20 percent. Cancellation notice is typically 30 to 60 days before the term ends.
+Contracts run 12 months, billed annually, with auto renewal. Multi-year terms are reported to discount 10 to 15 percent, and renewals commonly carry a 5 to 8 percent uplift. Cancellation notice is typically 30 to 60 days before the term ends.
 
-Enterprise deals are a different market: third-party benchmark data puts the full range across all segments at 13,000 to 119,000 dollars per year, averaging around 29,000. If you are a small firm being quoted near the top of that band, ask what you are paying for.
+**Treat every one of these numbers as a wide estimate.** Published sources disagree substantially: ITQlick works from roughly 200 dollars per user per month, which is about 21,600 dollars a year for ten users; Fed-Spend puts a realistic starter package at 12,000 to 15,000 dollars; and a 13,000 to 119,000 dollar range averaging 29,000 circulates widely, attributed to Vendr buyer data, though Vendr's own public Deltek page reports 9,099 to 39,500 dollars averaging 19,990 across all Deltek products rather than a GovWin IQ figure. Nobody outside Deltek and its customers knows the real distribution. Get your own quote in writing.
 
 ## GovWin IQ pricing, what users actually pay
 
-For small and mid-size contractors, real quotes for GovWin IQ usually land in these ranges. Single federal seat, 4,500 to 7,500 dollars per year. Federal plus state and local, 7,000 to 12,000 dollars per year. Add a second or third seat, often 1,500 to 3,000 dollars per seat. Task order data for major IDIQs can add 1,500 to 4,000 dollars. Multi-year terms discount 10 to 20 percent. Month to month is not common. Most contracts are 12 months, billed annually, with auto renewal. Negotiated notices to cancel are typically 30 to 60 days before the term ends, check your order form.
+The pattern across public sources is that the sticker a small firm expects and the number it ends up signing are far apart. Entry packages are reported at 6,000 to 15,000 dollars a year, but they are narrow: federal search, basic alerts, historical award data, and usually no analyst access. Once a team adds seats, state and local coverage, or the analyst and forecast modules that are the platform's real draw, reported totals move to 20,000 to 42,000 dollars. Month to month is not common. Most contracts are 12 months, billed annually, with auto renewal, and notice to cancel is typically 30 to 60 days before the term ends. Check your order form.
 
-If your quote is outside those bands, it is likely a different module mix, a promotional rate, or you are being quoted enterprise support tiers. Ask for a line item breakdown by module and by seat.
+If your quote is outside those bands, it is likely a different module mix, a promotional rate, or an enterprise support tier. Ask for a line item breakdown by module and by seat, and ask which features the entry tier leaves out, because that is where the gap between the two numbers lives.
 
 <img class="post-figure" src="/brand/page-graphics/compare-weigh-options.svg" alt="" aria-hidden="true" width="720" height="480" loading="lazy" decoding="async" />
 
@@ -50,7 +49,7 @@ What changes price:
 - Scope. Federal only is cheaper. Federal plus SLED costs more. Adding task orders is additive.
 - Seats. The first seat is the most expensive. Additional seats are discounted. Minimums vary by package.
 - Data rights. Some quotes limit bulk exports or API use. Lifts on limits can add cost.
-- Term. Two and three year terms usually get 10 to 20 percent off. New fiscal year and quarter ends are the best times to ask.
+- Term. Two and three year terms are reported to get 10 to 15 percent off. New fiscal year and quarter ends are the best times to ask. Renewals commonly come back with a 5 to 8 percent uplift, so negotiate the renewal number, not just year one.
 
 ## GovWin vs GovWin IQ vs Deltek GovWin
 
@@ -88,7 +87,7 @@ You can get by with one seat and a weekly pipeline review if your team is small.
 
 - Ask for line items. Get Federal, SLED, task orders, and seat counts on separate rows. You cannot negotiate what you cannot see.
 - Use timing. End of quarter and fiscal year end get better discounts. Federal Q4 is strong.
-- Multi-year with protection. Offer a two year term for 15 to 20 percent off. Ask for a cap on year two increases for any added seats.
+- Multi-year with protection. Offer a two year term and push for the 10 to 15 percent that gets reported. Ask for a cap on year two increases for any added seats, since renewal uplifts of 5 to 8 percent are common.
 - Bundle smart, not wide. Do not add SLED unless you have a plan to pursue it. Do not buy task orders unless you sit under vehicles.
 - Reference peers. Say you expect the single seat to land between 5k and 7k, and an add-on seat between 1.5k and 3k, given similar shops.
 - Renewal proof. Ask for a pro forma renewal quote in the order file, same discounts, same scope, subject to CPI cap.
@@ -144,15 +143,15 @@ In these cases, put the budget into proposal execution. If you need help buildin
 
 How much does GovWin cost per year
 
-- A single federal seat runs 4,500 to 7,500 dollars per year. Federal plus state and local runs 7,000 to 12,000 dollars. Additional seats add 1,500 to 3,000 dollars each. Across all segments, including enterprise, third-party benchmarks put the range at 13,000 to 119,000 dollars per year.
+- Reported entry-level packages run 6,000 to 15,000 dollars per year for a single federal seat. A working multi-seat setup with modules is reported at 20,000 to 42,000 dollars. Across all deal sizes, third-party figures put the average somewhere between 20,000 and 29,000 dollars, with large primes reported as high as 119,000. Sources disagree and Deltek publishes nothing, so treat all of these as estimates.
 
 What is a GovWin subscription cost for one user
 
-- One user on federal only is the cheapest entry point at 4,500 to 7,500 dollars per year. Some packages carry a two seat minimum, so confirm before you budget for one.
+- One user on federal only is the cheapest entry point, reported at 6,000 to 15,000 dollars per year depending on which source you read. That tier usually excludes analyst access. Some packages also carry a two seat minimum, so confirm before you budget for one.
 
 Is there Deltek GovWin pricing published anywhere
 
-- No. Deltek does not publish list pricing for GovWin IQ and there is no self-serve checkout. Every price is a sales-led quote, which is why the ranges in this post come from buyer-reported quotes rather than a rate card.
+- No. Deltek does not publish list pricing for GovWin IQ and there is no self-serve checkout. Every price is a sales-led quote, which is why the ranges in this post come from third-party aggregators and buyer reports rather than a rate card, and why they disagree with each other.
 
 What is the difference between GovWin and GovWin IQ
 
@@ -172,7 +171,7 @@ What about data exports and CRM integration
 
 How accurate are the prices in this post
 
-- These are the ranges we see on small firm quotes in 2023 and 2024. Your quote can be higher or lower based on scope, term, and timing. Always get a written breakdown.
+- They are third-party estimates compiled from public sources in 2026, including ITQlick, Fed-Spend, and figures widely attributed to Vendr buyer data. Those sources disagree with each other by a wide margin, and none of them is Deltek. Your quote can land well outside every band here based on scope, term, and timing. Always get a written breakdown.
 
 ## Quick checklist for buying GovWin IQ
 
@@ -187,8 +186,9 @@ If you want a full process to run from first notice to submission day, use this 
 
 ## Bottom line on GovWin IQ pricing
 
-- Single federal seat, 4,500 to 7,500 dollars per year. Federal plus SLED, 7,000 to 12,000 dollars. Add-on seats, 1,500 to 3,000 dollars each. Task orders, 1,500 to 4,000 dollars extra.
-- Contracts are annual with auto renewal. Multi-year terms discount 10 to 20 percent. Calendar your notice date.
+- Entry-level single federal seat is reported at 6,000 to 15,000 dollars per year. A working multi-seat setup with modules runs 20,000 to 42,000. Large primes are reported far higher.
+- Every number here is a third-party estimate and the sources disagree. Deltek publishes nothing.
+- Contracts are annual with auto renewal. Multi-year terms are reported to discount 10 to 15 percent, renewals to rise 5 to 8. Calendar your notice date.
 - Worth it if you use it to shape early, qualify hard, and cut waste. Not worth it if you chase everything or cannot staff proposals.
 
 Get the quote in writing, ask for the breakdown, and hold the tool to ROI like anything else you buy.
