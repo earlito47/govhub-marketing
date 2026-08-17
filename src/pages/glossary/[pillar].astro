@@ -28,15 +28,12 @@ const canonical = new URL(`/glossary/${pillar.slug}/`, Astro.site).toString();
 
 // Terms from the other pillars that these ones point at, so the cluster stays
 // connected now that "related" can cross a page boundary.
-const crossLinks = [
-  ...new Map(
-    terms
-      .flatMap((t) => t.related ?? [])
-      .filter((s) => !pillar.termSlugs.includes(s))
-      .map((s) => [s, getTerm(s)])
-      .filter(([, t]) => t),
-  ).values(),
-] as GlossaryTerm[];
+const crossLinkSlugs = [
+  ...new Set(terms.flatMap((t) => t.related ?? []).filter((s) => !pillar.termSlugs.includes(s))),
+];
+const crossLinks = crossLinkSlugs
+  .map((s) => getTerm(s))
+  .filter((t): t is GlossaryTerm => Boolean(t));
 
 const definedTermSet = {
   '@context': 'https://schema.org',

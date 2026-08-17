@@ -434,7 +434,10 @@ export const glossaryAlphabetical = () => [...glossary].sort((a, b) => a.term.lo
  * inline code, existing link targets, and headings are stripped first so a
  * match never comes from markup rather than prose.
  */
-export function termsMentionedIn(markdown: string, { exclude = [], limit = 6 } = {}): GlossaryTerm[] {
+export function termsMentionedIn(
+  markdown: string,
+  { exclude = [], limit = 6 }: { exclude?: string[]; limit?: number } = {},
+): GlossaryTerm[] {
   const prose = markdown
     .replace(/```[\s\S]*?```/g, ' ') // fenced code
     .replace(/`[^`]*`/g, ' ') // inline code
