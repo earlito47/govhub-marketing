@@ -22,11 +22,56 @@ export interface Competitor {
     competitor: string;
   }[];
   faqs: { question: string; answer: string }[];
+  /**
+   * The long-form post that goes deepest on this competitor. Both /vs/ and
+   * /alternatives/ link to it, and it links back, so the three pages for a
+   * competitor form a closed triangle instead of three orphans.
+   *
+   * This matters because the deep-dive post is often the strongest ranker of
+   * the three and the least linked. GSC 2026-08: the GovWin pricing post sat
+   * at position 5.8 for "govwin iq pricing" with a single inbound internal
+   * link, while /vs/govwin-iq/ took most of the impressions at position 17.5.
+   * Google was splitting one query across four of our URLs and mostly showing
+   * the weaker one.
+   */
+  deepDive?: { href: string; label: string };
+  /**
+   * Where this competitor's "<name> pricing" queries should land.
+   *
+   * Set this only when a dedicated page already outranks /vs/ and
+   * /alternatives/ for the pricing cluster. When set, PriceComparison drops
+   * its exact-match "<name>: pricing" heading and the detailed estimate on the
+   * comparison pages and points at the canonical page instead, so the three
+   * pages stop bidding against each other for one query.
+   *
+   * GSC 2026-08 for "govwin iq pricing": the post ranked 5.8, /vs/govwin-iq/
+   * ranked 17.5 but took 28 of the 38 impressions, /alternatives/govwin-iq/
+   * ranked 38.6, and /pricing/ ranked 67.2. Google had four candidates and
+   * mostly served the second-best one.
+   *
+   * Leave unset for competitors with no dedicated pricing page: there the
+   * comparison pages are the best answer we publish, and the pricing table is
+   * what makes them rank at all.
+   */
+  pricingCanonical?: { href: string; label: string };
+  /**
+   * Very short price statement for meta descriptions, e.g. "starts around
+   * $15,000/year". Must stay consistent with pricingEstimate above; it is the
+   * same claim compressed to fit a ~160-char SERP budget.
+   *
+   * A number is the most clickable thing we can put in a description, and it
+   * is the one thing the pages ranking above us cannot copy: these vendors do
+   * not publish list pricing, so review-aggregator listicles say "contact
+   * sales". GSC 2026-08: these pages drew 479 impressions and zero clicks at
+   * positions 18-21 behind descriptions that named no number.
+   */
+  priceHook: string;
 }
 
 export const competitors: Competitor[] = [
   {
     slug: 'loopio',
+    priceHook: 'starts around $15,000/year',
     name: 'Loopio',
     category: 'response-platform',
     tagline:
@@ -83,9 +128,14 @@ export const competitors: Competitor[] = [
           "GovHub is built specifically for government proposal compliance and small govcon teams, with AI that drafts full proposal content rather than just suggesting answers from a library you have to maintain yourself. Loopio is a broader enterprise RFP response tool used across industries, not government-specific.",
       },
     ],
+    deepDive: {
+      href: '/blog/loopio-alternatives-federal-proposals/',
+      label: 'Best Loopio alternatives for federal proposals',
+    },
   },
   {
     slug: 'responsive',
+    priceHook: 'averages about $14,000/year',
     name: 'Responsive (formerly RFPIO)',
     shortName: 'Responsive',
     category: 'response-platform',
@@ -144,16 +194,21 @@ export const competitors: Competitor[] = [
           'No. Responsive does not offer a self-serve free trial, access requires a sales conversation and custom quote.',
       },
     ],
+    deepDive: {
+      href: '/blog/rfpio-alternative-federal-contractors/',
+      label: 'RFPIO alternatives for federal contractors',
+    },
   },
   {
     slug: 'govwin-iq',
+    priceHook: 'starts around $4,500/year per federal seat',
     name: 'Deltek GovWin IQ',
     shortName: 'GovWin IQ',
     category: 'opportunity-intelligence',
     tagline:
       'Government contract opportunity intelligence and market research platform, not a proposal writing tool.',
     pricingEstimate:
-      'Estimated $13,000–$119,000/year, averaging around $29,000/year, based on third-party deal benchmark data. Entry-level packages exist around $6,000/year but typically exclude the analyst-access features that are GovWin\'s core value.',
+      'Across all segments, estimated $13,000–$119,000/year, averaging around $29,000/year, based on third-party deal benchmark data. That range is driven by enterprise deals; small and mid-size contractors quoting a single federal seat typically see $4,500–$7,500/year, or $7,000–$12,000/year with state and local added. Entry-level packages exist around $6,000/year but typically exclude the analyst-access features that are GovWin\'s core value.',
     bestFor:
       'Large federal prime contractors chasing $50M+ contracts who need analyst-verified opportunity intelligence 3–5 years ahead of RFP release, and who have budget for a dedicated business development research tool.',
     strengths: [
@@ -201,9 +256,17 @@ export const competitors: Competitor[] = [
       {
         question: 'Is GovWin IQ worth it for a small business?',
         answer:
-          'Multiple verified small-business reviewers describe GovWin IQ\'s pricing as a financial strain, and Deltek\'s own entry-level tier typically excludes the analyst-access features that are the platform\'s main value. It tends to make the most sense for larger contractors pursuing $50M+ opportunities who can absorb the estimated $13,000–$119,000/year cost.',
+          'Multiple verified small-business reviewers describe GovWin IQ\'s pricing as a financial strain, and Deltek\'s own entry-level tier typically excludes the analyst-access features that are the platform\'s main value. Small firms quoting a single federal seat typically see $4,500–$7,500/year, but the platform tends to make the most sense for larger contractors pursuing $50M+ opportunities, where deals run to an estimated $119,000/year.',
       },
     ],
+    deepDive: {
+      href: '/blog/govwin-iq-pricing-real-ranges-terms-roi/',
+      label: 'What GovWin IQ actually costs: ranges, terms, and ROI math',
+    },
+    pricingCanonical: {
+      href: '/blog/govwin-iq-pricing-real-ranges-terms-roi/',
+      label: 'GovWin IQ pricing: real ranges, terms, and ROI math',
+    },
   },
 ];
 

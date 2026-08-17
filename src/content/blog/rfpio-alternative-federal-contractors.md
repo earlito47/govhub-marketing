@@ -156,3 +156,5 @@ Week 4. Run a full cycle to Gold Team and final assembly. Stress test exports, p
 - The Simplified Acquisition Threshold is 250,000 dollars. Under that, buyers move faster, and page caps are tighter. You need speed and discipline more than a giant library.
 
 - Evaluation is either LPTA or Best Value, per FAR 15.101-2 and 15.101-1. Know which one you are in before you write. Your tool should flag it early so your writers aim correctly.
+
+If you are narrowing the list now, [Responsive alternatives](/alternatives/responsive/) covers why federal teams switch and when they should not, and [GovHub vs Responsive](/vs/responsive/) puts the two side by side.
