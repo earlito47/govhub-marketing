@@ -39,6 +39,30 @@ import PageHero from '../../components/PageHero.astro';
         </li>
       ))}
     </ul>
+
+    {/*
+      This hub is the only Compare entry in the nav, so until now the entire
+      /alternatives/ branch was unreachable from it: the /alternatives/ index
+      had zero inbound internal links anywhere on the site, and its child pages
+      had zero or one. Linking the branch from here puts every alternatives
+      page within two clicks of the nav.
+    */}
+    <section class="alt-branch">
+      <h2>Already using one of these?</h2>
+      <p>
+        The comparisons above are for teams choosing a tool. If you are on one
+        already and weighing a move, these pages cover the switching case, what
+        actually breaks on federal work, and when staying put is the right call.
+      </p>
+      <ul class="alt-links">
+        {competitors.map((c) => (
+          <li>
+            <a href={`/alternatives/${c.slug}/`}>{c.shortName ?? c.name} alternatives</a>
+          </li>
+        ))}
+        <li><a href="/alternatives/">All alternatives →</a></li>
+      </ul>
+    </section>
   </main>
 </BaseLayout>
 
@@ -91,5 +115,30 @@ import PageHero from '../../components/PageHero.astro';
     color: var(--accent);
     font-weight: 600;
     font-size: 0.9rem;
+  }
+  .alt-branch {
+    max-width: 44rem;
+    margin: 3.5rem 0 0;
+  }
+  .alt-branch h2 {
+    margin: 0 0 0.5rem;
+    font-size: 1.15rem;
+  }
+  .alt-branch p {
+    margin: 0 0 1rem;
+    color: var(--fg-muted);
+    font-size: 0.95rem;
+  }
+  .alt-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.5rem;
+  }
+  .alt-links a {
+    font-weight: 600;
+    font-size: 0.95rem;
   }
 </style>

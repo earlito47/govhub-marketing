@@ -164,3 +164,5 @@ If you want a full process to run from first notice to submission day, use this 
 - Worth it if you use it to shape early, qualify hard, and cut waste. Not worth it if you chase everything or cannot staff proposals.
 
 Get the quote in writing, ask for the breakdown, and hold the tool to ROI like anything else you buy.
+
+GovWin finds the work; it does not write the response. If that is the gap you are actually trying to close, [GovWin IQ alternatives](/alternatives/govwin-iq/) covers the proposal-side options, and [GovHub and Deltek GovWin IQ](/vs/govwin-iq/) explains where the two fit together.

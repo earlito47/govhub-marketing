@@ -143,3 +143,5 @@ If a tool scores under 18, it will cost you hours each cycle. If they cannot cre
 If you need a Loopio alternative because you run federal proposals, start by naming the hard parts, compliance matrices from Section L, clean Word exports, and review control. Test those in the demo with your files, not theirs. Verify security against your real requirements, FAR 52.204-21 for basic safeguarding, DFARS 252.204-7012 if you handle DoD CUI, and any FedRAMP constraints from your agency or prime.
 
 GovHub focuses on the federal specific gaps, automated shredding of Section L and C into a matrix, Word-first authoring, and packaging that matches the RFP. If you want to see how automated shredding drives a better compliance matrix and faster Pink and Red Team starts, here is a short walkthrough: [What is RFP shredding](/solutions/rfp-shredding/).
+
+For a side-by-side on the dimensions above, see [Loopio alternatives](/alternatives/loopio/) for the switching case, or [GovHub vs Loopio](/vs/loopio/) for the feature-by-feature comparison.

@@ -5,6 +5,7 @@ import Breadcrumbs from '../../components/seo/Breadcrumbs.astro';
 import PageHero from '../../components/PageHero.astro';
 import CTABand from '../../components/CTABand.astro';
 import PriceComparison from '../../components/PriceComparison.astro';
+import CompareLinks from '../../components/CompareLinks.astro';
 import { competitors, type Competitor } from '../../data/competitors';
 
 export function getStaticPaths() {
@@ -179,6 +180,8 @@ const altFaqs = isOpportunityIntel
         </>
       )}
     </article>
+
+    <CompareLinks competitor={competitor} current="alternatives" />
 
     <FAQSchema faqs={altFaqs} heading={`${competitor.name}: FAQ`} />
 

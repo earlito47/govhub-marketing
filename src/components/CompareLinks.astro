@@ -1,0 +1,94 @@
+---
+// Cross-links between the three pages we publish per competitor:
+//   /vs/<slug>/            "GovHub vs X" — the comparison
+//   /alternatives/<slug>/  "X alternatives" — the switching case
+//   the deep-dive blog post, where one exists
+//
+// Before this existed the links ran one way: /alternatives/ linked to /vs/ and
+// nothing linked back, so /alternatives/responsive/ had zero inbound internal
+// links and /alternatives/loopio/ had one (the footer). Practitioners treat a
+// striking-distance page with fewer than three internal links as partially
+// orphaned, and all three of these sit at positions 18-21 for queries we can
+// otherwise win.
+//
+// Anchor text carries the target query ("Loopio alternatives", not "read more")
+// because that is the part search engines use.
+import type { Competitor } from '../data/competitors';
+
+interface Props {
+  competitor: Competitor;
+  /** Which of the two page types is rendering this, so we omit the self-link. */
+  current: 'vs' | 'alternatives';
+}
+
+const { competitor, current } = Astro.props;
+const shortName = competitor.shortName ?? competitor.name;
+
+const links = [
+  current !== 'vs' && {
+    href: `/vs/${competitor.slug}/`,
+    anchor: `GovHub vs ${shortName}`,
+    note: 'Feature-by-feature comparison',
+  },
+  current !== 'alternatives' && {
+    href: `/alternatives/${competitor.slug}/`,
+    anchor: `${shortName} alternatives`,
+    note: 'Why teams switch, and when not to',
+  },
+  competitor.deepDive && {
+    href: competitor.deepDive.href,
+    anchor: competitor.deepDive.label,
+    note: 'In-depth guide',
+  },
+].filter(Boolean) as { href: string; anchor: string; note: string }[];
+---
+
+{links.length > 0 && (
+  <aside class="compare-links" aria-labelledby="compare-links-heading">
+    <h2 id="compare-links-heading">More on {shortName}</h2>
+    <ul>
+      {links.map((l) => (
+        <li>
+          <a href={l.href}>{l.anchor}</a>
+          <span>{l.note}</span>
+        </li>
+      ))}
+    </ul>
+  </aside>
+)}
+
+<style>
+  .compare-links {
+    max-width: 48rem;
+    margin: 3rem 0;
+    padding: 1.5rem 1.75rem;
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-radius: 0.75rem;
+  }
+  .compare-links h2 {
+    margin: 0 0 1rem;
+    font-size: 1.05rem;
+    color: var(--fg);
+  }
+  .compare-links ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+  }
+  .compare-links li {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+  .compare-links a {
+    font-weight: 600;
+  }
+  .compare-links span {
+    font-size: 0.9rem;
+    color: var(--fg-muted);
+  }
+</style>

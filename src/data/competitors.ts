@@ -22,6 +22,19 @@ export interface Competitor {
     competitor: string;
   }[];
   faqs: { question: string; answer: string }[];
+  /**
+   * The long-form post that goes deepest on this competitor. Both /vs/ and
+   * /alternatives/ link to it, and it links back, so the three pages for a
+   * competitor form a closed triangle instead of three orphans.
+   *
+   * This matters because the deep-dive post is often the strongest ranker of
+   * the three and the least linked. GSC 2026-08: the GovWin pricing post sat
+   * at position 5.8 for "govwin iq pricing" with a single inbound internal
+   * link, while /vs/govwin-iq/ took most of the impressions at position 17.5.
+   * Google was splitting one query across four of our URLs and mostly showing
+   * the weaker one.
+   */
+  deepDive?: { href: string; label: string };
 }
 
 export const competitors: Competitor[] = [
@@ -83,6 +96,10 @@ export const competitors: Competitor[] = [
           "GovHub is built specifically for government proposal compliance and small govcon teams, with AI that drafts full proposal content rather than just suggesting answers from a library you have to maintain yourself. Loopio is a broader enterprise RFP response tool used across industries, not government-specific.",
       },
     ],
+    deepDive: {
+      href: '/blog/loopio-alternatives-federal-proposals/',
+      label: 'Best Loopio alternatives for federal proposals',
+    },
   },
   {
     slug: 'responsive',
@@ -144,6 +161,10 @@ export const competitors: Competitor[] = [
           'No. Responsive does not offer a self-serve free trial, access requires a sales conversation and custom quote.',
       },
     ],
+    deepDive: {
+      href: '/blog/rfpio-alternative-federal-contractors/',
+      label: 'RFPIO alternatives for federal contractors',
+    },
   },
   {
     slug: 'govwin-iq',
@@ -204,6 +225,10 @@ export const competitors: Competitor[] = [
           'Multiple verified small-business reviewers describe GovWin IQ\'s pricing as a financial strain, and Deltek\'s own entry-level tier typically excludes the analyst-access features that are the platform\'s main value. It tends to make the most sense for larger contractors pursuing $50M+ opportunities who can absorb the estimated $13,000–$119,000/year cost.',
       },
     ],
+    deepDive: {
+      href: '/blog/govwin-iq-pricing-real-ranges-terms-roi/',
+      label: 'What GovWin IQ actually costs: ranges, terms, and ROI math',
+    },
   },
 ];
 

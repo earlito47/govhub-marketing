@@ -7,6 +7,7 @@ import { competitors, type Competitor } from '../../data/competitors';
 import PageHero from '../../components/PageHero.astro';
 import CTABand from '../../components/CTABand.astro';
 import PriceComparison from '../../components/PriceComparison.astro';
+import CompareLinks from '../../components/CompareLinks.astro';
 import { SIGNUP_URL } from '../../config';
 
 export function getStaticPaths() {
@@ -192,6 +193,8 @@ const description = isOpportunityIntel
         <a class="secondary" href="/pricing/">See pricing</a>
       </p>
     </article>
+
+    <CompareLinks competitor={competitor} current="vs" />
 
     <FAQSchema faqs={competitor.faqs} heading={`${title}: FAQ`} />
 
