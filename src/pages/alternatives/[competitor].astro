@@ -37,9 +37,16 @@ const metaTitle = isOpportunityIntel
   ? `${shortName} alternatives: proposal-first options (${YEAR})`
   : `${shortName} alternatives for government contractors (${YEAR})`;
 
+// Descriptions lead with a price and a named federal requirement. The pages
+// above us on these SERPs are review-aggregator listicles (Gartner, G2,
+// Capterra) and vendor blogs, and none of them can quote a number, because
+// none of these vendors publish list pricing. GSC 2026-08: /alternatives/
+// drew 479 impressions and zero clicks at positions 18-21 behind copy that
+// opened "Looking for a X alternative? See why government contractors choose
+// GovHub" — about us, not about what the searcher came to find out.
 const description = isOpportunityIntel
-  ? `${shortName} finds government opportunities but doesn't write proposals. See how GovHub pairs with (or replaces) it for proposal writing.`
-  : `Looking for a ${shortName} alternative? See why government contractors choose GovHub, an AI proposal platform built for federal, state, and local RFPs.`;
+  ? `${shortName} finds federal opportunities but will not write the proposal. See proposal-first alternatives, what ${shortName} costs, and when you need both.`
+  : `${shortName} ${competitor.priceHook} and is not built for Section L/M or FAR. See federal-first alternatives, real prices, and when to stay on ${shortName}.`;
 
 // Alternatives-page-specific FAQs — reframe the existing set toward
 // alternative-seeking search intent.

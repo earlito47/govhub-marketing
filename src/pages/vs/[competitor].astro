@@ -8,6 +8,7 @@ import PageHero from '../../components/PageHero.astro';
 import CTABand from '../../components/CTABand.astro';
 import PriceComparison from '../../components/PriceComparison.astro';
 import CompareLinks from '../../components/CompareLinks.astro';
+import { PLANS, formatUsd } from '../../data/pricing';
 import { SIGNUP_URL } from '../../config';
 
 export function getStaticPaths() {
@@ -40,9 +41,13 @@ const metaTitle = isOpportunityIntel
   ? `GovHub vs ${shortName} (${YEAR}): do you need both?`
   : `GovHub vs ${shortName} (${YEAR}): government proposal software`;
 
+// Same reasoning as the /alternatives/ descriptions: lead with the number.
+// GovHub publishing a starting price is the one claim these SERPs cannot
+// match, since every competitor here quotes by sales call only.
+const startingPrice = `${formatUsd(PLANS[0].monthlyUsd)}/mo`;
 const description = isOpportunityIntel
-  ? `${shortName} and GovHub solve different parts of the government contracting workflow. See how they compare, and why many teams use both.`
-  : `Direct comparison of GovHub and ${shortName} for government contractors, where each fits, compliance and AI drafting differences, and which is right for you.`;
+  ? `${shortName} finds federal opportunities years before the RFP; GovHub writes the response. See what each does, what they cost, and why teams run both.`
+  : `${shortName} ${competitor.priceHook}, quoted by sales call only. GovHub publishes tiers from ${startingPrice}. Compare both on federal compliance and AI drafting.`;
 ---
 
 <BaseLayout title={metaTitle} description={description} ogImage="/brand/page-graphics/compare-weigh-options@2x.png">

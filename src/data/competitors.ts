@@ -54,11 +54,24 @@ export interface Competitor {
    * what makes them rank at all.
    */
   pricingCanonical?: { href: string; label: string };
+  /**
+   * Very short price statement for meta descriptions, e.g. "starts around
+   * $15,000/year". Must stay consistent with pricingEstimate above; it is the
+   * same claim compressed to fit a ~160-char SERP budget.
+   *
+   * A number is the most clickable thing we can put in a description, and it
+   * is the one thing the pages ranking above us cannot copy: these vendors do
+   * not publish list pricing, so review-aggregator listicles say "contact
+   * sales". GSC 2026-08: these pages drew 479 impressions and zero clicks at
+   * positions 18-21 behind descriptions that named no number.
+   */
+  priceHook: string;
 }
 
 export const competitors: Competitor[] = [
   {
     slug: 'loopio',
+    priceHook: 'starts around $15,000/year',
     name: 'Loopio',
     category: 'response-platform',
     tagline:
@@ -122,6 +135,7 @@ export const competitors: Competitor[] = [
   },
   {
     slug: 'responsive',
+    priceHook: 'averages about $14,000/year',
     name: 'Responsive (formerly RFPIO)',
     shortName: 'Responsive',
     category: 'response-platform',
@@ -187,6 +201,7 @@ export const competitors: Competitor[] = [
   },
   {
     slug: 'govwin-iq',
+    priceHook: 'starts around $4,500/year per federal seat',
     name: 'Deltek GovWin IQ',
     shortName: 'GovWin IQ',
     category: 'opportunity-intelligence',

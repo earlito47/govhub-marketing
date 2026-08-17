@@ -14,7 +14,7 @@ import { mkdir, writeFile } from 'node:fs/promises';
 import { UsaSpendingClient, CONTRACT_AWARD_TYPE_CODES } from './lib/usaspending.mjs';
 import { fetchRecompeteRaw, RECOMPETE_WINDOW_MONTHS } from './fetch-data.mjs';
 import { fiscalYearOf, fiscalYearRange, fiscalYearLabel, formatUsdCompact, formatPercent, addMonths, formatMonthYear } from './lib/format.mjs';
-import { loadRoster, vendorHrefForRecipient, vendorEntryForRecipient } from './lib/vendor-roster.mjs';
+import { loadRoster, vendorHrefForRecipient, vendorEntryForRecipient, displayNameFor } from './lib/vendor-roster.mjs';
 import { vendorHref } from './lib/slugs.mjs';
 import {
   AGENCY_SLUGS,
@@ -165,11 +165,22 @@ function buildTopContractors(ctx, resp, { smallBiz, roster }) {
         { q: `How are these ${smallBiz ? 'small-business ' : ''}contractor rankings calculated?`, a: `By total federal contract obligations (award types A–D) in ${ctx.fyLabel}, from USAspending.gov${smallBiz ? ', filtered to recipients flagged as small businesses' : ''}. Vendor names use USAspending's recipient aggregation.` },
       ]
     : [];
-  const meta = `The largest ${smallBiz ? 'small-business ' : ''}federal contractors by obligations in ${ctx.fyLabel}, led by ${top?.name ?? 'n/a'}. Ranked from USAspending.gov data.`;
+  // SERP copy, so use the roster's display name rather than the raw
+  // USAspending string: that is ALL CAPS and usually ends in a corporate
+  // suffix, which rendered as "OPTUM PUBLIC SECTOR SOLUTIONS, INC.." once the
+  // sentence period landed against it.
+  const leader = top ? displayNameFor(top.name) : null;
+  const meta = leader
+    ? `The largest ${smallBiz ? 'small-business ' : ''}federal contractors by obligations in ${ctx.fyLabel}, led by ${leader} at ${formatUsdCompact(top.amount)}. Ranked from USAspending.gov data.`
+    : `The largest ${smallBiz ? 'small-business ' : ''}federal contractors by obligations in ${ctx.fyLabel}. Ranked from USAspending.gov data.`;
   return rankingPage({
     ctx,
     slug,
-    title: `${label}: ${fiscalYearLabel(ctx.currentFy)} Rankings`,
+    // "Rankings" after "Top" carried no information. The row count and the
+    // ranking metric do, and the count is a live query modifier: GSC 2026-08
+    // has us at position 3.0 for "top 100 government contractors 2026". Use
+    // the real table size, never a rounder-sounding one.
+    title: `Top ${rows.length} ${smallBiz ? 'small-business contractors' : 'government contractors'} by obligations (${fiscalYearLabel(ctx.currentFy)})`,
     h1: `${label}, ${ctx.fyLabel}`,
     metaDescription: meta,
     chart,
@@ -343,7 +354,7 @@ function buildLargestContracts(ctx, resp) {
     slug: 'largest-federal-contracts-fy2026',
     title: `Largest Federal Contracts, ${fiscalYearLabel(ctx.currentFy)}`,
     h1: `Largest federal contracts by total value, ${ctx.fyLabel}`,
-    metaDescription: `The federal contracts with the largest total award value active in ${ctx.fyLabel}, from USAspending.gov. Led by ${top?.recipient ?? 'n/a'}.`,
+    metaDescription: `The federal contracts with the largest total award value active in ${ctx.fyLabel}, from USAspending.gov. Led by ${top?.recipient ? displayNameFor(top.recipient) : 'n/a'}.`,
     chart,
     table,
     intro,
