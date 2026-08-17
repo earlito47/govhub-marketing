@@ -1,6 +1,7 @@
 ---
 import BlogPostLayout from '../../layouts/BlogPostLayout.astro';
 import { getCollection, render, type CollectionEntry } from 'astro:content';
+import { glossary, termsMentionedIn } from '../../data/glossary';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog', ({ data }) => !data.draft);
@@ -23,6 +24,18 @@ const related = post.data.pillarSlug
       (p) => p.id !== post.id && p.data.pillarSlug === post.data.pillarSlug,
     )
   : [];
+
+// Jargon this post actually uses, linked to its definition. See
+// termsMentionedIn in data/glossary.ts for why: the glossary pages were
+// almost entirely orphaned, and the posts are where the terms already appear.
+//
+// A post never links the glossary entry for its own subject. Both pages would
+// then be answering one query, which is how /glossary/compliance-matrix/ ended
+// up at position 73 behind our own /blog/what-is-a-compliance-matrix/ at 35
+// and /solutions/compliance-matrix-generator/ at 6.7 (GSC 2026-08). The post
+// slug is the test: "what-is-a-compliance-matrix" contains "compliance-matrix".
+const selfTerms = glossary.filter((t) => post.id.includes(t.slug)).map((t) => t.slug);
+const terms = termsMentionedIn(post.body ?? '', { exclude: selfTerms });
 ---
 
 <BlogPostLayout
@@ -37,6 +50,20 @@ const related = post.data.pillarSlug
   coverAlt={post.data.coverAlt}
 >
   <Content />
+
+  {terms.length > 0 && (
+    <aside class="terms" aria-labelledby="terms-heading">
+      <h2 id="terms-heading">Terms used in this post</h2>
+      <ul>
+        {terms.map((t) => (
+          <li>
+            <a href={t.defersTo?.href ?? `/glossary/${t.slug}/`}>{t.term}</a>
+            <span>{t.short}</span>
+          </li>
+        ))}
+      </ul>
+    </aside>
+  )}
 
   {related.length > 0 && (
     <aside class="related">
@@ -68,5 +95,34 @@ const related = post.data.pillarSlug
   }
   .related li {
     margin: 0.5rem 0;
+  }
+  .terms {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+  }
+  .terms h2 {
+    font-size: 1.1rem;
+    margin: 0 0 1rem;
+  }
+  .terms ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .terms li {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+  .terms a {
+    font-weight: 600;
+  }
+  .terms span {
+    font-size: 0.9rem;
+    color: var(--fg-muted);
   }
 </style>

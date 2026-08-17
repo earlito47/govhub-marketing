@@ -19,6 +19,35 @@ export interface GlossaryTerm {
   related?: string[]; // other glossary slugs
   solutions?: GlossaryLink[]; // relevant feature pages (glossary -> money page)
   insight?: GlossaryLink; // relevant Insights page
+  /**
+   * Too basic to define for this audience, so kept out of the automatic
+   * "terms used in this post" block. A federal proposal manager reading us
+   * does not need RFP explained, and linking it from all 13 posts pointed the
+   * most internal equity on the site at our weakest page: /glossary/rfp/ sits
+   * at position 77 against Wikipedia and Investopedia for a generic business
+   * term, drawing queries like "rfp meaning in construction" that are not
+   * govcon buyers at all (GSC 2026-08).
+   *
+   * The page stays live and indexed. It is a definition a visitor may still
+   * want; it just should not collect links meant for real federal jargon.
+   */
+  foundational?: boolean;
+  /**
+   * A stronger page of ours owns this topic, so the automatic "terms used in
+   * this post" block links there instead of at the glossary entry.
+   *
+   * Use it when the glossary page loses to our own pages on every shared
+   * query. GSC 2026-08 for the compliance matrix cluster: on "compliance
+   * matrix development" the glossary sat at 88.3, the blog post at 79.0 and
+   * the solutions page at 41.2; on "proposal compliance matrix" the glossary
+   * was at 82.5 against the solutions page at 52.2. Even "what is a compliance
+   * matrix" put the glossary at 86.7. Pointing a dozen internal links at the
+   * weakest of three pages on one topic just splits the signal further.
+   *
+   * The glossary page stays live and indexed and keeps its place in the hub;
+   * it simply stops collecting links that belong to the page that ranks.
+   */
+  defersTo?: GlossaryLink;
 }
 
 export const glossary: GlossaryTerm[] = [
@@ -213,6 +242,7 @@ export const glossary: GlossaryTerm[] = [
   },
   {
     slug: 'rfi',
+    foundational: true,
     term: 'RFI',
     aka: ['Request for Information'],
     category: 'Solicitations',
@@ -226,6 +256,7 @@ export const glossary: GlossaryTerm[] = [
   },
   {
     slug: 'rfp',
+    foundational: true,
     term: 'RFP',
     aka: ['Request for Proposal'],
     category: 'Solicitations',
@@ -243,6 +274,7 @@ export const glossary: GlossaryTerm[] = [
   },
   {
     slug: 'rfq',
+    foundational: true,
     term: 'RFQ',
     aka: ['Request for Quotation'],
     category: 'Solicitations',
@@ -256,6 +288,10 @@ export const glossary: GlossaryTerm[] = [
   },
   {
     slug: 'compliance-matrix',
+    defersTo: {
+      label: 'Compliance matrix generator',
+      href: '/solutions/compliance-matrix-generator/',
+    },
     term: 'Compliance matrix',
     aka: ['requirements traceability matrix', 'compliance crosswalk'],
     category: 'Proposal artifacts',
@@ -277,3 +313,49 @@ export const getTerm = (slug: string) => glossary.find((t) => t.slug === slug);
 
 // Alphabetical by display term, for the hub listing.
 export const glossaryAlphabetical = () => [...glossary].sort((a, b) => a.term.localeCompare(b.term));
+
+/**
+ * Glossary terms a body of text actually mentions, so a post can link the
+ * jargon it uses without anyone maintaining the list by hand.
+ *
+ * The glossary was written as a discovery path but nothing pointed at it:
+ * 14 of the 18 term pages had zero inbound internal links and the other four
+ * had one each, which is why they sit at positions 53-87 (GSC 2026-08, 1,280
+ * impressions and no clicks). Posts are where the terms are already used, so
+ * that is where the links belong.
+ *
+ * Matching is deliberately conservative. Multi-word terms and expansions match
+ * case-insensitively; bare acronyms must match uppercase, so prose about "a
+ * bpa machine" or a stray "sam" cannot pull in a definition. Fenced code,
+ * inline code, existing link targets, and headings are stripped first so a
+ * match never comes from markup rather than prose.
+ */
+export function termsMentionedIn(markdown: string, { exclude = [], limit = 6 } = {}): GlossaryTerm[] {
+  const prose = markdown
+    .replace(/```[\s\S]*?```/g, ' ') // fenced code
+    .replace(/`[^`]*`/g, ' ') // inline code
+    .replace(/\]\([^)]*\)/g, '] ') // link targets, keep the anchor text
+    .replace(/^#{1,6}\s.*$/gm, ' ') // headings
+    .replace(/^---[\s\S]*?^---/m, ' '); // frontmatter
+
+  const escape = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+
+  const matches = glossary.filter((t) => {
+    if (t.foundational) return false;
+    if (exclude.includes(t.slug)) return false;
+    return [t.term, ...(t.aka ?? [])].some((name) => {
+      const isAcronym = /^[A-Z0-9()]{2,6}$/.test(name);
+      const re = new RegExp(`(?<![\\w-])${escape(name)}(?![\\w-])`, isAcronym ? '' : 'i');
+      return re.test(prose);
+    });
+  });
+
+  // Densest mentions first, so the most relevant terms survive the cap.
+  const density = (t: GlossaryTerm) =>
+    [t.term, ...(t.aka ?? [])].reduce((n, name) => {
+      const re = new RegExp(`(?<![\\w-])${escape(name)}(?![\\w-])`, 'gi');
+      return n + (prose.match(re)?.length ?? 0);
+    }, 0);
+
+  return matches.sort((a, b) => density(b) - density(a)).slice(0, limit);
+}
