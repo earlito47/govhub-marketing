@@ -108,5 +108,5 @@ jobs:
             echo "Nothing archived (dry run, or no successful posts)."
           else
             git commit -m "chore: archive published social copy [skip ci]"
-            git push
+            scripts/ci/git-push-retry.sh
           fi

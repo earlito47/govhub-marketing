@@ -63,5 +63,5 @@ jobs:
             echo "No new vendor profiles today — nothing to commit."
           else
             git commit -m "insights: daily vendor profile publish $(date -u +%F)"
-            git push
+            scripts/ci/git-push-retry.sh
           fi
