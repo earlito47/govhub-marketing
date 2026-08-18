@@ -144,5 +144,5 @@ jobs:
             echo "No data changes this week — nothing to commit."
           else
             git commit -m "insights: weekly data refresh $(date -u +%F)"
-            git push
+            scripts/ci/git-push-retry.sh
           fi

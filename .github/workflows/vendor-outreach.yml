@@ -101,13 +101,11 @@ jobs:
             exit 0
           fi
           git commit -m "outreach: ledger update $(date -u +%F) [skip ci]"
-          for attempt in 1 2 3 4; do
-            if git push; then
-              exit 0
-            fi
-            echo "Push failed (attempt $attempt); rebasing onto origin and retrying."
-            sleep $((2 ** attempt))
-            git pull --rebase origin "${GITHUB_REF_NAME}"
-          done
-          echo "::error::Could not push the outreach ledger. Sends from this run are NOT recorded; do not re-run until it is committed by hand."
-          exit 1
+          # Shared with the other committing workflows. Losing this particular
+          # push is the costly one: the emails have already gone out, so a
+          # dropped ledger update means the next run re-sends to the same
+          # vendors. Hence the extra attempts.
+          PUSH_ATTEMPTS=6 scripts/ci/git-push-retry.sh || {
+            echo "::error::The outreach ledger was not pushed. Sends from this run are NOT recorded; do not re-run until it is committed by hand."
+            exit 1
+          }
