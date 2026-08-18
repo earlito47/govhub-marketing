@@ -23,12 +23,30 @@
 
 const BASE_URL = 'https://api.usaspending.gov';
 
-// The last two delays are deliberate cool-downs, not ordinary retries: the
-// weekly run died twice (2026-08-03 attempt 1, 2026-08-05 attempt 2) at the
-// same point ~3.5 minutes in, with USAspending's edge resetting connections
-// (UND_ERR_SOCKET, bytesRead 0) — a sustained-rate cutoff that outlasted the
-// old 20s ladder. A block like that clears in minutes, so wait minutes.
-const RETRY_DELAYS_MS = [1000, 4000, 15000, 60000, 180000];
+// The trailing delays are deliberate cool-downs, not ordinary retries.
+//
+// The earlier read of this — a "~3.5 minute sustained-rate cutoff" — did not
+// survive more runs. USAspending's edge drops connections (UND_ERR_SOCKET,
+// "other side closed") at an unpredictable point, not a fixed elapsed time:
+// 2026-08-17 died 3.8 minutes in, but 2026-08-10 queried happily for 22
+// minutes (all NAICS, agencies, states, ~130 vendors) before hitting the same
+// wall, and the two clean runs before that queried for 14 and 22 minutes.
+// Rate isn't the variable either — the drop happens at 2.5 req/s just as it
+// did at 12 req/s.
+//
+// What IS consistent: both August failures died exactly 260s after their last
+// success — the full old ladder (1+4+15+60+180), every attempt burnt. So the
+// outages outlast 4.3 minutes. The ladder now spans ~9.3 minutes — over twice
+// the only outage length we can actually measure — before giving up.
+//
+// It deliberately stops there rather than growing to cover every conceivable
+// outage: a retry sleep holds its concurrency slot, so a longer ladder stalls
+// the whole run. Anything that outlasts 9.3 minutes is handled a level up, by
+// the workflow re-running the pipeline against the on-disk response cache
+// (see weekly-insights.yml) — restarting is cheap because the cache makes it
+// resume, so the ladder covers short outages and the retry loop covers long
+// ones.
+const RETRY_DELAYS_MS = [1000, 4000, 15000, 60000, 180000, 300000];
 const RETRYABLE_STATUS = new Set([429, 500, 502, 503, 504]);
 
 // --- Concurrency limiter: max in-flight + minimum spacing between starts.
