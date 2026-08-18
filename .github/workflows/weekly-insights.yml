@@ -40,8 +40,10 @@ concurrency:
 jobs:
   refresh:
     runs-on: ubuntu-latest
-    # 60 (was 45): headroom for the vendor-profile fetches as the roster grows.
-    timeout-minutes: 60
+    # 90 (was 60, was 45): headroom for the vendor-profile fetches as the
+    # roster grows, plus the in-job retry loop below, which can idle through
+    # up to three ~9-minute retry ladders before giving up.
+    timeout-minutes: 90
     steps:
       - name: Checkout
         uses: actions/checkout@v5
@@ -55,13 +57,18 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      # USAspending's edge started (2026-08-03) resetting connections from
-      # GitHub-runner IPs after ~3.5 minutes of sustained querying — verified
-      # across three runs dying at the same elapsed time at two request rates,
-      # while the identical requests succeed from other networks. The response
-      # cache is keyed per ISO week, so persisting it across runs makes a
-      # re-run RESUME: each attempt spends its ~3.5-minute budget on new
-      # requests only, and one or two re-runs finish the week.
+      # USAspending's edge intermittently drops connections from GitHub-runner
+      # IPs (UND_ERR_SOCKET) for stretches longer than an in-request retry
+      # ladder can absorb. It is not the fixed ~3.5-minute cutoff this comment
+      # once claimed — 2026-08-10 queried for 22 minutes before hitting it, and
+      # the drop happens at 2.5 req/s just as it did at 12 req/s.
+      #
+      # The response cache is keyed per ISO week, so persisting it across runs
+      # makes a re-run RESUME: it skips every call an earlier run already
+      # completed and picks up at the first uncached one. The refresh step
+      # below also retries in-job against this same cache; this save/restore
+      # pair extends that resume across separate workflow runs, so even a
+      # manual Re-run days later starts from what the last one managed.
       - name: Compute cache key (ISO week)
         id: week
         run: echo "week=$(date -u +%G-w%V)" >> "$GITHUB_OUTPUT"
@@ -74,13 +81,44 @@ jobs:
           restore-keys: |
             insights-usaspending-${{ steps.week.outputs.week }}-
 
+      # Retried in-job, because the pipeline resumes. Every USAspending
+      # response is cached under .cache/raw keyed by ISO week, so an attempt
+      # that dies partway leaves everything it already fetched on disk and the
+      # next attempt walks straight past it to the first uncached call — the
+      # same .cache directory, no restore round-trip needed between attempts.
+      #
+      # That resume machinery landed 2026-08-05 and was then never used: every
+      # failed run since is run_attempt 1, because resuming needed a human to
+      # notice the failure and click Re-run. Nobody did, so the last two weeks
+      # were refreshed by hand locally instead. This loop is what makes the
+      # cache actually pay off.
       - name: Refresh Insights data (fetch + compute + LLM narratives)
-        run: npm run insights:weekly
         env:
           # Optional: enables the LLM narrative stage. Absent → deterministic
           # fallbacks (the stage self-skips). Every LLM number is verified or
           # discarded, and validate.mjs re-checks below.
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          ATTEMPTS: "3"
+          # Cool-down between attempts. The in-request retry ladder has already
+          # spent ~9 minutes backing off by the time an attempt fails, so this
+          # only needs to let a slightly-longer outage clear.
+          COOLDOWN_S: "120"
+        run: |
+          for attempt in $(seq 1 "$ATTEMPTS"); do
+            echo "::group::insights:weekly — attempt $attempt of $ATTEMPTS"
+            if npm run insights:weekly; then
+              echo "::endgroup::"
+              echo "Refresh completed on attempt $attempt."
+              exit 0
+            fi
+            echo "::endgroup::"
+            if [ "$attempt" -lt "$ATTEMPTS" ]; then
+              echo "::warning::Attempt $attempt failed. Cooling down ${COOLDOWN_S}s, then resuming from the response cache."
+              sleep "$COOLDOWN_S"
+            fi
+          done
+          echo "::error::All $ATTEMPTS attempts failed — USAspending was unreachable for longer than the run could absorb. The response cache is saved below, so a manual Re-run resumes from where this left off rather than starting over."
+          exit 1
 
       # Save even when the refresh failed — a failed run's partial cache is
       # exactly what lets the next attempt get further.
