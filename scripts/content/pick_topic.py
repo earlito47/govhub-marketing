@@ -164,6 +164,64 @@ def is_branded(query: str) -> bool:
     return any(b in q for b in BRAND_TOKENS)
 
 
+# Government data properties. A query that is only one of these plus stopwords
+# is someone navigating to that site, not someone with a question we answer.
+GOV_DATA_SITES = {"usaspending", "fpds", "sam", "samgov", "beta", "gov", "govtribe", "highergov"}
+
+
+def has_identifier(query: str) -> bool:
+    """True if the query contains a contract/award/entity identifier.
+
+    These rank well and score well, which is exactly the trap: the site sits at
+    position 4-9 for dozens of them because our /insights/ pages carry the
+    numbers, and they have never produced a single click, because the searcher
+    wants usaspending.gov, not proposal software. GSC 2026-08 counted 41 such
+    queries and 413 impressions at zero clicks. On 2026-08-17 this picker
+    selected one and the pipeline published "zrgfmmn3rxv8: find the total
+    awarded amount", a post titled after a random award identifier.
+
+    A PIID, order number, or UEI is 8+ characters mixing letters and digits
+    ("19aqmm18c0185", "zrgfmmn3rxv8"). That threshold deliberately clears the
+    real terms our audience searches: "sf330" and "8a" are too short, NAICS
+    codes like "541511" are digits only, and FAR cites like "52.212-1" carry
+    punctuation that normalize() splits apart.
+    """
+    for tok in normalize(query).split():
+        if len(tok) >= 8 and any(c.isalpha() for c in tok) and any(c.isdigit() for c in tok):
+            return True
+    return False
+
+
+# Words that turn a mention of a government data site into a record lookup.
+# Deliberately tight: "registration" and "research" are absent because
+# "sam.gov registration renewal checklist" and "how to use usaspending for
+# market research" are topics we do want.
+LOOKUP_TERMS = {"recipient", "profile", "lookup"}
+
+
+def is_navigational(query: str) -> bool:
+    """True if the query is site navigation or a record lookup, not a question.
+
+    Two shapes. "usaspending" or "fpds gov" is a person trying to reach that
+    site. "<vendor name> usaspending recipient profile" is a person pulling one
+    company's record; GSC 2026-08 had us at position 4.8 for exactly that, with
+    zero clicks, because the answer they want lives on usaspending.gov.
+
+    A real question that happens to mention one of these sites keeps its other
+    tokens and carries no lookup word, so it survives.
+    """
+    toks = tokens(query)
+    if not toks:
+        return False
+    if toks <= GOV_DATA_SITES:
+        return True
+    return bool(toks & GOV_DATA_SITES) and bool(toks & LOOKUP_TERMS)
+
+
+def is_usable_topic(query: str) -> bool:
+    return not (is_branded(query) or has_identifier(query) or is_navigational(query))
+
+
 def covered_signatures() -> list:
     """Token sets for every topic the site already targets.
 
@@ -281,7 +339,7 @@ def main():
             r for r in rows
             if r["impressions"] >= min_impr
             and pos_lo <= r["position"] <= pos_hi
-            and not is_branded(r["query"])
+            and is_usable_topic(r["query"])
         ]
         candidates = []
         for r in pool:

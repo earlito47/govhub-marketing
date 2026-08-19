@@ -54,3 +54,9 @@ https://govhub.online/*  https://www.govhub.online/:splat  301
 # shared with them, so it consolidates into the post that answers it.
 /glossary/compliance-matrix/    /blog/what-is-a-compliance-matrix/    301
 
+
+# The weekly content pipeline picked a USAspending award identifier as a topic
+# and published a post titled after it. The article itself is sound, so it was
+# retargeted at the real question instead of deleted. See has_identifier in
+# scripts/content/pick_topic.py for the filter that stops this recurring.
+/blog/zrgfmmn3rxv8-total-awarded-amount/  /blog/find-total-awarded-amount-federal-contract/  301

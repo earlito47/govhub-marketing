@@ -155,6 +155,20 @@ def source_ranking():
     return angle, facts, allowed, facts["link"]
 
 
+def glossary_href(slug: str) -> str:
+    """Live URL for a glossary term, mirroring hrefForTerm in data/glossary.ts.
+
+    Parsed out of the pillars list rather than hardcoded, so adding a term to a
+    pillar keeps this correct without a second edit.
+    """
+    src = GLOSSARY_TS.read_text(encoding="utf-8")
+    tail = src[src.index("export const pillars"):] if "export const pillars" in src else ""
+    for m in re.finditer(r"slug: '([a-z-]+)',[\s\S]*?termSlugs: \[([^\]]*)\]", tail):
+        pillar, terms = m.group(1), re.findall(r"'([a-z0-9-]+)'", m.group(2))
+        if slug in terms:
+            return f"/glossary/{pillar}/#{slug}"
+    return "/glossary/"
+
 def source_glossary():
     """Rotate through glossary terms. String-scrape, same as pick_topic.py."""
     text = GLOSSARY_TS.read_text()
@@ -172,7 +186,10 @@ def source_glossary():
     if not entries:
         sys.exit("Could not parse any glossary entries from src/data/glossary.ts.")
     e = entries[date.today().timetuple().tm_yday % len(entries)]
-    link = f"{SITE_URL}/glossary/{e['slug']}/"
+    # Term pages were consolidated into pillar pages, so /glossary/<term>/ now
+    # 301s. Resolve the pillar anchor the way hrefForTerm does in
+    # src/data/glossary.ts, so posted links land in one hop.
+    link = f"{SITE_URL}{glossary_href(e['slug'])}"
     facts = {"term": e["term"], "definition": e["short"], "link": link}
     angle = (f"Explain the term '{e['term']}' the way a veteran capture manager "
              f"would to a new teammate. No numbers needed today.")
