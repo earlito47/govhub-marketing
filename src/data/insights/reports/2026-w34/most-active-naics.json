@@ -1,0 +1,207 @@
+{
+  "pageType": "report",
+  "slug": "most-active-naics",
+  "week": "2026-w34",
+  "publishedDate": "2026-08-19",
+  "title": "Most Active Federal Markets This Week, Aug 13–19, 2026",
+  "h1": "Most active federal contract markets, week of Aug 13–19, 2026",
+  "metaDescription": "The most active federal contract industries (by newly reported obligations) the week of Aug 13–19, 2026, led by Direct Health and Medical Insurance Carriers.",
+  "updated": "2026-08-19",
+  "fyWindow": {
+    "label": "Week of Aug 13–19, 2026",
+    "start": "2026-08-13",
+    "end": "2026-08-19"
+  },
+  "stats": {
+    "totalObligations": 2438792119.7,
+    "awardCount": null,
+    "yoyGrowthPct": null,
+    "avgAwardSize": null,
+    "smallBusinessSharePct": null
+  },
+  "charts": [
+    {
+      "id": "2026-w34-most-active-naics",
+      "type": "bar",
+      "title": "Most active industries (NAICS) by obligations, week of Aug 13–19, 2026",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "Direct Health and Medical Insurance Carriers",
+              804257097.86
+            ],
+            [
+              "Computer Systems Design Services",
+              515770992.57
+            ],
+            [
+              "Other Computer Related Services",
+              260975000.95
+            ],
+            [
+              "Remediation Services",
+              202257597.77
+            ],
+            [
+              "Engineering Services",
+              143561236.91
+            ],
+            [
+              "Commercial and Institutional Building Construction",
+              139248387.53
+            ],
+            [
+              "All Other Miscellaneous Chemical Product and Preparation Manufacturing",
+              120107177.12
+            ],
+            [
+              "Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology)",
+              90460491.46
+            ],
+            [
+              "Custom Computer Programming Services",
+              82417292.49
+            ],
+            [
+              "Administrative Management and General Management Consulting Services",
+              79736845.04
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Direct Health and Medical Insurance Carriers was the most active market, with $804M in newly reported obligations."
+    }
+  ],
+  "tables": [
+    {
+      "title": "Most active industries, week of Aug 13–19, 2026",
+      "columns": [
+        "Rank",
+        "Industry (NAICS)",
+        "Obligations"
+      ],
+      "rows": [
+        [
+          1,
+          {
+            "text": "Direct Health and Medical Insurance Carriers (524114)",
+            "href": null
+          },
+          804257097.86
+        ],
+        [
+          2,
+          {
+            "text": "Computer Systems Design Services (541512)",
+            "href": "/insights/naics/541512/"
+          },
+          515770992.57
+        ],
+        [
+          3,
+          {
+            "text": "Other Computer Related Services (541519)",
+            "href": "/insights/naics/541519/"
+          },
+          260975000.95
+        ],
+        [
+          4,
+          {
+            "text": "Remediation Services (562910)",
+            "href": null
+          },
+          202257597.77
+        ],
+        [
+          5,
+          {
+            "text": "Engineering Services (541330)",
+            "href": "/insights/naics/541330/"
+          },
+          143561236.91
+        ],
+        [
+          6,
+          {
+            "text": "Commercial and Institutional Building Construction (236220)",
+            "href": "/insights/naics/236220/"
+          },
+          139248387.53
+        ],
+        [
+          7,
+          {
+            "text": "All Other Miscellaneous Chemical Product and Preparation Manufacturing (325998)",
+            "href": null
+          },
+          120107177.12
+        ],
+        [
+          8,
+          {
+            "text": "Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology) (541715)",
+            "href": "/insights/naics/541715/"
+          },
+          90460491.46
+        ],
+        [
+          9,
+          {
+            "text": "Custom Computer Programming Services (541511)",
+            "href": "/insights/naics/541511/"
+          },
+          82417292.49
+        ],
+        [
+          10,
+          {
+            "text": "Administrative Management and General Management Consulting Services (541611)",
+            "href": "/insights/naics/541611/"
+          },
+          79736845.04
+        ]
+      ]
+    }
+  ],
+  "narrative": {
+    "intro": "Direct Health and Medical Insurance Carriers was the most active federal contract market the week of Aug 13–19, 2026, with $804M in newly reported obligations. The ten most active industries obligated $2.4B combined.",
+    "sections": []
+  },
+  "faq": [],
+  "related": [
+    {
+      "label": "NAICS 541512: Computer Systems Design Services",
+      "href": "/insights/naics/541512/"
+    },
+    {
+      "label": "NAICS 541519: Other Computer Related Services",
+      "href": "/insights/naics/541519/"
+    },
+    {
+      "label": "NAICS 541330: Engineering Services",
+      "href": "/insights/naics/541330/"
+    },
+    {
+      "label": "NAICS 236220: Commercial and Institutional Building Construction",
+      "href": "/insights/naics/236220/"
+    },
+    {
+      "label": "NAICS 541715: Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology)",
+      "href": "/insights/naics/541715/"
+    },
+    {
+      "label": "NAICS 541511: Custom Computer Programming Services",
+      "href": "/insights/naics/541511/"
+    }
+  ],
+  "sources": [
+    {
+      "label": "USAspending.gov award data",
+      "href": "https://www.usaspending.gov"
+    }
+  ]
+}

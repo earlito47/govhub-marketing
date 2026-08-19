@@ -1,20 +1,20 @@
 {
   "pageType": "vendor",
   "slug": "accenture-federal-services",
-  "title": "Accenture Federal Services Government Contracts: $2.4B (FY2026)",
+  "title": "Accenture Federal Services Government Contracts: $2.7B (FY2026)",
   "h1": "Accenture Federal Services: Federal Contracts, Agencies & Awards",
-  "metaDescription": "Accenture Federal Services won $2.4B in federal contract obligations in FY2026 to date. See its top agencies, markets, largest awards, and expiring contracts.",
-  "updated": "2026-08-10",
+  "metaDescription": "Accenture Federal Services won $2.7B in federal contract obligations in FY2026 to date. See its top agencies, markets, largest awards, and expiring contracts.",
+  "updated": "2026-08-19",
   "fyWindow": {
     "label": "FY2026 to date",
     "start": "2025-10-01",
-    "end": "2026-08-10"
+    "end": "2026-08-19"
   },
   "stats": {
-    "totalObligations": 2427594618.87,
-    "awardCount": 355,
-    "yoyGrowthPct": -25,
-    "avgAwardSize": 6838295,
+    "totalObligations": 2655923592.29,
+    "awardCount": 364,
+    "yoyGrowthPct": -17.9,
+    "avgAwardSize": 7296493,
     "smallBusinessSharePct": null
   },
   "charts": [
@@ -48,13 +48,13 @@
             ],
             [
               "FY26",
-              2427594618.87
+              2655923592.29
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Obligations fell 25.0% year over year, from $3.2B in FY2025 to $2.4B in FY2026 to date."
+      "takeaway": "Obligations fell 17.9% year over year, from $3.2B in FY2025 to $2.7B in FY2026 to date."
     },
     {
       "id": "accenture-federal-services-top-agencies",
@@ -66,15 +66,19 @@
           "points": [
             [
               "Department of Defense",
-              453590578.15
+              470726087.38
             ],
             [
               "Department of Energy",
-              341231369.65
+              346805464.21
             ],
             [
               "Department of Education",
-              337882535.71
+              339993171.71
+            ],
+            [
+              "Department of the Treasury",
+              266572964.05
             ],
             [
               "Department of Veterans Affairs",
@@ -86,29 +90,25 @@
             ],
             [
               "General Services Administration",
-              206310329.87
-            ],
-            [
-              "Department of Homeland Security",
-              130067300.69
+              218153331.31
             ],
             [
               "Department of State",
-              128044470.3
+              148318401.85
             ],
             [
-              "Department of the Treasury",
-              122392387.38
+              "Department of Homeland Security",
+              134329890.29
             ],
             [
               "Department of Commerce",
-              110738725.33
+              129896670.59
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Department of Defense is Accenture Federal Services's largest federal customer, with $454M obligated (18.7% of the company's federal obligations)."
+      "takeaway": "Department of Defense is Accenture Federal Services's largest federal customer, with $471M obligated (17.7% of the company's federal obligations)."
     },
     {
       "id": "accenture-federal-services-top-naics",
@@ -120,19 +120,19 @@
           "points": [
             [
               "Computer Systems Design Services",
-              2121085466.92
+              2328328213.39
+            ],
+            [
+              "Other Computer Related Services",
+              108011204.35
             ],
             [
               "Custom Computer Programming Services",
               92594075.2
             ],
             [
-              "Other Computer Related Services",
-              91794803.88
-            ],
-            [
               "All Other Professional, Scientific, and Technical Services",
-              40362558.36
+              45203493.95
             ],
             [
               "Administrative Management and General Management Consulting Services",
@@ -140,7 +140,7 @@
             ],
             [
               "Computing Infrastructure Providers, Data Processing, Web Hosting, and Related Services",
-              23655854.6
+              23710817.03
             ],
             [
               "Software Publishers",
@@ -162,7 +162,7 @@
         }
       ],
       "unit": "usd",
-      "takeaway": "Computer Systems Design Services is Accenture Federal Services's largest federal market, with $2.1B in obligations."
+      "takeaway": "Computer Systems Design Services is Accenture Federal Services's largest federal market, with $2.3B in obligations."
     }
   ],
   "crossLinks": [
@@ -179,20 +179,20 @@
       "href": "/insights/agency/department-of-education/"
     },
     {
-      "label": "Department of Veterans Affairs contracts",
-      "href": "/insights/agency/department-of-veterans-affairs/"
+      "label": "Department of the Treasury contracts",
+      "href": "/insights/agency/department-of-the-treasury/"
     },
     {
       "label": "NAICS 541512: Computer Systems Design Services",
       "href": "/insights/naics/541512/"
     },
     {
-      "label": "NAICS 541511: Custom Computer Programming Services",
-      "href": "/insights/naics/541511/"
-    },
-    {
       "label": "NAICS 541519: Other Computer Related Services",
       "href": "/insights/naics/541519/"
+    },
+    {
+      "label": "NAICS 541511: Custom Computer Programming Services",
+      "href": "/insights/naics/541511/"
     },
     {
       "label": "NAICS 541990: All Other Professional, Scientific, and Technical Services",
@@ -306,7 +306,7 @@
             "text": "89303022FIM000088",
             "href": "https://www.usaspending.gov/award/CONT_AWD_89303022FIM000088_8900_89303019AIM000005_8900/"
           },
-          331091633.88,
+          333278750.25,
           "Department of Energy",
           "2026-08-31"
         ],
@@ -326,7 +326,7 @@
             "text": "91003125C0013",
             "href": "https://www.usaspending.gov/award/CONT_AWD_91003125C0013_9100_-NONE-_-NONE-/"
           },
-          283921962.51,
+          286032598.51,
           "Department of Education",
           "2031-07-31"
         ],
@@ -443,22 +443,22 @@
         [
           24,
           {
+            "text": "205AE926F00106",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_205AE926F00106_2050_47QTCK18D0036_4732/"
+          },
+          144180576.67,
+          "Department of the Treasury",
+          "2027-08-14"
+        ],
+        [
+          25,
+          {
             "text": "19AQMM21F3625",
             "href": "https://www.usaspending.gov/award/CONT_AWD_19AQMM21F3625_1900_HHSN316201200002W_7529/"
           },
           142343535.94,
           "Department of State",
           "2026-09-29"
-        ],
-        [
-          25,
-          {
-            "text": "89603024F0002",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_89603024F0002_8960_89303019AIM000005_8900/"
-          },
-          141084384.75,
-          "Department of Energy",
-          "2027-09-28"
         ]
       ]
     },
@@ -522,7 +522,7 @@
             "href": "https://www.usaspending.gov/award/CONT_AWD_89303022FIM000088_8900_89303019AIM000005_8900/"
           },
           "Department of Energy",
-          331091633.88,
+          333278750.25,
           "2026-08-31"
         ],
         [
@@ -545,21 +545,21 @@
         ],
         [
           {
-            "text": "W52P1J21C0025",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_W52P1J21C0025_9700_-NONE-_-NONE-/"
-          },
-          "Department of Defense",
-          193747012.43,
-          "2026-08-14"
-        ],
-        [
-          {
             "text": "47QFCA26F0004",
             "href": "https://www.usaspending.gov/award/CONT_AWD_47QFCA26F0004_4732_47QTCK18D0036_4732/"
           },
           "General Services Administration",
           179680116,
           "2027-06-07"
+        ],
+        [
+          {
+            "text": "47QFCA21F0065",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_47QFCA21F0065_4732_47QTCK18D0036_4732/"
+          },
+          "General Services Administration",
+          163413589,
+          "2027-08-05"
         ]
       ]
     },
@@ -590,34 +590,34 @@
     }
   ],
   "narrative": {
-    "intro": "Accenture Federal Services obligated $2.4B in FY2026 to date across 355 awards, with an average award size of $6.8M. Obligations fell 25.0% year over year. Fiscal-year obligations were $2.5B in FY21, $2.7B in FY22, $2.9B in FY23, $3.4B in FY24, and $3.2B in FY25 before the current-year total of $2.4B in FY26 to date. The Department of Defense is the top buyer in FY2026 to date, obligating $454M, followed by the Department of Energy with $341M and the Department of Education with $338M. Computer Systems Design Services is the dominant market, accounting for $2.1B of obligations in FY2026 to date. Other notable markets include Custom Computer Programming Services at $92.6M and Other Computer Related Services at $91.8M. The Departments of Veterans Affairs and Health and Human Services and the General Services Administration also feature among the top buyers, obligating $251M, $234M, and $206M respectively. The FY2026 to date profile shows strong concentration in IT and professional services work.",
+    "intro": "Accenture Federal Services obligated $2.7B in FY2026 to date across 364 awards, with an average award size of $7.3M. Obligations are down 17.9% year over year. Accenture Federal Services has moved through a multi-year cycle: obligations were $2.5B in FY21, $2.7B in FY22, $2.9B in FY23, $3.4B in FY24, $3.2B in FY25, and $2.7B in FY26. Federal buyers concentrate obligations in technology-related markets: Computer Systems Design Services accounts for $2.3B of FY2026 to date obligations, followed by smaller amounts in Other Computer Related Services and Custom Computer Programming Services. The Department of Defense leads buying agencies with $471M obligated in FY2026 to date. Other significant buyers include the Department of Energy, the Department of Education, and the Department of the Treasury. These figures are contract obligations unless noted otherwise. The fiscal-year-to-date totals are partial and reflect activity through the current reporting period. Use the agency and market breakdowns to identify where pipeline and capture efforts would align with current buyer behavior and contract types.",
     "sections": [
       {
-        "heading": "How have Accenture Federal Services obligations changed over recent years?",
-        "body": "Accenture Federal Services obligated $2.5B in FY21, $2.7B in FY22, $2.9B in FY23, $3.4B in FY24, $3.2B in FY25, and $2.4B in FY26 to date. Obligations fell 25.0% year over year into FY2026 to date. The largest single-year total in this sequence is $3.4B in FY24. The current-year total is partial and reported as FY2026 to date."
+        "heading": "Which agencies account for most FY2026 obligations?",
+        "body": "The Department of Defense obligated $471M in FY2026 to date. The Department of Energy obligated $347M, the Department of Education obligated $340M, and the Department of the Treasury obligated $267M. The Department of Veterans Affairs, Department of Health and Human Services, and General Services Administration also show notable FY2026 to date obligations."
       },
       {
-        "heading": "Who and what are the biggest buyers and markets for Accenture Federal Services in FY2026 to date?",
-        "body": "The Department of Defense obligated $454M, the Department of Energy obligated $341M, and the Department of Education obligated $338M in FY2026 to date. Computer Systems Design Services is the largest market at $2.1B, with Custom Computer Programming Services at $92.6M and Other Computer Related Services at $91.8M. The Department of Veterans Affairs, the Department of Health and Human Services, and the General Services Administration obligated $251M, $234M, and $206M respectively."
+        "heading": "What markets and contract types drive FY2026 obligations?",
+        "body": "Computer Systems Design Services is the largest market at $2.3B in FY2026 to date. Other technology-heavy markets include Other Computer Related Services at $108M and Custom Computer Programming Services at $92.6M. Professional, consulting, infrastructure, and software NAICS categories appear in smaller amounts across the top 10 markets."
       }
     ]
   },
   "faq": [
     {
       "q": "How much does Accenture Federal Services make from federal contracts?",
-      "a": "Accenture Federal Services obligated $2.4B in FY2026 to date from federal contracts. The company recorded 355 awards and an average award size of $6.8M, with obligations down 25.0% year over year and historical totals of $2.5B in FY21, $2.7B in FY22, $2.9B in FY23, $3.4B in FY24, and $3.2B in FY25."
+      "a": "Accenture Federal Services obligated $2.7B in FY2026 to date from federal contracts. The company recorded 364 awards in FY2026 to date, with an average award size of $7.3M, and obligations are down 17.9% year over year. Historical fiscal-year obligations were $2.5B in FY21, $2.7B in FY22, $2.9B in FY23, $3.4B in FY24, and $3.2B in FY25."
     },
     {
       "q": "Which agencies buy from Accenture Federal Services?",
-      "a": "The Department of Defense is the largest buyer, obligating $454M in FY2026 to date. Other top buyers include the Department of Energy at $341M, the Department of Education at $338M, the Department of Veterans Affairs at $251M, and the Department of Health and Human Services at $234M; the General Services Administration obligated $206M in FY2026 to date."
+      "a": "The Department of Defense, Department of Energy, Department of Education, and Department of the Treasury are the largest buyers in FY2026 to date. The Department of Defense obligated $471M, the Department of Energy obligated $347M, the Department of Education obligated $340M, and the Department of the Treasury obligated $267M in FY2026 to date."
     },
     {
       "q": "What does Accenture Federal Services sell to the government?",
-      "a": "Accenture Federal Services sells primarily IT and professional services to the government. Computer Systems Design Services accounts for $2.1B in FY2026 to date, followed by Custom Computer Programming Services at $92.6M and Other Computer Related Services at $91.8M, with additional work in management consulting, data processing and hosting, software publishing, engineering services, and event services."
+      "a": "Accenture Federal Services sells primarily technology and professional services to the government. Computer Systems Design Services accounts for $2.3B in FY2026 to date, followed by Other Computer Related Services at $108M and Custom Computer Programming Services at $92.6M, with additional obligations in consulting, infrastructure, and software categories."
     },
     {
       "q": "Which Accenture Federal Services contracts are expiring soon?",
-      "a": "The dataset does not list specific expiring-contract entries for Accenture Federal Services in FY2026 to date. The provided facts include largest markets and top buying agencies but do not include a table of expiring contracts."
+      "a": "The dataset does not list specific expiring-contract entries in the provided figures. The available information lists total obligations, agency buyers, and top markets for FY2026 to date but does not provide a table of expiring-contract details in the facts supplied."
     }
   ],
   "related": [
@@ -626,8 +626,16 @@
       "href": "/insights/expiring-federal-contracts/"
     },
     {
-      "label": "UT-Battelle federal contracts",
-      "href": "/insights/vendor/ut-battelle/"
+      "label": "Northrop Grumman Systems federal contracts",
+      "href": "/insights/vendor/northrop-grumman-systems/"
+    },
+    {
+      "label": "Sikorsky Aircraft federal contracts",
+      "href": "/insights/vendor/sikorsky-aircraft/"
+    },
+    {
+      "label": "National Steel and Shipbuilding federal contracts",
+      "href": "/insights/vendor/national-steel-and-shipbuilding/"
     },
     {
       "label": "Science Applications International federal contracts",
@@ -638,16 +646,8 @@
       "href": "/insights/vendor/amentum-services/"
     },
     {
-      "label": "SLS Federal Services federal contracts",
-      "href": "/insights/vendor/sls-federal-services/"
-    },
-    {
-      "label": "Spencer Construction federal contracts",
-      "href": "/insights/vendor/spencer-construction/"
-    },
-    {
-      "label": "QTC Medical Services federal contracts",
-      "href": "/insights/vendor/qtc-medical-services/"
+      "label": "UT-Battelle federal contracts",
+      "href": "/insights/vendor/ut-battelle/"
     }
   ],
   "sources": [
