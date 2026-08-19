@@ -1,8 +1,8 @@
 ---
-title: "zrgfmmn3rxv8: find the total awarded amount"
-description: "Here is how to find the true total awarded amount in FPDS, USAspending, and SAM.gov, plus what that zrgfmmn3rxv8 code is and what you should ignore."
+title: "How to find the total awarded amount on a federal contract"
+description: "How to read the total awarded amount in USAspending and FPDS, which field to trust for past performance, and the traps that inflate or deflate it."
 publishDate: 2026-08-17
-updatedDate: 2026-08-17
+updatedDate: 2026-08-19
 author: GovHub team
 pillarSlug: how-to-respond-to-a-government-rfp
 cover: "/brand/page-graphics/solutions-index-toolkit.svg"
@@ -14,7 +14,7 @@ draft: false
 
 If you need the total awarded amount for a federal contract, check two places first. In USAspending.gov on the Award Summary, read three fields: Current Total Value of Award, Potential Total Value of Award, and Total Obligations. In FPDS, use Base and Exercised Options Value for current total, and Base and All Options Value for the potential total. For a single definitive contract, the number you usually need for past performance is the Current Total Value, not the Potential. For IDIQs and BPAs, the parent award’s Potential Total is a ceiling. Real money shows up as obligations on orders.
 
-If your notes include a cryptic code like zrgfmmn3rxv8, that is not a contract number. It is usually a share or download token from USAspending or SAM.gov. You will not find an award by searching that code in FPDS. You need the PIID, Task Order number, or UEI/CAGE.
+If your notes include a short cryptic code, check it is actually a contract number before you search on it. Codes copied out of a USAspending or SAM.gov link are usually share or download tokens, and searching one in FPDS returns nothing. You need the PIID, Task Order number, or UEI/CAGE.
 
 Below is the exact process, pitfalls that inflate or deflate your total, and a worked example.
 
@@ -63,7 +63,7 @@ FPDS will also show the CLIN structure. For the source of truth on line item tot
 
 If the parent IDV shows $0 for Base and Exercised Options Value, that is not an error. Many agencies award an IDV with zero base funding, then place all value on orders.
 
-For more on these vehicle types, see our plain-language glossaries for [IDIQ](/glossary/idiq/), [GWAC](/glossary/gwac/), and [BPA](/glossary/bpa/).
+For more on these vehicle types, see our plain-language glossaries for [IDIQ](/glossary/contract-vehicles/#idiq), [GWAC](/glossary/contract-vehicles/#gwac), and [BPA](/glossary/contract-vehicles/#bpa).
 
 ## When you only have the solicitation
 
@@ -73,14 +73,14 @@ For more on these vehicle types, see our plain-language glossaries for [IDIQ](/g
 
 If you need help structuring the pricing section when you propose, see our guides on [how to read Section L and M](/blog/read-federal-rfp-section-l-m/) and [how to respond to a government RFP](/blog/how-to-respond-to-a-government-rfp/).
 
-## What is “zrgfmmn3rxv8” and why does it show up
+## That cryptic code you copied is probably not a contract number
 
-If you see a short lowercase code like zrgfmmn3rxv8 in a link you copied, it is almost always a system token from a public site. Two common cases:
+If you see a short lowercase alphanumeric code in a link you copied, it is almost always a system token from a public site rather than an award identifier. Two common cases:
 
 - USAspending Advanced Search share links include a short hash for your saved filters. It is not an Award ID, PIID, or FAIN.
 - SAM.gov download center and data services sometimes append a short ID for a file job.
 
-You cannot look up an award in FPDS or USAspending by pasting zrgfmmn3rxv8. Instead, find the real identifier in the award documents. Look for the PIID on SF 1449 Block 2 or the order number in Block 4. You can also use the vendor’s UEI or CAGE to narrow the search. Our glossaries for [UEI](/glossary/uei/) and [CAGE](/glossary/cage-code/) explain where to find those.
+You cannot look up an award in FPDS or USAspending by pasting one of these tokens. Instead, find the real identifier in the award documents. Look for the PIID on SF 1449 Block 2 or the order number in Block 4. You can also use the vendor’s UEI or CAGE to narrow the search. Our glossaries for [UEI](/glossary/registration-and-ids/#uei) and [CAGE](/glossary/registration-and-ids/#cage-code) explain where to find those.
 
 ## Worked example, with numbers you can sanity check
 
@@ -121,7 +121,7 @@ What to quote where:
 - Forgetting options you lost. If the government did not exercise an option, it does not belong in Current Total. If the potential was reduced via descoping mod, that also changes the Potential Total.
 - Summing parent and order totals together. If you add an IDV ceiling and all the orders, you will inflate the number. Pick one layer for the story, usually the order.
 
-If you routinely compile past performance, see our glossary on [past performance](/glossary/past-performance/) for what evaluators check, and how they match your claims against CPARS and USAspending.
+If you routinely compile past performance, see our glossary on [past performance](/glossary/evaluation-criteria/#past-performance) for what evaluators check, and how they match your claims against CPARS and USAspending.
 
 ## Quick checklist to get the right number every time
 
@@ -154,4 +154,4 @@ For more on qualifying pursuits before you sink hours into math, see our writeup
 - USAspending Potential Total Value equals FPDS Base and All Options Value. That is a ceiling.
 - Total Obligations show money on the street.
 - For IDIQs and BPAs, quote order-level totals for real performance. Treat parent totals as maximums.
-- Ignore zrgfmmn3rxv8. Find the PIID, then pull the numbers above.
+- Ignore share and download tokens. Find the PIID, then pull the numbers above.

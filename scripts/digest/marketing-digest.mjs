@@ -53,8 +53,13 @@ const git = (...a) => execFileSync('git', a, { cwd: REPO_ROOT, encoding: 'utf8',
 // path pattern -> { type, url builder }. Deletions are ignored; modifications
 // only matter for the rankings (weekly refresh of standing pages).
 const CONTENT_RULES = [
-  { re: /^src\/pages\/blog\/(?!index|\[)([^/.]+)\.(astro|md|mdx)$/, type: 'Blog post', url: (m) => `${SITE}/blog/${m[1]}/` },
-  { re: /^src\/pages\/glossary\/(?!index|\[)([^/.]+)\.(astro|md|mdx)$/, type: 'Glossary page', url: (m) => `${SITE}/glossary/${m[1]}/` },
+  // Blog posts are a content collection under src/content, not routes under
+  // src/pages, so the old src/pages/blog rule never matched and new posts were
+  // silently missing from the digest.
+  { re: /^src\/content\/blog\/([^/.]+)\.(md|mdx)$/, type: 'Blog post', url: (m) => `${SITE}/blog/${m[1]}/` },
+  // Terms live in one data file and render on pillar pages, so there is no
+  // per-term file to watch; report the edit and link the hub.
+  { re: /^src\/data\/glossary\.ts$/, type: 'Glossary', name: () => 'glossary updated', url: () => `${SITE}/glossary/` },
   { re: /^src\/data\/insights\/vendor\/([^/]+)\.json$/, type: 'Vendor profile', url: (m) => `${SITE}/insights/vendor/${m[1]}/` },
   { re: /^src\/data\/insights\/reports\/([^/]+)\/([^/]+)\.json$/, type: 'Weekly report', name: (m) => `${m[2]} (${m[1]})`, url: (m) => `${SITE}/insights/reports/${m[1]}/${m[2]}/` },
   { re: /^src\/data\/insights\/naics\/([^/]+)\.json$/, type: 'NAICS market page', url: (m) => `${SITE}/insights/naics/${m[1]}/` },
