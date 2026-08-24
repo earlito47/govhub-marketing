@@ -4,17 +4,17 @@
   "title": "NAICS 561720 Government Contracts: $1.3B in FY2026",
   "h1": "Janitorial Services (NAICS 561720): Federal Contract Market",
   "metaDescription": "Federal agencies obligated $1.3B on Janitorial Services (NAICS 561720) in FY2026 to date. See top vendors, top agencies, and trends.",
-  "updated": "2026-08-19",
+  "updated": "2026-08-24",
   "fyWindow": {
     "label": "FY2026 to date",
     "start": "2025-10-01",
-    "end": "2026-08-19"
+    "end": "2026-08-24"
   },
   "stats": {
-    "totalObligations": 1290279521.67,
-    "awardCount": 4385,
-    "yoyGrowthPct": -27.9,
-    "avgAwardSize": 294248,
+    "totalObligations": 1329825464.81,
+    "awardCount": 4486,
+    "yoyGrowthPct": -25.7,
+    "avgAwardSize": 296439,
     "smallBusinessSharePct": null
   },
   "charts": [
@@ -28,7 +28,7 @@
           "points": [
             [
               "FY21",
-              1588477902.8
+              1588556457.48
             ],
             [
               "FY22",
@@ -48,13 +48,13 @@
             ],
             [
               "FY26",
-              1290279521.67
+              1329825464.81
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Obligations fell 27.9% year over year, from $1.8B in FY2025 to $1.3B in FY2026 to date."
+      "takeaway": "Obligations fell 25.7% year over year, from $1.8B in FY2025 to $1.3B in FY2026 to date."
     },
     {
       "id": "561720-top-agencies",
@@ -66,35 +66,35 @@
           "points": [
             [
               "Department of Defense",
-              793694318.81
+              813534436.8
             ],
             [
               "Department of Veterans Affairs",
-              93196875.65
+              97419326.49
             ],
             [
               "Department of Homeland Security",
-              82164202.34
+              85098366.42
             ],
             [
               "General Services Administration",
-              67362076.69
+              77406183.26
             ],
             [
               "Department of Health and Human Services",
-              46207335.03
+              46246710.03
             ],
             [
               "Department of Transportation",
-              43475806.87
-            ],
-            [
-              "Department of the Interior",
-              28306641.76
+              43798558.94
             ],
             [
               "Department of Justice",
-              28075011.06
+              28866281.06
+            ],
+            [
+              "Department of the Interior",
+              28705373.48
             ],
             [
               "Department of the Treasury",
@@ -102,13 +102,13 @@
             ],
             [
               "Department of State",
-              19195295.85
+              19582903.13
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Department of Defense was the top buyer, obligating $794M (61.5% of all obligations)."
+      "takeaway": "Department of Defense was the top buyer, obligating $814M (61.2% of all obligations)."
     },
     {
       "id": "561720-top-vendors",
@@ -123,28 +123,28 @@
               49414500.68
             ],
             [
+              "FEDCAP REHABILITATION SERVICES, INC",
+              48789579.25
+            ],
+            [
               "TEYA SUPPORT SERVICES LLC",
               46498801.18
             ],
             [
-              "FEDCAP REHABILITATION SERVICES, INC",
-              39198922.45
-            ],
-            [
               "PROFESSIONAL CONTRACT SERVICES, INC.",
-              37684858.63
+              37965507.67
             ],
             [
               "DIDLAKE INC",
-              36101923.4
+              35987846.89
             ],
             [
               "CHIMES DISTRICT OF COLUMBIA INC",
-              34439900.52
+              35772627.8
             ],
             [
               "CW RESOURCES, INC.",
-              33083437.73
+              33163639.53
             ],
             [
               "TLS JOINT VENTURE LLC",
@@ -152,7 +152,7 @@
             ],
             [
               "SERVICESOURCE INC",
-              25930047.37
+              26721317.37
             ],
             [
               "DYNAMIC-HHS JV, LLC",
@@ -162,7 +162,7 @@
         }
       ],
       "unit": "usd",
-      "takeaway": "GLOBAL CONNECTIONS TO EMPLOYMENT, INC. led all vendors with $49.4M in obligations, 3.8% of the market."
+      "takeaway": "GLOBAL CONNECTIONS TO EMPLOYMENT, INC. led all vendors with $49.4M in obligations, 3.7% of the market."
     }
   ],
   "crossLinks": [
@@ -203,18 +203,18 @@
         [
           2,
           {
-            "text": "TEYA SUPPORT SERVICES LLC",
-            "href": "https://www.usaspending.gov/recipient/395e9ff9-dcd7-c6e7-4a93-12ec5ac6cd7b-C/latest/"
+            "text": "FEDCAP REHABILITATION SERVICES, INC",
+            "href": "https://www.usaspending.gov/recipient/b9845340-e772-d0e4-2723-00388e9eb5d9-C/latest/"
           },
-          46498801.18
+          48789579.25
         ],
         [
           3,
           {
-            "text": "FEDCAP REHABILITATION SERVICES, INC",
-            "href": "https://www.usaspending.gov/recipient/b9845340-e772-d0e4-2723-00388e9eb5d9-C/latest/"
+            "text": "TEYA SUPPORT SERVICES LLC",
+            "href": "https://www.usaspending.gov/recipient/395e9ff9-dcd7-c6e7-4a93-12ec5ac6cd7b-C/latest/"
           },
-          39198922.45
+          46498801.18
         ],
         [
           4,
@@ -222,7 +222,7 @@
             "text": "PROFESSIONAL CONTRACT SERVICES, INC.",
             "href": "https://www.usaspending.gov/recipient/0759412f-91f6-f348-daae-e077e056eeb7-C/latest/"
           },
-          37684858.63
+          37965507.67
         ],
         [
           5,
@@ -230,7 +230,7 @@
             "text": "DIDLAKE INC",
             "href": "https://www.usaspending.gov/recipient/d62a1ea5-5523-3370-d429-de744397f1ac-C/latest/"
           },
-          36101923.4
+          35987846.89
         ],
         [
           6,
@@ -238,7 +238,7 @@
             "text": "CHIMES DISTRICT OF COLUMBIA INC",
             "href": "https://www.usaspending.gov/recipient/3b1d5cf9-3a4b-b48e-80f7-cacaadf58b49-C/latest/"
           },
-          34439900.52
+          35772627.8
         ],
         [
           7,
@@ -246,7 +246,7 @@
             "text": "CW RESOURCES, INC.",
             "href": "https://www.usaspending.gov/recipient/654333cb-a4ee-ad72-6002-24bb2990fdf9-C/latest/"
           },
-          33083437.73
+          33163639.53
         ],
         [
           8,
@@ -262,7 +262,7 @@
             "text": "SERVICESOURCE INC",
             "href": "https://www.usaspending.gov/recipient/91ef2a9d-a6f3-10c7-b108-c084b0764eb8-C/latest/"
           },
-          25930047.37
+          26721317.37
         ],
         [
           10,
@@ -367,19 +367,19 @@
         [
           10,
           {
-            "text": "NUGATE GROUP LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_W9115121C0003_9700_-NONE-_-NONE-/"
+            "text": "POWER WORKS INDUSTRIES, INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W911SF21C0002_9700_-NONE-_-NONE-/"
           },
-          37563171.06,
+          38291348.61,
           "Department of Defense"
         ],
         [
           11,
           {
-            "text": "POWER WORKS INDUSTRIES, INC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_W911SF21C0002_9700_-NONE-_-NONE-/"
+            "text": "NUGATE GROUP LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W9115121C0003_9700_-NONE-_-NONE-/"
           },
-          37025516.05,
+          37563171.06,
           "Department of Defense"
         ],
         [
@@ -388,7 +388,7 @@
             "text": "T47 INTERNATIONAL, INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_70LGLY25CGLB00004_7015_-NONE-_-NONE-/"
           },
-          35503068.28,
+          35528771.16,
           "Department of Homeland Security"
         ],
         [
@@ -406,7 +406,7 @@
             "text": "SERVICESOURCE INC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_15F06724C0001156_1549_-NONE-_-NONE-/"
           },
-          32189019.47,
+          32980289.47,
           "Department of Justice"
         ],
         [
@@ -421,6 +421,15 @@
         [
           16,
           {
+            "text": "MELWOOD HORTICULTURAL TRAINING CENTER, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_80GSFC20C0098_8000_-NONE-_-NONE-/"
+          },
+          30841044.35,
+          "National Aeronautics and Space Administration"
+        ],
+        [
+          17,
+          {
             "text": "SKOOKUM EDUCATIONAL PROGRAMS",
             "href": "https://www.usaspending.gov/award/CONT_AWD_N4425525F4201_9700_N4425518D5009_9700/"
           },
@@ -428,7 +437,7 @@
           "Department of Defense"
         ],
         [
-          17,
+          18,
           {
             "text": "SKOOKUM EDUCATIONAL PROGRAMS",
             "href": "https://www.usaspending.gov/award/CONT_AWD_N4425523F4018_9700_N4425518D5009_9700/"
@@ -437,7 +446,7 @@
           "Department of Defense"
         ],
         [
-          18,
+          19,
           {
             "text": "ACE MAINTENANCE & SERVICE INC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_N4008025F0158_9700_N4008021D0004_9700/"
@@ -446,7 +455,7 @@
           "Department of Defense"
         ],
         [
-          19,
+          20,
           {
             "text": "CORPORATE SOURCE, INC THE",
             "href": "https://www.usaspending.gov/award/CONT_AWD_47PC0620F0109_4740_47PC0620A0001_4740/"
@@ -455,7 +464,7 @@
           "General Services Administration"
         ],
         [
-          20,
+          21,
           {
             "text": "MELWOOD HORTICULTURAL TRAINING CENTER, INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_15F06722C0000285_1549_-NONE-_-NONE-/"
@@ -464,7 +473,7 @@
           "Department of Justice"
         ],
         [
-          21,
+          22,
           {
             "text": "GLOBAL CONNECTIONS TO EMPLOYMENT, INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_FA282322C0001_9700_-NONE-_-NONE-/"
@@ -473,7 +482,7 @@
           "Department of Defense"
         ],
         [
-          22,
+          23,
           {
             "text": "TLS JOINT VENTURE LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_HT940824F0033_9700_HT940824D0009_9700/"
@@ -482,22 +491,13 @@
           "Department of Defense"
         ],
         [
-          23,
+          24,
           {
             "text": "R & R JANITORIAL, PAINTING & BUILDING SERVICES INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_HQ003422C0037_9700_-NONE-_-NONE-/"
           },
           23213035.87,
           "Department of Defense"
-        ],
-        [
-          24,
-          {
-            "text": "ADELANTE DEVELOPMENT CENTER INC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_70LART23CPFB00002_7015_-NONE-_-NONE-/"
-          },
-          22553563.75,
-          "Department of Homeland Security"
         ],
         [
           25,
@@ -533,7 +533,7 @@
           },
           109837466.96,
           "General Services Administration",
-          "2026-12-31"
+          "2026-08-31"
         ],
         [
           2,
@@ -594,6 +594,20 @@
         [
           6,
           {
+            "text": "W911SF21C0002",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W911SF21C0002_9700_-NONE-_-NONE-/"
+          },
+          {
+            "text": "POWER WORKS INDUSTRIES, INC",
+            "href": "https://www.usaspending.gov/recipient/67c9838b-0713-cdd2-0198-f7f73fa4f457-C/latest/"
+          },
+          38291348.61,
+          "Department of Defense",
+          "2026-08-31"
+        ],
+        [
+          7,
+          {
             "text": "W9115121C0003",
             "href": "https://www.usaspending.gov/award/CONT_AWD_W9115121C0003_9700_-NONE-_-NONE-/"
           },
@@ -606,20 +620,6 @@
           "2026-09-30"
         ],
         [
-          7,
-          {
-            "text": "W911SF21C0002",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_W911SF21C0002_9700_-NONE-_-NONE-/"
-          },
-          {
-            "text": "POWER WORKS INDUSTRIES, INC",
-            "href": "https://www.usaspending.gov/recipient/67c9838b-0713-cdd2-0198-f7f73fa4f457-C/latest/"
-          },
-          37025516.05,
-          "Department of Defense",
-          "2026-08-31"
-        ],
-        [
           8,
           {
             "text": "70LGLY25CGLB00004",
@@ -629,9 +629,9 @@
             "text": "T47 INTERNATIONAL, INC.",
             "href": "https://www.usaspending.gov/recipient/89fbde3e-6b13-3cc6-f3b0-e23a6f5a6d2f-C/latest/"
           },
-          35503068.28,
+          35528771.16,
           "Department of Homeland Security",
-          "2026-09-30"
+          "2027-07-31"
         ],
         [
           9,
@@ -735,30 +735,30 @@
     }
   ],
   "narrative": {
-    "intro": "Janitorial Services (NAICS 561720) recorded $1.3B in federal contract obligations in FY2026 to date. The contracting universe totaled 4,385 awards with an average award size of $294K. Obligations fell 27.9% year over year. Fiscal-year history shows a multi-year plateau and recent decline: FY21 obligations were $1.6B, FY22 obligations were $1.6B, FY23 obligations were $1.7B, FY24 obligations were $1.7B, FY25 obligations were $1.8B, and FY26 obligations were $1.3B. The Department of Defense is the largest buyer in FY2026 to date with $794M in obligations. The next-largest buyers in FY2026 to date are the Department of Veterans Affairs with $93.2M and the Department of Homeland Security with $82.2M. The largest vendors in FY2026 to date include GLOBAL CONNECTIONS TO EMPLOYMENT, INC. with $49.4M and TEYA SUPPORT SERVICES LLC with $46.5M. Contracting officers and business development teams should note the concentration among a few buyers and vendors when planning pursuits and capture efforts.",
+    "intro": "Janitorial Services (NAICS 561720) has $1.3B in federal contract obligations in FY2026 to date. The market includes 4,486 awards with an average award size of $296K, and obligations fell 25.7% year over year. Obligations trended up from FY21 through FY25, with FY21 at $1.6B, FY22 at $1.6B, FY23 at $1.7B, FY24 at $1.7B, and FY25 at $1.8B before the FY26 to date total of $1.3B. The Department of Defense is the largest buyer, obligating $814M in FY2026 to date. The Department of Veterans Affairs, Department of Homeland Security, and General Services Administration follow, obligating $97.4M, $85.1M, and $77.4M respectively. GLOBAL CONNECTIONS TO EMPLOYMENT, INC. is the top vendor by obligations at $49.4M in FY2026 to date, followed by FEDCAP REHABILITATION SERVICES, INC at $48.8M and TEYA SUPPORT SERVICES LLC at $46.5M. The data are fiscal year to date totals and represent contract obligations, so year-end totals could change. Buyers and vendors show concentration at the top, with the Department of Defense and a small group of vendors accounting for large shares of current-year spending.",
     "sections": [
       {
-        "heading": "Who buys the most janitorial services for the federal government?",
-        "body": "The Department of Defense obligated $794M on NAICS 561720 in FY2026 to date. The Department of Veterans Affairs obligated $93.2M and the Department of Homeland Security obligated $82.2M. The General Services Administration obligated $67.4M and the Department of Health and Human Services obligated $46.2M."
+        "heading": "How has spending changed year over year?",
+        "body": "Obligations fell 25.7% year over year. Fiscal totals were $1.6B in FY21, $1.6B in FY22, $1.7B in FY23, $1.7B in FY24, $1.8B in FY25, and $1.3B in FY26 to date. The FY26 to date total reflects partial-year obligations. The average award size in FY26 to date is $296K."
       },
       {
-        "heading": "Who captures the largest janitorial services contracts?",
-        "body": "GLOBAL CONNECTIONS TO EMPLOYMENT, INC. received $49.4M in obligations in FY2026 to date. TEYA SUPPORT SERVICES LLC received $46.5M and FEDCAP REHABILITATION SERVICES, INC received $39.2M. PROFESSIONAL CONTRACT SERVICES, INC. received $37.7M and DIDLAKE INC received $36.1M."
+        "heading": "Who are the largest buyers and contractors in this market?",
+        "body": "The Department of Defense is the largest buyer, obligating $814M in FY2026 to date. The Department of Veterans Affairs, Department of Homeland Security, and General Services Administration obligated $97.4M, $85.1M, and $77.4M respectively. GLOBAL CONNECTIONS TO EMPLOYMENT, INC., FEDCAP REHABILITATION SERVICES, INC, and TEYA SUPPORT SERVICES LLC are the top three vendors, at $49.4M, $48.8M, and $46.5M respectively. The market shows concentration among a few buyers and vendors."
       }
     ]
   },
   "faq": [
     {
       "q": "How much does the federal government spend on NAICS 561720?",
-      "a": "The federal government spent $1.3B on NAICS 561720 in FY2026 to date. The market totaled 4,385 awards with an average award size of $294K, and obligations fell 27.9% year over year."
+      "a": "The federal government has obligated $1.3B for NAICS 561720 in FY2026 to date. The market includes 4,486 awards and an average award size of $296K. Obligations fell 25.7% year over year. Historical fiscal obligations were $1.6B in FY21, $1.6B in FY22, $1.7B in FY23, $1.7B in FY24, and $1.8B in FY25."
     },
     {
       "q": "Which agencies buy the most NAICS 561720 services?",
-      "a": "The Department of Defense buys the most NAICS 561720 services, with $794M in obligations in FY2026 to date. The Department of Veterans Affairs obligated $93.2M and the Department of Homeland Security obligated $82.2M in FY2026 to date."
+      "a": "The Department of Defense buys the most NAICS 561720 services, obligating $814M in FY2026 to date. The Department of Veterans Affairs, Department of Homeland Security, and General Services Administration follow, obligating $97.4M, $85.1M, and $77.4M respectively. Other notable buyers include the Department of Health and Human Services at $46.2M and the Department of Transportation at $43.8M."
     },
     {
       "q": "Who are the largest NAICS 561720 government contractors?",
-      "a": "GLOBAL CONNECTIONS TO EMPLOYMENT, INC. is the largest contractor in NAICS 561720 for FY2026 to date with $49.4M in obligations. TEYA SUPPORT SERVICES LLC and FEDCAP REHABILITATION SERVICES, INC follow with $46.5M and $39.2M respectively."
+      "a": "GLOBAL CONNECTIONS TO EMPLOYMENT, INC. is the largest NAICS 561720 government contractor by obligations at $49.4M in FY2026 to date. FEDCAP REHABILITATION SERVICES, INC is next at $48.8M, followed by TEYA SUPPORT SERVICES LLC at $46.5M. Other top vendors include PROFESSIONAL CONTRACT SERVICES, INC. at $38M and DIDLAKE INC at $36M."
     }
   ],
   "related": [

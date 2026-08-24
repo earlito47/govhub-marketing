@@ -1,0 +1,207 @@
+{
+  "pageType": "report",
+  "slug": "most-active-naics",
+  "week": "2026-w35",
+  "publishedDate": "2026-08-24",
+  "title": "Most Active Federal Markets This Week, Aug 18–24, 2026",
+  "h1": "Most active federal contract markets, week of Aug 18–24, 2026",
+  "metaDescription": "The most active federal contract industries (by newly reported obligations) the week of Aug 18–24, 2026, led by Computer Systems Design Services.",
+  "updated": "2026-08-24",
+  "fyWindow": {
+    "label": "Week of Aug 18–24, 2026",
+    "start": "2026-08-18",
+    "end": "2026-08-24"
+  },
+  "stats": {
+    "totalObligations": 1982157890.0300002,
+    "awardCount": null,
+    "yoyGrowthPct": null,
+    "avgAwardSize": null,
+    "smallBusinessSharePct": null
+  },
+  "charts": [
+    {
+      "id": "2026-w35-most-active-naics",
+      "type": "bar",
+      "title": "Most active industries (NAICS) by obligations, week of Aug 18–24, 2026",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "Computer Systems Design Services",
+              364937099
+            ],
+            [
+              "Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology)",
+              308781799.28
+            ],
+            [
+              "Other Computer Related Services",
+              298828467.26
+            ],
+            [
+              "Commercial and Institutional Building Construction",
+              256158655.16
+            ],
+            [
+              "Engineering Services",
+              208334627.93
+            ],
+            [
+              "Administrative Management and General Management Consulting Services",
+              163702281.64
+            ],
+            [
+              "Research and Development in Biotechnology (except Nanobiotechnology)",
+              128420280.72
+            ],
+            [
+              "Medical, Dental, and Hospital Equipment and Supplies Merchant Wholesalers",
+              93096608.46
+            ],
+            [
+              "Custom Computer Programming Services",
+              86764354.15
+            ],
+            [
+              "Facilities Support Services",
+              73133716.43
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Computer Systems Design Services was the most active market, with $365M in newly reported obligations."
+    }
+  ],
+  "tables": [
+    {
+      "title": "Most active industries, week of Aug 18–24, 2026",
+      "columns": [
+        "Rank",
+        "Industry (NAICS)",
+        "Obligations"
+      ],
+      "rows": [
+        [
+          1,
+          {
+            "text": "Computer Systems Design Services (541512)",
+            "href": "/insights/naics/541512/"
+          },
+          364937099
+        ],
+        [
+          2,
+          {
+            "text": "Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology) (541715)",
+            "href": "/insights/naics/541715/"
+          },
+          308781799.28
+        ],
+        [
+          3,
+          {
+            "text": "Other Computer Related Services (541519)",
+            "href": "/insights/naics/541519/"
+          },
+          298828467.26
+        ],
+        [
+          4,
+          {
+            "text": "Commercial and Institutional Building Construction (236220)",
+            "href": "/insights/naics/236220/"
+          },
+          256158655.16
+        ],
+        [
+          5,
+          {
+            "text": "Engineering Services (541330)",
+            "href": "/insights/naics/541330/"
+          },
+          208334627.93
+        ],
+        [
+          6,
+          {
+            "text": "Administrative Management and General Management Consulting Services (541611)",
+            "href": "/insights/naics/541611/"
+          },
+          163702281.64
+        ],
+        [
+          7,
+          {
+            "text": "Research and Development in Biotechnology (except Nanobiotechnology) (541714)",
+            "href": null
+          },
+          128420280.72
+        ],
+        [
+          8,
+          {
+            "text": "Medical, Dental, and Hospital Equipment and Supplies Merchant Wholesalers (423450)",
+            "href": null
+          },
+          93096608.46
+        ],
+        [
+          9,
+          {
+            "text": "Custom Computer Programming Services (541511)",
+            "href": "/insights/naics/541511/"
+          },
+          86764354.15
+        ],
+        [
+          10,
+          {
+            "text": "Facilities Support Services (561210)",
+            "href": "/insights/naics/561210/"
+          },
+          73133716.43
+        ]
+      ]
+    }
+  ],
+  "narrative": {
+    "intro": "Computer Systems Design Services was the most active federal contract market the week of Aug 18–24, 2026, with $365M in newly reported obligations. The ten most active industries obligated $2B combined.",
+    "sections": []
+  },
+  "faq": [],
+  "related": [
+    {
+      "label": "NAICS 541512: Computer Systems Design Services",
+      "href": "/insights/naics/541512/"
+    },
+    {
+      "label": "NAICS 541715: Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology)",
+      "href": "/insights/naics/541715/"
+    },
+    {
+      "label": "NAICS 541519: Other Computer Related Services",
+      "href": "/insights/naics/541519/"
+    },
+    {
+      "label": "NAICS 236220: Commercial and Institutional Building Construction",
+      "href": "/insights/naics/236220/"
+    },
+    {
+      "label": "NAICS 541330: Engineering Services",
+      "href": "/insights/naics/541330/"
+    },
+    {
+      "label": "NAICS 541611: Administrative Management and General Management Consulting Services",
+      "href": "/insights/naics/541611/"
+    }
+  ],
+  "sources": [
+    {
+      "label": "USAspending.gov award data",
+      "href": "https://www.usaspending.gov"
+    }
+  ]
+}

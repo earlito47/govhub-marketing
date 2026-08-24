@@ -4,17 +4,17 @@
   "title": "Cgi Federal Government Contracts: $1.1B (FY2026)",
   "h1": "Cgi Federal: Federal Contracts, Agencies & Awards",
   "metaDescription": "Cgi Federal won $1.1B in federal contract obligations in FY2026 to date. See its top agencies, markets, largest awards, and expiring contracts.",
-  "updated": "2026-08-19",
+  "updated": "2026-08-24",
   "fyWindow": {
     "label": "FY2026 to date",
     "start": "2025-10-01",
-    "end": "2026-08-19"
+    "end": "2026-08-24"
   },
   "stats": {
-    "totalObligations": 1076758335.24,
-    "awardCount": 265,
-    "yoyGrowthPct": -9.6,
-    "avgAwardSize": 4063239,
+    "totalObligations": 1098049416.95,
+    "awardCount": 271,
+    "yoyGrowthPct": -7.8,
+    "avgAwardSize": 4051843,
     "smallBusinessSharePct": null
   },
   "charts": [
@@ -48,13 +48,13 @@
             ],
             [
               "FY26",
-              1076758335.24
+              1098049416.95
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Obligations fell 9.6% year over year, from $1.2B in FY2025 to $1.1B in FY2026 to date."
+      "takeaway": "Obligations fell 7.8% year over year, from $1.2B in FY2025 to $1.1B in FY2026 to date."
     },
     {
       "id": "cgi-federal-top-agencies",
@@ -66,15 +66,15 @@
           "points": [
             [
               "Department of State",
-              224756737.5
+              235466719.61
             ],
             [
               "General Services Administration",
-              173912377.98
+              180611345.48
             ],
             [
               "Department of Justice",
-              138321563.4
+              138723462.05
             ],
             [
               "Department of Veterans Affairs",
@@ -86,7 +86,7 @@
             ],
             [
               "Department of Homeland Security",
-              73102893.27
+              73224977.07
             ],
             [
               "Social Security Administration",
@@ -94,7 +94,7 @@
             ],
             [
               "Department of Transportation",
-              55505581.19
+              57997082.61
             ],
             [
               "Department of Defense",
@@ -102,13 +102,13 @@
             ],
             [
               "National Aeronautics and Space Administration",
-              26539935.41
+              26765869.97
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Department of State is Cgi Federal's largest federal customer, with $225M obligated (20.9% of the company's federal obligations)."
+      "takeaway": "Department of State is Cgi Federal's largest federal customer, with $235M obligated (21.4% of the company's federal obligations)."
     },
     {
       "id": "cgi-federal-top-naics",
@@ -120,15 +120,15 @@
           "points": [
             [
               "Other Computer Related Services",
-              449902662.62
+              462258708.44
             ],
             [
               "Computer Systems Design Services",
-              213520943.39
+              212327639.92
             ],
             [
               "Computer Facilities Management Services",
-              194564074.19
+              202007906.73
             ],
             [
               "Facilities Support Services",
@@ -136,15 +136,15 @@
             ],
             [
               "Computing Infrastructure Providers, Data Processing, Web Hosting, and Related Services",
-              54077255.92
+              56583526.29
             ],
             [
               "Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology)",
-              51684078.45
+              51910013.01
             ],
             [
               "Custom Computer Programming Services",
-              35731555.11
+              35698625.95
             ],
             [
               "Administrative Management and General Management Consulting Services",
@@ -152,7 +152,7 @@
             ],
             [
               "Professional and Management Development Training",
-              2192844.69
+              2178075.74
             ],
             [
               "All Other Information Services",
@@ -162,7 +162,7 @@
         }
       ],
       "unit": "usd",
-      "takeaway": "Other Computer Related Services is Cgi Federal's largest federal market, with $450M in obligations."
+      "takeaway": "Other Computer Related Services is Cgi Federal's largest federal market, with $462M in obligations."
     }
   ],
   "crossLinks": [
@@ -296,7 +296,7 @@
             "text": "80MSFC21FA009",
             "href": "https://www.usaspending.gov/award/CONT_AWD_80MSFC21FA009_8000_80MSFC21DA007_8000/"
           },
-          158194606.41,
+          158372458.49,
           "National Aeronautics and Space Administration",
           "2026-08-31"
         ],
@@ -393,22 +393,22 @@
         [
           19,
           {
+            "text": "693KA725F00017",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_693KA725F00017_6920_693KA725D00001_6920/"
+          },
+          67819006.87,
+          "Department of Transportation",
+          "2026-09-30"
+        ],
+        [
+          20,
+          {
             "text": "15JPSS24F00000894",
             "href": "https://www.usaspending.gov/award/CONT_AWD_15JPSS24F00000894_1501_15JPSS20D00000453_1501/"
           },
           65466561.53,
           "Department of Justice",
           "2025-09-30"
-        ],
-        [
-          20,
-          {
-            "text": "693KA725F00017",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_693KA725F00017_6920_693KA725D00001_6920/"
-          },
-          65312736.5,
-          "Department of Transportation",
-          "2026-09-29"
         ],
         [
           21,
@@ -513,7 +513,7 @@
             "href": "https://www.usaspending.gov/award/CONT_AWD_80MSFC21FA009_8000_80MSFC21DA007_8000/"
           },
           "National Aeronautics and Space Administration",
-          158194606.41,
+          158372458.49,
           "2026-08-31"
         ],
         [
@@ -584,46 +584,50 @@
         ],
         [
           "Business types",
-          "Category business; Corporate entity not tax exempt; Foreign owned; Foreign owned and us located business; Other than small business; Special designations"
+          "Category business; Corporate entity not tax exempt; Foreign owned; Other than small business; Special designations; Us owned business"
         ]
       ]
     }
   ],
   "narrative": {
-    "intro": "Cgi Federal obligated $1.1B in FY2026 to date across 265 awards, with an average award size of $4.1M. Obligations are down 9.6% year over year. Historical obligations show fiscal stability at a high level: FY21 was $1B, FY22 was $1.1B, FY23 was $1.1B, FY24 was $1.2B, FY25 was $1.2B, and FY26 is $1.1B so far. The Department of State is the largest buyer at $225M, followed by the General Services Administration at $174M and the Department of Justice at $138M. Other significant buyers include the Department of Veterans Affairs at $136M and Health and Human Services at $76M. Services tied to enterprise IT and operations dominate Cgi Federal's federal work. Other Computer Related Services accounts for $450M, Computer Systems Design Services accounts for $214M, and Computer Facilities Management Services accounts for $195M. Facilities Support Services and Computing Infrastructure Providers also appear among the top markets. The mix of buyers and markets shows a portfolio concentrated in IT services and facilities support while maintaining multi-agency reach.",
+    "intro": "Cgi Federal obligated $1.1B in FY2026 to date across 271 awards. Cgi Federal averaged $4.1M per award and obligations were down 7.8% year over year. Cgi Federal received the largest share of its FY2026 to date obligations from the Department of State at $235M, followed by the General Services Administration at $181M and the Department of Justice at $139M. Cgi Federal won the bulk of work in IT and services markets: Other Computer Related Services accounted for $462M, Computer Systems Design Services accounted for $212M, and Computer Facilities Management Services accounted for $202M. Historical obligations show Cgi Federal at $1B in FY21, $1.1B in FY22, $1.1B in FY23, $1.2B in FY24, $1.2B in FY25, and $1.1B in FY26. The FY2026 to date totals are partial, fiscal year to date, and the figures for largest awards and expiring contracts, where listed elsewhere, represent total contract values rather than yearly obligations.",
     "sections": [
       {
-        "heading": "Which agencies buy the most from Cgi Federal?",
-        "body": "The Department of State is the largest buyer, obligating $225M in FY2026 to date. The General Services Administration follows with $174M, and the Department of Justice follows with $138M. The Department of Veterans Affairs and Health and Human Services also rank in the top five with $136M and $76M respectively."
+        "heading": "What changed in Cgi Federal obligations this year?",
+        "body": "Cgi Federal obligated $1.1B in FY2026 to date. Obligations fell 7.8% year over year. Cgi Federal averaged $4.1M per award across 271 awards in the current fiscal year to date."
       },
       {
-        "heading": "What markets and services account for Cgi Federal's federal work?",
-        "body": "Other Computer Related Services is the largest market at $450M, followed by Computer Systems Design Services at $214M and Computer Facilities Management Services at $195M. Facilities Support Services and Computing Infrastructure Providers appear next with $66M and $54.1M respectively. Smaller but notable markets include research services at $51.7M and custom programming at $35.7M."
+        "heading": "Who are the biggest buyers of Cgi Federal in FY2026 to date?",
+        "body": "The Department of State is the largest buyer of Cgi Federal with $235M in obligations. The General Services Administration obligated $181M and the Department of Justice obligated $139M. The Department of Veterans Affairs and the Department of Health and Human Services obligated $136M and $76M respectively."
       }
     ]
   },
   "faq": [
     {
       "q": "How much does Cgi Federal make from federal contracts?",
-      "a": "Cgi Federal obligated $1.1B in federal contracts in FY2026 to date. Cgi Federal received 265 awards this fiscal year to date, with an average award size of $4.1M and obligations down 9.6% year over year."
+      "a": "Cgi Federal obligated $1.1B in federal contract obligations in FY2026 to date. Cgi Federal received 271 awards in the period, averaging $4.1M per award, and obligations were down 7.8% year over year."
     },
     {
       "q": "Which agencies buy from Cgi Federal?",
-      "a": "The Department of State, General Services Administration, and Department of Justice are the top buyers of Cgi Federal in FY2026 to date. The Department of State obligated $225M, the General Services Administration obligated $174M, and the Department of Justice obligated $138M. Other top buyers include the Department of Veterans Affairs at $136M and Health and Human Services at $76M."
+      "a": "The Department of State is the top buyer of Cgi Federal in FY2026 to date with $235M in obligations. Other major buyers include the General Services Administration at $181M, the Department of Justice at $139M, the Department of Veterans Affairs at $136M, and the Department of Health and Human Services at $76M."
     },
     {
       "q": "What does Cgi Federal sell to the government?",
-      "a": "Cgi Federal primarily sells IT and facility services to the government. Other Computer Related Services is the largest market at $450M, followed by Computer Systems Design Services at $214M and Computer Facilities Management Services at $195M. Facilities Support Services and Computing Infrastructure Providers account for $66M and $54.1M respectively."
+      "a": "Cgi Federal sells IT and related services to the government, led by Other Computer Related Services at $462M, Computer Systems Design Services at $212M, and Computer Facilities Management Services at $202M. Additional markets include Facilities Support Services at $66M and Computing Infrastructure Providers, Data Processing, Web Hosting, and Related Services at $56.6M."
     },
     {
       "q": "Which Cgi Federal contracts are expiring soon?",
-      "a": "No expiring contracts are listed in the provided tables. The facts include largest-awards and market tables but do not list expiring contracts or their award values."
+      "a": "No expiring-contracts data is listed for Cgi Federal in the provided facts. The facts note that largest-awards and expiring-contracts tables, when present, show total contract values rather than obligations, but no expiring-contract figures are included here."
     }
   ],
   "related": [
     {
       "label": "Expiring federal contracts: recompete watch",
       "href": "/insights/expiring-federal-contracts/"
+    },
+    {
+      "label": "Csi Aviation federal contracts",
+      "href": "/insights/vendor/csi-aviation/"
     },
     {
       "label": "Rauma Marine Constructions Oy federal contracts",
@@ -634,20 +638,16 @@
       "href": "/insights/vendor/l3harris-technologies-integrated-systems-l-p/"
     },
     {
-      "label": "Ferrovial Construccion PR federal contracts",
-      "href": "/insights/vendor/ferrovial-construccion-pr/"
-    },
-    {
       "label": "Aerospace federal contracts",
       "href": "/insights/vendor/aerospace/"
     },
     {
-      "label": "Savannah River Mission Completion federal contracts",
-      "href": "/insights/vendor/savannah-river-mission-completion/"
+      "label": "Ferrovial Construccion PR federal contracts",
+      "href": "/insights/vendor/ferrovial-construccion-pr/"
     },
     {
-      "label": "Bell Boeing Joint Project Office federal contracts",
-      "href": "/insights/vendor/bell-boeing-joint-project-office/"
+      "label": "Savannah River Mission Completion federal contracts",
+      "href": "/insights/vendor/savannah-river-mission-completion/"
     }
   ],
   "sources": [

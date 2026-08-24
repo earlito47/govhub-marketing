@@ -1,20 +1,20 @@
 {
   "pageType": "state",
   "slug": "minnesota",
-  "title": "Federal Contracts in Minnesota: $1.5B (FY2026)",
+  "title": "Federal Contracts in Minnesota: $1.6B (FY2026)",
   "h1": "Federal Contracts in Minnesota: Spending, Agencies & Vendors",
-  "metaDescription": "Federal agencies obligated $1.5B to contractors in Minnesota in FY2026 to date. See top buying agencies, top vendors, and industries.",
-  "updated": "2026-08-19",
+  "metaDescription": "Federal agencies obligated $1.6B to contractors in Minnesota in FY2026 to date. See top buying agencies, top vendors, and industries.",
+  "updated": "2026-08-24",
   "fyWindow": {
     "label": "FY2026 to date",
     "start": "2025-10-01",
-    "end": "2026-08-19"
+    "end": "2026-08-24"
   },
   "stats": {
-    "totalObligations": 1512791759.33,
-    "awardCount": 25791,
-    "yoyGrowthPct": -39.2,
-    "avgAwardSize": 58656,
+    "totalObligations": 1583075209.66,
+    "awardCount": 26594,
+    "yoyGrowthPct": -36.4,
+    "avgAwardSize": 59528,
     "smallBusinessSharePct": null
   },
   "charts": [
@@ -48,13 +48,13 @@
             ],
             [
               "FY26",
-              1512791759.33
+              1583075209.66
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Obligations fell 39.2% year over year, from $2.5B in FY2025 to $1.5B in FY2026 to date."
+      "takeaway": "Obligations fell 36.4% year over year, from $2.5B in FY2025 to $1.6B in FY2026 to date."
     },
     {
       "id": "minnesota-top-agencies",
@@ -66,49 +66,49 @@
           "points": [
             [
               "Department of Defense",
-              468094595.44
-            ],
-            [
-              "Department of Veterans Affairs",
-              254521568.03
+              506417218.9
             ],
             [
               "Department of Agriculture",
-              252930334.22
+              263428252.05
+            ],
+            [
+              "Department of Veterans Affairs",
+              257745526.16
             ],
             [
               "General Services Administration",
-              142638987.05
+              143974074.18
             ],
             [
               "Department of Health and Human Services",
-              127138276.36
+              128954566.13
             ],
             [
               "Department of Homeland Security",
-              70325638.03
+              74049330.39
             ],
             [
               "Department of Justice",
-              67617619.21
+              67876542.5
             ],
             [
               "Department of the Interior",
-              36824840.41
+              40398259.01
             ],
             [
               "Social Security Administration",
               17677547.88
             ],
             [
-              "Department of Transportation",
-              10926305.94
+              "Department of Labor",
+              12483017.95
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Department of Defense was the top federal buyer in Minnesota, obligating $468M (30.9% of the state total)."
+      "takeaway": "Department of Defense was the top federal buyer in Minnesota, obligating $506M (32.0% of the state total)."
     },
     {
       "id": "minnesota-top-vendors",
@@ -120,31 +120,31 @@
           "points": [
             [
               "NORTHROP GRUMMAN SYSTEMS CORPORATION",
-              184535694.63
+              184898028.74
             ],
             [
               "MCGOUGH CONSTRUCTION CO., LLC",
               106162917
             ],
             [
+              "CUMMINS POWER GENERATION INC.",
+              85182580.92
+            ],
+            [
               "BAE SYSTEMS LAND & ARMAMENTS L.P.",
-              67269546.94
+              65605371.01
             ],
             [
               "AGILITI HEALTH INC",
-              63328558.44
+              63448505.59
             ],
             [
               "ASSOCIATED MILK PRODUCERS INC",
               53802625.44
             ],
             [
-              "CUMMINS POWER GENERATION INC.",
-              51540153.92
-            ],
-            [
               "JENNIE-O TURKEY STORE INC",
-              43639544.22
+              47748584.22
             ],
             [
               "BONGARDS CREAMERIES",
@@ -156,13 +156,13 @@
             ],
             [
               "WESCOTT AGRI PRODUCTS, INC",
-              29938399.86
+              30077878.22
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "NORTHROP GRUMMAN SYSTEMS CORPORATION led all contractors in Minnesota with $185M, 12.2% of the state total."
+      "takeaway": "NORTHROP GRUMMAN SYSTEMS CORPORATION led all contractors in Minnesota with $185M, 11.7% of the state total."
     },
     {
       "id": "minnesota-top-naics",
@@ -178,39 +178,39 @@
             ],
             [
               "Commercial and Institutional Building Construction",
-              126065229.87
+              127038069.48
             ],
             [
               "Cheese Manufacturing",
               94969402.07
             ],
             [
+              "Motor and Generator Manufacturing",
+              68201394.42
+            ],
+            [
               "Electronic and Precision Equipment Repair and Maintenance",
-              63820660.04
+              63882056.04
             ],
             [
               "Other Aircraft Parts and Auxiliary Equipment Manufacturing",
-              48625783.47
-            ],
-            [
-              "Engineering Services",
-              44963306.72
+              48635455.47
             ],
             [
               "Poultry Processing",
-              44247724.22
+              48356764.22
+            ],
+            [
+              "Engineering Services",
+              46880882.41
             ],
             [
               "Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology)",
-              42513301.37
+              43712823.37
             ],
             [
               "Electromedical and Electrotherapeutic Apparatus Manufacturing",
-              42005162.92
-            ],
-            [
-              "Nursing Care Facilities (Skilled Nursing Facilities)",
-              40107282.79
+              42094634.73
             ]
           ]
         }
@@ -225,12 +225,12 @@
       "href": "/insights/agency/department-of-defense/"
     },
     {
-      "label": "Department of Veterans Affairs contracts",
-      "href": "/insights/agency/department-of-veterans-affairs/"
-    },
-    {
       "label": "Department of Agriculture contracts",
       "href": "/insights/agency/department-of-agriculture/"
+    },
+    {
+      "label": "Department of Veterans Affairs contracts",
+      "href": "/insights/agency/department-of-veterans-affairs/"
     },
     {
       "label": "General Services Administration contracts",
@@ -264,7 +264,7 @@
             "text": "NORTHROP GRUMMAN SYSTEMS CORPORATION",
             "href": "https://www.usaspending.gov/recipient/a7284824-a186-1d38-f257-0fd2f2e09ff5-C/latest/"
           },
-          184535694.63
+          184898028.74
         ],
         [
           2,
@@ -277,21 +277,29 @@
         [
           3,
           {
-            "text": "BAE SYSTEMS LAND & ARMAMENTS L.P.",
-            "href": "https://www.usaspending.gov/recipient/b5ca9859-c0d6-48c3-60a8-d8ccf2343a45-C/latest/"
+            "text": "CUMMINS POWER GENERATION INC.",
+            "href": "https://www.usaspending.gov/recipient/9e483c5d-7352-28b3-89dd-33052a121331-C/latest/"
           },
-          67269546.94
+          85182580.92
         ],
         [
           4,
           {
-            "text": "AGILITI HEALTH INC",
-            "href": "https://www.usaspending.gov/recipient/4a29d26a-81e5-2457-0c71-72f8353fd712-C/latest/"
+            "text": "BAE SYSTEMS LAND & ARMAMENTS L.P.",
+            "href": "https://www.usaspending.gov/recipient/b5ca9859-c0d6-48c3-60a8-d8ccf2343a45-C/latest/"
           },
-          63328558.44
+          65605371.01
         ],
         [
           5,
+          {
+            "text": "AGILITI HEALTH INC",
+            "href": "https://www.usaspending.gov/recipient/4a29d26a-81e5-2457-0c71-72f8353fd712-C/latest/"
+          },
+          63448505.59
+        ],
+        [
+          6,
           {
             "text": "ASSOCIATED MILK PRODUCERS INC",
             "href": "https://www.usaspending.gov/recipient/a9414861-272b-30e3-68c7-b2551f46810a-C/latest/"
@@ -299,20 +307,12 @@
           53802625.44
         ],
         [
-          6,
-          {
-            "text": "CUMMINS POWER GENERATION INC.",
-            "href": "https://www.usaspending.gov/recipient/9e483c5d-7352-28b3-89dd-33052a121331-C/latest/"
-          },
-          51540153.92
-        ],
-        [
           7,
           {
             "text": "JENNIE-O TURKEY STORE INC",
             "href": "https://www.usaspending.gov/recipient/959e51f8-6ee6-b66f-eaa3-fe8dfe13afbb-C/latest/"
           },
-          43639544.22
+          47748584.22
         ],
         [
           8,
@@ -336,7 +336,7 @@
             "text": "WESCOTT AGRI PRODUCTS, INC",
             "href": "https://www.usaspending.gov/recipient/c69a8aab-6413-1451-2bde-11c2f2b1d632-C/latest/"
           },
-          29938399.86
+          30077878.22
         ]
       ]
     },
@@ -571,37 +571,37 @@
             "text": "EDUCATION & TRAINING RESOURCES LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_1605JW21C0006_1605_-NONE-_-NONE-/"
           },
-          56655136.48,
+          59419549.92,
           "Department of Labor"
         ]
       ]
     }
   ],
   "narrative": {
-    "intro": "Minnesota recorded $1.5B in federal contract obligations for FY2026 to date. The state had 25,791 awards with an average award size of $58.7K, and obligations fell 39.2% year over year. Obligations have varied across the last six fiscal years: FY21 $2.6B, FY22 $2.4B, FY23 $2.7B, FY24 $3B, FY25 $2.5B, and FY26 $1.5B. The Department of Defense is the largest buyer so far in FY2026, followed by the Department of Veterans Affairs and the Department of Agriculture. NORTHROP GRUMMAN SYSTEMS CORPORATION leads vendors by obligations, followed by MCGOUGH CONSTRUCTION CO., LLC and BAE SYSTEMS LAND & ARMAMENTS L.P. Ammunition (except Small Arms) Manufacturing is the largest industry by obligations, followed by Commercial and Institutional Building Construction and Cheese Manufacturing. All figures are contract obligations and current-year totals are partial (fiscal year to date).",
+    "intro": "Minnesota has $1.6B in federal contract obligations in FY2026 to date. The state recorded 26,594 awards with an average award size of $59.5K. Obligations are down 36.4% year over year, and current-year totals are partial because the fiscal year is still in progress. The Department of Defense is the largest buyer with $506M, followed by the Department of Agriculture with $263M and the Department of Veterans Affairs with $258M. NORTHROP GRUMMAN SYSTEMS CORPORATION leads vendors with $185M, and MCGOUGH CONSTRUCTION CO., LLC follows with $106M. Ammunition (except Small Arms) Manufacturing is the largest industry by obligation at $185M, while Commercial and Institutional Building Construction and Cheese Manufacturing reported $127M and $95M respectively. Historical annual obligations show FY24 at $3B as the peak in the last six years, with FY21 through FY25 ranging between $2.4B and $3B and FY26 currently at $1.6B. These figures represent contract obligations only and reflect fiscal year to date totals.",
     "sections": [
       {
-        "heading": "What changed in Minnesota federal contracting year over year?",
-        "body": "Obligations fell 39.2% year over year. FY26 obligations are $1.5B compared with prior fiscal years that ranged from $2.4B to $3B. The average award size in FY2026 to date is $58.7K across 25,791 awards. These figures reflect contract obligations through FY2026 to date, a partial fiscal-year total."
+        "heading": "What changed year over year?",
+        "body": "Obligations are down 36.4% year over year. Award count stands at 26,594 and average award size is $59.5K, reflecting the current FY2026 to date totals. Annual context shows FY25 at $2.5B and FY24 at $3B, with FY26 at $1.6B so far."
       },
       {
-        "heading": "Who are the biggest buyers and industries in Minnesota this fiscal year?",
-        "body": "The Department of Defense obligated $468M, the Department of Veterans Affairs obligated $255M, and the Department of Agriculture obligated $253M in FY2026 to date. Ammunition (except Small Arms) Manufacturing accounts for $185M in obligations, Commercial and Institutional Building Construction accounts for $126M, and Cheese Manufacturing accounts for $95M. Those agencies and industries drive the largest shares of obligations in the state for FY2026 to date."
+        "heading": "Which agencies and vendors dominate Minnesota federal contracting?",
+        "body": "The Department of Defense obligated $506M, the Department of Agriculture obligated $263M, and the Department of Veterans Affairs obligated $258M in FY2026 to date. NORTHROP GRUMMAN SYSTEMS CORPORATION received $185M and MCGOUGH CONSTRUCTION CO., LLC received $106M. Ammunition (except Small Arms) Manufacturing led industries with $185M, followed by Commercial and Institutional Building Construction at $127M and Cheese Manufacturing at $95M."
       }
     ]
   },
   "faq": [
     {
       "q": "How much federal contract money goes to Minnesota?",
-      "a": "Minnesota received $1.5B in federal contract obligations for FY2026 to date. The state recorded 25,791 awards with an average award size of $58.7K, and obligations fell 39.2% year over year. Historical fiscal-year obligations include FY21 $2.6B, FY22 $2.4B, FY23 $2.7B, FY24 $3B, and FY25 $2.5B."
+      "a": "Federal contracts to Minnesota total $1.6B in FY2026 to date. The state recorded 26,594 awards with an average award size of $59.5K, and obligations are down 36.4% year over year. Historical obligations were $2.5B in FY25 and $3B in FY24."
     },
     {
       "q": "Which agencies award the most contracts in Minnesota?",
-      "a": "The Department of Defense awarded the most contracts in Minnesota, obligating $468M in FY2026 to date. The Department of Veterans Affairs obligated $255M and the Department of Agriculture obligated $253M. The General Services Administration, Department of Health and Human Services, and other agencies round out the top buying agencies for the state."
+      "a": "The Department of Defense awards the most contracts in Minnesota with $506M, followed by the Department of Agriculture with $263M and the Department of Veterans Affairs with $258M. The General Services Administration awarded $144M and the Department of Health and Human Services awarded $129M in FY2026 to date."
     },
     {
       "q": "Who are the largest federal contractors in Minnesota?",
-      "a": "NORTHROP GRUMMAN SYSTEMS CORPORATION is the largest federal contractor in Minnesota for FY2026 to date with $185M in obligations. MCGOUGH CONSTRUCTION CO., LLC obligated $106M and BAE SYSTEMS LAND & ARMAMENTS L.P. obligated $67.3M. Other top vendors include AGILITI HEALTH INC at $63.3M and ASSOCIATED MILK PRODUCERS INC at $53.8M."
+      "a": "NORTHROP GRUMMAN SYSTEMS CORPORATION is the largest federal contractor in Minnesota with $185M, followed by MCGOUGH CONSTRUCTION CO., LLC with $106M and CUMMINS POWER GENERATION INC. with $85.2M. Other top vendors include BAE SYSTEMS LAND & ARMAMENTS L.P. at $65.6M and AGILITI HEALTH INC at $63.4M."
     }
   ],
   "related": [
