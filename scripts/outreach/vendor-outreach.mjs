@@ -28,6 +28,18 @@
 //     by user decision — no Tomba subscription.)
 //   - A vendor neither tier can resolve is retried on a slow cadence rather
 //     than retired: Apollo's coverage of a company changes over months.
+//   - A tier being DOWN is not the same as a tier having no answer, and the
+//     difference is now recorded. Apollo reports an exhausted credit balance
+//     as a plain 422; on 2026-08-20 that killed resolution outright — SBA
+//     covers small businesses only, and the queue is mostly large primes,
+//     FFRDC operators and universities, so Apollo is the only tier that can
+//     reach them (53 of the first 69 sends came from it). Every vendor failed
+//     identically, no ledger row was written, the run stayed green, and the
+//     digest went on calling the backlog a daily retry for six days. So: a
+//     quota error now stops the run instead of spending the rest of the batch
+//     on the same wall, writes `resolverStatus` on the ledger, and prints a
+//     ::warning:: the digest turns into an action item. It clears itself on
+//     the next run that resolves anybody.
 //   - Never the same inbox twice across vendors: Raytheon and RTX share
 //     rtx.com, so every tier skips an email some other vendor already holds,
 //     or that the ledger's `suppressed` list has retired.
@@ -81,12 +93,23 @@ function loadLedger() {
   return ledger;
 }
 
+// Why the resolver is producing nothing, in the one file the digest already
+// reads. A dead upstream is invisible in `vendors` — an outage writes no rows
+// at all — so it needs somewhere of its own to be recorded.
+function setResolverStatus(ledger, status) {
+  if (status) ledger.resolverStatus = status;
+  else delete ledger.resolverStatus;
+}
+
 async function saveLedger(ledger) {
   const sorted = Object.fromEntries(Object.entries(ledger.vendors).sort(([a], [b]) => a.localeCompare(b)));
   // `suppressed` is written explicitly: an address that must never be mailed
   // again outlives the vendor row it came from, so it cannot live inside
   // `vendors` and must not be dropped by this rewrite.
   const out = { version: 1, vendors: sorted, suppressed: ledger.suppressed ?? [] };
+  // Same reason `suppressed` is written explicitly: this rewrite drops any key
+  // it does not name, and a resolver outage must survive the run that found it.
+  if (ledger.resolverStatus) out.resolverStatus = ledger.resolverStatus;
   await writeFile(LEDGER_PATH, `${JSON.stringify(out, null, 2)}\n`, 'utf8');
 }
 
@@ -293,13 +316,33 @@ async function resolveSba(vendor) {
 // then search people inside that organization by title and reveal one work
 // email. Capped at APOLLO_REVEALS_PER_VENDOR reveals per vendor to keep credit
 // use predictable.
+
+// Apollo answers an exhausted credit balance with an ordinary-looking 4xx
+// ("HTTP 422 You have insufficient credits!"), not a distinct status. Left
+// untagged it reads like any other per-vendor miss, which is exactly how the
+// 2026-08-20 outage stayed invisible for six days of green runs: every vendor
+// in every batch failed this way, the resolver wrote no ledger row (see
+// runResolve), and the digest kept reporting the backlog as "retries daily".
+// Tagging it lets the caller stop the run and say so out loud.
+export function isApolloQuotaError(status, body) {
+  if (status === 402) return true;
+  return /insufficient credits|upgrade your plan|over your.{0,20}limit/i.test(String(body));
+}
+
 async function apolloPost(key, endpoint, payload) {
   const resp = await fetch(`https://api.apollo.io/api/v1/${endpoint}`, {
     method: 'POST',
     headers: { 'X-Api-Key': key, 'Content-Type': 'application/json', 'Cache-Control': 'no-cache' },
     body: JSON.stringify(payload),
   });
-  if (!resp.ok) throw new Error(`apollo ${endpoint}: HTTP ${resp.status} ${(await resp.text()).slice(0, 150)}`);
+  if (!resp.ok) {
+    const text = await resp.text();
+    const err = new Error(`apollo ${endpoint}: HTTP ${resp.status} ${text.slice(0, 150)}`);
+    // Not a property of this vendor — a property of the account. Every
+    // remaining vendor in the batch would hit the same wall.
+    if (isApolloQuotaError(resp.status, text)) err.quotaExhausted = true;
+    throw err;
+  }
   return resp.json();
 }
 
@@ -440,7 +483,9 @@ async function runResolve(limit) {
     return;
   }
   const usedEmails = usedEmailSet(ledger);
-  for (const vendor of published) {
+  let quotaExhausted = null;
+  let resolvedThisRun = 0;
+  for (const [i, vendor] of published.entries()) {
     // The name the email will actually say, not the page-title displayName.
     const company = companyForEmail(vendor.name || vendor.displayName);
     let contact = await resolveSba(vendor);
@@ -450,8 +495,9 @@ async function runResolve(limit) {
     if (!contact) {
       const apollo = await resolveApollo(vendor, usedEmails).catch((e) => {
         console.log(`[resolve] ${vendor.slug}: ${e.message}`);
-        return { skipped: true, errored: true };
+        return { skipped: true, errored: true, quotaExhausted: Boolean(e.quotaExhausted) };
       });
+      if (apollo?.quotaExhausted) quotaExhausted = apollo;
       if (apollo?.skipped) {
         apolloSkipped = true;
         apolloErrored = Boolean(apollo.errored);
@@ -471,6 +517,7 @@ async function runResolve(limit) {
         sendAttempts: 0,
         notes: '',
       };
+      resolvedThisRun += 1;
       console.log(`[resolve] ${vendor.slug}: ${contact.email} (${contact.source})`);
     } else if (apolloSkipped) {
       // Leave unresolved so a later run retries — and say WHY accurately: the
@@ -495,7 +542,33 @@ async function runResolve(limit) {
       );
     }
     await saveLedger(ledger);
+    // The credit balance is not going to refill mid-run. Every vendor left in
+    // the batch would spend a request to be told the same thing, so stop.
+    if (quotaExhausted) {
+      console.log(`[resolve] stopping: Apollo is out of credits, ${published.length - i - 1} vendor(s) left unattempted this run`);
+      break;
+    }
     await new Promise((r) => setTimeout(r, 600));
+  }
+
+  // Record — or clear — why resolution is stalled, and make it loud. Neither
+  // tier resolving a given vendor is normal; the paid tier being switched off
+  // for every vendor is an outage, and green-and-silent is how it survived six
+  // days last time.
+  if (quotaExhausted) {
+    setResolverStatus(ledger, {
+      tier: 'apollo',
+      reason: 'out-of-credits',
+      detectedAt: new Date().toISOString(),
+      message: 'Apollo returned "insufficient credits" — contact resolution is blocked until the plan is topped up.',
+    });
+    await saveLedger(ledger);
+    console.log('::warning title=Vendor outreach contact resolution is blocked::Apollo is out of credits, so no new vendor contacts can be resolved and no outreach can be sent. SBA covers small businesses only and cannot reach the current backlog. Top up the Apollo plan or the queue will keep growing.');
+  } else if (ledger.resolverStatus && resolvedThisRun > 0) {
+    // Apollo answered and produced a contact: whatever was wrong is over.
+    setResolverStatus(ledger, null);
+    await saveLedger(ledger);
+    console.log('[resolve] Apollo is answering again — cleared the recorded resolver outage');
   }
 }
 
