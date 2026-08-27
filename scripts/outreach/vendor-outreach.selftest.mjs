@@ -5,7 +5,7 @@
 // Every case here is a real roster name or a real Apollo result. One email per
 // vendor ever means each of these is a mistake that cannot be taken back, so
 // they are pinned rather than eyeballed in a dry run.
-import { companyForEmail, dueForResolve, renderEmail, sameCompany } from './vendor-outreach.mjs';
+import { companyForEmail, dueForResolve, isApolloQuotaError, renderEmail, sameCompany } from './vendor-outreach.mjs';
 
 let failures = 0;
 function check(name, actual, expected) {
@@ -100,6 +100,26 @@ check('retry: legacy no-contact row is due now', dueForResolve({ status: 'no-con
 check('retry: tried yesterday, too soon', dueForResolve({ status: 'no-contact', resolveAttempts: 1, lastResolveAt: days(1) }, NOW), false);
 check('retry: tried 20 days ago, due', dueForResolve({ status: 'no-contact', resolveAttempts: 1, lastResolveAt: days(20) }, NOW), true);
 check('retry: attempts exhausted', dueForResolve({ status: 'no-contact', resolveAttempts: 5, lastResolveAt: days(400) }, NOW), false);
+
+// ---- Apollo quota detection -------------------------------------------------
+// Apollo reports an empty credit balance as an ordinary 422, the same status it
+// uses for a malformed query, so the body text is the only signal. Getting this
+// wrong in either direction is expensive: a miss silently kills resolution for
+// days (2026-08-20), and a false positive aborts a healthy batch. The first
+// case is the verbatim body from that outage.
+check(
+  'quota: verbatim 422 from the 2026-08-20 outage',
+  isApolloQuotaError(422, '{"error":"You have insufficient credits! <a href=\'https://app.apollo.io/#/settings/plans/upgrade\'>Upgrade your plan</a>"}'),
+  true,
+);
+check('quota: payment required', isApolloQuotaError(402, ''), true);
+check('quota: upgrade-your-plan wording alone', isApolloQuotaError(422, 'Please upgrade your plan to continue'), true);
+check('quota: case insensitive', isApolloQuotaError(422, 'INSUFFICIENT CREDITS'), true);
+// Must NOT trip: ordinary per-request failures that say nothing about billing.
+check('quota: plain validation 422 is not a quota error', isApolloQuotaError(422, '{"error":"organization_ids is invalid"}'), false);
+check('quota: auth failure is not a quota error', isApolloQuotaError(401, 'Unauthorized'), false);
+check('quota: rate limit is not a credit outage', isApolloQuotaError(429, 'Too many requests'), false);
+check('quota: server error is not a quota error', isApolloQuotaError(500, 'Internal Server Error'), false);
 
 // ---- Body wrapping ---------------------------------------------------------
 // A long company name must not leave one line jutting out past the rest.

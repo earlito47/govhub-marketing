@@ -95,7 +95,8 @@ function gatherContent() {
 // ---- Stream 2: outreach sends (ledger diff) --------------------------------
 function gatherOutreach() {
   const ledgerPath = 'data/vendor-outreach.json';
-  const cur = JSON.parse(readFileSync(path.join(REPO_ROOT, ledgerPath), 'utf8')).vendors;
+  const ledger = JSON.parse(readFileSync(path.join(REPO_ROOT, ledgerPath), 'utf8'));
+  const cur = ledger.vendors;
   let old = {};
   try {
     const sha = git('rev-list', '-1', `--before=${sinceIso}`, 'HEAD').trim();
@@ -120,7 +121,14 @@ function gatherOutreach() {
   const sendFailed = Object.entries(cur)
     .filter(([, v]) => v.status === 'send-failed')
     .map(([slug, v]) => ({ slug, email: v.email, notes: v.notes }));
-  return { sent, resolved, backlog, sendFailed, totalSent: Object.values(cur).filter((v) => v.status === 'sent').length };
+  return {
+    sent, resolved, backlog, sendFailed,
+    // Set by the outreach resolver when a whole contact tier is down. Without
+    // it the backlog line below reads as routine queue depth, which is what it
+    // did through the 2026-08-20 Apollo outage.
+    resolverStatus: ledger.resolverStatus ?? null,
+    totalSent: Object.values(cur).filter((v) => v.status === 'sent').length,
+  };
 }
 
 // ---- Stream 3: workflow health + action items (GitHub API) -----------------
@@ -172,8 +180,23 @@ async function gatherActions(outreach) {
       items.push({ text: 'Vendor outreach sends are paused — OUTREACH_ENABLED is not "true"', url: null });
     }
   } catch { /* variables API unavailable — skip the gate checks */ }
+  // Order matters: when the resolver is down, the backlog is a symptom and the
+  // outage is the thing to act on, so it goes first and the backlog line stops
+  // claiming a daily retry that cannot succeed.
+  const stalled = outreach?.resolverStatus;
+  if (stalled) {
+    items.push({
+      text: `Vendor contact resolution is BLOCKED (${stalled.tier}: ${stalled.reason}, since ${fmtWhen(stalled.detectedAt)}) — ${stalled.message} No vendor can be emailed until this is cleared.`,
+      url: null,
+    });
+  }
   if (outreach?.backlog > 0) {
-    items.push({ text: `${outreach.backlog} published vendor page(s) still need a contact resolved before they can be emailed (retries daily)`, url: null });
+    items.push({
+      text: stalled
+        ? `${outreach.backlog} published vendor page(s) are waiting on a contact — these are NOT retrying successfully while resolution is blocked`
+        : `${outreach.backlog} published vendor page(s) still need a contact resolved before they can be emailed (retries daily)`,
+      url: null,
+    });
   }
   for (const v of outreach?.sendFailed ?? []) {
     items.push({ text: `Outreach to ${v.slug} <${v.email}> gave up after repeated failures — ${v.notes || 'no detail recorded'}`, url: null });
