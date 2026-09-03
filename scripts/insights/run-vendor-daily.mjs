@@ -23,7 +23,7 @@ import { fileURLToPath } from 'node:url';
 import { readFileSync, existsSync, readdirSync } from 'node:fs';
 import { writeFile } from 'node:fs/promises';
 import { UsaSpendingClient } from './lib/usaspending.mjs';
-import { publishVendor, countExistingEntities, newSummary, reportSummary } from './run-entities.mjs';
+import { publishVendor, countExistingEntities, newSummary, reportSummary, assertBatchViable } from './run-entities.mjs';
 import { makeBudget } from './lib/guardrails.mjs';
 import { loadRoster, saveRoster, rosterEntries, vendorPageExists } from './lib/vendor-roster.mjs';
 import { enrichAll } from './generate-narratives.mjs';
@@ -74,14 +74,20 @@ async function main() {
   console.log(`[run-vendor-daily] ${backlog.length} pending vendors, budget ${budget.allowance} — as of ${asOfDate}`);
 
   const publishedFiles = [];
+  let attempted = 0;
   for (const entry of backlog) {
     if (!budget.canPublishNew()) break;
+    attempted += 1;
     const action = await publishVendor({ client, roster, slug: entry.slug, asOfDate, budget, summary });
     if (action === 'index' || action === 'noindex') {
       publishedFiles.push(path.join(DATA_DIR, 'vendor', `${entry.slug}.json`));
     }
   }
+  // Save first, always. The roster records which entries are now published and
+  // which are permanently failed; losing that is what let one bad entry block
+  // the queue for eight days straight.
   await saveRoster(roster);
+  assertBatchViable('run-vendor-daily', { attempted, published: publishedFiles.length, summary });
 
   // Enrich ONLY today's new pages — never rewrite narratives on pages whose
   // data did not change. Number-verified or discarded, same as the weekly run.

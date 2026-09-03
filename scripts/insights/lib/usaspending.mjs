@@ -49,6 +49,26 @@ const BASE_URL = 'https://api.usaspending.gov';
 const RETRY_DELAYS_MS = [1000, 4000, 15000, 60000, 180000, 300000];
 const RETRYABLE_STATUS = new Set([429, 500, 502, 503, 504]);
 
+// A status the API will answer identically however many times we ask — a
+// malformed filter, a missing record, a rejected field. Retrying one is pure
+// dead time, and the ladder above makes it 9.3 minutes of it.
+//
+// This distinction existed before but did not work: the throw for a
+// non-retryable status sat inside the same `try` as the fetch, so the `catch`
+// below swallowed it and retried anyway. RETRYABLE_STATUS never actually
+// prevented a retry. That is what made daily-vendor-publish spend ~10 minutes
+// a day, for eight days, re-asking USAspending about a vendor whose
+// recipient_id was null and getting the same 400 seven times.
+class PermanentHttpError extends Error {
+  constructor(message, status) {
+    super(message);
+    this.name = 'PermanentHttpError';
+    this.status = status;
+    this.permanent = true;
+  }
+}
+export { PermanentHttpError };
+
 // --- Concurrency limiter: max in-flight + minimum spacing between starts.
 // Defaults keep sustained load ~2.5 req/s (the 3/250ms of the first weeks
 // peaked near 12 req/s, which is what tripped the edge's cutoff). Raise via
@@ -121,18 +141,26 @@ export class UsaSpendingClient {
           body: body ? JSON.stringify(body) : undefined,
         });
         if (!res.ok) {
-          if (RETRYABLE_STATUS.has(res.status) && attempt < RETRY_DELAYS_MS.length) {
-            await sleep(RETRY_DELAYS_MS[attempt]);
-            continue;
-          }
           const text = await safeText(res);
-          throw new Error(`USAspending ${method} ${path} failed: ${res.status} ${text}`.slice(0, 500));
+          const message = `USAspending ${method} ${path} failed: ${res.status} ${text}`.slice(0, 500);
+          if (!RETRYABLE_STATUS.has(res.status)) throw new PermanentHttpError(message, res.status);
+          throw new Error(message);
         }
         return await res.json();
       } catch (err) {
+        // Rethrown, not retried: asking again cannot change the answer.
+        if (err instanceof PermanentHttpError) throw err;
         lastErr = err;
         if (attempt < RETRY_DELAYS_MS.length) {
-          await sleep(RETRY_DELAYS_MS[attempt]);
+          const delayMs = RETRY_DELAYS_MS[attempt];
+          // Say what is being waited on. Retries used to be silent, which is
+          // why a permanent 400 read as an unexplained multi-minute stall in
+          // the logs for weeks instead of as an error.
+          console.warn(
+            `[usaspending] ${method} ${path} — attempt ${attempt + 1}/${RETRY_DELAYS_MS.length + 1} failed ` +
+              `(${String(err.message).slice(0, 140)}); retrying in ${delayMs / 1000}s`
+          );
+          await sleep(delayMs);
           continue;
         }
       }

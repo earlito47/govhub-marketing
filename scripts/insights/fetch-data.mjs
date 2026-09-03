@@ -259,6 +259,21 @@ export async function fetchTopRecipients(client, { asOfDate, page = 1, limit = 1
  *     `recipient_search_text: [uei]` (same as scripts/leadgen/usaspending.py).
  */
 export async function fetchVendorRaw(client, { slug, vendor, asOfDate, trendYears = 6 }) {
+  // Every aggregate query below filters on recipient_id. A null one is not a
+  // vendor we can describe: USAspending answers it with
+  // 400 "Invalid value in 'filters|recipient_id'. 'None' is not a valid type".
+  // Say which vendor, here, rather than letting an opaque 400 surface six
+  // calls deep.
+  if (!vendor?.recipientId) {
+    const err = new Error(
+      `vendor/${slug} has no recipientId — cannot build a profile. ` +
+        'USAspending rows without a recipient_id are aggregate buckets ' +
+        '(e.g. "MISCELLANEOUS FOREIGN AWARDEES"), not companies.'
+    );
+    // Permanent: no amount of retrying or waiting produces a recipient_id.
+    err.permanent = true;
+    throw err;
+  }
   const currentFy = fiscalYearOf(asOfDate);
   const currentFyRange = fiscalYearRange(currentFy);
   const fyTp = { start_date: currentFyRange.start, end_date: currentFyRange.end };

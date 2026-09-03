@@ -41,8 +41,15 @@ jobs:
   refresh:
     runs-on: ubuntu-latest
     # 90 (was 60, was 45): headroom for the vendor-profile fetches as the
-    # roster grows, plus the in-job retry loop below, which can idle through
-    # up to three ~9-minute retry ladders before giving up.
+    # roster grows, plus the in-job retry loop below.
+    #
+    # Reviewed 2026-09-03 after the 2026-08-31 run was cancelled at exactly 90
+    # minutes, and deliberately left at 90. Most of that run's 78 minutes of
+    # stalls were the retry ladder re-asking about errors that could never
+    # succeed; that is fixed at the source now (non-retryable statuses fail
+    # immediately), so the same work should fit comfortably. Raising the
+    # ceiling instead would have bought time for waste. DEADLINE_MINUTES below
+    # is the real guard: it ends the run cleanly rather than being killed.
     timeout-minutes: 90
     steps:
       - name: Checkout
@@ -103,17 +110,30 @@ jobs:
           # spent ~9 minutes backing off by the time an attempt fails, so this
           # only needs to let a slightly-longer outage clear.
           COOLDOWN_S: "120"
+          # Stop STARTING attempts once this much of the job budget is gone.
+          # On 2026-08-31 all three attempts ran, the third began at minute 82
+          # of a 90-minute job, and the runner guillotined it mid-flight: the
+          # run reported "cancelled" with no error naming a cause. Ending on
+          # our own terms costs the same data (a failed run commits nothing
+          # either way) and leaves a log that says what happened.
+          DEADLINE_MINUTES: "70"
         run: |
+          started=$SECONDS
           for attempt in $(seq 1 "$ATTEMPTS"); do
+            elapsed_min=$(( (SECONDS - started) / 60 ))
+            if [ "$attempt" -gt 1 ] && [ "$elapsed_min" -ge "$DEADLINE_MINUTES" ]; then
+              echo "::error::Stopping after ${attempt} of ${ATTEMPTS} attempts: ${elapsed_min} minutes gone of a ${DEADLINE_MINUTES}-minute budget, not enough left to finish another pass. The response cache is saved below, so a Re-run resumes from here."
+              exit 1
+            fi
             echo "::group::insights:weekly — attempt $attempt of $ATTEMPTS"
             if npm run insights:weekly; then
               echo "::endgroup::"
-              echo "Refresh completed on attempt $attempt."
+              echo "Refresh completed on attempt $attempt after $(( (SECONDS - started) / 60 )) minutes."
               exit 0
             fi
             echo "::endgroup::"
             if [ "$attempt" -lt "$ATTEMPTS" ]; then
-              echo "::warning::Attempt $attempt failed. Cooling down ${COOLDOWN_S}s, then resuming from the response cache."
+              echo "::warning::Attempt $attempt failed after $(( (SECONDS - started) / 60 )) minutes. Cooling down ${COOLDOWN_S}s, then resuming from the response cache."
               sleep "$COOLDOWN_S"
             fi
           done
