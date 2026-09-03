@@ -76,39 +76,66 @@ six weeks later.
 The brief already said "do not use an aggressive affiliate pitch" for this
 segment. The stronger version is that there is no affiliate pitch at all.
 
-### 2. The relationship campaigns should not send from a cold-email domain
+### 2. The relationship campaigns should not send from a cold-email domain, but govhub.online is not connected to Instantly
 
 Wave 1 sends from twelve `.com` lookalike domains and flagged the mismatch
 between those and the `govhub.online` link as a deliverability problem. Here it
-is a conversion problem first, and a worse one.
+is a conversion problem first, and a worse one: every recipient in C1, C2, C3
+and C6 is a professional communicator who will look GovHub up before replying,
+and a partnership pitch for a product at govhub.online, arriving from
+`govhubprocurement.com`, reads as somebody impersonating the product they are
+pitching.
 
-Every recipient in C1, C2, C3 and C6 is a professional communicator who will
-look GovHub up before replying. A partnership pitch for a product at
-govhub.online, arriving from `govhubprocurement.com`, does not read as a growth
-tactic. It reads as somebody impersonating the product they are pitching, which
-is the single worst first impression available with a journalist.
+The design called for these four campaigns to send from govhub.online. Checked
+against the live workspace (`GET /accounts`, 2026-09-04): **there is no
+govhub.online mailbox connected to Instantly at all.** Every one of the 48
+connected accounts sits on one of the sixteen wave-1-style lookalike domains
+(`buildwithgovhub.com`, `govhubbids.com`, and so on), the same domains built and
+aged for cold sales. There is nothing to point the relationship campaigns at
+except more of what they were designed to avoid.
 
-The volume argument that justified twelve mailboxes in wave 1 does not exist
-here: 104 leads and 416 total sends is about 25 sends a day, which is one
-mailbox's normal work. So:
+Given that constraint, C1, C2, C3 and C6 share one mailbox on the least
+sales-coded of the sixteen: `earl.knight@govhubhq.com`. "HQ" reads as a
+company's own site; `govhubbids.com` or `govhubprocurement.com` read as what
+they are, a lead-gen domain, which is the exact tell a journalist or podcast
+host who vets pitches for a living would recognize. This is a compromise, not
+the fix. **Connect a real govhub.online mailbox to this Instantly workspace
+before these four campaigns start sending**. `PRIMARY_DOMAIN` and
+`MAILBOXES.C1`-`.C6` are the only lines that need to change when one exists,
+and everything else in the file is already built to point at it.
 
-- **C1, C2, C3, C6** send from one named human at `govhub.online`. One address
-  for all four, deliberately: a creator who gets the creator pitch and later the
-  podcast pitch should see the same sender both times.
-- **C4 and C5** behave more like cold sales and can borrow warmed wave 1
-  domains. `winwithgovhub.com` was documented as the wave 1 spare;
-  `govhubteam.com` is a wave 1 domain with spare mailbox capacity. Never
-  `bidwithgovhub.com`, whose `j.knight@` and `j.k@` do not match the account name
-  on file.
+The volume argument that justified twelve mailboxes in wave 1 does not apply
+here regardless of which domain is used: 104 leads and 416 total sends is
+about 25 sends a day, which is one mailbox's normal work. So:
 
-`MAILBOXES` in `instantly-influencer.mjs` ships with `REPLACE_ME@govhub.online`
-placeholders and `--check` fails on them, so `--sync` cannot run until somebody
-makes this call. That failure is the only one left:
+- **C1, C2, C3, C6** share one address, deliberately: a creator who gets the
+  creator pitch and later the podcast pitch should see the same sender both
+  times. Their campaign-level `daily_limit`s (6, 3, 3, 3) sum to 15, matching
+  that mailbox's own account-level cap in Instantly exactly; `--check` now
+  asserts this by address rather than relying on the arithmetic being done
+  correctly by hand whenever a limit changes.
+- **C4 and C5** behave more like cold sales and use separate, dedicated warmed
+  wave-1 mailboxes, confirmed live via the API (`status: 1`, `stat_warmup_score:
+  100` on both): `winwithgovhub.com` was the documented wave-1 spare;
+  `govhubteam.com` is a wave-1 domain with spare capacity. Never
+  `bidwithgovhub.com`: its `j.knight@` and `j.k@` addresses do not match the
+  account name on file, and while the domain carries a third, clean address
+  today (`e.knight@bidwithgovhub.com`), the original call was to resolve the
+  whole domain before any of it sends, not to cherry-pick around the two bad
+  addresses.
+
+`MAILBOXES` in `instantly-influencer.mjs` now carries real, live-checked
+addresses for all six campaigns, so `--check` passes clean and `--sync` is no
+longer blocked:
 
 ```
- FAIL  mailboxes are set to real addresses  EDIT MAILBOXES BEFORE --sync
-192 total renders checked. 1 FAILURES.
+192 total renders checked. All guardrails pass.
 ```
+
+One thing the accounts API does not expose: whether `{{accountSignature}}` is
+actually configured on `earl.knight@govhubhq.com`, `winwithgovhub.com`, or
+`govhubteam.com`. That field is not in the `GET /accounts` response, so it
+stays a manual check, item 2 in "Before importing" below.
 
 ### 3. `{{recentContent}}` cannot exist, so the opener is written per lead
 
@@ -173,10 +200,14 @@ and are noted here so they are not re-litigated:
   fails the build if any rendered email carries more than one question mark.
   It caught nothing new this pass because nothing violated it, which is the
   point of making it mechanical instead of a read-through habit.
-- **Sending from the real identity for the relationship segments was already
-  the design** (§2 above), decided independently of any outside review, for
-  the same reason: these recipients look senders up. C1, C2, C3 and C6 already
-  send from `govhub.online`, not a wave-1 lookalike domain.
+- **Sending from a non-lookalike identity for the relationship segments was
+  already the design** (§2 above), decided independently of any outside
+  review, for the same reason: these recipients look senders up. The design
+  called for govhub.online specifically; checking the live Instantly workspace
+  found no mailbox connected on that domain, so C1, C2, C3 and C6 currently
+  share the least sales-coded of the sixteen connected lookalikes
+  (`govhubhq.com`) instead, documented as a compromise pending a real
+  govhub.online mailbox, not as the intended state.
 - **C5's counselor copy got one real improvement**: email 2 now offers a worked
   compliance matrix from a real small-business set-aside solicitation, sent as
   a PDF, no account or scheduling required, rather than a second description of

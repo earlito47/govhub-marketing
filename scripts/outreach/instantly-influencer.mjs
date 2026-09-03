@@ -89,32 +89,55 @@ const SCHEDULE = {
 };
 
 // ---- Mailboxes ------------------------------------------------------------
-// This list is 116 sendable contacts and 464 total sends spread over a month.
+// This list is 104 sendable contacts and 416 total sends spread over a month.
 // That is roughly 25 sends a day across all six campaigns, which is one
 // mailbox's worth of work, so the wave 1 problem (spreading volume thin enough
 // that no single mailbox looks like a spammer) does not exist here.
 //
 // The problem that does exist is credibility. Every one of these recipients
 // will look GovHub up before replying, and several will look up the sending
-// domain. A partnership pitch for a product at govhub.online, arriving from
-// govhubprocurement.com, reads as an impersonation of the product it is
-// pitching. Wave 1 already logged the same mismatch as a deliverability
-// problem; here it is a conversion problem first.
+// domain. The original design here sent the four relationship segments from
+// govhub.online for exactly that reason. That domain has no mailbox connected
+// to this Instantly workspace: `GET /accounts` returns 48 addresses across
+// 16 domains (checked 2026-09-04) and every one of them is a wave-1-style
+// lookalike (buildwithgovhub.com, govhubbids.com, and so on), the same
+// domains the wave-1 doc built and aged for cold sales. There is no
+// govhub.online account to send this from.
 //
-// So: the four relationship segments send from the real company domain, and
-// only the two segments that behave like cold sales borrow warmed .com
-// mailboxes from the wave 1 pool.
+// Given that constraint, the four relationship segments (C1, C2, C3, C6)
+// share ONE mailbox on the least sales-coded of the sixteen: govhubhq.com.
+// "HQ" reads as a company's own site; "govhubbids.com" or
+// "govhubprocurement.com" read as what they are, a lead-gen domain, which is
+// the exact tell a journalist or podcast host who vets pitches all day would
+// recognize. It is still a compromise, not the fix: connecting a real
+// govhub.online mailbox to this workspace before these four campaigns start
+// sending is the actual right answer, and worth doing before the P1 rewrite
+// pass rather than after. One address for all four is unchanged from the
+// original design and still the point: a creator who gets the creator pitch
+// and later the podcast pitch should see the same sender both times.
 //
-// Set these to real addresses before --sync. The guardrail fails on the
-// placeholders, on a mailbox shared between campaigns, and on any C1/C2/C3/C6
-// address that is not on the primary domain.
-const PRIMARY_DOMAIN = 'govhub.online';
+// C4 and C5 behave more like cold sales and were already assigned real,
+// warmed wave-1 mailboxes, confirmed live via the API (status 1, warmup
+// score 100 on both): winwithgovhub.com was the documented wave-1 spare;
+// govhubteam.com is a wave-1 domain with room. Never bidwithgovhub.com, whose
+// j.knight@ and j.k@ do not match the account name on file (the wave-1 doc's
+// finding still holds; the domain carries a third, clean address today,
+// e.knight@bidwithgovhub.com, but the doc's call was to resolve the domain
+// before ANY of it sends, not to cherry-pick around the two bad addresses).
+//
+// The guardrail fails on a placeholder, on a mailbox shared outside the
+// relationship group, and on any C1/C2/C3/C6 address that is not on
+// PRIMARY_DOMAIN below. Point PRIMARY_DOMAIN and MAILBOXES.C1-C6 at
+// govhub.online addresses the moment that domain has a connected mailbox;
+// nothing else in this file has to change.
+const PRIMARY_DOMAIN = 'govhubhq.com';
 const MAILBOXES = {
-  // Relationship segments, primary domain, from a named human.
-  C1: ['REPLACE_ME@govhub.online'],
-  C2: ['REPLACE_ME@govhub.online'],
-  C3: ['REPLACE_ME@govhub.online'],
-  C6: ['REPLACE_ME@govhub.online'],
+  // Relationship segments, one shared address, from a named human. See above
+  // for why this is govhubhq.com and not govhub.online.
+  C1: ['earl.knight@govhubhq.com'],
+  C2: ['earl.knight@govhubhq.com'],
+  C3: ['earl.knight@govhubhq.com'],
+  C6: ['earl.knight@govhubhq.com'],
   // Referral segments. Warmed wave 1 domains held out of wave 1 sending:
   // winwithgovhub.com was the documented spare. Second mailboxes on wave 1
   // domains are the alternative. Never bidwithgovhub.com, whose j.knight@ and
@@ -538,7 +561,7 @@ const CAMPAIGNS = [
       'guest idea on AI and federal proposals',
     ],
     emails: [C2_EMAIL_1, C2_EMAIL_2, C2_EMAIL_3, C2_EMAIL_4],
-    daily_limit: 4,
+    daily_limit: 3,
     daily_max_leads: 2,
   },
   {
@@ -550,7 +573,7 @@ const CAMPAIGNS = [
       'USAspending analysis, yours to use',
     ],
     emails: [C3_EMAIL_1, C3_EMAIL_2, C3_EMAIL_3, C3_EMAIL_4],
-    daily_limit: 4,
+    daily_limit: 3,
     daily_max_leads: 2,
   },
   {
@@ -586,7 +609,7 @@ const CAMPAIGNS = [
       'something for your members',
     ],
     emails: [C6_EMAIL_1, C6_EMAIL_2, C6_EMAIL_3, C6_EMAIL_4],
-    daily_limit: 4,
+    daily_limit: 3,
     daily_max_leads: 2,
   },
 ];
@@ -799,6 +822,28 @@ function check() {
     !allMbx.some((m) => m.includes('bidwithgovhub.com')),
     'bidwithgovhub.com is not used',
     '(its addresses do not match the account name on file)'
+  );
+
+  // A shared mailbox has its own account-level daily_limit in Instantly (15
+  // on every account in this workspace, confirmed via GET /accounts on
+  // 2026-09-04), separate from and outside each campaign's own daily_limit.
+  // If several campaigns share one mailbox, the SUM of their campaign-level
+  // daily_limit can ask that mailbox for more sends in a day than the account
+  // itself allows. Checked by address rather than hardcoded to the C1/C2/C3/C6
+  // group, so this still catches it if a future edit adds a fifth campaign to
+  // the shared mailbox, or moves C4/C5 onto one.
+  const MAILBOX_ACCOUNT_DAILY_LIMIT = 15;
+  const byMailbox = new Map();
+  for (const c of CAMPAIGNS) {
+    for (const m of MAILBOXES[c.key] || []) {
+      byMailbox.set(m, (byMailbox.get(m) || 0) + c.daily_limit);
+    }
+  }
+  const overCap = [...byMailbox].filter(([, sum]) => sum > MAILBOX_ACCOUNT_DAILY_LIMIT);
+  note(
+    overCap.length === 0,
+    `no mailbox's campaigns sum past its ${MAILBOX_ACCOUNT_DAILY_LIMIT}/day account limit`,
+    overCap.length ? overCap.map(([m, sum]) => `${m}: ${sum}`).join(', ') : ''
   );
 
   console.log(`\n${total} total renders checked. ${fail === 0 ? 'All guardrails pass.' : fail + ' FAILURES.'}`);
