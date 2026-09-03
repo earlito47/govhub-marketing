@@ -1,7 +1,10 @@
 # Instantly wave 1
 
-Three campaigns, created 2026-08-12 and **left in Draft with zero leads**.
-Nothing sends until someone uploads leads and starts them.
+Three campaigns, created 2026-08-12. Still **Draft**, but no longer empty:
+1,800 leads were pushed on 2026-08-24. Nothing sends until someone starts them.
+
+Status as of 2026-09-03 is in the audit further down this file; the two lines
+below the fold that this note supersedes are struck through where they sit.
 
 | Campaign | Segment | ID | Mailboxes | Daily cap |
 |---|---|---|---|---|
@@ -21,8 +24,10 @@ node scripts/outreach/instantly-wave1.mjs --verify   # assert copy survived the 
 
 ## Read this before you start them
 
-**The domains are six days old.** Every mailbox and domain in the workspace was
-created 2026-08-06. Instantly's own guidance is a two-week minimum of warmup
+**The domains are six days old.** *(Written 2026-08-12. As of 2026-09-03 the
+mailboxes are 28 days old — day 30 is 2026-09-05. The reasoning below is
+unchanged, the arithmetic has moved on.)* Every mailbox and domain in the
+workspace was created 2026-08-06. Instantly's own guidance is a two-week minimum of warmup
 before campaign sends, and three weeks is the number that holds up. A warmup
 score of 100 does not contradict this: that score is inbox-vs-spam ratio inside
 Instantly's own warmup pool over a rolling 7 days, measured against accounts
@@ -34,7 +39,9 @@ Each mailbox has sent roughly 54 warmup emails in its life. That is not a
 sending history.
 
 The campaign schedule carries `start_date: 2026-08-27` as a backstop, so even
-an accidental activation sends nothing before then. **2026-08-27 is day 21 and
+an accidental activation sends nothing before then. **That date is now in the
+past and the backstop is spent** — as of 2026-09-03 an activation sends on the
+next scheduled window. Push `start_date` forward before touching anything. **2026-08-27 is day 21 and
 the earliest defensible launch date.** Day 30 (2026-09-05) is better if there
 is no urgency.
 
@@ -71,9 +78,10 @@ Held out of wave 1 on purpose:
   is not disqualified on that basis.
 
   The original note also assumed there was historical exposure ("mail already
-  sent from them"). There is not: all nine campaigns in this workspace read
-  status 0 (Draft) as of 2026-09-03 and none has ever been activated, so no
-  commercial mail has gone out from any address here, these two included.
+  sent from them"). There is not: no commercial mail has ever gone out from
+  any address in this workspace, these two included. (The six influencer
+  campaigns have since moved to status 1 with a start date of 2026-09-08; the
+  three wave 1 campaigns are still Draft. Nothing has sent from either set.)
 
   What remains is a consistency question rather than a legal one: every other
   mailbox in the workspace sends as "Earl Knight", so putting this domain into
@@ -111,13 +119,26 @@ a three-week-old domain, not content.
    couple of mailboxes can absorb the whole daily allowance. Left unchanged
    deliberately: it is a live config change on shared mailboxes and nothing is
    sending yet.
-2. **Configure `{{accountSignature}}` on every one of the 12 mailboxes.** It is
-   a per-mailbox setting, so one mailbox missing it sends with no signature at
-   all while the campaign preview still looks fine. The signature is the sole
-   carrier of the postal address and the solicitation disclosure, so a blank one
-   is a compliance failure, not a cosmetic one. Content: name, GovHub, the
-   solicitation line, the PINS mailing address. **No valediction** ("Best,",
+2. ~~**Configure `{{accountSignature}}` on every one of the 12 mailboxes.**~~
+   **Done 2026-09-03.** An API audit that day found all twelve still at
+   `signature: null` while the nine influencer mailboxes had been set, so wave
+   1 would have sent 5,400 messages with no postal address.
+   `scripts/outreach/set-signatures.mjs` now covers both sets, 21 mailboxes,
+   and a read-back of all 48 confirms every mailbox in every campaign carries:
+
+   ```
+   Earl Knight
+   Founder, GovHub
+
+   3060 Mercer University Dr Ste 110, Atlanta, GA 30341
+   ```
+
+   No solicitation line and no opt-out or unsubscribe wording, on request
+   2026-09-03; the script's guardrails enforce both. The opt-out notice lives
+   in every email body instead, which is where it was always meant to be so it
+   cannot depend on a per-mailbox setting. **No valediction** ("Best,",
    "Thanks,") because the bodies do not carry one and it would double up.
+   Item 3 below still stands: this is the one thing the API cannot confirm.
 3. **Send a seed email from every mailbox** to an address you control and
    confirm the signature renders with the full address. Repeat on a same-thread
    follow-up, not just email 1.
@@ -160,7 +181,7 @@ a three-week-old domain, not content.
 | `text_only` | true | Plain text everywhere. No HTML to a young domain, and it matches the no-images rule. |
 | `open_tracking` | false | The pixel is a remote image from a 6-day-old `inst.<domain>` subdomain, and it would put an image into the supposedly text-only email 1. Apple MPP and Microsoft prefetch fabricate opens anyway. |
 | `link_tracking` | false | Would rewrite the one email 3 link through the same young tracking domain. |
-| `insert_unsubscribe_header` | true | RFC 8058 List-Unsubscribe. Gives anyone who will not reply a non-destructive exit instead of the Report Spam button, which is the single most destructive signal to a new domain. |
+| `insert_unsubscribe_header` | **false** | RFC 8058 List-Unsubscribe, **turned off on request 2026-09-03**. It had been on for the reason recorded here originally: it is a header rather than visible text, so recipients meet it as Gmail's and Outlook's one-click Unsubscribe control, and it gives anyone who will not reply a non-destructive exit instead of the Report Spam button, which is the single most destructive signal to a new domain. That trade-off was stated when the change was requested and the answer was to turn it off. The reply-based opt-out in every body is unaffected. |
 | `stop_on_reply` | true | Structural opt-out safety. Any reply halts the sequence, so no missed removal keyword can cause a post-opt-out send. |
 | `stop_on_auto_reply` | false | An out-of-office should not burn the lead. |
 | `stop_for_company` | true | One conversation per company at a time. |
@@ -215,8 +236,11 @@ unchanged. These are the substantive edits, in descending order of consequence.
    Reply-based opt-out is itself fine, the FTC guide allows it; it just has to
    be *noticed* in each message. Item 2 of the checklist puts the solicitation
    disclosure and the address in the signature.
-7. Turned on `insert_unsubscribe_header`, which the doc does not mention. This
-   is a header, not a visible link, so email 1 still has no links.
+7. ~~Turned on `insert_unsubscribe_header`, which the doc does not mention.~~
+   **Reversed 2026-09-03 on request:** it is now `false` on all three wave 1
+   campaigns. See the settings table above for the trade that was made. The six
+   influencer campaigns keep theirs on; only wave 1 changed. Item 6 above still
+   holds either way, because the opt-out notice it added lives in the bodies.
 
 **Copy defects found by expanding all 26,012 original combinations:**
 
@@ -269,7 +293,15 @@ unchanged. These are the substantive edits, in descending order of consequence.
 - **The agency-merge test variant.** Correctly parked in the doc until 500+
   sends of baseline data. Note its body ends in the literal placeholder "...rest
   identical to A/V1..." inside a fenced code block, so do not paste it as-is.
-- **Lead import.** No leads are in any campaign. The lead engine
+- **Lead import.** ~~No leads are in any campaign.~~ **Superseded: 1,800 leads
+  were pushed on 2026-08-24** (A 900, B 450, C 450), with every custom variable
+  populated and segment tags matching their campaign on every row. They were
+  uploaded straight through the API, so nothing in this repo produced them and
+  their provenance is untracked here. Deliverability verification was run in a
+  separate session and is not reflected in `data/email-verification.json`,
+  which still covers only the influencer database. The rest of this note
+  describes the lead engine, which is still not the source of those rows.
+  The lead engine
   (`scripts/leadgen/`) has no `firstName` field at all: it emits `contact_person`
   and `poc_name` as pre-joined full-name strings, so a first-name column has to
   be derived before import. `tier == "A - serial bidder"` maps to segment A but
