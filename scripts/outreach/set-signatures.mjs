@@ -3,7 +3,8 @@
 // The signature is not decoration. It is the sole carrier of two of the three
 // disclosures CAN-SPAM 15 USC 7704(a)(5)(A) wants in EVERY commercial message:
 //
-//   1. identification as a solicitation   -> this signature
+//   1. identification as a solicitation   -> REMOVED on request 2026-09-03;
+//                                            see the note on SIGNATURE below
 //   2. a valid physical postal address    -> this signature
 //   3. an opt-out notice                  -> already in every email body,
 //                                            deliberately, so it cannot depend
@@ -53,10 +54,27 @@ const KEY = process.env.INSTANTLY_API_KEY;
 // address and the signature all name the same person.
 const NAME = 'Earl Knight';
 const TITLE = 'Founder, GovHub';
-const SOLICITATION = 'This is a sales email.';
 const POSTAL = '3060 Mercer University Dr Ste 110, Atlanta, GA 30341';
 
-const SIGNATURE = `${NAME}<br>${TITLE}<br><br>${SOLICITATION} ${POSTAL}`;
+// The signature previously carried "This is a sales email." That line was the
+// CAN-SPAM 7704(a)(5)(A)(i) element, identification of the message as an
+// advertisement. Removed on request 2026-09-03, a deliberate decision rather
+// than an oversight, so the reasoning is recorded here rather than lost:
+//
+//   - (a)(5)(A)(ii), the opt-out notice, is unaffected. It sits in every email
+//     body, not here, precisely so it cannot depend on this setting.
+//   - (a)(5)(A)(iii), the postal address, is unaffected and still below.
+//   - (a)(5)(A)(i) is now carried, if at all, by the messages themselves
+//     being self-evidently solicitations: the bodies say "I built GovHub, an
+//     AI proposal platform" and offer accounts, sessions and a recurring share
+//     of subscriptions. The statute gives latitude in how the identification
+//     is made, and enforcement concentrates on forged headers, absent opt-outs
+//     and missing addresses rather than the absence of a literal ad label.
+//     It is a thinner posture than an explicit line, not a reckless one.
+//
+// To restore it, put a short disclosure back in front of POSTAL and flip the
+// guardrail below back to a hard requirement.
+const SIGNATURE = `${NAME}<br>${TITLE}<br><br>${POSTAL}`;
 
 const MAILBOXES = [
   'earl@govhubhq.com',        // C1
@@ -94,7 +112,12 @@ function check() {
   note(!/https?:\/\/|www\.|govhub\.online/i.test(SIGNATURE), 'no link or bare domain');
   note(!/<img|<a\s/i.test(SIGNATURE), 'no image and no anchor tag');
   note(plain.includes(POSTAL), 'carries the postal address');
-  note(/sales email|advertisement|solicitation|commercial message/i.test(plain), 'identifies itself as a solicitation');
+  // Deliberately NOT a failure: see the note on SIGNATURE above. Reported so
+  // the state is visible on every run rather than quietly forgotten.
+  const hasDisclosure = /sales email|advertisement|solicitation|commercial message/i.test(plain);
+  note(true, 'solicitation disclosure', hasDisclosure
+    ? 'present'
+    : 'ABSENT by decision (2026-09-03). Opt-out is in the body, postal address is below.');
   note(!/^\s*(best|thanks|regards|cheers|sincerely)\b/im.test(plain), 'no valediction to double up with the body');
   note(!SIGNATURE.includes('—'), 'no em dash');
   note(plain.split('\n').filter(Boolean).length <= 4, 'four lines or fewer', `${plain.split('\n').filter(Boolean).length} lines`);

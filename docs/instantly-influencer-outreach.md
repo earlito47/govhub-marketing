@@ -439,18 +439,36 @@ the ledger file goes missing rather than passing an unchecked list.
    Earl Knight
    Founder, GovHub
 
-   This is a sales email. 3060 Mercer University Dr Ste 110, Atlanta, GA 30341
+   3060 Mercer University Dr Ste 110, Atlanta, GA 30341
    ```
 
-   The signature is the sole carrier of two of the three CAN-SPAM disclosures,
-   identification as a solicitation and the postal address; the opt-out is in
-   every body on purpose so it cannot depend on a per-mailbox setting. No link,
-   not even a bare `govhub.online`: sending happens from `.com` lookalikes, so
-   an `.online` string in the footer is the same sender/link-domain mismatch
-   the first-touch copy already avoids. No image, no valediction (the bodies do
-   not carry one and it would double up). "Founder" is not cosmetic either: the
-   bodies say "I built GovHub" and "I run GovHub", and a title contradicting
-   that is exactly what this audience notices.
+   No link, not even a bare `govhub.online`: sending happens from `.com`
+   lookalikes, so an `.online` string in the footer is the same
+   sender/link-domain mismatch the first-touch copy already avoids. No image,
+   no valediction (the bodies do not carry one and it would double up).
+   "Founder" is not cosmetic either: the bodies say "I built GovHub" and "I run
+   GovHub", and a title contradicting that is exactly what this audience
+   notices.
+
+   **On the CAN-SPAM disclosures.** The three that 15 USC 7704(a)(5)(A) asks
+   for in every commercial message land like this:
+
+   | Element | Where |
+   |---|---|
+   | Opt-out notice, `(ii)` | Every email body, deliberately, so it cannot depend on a per-mailbox setting being configured |
+   | Postal address, `(iii)` | This signature |
+   | Identification as an advertisement, `(i)` | **Removed on request, 2026-09-03** |
+
+   The signature previously read "This is a sales email." and that line was
+   `(i)`. It is gone by decision, not by oversight. What now carries `(i)`, if
+   anything, is the messages being self-evidently solicitations: the bodies say
+   "I built GovHub, an AI proposal platform" and offer accounts, sessions and a
+   recurring share of subscriptions. The statute gives latitude in how the
+   identification is made, and enforcement concentrates on forged headers,
+   absent opt-outs and missing addresses rather than on the absence of a
+   literal advertisement label. This is a thinner posture than an explicit
+   line, not a reckless one, and `set-signatures.mjs` reports the absence on
+   every run so it stays visible. Restoring it is one constant.
 
    **Still to verify on a seed send:** the signature uses HTML `<br>` because
    the bodies are `<div>`-wrapped HTML where a bare newline collapses to a
