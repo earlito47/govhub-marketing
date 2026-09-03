@@ -1,4 +1,5 @@
-// Set the per-mailbox signature on the nine influencer-campaign mailboxes.
+// Set the per-mailbox signature on every mailbox that sends campaign mail:
+// the nine influencer mailboxes and wave 1's twelve.
 //
 // The signature is not decoration. It is the sole carrier of two of the three
 // disclosures CAN-SPAM 15 USC 7704(a)(5)(A) wants in EVERY commercial message:
@@ -13,10 +14,17 @@
 //
 // It is a per-mailbox setting, so one mailbox missing it sends with no
 // signature at all while the campaign preview still looks fine. Every mailbox
-// in this workspace had `signature: null` when this was written, wave 1's
-// twelve included, which means wave 1 would also send non-compliant today.
-// This script only touches the nine this campaign uses; wave 1's are a
-// separate decision and a separate campaign's copy.
+// in this workspace had `signature: null` when this was first written. The
+// nine influencer mailboxes were set then; wave 1's twelve were left as a
+// separate decision and stayed null, which an API audit on 2026-09-03 caught
+// before launch: all three wave 1 campaigns end every email on
+// {{accountSignature}}, so activating them would have sent 5,400 messages
+// with no postal address. Both sets are covered here now.
+//
+// The 27 mailboxes in the workspace that are in no campaign are deliberately
+// not listed. Two of them, j.knight@ and j.k@bidwithgovhub.com, name a
+// different person, so a blanket "Earl Knight" across all 48 would be wrong
+// on exactly the addresses where an inaccurate From line matters most.
 //
 // Design constraints, all deliberate:
 //   - NO LINK. Not even a bare govhub.online. Sending happens from .com
@@ -76,7 +84,11 @@ const POSTAL = '3060 Mercer University Dr Ste 110, Atlanta, GA 30341';
 // guardrail below back to a hard requirement.
 const SIGNATURE = `${NAME}<br>${TITLE}<br><br>${POSTAL}`;
 
+// One mailbox per domain per programme. Eight domains carry both an
+// influencer mailbox and a wave 1 mailbox; the local parts differ, the
+// signature does not, and it names the same person either way.
 const MAILBOXES = [
+  // Influencer campaigns C1-C6, live since 2026-09-03.
   'earl@govhubhq.com',        // C1
   'earl@usegovhub.com',       // C1
   'earl@getgovhub.com',       // C2
@@ -86,6 +98,22 @@ const MAILBOXES = [
   'earl@trygovhub.com',       // C5
   'earl@govhubteam.com',      // C5
   'earl@govhubnow.com',       // C6
+
+  // Wave 1 campaigns A/B/C, draft. Read from each campaign's email_list on
+  // 2026-09-03 rather than transcribed from the plan, because campaign C uses
+  // e.knight@govhubrfp.com where every other wave 1 address is earl.knight@.
+  'earl.knight@buildwithgovhub.com',   // A serial_bidder
+  'earl.knight@usegovhub.com',         // A
+  'earl.knight@govhubcontracts.com',   // A
+  'earl.knight@govhubprocurement.com', // A
+  'earl.knight@govhubcapture.com',     // A
+  'earl.knight@trygovhub.com',         // A
+  'earl.knight@getgovhub.com',         // B new_prime
+  'earl.knight@govhubteam.com',        // B
+  'earl.knight@govhubnow.com',         // B
+  'earl.knight@govhubhq.com',          // C registered_no_awards
+  'earl.knight@govhubsubmittals.com',  // C
+  'e.knight@govhubrfp.com',            // C
 ];
 
 async function api(method, path, body) {
@@ -121,8 +149,12 @@ function check() {
   note(!/^\s*(best|thanks|regards|cheers|sincerely)\b/im.test(plain), 'no valediction to double up with the body');
   note(!SIGNATURE.includes('—'), 'no em dash');
   note(plain.split('\n').filter(Boolean).length <= 4, 'four lines or fewer', `${plain.split('\n').filter(Boolean).length} lines`);
-  // The bodies already carry the opt-out; repeating it here is clutter.
-  note(!/reply "remove"|unsubscribe/i.test(plain), 'does not duplicate the body opt-out line');
+  // The bodies already carry the opt-out; repeating it here is clutter, and
+  // as of 2026-09-03 keeping the signature clear of opt-out and unsubscribe
+  // wording is an explicit requirement rather than a style preference. Match
+  // the whole family of phrasings, not just the two the bodies happen to use.
+  note(!/\b(unsubscribe|opt[- ]?out|opt me out|remove me|take me off|reply "remove"|stop receiving|no longer wish|do not wish to receive)\b/i.test(plain),
+    'no opt-out or unsubscribe language');
 
   console.log(`\n${fail === 0 ? 'Signature passes.' : fail + ' FAILURES.'}\n`);
   return fail;
