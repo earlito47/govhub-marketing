@@ -37,6 +37,7 @@ re-run.
 | List hygiene and lead export | `scripts/outreach/influencer-db.mjs` |
 | Deliverability check | `scripts/outreach/verify-emails.mjs` |
 | Lead upload | `scripts/outreach/push-leads.mjs` |
+| Mailbox signatures | `scripts/outreach/set-signatures.mjs` |
 | Researched openers | `data/openers.json` |
 | Source rebuild | `scripts/outreach/build_influencer_db.py` (combines `parse_influencer_pdf.py` and `parse_expansion_xlsx.py`) |
 
@@ -53,6 +54,7 @@ node scripts/outreach/verify-emails.mjs                  # deliverability, cache
 node scripts/outreach/push-leads.mjs --dry-run           # what would upload
 node scripts/outreach/push-leads.mjs                     # upload leads (never starts a campaign)
 node scripts/outreach/push-leads.mjs --status            # leads and status per campaign
+node scripts/outreach/set-signatures.mjs --show           # signature on each mailbox
 ```
 
 Everything in [instantly-wave1.md](instantly-wave1.md) about the Instantly API
@@ -430,12 +432,49 @@ the ledger file goes missing rather than passing an unchecked list.
 
 1. **Set `MAILBOXES`.** See the argument above. `--check` blocks `--sync` until
    this is done.
-2. **Configure `{{accountSignature}}` on every sending mailbox.** It is a
-   per-mailbox setting, so one mailbox missing it sends with no signature while
-   the campaign preview looks fine. The signature is the sole carrier of the
-   postal address and the solicitation disclosure, so a blank one is a
-   compliance failure and not a cosmetic one. No valediction: the bodies do not
-   carry one and it would double up.
+2. **Signatures are set on all nine mailboxes** (`npm run influencers:signatures --show`
+   to read them back). What is set:
+
+   ```
+   Earl Knight
+   Founder, GovHub
+
+   3060 Mercer University Dr Ste 110, Atlanta, GA 30341
+   ```
+
+   No link, not even a bare `govhub.online`: sending happens from `.com`
+   lookalikes, so an `.online` string in the footer is the same
+   sender/link-domain mismatch the first-touch copy already avoids. No image,
+   no valediction (the bodies do not carry one and it would double up).
+   "Founder" is not cosmetic either: the bodies say "I built GovHub" and "I run
+   GovHub", and a title contradicting that is exactly what this audience
+   notices.
+
+   **On the CAN-SPAM disclosures.** The three that 15 USC 7704(a)(5)(A) asks
+   for in every commercial message land like this:
+
+   | Element | Where |
+   |---|---|
+   | Opt-out notice, `(ii)` | Every email body, deliberately, so it cannot depend on a per-mailbox setting being configured |
+   | Postal address, `(iii)` | This signature |
+   | Identification as an advertisement, `(i)` | **Removed on request, 2026-09-03** |
+
+   The signature previously read "This is a sales email." and that line was
+   `(i)`. It is gone by decision, not by oversight. What now carries `(i)`, if
+   anything, is the messages being self-evidently solicitations: the bodies say
+   "I built GovHub, an AI proposal platform" and offer accounts, sessions and a
+   recurring share of subscriptions. The statute gives latitude in how the
+   identification is made, and enforcement concentrates on forged headers,
+   absent opt-outs and missing addresses rather than on the absence of a
+   literal advertisement label. This is a thinner posture than an explicit
+   line, not a reckless one, and `set-signatures.mjs` reports the absence on
+   every run so it stays visible. Restoring it is one constant.
+
+   **Still to verify on a seed send:** the signature uses HTML `<br>` because
+   the bodies are `<div>`-wrapped HTML where a bare newline collapses to a
+   space. `text_only` should convert those back to newlines at send time, but
+   the API exposes no rendered preview, so confirm it in a received message
+   rather than the preview pane.
 3. **Review the researched P1 openers** in `data/openers.json`. Each one
    carries the fact it is grounded in and the URL that fact came from; spot
    check a few against the source before sending. `npm run influencers` lists

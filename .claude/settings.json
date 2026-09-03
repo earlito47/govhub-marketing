@@ -9,5 +9,15 @@
   },
   "enabledPlugins": {
     "cloudflare@cloudflare": true
+  },
+  "permissions": {
+    "allow": [
+      "Bash(node scripts/outreach/instantly-influencer.mjs --check)",
+      "Bash(node scripts/outreach/instantly-influencer.mjs --sync)",
+      "Bash(node scripts/outreach/instantly-influencer.mjs --verify)",
+      "Bash(node scripts/outreach/push-leads.mjs)",
+      "Bash(node scripts/outreach/push-leads.mjs --status)",
+      "Bash(node scripts/outreach/set-signatures.mjs --show)"
+    ]
   }
 }

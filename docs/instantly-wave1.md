@@ -60,10 +60,26 @@ Held out of wave 1 on purpose:
 - **govhubbids.com, govhubproposal.com** warmup never started, score 0. Start
   warmup or leave them out.
 - **bidwithgovhub.com** carries `j.knight@` and `j.k@` under the account name
-  "Earl Knight". If there is no J. Knight, that forfeits the CAN-SPAM
-  §7704(a)(1)(B) safe harbour for an accurate From line. Retire those two
-  rather than repointing them, since mail already sent from them is the
-  exposure. Resolve before that domain sends anything.
+  "Earl Knight". The original note here read: "if there is no J. Knight, that
+  forfeits the CAN-SPAM §7704(a)(1)(B) safe harbour for an accurate From line",
+  and recommended retiring both addresses.
+
+  **That conditional has since been answered, and the answer is that there is
+  a J. Knight.** The account holder confirmed on 2026-09-03 that they also go
+  by Jerry and by EJ Knight. So `j.knight@` and `j.k@` name a real person and
+  are not an inaccurate From line; §7704(a)(1)(B) is not in play and the domain
+  is not disqualified on that basis.
+
+  The original note also assumed there was historical exposure ("mail already
+  sent from them"). There is not: all nine campaigns in this workspace read
+  status 0 (Draft) as of 2026-09-03 and none has ever been activated, so no
+  commercial mail has gone out from any address here, these two included.
+
+  What remains is a consistency question rather than a legal one: every other
+  mailbox in the workspace sends as "Earl Knight", so putting this domain into
+  service would mean either a second From name across the programme or
+  repointing these two. Decide that on its merits. It is held out of wave 1
+  because wave 1's allocation was already settled, not because it is unusable.
 - **winwithgovhub.com** spare.
 
 ## Ramp
