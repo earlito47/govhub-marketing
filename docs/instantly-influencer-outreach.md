@@ -1,9 +1,25 @@
 # GovCon influencer and partner outreach
 
 Six Instantly campaigns against the GovCon influencer, media and partner
-database. Built, guardrailed, and **not created in Instantly yet**: the sync
-step is blocked on one decision only a human can make, which is which mailboxes
-send. Everything else is done.
+database. **Created in Instantly, Draft, zero leads, nothing sending.** The
+mailbox decision that used to block `--sync` is made (see §2 below for the
+governhub.online gap this surfaced) and the campaigns are live in the
+workspace:
+
+| Campaign | Instantly ID |
+|---|---|
+| C1 creators | `6f360a2e-4dee-4d75-8bd5-325162795616` |
+| C2 podcasts and newsletters | `1d2dc5a8-f7c1-4ac1-ac1a-3a382e185b4a` |
+| C3 media and blogs | `b2ee3665-fbee-4366-b2ee-d31cc0573e8e` |
+| C4 consultants | `b179df62-09f5-4045-a3e6-eb19afab4d20` |
+| C5 APEX advisors | `aceddf26-388d-45f4-be83-89eda98816a9` |
+| C6 associations | `80a9659f-ba43-4411-969f-10ecfcd6b95d` |
+
+What is still not done: no leads are uploaded, no campaign is started. That
+is deliberate and gated on the "Before importing" checklist below, the 41 P1
+openers chief among them. Re-running `--sync` after any future copy edit
+updates these same campaigns in place (matched by name) rather than creating
+duplicates.
 
 | | |
 |---|---|
