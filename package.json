@@ -30,6 +30,7 @@
     "influencers:verify-emails": "node scripts/outreach/verify-emails.mjs",
     "influencers:push": "node scripts/outreach/push-leads.mjs",
     "influencers:status": "node scripts/outreach/push-leads.mjs --status",
+    "influencers:signatures": "node scripts/outreach/set-signatures.mjs",
     "digest": "node scripts/digest/marketing-digest.mjs",
     "guard:emdash": "node scripts/check-emdash.mjs"
   },
