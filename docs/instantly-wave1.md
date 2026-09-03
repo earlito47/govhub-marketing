@@ -181,7 +181,7 @@ a three-week-old domain, not content.
 | `text_only` | true | Plain text everywhere. No HTML to a young domain, and it matches the no-images rule. |
 | `open_tracking` | false | The pixel is a remote image from a 6-day-old `inst.<domain>` subdomain, and it would put an image into the supposedly text-only email 1. Apple MPP and Microsoft prefetch fabricate opens anyway. |
 | `link_tracking` | false | Would rewrite the one email 3 link through the same young tracking domain. |
-| `insert_unsubscribe_header` | true | RFC 8058 List-Unsubscribe. Gives anyone who will not reply a non-destructive exit instead of the Report Spam button, which is the single most destructive signal to a new domain. |
+| `insert_unsubscribe_header` | **false** | RFC 8058 List-Unsubscribe, **turned off on request 2026-09-03**. It had been on for the reason recorded here originally: it is a header rather than visible text, so recipients meet it as Gmail's and Outlook's one-click Unsubscribe control, and it gives anyone who will not reply a non-destructive exit instead of the Report Spam button, which is the single most destructive signal to a new domain. That trade-off was stated when the change was requested and the answer was to turn it off. The reply-based opt-out in every body is unaffected. |
 | `stop_on_reply` | true | Structural opt-out safety. Any reply halts the sequence, so no missed removal keyword can cause a post-opt-out send. |
 | `stop_on_auto_reply` | false | An out-of-office should not burn the lead. |
 | `stop_for_company` | true | One conversation per company at a time. |
@@ -236,8 +236,11 @@ unchanged. These are the substantive edits, in descending order of consequence.
    Reply-based opt-out is itself fine, the FTC guide allows it; it just has to
    be *noticed* in each message. Item 2 of the checklist puts the solicitation
    disclosure and the address in the signature.
-7. Turned on `insert_unsubscribe_header`, which the doc does not mention. This
-   is a header, not a visible link, so email 1 still has no links.
+7. ~~Turned on `insert_unsubscribe_header`, which the doc does not mention.~~
+   **Reversed 2026-09-03 on request:** it is now `false` on all three wave 1
+   campaigns. See the settings table above for the trade that was made. The six
+   influencer campaigns keep theirs on; only wave 1 changed. Item 6 above still
+   holds either way, because the opt-out notice it added lives in the bodies.
 
 **Copy defects found by expanding all 26,012 original combinations:**
 

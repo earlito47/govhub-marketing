@@ -295,8 +295,14 @@ function payload(c) {
     // and it would put an image into the supposedly text-only email 1
     text_only: true,
     first_email_text_only: true,
-    insert_unsubscribe_header: true, // RFC 8058 List-Unsubscribe. A non-destructive exit
-    // for anyone who will not reply, instead of the Report Spam button
+    // RFC 8058 List-Unsubscribe. Turned OFF on request 2026-09-03. This is a
+    // header rather than visible text, so recipients meet it as Gmail's and
+    // Outlook's one-click "Unsubscribe" control; with it off, the only exits
+    // left to someone who will not reply are ignoring the mail or Report Spam,
+    // and a spam complaint is the most damaging signal available to a domain
+    // this young. The trade was put to the account holder with that stated and
+    // this is the answer. The opt-out notice in every body is unaffected.
+    insert_unsubscribe_header: false,
     prioritize_new_leads: false, // finish sequences in flight before starting new leads
     match_lead_esp: false, // every mailbox is the same provider, so this buys nothing
     allow_risky_contacts: false,
