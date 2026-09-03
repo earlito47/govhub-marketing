@@ -40,6 +40,25 @@ Two scheduled pipelines run every Monday:
   PR for review. See [docs/weekly-content.md](docs/weekly-content.md) for setup
   and the LinkedIn provider options.
 
+## Outreach
+
+Two cold-email programmes, both built against the Instantly API and both
+created paused with no leads until a human starts them.
+
+- **[docs/instantly-wave1.md](docs/instantly-wave1.md)** three campaigns to
+  federal contractors, segmented by bidding history.
+- **[docs/instantly-influencer-outreach.md](docs/instantly-influencer-outreach.md)**
+  six campaigns to the GovCon influencer, media and partner ecosystem:
+  creators, podcasts, publications, proposal consultants, APEX advisors and
+  associations. The goal is conversations and content, not subscriptions.
+
+```bash
+npm run influencers            # what is in the list and what is held back
+npm run influencers:check      # assert the lead export guarantees hold
+npm run influencers:export     # per-campaign CSVs for Instantly import
+npm run influencers:campaigns  # guardrail the sequence copy, no API calls
+```
+
 ## MCP setup (Cloudflare)
 
 This repo ships an `.mcp.json` that registers five Cloudflare MCP servers

@@ -31,3 +31,8 @@ pr_body.md
 # Python bytecode
 __pycache__/
 *.pyc
+
+# Instantly lead exports: generated from data/govcon-influencer-outreach.json
+# by scripts/outreach/influencer-db.mjs --export. The JSON is the source of
+# truth; these are a handoff to the Instantly importer.
+out/

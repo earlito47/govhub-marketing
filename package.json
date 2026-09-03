@@ -23,6 +23,10 @@
     "insights:guardrails-test": "node scripts/insights/guardrails.selftest.mjs",
     "outreach": "node scripts/outreach/vendor-outreach.mjs",
     "outreach:selftest": "node scripts/outreach/vendor-outreach.selftest.mjs",
+    "influencers": "node scripts/outreach/influencer-db.mjs --report",
+    "influencers:check": "node scripts/outreach/influencer-db.mjs --check",
+    "influencers:export": "node scripts/outreach/influencer-db.mjs --export",
+    "influencers:campaigns": "node scripts/outreach/instantly-influencer.mjs --check",
     "digest": "node scripts/digest/marketing-digest.mjs",
     "guard:emdash": "node scripts/check-emdash.mjs"
   },
