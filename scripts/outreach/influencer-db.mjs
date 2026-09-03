@@ -60,7 +60,7 @@
 
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
-import { fileURLToPath } from 'node:url';
+import { fileURLToPath, pathToFileURL } from 'node:url';
 
 const ROOT = fileURLToPath(new URL('../..', import.meta.url));
 const DB = JSON.parse(readFileSync(join(ROOT, 'data/govcon-influencer-outreach.json'), 'utf8'));
@@ -443,11 +443,25 @@ function check() {
   return fail;
 }
 
-const arg = process.argv[2] || '--report';
-if (arg === '--report') report();
-else if (arg === '--check') process.exit(check() === 0 ? 0 : 1);
-else if (arg === '--export') {
-  if (check() !== 0) { console.error('\nChecks failed. No CSVs written.'); process.exit(1); }
-  console.log('');
-  exportCsvs(process.argv[3] || join(ROOT, 'out/instantly-influencer'));
-} else { console.error(`unknown argument ${arg}`); process.exit(1); }
+// ---- Exported for push-leads.mjs ------------------------------------------
+// The uploader needs the exact rows --export writes, so it imports them from
+// here rather than reimplementing the derivation. If the two ever disagreed,
+// the CSV a human reviews and the leads actually in Instantly would differ,
+// which is the kind of gap nobody notices until a send goes out wrong.
+export function buildLeads() {
+  const { out } = sendable();
+  return out.map((c) => ({ campaign: c.campaign, ...lead(c) }));
+}
+
+// ---- CLI ------------------------------------------------------------------
+// Guarded so importing this module does not run the CLI.
+if (import.meta.url === pathToFileURL(process.argv[1] || '').href) {
+  const arg = process.argv[2] || '--report';
+  if (arg === '--report') report();
+  else if (arg === '--check') process.exit(check() === 0 ? 0 : 1);
+  else if (arg === '--export') {
+    if (check() !== 0) { console.error('\nChecks failed. No CSVs written.'); process.exit(1); }
+    console.log('');
+    exportCsvs(process.argv[3] || join(ROOT, 'out/instantly-influencer'));
+  } else { console.error(`unknown argument ${arg}`); process.exit(1); }
+}

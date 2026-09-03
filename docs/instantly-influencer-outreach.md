@@ -15,11 +15,15 @@ workspace:
 | C5 APEX advisors | `aceddf26-388d-45f4-be83-89eda98816a9` |
 | C6 associations | `80a9659f-ba43-4411-969f-10ecfcd6b95d` |
 
-What is still not done: no leads are uploaded, no campaign is started. That
-is deliberate and gated on the "Before importing" checklist below, the 39 P1
-openers chief among them. Re-running `--sync` after any future copy edit
-updates these same campaigns in place (matched by name) rather than creating
-duplicates.
+All 94 verified leads are uploaded, with `{{greeting}}`, `{{opener}}`,
+`{{channel}}` and `{{companyName}}` populated per lead and confirmed resolved
+against the live records. **No campaign is started**; every one is still Draft.
+
+What is still not done: nothing is sending, and the 39 P1 openers are still
+the derived generic ones. Starting a campaign today would send those. Re-running
+`--sync` after any copy edit updates these campaigns in place (matched by name),
+and `push-leads.mjs` is idempotent (`skip_if_in_campaign`), so both are safe to
+re-run.
 
 | | |
 |---|---|
@@ -29,6 +33,8 @@ duplicates.
 | Total sends if all four steps run | 376, over roughly five weeks |
 | Sequence copy | `scripts/outreach/instantly-influencer.mjs` |
 | List hygiene and lead export | `scripts/outreach/influencer-db.mjs` |
+| Deliverability check | `scripts/outreach/verify-emails.mjs` |
+| Lead upload | `scripts/outreach/push-leads.mjs` |
 | Source rebuild | `scripts/outreach/build_influencer_db.py` (combines `parse_influencer_pdf.py` and `parse_expansion_xlsx.py`) |
 
 ```bash
@@ -39,6 +45,11 @@ npm run influencers:campaigns  # guardrail the sequence copy, no API calls
 
 node scripts/outreach/instantly-influencer.mjs --sync    # create or update, never activates
 node scripts/outreach/instantly-influencer.mjs --verify  # assert the copy survived the sanitizer
+
+node scripts/outreach/verify-emails.mjs                  # deliverability, cached per address
+node scripts/outreach/push-leads.mjs --dry-run           # what would upload
+node scripts/outreach/push-leads.mjs                     # upload leads (never starts a campaign)
+node scripts/outreach/push-leads.mjs --status            # leads and status per campaign
 ```
 
 Everything in [instantly-wave1.md](instantly-wave1.md) about the Instantly API
@@ -125,21 +136,38 @@ The volume argument that justified twelve mailboxes in wave 1 does not apply
 here regardless of which domain is used: 94 leads and 376 total sends is
 about 25 sends a day, which is one mailbox's normal work. So:
 
-- **C1, C2, C3, C6** share one address, deliberately: a creator who gets the
-  creator pitch and later the podcast pitch should see the same sender both
-  times. Their campaign-level `daily_limit`s (6, 3, 3, 3) sum to 15, matching
-  that mailbox's own account-level cap in Instantly exactly; `--check` now
-  asserts this by address rather than relying on the arithmetic being done
-  correctly by hand whenever a limit changes.
-- **C4 and C5** behave more like cold sales and use separate, dedicated warmed
-  wave-1 mailboxes, confirmed live via the API (`status: 1`, `stat_warmup_score:
-  100` on both): `winwithgovhub.com` was the documented wave-1 spare;
-  `govhubteam.com` is a wave-1 domain with spare capacity. Never
-  `bidwithgovhub.com`: its `j.knight@` and `j.k@` addresses do not match the
-  account name on file, and while the domain carries a third, clean address
-  today (`e.knight@bidwithgovhub.com`), the original call was to resolve the
-  whole domain before any of it sends, not to cherry-pick around the two bad
-  addresses.
+Sending is spread across **nine mailboxes on nine separate domains**, one
+dedicated to each campaign and a second for the two largest:
+
+| Campaign | Leads | Mailboxes |
+|---|---|---|
+| C1 creators | 16 | `earl@govhubhq.com`, `earl@usegovhub.com` |
+| C2 podcasts | 5 | `earl@getgovhub.com` |
+| C3 media | 8 | `earl@buildwithgovhub.com` |
+| C4 consultants | 27 | `earl.knight@winwithgovhub.com`, `earl@govhubcontracts.com` |
+| C5 APEX | 32 | `earl@trygovhub.com`, `earl@govhubteam.com` |
+| C6 associations | 6 | `earl@govhubnow.com` |
+
+Every one is warmup score 100 and active, and **none is a mailbox wave 1 uses**.
+That last part was a real bug: an earlier revision put C5 on
+`earl.knight@govhubteam.com` and the four relationship campaigns on
+`earl.knight@govhubhq.com`, both of which appear in wave 1's own `email_list`.
+Two campaigns drawing on one mailbox share its 15/day account cap without
+either knowing. The wave-1 doc reserved "two untouched mailboxes per domain as
+wave 2 capacity"; this is wave 2, and these are those spares. `--check` now
+asserts no overlap with a hardcoded copy of wave 1's list.
+
+Spreading also retired the earlier "one shared sender for the relationship
+campaigns" rule. That existed so a creator who got the creator pitch and later
+the podcast pitch would see the same sender, but the guardrails already
+guarantee no contact and no sending domain appears in two campaigns, so no
+recipient ever sees two of these sequences and the case never arises.
+
+Never `bidwithgovhub.com`: its `j.knight@` and `j.k@` do not match the account
+name on file, and while the domain carries a third clean address today
+(`e.knight@bidwithgovhub.com`), the call was to resolve the whole domain before
+any of it sends rather than cherry-pick around the two bad addresses. Never
+`govhubbids.com` or `govhubproposal.com` either: warmup never started on them.
 
 `MAILBOXES` in `instantly-influencer.mjs` now carries real, live-checked
 addresses for all six campaigns, so `--check` passes clean and `--sync` is no

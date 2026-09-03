@@ -116,34 +116,47 @@ const SCHEDULE = {
 // original design and still the point: a creator who gets the creator pitch
 // and later the podcast pitch should see the same sender both times.
 //
-// C4 and C5 behave more like cold sales and were already assigned real,
-// warmed wave-1 mailboxes, confirmed live via the API (status 1, warmup
-// score 100 on both): winwithgovhub.com was the documented wave-1 spare;
-// govhubteam.com is a wave-1 domain with room. Never bidwithgovhub.com, whose
-// j.knight@ and j.k@ do not match the account name on file (the wave-1 doc's
-// finding still holds; the domain carries a third, clean address today,
-// e.knight@bidwithgovhub.com, but the doc's call was to resolve the domain
-// before ANY of it sends, not to cherry-pick around the two bad addresses).
+// Never bidwithgovhub.com, whose j.knight@ and j.k@ do not match the account
+// name on file (the wave-1 doc's finding still holds; the domain carries a
+// third, clean address today, e.knight@bidwithgovhub.com, but the call was to
+// resolve the domain before ANY of it sends, not to cherry-pick around the two
+// bad addresses). Never govhubbids.com or govhubproposal.com either: the
+// wave-1 doc recorded that warmup never started on them.
 //
-// The guardrail fails on a placeholder, on a mailbox shared outside the
-// relationship group, and on any C1/C2/C3/C6 address that is not on
-// PRIMARY_DOMAIN below. Point PRIMARY_DOMAIN and MAILBOXES.C1-C6 at
-// govhub.online addresses the moment that domain has a connected mailbox;
-// nothing else in this file has to change.
-const PRIMARY_DOMAIN = 'govhubhq.com';
+// Point MAILBOXES.C1-C6 at govhub.online addresses the moment that domain has
+// connected mailboxes; nothing else in this file has to change. The guardrails
+// below fail on a placeholder, on any overlap with wave 1 or a held-out
+// domain, and on any mailbox whose campaigns would exceed its account cap.
+
+// Wave 1 claims exactly one address per domain and its doc reserves "two
+// untouched mailboxes per domain as wave 2 capacity". This is wave 2. Every
+// address below is one of those spares: warmup score 100, status active, and
+// NOT in wave 1's own email_list, so the two programmes can run at the same
+// time without two campaigns quietly drawing on one mailbox's 15/day account
+// cap. (An earlier revision of this file did exactly that: it put C5 on
+// earl.knight@govhubteam.com and C1/C2/C3/C6 on earl.knight@govhubhq.com,
+// both of which wave 1 already uses.)
+//
+// One dedicated mailbox per campaign, two for the two largest, nine in all
+// across nine separate domains. Spreading matters more than the shared-sender
+// continuity the earlier revision optimised for: the guardrails already
+// guarantee no contact and no sending domain appears in two campaigns, so no
+// single recipient ever sees two of these sequences, and the continuity that
+// reasoning protected does not arise in practice.
 const MAILBOXES = {
-  // Relationship segments, one shared address, from a named human. See above
-  // for why this is govhubhq.com and not govhub.online.
-  C1: ['earl.knight@govhubhq.com'],
-  C2: ['earl.knight@govhubhq.com'],
-  C3: ['earl.knight@govhubhq.com'],
-  C6: ['earl.knight@govhubhq.com'],
-  // Referral segments. Warmed wave 1 domains held out of wave 1 sending:
-  // winwithgovhub.com was the documented spare. Second mailboxes on wave 1
-  // domains are the alternative. Never bidwithgovhub.com, whose j.knight@ and
-  // j.k@ do not match the account name on file.
-  C4: ['earl.knight@winwithgovhub.com'],
-  C5: ['earl.knight@govhubteam.com'],
+  // Relationship segments, on the least sales-coded domains available: a
+  // journalist or podcast host who vets pitches will read govhubbids.com or
+  // govhubprocurement.com as what it is.
+  C1: ['earl@govhubhq.com', 'earl@usegovhub.com'],
+  C2: ['earl@getgovhub.com'],
+  C3: ['earl@buildwithgovhub.com'],
+  C6: ['earl@govhubnow.com'],
+  // Referral segments. winwithgovhub.com was the documented wave 1 spare.
+  // Never bidwithgovhub.com, whose j.knight@ and j.k@ do not match the account
+  // name on file, and never govhubbids.com or govhubproposal.com, which the
+  // wave 1 doc flagged as never having started warmup.
+  C4: ['earl.knight@winwithgovhub.com', 'earl@govhubcontracts.com'],
+  C5: ['earl@trygovhub.com', 'earl@govhubteam.com'],
 };
 
 // ---- Shared closers -------------------------------------------------------
@@ -549,8 +562,8 @@ const CAMPAIGNS = [
       'idea for your GovCon audience',
     ],
     emails: [C1_EMAIL_1, C1_EMAIL_2, C1_EMAIL_3, C1_EMAIL_4],
-    daily_limit: 6,
-    daily_max_leads: 3,
+    daily_limit: 8,
+    daily_max_leads: 4,
   },
   {
     key: 'C2',
@@ -561,7 +574,7 @@ const CAMPAIGNS = [
       'guest idea on AI and federal proposals',
     ],
     emails: [C2_EMAIL_1, C2_EMAIL_2, C2_EMAIL_3, C2_EMAIL_4],
-    daily_limit: 3,
+    daily_limit: 4,
     daily_max_leads: 2,
   },
   {
@@ -573,8 +586,8 @@ const CAMPAIGNS = [
       'USAspending analysis, yours to use',
     ],
     emails: [C3_EMAIL_1, C3_EMAIL_2, C3_EMAIL_3, C3_EMAIL_4],
-    daily_limit: 3,
-    daily_max_leads: 2,
+    daily_limit: 5,
+    daily_max_leads: 3,
   },
   {
     key: 'C4',
@@ -585,8 +598,8 @@ const CAMPAIGNS = [
       'a partner account, not a replacement',
     ],
     emails: [C4_EMAIL_1, C4_EMAIL_2, C4_EMAIL_3, C4_EMAIL_4],
-    daily_limit: 8,
-    daily_max_leads: 4,
+    daily_limit: 10,
+    daily_max_leads: 5,
   },
   {
     key: 'C5',
@@ -597,8 +610,8 @@ const CAMPAIGNS = [
       'counselor account, no strings',
     ],
     emails: [C5_EMAIL_1, C5_EMAIL_2, C5_EMAIL_3, C5_EMAIL_4],
-    daily_limit: 8,
-    daily_max_leads: 4,
+    daily_limit: 10,
+    daily_max_leads: 5,
   },
   {
     key: 'C6',
@@ -609,7 +622,7 @@ const CAMPAIGNS = [
       'something for your members',
     ],
     emails: [C6_EMAIL_1, C6_EMAIL_2, C6_EMAIL_3, C6_EMAIL_4],
-    daily_limit: 3,
+    daily_limit: 4,
     daily_max_leads: 2,
   },
 ];
@@ -801,22 +814,37 @@ function check() {
   note(new Set(allSubjects).size === allSubjects.length, 'no subject line is reused across campaigns', `${allSubjects.length} total`);
 
   const allMbx = Object.values(MAILBOXES).flat();
-  // C1/C2/C3/C6 deliberately share one founder mailbox: same human, same
-  // address, and a creator who gets the creator pitch and later the podcast
-  // pitch should see the same sender both times. C4 and C5 are separate
-  // segments on separate domains and must not overlap with it or each other.
-  const relationship = new Set([...MAILBOXES.C1, ...MAILBOXES.C2, ...MAILBOXES.C3, ...MAILBOXES.C6]);
-  const referral = [...MAILBOXES.C4, ...MAILBOXES.C5];
+  // No mailbox may serve two campaigns: each campaign's daily_limit is set
+  // against the mailboxes it owns, so a shared box would be double-counted.
   note(
-    new Set(referral).size === referral.length && !referral.some((m) => relationship.has(m)),
-    'C4 and C5 mailboxes are distinct from each other and from the relationship mailbox',
+    new Set(allMbx).size === allMbx.length,
+    'no mailbox serves two campaigns',
     `${allMbx.length} assignments, ${new Set(allMbx).size} unique addresses`
   );
   note(!allMbx.some((m) => m.startsWith('REPLACE_ME')), 'mailboxes are set to real addresses', allMbx.some((m) => m.startsWith('REPLACE_ME')) ? 'EDIT MAILBOXES BEFORE --sync' : '');
+  // Wave 1's own email_list, from scripts/outreach/instantly-wave1.mjs. Two
+  // campaigns drawing on one mailbox share its 15/day account cap without
+  // either one knowing, so these two programmes must not overlap at all.
+  const WAVE1_MAILBOXES = new Set([
+    'earl.knight@buildwithgovhub.com', 'earl.knight@usegovhub.com', 'earl.knight@govhubcontracts.com',
+    'earl.knight@govhubprocurement.com', 'earl.knight@govhubcapture.com', 'earl.knight@trygovhub.com',
+    'earl.knight@getgovhub.com', 'earl.knight@govhubteam.com', 'earl.knight@govhubnow.com',
+    'earl.knight@govhubhq.com', 'earl.knight@govhubsubmittals.com', 'e.knight@govhubrfp.com',
+  ]);
+  const clash = allMbx.filter((m) => WAVE1_MAILBOXES.has(m));
+  note(clash.length === 0, 'no mailbox is shared with wave 1', clash.join(' '));
+
+  // Domains the wave 1 doc held out: warmup never started on two of them, and
+  // bidwithgovhub.com's addresses do not match the account name on file.
+  const HELD_OUT_DOMAINS = ['govhubbids.com', 'govhubproposal.com', 'bidwithgovhub.com'];
+  const heldOut = allMbx.filter((m) => HELD_OUT_DOMAINS.some((d) => m.endsWith('@' + d)));
+  note(heldOut.length === 0, 'no held-out domain is used', heldOut.join(' '));
+
+  const mbxDomains = allMbx.map((m) => m.split('@')[1]);
   note(
-    ['C1', 'C2', 'C3', 'C6'].every((k) => MAILBOXES[k].every((m) => m.endsWith('@' + PRIMARY_DOMAIN))),
-    `relationship campaigns send from ${PRIMARY_DOMAIN}`,
-    'C1 C2 C3 C6'
+    new Set(mbxDomains).size === mbxDomains.length,
+    'every mailbox is on its own domain',
+    `${new Set(mbxDomains).size} domains across ${allMbx.length} mailboxes`
   );
   note(
     !allMbx.some((m) => m.includes('bidwithgovhub.com')),
