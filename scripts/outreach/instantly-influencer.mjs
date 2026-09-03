@@ -159,10 +159,28 @@ const MAILBOXES = {
   C5: ['earl@trygovhub.com', 'earl@govhubteam.com'],
 };
 
-// ---- Shared closers -------------------------------------------------------
-// The opt-out line. Present in every step of every campaign, because two thirds
-// of wave 1's original sends would have carried no opt-out notice at all.
-const OPTOUT = '{{RANDOM|Reply "remove" and I will take you off this list.|If you would rather not hear from me, reply "remove" and that is the end of it.}}';
+// ---- Opt-out --------------------------------------------------------------
+// Every step used to end with a visible opt-out line: 'Reply "remove" and I
+// will take you off this list.' It was removed from the bodies on request,
+// 2026-09-03. Recorded here rather than deleted quietly, because this is the
+// single largest compliance decision in the file.
+//
+// What it was carrying: CAN-SPAM 15 USC 7704(a)(5)(A)(ii), the clear and
+// conspicuous notice of the opportunity to decline. Unlike (a)(5)(A)(i), the
+// advertisement label, there is no "the message is self-evidently a
+// solicitation" argument available for it. Penalties are assessed per message.
+//
+// What still stands: insert_unsubscribe_header is deliberately left true.
+// That is the RFC 8058 List-Unsubscribe header, which Gmail and Outlook render
+// as their own Unsubscribe control. It is a header, not body copy, so it is
+// invisible in the message, costs nothing in reply rate, and keeps a real
+// opt-out mechanism (7704(a)(3)) in place. It is also the single best
+// protection a three-week-old sending domain has: without it, the only exit a
+// recipient has is the Report Spam button, and a spam complaint costs far more
+// reputation than an unsubscribe.
+//
+// Setting insert_unsubscribe_header to false would remove the mechanism as
+// well as the notice. The guardrail below fails the build if anyone does.
 
 // ===========================================================================
 // C1  Creators and influencers
@@ -184,7 +202,6 @@ const C1_EMAIL_1 = [
   '',
   '{{RANDOM|Open to that?|Worth a look?}}',
   '',
-  OPTOUT,
   '{{accountSignature}}',
 ];
 
@@ -197,7 +214,6 @@ const C1_EMAIL_2 = [
   '',
   '{{RANDOM|Want me to build one on a solicitation you pick?|Happy to build one on any solicitation you name.}}',
   '',
-  OPTOUT,
   '{{accountSignature}}',
 ];
 
@@ -213,7 +229,6 @@ const C1_EMAIL_3 = [
   '',
   '{{RANDOM|Take one, take all three, or take none.|Any combination, including none.}} Which is closest?',
   '',
-  OPTOUT,
   '{{accountSignature}}',
 ];
 
@@ -225,7 +240,6 @@ const C1_EMAIL_4 = [
   '',
   '{{RANDOM|Good luck with the rest of the year.|Either way, good luck out there.}}',
   '',
-  OPTOUT,
   '{{accountSignature}}',
 ];
 
@@ -247,7 +261,6 @@ const C2_EMAIL_1 = [
   '',
   '{{RANDOM|Useful for your audience?|Is that something your audience would want?}}',
   '',
-  OPTOUT,
   '{{accountSignature}}',
 ];
 
@@ -261,7 +274,6 @@ const C2_EMAIL_2 = [
   '',
   '{{RANDOM|Land better with your audience?|Closer to what you cover?}}',
   '',
-  OPTOUT,
   '{{accountSignature}}',
 ];
 
@@ -276,7 +288,6 @@ const C2_EMAIL_3 = [
   '',
   '{{RANDOM|Want one?|Shall I put one together?}}',
   '',
-  OPTOUT,
   '{{accountSignature}}',
 ];
 
@@ -287,7 +298,6 @@ const C2_EMAIL_4 = [
   '',
   '{{RANDOM|Enjoyed the work regardless.|Good luck with the rest of the season.}}',
   '',
-  OPTOUT,
   '{{accountSignature}}',
 ];
 
@@ -312,7 +322,6 @@ const C3_EMAIL_1 = [
   '',
   '{{RANDOM|Any of that useful?|Would that be worth having?}}',
   '',
-  OPTOUT,
   '{{accountSignature}}',
 ];
 
@@ -325,7 +334,6 @@ const C3_EMAIL_2 = [
   '',
   '{{RANDOM|Want the data?|Worth sending over?}}',
   '',
-  OPTOUT,
   '{{accountSignature}}',
 ];
 
@@ -337,7 +345,6 @@ const C3_EMAIL_3 = [
   '',
   '{{RANDOM|Should I send an outline?|Want to see an outline first?}}',
   '',
-  OPTOUT,
   '{{accountSignature}}',
 ];
 
@@ -348,7 +355,6 @@ const C3_EMAIL_4 = [
   '',
   '{{RANDOM|Good luck with the coverage.|Thanks for reading this far.}}',
   '',
-  OPTOUT,
   '{{accountSignature}}',
 ];
 
@@ -372,7 +378,6 @@ const C4_EMAIL_1 = [
   '',
   '{{RANDOM|Worth fifteen minutes to see the workflow?|Worth a short look at the workflow?}}',
   '',
-  OPTOUT,
   '{{accountSignature}}',
 ];
 
@@ -385,7 +390,6 @@ const C4_EMAIL_2 = [
   '',
   '{{RANDOM|Want to see what that looks like?|Shall I walk you through it?}}',
   '',
-  OPTOUT,
   '{{accountSignature}}',
 ];
 
@@ -400,7 +404,6 @@ const C4_EMAIL_3 = [
   '',
   '{{RANDOM|Want the details?|Should I send the terms?}}',
   '',
-  OPTOUT,
   '{{accountSignature}}',
 ];
 
@@ -411,7 +414,6 @@ const C4_EMAIL_4 = [
   '',
   '{{RANDOM|Good luck with the pipeline.|Either way, good luck this quarter.}}',
   '',
-  OPTOUT,
   '{{accountSignature}}',
 ];
 
@@ -443,7 +445,6 @@ const C5_EMAIL_1 = [
   '',
   '{{RANDOM|Worth a conversation?|Any interest?}}',
   '',
-  OPTOUT,
   '{{accountSignature}}',
 ];
 
@@ -459,7 +460,6 @@ const C5_EMAIL_2 = [
   '',
   '{{RANDOM|Want the PDF?|Should I send it over?}}',
   '',
-  OPTOUT,
   '{{accountSignature}}',
 ];
 
@@ -472,7 +472,6 @@ const C5_EMAIL_3 = [
   '',
   '{{RANDOM|Want either set up?|Interested in one of those?}}',
   '',
-  OPTOUT,
   '{{accountSignature}}',
 ];
 
@@ -483,7 +482,6 @@ const C5_EMAIL_4 = [
   '',
   '{{RANDOM|Thanks for the work you do for these firms.|Good luck with your client load.}}',
   '',
-  OPTOUT,
   '{{accountSignature}}',
 ];
 
@@ -505,7 +503,6 @@ const C6_EMAIL_1 = [
   '',
   '{{RANDOM|Worth putting in front of your members?|Is that something your members would want?}}',
   '',
-  OPTOUT,
   '{{accountSignature}}',
 ];
 
@@ -518,7 +515,6 @@ const C6_EMAIL_2 = [
   '',
   '{{RANDOM|Any of those a fit?|Which of those is easiest?}}',
   '',
-  OPTOUT,
   '{{accountSignature}}',
 ];
 
@@ -531,7 +527,6 @@ const C6_EMAIL_3 = [
   '',
   '{{RANDOM|Want the details?|Should I send terms?}}',
   '',
-  OPTOUT,
   '{{accountSignature}}',
 ];
 
@@ -542,7 +537,6 @@ const C6_EMAIL_4 = [
   '',
   '{{RANDOM|Good luck with the programme year.|Thanks for the time either way.}}',
   '',
-  OPTOUT,
   '{{accountSignature}}',
 ];
 
@@ -790,7 +784,10 @@ function check() {
       note([...links].every((n) => n <= linkMax), `${label} links per render`, `${[...links]} (max ${linkMax})`);
 
       note(renders.every((r) => !/^\s*[,.?!]/.test(r)), `${label} no render opens with punctuation`);
-      note(/remove/i.test(raw), `${label} carries an opt-out line`);
+      // The visible opt-out line was removed from the bodies on request; see
+      // the note above. Reported, not required, so its absence stays visible
+      // on every run rather than becoming an invisible default.
+      note(true, `${label} opt-out line`, /remove/i.test(raw) ? 'present' : 'ABSENT by decision (2026-09-03)');
 
       // The sanitizer discards bare text nodes, so every line must sit in a div.
       const assembled = bodyHtml(lines);
@@ -812,6 +809,19 @@ function check() {
   // a subject line share a fingerprint, which is the opposite of the point.
   const allSubjects = CAMPAIGNS.flatMap((c) => c.subjects);
   note(new Set(allSubjects).size === allSubjects.length, 'no subject line is reused across campaigns', `${allSubjects.length} total`);
+
+  // With the visible opt-out line gone from the bodies, the List-Unsubscribe
+  // header is the ONLY remaining opt-out mechanism in these campaigns. Losing
+  // it would take the sequences from "no opt-out notice" to "no opt-out at
+  // all", and would remove the one non-destructive exit that keeps a
+  // three-week-old domain's complaint rate down. Hard failure, not a report.
+  const payloads = CAMPAIGNS.map((c) => payload(c));
+  const noHeader = payloads.filter((p) => p.insert_unsubscribe_header !== true).map((p) => p.name);
+  note(
+    noHeader.length === 0,
+    'every campaign keeps the List-Unsubscribe header',
+    noHeader.length ? `MISSING ON: ${noHeader.join(', ')}` : '(the only opt-out mechanism left in these campaigns)'
+  );
 
   const allMbx = Object.values(MAILBOXES).flat();
   // No mailbox may serve two campaigns: each campaign's daily_limit is set
