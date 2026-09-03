@@ -16,7 +16,7 @@ workspace:
 | C6 associations | `80a9659f-ba43-4411-969f-10ecfcd6b95d` |
 
 What is still not done: no leads are uploaded, no campaign is started. That
-is deliberate and gated on the "Before importing" checklist below, the 41 P1
+is deliberate and gated on the "Before importing" checklist below, the 39 P1
 openers chief among them. Re-running `--sync` after any future copy edit
 updates these same campaigns in place (matched by name) rather than creating
 duplicates.
@@ -24,8 +24,9 @@ duplicates.
 | | |
 |---|---|
 | Database | `data/govcon-influencer-outreach.json`, 294 contacts, two research batches |
-| Sendable after hygiene | **104**, across six campaigns |
-| Total sends if all four steps run | 416, over roughly five weeks |
+| Deliverability | all 216 addresses verified via MillionVerifier, verdicts in `data/email-verification.json` |
+| Sendable after hygiene and verification | **94**, across six campaigns (70 confirmed deliverable, 24 catch-all) |
+| Total sends if all four steps run | 376, over roughly five weeks |
 | Sequence copy | `scripts/outreach/instantly-influencer.mjs` |
 | List hygiene and lead export | `scripts/outreach/influencer-db.mjs` |
 | Source rebuild | `scripts/outreach/build_influencer_db.py` (combines `parse_influencer_pdf.py` and `parse_expansion_xlsx.py`) |
@@ -121,7 +122,7 @@ before these four campaigns start sending**. `PRIMARY_DOMAIN` and
 and everything else in the file is already built to point at it.
 
 The volume argument that justified twelve mailboxes in wave 1 does not apply
-here regardless of which domain is used: 104 leads and 416 total sends is
+here regardless of which domain is used: 94 leads and 376 total sends is
 about 25 sends a day, which is one mailbox's normal work. So:
 
 - **C1, C2, C3, C6** share one address, deliberately: a creator who gets the
@@ -162,7 +163,7 @@ safe and three are traps.
 - **`{{recentContent}}` has no source.** There is no recent-content field in the
   database and there never will be one that is current on the day of a send. A
   body that references it renders blank or, worse, stale.
-- **`{{firstName}}` is blank for 57 of the 104 sendable contacts.** They are
+- **`{{firstName}}` is blank for 54 of the 94 sendable contacts.** They are
   shared inboxes at a publication or an accelerator. "Hi {{firstName}}," renders
   "Hi ," for more than half this list.
 - **`{{audienceType}}` is populated for 9 contacts.** Not usable in a body.
@@ -180,7 +181,7 @@ announcing itself.
 
 The exported openers are **derived, not researched**. Every one is true of the
 record it came from and none invents a claim about the recipient's recent work.
-They are a floor, not a finish. `--report` prints all 41 P1 contacts precisely
+They are a floor, not a finish. `--report` prints all 39 P1 contacts precisely
 so those openers get rewritten by hand from the person's actual last month of
 output before import. That rewrite is the highest-leverage edit available on
 this campaign and no script can do it.
@@ -241,9 +242,71 @@ and are noted here so they are not re-litigated:
   addresses was already solved by `{{greeting}}` (`derives Hi <org> team` when
   there is no usable first name), built and guardrailed before that review ran.
 
+## Deliverability: every address verified, five confirmed-dead ones caught
+
+Structural hygiene answers "should we send here". It says nothing about
+whether the address accepts mail, and every address in this database came off
+a public web page rather than from a person who typed it in, so a share of
+them are stale by construction: someone who left the company, a contact page
+last updated in 2019, an address that was always a typo.
+
+All 216 unique addresses went through MillionVerifier (216 credits):
+
+| Verdict | Count | Meaning |
+|---|---|---|
+| `ok` | 142 | Confirmed deliverable |
+| `catch_all` | 51 | The domain accepts every address at SMTP, so the mailbox cannot be confirmed either way |
+| `invalid` | 14 | Confirmed bad. A guaranteed bounce |
+| `unknown` | 9 | The provider would not answer (greylisting, timeout) |
+
+**Five of those `invalid` addresses were in the 104 that were about to be
+mailed**, including `mark@federaldirect.net`, a P1 creator. Five bounces on
+104 sends is a 4.8% bounce rate, above the 3% that [instantly-wave1.md](instantly-wave1.md)
+says to stop and investigate at, on domains three weeks old. That single fact
+is the argument for verifying before sending rather than after.
+
+How each verdict is treated:
+
+- **`invalid` and `disposable`** get the `email-invalid` hold. Not negotiable.
+- **`unknown`** gets a separate `email-unverifiable` hold. Not proof of a bad
+  address, but a young sending domain cannot spend its reputation finding out.
+  These go to the manual pile, where a human can confirm the address by hand
+  or reach the person another way; Judy Bradt (P1) is one of them.
+- **`catch_all` is deliberately NOT held.** Holding all 51 would drop a
+  quarter of the sendable list, and most of them are universities and small
+  firms where catch-all is simply how the mail server is configured. They are
+  counted separately in `--report` instead, and they are the reason to ramp
+  slowly and read the first days of bounce data rather than trusting the
+  headline number.
+
+The two holds are deliberately separate constants in `lib_influencer_db.py`
+so either can be relaxed without the other, and `--check` fails if an
+`invalid`, `disposable`, or `unknown` address ever reaches an export, or if
+any exported address has no verdict at all.
+
+Verification also feeds the caps. `keep_rank` now prefers a confirmed-`ok`
+address over a catch-all or unverified one, so when the highest-priority
+contact at an organization turns out to be dead, the runner-up wins on merit
+rather than the cap silently keeping a dead address. That is why all 216 were
+verified rather than only the 104 that were sendable at the time.
+
+Re-running is cheap and does not re-bill: verdicts are cached per address in
+`data/email-verification.json` and the Python build reads that file rather
+than calling the API, so a rebuild months from now produces the same JSON.
+
+```bash
+export MILLIONVERIFIER_API_KEY=...
+node scripts/outreach/verify-emails.mjs --dry-run   # what would be checked
+node scripts/outreach/verify-emails.mjs             # verify anything not cached
+node scripts/outreach/verify-emails.mjs --recheck   # re-verify everything
+```
+
+Addresses go stale. Re-run before any future batch, and re-run the whole list
+if these campaigns sit unsent for more than a couple of months.
+
 ## What is held back, and why
 
-190 of 294 contacts do not enter a campaign. A hold is not a deletion: everything
+200 of 294 contacts do not enter a campaign. A hold is not a deletion: everything
 held lands in `held-manual-followup.csv` with its reason (and, for the
 expansion batch, a `contactPath` describing where to go find the address), so
 the manual pile is a worklist rather than a silent drop.
@@ -257,6 +320,8 @@ the manual pile is a worklist rather than a silent drop.
 | 9 | `duplicate-email` | One address, several records. Instantly would otherwise put the same person in two sequences |
 | 8 | `domain-cap` | Seven Ohio University APEX counselors are filed under four different organization names and all seven answer at `ohio.edu`. Only the domain sees them as one office |
 | 6 | `competitor` | Deltek GovWin, HigherGov, GovSpend, Capture2Proposal, GovDash, G2X. A partnership pitch to a competitor is a free product briefing for their sales team |
+| 14 | `email-invalid` | MillionVerifier confirmed the address is bad. Five of these were in the list about to be mailed |
+| 11 | `email-unverifiable` | MillionVerifier could not get an answer (greylisting, timeout). Manual pile rather than a send |
 | 3 | `duplicate-org-in-expansion` | govmates, TheSmalls and GovKid Method each appeared twice in the expansion batch, as a bare organization and again as a named podcast host. The bare listing is held pointing at the named one |
 | 2 | `email-salvaged-from-pdf-artifact` | Two addresses were recovered from a column collision in the source PDF and cannot be trusted without re-reading the site |
 | 1 | `government-entity` | The Contracting Experience is an official Air Force Materiel Command podcast. Its address is a gmail, so nothing in the TLD says so |
@@ -297,7 +362,7 @@ the ledger file goes missing rather than passing an unchecked list.
    postal address and the solicitation disclosure, so a blank one is a
    compliance failure and not a cosmetic one. No valediction: the bodies do not
    carry one and it would double up.
-3. **Rewrite the openers for all 41 P1 contacts.** `npm run influencers` lists
+3. **Rewrite the openers for all 39 P1 contacts.** `npm run influencers` lists
    them. This is the campaign.
 4. **Open the four flagged addresses in a browser**, plus `mlejuene@`.
 5. **Send a seed email from each mailbox** and read the received plain-text
@@ -364,7 +429,8 @@ before" check:
   pointing at it (`duplicate-org-in-expansion`), so it still shows up in the
   worklist rather than looking like it silently vanished from the sheet.
 
-Net effect: 265 + 33 - 4 = **294 contacts**, but **sendable stayed at 104**,
+Net effect: 265 + 33 - 4 = **294 contacts**, and sendable was unchanged at
+104 at the time (later 94, after deliverability verification),
 because every surviving new row lacks an email by design. `npm run
 influencers` now prints two things specific to this batch: P1 rows that carry
 a `contactPath` worth a human's time to chase an address for (currently one:
@@ -373,7 +439,7 @@ contracting officers), and the handful of rows the sheet author flagged as
 "needs verification": well-known ecosystem entities not independently
 re-checked, worth confirming still exist and are described correctly before
 spending research time on an address. This batch extends the pipeline's
-runway; it does not move the block on sending, which is still the 41 P1
+runway; it does not move the block on sending, which is still the 39 P1
 openers and the mailbox decision below.
 
 ## Rebuilding the database

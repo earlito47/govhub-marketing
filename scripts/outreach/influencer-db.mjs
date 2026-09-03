@@ -310,6 +310,16 @@ function report() {
     for (const c of mismatch) console.log(`    ${c.email.padEnd(36)}${c.name}`);
   }
 
+  const verdicts = {};
+  for (const c of out) verdicts[c.emailVerify || 'not checked'] = (verdicts[c.emailVerify || 'not checked'] || 0) + 1;
+  console.log('\n  deliverability of the sendable list (MillionVerifier)');
+  for (const [k, v] of Object.entries(verdicts).sort((a, b) => b[1] - a[1])) {
+    const note_ = k === 'catch_all'
+      ? '  the domain accepts every address, so the mailbox cannot be confirmed either way'
+      : k === 'ok' ? '  confirmed deliverable' : '';
+    console.log(`    ${String(v).padStart(4)}  ${k}${note_}`);
+  }
+
   const roleInbox = out.filter((c) => c.emailClass === 'role').length;
   console.log(`\n  ${roleInbox} of ${out.length} sendable addresses are a shared inbox rather than a person.`);
   console.log(`  ${out.filter((c) => !c.firstName).length} have no usable first name, which is why {{greeting}} is written per lead.`);
@@ -408,6 +418,20 @@ function check() {
   note(comp.length === 0, 'no competitor is exported', comp.map((c) => c.org).join(' '));
 
   // One organization, one conversation.
+  // Deliverability. The structural holds answer "should we send here"; these
+  // answer "will this address accept mail". MillionVerifier found five
+  // confirmed-dead addresses sitting in what was going to be sent, which on a
+  // 104-address list is a 4.8% bounce rate, above the 3% the wave 1 doc says
+  // to stop and investigate at.
+  const badVerdicts = out.filter((c) => ['invalid', 'disposable', 'unknown'].includes(c.emailVerify));
+  note(badVerdicts.length === 0, 'no invalid or unverifiable address is exported', badVerdicts.map((c) => `${c.email}:${c.emailVerify}`).join(' '));
+  const unchecked = out.filter((c) => !c.emailVerify);
+  note(
+    unchecked.length === 0,
+    'every exported address has a verification verdict',
+    unchecked.length ? `${unchecked.length} unchecked; run verify-emails.mjs` : ''
+  );
+
   const orgs = out.map((c) => `${c.campaign}:${c.org.toLowerCase()}`);
   note(new Set(orgs).size === orgs.length, 'one contact per organization per campaign');
   const FREE_HOSTS = new Set(['gmail.com', 'outlook.com', 'yahoo.com', 'hotmail.com', 'aol.com', 'icloud.com', 'proton.me', 'me.com']);

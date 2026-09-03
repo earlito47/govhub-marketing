@@ -15,8 +15,36 @@ name heuristics (ORGWORD, person_name) and the hold reasons are exactly what
 influencer-db.mjs documents and what --check asserts against, so a second copy
 that drifts is a second copy that silently stops matching its own tests.
 """
-import re, unicodedata
+import json, os, re, unicodedata
 from collections import Counter, defaultdict
+
+# ---- email deliverability ------------------------------------------------
+# Written by scripts/outreach/verify-emails.mjs (MillionVerifier). Read here
+# rather than re-queried so a rebuild is reproducible and free: the verdicts
+# are cached per address, and re-running that script is what refreshes them.
+#
+# Two holds, deliberately separate so either can be relaxed without the other:
+#   invalid / disposable -> `email-invalid`, a confirmed bounce.
+#   unknown              -> `email-unverifiable`, the provider would not answer
+#                           (greylisting, timeout). Not proof of a bad address,
+#                           but a young sending domain cannot spend its
+#                           reputation finding out, so these go to the manual
+#                           pile where a human can confirm the address by hand.
+#
+# catch_all is deliberately NOT held. A catch-all domain accepts every address
+# at SMTP time, so the mailbox cannot be confirmed either way; holding them all
+# would drop a quarter of this list, and most here are universities and small
+# firms where catch-all is just how the server is configured. They are counted
+# separately in --report instead, and they are the reason to ramp slowly and
+# watch the first days of bounces rather than trusting the number.
+VERIFY_HOLD = {'invalid': 'email-invalid', 'disposable': 'email-invalid', 'unknown': 'email-unverifiable'}
+
+_VERIFY_PATH = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))), 'data', 'email-verification.json')
+try:
+    with open(_VERIFY_PATH, encoding='utf-8') as _f:
+        EMAIL_VERIFY = json.load(_f).get('results', {})
+except FileNotFoundError:
+    EMAIL_VERIFY = {}
 
 # ---- campaign mapping -------------------------------------------------
 SEG2CAMPAIGN = {
@@ -127,6 +155,9 @@ def derive_one(r, origin):
     dom = email.split('@')[-1] if email else ''
     if dom.endswith('.mil') or dom.endswith('.gov'):
         if 'government-mailbox' not in holds: holds.append('government-mailbox')
+    verdict = EMAIL_VERIFY.get(email, {}).get('result') if email else None
+    if verdict in VERIFY_HOLD:
+        holds.append(f'{VERIFY_HOLD[verdict]} (millionverifier: {verdict})')
     # Pre-set holds a source-specific parser already decided (duplicate of an
     # existing contact, or a duplicate within its own batch). Carried through
     # rather than recomputed here because only the source parser has the
@@ -149,6 +180,7 @@ def derive_one(r, origin):
         'verification': r.get('verification', ''), 'verifiedAt': r.get('verifiedAt', ''),
         'notes': r.get('notes', ''),
         'origin': origin,
+        'emailVerify': verdict or '',
         'holds': [h for h in holds if h],
     }
 
@@ -167,7 +199,11 @@ def keep_rank(c):
     local = c['email'].split('@')[0].lower()
     parts = [p for p in re.sub(r'[^a-z ]', '', c['name'].lower()).split() if p]
     carries = any(len(p) >= 4 and p in local for p in parts)
-    return (c['priority'], 0 if c['emailClass'] == 'person' else 1, 0 if carries else 1,
+    # A confirmed-deliverable address beats a catch-all or an unverified one:
+    # a cap should keep the contact most likely to actually receive the email,
+    # not merely the highest-priority row.
+    verified = {'ok': 0, 'catch_all': 1}.get(c.get('emailVerify') or '', 2)
+    return (c['priority'], verified, 0 if c['emailClass'] == 'person' else 1, 0 if carries else 1,
             0 if c['nameIsPerson'] else 1, c['id'])
 
 def apply_caps(contacts):
