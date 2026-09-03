@@ -610,8 +610,8 @@ const CAMPAIGNS = [
       'counselor account, no strings',
     ],
     emails: [C5_EMAIL_1, C5_EMAIL_2, C5_EMAIL_3, C5_EMAIL_4],
-    daily_limit: 10,
-    daily_max_leads: 5,
+    daily_limit: 12,
+    daily_max_leads: 4,
   },
   {
     key: 'C6',

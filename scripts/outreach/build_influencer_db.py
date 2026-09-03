@@ -29,7 +29,7 @@ from collections import Counter
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
-from lib_influencer_db import derive_one, apply_caps
+from lib_influencer_db import derive_one, apply_caps, PER_CAMPAIGN_CAP, DEFAULT_CAP
 from parse_influencer_pdf import extract_pdf_rows
 from parse_expansion_xlsx import extract_expansion_rows
 
@@ -78,6 +78,9 @@ def main():
             'batches': batches,
         },
         'campaigns': CAMPAIGNS,
+        # Effective per-organization / per-sending-domain cap, so the JS side
+        # asserts against the same numbers rather than a second copy of them.
+        'caps': {'default': DEFAULT_CAP, **PER_CAMPAIGN_CAP},
         'contacts': contacts,
     }
     OUT.write_text(json.dumps(doc, indent=2, ensure_ascii=False))

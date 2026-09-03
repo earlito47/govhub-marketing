@@ -15,12 +15,14 @@ workspace:
 | C5 APEX advisors | `aceddf26-388d-45f4-be83-89eda98816a9` |
 | C6 associations | `80a9659f-ba43-4411-969f-10ecfcd6b95d` |
 
-All 94 verified leads are uploaded, with `{{greeting}}`, `{{opener}}`,
+All 119 verified leads are uploaded, with `{{greeting}}`, `{{opener}}`,
 `{{channel}}` and `{{companyName}}` populated per lead and confirmed resolved
 against the live records. **No campaign is started**; every one is still Draft.
 
-What is still not done: nothing is sending, and the 39 P1 openers are still
-the derived generic ones. Starting a campaign today would send those. Re-running
+What is still not done: nothing is sending. 39 of the 41 P1 openers are now
+researched rather than derived (the other two are recorded fallbacks with
+reasons), so the largest remaining blocker is the seed test and the signature
+check below, not the copy. Re-running
 `--sync` after any copy edit updates these campaigns in place (matched by name),
 and `push-leads.mjs` is idempotent (`skip_if_in_campaign`), so both are safe to
 re-run.
@@ -29,12 +31,13 @@ re-run.
 |---|---|
 | Database | `data/govcon-influencer-outreach.json`, 294 contacts, two research batches |
 | Deliverability | all 216 addresses verified via MillionVerifier, verdicts in `data/email-verification.json` |
-| Sendable after hygiene and verification | **94**, across six campaigns (70 confirmed deliverable, 24 catch-all) |
-| Total sends if all four steps run | 376, over roughly five weeks |
+| Sendable after hygiene and verification | **119**, across six campaigns (89 confirmed deliverable, 30 catch-all) |
+| Total sends if all four steps run | 476, over roughly five weeks |
 | Sequence copy | `scripts/outreach/instantly-influencer.mjs` |
 | List hygiene and lead export | `scripts/outreach/influencer-db.mjs` |
 | Deliverability check | `scripts/outreach/verify-emails.mjs` |
 | Lead upload | `scripts/outreach/push-leads.mjs` |
+| Researched openers | `data/openers.json` |
 | Source rebuild | `scripts/outreach/build_influencer_db.py` (combines `parse_influencer_pdf.py` and `parse_expansion_xlsx.py`) |
 
 ```bash
@@ -69,11 +72,11 @@ rate is invisible inside a blended 6%.
 
 | | Campaign | In DB | Sendable | Ask |
 |---|---|---|---|---|
-| C1 | Creators and influencers | 41 | 20 | Run one of their real solicitations through GovHub, on camera |
+| C1 | Creators and influencers | 41 | 16 | Run one of their real solicitations through GovHub, on camera |
 | C2 | Podcasts and newsletters | 29 | 5 | An episode or a piece, not a promotion |
-| C3 | GovCon media and blogs | 17 | 9 | Original USAspending analysis cut for their beat |
+| C3 | GovCon media and blogs | 17 | 8 | Original USAspending analysis cut for their beat |
 | C4 | Proposal and capture consultants | 57 | 27 | A referral partnership that names its own boundary |
-| C5 | APEX advisors and education | 118 | 37 | A counselor account and a client session. Nothing back |
+| C5 | APEX advisors and education | 118 | 57 | A counselor account and a client session. Nothing back |
 | C6 | Associations and communities | 25 | 6 | A member session delivered by us |
 
 Sequence is four emails on day 0, 4, 8 and 14. Slower than wave 1's 0, 3, 7:
@@ -133,7 +136,7 @@ before these four campaigns start sending**. `PRIMARY_DOMAIN` and
 and everything else in the file is already built to point at it.
 
 The volume argument that justified twelve mailboxes in wave 1 does not apply
-here regardless of which domain is used: 94 leads and 376 total sends is
+here regardless of which domain is used: 119 leads and 476 total sends is
 about 25 sends a day, which is one mailbox's normal work. So:
 
 Sending is spread across **nine mailboxes on nine separate domains**, one
@@ -145,7 +148,7 @@ dedicated to each campaign and a second for the two largest:
 | C2 podcasts | 5 | `earl@getgovhub.com` |
 | C3 media | 8 | `earl@buildwithgovhub.com` |
 | C4 consultants | 27 | `earl.knight@winwithgovhub.com`, `earl@govhubcontracts.com` |
-| C5 APEX | 32 | `earl@trygovhub.com`, `earl@govhubteam.com` |
+| C5 APEX | 57 | `earl@trygovhub.com`, `earl@govhubteam.com` |
 | C6 associations | 6 | `earl@govhubnow.com` |
 
 Every one is warmup score 100 and active, and **none is a mailbox wave 1 uses**.
@@ -191,7 +194,7 @@ safe and three are traps.
 - **`{{recentContent}}` has no source.** There is no recent-content field in the
   database and there never will be one that is current on the day of a send. A
   body that references it renders blank or, worse, stale.
-- **`{{firstName}}` is blank for 54 of the 94 sendable contacts.** They are
+- **`{{firstName}}` is blank for 55 of the 119 sendable contacts.** They are
   shared inboxes at a publication or an accelerator. "Hi {{firstName}}," renders
   "Hi ," for more than half this list.
 - **`{{audienceType}}` is populated for 9 contacts.** Not usable in a body.
@@ -207,12 +210,19 @@ failure stays invisible until the first real send.
 use on YouTube, Podcast, LinkedIn, Instagram however you like" is a mail merge
 announcing itself.
 
-The exported openers are **derived, not researched**. Every one is true of the
-record it came from and none invents a claim about the recipient's recent work.
-They are a floor, not a finish. `--report` prints all 39 P1 contacts precisely
-so those openers get rewritten by hand from the person's actual last month of
-output before import. That rewrite is the highest-leverage edit available on
-this campaign and no script can do it.
+Openers come from one of two places. The **derived** ones are true of the
+record they came from and invent nothing, but they say how the contact was
+found rather than anything about the contact, which is exactly the tell a
+professional communicator reads as a merge. The **researched** ones live in
+`data/openers.json`, keyed by contact id, and each carries a `basis` field
+recording what the claim was verified from, so an assertion about someone's
+work can be audited rather than trusted.
+
+Researched openers override derived ones automatically. `--check` requires
+every P1 contact to have an entry in that file, either a written line or an
+explicit `null` with a `reason` meaning "the derived one is fine here", so a
+P1 on a generic opener is always a decision somebody made rather than one
+nobody noticed.
 
 ### 4. A line-edit pass, after an outside review of this framework
 
@@ -332,6 +342,42 @@ node scripts/outreach/verify-emails.mjs --recheck   # re-verify everything
 Addresses go stale. Re-run before any future batch, and re-run the whole list
 if these campaigns sit unsent for more than a couple of months.
 
+## C5 volume: three counselors per accelerator, not one and not twelve
+
+The default cap everywhere on this list is one contact per organization and
+one per sending domain: eight cold emails into one association produce one
+complaint, not eight replies. C5 is the one segment where that default was
+deliberately loosened, because the APEX network is 118 contacts across 34
+accelerator offices and the campaign asks for nothing in return, which makes
+several counselors at one office defensible rather than a blast.
+
+Measured against the live list:
+
+| Per-office cap | C5 leads | Worst office gets | Rollout at 4 new leads/day |
+|---|---|---|---|
+| 1 | 34 | 1 | 8 days |
+| **3 (current)** | **57** | **3** | **14 days** |
+| 5 | 70 | 5 | 18 days |
+| none | 88 | 12 | 22 days |
+
+Three takes roughly two thirds of the available volume. Uncapping takes the
+last third at the price of twelve near-identical emails into a single Georgia
+Tech office, which reads as a scrape however the sends are spaced, and the
+reputational cost lands across all 34 offices rather than the one, in a network
+whose counselors talk to each other. `PER_CAMPAIGN_CAP` in
+`lib_influencer_db.py` is the only thing to change to buy more volume against
+that risk; the JSON build writes the effective caps into
+`data/govcon-influencer-outreach.json` so `--check` asserts against the same
+numbers rather than a second copy of them.
+
+"Send at different times" is real and is implemented in the upload order.
+Leads enter an Instantly sequence in insertion order at `daily_max_leads` per
+day, so upload order is send order. `push-leads.mjs` round-robins each
+campaign's leads across sending domains, biggest office first, so consecutive
+leads never share an office: the first twelve C5 leads are twelve different
+accelerators. At four new leads a day the three Georgia Tech counselors land
+several days apart rather than in one morning.
+
 ## What is held back, and why
 
 200 of 294 contacts do not enter a campaign. A hold is not a deletion: everything
@@ -390,8 +436,10 @@ the ledger file goes missing rather than passing an unchecked list.
    postal address and the solicitation disclosure, so a blank one is a
    compliance failure and not a cosmetic one. No valediction: the bodies do not
    carry one and it would double up.
-3. **Rewrite the openers for all 39 P1 contacts.** `npm run influencers` lists
-   them. This is the campaign.
+3. **Review the researched P1 openers** in `data/openers.json`. Each one
+   carries the fact it is grounded in and the URL that fact came from; spot
+   check a few against the source before sending. `npm run influencers` lists
+   any P1 still on a derived opener.
 4. **Open the four flagged addresses in a browser**, plus `mlejuene@`.
 5. **Send a seed email from each mailbox** and read the received plain-text
    part, not the preview pane. Repeat on a same-thread follow-up: emails 2, 3
@@ -467,7 +515,7 @@ contracting officers), and the handful of rows the sheet author flagged as
 "needs verification": well-known ecosystem entities not independently
 re-checked, worth confirming still exist and are described correctly before
 spending research time on an address. This batch extends the pipeline's
-runway; it does not move the block on sending, which is still the 39 P1
+runway; it does not move the block on sending, which was then the P1
 openers and the mailbox decision below.
 
 ## Rebuilding the database

@@ -206,6 +206,32 @@ def keep_rank(c):
     return (c['priority'], verified, 0 if c['emailClass'] == 'person' else 1, 0 if carries else 1,
             0 if c['nameIsPerson'] else 1, c['id'])
 
+# How many contacts one organization, or one sending domain, may receive.
+#
+# The default is 1: eight cold emails into one association produce one
+# complaint, not eight replies. C5 is raised deliberately. The APEX network is
+# 118 contacts across 34 accelerator offices and the campaign is an educational
+# offer with nothing asked in return, which is the one segment here where
+# several counselors at one office is defensible rather than a blast. The
+# numbers, from the live list:
+#
+#     cap   C5 leads   worst office   rollout at 4 new leads/day
+#       1         34              1        8 days
+#       3         57              3       14 days
+#       5         70              5       18 days
+#    none         88             12       22 days
+#
+# 3 takes roughly two thirds of the available volume. Uncapping takes the last
+# third at the price of twelve near-identical emails into a single Georgia Tech
+# office, which reads as a scrape no matter how the sends are spaced, and the
+# reputational cost lands across all 34 offices rather than the one. Raise this
+# number to buy more volume against that risk; it is the only thing to change.
+PER_CAMPAIGN_CAP = {'C5': 3}
+DEFAULT_CAP = 1
+
+def cap_for(campaign):
+    return PER_CAMPAIGN_CAP.get(campaign, DEFAULT_CAP)
+
 def apply_caps(contacts):
     """Mutates contacts in place: unique ids, duplicate-email, org-cap,
     domain-cap, then sets `sendable`. Must run over the FULL combined set from
@@ -228,11 +254,14 @@ def apply_caps(contacts):
     for c in contacts:
         if c['email'] and c['org']: byorg[(c['campaign'], c['org'].lower())].append(c)
     for (camp, org), group in byorg.items():
-        if len(group) == 1 or camp is None: continue
+        if camp is None: continue
+        n = cap_for(camp)
+        if len(group) <= n: continue
         group.sort(key=keep_rank)
-        for c in group[1:]:
+        kept = ', '.join(x['id'] for x in group[:n])
+        for c in group[n:]:
             if not any(h.startswith('duplicate-email') for h in c['holds']):
-                c['holds'].append(f'org-cap (one send per org; kept {group[0]["id"]})')
+                c['holds'].append(f'org-cap (max {n} per org; kept {kept})')
 
     bydomain = defaultdict(list)
     for c in contacts:
@@ -241,10 +270,14 @@ def apply_caps(contacts):
         if dom in FREE_HOSTS: continue
         bydomain[dom].append(c)
     for dom, group in bydomain.items():
-        if len(group) == 1: continue
+        # A domain shared by two campaigns takes the strictest of their caps:
+        # the recipients cannot tell the campaigns apart, they just see mail.
+        n = min(cap_for(c['campaign']) for c in group)
+        if len(group) <= n: continue
         group.sort(key=keep_rank)
-        for c in group[1:]:
-            c['holds'].append(f'domain-cap (one send per sending domain; kept {group[0]["id"]})')
+        kept = ', '.join(x['id'] for x in group[:n])
+        for c in group[n:]:
+            c['holds'].append(f'domain-cap (max {n} per sending domain; kept {kept})')
 
     for c in contacts:
         c['sendable'] = bool(c['email']) and not c['holds'] and c['campaign'] is not None

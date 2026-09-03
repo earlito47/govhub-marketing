@@ -14,8 +14,10 @@
 // Uploading does NOT start anything. The campaigns stay in whatever status
 // they are already in, and every one of them is Draft.
 //
-// Idempotent: skip_if_in_campaign means re-running adds only what is missing,
-// so this is safe to run again after the list changes.
+// Idempotent and re-runnable: a lead already in the campaign is PATCHed if its
+// merge variables changed and left alone if they did not, so re-running after
+// an opener rewrite propagates the new text instead of silently keeping the
+// old. A lead's position in the sequence is never disturbed.
 //
 // Env: INSTANTLY_API_KEY
 // Usage:
@@ -101,8 +103,34 @@ const db = JSON.parse(readFileSync(join(ROOT, 'data/govcon-influencer-outreach.j
 const { buildLeads } = await import(join(ROOT, 'scripts/outreach/influencer-db.mjs'));
 const leads = buildLeads();
 
+// Interleave by sending domain so consecutive leads never share an office.
+//
+// This is what "stagger the sends" actually means in Instantly: leads enter a
+// sequence in insertion order at daily_max_leads per day, so upload order IS
+// send order. C5 allows up to three counselors per accelerator, and three
+// emails landing in one Georgia Tech office on one morning reads very
+// differently from three landing a week apart. Round-robining across domains
+// puts the maximum possible distance between same-office recipients without
+// any scheduling machinery.
+function interleaveByDomain(rows) {
+  const groups = new Map();
+  for (const l of rows) {
+    const d = l.email.split('@')[1];
+    if (!groups.has(d)) groups.set(d, []);
+    groups.get(d).push(l);
+  }
+  // Biggest offices first, so their members are spread widest across the queue.
+  const queues = [...groups.values()].sort((a, b) => b.length - a.length);
+  const out = [];
+  for (let i = 0; out.length < rows.length; i++) {
+    for (const q of queues) if (q[i]) out.push(q[i]);
+  }
+  return out;
+}
+
 const byCampaign = {};
 for (const l of leads) (byCampaign[l.campaign] ||= []).push(l);
+for (const key of Object.keys(byCampaign)) byCampaign[key] = interleaveByDomain(byCampaign[key]);
 
 let planned = 0;
 for (const key of Object.keys(CAMPAIGN_IDS)) planned += (byCampaign[key] || []).length;
@@ -127,31 +155,61 @@ if (arg === '--dry-run') {
 
 if (!KEY) { console.error('INSTANTLY_API_KEY is not set'); process.exit(1); }
 
-let uploaded = 0, failed = 0;
+// Upsert, not insert. The openers get rewritten (data/openers.json), and a
+// lead already in the campaign has the OLD text baked into its payload. Adding
+// with skip_if_in_campaign would silently leave the stale copy in place, so a
+// lead that already exists is PATCHed instead. Its sequence position is
+// untouched either way.
+async function existingLeadsFor(campaignId) {
+  const byEmail = new Map();
+  let cursor = null;
+  for (let i = 0; i < 30; i++) {
+    const body = { limit: 100, campaign: campaignId };
+    if (cursor) body.starting_after = cursor;
+    const d = await api('POST', '/leads/list', body);
+    for (const l of d.items || []) byEmail.set((l.email || '').toLowerCase(), l);
+    cursor = d.next_starting_after;
+    if (!(d.items || []).length || !cursor) break;
+  }
+  return byEmail;
+}
+
+let created = 0, updated = 0, unchanged = 0, failed = 0;
 for (const [key, rows] of Object.entries(byCampaign)) {
   const id = CAMPAIGN_IDS[key];
   if (!id) { console.error(`no campaign id for ${key}`); process.exit(1); }
-  console.log(`\n${key} -> ${id}  (${rows.length} leads)`);
+  const existing = await existingLeadsFor(id);
+  console.log(`\n${key} -> ${id}  (${rows.length} leads, ${existing.size} already there)`);
   for (const l of rows) {
-    const body = {
-      campaign: id,
-      email: l.email,
-      company_name: l.companyName,
-      website: l.website || undefined,
-      // Re-running must not duplicate a lead or reset its sequence position.
-      skip_if_in_campaign: true,
-      custom_variables: {
-        greeting: l.greeting,
-        opener: l.opener,
-        channel: l.channel || '',
-        companyName: l.companyName,
-      },
+    const vars = {
+      greeting: l.greeting,
+      opener: l.opener,
+      channel: l.channel || '',
+      companyName: l.companyName,
     };
-    if (l.firstName) body.first_name = l.firstName;
+    const prior = existing.get(l.email.toLowerCase());
     try {
-      await api('POST', '/leads', body);
-      uploaded++;
-      console.log(`  ok   ${l.email}`);
+      if (prior) {
+        const p = prior.payload || {};
+        const same = Object.entries(vars).every(([k, v]) => (p[k] || '') === v);
+        if (same) { unchanged++; continue; }
+        await api('PATCH', `/leads/${prior.id}`, { custom_variables: vars });
+        updated++;
+        console.log(`  upd  ${l.email}`);
+      } else {
+        const body = {
+          campaign: id,
+          email: l.email,
+          company_name: l.companyName,
+          website: l.website || undefined,
+          skip_if_in_campaign: true,
+          custom_variables: vars,
+        };
+        if (l.firstName) body.first_name = l.firstName;
+        await api('POST', '/leads', body);
+        created++;
+        console.log(`  new  ${l.email}`);
+      }
     } catch (e) {
       failed++;
       console.log(` FAIL ${l.email}  ${e.message.split('\n')[0]}`);
@@ -159,7 +217,7 @@ for (const [key, rows] of Object.entries(byCampaign)) {
   }
 }
 
-console.log(`\n${uploaded} uploaded, ${failed} failed.`);
+console.log(`\n${created} created, ${updated} updated, ${unchanged} already correct, ${failed} failed.`);
 console.log('\nCampaign state now:');
 for (const [key, id] of Object.entries(CAMPAIGN_IDS)) {
   const c = await api('GET', `/campaigns/${id}`);
