@@ -250,8 +250,11 @@ function report() {
   const total = DB.contacts.length;
   const byCampaign = (pred) => CAMPAIGN_ORDER.map((k) => DB.contacts.filter((c) => c.campaign === k && pred(c)).length);
 
-  console.log(`GovCon influencer outreach database  (source researched ${DB.source.researched})\n`);
-  console.log(`  ${total} contacts, ${DB.contacts.filter((c) => c.email).length} with a public email\n`);
+  console.log('GovCon influencer outreach database\n');
+  for (const b of DB.source.batches || []) {
+    console.log(`  ${b.kind === 'pdf' ? 'source' : 'expansion'}  ${b.file}  researched ${b.researched}  (${b.rows} rows)`);
+  }
+  console.log(`\n  ${total} contacts, ${DB.contacts.filter((c) => c.email).length} with a public email\n`);
 
   console.log('  campaign                              total  sendable  held');
   for (const k of CAMPAIGN_ORDER) {
@@ -279,6 +282,27 @@ function report() {
     console.log(`    ${c.campaign}  ${(c.name || c.org).slice(0, 30).padEnd(32)}${c.email.padEnd(36)}${(c.audience || c.reachTier || '').slice(0, 18)}`);
   }
   console.log(`    ${p1.length} of ${out.length} sendable contacts are P1.`);
+
+  // Everything an expansion batch adds is address-blank on principle (see
+  // parse_expansion_xlsx.py's docstring: no guessed addresses, because a
+  // guessed address is a bounce and bounces are what kill a young domain), so
+  // none of it is sendable yet. It is still ranked: P1 rows with a contactPath
+  // are worth a human's time to go find the address for before the batch as a
+  // whole is written off as "held".
+  const toResearch = DB.contacts.filter((c) => !c.sendable && c.contactPath && c.priority === 'P1' && !c.holds.some((h) => h.startsWith('duplicate')));
+  if (toResearch.length) {
+    console.log(`
+  P1 prospects worth finding an address for (no email in the source, but a contact path exists)`);
+    for (const c of toResearch) {
+      console.log(`    ${c.campaign}  ${(c.name || c.org).slice(0, 30).padEnd(32)}${c.org.slice(0, 30).padEnd(32)}${c.contactPath.slice(0, 50)}`);
+    }
+  }
+  const needsVerification = DB.contacts.filter((c) => /needs verification/i.test(c.verification));
+  if (needsVerification.length) {
+    console.log(`
+  ${needsVerification.length} contacts are unverified ecosystem entities (the expansion author's own flag, not re-checked): confirm the org and role are current before researching an address.`);
+    for (const c of needsVerification) console.log(`    ${c.campaign}  ${(c.name || c.org).slice(0, 30).padEnd(32)}${c.org.slice(0, 40)}`);
+  }
 
   const mismatch = out.filter(nameEmailMismatch);
   if (mismatch.length) {
@@ -313,7 +337,7 @@ function exportCsvs(dir) {
   // Everything held, in one file, so the manual pile is a worklist and not a
   // silent deletion.
   const held = DB.contacts.filter((c) => !c.sendable);
-  const hcols = ['campaign', 'segment', 'name', 'org', 'email', 'priority', 'holds', 'website', 'sourceUrl'];
+  const hcols = ['campaign', 'segment', 'name', 'org', 'email', 'priority', 'holds', 'contactPath', 'website', 'sourceUrl'];
   const hcsv = [hcols.join(','), ...held.map((c) => hcols.map((col) => csvCell(col === 'holds' ? c.holds.join('; ') : c[col])).join(','))].join('\n');
   writeFileSync(join(dir, 'held-manual-followup.csv'), hcsv + '\n');
   console.log(`  ${held.length.toString().padStart(3)} held   ${join(dir, 'held-manual-followup.csv')}`);

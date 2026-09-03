@@ -7,12 +7,12 @@ send. Everything else is done.
 
 | | |
 |---|---|
-| Database | `data/govcon-influencer-outreach.json`, 265 contacts |
+| Database | `data/govcon-influencer-outreach.json`, 294 contacts, two research batches |
 | Sendable after hygiene | **104**, across six campaigns |
 | Total sends if all four steps run | 416, over roughly five weeks |
 | Sequence copy | `scripts/outreach/instantly-influencer.mjs` |
 | List hygiene and lead export | `scripts/outreach/influencer-db.mjs` |
-| Source rebuild | `scripts/outreach/parse-influencer-pdf.py` |
+| Source rebuild | `scripts/outreach/build_influencer_db.py` (combines `parse_influencer_pdf.py` and `parse_expansion_xlsx.py`) |
 
 ```bash
 npm run influencers            # what is in the list and what is held back
@@ -41,12 +41,12 @@ rate is invisible inside a blended 6%.
 
 | | Campaign | In DB | Sendable | Ask |
 |---|---|---|---|---|
-| C1 | Creators and influencers | 39 | 20 | Run one of their real solicitations through GovHub, on camera |
-| C2 | Podcasts and newsletters | 16 | 5 | An episode or a piece, not a promotion |
-| C3 | GovCon media and blogs | 15 | 9 | Original USAspending analysis cut for their beat |
-| C4 | Proposal and capture consultants | 53 | 27 | A referral partnership that names its own boundary |
-| C5 | APEX advisors and education | 117 | 37 | A counselor account and a client session. Nothing back |
-| C6 | Associations and communities | 18 | 6 | A member session delivered by us |
+| C1 | Creators and influencers | 41 | 20 | Run one of their real solicitations through GovHub, on camera |
+| C2 | Podcasts and newsletters | 29 | 5 | An episode or a piece, not a promotion |
+| C3 | GovCon media and blogs | 17 | 9 | Original USAspending analysis cut for their beat |
+| C4 | Proposal and capture consultants | 57 | 27 | A referral partnership that names its own boundary |
+| C5 | APEX advisors and education | 118 | 37 | A counselor account and a client session. Nothing back |
+| C6 | Associations and communities | 25 | 6 | A member session delivered by us |
 
 Sequence is four emails on day 0, 4, 8 and 14. Slower than wave 1's 0, 3, 7:
 these are partnership asks to people with audiences, and a three-day bump on a
@@ -54,13 +54,18 @@ podcast pitch reads as pushy in a way a bid-cycle sales bump does not.
 
 ## Three things worth arguing about before launch
 
-### 1. C5 is 45% of the database and it cannot be sold to
+### 1. C5 is 40% of the database and it cannot be sold to
 
 APEX Accelerators run on DoD Office of Small Business Programs cooperative
 agreements and counsel contractors at no cost. Vendor neutrality is the entire
 basis of that relationship. A counselor who forwards a referral-commission offer
 to their program office has not just declined; they have made GovHub a name that
 travels across a 117-contact network whose members all know each other.
+
+C5 also carries the Veterans Business Outreach Centers (VBOC) network, added in
+the expansion batch: a separate SBA-funded counseling network for veteran-owned
+businesses, but the same vendor-neutrality rule and the same reason it cannot
+carry commission language.
 
 So C5 offers a counselor account and a tool-neutral client session, and asks for
 nothing in return. No commission, no referral share, no affiliate anything, no
@@ -137,23 +142,83 @@ so those openers get rewritten by hand from the person's actual last month of
 output before import. That rewrite is the highest-leverage edit available on
 this campaign and no script can do it.
 
+### 4. A line-edit pass, after an outside review of this framework
+
+The framework got a second read against the actual copy in
+`instantly-influencer.mjs` (the emails themselves live in the repo, not in any
+chat transcript, so a review of "the messaging framework" from a description of
+it is necessarily a review of the intent, not the execution). Two things it
+raised were real and are fixed; a few others were already handled by the build
+and are noted here so they are not re-litigated:
+
+- **C2 email 2 pitched a menu, not a topic.** It offered two named podcast
+  topics as alternatives to email 1's opener, plus a line that literally counted
+  them as "the three" once email 1's own topic was added in. That is the exact
+  tell the brief itself warns against. Rewritten to name one alternative and ask
+  one question.
+- **C3 email 1 named the sending domain.** It referenced "the analysis at
+  govhub.online/insights" in a cold first touch, which both guardrail and
+  outside review agree is wrong on a young `.online` domain: a bare domain
+  mention reads as a link for spam-filtering purposes whether or not it is
+  markup, and there is no conversation yet to justify a link. Moved to email 2,
+  once the thread exists and the recipient has already shown some interest, and
+  `--check` now asserts every email 1 across all six campaigns carries zero
+  links rather than trusting the campaign authors to remember by hand.
+- **Subject lines were already there**, three per campaign, already lowercase
+  and already not title-cased. Two read closer to campaign copy than an
+  internal note (`episode idea: where AI fails on proposals`, a colon and six
+  words; `when a client brings in a 200 page solicitation`, nine words) and are
+  trimmed.
+- **One ask per email was already a guardrail**, not a style note: `--check`
+  fails the build if any rendered email carries more than one question mark.
+  It caught nothing new this pass because nothing violated it, which is the
+  point of making it mechanical instead of a read-through habit.
+- **Sending from the real identity for the relationship segments was already
+  the design** (§2 above), decided independently of any outside review, for
+  the same reason: these recipients look senders up. C1, C2, C3 and C6 already
+  send from `govhub.online`, not a wave-1 lookalike domain.
+- **C5's counselor copy got one real improvement**: email 2 now offers a worked
+  compliance matrix from a real small-business set-aside solicitation, sent as
+  a PDF, no account or scheduling required, rather than a second description of
+  what the counselor session covers (which moved to email 3, next to the
+  standalone account offer). A finished artifact that costs nothing to open is
+  a stronger single ask than restated session logistics, the same instinct
+  behind C1's on-camera RFP teardown. A separately drafted full replacement for
+  C5 was not adopted: it opened with two questions stacked in one CTA ("is this
+  something you'd feel comfortable pointing a client to, and if not, what's
+  missing?"), which is the same menu problem as the C2 fix above, and it closed
+  with a hardcoded name and title in the body where this system's compliance
+  design puts that information in the per-mailbox `{{accountSignature}}` on
+  purpose, so it does not double up with the mailbox's own signature block.
+  The shared-inbox greeting problem that draft raised for APEX's 18 role
+  addresses was already solved by `{{greeting}}` (`derives Hi <org> team` when
+  there is no usable first name), built and guardrailed before that review ran.
+
 ## What is held back, and why
 
-161 of 265 contacts do not enter a campaign. A hold is not a deletion: everything
-held lands in `held-manual-followup.csv` with its reason, so the manual pile is a
-worklist rather than a silent drop.
+190 of 294 contacts do not enter a campaign. A hold is not a deletion: everything
+held lands in `held-manual-followup.csv` with its reason (and, for the
+expansion batch, a `contactPath` describing where to go find the address), so
+the manual pile is a worklist rather than a silent drop.
 
 | Count | Hold | Why |
 |---|---|---|
 | 80 | `org-cap` | Several contacts at one organization. Eleven Colorado APEX counselors and eight Professional Services Council staff are in this list. Eight cold emails into one association produce one complaint, not eight replies |
-| 40 | `no-public-email` | No address published. Manual channel, and every one retains a website or contact form |
+| 69 | `no-public-email` | No address published. Manual channel, and every one retains a website, contact form, or (for the expansion batch) a `contactPath` describing where to look |
 | 17 | `government-mailbox` | DCMA, DISA, DMEA, Air Force OSBP and three SBA program inboxes, plus APEX offices on `.gov`. The source database marks these "do not pitch as affiliate; use for public resource" and it is right |
 | 10 | `email-not-first-party-verified` | The database supplies an address while its own verification note says none was found. These are inferred, and bounces are what kill a young sending domain |
 | 9 | `duplicate-email` | One address, several records. Instantly would otherwise put the same person in two sequences |
 | 8 | `domain-cap` | Seven Ohio University APEX counselors are filed under four different organization names and all seven answer at `ohio.edu`. Only the domain sees them as one office |
 | 6 | `competitor` | Deltek GovWin, HigherGov, GovSpend, Capture2Proposal, GovDash, G2X. A partnership pitch to a competitor is a free product briefing for their sales team |
+| 3 | `duplicate-org-in-expansion` | govmates, TheSmalls and GovKid Method each appeared twice in the expansion batch, as a bare organization and again as a named podcast host. The bare listing is held pointing at the named one |
 | 2 | `email-salvaged-from-pdf-artifact` | Two addresses were recovered from a column collision in the source PDF and cannot be trusted without re-reading the site |
 | 1 | `government-entity` | The Contracting Experience is an official Air Force Materiel Command podcast. Its address is a gmail, so nothing in the TLD says so |
+
+Four more rows from the expansion batch were dropped before they could even
+become a hold, because they turned out to already be existing, sendable
+contacts under a different label: Washington Technology, FedBiz Access,
+Jennifer Schaus and Judy Bradt. See "The expansion batch" below for why a
+name-only dedup missed them and what caught it instead.
 
 Four more addresses are exported but flagged for a human to open in a browser
 first, because the mailbox does not carry the contact's name:
@@ -221,22 +286,80 @@ guest posts, backlinks earned, affiliate and referral partners activated, and
 customers attributed to a partner. Most of those land weeks after the sequence
 ends, so judge a campaign on the quarter and not on the send window.
 
+## The expansion batch, and why 29 new prospects added zero sendable leads
+
+A second research pass (`GovCon_Outreach_Expansion.xlsx`, researched
+2026-09-03) added 33 rows: more podcasts, a few media targets, consultants,
+associations, and a veteran-focused counseling network (VBOC) that runs on the
+same SBA-funded vendor-neutrality rules as APEX. All 33 were deliberately
+researched with **no guessed email addresses**, the sheet author's rule, and
+the right one, since a guessed address is a bounce and bounces are what kill a
+young sending domain. Every row that had no publicly posted address shipped
+with a `contactPath` instead: where a human would go look.
+
+Four rows turned out to already be in the database under a different label,
+and three more duplicated each other within the new batch itself. Neither kind
+of collision is visible to a simple "have we seen this organization name
+before" check:
+
+- **Washington Technology, FedBiz Access, Jennifer Schaus and Judy Bradt** were
+  all already present, three of them already sendable. The new batch's own
+  dedup pass checked organization names against the master PDF tab only (254
+  rows); the database that pass was checked against carries 11 more from the
+  newsletter tab, and Washington Technology in particular is filed under its
+  parent company (`GovExec`) rather than the outlet name, which a name-only
+  check does not see. These four are dropped entirely rather than held, since
+  the existing record already covers them, and `parse_expansion_xlsx.py`
+  documents which existing contact each one duplicates.
+- **govmates, TheSmalls and GovKid Method** each appear twice in the new batch:
+  once as a bare organization listing, once as a podcast or channel with a
+  named host attached. The named-host version is kept and the other is held
+  pointing at it (`duplicate-org-in-expansion`), so it still shows up in the
+  worklist rather than looking like it silently vanished from the sheet.
+
+Net effect: 265 + 33 - 4 = **294 contacts**, but **sendable stayed at 104**,
+because every surviving new row lacks an email by design. `npm run
+influencers` now prints two things specific to this batch: P1 rows that carry
+a `contactPath` worth a human's time to chase an address for (currently one:
+the Contracting Officer Podcast, 452 episodes, hosted by two former
+contracting officers), and the handful of rows the sheet author flagged as
+"needs verification": well-known ecosystem entities not independently
+re-checked, worth confirming still exist and are described correctly before
+spending research time on an address. This batch extends the pipeline's
+runway; it does not move the block on sending, which is still the 41 P1
+openers and the mailbox decision below.
+
 ## Rebuilding the database
 
-`data/govcon-influencer-outreach.json` is generated, not hand-edited:
+`data/govcon-influencer-outreach.json` is generated from every source batch in
+one pass, never hand-edited:
 
 ```bash
-pip install pdfplumber
-python3 scripts/outreach/parse-influencer-pdf.py path/to/GovCon_Influencer_Outreach_Database_200plus.pdf
+pip install pdfplumber openpyxl
+python3 scripts/outreach/build_influencer_db.py \
+  --pdf path/to/GovCon_Influencer_Outreach_Database_200plus.pdf \
+  --xlsx path/to/GovCon_Outreach_Expansion.xlsx
 ```
 
-The source PDF is a research artifact and is not committed. The extraction is
-awkward enough to be worth automating rather than repeating by hand: it is a
-spreadsheet printed at 1.5pt, so the parser walks raw characters, clusters them
-into rows by vertical position, and assigns tokens to columns by the header
-row's x positions. Two segment values wrap across the first column and read as
-phantom records until they are rejoined.
+`--pdf` alone reproduces the original 265-contact database; add `--xlsx` to
+merge in a research batch on top of it. Neither source file is committed: both
+are research artifacts, and `build_influencer_db.py` plus the two parsers it
+imports (`parse_influencer_pdf.py`, `parse_expansion_xlsx.py`) are what make
+the committed JSON reproducible and auditable instead of a hand-edited blob.
+The normalization and cross-record rules (person-vs-organization name
+detection, the org and domain caps, hold reasons) live once, in
+`lib_influencer_db.py`, and both parsers call into it, because those rules
+have to run over every row from every source in a single pass to catch a
+collision that spans sources, which is exactly what the expansion batch
+produced twice.
 
-The script asserts that its output reconciles with the PDF's own Expansion
-Dashboard, all 254 records and every per-segment count, and refuses to write a
-short list. The committed JSON is byte-identical to a fresh rebuild.
+The PDF extraction is awkward enough to be worth automating rather than
+repeating by hand: it is a spreadsheet printed at 1.5pt, so the parser walks
+raw characters, clusters them into rows by vertical position, and assigns
+tokens to columns by the header row's x positions. Two segment values wrap
+across the first column and read as phantom records until they are rejoined.
+It asserts that its output reconciles with the PDF's own Expansion Dashboard,
+all 254 records and every per-segment count, and refuses to write a short
+list on a mismatch. A rebuild from `--pdf` alone is byte-identical to the
+first commit of this database, field for field, before the expansion batch's
+`origin` and `contactPath` fields were added to the schema.

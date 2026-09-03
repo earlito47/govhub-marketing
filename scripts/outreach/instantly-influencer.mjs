@@ -215,14 +215,15 @@ const C2_EMAIL_1 = [
   '{{accountSignature}}',
 ];
 
+// One topic, not the menu from the brief. A guest pitch that lists three
+// backup ideas reads as a template with slots; naming one and moving on reads
+// as someone who already thought about the show.
 const C2_EMAIL_2 = [
-  '{{RANDOM|Following up with a couple of alternatives.|Two other angles, in case the first one was not right.}}',
+  '{{RANDOM|A different angle, in case the first one was not it.|One more idea, if the first one did not land.}}',
   '',
-  'Why so many contractors lose a bid before anyone writes a word of it, and how a small shop builds a proposal operation without hiring a proposal manager.',
+  'Why so many contractors lose a bid before anyone writes a word of the proposal, with the redacted solicitations and compliance matrices to make it a working walkthrough instead of opinion.',
   '',
-  'I can bring the working examples for either, redacted solicitations and real compliance matrices, so it is a walkthrough rather than opinion.',
-  '',
-  '{{RANDOM|Any of the three closer?|Does one of those fit better?}}',
+  '{{RANDOM|Land better with your audience?|Closer to what you cover?}}',
   '',
   OPTOUT,
   '{{accountSignature}}',
@@ -269,7 +270,7 @@ const C3_EMAIL_1 = [
   '',
   '{{opener}}',
   '',
-  'We pull federal award data from USAspending every week and publish the analysis at govhub.online/insights. Most of what we find never gets written up, and some of it is squarely on your beat.',
+  'We pull federal award data from USAspending every week and publish original analysis most of the market never sees. Some of what we have found is squarely on your beat.',
   '',
   '{{RANDOM|Happy to cut a slice of it for you.|I can cut it any way that is useful to you.}} Name an agency, a NAICS code or a set-aside program and I will send the numbers and the methodology, yours to write up with or without our name on it.',
   '',
@@ -282,9 +283,9 @@ const C3_EMAIL_1 = [
 const C3_EMAIL_2 = [
   '{{RANDOM|A more concrete version of the last note.|Being more specific than I was.}}',
   '',
-  'Two that surprised us: how much of the small-business award total is concentrated in a handful of NAICS codes, and how differently agencies behave on set-aside dollars once you control for contract size.',
+  'Two that surprised us: how much of the small-business award total sits in a handful of NAICS codes, and how differently agencies treat set-aside dollars once you control for contract size. Write-up is at govhub.online/insights.',
   '',
-  'Both hold up to checking, and I will send the query and the raw rows with either so your team can verify the numbers rather than take mine.',
+  'Both hold up to checking, and I will send the query and raw rows so your team can verify rather than take my word.',
   '',
   '{{RANDOM|Want the data?|Worth sending over?}}',
   '',
@@ -410,27 +411,30 @@ const C5_EMAIL_1 = [
   '{{accountSignature}}',
 ];
 
+// A worked artifact beats restated session logistics: it costs the counselor
+// nothing to open, needs no account and no scheduling, and is the same
+// "show, don't pitch" instinct behind C1's on-camera RFP teardown. Session
+// detail moved to email 3, alongside the standalone account offer, since both
+// are "here is more to opt into" asks and belong together.
 const C5_EMAIL_2 = [
-  '{{RANDOM|More detail on the session, in case it is useful.|What the session actually covers, in case that helps.}}',
+  '{{RANDOM|Something concrete, since the last note was all description.|A real example, since I only described it before.}}',
   '',
-  'Forty five minutes, virtual, on turning a federal solicitation into a compliance and submission plan. Sections L and M, how to build a compliance matrix, and the disqualifiers that get a bid thrown out before evaluation.',
+  'I ran a recent small-business set-aside solicitation through GovHub and it produced a two-page compliance matrix: every Section L requirement lined up against the Section M factors. Happy to send it over as workshop material, no account needed and nothing to set up.',
   '',
-  'It is tool-neutral. Your clients can do all of it in a spreadsheet, and I say so in the session.',
-  '',
-  '{{RANDOM|Would that be useful to your clients?|Any use to the contractors you counsel?}}',
+  '{{RANDOM|Want the PDF?|Should I send it over?}}',
   '',
   OPTOUT,
   '{{accountSignature}}',
 ];
 
 const C5_EMAIL_3 = [
-  '{{RANDOM|The counselor account stands on its own.|Separate from the session.}}',
+  '{{RANDOM|Two more things, both no cost, take either or neither.|Two offers, take either, both stand on their own.}}',
   '',
-  'Full access, no cost, no expiry, no strings, and nothing you have to say about it. Several counselors use it to show a client what is buried in their own solicitation during a session, which is a faster explanation than any slide.',
+  'A counselor account: full access, no expiry, nothing you have to say about it. And a forty five minute session for your clients on turning a solicitation into a compliance and submission plan, tool-neutral, doable in a spreadsheet either way.',
   '',
-  'If it is not useful you have lost nothing, and I will not ask about it again.',
+  'If neither is useful you have lost nothing, and I will not ask about it again.',
   '',
-  '{{RANDOM|Want me to set one up?|Shall I open one for you?}}',
+  '{{RANDOM|Want either set up?|Interested in one of those?}}',
   '',
   OPTOUT,
   '{{accountSignature}}',
@@ -529,7 +533,7 @@ const CAMPAIGNS = [
     key: 'C2',
     name: 'GovHub Influencer - C2 podcasts and newsletters',
     subjects: [
-      'episode idea: where AI fails on proposals',
+      'where AI fails on proposals',
       'a topic for your audience',
       'guest idea on AI and federal proposals',
     ],
@@ -566,7 +570,7 @@ const CAMPAIGNS = [
     name: 'GovHub Influencer - C5 APEX advisors',
     subjects: [
       'a session for the firms you counsel',
-      'when a client brings in a 200 page solicitation',
+      'the 200 page solicitation problem',
       'counselor account, no strings',
     ],
     emails: [C5_EMAIL_1, C5_EMAIL_2, C5_EMAIL_3, C5_EMAIL_4],
@@ -739,10 +743,14 @@ function check() {
       const q = new Set(renders.map((r) => (r.match(/\?/g) || []).length));
       note([...q].every((n) => n <= 1), `${label} questions per render`, `${[...q].sort()}`);
 
-      // Only C3 email 1 carries a URL, and it is the insights page it is
-      // actually offering. Everything else is link-free.
+      // No campaign links its first cold touch: a bare domain in a first email
+      // to a young .online site is a spam-signal double hit, and it reads as a
+      // pitch before there is a conversation to justify one. C3 email 2 is the
+      // one exception, once the thread already exists, because the insights
+      // page is the thing being offered rather than a bolt-on CTA.
       const links = new Set(renders.map((r) => (r.match(/govhub\.online|https?:\/\//g) || []).length));
-      const linkMax = c.key === 'C3' && i === 0 ? 1 : 0;
+      const linkMax = c.key === 'C3' && i === 1 ? 1 : 0;
+      if (i === 0) note(!renders.some((r) => /govhub\.online|https?:\/\//.test(r)), `${label} zero links in the first cold touch`);
       note([...links].every((n) => n <= linkMax), `${label} links per render`, `${[...links]} (max ${linkMax})`);
 
       note(renders.every((r) => !/^\s*[,.?!]/.test(r)), `${label} no render opens with punctuation`);

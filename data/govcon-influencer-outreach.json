@@ -1,15 +1,22 @@
 {
-  "version": 1,
+  "version": 2,
   "generatedAt": "2026-09-03",
   "source": {
-    "file": "GovCon_Influencer_Outreach_Database_200plus.pdf",
-    "researched": "2026-08-31",
-    "tabs": [
-      "Master 200+",
-      "Dashboard 200+",
-      "Newsletters"
-    ],
-    "note": "Public business contacts only. Record count and per-segment counts reconcile exactly with the PDF Expansion Dashboard (254 total)."
+    "note": "Public business contacts only. Combined from every batch below; see build-influencer-db.py.",
+    "batches": [
+      {
+        "kind": "pdf",
+        "file": "2d18b4f4-GovCon_Influencer_Outreach_Database_200plus.pdf.pdf",
+        "researched": "2026-08-31",
+        "rows": 265
+      },
+      {
+        "kind": "xlsx",
+        "file": "fa2069b2-GovCon_Outreach_Expansion.xlsx",
+        "researched": "2026-09-03",
+        "rows": 29
+      }
+    ]
   },
   "campaigns": {
     "C1": "Creators and influencers",
@@ -37,6 +44,7 @@
       "links": {
         "contactForm": "https://govcongiants.com"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Affiliate / Creator",
@@ -47,6 +55,7 @@
       "verification": "Official site",
       "verifiedAt": "2026-08-31",
       "notes": "Original database record. Primary channels: YouTube, Podcast, LinkedIn, Instagram",
+      "origin": "master-pdf-2026-08-31",
       "holds": [],
       "sendable": true
     },
@@ -68,6 +77,7 @@
         "contactForm": "https://proposalthatwins.com",
         "instagram": "https://www.instagram.com/kizzymparks"
       },
+      "contactPath": "",
       "audience": "31.6K Instagram",
       "reachTier": "Micro",
       "partnerType": "Affiliate / Creator",
@@ -78,6 +88,7 @@
       "verification": "Public LinkedIn post",
       "verifiedAt": "2026-08-31",
       "notes": "Original database record. Primary channels: YouTube, TikTok, Instagram, LinkedIn",
+      "origin": "master-pdf-2026-08-31",
       "holds": [],
       "sendable": true
     },
@@ -99,6 +110,7 @@
         "contactForm": "https://www.govconchamber.com",
         "linkedin": "https://www.linkedin.com/in/neil-mcdonnell"
       },
+      "contactPath": "",
       "audience": "47K LinkedIn",
       "reachTier": "Micro",
       "partnerType": "Affiliate / Creator",
@@ -109,6 +121,7 @@
       "verification": "Official site; no public email found",
       "verifiedAt": "2026-08-31",
       "notes": "Original database record. Primary channels: LinkedIn, YouTube, Podcast, Newsletter",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "email-not-first-party-verified"
       ],
@@ -132,6 +145,7 @@
         "contactForm": "https://www.thefederalcode.com",
         "instagram": "https://www.instagram.com/iamjasonwhite_"
       },
+      "contactPath": "",
       "audience": "116K Instagram",
       "reachTier": "Macro",
       "partnerType": "Affiliate / Creator",
@@ -142,6 +156,7 @@
       "verification": "Official site",
       "verifiedAt": "2026-08-31",
       "notes": "Original database record. Primary channels: Instagram, YouTube, Courses",
+      "origin": "master-pdf-2026-08-31",
       "holds": [],
       "sendable": true
     },
@@ -163,6 +178,7 @@
         "contactForm": "https://govconnow.co",
         "instagram": "https://www.instagram.com/sheenapreneur"
       },
+      "contactPath": "",
       "audience": "18.1K Instagram",
       "reachTier": "Micro",
       "partnerType": "Affiliate / Creator",
@@ -173,6 +189,7 @@
       "verification": "Official site",
       "verifiedAt": "2026-08-31",
       "notes": "Original database record. Primary channels: YouTube, Instagram, LinkedIn",
+      "origin": "master-pdf-2026-08-31",
       "holds": [],
       "sendable": true
     },
@@ -194,6 +211,7 @@
         "contactForm": "https://linktr.ee/foxwade",
         "instagram": "https://www.instagram.com/fox_wade"
       },
+      "contactPath": "",
       "audience": "114.4K Instagram",
       "reachTier": "Macro",
       "partnerType": "Affiliate / Creator",
@@ -204,6 +222,7 @@
       "verification": "No exact public email found",
       "verifiedAt": "2026-08-31",
       "notes": "Original database record. Primary channels: Instagram, TikTok, YouTube, LinkedIn",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "email-not-first-party-verified"
       ],
@@ -227,6 +246,7 @@
         "contactForm": "https://www.dodcontract.com",
         "instagram": "https://www.instagram.com/dodcontract"
       },
+      "contactPath": "",
       "audience": "351 Instagram",
       "reachTier": "Nano",
       "partnerType": "Affiliate / Creator",
@@ -237,6 +257,7 @@
       "verification": "Official site; exact email not exposed in text",
       "verifiedAt": "2026-08-31",
       "notes": "Original database record. Primary channels: Podcast, YouTube, LinkedIn, Instagram",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "email-not-first-party-verified"
       ],
@@ -259,6 +280,7 @@
       "links": {
         "contactForm": "https://rsmfederal.com"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Affiliate / Creator",
@@ -269,6 +291,7 @@
       "verification": "Published RSM credential sheet",
       "verifiedAt": "2026-08-31",
       "notes": "Original database record. Primary channels: Podcast, LinkedIn, Training",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "org-cap (one send per org; kept joshua-frank-rsm-federal)"
       ],
@@ -291,6 +314,7 @@
       "links": {
         "contactForm": "https://rsmfederal.com"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Affiliate / Creator",
@@ -301,6 +325,7 @@
       "verification": "Published RSM media kit",
       "verifiedAt": "2026-08-31",
       "notes": "Original database record. Primary channels: LinkedIn, Newsletter, Training",
+      "origin": "master-pdf-2026-08-31",
       "holds": [],
       "sendable": true
     },
@@ -321,6 +346,7 @@
       "links": {
         "contactForm": "https://fedsubk.com"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Affiliate / Creator",
@@ -331,6 +357,7 @@
       "verification": "Published webinar deck",
       "verifiedAt": "2026-08-31",
       "notes": "Original database record. Primary channels: LinkedIn, Blog, Training",
+      "origin": "master-pdf-2026-08-31",
       "holds": [],
       "sendable": true
     },
@@ -352,6 +379,7 @@
         "contactForm": "https://govconhacks.com",
         "instagram": "https://www.instagram.com/govconhacks"
       },
+      "contactPath": "",
       "audience": "778 Instagram",
       "reachTier": "Nano",
       "partnerType": "Affiliate / Creator",
@@ -362,6 +390,7 @@
       "verification": "Public business profile in training material",
       "verifiedAt": "2026-08-31",
       "notes": "Original database record. Primary channels: Podcast, YouTube, Instagram, LinkedIn",
+      "origin": "master-pdf-2026-08-31",
       "holds": [],
       "sendable": true
     },
@@ -382,6 +411,7 @@
       "links": {
         "contactForm": "https://blog.federaldirect.net"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Affiliate / Creator",
@@ -392,6 +422,7 @@
       "verification": "Official blog",
       "verifiedAt": "2026-08-31",
       "notes": "Original database record. Primary channels: LinkedIn, Podcast, Blog",
+      "origin": "master-pdf-2026-08-31",
       "holds": [],
       "sendable": true
     },
@@ -412,6 +443,7 @@
       "links": {
         "contactForm": "https://growfedbiz.com"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Affiliate / Creator",
@@ -422,6 +454,7 @@
       "verification": "Official site",
       "verifiedAt": "2026-08-31",
       "notes": "Original database record. Primary channels: LinkedIn, Blog, Consulting",
+      "origin": "master-pdf-2026-08-31",
       "holds": [],
       "sendable": true
     },
@@ -443,6 +476,7 @@
         "contactForm": "https://www.procurementqueen.com",
         "instagram": "https://www.instagram.com/procurementqueen"
       },
+      "contactPath": "",
       "audience": "9.4K Instagram",
       "reachTier": "Nano",
       "partnerType": "Affiliate / Creator",
@@ -453,6 +487,7 @@
       "verification": "Official site",
       "verifiedAt": "2026-08-31",
       "notes": "Original database record. Primary channels: Instagram, LinkedIn, Courses",
+      "origin": "master-pdf-2026-08-31",
       "holds": [],
       "sendable": true
     },
@@ -474,6 +509,7 @@
         "contactForm": "https://colleenjpayne.com",
         "instagram": "https://www.instagram.com/colleenpayne01"
       },
+      "contactPath": "",
       "audience": "14.5K Instagram",
       "reachTier": "Micro",
       "partnerType": "Affiliate / Creator",
@@ -484,6 +520,7 @@
       "verification": "Manually verified",
       "verifiedAt": "2026-08-31",
       "notes": "Original database record. Primary channels: Instagram, Community, Email",
+      "origin": "master-pdf-2026-08-31",
       "holds": [],
       "sendable": true
     },
@@ -505,6 +542,7 @@
         "contactForm": "https://thecompasscircle.com/home",
         "instagram": "https://www.instagram.com/thecompasscircle"
       },
+      "contactPath": "",
       "audience": "776.7K Instagram",
       "reachTier": "Macro",
       "partnerType": "Affiliate / Creator",
@@ -515,6 +553,7 @@
       "verification": "Official site; no explicit email captured",
       "verifiedAt": "2026-08-31",
       "notes": "Original database record. Primary channels: Instagram, Construction/GovCon",
+      "origin": "master-pdf-2026-08-31",
       "holds": [],
       "sendable": true
     },
@@ -535,6 +574,7 @@
       "links": {
         "instagram": "https://www.instagram.com/performancecontracts"
       },
+      "contactPath": "",
       "audience": "68.4K Instagram",
       "reachTier": "Micro",
       "partnerType": "Affiliate / Creator",
@@ -545,6 +585,7 @@
       "verification": "Exact email not captured",
       "verifiedAt": "2026-08-31",
       "notes": "Original database record. Primary channels: Instagram, Social",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "email-not-first-party-verified",
         "email-salvaged-from-pdf-artifact"
@@ -568,6 +609,7 @@
       "links": {
         "instagram": "https://www.instagram.com/globalleader_"
       },
+      "contactPath": "",
       "audience": "36.1K Instagram",
       "reachTier": "Micro",
       "partnerType": "Affiliate / Creator",
@@ -578,6 +620,7 @@
       "verification": "Public procurement record",
       "verifiedAt": "2026-08-31",
       "notes": "Original database record. Primary channels: Instagram, Social",
+      "origin": "master-pdf-2026-08-31",
       "holds": [],
       "sendable": true
     },
@@ -598,6 +641,7 @@
       "links": {
         "instagram": "https://www.instagram.com/melaniepatterson_ceo"
       },
+      "contactPath": "",
       "audience": "31K Instagram",
       "reachTier": "Micro",
       "partnerType": "Affiliate / Creator",
@@ -608,6 +652,7 @@
       "verification": "Exact email not captured",
       "verifiedAt": "2026-08-31",
       "notes": "Original database record. Primary channels: Instagram, LinkedIn",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "email-not-first-party-verified",
         "email-salvaged-from-pdf-artifact"
@@ -631,6 +676,7 @@
       "links": {
         "contactForm": "https://linktr.ee/thegovconcollective"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Affiliate / Creator",
@@ -641,6 +687,7 @@
       "verification": "Official Linktree; no email found",
       "verifiedAt": "2026-08-31",
       "notes": "Original database record. Primary channels: TikTok, YouTube, Instagram",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "email-not-first-party-verified"
       ],
@@ -663,6 +710,7 @@
       "links": {
         "instagram": "https://www.instagram.com/govconwithcortney"
       },
+      "contactPath": "",
       "audience": "2.2K Instagram",
       "reachTier": "Nano",
       "partnerType": "Affiliate / Creator",
@@ -673,6 +721,7 @@
       "verification": "Exact email not captured",
       "verifiedAt": "2026-08-31",
       "notes": "Original database record. Primary channels: Instagram",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "no-public-email"
       ],
@@ -695,6 +744,7 @@
       "links": {
         "contactForm": "https://designshowmarketing.com"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Affiliate / Creator",
@@ -705,6 +755,7 @@
       "verification": "Official company site",
       "verifiedAt": "2026-08-31",
       "notes": "Original database record. Primary channels: Instagram, SLED, Marketing",
+      "origin": "master-pdf-2026-08-31",
       "holds": [],
       "sendable": true
     },
@@ -723,6 +774,7 @@
       "emailClass": "none",
       "website": "",
       "links": {},
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Affiliate / Creator",
@@ -733,6 +785,7 @@
       "verification": "Public business profile; no email displayed",
       "verifiedAt": "2026-08-31",
       "notes": "Original database record. Primary channels: LinkedIn, Consulting",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "no-public-email"
       ],
@@ -755,6 +808,7 @@
       "links": {
         "contactForm": "https://www.fedbizexchange.org"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Affiliate / Creator",
@@ -765,6 +819,7 @@
       "verification": "Official storefront",
       "verifiedAt": "2026-08-31",
       "notes": "Original database record. Primary channels: LinkedIn, Newsletter, Training",
+      "origin": "master-pdf-2026-08-31",
       "holds": [],
       "sendable": true
     },
@@ -785,6 +840,7 @@
       "links": {
         "contactForm": "https://join.govconuniversity.com"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Affiliate / Creator",
@@ -795,6 +851,7 @@
       "verification": "Official site",
       "verifiedAt": "2026-08-31",
       "notes": "Original database record. Primary channels: YouTube, Courses",
+      "origin": "master-pdf-2026-08-31",
       "holds": [],
       "sendable": true
     },
@@ -815,6 +872,7 @@
       "links": {
         "contactForm": "https://www.catinathebroker.com"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Affiliate / Creator",
@@ -825,6 +883,7 @@
       "verification": "Published capability statement",
       "verifiedAt": "2026-08-31",
       "notes": "Original database record. Primary channels: YouTube, Consulting",
+      "origin": "master-pdf-2026-08-31",
       "holds": [],
       "sendable": true
     },
@@ -845,6 +904,7 @@
       "links": {
         "contactForm": "https://www.vendorship.net"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Affiliate / Creator",
@@ -855,6 +915,7 @@
       "verification": "Public business contact",
       "verifiedAt": "2026-08-31",
       "notes": "Original database record. Primary channels: TikTok, Instagram, YouTube, LinkedIn",
+      "origin": "master-pdf-2026-08-31",
       "holds": [],
       "sendable": true
     },
@@ -873,6 +934,7 @@
       "emailClass": "none",
       "website": "",
       "links": {},
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Podcast / PR",
@@ -883,6 +945,7 @@
       "verification": "Needs enrichment",
       "verifiedAt": "2026-08-31",
       "notes": "Original database record. Primary channels: Podcast",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "no-public-email"
       ],
@@ -905,6 +968,7 @@
       "links": {
         "contactForm": "https://parabilis.com/spilling-the-tea/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Podcast / PR",
@@ -915,6 +979,7 @@
       "verification": "Public company contact",
       "verifiedAt": "2026-08-31",
       "notes": "Original database record. Primary channels: Podcast",
+      "origin": "master-pdf-2026-08-31",
       "holds": [],
       "sendable": true
     },
@@ -933,6 +998,7 @@
       "emailClass": "none",
       "website": "",
       "links": {},
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Podcast / PR",
@@ -943,6 +1009,7 @@
       "verification": "Needs enrichment",
       "verifiedAt": "2026-08-31",
       "notes": "Original database record. Primary channels: Podcast",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "no-public-email"
       ],
@@ -965,6 +1032,7 @@
       "links": {
         "contactForm": "https://federalnewsnetwork.com/shows/off-the-shelf-podcast/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Podcast / PR",
@@ -975,6 +1043,7 @@
       "verification": "Official network contact",
       "verifiedAt": "2026-08-31",
       "notes": "Original database record. Primary channels: Podcast",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "duplicate-email (kept federal-news-network-federal-news-network)"
       ],
@@ -997,6 +1066,7 @@
       "links": {
         "contactForm": "https://www.dvidshub.net/podcast/312/the-contracting-experience"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Podcast / PR",
@@ -1007,6 +1077,7 @@
       "verification": "Official DVIDS show page",
       "verifiedAt": "2026-08-31",
       "notes": "Original database record. Primary channels: Podcast",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "government-entity"
       ],
@@ -1029,6 +1100,7 @@
       "links": {
         "contactForm": "https://www.washingtontechnology.com"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Media / PR",
@@ -1039,6 +1111,7 @@
       "verification": "Official publication",
       "verifiedAt": "2026-08-31",
       "notes": "Original database record. Primary channels: Publication, Newsletter",
+      "origin": "master-pdf-2026-08-31",
       "holds": [],
       "sendable": true
     },
@@ -1059,6 +1132,7 @@
       "links": {
         "contactForm": "https://www.govconwire.com"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Media / PR",
@@ -1069,6 +1143,7 @@
       "verification": "Official publication",
       "verifiedAt": "2026-08-31",
       "notes": "Original database record. Primary channels: Publication, Newsletter",
+      "origin": "master-pdf-2026-08-31",
       "holds": [],
       "sendable": true
     },
@@ -1089,6 +1164,7 @@
       "links": {
         "contactForm": "https://federalnewsnetwork.com"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Media / PR",
@@ -1099,6 +1175,7 @@
       "verification": "Official publication",
       "verifiedAt": "2026-08-31",
       "notes": "Original database record. Primary channels: Radio, Podcast, Publication",
+      "origin": "master-pdf-2026-08-31",
       "holds": [],
       "sendable": true
     },
@@ -1119,6 +1196,7 @@
       "links": {
         "contactForm": "https://smallgovcon.com"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Media / PR",
@@ -1129,6 +1207,7 @@
       "verification": "Official publication",
       "verifiedAt": "2026-08-31",
       "notes": "Original database record. Primary channels: Blog, Newsletter, YouTube",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "duplicate-email (kept steven-koprince-govcon-roundup-smallgovcon)"
       ],
@@ -1151,6 +1230,7 @@
       "links": {
         "contactForm": "https://govology.com"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Media / PR",
@@ -1161,6 +1241,7 @@
       "verification": "Public support email",
       "verifiedAt": "2026-08-31",
       "notes": "Original database record. Primary channels: Training, Webinars",
+      "origin": "master-pdf-2026-08-31",
       "holds": [],
       "sendable": true
     },
@@ -1181,6 +1262,7 @@
       "links": {
         "contactForm": "https://www.targetgov.com"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Media / PR",
@@ -1191,6 +1273,7 @@
       "verification": "Official site",
       "verifiedAt": "2026-08-31",
       "notes": "Original database record. Primary channels: Blog, Newsletter, Training",
+      "origin": "master-pdf-2026-08-31",
       "holds": [],
       "sendable": true
     },
@@ -1211,6 +1294,7 @@
       "links": {
         "contactForm": "https://www.lohfeldconsulting.com"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Media / PR",
@@ -1221,6 +1305,7 @@
       "verification": "Published company material",
       "verifiedAt": "2026-08-31",
       "notes": "Original database record. Primary channels: Blog, Proposal Training",
+      "origin": "master-pdf-2026-08-31",
       "holds": [],
       "sendable": true
     },
@@ -1241,6 +1326,7 @@
       "links": {
         "contactForm": "https://rsmfederal.com"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Media / PR",
@@ -1251,6 +1337,7 @@
       "verification": "Official site",
       "verifiedAt": "2026-08-31",
       "notes": "Original database record. Primary channels: Training, Podcast, Newsletter",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "domain-cap (one send per sending domain; kept joshua-frank-rsm-federal)"
       ],
@@ -1273,6 +1360,7 @@
       "links": {
         "contactForm": "https://fedsubk.com"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Media / PR",
@@ -1283,6 +1371,7 @@
       "verification": "Published webinar deck",
       "verifiedAt": "2026-08-31",
       "notes": "Original database record. Primary channels: Blog, Training",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "duplicate-email (kept shauna-weatherly-fedsubk)"
       ],
@@ -1305,6 +1394,7 @@
       "links": {
         "contactForm": "https://govconhacks.com"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Media / PR",
@@ -1315,6 +1405,7 @@
       "verification": "Public business profile in training material",
       "verifiedAt": "2026-08-31",
       "notes": "Original database record. Primary channels: Podcast, Blog, Social",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "duplicate-email (kept ashley-duwel-govconhacks)"
       ],
@@ -1337,6 +1428,7 @@
       "links": {
         "contactForm": "https://govtribe.com"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Media / PR",
@@ -1347,6 +1439,7 @@
       "verification": "Official blog",
       "verifiedAt": "2026-08-31",
       "notes": "Original database record. Primary channels: Platform, Blog, Newsletter",
+      "origin": "master-pdf-2026-08-31",
       "holds": [],
       "sendable": true
     },
@@ -1367,6 +1460,7 @@
       "links": {
         "contactForm": "https://orangeslices.ai"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Media / PR",
@@ -1377,6 +1471,7 @@
       "verification": "Official FAQ",
       "verifiedAt": "2026-08-31",
       "notes": "Original database record. Primary channels: Publication, Newsletter, Community",
+      "origin": "master-pdf-2026-08-31",
       "holds": [],
       "sendable": true
     },
@@ -1397,6 +1492,7 @@
       "links": {
         "contactForm": "https://www.afcea.org"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Media / PR",
@@ -1407,6 +1503,7 @@
       "verification": "Official organization",
       "verifiedAt": "2026-08-31",
       "notes": "Original database record. Primary channels: Association, Magazine, Events",
+      "origin": "master-pdf-2026-08-31",
       "holds": [],
       "sendable": true
     },
@@ -1427,6 +1524,7 @@
       "links": {
         "contactForm": "https://www.govexec.com"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Media / PR",
@@ -1437,6 +1535,7 @@
       "verification": "Official publication",
       "verifiedAt": "2026-08-31",
       "notes": "Original database record. Primary channels: Publication, Newsletter",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "org-cap (one send per org; kept washington-technology-govexec)"
       ],
@@ -1459,6 +1558,7 @@
       "links": {
         "contactForm": "https://g2xchange.com"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Media / PR",
@@ -1469,6 +1569,7 @@
       "verification": "Official company LinkedIn post",
       "verifiedAt": "2026-08-31",
       "notes": "Original database record. Primary channels: Platform, Newsletter, Podcast",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "competitor"
       ],
@@ -1492,6 +1593,7 @@
         "contactForm": "https://latashabrooks.com",
         "instagram": "https://www.instagram.com/moneybaggs623"
       },
+      "contactPath": "",
       "audience": "44.4K Instagram",
       "reachTier": "Micro",
       "partnerType": "Affiliate / Creator",
@@ -1502,6 +1604,7 @@
       "verification": "Follower count/handle verified; email requires first-party enrichment",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "email-not-first-party-verified"
       ],
@@ -1524,6 +1627,7 @@
       "links": {
         "instagram": "https://www.instagram.com/officialtravisdavis"
       },
+      "contactPath": "",
       "audience": "26.1K Instagram",
       "reachTier": "Micro",
       "partnerType": "Affiliate / Creator",
@@ -1534,6 +1638,7 @@
       "verification": "Follower count/handle verified; email requires first-party enrichment",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "email-not-first-party-verified"
       ],
@@ -1557,6 +1662,7 @@
         "contactForm": "https://stan.store/GovConPro",
         "instagram": "https://www.instagram.com/iamstacism"
       },
+      "contactPath": "",
       "audience": "10.1K Instagram",
       "reachTier": "Micro",
       "partnerType": "Affiliate / Creator",
@@ -1567,6 +1673,7 @@
       "verification": "Public web source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "no-public-email"
       ],
@@ -1590,6 +1697,7 @@
         "contactForm": "https://feliciastreeter.com",
         "instagram": "https://www.instagram.com/feliciamdupree"
       },
+      "contactPath": "",
       "audience": "4.4K Instagram",
       "reachTier": "Nano",
       "partnerType": "Affiliate / Creator",
@@ -1600,6 +1708,7 @@
       "verification": "Follower count/handle verified; email requires first-party enrichment",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "email-not-first-party-verified"
       ],
@@ -1623,6 +1732,7 @@
         "contactForm": "https://www.fgcsimplified.com",
         "instagram": "https://www.instagram.com/fgcsimplified"
       },
+      "contactPath": "",
       "audience": "1.5K Instagram",
       "reachTier": "Nano",
       "partnerType": "Affiliate / Creator",
@@ -1633,6 +1743,7 @@
       "verification": "Follower count/handle verified; email requires first-party enrichment",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "email-not-first-party-verified"
       ],
@@ -1655,6 +1766,7 @@
       "links": {
         "instagram": "https://www.instagram.com/cleaninglaunch"
       },
+      "contactPath": "",
       "audience": "86.8K Instagram",
       "reachTier": "Micro",
       "partnerType": "Affiliate / Vertical Creator",
@@ -1665,6 +1777,7 @@
       "verification": "Public web source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "no-public-email"
       ],
@@ -1688,6 +1801,7 @@
         "contactForm": "https://www.linkedin.com/in/setasidealert",
         "linkedin": "https://www.linkedin.com/in/setasidealert"
       },
+      "contactPath": "",
       "audience": "2K LinkedIn",
       "reachTier": "Nano",
       "partnerType": "Newsletter / Creator",
@@ -1698,6 +1812,7 @@
       "verification": "Public LinkedIn profile/article contact",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [],
       "sendable": true
     },
@@ -1720,6 +1835,7 @@
         "linkedin": "https://www.linkedin.com/in/thepulsegovcon",
         "youtube": "https://www.youtube.com/@thepulseofgovconvideos"
       },
+      "contactPath": "",
       "audience": "4K LinkedIn",
       "reachTier": "Nano",
       "partnerType": "Media / Advisory",
@@ -1730,6 +1846,7 @@
       "verification": "Public web source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "no-public-email"
       ],
@@ -1750,6 +1867,7 @@
       "emailClass": "none",
       "website": "",
       "links": {},
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Newsletter / Creator",
@@ -1760,6 +1878,7 @@
       "verification": "Active LinkedIn newsletter",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "no-public-email"
       ],
@@ -1782,6 +1901,7 @@
       "links": {
         "contactForm": "https://www.nvsstrategicsolutions.com"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Consultant + Newsletter",
@@ -1792,6 +1912,7 @@
       "verification": "Active LinkedIn newsletter",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "no-public-email"
       ],
@@ -1812,6 +1933,7 @@
       "emailClass": "none",
       "website": "",
       "links": {},
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Newsletter / Creator",
@@ -1822,6 +1944,7 @@
       "verification": "Public web source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "no-public-email"
       ],
@@ -1844,6 +1967,7 @@
       "links": {
         "contactForm": "https://smallgovcon.com/contact/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Newsletter / Legal Media",
@@ -1854,6 +1978,7 @@
       "verification": "Public web source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [],
       "sendable": true
     },
@@ -1874,6 +1999,7 @@
       "links": {
         "contactForm": "https://www.gdicwins.com/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Referral / Proposal Partner",
@@ -1884,6 +2010,7 @@
       "verification": "Public web source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [],
       "sendable": true
     },
@@ -1904,6 +2031,7 @@
       "links": {
         "contactForm": "https://paynepa.com/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Referral / Capture Partner",
@@ -1914,6 +2042,7 @@
       "verification": "Public web source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [],
       "sendable": true
     },
@@ -1934,6 +2063,7 @@
       "links": {
         "contactForm": "https://www.gobwit.com/service-page/capture-and-proposal-consulting"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Referral / Proposal Partner",
@@ -1944,6 +2074,7 @@
       "verification": "Public web source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [],
       "sendable": true
     },
@@ -1964,6 +2095,7 @@
       "links": {
         "contactForm": "https://4fedbiz.com/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Referral / Capture Partner",
@@ -1974,6 +2106,7 @@
       "verification": "Public web source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [],
       "sendable": true
     },
@@ -1994,6 +2127,7 @@
       "links": {
         "contactForm": "https://www.mygovcon.com/contact"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Affiliate / Coach Partner",
@@ -2004,6 +2138,7 @@
       "verification": "Public web source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [],
       "sendable": true
     },
@@ -2024,6 +2159,7 @@
       "links": {
         "contactForm": "https://www.govproposals.com/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Referral / Proposal Partner",
@@ -2034,6 +2170,7 @@
       "verification": "Public web source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [],
       "sendable": true
     },
@@ -2054,6 +2191,7 @@
       "links": {
         "contactForm": "https://www.gsa.consulting/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Referral / GSA Partner",
@@ -2064,6 +2202,7 @@
       "verification": "Public web source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [],
       "sendable": true
     },
@@ -2084,6 +2223,7 @@
       "links": {
         "contactForm": "https://cooteconsultinggroup.com/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Referral / Consultant",
@@ -2094,6 +2234,7 @@
       "verification": "Public web source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [],
       "sendable": true
     },
@@ -2114,6 +2255,7 @@
       "links": {
         "contactForm": "https://www.commodoreconsulting.com/ourservices"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Training / Referral Partner",
@@ -2124,6 +2266,7 @@
       "verification": "Public web source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [],
       "sendable": true
     },
@@ -2144,6 +2287,7 @@
       "links": {
         "contactForm": "https://mahnkeconsulting.com/about-mahnke-consulting/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Compliance Referral Partner",
@@ -2154,6 +2298,7 @@
       "verification": "Public web source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [],
       "sendable": true
     },
@@ -2174,6 +2319,7 @@
       "links": {
         "contactForm": "https://www.aadviksolutions.com/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Referral / Proposal Partner",
@@ -2184,6 +2330,7 @@
       "verification": "Public web source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [],
       "sendable": true
     },
@@ -2204,6 +2351,7 @@
       "links": {
         "contactForm": "https://jrfederal.com/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Referral / Consultant",
@@ -2214,6 +2362,7 @@
       "verification": "Public web source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [],
       "sendable": true
     },
@@ -2234,6 +2383,7 @@
       "links": {
         "contactForm": "https://www.andanaconsulting.com/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Referral / Proposal Partner",
@@ -2244,6 +2394,7 @@
       "verification": "Public web source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [],
       "sendable": true
     },
@@ -2264,6 +2415,7 @@
       "links": {
         "contactForm": "https://www.cavalryconsulting.com/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Referral / Proposal Partner",
@@ -2274,6 +2426,7 @@
       "verification": "Public web source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [],
       "sendable": true
     },
@@ -2294,6 +2447,7 @@
       "links": {
         "contactForm": "https://federalproposal.com/services"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Referral / Proposal Partner",
@@ -2304,6 +2458,7 @@
       "verification": "Public web source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [],
       "sendable": true
     },
@@ -2324,6 +2479,7 @@
       "links": {
         "contactForm": "https://www.federalpricinggroup.com/who_we_are"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Pricing / Proposal Partner",
@@ -2334,6 +2490,7 @@
       "verification": "Public web source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [],
       "sendable": true
     },
@@ -2354,6 +2511,7 @@
       "links": {
         "contactForm": "https://quotecrafthq.com/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Referral / Solo Consultant",
@@ -2364,6 +2522,7 @@
       "verification": "Public web source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [],
       "sendable": true
     },
@@ -2384,6 +2543,7 @@
       "links": {
         "contactForm": "https://sas-gps.com/contact-us/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Referral / Proposal Partner",
@@ -2394,6 +2554,7 @@
       "verification": "Public web source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [],
       "sendable": true
     },
@@ -2414,6 +2575,7 @@
       "links": {
         "contactForm": "https://fedcon.com/programs/flagship"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Affiliate / Consultant",
@@ -2424,6 +2586,7 @@
       "verification": "Public web source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [],
       "sendable": true
     },
@@ -2444,6 +2607,7 @@
       "links": {
         "contactForm": "https://www.tdcginc.com/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Affiliate / Coach Partner",
@@ -2454,6 +2618,7 @@
       "verification": "Public web source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [],
       "sendable": true
     },
@@ -2474,6 +2639,7 @@
       "links": {
         "contactForm": "https://gormgroup.com/person/david-cornell/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Referral / GSA Partner",
@@ -2484,6 +2650,7 @@
       "verification": "Public web source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [],
       "sendable": true
     },
@@ -2504,6 +2671,7 @@
       "links": {
         "contactForm": "https://winvalepublicsector.com/contact/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Channel / GSA Partner",
@@ -2514,6 +2682,7 @@
       "verification": "Public web source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [],
       "sendable": true
     },
@@ -2534,6 +2703,7 @@
       "links": {
         "contactForm": "https://selectgcr.com/contact-us/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Affiliate / Consultant",
@@ -2544,6 +2714,7 @@
       "verification": "Public web source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [],
       "sendable": true
     },
@@ -2564,6 +2735,7 @@
       "links": {
         "contactForm": "https://www.federalbidpartners.com/contact-us"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Referral / Consultant",
@@ -2574,6 +2746,7 @@
       "verification": "Public web source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [],
       "sendable": true
     },
@@ -2594,6 +2767,7 @@
       "links": {
         "contactForm": "https://www.theproposallabllc.com/contact.html"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Referral / Proposal Partner",
@@ -2604,6 +2778,7 @@
       "verification": "Public web source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [],
       "sendable": true
     },
@@ -2624,6 +2799,7 @@
       "links": {
         "contactForm": "https://bidwritebuddy.com/contact/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Referral / Proposal Partner",
@@ -2634,6 +2810,7 @@
       "verification": "Public web source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [],
       "sendable": true
     },
@@ -2654,6 +2831,7 @@
       "links": {
         "contactForm": "https://www.roadmapc.com/contact/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Referral / Consultant",
@@ -2664,6 +2842,7 @@
       "verification": "Public web source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "no-public-email"
       ],
@@ -2686,6 +2865,7 @@
       "links": {
         "contactForm": "https://redteamconsulting.com/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Referral / Proposal Partner",
@@ -2696,6 +2876,7 @@
       "verification": "Public web source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "no-public-email"
       ],
@@ -2718,6 +2899,7 @@
       "links": {
         "contactForm": "https://www.ostglobalsolutions.com/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Training / Referral Partner",
@@ -2728,6 +2910,7 @@
       "verification": "Public web source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "no-public-email"
       ],
@@ -2750,6 +2933,7 @@
       "links": {
         "contactForm": "https://www.summitstrategywins.com/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Referral / Proposal Partner",
@@ -2760,6 +2944,7 @@
       "verification": "Public web source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "no-public-email"
       ],
@@ -2782,6 +2967,7 @@
       "links": {
         "contactForm": "https://www.shipleywins.com/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Training / Enterprise Partner",
@@ -2792,6 +2978,7 @@
       "verification": "Public web source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "no-public-email"
       ],
@@ -2814,6 +3001,7 @@
       "links": {
         "contactForm": "https://dragonflyeditorial.com/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Referral / Proposal Partner",
@@ -2824,6 +3012,7 @@
       "verification": "Public web source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "no-public-email"
       ],
@@ -2846,6 +3035,7 @@
       "links": {
         "contactForm": "https://metreworks.com/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Vertical Proposal Partner",
@@ -2856,6 +3046,7 @@
       "verification": "Public web source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "no-public-email"
       ],
@@ -2878,6 +3069,7 @@
       "links": {
         "contactForm": "https://strategicproposals.com/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Referral / Proposal Partner",
@@ -2888,6 +3080,7 @@
       "verification": "Public web source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "no-public-email"
       ],
@@ -2910,6 +3103,7 @@
       "links": {
         "contactForm": "https://www.nvsstrategicsolutions.com/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Referral / Proposal Partner",
@@ -2920,6 +3114,7 @@
       "verification": "Public web source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "no-public-email"
       ],
@@ -2942,6 +3137,7 @@
       "links": {
         "contactForm": "https://www.proposalopsengineer.com/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Integration / Ops Partner",
@@ -2952,6 +3148,7 @@
       "verification": "Public web source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "no-public-email"
       ],
@@ -2974,6 +3171,7 @@
       "links": {
         "contactForm": "https://capture2proposal.com/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Competitive / Ecosystem",
@@ -2984,6 +3182,7 @@
       "verification": "Public web source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "competitor",
         "no-public-email"
@@ -3007,6 +3206,7 @@
       "links": {
         "contactForm": "https://numerogen.com/capture-management/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Referral / Capture Partner",
@@ -3017,6 +3217,7 @@
       "verification": "Public web source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "no-public-email"
       ],
@@ -3039,6 +3240,7 @@
       "links": {
         "contactForm": "https://www.aptosstrategyinc.com/capture-strategy-consulting.html"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Referral / Capture Partner",
@@ -3049,6 +3251,7 @@
       "verification": "Public web source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "no-public-email"
       ],
@@ -3071,6 +3274,7 @@
       "links": {
         "contactForm": "https://choosepeerless.com/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Referral / Capture Partner",
@@ -3081,6 +3285,7 @@
       "verification": "Public web source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "no-public-email"
       ],
@@ -3103,6 +3308,7 @@
       "links": {
         "contactForm": "https://govconindex.org/firms/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Directory / Media",
@@ -3113,6 +3319,7 @@
       "verification": "Public web source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "no-public-email"
       ],
@@ -3135,6 +3342,7 @@
       "links": {
         "contactForm": "https://usfcr.com/company/contact-us/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Affiliate / Service Partner",
@@ -3145,6 +3353,7 @@
       "verification": "Public web source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [],
       "sendable": true
     },
@@ -3165,6 +3374,7 @@
       "links": {
         "contactForm": "https://www.highergov.com/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Competitive / Data Partner",
@@ -3175,6 +3385,7 @@
       "verification": "Public web source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "competitor",
         "no-public-email"
@@ -3198,6 +3409,7 @@
       "links": {
         "contactForm": "https://govspend.com/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Competitive / Data Partner",
@@ -3208,6 +3420,7 @@
       "verification": "Public web source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "competitor",
         "no-public-email"
@@ -3231,6 +3444,7 @@
       "links": {
         "contactForm": "https://www.deltek.com/en/government-contracting/govwin"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Competitive / Enterprise Ecosystem",
@@ -3241,6 +3455,7 @@
       "verification": "Public web source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "competitor",
         "no-public-email"
@@ -3264,6 +3479,7 @@
       "links": {
         "contactForm": "https://www.fed.net/services/proposal-writing"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Referral / Proposal Partner",
@@ -3274,6 +3490,7 @@
       "verification": "Public web source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "no-public-email"
       ],
@@ -3296,6 +3513,7 @@
       "links": {
         "contactForm": "https://www.flapex.org/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -3306,6 +3524,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [],
       "sendable": true
     },
@@ -3326,6 +3545,7 @@
       "links": {
         "contactForm": "https://www.flapex.org/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -3336,6 +3556,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "org-cap (one send per org; kept chip-wells-florida-apex-accelerator-at-uwf)"
       ],
@@ -3358,6 +3579,7 @@
       "links": {
         "contactForm": "https://www.flapex.org/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -3368,6 +3590,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [],
       "sendable": true
     },
@@ -3388,6 +3611,7 @@
       "links": {
         "contactForm": "https://www.flapex.org/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -3398,6 +3622,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "domain-cap (one send per sending domain; kept chip-wells-florida-apex-accelerator-at-uwf)"
       ],
@@ -3420,6 +3645,7 @@
       "links": {
         "contactForm": "https://www.flapex.org/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -3430,6 +3656,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "org-cap (one send per org; kept elly-membreno-florida-apex-accelerator-at-ucf)"
       ],
@@ -3452,6 +3679,7 @@
       "links": {
         "contactForm": "https://www.flapex.org/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -3462,6 +3690,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [],
       "sendable": true
     },
@@ -3482,6 +3711,7 @@
       "links": {
         "contactForm": "https://www.flapex.org/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -3492,6 +3722,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [],
       "sendable": true
     },
@@ -3512,6 +3743,7 @@
       "links": {
         "contactForm": "https://www.flapex.org/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -3522,6 +3754,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "government-mailbox",
         "org-cap (one send per org; kept karen-krymski-florida-apex-accelerator-at-usf)"
@@ -3545,6 +3778,7 @@
       "links": {
         "contactForm": "https://www.flapex.org/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -3555,6 +3789,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [],
       "sendable": true
     },
@@ -3575,6 +3810,7 @@
       "links": {
         "contactForm": "https://www.flapex.org/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -3585,6 +3821,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [],
       "sendable": true
     },
@@ -3605,6 +3842,7 @@
       "links": {
         "contactForm": "https://www.flapex.org/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -3615,6 +3853,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "org-cap (one send per org; kept jacqueline-ramirez-florida-apex-accelerator-at-fau)"
       ],
@@ -3637,6 +3876,7 @@
       "links": {
         "contactForm": "https://www.flapex.org/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -3647,6 +3887,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "duplicate-email (kept sarah-griffin-florida-apex-accelerator-at-fau)"
       ],
@@ -3669,6 +3910,7 @@
       "links": {
         "contactForm": "https://www.flapex.org/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -3679,6 +3921,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [],
       "sendable": true
     },
@@ -3699,6 +3942,7 @@
       "links": {
         "contactForm": "https://www.flapex.org/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -3709,6 +3953,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "org-cap (one send per org; kept luis-batista-florida-apex-accelerator-at-fiu)"
       ],
@@ -3731,6 +3976,7 @@
       "links": {
         "contactForm": "https://www.coloradoapex.org/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -3741,6 +3987,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "org-cap (one send per org; kept andrew-stott-colorado-apex-accelerator)"
       ],
@@ -3763,6 +4010,7 @@
       "links": {
         "contactForm": "https://www.coloradoapex.org/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -3773,6 +4021,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [],
       "sendable": true
     },
@@ -3793,6 +4042,7 @@
       "links": {
         "contactForm": "https://www.coloradoapex.org/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -3803,6 +4053,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "org-cap (one send per org; kept andrew-stott-colorado-apex-accelerator)"
       ],
@@ -3825,6 +4076,7 @@
       "links": {
         "contactForm": "https://www.coloradoapex.org/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -3835,6 +4087,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "org-cap (one send per org; kept andrew-stott-colorado-apex-accelerator)"
       ],
@@ -3857,6 +4110,7 @@
       "links": {
         "contactForm": "https://www.coloradoapex.org/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -3867,6 +4121,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "org-cap (one send per org; kept andrew-stott-colorado-apex-accelerator)"
       ],
@@ -3889,6 +4144,7 @@
       "links": {
         "contactForm": "https://www.coloradoapex.org/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -3899,6 +4155,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "org-cap (one send per org; kept andrew-stott-colorado-apex-accelerator)"
       ],
@@ -3921,6 +4178,7 @@
       "links": {
         "contactForm": "https://www.coloradoapex.org/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -3931,6 +4189,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "org-cap (one send per org; kept andrew-stott-colorado-apex-accelerator)"
       ],
@@ -3953,6 +4212,7 @@
       "links": {
         "contactForm": "https://www.coloradoapex.org/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -3963,6 +4223,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "org-cap (one send per org; kept andrew-stott-colorado-apex-accelerator)"
       ],
@@ -3985,6 +4246,7 @@
       "links": {
         "contactForm": "https://www.coloradoapex.org/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -3995,6 +4257,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "org-cap (one send per org; kept andrew-stott-colorado-apex-accelerator)"
       ],
@@ -4017,6 +4280,7 @@
       "links": {
         "contactForm": "https://www.coloradoapex.org/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -4027,6 +4291,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "org-cap (one send per org; kept andrew-stott-colorado-apex-accelerator)"
       ],
@@ -4049,6 +4314,7 @@
       "links": {
         "contactForm": "https://www.coloradoapex.org/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -4059,6 +4325,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "org-cap (one send per org; kept andrew-stott-colorado-apex-accelerator)"
       ],
@@ -4081,6 +4348,7 @@
       "links": {
         "contactForm": "https://find.govcontracts.ohio.gov/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -4091,6 +4359,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "government-mailbox",
         "org-cap (one send per org; kept dasia-johnson-ohio-apex-accelerator)"
@@ -4114,6 +4383,7 @@
       "links": {
         "contactForm": "https://find.govcontracts.ohio.gov/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -4124,6 +4394,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "government-mailbox"
       ],
@@ -4146,6 +4417,7 @@
       "links": {
         "contactForm": "https://find.govcontracts.ohio.gov/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -4156,6 +4428,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "org-cap (one send per org; kept karen-wivell-ohio-university-apex-accelerator)"
       ],
@@ -4178,6 +4451,7 @@
       "links": {
         "contactForm": "https://find.govcontracts.ohio.gov/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -4188,6 +4462,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "domain-cap (one send per sending domain; kept billy-grill-ohio-apex-accelerator-at-ohio-university)"
       ],
@@ -4210,6 +4485,7 @@
       "links": {
         "contactForm": "https://find.govcontracts.ohio.gov/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -4220,6 +4496,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "domain-cap (one send per sending domain; kept billy-grill-ohio-apex-accelerator-at-ohio-university)"
       ],
@@ -4242,6 +4519,7 @@
       "links": {
         "contactForm": "https://find.govcontracts.ohio.gov/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -4252,6 +4530,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "domain-cap (one send per sending domain; kept billy-grill-ohio-apex-accelerator-at-ohio-university)"
       ],
@@ -4274,6 +4553,7 @@
       "links": {
         "contactForm": "https://find.govcontracts.ohio.gov/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -4284,6 +4564,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "org-cap (one send per org; kept dillan-pickel-ohio-apex-accelerator-at-ysu)"
       ],
@@ -4306,6 +4587,7 @@
       "links": {
         "contactForm": "https://find.govcontracts.ohio.gov/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -4316,6 +4598,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [],
       "sendable": true
     },
@@ -4336,6 +4619,7 @@
       "links": {
         "contactForm": "https://find.govcontracts.ohio.gov/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -4346,6 +4630,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "org-cap (one send per org; kept dasia-johnson-ohio-apex-accelerator)"
       ],
@@ -4368,6 +4653,7 @@
       "links": {
         "contactForm": "https://find.govcontracts.ohio.gov/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -4378,6 +4664,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "domain-cap (one send per sending domain; kept billy-grill-ohio-apex-accelerator-at-ohio-university)"
       ],
@@ -4400,6 +4687,7 @@
       "links": {
         "contactForm": "https://find.govcontracts.ohio.gov/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -4410,6 +4698,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "domain-cap (one send per sending domain; kept billy-grill-ohio-apex-accelerator-at-ohio-university)"
       ],
@@ -4432,6 +4721,7 @@
       "links": {
         "contactForm": "https://find.govcontracts.ohio.gov/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -4442,6 +4732,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [],
       "sendable": true
     },
@@ -4462,6 +4753,7 @@
       "links": {
         "contactForm": "https://find.govcontracts.ohio.gov/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -4472,6 +4764,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "no-public-email"
       ],
@@ -4494,6 +4787,7 @@
       "links": {
         "contactForm": "https://find.govcontracts.ohio.gov/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -4504,6 +4798,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "org-cap (one send per org; kept billy-grill-ohio-apex-accelerator-at-ohio-university)"
       ],
@@ -4526,6 +4821,7 @@
       "links": {
         "contactForm": "https://find.govcontracts.ohio.gov/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -4536,6 +4832,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [],
       "sendable": true
     },
@@ -4556,6 +4853,7 @@
       "links": {
         "contactForm": "https://find.govcontracts.ohio.gov/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -4566,6 +4864,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "domain-cap (one send per sending domain; kept billy-grill-ohio-apex-accelerator-at-ohio-university)"
       ],
@@ -4588,6 +4887,7 @@
       "links": {
         "contactForm": "https://gtapexaccelerator.org/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -4598,6 +4898,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "org-cap (one send per org; kept annette-bettis-gt-apex-accelerator)"
       ],
@@ -4620,6 +4921,7 @@
       "links": {
         "contactForm": "https://gtapexaccelerator.org/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -4630,6 +4932,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "org-cap (one send per org; kept annette-bettis-gt-apex-accelerator)"
       ],
@@ -4652,6 +4955,7 @@
       "links": {
         "contactForm": "https://gtapexaccelerator.org/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -4662,6 +4966,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "org-cap (one send per org; kept annette-bettis-gt-apex-accelerator)"
       ],
@@ -4684,6 +4989,7 @@
       "links": {
         "contactForm": "https://gtapexaccelerator.org/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -4694,6 +5000,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [],
       "sendable": true
     },
@@ -4714,6 +5021,7 @@
       "links": {
         "contactForm": "https://gtapexaccelerator.org/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -4724,6 +5032,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "org-cap (one send per org; kept annette-bettis-gt-apex-accelerator)"
       ],
@@ -4746,6 +5055,7 @@
       "links": {
         "contactForm": "https://gtapexaccelerator.org/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -4756,6 +5066,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "org-cap (one send per org; kept annette-bettis-gt-apex-accelerator)"
       ],
@@ -4778,6 +5089,7 @@
       "links": {
         "contactForm": "https://gtapexaccelerator.org/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -4788,6 +5100,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "org-cap (one send per org; kept annette-bettis-gt-apex-accelerator)"
       ],
@@ -4810,6 +5123,7 @@
       "links": {
         "contactForm": "https://gtapexaccelerator.org/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -4820,6 +5134,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "org-cap (one send per org; kept annette-bettis-gt-apex-accelerator)"
       ],
@@ -4842,6 +5157,7 @@
       "links": {
         "contactForm": "https://gtapexaccelerator.org/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -4852,6 +5168,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "org-cap (one send per org; kept annette-bettis-gt-apex-accelerator)"
       ],
@@ -4874,6 +5191,7 @@
       "links": {
         "contactForm": "https://gtapexaccelerator.org/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -4884,6 +5202,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "org-cap (one send per org; kept annette-bettis-gt-apex-accelerator)"
       ],
@@ -4906,6 +5225,7 @@
       "links": {
         "contactForm": "https://gtapexaccelerator.org/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -4916,6 +5236,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "org-cap (one send per org; kept annette-bettis-gt-apex-accelerator)"
       ],
@@ -4938,6 +5259,7 @@
       "links": {
         "contactForm": "https://gtapexaccelerator.org/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -4948,6 +5270,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "org-cap (one send per org; kept annette-bettis-gt-apex-accelerator)"
       ],
@@ -4970,6 +5293,7 @@
       "links": {
         "contactForm": "https://www.pennwest.edu/about/offices-services/gaco/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -4980,6 +5304,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "org-cap (one send per org; kept james-d-free-pennwest-gaco-apex-accelerator)"
       ],
@@ -5002,6 +5327,7 @@
       "links": {
         "contactForm": "https://www.pennwest.edu/about/offices-services/gaco/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -5012,6 +5338,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "org-cap (one send per org; kept james-d-free-pennwest-gaco-apex-accelerator)"
       ],
@@ -5034,6 +5361,7 @@
       "links": {
         "contactForm": "https://www.pennwest.edu/about/offices-services/gaco/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -5044,6 +5372,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "org-cap (one send per org; kept james-d-free-pennwest-gaco-apex-accelerator)"
       ],
@@ -5066,6 +5395,7 @@
       "links": {
         "contactForm": "https://www.pennwest.edu/about/offices-services/gaco/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -5076,6 +5406,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "org-cap (one send per org; kept james-d-free-pennwest-gaco-apex-accelerator)"
       ],
@@ -5098,6 +5429,7 @@
       "links": {
         "contactForm": "https://www.pennwest.edu/about/offices-services/gaco/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -5108,6 +5440,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "org-cap (one send per org; kept james-d-free-pennwest-gaco-apex-accelerator)"
       ],
@@ -5130,6 +5463,7 @@
       "links": {
         "contactForm": "https://www.pennwest.edu/about/offices-services/gaco/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -5140,6 +5474,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [],
       "sendable": true
     },
@@ -5160,6 +5495,7 @@
       "links": {
         "contactForm": "https://sapdc.net/contact-information/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -5170,6 +5506,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [],
       "sendable": true
     },
@@ -5190,6 +5527,7 @@
       "links": {
         "contactForm": "https://sapdc.net/contact-information/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -5200,6 +5538,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [],
       "sendable": true
     },
@@ -5220,6 +5559,7 @@
       "links": {
         "contactForm": "https://sapdc.net/contact-information/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -5230,6 +5570,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [],
       "sendable": true
     },
@@ -5250,6 +5591,7 @@
       "links": {
         "contactForm": "https://sapdc.net/contact-information/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -5260,6 +5602,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [],
       "sendable": true
     },
@@ -5280,6 +5623,7 @@
       "links": {
         "contactForm": "https://seda-cog.org/about/ourteam/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -5290,6 +5634,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "org-cap (one send per org; kept alexis-hepburn-seda-cog-apex-accelerator)"
       ],
@@ -5312,6 +5657,7 @@
       "links": {
         "contactForm": "https://seda-cog.org/about/ourteam/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -5322,6 +5668,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "org-cap (one send per org; kept alexis-hepburn-seda-cog-apex-accelerator)"
       ],
@@ -5344,6 +5691,7 @@
       "links": {
         "contactForm": "https://seda-cog.org/about/ourteam/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -5354,6 +5702,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [],
       "sendable": true
     },
@@ -5374,6 +5723,7 @@
       "links": {
         "contactForm": "https://seda-cog.org/about/ourteam/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -5384,6 +5734,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "org-cap (one send per org; kept alexis-hepburn-seda-cog-apex-accelerator)"
       ],
@@ -5406,6 +5757,7 @@
       "links": {
         "contactForm": "https://westmiapex.org/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -5416,6 +5768,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "org-cap (one send per org; kept anna-akarapiraya-west-michigan-apex-accelerator)"
       ],
@@ -5438,6 +5791,7 @@
       "links": {
         "contactForm": "https://westmiapex.org/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -5448,6 +5802,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "org-cap (one send per org; kept anna-akarapiraya-west-michigan-apex-accelerator)"
       ],
@@ -5470,6 +5825,7 @@
       "links": {
         "contactForm": "https://westmiapex.org/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -5480,6 +5836,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "org-cap (one send per org; kept anna-akarapiraya-west-michigan-apex-accelerator)"
       ],
@@ -5502,6 +5859,7 @@
       "links": {
         "contactForm": "https://westmiapex.org/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -5512,6 +5870,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "org-cap (one send per org; kept anna-akarapiraya-west-michigan-apex-accelerator)"
       ],
@@ -5534,6 +5893,7 @@
       "links": {
         "contactForm": "https://westmiapex.org/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -5544,6 +5904,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [],
       "sendable": true
     },
@@ -5564,6 +5925,7 @@
       "links": {
         "contactForm": "https://www.monroeupstatenyapex.org/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -5574,6 +5936,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "government-mailbox",
         "org-cap (one send per org; kept amber-stevens-mcuny-apex-accelerator)"
@@ -5597,6 +5960,7 @@
       "links": {
         "contactForm": "https://www.monroeupstatenyapex.org/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -5607,6 +5971,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "government-mailbox",
         "org-cap (one send per org; kept amber-stevens-mcuny-apex-accelerator)"
@@ -5630,6 +5995,7 @@
       "links": {
         "contactForm": "https://www.monroeupstatenyapex.org/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -5640,6 +6006,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "government-mailbox"
       ],
@@ -5662,6 +6029,7 @@
       "links": {
         "contactForm": "https://www.monroeupstatenyapex.org/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -5672,6 +6040,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "government-mailbox",
         "org-cap (one send per org; kept amber-stevens-mcuny-apex-accelerator)"
@@ -5695,6 +6064,7 @@
       "links": {
         "contactForm": "https://www.monroeupstatenyapex.org/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -5705,6 +6075,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "government-mailbox",
         "org-cap (one send per org; kept amber-stevens-mcuny-apex-accelerator)"
@@ -5728,6 +6099,7 @@
       "links": {
         "contactForm": "https://nyc-business.nyc.gov/nycbusiness/business-services/education-programs/nyc-sbs-apex-accelerator/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -5738,6 +6110,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "government-mailbox"
       ],
@@ -5760,6 +6133,7 @@
       "links": {
         "contactForm": "https://apex.tennessee.edu/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -5770,6 +6144,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "org-cap (one send per org; kept debbie-barber-tennessee-apex-accelerator)"
       ],
@@ -5792,6 +6167,7 @@
       "links": {
         "contactForm": "https://apex.tennessee.edu/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -5802,6 +6178,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [],
       "sendable": true
     },
@@ -5822,6 +6199,7 @@
       "links": {
         "contactForm": "https://apex.tennessee.edu/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -5832,6 +6210,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "org-cap (one send per org; kept debbie-barber-tennessee-apex-accelerator)"
       ],
@@ -5854,6 +6233,7 @@
       "links": {
         "contactForm": "https://apex.tennessee.edu/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -5864,6 +6244,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "org-cap (one send per org; kept debbie-barber-tennessee-apex-accelerator)"
       ],
@@ -5886,6 +6267,7 @@
       "links": {
         "contactForm": "https://www.unomaha.edu/nebraska-business-development-center/about/consultant-directory/index.php"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -5896,6 +6278,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [],
       "sendable": true
     },
@@ -5916,6 +6299,7 @@
       "links": {
         "contactForm": "https://www.unomaha.edu/nebraska-business-development-center/about/consultant-directory/index.php"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -5926,6 +6310,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "org-cap (one send per org; kept chuck-beck-nebraska-apex-accelerator)"
       ],
@@ -5948,6 +6333,7 @@
       "links": {
         "contactForm": "https://www.unomaha.edu/nebraska-business-development-center/about/consultant-directory/index.php"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -5958,6 +6344,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "org-cap (one send per org; kept chuck-beck-nebraska-apex-accelerator)"
       ],
@@ -5980,6 +6367,7 @@
       "links": {
         "contactForm": "https://washingtonapex.org/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -5990,6 +6378,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "org-cap (one send per org; kept pierce-region-washington-apex-accelerator)"
       ],
@@ -6012,6 +6401,7 @@
       "links": {
         "contactForm": "https://washingtonapex.org/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -6022,6 +6412,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [],
       "sendable": true
     },
@@ -6042,6 +6433,7 @@
       "links": {
         "contactForm": "https://washingtonapex.org/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -6052,6 +6444,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "org-cap (one send per org; kept pierce-region-washington-apex-accelerator)"
       ],
@@ -6074,6 +6467,7 @@
       "links": {
         "contactForm": "https://washingtonapex.org/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -6084,6 +6478,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "org-cap (one send per org; kept pierce-region-washington-apex-accelerator)"
       ],
@@ -6106,6 +6501,7 @@
       "links": {
         "contactForm": "https://washingtonapex.org/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -6116,6 +6512,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "org-cap (one send per org; kept pierce-region-washington-apex-accelerator)"
       ],
@@ -6138,6 +6535,7 @@
       "links": {
         "contactForm": "https://www.kitsapeda.org/government-contracting"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -6148,6 +6546,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [],
       "sendable": true
     },
@@ -6168,6 +6567,7 @@
       "links": {
         "contactForm": "https://apexalaska.org"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -6178,6 +6578,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [],
       "sendable": true
     },
@@ -6198,6 +6599,7 @@
       "links": {
         "contactForm": "https://aicef-apex.org/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -6208,6 +6610,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "org-cap (one send per org; kept aicef-apex-arizona-venessa-gleich-american-indian-chamber-apex-acceler)"
       ],
@@ -6230,6 +6633,7 @@
       "links": {
         "contactForm": "https://aicef-apex.org/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -6240,6 +6644,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "duplicate-email (kept aic-apex-california-american-indian-chamber-apex-accelerator)"
       ],
@@ -6262,6 +6667,7 @@
       "links": {
         "contactForm": "https://www.ncaied.org/apex-accelerator"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -6272,6 +6678,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "org-cap (one send per org; kept ncaied-apex-colorado-the-national-center-apex-accelerator)"
       ],
@@ -6294,6 +6701,7 @@
       "links": {
         "contactForm": "https://www.thenicc.edu/career-services/APEX-Accelerator.php"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -6304,6 +6712,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [],
       "sendable": true
     },
@@ -6324,6 +6733,7 @@
       "links": {
         "contactForm": "http://www.nadc-nabn.org"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -6334,6 +6744,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [],
       "sendable": true
     },
@@ -6354,6 +6765,7 @@
       "links": {
         "contactForm": "http://www.tgiok.com"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -6364,6 +6776,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [],
       "sendable": true
     },
@@ -6384,6 +6797,7 @@
       "links": {
         "contactForm": "https://www.ncaied.org/apex-accelerator"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -6394,6 +6808,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "duplicate-email (kept ncaied-apex-marietta-the-national-center-apex-accelerator)"
       ],
@@ -6416,6 +6831,7 @@
       "links": {
         "contactForm": "https://www.ncaied.org/apex-accelerator"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -6426,6 +6842,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "duplicate-email (kept ncaied-apex-marietta-the-national-center-apex-accelerator)"
       ],
@@ -6448,6 +6865,7 @@
       "links": {
         "contactForm": "http://aicef-apex.org"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -6458,6 +6876,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "duplicate-email (kept aic-apex-california-american-indian-chamber-apex-accelerator)"
       ],
@@ -6480,6 +6899,7 @@
       "links": {
         "contactForm": "https://nnapex.org"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -6490,6 +6910,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [],
       "sendable": true
     },
@@ -6510,6 +6931,7 @@
       "links": {
         "contactForm": "https://mn.gov/admin/business/vendor-info/apexaccelerator/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -6520,6 +6942,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [],
       "sendable": true
     },
@@ -6540,6 +6963,7 @@
       "links": {
         "contactForm": "https://apexal.org/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -6550,6 +6974,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "no-public-email"
       ],
@@ -6572,6 +6997,7 @@
       "links": {
         "contactForm": "https://virginiaapex.org/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -6582,6 +7008,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [],
       "sendable": true
     },
@@ -6602,6 +7029,7 @@
       "links": {
         "contactForm": "https://apexsocal.org/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -6612,6 +7040,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [],
       "sendable": true
     },
@@ -6632,6 +7061,7 @@
       "links": {
         "contactForm": "https://montanaapex.org/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -6642,6 +7072,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "org-cap (one send per org; kept julie-jaksha-montana-apex-accelerator)"
       ],
@@ -6664,6 +7095,7 @@
       "links": {
         "contactForm": "https://montanaapex.org/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -6674,6 +7106,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [],
       "sendable": true
     },
@@ -6694,6 +7127,7 @@
       "links": {
         "contactForm": "https://omb.illinois.gov/public/gata/csfa/Program.aspx?csfa=69"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -6704,6 +7138,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "government-mailbox"
       ],
@@ -6726,6 +7161,7 @@
       "links": {
         "contactForm": "https://apex.siu.edu/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -6736,6 +7172,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [],
       "sendable": true
     },
@@ -6756,6 +7193,7 @@
       "links": {
         "contactForm": "https://www.wichita.edu/research/kansasapexaccelerator/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -6766,6 +7204,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [],
       "sendable": true
     },
@@ -6786,6 +7225,7 @@
       "links": {
         "contactForm": "https://www.kyapex.com/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -6796,6 +7236,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [],
       "sendable": true
     },
@@ -6816,6 +7257,7 @@
       "links": {
         "contactForm": "https://inapex.org/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -6826,6 +7268,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "no-public-email"
       ],
@@ -6848,6 +7291,7 @@
       "links": {
         "contactForm": "https://www.linkedin.com/company/nw-texas-ptac"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -6858,6 +7302,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [],
       "sendable": true
     },
@@ -6878,6 +7323,7 @@
       "links": {
         "contactForm": "https://aicef-apex.org/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -6888,6 +7334,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "org-cap (one send per org; kept aicef-apex-arizona-venessa-gleich-american-indian-chamber-apex-acceler)"
       ],
@@ -6910,6 +7357,7 @@
       "links": {
         "contactForm": "https://aicef-apex.org/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -6920,6 +7368,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [],
       "sendable": true
     },
@@ -6940,6 +7389,7 @@
       "links": {
         "contactForm": "https://aicef-apex.org/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Referral Partner",
@@ -6950,6 +7400,7 @@
       "verification": "Official APEX/state/program source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "org-cap (one send per org; kept aicef-apex-arizona-venessa-gleich-american-indian-chamber-apex-acceler)"
       ],
@@ -6972,6 +7423,7 @@
       "links": {
         "contactForm": "https://www.apmp.org/Web/Web/Forms/Contact-Us-Form.aspx"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Association / Proposal Community",
@@ -6982,6 +7434,7 @@
       "verification": "Official association/community source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "no-public-email"
       ],
@@ -7004,6 +7457,7 @@
       "links": {
         "contactForm": "https://www.ndia.org/about/contact-us/contacts"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Association / Defense",
@@ -7014,6 +7468,7 @@
       "verification": "Official association/community source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "org-cap (one send per org; kept allison-hitchner-carpenter-national-defense-industrial-association-ndi)"
       ],
@@ -7036,6 +7491,7 @@
       "links": {
         "contactForm": "https://www.ndia.org/about/contact-us/contacts"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Media / Sponsorship",
@@ -7046,6 +7502,7 @@
       "verification": "Official association/community source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "org-cap (one send per org; kept allison-hitchner-carpenter-national-defense-industrial-association-ndi)"
       ],
@@ -7068,6 +7525,7 @@
       "links": {
         "contactForm": "https://www.ndia.org/about/contact-us/contacts"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Events / Sponsorship",
@@ -7078,6 +7536,7 @@
       "verification": "Official association/community source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [],
       "sendable": true
     },
@@ -7098,6 +7557,7 @@
       "links": {
         "contactForm": "https://www.ndia.org/about/contact-us/contacts"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Editorial / Media",
@@ -7108,6 +7568,7 @@
       "verification": "Official association/community source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "org-cap (one send per org; kept allison-hitchner-carpenter-national-defense-industrial-association-ndi)"
       ],
@@ -7130,6 +7591,7 @@
       "links": {
         "contactForm": "https://www.pscouncil.org/about"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Association / GovCon",
@@ -7140,6 +7602,7 @@
       "verification": "Official association/community source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "org-cap (one send per org; kept christian-larsen-professional-services-council)"
       ],
@@ -7162,6 +7625,7 @@
       "links": {
         "contactForm": "https://www.pscouncil.org/about"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Association / GovCon",
@@ -7172,6 +7636,7 @@
       "verification": "Official association/community source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "org-cap (one send per org; kept christian-larsen-professional-services-council)"
       ],
@@ -7194,6 +7659,7 @@
       "links": {
         "contactForm": "https://www.pscouncil.org/about"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Association / GovCon",
@@ -7204,6 +7670,7 @@
       "verification": "Official association/community source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "org-cap (one send per org; kept christian-larsen-professional-services-council)"
       ],
@@ -7226,6 +7693,7 @@
       "links": {
         "contactForm": "https://pscouncil.org/psc/Resources/Government_Resources/__p/ca/GovResources.aspx"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Policy / Thought Leadership",
@@ -7236,6 +7704,7 @@
       "verification": "Official association/community source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "org-cap (one send per org; kept christian-larsen-professional-services-council)"
       ],
@@ -7258,6 +7727,7 @@
       "links": {
         "contactForm": "https://pscouncil.org/psc/Resources/Government_Resources/__p/ca/GovResources.aspx"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Association / Defense",
@@ -7268,6 +7738,7 @@
       "verification": "Official association/community source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "org-cap (one send per org; kept christian-larsen-professional-services-council)"
       ],
@@ -7290,6 +7761,7 @@
       "links": {
         "contactForm": "https://pscouncil.org/psc/Resources/Government_Resources/__p/ca/GovResources.aspx"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Association / Civilian",
@@ -7300,6 +7772,7 @@
       "verification": "Official association/community source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "org-cap (one send per org; kept christian-larsen-professional-services-council)"
       ],
@@ -7322,6 +7795,7 @@
       "links": {
         "contactForm": "https://pscouncil.org/psc/Resources/Government_Resources/__p/ca/GovResources.aspx"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Policy / GovCon",
@@ -7332,6 +7806,7 @@
       "verification": "Official association/community source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "org-cap (one send per org; kept christian-larsen-professional-services-council)"
       ],
@@ -7354,6 +7829,7 @@
       "links": {
         "contactForm": "https://pscouncil.org/psc/Resources/Government_Resources/__p/ca/GovResources.aspx"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Emerging Tech / GovCon",
@@ -7364,6 +7840,7 @@
       "verification": "Official association/community source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [],
       "sendable": true
     },
@@ -7384,6 +7861,7 @@
       "links": {
         "contactForm": "https://www.nsbgca.org/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Association / Small Business",
@@ -7394,6 +7872,7 @@
       "verification": "Official association/community source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [],
       "sendable": true
     },
@@ -7414,6 +7893,7 @@
       "links": {
         "contactForm": "https://www.govassociation.org/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Association / Small Business",
@@ -7424,6 +7904,7 @@
       "verification": "Official association/community source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [],
       "sendable": true
     },
@@ -7444,6 +7925,7 @@
       "links": {
         "contactForm": "https://www.ncmahq.org/SubCon22/Web/Contact-Us.aspx"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Association / Contract Management",
@@ -7454,6 +7936,7 @@
       "verification": "Official association/community source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "no-public-email"
       ],
@@ -7476,6 +7959,7 @@
       "links": {
         "contactForm": "https://ncmadc.org/contact"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Local GovCon Community",
@@ -7486,6 +7970,7 @@
       "verification": "Official association/community source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [],
       "sendable": true
     },
@@ -7506,6 +7991,7 @@
       "links": {
         "contactForm": "https://www.govcon.com/static/about"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Media / Community",
@@ -7516,6 +8002,7 @@
       "verification": "Official association/community source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [],
       "sendable": true
     },
@@ -7536,6 +8023,7 @@
       "links": {
         "contactForm": "https://business.defense.gov/Work-with-us/Federal-Small-Business-Offices/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Ecosystem",
@@ -7546,6 +8034,7 @@
       "verification": "Official government source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "government-mailbox"
       ],
@@ -7568,6 +8057,7 @@
       "links": {
         "contactForm": "https://business.defense.gov/Work-with-us/Federal-Small-Business-Offices/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Ecosystem",
@@ -7578,6 +8068,7 @@
       "verification": "Official government source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "government-mailbox"
       ],
@@ -7600,6 +8091,7 @@
       "links": {
         "contactForm": "https://business.defense.gov/Work-with-us/Federal-Small-Business-Offices/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Ecosystem",
@@ -7610,6 +8102,7 @@
       "verification": "Official government source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "government-mailbox"
       ],
@@ -7632,6 +8125,7 @@
       "links": {
         "contactForm": "https://business.defense.gov/Work-with-us/Federal-Small-Business-Offices/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Ecosystem",
@@ -7642,6 +8136,7 @@
       "verification": "Official government source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "government-mailbox"
       ],
@@ -7664,6 +8159,7 @@
       "links": {
         "contactForm": "https://www.sba.gov/counseling/how-to-win-contracts/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Ecosystem",
@@ -7674,6 +8170,7 @@
       "verification": "Official government source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "government-mailbox"
       ],
@@ -7696,6 +8193,7 @@
       "links": {
         "contactForm": "https://www.sba.gov/counseling/local-assistance/targeted-support-and-services/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Ecosystem",
@@ -7706,6 +8204,7 @@
       "verification": "Official government source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "government-mailbox"
       ],
@@ -7728,6 +8227,7 @@
       "links": {
         "contactForm": "https://www.sba.gov/certifications/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Education / Ecosystem",
@@ -7738,6 +8238,7 @@
       "verification": "Official government source",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "government-mailbox"
       ],
@@ -7760,6 +8261,7 @@
       "links": {
         "contactForm": "https://selectgcr.com/contact-us/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Affiliate / Consultant",
@@ -7770,6 +8272,7 @@
       "verification": "Official Select GCR knowledge base",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "org-cap (one send per org; kept select-gcr-select-gcr)"
       ],
@@ -7792,6 +8295,7 @@
       "links": {
         "contactForm": "https://selectgcr.com/contact-us/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Affiliate / Consultant",
@@ -7802,6 +8306,7 @@
       "verification": "Official Select GCR knowledge base",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "org-cap (one send per org; kept select-gcr-select-gcr)"
       ],
@@ -7824,6 +8329,7 @@
       "links": {
         "contactForm": "https://selectgcr.com/contact-us/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Affiliate / Consultant",
@@ -7834,6 +8340,7 @@
       "verification": "Official Select GCR knowledge base",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "org-cap (one send per org; kept select-gcr-select-gcr)"
       ],
@@ -7856,6 +8363,7 @@
       "links": {
         "contactForm": "https://selectgcr.com/contact-us/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Affiliate / Consultant",
@@ -7866,6 +8374,7 @@
       "verification": "Official Select GCR knowledge base",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "org-cap (one send per org; kept select-gcr-select-gcr)"
       ],
@@ -7888,6 +8397,7 @@
       "links": {
         "contactForm": "https://selectgcr.com/contact-us/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Affiliate / Consultant",
@@ -7898,6 +8408,7 @@
       "verification": "Official Select GCR knowledge base",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "org-cap (one send per org; kept select-gcr-select-gcr)"
       ],
@@ -7920,6 +8431,7 @@
       "links": {
         "contactForm": "https://selectgcr.com/contact-us/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Affiliate / Consultant",
@@ -7930,6 +8442,7 @@
       "verification": "Official Select GCR knowledge base",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "org-cap (one send per org; kept select-gcr-select-gcr)"
       ],
@@ -7952,6 +8465,7 @@
       "links": {
         "contactForm": "https://selectgcr.com/contact-us/"
       },
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Affiliate / Consultant",
@@ -7962,6 +8476,7 @@
       "verification": "Official Select GCR knowledge base",
       "verifiedAt": "2026-08-31",
       "notes": "",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "org-cap (one send per org; kept select-gcr-select-gcr)"
       ],
@@ -7982,6 +8497,7 @@
       "emailClass": "none",
       "website": "https://www.govconchamber.com/about",
       "links": {},
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Newsletter / Publisher",
@@ -7992,6 +8508,7 @@
       "verification": "Newsletter tab, public listing",
       "verifiedAt": "2026-08-31",
       "notes": "Newsletter tab record.",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "no-public-email"
       ],
@@ -8012,6 +8529,7 @@
       "emailClass": "role",
       "website": "https://www.jenniferschaus.com/about",
       "links": {},
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Newsletter / Publisher",
@@ -8022,6 +8540,7 @@
       "verification": "Newsletter tab, public listing",
       "verifiedAt": "2026-08-31",
       "notes": "Newsletter tab record.",
+      "origin": "master-pdf-2026-08-31",
       "holds": [],
       "sendable": true
     },
@@ -8040,6 +8559,7 @@
       "emailClass": "role",
       "website": "https://www.govdash.com/press",
       "links": {},
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Newsletter / Publisher",
@@ -8050,6 +8570,7 @@
       "verification": "Newsletter tab, public listing",
       "verifiedAt": "2026-08-31",
       "notes": "Newsletter tab record.",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "competitor"
       ],
@@ -8070,6 +8591,7 @@
       "emailClass": "role",
       "website": "https://fedbizaccess.com",
       "links": {},
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Newsletter / Publisher",
@@ -8080,6 +8602,7 @@
       "verification": "Newsletter tab, public listing",
       "verifiedAt": "2026-08-31",
       "notes": "Newsletter tab record.",
+      "origin": "master-pdf-2026-08-31",
       "holds": [],
       "sendable": true
     },
@@ -8098,6 +8621,7 @@
       "emailClass": "person",
       "website": "https://governmentsalesplan.com",
       "links": {},
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Newsletter / Publisher",
@@ -8108,6 +8632,7 @@
       "verification": "Newsletter tab, public listing",
       "verifiedAt": "2026-08-31",
       "notes": "Newsletter tab record.",
+      "origin": "master-pdf-2026-08-31",
       "holds": [],
       "sendable": true
     },
@@ -8126,6 +8651,7 @@
       "emailClass": "none",
       "website": "",
       "links": {},
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Newsletter / Publisher",
@@ -8136,6 +8662,7 @@
       "verification": "Newsletter tab, public listing",
       "verifiedAt": "2026-08-31",
       "notes": "Newsletter tab record.",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "no-public-email"
       ],
@@ -8156,6 +8683,7 @@
       "emailClass": "none",
       "website": "",
       "links": {},
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Newsletter / Publisher",
@@ -8166,6 +8694,7 @@
       "verification": "Newsletter tab, public listing",
       "verifiedAt": "2026-08-31",
       "notes": "Newsletter tab record.",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "no-public-email"
       ],
@@ -8186,6 +8715,7 @@
       "emailClass": "none",
       "website": "",
       "links": {},
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Newsletter / Publisher",
@@ -8196,6 +8726,7 @@
       "verification": "Newsletter tab, public listing",
       "verifiedAt": "2026-08-31",
       "notes": "Newsletter tab record.",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "no-public-email"
       ],
@@ -8216,6 +8747,7 @@
       "emailClass": "none",
       "website": "",
       "links": {},
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Newsletter / Publisher",
@@ -8226,6 +8758,7 @@
       "verification": "Newsletter tab, public listing",
       "verifiedAt": "2026-08-31",
       "notes": "Newsletter tab record.",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "no-public-email"
       ],
@@ -8246,6 +8779,7 @@
       "emailClass": "none",
       "website": "",
       "links": {},
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Newsletter / Publisher",
@@ -8256,6 +8790,7 @@
       "verification": "Newsletter tab, public listing",
       "verifiedAt": "2026-08-31",
       "notes": "Newsletter tab record.",
+      "origin": "master-pdf-2026-08-31",
       "holds": [
         "no-public-email"
       ],
@@ -8276,6 +8811,7 @@
       "emailClass": "role",
       "website": "https://www.mmcgovsolutions.com/contact-us/",
       "links": {},
+      "contactPath": "",
       "audience": "",
       "reachTier": "",
       "partnerType": "Newsletter / Publisher",
@@ -8286,8 +8822,940 @@
       "verification": "Newsletter tab, public listing",
       "verifiedAt": "2026-08-31",
       "notes": "Newsletter tab record.",
+      "origin": "master-pdf-2026-08-31",
       "holds": [],
       "sendable": true
+    },
+    {
+      "id": "kevin-jans-and-paul-schauer-contracting-officer-podcast-skyway-acquisi",
+      "segment": "podcast",
+      "campaign": "C2",
+      "name": "Kevin Jans and Paul Schauer",
+      "firstName": "",
+      "nameIsPerson": false,
+      "org": "Contracting Officer Podcast / Skyway Acquisition",
+      "role": "Former federal contracting officers, co-hosts",
+      "state": "",
+      "email": "",
+      "emailType": "",
+      "emailClass": "none",
+      "website": "https://contractingofficerpodcast.com",
+      "links": {},
+      "contactPath": "Site contact page; Feedspot shows contact domain skywayacquisition.com",
+      "audience": "452 episodes, est. 10k-50k monthly listeners (Feedspot)",
+      "reachTier": "",
+      "partnerType": "",
+      "affiliatePotential": "",
+      "priority": "P1",
+      "angle": "Guest pitch: what AI changes about proposal prep, from the CO's side of the table. Skyway is also a C4 partner target, same org, count once",
+      "sourceUrl": "https://podcast.feedspot.com/government_contract_podcasts/",
+      "verification": "Verified via Feedspot 2026-08",
+      "verifiedAt": "2026-09-03",
+      "notes": "Expansion batch, researched 2026-09-03. Contact path: Site contact page; Feedspot shows contact domain skywayacquisition.com. Primary channels: Podcast.",
+      "origin": "expansion-2026-09-03",
+      "holds": [
+        "no-public-email"
+      ],
+      "sendable": false
+    },
+    {
+      "id": "government-contractor-s-playbook-the-govcon-brief",
+      "segment": "podcast",
+      "campaign": "C2",
+      "name": "",
+      "firstName": "",
+      "nameIsPerson": false,
+      "org": "Government Contractor's Playbook (The GovCon Brief)",
+      "role": "Weekly GovCon news and strategy briefings",
+      "state": "",
+      "email": "",
+      "emailType": "",
+      "emailClass": "none",
+      "website": "https://podcasts.apple.com/us/podcast/government-contractors-playbook/id1828954089",
+      "links": {},
+      "contactPath": "Feedspot shows contact domain squaredcompass.com",
+      "audience": "Newer show, weekly cadence",
+      "reachTier": "",
+      "partnerType": "",
+      "affiliatePotential": "",
+      "priority": "P2",
+      "angle": "Offer an RFP-analysis data segment or founder interview",
+      "sourceUrl": "https://podcast.feedspot.com/government_contract_podcasts/",
+      "verification": "Verified via Feedspot 2026-08",
+      "verifiedAt": "2026-09-03",
+      "notes": "Expansion batch, researched 2026-09-03. Contact path: Feedspot shows contact domain squaredcompass.com. Primary channels: Podcast.",
+      "origin": "expansion-2026-09-03",
+      "holds": [
+        "no-public-email"
+      ],
+      "sendable": false
+    },
+    {
+      "id": "aubrey-gainfort-breaking-the-standard",
+      "segment": "podcast",
+      "campaign": "C2",
+      "name": "Aubrey Gainfort",
+      "firstName": "Aubrey",
+      "nameIsPerson": true,
+      "org": "Breaking the Standard",
+      "role": "Host, small business GovCon community show",
+      "state": "",
+      "email": "",
+      "emailType": "",
+      "emailClass": "none",
+      "website": "https://breakingthestandard.libsyn.com/website",
+      "links": {},
+      "contactPath": "Show site contact",
+      "audience": "Est. 1k-10k monthly listeners (Feedspot)",
+      "reachTier": "",
+      "partnerType": "",
+      "affiliatePotential": "",
+      "priority": "P2",
+      "angle": "Guest pitch on closing the knowledge gap for small contractors",
+      "sourceUrl": "https://podcast.feedspot.com/government_contract_podcasts/",
+      "verification": "Verified via Feedspot 2026-08",
+      "verifiedAt": "2026-09-03",
+      "notes": "Expansion batch, researched 2026-09-03. Contact path: Show site contact. Primary channels: Podcast, YouTube.",
+      "origin": "expansion-2026-09-03",
+      "holds": [
+        "no-public-email"
+      ],
+      "sendable": false
+    },
+    {
+      "id": "sam-le-govcon-intelligence",
+      "segment": "podcast",
+      "campaign": "C2",
+      "name": "Sam Le",
+      "firstName": "Sam",
+      "nameIsPerson": true,
+      "org": "GovCon Intelligence",
+      "role": "Host, 20 years writing contract regulations for the government",
+      "state": "",
+      "email": "",
+      "emailType": "",
+      "emailClass": "none",
+      "website": "https://www.govconintelligence.com",
+      "links": {},
+      "contactPath": "Feedspot shows contact domain samlelaw.com",
+      "audience": "Newer show, regulatory and data angle",
+      "reachTier": "",
+      "partnerType": "",
+      "affiliatePotential": "",
+      "priority": "P2",
+      "angle": "Data-driven episode: what AI analysis of solicitations reveals about compliance traps",
+      "sourceUrl": "https://podcast.feedspot.com/government_contract_podcasts/",
+      "verification": "Verified via Feedspot 2026-08",
+      "verifiedAt": "2026-09-03",
+      "notes": "Expansion batch, researched 2026-09-03. Contact path: Feedspot shows contact domain samlelaw.com. Primary channels: Podcast.",
+      "origin": "expansion-2026-09-03",
+      "holds": [
+        "no-public-email"
+      ],
+      "sendable": false
+    },
+    {
+      "id": "meg-o-hara-govmates-nextgen",
+      "segment": "podcast",
+      "campaign": "C2",
+      "name": "Meg O'Hara",
+      "firstName": "Meg",
+      "nameIsPerson": true,
+      "org": "govmates NextGen",
+      "role": "Host; govmates is a teaming and matchmaking community",
+      "state": "",
+      "email": "",
+      "emailType": "",
+      "emailClass": "none",
+      "website": "https://govmatesnextgen.libsyn.com/website",
+      "links": {},
+      "contactPath": "Feedspot shows contact domain govmates.com",
+      "audience": "govmates network reach beyond the show itself",
+      "reachTier": "",
+      "partnerType": "",
+      "affiliatePotential": "",
+      "priority": "P2",
+      "angle": "Guest spot; govmates itself is a C6 partnership target, same org, count once",
+      "sourceUrl": "https://podcast.feedspot.com/government_contract_podcasts/",
+      "verification": "Verified via Feedspot 2026-08",
+      "verifiedAt": "2026-09-03",
+      "notes": "Expansion batch, researched 2026-09-03. Contact path: Feedspot shows contact domain govmates.com. Primary channels: Podcast.",
+      "origin": "expansion-2026-09-03",
+      "holds": [
+        "no-public-email"
+      ],
+      "sendable": false
+    },
+    {
+      "id": "derek-james-sam-gov-bids-live-govkid-method",
+      "segment": "podcast",
+      "campaign": "C2",
+      "name": "Derek James",
+      "firstName": "Derek",
+      "nameIsPerson": true,
+      "org": "SAM.gov Bids LIVE / GovKid Method",
+      "role": "Live bid training on SAM.gov, YouTube creator",
+      "state": "",
+      "email": "",
+      "emailType": "",
+      "emailClass": "none",
+      "website": "https://govkidmethod.com",
+      "links": {},
+      "contactPath": "Feedspot shows contact domain govkidmethod.com",
+      "audience": "Live-format bid walkthroughs",
+      "reachTier": "",
+      "partnerType": "",
+      "affiliatePotential": "",
+      "priority": "P2",
+      "angle": "Strong C1 crossover: run a live RFP through GovHub on stream",
+      "sourceUrl": "https://podcast.feedspot.com/government_contract_podcasts/",
+      "verification": "Verified via Feedspot 2026-08",
+      "verifiedAt": "2026-09-03",
+      "notes": "Expansion batch, researched 2026-09-03. Contact path: Feedspot shows contact domain govkidmethod.com. Primary channels: Podcast, YouTube.",
+      "origin": "expansion-2026-09-03",
+      "holds": [
+        "duplicate-org-in-expansion (same organization as row 33, \"GovKid Method (YouTube)\")",
+        "no-public-email"
+      ],
+      "sendable": false
+    },
+    {
+      "id": "rick-wimberly-myths-of-selling-to-government",
+      "segment": "podcast",
+      "campaign": "C2",
+      "name": "Rick Wimberly",
+      "firstName": "Rick",
+      "nameIsPerson": true,
+      "org": "Myths of Selling to Government",
+      "role": "Host, government sales strategy",
+      "state": "",
+      "email": "",
+      "emailType": "",
+      "emailClass": "none",
+      "website": "https://open.spotify.com/show/0OZhbm7i93KKu20flGyuwo",
+      "links": {},
+      "contactPath": "Feedspot shows contact domain govselling.com",
+      "audience": "Bite-size episodes",
+      "reachTier": "",
+      "partnerType": "",
+      "affiliatePotential": "",
+      "priority": "P3",
+      "angle": "Myth-busting episode: what AI can and cannot do in proposals",
+      "sourceUrl": "https://podcast.feedspot.com/government_contract_podcasts/",
+      "verification": "Verified via Feedspot 2026-08",
+      "verifiedAt": "2026-09-03",
+      "notes": "Expansion batch, researched 2026-09-03. Contact path: Feedspot shows contact domain govselling.com. Primary channels: Podcast, YouTube.",
+      "origin": "expansion-2026-09-03",
+      "holds": [
+        "no-public-email"
+      ],
+      "sendable": false
+    },
+    {
+      "id": "govcon-different",
+      "segment": "podcast",
+      "campaign": "C2",
+      "name": "",
+      "firstName": "",
+      "nameIsPerson": false,
+      "org": "GovCon DIFFERENT",
+      "role": "Ideas-from-outside format, TED-style GovCon show",
+      "state": "",
+      "email": "",
+      "emailType": "",
+      "emailClass": "none",
+      "website": "https://www.govcondifferent.com/podcast",
+      "links": {},
+      "contactPath": "Site contact; Feedspot shows domain govcondifferent.com",
+      "audience": "Long-form interviews",
+      "reachTier": "",
+      "partnerType": "",
+      "affiliatePotential": "",
+      "priority": "P3",
+      "angle": "Founder story: solo-building an AI proposal platform",
+      "sourceUrl": "https://podcast.feedspot.com/government_contract_podcasts/",
+      "verification": "Verified via Feedspot 2026-08",
+      "verifiedAt": "2026-09-03",
+      "notes": "Expansion batch, researched 2026-09-03. Contact path: Site contact; Feedspot shows domain govcondifferent.com. Primary channels: Podcast, YouTube.",
+      "origin": "expansion-2026-09-03",
+      "holds": [
+        "no-public-email"
+      ],
+      "sendable": false
+    },
+    {
+      "id": "govcon-growth-bytes-rturner-solutions",
+      "segment": "podcast",
+      "campaign": "C2",
+      "name": "",
+      "firstName": "",
+      "nameIsPerson": false,
+      "org": "GovCon Growth Bytes / rTurner Solutions",
+      "role": "BD-focused show for growing GovCon firms",
+      "state": "",
+      "email": "",
+      "emailType": "",
+      "emailClass": "none",
+      "website": "https://www.buzzsprout.com/1991689",
+      "links": {},
+      "contactPath": "Show site contact",
+      "audience": "Short form",
+      "reachTier": "",
+      "partnerType": "",
+      "affiliatePotential": "",
+      "priority": "P3",
+      "angle": "Guest pitch on proposal operations for small firms",
+      "sourceUrl": "https://podcast.feedspot.com/government_contract_podcasts/",
+      "verification": "Verified via Feedspot 2026-08",
+      "verifiedAt": "2026-09-03",
+      "notes": "Expansion batch, researched 2026-09-03. Contact path: Show site contact. Primary channels: Podcast.",
+      "origin": "expansion-2026-09-03",
+      "holds": [
+        "no-public-email"
+      ],
+      "sendable": false
+    },
+    {
+      "id": "adventures-in-contracting-spc-consulting",
+      "segment": "podcast",
+      "campaign": "C2",
+      "name": "",
+      "firstName": "",
+      "nameIsPerson": false,
+      "org": "Adventures in Contracting / SPC Consulting",
+      "role": "By contractors for contractors",
+      "state": "",
+      "email": "",
+      "emailType": "",
+      "emailClass": "none",
+      "website": "https://www.spcconsulting.org/adventures-in-contracting-podcasts/",
+      "links": {},
+      "contactPath": "Feedspot shows contact domain spcconsulting.org",
+      "audience": "Medium form",
+      "reachTier": "",
+      "partnerType": "",
+      "affiliatePotential": "",
+      "priority": "P3",
+      "angle": "Practitioner conversation, wins and losses format",
+      "sourceUrl": "https://podcast.feedspot.com/government_contract_podcasts/",
+      "verification": "Verified via Feedspot 2026-08",
+      "verifiedAt": "2026-09-03",
+      "notes": "Expansion batch, researched 2026-09-03. Contact path: Feedspot shows contact domain spcconsulting.org. Primary channels: Podcast.",
+      "origin": "expansion-2026-09-03",
+      "holds": [
+        "no-public-email"
+      ],
+      "sendable": false
+    },
+    {
+      "id": "contractor-conversation-lta-consulting-group",
+      "segment": "podcast",
+      "campaign": "C2",
+      "name": "",
+      "firstName": "",
+      "nameIsPerson": false,
+      "org": "Contractor Conversation / LTA Consulting Group",
+      "role": "GovCon issues discussion show",
+      "state": "",
+      "email": "",
+      "emailType": "",
+      "emailClass": "none",
+      "website": "https://podcasters.spotify.com/pod/show/contractor-conversation",
+      "links": {},
+      "contactPath": "Feedspot shows contact domain ltaconsultinggroup.com",
+      "audience": "Medium form",
+      "reachTier": "",
+      "partnerType": "",
+      "affiliatePotential": "",
+      "priority": "P3",
+      "angle": "Guest conversation on AI in proposals",
+      "sourceUrl": "https://podcast.feedspot.com/government_contract_podcasts/",
+      "verification": "Verified via Feedspot 2026-08",
+      "verifiedAt": "2026-09-03",
+      "notes": "Expansion batch, researched 2026-09-03. Contact path: Feedspot shows contact domain ltaconsultinggroup.com. Primary channels: Podcast, YouTube.",
+      "origin": "expansion-2026-09-03",
+      "holds": [
+        "no-public-email"
+      ],
+      "sendable": false
+    },
+    {
+      "id": "this-week-in-procurement",
+      "segment": "podcast",
+      "campaign": "C2",
+      "name": "",
+      "firstName": "",
+      "nameIsPerson": false,
+      "org": "This Week in Procurement",
+      "role": "Weekly SLED opportunity roundup",
+      "state": "",
+      "email": "",
+      "emailType": "",
+      "emailClass": "none",
+      "website": "https://podcasts.apple.com/us/podcast/id1878462875",
+      "links": {},
+      "contactPath": "Apple Podcasts listing",
+      "audience": "SLED focus, adjacent audience",
+      "reachTier": "",
+      "partnerType": "",
+      "affiliatePotential": "",
+      "priority": "P3",
+      "angle": "Only if you want state and local reach later; federal is your core",
+      "sourceUrl": "https://podcast.feedspot.com/government_contract_podcasts/",
+      "verification": "Verified via Feedspot 2026-08",
+      "verifiedAt": "2026-09-03",
+      "notes": "Expansion batch, researched 2026-09-03. Contact path: Apple Podcasts listing. Primary channels: Podcast.",
+      "origin": "expansion-2026-09-03",
+      "holds": [
+        "no-public-email"
+      ],
+      "sendable": false
+    },
+    {
+      "id": "aaron-and-team-the-smallscast-thesmalls",
+      "segment": "podcast",
+      "campaign": "C2",
+      "name": "Aaron and team",
+      "firstName": "",
+      "nameIsPerson": false,
+      "org": "The SmallsCast / TheSmalls",
+      "role": "Community podcast for small contractors",
+      "state": "",
+      "email": "",
+      "emailType": "",
+      "emailClass": "none",
+      "website": "https://www.thesmalls.org/podcast-landing/",
+      "links": {},
+      "contactPath": "Feedspot shows contact domain thesmalls.org",
+      "audience": "Community org plus show",
+      "reachTier": "",
+      "partnerType": "",
+      "affiliatePotential": "",
+      "priority": "P3",
+      "angle": "TheSmalls is also a C6 community partner target, same org, count once",
+      "sourceUrl": "https://podcast.feedspot.com/government_contract_podcasts/",
+      "verification": "Verified via Feedspot 2026-08",
+      "verifiedAt": "2026-09-03",
+      "notes": "Expansion batch, researched 2026-09-03. Contact path: Feedspot shows contact domain thesmalls.org. Primary channels: Podcast, YouTube.",
+      "origin": "expansion-2026-09-03",
+      "holds": [
+        "no-public-email"
+      ],
+      "sendable": false
+    },
+    {
+      "id": "editorial-team-clearancejobs-news",
+      "segment": "media",
+      "campaign": "C3",
+      "name": "Editorial team",
+      "firstName": "",
+      "nameIsPerson": false,
+      "org": "ClearanceJobs News",
+      "role": "Covers GovCon and cleared workforce, publishes resource roundups",
+      "state": "",
+      "email": "",
+      "emailType": "",
+      "emailClass": "none",
+      "website": "https://news.clearancejobs.com",
+      "links": {},
+      "contactPath": "Site contact page",
+      "audience": "Ran GovCon podcast roundups, does listicles that earn backlinks",
+      "reachTier": "",
+      "partnerType": "",
+      "affiliatePotential": "",
+      "priority": "P2",
+      "angle": "Pitch inclusion in tools and resources coverage with original data",
+      "sourceUrl": "https://news.clearancejobs.com/2025/01/20/10-best-government-contracting-podcasts/",
+      "verification": "Verified via site 2026-09",
+      "verifiedAt": "2026-09-03",
+      "notes": "Expansion batch, researched 2026-09-03. Contact path: Site contact page. Primary channels: Web, newsletter.",
+      "origin": "expansion-2026-09-03",
+      "holds": [
+        "no-public-email"
+      ],
+      "sendable": false
+    },
+    {
+      "id": "pubk-group",
+      "segment": "media",
+      "campaign": "C3",
+      "name": "",
+      "firstName": "",
+      "nameIsPerson": false,
+      "org": "PubK Group",
+      "role": "Government contracts news publisher, co-produces Bona Fide Needs",
+      "state": "",
+      "email": "",
+      "emailType": "",
+      "emailClass": "none",
+      "website": "https://pubkgroup.podbean.com",
+      "links": {},
+      "contactPath": "Publisher site contact",
+      "audience": "Legal and regulatory readership",
+      "reachTier": "",
+      "partnerType": "",
+      "affiliatePotential": "",
+      "priority": "P3",
+      "angle": "Contributed analysis angle, not product coverage",
+      "sourceUrl": "https://podcast.feedspot.com/government_contract_podcasts/",
+      "verification": "Verified via Feedspot 2026-08",
+      "verifiedAt": "2026-09-03",
+      "notes": "Expansion batch, researched 2026-09-03. Contact path: Publisher site contact. Primary channels: Web, podcast.",
+      "origin": "expansion-2026-09-03",
+      "holds": [
+        "no-public-email"
+      ],
+      "sendable": false
+    },
+    {
+      "id": "hinz-consulting",
+      "segment": "consultant_firm",
+      "campaign": "C4",
+      "name": "",
+      "firstName": "",
+      "nameIsPerson": false,
+      "org": "Hinz Consulting",
+      "role": "Proposal and capture services firm with a newsletter",
+      "state": "",
+      "email": "",
+      "emailType": "",
+      "emailClass": "none",
+      "website": "https://hinzconsulting.com",
+      "links": {},
+      "contactPath": "Site contact page",
+      "audience": "Publishes GovCon guidance content",
+      "reachTier": "",
+      "partnerType": "",
+      "affiliatePotential": "",
+      "priority": "P2",
+      "angle": "Referral partner pitch: GovHub for intake and first pass, Hinz for strategy and review",
+      "sourceUrl": "https://hinzconsulting.com/small-business-government-contract-support/",
+      "verification": "Verified via site 2026-09",
+      "verifiedAt": "2026-09-03",
+      "notes": "Expansion batch, researched 2026-09-03. Contact path: Site contact page. Primary channels: Web, newsletter.",
+      "origin": "expansion-2026-09-03",
+      "holds": [
+        "no-public-email"
+      ],
+      "sendable": false
+    },
+    {
+      "id": "cherry-bekaert-govcon-practice",
+      "segment": "consultant_firm",
+      "campaign": "C4",
+      "name": "",
+      "firstName": "",
+      "nameIsPerson": false,
+      "org": "Cherry Bekaert GovCon practice",
+      "role": "Accounting and advisory, runs Government Contractors Guidance podcast",
+      "state": "",
+      "email": "",
+      "emailType": "",
+      "emailClass": "none",
+      "website": "https://www.buzzsprout.com/750110",
+      "links": {},
+      "contactPath": "Firm site contact; Feedspot shows domain cbh.com",
+      "audience": "Advisory readership, compliance heavy",
+      "reachTier": "",
+      "partnerType": "",
+      "affiliatePotential": "",
+      "priority": "P3",
+      "angle": "Co-content on compliance workflows; podcast guest angle",
+      "sourceUrl": "https://podcast.feedspot.com/government_contract_podcasts/",
+      "verification": "Verified via Feedspot 2026-08",
+      "verifiedAt": "2026-09-03",
+      "notes": "Expansion batch, researched 2026-09-03. Contact path: Firm site contact; Feedspot shows domain cbh.com. Primary channels: Podcast, web.",
+      "origin": "expansion-2026-09-03",
+      "holds": [
+        "no-public-email"
+      ],
+      "sendable": false
+    },
+    {
+      "id": "lisa-rehurek-the-rfp-success-company",
+      "segment": "consultant_individual",
+      "campaign": "C4",
+      "name": "Lisa Rehurek",
+      "firstName": "Lisa",
+      "nameIsPerson": true,
+      "org": "The RFP Success Company",
+      "role": "Proposal consultancy, book and show",
+      "state": "",
+      "email": "",
+      "emailType": "",
+      "emailClass": "none",
+      "website": "https://therfpsuccesscompany.com",
+      "links": {},
+      "contactPath": "Site contact page",
+      "audience": "Known proposal-consulting brand",
+      "reachTier": "",
+      "partnerType": "",
+      "affiliatePotential": "",
+      "priority": "P2",
+      "angle": "Complement-not-replace partner pitch",
+      "sourceUrl": "",
+      "verification": "Needs verification",
+      "verifiedAt": "2026-09-03",
+      "notes": "Expansion batch, researched 2026-09-03. Contact path: Site contact page. Primary channels: Web, podcast, LinkedIn.",
+      "origin": "expansion-2026-09-03",
+      "holds": [
+        "no-public-email"
+      ],
+      "sendable": false
+    },
+    {
+      "id": "robert-e-jones-left-brain-professionals",
+      "segment": "consultant_firm",
+      "campaign": "C4",
+      "name": "Robert E. Jones",
+      "firstName": "Robert",
+      "nameIsPerson": true,
+      "org": "Left Brain Professionals",
+      "role": "GovCon accounting and compliance firm, active content",
+      "state": "",
+      "email": "",
+      "emailType": "",
+      "emailClass": "none",
+      "website": "https://leftbrainpro.com",
+      "links": {},
+      "contactPath": "Site contact page",
+      "audience": "Compliance-adjacent audience",
+      "reachTier": "",
+      "partnerType": "",
+      "affiliatePotential": "",
+      "priority": "P3",
+      "angle": "Cross-content: compliance plus proposal workflow",
+      "sourceUrl": "",
+      "verification": "Needs verification",
+      "verifiedAt": "2026-09-03",
+      "notes": "Expansion batch, researched 2026-09-03. Contact path: Site contact page. Primary channels: Web, YouTube, speaking.",
+      "origin": "expansion-2026-09-03",
+      "holds": [
+        "no-public-email"
+      ],
+      "sendable": false
+    },
+    {
+      "id": "roger-waldron-coalition-for-government-procurement",
+      "segment": "association",
+      "campaign": "C6",
+      "name": "Roger Waldron",
+      "firstName": "Roger",
+      "nameIsPerson": true,
+      "org": "Coalition for Government Procurement",
+      "role": "Procurement policy association, hosts Off the Shelf on Federal News Network",
+      "state": "",
+      "email": "",
+      "emailType": "",
+      "emailClass": "none",
+      "website": "https://thecgp.org",
+      "links": {},
+      "contactPath": "Association contact page",
+      "audience": "Policy-side audience, credible platform",
+      "reachTier": "",
+      "partnerType": "",
+      "affiliatePotential": "",
+      "priority": "P2",
+      "angle": "Off the Shelf guest pitch on AI in proposal prep; note FNN is already in your DB, this org is separate",
+      "sourceUrl": "https://podcast.feedspot.com/government_contract_podcasts/",
+      "verification": "Verified via Feedspot 2026-08",
+      "verifiedAt": "2026-09-03",
+      "notes": "Expansion batch, researched 2026-09-03. Contact path: Association contact page. Primary channels: Podcast, events, membership.",
+      "origin": "expansion-2026-09-03",
+      "holds": [
+        "no-public-email"
+      ],
+      "sendable": false
+    },
+    {
+      "id": "govmates",
+      "segment": "association",
+      "campaign": "C6",
+      "name": "",
+      "firstName": "",
+      "nameIsPerson": false,
+      "org": "govmates",
+      "role": "Teaming and matchmaking platform for GovCon",
+      "state": "",
+      "email": "",
+      "emailType": "",
+      "emailClass": "none",
+      "website": "https://govmates.com",
+      "links": {},
+      "contactPath": "Site contact page",
+      "audience": "National teaming network",
+      "reachTier": "",
+      "partnerType": "",
+      "affiliatePotential": "",
+      "priority": "P2",
+      "angle": "Member benefit or tool demo for the network",
+      "sourceUrl": "https://podcast.feedspot.com/government_contract_podcasts/",
+      "verification": "Verified via Feedspot 2026-08",
+      "verifiedAt": "2026-09-03",
+      "notes": "Expansion batch, researched 2026-09-03. Contact path: Site contact page. Primary channels: Community, events, podcast.",
+      "origin": "expansion-2026-09-03",
+      "holds": [
+        "duplicate-org-in-expansion (same organization as row 7, \"govmates NextGen\")",
+        "no-public-email"
+      ],
+      "sendable": false
+    },
+    {
+      "id": "thesmalls",
+      "segment": "association",
+      "campaign": "C6",
+      "name": "",
+      "firstName": "",
+      "nameIsPerson": false,
+      "org": "TheSmalls",
+      "role": "Small contractor ecosystem community",
+      "state": "",
+      "email": "",
+      "emailType": "",
+      "emailClass": "none",
+      "website": "https://www.thesmalls.org",
+      "links": {},
+      "contactPath": "Site contact page",
+      "audience": "Community org",
+      "reachTier": "",
+      "partnerType": "",
+      "affiliatePotential": "",
+      "priority": "P3",
+      "angle": "Resource listing and community demo session",
+      "sourceUrl": "https://podcast.feedspot.com/government_contract_podcasts/",
+      "verification": "Verified via Feedspot 2026-08",
+      "verifiedAt": "2026-09-03",
+      "notes": "Expansion batch, researched 2026-09-03. Contact path: Site contact page. Primary channels: Community, podcast.",
+      "origin": "expansion-2026-09-03",
+      "holds": [
+        "duplicate-org-in-expansion (same organization as row 15, \"The SmallsCast / TheSmalls\")",
+        "no-public-email"
+      ],
+      "sendable": false
+    },
+    {
+      "id": "women-impacting-public-policy-wipp",
+      "segment": "association",
+      "campaign": "C6",
+      "name": "",
+      "firstName": "",
+      "nameIsPerson": false,
+      "org": "Women Impacting Public Policy (WIPP)",
+      "role": "National association for women-owned businesses in federal contracting",
+      "state": "",
+      "email": "",
+      "emailType": "",
+      "emailClass": "none",
+      "website": "https://www.wipp.org",
+      "links": {},
+      "contactPath": "Association contact page",
+      "audience": "National WOSB audience",
+      "reachTier": "",
+      "partnerType": "",
+      "affiliatePotential": "",
+      "priority": "P2",
+      "angle": "Educational webinar for members, no hard sell",
+      "sourceUrl": "",
+      "verification": "Needs verification",
+      "verifiedAt": "2026-09-03",
+      "notes": "Expansion batch, researched 2026-09-03. Contact path: Association contact page. Primary channels: Events, newsletter, advocacy.",
+      "origin": "expansion-2026-09-03",
+      "holds": [
+        "no-public-email"
+      ],
+      "sendable": false
+    },
+    {
+      "id": "national-veteran-small-business-coalition",
+      "segment": "association",
+      "campaign": "C6",
+      "name": "",
+      "firstName": "",
+      "nameIsPerson": false,
+      "org": "National Veteran Small Business Coalition",
+      "role": "VOSB and SDVOSB contractor association",
+      "state": "",
+      "email": "",
+      "emailType": "",
+      "emailClass": "none",
+      "website": "https://nvsbc.org",
+      "links": {},
+      "contactPath": "Association contact page",
+      "audience": "National VOSB audience",
+      "reachTier": "",
+      "partnerType": "",
+      "affiliatePotential": "",
+      "priority": "P2",
+      "angle": "Educational webinar or conference presence",
+      "sourceUrl": "",
+      "verification": "Needs verification",
+      "verifiedAt": "2026-09-03",
+      "notes": "Expansion batch, researched 2026-09-03. Contact path: Association contact page. Primary channels: Events, newsletter.",
+      "origin": "expansion-2026-09-03",
+      "holds": [
+        "no-public-email"
+      ],
+      "sendable": false
+    },
+    {
+      "id": "national-8-a-association",
+      "segment": "association",
+      "campaign": "C6",
+      "name": "",
+      "firstName": "",
+      "nameIsPerson": false,
+      "org": "National 8(a) Association",
+      "role": "Association for 8(a) and small disadvantaged contractors",
+      "state": "",
+      "email": "",
+      "emailType": "",
+      "emailClass": "none",
+      "website": "https://www.national8aassociation.org",
+      "links": {},
+      "contactPath": "Association contact page",
+      "audience": "8(a) contractor audience, core GovHub fit",
+      "reachTier": "",
+      "partnerType": "",
+      "affiliatePotential": "",
+      "priority": "P2",
+      "angle": "Member education partnership",
+      "sourceUrl": "",
+      "verification": "Needs verification",
+      "verifiedAt": "2026-09-03",
+      "notes": "Expansion batch, researched 2026-09-03. Contact path: Association contact page. Primary channels: Events, newsletter.",
+      "origin": "expansion-2026-09-03",
+      "holds": [
+        "no-public-email"
+      ],
+      "sendable": false
+    },
+    {
+      "id": "montgomery-county-chamber-govconnet",
+      "segment": "association",
+      "campaign": "C6",
+      "name": "",
+      "firstName": "",
+      "nameIsPerson": false,
+      "org": "Montgomery County Chamber GovConNet",
+      "role": "Regional GovCon program with national draw",
+      "state": "",
+      "email": "",
+      "emailType": "",
+      "emailClass": "none",
+      "website": "https://www.mcccmd.com",
+      "links": {},
+      "contactPath": "Chamber contact page",
+      "audience": "DC-region contractor density",
+      "reachTier": "",
+      "partnerType": "",
+      "affiliatePotential": "",
+      "priority": "P3",
+      "angle": "Program speaker or resource partner",
+      "sourceUrl": "",
+      "verification": "Needs verification",
+      "verifiedAt": "2026-09-03",
+      "notes": "Expansion batch, researched 2026-09-03. Contact path: Chamber contact page. Primary channels: Events, programs.",
+      "origin": "expansion-2026-09-03",
+      "holds": [
+        "no-public-email"
+      ],
+      "sendable": false
+    },
+    {
+      "id": "veterans-business-outreach-centers-vboc-network",
+      "segment": "education_network",
+      "campaign": "C5",
+      "name": "",
+      "firstName": "",
+      "nameIsPerson": false,
+      "org": "Veterans Business Outreach Centers (VBOC network)",
+      "role": "SBA-funded counseling network for veteran-owned businesses",
+      "state": "",
+      "email": "",
+      "emailType": "",
+      "emailClass": "none",
+      "website": "https://vboc.org",
+      "links": {},
+      "contactPath": "National site lists regional centers",
+      "audience": "Same neutrality dynamics as APEX: education-led messaging only, no affiliate language",
+      "reachTier": "",
+      "partnerType": "",
+      "affiliatePotential": "",
+      "priority": "P2",
+      "angle": "Counselor demo account and workshop offer, identical rules to your C5 campaign",
+      "sourceUrl": "https://vboc.org/government-contracting/",
+      "verification": "Verified via site 2026-09",
+      "verifiedAt": "2026-09-03",
+      "notes": "Expansion batch, researched 2026-09-03. Contact path: National site lists regional centers. Primary channels: Counseling network.",
+      "origin": "expansion-2026-09-03",
+      "holds": [
+        "no-public-email"
+      ],
+      "sendable": false
+    },
+    {
+      "id": "derek-james-govkid-method-youtube",
+      "segment": "creator",
+      "campaign": "C1",
+      "name": "Derek James",
+      "firstName": "Derek",
+      "nameIsPerson": true,
+      "org": "GovKid Method (YouTube)",
+      "role": "Live SAM.gov bid training creator",
+      "state": "",
+      "email": "",
+      "emailType": "",
+      "emailClass": "none",
+      "website": "https://govkidmethod.com",
+      "links": {},
+      "contactPath": "Site contact; same org as SAM.gov Bids LIVE row, count once",
+      "audience": "Live demo format suits a screen-share product",
+      "reachTier": "",
+      "partnerType": "",
+      "affiliatePotential": "",
+      "priority": "P2",
+      "angle": "Run a real RFP through GovHub live on stream",
+      "sourceUrl": "https://podcast.feedspot.com/government_contract_podcasts/",
+      "verification": "Verified via Feedspot 2026-08",
+      "verifiedAt": "2026-09-03",
+      "notes": "Expansion batch, researched 2026-09-03. Contact path: Site contact; same org as SAM.gov Bids LIVE row, count once. Primary channels: YouTube, podcast.",
+      "origin": "expansion-2026-09-03",
+      "holds": [
+        "no-public-email"
+      ],
+      "sendable": false
+    },
+    {
+      "id": "jaime-gracia-seville-government-consulting",
+      "segment": "creator",
+      "campaign": "C1",
+      "name": "Jaime Gracia",
+      "firstName": "Jaime",
+      "nameIsPerson": true,
+      "org": "Seville Government Consulting",
+      "role": "Active GovCon LinkedIn commentator on procurement",
+      "state": "",
+      "email": "",
+      "emailType": "",
+      "emailClass": "none",
+      "website": "https://www.linkedin.com/in/jaimegracia",
+      "links": {},
+      "contactPath": "LinkedIn profile and DMs",
+      "audience": "Engaged procurement-community following",
+      "reachTier": "",
+      "partnerType": "",
+      "affiliatePotential": "",
+      "priority": "P3",
+      "angle": "LinkedIn-first touch is better than cold email here",
+      "sourceUrl": "https://www.linkedin.com/posts/jaimegracia_influencers-in-govcon-redefining-the-term-activity-7439653020482756608-Arw8",
+      "verification": "Verified via LinkedIn 2026-09",
+      "verifiedAt": "2026-09-03",
+      "notes": "Expansion batch, researched 2026-09-03. Contact path: LinkedIn profile and DMs. Primary channels: LinkedIn.",
+      "origin": "expansion-2026-09-03",
+      "holds": [
+        "no-public-email"
+      ],
+      "sendable": false
     }
   ]
 }
