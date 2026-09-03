@@ -45,7 +45,7 @@ export function countExistingEntities() {
 
 // A summary with the guardrail buckets, so nothing is capped silently.
 export function newSummary() {
-  return { written: 0, skipped: [], deferred: [], noindexed: [] };
+  return { written: 0, skipped: [], deferred: [], noindexed: [], failed: [] };
 }
 
 // Shared publish step used by every entity type (agency/state/setaside here,
@@ -86,13 +86,36 @@ export async function publishEntity({ kind, slug, page, budget, summary }) {
 // Shared by the weekly run (via generateEntities) and the daily publisher.
 export async function publishVendor({ client, roster, slug, asOfDate, budget, summary }) {
   const vendor = roster.vendors[slug];
-  const raw = await fetchVendorRaw(client, { slug, vendor, asOfDate });
-  const page = computeVendorPage({ slug, vendor, roster, raw, updated: asOfDate });
-  const action = await publishEntity({ kind: 'vendor', slug, page, budget, summary });
-  if (action === 'index' || action === 'noindex') vendor.status = 'published';
-  else if (action === 'skip') vendor.status = 'skipped';
-  // 'defer' leaves the entry pending for the next (daily) run.
-  return action;
+  try {
+    const raw = await fetchVendorRaw(client, { slug, vendor, asOfDate });
+    const page = computeVendorPage({ slug, vendor, roster, raw, updated: asOfDate });
+    const action = await publishEntity({ kind: 'vendor', slug, page, budget, summary });
+    if (action === 'index' || action === 'noindex') vendor.status = 'published';
+    else if (action === 'skip') vendor.status = 'skipped';
+    // 'defer' leaves the entry pending for the next (daily) run.
+    return action;
+  } catch (err) {
+    // One unbuildable vendor must not take the batch down with it. Until now a
+    // single failure threw all the way out of the runner, so the pages already
+    // built earlier in the same run were discarded too, and a permanently
+    // broken entry at the head of the queue blocked every subsequent day.
+    const permanent = err?.permanent === true;
+    const message = String(err?.message ?? err).slice(0, 300);
+    if (permanent) {
+      // Take it out of the pending queue: retrying tomorrow cannot help, and
+      // leaving it pending is what made this a standing outage rather than a
+      // one-day blip. `failed` entries need a human, not another attempt.
+      vendor.status = 'failed';
+      vendor.failedReason = message;
+      vendor.failedOn = asOfDate;
+    }
+    // Transient failures keep `pending`, so the next run retries them.
+    summary.failed.push({ slug, permanent, message });
+    console.warn(
+      `::warning::vendor/${slug} ${permanent ? 'cannot be built (permanent)' : 'failed (transient, will retry)'} — ${message}`
+    );
+    return 'failed';
+  }
 }
 
 function parseOnly(arg) {
@@ -220,6 +243,36 @@ export function reportSummary(label, summary, budget, client) {
   if (summary.deferred.length)
     console.log(`[${label}] deferred to a later run (velocity throttle, budget ${budget?.allowance ?? 'n/a'}):\n  ${summary.deferred.join('\n  ')}`);
   if (summary.skipped.length) console.log(`[${label}] skipped (below hard floor):\n  ${summary.skipped.join('\n  ')}`);
+  if (summary.failed?.length) {
+    const perm = summary.failed.filter((f) => f.permanent);
+    const tmp = summary.failed.filter((f) => !f.permanent);
+    if (perm.length)
+      console.log(
+        `[${label}] FAILED permanently (marked 'failed' in the roster, will not be retried — needs a human):\n  ${perm
+          .map((f) => `vendor/${f.slug} — ${f.message}`)
+          .join('\n  ')}`
+      );
+    if (tmp.length)
+      console.log(
+        `[${label}] failed transiently (left pending, next run retries):\n  ${tmp
+          .map((f) => `vendor/${f.slug} — ${f.message}`)
+          .join('\n  ')}`
+      );
+  }
+}
+
+// A batch where every single attempt failed transiently is an outage, not a
+// set of bad vendors: committing a run like that would publish nothing while
+// reporting success. Permanent failures are isolated bad data and do NOT trip
+// this — the rest of the batch is still good.
+export function assertBatchViable(label, { attempted, published, summary }) {
+  if (attempted === 0) return;
+  const transient = (summary.failed ?? []).filter((f) => !f.permanent).length;
+  if (published === 0 && transient > 0) {
+    throw new Error(
+      `[${label}] all ${attempted} vendor(s) failed and ${transient} were transient — treating this as a USAspending outage rather than committing an empty run.`
+    );
+  }
 }
 
 // Only run as a CLI when invoked directly (not when imported by run-weekly).
