@@ -26,6 +26,10 @@
     "C5": "APEX advisors and GovCon education",
     "C6": "Associations and communities"
   },
+  "caps": {
+    "default": 1,
+    "C5": 3
+  },
   "contacts": [
     {
       "id": "eric-coffie-govcon-giants",
@@ -56,6 +60,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "Original database record. Primary channels: YouTube, Podcast, LinkedIn, Instagram",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "catch_all",
       "holds": [],
       "sendable": true
     },
@@ -89,6 +94,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "Original database record. Primary channels: YouTube, TikTok, Instagram, LinkedIn",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [],
       "sendable": true
     },
@@ -122,6 +128,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "Original database record. Primary channels: LinkedIn, YouTube, Podcast, Newsletter",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [
         "email-not-first-party-verified"
       ],
@@ -157,6 +164,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "Original database record. Primary channels: Instagram, YouTube, Courses",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [],
       "sendable": true
     },
@@ -190,6 +198,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "Original database record. Primary channels: YouTube, Instagram, LinkedIn",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "catch_all",
       "holds": [],
       "sendable": true
     },
@@ -223,6 +232,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "Original database record. Primary channels: Instagram, TikTok, YouTube, LinkedIn",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [
         "email-not-first-party-verified"
       ],
@@ -258,6 +268,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "Original database record. Primary channels: Podcast, YouTube, LinkedIn, Instagram",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "catch_all",
       "holds": [
         "email-not-first-party-verified"
       ],
@@ -292,8 +303,10 @@
       "verifiedAt": "2026-08-31",
       "notes": "Original database record. Primary channels: Podcast, LinkedIn, Training",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "invalid",
       "holds": [
-        "org-cap (one send per org; kept joshua-frank-rsm-federal)"
+        "email-invalid (millionverifier: invalid)",
+        "org-cap (max 1 per org; kept joshua-frank-rsm-federal)"
       ],
       "sendable": false
     },
@@ -326,6 +339,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "Original database record. Primary channels: LinkedIn, Newsletter, Training",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [],
       "sendable": true
     },
@@ -358,6 +372,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "Original database record. Primary channels: LinkedIn, Blog, Training",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [],
       "sendable": true
     },
@@ -391,6 +406,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "Original database record. Primary channels: Podcast, YouTube, Instagram, LinkedIn",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "catch_all",
       "holds": [],
       "sendable": true
     },
@@ -423,8 +439,11 @@
       "verifiedAt": "2026-08-31",
       "notes": "Original database record. Primary channels: LinkedIn, Podcast, Blog",
       "origin": "master-pdf-2026-08-31",
-      "holds": [],
-      "sendable": true
+      "emailVerify": "invalid",
+      "holds": [
+        "email-invalid (millionverifier: invalid)"
+      ],
+      "sendable": false
     },
     {
       "id": "judy-bradt-grow-fed-biz",
@@ -455,8 +474,11 @@
       "verifiedAt": "2026-08-31",
       "notes": "Original database record. Primary channels: LinkedIn, Blog, Consulting",
       "origin": "master-pdf-2026-08-31",
-      "holds": [],
-      "sendable": true
+      "emailVerify": "unknown",
+      "holds": [
+        "email-unverifiable (millionverifier: unknown)"
+      ],
+      "sendable": false
     },
     {
       "id": "denise-williams-procurement-queen",
@@ -488,6 +510,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "Original database record. Primary channels: Instagram, LinkedIn, Courses",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "catch_all",
       "holds": [],
       "sendable": true
     },
@@ -521,6 +544,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "Original database record. Primary channels: Instagram, Community, Email",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [],
       "sendable": true
     },
@@ -554,6 +578,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "Original database record. Primary channels: Instagram, Construction/GovCon",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [],
       "sendable": true
     },
@@ -586,6 +611,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "Original database record. Primary channels: Instagram, Social",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [
         "email-not-first-party-verified",
         "email-salvaged-from-pdf-artifact"
@@ -621,6 +647,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "Original database record. Primary channels: Instagram, Social",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [],
       "sendable": true
     },
@@ -653,7 +680,9 @@
       "verifiedAt": "2026-08-31",
       "notes": "Original database record. Primary channels: Instagram, LinkedIn",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "invalid",
       "holds": [
+        "email-invalid (millionverifier: invalid)",
         "email-not-first-party-verified",
         "email-salvaged-from-pdf-artifact"
       ],
@@ -688,6 +717,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "Original database record. Primary channels: TikTok, YouTube, Instagram",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [
         "email-not-first-party-verified"
       ],
@@ -722,6 +752,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "Original database record. Primary channels: Instagram",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "",
       "holds": [
         "no-public-email"
       ],
@@ -756,6 +787,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "Original database record. Primary channels: Instagram, SLED, Marketing",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [],
       "sendable": true
     },
@@ -786,6 +818,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "Original database record. Primary channels: LinkedIn, Consulting",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "",
       "holds": [
         "no-public-email"
       ],
@@ -820,6 +853,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "Original database record. Primary channels: LinkedIn, Newsletter, Training",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [],
       "sendable": true
     },
@@ -852,8 +886,11 @@
       "verifiedAt": "2026-08-31",
       "notes": "Original database record. Primary channels: YouTube, Courses",
       "origin": "master-pdf-2026-08-31",
-      "holds": [],
-      "sendable": true
+      "emailVerify": "unknown",
+      "holds": [
+        "email-unverifiable (millionverifier: unknown)"
+      ],
+      "sendable": false
     },
     {
       "id": "catina-willis-willis-consulting-group",
@@ -884,8 +921,11 @@
       "verifiedAt": "2026-08-31",
       "notes": "Original database record. Primary channels: YouTube, Consulting",
       "origin": "master-pdf-2026-08-31",
-      "holds": [],
-      "sendable": true
+      "emailVerify": "invalid",
+      "holds": [
+        "email-invalid (millionverifier: invalid)"
+      ],
+      "sendable": false
     },
     {
       "id": "dr-nazeera-dawood-vendorship",
@@ -916,6 +956,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "Original database record. Primary channels: TikTok, Instagram, YouTube, LinkedIn",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [],
       "sendable": true
     },
@@ -946,6 +987,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "Original database record. Primary channels: Podcast",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "",
       "holds": [
         "no-public-email"
       ],
@@ -980,6 +1022,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "Original database record. Primary channels: Podcast",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [],
       "sendable": true
     },
@@ -1010,6 +1053,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "Original database record. Primary channels: Podcast",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "",
       "holds": [
         "no-public-email"
       ],
@@ -1044,6 +1088,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "Original database record. Primary channels: Podcast",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [
         "duplicate-email (kept federal-news-network-federal-news-network)"
       ],
@@ -1078,6 +1123,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "Original database record. Primary channels: Podcast",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [
         "government-entity"
       ],
@@ -1112,6 +1158,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "Original database record. Primary channels: Publication, Newsletter",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "catch_all",
       "holds": [],
       "sendable": true
     },
@@ -1144,6 +1191,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "Original database record. Primary channels: Publication, Newsletter",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [],
       "sendable": true
     },
@@ -1176,6 +1224,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "Original database record. Primary channels: Radio, Podcast, Publication",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [],
       "sendable": true
     },
@@ -1208,6 +1257,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "Original database record. Primary channels: Blog, Newsletter, YouTube",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "catch_all",
       "holds": [
         "duplicate-email (kept steven-koprince-govcon-roundup-smallgovcon)"
       ],
@@ -1242,6 +1292,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "Original database record. Primary channels: Training, Webinars",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "catch_all",
       "holds": [],
       "sendable": true
     },
@@ -1274,6 +1325,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "Original database record. Primary channels: Blog, Newsletter, Training",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [],
       "sendable": true
     },
@@ -1306,6 +1358,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "Original database record. Primary channels: Blog, Proposal Training",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [],
       "sendable": true
     },
@@ -1338,8 +1391,9 @@
       "verifiedAt": "2026-08-31",
       "notes": "Original database record. Primary channels: Training, Podcast, Newsletter",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [
-        "domain-cap (one send per sending domain; kept joshua-frank-rsm-federal)"
+        "domain-cap (max 1 per sending domain; kept joshua-frank-rsm-federal)"
       ],
       "sendable": false
     },
@@ -1372,6 +1426,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "Original database record. Primary channels: Blog, Training",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [
         "duplicate-email (kept shauna-weatherly-fedsubk)"
       ],
@@ -1406,6 +1461,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "Original database record. Primary channels: Podcast, Blog, Social",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "catch_all",
       "holds": [
         "duplicate-email (kept ashley-duwel-govconhacks)"
       ],
@@ -1440,6 +1496,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "Original database record. Primary channels: Platform, Blog, Newsletter",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "catch_all",
       "holds": [],
       "sendable": true
     },
@@ -1472,6 +1529,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "Original database record. Primary channels: Publication, Newsletter, Community",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [],
       "sendable": true
     },
@@ -1504,8 +1562,11 @@
       "verifiedAt": "2026-08-31",
       "notes": "Original database record. Primary channels: Association, Magazine, Events",
       "origin": "master-pdf-2026-08-31",
-      "holds": [],
-      "sendable": true
+      "emailVerify": "unknown",
+      "holds": [
+        "email-unverifiable (millionverifier: unknown)"
+      ],
+      "sendable": false
     },
     {
       "id": "government-executive-govexec",
@@ -1536,8 +1597,9 @@
       "verifiedAt": "2026-08-31",
       "notes": "Original database record. Primary channels: Publication, Newsletter",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "catch_all",
       "holds": [
-        "org-cap (one send per org; kept washington-technology-govexec)"
+        "org-cap (max 1 per org; kept washington-technology-govexec)"
       ],
       "sendable": false
     },
@@ -1570,6 +1632,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "Original database record. Primary channels: Platform, Newsletter, Podcast",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [
         "competitor"
       ],
@@ -1605,6 +1668,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [
         "email-not-first-party-verified"
       ],
@@ -1639,6 +1703,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [
         "email-not-first-party-verified"
       ],
@@ -1674,6 +1739,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "",
       "holds": [
         "no-public-email"
       ],
@@ -1709,6 +1775,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "catch_all",
       "holds": [
         "email-not-first-party-verified"
       ],
@@ -1744,6 +1811,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [
         "email-not-first-party-verified"
       ],
@@ -1778,6 +1846,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "",
       "holds": [
         "no-public-email"
       ],
@@ -1813,6 +1882,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "catch_all",
       "holds": [],
       "sendable": true
     },
@@ -1847,6 +1917,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "",
       "holds": [
         "no-public-email"
       ],
@@ -1879,6 +1950,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "",
       "holds": [
         "no-public-email"
       ],
@@ -1913,6 +1985,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "",
       "holds": [
         "no-public-email"
       ],
@@ -1945,6 +2018,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "",
       "holds": [
         "no-public-email"
       ],
@@ -1979,6 +2053,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "catch_all",
       "holds": [],
       "sendable": true
     },
@@ -2011,6 +2086,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "catch_all",
       "holds": [],
       "sendable": true
     },
@@ -2043,6 +2119,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [],
       "sendable": true
     },
@@ -2075,6 +2152,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [],
       "sendable": true
     },
@@ -2107,6 +2185,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [],
       "sendable": true
     },
@@ -2139,6 +2218,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [],
       "sendable": true
     },
@@ -2171,6 +2251,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "catch_all",
       "holds": [],
       "sendable": true
     },
@@ -2203,6 +2284,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [],
       "sendable": true
     },
@@ -2235,6 +2317,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "catch_all",
       "holds": [],
       "sendable": true
     },
@@ -2267,6 +2350,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [],
       "sendable": true
     },
@@ -2299,6 +2383,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [],
       "sendable": true
     },
@@ -2331,6 +2416,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [],
       "sendable": true
     },
@@ -2363,6 +2449,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [],
       "sendable": true
     },
@@ -2395,6 +2482,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [],
       "sendable": true
     },
@@ -2427,6 +2515,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [],
       "sendable": true
     },
@@ -2459,6 +2548,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [],
       "sendable": true
     },
@@ -2491,6 +2581,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [],
       "sendable": true
     },
@@ -2523,6 +2614,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [],
       "sendable": true
     },
@@ -2555,6 +2647,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [],
       "sendable": true
     },
@@ -2587,6 +2680,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [],
       "sendable": true
     },
@@ -2619,6 +2713,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "catch_all",
       "holds": [],
       "sendable": true
     },
@@ -2651,6 +2746,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [],
       "sendable": true
     },
@@ -2683,6 +2779,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "catch_all",
       "holds": [],
       "sendable": true
     },
@@ -2715,6 +2812,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [],
       "sendable": true
     },
@@ -2747,6 +2845,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "catch_all",
       "holds": [],
       "sendable": true
     },
@@ -2779,6 +2878,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [],
       "sendable": true
     },
@@ -2811,6 +2911,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [],
       "sendable": true
     },
@@ -2843,6 +2944,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "",
       "holds": [
         "no-public-email"
       ],
@@ -2877,6 +2979,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "",
       "holds": [
         "no-public-email"
       ],
@@ -2911,6 +3014,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "",
       "holds": [
         "no-public-email"
       ],
@@ -2945,6 +3049,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "",
       "holds": [
         "no-public-email"
       ],
@@ -2979,6 +3084,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "",
       "holds": [
         "no-public-email"
       ],
@@ -3013,6 +3119,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "",
       "holds": [
         "no-public-email"
       ],
@@ -3047,6 +3154,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "",
       "holds": [
         "no-public-email"
       ],
@@ -3081,6 +3189,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "",
       "holds": [
         "no-public-email"
       ],
@@ -3115,6 +3224,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "",
       "holds": [
         "no-public-email"
       ],
@@ -3149,6 +3259,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "",
       "holds": [
         "no-public-email"
       ],
@@ -3183,6 +3294,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "",
       "holds": [
         "competitor",
         "no-public-email"
@@ -3218,6 +3330,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "",
       "holds": [
         "no-public-email"
       ],
@@ -3252,6 +3365,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "",
       "holds": [
         "no-public-email"
       ],
@@ -3286,6 +3400,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "",
       "holds": [
         "no-public-email"
       ],
@@ -3320,6 +3435,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "",
       "holds": [
         "no-public-email"
       ],
@@ -3354,6 +3470,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [],
       "sendable": true
     },
@@ -3386,6 +3503,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "",
       "holds": [
         "competitor",
         "no-public-email"
@@ -3421,6 +3539,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "",
       "holds": [
         "competitor",
         "no-public-email"
@@ -3456,6 +3575,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "",
       "holds": [
         "competitor",
         "no-public-email"
@@ -3491,6 +3611,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "",
       "holds": [
         "no-public-email"
       ],
@@ -3525,6 +3646,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [],
       "sendable": true
     },
@@ -3557,10 +3679,9 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
-      "holds": [
-        "org-cap (one send per org; kept chip-wells-florida-apex-accelerator-at-uwf)"
-      ],
-      "sendable": false
+      "emailVerify": "ok",
+      "holds": [],
+      "sendable": true
     },
     {
       "id": "emery-parker-florida-apex-accelerator-at-famu",
@@ -3591,6 +3712,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "catch_all",
       "holds": [],
       "sendable": true
     },
@@ -3623,10 +3745,9 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
-      "holds": [
-        "domain-cap (one send per sending domain; kept chip-wells-florida-apex-accelerator-at-uwf)"
-      ],
-      "sendable": false
+      "emailVerify": "ok",
+      "holds": [],
+      "sendable": true
     },
     {
       "id": "steve-south-florida-apex-accelerator-at-ucf",
@@ -3657,10 +3778,9 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
-      "holds": [
-        "org-cap (one send per org; kept elly-membreno-florida-apex-accelerator-at-ucf)"
-      ],
-      "sendable": false
+      "emailVerify": "ok",
+      "holds": [],
+      "sendable": true
     },
     {
       "id": "elly-membreno-florida-apex-accelerator-at-ucf",
@@ -3691,6 +3811,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [],
       "sendable": true
     },
@@ -3723,6 +3844,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [],
       "sendable": true
     },
@@ -3755,9 +3877,9 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [
-        "government-mailbox",
-        "org-cap (one send per org; kept karen-krymski-florida-apex-accelerator-at-usf)"
+        "government-mailbox"
       ],
       "sendable": false
     },
@@ -3790,6 +3912,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [],
       "sendable": true
     },
@@ -3822,8 +3945,11 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
-      "holds": [],
-      "sendable": true
+      "emailVerify": "invalid",
+      "holds": [
+        "email-invalid (millionverifier: invalid)"
+      ],
+      "sendable": false
     },
     {
       "id": "sarah-griffin-florida-apex-accelerator-at-fau",
@@ -3854,10 +3980,9 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
-      "holds": [
-        "org-cap (one send per org; kept jacqueline-ramirez-florida-apex-accelerator-at-fau)"
-      ],
-      "sendable": false
+      "emailVerify": "catch_all",
+      "holds": [],
+      "sendable": true
     },
     {
       "id": "jacqueline-ramirez-florida-apex-accelerator-at-fau",
@@ -3888,6 +4013,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "catch_all",
       "holds": [
         "duplicate-email (kept sarah-griffin-florida-apex-accelerator-at-fau)"
       ],
@@ -3922,6 +4048,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "catch_all",
       "holds": [],
       "sendable": true
     },
@@ -3954,10 +4081,9 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
-      "holds": [
-        "org-cap (one send per org; kept luis-batista-florida-apex-accelerator-at-fiu)"
-      ],
-      "sendable": false
+      "emailVerify": "catch_all",
+      "holds": [],
+      "sendable": true
     },
     {
       "id": "beth-ann-taylor-colorado-apex-accelerator",
@@ -3988,10 +4114,9 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
-      "holds": [
-        "org-cap (one send per org; kept andrew-stott-colorado-apex-accelerator)"
-      ],
-      "sendable": false
+      "emailVerify": "ok",
+      "holds": [],
+      "sendable": true
     },
     {
       "id": "andrew-stott-colorado-apex-accelerator",
@@ -4022,6 +4147,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [],
       "sendable": true
     },
@@ -4054,8 +4180,9 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [
-        "org-cap (one send per org; kept andrew-stott-colorado-apex-accelerator)"
+        "org-cap (max 3 per org; kept andrew-stott-colorado-apex-accelerator, beth-ann-taylor-colorado-apex-accelerator, brooke-taylor-colorado-apex-accelerator)"
       ],
       "sendable": false
     },
@@ -4088,8 +4215,9 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [
-        "org-cap (one send per org; kept andrew-stott-colorado-apex-accelerator)"
+        "org-cap (max 3 per org; kept andrew-stott-colorado-apex-accelerator, beth-ann-taylor-colorado-apex-accelerator, brooke-taylor-colorado-apex-accelerator)"
       ],
       "sendable": false
     },
@@ -4122,8 +4250,9 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [
-        "org-cap (one send per org; kept andrew-stott-colorado-apex-accelerator)"
+        "org-cap (max 3 per org; kept andrew-stott-colorado-apex-accelerator, beth-ann-taylor-colorado-apex-accelerator, brooke-taylor-colorado-apex-accelerator)"
       ],
       "sendable": false
     },
@@ -4156,10 +4285,9 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
-      "holds": [
-        "org-cap (one send per org; kept andrew-stott-colorado-apex-accelerator)"
-      ],
-      "sendable": false
+      "emailVerify": "ok",
+      "holds": [],
+      "sendable": true
     },
     {
       "id": "jim-kidd-colorado-apex-accelerator",
@@ -4190,8 +4318,9 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [
-        "org-cap (one send per org; kept andrew-stott-colorado-apex-accelerator)"
+        "org-cap (max 3 per org; kept andrew-stott-colorado-apex-accelerator, beth-ann-taylor-colorado-apex-accelerator, brooke-taylor-colorado-apex-accelerator)"
       ],
       "sendable": false
     },
@@ -4224,8 +4353,9 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [
-        "org-cap (one send per org; kept andrew-stott-colorado-apex-accelerator)"
+        "org-cap (max 3 per org; kept andrew-stott-colorado-apex-accelerator, beth-ann-taylor-colorado-apex-accelerator, brooke-taylor-colorado-apex-accelerator)"
       ],
       "sendable": false
     },
@@ -4258,8 +4388,9 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [
-        "org-cap (one send per org; kept andrew-stott-colorado-apex-accelerator)"
+        "org-cap (max 3 per org; kept andrew-stott-colorado-apex-accelerator, beth-ann-taylor-colorado-apex-accelerator, brooke-taylor-colorado-apex-accelerator)"
       ],
       "sendable": false
     },
@@ -4292,8 +4423,9 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [
-        "org-cap (one send per org; kept andrew-stott-colorado-apex-accelerator)"
+        "org-cap (max 3 per org; kept andrew-stott-colorado-apex-accelerator, beth-ann-taylor-colorado-apex-accelerator, brooke-taylor-colorado-apex-accelerator)"
       ],
       "sendable": false
     },
@@ -4326,8 +4458,10 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "invalid",
       "holds": [
-        "org-cap (one send per org; kept andrew-stott-colorado-apex-accelerator)"
+        "email-invalid (millionverifier: invalid)",
+        "org-cap (max 3 per org; kept andrew-stott-colorado-apex-accelerator, beth-ann-taylor-colorado-apex-accelerator, brooke-taylor-colorado-apex-accelerator)"
       ],
       "sendable": false
     },
@@ -4360,9 +4494,9 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [
-        "government-mailbox",
-        "org-cap (one send per org; kept dasia-johnson-ohio-apex-accelerator)"
+        "government-mailbox"
       ],
       "sendable": false
     },
@@ -4395,6 +4529,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [
         "government-mailbox"
       ],
@@ -4429,8 +4564,9 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [
-        "org-cap (one send per org; kept karen-wivell-ohio-university-apex-accelerator)"
+        "domain-cap (max 3 per sending domain; kept billy-grill-ohio-apex-accelerator-at-ohio-university, danielle-petermann-ohio-apex-accelerator-cincinnati, don-zavesky-ohio-apex-accelerator-greater-cleveland)"
       ],
       "sendable": false
     },
@@ -4463,8 +4599,9 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [
-        "domain-cap (one send per sending domain; kept billy-grill-ohio-apex-accelerator-at-ohio-university)"
+        "domain-cap (max 3 per sending domain; kept billy-grill-ohio-apex-accelerator-at-ohio-university, danielle-petermann-ohio-apex-accelerator-cincinnati, don-zavesky-ohio-apex-accelerator-greater-cleveland)"
       ],
       "sendable": false
     },
@@ -4497,8 +4634,9 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [
-        "domain-cap (one send per sending domain; kept billy-grill-ohio-apex-accelerator-at-ohio-university)"
+        "domain-cap (max 3 per sending domain; kept billy-grill-ohio-apex-accelerator-at-ohio-university, danielle-petermann-ohio-apex-accelerator-cincinnati, don-zavesky-ohio-apex-accelerator-greater-cleveland)"
       ],
       "sendable": false
     },
@@ -4531,8 +4669,9 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [
-        "domain-cap (one send per sending domain; kept billy-grill-ohio-apex-accelerator-at-ohio-university)"
+        "domain-cap (max 3 per sending domain; kept billy-grill-ohio-apex-accelerator-at-ohio-university, danielle-petermann-ohio-apex-accelerator-cincinnati, don-zavesky-ohio-apex-accelerator-greater-cleveland)"
       ],
       "sendable": false
     },
@@ -4565,10 +4704,9 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
-      "holds": [
-        "org-cap (one send per org; kept dillan-pickel-ohio-apex-accelerator-at-ysu)"
-      ],
-      "sendable": false
+      "emailVerify": "ok",
+      "holds": [],
+      "sendable": true
     },
     {
       "id": "dillan-pickel-ohio-apex-accelerator-at-ysu",
@@ -4599,6 +4737,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [],
       "sendable": true
     },
@@ -4631,8 +4770,9 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [
-        "org-cap (one send per org; kept dasia-johnson-ohio-apex-accelerator)"
+        "domain-cap (max 3 per sending domain; kept billy-grill-ohio-apex-accelerator-at-ohio-university, danielle-petermann-ohio-apex-accelerator-cincinnati, don-zavesky-ohio-apex-accelerator-greater-cleveland)"
       ],
       "sendable": false
     },
@@ -4665,10 +4805,9 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
-      "holds": [
-        "domain-cap (one send per sending domain; kept billy-grill-ohio-apex-accelerator-at-ohio-university)"
-      ],
-      "sendable": false
+      "emailVerify": "ok",
+      "holds": [],
+      "sendable": true
     },
     {
       "id": "john-woodard-ohio-apex-accelerator-akron",
@@ -4699,8 +4838,9 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [
-        "domain-cap (one send per sending domain; kept billy-grill-ohio-apex-accelerator-at-ohio-university)"
+        "domain-cap (max 3 per sending domain; kept billy-grill-ohio-apex-accelerator-at-ohio-university, danielle-petermann-ohio-apex-accelerator-cincinnati, don-zavesky-ohio-apex-accelerator-greater-cleveland)"
       ],
       "sendable": false
     },
@@ -4733,8 +4873,11 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
-      "holds": [],
-      "sendable": true
+      "emailVerify": "invalid",
+      "holds": [
+        "email-invalid (millionverifier: invalid)"
+      ],
+      "sendable": false
     },
     {
       "id": "jeremy-garber-ohio-apex-accelerator-at-northwest-state-cc",
@@ -4765,6 +4908,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "",
       "holds": [
         "no-public-email"
       ],
@@ -4799,8 +4943,9 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [
-        "org-cap (one send per org; kept billy-grill-ohio-apex-accelerator-at-ohio-university)"
+        "domain-cap (max 3 per sending domain; kept billy-grill-ohio-apex-accelerator-at-ohio-university, danielle-petermann-ohio-apex-accelerator-cincinnati, don-zavesky-ohio-apex-accelerator-greater-cleveland)"
       ],
       "sendable": false
     },
@@ -4833,6 +4978,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [],
       "sendable": true
     },
@@ -4865,10 +5011,9 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
-      "holds": [
-        "domain-cap (one send per sending domain; kept billy-grill-ohio-apex-accelerator-at-ohio-university)"
-      ],
-      "sendable": false
+      "emailVerify": "ok",
+      "holds": [],
+      "sendable": true
     },
     {
       "id": "nancy-cleveland-gt-apex-accelerator",
@@ -4899,8 +5044,9 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "catch_all",
       "holds": [
-        "org-cap (one send per org; kept annette-bettis-gt-apex-accelerator)"
+        "org-cap (max 3 per org; kept annette-bettis-gt-apex-accelerator, bridget-bennett-gt-apex-accelerator, chioma-anosike-gt-apex-accelerator)"
       ],
       "sendable": false
     },
@@ -4933,10 +5079,9 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
-      "holds": [
-        "org-cap (one send per org; kept annette-bettis-gt-apex-accelerator)"
-      ],
-      "sendable": false
+      "emailVerify": "catch_all",
+      "holds": [],
+      "sendable": true
     },
     {
       "id": "bridget-bennett-gt-apex-accelerator",
@@ -4967,10 +5112,9 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
-      "holds": [
-        "org-cap (one send per org; kept annette-bettis-gt-apex-accelerator)"
-      ],
-      "sendable": false
+      "emailVerify": "catch_all",
+      "holds": [],
+      "sendable": true
     },
     {
       "id": "annette-bettis-gt-apex-accelerator",
@@ -5001,6 +5145,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "catch_all",
       "holds": [],
       "sendable": true
     },
@@ -5033,8 +5178,9 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "catch_all",
       "holds": [
-        "org-cap (one send per org; kept annette-bettis-gt-apex-accelerator)"
+        "org-cap (max 3 per org; kept annette-bettis-gt-apex-accelerator, bridget-bennett-gt-apex-accelerator, chioma-anosike-gt-apex-accelerator)"
       ],
       "sendable": false
     },
@@ -5067,8 +5213,9 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "catch_all",
       "holds": [
-        "org-cap (one send per org; kept annette-bettis-gt-apex-accelerator)"
+        "org-cap (max 3 per org; kept annette-bettis-gt-apex-accelerator, bridget-bennett-gt-apex-accelerator, chioma-anosike-gt-apex-accelerator)"
       ],
       "sendable": false
     },
@@ -5101,8 +5248,9 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "catch_all",
       "holds": [
-        "org-cap (one send per org; kept annette-bettis-gt-apex-accelerator)"
+        "org-cap (max 3 per org; kept annette-bettis-gt-apex-accelerator, bridget-bennett-gt-apex-accelerator, chioma-anosike-gt-apex-accelerator)"
       ],
       "sendable": false
     },
@@ -5135,8 +5283,9 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "catch_all",
       "holds": [
-        "org-cap (one send per org; kept annette-bettis-gt-apex-accelerator)"
+        "org-cap (max 3 per org; kept annette-bettis-gt-apex-accelerator, bridget-bennett-gt-apex-accelerator, chioma-anosike-gt-apex-accelerator)"
       ],
       "sendable": false
     },
@@ -5169,8 +5318,9 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "catch_all",
       "holds": [
-        "org-cap (one send per org; kept annette-bettis-gt-apex-accelerator)"
+        "org-cap (max 3 per org; kept annette-bettis-gt-apex-accelerator, bridget-bennett-gt-apex-accelerator, chioma-anosike-gt-apex-accelerator)"
       ],
       "sendable": false
     },
@@ -5203,8 +5353,9 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "catch_all",
       "holds": [
-        "org-cap (one send per org; kept annette-bettis-gt-apex-accelerator)"
+        "org-cap (max 3 per org; kept annette-bettis-gt-apex-accelerator, bridget-bennett-gt-apex-accelerator, chioma-anosike-gt-apex-accelerator)"
       ],
       "sendable": false
     },
@@ -5237,8 +5388,9 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "catch_all",
       "holds": [
-        "org-cap (one send per org; kept annette-bettis-gt-apex-accelerator)"
+        "org-cap (max 3 per org; kept annette-bettis-gt-apex-accelerator, bridget-bennett-gt-apex-accelerator, chioma-anosike-gt-apex-accelerator)"
       ],
       "sendable": false
     },
@@ -5271,8 +5423,9 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "catch_all",
       "holds": [
-        "org-cap (one send per org; kept annette-bettis-gt-apex-accelerator)"
+        "org-cap (max 3 per org; kept annette-bettis-gt-apex-accelerator, bridget-bennett-gt-apex-accelerator, chioma-anosike-gt-apex-accelerator)"
       ],
       "sendable": false
     },
@@ -5305,8 +5458,9 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [
-        "org-cap (one send per org; kept james-d-free-pennwest-gaco-apex-accelerator)"
+        "org-cap (max 3 per org; kept james-d-free-pennwest-gaco-apex-accelerator, kate-lacey-glodek-pennwest-gaco-apex-accelerator, pricilla-a-robertson-pennwest-gaco-apex-accelerator)"
       ],
       "sendable": false
     },
@@ -5339,10 +5493,9 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
-      "holds": [
-        "org-cap (one send per org; kept james-d-free-pennwest-gaco-apex-accelerator)"
-      ],
-      "sendable": false
+      "emailVerify": "ok",
+      "holds": [],
+      "sendable": true
     },
     {
       "id": "pricilla-a-robertson-pennwest-gaco-apex-accelerator",
@@ -5373,10 +5526,9 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
-      "holds": [
-        "org-cap (one send per org; kept james-d-free-pennwest-gaco-apex-accelerator)"
-      ],
-      "sendable": false
+      "emailVerify": "ok",
+      "holds": [],
+      "sendable": true
     },
     {
       "id": "tracy-julian-pennwest-gaco-apex-accelerator",
@@ -5407,8 +5559,9 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [
-        "org-cap (one send per org; kept james-d-free-pennwest-gaco-apex-accelerator)"
+        "org-cap (max 3 per org; kept james-d-free-pennwest-gaco-apex-accelerator, kate-lacey-glodek-pennwest-gaco-apex-accelerator, pricilla-a-robertson-pennwest-gaco-apex-accelerator)"
       ],
       "sendable": false
     },
@@ -5441,8 +5594,9 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [
-        "org-cap (one send per org; kept james-d-free-pennwest-gaco-apex-accelerator)"
+        "org-cap (max 3 per org; kept james-d-free-pennwest-gaco-apex-accelerator, kate-lacey-glodek-pennwest-gaco-apex-accelerator, pricilla-a-robertson-pennwest-gaco-apex-accelerator)"
       ],
       "sendable": false
     },
@@ -5475,6 +5629,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [],
       "sendable": true
     },
@@ -5507,6 +5662,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [],
       "sendable": true
     },
@@ -5539,6 +5695,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "catch_all",
       "holds": [],
       "sendable": true
     },
@@ -5571,6 +5728,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [],
       "sendable": true
     },
@@ -5603,6 +5761,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [],
       "sendable": true
     },
@@ -5635,8 +5794,9 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [
-        "org-cap (one send per org; kept alexis-hepburn-seda-cog-apex-accelerator)"
+        "org-cap (max 3 per org; kept alexis-hepburn-seda-cog-apex-accelerator, denise-feese-seda-cog-apex-accelerator, heather-vial-seda-cog-apex-accelerator)"
       ],
       "sendable": false
     },
@@ -5669,10 +5829,9 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
-      "holds": [
-        "org-cap (one send per org; kept alexis-hepburn-seda-cog-apex-accelerator)"
-      ],
-      "sendable": false
+      "emailVerify": "ok",
+      "holds": [],
+      "sendable": true
     },
     {
       "id": "alexis-hepburn-seda-cog-apex-accelerator",
@@ -5703,6 +5862,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [],
       "sendable": true
     },
@@ -5735,10 +5895,9 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
-      "holds": [
-        "org-cap (one send per org; kept alexis-hepburn-seda-cog-apex-accelerator)"
-      ],
-      "sendable": false
+      "emailVerify": "ok",
+      "holds": [],
+      "sendable": true
     },
     {
       "id": "kelsey-rhoda-west-michigan-apex-accelerator",
@@ -5769,10 +5928,9 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
-      "holds": [
-        "org-cap (one send per org; kept anna-akarapiraya-west-michigan-apex-accelerator)"
-      ],
-      "sendable": false
+      "emailVerify": "ok",
+      "holds": [],
+      "sendable": true
     },
     {
       "id": "eleanor-wilson-west-michigan-apex-accelerator",
@@ -5803,8 +5961,10 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "invalid",
       "holds": [
-        "org-cap (one send per org; kept anna-akarapiraya-west-michigan-apex-accelerator)"
+        "email-invalid (millionverifier: invalid)",
+        "org-cap (max 3 per org; kept anna-akarapiraya-west-michigan-apex-accelerator, britany-cooper-west-michigan-apex-accelerator, kelsey-rhoda-west-michigan-apex-accelerator)"
       ],
       "sendable": false
     },
@@ -5837,10 +5997,9 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
-      "holds": [
-        "org-cap (one send per org; kept anna-akarapiraya-west-michigan-apex-accelerator)"
-      ],
-      "sendable": false
+      "emailVerify": "ok",
+      "holds": [],
+      "sendable": true
     },
     {
       "id": "olivia-brown-west-michigan-apex-accelerator",
@@ -5871,8 +6030,9 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [
-        "org-cap (one send per org; kept anna-akarapiraya-west-michigan-apex-accelerator)"
+        "org-cap (max 3 per org; kept anna-akarapiraya-west-michigan-apex-accelerator, britany-cooper-west-michigan-apex-accelerator, kelsey-rhoda-west-michigan-apex-accelerator)"
       ],
       "sendable": false
     },
@@ -5905,6 +6065,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [],
       "sendable": true
     },
@@ -5937,9 +6098,10 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "catch_all",
       "holds": [
         "government-mailbox",
-        "org-cap (one send per org; kept amber-stevens-mcuny-apex-accelerator)"
+        "org-cap (max 3 per org; kept amber-stevens-mcuny-apex-accelerator, anna-vulaj-fitzsimmons-mcuny-apex-accelerator, jennifer-poliwoda-mcuny-apex-accelerator)"
       ],
       "sendable": false
     },
@@ -5972,9 +6134,9 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "catch_all",
       "holds": [
-        "government-mailbox",
-        "org-cap (one send per org; kept amber-stevens-mcuny-apex-accelerator)"
+        "government-mailbox"
       ],
       "sendable": false
     },
@@ -6007,6 +6169,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "catch_all",
       "holds": [
         "government-mailbox"
       ],
@@ -6041,9 +6204,10 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "catch_all",
       "holds": [
         "government-mailbox",
-        "org-cap (one send per org; kept amber-stevens-mcuny-apex-accelerator)"
+        "org-cap (max 3 per org; kept amber-stevens-mcuny-apex-accelerator, anna-vulaj-fitzsimmons-mcuny-apex-accelerator, jennifer-poliwoda-mcuny-apex-accelerator)"
       ],
       "sendable": false
     },
@@ -6076,9 +6240,9 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "catch_all",
       "holds": [
-        "government-mailbox",
-        "org-cap (one send per org; kept amber-stevens-mcuny-apex-accelerator)"
+        "government-mailbox"
       ],
       "sendable": false
     },
@@ -6111,6 +6275,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [
         "government-mailbox"
       ],
@@ -6145,10 +6310,9 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
-      "holds": [
-        "org-cap (one send per org; kept debbie-barber-tennessee-apex-accelerator)"
-      ],
-      "sendable": false
+      "emailVerify": "ok",
+      "holds": [],
+      "sendable": true
     },
     {
       "id": "debbie-barber-tennessee-apex-accelerator",
@@ -6179,6 +6343,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [],
       "sendable": true
     },
@@ -6211,8 +6376,9 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [
-        "org-cap (one send per org; kept debbie-barber-tennessee-apex-accelerator)"
+        "org-cap (max 3 per org; kept debbie-barber-tennessee-apex-accelerator, jutta-bangs-tennessee-apex-accelerator, paul-middlebrooks-tennessee-apex-accelerator)"
       ],
       "sendable": false
     },
@@ -6245,10 +6411,9 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
-      "holds": [
-        "org-cap (one send per org; kept debbie-barber-tennessee-apex-accelerator)"
-      ],
-      "sendable": false
+      "emailVerify": "ok",
+      "holds": [],
+      "sendable": true
     },
     {
       "id": "chuck-beck-nebraska-apex-accelerator",
@@ -6279,6 +6444,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "catch_all",
       "holds": [],
       "sendable": true
     },
@@ -6311,10 +6477,9 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
-      "holds": [
-        "org-cap (one send per org; kept chuck-beck-nebraska-apex-accelerator)"
-      ],
-      "sendable": false
+      "emailVerify": "catch_all",
+      "holds": [],
+      "sendable": true
     },
     {
       "id": "terry-morgan-nebraska-apex-accelerator",
@@ -6345,10 +6510,9 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
-      "holds": [
-        "org-cap (one send per org; kept chuck-beck-nebraska-apex-accelerator)"
-      ],
-      "sendable": false
+      "emailVerify": "catch_all",
+      "holds": [],
+      "sendable": true
     },
     {
       "id": "washington-apex-main-office-washington-apex-accelerator",
@@ -6379,8 +6543,9 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [
-        "org-cap (one send per org; kept pierce-region-washington-apex-accelerator)"
+        "org-cap (max 3 per org; kept pierce-region-washington-apex-accelerator, spokane-region-washington-apex-accelerator, thurston-region-washington-apex-accelerator)"
       ],
       "sendable": false
     },
@@ -6413,6 +6578,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [],
       "sendable": true
     },
@@ -6445,10 +6611,9 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
-      "holds": [
-        "org-cap (one send per org; kept pierce-region-washington-apex-accelerator)"
-      ],
-      "sendable": false
+      "emailVerify": "ok",
+      "holds": [],
+      "sendable": true
     },
     {
       "id": "thurston-region-washington-apex-accelerator",
@@ -6479,10 +6644,9 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
-      "holds": [
-        "org-cap (one send per org; kept pierce-region-washington-apex-accelerator)"
-      ],
-      "sendable": false
+      "emailVerify": "ok",
+      "holds": [],
+      "sendable": true
     },
     {
       "id": "tri-city-region-washington-apex-accelerator",
@@ -6513,8 +6677,9 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [
-        "org-cap (one send per org; kept pierce-region-washington-apex-accelerator)"
+        "org-cap (max 3 per org; kept pierce-region-washington-apex-accelerator, spokane-region-washington-apex-accelerator, thurston-region-washington-apex-accelerator)"
       ],
       "sendable": false
     },
@@ -6547,6 +6712,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [],
       "sendable": true
     },
@@ -6579,6 +6745,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [],
       "sendable": true
     },
@@ -6611,8 +6778,10 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "unknown",
       "holds": [
-        "org-cap (one send per org; kept aicef-apex-arizona-venessa-gleich-american-indian-chamber-apex-acceler)"
+        "email-unverifiable (millionverifier: unknown)",
+        "org-cap (max 3 per org; kept aicef-apex-arizona-venessa-gleich-american-indian-chamber-apex-acceler, aicef-apex-washington-jeremy-sandoval-american-indian-chamber-apex-acc, aicef-apex-oregon-american-indian-chamber-apex-accelerator)"
       ],
       "sendable": false
     },
@@ -6645,8 +6814,10 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "unknown",
       "holds": [
-        "duplicate-email (kept aic-apex-california-american-indian-chamber-apex-accelerator)"
+        "duplicate-email (kept aic-apex-california-american-indian-chamber-apex-accelerator)",
+        "email-unverifiable (millionverifier: unknown)"
       ],
       "sendable": false
     },
@@ -6679,10 +6850,9 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
-      "holds": [
-        "org-cap (one send per org; kept ncaied-apex-colorado-the-national-center-apex-accelerator)"
-      ],
-      "sendable": false
+      "emailVerify": "ok",
+      "holds": [],
+      "sendable": true
     },
     {
       "id": "nicc-apex-nebraska-indian-community-college-apex-accelerator",
@@ -6713,6 +6883,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [],
       "sendable": true
     },
@@ -6745,6 +6916,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [],
       "sendable": true
     },
@@ -6777,6 +6949,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "catch_all",
       "holds": [],
       "sendable": true
     },
@@ -6809,6 +6982,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [
         "duplicate-email (kept ncaied-apex-marietta-the-national-center-apex-accelerator)"
       ],
@@ -6843,6 +7017,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [
         "duplicate-email (kept ncaied-apex-marietta-the-national-center-apex-accelerator)"
       ],
@@ -6877,8 +7052,10 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "unknown",
       "holds": [
-        "duplicate-email (kept aic-apex-california-american-indian-chamber-apex-accelerator)"
+        "duplicate-email (kept aic-apex-california-american-indian-chamber-apex-accelerator)",
+        "email-unverifiable (millionverifier: unknown)"
       ],
       "sendable": false
     },
@@ -6911,6 +7088,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "catch_all",
       "holds": [],
       "sendable": true
     },
@@ -6943,6 +7121,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [],
       "sendable": true
     },
@@ -6975,6 +7154,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "",
       "holds": [
         "no-public-email"
       ],
@@ -7009,6 +7189,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "catch_all",
       "holds": [],
       "sendable": true
     },
@@ -7041,6 +7222,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [],
       "sendable": true
     },
@@ -7073,8 +7255,9 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "invalid",
       "holds": [
-        "org-cap (one send per org; kept julie-jaksha-montana-apex-accelerator)"
+        "email-invalid (millionverifier: invalid)"
       ],
       "sendable": false
     },
@@ -7107,8 +7290,11 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
-      "holds": [],
-      "sendable": true
+      "emailVerify": "unknown",
+      "holds": [
+        "email-unverifiable (millionverifier: unknown)"
+      ],
+      "sendable": false
     },
     {
       "id": "ericka-white-illinois-apex-accelerator",
@@ -7139,6 +7325,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [
         "government-mailbox"
       ],
@@ -7173,6 +7360,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [],
       "sendable": true
     },
@@ -7205,8 +7393,11 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
-      "holds": [],
-      "sendable": true
+      "emailVerify": "invalid",
+      "holds": [
+        "email-invalid (millionverifier: invalid)"
+      ],
+      "sendable": false
     },
     {
       "id": "kentucky-apex-team-kentucky-apex-accelerator",
@@ -7237,6 +7428,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [],
       "sendable": true
     },
@@ -7269,6 +7461,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "",
       "holds": [
         "no-public-email"
       ],
@@ -7303,6 +7496,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [],
       "sendable": true
     },
@@ -7335,8 +7529,9 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "unknown",
       "holds": [
-        "org-cap (one send per org; kept aicef-apex-arizona-venessa-gleich-american-indian-chamber-apex-acceler)"
+        "email-unverifiable (millionverifier: unknown)"
       ],
       "sendable": false
     },
@@ -7369,8 +7564,11 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
-      "holds": [],
-      "sendable": true
+      "emailVerify": "unknown",
+      "holds": [
+        "email-unverifiable (millionverifier: unknown)"
+      ],
+      "sendable": false
     },
     {
       "id": "aicef-apex-washington-jeremy-sandoval-american-indian-chamber-apex-acc",
@@ -7401,8 +7599,9 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "unknown",
       "holds": [
-        "org-cap (one send per org; kept aicef-apex-arizona-venessa-gleich-american-indian-chamber-apex-acceler)"
+        "email-unverifiable (millionverifier: unknown)"
       ],
       "sendable": false
     },
@@ -7435,6 +7634,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "",
       "holds": [
         "no-public-email"
       ],
@@ -7469,8 +7669,9 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [
-        "org-cap (one send per org; kept allison-hitchner-carpenter-national-defense-industrial-association-ndi)"
+        "org-cap (max 1 per org; kept allison-hitchner-carpenter-national-defense-industrial-association-ndi)"
       ],
       "sendable": false
     },
@@ -7503,8 +7704,9 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [
-        "org-cap (one send per org; kept allison-hitchner-carpenter-national-defense-industrial-association-ndi)"
+        "org-cap (max 1 per org; kept allison-hitchner-carpenter-national-defense-industrial-association-ndi)"
       ],
       "sendable": false
     },
@@ -7537,6 +7739,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [],
       "sendable": true
     },
@@ -7569,8 +7772,9 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [
-        "org-cap (one send per org; kept allison-hitchner-carpenter-national-defense-industrial-association-ndi)"
+        "org-cap (max 1 per org; kept allison-hitchner-carpenter-national-defense-industrial-association-ndi)"
       ],
       "sendable": false
     },
@@ -7603,8 +7807,9 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [
-        "org-cap (one send per org; kept christian-larsen-professional-services-council)"
+        "org-cap (max 1 per org; kept christian-larsen-professional-services-council)"
       ],
       "sendable": false
     },
@@ -7637,8 +7842,9 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [
-        "org-cap (one send per org; kept christian-larsen-professional-services-council)"
+        "org-cap (max 1 per org; kept christian-larsen-professional-services-council)"
       ],
       "sendable": false
     },
@@ -7671,8 +7877,9 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [
-        "org-cap (one send per org; kept christian-larsen-professional-services-council)"
+        "org-cap (max 1 per org; kept christian-larsen-professional-services-council)"
       ],
       "sendable": false
     },
@@ -7705,8 +7912,9 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [
-        "org-cap (one send per org; kept christian-larsen-professional-services-council)"
+        "org-cap (max 1 per org; kept christian-larsen-professional-services-council)"
       ],
       "sendable": false
     },
@@ -7739,8 +7947,9 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [
-        "org-cap (one send per org; kept christian-larsen-professional-services-council)"
+        "org-cap (max 1 per org; kept christian-larsen-professional-services-council)"
       ],
       "sendable": false
     },
@@ -7773,8 +7982,9 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [
-        "org-cap (one send per org; kept christian-larsen-professional-services-council)"
+        "org-cap (max 1 per org; kept christian-larsen-professional-services-council)"
       ],
       "sendable": false
     },
@@ -7807,8 +8017,9 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [
-        "org-cap (one send per org; kept christian-larsen-professional-services-council)"
+        "org-cap (max 1 per org; kept christian-larsen-professional-services-council)"
       ],
       "sendable": false
     },
@@ -7841,6 +8052,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [],
       "sendable": true
     },
@@ -7873,6 +8085,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [],
       "sendable": true
     },
@@ -7905,6 +8118,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [],
       "sendable": true
     },
@@ -7937,6 +8151,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "",
       "holds": [
         "no-public-email"
       ],
@@ -7971,6 +8186,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [],
       "sendable": true
     },
@@ -8003,6 +8219,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "catch_all",
       "holds": [],
       "sendable": true
     },
@@ -8035,6 +8252,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "catch_all",
       "holds": [
         "government-mailbox"
       ],
@@ -8069,6 +8287,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "catch_all",
       "holds": [
         "government-mailbox"
       ],
@@ -8103,6 +8322,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "catch_all",
       "holds": [
         "government-mailbox"
       ],
@@ -8137,7 +8357,9 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "invalid",
       "holds": [
+        "email-invalid (millionverifier: invalid)",
         "government-mailbox"
       ],
       "sendable": false
@@ -8171,7 +8393,9 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "unknown",
       "holds": [
+        "email-unverifiable (millionverifier: unknown)",
         "government-mailbox"
       ],
       "sendable": false
@@ -8205,6 +8429,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [
         "government-mailbox"
       ],
@@ -8239,6 +8464,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [
         "government-mailbox"
       ],
@@ -8273,8 +8499,9 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [
-        "org-cap (one send per org; kept select-gcr-select-gcr)"
+        "org-cap (max 1 per org; kept select-gcr-select-gcr)"
       ],
       "sendable": false
     },
@@ -8307,8 +8534,10 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "invalid",
       "holds": [
-        "org-cap (one send per org; kept select-gcr-select-gcr)"
+        "email-invalid (millionverifier: invalid)",
+        "org-cap (max 1 per org; kept select-gcr-select-gcr)"
       ],
       "sendable": false
     },
@@ -8341,8 +8570,9 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [
-        "org-cap (one send per org; kept select-gcr-select-gcr)"
+        "org-cap (max 1 per org; kept select-gcr-select-gcr)"
       ],
       "sendable": false
     },
@@ -8375,8 +8605,9 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [
-        "org-cap (one send per org; kept select-gcr-select-gcr)"
+        "org-cap (max 1 per org; kept select-gcr-select-gcr)"
       ],
       "sendable": false
     },
@@ -8409,8 +8640,10 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "invalid",
       "holds": [
-        "org-cap (one send per org; kept select-gcr-select-gcr)"
+        "email-invalid (millionverifier: invalid)",
+        "org-cap (max 1 per org; kept select-gcr-select-gcr)"
       ],
       "sendable": false
     },
@@ -8443,8 +8676,10 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "invalid",
       "holds": [
-        "org-cap (one send per org; kept select-gcr-select-gcr)"
+        "email-invalid (millionverifier: invalid)",
+        "org-cap (max 1 per org; kept select-gcr-select-gcr)"
       ],
       "sendable": false
     },
@@ -8477,8 +8712,9 @@
       "verifiedAt": "2026-08-31",
       "notes": "",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [
-        "org-cap (one send per org; kept select-gcr-select-gcr)"
+        "org-cap (max 1 per org; kept select-gcr-select-gcr)"
       ],
       "sendable": false
     },
@@ -8509,6 +8745,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "Newsletter tab record.",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "",
       "holds": [
         "no-public-email"
       ],
@@ -8541,6 +8778,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "Newsletter tab record.",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [],
       "sendable": true
     },
@@ -8571,6 +8809,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "Newsletter tab record.",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "catch_all",
       "holds": [
         "competitor"
       ],
@@ -8603,6 +8842,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "Newsletter tab record.",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [],
       "sendable": true
     },
@@ -8633,6 +8873,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "Newsletter tab record.",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [],
       "sendable": true
     },
@@ -8663,6 +8904,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "Newsletter tab record.",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "",
       "holds": [
         "no-public-email"
       ],
@@ -8695,6 +8937,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "Newsletter tab record.",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "",
       "holds": [
         "no-public-email"
       ],
@@ -8727,6 +8970,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "Newsletter tab record.",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "",
       "holds": [
         "no-public-email"
       ],
@@ -8759,6 +9003,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "Newsletter tab record.",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "",
       "holds": [
         "no-public-email"
       ],
@@ -8791,6 +9036,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "Newsletter tab record.",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "",
       "holds": [
         "no-public-email"
       ],
@@ -8823,6 +9069,7 @@
       "verifiedAt": "2026-08-31",
       "notes": "Newsletter tab record.",
       "origin": "master-pdf-2026-08-31",
+      "emailVerify": "ok",
       "holds": [],
       "sendable": true
     },
@@ -8853,6 +9100,7 @@
       "verifiedAt": "2026-09-03",
       "notes": "Expansion batch, researched 2026-09-03. Contact path: Site contact page; Feedspot shows contact domain skywayacquisition.com. Primary channels: Podcast.",
       "origin": "expansion-2026-09-03",
+      "emailVerify": "",
       "holds": [
         "no-public-email"
       ],
@@ -8885,6 +9133,7 @@
       "verifiedAt": "2026-09-03",
       "notes": "Expansion batch, researched 2026-09-03. Contact path: Feedspot shows contact domain squaredcompass.com. Primary channels: Podcast.",
       "origin": "expansion-2026-09-03",
+      "emailVerify": "",
       "holds": [
         "no-public-email"
       ],
@@ -8917,6 +9166,7 @@
       "verifiedAt": "2026-09-03",
       "notes": "Expansion batch, researched 2026-09-03. Contact path: Show site contact. Primary channels: Podcast, YouTube.",
       "origin": "expansion-2026-09-03",
+      "emailVerify": "",
       "holds": [
         "no-public-email"
       ],
@@ -8949,6 +9199,7 @@
       "verifiedAt": "2026-09-03",
       "notes": "Expansion batch, researched 2026-09-03. Contact path: Feedspot shows contact domain samlelaw.com. Primary channels: Podcast.",
       "origin": "expansion-2026-09-03",
+      "emailVerify": "",
       "holds": [
         "no-public-email"
       ],
@@ -8981,6 +9232,7 @@
       "verifiedAt": "2026-09-03",
       "notes": "Expansion batch, researched 2026-09-03. Contact path: Feedspot shows contact domain govmates.com. Primary channels: Podcast.",
       "origin": "expansion-2026-09-03",
+      "emailVerify": "",
       "holds": [
         "no-public-email"
       ],
@@ -9013,6 +9265,7 @@
       "verifiedAt": "2026-09-03",
       "notes": "Expansion batch, researched 2026-09-03. Contact path: Feedspot shows contact domain govkidmethod.com. Primary channels: Podcast, YouTube.",
       "origin": "expansion-2026-09-03",
+      "emailVerify": "",
       "holds": [
         "duplicate-org-in-expansion (same organization as row 33, \"GovKid Method (YouTube)\")",
         "no-public-email"
@@ -9046,6 +9299,7 @@
       "verifiedAt": "2026-09-03",
       "notes": "Expansion batch, researched 2026-09-03. Contact path: Feedspot shows contact domain govselling.com. Primary channels: Podcast, YouTube.",
       "origin": "expansion-2026-09-03",
+      "emailVerify": "",
       "holds": [
         "no-public-email"
       ],
@@ -9078,6 +9332,7 @@
       "verifiedAt": "2026-09-03",
       "notes": "Expansion batch, researched 2026-09-03. Contact path: Site contact; Feedspot shows domain govcondifferent.com. Primary channels: Podcast, YouTube.",
       "origin": "expansion-2026-09-03",
+      "emailVerify": "",
       "holds": [
         "no-public-email"
       ],
@@ -9110,6 +9365,7 @@
       "verifiedAt": "2026-09-03",
       "notes": "Expansion batch, researched 2026-09-03. Contact path: Show site contact. Primary channels: Podcast.",
       "origin": "expansion-2026-09-03",
+      "emailVerify": "",
       "holds": [
         "no-public-email"
       ],
@@ -9142,6 +9398,7 @@
       "verifiedAt": "2026-09-03",
       "notes": "Expansion batch, researched 2026-09-03. Contact path: Feedspot shows contact domain spcconsulting.org. Primary channels: Podcast.",
       "origin": "expansion-2026-09-03",
+      "emailVerify": "",
       "holds": [
         "no-public-email"
       ],
@@ -9174,6 +9431,7 @@
       "verifiedAt": "2026-09-03",
       "notes": "Expansion batch, researched 2026-09-03. Contact path: Feedspot shows contact domain ltaconsultinggroup.com. Primary channels: Podcast, YouTube.",
       "origin": "expansion-2026-09-03",
+      "emailVerify": "",
       "holds": [
         "no-public-email"
       ],
@@ -9206,6 +9464,7 @@
       "verifiedAt": "2026-09-03",
       "notes": "Expansion batch, researched 2026-09-03. Contact path: Apple Podcasts listing. Primary channels: Podcast.",
       "origin": "expansion-2026-09-03",
+      "emailVerify": "",
       "holds": [
         "no-public-email"
       ],
@@ -9238,6 +9497,7 @@
       "verifiedAt": "2026-09-03",
       "notes": "Expansion batch, researched 2026-09-03. Contact path: Feedspot shows contact domain thesmalls.org. Primary channels: Podcast, YouTube.",
       "origin": "expansion-2026-09-03",
+      "emailVerify": "",
       "holds": [
         "no-public-email"
       ],
@@ -9270,6 +9530,7 @@
       "verifiedAt": "2026-09-03",
       "notes": "Expansion batch, researched 2026-09-03. Contact path: Site contact page. Primary channels: Web, newsletter.",
       "origin": "expansion-2026-09-03",
+      "emailVerify": "",
       "holds": [
         "no-public-email"
       ],
@@ -9302,6 +9563,7 @@
       "verifiedAt": "2026-09-03",
       "notes": "Expansion batch, researched 2026-09-03. Contact path: Publisher site contact. Primary channels: Web, podcast.",
       "origin": "expansion-2026-09-03",
+      "emailVerify": "",
       "holds": [
         "no-public-email"
       ],
@@ -9334,6 +9596,7 @@
       "verifiedAt": "2026-09-03",
       "notes": "Expansion batch, researched 2026-09-03. Contact path: Site contact page. Primary channels: Web, newsletter.",
       "origin": "expansion-2026-09-03",
+      "emailVerify": "",
       "holds": [
         "no-public-email"
       ],
@@ -9366,6 +9629,7 @@
       "verifiedAt": "2026-09-03",
       "notes": "Expansion batch, researched 2026-09-03. Contact path: Firm site contact; Feedspot shows domain cbh.com. Primary channels: Podcast, web.",
       "origin": "expansion-2026-09-03",
+      "emailVerify": "",
       "holds": [
         "no-public-email"
       ],
@@ -9398,6 +9662,7 @@
       "verifiedAt": "2026-09-03",
       "notes": "Expansion batch, researched 2026-09-03. Contact path: Site contact page. Primary channels: Web, podcast, LinkedIn.",
       "origin": "expansion-2026-09-03",
+      "emailVerify": "",
       "holds": [
         "no-public-email"
       ],
@@ -9430,6 +9695,7 @@
       "verifiedAt": "2026-09-03",
       "notes": "Expansion batch, researched 2026-09-03. Contact path: Site contact page. Primary channels: Web, YouTube, speaking.",
       "origin": "expansion-2026-09-03",
+      "emailVerify": "",
       "holds": [
         "no-public-email"
       ],
@@ -9462,6 +9728,7 @@
       "verifiedAt": "2026-09-03",
       "notes": "Expansion batch, researched 2026-09-03. Contact path: Association contact page. Primary channels: Podcast, events, membership.",
       "origin": "expansion-2026-09-03",
+      "emailVerify": "",
       "holds": [
         "no-public-email"
       ],
@@ -9494,6 +9761,7 @@
       "verifiedAt": "2026-09-03",
       "notes": "Expansion batch, researched 2026-09-03. Contact path: Site contact page. Primary channels: Community, events, podcast.",
       "origin": "expansion-2026-09-03",
+      "emailVerify": "",
       "holds": [
         "duplicate-org-in-expansion (same organization as row 7, \"govmates NextGen\")",
         "no-public-email"
@@ -9527,6 +9795,7 @@
       "verifiedAt": "2026-09-03",
       "notes": "Expansion batch, researched 2026-09-03. Contact path: Site contact page. Primary channels: Community, podcast.",
       "origin": "expansion-2026-09-03",
+      "emailVerify": "",
       "holds": [
         "duplicate-org-in-expansion (same organization as row 15, \"The SmallsCast / TheSmalls\")",
         "no-public-email"
@@ -9560,6 +9829,7 @@
       "verifiedAt": "2026-09-03",
       "notes": "Expansion batch, researched 2026-09-03. Contact path: Association contact page. Primary channels: Events, newsletter, advocacy.",
       "origin": "expansion-2026-09-03",
+      "emailVerify": "",
       "holds": [
         "no-public-email"
       ],
@@ -9592,6 +9862,7 @@
       "verifiedAt": "2026-09-03",
       "notes": "Expansion batch, researched 2026-09-03. Contact path: Association contact page. Primary channels: Events, newsletter.",
       "origin": "expansion-2026-09-03",
+      "emailVerify": "",
       "holds": [
         "no-public-email"
       ],
@@ -9624,6 +9895,7 @@
       "verifiedAt": "2026-09-03",
       "notes": "Expansion batch, researched 2026-09-03. Contact path: Association contact page. Primary channels: Events, newsletter.",
       "origin": "expansion-2026-09-03",
+      "emailVerify": "",
       "holds": [
         "no-public-email"
       ],
@@ -9656,6 +9928,7 @@
       "verifiedAt": "2026-09-03",
       "notes": "Expansion batch, researched 2026-09-03. Contact path: Chamber contact page. Primary channels: Events, programs.",
       "origin": "expansion-2026-09-03",
+      "emailVerify": "",
       "holds": [
         "no-public-email"
       ],
@@ -9688,6 +9961,7 @@
       "verifiedAt": "2026-09-03",
       "notes": "Expansion batch, researched 2026-09-03. Contact path: National site lists regional centers. Primary channels: Counseling network.",
       "origin": "expansion-2026-09-03",
+      "emailVerify": "",
       "holds": [
         "no-public-email"
       ],
@@ -9720,6 +9994,7 @@
       "verifiedAt": "2026-09-03",
       "notes": "Expansion batch, researched 2026-09-03. Contact path: Site contact; same org as SAM.gov Bids LIVE row, count once. Primary channels: YouTube, podcast.",
       "origin": "expansion-2026-09-03",
+      "emailVerify": "",
       "holds": [
         "no-public-email"
       ],
@@ -9752,6 +10027,7 @@
       "verifiedAt": "2026-09-03",
       "notes": "Expansion batch, researched 2026-09-03. Contact path: LinkedIn profile and DMs. Primary channels: LinkedIn.",
       "origin": "expansion-2026-09-03",
+      "emailVerify": "",
       "holds": [
         "no-public-email"
       ],

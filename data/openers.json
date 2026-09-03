@@ -1,0 +1,213 @@
+{
+  "version": 1,
+  "note": "Hand-researched opening lines, one per contact id, overriding the derived opener in influencer-db.mjs. The derived openers are true but generic by construction: they say how the contact was found, not anything about the contact. These say something only true of that person, which is the difference between a cold email that reads as researched and one that reads as a merge. `basis` records what each claim was verified from so the assertion can be audited rather than trusted. An entry with opener:null is a deliberate decision to fall back to the derived opener, not an oversight; --check requires every P1 contact to have an entry either way.",
+  "openers": {
+    "aadvik-solutions-aadvik-solutions": {
+      "opener": "Aadvik is one of the few shops I have seen that keeps going after award with post-award briefs and transition support, which reads like you treat the proposal as a promise somebody then has to deliver.",
+      "basis": "'Post-Award Support: post-award briefs and transition support' service line at aadviksolutions.com",
+      "researchedAt": "2026-09-03"
+    },
+    "allison-hitchner-carpenter-national-defense-industrial-association-ndi": {
+      "opener": "NDIA's Small Business Division exists to keep small companies in the defense industrial base, and a lot of that actually happens in the room at the conferences your team puts on rather than in policy papers.",
+      "basis": "Small Business Division mission and event programme at ndia.org/divisions/small-business; Carpenter leads exhibits and sponsorships per ndia.org press release 2018. WEAKER SOURCING: ndia.org is JS-rendered and returned empty, rests on indexed pages",
+      "researchedAt": "2026-09-03"
+    },
+    "annette-bettis-gt-apex-accelerator": {
+      "opener": "You counsel the Carrollton region for GT APEX, which runs out of Georgia Tech's Enterprise Innovation Institute and describes its mission as strengthening the defense industrial base.",
+      "basis": "Annette Bettis listed as Counselor, Carrollton Region; GT APEX described as a member programme of the Enterprise Innovation Institute with a stated mission to strengthen the Defense Industrial Base, at gtapexaccelerator.org",
+      "researchedAt": "2026-09-03"
+    },
+    "ashley-duwel-govconhacks": {
+      "opener": "Teaching GovCon and being a certified monday.com partner is an unusual pair of credentials, and it makes me think you treat a contractor's proposal work as a process problem rather than a writing one.",
+      "basis": "LinkedIn headline 'GovCon Nerd | GovConHacks Host | Workflow Engineer | Certified monday.com Partner'. WEAKER SOURCING: govconhacks.com returned 403, rests on search snippets",
+      "researchedAt": "2026-09-03"
+    },
+    "bidwritebuddy-bidwritebuddy": {
+      "opener": null,
+      "reason": "bidwritebuddy.com is unreachable to automated fetch (503 to the research agent, TLS handshake failure on independent retry), so its positioning could only be sourced from search snippets. Not willing to assert a specific factual claim about a P1's business off indexed summaries alone. Falls back to the derived opener; a human who can load the site can write a real one in two minutes.",
+      "basis": null,
+      "researchedAt": "2026-09-03"
+    },
+    "bridget-bennett-gt-apex-accelerator": {
+      "opener": "The Albany region is one of nine GT APEX centers Georgia Tech keeps running, from Savannah across to LaGrange, which is a lot of ground for a programme that counsels one company at a time.",
+      "basis": "Bridget Bennett listed as Counselor, Albany Region; nine centers listed (Albany, Athens, Atlanta, Augusta, Carrollton, Gainesville, LaGrange, Savannah, Warner Robins) at gtapexaccelerator.org/our-team and /who-we-are",
+      "researchedAt": "2026-09-03"
+    },
+    "bwit-solutions-bwit-solutions": {
+      "opener": "BWIT is unusual in sitting on both sides of the fence, CMMC and GRC readiness on one hand and strategy, capture and contract on-boarding on the other, so you see clients well before the bid and well after award.",
+      "basis": "Service list at gobwit.com includes CMMC auditing/certification, GRC, Strategy and Capture, Proposal Writing and Contract On-boarding",
+      "researchedAt": "2026-09-03"
+    },
+    "cavalry-consulting-cavalry-consulting": {
+      "opener": "Construction, A/E and environmental is a specific place to plant a flag, since those pursuits turn on the technical approach and the team you assemble rather than on anything boilerplate.",
+      "basis": "'Deepest expertise lies in construction, A/E, and environmental work' at cavalryconsulting.com",
+      "researchedAt": "2026-09-03"
+    },
+    "chioma-anosike-gt-apex-accelerator": {
+      "opener": "I noticed you cover the Gainesville region for GT APEX, where the work is one-on-one counseling with Georgia companies trying to get procurement-ready.",
+      "basis": "Chioma Anosike listed as Counselor, Gainesville Region, and 'free one-on-one counseling' to help Georgia businesses get procurement-ready, at gtapexaccelerator.org/our-team and /who-we-are",
+      "researchedAt": "2026-09-03"
+    },
+    "christian-larsen-professional-services-council": {
+      "opener": "The Vision Federal Market Forecast is one of the only reads on this market that is not being sold to anyone, and it gets built out of hundreds of non-attribution conversations rather than scraped data.",
+      "basis": "Vision Federal Market Forecast described as the only non-profit reporting of these markets, built from 400+ non-attribution discussions, at vision.pscouncil.org. WEAKER SOURCING: pscouncil.org returned 503",
+      "researchedAt": "2026-09-03"
+    },
+    "colleen-j-payne-bid-masters-personal-brand": {
+      "opener": "Bid Masters comes from someone still running MCI Diagnostic and still selling to federal agencies, which is not how most contracting courses get built.",
+      "basis": "Founder of MCI Diagnostic Center per colleenjpayne.com; active VA contract 36F79723D0014 through 2027 per vendorportal.ecms.va.gov",
+      "researchedAt": "2026-09-03"
+    },
+    "commodore-consulting-commodore-consulting": {
+      "opener": null,
+      "reason": "commodoreconsulting.com returns HTTP 404 (Squarespace 'Website Expired'), so no first-party source is live. The mailbox still verifies as deliverable, but a researched opener asserting their credentials would rest entirely on a third-party NCMA page. Falls back to the derived opener; a human should confirm the firm is still trading before this one sends.",
+      "basis": null,
+      "researchedAt": "2026-09-03"
+    },
+    "denise-williams-procurement-queen": {
+      "opener": "You held a QPA and a CPPO and ran purchasing on the buying side in New Jersey, which means you have read far more bad proposals than most people who now teach contractors how to write them.",
+      "basis": "QPA (New Jersey), CPPO, RPPO certifications and 18+ years leading procurement teams listed at procurementqueen.com; buy-side role corroborated at canvasrebel.com",
+      "researchedAt": "2026-09-03"
+    },
+    "eric-coffie-govcon-giants": {
+      "opener": "You have put out more than 800 GovCon Giants episodes since 2019, at close to one a day, which means you have probably heard more contractors describe what actually went wrong on a bid than anyone else I could talk to.",
+      "basis": "843 episodes since 2019-05-10, near-daily cadence, per listennotes.com/podcasts/govcon-giants-eric-coffie-_k3IKdt9NMg (govcongiants.com is JS-only and returned no body)",
+      "researchedAt": "2026-09-03"
+    },
+    "fedcon-fedcon": {
+      "opener": "I noticed FEDCON puts Assess in between Connect and Win, so a client hears what their real opportunity actually is before anything gets written.",
+      "basis": "Three-step journey stated verbatim on fedcon.com: Connect, Assess ('See Your Real Opportunity'), Win",
+      "researchedAt": "2026-09-03"
+    },
+    "federal-bid-partners-federal-bid-partners": {
+      "opener": "You describe the job as honest guidance on what is actually worth chasing, which is a very different problem from writing the response once that call has already been made.",
+      "basis": "Client-type language 'honest guidance on what is actually worth chasing' at federalbidpartners.com",
+      "researchedAt": "2026-09-03"
+    },
+    "federal-news-network-federal-news-network": {
+      "opener": "Most coverage of this market is written for the companies selling into it. Federal News Network still puts the Federal Drive on the air at 1500 AM for the people inside the agencies, which is a different audience entirely.",
+      "basis": "Audience stated as federal employees; Federal Drive is the flagship show on WFED 1500 AM per federalnewsnetwork.com and corporate.hubbardradio.com",
+      "researchedAt": "2026-09-03"
+    },
+    "federal-pricing-group-federal-pricing-group": {
+      "opener": "Federal Pricing Group is the rare shop doing cost and price analysis for contracting officers as well as price-to-win for contractors, so you have seen how the other side of the table actually scores a cost volume.",
+      "basis": "Service list at federalpricinggroup.com includes 'Cost/Price Analysis for Federal Contracting Officers' alongside contractor-side proposal pricing",
+      "researchedAt": "2026-09-03"
+    },
+    "gc-plug-and-play-gc-plug-and-play": {
+      "opener": "Most people in this market write the proposal for the client and you teach them to do it themselves, down to the solicitation filters and the middleman positioning in Navigator Essentials and the Weekend Warriors bootcamp.",
+      "basis": "Training-only model; 'Navigator Essentials Course', 'Weekend Warriors Bootcamp', solicitation-hunting filters and middle-man framework at mygovcon.com/about",
+      "researchedAt": "2026-09-03"
+    },
+    "gdi-consulting-gdi-consulting": {
+      "opener": "The OASIS+ record you put up front, 97 of 98 submissions awarded, caught my eye mostly because self-scoring vehicles come down to judgment about which past performance and points you claim rather than to writing.",
+      "basis": "'97/98 OASIS+ Submissions Awarded' stated on gdicwins.com alongside self-scoring proposal support services",
+      "researchedAt": "2026-09-03"
+    },
+    "govcon-wire-executive-mosaic": {
+      "opener": "GovCon Wire posts awards, executive moves and M&A as they break rather than saving them for a weekly roundup, which is a hard cadence to keep and a rare one in this market.",
+      "basis": "'Breaking business news for the government contracting industry'; recurring Contract Awards, Executive Moves and M&A sections at govconwire.com",
+      "researchedAt": "2026-09-03"
+    },
+    "government-contractors-association-government-contractors-association": {
+      "opener": "Most GovCon associations run the networking and leave the teaching to consultants, and GCA went the other direction with an actual curriculum and the CFCP certification behind it.",
+      "basis": "'We are a training institution with educational curriculum, resources and certification training' and the CFCP certification at govassociation.org/training. WEAKER SOURCING: site returned 503, rests on indexed pages",
+      "researchedAt": "2026-09-03"
+    },
+    "govproposals-govproposals": {
+      "opener": "GovProposals meets people further upstream than most shops do, flat fee SAM.gov registration, a GovCon readiness review and a Contract Match Pack, before there is a proposal to write at all.",
+      "basis": "Services listed at govproposals.com: SAM.gov Registration ($399 flat fee), GovCon Readiness Review, Contract Match Pack",
+      "researchedAt": "2026-09-03"
+    },
+    "jason-white-the-federal-code": {
+      "opener": "Three years of bidding before your first federal contract, and then 250 of them after that, is a longer runway than most people teaching this are willing to admit to.",
+      "basis": "Entered federal contracting 2008, first contract after three years, 250+ contracts since, per thebusinessshowus.com/speakers/jason-white. NOTE: thefederalcode.com 301-redirects to a lookalike host wvvw.thefederalcode.com, which was NOT used as a source",
+      "researchedAt": "2026-09-03"
+    },
+    "jennifer-schaus-federal-contractor-weekly": {
+      "opener": "Going through the FAR and DFARS part by part on free webinars is a thankless format, and there are now hundreds of them sitting on your YouTube channel for people who cannot afford a compliance consultant.",
+      "basis": "Free webinar series structured part-by-part through FAR and DFARS Parts 201-253, ~50+ sessions listed plus archives, at jenniferschaus.com/webinars, recordings on youtube.com/user/Schausjennifer",
+      "researchedAt": "2026-09-03"
+    },
+    "joshua-frank-rsm-federal": {
+      "opener": "The Government Sales Manual being on its tenth edition tells me you keep rewriting it rather than reprinting it, which is not how most GovCon books get treated.",
+      "basis": "The Government Sales Manual, 10th Edition (2022), authorjoshfrank.com (rsmfederal.com returned an empty body)",
+      "researchedAt": "2026-09-03"
+    },
+    "kizzy-parks-kizzy-parks-kpc": {
+      "opener": "Proposal Master Academy already has an AI-powered proposal writing module inside it, which puts you further along on this than most people I have been talking to.",
+      "basis": "Proposal Master Academy lists a module 'AI-Powered Proposal Writing' at proposalthatwins.com",
+      "researchedAt": "2026-09-03"
+    },
+    "lohfeld-consulting-group-lohfeld-consulting": {
+      "opener": "The FY27 budget watch and shutdown-proofing posts on your blog do something unusual for a proposal shop, which is start from where the federal money is actually going rather than from proposal craft.",
+      "basis": "Posts 'FY27 Budget Watch: Where the Money Is (and Isn't) Headed' (2026-08-27) and 'How to Shutdown-Proof Your FY27 Pipeline' (2026-08-31) at lohfeldconsulting.com/blog",
+      "researchedAt": "2026-09-03"
+    },
+    "nsbgca-national-small-business-government-contractors-association": {
+      "opener": "Going from the National 8(a) Association to NSBGCA reads like a deliberate call that the problems your members run into are not really about which certification they happen to hold.",
+      "basis": "'Formerly known as the National 8(a) Association', rebrand to reflect a mission beyond the 8(a) programme, at nsbgca.org/our-story",
+      "researchedAt": "2026-09-03"
+    },
+    "orangeslices-ai-orangeslices-pbc": {
+      "opener": "Registering as a public benefit corporation is not a typical move for a GovCon media outlet, and the expiring task order and agency forecast reporting suggests the more informed marketplace line was meant literally.",
+      "basis": "PBC conversion announcement and mission language at orangeslices.ai; expiring task order and agency forecast sections confirmed on site",
+      "researchedAt": "2026-09-03"
+    },
+    "payne-professional-assurance-payne-professional-assurance": {
+      "opener": "You built PPA on forty years of federal telecom capture and pricing across Bell Atlantic, Qwest/CenturyLink and BT Federal, and price-to-win is about the least automatable thing in this business.",
+      "basis": "Founder Thomas Payne, 40+ years, career timeline listing Bell Atlantic Federal, Qwest/CenturyLink and BT Federal, plus a Price-to-Win service line, at paynepa.com",
+      "researchedAt": "2026-09-03"
+    },
+    "sas-gps-sas-gps": {
+      "opener": "I went through your services page and FedStarter stood out, since matching small firms with no federal past performance to primes who need them for socioeconomic requirements is a relationship problem, not a writing one.",
+      "basis": "'FedStarter' programme described as connecting small businesses lacking federal experience with primes seeking partners for operational and socioeconomic requirements, sas-gps.com/services",
+      "researchedAt": "2026-09-03"
+    },
+    "select-gcr-select-gcr": {
+      "opener": "I noticed Select GCR splits the work into Contract Ready first and then Contract Accelerate and Execute, so a company has to be positioned before anyone writes a bid for it.",
+      "basis": "Two packages named 'Contract Ready' and 'Contract Accelerate and Execute' at selectgcr.com",
+      "researchedAt": "2026-09-03"
+    },
+    "shauna-weatherly-fedsubk": {
+      "opener": "You put a readiness assessment for AI proposal tools in the FedSubK guides, before the tools, which is a more careful order of operations than most vendors of those tools would choose. I am one of those vendors.",
+      "basis": "Guide titled 'Evaluate Your Readiness to Use AI Tools for Federal Responses & Proposals' at fedsubk.com/guides-templates",
+      "researchedAt": "2026-09-03"
+    },
+    "sheena-parker-govconnow-sheenapreneur": {
+      "opener": "GovConNOW pointing people at their first SLED contract instead of straight at federal is an unusual starting point, and running 4SYT alongside it means you are teaching a market you are still bidding in yourself.",
+      "basis": "'We help small businesses win their first SLED contract' and founders described as active contractors, govconnow.co; 4SYT Industries facilities management corroborated at asbn.com",
+      "researchedAt": "2026-09-03"
+    },
+    "steven-koprince-govcon-roundup-smallgovcon": {
+      "opener": "You retired from the practice of law in 2019 and are still up on GovCon Roundup Live explaining teaming and joint ventures. The FAR appears to be harder to quit than the billable hour.",
+      "basis": "Retired from active practice May 2019 per smallgovcon.com/steven-koprince; GovCon Roundup Live teaming/JV session at govology.com. NOTE: SmallGovCon is now edited by Shane J. McCall, so he is not addressed as current editor",
+      "researchedAt": "2026-09-03"
+    },
+    "t-d-consulting-group-t-d-consulting-group": {
+      "opener": "Most proposal-side firms I look at don't also do Section 508 compliance and plain language review, and fewer still hold their own GSA MAS schedule.",
+      "basis": "Editing & Document Services listing Section 508 compliance and plain language review, plus GSA MAS Schedule #47QRAA24D00DL, at tdcginc.com",
+      "researchedAt": "2026-09-03"
+    },
+    "the-proposal-lab-llc-the-proposal-lab-llc": {
+      "opener": "Your Must Win formula puts pipeline development and competitor analysis in the same engagement as the proposal design and graphics, which is not how most shops sell it.",
+      "basis": "'Must Win formula' methodology and four service headings including Business Development (pipeline development, competitor analysis) and Graphic Design, at theproposallabllc.com",
+      "researchedAt": "2026-09-03"
+    },
+    "washington-technology-govexec": {
+      "opener": "Washington Technology is one of the few outlets in this market that publishes its own rankings, the Top 100 and the Fast 50, instead of only covering what the agencies announce.",
+      "basis": "Top 100 and Fast 50 ranking programs confirmed at washingtontechnology.com/topic/top-100 and the rankings landing page",
+      "researchedAt": "2026-09-03"
+    },
+    "will-mccormick-set-aside-alert": {
+      "opener": "Set-Aside Alert has been sending daily opportunity notices and a twice monthly newsletter since 1992, which is a longer continuous read on this market than almost anyone currently teaching it has.",
+      "basis": "Masthead lists William McCormick as editor; daily alerts plus twice-monthly newsletter since 1992, setasidealert.com. WEAKER SOURCING: site returned 503, rests on search snippets and the sample-issue PDF",
+      "researchedAt": "2026-09-03"
+    },
+    "winvale-winvale": {
+      "opener": "Most GSA consultants I come across stop once a company is on schedule, but you also do the audit support and Transactional Data Reporting analysis that lands years later.",
+      "basis": "Service list at winvale.com includes GSA Schedule Audit Support and Transactional Data Reporting Analysis alongside getting on and managing a schedule",
+      "researchedAt": "2026-09-03"
+    }
+  }
+}

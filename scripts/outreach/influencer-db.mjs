@@ -60,11 +60,15 @@
 
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
-import { fileURLToPath } from 'node:url';
+import { fileURLToPath, pathToFileURL } from 'node:url';
 
 const ROOT = fileURLToPath(new URL('../..', import.meta.url));
 const DB = JSON.parse(readFileSync(join(ROOT, 'data/govcon-influencer-outreach.json'), 'utf8'));
 const VENDOR = join(ROOT, 'data/vendor-outreach.json');
+
+// Hand-researched openers, keyed by contact id. See data/openers.json.
+const OPENER_PATH = join(ROOT, 'data/openers.json');
+const OPENERS = existsSync(OPENER_PATH) ? JSON.parse(readFileSync(OPENER_PATH, 'utf8')).openers || {} : {};
 
 // ---- Suppression ----------------------------------------------------------
 // data/vendor-outreach.json is the existing opt-out record for the vendor
@@ -168,7 +172,7 @@ function isPersonalBrand(c) {
   return org === name || org.startsWith(c.firstName.toLowerCase() + ' ');
 }
 
-const OPENERS = {
+const DERIVED_OPENERS = {
   C1: (c) =>
     isPersonalBrand(c)
       ? `I went looking for the people who show small federal contractors how the work actually gets done rather than talk around it, and your name came up more than once.`
@@ -183,13 +187,21 @@ const OPENERS = {
   C6: (c) => `I was mapping the associations that small federal contractors actually belong to, and ${brand(c)} is on that list.`,
 };
 
+// A researched opener wins over the derived one. An entry whose opener is
+// null is a deliberate "the derived one is fine here", which is why --check
+// distinguishes "no entry" (an oversight) from "entry with null" (a decision).
+function researchedOpener(c) {
+  const e = OPENERS[c.id];
+  return e && e.opener ? e.opener : null;
+}
+
 function lead(c) {
   return {
     email: c.email,
     firstName: c.firstName,
     companyName: brand(c),
     greeting: greeting(c),
-    opener: OPENERS[c.campaign](c),
+    opener: researchedOpener(c) || DERIVED_OPENERS[c.campaign](c),
     channel: channel(c),
     // Carried for the operator, not referenced by any body. A body that
     // referenced them would be a body that can render blank.
@@ -276,10 +288,15 @@ function report() {
   console.log(`    ${String(suppressed.length).padStart(4)}  suppressed by data/vendor-outreach.json${sup.present ? '' : ' (FILE MISSING)'}`);
   for (const c of suppressed) console.log(`          ${c.email}  ${c.name}`);
 
-  console.log('\n  P1 contacts needing a hand-written opener before send');
   const p1 = out.filter((c) => c.priority === 'P1');
-  for (const c of p1) {
-    console.log(`    ${c.campaign}  ${(c.name || c.org).slice(0, 30).padEnd(32)}${c.email.padEnd(36)}${(c.audience || c.reachTier || '').slice(0, 18)}`);
+  const p1NoOpener = p1.filter((c) => !researchedOpener(c));
+  console.log(`\n  openers: ${out.filter((c) => researchedOpener(c)).length} researched, ${out.filter((c) => !researchedOpener(c)).length} derived`);
+  if (p1NoOpener.length) {
+    console.log('  P1 contacts still on a derived opener:');
+    for (const c of p1NoOpener) {
+      const reason = OPENERS[c.id]?.reason ? `  (deliberate: ${OPENERS[c.id].reason})` : '  NO ENTRY in data/openers.json';
+      console.log(`    ${c.campaign}  ${(c.name || c.org).slice(0, 30).padEnd(32)}${c.email.padEnd(36)}${reason}`);
+    }
   }
   console.log(`    ${p1.length} of ${out.length} sendable contacts are P1.`);
 
@@ -308,6 +325,16 @@ function report() {
   if (mismatch.length) {
     console.log('\n  addresses to open in a browser before import (the mailbox does not carry the contact name)');
     for (const c of mismatch) console.log(`    ${c.email.padEnd(36)}${c.name}`);
+  }
+
+  const verdicts = {};
+  for (const c of out) verdicts[c.emailVerify || 'not checked'] = (verdicts[c.emailVerify || 'not checked'] || 0) + 1;
+  console.log('\n  deliverability of the sendable list (MillionVerifier)');
+  for (const [k, v] of Object.entries(verdicts).sort((a, b) => b[1] - a[1])) {
+    const note_ = k === 'catch_all'
+      ? '  the domain accepts every address, so the mailbox cannot be confirmed either way'
+      : k === 'ok' ? '  confirmed deliverable' : '';
+    console.log(`    ${String(v).padStart(4)}  ${k}${note_}`);
   }
 
   const roleInbox = out.filter((c) => c.emailClass === 'role').length;
@@ -408,22 +435,101 @@ function check() {
   note(comp.length === 0, 'no competitor is exported', comp.map((c) => c.org).join(' '));
 
   // One organization, one conversation.
-  const orgs = out.map((c) => `${c.campaign}:${c.org.toLowerCase()}`);
-  note(new Set(orgs).size === orgs.length, 'one contact per organization per campaign');
+  // Deliverability. The structural holds answer "should we send here"; these
+  // answer "will this address accept mail". MillionVerifier found five
+  // confirmed-dead addresses sitting in what was going to be sent, which on a
+  // 104-address list is a 4.8% bounce rate, above the 3% the wave 1 doc says
+  // to stop and investigate at.
+  const badVerdicts = out.filter((c) => ['invalid', 'disposable', 'unknown'].includes(c.emailVerify));
+  note(badVerdicts.length === 0, 'no invalid or unverifiable address is exported', badVerdicts.map((c) => `${c.email}:${c.emailVerify}`).join(' '));
+  const unchecked = out.filter((c) => !c.emailVerify);
+  note(
+    unchecked.length === 0,
+    'every exported address has a verification verdict',
+    unchecked.length ? `${unchecked.length} unchecked; run verify-emails.mjs` : ''
+  );
+
+  // Caps come from the JSON the Python build writes, so there is exactly one
+  // definition of them. C5 is raised above 1 deliberately; see
+  // lib_influencer_db.py for the volume-against-blast-risk numbers.
+  const caps = DB.caps || { default: 1 };
+  const capOf = (campaign) => caps[campaign] ?? caps.default ?? 1;
+
+  // The 41 P1 contacts are where a generic opener costs the most: they are the
+  // highest-value relationships on the list and the ones most likely to notice
+  // a merge. Every one must have an entry in data/openers.json, either a
+  // researched line or an explicit null saying the derived one will do. A
+  // missing entry is an oversight, and this is what catches it.
+  const p1 = out.filter((c) => c.priority === 'P1');
+  const p1Missing = p1.filter((c) => !(c.id in OPENERS));
+  note(
+    p1Missing.length === 0,
+    'every P1 contact has an opener decision recorded',
+    p1Missing.length ? `${p1Missing.length} with no entry in data/openers.json: ${p1Missing.slice(0, 4).map((c) => c.id).join(' ')}${p1Missing.length > 4 ? ' ...' : ''}` : `${p1.length} P1`
+  );
+  const researched = out.filter((c) => researchedOpener(c));
+  note(true, 'openers', `${researched.length} researched, ${out.length - researched.length} derived`);
+
+  // A researched opener that is reused across contacts is not researched, it
+  // is a derived opener wearing a costume. The whole point of the file is that
+  // each line is true of exactly one person.
+  const texts = researched.map((c) => researchedOpener(c).trim().toLowerCase());
+  const dupes = [...new Set(texts.filter((t, i) => texts.indexOf(t) !== i))];
+  note(dupes.length === 0, 'no researched opener is reused across contacts', dupes.length ? `${dupes.length} reused` : '');
+
+  // Catches an unfinished entry reaching an export.
+  const PLACEHOLDER = /INSUFFICIENT|\bTODO\b|\bTBD\b|PROBE|XXX|LOREM|\{\{/i;
+  const placeholders = researched.filter((c) => PLACEHOLDER.test(researchedOpener(c)));
+  note(placeholders.length === 0, 'no researched opener contains placeholder text', placeholders.map((c) => c.id).join(' '));
+
+  // Every researched claim must be auditable back to a source.
+  const noBasis = researched.filter((c) => !(OPENERS[c.id] || {}).basis);
+  note(noBasis.length === 0, 'every researched opener records what it is based on', noBasis.map((c) => c.id).join(' '));
+
+  const orgCount = {};
+  for (const c of out) {
+    const k = `${c.campaign}:${c.org.toLowerCase()}`;
+    orgCount[k] = (orgCount[k] || 0) + 1;
+  }
+  const orgOver = Object.entries(orgCount).filter(([k, n]) => n > capOf(k.split(':')[0]));
+  note(orgOver.length === 0, 'no organization exceeds its per-campaign cap', orgOver.map(([k, n]) => `${k}=${n}`).join(' '));
+
   const FREE_HOSTS = new Set(['gmail.com', 'outlook.com', 'yahoo.com', 'hotmail.com', 'aol.com', 'icloud.com', 'proton.me', 'me.com']);
-  const doms = out.map((c) => c.email.split('@')[1]).filter((d) => !FREE_HOSTS.has(d));
-  const overDom = [...new Set(doms.filter((d, i) => doms.indexOf(d) !== i))];
-  note(overDom.length === 0, 'one contact per sending domain across all campaigns', overDom.join(' '));
+  const domGroups = {};
+  for (const c of out) {
+    const d = c.email.split('@')[1];
+    if (FREE_HOSTS.has(d)) continue;
+    (domGroups[d] ||= []).push(c);
+  }
+  // A domain shared by two campaigns takes the strictest of their caps.
+  const domOver = Object.entries(domGroups).filter(
+    ([, g]) => g.length > Math.min(...g.map((c) => capOf(c.campaign)))
+  );
+  note(domOver.length === 0, 'no sending domain exceeds its cap', domOver.map(([d, g]) => `${d}=${g.length}`).join(' '));
 
   console.log(`\n${out.length} sendable leads. ${fail === 0 ? 'All checks pass.' : fail + ' FAILURES.'}`);
   return fail;
 }
 
-const arg = process.argv[2] || '--report';
-if (arg === '--report') report();
-else if (arg === '--check') process.exit(check() === 0 ? 0 : 1);
-else if (arg === '--export') {
-  if (check() !== 0) { console.error('\nChecks failed. No CSVs written.'); process.exit(1); }
-  console.log('');
-  exportCsvs(process.argv[3] || join(ROOT, 'out/instantly-influencer'));
-} else { console.error(`unknown argument ${arg}`); process.exit(1); }
+// ---- Exported for push-leads.mjs ------------------------------------------
+// The uploader needs the exact rows --export writes, so it imports them from
+// here rather than reimplementing the derivation. If the two ever disagreed,
+// the CSV a human reviews and the leads actually in Instantly would differ,
+// which is the kind of gap nobody notices until a send goes out wrong.
+export function buildLeads() {
+  const { out } = sendable();
+  return out.map((c) => ({ campaign: c.campaign, ...lead(c) }));
+}
+
+// ---- CLI ------------------------------------------------------------------
+// Guarded so importing this module does not run the CLI.
+if (import.meta.url === pathToFileURL(process.argv[1] || '').href) {
+  const arg = process.argv[2] || '--report';
+  if (arg === '--report') report();
+  else if (arg === '--check') process.exit(check() === 0 ? 0 : 1);
+  else if (arg === '--export') {
+    if (check() !== 0) { console.error('\nChecks failed. No CSVs written.'); process.exit(1); }
+    console.log('');
+    exportCsvs(process.argv[3] || join(ROOT, 'out/instantly-influencer'));
+  } else { console.error(`unknown argument ${arg}`); process.exit(1); }
+}
