@@ -20,9 +20,24 @@
 //     readers read the em dash as an AI-writing tell.
 //   - Every step carries a plain-text opt-out line. CAN-SPAM 15 USC 7704(a)(5)(A)
 //     wants three disclosures in EVERY commercial message: identification as
-//     solicitation, opt-out notice, and a postal address. The postal address and
-//     the solicitation line ship in the per-mailbox {{accountSignature}}; the
-//     opt-out notice is in the body so it cannot depend on a mailbox setting.
+//     solicitation, opt-out notice, and a postal address. The postal address
+//     ships in the per-mailbox {{accountSignature}}; the solicitation line was
+//     dropped on request (see set-signatures.mjs); the opt-out notice is in the
+//     body so it cannot depend on a mailbox setting being configured.
+//
+//     The wording of that notice is deliberate. It reads 'reply "no" and I will
+//     not reach out again', not 'reply "remove"'. "Remove" and "off my list"
+//     are the vocabulary of list management, and a cold email that admits to
+//     having a list stops reading like one person writing to another, which is
+//     the whole premise of the message. The mechanism is identical and the
+//     notice is just as clear; only the frame changes.
+//
+//     One consequence to carry into any reply automation: do NOT trigger
+//     suppression on a bare "no". It is a common word in ordinary replies
+//     ("no problem, let us talk", "no rush but yes"), so matching it alone
+//     would unsubscribe interested people. Match the phrasing, or read the
+//     replies. stop_on_reply is true either way, so the sequence halts on any
+//     reply regardless.
 //   - Every paragraph is wrapped in a <div>. This is NOT optional and the API
 //     reference does not mention it: the docs say only "use <br/> tags for
 //     line breaks", but the server-side sanitizer DISCARDS BARE TEXT NODES at
@@ -129,7 +144,7 @@ const EMAIL_2_BODY = [
   '',
   '{{RANDOM|Want me to send a short example on a live solicitation?|Worth putting together a quick example on a real solicitation?}}',
   '',
-  '{{RANDOM|If I am barking up the wrong tree, just say so and I will close this out.|If this is not relevant, tell me and I will leave you be.}} Reply "remove" and you are off my list.',
+  '{{RANDOM|If I am barking up the wrong tree, reply "no" and I will not reach out again.|If this is not relevant, reply "no" and you will not hear from me again.}}',
   '',
   '{{accountSignature}}',
 ];
@@ -147,7 +162,7 @@ const EMAIL_3_BODY = [
   '',
   'There is a working compliance matrix builder on our site you can try without creating an account: https://govhub.online',
   '',
-  '{{RANDOM|If the timing is off, no problem at all.|If now is not the time, all good.}} {{RANDOM|Reply "remove" and you will not hear from me again.|Say "remove" and I will take you off my list.}}',
+  '{{RANDOM|If the timing is off, that is fine.|If now is not the time, all good.}} {{RANDOM|Reply "no" and I will not reach out again.|Reply "no" and you will not hear from me again.}}',
   '',
   '{{accountSignature}}',
 ];
@@ -164,7 +179,7 @@ const A_EMAIL_1_BODY = [
   '',
   '{{RANDOM|Worth a quick look?|Open to a look on a live RFP?|Want me to send a 2-minute example?}}',
   '',
-  'Reply "remove" and I will stop.',
+  'Reply "no" and I will not reach out again.',
   '',
   '{{accountSignature}}',
 ];
@@ -185,7 +200,7 @@ const B_EMAIL_1_BODY = [
   '',
   '{{RANDOM|Open to a look?|Want a 2-minute example on a solicitation you are watching?}}',
   '',
-  'Reply "remove" and I will stop.',
+  'Reply "no" and I will not reach out again.',
   '',
   '{{accountSignature}}',
 ];
@@ -203,7 +218,7 @@ const C_EMAIL_1_BODY = [
   '',
   '{{RANDOM|Want to see it on a live solicitation?|Want me to walk it through your first bid?}}',
   '',
-  'Reply "remove" and I will stop.',
+  'Reply "no" and I will not reach out again.',
   '',
   '{{accountSignature}}',
 ];
@@ -415,7 +430,16 @@ function check() {
       renders.every((r) => !/^\s*[,.?!]/.test(r)),
       `${s.label} no render opens with punctuation`
     );
-    note(/remove/i.test(raw), `${s.label} carries an opt-out line`);
+    // The opt-out has to be present AND has to not sound like a mailing list.
+    // Changed 2026-09-04: "remove" and "off my list" tell the reader they were
+    // on a list, which is the one thing a cold email cannot afford to admit on
+    // the way out. Both halves are checked, so neither the instruction nor the
+    // voice can regress silently.
+    note(/reply "no"/i.test(raw), `${s.label} carries an opt-out line`);
+    note(
+      !/\b(remove|unsubscribe|opt[- ]?out|off my list|off this list|mailing list|your list)\b/i.test(raw),
+      `${s.label} opt-out reads personal, not list-managed`
+    );
 
     // The sanitizer discards bare text nodes, so every line must be inside a div.
     const assembled = bodyHtml(s.lines);
