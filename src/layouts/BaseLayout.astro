@@ -32,6 +32,25 @@ const {
 
 const canonicalUrl = canonical ?? new URL(Astro.url.pathname, Astro.site).toString();
 const fullOgImage = new URL(ogImage, Astro.site).toString();
+
+// GA4 measurement ID. Hardcoded on purpose: it is a public identifier that ships
+// in plaintext to every visitor, and app.govhub.online already carries this same
+// one in index.html. It used to come only from PUBLIC_GA_MEASUREMENT_ID, but this
+// Pages project has a wrangler.jsonc, which makes the Wrangler file the source of
+// truth and stops Cloudflare passing dashboard plain-text variables into the build
+// ("Build environment variables: (none found)" in the build log). The variable was
+// set correctly in the dashboard and still never reached `astro build`, so the
+// guard below rendered nothing and www shipped with no analytics at all. An
+// explicit env var still wins if one is ever provided.
+const GA_MEASUREMENT_ID = import.meta.env.PUBLIC_GA_MEASUREMENT_ID ?? 'G-CBS7SWVWVJ';
+
+// Deliberately fails OPEN: analytics ships unless we positively identify a
+// non-production context. `astro dev` is excluded by PROD, and a Cloudflare
+// preview branch by name, which is what the old env-var gate achieved. If
+// CF_PAGES_BRANCH is ever renamed or missing the tag still ships — a silently
+// absent variable is precisely what took www off analytics before.
+const GA_BRANCH = process.env.CF_PAGES_BRANCH;
+const GA_ENABLED = import.meta.env.PROD && (GA_BRANCH === undefined || GA_BRANCH === 'main');
 ---
 
 <!doctype html>
@@ -81,19 +100,17 @@ const fullOgImage = new URL(ogImage, Astro.site).toString();
       />
     )}
 
-    {/* GA4 — renders nothing until PUBLIC_GA_MEASUREMENT_ID is set (Cloudflare
-        Pages → Settings → Environment variables). Get the ID from Google
-        Analytics → Admin → Data Streams → your web stream → Measurement ID
-        (G-XXXXXXXXXX). Runs alongside Cloudflare Web Analytics above — GA4
-        and CF Analytics measure independently, keep both. */}
-    {import.meta.env.PUBLIC_GA_MEASUREMENT_ID && (
+    {/* GA4 — measurement ID and the on/off rule live in the frontmatter above.
+        Runs alongside Cloudflare Web Analytics — GA4 and CF Analytics measure
+        independently, keep both. */}
+    {GA_ENABLED && (
       <>
         <script
           is:inline
           async
-          src={`https://www.googletagmanager.com/gtag/js?id=${import.meta.env.PUBLIC_GA_MEASUREMENT_ID}`}
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
         />
-        <script is:inline define:vars={{ gaId: import.meta.env.PUBLIC_GA_MEASUREMENT_ID }}>
+        <script is:inline define:vars={{ gaId: GA_MEASUREMENT_ID }}>
           window.dataLayer = window.dataLayer || [];
           function gtag() { dataLayer.push(arguments); }
           gtag('js', new Date());
