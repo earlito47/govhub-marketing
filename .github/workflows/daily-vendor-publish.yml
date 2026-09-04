@@ -27,7 +27,9 @@ concurrency:
 jobs:
   publish:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    # 45 (was 30): the retry loop below can idle through USAspending outages.
+    # A normal day is ~2 minutes; this is headroom for a bad one.
+    timeout-minutes: 45
     steps:
       - name: Checkout
         uses: actions/checkout@v5
@@ -41,12 +43,63 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      # Same resume machinery as weekly-insights, which this job never got.
+      # Responses are cached per ISO week, so an attempt that dies partway
+      # leaves what it fetched on disk and the next one walks past it. The key
+      # prefix is shared with weekly-insights on purpose: whichever job runs
+      # first in a given week warms the cache for the other, and the shared
+      # `insights-pipeline` concurrency group means they never overlap.
+      - name: Compute cache key (ISO week)
+        id: week
+        run: echo "week=$(date -u +%G-w%V)" >> "$GITHUB_OUTPUT"
+
+      - name: Restore USAspending response cache
+        uses: actions/cache/restore@v5
+        with:
+          path: .cache
+          key: insights-usaspending-${{ steps.week.outputs.week }}-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: |
+            insights-usaspending-${{ steps.week.outputs.week }}-
+
       - name: Publish today's vendor profiles
-        run: npm run insights:vendors-daily
         env:
           # Optional: enriches only today's new pages. Absent -> deterministic
           # fallback narratives; every LLM number is verified or discarded.
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          ATTEMPTS: "3"
+          COOLDOWN_S: "120"
+          DEADLINE_MINUTES: "30"
+        run: |
+          started=$SECONDS
+          for attempt in $(seq 1 "$ATTEMPTS"); do
+            elapsed_min=$(( (SECONDS - started) / 60 ))
+            if [ "$attempt" -gt 1 ] && [ "$elapsed_min" -ge "$DEADLINE_MINUTES" ]; then
+              echo "::error::Stopping after ${attempt} of ${ATTEMPTS} attempts: ${elapsed_min} minutes gone of a ${DEADLINE_MINUTES}-minute budget. The response cache is saved below, so a Re-run resumes from here."
+              exit 1
+            fi
+            echo "::group::insights:vendors-daily — attempt $attempt of $ATTEMPTS"
+            if npm run insights:vendors-daily; then
+              echo "::endgroup::"
+              echo "Publish completed on attempt $attempt."
+              exit 0
+            fi
+            echo "::endgroup::"
+            if [ "$attempt" -lt "$ATTEMPTS" ]; then
+              echo "::warning::Attempt $attempt failed. Cooling down ${COOLDOWN_S}s, then resuming from the response cache."
+              sleep "$COOLDOWN_S"
+            fi
+          done
+          echo "::error::All $ATTEMPTS attempts failed. A single unbuildable vendor no longer reaches this point — it is isolated and marked in the roster — so reaching here means USAspending was unreachable for the whole run."
+          exit 1
+
+      # Save even on failure: a partial cache is exactly what lets the next
+      # attempt get further.
+      - name: Save USAspending response cache
+        if: always()
+        uses: actions/cache/save@v5
+        with:
+          path: .cache
+          key: insights-usaspending-${{ steps.week.outputs.week }}-${{ github.run_id }}-${{ github.run_attempt }}
 
       - name: Validate (commit gate)
         run: npm run insights:validate

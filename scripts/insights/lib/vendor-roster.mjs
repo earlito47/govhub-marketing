@@ -143,6 +143,16 @@ export async function ensureRoster({ fetchPage, asOfDate, targetSize = null, log
       rank += 1;
       const uei = r.uei ?? null;
       if (!uei) continue;
+      // No recipient_id means this is one of USAspending's aggregate buckets
+      // ("MISCELLANEOUS FOREIGN AWARDEES" and friends), not a company. Every
+      // aggregate query a vendor page needs filters on recipient_id, so such
+      // an entry can never be built — it just sits at the head of the pending
+      // queue failing. One reached the roster on 2026-08-26 and blocked the
+      // daily publisher for eight days.
+      if (!r.recipient_id) {
+        log(`[roster] rank ${rank}: "${r.name}" has no recipient_id (aggregate bucket, not a company) — skipping`);
+        continue;
+      }
       const amount = Number.parseFloat(r.amount) || 0;
       const existingSlug = byUei.get(uei);
       if (existingSlug) {
@@ -168,7 +178,7 @@ export async function ensureRoster({ fetchPage, asOfDate, targetSize = null, log
       vendors[slug] = {
         name: r.name ?? uei,
         displayName: displayNameFor(r.name ?? uei),
-        recipientId: r.recipient_id ?? null,
+        recipientId: r.recipient_id, // guaranteed non-null by the guard above
         uei,
         duns: r.code ?? null,
         rank,
