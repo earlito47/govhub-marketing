@@ -1,7 +1,7 @@
 # Instantly wave 1
 
 Three campaigns, created 2026-08-12. Still **Draft**, but no longer empty:
-1,800 leads were pushed on 2026-08-24. Nothing sends until someone starts them.
+1,794 leads after verification. Nothing sends until someone starts them.
 
 Status as of 2026-09-03 is in the audit further down this file; the two lines
 below the fold that this note supersedes are struck through where they sit.
@@ -196,7 +196,34 @@ a three-week-old domain, not content.
 8. **Cross-check the suppression ledger.** `data/vendor-outreach.json` is the
    existing opt-out record for the vendor "claim your page" outreach. Anyone
    marked `opted-out` there must not enter these campaigns.
-9. Run Instantly's spam-word checker and the spintax preview. Both pass today
+9. ~~**Verify the list before sending.**~~ **Done 2026-09-04.** All 1,800
+   addresses went through MillionVerifier's bulk API and the verdicts are in
+   `data/email-verification.json`, so this is now checkable from the repo
+   rather than taken on trust. The list came back far cleaner than the
+   influencer set that preceded it:
+
+   | Result | Count | Share |
+   |---|---|---|
+   | ok | 1,698 | 94.33% |
+   | catch_all | 68 | 3.78% |
+   | unknown | 28 | 1.56% |
+   | invalid | 6 | 0.33% |
+
+   The six invalid addresses were removed by
+   `scripts/outreach/wave1-suppress.mjs`, leaving 1,794. Bounce exposure from
+   known-bad addresses is now 0.00% against a 2% gate, which is the single
+   biggest change to the launch risk on this page: the earlier estimate of
+   roughly 117 bounces was extrapolated from the influencer list's 6.5%
+   invalid rate and was wrong by a factor of twenty.
+
+   Still outstanding, and deliberately not acted on: 68 catch_all and 28
+   unknown. Instantly holds catch_alls back on its own while
+   `allow_risky_contacts` is false, so deleting them here would do the same
+   job twice and lose the leads permanently. `--drop-unknown` and
+   `--drop-catch-all` exist if that call changes. MillionVerifier also flags
+   80 role accounts and 239 free-provider addresses, which is the data
+   checklist item 6 needs.
+10. Run Instantly's spam-word checker and the spintax preview. Both pass today
    (`--check` expands all 13,192 renders and finds zero banned tokens), so treat
    this as confirmation, not as launch readiness. Placement is driven by domain
    age, authentication and complaint rate, not by word lists.
