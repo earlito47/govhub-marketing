@@ -8,9 +8,12 @@ below the fold that this note supersedes are struck through where they sit.
 
 | Campaign | Segment | ID | Mailboxes | Daily cap |
 |---|---|---|---|---|
-| A | serial_bidder | `31fc2282-4153-42f9-b8d7-94517162b47c` | 6 | 30 |
-| B | new_prime | `61c3b5df-22b6-4f98-ae56-290a750f1833` | 3 | 15 |
-| C | registered_no_awards | `09189743-6310-46bd-b48f-e5ca931d7e7e` | 3 | 15 |
+| A | serial_bidder | `31fc2282-4153-42f9-b8d7-94517162b47c` | 6 | 120 |
+| B | new_prime | `61c3b5df-22b6-4f98-ae56-290a750f1833` | 3 | 60 |
+| C | registered_no_awards | `09189743-6310-46bd-b48f-e5ca931d7e7e` | 3 | 60 |
+
+Daily caps are 20 per inbox per day, raised from 5 on request 2026-09-04. See
+the Ramp section for what that changes.
 
 Source of truth is `scripts/outreach/instantly-wave1.mjs`. Edit the copy there
 and re-run `--sync`; it matches campaigns by name and updates them in place, so
@@ -92,7 +95,23 @@ Held out of wave 1 on purpose:
 
 ## Ramp
 
-Launch L = 2026-08-27. Weekdays only.
+**Superseded 2026-09-04 on request: wave 1 opens at 20 per inbox per day, not
+5.** All twelve mailboxes are set to `daily_limit: 20` and the campaign caps
+are 120/60/60, so the programme opens at 240/day rather than 60/day. The
+stepped table below is kept because the gates under it still apply and because
+the reasoning for the original numbers should not have to be reconstructed.
+
+What the change costs, stated plainly: 20/inbox/day is the number this ramp
+treats as the **week-8 ceiling**, and it is being used on day one, on domains
+29 days old with roughly a month of warmup behind them. Every gate below is
+measured from sends that have not happened yet, so none of them can be checked
+before the first batch goes out. The practical consequence is that the first
+day of real data arrives at 240 sends instead of 60: if the list bounces, four
+times as much of it bounces before anyone can react. Watch bounce rate on day
+one, not at the end of week one, and be ready to drop the caps back the same
+morning.
+
+The original stepped plan, for reference:
 
 | Week | Volume |
 |---|---|
@@ -114,11 +133,14 @@ a three-week-old domain, not content.
 
 ## Pre-launch checklist
 
-1. **Set each of the 12 mailboxes to `daily_limit: 5`.** They are at 15 today.
-   The campaign cap alone does not control distribution, so without this a
-   couple of mailboxes can absorb the whole daily allowance. Left unchanged
-   deliberately: it is a live config change on shared mailboxes and nothing is
-   sending yet.
+1. ~~**Set each of the 12 mailboxes to `daily_limit: 5`.**~~ **Done 2026-09-04,
+   at 20 rather than 5** (see Ramp). All twelve were still at 15. The campaign
+   cap controls total volume and never its distribution, so without a
+   per-mailbox ceiling a couple of mailboxes can absorb the whole daily
+   allowance while the rest sit idle. Run
+   `node scripts/outreach/instantly-wave1.mjs --mailbox-limits`; it is a
+   separate flag from `--sync` because it writes shared mailbox accounts
+   rather than campaigns.
 2. ~~**Configure `{{accountSignature}}` on every one of the 12 mailboxes.**~~
    **Done 2026-09-03.** An API audit that day found all twelve still at
    `signature: null` while the nine influencer mailboxes had been set, so wave
@@ -155,7 +177,12 @@ a three-week-old domain, not content.
    workspace, but the API reference never states the mapping and the spec's own
    example implies 0 = Monday. Open the campaign and check the picker shows
    Mon-Fri. Five seconds, and the alternative is sending Saturdays.
-6. **Clean the list before import.** Suppress any lead whose firstName is
+6. **Clean the list before import.** *(Partly done 2026-09-04: `firstName` was
+   already clean on all 1,800 rows, and `companyName` has since been rewritten
+   from the raw SAM legal name to a human display name by
+   `scripts/outreach/wave1-display-names.mjs`, which keeps the original in a
+   `legalName` variable. The role-account and free-provider filters below are
+   still outstanding.)* Suppress any lead whose firstName is
    blank, under 2 characters, contains a digit or `@`, matches a role word
    (info, sales, contracts, admin, office, procurement, bids, proposals, team,
    support, hr), or carries a company suffix (LLC, Inc, Corp, Ltd, Group,

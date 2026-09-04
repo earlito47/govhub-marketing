@@ -41,6 +41,7 @@
 //                                             if they already exist (matched by name).
 //                                             Idempotent, and never activates anything.
 //   node instantly-wave1.mjs --verify         re-read the campaigns and assert the copy
+//   node instantly-wave1.mjs --mailbox-limits set each wave 1 mailbox to MAILBOX_DAILY_LIMIT
 //                                             survived the sanitizer
 
 const API = 'https://api.instantly.ai/api/v2';
@@ -55,11 +56,17 @@ const KEY = process.env.INSTANTLY_API_KEY;
 // on a schedule it named "Weekdays" in this same workspace, so 0 = Sunday.
 // Worth eyeballing once in the UI, since the API reference never says it.
 const SCHEDULE = {
-  // Hard floor on the first send. Every mailbox and domain in this workspace was
-  // created 2026-08-06, so they are 6 days old. Instantly's own guidance is a
-  // 2-week minimum before campaign sends; 3 weeks is the defensible number.
-  // Even if someone activates early, nothing goes out before this date.
-  start_date: '2026-08-27',
+  // Hard floor on the first send. Every mailbox and domain in this workspace
+  // was created 2026-08-06. Instantly's own guidance is a 2-week minimum
+  // before campaign sends; 3 weeks is the defensible number. Even if someone
+  // activates early, nothing goes out before this date.
+  //
+  // Moved forward 2026-09-04. The original 2026-08-27 was day 21, and it had
+  // quietly become a date in the past, which meant the backstop was doing
+  // nothing at all: activating a campaign would have started sending on the
+  // next window. Day 30 is 2026-09-05, a Saturday and not a sending day, so
+  // the floor is the Monday after it.
+  start_date: '2026-09-07',
   end_date: null,
   schedules: [
     {
@@ -70,6 +77,11 @@ const SCHEDULE = {
     },
   ],
 };
+
+// Per-mailbox ceiling, applied by --mailbox-limits. Kept beside the mailbox
+// list rather than inside a campaign because it is an account setting: the
+// same twelve accounts would carry it into any later campaign too.
+const MAILBOX_DAILY_LIMIT = 20;
 
 // ---- Mailboxes ------------------------------------------------------------
 // One mailbox per domain, twelve domains, and each campaign gets its own set.
@@ -201,6 +213,27 @@ const C_EMAIL_1_BODY = [
 // degrades to a shorter valid subject instead of "(no subject)" or "?".
 // CTA and subject vocabulary are disjoint across campaigns: identical closing
 // lines across all three would undo the point of varying the fingerprint.
+// Volume. Raised to 20 per inbox per day on request, 2026-09-04, from the 5
+// the ramp in docs/instantly-wave1.md opens on.
+//
+// Three knobs have to agree or the change does nothing. The per-mailbox
+// `daily_limit` on the account is the real ceiling (see --mailbox-limits
+// below); `daily_limit` here is the campaign-wide cap, mailboxes x 20; and
+// `daily_max_leads` is how many NEW leads enter per day. A three-email
+// sequence means steady-state sends are roughly three times the new-lead rate,
+// so daily_max_leads is the campaign cap divided by 3. Leaving it at the old
+// 12/6/6 would have held actual volume near 72/day whatever the caps said.
+//
+// Recorded because it is a real departure and the record should not have to be
+// reconstructed later: 20/inbox/day is the number the ramp treats as the
+// week-8 ceiling, not its opening step, and it is being used on domains 29
+// days old. The ramp's own gates -- bounce under 2%, reply at or above 3%,
+// zero complaints, seed placement at or above 90% -- are all measured from
+// sends that have not happened yet, so none of them can be checked before the
+// first one. Opening at the ceiling means the first day of real data arrives
+// at 240 sends rather than 60. That trade was put to the account holder and
+// this is the answer; watch bounces on day one rather than at the end of week
+// one.
 const CAMPAIGNS = [
   {
     key: 'A',
@@ -211,8 +244,8 @@ const CAMPAIGNS = [
       'Section L compliance',
     ],
     email1: A_EMAIL_1_BODY,
-    daily_limit: 30, // 6 mailboxes x 5/day
-    daily_max_leads: 12,
+    daily_limit: 120, // 6 mailboxes x 20/day
+    daily_max_leads: 40,
   },
   {
     key: 'B',
@@ -223,8 +256,8 @@ const CAMPAIGNS = [
       'proposal workload',
     ],
     email1: B_EMAIL_1_BODY,
-    daily_limit: 15, // 3 mailboxes x 5/day
-    daily_max_leads: 6,
+    daily_limit: 60, // 3 mailboxes x 20/day
+    daily_max_leads: 20,
   },
   {
     key: 'C',
@@ -235,8 +268,8 @@ const CAMPAIGNS = [
       'getting the first bid out',
     ],
     email1: C_EMAIL_1_BODY,
-    daily_limit: 15, // 3 mailboxes x 5/day
-    daily_max_leads: 6,
+    daily_limit: 60, // 3 mailboxes x 20/day
+    daily_max_leads: 20,
   },
 ];
 
@@ -483,6 +516,34 @@ if (arg === '--check') {
     else console.log(`  ok   copy stored intact, status=${stored.status} (0=Draft), ${(stored.email_list || []).length} mailboxes`);
   }
   process.exit(bad === 0 ? 0 : 1);
+} else if (arg === '--mailbox-limits') {
+  // Deliberately NOT part of --sync. --sync writes campaigns and is safe to
+  // run at any time; this writes shared mailbox accounts, which the influencer
+  // campaigns also draw on by domain, so it stays an explicit choice.
+  //
+  // The campaign cap controls total volume, never its distribution. Without a
+  // per-mailbox ceiling two mailboxes can absorb the whole daily allowance
+  // while ten sit idle, which is the opposite of the twelve-independent-
+  // readings design and the fastest way to burn a single domain.
+  const wanted = MAILBOX_DAILY_LIMIT;
+  const all = Object.values(MAILBOXES).flat();
+  let set = 0, already = 0, failed = 0;
+  for (const m of all) {
+    try {
+      const cur = await api('GET', `/accounts/${encodeURIComponent(m)}`);
+      if (cur.daily_limit === wanted) { already++; console.log(`  ok   ${m.padEnd(34)} already ${wanted}`); continue; }
+      const r = await api('PATCH', `/accounts/${encodeURIComponent(m)}`, { daily_limit: wanted });
+      if (r.daily_limit !== wanted) throw new Error(`stored ${r.daily_limit}, wanted ${wanted}`);
+      set++;
+      console.log(`  set  ${m.padEnd(34)} ${cur.daily_limit} -> ${wanted}`);
+    } catch (e) {
+      failed++;
+      console.log(` FAIL ${m}  ${e.message.split('\n')[0]}`);
+    }
+  }
+  console.log(`\n${set} changed, ${already} already correct, ${failed} failed.`);
+  console.log(`${all.length} mailboxes x ${wanted}/day = ${all.length * wanted}/day of mailbox headroom.`);
+  console.log('Campaign caps are what actually meter the sending; this is the ceiling under them.');
 } else if (arg === '--verify') {
   let bad = 0;
   for (const c of CAMPAIGNS) {
