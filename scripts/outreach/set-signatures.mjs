@@ -4,7 +4,8 @@
 // The signature is not decoration. It is the sole carrier of two of the three
 // disclosures CAN-SPAM 15 USC 7704(a)(5)(A) wants in EVERY commercial message:
 //
-//   1. identification as a solicitation   -> REMOVED on request 2026-09-03;
+//   1. identification as a solicitation   -> REMOVED on request 2026-09-03 and
+//                                            barred since 2026-09-04;
 //                                            see the note on SIGNATURE below
 //   2. a valid physical postal address    -> this signature
 //   3. an opt-out notice                  -> already in every email body,
@@ -66,8 +67,9 @@ const POSTAL = '3060 Mercer University Dr Ste 110, Atlanta, GA 30341';
 
 // The signature previously carried "This is a sales email." That line was the
 // CAN-SPAM 7704(a)(5)(A)(i) element, identification of the message as an
-// advertisement. Removed on request 2026-09-03, a deliberate decision rather
-// than an oversight, so the reasoning is recorded here rather than lost:
+// advertisement. Removed on request 2026-09-03 and now actively barred by the
+// guardrail below, on request 2026-09-04. A deliberate decision rather than an
+// oversight, so the reasoning is recorded here rather than lost:
 //
 //   - (a)(5)(A)(ii), the opt-out notice, is unaffected. It sits in every email
 //     body, not here, precisely so it cannot depend on this setting.
@@ -80,8 +82,8 @@ const POSTAL = '3060 Mercer University Dr Ste 110, Atlanta, GA 30341';
 //     and missing addresses rather than the absence of a literal ad label.
 //     It is a thinner posture than an explicit line, not a reckless one.
 //
-// To restore it, put a short disclosure back in front of POSTAL and flip the
-// guardrail below back to a hard requirement.
+// To restore it, put a short disclosure back in front of POSTAL and invert the
+// guardrail below, which now rejects that wording rather than reporting on it.
 const SIGNATURE = `${NAME}<br>${TITLE}<br><br>${POSTAL}`;
 
 // One mailbox per domain per programme. Eight domains carry both an
@@ -140,12 +142,12 @@ function check() {
   note(!/https?:\/\/|www\.|govhub\.online/i.test(SIGNATURE), 'no link or bare domain');
   note(!/<img|<a\s/i.test(SIGNATURE), 'no image and no anchor tag');
   note(plain.includes(POSTAL), 'carries the postal address');
-  // Deliberately NOT a failure: see the note on SIGNATURE above. Reported so
-  // the state is visible on every run rather than quietly forgotten.
-  const hasDisclosure = /sales email|advertisement|solicitation|commercial message/i.test(plain);
-  note(true, 'solicitation disclosure', hasDisclosure
-    ? 'present'
-    : 'ABSENT by decision (2026-09-03). Opt-out is in the body, postal address is below.');
+  // Was a report-only line while the absence was merely a decision. Made a
+  // hard failure 2026-09-04, when keeping sales and solicitation wording out
+  // became the standing requirement rather than one call on one day: a check
+  // that only prints cannot stop the line coming back.
+  note(!/sales email|advertis|solicitation|commercial message|promotional|this is an ad\b/i.test(plain),
+    'no sales or solicitation disclosure language');
   note(!/^\s*(best|thanks|regards|cheers|sincerely)\b/im.test(plain), 'no valediction to double up with the body');
   note(!SIGNATURE.includes('—'), 'no em dash');
   note(plain.split('\n').filter(Boolean).length <= 4, 'four lines or fewer', `${plain.split('\n').filter(Boolean).length} lines`);

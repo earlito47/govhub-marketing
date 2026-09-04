@@ -160,17 +160,36 @@ const MAILBOXES = {
 };
 
 // ---- Opt-out --------------------------------------------------------------
-// Every step used to end with a visible opt-out line: 'Reply "remove" and I
-// will take you off this list.' It was removed from the bodies on request,
-// 2026-09-03. Recorded here rather than deleted quietly, because this is the
-// single largest compliance decision in the file.
+// Every step ends with a visible opt-out line: 'Reply "no" and I will not
+// reach out again.'
 //
-// What it was carrying: CAN-SPAM 15 USC 7704(a)(5)(A)(ii), the clear and
+// This line has been through two decisions and the history matters, so it is
+// recorded rather than tidied away.
+//
+// It originally read 'Reply "remove" and I will take you off this list.' On
+// 2026-09-03 it was removed from the bodies entirely, on request. That edit
+// was never synced, so the live campaigns kept sending the old line while this
+// file said otherwise; the drift was found on 2026-09-04.
+//
+// On 2026-09-04 the line came back, reworded, to match wave 1. The objection
+// that removed it turns out to have been to the WORDING rather than to the
+// notice: "remove" and "take you off this list" tell a creator they are a row
+// in a list, which is corrosive in a message whose whole premise is one person
+// offering to do them a favour. 'Reply "no"' carries the identical mechanism
+// without the admission.
+//
+// What the line carries: CAN-SPAM 15 USC 7704(a)(5)(A)(ii), the clear and
 // conspicuous notice of the opportunity to decline. Unlike (a)(5)(A)(i), the
 // advertisement label, there is no "the message is self-evidently a
-// solicitation" argument available for it. Penalties are assessed per message.
+// solicitation" argument available for it, and penalties are assessed per
+// message. Having it back is the stronger position by a wide margin.
 //
-// What still stands: insert_unsubscribe_header is deliberately left true.
+// A trap for whoever builds reply automation: do NOT suppress on a bare "no".
+// It is an ordinary word in ordinary replies ("no problem, send it over"), so
+// matching the token alone would drop the most interested people. Match the
+// phrasing, or read the replies. stop_on_reply is true either way.
+//
+// What also stands: insert_unsubscribe_header is deliberately left true.
 // That is the RFC 8058 List-Unsubscribe header, which Gmail and Outlook render
 // as their own Unsubscribe control. It is a header, not body copy, so it is
 // invisible in the message, costs nothing in reply rate, and keeps a real
@@ -202,6 +221,8 @@ const C1_EMAIL_1 = [
   '',
   '{{RANDOM|Open to that?|Worth a look?}}',
   '',
+  'Reply "no" and I will not reach out again.',
+  '',
   '{{accountSignature}}',
 ];
 
@@ -213,6 +234,8 @@ const C1_EMAIL_2 = [
   'The part creators actually use is not the writing. It is the compliance matrix: every Section L instruction lined up against the Section M evaluation factors, on screen, in about two minutes. It teaches something real and it films well.',
   '',
   '{{RANDOM|Want me to build one on a solicitation you pick?|Happy to build one on any solicitation you name.}}',
+  '',
+  'Reply "no" and I will not reach out again.',
   '',
   '{{accountSignature}}',
 ];
@@ -229,6 +252,8 @@ const C1_EMAIL_3 = [
   '',
   '{{RANDOM|Take one, take all three, or take none.|Any combination, including none.}} Which is closest?',
   '',
+  'Reply "no" and I will not reach out again.',
+  '',
   '{{accountSignature}}',
 ];
 
@@ -239,6 +264,8 @@ const C1_EMAIL_4 = [
   'If the timing is wrong, that is a fine answer. The account offer has no expiry on it, so if you ever want a solicitation run through, reply on this thread and I will set it up that week.',
   '',
   '{{RANDOM|Good luck with the rest of the year.|Either way, good luck out there.}}',
+  '',
+  'Reply "no" and I will not reach out again.',
   '',
   '{{accountSignature}}',
 ];
@@ -261,6 +288,8 @@ const C2_EMAIL_1 = [
   '',
   '{{RANDOM|Useful for your audience?|Is that something your audience would want?}}',
   '',
+  'Reply "no" and I will not reach out again.',
+  '',
   '{{accountSignature}}',
 ];
 
@@ -273,6 +302,8 @@ const C2_EMAIL_2 = [
   'Why so many contractors lose a bid before anyone writes a word of the proposal, with the redacted solicitations and compliance matrices to make it a working walkthrough instead of opinion.',
   '',
   '{{RANDOM|Land better with your audience?|Closer to what you cover?}}',
+  '',
+  'Reply "no" and I will not reach out again.',
   '',
   '{{accountSignature}}',
 ];
@@ -288,6 +319,8 @@ const C2_EMAIL_3 = [
   '',
   '{{RANDOM|Want one?|Shall I put one together?}}',
   '',
+  'Reply "no" and I will not reach out again.',
+  '',
   '{{accountSignature}}',
 ];
 
@@ -297,6 +330,8 @@ const C2_EMAIL_4 = [
   'If a guest on AI and federal proposals is ever useful to you, I am happy to be that guest, this month or next year. Reply on this thread whenever.',
   '',
   '{{RANDOM|Enjoyed the work regardless.|Good luck with the rest of the season.}}',
+  '',
+  'Reply "no" and I will not reach out again.',
   '',
   '{{accountSignature}}',
 ];
@@ -322,6 +357,8 @@ const C3_EMAIL_1 = [
   '',
   '{{RANDOM|Any of that useful?|Would that be worth having?}}',
   '',
+  'Reply "no" and I will not reach out again.',
+  '',
   '{{accountSignature}}',
 ];
 
@@ -334,6 +371,8 @@ const C3_EMAIL_2 = [
   '',
   '{{RANDOM|Want the data?|Worth sending over?}}',
   '',
+  'Reply "no" and I will not reach out again.',
+  '',
   '{{accountSignature}}',
 ];
 
@@ -345,6 +384,8 @@ const C3_EMAIL_3 = [
   '',
   '{{RANDOM|Should I send an outline?|Want to see an outline first?}}',
   '',
+  'Reply "no" and I will not reach out again.',
+  '',
   '{{accountSignature}}',
 ];
 
@@ -354,6 +395,8 @@ const C3_EMAIL_4 = [
   'The data offer stands with no deadline on it. If a story ever needs federal award numbers checked or cut a particular way, reply on this thread and I will turn it around the same week.',
   '',
   '{{RANDOM|Good luck with the coverage.|Thanks for reading this far.}}',
+  '',
+  'Reply "no" and I will not reach out again.',
   '',
   '{{accountSignature}}',
 ];
@@ -378,6 +421,8 @@ const C4_EMAIL_1 = [
   '',
   '{{RANDOM|Worth fifteen minutes to see the workflow?|Worth a short look at the workflow?}}',
   '',
+  'Reply "no" and I will not reach out again.',
+  '',
   '{{accountSignature}}',
 ];
 
@@ -389,6 +434,8 @@ const C4_EMAIL_2 = [
   'Clients pay for judgment either way. They just stop paying for the reading.',
   '',
   '{{RANDOM|Want to see what that looks like?|Shall I walk you through it?}}',
+  '',
+  'Reply "no" and I will not reach out again.',
   '',
   '{{accountSignature}}',
 ];
@@ -404,6 +451,8 @@ const C4_EMAIL_3 = [
   '',
   '{{RANDOM|Want the details?|Should I send the terms?}}',
   '',
+  'Reply "no" and I will not reach out again.',
+  '',
   '{{accountSignature}}',
 ];
 
@@ -413,6 +462,8 @@ const C4_EMAIL_4 = [
   'If it is not a fit, no problem at all. If a client ever turns up with more solicitations than proposal hours, the partner account is there and takes about a day to set up.',
   '',
   '{{RANDOM|Good luck with the pipeline.|Either way, good luck this quarter.}}',
+  '',
+  'Reply "no" and I will not reach out again.',
   '',
   '{{accountSignature}}',
 ];
@@ -445,6 +496,8 @@ const C5_EMAIL_1 = [
   '',
   '{{RANDOM|Worth a conversation?|Any interest?}}',
   '',
+  'Reply "no" and I will not reach out again.',
+  '',
   '{{accountSignature}}',
 ];
 
@@ -460,6 +513,8 @@ const C5_EMAIL_2 = [
   '',
   '{{RANDOM|Want the PDF?|Should I send it over?}}',
   '',
+  'Reply "no" and I will not reach out again.',
+  '',
   '{{accountSignature}}',
 ];
 
@@ -472,6 +527,8 @@ const C5_EMAIL_3 = [
   '',
   '{{RANDOM|Want either set up?|Interested in one of those?}}',
   '',
+  'Reply "no" and I will not reach out again.',
+  '',
   '{{accountSignature}}',
 ];
 
@@ -481,6 +538,8 @@ const C5_EMAIL_4 = [
   'If a client ever gets stuck inside a solicitation, the account offer and the session offer both stand with no deadline. Reply on this thread and I will sort it out.',
   '',
   '{{RANDOM|Thanks for the work you do for these firms.|Good luck with your client load.}}',
+  '',
+  'Reply "no" and I will not reach out again.',
   '',
   '{{accountSignature}}',
 ];
@@ -503,6 +562,8 @@ const C6_EMAIL_1 = [
   '',
   '{{RANDOM|Worth putting in front of your members?|Is that something your members would want?}}',
   '',
+  'Reply "no" and I will not reach out again.',
+  '',
   '{{accountSignature}}',
 ];
 
@@ -514,6 +575,8 @@ const C6_EMAIL_2 = [
   'Whichever is least work for your team.',
   '',
   '{{RANDOM|Any of those a fit?|Which of those is easiest?}}',
+  '',
+  'Reply "no" and I will not reach out again.',
   '',
   '{{accountSignature}}',
 ];
@@ -527,6 +590,8 @@ const C6_EMAIL_3 = [
   '',
   '{{RANDOM|Want the details?|Should I send terms?}}',
   '',
+  'Reply "no" and I will not reach out again.',
+  '',
   '{{accountSignature}}',
 ];
 
@@ -536,6 +601,8 @@ const C6_EMAIL_4 = [
   'If member education on federal proposals is ever on the calendar, the session offer stands and I can deliver it on two weeks notice. Reply on this thread whenever it comes up.',
   '',
   '{{RANDOM|Good luck with the programme year.|Thanks for the time either way.}}',
+  '',
+  'Reply "no" and I will not reach out again.',
   '',
   '{{accountSignature}}',
 ];
@@ -784,10 +851,15 @@ function check() {
       note([...links].every((n) => n <= linkMax), `${label} links per render`, `${[...links]} (max ${linkMax})`);
 
       note(renders.every((r) => !/^\s*[,.?!]/.test(r)), `${label} no render opens with punctuation`);
-      // The visible opt-out line was removed from the bodies on request; see
-      // the note above. Reported, not required, so its absence stays visible
-      // on every run rather than becoming an invisible default.
-      note(true, `${label} opt-out line`, /remove/i.test(raw) ? 'present' : 'ABSENT by decision (2026-09-03)');
+      // Required again since 2026-09-04, and required in both directions: the
+      // notice has to be there, and it must not sound like list management.
+      // Reporting rather than failing is what let the previous wording sit
+      // live in six campaigns while this file claimed it was gone.
+      note(/reply "no"/i.test(raw), `${label} carries an opt-out line`);
+      note(
+        !/\b(remove|unsubscribe|opt[- ]?out|off my list|off this list|mailing list|your list)\b/i.test(raw),
+        `${label} opt-out reads personal, not list-managed`
+      );
 
       // The sanitizer discards bare text nodes, so every line must sit in a div.
       const assembled = bodyHtml(lines);
@@ -951,7 +1023,18 @@ if (arg === '--check') {
       console.log(`created ${c.key}  ${r.id}`);
     }
   }
-  console.log('\nAll six campaigns are in Draft with no leads. Nothing sends until leads are uploaded and a human starts them.');
+  // Was 'All six campaigns are in Draft with no leads.' That stopped being
+  // true once they were activated and loaded, and a sync that reassures you
+  // about the wrong thing is worse than one that says nothing. Report what the
+  // API actually says instead.
+  const live = [];
+  for (const c of CAMPAIGNS) {
+    const e = await findByName(c.name);
+    if (e) live.push(`  ${c.key}  status=${e.status}${e.status === 1 ? ' (ACTIVE)' : ''}  start=${(e.campaign_schedule || {}).start_date}`);
+  }
+  console.log('\nState after sync, read back from the API:');
+  console.log(live.join('\n'));
+  console.log('\nSync changes copy and settings only. It never sets status and never touches leads.');
 } else if (arg === '--verify') {
   if (!KEY) { console.error('INSTANTLY_API_KEY is not set'); process.exit(1); }
   let bad = 0;

@@ -459,6 +459,28 @@ the ledger file goes missing rather than passing an unchecked list.
    | Postal address, `(iii)` | This signature |
    | Identification as an advertisement, `(i)` | **Removed on request, 2026-09-03** |
 
+   **Wording of the opt-out, 2026-09-04.** It now reads `Reply "no" and I will
+   not reach out again.` in all four steps of all six campaigns, matching wave
+   1. It previously read `Reply "remove" and I will take you off this list.`,
+   which tells a creator they are a row in a list. That is corrosive in a
+   message whose whole premise is one person offering to do them a favour, and
+   the mechanism is identical either way.
+
+   Two things are worth recording about how this landed. The line had been
+   deleted from the bodies outright on 2026-09-03, but that edit was never
+   synced, so all six live campaigns kept sending the old wording while the
+   script claimed the line was gone. The drift was found on 2026-09-04 and the
+   campaigns were re-synced. And the guardrail that should have caught it only
+   *reported* on the opt-out rather than requiring it; it now fails the build
+   if the notice is missing, and fails again if remove / unsubscribe / off this
+   list reappears.
+
+   For whoever builds reply automation: `no` must not be an automatic
+   suppression trigger on its own. It is an ordinary word in ordinary replies
+   ("no problem, send it over"), so matching the bare token would drop the most
+   interested people. Match the phrasing or read the replies; `stop_on_reply`
+   halts the sequence on any reply meanwhile.
+
    The signature previously read "This is a sales email." and that line was
    `(i)`. It is gone by decision, not by oversight. What now carries `(i)`, if
    anything, is the messages being self-evidently solicitations: the bodies say

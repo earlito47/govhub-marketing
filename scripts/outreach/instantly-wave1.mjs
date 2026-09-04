@@ -20,9 +20,24 @@
 //     readers read the em dash as an AI-writing tell.
 //   - Every step carries a plain-text opt-out line. CAN-SPAM 15 USC 7704(a)(5)(A)
 //     wants three disclosures in EVERY commercial message: identification as
-//     solicitation, opt-out notice, and a postal address. The postal address and
-//     the solicitation line ship in the per-mailbox {{accountSignature}}; the
-//     opt-out notice is in the body so it cannot depend on a mailbox setting.
+//     solicitation, opt-out notice, and a postal address. The postal address
+//     ships in the per-mailbox {{accountSignature}}; the solicitation line was
+//     dropped on request (see set-signatures.mjs); the opt-out notice is in the
+//     body so it cannot depend on a mailbox setting being configured.
+//
+//     The wording of that notice is deliberate. It reads 'reply "no" and I will
+//     not reach out again', not 'reply "remove"'. "Remove" and "off my list"
+//     are the vocabulary of list management, and a cold email that admits to
+//     having a list stops reading like one person writing to another, which is
+//     the whole premise of the message. The mechanism is identical and the
+//     notice is just as clear; only the frame changes.
+//
+//     One consequence to carry into any reply automation: do NOT trigger
+//     suppression on a bare "no". It is a common word in ordinary replies
+//     ("no problem, let us talk", "no rush but yes"), so matching it alone
+//     would unsubscribe interested people. Match the phrasing, or read the
+//     replies. stop_on_reply is true either way, so the sequence halts on any
+//     reply regardless.
 //   - Every paragraph is wrapped in a <div>. This is NOT optional and the API
 //     reference does not mention it: the docs say only "use <br/> tags for
 //     line breaks", but the server-side sanitizer DISCARDS BARE TEXT NODES at
@@ -41,6 +56,7 @@
 //                                             if they already exist (matched by name).
 //                                             Idempotent, and never activates anything.
 //   node instantly-wave1.mjs --verify         re-read the campaigns and assert the copy
+//   node instantly-wave1.mjs --mailbox-limits set each wave 1 mailbox to MAILBOX_DAILY_LIMIT
 //                                             survived the sanitizer
 
 const API = 'https://api.instantly.ai/api/v2';
@@ -55,11 +71,17 @@ const KEY = process.env.INSTANTLY_API_KEY;
 // on a schedule it named "Weekdays" in this same workspace, so 0 = Sunday.
 // Worth eyeballing once in the UI, since the API reference never says it.
 const SCHEDULE = {
-  // Hard floor on the first send. Every mailbox and domain in this workspace was
-  // created 2026-08-06, so they are 6 days old. Instantly's own guidance is a
-  // 2-week minimum before campaign sends; 3 weeks is the defensible number.
-  // Even if someone activates early, nothing goes out before this date.
-  start_date: '2026-08-27',
+  // Hard floor on the first send. Every mailbox and domain in this workspace
+  // was created 2026-08-06. Instantly's own guidance is a 2-week minimum
+  // before campaign sends; 3 weeks is the defensible number. Even if someone
+  // activates early, nothing goes out before this date.
+  //
+  // Moved forward 2026-09-04. The original 2026-08-27 was day 21, and it had
+  // quietly become a date in the past, which meant the backstop was doing
+  // nothing at all: activating a campaign would have started sending on the
+  // next window. Day 30 is 2026-09-05, a Saturday and not a sending day, so
+  // the floor is the Monday after it.
+  start_date: '2026-09-07',
   end_date: null,
   schedules: [
     {
@@ -70,6 +92,11 @@ const SCHEDULE = {
     },
   ],
 };
+
+// Per-mailbox ceiling, applied by --mailbox-limits. Kept beside the mailbox
+// list rather than inside a campaign because it is an account setting: the
+// same twelve accounts would carry it into any later campaign too.
+const MAILBOX_DAILY_LIMIT = 20;
 
 // ---- Mailboxes ------------------------------------------------------------
 // One mailbox per domain, twelve domains, and each campaign gets its own set.
@@ -117,7 +144,7 @@ const EMAIL_2_BODY = [
   '',
   '{{RANDOM|Want me to send a short example on a live solicitation?|Worth putting together a quick example on a real solicitation?}}',
   '',
-  '{{RANDOM|If I am barking up the wrong tree, just say so and I will close this out.|If this is not relevant, tell me and I will leave you be.}} Reply "remove" and you are off my list.',
+  '{{RANDOM|If I am barking up the wrong tree, reply "no" and I will not reach out again.|If this is not relevant, reply "no" and you will not hear from me again.}}',
   '',
   '{{accountSignature}}',
 ];
@@ -135,7 +162,7 @@ const EMAIL_3_BODY = [
   '',
   'There is a working compliance matrix builder on our site you can try without creating an account: https://govhub.online',
   '',
-  '{{RANDOM|If the timing is off, no problem at all.|If now is not the time, all good.}} {{RANDOM|Reply "remove" and you will not hear from me again.|Say "remove" and I will take you off my list.}}',
+  '{{RANDOM|If the timing is off, that is fine.|If now is not the time, all good.}} {{RANDOM|Reply "no" and I will not reach out again.|Reply "no" and you will not hear from me again.}}',
   '',
   '{{accountSignature}}',
 ];
@@ -152,7 +179,7 @@ const A_EMAIL_1_BODY = [
   '',
   '{{RANDOM|Worth a quick look?|Open to a look on a live RFP?|Want me to send a 2-minute example?}}',
   '',
-  'Reply "remove" and I will stop.',
+  'Reply "no" and I will not reach out again.',
   '',
   '{{accountSignature}}',
 ];
@@ -173,7 +200,7 @@ const B_EMAIL_1_BODY = [
   '',
   '{{RANDOM|Open to a look?|Want a 2-minute example on a solicitation you are watching?}}',
   '',
-  'Reply "remove" and I will stop.',
+  'Reply "no" and I will not reach out again.',
   '',
   '{{accountSignature}}',
 ];
@@ -191,7 +218,7 @@ const C_EMAIL_1_BODY = [
   '',
   '{{RANDOM|Want to see it on a live solicitation?|Want me to walk it through your first bid?}}',
   '',
-  'Reply "remove" and I will stop.',
+  'Reply "no" and I will not reach out again.',
   '',
   '{{accountSignature}}',
 ];
@@ -201,6 +228,27 @@ const C_EMAIL_1_BODY = [
 // degrades to a shorter valid subject instead of "(no subject)" or "?".
 // CTA and subject vocabulary are disjoint across campaigns: identical closing
 // lines across all three would undo the point of varying the fingerprint.
+// Volume. Raised to 20 per inbox per day on request, 2026-09-04, from the 5
+// the ramp in docs/instantly-wave1.md opens on.
+//
+// Three knobs have to agree or the change does nothing. The per-mailbox
+// `daily_limit` on the account is the real ceiling (see --mailbox-limits
+// below); `daily_limit` here is the campaign-wide cap, mailboxes x 20; and
+// `daily_max_leads` is how many NEW leads enter per day. A three-email
+// sequence means steady-state sends are roughly three times the new-lead rate,
+// so daily_max_leads is the campaign cap divided by 3. Leaving it at the old
+// 12/6/6 would have held actual volume near 72/day whatever the caps said.
+//
+// Recorded because it is a real departure and the record should not have to be
+// reconstructed later: 20/inbox/day is the number the ramp treats as the
+// week-8 ceiling, not its opening step, and it is being used on domains 29
+// days old. The ramp's own gates -- bounce under 2%, reply at or above 3%,
+// zero complaints, seed placement at or above 90% -- are all measured from
+// sends that have not happened yet, so none of them can be checked before the
+// first one. Opening at the ceiling means the first day of real data arrives
+// at 240 sends rather than 60. That trade was put to the account holder and
+// this is the answer; watch bounces on day one rather than at the end of week
+// one.
 const CAMPAIGNS = [
   {
     key: 'A',
@@ -211,8 +259,8 @@ const CAMPAIGNS = [
       'Section L compliance',
     ],
     email1: A_EMAIL_1_BODY,
-    daily_limit: 30, // 6 mailboxes x 5/day
-    daily_max_leads: 12,
+    daily_limit: 120, // 6 mailboxes x 20/day
+    daily_max_leads: 40,
   },
   {
     key: 'B',
@@ -223,8 +271,8 @@ const CAMPAIGNS = [
       'proposal workload',
     ],
     email1: B_EMAIL_1_BODY,
-    daily_limit: 15, // 3 mailboxes x 5/day
-    daily_max_leads: 6,
+    daily_limit: 60, // 3 mailboxes x 20/day
+    daily_max_leads: 20,
   },
   {
     key: 'C',
@@ -235,8 +283,8 @@ const CAMPAIGNS = [
       'getting the first bid out',
     ],
     email1: C_EMAIL_1_BODY,
-    daily_limit: 15, // 3 mailboxes x 5/day
-    daily_max_leads: 6,
+    daily_limit: 60, // 3 mailboxes x 20/day
+    daily_max_leads: 20,
   },
 ];
 
@@ -382,7 +430,16 @@ function check() {
       renders.every((r) => !/^\s*[,.?!]/.test(r)),
       `${s.label} no render opens with punctuation`
     );
-    note(/remove/i.test(raw), `${s.label} carries an opt-out line`);
+    // The opt-out has to be present AND has to not sound like a mailing list.
+    // Changed 2026-09-04: "remove" and "off my list" tell the reader they were
+    // on a list, which is the one thing a cold email cannot afford to admit on
+    // the way out. Both halves are checked, so neither the instruction nor the
+    // voice can regress silently.
+    note(/reply "no"/i.test(raw), `${s.label} carries an opt-out line`);
+    note(
+      !/\b(remove|unsubscribe|opt[- ]?out|off my list|off this list|mailing list|your list)\b/i.test(raw),
+      `${s.label} opt-out reads personal, not list-managed`
+    );
 
     // The sanitizer discards bare text nodes, so every line must be inside a div.
     const assembled = bodyHtml(s.lines);
@@ -483,6 +540,34 @@ if (arg === '--check') {
     else console.log(`  ok   copy stored intact, status=${stored.status} (0=Draft), ${(stored.email_list || []).length} mailboxes`);
   }
   process.exit(bad === 0 ? 0 : 1);
+} else if (arg === '--mailbox-limits') {
+  // Deliberately NOT part of --sync. --sync writes campaigns and is safe to
+  // run at any time; this writes shared mailbox accounts, which the influencer
+  // campaigns also draw on by domain, so it stays an explicit choice.
+  //
+  // The campaign cap controls total volume, never its distribution. Without a
+  // per-mailbox ceiling two mailboxes can absorb the whole daily allowance
+  // while ten sit idle, which is the opposite of the twelve-independent-
+  // readings design and the fastest way to burn a single domain.
+  const wanted = MAILBOX_DAILY_LIMIT;
+  const all = Object.values(MAILBOXES).flat();
+  let set = 0, already = 0, failed = 0;
+  for (const m of all) {
+    try {
+      const cur = await api('GET', `/accounts/${encodeURIComponent(m)}`);
+      if (cur.daily_limit === wanted) { already++; console.log(`  ok   ${m.padEnd(34)} already ${wanted}`); continue; }
+      const r = await api('PATCH', `/accounts/${encodeURIComponent(m)}`, { daily_limit: wanted });
+      if (r.daily_limit !== wanted) throw new Error(`stored ${r.daily_limit}, wanted ${wanted}`);
+      set++;
+      console.log(`  set  ${m.padEnd(34)} ${cur.daily_limit} -> ${wanted}`);
+    } catch (e) {
+      failed++;
+      console.log(` FAIL ${m}  ${e.message.split('\n')[0]}`);
+    }
+  }
+  console.log(`\n${set} changed, ${already} already correct, ${failed} failed.`);
+  console.log(`${all.length} mailboxes x ${wanted}/day = ${all.length * wanted}/day of mailbox headroom.`);
+  console.log('Campaign caps are what actually meter the sending; this is the ceiling under them.');
 } else if (arg === '--verify') {
   let bad = 0;
   for (const c of CAMPAIGNS) {
