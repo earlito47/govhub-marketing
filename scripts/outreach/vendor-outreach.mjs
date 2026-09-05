@@ -19,29 +19,36 @@
 //     Hand-corrected displayNames and a ledger `companyOverride` both win
 //     over the derivation; the dry run prints the exact name that will send.
 //   - No SAM.gov. POC email/phone are FOUO-gated at every public key tier and
-//     in the public bulk extracts alike, so contacts come from a layered
-//     resolver instead: SBA certification search first (keyless, covers small
-//     businesses — see scripts/leadgen/enrich_sba.py for the API's quirks),
-//     then Apollo (APOLLO_API_KEY) for named contacts at the large primes:
-//     company name -> organization id, then people inside that organization.
-//     (A Tomba domain-search tier sat between them until 2026-08-05, removed
-//     by user decision — no Tomba subscription.)
-//   - A vendor neither tier can resolve is retried on a slow cadence rather
-//     than retired: Apollo's coverage of a company changes over months.
-//   - A tier being DOWN is not the same as a tier having no answer, and the
-//     difference is now recorded. Apollo reports an exhausted credit balance
-//     as a plain 422; on 2026-08-20 that killed resolution outright — SBA
-//     covers small businesses only, and the queue is mostly large primes,
-//     FFRDC operators and universities, so Apollo is the only tier that can
-//     reach them (53 of the first 69 sends came from it). Every vendor failed
-//     identically, no ledger row was written, the run stayed green, and the
-//     digest went on calling the backlog a daily retry for six days. So: a
-//     quota error now stops the run instead of spending the rest of the batch
-//     on the same wall, writes `resolverStatus` on the ledger, and prints a
-//     ::warning:: the digest turns into an action item. It clears itself on
-//     the next run that resolves anybody.
+//     in the public bulk extracts alike, so contacts come from the SBA
+//     certification search: keyless, matched on UEI, and covering small
+//     businesses only (see scripts/leadgen/enrich_sba.py for the API's
+//     quirks). It is the ONLY tier.
+//
+//     Two paid tiers sat behind it and are both gone: Tomba domain search
+//     (removed 2026-08-05, no subscription) and Apollo (removed 2026-09-05,
+//     user decision to stop paying for it). Apollo had resolved 53 of the
+//     first 69 sends, so removing it is not free — see the next bullet.
+//   - A vendor SBA cannot answer for is now RETIRED, not retried. SBA matches
+//     on UEI and only holds small businesses; the 77 vendors left unresolved
+//     are large primes, FFRDC operators, universities and foreign entities,
+//     which SBA will never cover no matter how often it is asked. Retrying
+//     them was only ever waiting for Apollo. They are marked `no-contact`
+//     once and skipped thereafter; deleting a vendor's ledger row is the
+//     manual way to reopen one (e.g. after entering a contact by hand).
+//   - A tier being DOWN is not the same as a tier having no answer, and with
+//     one tier that distinction now decides whether a vendor is retired for
+//     good. SBA reports not-found as HTTP 500 "No matching", which is
+//     indistinguishable from a real outage unless you look: so resolveSba
+//     separates them and only a genuine "SBA answered, has nothing" retires a
+//     vendor. A transport failure leaves the row untouched for the next run,
+//     records `resolverStatus` on the ledger, and prints a ::warning:: the
+//     digest turns into an action item. It clears on the next run that
+//     resolves anybody. (This machinery was built for the 2026-08-20 Apollo
+//     credit outage, which stayed invisible through six days of green runs;
+//     the failure mode it guards against is now worse, because a silent
+//     outage would retire every vendor it touched.)
 //   - Never the same inbox twice across vendors: Raytheon and RTX share
-//     rtx.com, so every tier skips an email some other vendor already holds,
+//     rtx.com, so the resolver skips an email some other vendor already holds,
 //     or that the ledger's `suppressed` list has retired.
 //
 // Modes:
@@ -50,9 +57,9 @@
 //   --send    [--limit N]  send ready entries via Resend (default cap 10)
 //   --test <address>       send one rendered sample to your own inbox
 //
-// Env: RESEND_API_KEY (send/test), APOLLO_API_KEY (resolve tier 2),
-//      OUTREACH_FROM, OUTREACH_REPLY_TO, OUTREACH_POSTAL (postal address for
-//      the signature; required to --send, CAN-SPAM).
+// Env: RESEND_API_KEY (send/test), OUTREACH_FROM, OUTREACH_REPLY_TO,
+//      OUTREACH_POSTAL (postal address for the signature; required to --send,
+//      CAN-SPAM). Contact resolution needs no key at all now.
 
 import path from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
@@ -67,23 +74,6 @@ const FROM = process.env.OUTREACH_FROM || 'Jerr at GovHub <hello@govhub.online>'
 const REPLY_TO = process.env.OUTREACH_REPLY_TO || 'hello@govhub.online';
 const POSTAL = process.env.OUTREACH_POSTAL || '';
 
-// Titles Apollo is asked for, in preference order: people who own how the
-// company shows up in the federal market, not generic sales.
-const APOLLO_TITLES = [
-  'business development',
-  'capture manager',
-  'proposal manager',
-  'corporate communications',
-  'marketing',
-];
-
-// Apollo reveal attempts per vendor: each one is a credit.
-const APOLLO_REVEALS_PER_VENDOR = 3;
-// A vendor both tiers failed is retried, but slowly: Apollo's coverage of a
-// company changes over months, not overnight, and a daily retry of 75 dead
-// vendors would just burn a credit apiece every morning.
-const RETRY_AFTER_DAYS = 14;
-const MAX_RESOLVE_ATTEMPTS = 5;
 
 // ---- Ledger ---------------------------------------------------------------
 function loadLedger() {
@@ -291,219 +281,97 @@ const SBA_UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KH
 // and quirks as scripts/leadgen/enrich_sba.py: browser UA required, not-found
 // surfaces as HTTP 500 "No matching", and email is honored only when the
 // profile's public display flags allow.
-async function resolveSba(vendor) {
-  if (!vendor.uei) return null;
-  const resp = await fetch(`https://search.certifications.sba.gov/_api/v2/profile/${vendor.uei}`, {
-    headers: { 'User-Agent': SBA_UA, Accept: 'application/json' },
-  }).catch(() => null);
-  if (!resp || !resp.ok) return null;
+// Returns one of:
+//   { contact }        SBA answered and the profile carries a usable email
+//   { empty: true }    SBA answered and has nothing for this UEI
+//   { error: reason }  SBA could not be reached, or answered unintelligibly
+//
+// The three are NOT interchangeable any more. With Apollo gone this is the
+// only tier, and an empty answer retires the vendor permanently — so an
+// outage misread as "empty" would quietly retire every vendor it touched.
+// SBA signals not-found as HTTP 500 with a "No matching" body, which is the
+// same status a genuinely broken service returns, hence the body check.
+export async function resolveSba(vendor, { fetchImpl = fetch } = {}) {
+  if (!vendor.uei) return { empty: true };
+  let resp;
+  try {
+    resp = await fetchImpl(`https://search.certifications.sba.gov/_api/v2/profile/${vendor.uei}`, {
+      headers: { 'User-Agent': SBA_UA, Accept: 'application/json' },
+    });
+  } catch (err) {
+    return { error: `SBA unreachable: ${err.message}` };
+  }
+  if (!resp.ok) {
+    const text = await resp.text().catch(() => '');
+    // The documented not-found shape. Anything else with a bad status is the
+    // service failing, not the vendor being absent.
+    if (/no matching/i.test(text)) return { empty: true };
+    return { error: `SBA HTTP ${resp.status} ${text.slice(0, 120)}` };
+  }
   const raw = await resp.json().catch(() => null);
+  if (raw === null) return { error: 'SBA returned a body that is not JSON' };
   const ent = raw && typeof raw.entity === 'object' ? raw.entity : raw;
-  if (!ent) return null;
+  if (!ent) return { empty: true };
   const flag = (name) => (typeof ent[name] === 'boolean' ? ent[name] : true);
-  if (!flag('public_display') || !flag('display_email')) return null;
+  // Profile exists but the owner has not published an address: a real answer,
+  // and the answer is no.
+  if (!flag('public_display') || !flag('display_email')) return { empty: true };
   const email = String(ent.email || '').trim();
-  if (!email.includes('@')) return null;
+  if (!email.includes('@')) return { empty: true };
   return {
-    email,
-    contactName: String(ent.contact_person || '').trim(),
-    contactTitle: '',
-    source: 'sba',
+    contact: {
+      email,
+      contactName: String(ent.contact_person || '').trim(),
+      contactTitle: '',
+      source: 'sba',
+    },
   };
 }
 
-// Tier 2: Apollo, in two steps — resolve the company to an organization id,
-// then search people inside that organization by title and reveal one work
-// email. Capped at APOLLO_REVEALS_PER_VENDOR reveals per vendor to keep credit
-// use predictable.
-
-// Apollo answers an exhausted credit balance with an ordinary-looking 4xx
-// ("HTTP 422 You have insufficient credits!"), not a distinct status. Left
-// untagged it reads like any other per-vendor miss, which is exactly how the
-// 2026-08-20 outage stayed invisible for six days of green runs: every vendor
-// in every batch failed this way, the resolver wrote no ledger row (see
-// runResolve), and the digest kept reporting the backlog as "retries daily".
-// Tagging it lets the caller stop the run and say so out loud.
-export function isApolloQuotaError(status, body) {
-  if (status === 402) return true;
-  return /insufficient credits|upgrade your plan|over your.{0,20}limit/i.test(String(body));
-}
-
-async function apolloPost(key, endpoint, payload) {
-  const resp = await fetch(`https://api.apollo.io/api/v1/${endpoint}`, {
-    method: 'POST',
-    headers: { 'X-Api-Key': key, 'Content-Type': 'application/json', 'Cache-Control': 'no-cache' },
-    body: JSON.stringify(payload),
-  });
-  if (!resp.ok) {
-    const text = await resp.text();
-    const err = new Error(`apollo ${endpoint}: HTTP ${resp.status} ${text.slice(0, 150)}`);
-    // Not a property of this vendor — a property of the account. Every
-    // remaining vendor in the batch would hit the same wall.
-    if (isApolloQuotaError(resp.status, text)) err.quotaExhausted = true;
-    throw err;
-  }
-  return resp.json();
-}
-
-function apolloCandidateRank(person) {
-  const title = String(person.title || '').toLowerCase();
-  const idx = APOLLO_TITLES.findIndex((t) => title.includes(t.split(' ')[0]));
-  return idx === -1 ? APOLLO_TITLES.length : idx;
-}
-
-// Company-name match, used to confirm that the organization Apollo returned
-// for a name really is the vendor, and as a backstop on each person's
-// employer. Acronym-only mismatches (SAIC) stay unresolved for hand entry
-// rather than risking an email to the wrong company.
+// A vendor is due for a resolution attempt only if it has never had one.
 //
-// The match is a PREFIX of the token list, not free containment. Extra tokens
-// on the end are the same company under a longer registration ("Northrop
-// Grumman" / "Northrop Grumman Systems"); extra tokens on the FRONT are a
-// different company that merely ends in the same words. Free containment sent
-// two wrong emails before this was tightened: "Aerospace" (The Aerospace
-// Corporation) matched Field Aerospace, and "General Electric" matched
-// Portland General Electric. A single shared token is never enough on its
-// own — one word can be an industry rather than an identity.
-function nameTokens(name) {
-  return companyForEmail(name).toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim().split(/\s+/)
-    .filter(Boolean);
-}
-
-export function sameCompany(vendorName, orgName) {
-  const a = nameTokens(vendorName);
-  const b = nameTokens(orgName);
-  if (!a.length || !b.length) return false;
-  const [short, long] = a.length <= b.length ? [a, b] : [b, a];
-  if (!short.every((tok, i) => tok === long[i])) return false;
-  return a.length === b.length || short.length >= 2;
-}
-
-// Step 1: the vendor's USAspending legal name -> an Apollo organization id.
+// This used to allow slow retries, because Apollo's coverage of a company
+// genuinely changed over months. SBA's does not in the way that matters: it
+// matches on UEI and holds small businesses, so a prime, an FFRDC operator or
+// a university is not going to appear in it next fortnight. Retrying them was
+// waiting for Apollo, and Apollo is gone.
 //
-// This step exists because searching people by company NAME does not work.
-// Apollo files companies under their trading name, and the roster carries the
-// registered one, so the old q_keywords search missed the company entirely or
-// surfaced somebody at a different one. Measured against the vendors this
-// resolver had given up on:
-//   "Carahsoft Technology"           -> 0 people;   carahsoft.com -> 332
-//   "Space Exploration Technologies" -> 1 person, at Lockheed Martin;
-//                                       spacex.com  -> 20
-// Both companies are in Apollo in force. The query was the problem.
-//
-// Costs one Apollo credit per call that returns a result, so it runs once per
-// vendor, after the keyless SBA tier has already had its turn, and only for
-// vendors the daily --limit lets through.
-async function apolloOrgId(key, vendor) {
-  const name = companyForEmail(vendor.name || vendor.displayName);
-  const search = await apolloPost(key, 'mixed_companies/search', {
-    q_organization_name: name,
-    per_page: 5,
-  });
-  // Two buckets, and the id to use differs: `organizations` (net new) carries
-  // the organization id as `id`, while `accounts` (already saved to the
-  // team) carries it as `organization_id` and uses `id` for the account.
-  const candidates = [
-    ...(search?.organizations ?? []).map((o) => ({ id: o.id, name: o.name })),
-    ...(search?.accounts ?? []).map((a) => ({ id: a.organization_id, name: a.name })),
-  ].filter((o) => o.id && o.name);
-  // Name search is fuzzy, so the same guard that keeps people at the wrong
-  // company out applies to the company itself.
-  const hit = candidates.find((o) => sameCompany(vendor.name || vendor.displayName, o.name));
-  if (!hit) {
-    console.log(`[resolve] ${vendor.slug}: no Apollo org matched "${name}"${candidates.length ? ` (saw ${candidates.map((c) => c.name).join(', ')})` : ''}`);
-    return null;
-  }
-  return hit;
-}
-
-async function resolveApollo(vendor, usedEmails) {
-  const key = process.env.APOLLO_API_KEY;
-  if (!key) return { skipped: true };
-  const org = await apolloOrgId(key, vendor);
-  if (!org) return null;
-  const search = await apolloPost(key, 'mixed_people/api_search', {
-    organization_ids: [org.id],
-    person_titles: APOLLO_TITLES,
-    person_locations: ['United States'],
-    per_page: 25,
-  });
-  const people = (search?.people ?? [])
-    // has_email is Apollo telling us, for free, whether it holds a work email
-    // for this person. Revealing one it does not have still spends a credit,
-    // so candidates without it go last rather than first.
-    .filter((p) => p.has_email !== false)
-    // The org-id filter should make this redundant. Keep it: a reveal is a
-    // credit, and an email to the wrong company cannot be taken back.
-    .filter((p) => !p.organization?.name || sameCompany(org.name, p.organization.name))
-    .sort((a, b) => apolloCandidateRank(a) - apolloCandidateRank(b));
-  if (people.length === 0) {
-    console.log(`[resolve] ${vendor.slug}: Apollo org "${org.name}" has no titled contact with an email on file`);
-    return null;
-  }
-  for (const person of people.slice(0, APOLLO_REVEALS_PER_VENDOR)) {
-    const match = await apolloPost(key, 'people/match', { id: person.id, reveal_personal_emails: false }).catch(() => null);
-    const email = String(match?.person?.email || '').trim();
-    if (email.includes('@') && !email.startsWith('email_not_unlocked') && !usedEmails.has(email)) {
-      return {
-        email,
-        contactName: [person.first_name, person.last_name].filter(Boolean).join(' '),
-        contactTitle: person.title || '',
-        source: 'apollo',
-      };
-    }
-  }
-  return null;
-}
-
-// A vendor is due for a resolution attempt if it has never had one, or if
-// both tiers came up empty far enough back to be worth another look.
-//
-// "no-contact" used to be terminal: runResolve skipped every vendor that had
-// a ledger row at all, so the 75 vendors the old keyword search failed on
-// could never be reached again, no matter what got fixed afterwards. The
-// digest's "retries daily" only ever described vendors with no row.
-export function dueForResolve(entry, now) {
-  if (!entry) return true;
-  if (entry.status !== 'no-contact') return false;
-  if ((entry.resolveAttempts ?? 1) >= MAX_RESOLVE_ATTEMPTS) return false;
-  if (!entry.lastResolveAt) return true;
-  return now - Date.parse(entry.lastResolveAt) >= RETRY_AFTER_DAYS * 86400000;
+// A row is therefore terminal once written. To reopen one — a contact entered
+// by hand, or a vendor that has since registered with SBA — delete its entry
+// from data/vendor-outreach.json and the next run will attempt it again.
+export function dueForResolve(entry) {
+  return !entry;
 }
 
 async function runResolve(limit) {
   const ledger = loadLedger();
-  const now = Date.now();
   const published = rosterEntries(loadRoster())
-    .filter((v) => v.status === 'published' && dueForResolve(ledger.vendors[v.slug], now))
+    .filter((v) => v.status === 'published' && dueForResolve(ledger.vendors[v.slug]))
     .sort((a, b) => (a.rank ?? Infinity) - (b.rank ?? Infinity))
     .slice(0, limit);
   if (published.length === 0) {
-    console.log('[resolve] nothing to do: every published vendor is resolved or not yet due for a retry');
+    console.log('[resolve] nothing to do: every published vendor has been attempted');
     return;
   }
   const usedEmails = usedEmailSet(ledger);
-  let quotaExhausted = null;
   let resolvedThisRun = 0;
-  for (const [i, vendor] of published.entries()) {
+  let sbaErrors = 0;
+  let attempted = 0;
+  let lastError = '';
+  for (const vendor of published) {
     // The name the email will actually say, not the page-title displayName.
     const company = companyForEmail(vendor.name || vendor.displayName);
-    let contact = await resolveSba(vendor);
-    if (contact && usedEmails.has(contact.email)) contact = null;
-    let apolloSkipped = false;
-    let apolloErrored = false;
-    if (!contact) {
-      const apollo = await resolveApollo(vendor, usedEmails).catch((e) => {
-        console.log(`[resolve] ${vendor.slug}: ${e.message}`);
-        return { skipped: true, errored: true, quotaExhausted: Boolean(e.quotaExhausted) };
-      });
-      if (apollo?.quotaExhausted) quotaExhausted = apollo;
-      if (apollo?.skipped) {
-        apolloSkipped = true;
-        apolloErrored = Boolean(apollo.errored);
-      } else contact = apollo;
-    }
-    if (contact) {
+    attempted += 1;
+    const result = await resolveSba(vendor);
+
+    if (result.error) {
+      // Deliberately writes NO ledger row: an unreachable tier must not retire
+      // a vendor, and leaving the row absent is what brings it back next run.
+      sbaErrors += 1;
+      lastError = result.error;
+      console.log(`[resolve] ${vendor.slug}: not attempted — ${result.error}`);
+    } else if (result.contact && !usedEmails.has(result.contact.email)) {
+      const contact = result.contact;
       usedEmails.add(contact.email);
       ledger.vendors[vendor.slug] = {
         company,
@@ -519,56 +387,39 @@ async function runResolve(limit) {
       };
       resolvedThisRun += 1;
       console.log(`[resolve] ${vendor.slug}: ${contact.email} (${contact.source})`);
-    } else if (apolloSkipped) {
-      // Leave unresolved so a later run retries — and say WHY accurately: the
-      // 2026-08-05 stall was misdiagnosed for a day because an Apollo API
-      // error printed the missing-key message.
-      console.log(
-        `[resolve] ${vendor.slug}: unresolved (${apolloErrored ? 'Apollo errored this run' : 'APOLLO_API_KEY is not configured'})`,
-      );
     } else {
-      // Not terminal any more: record the attempt so this vendor comes back
-      // around in RETRY_AFTER_DAYS, up to MAX_RESOLVE_ATTEMPTS.
-      const attempts = (ledger.vendors[vendor.slug]?.resolveAttempts ?? 0) + 1;
+      // Either SBA has nothing, or the address it gave is already spoken for
+      // by another vendor. Both are real answers, and both are final.
+      const takenBy = result.contact ? ` (SBA gave ${result.contact.email}, already used by another vendor)` : '';
       ledger.vendors[vendor.slug] = {
         company, contactName: '', contactTitle: '', email: '', source: '',
-        status: 'no-contact', sentAt: null, resendId: null, notes: '',
-        resolveAttempts: attempts,
+        status: 'no-contact', sentAt: null, resendId: null,
+        notes: result.contact ? 'sba address already used by another vendor' : 'no SBA profile with a public email',
         lastResolveAt: new Date().toISOString(),
       };
-      console.log(
-        `[resolve] ${vendor.slug}: no contact found (attempt ${attempts}/${MAX_RESOLVE_ATTEMPTS}` +
-        `${attempts >= MAX_RESOLVE_ATTEMPTS ? ', giving up' : `, retrying after ${RETRY_AFTER_DAYS}d`})`,
-      );
+      console.log(`[resolve] ${vendor.slug}: no contact — retired, SBA is the only tier${takenBy}`);
     }
     await saveLedger(ledger);
-    // The credit balance is not going to refill mid-run. Every vendor left in
-    // the batch would spend a request to be told the same thing, so stop.
-    if (quotaExhausted) {
-      console.log(`[resolve] stopping: Apollo is out of credits, ${published.length - i - 1} vendor(s) left unattempted this run`);
-      break;
-    }
     await new Promise((r) => setTimeout(r, 600));
   }
 
-  // Record — or clear — why resolution is stalled, and make it loud. Neither
-  // tier resolving a given vendor is normal; the paid tier being switched off
-  // for every vendor is an outage, and green-and-silent is how it survived six
-  // days last time.
-  if (quotaExhausted) {
+  // Every attempt failing at the transport is an outage, not a queue of
+  // vendors SBA happens not to know. Say so loudly: silence here is how the
+  // 2026-08-20 Apollo outage survived six days, and the cost is higher now
+  // because a misread outage would retire vendors permanently.
+  if (attempted > 0 && sbaErrors === attempted) {
     setResolverStatus(ledger, {
-      tier: 'apollo',
-      reason: 'out-of-credits',
+      tier: 'sba',
+      reason: 'unreachable',
       detectedAt: new Date().toISOString(),
-      message: 'Apollo returned "insufficient credits" — contact resolution is blocked until the plan is topped up.',
+      message: `SBA certification search failed for every vendor attempted this run (${lastError}). No vendor was retired; the next run retries them.`,
     });
     await saveLedger(ledger);
-    console.log('::warning title=Vendor outreach contact resolution is blocked::Apollo is out of credits, so no new vendor contacts can be resolved and no outreach can be sent. SBA covers small businesses only and cannot reach the current backlog. Top up the Apollo plan or the queue will keep growing.');
-  } else if (ledger.resolverStatus && resolvedThisRun > 0) {
-    // Apollo answered and produced a contact: whatever was wrong is over.
+    console.log(`::warning title=Vendor outreach contact resolution is blocked::SBA certification search failed on all ${attempted} vendor(s) this run (${lastError}). It is the only contact tier, so no new vendor contacts can be resolved until it recovers. No vendor was retired.`);
+  } else if (ledger.resolverStatus && (resolvedThisRun > 0 || sbaErrors === 0)) {
     setResolverStatus(ledger, null);
     await saveLedger(ledger);
-    console.log('[resolve] Apollo is answering again — cleared the recorded resolver outage');
+    console.log('[resolve] SBA is answering again — cleared the recorded resolver outage');
   }
 }
 
