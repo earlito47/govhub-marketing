@@ -3,7 +3,7 @@
 // Reuses the shared chart/table/methodology/CTA components; adds an Article
 // JSON-LD block and a prominent published-date line.
 import type { InsightsPage } from '../../lib/insightsTypes';
-import { SIGNUP_URL, SITE_URL } from '../../config';
+import { SITE_URL, ctaHref } from '../../config';
 import Breadcrumbs from '../seo/Breadcrumbs.astro';
 import CTABand from '../CTABand.astro';
 import SvgChart from './SvgChart.astro';
@@ -63,7 +63,7 @@ const canonical = `${SITE_URL}/insights/reports/${page.week}/${page.slug}/`;
 <CTABand
   heading="Track this market as it moves"
   sub="GovHub customers get live award feeds, saved searches, and AI proposal drafting on top of this data."
-  primaryHref={`${SIGNUP_URL}?utm_source=insights&utm_campaign=report`}
+  primaryHref={ctaHref('insights_report')}
   primaryLabel="Start free"
 />
 

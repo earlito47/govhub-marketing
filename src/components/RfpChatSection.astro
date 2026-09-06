@@ -52,10 +52,23 @@ import { APP_URL } from '../config';
 
   // Hand off to the app's /start intake. Short pasted text rides ?text=; files
   // and long text are entered on the app origin.
+  //
+  // Routed through window.gh.decorate because this is a scripted navigation,
+  // not an <a href>: the link decorator in Analytics.astro walks anchors and
+  // would silently miss the site's most prominent CTA. If the attribution
+  // bootstrap is absent (blocked, or an older cached BaseLayout), navigate
+  // anyway and say so in the console rather than dropping the click.
   const go = () => {
     const text = (ta && ta.value ? ta.value : '').trim();
     const base = appUrl + '/start';
-    window.location.href = text && text.length <= 1500 ? base + '?text=' + encodeURIComponent(text) : base;
+    const raw = text && text.length <= 1500 ? base + '?text=' + encodeURIComponent(text) : base;
+    const gh = window.gh;
+    if (!gh || typeof gh.decorate !== 'function') {
+      console.warn('[gh] attribution bootstrap missing; /start hop is undecorated');
+      window.location.href = raw;
+      return;
+    }
+    window.location.href = gh.decorate(raw);
   };
   if (send) send.addEventListener('click', go);
   if (plus) plus.addEventListener('click', go);

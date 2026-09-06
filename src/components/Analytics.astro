@@ -1,0 +1,306 @@
+---
+import { POSTHOG_TOKEN, POSTHOG_API_HOST, COOKIE_DOMAIN, APP_URL } from '../config';
+
+interface Props {
+  /**
+   * False in `astro dev` and on Cloudflare preview branches. When false the
+   * cookies and the link decoration still run (those are page behaviour, and
+   * you want to be able to test them on a preview), but nothing is sent to GA4
+   * or PostHog.
+   */
+  enabled: boolean;
+}
+const { enabled } = Astro.props;
+---
+
+<script
+  is:inline
+  define:vars={{
+    phToken: POSTHOG_TOKEN,
+    phApiHost: POSTHOG_API_HOST,
+    cookieDomain: COOKIE_DOMAIN,
+    appOrigin: APP_URL,
+    sendEnabled: enabled,
+  }}
+>
+  (function () {
+    'use strict';
+
+    /* ------------------------------------------------------------------
+     * 0. Runtime kill switch. Mirrors strata-parse/index.html:23.
+     *
+     * The build-time branch gate in BaseLayout.astro cannot see this: a
+     * production-branch Pages deploy is ALSO served from
+     * <hash>.govhub-marketing.pages.dev with byte-identical HTML, and
+     * CF_PAGES_BRANCH is 'main' for that deploy. Without a runtime hostname
+     * check, every preview alias reports into the live GA4 property and the
+     * live PostHog project.
+     *
+     * Denylist, not allowlist: if the site ever moves to a new domain it keeps
+     * reporting rather than silently going dark, which is how www lost 64 days.
+     * ---------------------------------------------------------------- */
+    var DEV_HOST =
+      /^localhost$|^127\.|^\[?::1\]?$|\.local$|\.pages\.dev$|\.workers\.dev$|\.lovable\.app$/;
+    var SEND = sendEnabled === true && !DEV_HOST.test(location.hostname);
+
+    /* ---------------- 1. Cookie helpers (.govhub.online) -------------- */
+    function readCookie(name) {
+      var m = document.cookie.match('(?:^|; )' + name + '=([^;]*)');
+      return m ? decodeURIComponent(m[1]) : '';
+    }
+    function writeCookie(name, value, maxAgeSeconds) {
+      /* SameSite=Lax, not Strict: www -> app is same-site (one registrable
+         domain) so Lax is sent on that navigation, while Strict would be
+         dropped on the inbound cross-site ad click that starts the journey.
+         Secure only over https so the cookies still work in `astro dev`. */
+      document.cookie =
+        name + '=' + encodeURIComponent(value) +
+        '; Domain=' + cookieDomain +
+        '; Path=/; Max-Age=' + maxAgeSeconds +
+        '; SameSite=Lax' +
+        (location.protocol === 'https:' ? '; Secure' : '');
+    }
+
+    /* ---------------- 2. Attribution parameters ----------------------- */
+    var ATTR_KEYS = [
+      'utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term',
+      'gclid', 'gbraid', 'wbraid', 'fbclid', 'li_fat_id', 'msclkid', 'ttclid',
+    ];
+    function paramsFromUrl() {
+      var q = new URLSearchParams(location.search);
+      var out = {};
+      for (var i = 0; i < ATTR_KEYS.length; i++) {
+        var v = q.get(ATTR_KEYS[i]);
+        if (v) out[ATTR_KEYS[i]] = v.slice(0, 200);
+      }
+      return out;
+    }
+    function isEmpty(o) {
+      for (var k in o) if (Object.prototype.hasOwnProperty.call(o, k)) return false;
+      return true;
+    }
+
+    /* ---------------- 3. Session id, 30 min sliding ------------------- */
+    var SESSION_TTL = 30 * 60;
+    var SID = readCookie('gh_s');
+    var NEW_SESSION = !SID;
+    if (!SID) SID = Date.now().toString(36) + Math.random().toString(36).slice(2, 10);
+    writeCookie('gh_s', SID, SESSION_TTL); /* re-written every page = sliding */
+
+    /* ---------------- 4. FIRST TOUCH: write once, 90 days -------------
+     * Never overwritten. This is the record the Stripe webhook ultimately
+     * stamps onto the paid conversion, so an overwrite here silently
+     * re-attributes a customer who has already converted. There is
+     * deliberately no update path.
+     *
+     * It travels to app.govhub.online BY COOKIE, not by URL: the cookie is on
+     * .govhub.online, so app.govhub.online reads it directly. Putting a
+     * 90-day-old utm_source on every app link would make GA4 credit three
+     * months of later direct and organic sessions to the original paid click.
+     * ---------------------------------------------------------------- */
+    var FIRST_TOUCH_TTL = 90 * 24 * 60 * 60;
+    var FT = null;
+    var IS_FIRST_TOUCH = false;
+    var ftRaw = readCookie('gh_ft');
+    if (ftRaw) { try { FT = JSON.parse(ftRaw); } catch (e) { FT = null; } }
+    if (!FT) {
+      var refHost = '';
+      try { refHost = document.referrer ? new URL(document.referrer).hostname : ''; }
+      catch (e) { refHost = ''; }
+      /* An internal hop is not a first touch. */
+      if (/(^|\.)govhub\.online$/.test(refHost)) refHost = '';
+      FT = { t: Math.floor(Date.now() / 1000), lp: location.pathname.slice(0, 200), rf: refHost };
+      var ftp = paramsFromUrl();
+      for (var fk in ftp) FT[fk] = ftp[fk];
+      writeCookie('gh_ft', JSON.stringify(FT), FIRST_TOUCH_TTL);
+      IS_FIRST_TOUCH = true;
+    }
+
+    /* ---------------- 5. LAST TOUCH: this session only ----------------
+     * The campaign params of the most recent entry that carried any. Scoped to
+     * the session, and this is the ONLY thing appended to app links.
+     * ---------------------------------------------------------------- */
+    var LT = paramsFromUrl();
+    if (!isEmpty(LT)) {
+      writeCookie('gh_lt', JSON.stringify(LT), SESSION_TTL);
+    } else {
+      var ltRaw = readCookie('gh_lt');
+      if (ltRaw) {
+        try { LT = JSON.parse(ltRaw); writeCookie('gh_lt', ltRaw, SESSION_TTL); }
+        catch (e) { LT = {}; }
+      }
+    }
+
+    /* ---------------- 6. Decorate links into the app -----------------
+     * Never overwrite a key already on the destination: an explicit value in
+     * the href is the author's intent and wins. gh_ref records which marketing
+     * page produced the click and is deliberately not a utm_* key.
+     * ---------------------------------------------------------------- */
+    function decorate(href) {
+      if (!href) return href;
+      try {
+        var u = new URL(href, location.href);
+        if (u.origin !== appOrigin) return href;
+        for (var k in LT) {
+          if (!Object.prototype.hasOwnProperty.call(LT, k)) continue;
+          if (u.searchParams.has(k)) continue;
+          u.searchParams.set(k, LT[k]);
+        }
+        if (!u.searchParams.has('gh_ref')) {
+          u.searchParams.set('gh_ref', location.pathname.slice(0, 120));
+        }
+        return u.toString();
+      } catch (e) {
+        console.warn('[gh] link decoration failed for', href, e);
+        return href;
+      }
+    }
+    function decorateAnchor(a) {
+      if (!a || a.getAttribute('data-gh-cta') === '1') return;
+      var href = a.getAttribute('href');
+      var next = decorate(href);
+      if (next !== href) a.setAttribute('href', next);
+      a.setAttribute('data-gh-cta', '1');
+    }
+    function decorateAll() {
+      var links = document.querySelectorAll('a[href^="https://app.govhub.online"]');
+      for (var i = 0; i < links.length; i++) decorateAnchor(links[i]);
+    }
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', decorateAll);
+    } else {
+      decorateAll();
+    }
+    /* Just-in-time pass for anything inserted after DOMContentLoaded, and for
+       middle-click / copy-link, which never fire a normal click. */
+    ['pointerdown', 'auxclick', 'contextmenu'].forEach(function (evt) {
+      document.addEventListener(evt, function (e) {
+        var a = e.target && e.target.closest ? e.target.closest('a[href]') : null;
+        if (a) decorateAnchor(a);
+      }, true);
+    });
+
+    /* ---------------- 7. Page type (www routes) ----------------------- */
+    function pageType(p) {
+      if (p === '/') return 'home';
+      if (p.indexOf('/insights/') === 0) return 'insights';
+      if (p.indexOf('/solutions/') === 0) return 'solutions';
+      if (p.indexOf('/blog/') === 0) return 'blog';
+      if (p.indexOf('/vs/') === 0 || p.indexOf('/alternatives/') === 0) return 'comparison';
+      if (p.indexOf('/glossary/') === 0) return 'glossary';
+      if (p.indexOf('/faq') === 0) return 'faq';
+      if (p.indexOf('/case-studies/') === 0) return 'case_study';
+      if (p.indexOf('/for/') === 0) return 'audience';
+      if (p.indexOf('/templates/') === 0) return 'templates';
+      if (p === '/pricing/') return 'pricing';
+      return 'other';
+    }
+
+    /* ---------------- 8. track(): both destinations, loudly ----------- */
+    function track(name, props) {
+      var payload = props || {};
+      if (!SEND) return;
+      if (typeof window.gtag === 'function') {
+        try { window.gtag('event', name, payload); }
+        catch (e) { console.warn('[gh] gtag failed for', name, e); }
+      } else {
+        console.warn('[gh] gtag missing, GA4 dropped', name);
+      }
+      /* The PostHog snippet stub queues capture() before array.js lands, so a
+         single unconditional call is correct and nothing is lost on a fast
+         click. If posthog is absent entirely (blocked), say so out loud
+         rather than swallowing it. */
+      if (window.posthog) {
+        try { window.posthog.capture(name, payload); }
+        catch (e) { console.warn('[gh] posthog failed for', name, e); }
+      } else {
+        console.warn('[gh] posthog missing, PostHog dropped', name);
+      }
+    }
+
+    /* ---------------- 9. Public API for other components -------------- */
+    window.gh = {
+      firstTouch: function () { return FT; },
+      lastTouch: function () { return LT; },
+      sessionId: function () { return SID; },
+      decorate: decorate,
+      track: track,
+      enabled: SEND,
+    };
+
+    if (!SEND) return;
+
+    /* ---------------- 10. PostHog ------------------------------------
+     * Official snippet. array.js is inserted async, so nothing blocks render
+     * and nothing enters the Astro bundle. Verify after deploy with
+     * `window.posthog.__loaded === true` (runbook step V3) so a bad paste
+     * fails loudly instead of quietly not measuring.
+     * ---------------------------------------------------------------- */
+    !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+
+    window.posthog.init(phToken, {
+      api_host: phApiHost,
+      /* Byte-parity with strata-parse/src/main.tsx:21 so the two hosts agree
+         on persistence shape. */
+      defaults: '2026-01-30',
+      /* Matches the app's effective default. Anonymous events create no person
+         profile, so $set / $set_once from www would be discarded: campaign data
+         rides on the EVENT and in the gh_ft cookie, and is re-asserted at
+         identify() on the app. */
+      person_profiles: 'identified_only',
+      /* Explicit, though the default already resolves true for govhub.online.
+         This is what carries $initial_person_info (and therefore the true
+         first-touch campaign) across the www to app hop with no app code. */
+      cross_subdomain_cookie: true,
+      persistence: 'localStorage+cookie',
+      /* OFF on purpose. This is a content site with hundreds of insights pages;
+         autocapture would turn every click, change and submit into a billable
+         event and burn the 1M/month free tier on data no funnel reads. */
+      autocapture: false,
+      capture_pageview: true,
+      capture_pageleave: true,
+      disable_session_recording: true,
+    });
+
+    /* ---------------- 11. landing_view -------------------------------
+     * Once per session PER HOST. The guard cookie is named per host
+     * (gh_lv_www / gh_lv_app) even though both live on .govhub.online, so www
+     * and app each guard themselves and neither can clear the other's flag.
+     *
+     * NOT fired from PostHog's `loaded` callback (Design 1's choice): if an ad
+     * blocker eats array.js, `loaded` never runs and GA4 would lose the event
+     * too. Firing here is fail-open, and the snippet stub queues the capture.
+     *
+     * $pageview also fires on this page. They are different facts: $pageview is
+     * the traffic metric, landing_view is the funnel step. Build the funnel on
+     * one of them, not both.
+     * ---------------------------------------------------------------- */
+    var hostKey = (location.hostname.split('.')[0] || 'x').replace(/[^a-z0-9]/gi, '');
+    var lvCookie = 'gh_lv_' + hostKey;
+    if (readCookie(lvCookie) !== SID) {
+      writeCookie(lvCookie, SID, SESSION_TTL);
+      var refHost = '';
+      try { refHost = document.referrer ? new URL(document.referrer).hostname : ''; }
+      catch (e) { refHost = ''; }
+      var props = {
+        host: location.hostname,
+        page_path: location.pathname,
+        page_type: pageType(location.pathname),
+        referrer_host: refHost || null,
+        is_first_touch: IS_FIRST_TOUCH,
+        is_new_session: NEW_SESSION,
+        /* This session's params only. Nulls, not undefined, so PostHog and GA4
+           breakdowns get a real bucket instead of dropping the property. */
+        utm_source: LT.utm_source || null,
+        utm_medium: LT.utm_medium || null,
+        utm_campaign: LT.utm_campaign || null,
+        utm_content: LT.utm_content || null,
+        utm_term: LT.utm_term || null,
+        gclid: LT.gclid || null,
+        fbclid: LT.fbclid || null,
+        li_fat_id: LT.li_fat_id || null,
+      };
+      track('landing_view', props);
+    }
+  })();
+</script>
