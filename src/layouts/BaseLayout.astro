@@ -45,6 +45,14 @@ const fullOgImage = new URL(ogImage, Astro.site).toString();
 // explicit env var still wins if one is ever provided.
 const GA_MEASUREMENT_ID = import.meta.env.PUBLIC_GA_MEASUREMENT_ID ?? 'G-CBS7SWVWVJ';
 
+// Meta (Facebook) Pixel ID. Hardcoded with an env override for exactly the same
+// reason as GA4 above: this project's wrangler.jsonc stops Cloudflare passing
+// dashboard plain-text variables into `astro build`, so a bare env var would
+// resolve to undefined and ship a page with no pixel — silently, which is the
+// failure this file already carries 64 days of scar tissue about. A pixel ID is
+// a public identifier; every site running one serves it in plaintext.
+const META_PIXEL_ID = import.meta.env.PUBLIC_META_PIXEL_ID ?? '1782130059453495';
+
 // Deliberately fails OPEN: analytics ships unless we positively identify a
 // non-production context. `astro dev` is excluded by PROD, and a Cloudflare
 // preview branch by name, which is what the old env-var gate achieved. If
@@ -128,6 +136,54 @@ const ANALYTICS_ENABLED =
           gtag('js', new Date());
           gtag('config', gaId);
         </script>
+      </>
+    )}
+
+    {/* Meta Pixel. Same ANALYTICS_ENABLED gate as GA4, PLUS a runtime hostname
+        denylist identical to the one in Analytics.astro. The build-time gate is
+        not sufficient on its own: a production-branch deploy is also served from
+        <hash>.govhub-marketing.pages.dev with byte-identical HTML and
+        CF_PAGES_BRANCH set to 'main', so without the runtime check preview
+        traffic would land in the pixel's audiences — and a Meta custom audience,
+        like a GA4 property, has no retroactive cleanup.
+
+        Unlike the app (app.govhub.online), www is a static multi-page site: a
+        full document load per navigation, so the stock snippet's single
+        fbq('track','PageView') per load is exactly right here and there is no
+        SPA route-change hook to add. */}
+    {ANALYTICS_ENABLED && (
+      <>
+        <script is:inline define:vars={{ metaPixelId: META_PIXEL_ID }}>
+          var META_DEV_HOST =
+            /^localhost$|^127\.|^\[?::1\]?$|\.local$|\.pages\.dev$|\.workers\.dev$|\.lovable\.app$/;
+          if (!META_DEV_HOST.test(location.hostname)) {
+            !function(f,b,e,v,n,t,s)
+            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+            n.queue=[];t=b.createElement(e);t.async=!0;
+            t.src=v;s=b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t,s)}(window, document,'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+            fbq('init', metaPixelId);
+            fbq('track', 'PageView');
+          }
+        </script>
+        {/* Meta's no-JS fallback. It cannot carry the hostname guard above —
+            that is what "no JS" means — so on the main-branch *.pages.dev alias
+            a visitor with JavaScript disabled would still register. That is a
+            rounding error on a set that is already nearly empty, and dropping
+            the tag would mean silently under-counting real no-JS visitors on
+            www, which is the worse trade. */}
+        <noscript>
+          <img
+            height="1"
+            width="1"
+            style="display:none"
+            alt=""
+            src={`https://www.facebook.com/tr?id=${META_PIXEL_ID}&ev=PageView&noscript=1`}
+          />
+        </noscript>
       </>
     )}
 
