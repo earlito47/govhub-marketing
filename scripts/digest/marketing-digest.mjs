@@ -121,11 +121,17 @@ function gatherOutreach() {
   const sendFailed = Object.entries(cur)
     .filter(([, v]) => v.status === 'send-failed')
     .map(([slug, v]) => ({ slug, email: v.email, notes: v.notes }));
+  // Vendors SBA had no contact for. Since Apollo was removed (2026-09-05)
+  // these are terminal rather than slowly retried, so nothing else will ever
+  // mention them again -- which is exactly why they get a line here. A set
+  // this size going quiet is how the last outage hid for six days.
+  const unreachable = Object.values(cur).filter((v) => v.status === 'no-contact').length;
   return {
-    sent, resolved, backlog, sendFailed,
-    // Set by the outreach resolver when a whole contact tier is down. Without
-    // it the backlog line below reads as routine queue depth, which is what it
-    // did through the 2026-08-20 Apollo outage.
+    sent, resolved, backlog, sendFailed, unreachable,
+    // Set by the outreach resolver when the contact tier is down. Without it
+    // the backlog line below reads as routine queue depth, which is what it
+    // did through the 2026-08-20 Apollo outage. It matters more now: SBA is
+    // the only tier, and an unnoticed outage would retire vendors for good.
     resolverStatus: ledger.resolverStatus ?? null,
     totalSent: Object.values(cur).filter((v) => v.status === 'sent').length,
   };
@@ -195,6 +201,15 @@ async function gatherActions(outreach) {
       text: stalled
         ? `${outreach.backlog} published vendor page(s) are waiting on a contact — these are NOT retrying successfully while resolution is blocked`
         : `${outreach.backlog} published vendor page(s) still need a contact resolved before they can be emailed (retries daily)`,
+      url: null,
+    });
+  }
+  // Standing fact, not a queue: these have been attempted and SBA had nothing.
+  // Reported so the number stays visible — it only moves if someone enters a
+  // contact by hand (delete the ledger row to reopen a vendor).
+  if (outreach?.unreachable > 0) {
+    items.push({
+      text: `${outreach.unreachable} published vendor page(s) have no reachable contact and are NOT retried — SBA certification search is the only tier and holds small businesses only. Entering a contact by hand is the only way these get emailed.`,
       url: null,
     });
   }

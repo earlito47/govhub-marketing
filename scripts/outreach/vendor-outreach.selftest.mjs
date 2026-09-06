@@ -2,10 +2,10 @@
 // Network-free self-test for the vendor outreach email. Run:
 //   node scripts/outreach/vendor-outreach.selftest.mjs
 //
-// Every case here is a real roster name or a real Apollo result. One email per
-// vendor ever means each of these is a mistake that cannot be taken back, so
-// they are pinned rather than eyeballed in a dry run.
-import { companyForEmail, dueForResolve, isApolloQuotaError, renderEmail, sameCompany } from './vendor-outreach.mjs';
+// Every case here is a real roster name. One email per vendor ever means each
+// of these is a mistake that cannot be taken back, so they are pinned rather
+// than eyeballed in a dry run.
+import { companyForEmail, dueForResolve, renderEmail, resolveSba } from './vendor-outreach.mjs';
 
 let failures = 0;
 function check(name, actual, expected) {
@@ -49,28 +49,6 @@ const NAMES = [
 ];
 for (const [raw, want] of NAMES) check(`company: ${raw}`, companyForEmail(raw), want);
 
-// ---- Apollo company match --------------------------------------------------
-// Extra tokens on the end are the same company under a longer registration.
-check('match: exact', sameCompany('RAYTHEON COMPANY', 'Raytheon'), true);
-check('match: longer registration', sameCompany('NORTHROP GRUMMAN SYSTEMS CORP', 'Northrop Grumman Systems'), true);
-check('match: suffix only differs', sameCompany('GENERAL ELECTRIC COMPANY', 'General Electric Co.'), true);
-check('match: vendor is the longer name', sameCompany('BOOZ ALLEN HAMILTON INC', 'Booz Allen'), true);
-
-// Extra tokens on the FRONT are a different company. Both of these actually
-// sent: aerospace -> mpipes@fieldaero.com, general-electric -> ...@pgn.com.
-check('reject: Field Aerospace', sameCompany('THE AEROSPACE CORPORATION', 'Field Aerospace'), false);
-check('reject: Portland General Electric', sameCompany('GENERAL ELECTRIC COMPANY', 'Portland General Electric'), false);
-check('reject: one shared word', sameCompany('SIERRA NEVADA COMPANY, LLC', 'Nevada'), false);
-check('reject: unrelated', sameCompany('LEIDOS, INC.', 'Peraton'), false);
-check('reject: empty org', sameCompany('LEIDOS, INC.', ''), false);
-check('reject: single token, longer org', sameCompany('MITRE CORPORATION', 'Mitre Sports International'), false);
-// Known and deliberate: a company Apollo files under a trading name that
-// shares no token with the registered one does NOT auto-resolve, even when
-// Apollo's org search returns it. Trusting the search result here is exactly
-// what mailed Field Aerospace. The resolver logs the candidate it rejected
-// ("no Apollo org matched ... (saw SpaceX)") so the row can be filled by hand.
-check('reject: trading name, registered name', sameCompany('SPACE EXPLORATION TECHNOLOGIES CORP.', 'SpaceX'), false);
-
 // ---- Greeting --------------------------------------------------------------
 const greeting = (contactName) => renderEmail({ company: 'Acme', contactName }).body.split('\n')[0];
 check('greeting: SBA all-caps', greeting('AUSTIN DEROSE'), 'Hi Austin,');
@@ -87,39 +65,57 @@ check('subject: name ending in s', subject('BAE Systems'), "BAE Systems' page on
 check('subject: ampersand survives', subject('AT&T Enterprises'), "AT&T Enterprises' page on GovHub");
 
 // ---- Retry eligibility -----------------------------------------------------
-// "no-contact" was terminal, which stranded 75 vendors — half the roster —
-// where no later fix could reach them.
-const NOW = Date.parse('2026-09-01T00:00:00Z');
-const days = (n) => new Date(NOW - n * 86400000).toISOString();
-check('retry: no ledger row', dueForResolve(undefined, NOW), true);
-check('retry: sent is final', dueForResolve({ status: 'sent' }, NOW), false);
-check('retry: ready is not re-resolved', dueForResolve({ status: 'ready' }, NOW), false);
-check('retry: opted-out is final', dueForResolve({ status: 'opted-out' }, NOW), false);
-// A legacy row predates the counter; it counts as one attempt already spent.
-check('retry: legacy no-contact row is due now', dueForResolve({ status: 'no-contact' }, NOW), true);
-check('retry: tried yesterday, too soon', dueForResolve({ status: 'no-contact', resolveAttempts: 1, lastResolveAt: days(1) }, NOW), false);
-check('retry: tried 20 days ago, due', dueForResolve({ status: 'no-contact', resolveAttempts: 1, lastResolveAt: days(20) }, NOW), true);
-check('retry: attempts exhausted', dueForResolve({ status: 'no-contact', resolveAttempts: 5, lastResolveAt: days(400) }, NOW), false);
+// A row is terminal once written. SBA is the only tier, it matches on UEI and
+// holds small businesses only, so re-asking about a prime or an FFRDC operator
+// cannot produce a different answer -- the old slow-retry cadence was waiting
+// for Apollo, which is gone.
+check('retry: no ledger row', dueForResolve(undefined), true);
+check('retry: sent is final', dueForResolve({ status: 'sent' }), false);
+check('retry: ready is not re-resolved', dueForResolve({ status: 'ready' }), false);
+check('retry: opted-out is final', dueForResolve({ status: 'opted-out' }), false);
+check('retry: no-contact is now final', dueForResolve({ status: 'no-contact' }), false);
+// The manual reopen path is deleting the row, which is the `undefined` case
+// above -- there is deliberately no status that means "try again later".
+check('retry: legacy row with retry counters is still final',
+  dueForResolve({ status: 'no-contact', resolveAttempts: 1, lastResolveAt: '2020-01-01T00:00:00Z' }), false);
 
-// ---- Apollo quota detection -------------------------------------------------
-// Apollo reports an empty credit balance as an ordinary 422, the same status it
-// uses for a malformed query, so the body text is the only signal. Getting this
-// wrong in either direction is expensive: a miss silently kills resolution for
-// days (2026-08-20), and a false positive aborts a healthy batch. The first
-// case is the verbatim body from that outage.
-check(
-  'quota: verbatim 422 from the 2026-08-20 outage',
-  isApolloQuotaError(422, '{"error":"You have insufficient credits! <a href=\'https://app.apollo.io/#/settings/plans/upgrade\'>Upgrade your plan</a>"}'),
-  true,
-);
-check('quota: payment required', isApolloQuotaError(402, ''), true);
-check('quota: upgrade-your-plan wording alone', isApolloQuotaError(422, 'Please upgrade your plan to continue'), true);
-check('quota: case insensitive', isApolloQuotaError(422, 'INSUFFICIENT CREDITS'), true);
-// Must NOT trip: ordinary per-request failures that say nothing about billing.
-check('quota: plain validation 422 is not a quota error', isApolloQuotaError(422, '{"error":"organization_ids is invalid"}'), false);
-check('quota: auth failure is not a quota error', isApolloQuotaError(401, 'Unauthorized'), false);
-check('quota: rate limit is not a credit outage', isApolloQuotaError(429, 'Too many requests'), false);
-check('quota: server error is not a quota error', isApolloQuotaError(500, 'Internal Server Error'), false);
+// ---- SBA: an outage is not an empty answer -----------------------------------
+// The load-bearing distinction now that SBA is the only tier. An empty answer
+// RETIRES a vendor permanently; an error must not. SBA signals not-found as
+// HTTP 500 with a "No matching" body -- the same status a broken service
+// returns -- so the body is the only thing separating "we asked and they have
+// nothing" from "we never got an answer".
+const VENDOR = { uei: 'ABC123DEF456', slug: 't', name: 'Test' };
+const reply = (init) => async () => init;
+const res = (status, body, json) => ({
+  ok: status >= 200 && status < 300,
+  status,
+  text: async () => body,
+  json: async () => (json === undefined ? JSON.parse(body) : json),
+});
+
+const kind = async (fetchImpl) => {
+  const r = await resolveSba(VENDOR, { fetchImpl });
+  return r.error ? 'error' : r.contact ? 'contact' : 'empty';
+};
+
+check('sba: not-found 500 is EMPTY (retires)', await kind(reply(res(500, 'No matching entity found'))), 'empty');
+check('sba: other 500 is ERROR (does not retire)', await kind(reply(res(500, 'Internal Server Error'))), 'error');
+check('sba: 503 is ERROR', await kind(reply(res(503, 'Service Unavailable'))), 'error');
+check('sba: network failure is ERROR', await kind(async () => { throw new Error('ECONNRESET'); }), 'error');
+check('sba: non-JSON 200 is ERROR', await kind(reply({ ok: true, status: 200, text: async () => 'x', json: async () => { throw new Error('bad json'); } })), 'error');
+check('sba: profile with a public email is CONTACT',
+  await kind(reply(res(200, '', { entity: { email: 'a@b.com', contact_person: 'PAT LEE', public_display: true, display_email: true } }))), 'contact');
+check('sba: email withheld by display flag is EMPTY',
+  await kind(reply(res(200, '', { entity: { email: 'a@b.com', public_display: true, display_email: false } }))), 'empty');
+check('sba: profile with no email is EMPTY',
+  await kind(reply(res(200, '', { entity: { email: '', public_display: true, display_email: true } }))), 'empty');
+// No UEI: there is nothing to look up, so it must answer empty WITHOUT
+// reaching the network -- the throwing stub proves the call never happens.
+const noUei = await resolveSba({ slug: 't', name: 'Test' }, {
+  fetchImpl: async () => { throw new Error('fetch must not be called without a UEI'); },
+});
+check('sba: vendor with no UEI is EMPTY, no request made', Boolean(noUei.empty), true);
 
 // ---- Body wrapping ---------------------------------------------------------
 // A long company name must not leave one line jutting out past the rest.

@@ -1,7 +1,7 @@
 # Vendor "claim your page" outreach — daily drip.
 #
 # For every vendor with a PUBLISHED profile page: resolve a contact (SBA
-# certification search, then Apollo), then send at most 10 plain-text notes
+# certification search — the only tier), then send at most 10 plain-text notes
 # per day from Jerr inviting the vendor to review its page and reply with
 # edits. One email per vendor ever; data/vendor-outreach.json is the committed
 # ledger (idempotency + reply-based opt-out suppression). See the header of
@@ -13,7 +13,7 @@
 # dry run and a --test send.
 #
 # Setup (one-time, by a maintainer):
-#   Secrets:   RESEND_API_KEY, APOLLO_API_KEY
+#   Secrets:   RESEND_API_KEY  (contact resolution needs no key)
 #   Variables: OUTREACH_ENABLED ("true" to send)
 #              OUTREACH_POSTAL  (postal address for the signature; required)
 #              OUTREACH_FROM    (optional, default "Jerr at GovHub <hello@govhub.online>")
@@ -53,15 +53,16 @@ jobs:
       - name: Self-test the email rendering
         run: node scripts/outreach/vendor-outreach.selftest.mjs
 
-      # Apollo bills a credit per company lookup that returns a result, and up
-      # to 3 more per vendor to reveal an email, so --limit is the daily credit
-      # ceiling: at most 15 lookups plus 45 reveals. Vendors neither tier can
-      # resolve come back around every 14 days rather than being retired, so
-      # this queue keeps moving instead of draining to nothing.
+      # SBA is keyless and free, so --limit is now politeness toward their
+      # service rather than a spend ceiling. Each vendor is attempted ONCE:
+      # SBA matches on UEI and holds small businesses only, so a prime or an
+      # FFRDC operator it cannot answer for will never be answerable, and the
+      # row is retired instead of re-queued. This queue therefore drains to
+      # nothing by design; the digest reports the retired count so it stays
+      # visible. (APOLLO_API_KEY was removed 2026-09-05 — the secret can be
+      # deleted from the repo settings.)
       - name: Resolve contacts for newly published vendors
         run: node scripts/outreach/vendor-outreach.mjs --resolve --limit 15
-        env:
-          APOLLO_API_KEY: ${{ secrets.APOLLO_API_KEY }}
 
       - name: Dry run (always logged, the audit trail for what send would do)
         run: node scripts/outreach/vendor-outreach.mjs
