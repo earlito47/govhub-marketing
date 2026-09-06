@@ -10,7 +10,7 @@
     "preview": "astro preview",
     "astro": "astro",
     "check": "astro check",
-    "guard": "grep -rl '{{STAT\\|{{VERIFY' dist/ && echo 'UNRESOLVED TOKENS IN dist/ — fix before shipping' && exit 1 || echo 'token guard: clean'",
+    "guard": "grep -rl '{{STAT\\|{{VERIFY' dist/ && echo 'UNRESOLVED TOKENS IN dist/ \u2014 fix before shipping' && exit 1 || echo 'token guard: clean'",
     "check:meta": "node scripts/check-meta.mjs",
     "verify": "npm run check && npm run build && npm run guard && npm run check:meta && npm run guard:emdash",
     "insights:pilot": "node scripts/insights/run-pilot.mjs",
@@ -31,6 +31,8 @@
     "influencers:push": "node scripts/outreach/push-leads.mjs",
     "influencers:status": "node scripts/outreach/push-leads.mjs --status",
     "influencers:signatures": "node scripts/outreach/set-signatures.mjs",
+    "influencers:replies": "node scripts/outreach/instantly-replies.mjs --report",
+    "influencers:replies:send": "node scripts/outreach/instantly-replies.mjs",
     "digest": "node scripts/digest/marketing-digest.mjs",
     "guard:emdash": "node scripts/check-emdash.mjs"
   },
