@@ -53,6 +53,17 @@ const GA_MEASUREMENT_ID = import.meta.env.PUBLIC_GA_MEASUREMENT_ID ?? 'G-CBS7SWV
 // a public identifier; every site running one serves it in plaintext.
 const META_PIXEL_ID = import.meta.env.PUBLIC_META_PIXEL_ID ?? '1782130059453495';
 
+// LinkedIn Insight Tag partner ID. Same hardcode-with-override rule as the two
+// IDs above, for the same wrangler.jsonc reason. Also a public identifier.
+//
+// This was going to live in Cloudflare Zaraz — one install for both hosts, no
+// code. Zaraz accepted the tool and its triggers evaluated correctly, but the
+// tool emitted nothing: Cloudflare does not validate the `component` field, and
+// every identifier tried was accepted while producing an empty action. A tool
+// that looks installed and collects zero is worse than no tool, so the zone was
+// rolled back to its previous state and the tag ships here instead.
+const LINKEDIN_PARTNER_ID = import.meta.env.PUBLIC_LINKEDIN_PARTNER_ID ?? '9674602';
+
 // Deliberately fails OPEN: analytics ships unless we positively identify a
 // non-production context. `astro dev` is excluded by PROD, and a Cloudflare
 // preview branch by name, which is what the old env-var gate achieved. If
@@ -182,6 +193,55 @@ const ANALYTICS_ENABLED =
             style="display:none"
             alt=""
             src={`https://www.facebook.com/tr?id=${META_PIXEL_ID}&ev=PageView&noscript=1`}
+          />
+        </noscript>
+      </>
+    )}
+
+    {/* LinkedIn Insight Tag. Same gate and same runtime hostname denylist as the
+        Meta pixel above — a LinkedIn website audience has no retroactive cleanup
+        either, and the build-time gate cannot see the main-branch *.pages.dev
+        alias.
+
+        Coverage is deliberately identical to Meta's: BaseLayout does not wrap
+        src/pages/embed/[chartId].astro, so the 900 noindex chart iframes that
+        render inside third-party pages carry no ad tags. That exclusion is the
+        main reason this is in code rather than at the edge — Zaraz injects on
+        every hostname in the zone, embeds included, and would have recorded an
+        audience member for every impression on somebody else's site. */}
+    {ANALYTICS_ENABLED && (
+      <>
+        <script is:inline define:vars={{ liPartnerId: LINKEDIN_PARTNER_ID }}>
+          var LI_DEV_HOST =
+            /^localhost$|^127\.|^\[?::1\]?$|\.local$|\.pages\.dev$|\.workers\.dev$|\.lovable\.app$/;
+          if (!LI_DEV_HOST.test(location.hostname)) {
+            window._linkedin_partner_id = liPartnerId;
+            window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+            window._linkedin_data_partner_ids.push(liPartnerId);
+            (function (l) {
+              if (!l) {
+                window.lintrk = function (a, b) { window.lintrk.q.push([a, b]); };
+                window.lintrk.q = [];
+              }
+              var s = document.getElementsByTagName('script')[0];
+              var b = document.createElement('script');
+              b.type = 'text/javascript';
+              b.async = true;
+              b.src = 'https://snap.licdn.com/li.lms-analytics/insight.min.js';
+              s.parentNode.insertBefore(b, s);
+            })(window.lintrk);
+          }
+        </script>
+        {/* Same no-JS caveat as Meta's: this cannot carry the hostname guard,
+            so a JavaScript-disabled visitor on the main-branch pages.dev alias
+            still registers. Same rounding error, same trade. */}
+        <noscript>
+          <img
+            height="1"
+            width="1"
+            style="display:none"
+            alt=""
+            src={`https://px.ads.linkedin.com/collect/?pid=${LINKEDIN_PARTNER_ID}&fmt=gif`}
           />
         </noscript>
       </>
