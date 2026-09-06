@@ -3,7 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/seo/Breadcrumbs.astro';
 import CTABand from '../../components/CTABand.astro';
 import { glossary, pillars, getTerm, hrefForTerm, type GlossaryTerm } from '../../data/glossary';
-import { SIGNUP_URL } from '../../config';
+import { ctaHref } from '../../config';
 
 const title = 'Federal contracting glossary: terms and definitions';
 const description =
@@ -70,7 +70,7 @@ const deferred = glossary.filter((t) => t.defersTo && !pillars.some((p) => p.ter
   <CTABand
     heading="Know the terms? Now win the work."
     sub="GovHub turns a solicitation into a compliant, submitted proposal, faster."
-    primaryHref={`${SIGNUP_URL}?utm_source=glossary`}
+    primaryHref={ctaHref('glossary_index')}
     primaryLabel="Start free trial"
     secondaryHref="/solutions/"
   />

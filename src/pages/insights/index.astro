@@ -2,7 +2,7 @@
 // Insights hub. Links every entity page that exists (internal-link hub role,
 // spec 9.5): NAICS market dashboards, agency profiles, and state pages.
 import type { InsightsPage } from '../../lib/insightsTypes';
-import { SIGNUP_URL } from '../../config';
+import { ctaHref } from '../../config';
 import InsightsLayout from '../../components/insights/InsightsLayout.astro';
 import Breadcrumbs from '../../components/seo/Breadcrumbs.astro';
 import CTABand from '../../components/CTABand.astro';
@@ -238,7 +238,7 @@ const updated = [...Object.values(agencyPages), ...Object.values(statePages), ..
   <CTABand
     heading="Go from market data to a winning proposal"
     sub="GovHub turns federal market intelligence into compliant, submitted proposals, with AI drafting, filters, and exports on top of this data."
-    primaryHref={`${SIGNUP_URL}?utm_source=insights&utm_campaign=hub`}
+    primaryHref={ctaHref('insights_hub')}
     primaryLabel="Start free trial"
   />
 </InsightsLayout>

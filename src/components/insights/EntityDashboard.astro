@@ -6,7 +6,7 @@
 // methodology → related → footer CTA. Contains no data logic beyond selecting
 // and ordering fields from the page JSON.
 import type { InsightsPage } from '../../lib/insightsTypes';
-import { SIGNUP_URL } from '../../config';
+import { ctaHref } from '../../config';
 import Breadcrumbs from '../seo/Breadcrumbs.astro';
 import FAQSchema from '../seo/FAQSchema.astro';
 import CTABand from '../CTABand.astro';
@@ -95,7 +95,7 @@ const toolBlock = TOOL_LINKS[campaign] ?? TOOL_LINKS[campaign.replace(/-/g, '')]
 const [primaryChart, ...categoryCharts] = page.charts;
 const sections = page.narrative.sections;
 const faqs = page.faq.map((f) => ({ question: f.q, answer: f.a }));
-const utm = (suffix: string) => `${SIGNUP_URL}?utm_source=insights&utm_campaign=${suffix}`;
+const utm = (suffix: string) => ctaHref(`insights_${suffix}`);
 // Pair each narrative section with its category chart; some charts have no
 // paired section (they render on their own).
 const pairCount = Math.max(sections.length, categoryCharts.length);
