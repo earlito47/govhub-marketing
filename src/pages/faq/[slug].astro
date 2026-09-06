@@ -4,7 +4,7 @@ import Breadcrumbs from '../../components/seo/Breadcrumbs.astro';
 import CTABand from '../../components/CTABand.astro';
 import { faqPages, getFaqPage, type FaqPage } from '../../data/faqPages';
 import { getTerm, hrefForTerm } from '../../data/glossary';
-import { SIGNUP_URL } from '../../config';
+import { ctaHref } from '../../config';
 
 export function getStaticPaths() {
   return faqPages.map((f) => ({ params: { slug: f.slug }, props: { faq: f } }));
@@ -76,7 +76,7 @@ const relatedFaqs = (faq.related ?? []).map((s) => getFaqPage(s)).filter(Boolean
   <CTABand
     heading="Stop researching, start responding"
     sub="GovHub turns a solicitation into a compliant, submitted proposal, faster."
-    primaryHref={`${SIGNUP_URL}?utm_source=faq`}
+    primaryHref={ctaHref('faq_answer')}
     primaryLabel="Start free trial"
     secondaryHref="/solutions/"
   />

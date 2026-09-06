@@ -1,7 +1,7 @@
 ---
 // Weekly report archive — reverse-chronological, accumulates every week.
 import type { InsightsPage } from '../../../lib/insightsTypes';
-import { SIGNUP_URL } from '../../../config';
+import { ctaHref } from '../../../config';
 import InsightsLayout from '../../../components/insights/InsightsLayout.astro';
 import Breadcrumbs from '../../../components/seo/Breadcrumbs.astro';
 import CTABand from '../../../components/CTABand.astro';
@@ -71,7 +71,7 @@ for (const g of weeks) g.reports.sort((a, b) => ORDER.indexOf(a.slug) - ORDER.in
   <CTABand
     heading="Go from the weekly read to a winning bid"
     sub="GovHub turns federal market intelligence into compliant, submitted proposals, with AI drafting on top of this data."
-    primaryHref={`${SIGNUP_URL}?utm_source=insights&utm_campaign=reports-archive`}
+    primaryHref={ctaHref('insights_reports_archive')}
     primaryLabel="Start free trial"
   />
 </InsightsLayout>

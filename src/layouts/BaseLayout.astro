@@ -3,6 +3,7 @@ import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 import SchemaOrg from '../components/seo/SchemaOrg.astro';
 import { CALENDLY_URL } from '../config';
+import Analytics from '../components/Analytics.astro';
 // Self-hosted Gold Country type (no render-blocking Google Fonts request).
 // Fraunces needs full.css for the SOFT/WONK axes the brand guide pins.
 import '@fontsource-variable/fraunces/full.css';
@@ -50,7 +51,18 @@ const GA_MEASUREMENT_ID = import.meta.env.PUBLIC_GA_MEASUREMENT_ID ?? 'G-CBS7SWV
 // CF_PAGES_BRANCH is ever renamed or missing the tag still ships — a silently
 // absent variable is precisely what took www off analytics before.
 const GA_BRANCH = process.env.CF_PAGES_BRANCH;
-const GA_ENABLED = import.meta.env.PROD && (GA_BRANCH === undefined || GA_BRANCH === 'main');
+// One gate for GA4 and PostHog. Renamed from GA_ENABLED because PostHog now
+// rides the same rule: two analytics products with two enable predicates is how
+// they drift out of sync.
+//
+// This gate is kept, not bypassed. The 64-day outage was caused by
+// PUBLIC_GA_MEASUREMENT_ID resolving to undefined (the value never reached the
+// build), NOT by this predicate, which already fails OPEN. Bypassing it would
+// pollute the live GA4 property and the live PostHog project from every preview
+// branch. It cannot cover a production-branch deploy served from its *.pages.dev
+// alias, so Analytics.astro adds a runtime hostname denylist too.
+const ANALYTICS_ENABLED =
+  import.meta.env.PROD && (GA_BRANCH === undefined || GA_BRANCH === 'main');
 ---
 
 <!doctype html>
@@ -103,7 +115,7 @@ const GA_ENABLED = import.meta.env.PROD && (GA_BRANCH === undefined || GA_BRANCH
     {/* GA4 — measurement ID and the on/off rule live in the frontmatter above.
         Runs alongside Cloudflare Web Analytics — GA4 and CF Analytics measure
         independently, keep both. */}
-    {GA_ENABLED && (
+    {ANALYTICS_ENABLED && (
       <>
         <script
           is:inline
@@ -118,6 +130,14 @@ const GA_ENABLED = import.meta.env.PROD && (GA_BRANCH === undefined || GA_BRANCH
         </script>
       </>
     )}
+
+    {/* Attribution + PostHog + landing_view. Placed AFTER the GA4 block on
+        purpose: the gtag() shim above is defined synchronously, so window.gtag
+        exists by the time this runs and the event reaches both destinations.
+        Rendered unconditionally, gated by the prop: the first-touch cookie and
+        the CTA link decoration are page behaviour and must work on previews
+        too; only the sending is switched off. */}
+    <Analytics enabled={ANALYTICS_ENABLED} />
 
     {/* Calendly "Book a Demo" floating badge — site-wide. addEventListener
         (not window.onload=) so other load handlers keep working; async
