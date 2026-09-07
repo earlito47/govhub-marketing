@@ -1,20 +1,20 @@
 {
   "pageType": "state",
   "slug": "delaware",
-  "title": "Delaware: $191M in Federal Contracts, FY2026",
+  "title": "Delaware: $205M in Federal Contracts, FY2026",
   "h1": "Federal Contracts in Delaware: Spending, Agencies & Vendors",
-  "metaDescription": "Federal agencies obligated $191M to contractors in Delaware in FY2026 to date. See top buying agencies, top vendors, and industries.",
-  "updated": "2026-08-24",
+  "metaDescription": "Federal agencies obligated $205M to contractors in Delaware in FY2026 to date. See top buying agencies, top vendors, and industries.",
+  "updated": "2026-09-07",
   "fyWindow": {
     "label": "FY2026 to date",
     "start": "2025-10-01",
-    "end": "2026-08-24"
+    "end": "2026-09-07"
   },
   "stats": {
-    "totalObligations": 190650874.35,
-    "awardCount": 2970,
-    "yoyGrowthPct": -48.2,
-    "avgAwardSize": 64192,
+    "totalObligations": 205444719.19,
+    "awardCount": 3149,
+    "yoyGrowthPct": -44.2,
+    "avgAwardSize": 65241,
     "smallBusinessSharePct": null
   },
   "charts": [
@@ -48,13 +48,13 @@
             ],
             [
               "FY26",
-              190650874.35
+              205444719.19
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Obligations fell 48.2% year over year, from $368M in FY2025 to $191M in FY2026 to date."
+      "takeaway": "Obligations fell 44.2% year over year, from $368M in FY2025 to $205M in FY2026 to date."
     },
     {
       "id": "delaware-top-agencies",
@@ -66,23 +66,27 @@
           "points": [
             [
               "Department of Defense",
-              92910257.96
+              92509935.64
             ],
             [
               "Department of Veterans Affairs",
-              37403341.82
+              42800941.34
             ],
             [
               "Department of Health and Human Services",
-              17841941.76
-            ],
-            [
-              "Department of Homeland Security",
-              9558529.18
+              18333180.59
             ],
             [
               "Department of Justice",
-              7462901.93
+              10910628.02
+            ],
+            [
+              "Department of Homeland Security",
+              9604977.99
+            ],
+            [
+              "General Services Administration",
+              8209405.9
             ],
             [
               "Department of Labor",
@@ -90,25 +94,21 @@
             ],
             [
               "National Aeronautics and Space Administration",
-              5327552.37
-            ],
-            [
-              "General Services Administration",
-              4739557.33
+              5360832.37
             ],
             [
               "Environmental Protection Agency",
-              3144994.9
+              4053268.16
             ],
             [
               "Department of the Interior",
-              2049924.92
+              2918552.18
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Department of Defense was the top federal buyer in Delaware, obligating $92.9M (48.7% of the state total)."
+      "takeaway": "Department of Defense was the top federal buyer in Delaware, obligating $92.5M (45.0% of the state total)."
     },
     {
       "id": "delaware-top-vendors",
@@ -119,16 +119,16 @@
           "label": "Obligations",
           "points": [
             [
+              "STONEWIN INTERNATIONAL, LLC",
+              16700114.38
+            ],
+            [
               "CAESAR RODNEY SCHOOL DISTRICT",
               15007444.4
             ],
             [
-              "STONEWIN INTERNATIONAL, LLC",
-              14842882.65
-            ],
-            [
               "AQUIA NAVA II LLC",
-              11761044.38
+              14570091.58
             ],
             [
               "CORBALT, LLC",
@@ -136,7 +136,11 @@
             ],
             [
               "AGILENT TECHNOLOGIES INC",
-              8090282.93
+              10259006.49
+            ],
+            [
+              "BLUELINE GLOBAL TECHNOLOGIES LLC",
+              7932359
             ],
             [
               "ROSHEL LLC",
@@ -153,16 +157,12 @@
             [
               "SNA INTERNATIONAL LLC",
               5280870.8
-            ],
-            [
-              "BLUELINE GLOBAL TECHNOLOGIES LLC",
-              4932359
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "CAESAR RODNEY SCHOOL DISTRICT led all contractors in Delaware with $15M, 7.9% of the state total."
+      "takeaway": "STONEWIN INTERNATIONAL, LLC led all contractors in Delaware with $16.7M, 8.1% of the state total."
     },
     {
       "id": "delaware-top-naics",
@@ -174,15 +174,19 @@
           "points": [
             [
               "Other Computer Related Services",
-              18425046.11
+              24234093.31
+            ],
+            [
+              "Petroleum Refineries",
+              16732497.98
             ],
             [
               "Elementary and Secondary Schools",
               15007444.4
             ],
             [
-              "Petroleum Refineries",
-              14875266.25
+              "Analytical Laboratory Instrument Manufacturing",
+              12889881.58
             ],
             [
               "Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology)",
@@ -193,10 +197,6 @@
               10935635.52
             ],
             [
-              "Analytical Laboratory Instrument Manufacturing",
-              10270909.22
-            ],
-            [
               "Military Armored Vehicle, Tank, and Tank Component Manufacturing",
               7234926.2
             ],
@@ -205,18 +205,18 @@
               6924852.09
             ],
             [
-              "Engineering Services",
-              6032032.65
+              "Commercial and Institutional Building Construction",
+              6652636.44
             ],
             [
-              "Electrical Contractors and Other Wiring Installation Contractors",
-              5747559.27
+              "Engineering Services",
+              6131656.03
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Other Computer Related Services was the largest industry in Delaware, with $18.4M obligated."
+      "takeaway": "Other Computer Related Services was the largest industry in Delaware, with $24.2M obligated."
     }
   ],
   "crossLinks": [
@@ -233,8 +233,8 @@
       "href": "/insights/agency/department-of-health-and-human-services/"
     },
     {
-      "label": "Department of Homeland Security contracts",
-      "href": "/insights/agency/department-of-homeland-security/"
+      "label": "Department of Justice contracts",
+      "href": "/insights/agency/department-of-justice/"
     },
     {
       "label": "NAICS 541519: Other Computer Related Services",
@@ -249,8 +249,8 @@
       "href": "/insights/naics/541511/"
     },
     {
-      "label": "NAICS 541330: Engineering Services",
-      "href": "/insights/naics/541330/"
+      "label": "NAICS 236220: Commercial and Institutional Building Construction",
+      "href": "/insights/naics/236220/"
     }
   ],
   "tables": [
@@ -265,18 +265,18 @@
         [
           1,
           {
-            "text": "CAESAR RODNEY SCHOOL DISTRICT",
-            "href": "https://www.usaspending.gov/recipient/c818e9fb-6756-f8bd-2b9d-ee8b3c923211-C/latest/"
+            "text": "STONEWIN INTERNATIONAL, LLC",
+            "href": "https://www.usaspending.gov/recipient/ce707c88-0aa9-39f3-8f95-e169b1cfd544-C/latest/"
           },
-          15007444.4
+          16700114.38
         ],
         [
           2,
           {
-            "text": "STONEWIN INTERNATIONAL, LLC",
-            "href": "https://www.usaspending.gov/recipient/ce707c88-0aa9-39f3-8f95-e169b1cfd544-C/latest/"
+            "text": "CAESAR RODNEY SCHOOL DISTRICT",
+            "href": "https://www.usaspending.gov/recipient/c818e9fb-6756-f8bd-2b9d-ee8b3c923211-C/latest/"
           },
-          14842882.65
+          15007444.4
         ],
         [
           3,
@@ -284,7 +284,7 @@
             "text": "AQUIA NAVA II LLC",
             "href": "https://www.usaspending.gov/recipient/6bad6a39-5fd4-43ba-aacd-d2d716f0ce2b-C/latest/"
           },
-          11761044.38
+          14570091.58
         ],
         [
           4,
@@ -300,10 +300,18 @@
             "text": "AGILENT TECHNOLOGIES INC",
             "href": "https://www.usaspending.gov/recipient/3b7c33cb-1410-1afe-4cdf-a4176221b83f-C/latest/"
           },
-          8090282.93
+          10259006.49
         ],
         [
           6,
+          {
+            "text": "BLUELINE GLOBAL TECHNOLOGIES LLC",
+            "href": "https://www.usaspending.gov/recipient/ab165aed-7c82-9be9-3339-c5f2b570b040-C/latest/"
+          },
+          7932359
+        ],
+        [
+          7,
           {
             "text": "ROSHEL LLC",
             "href": "https://www.usaspending.gov/recipient/2703e6e0-e329-d11c-5bd9-c3cd8dc61250-C/latest/"
@@ -311,7 +319,7 @@
           7234926.2
         ],
         [
-          7,
+          8,
           {
             "text": "EDUCATION & TRAINING RESOURCES LLC",
             "href": "https://www.usaspending.gov/recipient/820ce97d-63fc-474b-e4cd-464a693e2781-C/latest/"
@@ -319,7 +327,7 @@
           6924852.09
         ],
         [
-          8,
+          9,
           {
             "text": "MGI, INC.",
             "href": "https://www.usaspending.gov/recipient/05860567-8327-2e15-e809-097ab09be627-C/latest/"
@@ -327,20 +335,12 @@
           5681254.96
         ],
         [
-          9,
+          10,
           {
             "text": "SNA INTERNATIONAL LLC",
             "href": "https://www.usaspending.gov/recipient/981c2cef-e8eb-6e6c-10b9-4b71aa2a282b-C/latest/"
           },
           5280870.8
-        ],
-        [
-          10,
-          {
-            "text": "BLUELINE GLOBAL TECHNOLOGIES LLC",
-            "href": "https://www.usaspending.gov/recipient/ab165aed-7c82-9be9-3339-c5f2b570b040-C/latest/"
-          },
-          4932359
         ]
       ]
     },
@@ -359,7 +359,7 @@
             "text": "DOBCO INC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_W912BU19C0017_9700_-NONE-_-NONE-/"
           },
-          50038455.02,
+          45334048.58,
           "Department of Defense"
         ],
         [
@@ -455,20 +455,20 @@
         [
           12,
           {
+            "text": "SENATE BUILDERS & CONSTRUCTION MANAGERS, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C24420C0082_3600_-NONE-_-NONE-/"
+          },
+          15054159.54,
+          "Department of Veterans Affairs"
+        ],
+        [
+          13,
+          {
             "text": "CAESAR RODNEY SCHOOL DISTRICT",
             "href": "https://www.usaspending.gov/award/CONT_AWD_HE125426FE367_9700_HE125425DE027_9700/"
           },
           15007444.4,
           "Department of Defense"
-        ],
-        [
-          13,
-          {
-            "text": "SENATE BUILDERS & CONSTRUCTION MANAGERS, INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C24420C0082_3600_-NONE-_-NONE-/"
-          },
-          13809465.01,
-          "Department of Veterans Affairs"
         ],
         [
           14,
@@ -563,49 +563,49 @@
         [
           24,
           {
-            "text": "AGILENT TECHNOLOGIES INC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_70T04025C7573N001_7013_-NONE-_-NONE-/"
+            "text": "BLUELINE GLOBAL TECHNOLOGIES LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_15DDHQ26F00000553_1524_15DDHQ26D00000009_1524/"
           },
-          7498510.26,
-          "Department of Homeland Security"
+          7674359,
+          "Department of Justice"
         ],
         [
           25,
           {
-            "text": "ROSHEL LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_70CMSW26FR0000002_7012_47QSWA22D001R_4732/"
+            "text": "AGILENT TECHNOLOGIES INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70T04025C7573N001_7013_-NONE-_-NONE-/"
           },
-          7234926.2,
+          7498510.26,
           "Department of Homeland Security"
         ]
       ]
     }
   ],
   "narrative": {
-    "intro": "Delaware has $191M in federal contract obligations for FY2026 to date. The Department of Defense is the largest buyer, obligating $92.9M. Contracting activity in Delaware includes 2,970 awards so far, with an average award size of $64.2K. Obligations are down 48.2% year over year. Fiscal-year comparisons show prior totals of $321M in FY21, $81.3M in FY22, $325M in FY23, $337M in FY24, and $368M in FY25. The top buying agencies after the Department of Defense are the Department of Veterans Affairs with $37.4M and the Department of Health and Human Services with $17.8M. The top vendors include CAESAR RODNEY SCHOOL DISTRICT with $15M and STONEWIN INTERNATIONAL, LLC with $14.8M. The largest industries by NAICS include Other Computer Related Services at $18.4M and Elementary and Secondary Schools at $15M. All figures are contract obligations and current-year totals are partial fiscal year to date.",
+    "intro": "Delaware saw $205M in federal contract obligations in FY2026 to date. The state recorded 3,149 awards and an average award size of $65.2K. Obligations fell 44.2% year over year. Fiscal-year comparisons show FY21 at $321M, FY22 at $81.3M, FY23 at $325M, FY24 at $337M, and FY25 at $368M. The Department of Defense was the largest buyer with $92.5M, followed by the Department of Veterans Affairs with $42.8M and the Department of Health and Human Services with $18.3M. STONEWIN INTERNATIONAL, LLC was the top vendor at $16.7M, with CAESAR RODNEY SCHOOL DISTRICT at $15M and AQUIA NAVA II LLC at $14.6M. Other Computer Related Services led industries at $24.2M, followed by Petroleum Refineries at $16.7M and Elementary and Secondary Schools at $15M. This snapshot covers partial fiscal-year totals. Use the listed agency, vendor, and industry figures when comparing procurement activity or prioritizing outreach in Delaware for the remainder of FY2026 to date.",
     "sections": [
       {
-        "heading": "How has federal contracting in Delaware changed this year?",
-        "body": "FY2026 to date obligations total $191M. Obligations are down 48.2% year over year, and FY25 obligations were $368M compared with FY26 obligations of $191M. Delaware has 2,970 awards so far, with an average award size of $64.2K."
+        "heading": "Which agencies are driving federal spending in Delaware?",
+        "body": "The Department of Defense obligated $92.5M in FY2026 to date. The Department of Veterans Affairs obligated $42.8M and the Department of Health and Human Services obligated $18.3M. Other notable buyers include the Department of Justice at $10.9M and the Department of Homeland Security at $9.6M."
       },
       {
-        "heading": "Which agencies and industries account for the largest share of Delaware spending?",
-        "body": "The Department of Defense is the largest buyer with $92.9M, followed by the Department of Veterans Affairs at $37.4M and the Department of Health and Human Services at $17.8M. Other Computer Related Services leads industries at $18.4M, followed by Elementary and Secondary Schools at $15M and Petroleum Refineries at $14.9M."
+        "heading": "Who are the top vendors and which industries get the most awards?",
+        "body": "STONEWIN INTERNATIONAL, LLC received $16.7M and CAESAR RODNEY SCHOOL DISTRICT received $15M in FY2026 to date. Other top vendors include AQUIA NAVA II LLC at $14.6M and CORBALT, LLC at $10.8M. Other Computer Related Services led industries at $24.2M, followed by Petroleum Refineries at $16.7M and Elementary and Secondary Schools at $15M."
       }
     ]
   },
   "faq": [
     {
       "q": "How much federal contract money goes to Delaware?",
-      "a": "Delaware has $191M in federal contract obligations for FY2026 to date. The state recorded prior fiscal totals of $321M in FY21, $81.3M in FY22, $325M in FY23, $337M in FY24, and $368M in FY25."
+      "a": "Delaware received $205M in federal contract obligations in FY2026 to date. The state recorded 3,149 awards with an average award size of $65.2K. Obligations fell 44.2% year over year, and prior-year totals were FY25 at $368M, FY24 at $337M, FY23 at $325M, FY22 at $81.3M, and FY21 at $321M."
     },
     {
       "q": "Which agencies award the most contracts in Delaware?",
-      "a": "The Department of Defense awards the most contracts in Delaware, obligating $92.9M. The next-largest buyers are the Department of Veterans Affairs with $37.4M and the Department of Health and Human Services with $17.8M."
+      "a": "The Department of Defense awards the most contracts in Delaware, obligating $92.5M in FY2026 to date. The Department of Veterans Affairs followed with $42.8M and the Department of Health and Human Services followed with $18.3M. Other agencies in the top ten include the Department of Justice at $10.9M and the Department of Homeland Security at $9.6M."
     },
     {
       "q": "Who are the largest federal contractors in Delaware?",
-      "a": "CAESAR RODNEY SCHOOL DISTRICT is the largest federal contractor in Delaware with $15M in obligations. STONEWIN INTERNATIONAL, LLC is second with $14.8M, and AQUIA NAVA II LLC is third with $11.8M."
+      "a": "STONEWIN INTERNATIONAL, LLC is the largest federal contractor in Delaware at $16.7M in FY2026 to date. CAESAR RODNEY SCHOOL DISTRICT follows at $15M and AQUIA NAVA II LLC follows at $14.6M. Other top contractors include CORBALT, LLC at $10.8M and AGILENT TECHNOLOGIES INC at $10.3M."
     }
   ],
   "related": [

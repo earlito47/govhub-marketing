@@ -1,0 +1,207 @@
+{
+  "pageType": "report",
+  "slug": "most-active-naics",
+  "week": "2026-w37",
+  "publishedDate": "2026-09-07",
+  "title": "Most Active Federal Markets This Week, Sep 1–7, 2026",
+  "h1": "Most active federal contract markets, week of Sep 1–7, 2026",
+  "metaDescription": "The most active federal contract industries (by newly reported obligations) the week of Sep 1–7, 2026, led by Commercial and Institutional Building Constructi",
+  "updated": "2026-09-07",
+  "fyWindow": {
+    "label": "Week of Sep 1–7, 2026",
+    "start": "2026-09-01",
+    "end": "2026-09-07"
+  },
+  "stats": {
+    "totalObligations": 3067642527.1800003,
+    "awardCount": null,
+    "yoyGrowthPct": null,
+    "avgAwardSize": null,
+    "smallBusinessSharePct": null
+  },
+  "charts": [
+    {
+      "id": "2026-w37-most-active-naics",
+      "type": "bar",
+      "title": "Most active industries (NAICS) by obligations, week of Sep 1–7, 2026",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "Commercial and Institutional Building Construction",
+              963768943.43
+            ],
+            [
+              "Computer Systems Design Services",
+              389519403.09
+            ],
+            [
+              "Other Computer Related Services",
+              387468694.57
+            ],
+            [
+              "Engineering Services",
+              346705623.59
+            ],
+            [
+              "Administrative Management and General Management Consulting Services",
+              207039428.78
+            ],
+            [
+              "Custom Computer Programming Services",
+              186102004
+            ],
+            [
+              "Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology)",
+              165829897.76
+            ],
+            [
+              "Direct Health and Medical Insurance Carriers",
+              162190791.08
+            ],
+            [
+              "Computing Infrastructure Providers, Data Processing, Web Hosting, and Related Services",
+              137237912.25
+            ],
+            [
+              "Telephone Apparatus Manufacturing",
+              121779828.63
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Commercial and Institutional Building Construction was the most active market, with $964M in newly reported obligations."
+    }
+  ],
+  "tables": [
+    {
+      "title": "Most active industries, week of Sep 1–7, 2026",
+      "columns": [
+        "Rank",
+        "Industry (NAICS)",
+        "Obligations"
+      ],
+      "rows": [
+        [
+          1,
+          {
+            "text": "Commercial and Institutional Building Construction (236220)",
+            "href": "/insights/naics/236220/"
+          },
+          963768943.43
+        ],
+        [
+          2,
+          {
+            "text": "Computer Systems Design Services (541512)",
+            "href": "/insights/naics/541512/"
+          },
+          389519403.09
+        ],
+        [
+          3,
+          {
+            "text": "Other Computer Related Services (541519)",
+            "href": "/insights/naics/541519/"
+          },
+          387468694.57
+        ],
+        [
+          4,
+          {
+            "text": "Engineering Services (541330)",
+            "href": "/insights/naics/541330/"
+          },
+          346705623.59
+        ],
+        [
+          5,
+          {
+            "text": "Administrative Management and General Management Consulting Services (541611)",
+            "href": "/insights/naics/541611/"
+          },
+          207039428.78
+        ],
+        [
+          6,
+          {
+            "text": "Custom Computer Programming Services (541511)",
+            "href": "/insights/naics/541511/"
+          },
+          186102004
+        ],
+        [
+          7,
+          {
+            "text": "Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology) (541715)",
+            "href": "/insights/naics/541715/"
+          },
+          165829897.76
+        ],
+        [
+          8,
+          {
+            "text": "Direct Health and Medical Insurance Carriers (524114)",
+            "href": null
+          },
+          162190791.08
+        ],
+        [
+          9,
+          {
+            "text": "Computing Infrastructure Providers, Data Processing, Web Hosting, and Related Services (518210)",
+            "href": null
+          },
+          137237912.25
+        ],
+        [
+          10,
+          {
+            "text": "Telephone Apparatus Manufacturing (334210)",
+            "href": null
+          },
+          121779828.63
+        ]
+      ]
+    }
+  ],
+  "narrative": {
+    "intro": "Commercial and Institutional Building Construction was the most active federal contract market the week of Sep 1–7, 2026, with $964M in newly reported obligations. The ten most active industries obligated $3.1B combined.",
+    "sections": []
+  },
+  "faq": [],
+  "related": [
+    {
+      "label": "NAICS 236220: Commercial and Institutional Building Construction",
+      "href": "/insights/naics/236220/"
+    },
+    {
+      "label": "NAICS 541512: Computer Systems Design Services",
+      "href": "/insights/naics/541512/"
+    },
+    {
+      "label": "NAICS 541519: Other Computer Related Services",
+      "href": "/insights/naics/541519/"
+    },
+    {
+      "label": "NAICS 541330: Engineering Services",
+      "href": "/insights/naics/541330/"
+    },
+    {
+      "label": "NAICS 541611: Administrative Management and General Management Consulting Services",
+      "href": "/insights/naics/541611/"
+    },
+    {
+      "label": "NAICS 541511: Custom Computer Programming Services",
+      "href": "/insights/naics/541511/"
+    }
+  ],
+  "sources": [
+    {
+      "label": "USAspending.gov award data",
+      "href": "https://www.usaspending.gov"
+    }
+  ]
+}

@@ -1,20 +1,20 @@
 {
   "pageType": "naics",
   "slug": "561110",
-  "title": "Federal Contracts in NAICS 561110: $337M (FY2026)",
+  "title": "Federal Contracts in NAICS 561110: $389M (FY2026)",
   "h1": "Office Administrative Services (NAICS 561110): Federal Contract Market",
-  "metaDescription": "Federal agencies obligated $337M on Office Administrative Services (NAICS 561110) in FY2026 to date. See top vendors, top agencies, and trends.",
-  "updated": "2026-08-24",
+  "metaDescription": "Federal agencies obligated $389M on Office Administrative Services (NAICS 561110) in FY2026 to date. See top vendors, top agencies, and trends.",
+  "updated": "2026-09-07",
   "fyWindow": {
     "label": "FY2026 to date",
     "start": "2025-10-01",
-    "end": "2026-08-24"
+    "end": "2026-09-07"
   },
   "stats": {
-    "totalObligations": 336975878.02,
-    "awardCount": 923,
-    "yoyGrowthPct": -48.9,
-    "avgAwardSize": 365088,
+    "totalObligations": 389405232.61,
+    "awardCount": 987,
+    "yoyGrowthPct": -40.9,
+    "avgAwardSize": 394534,
     "smallBusinessSharePct": null
   },
   "charts": [
@@ -48,13 +48,13 @@
             ],
             [
               "FY26",
-              336975878.02
+              389405232.61
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Obligations fell 48.9% year over year, from $659M in FY2025 to $337M in FY2026 to date."
+      "takeaway": "Obligations fell 40.9% year over year, from $659M in FY2025 to $389M in FY2026 to date."
     },
     {
       "id": "561110-top-agencies",
@@ -66,27 +66,35 @@
           "points": [
             [
               "Department of Defense",
-              173941611.11
-            ],
-            [
-              "National Aeronautics and Space Administration",
-              41871031.56
+              183644478.98
             ],
             [
               "Department of Homeland Security",
-              39245196.3
+              47783198.39
+            ],
+            [
+              "National Aeronautics and Space Administration",
+              41867681.7
+            ],
+            [
+              "Department of State",
+              24827354.47
             ],
             [
               "Department of Health and Human Services",
-              19952718.41
+              22437099.98
             ],
             [
               "Department of Energy",
-              14570805.67
+              15057466.33
             ],
             [
               "Department of Transportation",
-              12361602.42
+              14666639.47
+            ],
+            [
+              "Department of Justice",
+              10788917.15
             ],
             [
               "Department of Commerce",
@@ -94,21 +102,13 @@
             ],
             [
               "General Services Administration",
-              5796898.71
-            ],
-            [
-              "Department of State",
-              4610882.21
-            ],
-            [
-              "Department of the Treasury",
-              3325721.23
+              5905409.11
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Department of Defense was the top buyer, obligating $174M (51.6% of all obligations)."
+      "takeaway": "Department of Defense was the top buyer, obligating $184M (47.2% of all obligations)."
     },
     {
       "id": "561110-top-vendors",
@@ -118,6 +118,10 @@
         {
           "label": "Obligations",
           "points": [
+            [
+              "KENT CAMPA & KATE INC",
+              22817387.02
+            ],
             [
               "KONIAG BRILLIENT, LLC",
               22801182.64
@@ -136,7 +140,7 @@
             ],
             [
               "1 - 8A ISO9001 FEDSYNC-BFS, LLC",
-              16017261.4
+              16007761.01
             ],
             [
               "LMI CONSULTING, LLC",
@@ -151,18 +155,14 @@
               13775043.64
             ],
             [
-              "IVYHILL TECHNOLOGIES LLC",
-              7991519.99
-            ],
-            [
-              "TRACE SYSTEMS INC.",
-              7607759.57
+              "ASRC FEDERAL FACILITIES LOGISTICS LLC",
+              8276567.02
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "KONIAG BRILLIENT, LLC led all vendors with $22.8M in obligations, 6.8% of the market."
+      "takeaway": "KENT CAMPA & KATE INC led all vendors with $22.8M in obligations, 5.9% of the market."
     }
   ],
   "crossLinks": [
@@ -171,16 +171,16 @@
       "href": "/insights/agency/department-of-defense/"
     },
     {
-      "label": "National Aeronautics and Space Administration contracts",
-      "href": "/insights/agency/national-aeronautics-and-space-administration/"
-    },
-    {
       "label": "Department of Homeland Security contracts",
       "href": "/insights/agency/department-of-homeland-security/"
     },
     {
-      "label": "Department of Health and Human Services contracts",
-      "href": "/insights/agency/department-of-health-and-human-services/"
+      "label": "National Aeronautics and Space Administration contracts",
+      "href": "/insights/agency/national-aeronautics-and-space-administration/"
+    },
+    {
+      "label": "Department of State contracts",
+      "href": "/insights/agency/department-of-state/"
     }
   ],
   "tables": [
@@ -195,13 +195,21 @@
         [
           1,
           {
+            "text": "KENT CAMPA & KATE INC",
+            "href": "https://www.usaspending.gov/recipient/04fc130f-88f3-1f61-2ee0-701681c5f4f0-C/latest/"
+          },
+          22817387.02
+        ],
+        [
+          2,
+          {
             "text": "KONIAG BRILLIENT, LLC",
             "href": "https://www.usaspending.gov/recipient/32487f57-d90d-4a93-11f1-dbead074308c-C/latest/"
           },
           22801182.64
         ],
         [
-          2,
+          3,
           {
             "text": "BOWHEAD MARINE SUPPORT SERVICES, LLC",
             "href": "https://www.usaspending.gov/recipient/b085a1e7-7432-c97b-7323-dd88667b8c13-C/latest/"
@@ -209,7 +217,7 @@
           22743575.8
         ],
         [
-          3,
+          4,
           {
             "text": "AGILE DECISION SCIENCES, LLC",
             "href": "https://www.usaspending.gov/recipient/4b05f6bb-c9ce-8ef9-4701-7ba8cd771827-C/latest/"
@@ -217,7 +225,7 @@
           20956196.23
         ],
         [
-          4,
+          5,
           {
             "text": "SCIOLEX CORPORATION",
             "href": "https://www.usaspending.gov/recipient/dbb4ace5-01a4-be99-d3e1-59c733cd7dd8-C/latest/"
@@ -225,15 +233,15 @@
           17820066.69
         ],
         [
-          5,
+          6,
           {
             "text": "1 - 8A ISO9001 FEDSYNC-BFS, LLC",
             "href": "https://www.usaspending.gov/recipient/ec746899-7854-fc94-7464-f7945cf0b15c-C/latest/"
           },
-          16017261.4
+          16007761.01
         ],
         [
-          6,
+          7,
           {
             "text": "LMI CONSULTING, LLC",
             "href": "https://www.usaspending.gov/recipient/9291f485-a281-155d-c22c-1821a912cefe-C/latest/"
@@ -241,7 +249,7 @@
           15811503.14
         ],
         [
-          7,
+          8,
           {
             "text": "KATMAI NORTH AMERICA, LLC",
             "href": "https://www.usaspending.gov/recipient/51f2183b-bd67-c6d7-d7a7-36e50337cd85-C/latest/"
@@ -249,7 +257,7 @@
           15419079.97
         ],
         [
-          8,
+          9,
           {
             "text": "FEDERAL STAFFING RESOURCES, LLC",
             "href": "https://www.usaspending.gov/recipient/57b2a139-a130-153e-2394-b0b5390bef8c-C/latest/"
@@ -257,20 +265,12 @@
           13775043.64
         ],
         [
-          9,
-          {
-            "text": "IVYHILL TECHNOLOGIES LLC",
-            "href": "https://www.usaspending.gov/recipient/8bafabcb-6049-c2e1-78ac-9c1f85cebfdd-C/latest/"
-          },
-          7991519.99
-        ],
-        [
           10,
           {
-            "text": "TRACE SYSTEMS INC.",
-            "href": "https://www.usaspending.gov/recipient/a79678b0-299d-8ef6-cc6e-92c167a5bdd1-C/latest/"
+            "text": "ASRC FEDERAL FACILITIES LOGISTICS LLC",
+            "href": "https://www.usaspending.gov/recipient/16b7202a-1f85-bbe9-9a70-ac3d3d564f93-C/latest/"
           },
-          7607759.57
+          8276567.02
         ]
       ]
     },
@@ -415,7 +415,7 @@
             "text": "GLOBAL CONNECTIONS TO EMPLOYMENT, INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_FA700023C0002_9700_-NONE-_-NONE-/"
           },
-          25908595.41,
+          28046482.26,
           "Department of Defense"
         ],
         [
@@ -424,7 +424,7 @@
             "text": "ASRC FEDERAL FACILITIES LOGISTICS LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_15A00022CAQA00303_1560_-NONE-_-NONE-/"
           },
-          18205802.52,
+          26038205.17,
           "Department of Justice"
         ],
         [
@@ -547,7 +547,7 @@
           },
           102967922.56,
           "Department of Homeland Security",
-          "2026-09-30"
+          "2027-03-31"
         ],
         [
           3,
@@ -643,7 +643,7 @@
             "text": "GLOBAL CONNECTIONS TO EMPLOYMENT, INC.",
             "href": "https://www.usaspending.gov/recipient/d0288c13-2db6-541a-4792-0388d6d6bdd0-C/latest/"
           },
-          25908595.41,
+          28046482.26,
           "Department of Defense",
           "2027-02-28"
         ],
@@ -706,20 +706,6 @@
         [
           14,
           {
-            "text": "70B06C23F00000577",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_70B06C23F00000577_7014_HSHQDC16DP2030_7001/"
-          },
-          {
-            "text": "VISION CENTRIC INC",
-            "href": "https://www.usaspending.gov/recipient/1eb7247a-27bc-989d-9dac-9cff490f04eb-C/latest/"
-          },
-          13528460.47,
-          "Department of Homeland Security",
-          "2026-08-31"
-        ],
-        [
-          15,
-          {
             "text": "HQ003424C0008",
             "href": "https://www.usaspending.gov/award/CONT_AWD_HQ003424C0008_9700_-NONE-_-NONE-/"
           },
@@ -730,35 +716,49 @@
           12474395.82,
           "Department of Defense",
           "2026-11-30"
+        ],
+        [
+          15,
+          {
+            "text": "N5523623F0275",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N5523623F0275_9700_47QTCA23D0030_4732/"
+          },
+          {
+            "text": "MORA CONSULTANTS LLC",
+            "href": "https://www.usaspending.gov/recipient/9ac7dc00-6a84-1804-14c2-fcea8932d5bd-C/latest/"
+          },
+          12221610.45,
+          "Department of Defense",
+          "2027-04-26"
         ]
       ]
     }
   ],
   "narrative": {
-    "intro": "Office Administrative Services (NAICS 561110) obligations in FY2026 to date total $337M. The federal government made 923 awards in the sector, with an average award size of $365K. Obligations fell 48.9% year over year. Yearly totals show a multi-year decline from FY22 peaks: FY21 $766M, FY22 $916M, FY23 $850M, FY24 $789M, FY25 $659M, and FY26 $337M. The Department of Defense is the largest buyer in FY2026 to date, obligating $174M. The National Aeronautics and Space Administration follows with $41.9M, and the Department of Homeland Security follows with $39.2M. Vendor concentration is moderate: KONIAG BRILLIENT, LLC leads vendors with $22.8M, followed by BOWHEAD MARINE SUPPORT SERVICES, LLC at $22.7M and AGILE DECISION SCIENCES, LLC at $21M. The FY2026 totals are fiscal year to date and therefore partial. This snapshot shows smaller current-year obligations compared with the prior three fiscal years and highlights the agencies and vendors that account for the largest shares of FY2026 spending so far.",
+    "intro": "Office Administrative Services (NAICS 561110) recorded $389M in federal contract obligations in FY2026 to date. Obligations fell 40.9% year over year from prior-year activity. Contracting activity included 987 awards with an average award size of $395K. Year-by-year totals show a multi-year decline from $916M in FY22 to $659M in FY25 and $389M in FY26. The Department of Defense dominated buying, obligating $184M, followed by the Department of Homeland Security with $47.8M and the National Aeronautics and Space Administration with $41.9M. Large vendors captured sizable shares: KENT CAMPA & KATE INC and KONIAG BRILLIENT, LLC each received $22.8M, BOWHEAD MARINE SUPPORT SERVICES, LLC received $22.7M, and AGILE DECISION SCIENCES, LLC received $21M. The current-year totals are partial and reflect fiscal year to date obligations. Buyers and vendors show concentration at the top, while overall obligations are down materially compared with prior fiscal years. Contracting officers and vendors should note the smaller award counts and lower aggregate dollars in FY2026 to date when assessing pipeline and competition for Office Administrative Services work.",
     "sections": [
       {
-        "heading": "How has NAICS 561110 spending changed year over year?",
-        "body": "Obligations fell 48.9% year over year. Fiscal totals declined from FY22 $916M through FY25 $659M to FY26 $337M. The FY26 figure is fiscal year to date, so current-year totals are partial. The downward trend since FY22 shows materially lower buying in the current fiscal period."
+        "heading": "Which agencies are buying Office Administrative Services in FY2026 to date?",
+        "body": "The Department of Defense obligated $184M for Office Administrative Services in FY2026 to date. The Department of Homeland Security obligated $47.8M and the National Aeronautics and Space Administration obligated $41.9M. The Department of State, Department of Health and Human Services, and Department of Energy follow with $24.8M, $22.4M, and $15.1M respectively."
       },
       {
-        "heading": "Which agencies and vendors dominate FY2026 to date?",
-        "body": "The Department of Defense obligated $174M, making it the largest buyer in FY2026 to date. The National Aeronautics and Space Administration obligated $41.9M and the Department of Homeland Security obligated $39.2M. KONIAG BRILLIENT, LLC leads vendors with $22.8M, followed by BOWHEAD MARINE SUPPORT SERVICES, LLC $22.7M and AGILE DECISION SCIENCES, LLC $21M."
+        "heading": "Who are the largest government contractors for NAICS 561110 this year?",
+        "body": "KENT CAMPA & KATE INC and KONIAG BRILLIENT, LLC each received $22.8M in obligations in FY2026 to date. BOWHEAD MARINE SUPPORT SERVICES, LLC received $22.7M and AGILE DECISION SCIENCES, LLC received $21M. Other top vendors include SCIOLEX CORPORATION with $17.8M, 1 - 8A ISO9001 FEDSYNC-BFS, LLC with $16M, and LMI CONSULTING, LLC with $15.8M."
       }
     ]
   },
   "faq": [
     {
       "q": "How much does the federal government spend on NAICS 561110?",
-      "a": "The federal government obligated $337M on NAICS 561110 in FY2026 to date. The market produced 923 awards with an average award size of $365K. Obligations fell 48.9% year over year. The FY26 total is fiscal year to date, and prior fiscal totals were FY25 $659M, FY24 $789M, FY23 $850M, FY22 $916M, and FY21 $766M."
+      "a": "The federal government obligated $389M for NAICS 561110 in FY2026 to date. Obligations fell 40.9% year over year. Contracting activity included 987 awards with an average award size of $395K. Historical totals show higher obligations in prior fiscal years, peaking at $916M in FY22."
     },
     {
       "q": "Which agencies buy the most NAICS 561110 services?",
-      "a": "The Department of Defense buys the most NAICS 561110 services, obligating $174M in FY2026 to date. The National Aeronautics and Space Administration obligated $41.9M and the Department of Homeland Security obligated $39.2M. Other notable buyers are the Department of Health and Human Services $20M and the Department of Energy $14.6M."
+      "a": "The Department of Defense is the largest buyer, obligating $184M in FY2026 to date. The Department of Homeland Security obligated $47.8M and the National Aeronautics and Space Administration obligated $41.9M. Other notable buyers include the Department of State with $24.8M and the Department of Health and Human Services with $22.4M."
     },
     {
       "q": "Who are the largest NAICS 561110 government contractors?",
-      "a": "KONIAG BRILLIENT, LLC is the largest NAICS 561110 government contractor in FY2026 to date, with $22.8M in obligations. BOWHEAD MARINE SUPPORT SERVICES, LLC follows with $22.7M and AGILE DECISION SCIENCES, LLC follows with $21M. Other top vendors include SCIOLEX CORPORATION $17.8M and 1 - 8A ISO9001 FEDSYNC-BFS, LLC $16M."
+      "a": "KENT CAMPA & KATE INC and KONIAG BRILLIENT, LLC are the largest contractors, each with $22.8M in obligations in FY2026 to date. BOWHEAD MARINE SUPPORT SERVICES, LLC received $22.7M and AGILE DECISION SCIENCES, LLC received $21M. Other top vendors include SCIOLEX CORPORATION with $17.8M and LMI CONSULTING, LLC with $15.8M."
     }
   ],
   "related": [

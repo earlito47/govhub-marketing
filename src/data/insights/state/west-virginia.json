@@ -1,20 +1,20 @@
 {
   "pageType": "state",
   "slug": "west-virginia",
-  "title": "West Virginia Federal Contracts: $1.2B in FY2026",
+  "title": "West Virginia Federal Contracts: $1.4B in FY2026",
   "h1": "Federal Contracts in West Virginia: Spending, Agencies & Vendors",
-  "metaDescription": "Federal agencies obligated $1.2B to contractors in West Virginia in FY2026 to date. See top buying agencies, top vendors, and industries.",
-  "updated": "2026-08-24",
+  "metaDescription": "Federal agencies obligated $1.4B to contractors in West Virginia in FY2026 to date. See top buying agencies, top vendors, and industries.",
+  "updated": "2026-09-07",
   "fyWindow": {
     "label": "FY2026 to date",
     "start": "2025-10-01",
-    "end": "2026-08-24"
+    "end": "2026-09-07"
   },
   "stats": {
-    "totalObligations": 1215408596.14,
-    "awardCount": 3867,
-    "yoyGrowthPct": -35.2,
-    "avgAwardSize": 314303,
+    "totalObligations": 1397824234.87,
+    "awardCount": 4084,
+    "yoyGrowthPct": -25.6,
+    "avgAwardSize": 342268,
     "smallBusinessSharePct": null
   },
   "charts": [
@@ -44,17 +44,17 @@
             ],
             [
               "FY25",
-              1876457181.23
+              1878189882.7
             ],
             [
               "FY26",
-              1215408596.14
+              1397824234.87
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Obligations fell 35.2% year over year, from $1.9B in FY2025 to $1.2B in FY2026 to date."
+      "takeaway": "Obligations fell 25.6% year over year, from $1.9B in FY2025 to $1.4B in FY2026 to date."
     },
     {
       "id": "west-virginia-top-agencies",
@@ -66,49 +66,49 @@
           "points": [
             [
               "Department of Energy",
-              263533520.03
-            ],
-            [
-              "Department of Veterans Affairs",
-              226131260.53
-            ],
-            [
-              "Department of Justice",
-              208820307.93
+              283038115.26
             ],
             [
               "Department of Defense",
-              149549570.41
+              264470349.15
+            ],
+            [
+              "Department of Veterans Affairs",
+              227066436
+            ],
+            [
+              "Department of Justice",
+              218149974.45
             ],
             [
               "Department of the Treasury",
-              134979047.14
+              135169865.83
             ],
             [
               "Department of Homeland Security",
-              90335845.19
-            ],
-            [
-              "Department of Labor",
-              26400932.6
-            ],
-            [
-              "Department of Agriculture",
-              22257011.7
+              96311573.49
             ],
             [
               "General Services Administration",
-              17902612.58
+              33367888.57
             ],
             [
-              "National Aeronautics and Space Administration",
-              17053049.48
+              "Department of Labor",
+              26958759.78
+            ],
+            [
+              "Department of Agriculture",
+              25925311.5
+            ],
+            [
+              "Department of Transportation",
+              20464260.21
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Department of Energy was the top federal buyer in West Virginia, obligating $264M (21.7% of the state total)."
+      "takeaway": "Department of Energy was the top federal buyer in West Virginia, obligating $283M (20.2% of the state total)."
     },
     {
       "id": "west-virginia-top-vendors",
@@ -120,7 +120,11 @@
           "points": [
             [
               "LEIDOS, INC.",
-              125266282
+              136859272
+            ],
+            [
+              "NORTHROP GRUMMAN SYSTEMS CORP",
+              131211769
             ],
             [
               "SAWTOOTH CONSTRUCTION JV II LLC",
@@ -132,37 +136,33 @@
             ],
             [
               "ACTION FACILITIES MANAGEMENT INC",
-              39222258.48
+              39414584.08
+            ],
+            [
+              "WASEYABEK FEDERAL SERVICES, L.L.C.",
+              35591854
             ],
             [
               "SCIENCE APPLICATIONS INTERNATIONAL CORPORATION",
               33324502.19
             ],
             [
-              "WASEYABEK FEDERAL SERVICES, L.L.C.",
-              32577403
-            ],
-            [
               "KBC ENERGY SOLUTIONS LLC",
-              31212740.41
+              32872740.41
             ],
             [
               "KEYLOGIC, LLC",
-              30086749.23
+              31636872.23
             ],
             [
               "KAR CONTRACTING LLC",
               28870844.21
-            ],
-            [
-              "FUSION TECHNOLOGY LLC",
-              25327187.5
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "LEIDOS, INC. led all contractors in West Virginia with $125M, 10.3% of the state total."
+      "takeaway": "LEIDOS, INC. led all contractors in West Virginia with $137M, 9.8% of the state total."
     },
     {
       "id": "west-virginia-top-naics",
@@ -173,56 +173,60 @@
           "label": "Obligations",
           "points": [
             [
-              "Other Computer Related Services",
-              163625840.57
+              "Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology)",
+              168839195.31
             ],
             [
-              "Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology)",
-              157246205.31
+              "Other Computer Related Services",
+              166435553.98
             ],
             [
               "Commercial and Institutional Building Construction",
-              130723413.45
+              154577606.19
             ],
             [
               "Engineering Services",
-              110735570.77
+              117148203.72
             ],
             [
               "Facilities Support Services",
-              105553162.69
+              115394126.98
+            ],
+            [
+              "Small Arms, Ordnance, and Ordnance Accessories Manufacturing",
+              106055294
             ],
             [
               "Computer Systems Design Services",
-              85287028.35
+              86300467.91
             ],
             [
               "Custom Computer Programming Services",
-              78046107.57
+              77332622.54
             ],
             [
               "Highway, Street, and Bridge Construction",
-              29168817.74
+              36314617.49
             ],
             [
               "General Medical and Surgical Hospitals",
-              21454437.94
-            ],
-            [
-              "Temporary Help Services",
-              21386633.23
+              21551747.28
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Other Computer Related Services was the largest industry in West Virginia, with $164M obligated."
+      "takeaway": "Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology) was the largest industry in West Virginia, with $169M obligated."
     }
   ],
   "crossLinks": [
     {
       "label": "Department of Energy contracts",
       "href": "/insights/agency/department-of-energy/"
+    },
+    {
+      "label": "Department of Defense contracts",
+      "href": "/insights/agency/department-of-defense/"
     },
     {
       "label": "Department of Veterans Affairs contracts",
@@ -233,16 +237,12 @@
       "href": "/insights/agency/department-of-justice/"
     },
     {
-      "label": "Department of Defense contracts",
-      "href": "/insights/agency/department-of-defense/"
+      "label": "NAICS 541715: Research and Development in the Physical, Engineering, and Life Sciences",
+      "href": "/insights/naics/541715/"
     },
     {
       "label": "NAICS 541519: Other Computer Related Services",
       "href": "/insights/naics/541519/"
-    },
-    {
-      "label": "NAICS 541715: Research and Development in the Physical, Engineering, and Life Sciences",
-      "href": "/insights/naics/541715/"
     },
     {
       "label": "NAICS 236220: Commercial and Institutional Building Construction",
@@ -268,10 +268,18 @@
             "text": "LEIDOS, INC.",
             "href": "https://www.usaspending.gov/recipient/32109085-1976-8da6-d5cd-7c8077389b75-C/latest/"
           },
-          125266282
+          136859272
         ],
         [
           2,
+          {
+            "text": "NORTHROP GRUMMAN SYSTEMS CORP",
+            "href": "https://www.usaspending.gov/recipient/7075086b-d0b1-a7a5-3638-402a7aba0b1c-C/latest/"
+          },
+          131211769
+        ],
+        [
+          3,
           {
             "text": "SAWTOOTH CONSTRUCTION JV II LLC",
             "href": "https://www.usaspending.gov/recipient/66af999b-a96b-ae2f-6c8f-f84be60108c4-C/latest/"
@@ -279,7 +287,7 @@
           60663445
         ],
         [
-          3,
+          4,
           {
             "text": "IMPRES TECHNOLOGY SOLUTIONS, INC",
             "href": "https://www.usaspending.gov/recipient/729e2015-0309-7429-56c8-a6446b735171-C/latest/"
@@ -287,20 +295,12 @@
           50515921.91
         ],
         [
-          4,
+          5,
           {
             "text": "ACTION FACILITIES MANAGEMENT INC",
             "href": "https://www.usaspending.gov/recipient/f0b5ad28-54d1-49a3-e86c-e3dd896cce70-C/latest/"
           },
-          39222258.48
-        ],
-        [
-          5,
-          {
-            "text": "SCIENCE APPLICATIONS INTERNATIONAL CORPORATION",
-            "href": "https://www.usaspending.gov/recipient/20af0683-f17d-1f8f-38ee-2f11bd124559-C/latest/"
-          },
-          33324502.19
+          39414584.08
         ],
         [
           6,
@@ -308,39 +308,39 @@
             "text": "WASEYABEK FEDERAL SERVICES, L.L.C.",
             "href": "https://www.usaspending.gov/recipient/da975887-799b-7c75-2c62-ce1c86abe366-C/latest/"
           },
-          32577403
+          35591854
         ],
         [
           7,
           {
-            "text": "KBC ENERGY SOLUTIONS LLC",
-            "href": "https://www.usaspending.gov/recipient/1d2d4211-49c9-9a24-65c8-1f4ea999aa31-C/latest/"
+            "text": "SCIENCE APPLICATIONS INTERNATIONAL CORPORATION",
+            "href": "https://www.usaspending.gov/recipient/20af0683-f17d-1f8f-38ee-2f11bd124559-C/latest/"
           },
-          31212740.41
+          33324502.19
         ],
         [
           8,
           {
-            "text": "KEYLOGIC, LLC",
-            "href": "https://www.usaspending.gov/recipient/a983be87-ac0a-1ee0-4950-573a57fdb57b-C/latest/"
+            "text": "KBC ENERGY SOLUTIONS LLC",
+            "href": "https://www.usaspending.gov/recipient/1d2d4211-49c9-9a24-65c8-1f4ea999aa31-C/latest/"
           },
-          30086749.23
+          32872740.41
         ],
         [
           9,
+          {
+            "text": "KEYLOGIC, LLC",
+            "href": "https://www.usaspending.gov/recipient/a983be87-ac0a-1ee0-4950-573a57fdb57b-C/latest/"
+          },
+          31636872.23
+        ],
+        [
+          10,
           {
             "text": "KAR CONTRACTING LLC",
             "href": "https://www.usaspending.gov/recipient/97576cff-1056-92b0-e87c-331b8ee1fb59-C/latest/"
           },
           28870844.21
-        ],
-        [
-          10,
-          {
-            "text": "FUSION TECHNOLOGY LLC",
-            "href": "https://www.usaspending.gov/recipient/9c1c8e90-1b2f-4f83-a3ba-03371c745494-C/latest/"
-          },
-          25327187.5
         ]
       ]
     },
@@ -359,7 +359,7 @@
             "text": "LEIDOS, INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_89243318CFE000003_8900_-NONE-_-NONE-/"
           },
-          1049590211,
+          1061183201,
           "Department of Energy"
         ],
         [
@@ -368,7 +368,7 @@
             "text": "BRAYMAN CONSTRUCTION CORP",
             "href": "https://www.usaspending.gov/award/CONT_AWD_W9123720C0004_9700_-NONE-_-NONE-/"
           },
-          386433553.89,
+          386709901.54,
           "Department of Defense"
         ],
         [
@@ -395,7 +395,7 @@
             "text": "KEYLOGIC, LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_89243323CFE000075_8900_-NONE-_-NONE-/"
           },
-          169979824,
+          171529947,
           "Department of Energy"
         ],
         [
@@ -404,7 +404,7 @@
             "text": "KBC ENERGY SOLUTIONS LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_89243323CFE000074_8900_-NONE-_-NONE-/"
           },
-          157454527.45,
+          159114527.45,
           "Department of Energy"
         ],
         [
@@ -419,6 +419,15 @@
         [
           8,
           {
+            "text": "NORTHROP GRUMMAN SYSTEMS CORP",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0001926F0288_9700_N0001924D0104_9700/"
+          },
+          105987880,
+          "Department of Defense"
+        ],
+        [
+          9,
+          {
             "text": "GENERAL DYNAMICS INFORMATION TECHNOLOGY, INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_1305M424F0170_1330_DOCST133018CQ0073_1330/"
           },
@@ -426,7 +435,7 @@
           "Department of Commerce"
         ],
         [
-          9,
+          10,
           {
             "text": "FUSION TECHNOLOGY LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_15F06724F0000127_1549_GS35F0425W_4730/"
@@ -435,7 +444,7 @@
           "Department of Justice"
         ],
         [
-          10,
+          11,
           {
             "text": "THUNDERCAT TECHNOLOGY, LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_15F06722F0000665_1549_NNG15SD26B_8000/"
@@ -444,16 +453,16 @@
           "Department of Justice"
         ],
         [
-          11,
+          12,
           {
             "text": "ACTION FACILITIES MANAGEMENT INC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_15F06723F0000103_1549_GS06Q16BQDS102_4732/"
           },
-          58004054.34,
+          58042045.27,
           "Department of Justice"
         ],
         [
-          12,
+          13,
           {
             "text": "SCIENCE APPLICATIONS INTERNATIONAL CORPORATION",
             "href": "https://www.usaspending.gov/award/CONT_AWD_2032H524F00003_2050_2032H523D00001_2050/"
@@ -462,7 +471,16 @@
           "Department of the Treasury"
         ],
         [
-          13,
+          14,
+          {
+            "text": "WASEYABEK FEDERAL SERVICES, L.L.C.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_89243325CFE000098_8900_-NONE-_-NONE-/"
+          },
+          52502134,
+          "Department of Energy"
+        ],
+        [
+          15,
           {
             "text": "MAVERIS LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C10B22N10370001_3600_36C10B21D1037_3600/"
@@ -471,7 +489,7 @@
           "Department of Veterans Affairs"
         ],
         [
-          14,
+          16,
           {
             "text": "IMPRES TECHNOLOGY SOLUTIONS, INC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_2032H526F00080_2050_NNG15SC86B_8000/"
@@ -480,16 +498,7 @@
           "Department of the Treasury"
         ],
         [
-          15,
-          {
-            "text": "WASEYABEK FEDERAL SERVICES, L.L.C.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_89243325CFE000098_8900_-NONE-_-NONE-/"
-          },
-          49487683,
-          "Department of Energy"
-        ],
-        [
-          16,
+          17,
           {
             "text": "NORTHROP GRUMMAN SYSTEMS CORP",
             "href": "https://www.usaspending.gov/award/CONT_AWD_N0001923F0329_9700_N0001915D0030_9700/"
@@ -498,7 +507,7 @@
           "Department of Defense"
         ],
         [
-          17,
+          18,
           {
             "text": "CIVIL-MILITARY INNOVATION INSTITUTE INC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_W911QX23C0011_9700_-NONE-_-NONE-/"
@@ -507,7 +516,7 @@
           "Department of Defense"
         ],
         [
-          18,
+          19,
           {
             "text": "LEIDOS, INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_15F06725F0000117_1549_GS35F116AA_4732/"
@@ -516,7 +525,7 @@
           "Department of Justice"
         ],
         [
-          19,
+          20,
           {
             "text": "SILVER LAKE CONSTRUCTION LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_89243324CFE000088_8900_-NONE-_-NONE-/"
@@ -525,7 +534,7 @@
           "Department of Energy"
         ],
         [
-          20,
+          21,
           {
             "text": "SAWTOOTH CONSTRUCTION JV II LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C77626C0061_3600_-NONE-_-NONE-/"
@@ -534,7 +543,7 @@
           "Department of Veterans Affairs"
         ],
         [
-          21,
+          22,
           {
             "text": "MANAGEMENT & TRAINING CORPORATION",
             "href": "https://www.usaspending.gov/award/CONT_AWD_1605JE23C0003_1605_-NONE-_-NONE-/"
@@ -543,16 +552,16 @@
           "Department of Labor"
         ],
         [
-          22,
+          23,
           {
             "text": "MAXIMUS FEDERAL SERVICES, INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_89243325FFE400652_8900_HHSN316201600006W_7529/"
           },
-          39446892.4,
+          40772147.4,
           "Department of Energy"
         ],
         [
-          23,
+          24,
           {
             "text": "ALLIANT TECHSYSTEMS OPERATIONS LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_N0017420F0144_9700_N0017420D0014_9700/"
@@ -561,51 +570,42 @@
           "Department of Defense"
         ],
         [
-          24,
+          25,
           {
             "text": "MANTECH ADVANCED SYSTEMS INTERNATIONAL, INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_1305M425F0055_1330_47QTCA21D0031_4732/"
           },
           36287545.77,
           "Department of Commerce"
-        ],
-        [
-          25,
-          {
-            "text": "M. A. MORTENSON COMPANY",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_70B01C23F00000890_7014_70Z04718DMORTSN00_7008/"
-          },
-          36133712.62,
-          "Department of Homeland Security"
         ]
       ]
     }
   ],
   "narrative": {
-    "intro": "Federal contract obligations in West Virginia are $1.2B in FY2026 to date. Award activity in FY2026 to date includes 3,867 awards with an average award size of $314K. Obligations fell 35.2% year over year. Annual obligations peaked at $2B in FY24 and then fell to $1.9B in FY25 and to $1.2B in FY26 to date. The Department of Energy is the largest buyer in FY2026 to date at $264M, followed by the Department of Veterans Affairs at $226M and the Department of Justice at $209M. Other large buying agencies include the Department of Defense at $150M and the Department of the Treasury at $135M. Other Computer Related Services is the largest industry by obligations at $164M, followed by Research and Development in the Physical, Engineering, and Life Sciences at $157M and Commercial and Institutional Building Construction at $131M. LEIDOS, INC. is the largest vendor in FY2026 to date at $125M, followed by SAWTOOTH CONSTRUCTION JV II LLC at $60.7M and IMPRES TECHNOLOGY SOLUTIONS, INC at $50.5M.",
+    "intro": "Federal agencies obligated $1.4B in West Virginia in FY2026 to date. Obligations fell 25.6% year over year while agencies awarded 4,084 contracts at an average award size of $342K. The Department of Energy, the Department of Defense, and the Department of Veterans Affairs are the top buyers so far, with obligations of $283M, $264M, and $227M respectively. LEIDOS, INC., NORTHROP GRUMMAN SYSTEMS CORP, and SAWTOOTH CONSTRUCTION JV II LLC lead vendors, receiving $137M, $131M, and $60.7M respectively. Research and Development in the Physical, Engineering, and Life Sciences is the largest industry by obligations at $169M, followed closely by Other Computer Related Services at $166M and Commercial and Institutional Building Construction at $155M. Historical obligations show a peak at $2B in FY24 and a decline to $1.4B in FY26. All figures are contract obligations and current-year totals are partial (fiscal year to date).",
     "sections": [
       {
-        "heading": "What changed year over year?",
-        "body": "Obligations fell 35.2% year over year. Annual obligations moved from $2B in FY24 to $1.9B in FY25 and to $1.2B in FY26 to date. The number of awards in FY2026 to date is 3,867 with an average award size of $314K. These figures show a lower current-year total compared with the prior two fiscal years."
+        "heading": "How has federal contracting in West Virginia changed recently?",
+        "body": "Obligations fell 25.6% year over year. Total obligations reached $1.4B in FY2026 to date, down from $1.9B in FY25 and $2B in FY24. Agencies awarded 4,084 contracts at an average award size of $342K, and current-year totals are partial since the fiscal year is still in progress."
       },
       {
-        "heading": "Who are the top buyers and industries in FY2026 to date?",
-        "body": "The Department of Energy is the top buying agency at $264M, followed by the Department of Veterans Affairs at $226M and the Department of Justice at $209M. The Department of Defense obligated $150M and the Department of the Treasury obligated $135M in FY2026 to date. Other Computer Related Services is the top industry at $164M, followed by Research and Development in the Physical, Engineering, and Life Sciences at $157M and Commercial and Institutional Building Construction at $131M."
+        "heading": "Which agencies and vendors are driving spending in West Virginia?",
+        "body": "The Department of Energy, the Department of Defense, and the Department of Veterans Affairs are the top buyers with $283M, $264M, and $227M in obligations. LEIDOS, INC., NORTHROP GRUMMAN SYSTEMS CORP, and SAWTOOTH CONSTRUCTION JV II LLC are the top vendors with $137M, $131M, and $60.7M in obligations. Research and Development in the Physical, Engineering, and Life Sciences, Other Computer Related Services, and Commercial and Institutional Building Construction are the leading industries by obligations."
       }
     ]
   },
   "faq": [
     {
       "q": "How much federal contract money goes to West Virginia?",
-      "a": "Total federal contract obligations in West Virginia are $1.2B in FY2026 to date. Obligations fell 35.2% year over year. Annual obligations were $2B in FY24 and $1.9B in FY25 prior to the current-year total."
+      "a": "Federal agencies obligated $1.4B in West Virginia in FY2026 to date. Obligations fell 25.6% year over year, and agencies awarded 4,084 contracts at an average award size of $342K. Current-year totals are partial because the fiscal year is still in progress."
     },
     {
       "q": "Which agencies award the most contracts in West Virginia?",
-      "a": "The Department of Energy is the largest awarding agency in West Virginia at $264M in FY2026 to date. The Department of Veterans Affairs awarded $226M and the Department of Justice awarded $209M in FY2026 to date. The Department of Defense awarded $150M and the Department of the Treasury awarded $135M in FY2026 to date."
+      "a": "The Department of Energy, the Department of Defense, and the Department of Veterans Affairs award the most contracts in West Virginia. The Department of Energy obligated $283M, the Department of Defense obligated $264M, and the Department of Veterans Affairs obligated $227M in FY2026 to date. Other top buyers include the Department of Justice at $218M and the Department of the Treasury at $135M."
     },
     {
       "q": "Who are the largest federal contractors in West Virginia?",
-      "a": "LEIDOS, INC. is the largest federal contractor in West Virginia at $125M in FY2026 to date. SAWTOOTH CONSTRUCTION JV II LLC is the second largest at $60.7M and IMPRES TECHNOLOGY SOLUTIONS, INC is third at $50.5M. ACTION FACILITIES MANAGEMENT INC and SCIENCE APPLICATIONS INTERNATIONAL CORPORATION follow at $39.2M and $33.3M respectively."
+      "a": "LEIDOS, INC., NORTHROP GRUMMAN SYSTEMS CORP, and SAWTOOTH CONSTRUCTION JV II LLC are the largest federal contractors in West Virginia. LEIDOS, INC. received $137M, NORTHROP GRUMMAN SYSTEMS CORP received $131M, and SAWTOOTH CONSTRUCTION JV II LLC received $60.7M in FY2026 to date. The top-ten vendor list also includes IMPRES TECHNOLOGY SOLUTIONS, INC at $50.5M and ACTION FACILITIES MANAGEMENT INC at $39.4M."
     }
   ],
   "related": [

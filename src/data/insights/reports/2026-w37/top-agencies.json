@@ -1,0 +1,212 @@
+{
+  "pageType": "report",
+  "slug": "top-agencies",
+  "week": "2026-w37",
+  "publishedDate": "2026-09-07",
+  "title": "Top Federal Agencies This Week, Sep 1–7, 2026",
+  "h1": "Top agencies by newly reported contract obligations, week of Sep 1–7, 2026",
+  "metaDescription": "The federal agencies with the most newly reported contract obligations the week of Sep 1–7, 2026, led by Department of Health and Human Services.",
+  "updated": "2026-09-07",
+  "fyWindow": {
+    "label": "Week of Sep 1–7, 2026",
+    "start": "2026-09-01",
+    "end": "2026-09-07"
+  },
+  "stats": {
+    "totalObligations": 4380771360.66,
+    "awardCount": null,
+    "yoyGrowthPct": null,
+    "avgAwardSize": null,
+    "smallBusinessSharePct": null
+  },
+  "charts": [
+    {
+      "id": "2026-w37-top-agencies",
+      "type": "bar",
+      "title": "Top agencies by newly reported obligations, week of Sep 1–7, 2026",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "Department of Health and Human Services",
+              673954125.42
+            ],
+            [
+              "Department of Homeland Security",
+              660403411.35
+            ],
+            [
+              "Department of Veterans Affairs",
+              616012417.75
+            ],
+            [
+              "Department of State",
+              574149667.39
+            ],
+            [
+              "General Services Administration",
+              539456115.89
+            ],
+            [
+              "Department of Transportation",
+              496162931.59
+            ],
+            [
+              "Department of the Interior",
+              305828324.7
+            ],
+            [
+              "Department of the Treasury",
+              184414049.02
+            ],
+            [
+              "Department of Justice",
+              168661523.07
+            ],
+            [
+              "Department of Agriculture",
+              161728794.48
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Department of Health and Human Services led all agencies with $674M in newly reported contract obligations."
+    }
+  ],
+  "tables": [
+    {
+      "title": "Top agencies, week of Sep 1–7, 2026",
+      "columns": [
+        "Rank",
+        "Agency",
+        "Obligations"
+      ],
+      "rows": [
+        [
+          1,
+          {
+            "text": "Department of Health and Human Services",
+            "href": "/insights/agency/department-of-health-and-human-services/"
+          },
+          673954125.42
+        ],
+        [
+          2,
+          {
+            "text": "Department of Homeland Security",
+            "href": "/insights/agency/department-of-homeland-security/"
+          },
+          660403411.35
+        ],
+        [
+          3,
+          {
+            "text": "Department of Veterans Affairs",
+            "href": "/insights/agency/department-of-veterans-affairs/"
+          },
+          616012417.75
+        ],
+        [
+          4,
+          {
+            "text": "Department of State",
+            "href": "/insights/agency/department-of-state/"
+          },
+          574149667.39
+        ],
+        [
+          5,
+          {
+            "text": "General Services Administration",
+            "href": "/insights/agency/general-services-administration/"
+          },
+          539456115.89
+        ],
+        [
+          6,
+          {
+            "text": "Department of Transportation",
+            "href": "/insights/agency/department-of-transportation/"
+          },
+          496162931.59
+        ],
+        [
+          7,
+          {
+            "text": "Department of the Interior",
+            "href": "/insights/agency/department-of-the-interior/"
+          },
+          305828324.7
+        ],
+        [
+          8,
+          {
+            "text": "Department of the Treasury",
+            "href": "/insights/agency/department-of-the-treasury/"
+          },
+          184414049.02
+        ],
+        [
+          9,
+          {
+            "text": "Department of Justice",
+            "href": "/insights/agency/department-of-justice/"
+          },
+          168661523.07
+        ],
+        [
+          10,
+          {
+            "text": "Department of Agriculture",
+            "href": "/insights/agency/department-of-agriculture/"
+          },
+          161728794.48
+        ]
+      ]
+    }
+  ],
+  "narrative": {
+    "intro": "In the week of Sep 1–7, 2026, Department of Health and Human Services led all federal agencies with $674M in newly reported contract obligations. The ten most active agencies obligated $4.4B combined.",
+    "sections": []
+  },
+  "faq": [
+    {
+      "q": "Which federal agency reported the most contract obligations the week of Sep 1–7, 2026?",
+      "a": "Department of Health and Human Services, with $674M in newly reported contract obligations."
+    }
+  ],
+  "related": [
+    {
+      "label": "Department of Health and Human Services",
+      "href": "/insights/agency/department-of-health-and-human-services/"
+    },
+    {
+      "label": "Department of Homeland Security",
+      "href": "/insights/agency/department-of-homeland-security/"
+    },
+    {
+      "label": "Department of Veterans Affairs",
+      "href": "/insights/agency/department-of-veterans-affairs/"
+    },
+    {
+      "label": "Department of State",
+      "href": "/insights/agency/department-of-state/"
+    },
+    {
+      "label": "General Services Administration",
+      "href": "/insights/agency/general-services-administration/"
+    },
+    {
+      "label": "Department of Transportation",
+      "href": "/insights/agency/department-of-transportation/"
+    }
+  ],
+  "sources": [
+    {
+      "label": "USAspending.gov award data",
+      "href": "https://www.usaspending.gov"
+    }
+  ]
+}
