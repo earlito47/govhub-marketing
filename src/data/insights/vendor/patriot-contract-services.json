@@ -1,0 +1,545 @@
+{
+  "pageType": "vendor",
+  "slug": "patriot-contract-services",
+  "title": "Patriot Contract Services Government Contracts: $301M (FY2026)",
+  "h1": "Patriot Contract Services: Federal Contracts, Agencies & Awards",
+  "metaDescription": "Patriot Contract Services won $301M in federal contract obligations in FY2026 to date. See its top agencies, markets, largest awards, and expiring contracts.",
+  "updated": "2026-09-08",
+  "fyWindow": {
+    "label": "FY2026 to date",
+    "start": "2025-10-01",
+    "end": "2026-09-08"
+  },
+  "stats": {
+    "totalObligations": 301213771.23,
+    "awardCount": 252,
+    "yoyGrowthPct": -13.1,
+    "avgAwardSize": 1195293,
+    "smallBusinessSharePct": null
+  },
+  "charts": [
+    {
+      "id": "patriot-contract-services-trend",
+      "type": "line",
+      "title": "Obligations by fiscal year",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "FY21",
+              219321877.08
+            ],
+            [
+              "FY22",
+              335513930.35
+            ],
+            [
+              "FY23",
+              370702245.75
+            ],
+            [
+              "FY24",
+              444309389.04
+            ],
+            [
+              "FY25",
+              346755330.38
+            ],
+            [
+              "FY26",
+              301213771.23
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Obligations fell 13.1% year over year, from $347M in FY2025 to $301M in FY2026 to date."
+    },
+    {
+      "id": "patriot-contract-services-top-agencies",
+      "type": "bar",
+      "title": "Top 10 buying agencies, FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "Department of Defense",
+              169054839.86
+            ],
+            [
+              "Department of Transportation",
+              132158931.37
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Department of Defense is Patriot Contract Services's largest federal customer, with $169M obligated (56.1% of the company's federal obligations)."
+    }
+  ],
+  "crossLinks": [
+    {
+      "label": "Department of Defense contracts",
+      "href": "/insights/agency/department-of-defense/"
+    },
+    {
+      "label": "Department of Transportation contracts",
+      "href": "/insights/agency/department-of-transportation/"
+    }
+  ],
+  "tables": [
+    {
+      "title": "Largest awards, FY2026 to date",
+      "columns": [
+        "Rank",
+        "Award",
+        "Award Amount",
+        "Awarding Agency",
+        "Ends"
+      ],
+      "rows": [
+        [
+          1,
+          {
+            "text": "N3220521C3009",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N3220521C3009_9700_-NONE-_-NONE-/"
+          },
+          973925425.31,
+          "Department of Defense",
+          "2026-09-30"
+        ],
+        [
+          2,
+          {
+            "text": "N3220523C4031",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N3220523C4031_9700_-NONE-_-NONE-/"
+          },
+          172172826.56,
+          "Department of Defense",
+          "2026-09-30"
+        ],
+        [
+          3,
+          {
+            "text": "69727624F00070N",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_69727624F00070N_6938_DTMA98D16008_6938/"
+          },
+          20151822.39,
+          "Department of Transportation",
+          "2025-07-26"
+        ],
+        [
+          4,
+          {
+            "text": "N3220526C4070",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N3220526C4070_9700_-NONE-_-NONE-/"
+          },
+          18165081.48,
+          "Department of Defense",
+          "2027-05-31"
+        ],
+        [
+          5,
+          {
+            "text": "6991PE24F00131N",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_6991PE24F00131N_6938_693JF720G000007_6938/"
+          },
+          16056438,
+          "Department of Transportation",
+          "2025-10-26"
+        ],
+        [
+          6,
+          {
+            "text": "6991PE25F00098N",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_6991PE25F00098N_6938_693JF720G000007_6938/"
+          },
+          12732714,
+          "Department of Transportation",
+          "2026-12-31"
+        ],
+        [
+          7,
+          {
+            "text": "69727626F00127N",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_69727626F00127N_6938_693JF726D000028_6938/"
+          },
+          9600000,
+          "Department of Transportation",
+          "2027-09-30"
+        ],
+        [
+          8,
+          {
+            "text": "6991PE26F00108N",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_6991PE26F00108N_6938_693JF725D000011_6938/"
+          },
+          8513071.09,
+          "Department of Transportation",
+          "2026-09-30"
+        ],
+        [
+          9,
+          {
+            "text": "69727626F00018N",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_69727626F00018N_6938_693JF720G000007_6938/"
+          },
+          6318978.96,
+          "Department of Transportation",
+          "2026-11-30"
+        ],
+        [
+          10,
+          {
+            "text": "69727626F00075N",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_69727626F00075N_6938_693JF720G000007_6938/"
+          },
+          5850000,
+          "Department of Transportation",
+          "2026-08-25"
+        ],
+        [
+          11,
+          {
+            "text": "6991PE26F00008N",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_6991PE26F00008N_6938_693JF725D000010_6938/"
+          },
+          5651960,
+          "Department of Transportation",
+          "2026-09-30"
+        ],
+        [
+          12,
+          {
+            "text": "6933A225F00187N",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_6933A225F00187N_6938_693JF720G000007_6938/"
+          },
+          5473364.89,
+          "Department of Transportation",
+          "2026-08-10"
+        ],
+        [
+          13,
+          {
+            "text": "6991PE24F00035N",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_6991PE24F00035N_6938_DTMA98D16011_6938/"
+          },
+          4396058.98,
+          "Department of Transportation",
+          "2024-11-30"
+        ],
+        [
+          14,
+          {
+            "text": "69727624F00086N",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_69727624F00086N_6938_693JF724D000014_6938/"
+          },
+          3950886.95,
+          "Department of Transportation",
+          "2025-10-26"
+        ],
+        [
+          15,
+          {
+            "text": "69727625F00115N",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_69727625F00115N_6938_693JF725D000038_6938/"
+          },
+          3895166.31,
+          "Department of Transportation",
+          "2026-07-26"
+        ],
+        [
+          16,
+          {
+            "text": "69727624F00114N",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_69727624F00114N_6938_693JF724D000013_6938/"
+          },
+          3815625.63,
+          "Department of Transportation",
+          "2025-09-01"
+        ],
+        [
+          17,
+          {
+            "text": "69727626F00091N",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_69727626F00091N_6938_693JF725D000038_6938/"
+          },
+          3600254.93,
+          "Department of Transportation",
+          "2026-09-30"
+        ],
+        [
+          18,
+          {
+            "text": "69727625F00116N",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_69727625F00116N_6938_693JF725D000038_6938/"
+          },
+          3516477.16,
+          "Department of Transportation",
+          "2026-07-26"
+        ],
+        [
+          19,
+          {
+            "text": "6991PE24F00142N",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_6991PE24F00142N_6938_693JF720G000007_6938/"
+          },
+          3498628,
+          "Department of Transportation",
+          "2025-10-26"
+        ],
+        [
+          20,
+          {
+            "text": "6933A226F00037N",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_6933A226F00037N_6938_693JF720G000007_6938/"
+          },
+          3365379.86,
+          "Department of Transportation",
+          "2026-09-14"
+        ],
+        [
+          21,
+          {
+            "text": "6991PE25F00112N",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_6991PE25F00112N_6938_693JF720G000007_6938/"
+          },
+          3328119.52,
+          "Department of Transportation",
+          "2026-09-30"
+        ],
+        [
+          22,
+          {
+            "text": "6991PE25F00240N",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_6991PE25F00240N_6938_693JF725D000010_6938/"
+          },
+          3315797.13,
+          "Department of Transportation",
+          "2026-09-30"
+        ],
+        [
+          23,
+          {
+            "text": "69727624F00079N",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_69727624F00079N_6938_693JF724D000013_6938/"
+          },
+          3161521.14,
+          "Department of Transportation",
+          "2025-09-01"
+        ],
+        [
+          24,
+          {
+            "text": "6991PE25F00243N",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_6991PE25F00243N_6938_693JF725D000010_6938/"
+          },
+          3065383.88,
+          "Department of Transportation",
+          "2026-09-30"
+        ],
+        [
+          25,
+          {
+            "text": "69727625F00158N",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_69727625F00158N_6938_693JF725D000038_6938/"
+          },
+          3022500,
+          "Department of Transportation",
+          "2026-11-30"
+        ]
+      ]
+    },
+    {
+      "title": "Contracts expiring in the next 12 months",
+      "columns": [
+        "Award",
+        "Awarding Agency",
+        "Award Value",
+        "Ends"
+      ],
+      "rows": [
+        [
+          {
+            "text": "N3220521C3009",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N3220521C3009_9700_-NONE-_-NONE-/"
+          },
+          "Department of Defense",
+          973925425.31,
+          "2026-09-30"
+        ],
+        [
+          {
+            "text": "N3220523C4031",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N3220523C4031_9700_-NONE-_-NONE-/"
+          },
+          "Department of Defense",
+          172172826.56,
+          "2026-09-30"
+        ],
+        [
+          {
+            "text": "N3220526C4070",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N3220526C4070_9700_-NONE-_-NONE-/"
+          },
+          "Department of Defense",
+          18165081.48,
+          "2027-05-31"
+        ],
+        [
+          {
+            "text": "6991PE25F00098N",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_6991PE25F00098N_6938_693JF720G000007_6938/"
+          },
+          "Department of Transportation",
+          12732714,
+          "2026-12-31"
+        ],
+        [
+          {
+            "text": "6991PE26F00108N",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_6991PE26F00108N_6938_693JF725D000011_6938/"
+          },
+          "Department of Transportation",
+          8513071.09,
+          "2026-09-30"
+        ],
+        [
+          {
+            "text": "69727626F00018N",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_69727626F00018N_6938_693JF720G000007_6938/"
+          },
+          "Department of Transportation",
+          6318978.96,
+          "2026-11-30"
+        ],
+        [
+          {
+            "text": "6991PE26F00008N",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_6991PE26F00008N_6938_693JF725D000010_6938/"
+          },
+          "Department of Transportation",
+          5651960,
+          "2026-09-30"
+        ],
+        [
+          {
+            "text": "69727626F00091N",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_69727626F00091N_6938_693JF725D000038_6938/"
+          },
+          "Department of Transportation",
+          3600254.93,
+          "2026-09-30"
+        ],
+        [
+          {
+            "text": "6933A226F00037N",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_6933A226F00037N_6938_693JF720G000007_6938/"
+          },
+          "Department of Transportation",
+          3365379.86,
+          "2026-09-14"
+        ],
+        [
+          {
+            "text": "6991PE25F00112N",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_6991PE25F00112N_6938_693JF720G000007_6938/"
+          },
+          "Department of Transportation",
+          3328119.52,
+          "2026-09-30"
+        ]
+      ]
+    },
+    {
+      "title": "Registration details",
+      "columns": [
+        "Detail",
+        "Registration"
+      ],
+      "rows": [
+        [
+          "Unique Entity ID (UEI)",
+          "S9L9DZ8RBNL6"
+        ],
+        [
+          "Headquarters",
+          "Concord, CA"
+        ],
+        [
+          "Business types",
+          "Category business; Limited liability corporation; Minority owned business; Other minority owned business; Small business; Special designations"
+        ]
+      ]
+    }
+  ],
+  "narrative": {
+    "intro": "Patriot Contract Services has $301M in contract obligations in FY2026 to date, spread across 252 awards with an average award size of $1.2M. Patriot Contract Services obligations are down 13.1% year over year. Patriot Contract Services obligated amounts have varied by fiscal year: $219M in FY21, $336M in FY22, $371M in FY23, $444M in FY24, $347M in FY25, and $301M in FY26. Patriot Contract Services receives the largest shares of FY2026 to date obligations from the Department of Defense with $169M and the Department of Transportation with $132M. Patriot Contract Services current-year totals are partial because the fiscal year is still in progress, and the figures shown are contract obligations except where table notes identify award values as total contract values. Patriot Contract Services reporting focuses on obligations and buying-agency concentration, giving a concise view of federal demand and recent-year movement in contract funding.",
+    "sections": [
+      {
+        "heading": "What are Patriot Contract Services' recent federal obligations?",
+        "body": "Patriot Contract Services has $301M in obligations in FY2026 to date. Patriot Contract Services has 252 awards so far this fiscal year with an average award size of $1.2M. Patriot Contract Services obligations are down 13.1% year over year. Patriot Contract Services annual obligations were $219M in FY21, $336M in FY22, $371M in FY23, $444M in FY24, and $347M in FY25."
+      },
+      {
+        "heading": "Who are Patriot Contract Services' largest federal customers?",
+        "body": "The Department of Defense is the largest buyer of Patriot Contract Services with $169M in FY2026 to date. The Department of Transportation is the second largest buyer with $132M in FY2026 to date. Patriot Contract Services other agency buyers are not listed in the top-two table."
+      }
+    ]
+  },
+  "faq": [
+    {
+      "q": "How much does Patriot Contract Services make from federal contracts?",
+      "a": "Patriot Contract Services has received $301M in federal contract obligations in FY2026 to date. Patriot Contract Services obligations are spread across 252 awards, with an average award size of $1.2M, and obligations are down 13.1% year over year."
+    },
+    {
+      "q": "Which agencies buy from Patriot Contract Services?",
+      "a": "The Department of Defense and the Department of Transportation are Patriot Contract Services' top buyers in FY2026 to date. The Department of Defense obligated $169M and the Department of Transportation obligated $132M."
+    },
+    {
+      "q": "What does Patriot Contract Services sell to the government?",
+      "a": "No product or service descriptions are listed for Patriot Contract Services in the provided figures. The report focuses on contract obligations, award counts, and buying agencies rather than line-item product or service details."
+    },
+    {
+      "q": "Which Patriot Contract Services contracts are expiring soon?",
+      "a": "No expiring-contract data are listed for Patriot Contract Services in the provided figures. The available tables and totals show current obligations and award counts but do not include an expiring-contract schedule."
+    }
+  ],
+  "related": [
+    {
+      "label": "Expiring federal contracts: recompete watch",
+      "href": "/insights/expiring-federal-contracts/"
+    },
+    {
+      "label": "United Launch Services federal contracts",
+      "href": "/insights/vendor/united-launch-services/"
+    },
+    {
+      "label": "Leidos Biomedical Research federal contracts",
+      "href": "/insights/vendor/leidos-biomedical-research/"
+    },
+    {
+      "label": "Blue Origin Manufacturing federal contracts",
+      "href": "/insights/vendor/blue-origin-manufacturing/"
+    },
+    {
+      "label": "Universal Protection Service Limited Partnership federal contracts",
+      "href": "/insights/vendor/universal-protection-service-limited-partnership/"
+    },
+    {
+      "label": "Nelnet Servicing federal contracts",
+      "href": "/insights/vendor/nelnet-servicing/"
+    },
+    {
+      "label": "Data Link Solutions federal contracts",
+      "href": "/insights/vendor/data-link-solutions/"
+    }
+  ],
+  "sources": [
+    {
+      "label": "USAspending.gov award data",
+      "href": "https://www.usaspending.gov"
+    }
+  ]
+}
