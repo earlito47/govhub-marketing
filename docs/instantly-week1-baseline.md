@@ -181,6 +181,44 @@ per arm, which this programme will not have for a month. Week 2 can tell you
 whether positives exist at all. It cannot rank two copy variants finely, and it
 should not be asked to.
 
+## What changed for week 2
+
+Every variable that moved, so a week 2 reading can be attributed rather than
+guessed at. Source is `scripts/outreach/instantly-wave1.mjs`; none of it is live
+until someone runs `--sync`.
+
+| Change | A | B | C | Why |
+|---|---|---|---|---|
+| Opener premise rewritten | yes | **no** | yes | A was pitched as a struggling small prime, C as a first-time bidder; neither is true of the segment |
+| Subjects rewritten | yes | **no** | yes | "Section L compliance" and "first federal bid" carried the same false premise as the bodies |
+| CTA is a question, not a meeting ask | yes | yes | yes | 471 meeting asks produced 0 acceptances; a process question can be answered without commitment |
+| Opt-out moved below the signature | yes | yes | yes | it sat directly under the CTA and outdrew it 10 to 0 |
+| Tool mentioned in email 2 | yes | yes | yes | the lowest-friction action was only in email 3 |
+| List-Unsubscribe header on | yes | yes | yes | reverses the 2026-09-03 decision, on request 2026-09-12 |
+| `daily_max_leads` | 40 to **20** | 20 | 20 to **10** | validate new copy before spending 1,045 untouched leads |
+
+**B is the control.** It was the only segment whose premise matched its audience
+and the only one that drew replies, so its opener and subjects are untouched. It
+moves only on the three programme-wide changes. If A and C improve while B holds
+flat, the premise rewrite is what did it. If all three move together, the credit
+belongs to the CTA, the opt-out position or the header, and B is what separates
+those two stories.
+
+Two things deliberately NOT changed, to keep the number of moving variables
+survivable:
+
+- **The `{{companyName}} proposals` subject still renders a person's name for 38
+  leads** (2.1% of wave 1, worst in C at 4.9%), because SAM registrant names for
+  sole proprietors are surname first: "Rajala Timothy L proposals". It is a real
+  defect and worth a separate isolated fix, but folding it in here would add a
+  variable to an already wide change.
+- **The link stays in email 3 only.** Moving the govhub.online URL into email 1
+  would breach the zero-links-in-email-1 guardrail, which exists because a link
+  in a first cold touch from a young domain costs placement. Email 2 now names
+  the tool in prose instead, which gets the offer in front of people two steps
+  earlier at no deliverability cost. Moving the actual URL is a judgement call
+  about that guardrail and should be made deliberately, not as a side effect.
+
 ## The better experiment, when there is budget for it
 
 Week over week is a sequential comparison and carries every confound above. A
