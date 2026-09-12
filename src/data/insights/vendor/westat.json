@@ -1,0 +1,655 @@
+{
+  "pageType": "vendor",
+  "slug": "westat",
+  "title": "Westat Government Contracts: $260M (FY2026)",
+  "h1": "Westat: Federal Contracts, Agencies & Awards",
+  "metaDescription": "Westat won $260M in federal contract obligations in FY2026 to date. See its top agencies, markets, largest awards, and expiring contracts.",
+  "updated": "2026-09-12",
+  "fyWindow": {
+    "label": "FY2026 to date",
+    "start": "2025-10-01",
+    "end": "2026-09-12"
+  },
+  "stats": {
+    "totalObligations": 260346012.87,
+    "awardCount": 159,
+    "yoyGrowthPct": 31.6,
+    "avgAwardSize": 1637396,
+    "smallBusinessSharePct": null
+  },
+  "charts": [
+    {
+      "id": "westat-trend",
+      "type": "line",
+      "title": "Obligations by fiscal year",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "FY21",
+              356405138.32
+            ],
+            [
+              "FY22",
+              383293450.87
+            ],
+            [
+              "FY23",
+              312029420.07
+            ],
+            [
+              "FY24",
+              390310091.58
+            ],
+            [
+              "FY25",
+              197827907.36
+            ],
+            [
+              "FY26",
+              260346012.87
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Obligations grew 31.6% year over year, from $198M in FY2025 to $260M in FY2026 to date."
+    },
+    {
+      "id": "westat-top-agencies",
+      "type": "bar",
+      "title": "Top 10 buying agencies, FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "Department of Health and Human Services",
+              183549437.73
+            ],
+            [
+              "Department of Education",
+              63180372.38
+            ],
+            [
+              "Department of Veterans Affairs",
+              3372785
+            ],
+            [
+              "Department of Transportation",
+              2875945.89
+            ],
+            [
+              "Department of Labor",
+              2375156.13
+            ],
+            [
+              "National Science Foundation",
+              2157484.19
+            ],
+            [
+              "Department of Commerce",
+              1269059.4
+            ],
+            [
+              "Department of the Interior",
+              918522.08
+            ],
+            [
+              "Consumer Product Safety Commission",
+              355757.8
+            ],
+            [
+              "Department of Agriculture",
+              271659.45
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Department of Health and Human Services is Westat's largest federal customer, with $184M obligated (70.5% of the company's federal obligations)."
+    },
+    {
+      "id": "westat-top-naics",
+      "type": "bar",
+      "title": "Top 10 markets (NAICS), FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology)",
+              86657959.82
+            ],
+            [
+              "Research and Development in the Social Sciences and Humanities",
+              69657682.67
+            ],
+            [
+              "Marketing Research and Public Opinion Polling",
+              43712431
+            ],
+            [
+              "Administrative Management and General Management Consulting Services",
+              30997542.48
+            ],
+            [
+              "Computing Infrastructure Providers, Data Processing, Web Hosting, and Related Services",
+              11939432.45
+            ],
+            [
+              "Other Scientific and Technical Consulting Services",
+              7387945
+            ],
+            [
+              "All Other Professional, Scientific, and Technical Services",
+              6770992.53
+            ],
+            [
+              "Other Accounting Services",
+              2875985.6
+            ],
+            [
+              "Other Computer Related Services",
+              1269059.4
+            ],
+            [
+              "Custom Computer Programming Services",
+              500000
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology) is Westat's largest federal market, with $86.7M in obligations."
+    }
+  ],
+  "crossLinks": [
+    {
+      "label": "Department of Health and Human Services contracts",
+      "href": "/insights/agency/department-of-health-and-human-services/"
+    },
+    {
+      "label": "Department of Education contracts",
+      "href": "/insights/agency/department-of-education/"
+    },
+    {
+      "label": "Department of Veterans Affairs contracts",
+      "href": "/insights/agency/department-of-veterans-affairs/"
+    },
+    {
+      "label": "Department of Transportation contracts",
+      "href": "/insights/agency/department-of-transportation/"
+    },
+    {
+      "label": "NAICS 541715: Research and Development in the Physical, Engineering, and Life Sciences",
+      "href": "/insights/naics/541715/"
+    },
+    {
+      "label": "NAICS 541611: Administrative Management and General Management Consulting Services",
+      "href": "/insights/naics/541611/"
+    },
+    {
+      "label": "NAICS 541690: Other Scientific and Technical Consulting Services",
+      "href": "/insights/naics/541690/"
+    },
+    {
+      "label": "NAICS 541990: All Other Professional, Scientific, and Technical Services",
+      "href": "/insights/naics/541990/"
+    }
+  ],
+  "tables": [
+    {
+      "title": "Largest awards, FY2026 to date",
+      "columns": [
+        "Rank",
+        "Award",
+        "Award Amount",
+        "Awarding Agency",
+        "Ends"
+      ],
+      "rows": [
+        [
+          1,
+          {
+            "text": "HHSN271201600001C",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_HHSN271201600001C_7529_-NONE-_-NONE-/"
+          },
+          505254551.54,
+          "Department of Health and Human Services",
+          "2028-11-30"
+        ],
+        [
+          2,
+          {
+            "text": "75Q80120F32001",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75Q80120F32001_7528_75Q80120D00024_7528/"
+          },
+          181778459,
+          "Department of Health and Human Services",
+          "2026-11-30"
+        ],
+        [
+          3,
+          {
+            "text": "75N91022F00001",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75N91022F00001_7529_75N91022D00009_7529/"
+          },
+          97248696,
+          "Department of Health and Human Services",
+          "2027-07-31"
+        ],
+        [
+          4,
+          {
+            "text": "75N95024C00003",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75N95024C00003_7529_-NONE-_-NONE-/"
+          },
+          85470330,
+          "Department of Health and Human Services",
+          "2030-11-30"
+        ],
+        [
+          5,
+          {
+            "text": "91990025C0008",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_91990025C0008_9100_-NONE-_-NONE-/"
+          },
+          82767159,
+          "Department of Education",
+          "2026-12-05"
+        ],
+        [
+          6,
+          {
+            "text": "75Q80125F32002",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75Q80125F32002_7528_75Q80124D00001_7528/"
+          },
+          54076728,
+          "Department of Health and Human Services",
+          "2026-11-30"
+        ],
+        [
+          7,
+          {
+            "text": "91990019C0002",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_91990019C0002_9100_-NONE-_-NONE-/"
+          },
+          47056005.39,
+          "Department of Education",
+          "2027-02-06"
+        ],
+        [
+          8,
+          {
+            "text": "91990019F0025",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_91990019F0025_9100_GS00Q14OADU223_4732/"
+          },
+          41995167.38,
+          "Department of Education",
+          "2026-12-31"
+        ],
+        [
+          9,
+          {
+            "text": "EDIES12C0072",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_EDIES12C0072_9100_-NONE-_-NONE-/"
+          },
+          26706437.66,
+          "Department of Education",
+          "2022-09-26"
+        ],
+        [
+          10,
+          {
+            "text": "75S20323F42001",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75S20323F42001_7522_75S20322D00031_7522/"
+          },
+          26118458.89,
+          "Department of Health and Human Services",
+          "2026-08-26"
+        ],
+        [
+          11,
+          {
+            "text": "91990019C0048",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_91990019C0048_9100_-NONE-_-NONE-/"
+          },
+          25590998.26,
+          "Department of Education",
+          "2024-12-31"
+        ],
+        [
+          12,
+          {
+            "text": "W81XWH15C0048",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W81XWH15C0048_9700_-NONE-_-NONE-/"
+          },
+          22214368.94,
+          "Department of Defense",
+          "2026-12-31"
+        ],
+        [
+          13,
+          {
+            "text": "75S20322F42004",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75S20322F42004_7522_HHSS283201700031I_7522/"
+          },
+          19308150,
+          "Department of Health and Human Services",
+          "2027-09-29"
+        ],
+        [
+          14,
+          {
+            "text": "75S20322F42003",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75S20322F42003_7522_HHSS283201700031I_7522/"
+          },
+          16957846,
+          "Department of Health and Human Services",
+          "2027-06-14"
+        ],
+        [
+          15,
+          {
+            "text": "EDIES13C0006",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_EDIES13C0006_9100_-NONE-_-NONE-/"
+          },
+          16659121.73,
+          "Department of Education",
+          "2021-07-16"
+        ],
+        [
+          16,
+          {
+            "text": "75N92021F00229",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75N92021F00229_7529_GS00F009DA_4732/"
+          },
+          16650520,
+          "Department of Health and Human Services",
+          "2026-08-22"
+        ],
+        [
+          17,
+          {
+            "text": "75Q80123F80005",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75Q80123F80005_7528_GS00F009DA_4732/"
+          },
+          16599463,
+          "Department of Health and Human Services",
+          "2027-01-29"
+        ],
+        [
+          18,
+          {
+            "text": "EDIES11C0063",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_EDIES11C0063_9100_-NONE-_-NONE-/"
+          },
+          15635417.5,
+          "Department of Education",
+          "2023-03-31"
+        ],
+        [
+          19,
+          {
+            "text": "75D30122F14227",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75D30122F14227_7523_GS00F009DA_4732/"
+          },
+          15292726.32,
+          "Department of Health and Human Services",
+          "2027-07-31"
+        ],
+        [
+          20,
+          {
+            "text": "75N94023F00002",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75N94023F00002_7529_HHSN275201800001I_7529/"
+          },
+          13095838,
+          "Department of Health and Human Services",
+          "2026-11-29"
+        ],
+        [
+          21,
+          {
+            "text": "75Q80125F32003",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75Q80125F32003_7528_75Q80124D00001_7528/"
+          },
+          12861485,
+          "Department of Health and Human Services",
+          "2028-12-30"
+        ],
+        [
+          22,
+          {
+            "text": "91990022F0306",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_91990022F0306_9100_91990020A0016_9100/"
+          },
+          11482406.91,
+          "Department of Education",
+          "2026-02-27"
+        ],
+        [
+          23,
+          {
+            "text": "75N94023F00001",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75N94023F00001_7529_HHSN275201800001I_7529/"
+          },
+          11022336,
+          "Department of Health and Human Services",
+          "2026-11-29"
+        ],
+        [
+          24,
+          {
+            "text": "75N91018C00043",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75N91018C00043_7529_-NONE-_-NONE-/"
+          },
+          10734491.76,
+          "Department of Health and Human Services",
+          "2024-03-21"
+        ],
+        [
+          25,
+          {
+            "text": "75N91023F00004",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75N91023F00004_7529_75N91022D00006_7529/"
+          },
+          10275683.46,
+          "Department of Health and Human Services",
+          "2027-08-31"
+        ]
+      ]
+    },
+    {
+      "title": "Contracts expiring in the next 12 months",
+      "columns": [
+        "Award",
+        "Awarding Agency",
+        "Award Value",
+        "Ends"
+      ],
+      "rows": [
+        [
+          {
+            "text": "75Q80120F32001",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75Q80120F32001_7528_75Q80120D00024_7528/"
+          },
+          "Department of Health and Human Services",
+          181778459,
+          "2026-11-30"
+        ],
+        [
+          {
+            "text": "75N91022F00001",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75N91022F00001_7529_75N91022D00009_7529/"
+          },
+          "Department of Health and Human Services",
+          97248696,
+          "2027-07-31"
+        ],
+        [
+          {
+            "text": "91990025C0008",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_91990025C0008_9100_-NONE-_-NONE-/"
+          },
+          "Department of Education",
+          82767159,
+          "2026-12-05"
+        ],
+        [
+          {
+            "text": "75Q80125F32002",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75Q80125F32002_7528_75Q80124D00001_7528/"
+          },
+          "Department of Health and Human Services",
+          54076728,
+          "2026-11-30"
+        ],
+        [
+          {
+            "text": "91990019C0002",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_91990019C0002_9100_-NONE-_-NONE-/"
+          },
+          "Department of Education",
+          47056005.39,
+          "2027-02-06"
+        ],
+        [
+          {
+            "text": "91990019F0025",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_91990019F0025_9100_GS00Q14OADU223_4732/"
+          },
+          "Department of Education",
+          41995167.38,
+          "2026-12-31"
+        ],
+        [
+          {
+            "text": "W81XWH15C0048",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W81XWH15C0048_9700_-NONE-_-NONE-/"
+          },
+          "Department of Defense",
+          22214368.94,
+          "2026-12-31"
+        ],
+        [
+          {
+            "text": "75S20322F42003",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75S20322F42003_7522_HHSS283201700031I_7522/"
+          },
+          "Department of Health and Human Services",
+          16957846,
+          "2027-06-14"
+        ],
+        [
+          {
+            "text": "75Q80123F80005",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75Q80123F80005_7528_GS00F009DA_4732/"
+          },
+          "Department of Health and Human Services",
+          16599463,
+          "2027-01-29"
+        ],
+        [
+          {
+            "text": "75D30122F14227",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75D30122F14227_7523_GS00F009DA_4732/"
+          },
+          "Department of Health and Human Services",
+          15292726.32,
+          "2027-07-31"
+        ]
+      ]
+    },
+    {
+      "title": "Registration details",
+      "columns": [
+        "Detail",
+        "Registration"
+      ],
+      "rows": [
+        [
+          "Unique Entity ID (UEI)",
+          "NVUWAFWQ57S5"
+        ],
+        [
+          "Headquarters",
+          "Bethesda, MD"
+        ],
+        [
+          "Business types",
+          "Category business; Corporate entity tax exempt; Other than small business; Special designations; Us owned business"
+        ]
+      ]
+    }
+  ],
+  "narrative": {
+    "intro": "Westat has $260M in contract obligations in FY2026 to date. Westat received 159 awards so far this fiscal year, with an average award size of $1.6M and obligations up 31.6% year over year. The Department of Health and Human Services accounts for the largest share of obligations at $184M, followed by the Department of Education at $63.2M. Research and development drives the work: Research and Development in the Physical, Engineering, and Life Sciences accounts for $86.7M, and Research and Development in the Social Sciences and Humanities accounts for $69.7M. Marketing Research and Public Opinion Polling accounts for $43.7M, and Administrative Management and General Management Consulting Services accounts for $31M. The FY2026 totals are partial, fiscal year to date, and all figures on the page represent contract obligations except where award-value figures are explicitly noted as total contract values.",
+    "sections": [
+      {
+        "heading": "How did Westat perform year over year?",
+        "body": "Westat obligations are up 31.6% year over year. Westat recorded $260M in obligations in FY2026 to date compared with prior-year totals shown on the page. Westat received 159 awards so far this fiscal year with an average award size of $1.6M."
+      },
+      {
+        "heading": "Who are Westat's top buyers and markets?",
+        "body": "The Department of Health and Human Services is the largest buyer with $184M in obligations, followed by the Department of Education with $63.2M. Research and Development in the Physical, Engineering, and Life Sciences is the largest market at $86.7M, followed by Research and Development in the Social Sciences and Humanities at $69.7M and Marketing Research and Public Opinion Polling at $43.7M."
+      }
+    ]
+  },
+  "faq": [
+    {
+      "q": "How much does Westat make from federal contracts?",
+      "a": "Westat has $260M in contract obligations in FY2026 to date. Westat received 159 awards so far this fiscal year, and the average award size is $1.6M. These totals are partial, fiscal year to date."
+    },
+    {
+      "q": "Which agencies buy from Westat?",
+      "a": "The Department of Health and Human Services is the largest buyer, with $184M in obligations. The Department of Education is the second largest buyer, with $63.2M, followed by the Department of Veterans Affairs with $3.4M and other agencies listed down to the Department of Agriculture with $272K."
+    },
+    {
+      "q": "What does Westat sell to the government?",
+      "a": "Westat sells research and related services, led by Research and Development in the Physical, Engineering, and Life Sciences at $86.7M. Westat also provides Research and Development in the Social Sciences and Humanities at $69.7M, Marketing Research and Public Opinion Polling at $43.7M, and Administrative Management and General Management Consulting Services at $31M."
+    },
+    {
+      "q": "Which Westat contracts are expiring soon?",
+      "a": "The page does not list any expiring contracts. No expiring-contracts entries appear on the provided page, so contract expiration timing cannot be determined from the available figures."
+    }
+  ],
+  "related": [
+    {
+      "label": "Expiring federal contracts: recompete watch",
+      "href": "/insights/expiring-federal-contracts/"
+    },
+    {
+      "label": "Skookum Educational Programs federal contracts",
+      "href": "/insights/vendor/skookum-educational-programs/"
+    },
+    {
+      "label": "Soldierpoint Digital Health federal contracts",
+      "href": "/insights/vendor/soldierpoint-digital-health/"
+    },
+    {
+      "label": "CDW Government federal contracts",
+      "href": "/insights/vendor/cdw-government/"
+    },
+    {
+      "label": "Honeywell International federal contracts",
+      "href": "/insights/vendor/honeywell-international/"
+    },
+    {
+      "label": "Airbus Us Space and Defense federal contracts",
+      "href": "/insights/vendor/airbus-us-space-and-defense/"
+    },
+    {
+      "label": "Tutor Perini federal contracts",
+      "href": "/insights/vendor/tutor-perini/"
+    }
+  ],
+  "sources": [
+    {
+      "label": "USAspending.gov award data",
+      "href": "https://www.usaspending.gov"
+    }
+  ]
+}
