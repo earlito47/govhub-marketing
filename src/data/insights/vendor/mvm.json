@@ -1,0 +1,309 @@
+{
+  "pageType": "vendor",
+  "slug": "mvm",
+  "title": "MVM Federal Contracts: $234M in FY2026",
+  "h1": "MVM: Federal Contracts, Agencies & Awards",
+  "metaDescription": "MVM won $234M in federal contract obligations in FY2026 to date. See its top agencies, markets, largest awards, and expiring contracts.",
+  "updated": "2026-09-13",
+  "fyWindow": {
+    "label": "FY2026 to date",
+    "start": "2025-10-01",
+    "end": "2026-09-13"
+  },
+  "stats": {
+    "totalObligations": 234381496.24,
+    "awardCount": 6,
+    "yoyGrowthPct": 26,
+    "avgAwardSize": 39063583,
+    "smallBusinessSharePct": null
+  },
+  "charts": [
+    {
+      "id": "mvm-trend",
+      "type": "line",
+      "title": "Obligations by fiscal year",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "FY21",
+              496978036.7
+            ],
+            [
+              "FY22",
+              768916622.71
+            ],
+            [
+              "FY23",
+              303326971.62
+            ],
+            [
+              "FY24",
+              344280863.6
+            ],
+            [
+              "FY25",
+              186068599.27
+            ],
+            [
+              "FY26",
+              234381496.24
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Obligations grew 26.0% year over year, from $186M in FY2025 to $234M in FY2026 to date."
+    },
+    {
+      "id": "mvm-top-agencies",
+      "type": "bar",
+      "title": "Top 10 buying agencies, FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "Department of Homeland Security",
+              234388925.24
+            ],
+            [
+              "Department of Health and Human Services",
+              -7429
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Department of Homeland Security is MVM's largest federal customer, with $234M obligated (100.0% of the company's federal obligations)."
+    },
+    {
+      "id": "mvm-top-naics",
+      "type": "bar",
+      "title": "Top 10 markets (NAICS), FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "Security Guards and Patrol Services",
+              234388925.24
+            ],
+            [
+              "Emergency and Other Relief Services",
+              -7429
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Security Guards and Patrol Services is MVM's largest federal market, with $234M in obligations."
+    }
+  ],
+  "crossLinks": [
+    {
+      "label": "Department of Homeland Security contracts",
+      "href": "/insights/agency/department-of-homeland-security/"
+    },
+    {
+      "label": "Department of Health and Human Services contracts",
+      "href": "/insights/agency/department-of-health-and-human-services/"
+    },
+    {
+      "label": "NAICS 561612: Security Guards and Patrol Services",
+      "href": "/insights/naics/561612/"
+    }
+  ],
+  "tables": [
+    {
+      "title": "Largest awards, FY2026 to date",
+      "columns": [
+        "Rank",
+        "Award",
+        "Award Amount",
+        "Awarding Agency",
+        "Ends"
+      ],
+      "rows": [
+        [
+          1,
+          {
+            "text": "75ACF121C00023",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75ACF121C00023_7590_-NONE-_-NONE-/"
+          },
+          369516064.71,
+          "Department of Health and Human Services",
+          "2025-11-30"
+        ],
+        [
+          2,
+          {
+            "text": "70CDCR26FR0000053",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70CDCR26FR0000053_7012_70CDCR24D00000002_7012/"
+          },
+          182000000,
+          "Department of Homeland Security",
+          "2027-03-31"
+        ],
+        [
+          3,
+          {
+            "text": "70CDCR25FR0000026",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70CDCR25FR0000026_7012_70CDCR24D00000002_7012/"
+          },
+          159674812.23,
+          "Department of Homeland Security",
+          "2026-03-31"
+        ],
+        [
+          4,
+          {
+            "text": "70CDCR24FR0000026",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70CDCR24FR0000026_7012_70CDCR24D00000002_7012/"
+          },
+          142022108.11,
+          "Department of Homeland Security",
+          "2025-03-31"
+        ],
+        [
+          5,
+          {
+            "text": "70CDCR23C00000001",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70CDCR23C00000001_7012_-NONE-_-NONE-/"
+          },
+          8628945.17,
+          "Department of Homeland Security",
+          "2025-09-12"
+        ],
+        [
+          6,
+          {
+            "text": "70CDCR26FR0000052",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70CDCR26FR0000052_7012_70CDCR24D00000002_7012/"
+          },
+          6446000,
+          "Department of Homeland Security",
+          "2027-03-19"
+        ]
+      ]
+    },
+    {
+      "title": "Contracts expiring in the next 12 months",
+      "columns": [
+        "Award",
+        "Awarding Agency",
+        "Award Value",
+        "Ends"
+      ],
+      "rows": [
+        [
+          {
+            "text": "70CDCR26FR0000053",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70CDCR26FR0000053_7012_70CDCR24D00000002_7012/"
+          },
+          "Department of Homeland Security",
+          182000000,
+          "2027-03-31"
+        ],
+        [
+          {
+            "text": "70CDCR26FR0000052",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70CDCR26FR0000052_7012_70CDCR24D00000002_7012/"
+          },
+          "Department of Homeland Security",
+          6446000,
+          "2027-03-19"
+        ]
+      ]
+    },
+    {
+      "title": "Registration details",
+      "columns": [
+        "Detail",
+        "Registration"
+      ],
+      "rows": [
+        [
+          "Unique Entity ID (UEI)",
+          "ZHJYA5NN32Z5"
+        ],
+        [
+          "Headquarters",
+          "Ashburn, VA"
+        ],
+        [
+          "Business types",
+          "Category business; Corporate entity not tax exempt; Hispanic american owned business; Minority owned business; Other than small business; Special designations"
+        ]
+      ]
+    }
+  ],
+  "narrative": {
+    "intro": "MVM appears as an active federal contractor in FY2026 to date with $234M in contract obligations. The company received 6 awards so far, with an average award size of $39.1M, and obligations are up 26.0% year over year. The Department of Homeland Security is the dominant buyer, providing $234M in obligations this fiscal year. MVM’s spending is concentrated in Security Guards and Patrol Services, which accounts for $234M of obligations in FY2026 to date. Historical obligations by fiscal year are: FY21 $497M, FY22 $769M, FY23 $303M, FY24 $344M, FY25 $186M, FY26 $234M. Current-year totals are partial because the fiscal year is still in progress. The page treats the listed figures as contract obligations except where tables label award-value figures as total contract values. This snapshot highlights where MVM’s federal revenue is coming from and how that revenue sits against prior fiscal years.",
+    "sections": [
+      {
+        "heading": "Who are MVM's top buyers this fiscal year?",
+        "body": "The Department of Homeland Security obligated $234M to MVM in FY2026 to date. The Department of Health and Human Services is also listed among the buying agencies for FY2026 to date. Those two agency entries are the top buying agencies shown for the current fiscal year."
+      },
+      {
+        "heading": "What services is MVM selling to the federal government?",
+        "body": "Security Guards and Patrol Services generated $234M in obligations for MVM in FY2026 to date. The company’s current award profile includes 6 awards with an average award size of $39.1M."
+      }
+    ]
+  },
+  "faq": [
+    {
+      "q": "How much does MVM make from federal contracts?",
+      "a": "MVM makes $234M from federal contracts in FY2026 to date. The company received 6 awards so far this fiscal year, with an average award size of $39.1M, and obligations are up 26.0% year over year."
+    },
+    {
+      "q": "Which agencies buy from MVM?",
+      "a": "The Department of Homeland Security buys most from MVM, having obligated $234M in FY2026 to date. The Department of Health and Human Services is also listed as a buying agency on the page for FY2026 to date."
+    },
+    {
+      "q": "What does MVM sell to the government?",
+      "a": "MVM sells security and related services to the government, with Security Guards and Patrol Services accounting for $234M in obligations in FY2026 to date. The company’s current award profile includes 6 awards with an average award size of $39.1M."
+    },
+    {
+      "q": "Which MVM contracts are expiring soon?",
+      "a": "The page does not provide a labeled list of expiring contracts. The available tables show obligations by fiscal year and top markets and agencies for FY2026 to date, including the six awards totaling $234M in obligations."
+    }
+  ],
+  "related": [
+    {
+      "label": "Expiring federal contracts: recompete watch",
+      "href": "/insights/expiring-federal-contracts/"
+    },
+    {
+      "label": "DLT Solutions federal contracts",
+      "href": "/insights/vendor/dlt-solutions/"
+    },
+    {
+      "label": "Undersea Sensor Systems federal contracts",
+      "href": "/insights/vendor/undersea-sensor-systems/"
+    },
+    {
+      "label": "South National for Logistics federal contracts",
+      "href": "/insights/vendor/south-national-for-logistics/"
+    },
+    {
+      "label": "Carrington Mortgage Services federal contracts",
+      "href": "/insights/vendor/carrington-mortgage-services/"
+    },
+    {
+      "label": "Detyens Shipyards federal contracts",
+      "href": "/insights/vendor/detyens-shipyards/"
+    },
+    {
+      "label": "Applied Research Solutions federal contracts",
+      "href": "/insights/vendor/applied-research-solutions/"
+    }
+  ],
+  "sources": [
+    {
+      "label": "USAspending.gov award data",
+      "href": "https://www.usaspending.gov"
+    }
+  ]
+}
