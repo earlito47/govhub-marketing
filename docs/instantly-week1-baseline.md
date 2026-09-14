@@ -66,9 +66,13 @@ Every email carries `Reply "no" and I will not reach out again.` All ten replies
 were that word or a close variant. The notice is required in every commercial
 message (CAN-SPAM 15 USC 7704(a)(5)(A)(ii)) and is not removable, but in week 1
 it sat directly beneath the CTA, where it competed with the ask and won every
-time. It is also cheaper to answer than any real CTA, and with `stop_on_reply`
-and `stop_for_company` both true, one person's reflex permanently burns every
-contact at that company. Ten companies were spent this way for zero information.
+time. It is also cheaper to answer than any real CTA, so ten contacts were
+spent for zero information.
+
+`stop_for_company` was true for all of week 1 but, checked after the fact, cost
+nothing: none of the ten repliers worked at a company carrying another contact
+on the list. It was a latent exposure rather than a realised one. It is off from
+week 2 regardless, and the reasoning is under "What changed" below.
 
 ### 2. Two of the three Wave 1 segments were sent a premise that does not describe them
 
@@ -194,8 +198,27 @@ until someone runs `--sync`.
 | CTA is a question, not a meeting ask | yes | yes | yes | 471 meeting asks produced 0 acceptances; a process question can be answered without commitment |
 | Opt-out moved below the signature | yes | yes | yes | it sat directly under the CTA and outdrew it 10 to 0 |
 | Tool mentioned in email 2 | yes | yes | yes | the lowest-friction action was only in email 3 |
-| List-Unsubscribe header on | yes | yes | yes | reverses the 2026-09-03 decision, on request 2026-09-12 |
+| `stop_for_company` off | yes | yes | yes | a "no" is one person's answer, not their employer's |
 | `daily_max_leads` | 40 to **20** | 20 | 20 to **10** | validate new copy before spending 1,045 untouched leads |
+
+**List-Unsubscribe stays off.** It was briefly set true on 2026-09-12 and set
+back to false on 2026-09-14 as a standing decision: an unsubscribe control makes
+the message read as bulk mail rather than as one person writing to another,
+which is the premise the sequence depends on. This is settled and should not be
+re-proposed. The CAN-SPAM notice lives in every body and the mechanism is the
+monitored reply address it points at, so neither depends on the header.
+
+**`stop_for_company` off** matters more than the count suggests. Grouping is by
+`company_domain`, and the only multi-contact companies on this list are the
+Alaska Native and tribal 8(a) holding companies, which are also its biggest
+serial bidders: `chenega.com` carries 8 contacts in campaign A alone and 10
+across all three, `koniag-gs.com` 9, `ahtna.net` 4, with `goldbeltfed.com`,
+`chickasaw.com` and `miamifed.com` at 3 each. 25 leads sit behind another
+contact at the same company within their own campaign. With the setting on, one
+BD person at Chenega saying no retired the other seven, who work different
+subsidiaries and different portfolios. Free-provider leads were never affected:
+`push-leads.mjs` writes `company_domain` as the full address for them, so each
+gmail lead is already its own company.
 
 **B is the control.** It was the only segment whose premise matched its audience
 and the only one that drew replies, so its opener and subjects are untouched. It

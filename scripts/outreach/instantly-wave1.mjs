@@ -380,28 +380,58 @@ function payload(c) {
     stop_on_reply: true, // structural opt-out safety: any reply halts the sequence,
     // so no missed removal keyword can cause a post-opt-out send
     stop_on_auto_reply: false, // an out-of-office should not burn the lead
-    stop_for_company: true, // one conversation per company at a time
+    // A "no" is that person's answer, not their employer's. Set false on
+    // request 2026-09-14 and standing.
+    //
+    // Grouping is by the lead's company_domain. That makes the exposure small
+    // in count and large in value, because the only multi-contact companies on
+    // this list are the Alaska Native and tribal 8(a) holding companies, which
+    // is to say the biggest serial bidders on it:
+    //
+    //   chenega.com      8 contacts in A alone (10 across A, B and C)
+    //   koniag-gs.com    9 contacts in A
+    //   ahtna.net        2 in A, 4 across all three
+    //   goldbeltfed.com, chickasaw.com, miamifed.com   3 each
+    //
+    // 25 leads sit behind another contact at the same company within their own
+    // campaign. With this true, one BD person at Chenega replying "no" retires
+    // the other seven, who work different subsidiaries and different contract
+    // portfolios and never saw the mail. These firms carry the largest
+    // obligated totals in the segment, so the setting was costing the most
+    // where it could least afford to.
+    //
+    // Free-provider leads are NOT affected either way: push-leads.mjs writes
+    // company_domain as the full address for them (jdscheiber@gmail.com, not
+    // gmail.com), so each is already its own company and no gmail reply has
+    // ever suppressed another gmail lead.
+    //
+    // stop_on_reply stays true, so the person who answered still exits their
+    // own sequence immediately and cannot be mailed again by it.
+    stop_for_company: false,
     link_tracking: false, // would rewrite the email 3 link through a 6-day-old tracking domain
     open_tracking: false, // the pixel is a remote image from a no-reputation subdomain,
     // and it would put an image into the supposedly text-only email 1
     text_only: true,
     first_email_text_only: true,
-    // RFC 8058 List-Unsubscribe. Turned OFF on request 2026-09-03; turned back
-    // ON on request 2026-09-12 after the week 1 review. Recording both so the
-    // reversal is not mistaken for drift.
+    // RFC 8058 List-Unsubscribe: OFF, and this is a SETTLED PREFERENCE, not an
+    // open question. Turned off on request 2026-09-03, turned on 2026-09-12,
+    // turned off again and made standing on 2026-09-14: the account holder does
+    // not want an unsubscribe header on this programme in any form, because an
+    // unsubscribe control makes the message read as bulk mail rather than as
+    // one person writing to another, which is the premise the whole sequence
+    // depends on.
     //
-    // It is a header rather than visible text, so recipients meet it as Gmail's
-    // and Outlook's own one-click "Unsubscribe" control. With it off, the only
-    // exits left to someone who will not reply are ignoring the mail or Report
-    // Spam, and a spam complaint is the most damaging signal available to a
-    // domain this young. Week 1 also showed the six influencer campaigns
-    // running with it true and taking no measurable reply-rate cost, while
-    // wave 1 ran without it at four times the volume.
+    // Do not re-propose this. It has been raised three times and answered three
+    // times. The next person to read a deliverability article about RFC 8058
+    // should change this line only if the account holder asks for it directly.
     //
-    // This does not replace the opt-out notice in every body: CAN-SPAM 15 USC
-    // 7704(a)(5)(A)(ii) wants the notice in the message, and a header is not
-    // the message. Both mechanisms now stand.
-    insert_unsubscribe_header: true,
+    // Compliance position, stated once so it does not have to be re-derived:
+    // the opt-out NOTICE required by CAN-SPAM 15 USC 7704(a)(5)(A)(ii) lives in
+    // the body of every step and is unaffected by this setting, and the opt-out
+    // MECHANISM required by 7704(a)(3) is the monitored reply address the
+    // notice points at. The header is a third thing on top of both, and its
+    // absence does not put either at risk.
+    insert_unsubscribe_header: false,
     prioritize_new_leads: false, // finish sequences in flight before starting new leads
     match_lead_esp: false, // every mailbox is the same provider, so this buys nothing
     allow_risky_contacts: false,
