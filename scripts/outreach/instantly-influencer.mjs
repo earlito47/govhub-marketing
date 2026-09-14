@@ -1040,7 +1040,15 @@ function assertStored(c, sent) {
   });
   const mbx = c.email_list || [];
   if (mbx.length !== sent.email_list.length) problems.push(`mailboxes ${mbx.length} != ${sent.email_list.length}`);
-  if (c.status !== 0 && c.status !== 2) problems.push(`status ${c.status} is neither Draft(0) nor Paused(2)`);
+  // Was "must be Draft(0) or Paused(2)", which was right while these campaigns
+  // had never sent and became a false alarm when they went live on 2026-09-08.
+  // --sync never sets status (payload() carries no status field), so the useful
+  // assertion is that the value is one the programme recognises, not that the
+  // campaign is stopped. Same change as instantly-wave1.mjs, same reason: a
+  // check that fails on healthy state trains people to ignore it.
+  if (![0, 1, 2].includes(c.status)) {
+    problems.push(`unexpected status ${c.status} (expected Draft 0, Active 1 or Paused 2)`);
+  }
   return problems;
 }
 

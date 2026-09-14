@@ -572,7 +572,7 @@ async function findByName(name) {
 
 // Assert the copy actually survived the server-side sanitizer. A 200 on create
 // does not mean the body was stored: bare text nodes come back stripped.
-function assertStored(c, sent) {
+function assertStored(c, sent, expectStatus) {
   const problems = [];
   const steps = c.sequences?.[0]?.steps || [];
   const want = sent.sequences[0].steps;
@@ -589,7 +589,22 @@ function assertStored(c, sent) {
   });
   const mbx = c.email_list || [];
   if (mbx.length !== sent.email_list.length) problems.push(`mailboxes ${mbx.length} != ${sent.email_list.length}`);
-  if (c.status !== 0 && c.status !== 2) problems.push(`status ${c.status} is neither Draft(0) nor Paused(2)`);
+  // Status. The property worth protecting is that --sync never starts or stops
+  // a campaign. payload() carries no status field, so any movement here means
+  // the API did something that was not asked for.
+  //
+  // Before launch that was expressed as "must be Draft(0) or Paused(2)", which
+  // was correct while nothing had ever sent and became a false alarm the moment
+  // wave 1 went live on 2026-09-07: every --sync and --verify then reported
+  // three failures for the campaigns doing exactly what they were started to
+  // do, which is the kind of noise that gets a real failure ignored. It now
+  // asserts the status did not MOVE, which is the same guarantee and survives
+  // the campaign running.
+  if (expectStatus !== null && expectStatus !== undefined) {
+    if (c.status !== expectStatus) problems.push(`status moved ${expectStatus} -> ${c.status} during sync`);
+  } else if (![0, 1, 2].includes(c.status)) {
+    problems.push(`unexpected status ${c.status} (expected Draft 0, Active 1 or Paused 2)`);
+  }
   return problems;
 }
 
@@ -616,9 +631,9 @@ if (arg === '--check') {
       console.log(`created ${c.key}  ${id}  status=${r.status}`);
     }
     const stored = await api('GET', `/campaigns/${id}`);
-    const problems = assertStored(stored, body);
+    const problems = assertStored(stored, body, existing ? existing.status : 0);
     if (problems.length) { bad++; console.log(`  FAIL ${problems.join('; ')}`); }
-    else console.log(`  ok   copy stored intact, status=${stored.status} (0=Draft), ${(stored.email_list || []).length} mailboxes`);
+    else console.log(`  ok   copy stored intact, status unchanged at ${stored.status} (0=Draft, 1=Active, 2=Paused), ${(stored.email_list || []).length} mailboxes`);
   }
   process.exit(bad === 0 ? 0 : 1);
 } else if (arg === '--mailbox-limits') {
