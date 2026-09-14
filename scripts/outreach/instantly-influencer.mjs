@@ -189,17 +189,23 @@ const MAILBOXES = {
 // matching the token alone would drop the most interested people. Match the
 // phrasing, or read the replies. stop_on_reply is true either way.
 //
-// What also stands: insert_unsubscribe_header is deliberately left true.
-// That is the RFC 8058 List-Unsubscribe header, which Gmail and Outlook render
-// as their own Unsubscribe control. It is a header, not body copy, so it is
-// invisible in the message, costs nothing in reply rate, and keeps a real
-// opt-out mechanism (7704(a)(3)) in place. It is also the single best
-// protection a three-week-old sending domain has: without it, the only exit a
-// recipient has is the Report Spam button, and a spam complaint costs far more
-// reputation than an unsubscribe.
+// What changed 2026-09-14: insert_unsubscribe_header is now FALSE, on request,
+// matching wave 1, and it is a standing decision rather than an open question.
+// An unsubscribe control makes the message read as bulk mail rather than as one
+// person writing to another, and that premise matters more here than in wave 1:
+// C1, C2, C3 and C6 all go to professional communicators who vet pitches for a
+// living. Do not re-propose it.
 //
-// Setting insert_unsubscribe_header to false would remove the mechanism as
-// well as the notice. The guardrail below fails the build if anyone does.
+// This paragraph used to argue the opposite, and the reason it was right then
+// and wrong now is worth keeping. It was written while the visible opt-out line
+// had been removed from the bodies, when the header really was the only
+// mechanism left and turning it off would have meant no opt-out at all. The
+// line returned on 2026-09-04. All 24 steps carry it today, asserted per step
+// by the opt-out guardrail, so the notice (7704(a)(5)(A)(ii)) and the mechanism
+// it points at (7704(a)(3)) both survive without the header.
+//
+// The guardrail below was inverted to match: it now fails the build if the
+// header is switched back on.
 
 // ===========================================================================
 // C1  Creators and influencers
@@ -726,16 +732,45 @@ function payload(c) {
     random_wait_max: 5,
     stop_on_reply: true, // structural opt-out safety: any reply halts the sequence
     stop_on_auto_reply: false, // an out-of-office should not burn a relationship lead
-    stop_for_company: true, // one conversation per organization at a time. This is
-    // the backstop for the eight separate people at one association; the export
-    // caps at one contact per org, and this catches what the cap misses.
+    // A "no" is that person's answer, not their organization's. Set false on
+    // request 2026-09-14, matching wave 1, and standing.
+    //
+    // This was the backstop for several people at one association, on the
+    // reasoning that the export caps at one contact per org. The cap does not
+    // in fact hold: C5 carries 13 domains with more than one contact and 23
+    // leads behind another, and the shape of them is why the backstop is wrong
+    // here. washingtonapex.org is pierce@, spokane@ and thurston@, which are
+    // three separate county offices serving different regions. uwf.edu,
+    // ohio.edu, tennessee.edu and unomaha.edu are three counselors each at
+    // different centers. Retiring all of them because one declined treats a
+    // shared mail domain as a shared decision, which for a university system
+    // or a statewide APEX network it is not.
+    //
+    // Watch it on C5 specifically. That segment's whole risk is that a bad
+    // impression travels across a network whose members know each other, so if
+    // a decline is ever followed by a complaint from the same org, revisit
+    // this for C5 alone rather than for the programme.
+    stop_for_company: false,
     link_tracking: false,
     open_tracking: false, // Apple MPP and Microsoft prefetch fabricate opens, and
     // a tracking pixel is a remote image in a supposedly text-only email
     text_only: true,
     first_email_text_only: true,
-    insert_unsubscribe_header: true, // RFC 8058. A non-destructive exit instead
-    // of the Report Spam button
+    // RFC 8058 List-Unsubscribe: OFF, on request 2026-09-14, matching wave 1,
+    // and standing. An unsubscribe control makes the message read as bulk mail
+    // rather than as one person writing to another, which is the premise these
+    // partnership pitches depend on more than wave 1 does: every recipient in
+    // C1, C2, C3 and C6 is a professional communicator who vets pitches for a
+    // living. Do not re-propose this.
+    //
+    // What made this safe to turn off: when the header guardrail below was
+    // written, the visible opt-out line had been removed from the bodies and
+    // the header genuinely was the only mechanism left. The line came back on
+    // 2026-09-04 and all 24 steps carry it now, verified by the per-step
+    // opt-out guardrail above. So the CAN-SPAM notice (7704(a)(5)(A)(ii)) is in
+    // every body and the mechanism (7704(a)(3)) is the monitored reply address
+    // it points at, exactly as in wave 1.
+    insert_unsubscribe_header: false,
     prioritize_new_leads: false,
     match_lead_esp: false,
     allow_risky_contacts: false,
@@ -882,17 +917,23 @@ function check() {
   const allSubjects = CAMPAIGNS.flatMap((c) => c.subjects);
   note(new Set(allSubjects).size === allSubjects.length, 'no subject line is reused across campaigns', `${allSubjects.length} total`);
 
-  // With the visible opt-out line gone from the bodies, the List-Unsubscribe
-  // header is the ONLY remaining opt-out mechanism in these campaigns. Losing
-  // it would take the sequences from "no opt-out notice" to "no opt-out at
-  // all", and would remove the one non-destructive exit that keeps a
-  // three-week-old domain's complaint rate down. Hard failure, not a report.
+  // Inverted 2026-09-14. This guardrail used to require the List-Unsubscribe
+  // header, on the reasoning that with the visible opt-out line gone from the
+  // bodies it was the ONLY opt-out mechanism left. That premise expired when
+  // the line came back on 2026-09-04: all 24 steps carry it now, which the
+  // per-step opt-out check above proves on every run. The header is off by
+  // standing decision, so the guardrail now holds that decision in place
+  // instead of the one it replaced.
+  //
+  // The thing actually worth protecting is the body notice, and that is
+  // asserted per step above. This check only stops the header being switched
+  // back on by a well-meaning edit.
   const payloads = CAMPAIGNS.map((c) => payload(c));
-  const noHeader = payloads.filter((p) => p.insert_unsubscribe_header !== true).map((p) => p.name);
+  const withHeader = payloads.filter((p) => p.insert_unsubscribe_header !== false).map((p) => p.name);
   note(
-    noHeader.length === 0,
-    'every campaign keeps the List-Unsubscribe header',
-    noHeader.length ? `MISSING ON: ${noHeader.join(', ')}` : '(the only opt-out mechanism left in these campaigns)'
+    withHeader.length === 0,
+    'no campaign carries the List-Unsubscribe header',
+    withHeader.length ? `PRESENT ON: ${withHeader.join(', ')}` : '(standing decision 2026-09-14; the opt-out notice lives in every body)'
   );
 
   const allMbx = Object.values(MAILBOXES).flat();
