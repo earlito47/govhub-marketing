@@ -142,11 +142,13 @@ const MAILBOXES = {
 const EMAIL_2_BODY = [
   '{{RANDOM|Following up on my note about|Circling back on}} turning an RFP into a compliance matrix and a first draft.',
   '',
-  '{{RANDOM|Want me to send a short example on a live solicitation?|Worth putting together a quick example on a real solicitation?}}',
+  '{{RANDOM|There is a matrix builder on our site that runs without an account|We put a matrix builder on the site that runs without an account}}, {{RANDOM|so you can judge the output before talking to anyone|so the output speaks before I do}}.',
   '',
-  '{{RANDOM|If I am barking up the wrong tree, reply "no" and I will not reach out again.|If this is not relevant, reply "no" and you will not hear from me again.}}',
+  '{{RANDOM|Want me to point you at it?|Worth a look?}}',
   '',
   '{{accountSignature}}',
+  '',
+  '{{RANDOM|If I am barking up the wrong tree, reply "no" and I will not reach out again.|If this is not relevant, reply "no" and you will not hear from me again.}}',
 ];
 
 // Email 3, day 4 after email 2 (so day 7), same thread. The info dump.
@@ -162,26 +164,33 @@ const EMAIL_3_BODY = [
   '',
   'There is a working compliance matrix builder on our site you can try without creating an account: https://govhub.online',
   '',
-  '{{RANDOM|If the timing is off, that is fine.|If now is not the time, all good.}} {{RANDOM|Reply "no" and I will not reach out again.|Reply "no" and you will not hear from me again.}}',
+  '{{RANDOM|If the timing is off, that is fine.|If now is not the time, all good.}}',
   '',
   '{{accountSignature}}',
+  '',
+  '{{RANDOM|Reply "no" and I will not reach out again.|Reply "no" and you will not hear from me again.}}',
 ];
 
 // ---- Campaign A: serial_bidder -------------------------------------------
-// They bid constantly. The pain is throughput, review nights, and compliance
-// slips on bids they should have won.
+// Rewritten 2026-09-12 on the week 1 result. These are not struggling small
+// primes: median obligated is $13.2M, 90.6% sit above $1M, and every one has
+// between 3 and 10 awards this year. Week 1 opened on small primes losing
+// winnable bids to compliance technicalities, which is not their experience,
+// and A returned the lowest reply rate of the three at 1.0% against B's 5.0%.
+// At this cadence the constraint is capacity: good solicitations get passed on
+// for want of hours, not for want of skill. See docs/instantly-week1-baseline.md.
 const A_EMAIL_1_BODY = [
-  '{{RANDOM|Hey|Hi}} {{firstName}}, {{RANDOM|noticed|saw}} {{companyName}} {{RANDOM|has been bidding|keeps showing up on}} federal work {{RANDOM|lately|this year}}.',
+  '{{RANDOM|Hey|Hi}} {{firstName}}, {{RANDOM|noticed|saw}} {{companyName}} {{RANDOM|has been winning federal work steadily|keeps landing federal work}} {{RANDOM|this year|all year}}.',
   '',
-  '{{RANDOM|Most|A lot of}} small primes {{RANDOM|we work with|I talk to}} {{RANDOM|lose winnable bids|walk away from good bids}} on compliance technicalities, not price. {{RANDOM|Someone|A proposal lead}} misses a Section L instruction at 11pm and {{RANDOM|the whole thing gets tossed|the bid is dead on arrival}}.',
+  '{{RANDOM|At that cadence the ceiling is usually capacity, not capability|Past a certain cadence the limit is hours, not capability}}. {{RANDOM|Solicitations worth bidding get passed on because nobody has the hours|Good solicitations get passed on because nobody has the week to spare}}.',
   '',
-  'We built GovHub so a small team can {{RANDOM|hand it the RFP|upload the RFP}} and get {{RANDOM|a compliance matrix and a working draft back|a compliance matrix plus a first draft}} {{RANDOM|the same day|in hours, not days}}.',
+  'GovHub {{RANDOM|turns an RFP into a compliance matrix and a working draft|reads the RFP, builds the compliance matrix, and drafts the sections}}, so {{RANDOM|the same team covers more of the pipeline|a team covers more pipeline without adding headcount}}.',
   '',
-  '{{RANDOM|Worth a quick look?|Open to a look on a live RFP?|Want me to send a 2-minute example?}}',
-  '',
-  'Reply "no" and I will not reach out again.',
+  '{{RANDOM|How many do you pass on in a month for capacity?|Who carries the proposal load for you now, in-house or outside?}}',
   '',
   '{{accountSignature}}',
+  '',
+  'Reply "no" and I will not reach out again.',
 ];
 
 // ---- Campaign B: new_prime ----------------------------------------------
@@ -191,6 +200,15 @@ const A_EMAIL_1_BODY = [
 // The doc's opener nested {{companyName}} inside a RANDOM block and fed a
 // singular subject ("the founder") into plural verbs ("still write"), which
 // broke half of this campaign's renders. Both are restructured here.
+//
+// The premise below is deliberately UNCHANGED for week 2. B was the only wave 1
+// segment whose opener was true of its audience (1 to 2 recent awards, median
+// obligated $695,935, last award inside five months) and the only one that drew
+// human replies, at 5.0% against A's 1.0%. Rewriting the one thing that worked
+// would leave nothing to compare A and C against, so B keeps its copy and moves
+// only on the two changes applied programme-wide: the CTA is now a question
+// about their process rather than a request for a meeting, and the opt-out sits
+// below the signature instead of under the ask.
 const B_EMAIL_1_BODY = [
   '{{RANDOM|Hey|Hi}} {{firstName}}, saw {{companyName}} {{RANDOM|recently landed federal work|picked up federal work recently}}.',
   '',
@@ -198,29 +216,45 @@ const B_EMAIL_1_BODY = [
   '',
   'GovHub {{RANDOM|reads the RFP, builds the compliance matrix, and drafts the sections|turns an RFP into a compliance matrix and a working draft}} so you can {{RANDOM|chase more of the right bids|bid more without burning out}}.',
   '',
-  '{{RANDOM|Open to a look?|Want a 2-minute example on a solicitation you are watching?}}',
-  '',
-  'Reply "no" and I will not reach out again.',
+  '{{RANDOM|Who writes your proposals today, in-house or a consultant?|Is the proposal work in-house for you, or outsourced?}}',
   '',
   '{{accountSignature}}',
+  '',
+  'Reply "no" and I will not reach out again.',
 ];
 
 // ---- Campaign C: registered_no_awards -----------------------------------
-// Colder intent, expect lower reply rates. Run only if you need volume beyond
-// A and B. The doc's opener told the prospect the research turned up nothing
-// they had won, which is a status dig on the first line; reframed forward.
+// Rewritten 2026-09-12, and the segment name is the trap that caused it.
+// "registered_no_awards" means no award in the RECENT window, not no award
+// ever. Median obligated inside this campaign is $1,088,211, 51% sit at or
+// above $1M, one lead carries $1.84B, and all 448 have a real award history
+// ending around 2023. These are LAPSED contractors, not first-time bidders.
+//
+// Week 1 told them "what stops most firms from their first win" and offered to
+// help them "submit like a big one without a proposal shop". A recipient with
+// $7.2M in federal obligations replied "NO" in capitals. The premise was false,
+// and a false premise reads as not having done the homework, which is worse
+// than a weak offer because it cannot be recovered later in the thread.
+//
+// Reframed as re-engagement: they already know how to win federal work, they
+// stopped. Ask what changed rather than explain their own business to them.
+// See docs/instantly-week1-baseline.md.
+//
+// Worth confirming before leaning harder on this angle: C's award dates sit in
+// a tight 2023 band exactly three years before A's and B's, which is either
+// genuine dormancy or an artifact in the source pipeline.
 const C_EMAIL_1_BODY = [
-  '{{RANDOM|Hey|Hi}} {{firstName}}, {{RANDOM|saw|noticed}} {{companyName}} is registered in SAM and {{RANDOM|looks set up to bid|looks ready to go after prime work}}.',
+  '{{RANDOM|Hey|Hi}} {{firstName}}, {{RANDOM|saw|noticed}} {{companyName}} {{RANDOM|has federal awards on the record but nothing recent|won federal work a few years back, nothing lately}}.',
   '',
-  '{{RANDOM|The honest blocker for most first-time primes|What stops most firms from their first win}} is not capability. It is {{RANDOM|the proposal itself|getting a compliant proposal out the door}}. {{RANDOM|Miss one instruction and the bid is tossed unread.|One missed requirement and it never gets scored.}}',
+  '{{RANDOM|Usually that gap is not a decision anyone made|In my experience that gap is rarely a decision}}. {{RANDOM|The pursuits just stopped being worth the nights they cost|Bidding stopped being worth the nights it cost}}.',
   '',
-  'GovHub reads the RFP, builds the compliance matrix, and drafts the sections, so {{RANDOM|a small team can submit like a big one|you can get a clean bid in on time without a proposal shop}}.',
+  'GovHub reads the RFP, builds the compliance matrix, and drafts the sections, so {{RANDOM|coming back does not mean staffing a proposal team|getting back in does not mean hiring for it}}.',
   '',
-  '{{RANDOM|Want to see it on a live solicitation?|Want me to walk it through your first bid?}}',
-  '',
-  'Reply "no" and I will not reach out again.',
+  '{{RANDOM|Still bidding, or is federal on hold for now?|Are you still chasing federal, or has that gone quiet?}}',
   '',
   '{{accountSignature}}',
+  '',
+  'Reply "no" and I will not reach out again.',
 ];
 
 // Subject variants are real A/B variants, not spintax, so Instantly reports
@@ -255,12 +289,17 @@ const CAMPAIGNS = [
     name: 'GovHub Wave 1 - A serial_bidder',
     subjects: [
       '{{companyName}} proposals', // blank -> "proposals"
-      'federal bids',
-      'Section L compliance',
+      'bid capacity',
+      'the ones you pass on',
     ],
     email1: A_EMAIL_1_BODY,
     daily_limit: 120, // 6 mailboxes x 20/day
-    daily_max_leads: 40,
+    // Halved from 40 for week 2 (2026-09-12). A has 697 untouched leads and the
+    // copy above is new and unvalidated; week 1 spent 200 of them on a premise
+    // that did not describe the segment. 20/day is roughly 100 contacts a week,
+    // enough to see whether positives exist at all without burning the rest of
+    // the list to find out. Restore to 40 once a week 2 read exists.
+    daily_max_leads: 20,
   },
   {
     key: 'B',
@@ -277,14 +316,18 @@ const CAMPAIGNS = [
   {
     key: 'C',
     name: 'GovHub Wave 1 - C registered_no_awards',
+    // "first federal bid" and "getting the first bid out" carried the same
+    // false premise as the old body and are replaced with it.
     subjects: [
-      '{{companyName}} bids', // blank -> "bids"
-      'first federal bid',
-      'getting the first bid out',
+      '{{companyName}} federal work', // blank -> "federal work"
+      'back to federal bidding',
+      'the pause on federal work',
     ],
     email1: C_EMAIL_1_BODY,
     daily_limit: 60, // 3 mailboxes x 20/day
-    daily_max_leads: 20,
+    // Halved from 20 for week 2 (2026-09-12), same reasoning as A: 348 leads
+    // are still untouched and the re-engagement angle is unproven.
+    daily_max_leads: 10,
   },
 ];
 
@@ -337,19 +380,57 @@ function payload(c) {
     stop_on_reply: true, // structural opt-out safety: any reply halts the sequence,
     // so no missed removal keyword can cause a post-opt-out send
     stop_on_auto_reply: false, // an out-of-office should not burn the lead
-    stop_for_company: true, // one conversation per company at a time
+    // A "no" is that person's answer, not their employer's. Set false on
+    // request 2026-09-14 and standing.
+    //
+    // Grouping is by the lead's company_domain. That makes the exposure small
+    // in count and large in value, because the only multi-contact companies on
+    // this list are the Alaska Native and tribal 8(a) holding companies, which
+    // is to say the biggest serial bidders on it:
+    //
+    //   chenega.com      8 contacts in A alone (10 across A, B and C)
+    //   koniag-gs.com    9 contacts in A
+    //   ahtna.net        2 in A, 4 across all three
+    //   goldbeltfed.com, chickasaw.com, miamifed.com   3 each
+    //
+    // 25 leads sit behind another contact at the same company within their own
+    // campaign. With this true, one BD person at Chenega replying "no" retires
+    // the other seven, who work different subsidiaries and different contract
+    // portfolios and never saw the mail. These firms carry the largest
+    // obligated totals in the segment, so the setting was costing the most
+    // where it could least afford to.
+    //
+    // Free-provider leads are NOT affected either way: push-leads.mjs writes
+    // company_domain as the full address for them (jdscheiber@gmail.com, not
+    // gmail.com), so each is already its own company and no gmail reply has
+    // ever suppressed another gmail lead.
+    //
+    // stop_on_reply stays true, so the person who answered still exits their
+    // own sequence immediately and cannot be mailed again by it.
+    stop_for_company: false,
     link_tracking: false, // would rewrite the email 3 link through a 6-day-old tracking domain
     open_tracking: false, // the pixel is a remote image from a no-reputation subdomain,
     // and it would put an image into the supposedly text-only email 1
     text_only: true,
     first_email_text_only: true,
-    // RFC 8058 List-Unsubscribe. Turned OFF on request 2026-09-03. This is a
-    // header rather than visible text, so recipients meet it as Gmail's and
-    // Outlook's one-click "Unsubscribe" control; with it off, the only exits
-    // left to someone who will not reply are ignoring the mail or Report Spam,
-    // and a spam complaint is the most damaging signal available to a domain
-    // this young. The trade was put to the account holder with that stated and
-    // this is the answer. The opt-out notice in every body is unaffected.
+    // RFC 8058 List-Unsubscribe: OFF, and this is a SETTLED PREFERENCE, not an
+    // open question. Turned off on request 2026-09-03, turned on 2026-09-12,
+    // turned off again and made standing on 2026-09-14: the account holder does
+    // not want an unsubscribe header on this programme in any form, because an
+    // unsubscribe control makes the message read as bulk mail rather than as
+    // one person writing to another, which is the premise the whole sequence
+    // depends on.
+    //
+    // Do not re-propose this. It has been raised three times and answered three
+    // times. The next person to read a deliverability article about RFC 8058
+    // should change this line only if the account holder asks for it directly.
+    //
+    // Compliance position, stated once so it does not have to be re-derived:
+    // the opt-out NOTICE required by CAN-SPAM 15 USC 7704(a)(5)(A)(ii) lives in
+    // the body of every step and is unaffected by this setting, and the opt-out
+    // MECHANISM required by 7704(a)(3) is the monitored reply address the
+    // notice points at. The header is a third thing on top of both, and its
+    // absence does not put either at risk.
     insert_unsubscribe_header: false,
     prioritize_new_leads: false, // finish sequences in flight before starting new leads
     match_lead_esp: false, // every mailbox is the same provider, so this buys nothing
@@ -491,7 +572,7 @@ async function findByName(name) {
 
 // Assert the copy actually survived the server-side sanitizer. A 200 on create
 // does not mean the body was stored: bare text nodes come back stripped.
-function assertStored(c, sent) {
+function assertStored(c, sent, expectStatus) {
   const problems = [];
   const steps = c.sequences?.[0]?.steps || [];
   const want = sent.sequences[0].steps;
@@ -508,7 +589,22 @@ function assertStored(c, sent) {
   });
   const mbx = c.email_list || [];
   if (mbx.length !== sent.email_list.length) problems.push(`mailboxes ${mbx.length} != ${sent.email_list.length}`);
-  if (c.status !== 0 && c.status !== 2) problems.push(`status ${c.status} is neither Draft(0) nor Paused(2)`);
+  // Status. The property worth protecting is that --sync never starts or stops
+  // a campaign. payload() carries no status field, so any movement here means
+  // the API did something that was not asked for.
+  //
+  // Before launch that was expressed as "must be Draft(0) or Paused(2)", which
+  // was correct while nothing had ever sent and became a false alarm the moment
+  // wave 1 went live on 2026-09-07: every --sync and --verify then reported
+  // three failures for the campaigns doing exactly what they were started to
+  // do, which is the kind of noise that gets a real failure ignored. It now
+  // asserts the status did not MOVE, which is the same guarantee and survives
+  // the campaign running.
+  if (expectStatus !== null && expectStatus !== undefined) {
+    if (c.status !== expectStatus) problems.push(`status moved ${expectStatus} -> ${c.status} during sync`);
+  } else if (![0, 1, 2].includes(c.status)) {
+    problems.push(`unexpected status ${c.status} (expected Draft 0, Active 1 or Paused 2)`);
+  }
   return problems;
 }
 
@@ -535,9 +631,9 @@ if (arg === '--check') {
       console.log(`created ${c.key}  ${id}  status=${r.status}`);
     }
     const stored = await api('GET', `/campaigns/${id}`);
-    const problems = assertStored(stored, body);
+    const problems = assertStored(stored, body, existing ? existing.status : 0);
     if (problems.length) { bad++; console.log(`  FAIL ${problems.join('; ')}`); }
-    else console.log(`  ok   copy stored intact, status=${stored.status} (0=Draft), ${(stored.email_list || []).length} mailboxes`);
+    else console.log(`  ok   copy stored intact, status unchanged at ${stored.status} (0=Draft, 1=Active, 2=Paused), ${(stored.email_list || []).length} mailboxes`);
   }
   process.exit(bad === 0 ? 0 : 1);
 } else if (arg === '--mailbox-limits') {

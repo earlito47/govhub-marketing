@@ -1,0 +1,860 @@
+{
+  "version": 1,
+  "label": "week1",
+  "window": {
+    "from": "2026-09-07",
+    "to": "2026-09-11"
+  },
+  "captured_at": "2026-09-12T21:25:02.270Z",
+  "definitions": {
+    "contacted": "unique leads that received a first touch (contacted_count)",
+    "sent": "total emails sent including follow-up steps (emails_sent_count)",
+    "replies_human": "reply_count, which excludes auto-replies",
+    "replies_auto": "reply_count_automatic (out-of-office and similar)",
+    "positive": "leads with lt_interest_status >= 1 (interested or better)",
+    "reply_rate_pct": "replies_human / contacted, NOT over sent"
+  },
+  "campaigns": {
+    "A": {
+      "id": "31fc2282-4153-42f9-b8d7-94517162b47c",
+      "name": "GovHub Wave 1 - A serial_bidder",
+      "settings": {
+        "status": 1,
+        "daily_limit": 120,
+        "daily_max_leads": 40,
+        "email_gap": 12,
+        "insert_unsubscribe_header": false,
+        "open_tracking": false,
+        "link_tracking": false,
+        "stop_on_reply": true,
+        "stop_for_company": true,
+        "mailboxes": 6
+      },
+      "copy_fingerprint": [
+        {
+          "step": 1,
+          "delay": 3,
+          "variants": [
+            {
+              "subject": "{{companyName}} proposals",
+              "body_sha256": "720199d517935e11",
+              "body_words": 120
+            },
+            {
+              "subject": "federal bids",
+              "body_sha256": "720199d517935e11",
+              "body_words": 120
+            },
+            {
+              "subject": "Section L compliance",
+              "body_sha256": "720199d517935e11",
+              "body_words": 120
+            }
+          ]
+        },
+        {
+          "step": 2,
+          "delay": 4,
+          "variants": [
+            {
+              "subject": "",
+              "body_sha256": "c6226305d248d6f5",
+              "body_words": 71
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "delay": 0,
+          "variants": [
+            {
+              "subject": "",
+              "body_sha256": "906aa2b000f53037",
+              "body_words": 134
+            }
+          ]
+        }
+      ],
+      "counts": {
+        "leads": 897,
+        "contacted": 200,
+        "sent": 280,
+        "bounced": 0,
+        "replies_human": 2,
+        "replies_auto": 2,
+        "unsubscribed": 0,
+        "completed": 2,
+        "opportunities": 0,
+        "positive": 0
+      },
+      "rates": {
+        "reply_rate_pct": 1,
+        "positive_rate_pct": 0,
+        "bounce_rate_pct": 0
+      },
+      "interest_distribution": {
+        "out_of_office": 2,
+        "not_interested": 2
+      }
+    },
+    "B": {
+      "id": "61c3b5df-22b6-4f98-ae56-290a750f1833",
+      "name": "GovHub Wave 1 - B new_prime",
+      "settings": {
+        "status": 1,
+        "daily_limit": 60,
+        "daily_max_leads": 20,
+        "email_gap": 12,
+        "insert_unsubscribe_header": false,
+        "open_tracking": false,
+        "link_tracking": false,
+        "stop_on_reply": true,
+        "stop_for_company": true,
+        "mailboxes": 3
+      },
+      "copy_fingerprint": [
+        {
+          "step": 1,
+          "delay": 3,
+          "variants": [
+            {
+              "subject": "{{companyName}} next bid",
+              "body_sha256": "6672c103c7f13bb5",
+              "body_words": 115
+            },
+            {
+              "subject": "after the first award",
+              "body_sha256": "6672c103c7f13bb5",
+              "body_words": 115
+            },
+            {
+              "subject": "proposal workload",
+              "body_sha256": "6672c103c7f13bb5",
+              "body_words": 115
+            }
+          ]
+        },
+        {
+          "step": 2,
+          "delay": 4,
+          "variants": [
+            {
+              "subject": "",
+              "body_sha256": "c6226305d248d6f5",
+              "body_words": 71
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "delay": 0,
+          "variants": [
+            {
+              "subject": "",
+              "body_sha256": "906aa2b000f53037",
+              "body_words": 134
+            }
+          ]
+        }
+      ],
+      "counts": {
+        "leads": 449,
+        "contacted": 100,
+        "sent": 137,
+        "bounced": 0,
+        "replies_human": 5,
+        "replies_auto": 1,
+        "unsubscribed": 0,
+        "completed": 5,
+        "opportunities": 0,
+        "positive": 0
+      },
+      "rates": {
+        "reply_rate_pct": 5,
+        "positive_rate_pct": 0,
+        "bounce_rate_pct": 0
+      },
+      "interest_distribution": {
+        "not_interested": 5
+      }
+    },
+    "C": {
+      "id": "09189743-6310-46bd-b48f-e5ca931d7e7e",
+      "name": "GovHub Wave 1 - C registered_no_awards",
+      "settings": {
+        "status": 1,
+        "daily_limit": 60,
+        "daily_max_leads": 20,
+        "email_gap": 12,
+        "insert_unsubscribe_header": false,
+        "open_tracking": false,
+        "link_tracking": false,
+        "stop_on_reply": true,
+        "stop_for_company": true,
+        "mailboxes": 3
+      },
+      "copy_fingerprint": [
+        {
+          "step": 1,
+          "delay": 3,
+          "variants": [
+            {
+              "subject": "{{companyName}} bids",
+              "body_sha256": "d1c1c143f9adc89d",
+              "body_words": 124
+            },
+            {
+              "subject": "first federal bid",
+              "body_sha256": "d1c1c143f9adc89d",
+              "body_words": 124
+            },
+            {
+              "subject": "getting the first bid out",
+              "body_sha256": "d1c1c143f9adc89d",
+              "body_words": 124
+            }
+          ]
+        },
+        {
+          "step": 2,
+          "delay": 4,
+          "variants": [
+            {
+              "subject": "",
+              "body_sha256": "c6226305d248d6f5",
+              "body_words": 71
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "delay": 0,
+          "variants": [
+            {
+              "subject": "",
+              "body_sha256": "906aa2b000f53037",
+              "body_words": 134
+            }
+          ]
+        }
+      ],
+      "counts": {
+        "leads": 448,
+        "contacted": 100,
+        "sent": 139,
+        "bounced": 1,
+        "replies_human": 3,
+        "replies_auto": 1,
+        "unsubscribed": 0,
+        "completed": 3,
+        "opportunities": 0,
+        "positive": 0
+      },
+      "rates": {
+        "reply_rate_pct": 3,
+        "positive_rate_pct": 0,
+        "bounce_rate_pct": 1
+      },
+      "interest_distribution": {
+        "not_interested": 3,
+        "out_of_office": 1
+      }
+    },
+    "C1": {
+      "id": "6f360a2e-4dee-4d75-8bd5-325162795616",
+      "name": "GovHub Influencer - C1 creators",
+      "settings": {
+        "status": 1,
+        "daily_limit": 8,
+        "daily_max_leads": 4,
+        "email_gap": 20,
+        "insert_unsubscribe_header": true,
+        "open_tracking": false,
+        "link_tracking": false,
+        "stop_on_reply": true,
+        "stop_for_company": true,
+        "mailboxes": 2
+      },
+      "copy_fingerprint": [
+        {
+          "step": 1,
+          "delay": 4,
+          "variants": [
+            {
+              "subject": "run one of your RFPs through this",
+              "body_sha256": "9e84df7d2f1aa9a1",
+              "body_words": 105
+            },
+            {
+              "subject": "an RFP teardown for your audience",
+              "body_sha256": "9e84df7d2f1aa9a1",
+              "body_words": 105
+            },
+            {
+              "subject": "idea for your GovCon audience",
+              "body_sha256": "9e84df7d2f1aa9a1",
+              "body_words": 105
+            }
+          ]
+        },
+        {
+          "step": 2,
+          "delay": 4,
+          "variants": [
+            {
+              "subject": "",
+              "body_sha256": "b096278f173aeb76",
+              "body_words": 82
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "delay": 6,
+          "variants": [
+            {
+              "subject": "",
+              "body_sha256": "80bdb4488a727447",
+              "body_words": 95
+            }
+          ]
+        },
+        {
+          "step": 4,
+          "delay": 0,
+          "variants": [
+            {
+              "subject": "",
+              "body_sha256": "d432c1acf61dcd9c",
+              "body_words": 69
+            }
+          ]
+        }
+      ],
+      "counts": {
+        "leads": 16,
+        "contacted": 16,
+        "sent": 16,
+        "bounced": 1,
+        "replies_human": 0,
+        "replies_auto": 1,
+        "unsubscribed": 0,
+        "completed": 0,
+        "opportunities": 0,
+        "positive": 0
+      },
+      "rates": {
+        "reply_rate_pct": 0,
+        "positive_rate_pct": 0,
+        "bounce_rate_pct": 6.25
+      },
+      "interest_distribution": {
+        "out_of_office": 1
+      }
+    },
+    "C2": {
+      "id": "1d2dc5a8-f7c1-4ac1-ac1a-3a382e185b4a",
+      "name": "GovHub Influencer - C2 podcasts and newsletters",
+      "settings": {
+        "status": 1,
+        "daily_limit": 4,
+        "daily_max_leads": 2,
+        "email_gap": 20,
+        "insert_unsubscribe_header": true,
+        "open_tracking": false,
+        "link_tracking": false,
+        "stop_on_reply": true,
+        "stop_for_company": true,
+        "mailboxes": 1
+      },
+      "copy_fingerprint": [
+        {
+          "step": 1,
+          "delay": 4,
+          "variants": [
+            {
+              "subject": "where AI fails on proposals",
+              "body_sha256": "ef39b8513e170760",
+              "body_words": 102
+            },
+            {
+              "subject": "a topic for your audience",
+              "body_sha256": "ef39b8513e170760",
+              "body_words": 102
+            },
+            {
+              "subject": "guest idea on AI and federal proposals",
+              "body_sha256": "ef39b8513e170760",
+              "body_words": 102
+            }
+          ]
+        },
+        {
+          "step": 2,
+          "delay": 4,
+          "variants": [
+            {
+              "subject": "",
+              "body_sha256": "dc42f5ded24ac992",
+              "body_words": 70
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "delay": 6,
+          "variants": [
+            {
+              "subject": "",
+              "body_sha256": "4c1fa91c91365c97",
+              "body_words": 73
+            }
+          ]
+        },
+        {
+          "step": 4,
+          "delay": 0,
+          "variants": [
+            {
+              "subject": "",
+              "body_sha256": "039f370fbc5db40f",
+              "body_words": 57
+            }
+          ]
+        }
+      ],
+      "counts": {
+        "leads": 5,
+        "contacted": 5,
+        "sent": 5,
+        "bounced": 0,
+        "replies_human": 0,
+        "replies_auto": 0,
+        "unsubscribed": 0,
+        "completed": 0,
+        "opportunities": 0,
+        "positive": 0
+      },
+      "rates": {
+        "reply_rate_pct": 0,
+        "positive_rate_pct": 0,
+        "bounce_rate_pct": 0
+      },
+      "interest_distribution": {}
+    },
+    "C3": {
+      "id": "b2ee3665-fbee-4366-b2ee-d31cc0573e8e",
+      "name": "GovHub Influencer - C3 media and blogs",
+      "settings": {
+        "status": 1,
+        "daily_limit": 5,
+        "daily_max_leads": 3,
+        "email_gap": 20,
+        "insert_unsubscribe_header": true,
+        "open_tracking": false,
+        "link_tracking": false,
+        "stop_on_reply": true,
+        "stop_for_company": true,
+        "mailboxes": 1
+      },
+      "copy_fingerprint": [
+        {
+          "step": 1,
+          "delay": 4,
+          "variants": [
+            {
+              "subject": "federal award data, cut for your beat",
+              "body_sha256": "61ad3f76251a94cc",
+              "body_words": 99
+            },
+            {
+              "subject": "some numbers you might want",
+              "body_sha256": "61ad3f76251a94cc",
+              "body_words": 99
+            },
+            {
+              "subject": "USAspending analysis, yours to use",
+              "body_sha256": "61ad3f76251a94cc",
+              "body_words": 99
+            }
+          ]
+        },
+        {
+          "step": 2,
+          "delay": 4,
+          "variants": [
+            {
+              "subject": "",
+              "body_sha256": "5186fdb6935e8eda",
+              "body_words": 87
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "delay": 6,
+          "variants": [
+            {
+              "subject": "",
+              "body_sha256": "b41721608239c4e9",
+              "body_words": 83
+            }
+          ]
+        },
+        {
+          "step": 4,
+          "delay": 0,
+          "variants": [
+            {
+              "subject": "",
+              "body_sha256": "fe8864f2fac30aab",
+              "body_words": 62
+            }
+          ]
+        }
+      ],
+      "counts": {
+        "leads": 8,
+        "contacted": 8,
+        "sent": 8,
+        "bounced": 0,
+        "replies_human": 0,
+        "replies_auto": 0,
+        "unsubscribed": 0,
+        "completed": 0,
+        "opportunities": 0,
+        "positive": 0
+      },
+      "rates": {
+        "reply_rate_pct": 0,
+        "positive_rate_pct": 0,
+        "bounce_rate_pct": 0
+      },
+      "interest_distribution": {}
+    },
+    "C4": {
+      "id": "b179df62-09f5-4045-a3e6-eb19afab4d20",
+      "name": "GovHub Influencer - C4 consultants",
+      "settings": {
+        "status": 1,
+        "daily_limit": 10,
+        "daily_max_leads": 5,
+        "email_gap": 20,
+        "insert_unsubscribe_header": true,
+        "open_tracking": false,
+        "link_tracking": false,
+        "stop_on_reply": true,
+        "stop_for_company": true,
+        "mailboxes": 2
+      },
+      "copy_fingerprint": [
+        {
+          "step": 1,
+          "delay": 4,
+          "variants": [
+            {
+              "subject": "software that stops where you start",
+              "body_sha256": "fdb205d972e80e0a",
+              "body_words": 108
+            },
+            {
+              "subject": "the mechanical half of proposal work",
+              "body_sha256": "fdb205d972e80e0a",
+              "body_words": 108
+            },
+            {
+              "subject": "a partner account, not a replacement",
+              "body_sha256": "fdb205d972e80e0a",
+              "body_words": 108
+            }
+          ]
+        },
+        {
+          "step": 2,
+          "delay": 4,
+          "variants": [
+            {
+              "subject": "",
+              "body_sha256": "9de926523d2c20a4",
+              "body_words": 76
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "delay": 6,
+          "variants": [
+            {
+              "subject": "",
+              "body_sha256": "0ae5c8059b3fb475",
+              "body_words": 86
+            }
+          ]
+        },
+        {
+          "step": 4,
+          "delay": 0,
+          "variants": [
+            {
+              "subject": "",
+              "body_sha256": "8a7efc56324f2362",
+              "body_words": 62
+            }
+          ]
+        }
+      ],
+      "counts": {
+        "leads": 27,
+        "contacted": 20,
+        "sent": 20,
+        "bounced": 1,
+        "replies_human": 0,
+        "replies_auto": 0,
+        "unsubscribed": 0,
+        "completed": 0,
+        "opportunities": 0,
+        "positive": 0
+      },
+      "rates": {
+        "reply_rate_pct": 0,
+        "positive_rate_pct": 0,
+        "bounce_rate_pct": 5
+      },
+      "interest_distribution": {}
+    },
+    "C5": {
+      "id": "aceddf26-388d-45f4-be83-89eda98816a9",
+      "name": "GovHub Influencer - C5 APEX advisors",
+      "settings": {
+        "status": 1,
+        "daily_limit": 12,
+        "daily_max_leads": 4,
+        "email_gap": 20,
+        "insert_unsubscribe_header": true,
+        "open_tracking": false,
+        "link_tracking": false,
+        "stop_on_reply": true,
+        "stop_for_company": true,
+        "mailboxes": 2
+      },
+      "copy_fingerprint": [
+        {
+          "step": 1,
+          "delay": 4,
+          "variants": [
+            {
+              "subject": "a session for the firms you counsel",
+              "body_sha256": "4ea071426346c3fd",
+              "body_words": 123
+            },
+            {
+              "subject": "the 200 page solicitation problem",
+              "body_sha256": "4ea071426346c3fd",
+              "body_words": 123
+            },
+            {
+              "subject": "counselor account, no strings",
+              "body_sha256": "4ea071426346c3fd",
+              "body_words": 123
+            }
+          ]
+        },
+        {
+          "step": 2,
+          "delay": 4,
+          "variants": [
+            {
+              "subject": "",
+              "body_sha256": "5bad1f9c4696b0a4",
+              "body_words": 77
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "delay": 6,
+          "variants": [
+            {
+              "subject": "",
+              "body_sha256": "37ecf0d409fe01ba",
+              "body_words": 92
+            }
+          ]
+        },
+        {
+          "step": 4,
+          "delay": 0,
+          "variants": [
+            {
+              "subject": "",
+              "body_sha256": "d04f10a33097eb09",
+              "body_words": 69
+            }
+          ]
+        }
+      ],
+      "counts": {
+        "leads": 57,
+        "contacted": 16,
+        "sent": 16,
+        "bounced": 0,
+        "replies_human": 0,
+        "replies_auto": 0,
+        "unsubscribed": 0,
+        "completed": 0,
+        "opportunities": 0,
+        "positive": 0
+      },
+      "rates": {
+        "reply_rate_pct": 0,
+        "positive_rate_pct": 0,
+        "bounce_rate_pct": 0
+      },
+      "interest_distribution": {}
+    },
+    "C6": {
+      "id": "80a9659f-ba43-4411-969f-10ecfcd6b95d",
+      "name": "GovHub Influencer - C6 associations",
+      "settings": {
+        "status": 1,
+        "daily_limit": 4,
+        "daily_max_leads": 2,
+        "email_gap": 20,
+        "insert_unsubscribe_header": true,
+        "open_tracking": false,
+        "link_tracking": false,
+        "stop_on_reply": true,
+        "stop_for_company": true,
+        "mailboxes": 1
+      },
+      "copy_fingerprint": [
+        {
+          "step": 1,
+          "delay": 4,
+          "variants": [
+            {
+              "subject": "a member session on federal solicitations",
+              "body_sha256": "13efcd6289c1de08",
+              "body_words": 117
+            },
+            {
+              "subject": "member education, delivered by us",
+              "body_sha256": "13efcd6289c1de08",
+              "body_words": 117
+            },
+            {
+              "subject": "something for your members",
+              "body_sha256": "13efcd6289c1de08",
+              "body_words": 117
+            }
+          ]
+        },
+        {
+          "step": 2,
+          "delay": 4,
+          "variants": [
+            {
+              "subject": "",
+              "body_sha256": "0c5795dc18d103f8",
+              "body_words": 68
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "delay": 6,
+          "variants": [
+            {
+              "subject": "",
+              "body_sha256": "e4148a0d426fd5d2",
+              "body_words": 72
+            }
+          ]
+        },
+        {
+          "step": 4,
+          "delay": 0,
+          "variants": [
+            {
+              "subject": "",
+              "body_sha256": "f77b0de3d27cdc6d",
+              "body_words": 59
+            }
+          ]
+        }
+      ],
+      "counts": {
+        "leads": 6,
+        "contacted": 6,
+        "sent": 6,
+        "bounced": 0,
+        "replies_human": 0,
+        "replies_auto": 0,
+        "unsubscribed": 0,
+        "completed": 0,
+        "opportunities": 0,
+        "positive": 0
+      },
+      "rates": {
+        "reply_rate_pct": 0,
+        "positive_rate_pct": 0,
+        "bounce_rate_pct": 0
+      },
+      "interest_distribution": {}
+    }
+  },
+  "daily": [
+    {
+      "date": "2026-09-07",
+      "sent": 80,
+      "first_touch": 80,
+      "follow_up": 0,
+      "replies_human": 0,
+      "replies_auto": 2
+    },
+    {
+      "date": "2026-09-08",
+      "sent": 100,
+      "first_touch": 100,
+      "follow_up": 0,
+      "replies_human": -1,
+      "replies_auto": 1
+    },
+    {
+      "date": "2026-09-09",
+      "sent": 100,
+      "first_touch": 100,
+      "follow_up": 0,
+      "replies_human": 1,
+      "replies_auto": 1
+    },
+    {
+      "date": "2026-09-10",
+      "sent": 176,
+      "first_touch": 98,
+      "follow_up": 78,
+      "replies_human": 5,
+      "replies_auto": 0
+    },
+    {
+      "date": "2026-09-11",
+      "sent": 171,
+      "first_touch": 93,
+      "follow_up": 78,
+      "replies_human": 0,
+      "replies_auto": 1
+    }
+  ],
+  "totals": {
+    "contacted": 471,
+    "sent": 627,
+    "bounced": 3,
+    "replies_human": 10,
+    "replies_auto": 5,
+    "positive": 0,
+    "unsubscribed": 0,
+    "reply_rate_pct": 2.12,
+    "positive_rate_pct": 0,
+    "bounce_rate_pct": 0.64
+  }
+}
