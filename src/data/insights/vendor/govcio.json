@@ -1,0 +1,491 @@
+{
+  "pageType": "vendor",
+  "slug": "govcio",
+  "title": "Who Buys From Govcio: $223M in FY2026",
+  "h1": "Govcio: Federal Contracts, Agencies & Awards",
+  "metaDescription": "Govcio won $223M in federal contract obligations in FY2026 to date. See its top agencies, markets, largest awards, and expiring contracts.",
+  "updated": "2026-09-15",
+  "fyWindow": {
+    "label": "FY2026 to date",
+    "start": "2025-10-01",
+    "end": "2026-09-15"
+  },
+  "stats": {
+    "totalObligations": 222653218.87,
+    "awardCount": 15,
+    "yoyGrowthPct": -1.8,
+    "avgAwardSize": 14843548,
+    "smallBusinessSharePct": null
+  },
+  "charts": [
+    {
+      "id": "govcio-trend",
+      "type": "line",
+      "title": "Obligations by fiscal year",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "FY21",
+              267996570.3
+            ],
+            [
+              "FY22",
+              269164433.8
+            ],
+            [
+              "FY23",
+              287919707.38
+            ],
+            [
+              "FY24",
+              233602268.89
+            ],
+            [
+              "FY25",
+              226676676.97
+            ],
+            [
+              "FY26",
+              222653218.87
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Obligations fell 1.8% year over year, from $227M in FY2025 to $223M in FY2026 to date."
+    },
+    {
+      "id": "govcio-top-agencies",
+      "type": "bar",
+      "title": "Top 10 buying agencies, FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "Department of Veterans Affairs",
+              213439558.53
+            ],
+            [
+              "Department of the Treasury",
+              7566177.2
+            ],
+            [
+              "Department of Defense",
+              828219.14
+            ],
+            [
+              "Export-Import Bank of the United States",
+              819264
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Department of Veterans Affairs is Govcio's largest federal customer, with $213M obligated (95.9% of the company's federal obligations)."
+    },
+    {
+      "id": "govcio-top-naics",
+      "type": "bar",
+      "title": "Top 10 markets (NAICS), FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "Computer Systems Design Services",
+              119486880.57
+            ],
+            [
+              "Computing Infrastructure Providers, Data Processing, Web Hosting, and Related Services",
+              93137274.6
+            ],
+            [
+              "Other Computer Related Services",
+              10029063.7
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Computer Systems Design Services is Govcio's largest federal market, with $119M in obligations."
+    }
+  ],
+  "crossLinks": [
+    {
+      "label": "Department of Veterans Affairs contracts",
+      "href": "/insights/agency/department-of-veterans-affairs/"
+    },
+    {
+      "label": "Department of the Treasury contracts",
+      "href": "/insights/agency/department-of-the-treasury/"
+    },
+    {
+      "label": "Department of Defense contracts",
+      "href": "/insights/agency/department-of-defense/"
+    },
+    {
+      "label": "NAICS 541512: Computer Systems Design Services",
+      "href": "/insights/naics/541512/"
+    },
+    {
+      "label": "NAICS 541519: Other Computer Related Services",
+      "href": "/insights/naics/541519/"
+    }
+  ],
+  "tables": [
+    {
+      "title": "Largest awards, FY2026 to date",
+      "columns": [
+        "Rank",
+        "Award",
+        "Award Amount",
+        "Awarding Agency",
+        "Ends"
+      ],
+      "rows": [
+        [
+          1,
+          {
+            "text": "36C10B22N10030034",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10B22N10030034_3600_VA11816D1003_3600/"
+          },
+          389669895.67,
+          "Department of Veterans Affairs",
+          "2027-08-22"
+        ],
+        [
+          2,
+          {
+            "text": "36C10D22N0009",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10D22N0009_3600_36C10E19D0017_3600/"
+          },
+          353367480.99,
+          "Department of Veterans Affairs",
+          "2027-06-18"
+        ],
+        [
+          3,
+          {
+            "text": "36C10B20N10030031",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10B20N10030031_3600_VA11816D1003_3600/"
+          },
+          153091892.54,
+          "Department of Veterans Affairs",
+          "2026-03-31"
+        ],
+        [
+          4,
+          {
+            "text": "36C10B22N10030033",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10B22N10030033_3600_VA11816D1003_3600/"
+          },
+          79029824,
+          "Department of Veterans Affairs",
+          "2027-06-12"
+        ],
+        [
+          5,
+          {
+            "text": "36C10B22N10030032",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10B22N10030032_3600_VA11816D1003_3600/"
+          },
+          26739202.4,
+          "Department of Veterans Affairs",
+          "2026-02-15"
+        ],
+        [
+          6,
+          {
+            "text": "36C10B23N10030036",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10B23N10030036_3600_VA11816D1003_3600/"
+          },
+          25078155.31,
+          "Department of Veterans Affairs",
+          "2026-07-14"
+        ],
+        [
+          7,
+          {
+            "text": "2023H225F00138",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_2023H225F00138_2050_GS35F0263Y_4732/"
+          },
+          14953110.97,
+          "Department of the Treasury",
+          "2026-09-14"
+        ],
+        [
+          8,
+          {
+            "text": "20340925C00001",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_20340925C00001_2036_-NONE-_-NONE-/"
+          },
+          13223944.42,
+          "Department of the Treasury",
+          "2027-01-31"
+        ],
+        [
+          9,
+          {
+            "text": "36C10B22N10030035",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10B22N10030035_3600_VA11816D1003_3600/"
+          },
+          11525613.88,
+          "Department of Veterans Affairs",
+          "2027-09-27"
+        ],
+        [
+          10,
+          {
+            "text": "HS002124C0003",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_HS002124C0003_9700_-NONE-_-NONE-/"
+          },
+          9386342.22,
+          "Department of Defense",
+          "2026-02-04"
+        ],
+        [
+          11,
+          {
+            "text": "36C10B26N10030037",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10B26N10030037_3600_VA11816D1003_3600/"
+          },
+          8657621.89,
+          "Department of Veterans Affairs",
+          "2027-01-15"
+        ],
+        [
+          12,
+          {
+            "text": "36C10B26N10030038",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10B26N10030038_3600_VA11816D1003_3600/"
+          },
+          6939031.64,
+          "Department of Veterans Affairs",
+          "2027-04-30"
+        ],
+        [
+          13,
+          {
+            "text": "83310125F0155",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_83310125F0155_8300_GS35F0263Y_4732/"
+          },
+          1638528,
+          "Export-Import Bank of the United States",
+          "2026-10-31"
+        ],
+        [
+          14,
+          {
+            "text": "36C10B25F0178",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10B25F0178_3600_GS35F0263Y_4732/"
+          },
+          1451889,
+          "Department of Veterans Affairs",
+          "2027-07-16"
+        ],
+        [
+          15,
+          {
+            "text": "FA570225F0122",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA570225F0122_9700_GS35F0263Y_4732/"
+          },
+          331296.32,
+          "Department of Defense",
+          "2026-09-28"
+        ]
+      ]
+    },
+    {
+      "title": "Contracts expiring in the next 12 months",
+      "columns": [
+        "Award",
+        "Awarding Agency",
+        "Award Value",
+        "Ends"
+      ],
+      "rows": [
+        [
+          {
+            "text": "36C10B22N10030034",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10B22N10030034_3600_VA11816D1003_3600/"
+          },
+          "Department of Veterans Affairs",
+          389669895.67,
+          "2027-08-22"
+        ],
+        [
+          {
+            "text": "36C10D22N0009",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10D22N0009_3600_36C10E19D0017_3600/"
+          },
+          "Department of Veterans Affairs",
+          353367480.99,
+          "2027-06-18"
+        ],
+        [
+          {
+            "text": "36C10B22N10030033",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10B22N10030033_3600_VA11816D1003_3600/"
+          },
+          "Department of Veterans Affairs",
+          79029824,
+          "2027-06-12"
+        ],
+        [
+          {
+            "text": "20340925C00001",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_20340925C00001_2036_-NONE-_-NONE-/"
+          },
+          "Department of the Treasury",
+          13223944.42,
+          "2027-01-31"
+        ],
+        [
+          {
+            "text": "36C10B26N10030037",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10B26N10030037_3600_VA11816D1003_3600/"
+          },
+          "Department of Veterans Affairs",
+          8657621.89,
+          "2027-01-15"
+        ],
+        [
+          {
+            "text": "36C10B26N10030038",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10B26N10030038_3600_VA11816D1003_3600/"
+          },
+          "Department of Veterans Affairs",
+          6939031.64,
+          "2027-04-30"
+        ],
+        [
+          {
+            "text": "83310125F0155",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_83310125F0155_8300_GS35F0263Y_4732/"
+          },
+          "Export-Import Bank of the United States",
+          1638528,
+          "2026-10-31"
+        ],
+        [
+          {
+            "text": "36C10B25F0178",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10B25F0178_3600_GS35F0263Y_4732/"
+          },
+          "Department of Veterans Affairs",
+          1451889,
+          "2027-07-16"
+        ],
+        [
+          {
+            "text": "FA570225F0122",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA570225F0122_9700_GS35F0263Y_4732/"
+          },
+          "Department of Defense",
+          331296.32,
+          "2026-09-28"
+        ],
+        [
+          {
+            "text": "2032H821C00030",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_2032H821C00030_2050_-NONE-_-NONE-/"
+          },
+          "Department of the Treasury",
+          200000,
+          "2026-09-30"
+        ]
+      ]
+    },
+    {
+      "title": "Registration details",
+      "columns": [
+        "Detail",
+        "Registration"
+      ],
+      "rows": [
+        [
+          "Unique Entity ID (UEI)",
+          "D84JK2RNL7V4"
+        ],
+        [
+          "Headquarters",
+          "Fairfax, VA"
+        ],
+        [
+          "Business types",
+          "Category business; Corporate entity not tax exempt; Limited liability corporation; Other than small business; Special designations; Us owned business"
+        ]
+      ]
+    }
+  ],
+  "narrative": {
+    "intro": "Govcio has $223M in contract obligations for FY2026 to date. Govcio won 15 awards so far this fiscal year, with an average award size of $14.8M. Obligations are down 1.8% year over year. Fiscal-year obligations show a peak in FY23 at $288M and a gradual decline to $223M in FY26. The Department of Veterans Affairs is the dominant buyer, accounting for $213M of obligations. Computer Systems Design Services and Computing Infrastructure Providers, Data Processing, Web Hosting, and Related Services are the largest markets, with $119M and $93.1M respectively. Current-year totals are partial, and the figures reported are contract obligations except for award-value figures in the largest-awards and expiring-contracts tables, which are total contract values. This profile highlights concentration in a few customers and markets, a modest year-over-year decline, and relatively large average award sizes for the fiscal year to date.",
+    "sections": [
+      {
+        "heading": "How concentrated are Govcio's FY2026 to date obligations?",
+        "body": "The Department of Veterans Affairs accounts for $213M of Govcio's $223M in FY2026 to date obligations. The Department of the Treasury, the Department of Defense, and the Export-Import Bank of the United States account for much smaller shares at $7.6M, $828K, and $819K respectively. This shows a high customer concentration in one agency."
+      },
+      {
+        "heading": "What markets are driving Govcio's revenue this fiscal year?",
+        "body": "Computer Systems Design Services and Computing Infrastructure Providers, Data Processing, Web Hosting, and Related Services are the top markets at $119M and $93.1M respectively. Other Computer Related Services contributes $10M. Those three markets together represent the large majority of reported market obligations."
+      }
+    ]
+  },
+  "faq": [
+    {
+      "q": "How much does Govcio make from federal contracts?",
+      "a": "Govcio makes $223M from federal contracts in FY2026 to date. Govcio's current-year total comes from 15 awards with an average award size of $14.8M, and obligations are down 1.8% year over year."
+    },
+    {
+      "q": "Which agencies buy from Govcio?",
+      "a": "The Department of Veterans Affairs, the Department of the Treasury, the Department of Defense, and the Export-Import Bank of the United States buy from Govcio. The Department of Veterans Affairs accounts for $213M, the Department of the Treasury accounts for $7.6M, the Department of Defense accounts for $828K, and the Export-Import Bank of the United States accounts for $819K."
+    },
+    {
+      "q": "What does Govcio sell to the government?",
+      "a": "Govcio sells services in Computer Systems Design Services, Computing Infrastructure Providers, Data Processing, Web Hosting, and Related Services, and Other Computer Related Services. Those markets are $119M, $93.1M, and $10M respectively."
+    },
+    {
+      "q": "Which Govcio contracts are expiring soon?",
+      "a": "No expiring-contracts table is listed in the provided information. The available figures do not include a list of contracts that are expiring soon."
+    }
+  ],
+  "related": [
+    {
+      "label": "Expiring federal contracts: recompete watch",
+      "href": "/insights/expiring-federal-contracts/"
+    },
+    {
+      "label": "MVM federal contracts",
+      "href": "/insights/vendor/mvm/"
+    },
+    {
+      "label": "Caci Technologies federal contracts",
+      "href": "/insights/vendor/caci-technologies/"
+    },
+    {
+      "label": "Association of Universities for Research In Astronomy federal contracts",
+      "href": "/insights/vendor/association-of-universities-for-research-in-astronomy/"
+    },
+    {
+      "label": "Siemens Medical Solutions Usa federal contracts",
+      "href": "/insights/vendor/siemens-medical-solutions-usa/"
+    },
+    {
+      "label": "Aar Government Services federal contracts",
+      "href": "/insights/vendor/aar-government-services/"
+    },
+    {
+      "label": "Forgen Odin federal contracts",
+      "href": "/insights/vendor/forgen-odin/"
+    }
+  ],
+  "sources": [
+    {
+      "label": "USAspending.gov award data",
+      "href": "https://www.usaspending.gov"
+    }
+  ]
+}
