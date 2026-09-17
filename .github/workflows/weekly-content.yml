@@ -67,6 +67,11 @@ jobs:
           pip install --quiet -r scripts/content/requirements.txt
           npm ci
 
+      # The demand guards decide what a whole week of content gets spent on, so
+      # they are proven before they are trusted. No network, no secrets.
+      - name: Check the topic picker's demand guards
+        run: python scripts/content/pick_topic.selftest.py
+
       - name: Pick topic
         env:
           GSC_SERVICE_ACCOUNT_JSON: ${{ secrets.GSC_SERVICE_ACCOUNT_JSON }}
