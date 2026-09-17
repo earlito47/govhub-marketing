@@ -3,6 +3,41 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/seo/Breadcrumbs.astro';
 import CTABand from '../components/CTABand.astro';
 import PageHero from '../components/PageHero.astro';
+import FAQSchema from '../components/seo/FAQSchema.astro';
+import { APP_URL, CONTACT_EMAIL, SITE_URL } from '../config';
+
+// "GovHub" is a contested name. Over the 90 days to 2026-09-14 the property
+// ranked 6.9 for "govhub" and 7.9 for "gov.hub", and the searches underneath
+// are people working out who we are before they trust us: "what is
+// govhub.com" (position 4.4), "govhub.com legit" (6.0), "govhub georgia"
+// (4.1, and that one is a different organisation entirely). None of it
+// converted, because nothing on the site answered the question being asked.
+//
+// These answers are the disambiguation, in the searcher's words, and they
+// carry FAQPage markup so the answer can surface on the SERP itself rather
+// than waiting for a click we were not getting.
+const identityFaqs = [
+  {
+    question: 'What is GovHub?',
+    answer:
+      'GovHub is AI proposal software for government contractors. It shreds a solicitation into a compliance matrix, drafts narrative against the evaluation criteria, autofills standard forms such as the SF330, and reviews the response for compliance before submission. The marketing site is at www.govhub.online and the product itself runs at app.govhub.online.',
+  },
+  {
+    question: 'Is GovHub a government agency or affiliated with one?',
+    answer:
+      'No. GovHub is an independent private company that sells software to businesses bidding on government contracts. It is not a government agency, is not endorsed by one, and is not connected to any state or federal portal that uses a similar name. Nothing submitted through GovHub goes to an agency on your behalf; you file through SAM.gov or the agency portal as usual.',
+  },
+  {
+    question: 'Is GovHub legitimate?',
+    answer:
+      `Yes. GovHub is a real product with a free trial, published pricing, and a named contact address (${CONTACT_EMAIL}). If you are checking us out before signing up, the pages worth reading are our security practices, our compliance posture, and our pricing, all linked from this site's footer. We also publish federal contracting data openly under Insights, sourced from USAspending.gov.`,
+  },
+  {
+    question: 'Which domain is the real GovHub?',
+    answer:
+      'GovHub the proposal software runs on two addresses and no others: www.govhub.online for this site, and app.govhub.online for the product. Those are the only domains we publish, and every link and login on this site stays inside them. "GovHub" is a common enough name that other organisations use it for unrelated services, so check the address bar rather than the name.',
+  },
+];
 ---
 
 <BaseLayout
@@ -62,12 +97,33 @@ import PageHero from '../components/PageHero.astro';
         <li><strong>Honest by default.</strong> We'd rather tell you what the tool does and doesn't do than oversell it, the same standard we hold this site to.</li>
       </ul>
 
+      <h2 id="who-we-are">Who GovHub is, plainly</h2>
+      <p>
+        GovHub is an independent private company, not a government agency and
+        not affiliated with one. We sell software to businesses that bid on
+        government contracts. Filing still happens where it always did, through
+        SAM.gov or the agency's own portal; nothing you write in GovHub is
+        submitted to an agency on your behalf.
+      </p>
+      <p>
+        This site is <strong>www.govhub.online</strong> and the product is
+        <strong> app.govhub.online</strong>. If you are checking us out before
+        you sign up, the substantive pages are our
+        {' '}<a href="/security/">security practices</a>, our
+        {' '}<a href="/compliance/">compliance posture</a>, and our
+        {' '}<a href="/pricing/">pricing</a>, which is published rather than
+        quote-on-request. You can reach a person at
+        {' '}<a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.
+      </p>
+
       <p>
         Want to see how it works? Explore the <a href="/solutions/">platform</a>,
         try the free <a href="/solutions/compliance-matrix-generator/">compliance
         matrix generator</a>, or <a href="/contact/">get in touch</a>.
       </p>
     </article>
+
+    <FAQSchema faqs={identityFaqs} heading="About GovHub: FAQ" />
 
     <CTABand heading="Compete on quality, not headcount" sub="Start a free trial and put GovHub on your next solicitation." />
   </main>

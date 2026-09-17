@@ -6,6 +6,7 @@ import { audiences, type Audience } from '../../data/audiences';
 import PageHero from '../../components/PageHero.astro';
 import CTABand from '../../components/CTABand.astro';
 import { SIGNUP_URL } from '../../config';
+import { getCaseStudy } from '../../data/case-studies';
 
 export function getStaticPaths() {
   return audiences.map((a) => ({
@@ -19,6 +20,10 @@ interface Props {
 }
 
 const { audience } = Astro.props;
+// A slug that no longer resolves drops out rather than rendering a dead link.
+const relatedCaseStudies = (audience.caseStudySlugs ?? [])
+  .map((slug) => getCaseStudy(slug))
+  .filter((c) => c !== undefined);
 const title = `GovHub for ${audience.name.toLowerCase()}`;
 const description = `${audience.headline} GovHub is the AI proposal platform designed for ${audience.name.toLowerCase()}.`;
 ---
@@ -57,6 +62,25 @@ const description = `${audience.headline} GovHub is the AI proposal platform des
         ))}
       </div>
 
+      {relatedCaseStudies.length > 0 && (
+        <>
+          <h2>What this looks like in practice</h2>
+          <ul class="proof">
+            {relatedCaseStudies.map((c) => (
+              <li>
+                <a href={`/case-studies/${c.slug}/`}>{c.title}</a>
+                {c.contractValue && <span class="proof-value">{c.contractValue}</span>}
+                <p>{c.outcome}</p>
+              </li>
+            ))}
+          </ul>
+          <p class="proof-note">
+            Representative scenarios grounded in public federal award data, not
+            named-customer claims. <a href="/case-studies/">See how they were built</a>.
+          </p>
+        </>
+      )}
+
       <p class="cta-pair">
         <a class="primary" href={SIGNUP_URL}>Start free trial</a>
         <a class="secondary" href="/pricing/">See pricing</a>
@@ -74,6 +98,40 @@ const description = `${audience.headline} GovHub is the AI proposal platform des
 </BaseLayout>
 
 <style>
+  .proof {
+    list-style: none;
+    padding: 0;
+    margin: 1.25rem 0 0;
+    display: grid;
+    gap: 1rem;
+  }
+  .proof li {
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-radius: 0.75rem;
+    padding: 1.1rem 1.25rem;
+  }
+  .proof a {
+    font-weight: 600;
+  }
+  .proof-value {
+    display: inline-block;
+    margin-left: 0.5rem;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.9rem;
+  }
+  .proof li p {
+    margin: 0.4rem 0 0;
+    color: var(--fg-muted);
+    font-size: 0.95rem;
+  }
+  .proof-note {
+    margin-top: 0.9rem;
+    font-size: 0.85rem;
+    color: var(--fg-muted);
+  }
+
   main {
     padding-bottom: 3rem;
   }

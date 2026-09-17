@@ -55,6 +55,20 @@ export interface Competitor {
    */
   pricingCanonical?: { href: string; label: string };
   /**
+   * Other tools a searcher should weigh, besides GovHub.
+   *
+   * "<competitor> alternatives" is a list intent. A page that answers it with
+   * one name, ours, is not the page they came for, and the SERP reflected
+   * that: /alternatives/loopio/ took 706 impressions at position 17.6 over the
+   * 90 days to 2026-09-14 and was never clicked, sitting under
+   * review-aggregator listicles that do name the field.
+   *
+   * Naming real competitors, including ones that beat us for a given job, is
+   * what makes the page worth ranking. Each entry stays honest about who the
+   * tool actually suits; `fit` is the one-line "pick this when".
+   */
+  alternativesRoster?: { name: string; fit: string; note: string }[];
+  /**
    * Very short price statement for meta descriptions, e.g. "starts around
    * $15,000/year". Must stay consistent with pricingEstimate above; it is the
    * same claim compressed to fit a ~160-char SERP budget.
@@ -129,9 +143,51 @@ export const competitors: Competitor[] = [
       },
     ],
     deepDive: {
-      href: '/blog/loopio-alternatives-federal-proposals/',
-      label: 'Best Loopio alternatives for federal proposals',
+      href: '/blog/loopio-competitors-federal-proposals/',
+      label: 'Loopio competitors for federal proposals',
     },
+    alternativesRoster: [
+      {
+        name: 'Privia',
+        fit: 'Federal teams that live in Word and run color team cycles',
+        note: 'A longtime federal staple for proposal collaboration, with strong document control, versioning, and review workflows. Handles hard page limits and Word-based authoring well.',
+      },
+      {
+        name: 'Expedience Software',
+        fit: 'Firms that must hit an exact format, font, and page count',
+        note: 'A Microsoft Word add-in for templates, styles, boilerplate, and compliance outlines, rather than a separate platform to move your work into.',
+      },
+      {
+        name: 'Responsive (formerly RFPIO)',
+        fit: 'Enterprise teams with a dedicated proposal desk',
+        note: 'Scales further than Loopio on governance, SSO, and audit trails. Like Loopio, it is a general enterprise RFx tool, so Section L/M structure is not built in.',
+      },
+      {
+        name: 'SiftHub',
+        fit: 'Teams whose pain is answering recurring questionnaires',
+        note: 'AI-first knowledge base that auto-answers RFP and security questionnaires. Strong at Q&A, still maturing on strict compliance packaging and page-count control.',
+      },
+      {
+        name: 'XaitPorter',
+        fit: 'Large teams needing strict change control',
+        note: 'Structured document authoring with heavyweight workflow and auditability. Worth the weight only if your process genuinely requires it.',
+      },
+      {
+        name: 'RocketDocs',
+        fit: 'Regulated industries with mature content governance',
+        note: 'Content library and proposal automation, enterprise leaning, with ISO-style controls.',
+      },
+      {
+        name: 'Qvidian (Upland)',
+        fit: 'Large content operations, mostly commercial',
+        note: 'Deep search and business rules over a big answer library. Little federal-specific guidance.',
+      },
+      {
+        name: 'Zbizlink',
+        fit: 'Small firms building a first formal process',
+        note: 'SMB-friendly proposal management covering pipeline, teaming, templates, and content library at a lower entry price.',
+      },
+    ],
   },
   {
     slug: 'responsive',

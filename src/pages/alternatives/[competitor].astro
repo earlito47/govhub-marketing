@@ -172,6 +172,36 @@ const altFaqs = isOpportunityIntel
             ))}
           </ul>
 
+          {competitor.alternativesRoster && (
+            <>
+              <h2>The rest of the field</h2>
+              <p>
+                GovHub is not the only option, and for some of this work it is
+                not the right one. Here is the honest shortlist of other
+                {' '}{competitor.name} alternatives and who each actually suits.
+              </p>
+              <dl class="roster">
+                {competitor.alternativesRoster.map((alt) => (
+                  <>
+                    <dt>{alt.name}</dt>
+                    <dd>
+                      <span class="roster-fit">{alt.fit}.</span> {alt.note}
+                    </dd>
+                  </>
+                ))}
+              </dl>
+              <p>
+                A hard truth that applies to most of this list: these tools were
+                built for commercial security questionnaires and marketing RFIs.
+                Federal work needs Section L and M alignment, page-count control,
+                strict file naming, and forms like the SF33 and SF1449. If a
+                vendor cannot show a real compliance matrix and a clean crosswalk
+                to a Word outline in the demo, that gap becomes your problem at
+                Red Team.
+              </p>
+            </>
+          )}
+
           <h2>When {competitor.name} is still the right tool</h2>
           <p>
             {competitor.name} remains a strong option for
@@ -229,6 +259,22 @@ const altFaqs = isOpportunityIntel
     display: block;
     margin-bottom: 0.35rem;
     font-size: 0.9rem;
+  }
+  .roster {
+    margin: 1.5rem 0 0;
+  }
+  .roster dt {
+    font-weight: 700;
+    color: var(--fg);
+    margin-top: 1.1rem;
+  }
+  .roster dd {
+    margin: 0.25rem 0 0;
+    color: var(--fg-muted);
+  }
+  .roster-fit {
+    color: var(--fg);
+    font-weight: 600;
   }
   h2 {
     margin-top: 2.5rem;

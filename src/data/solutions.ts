@@ -83,11 +83,15 @@ export const solutions: Solution[] = [
   },
   {
     slug: 'sf330',
-    name: 'SF330 software',
-    title: 'SF330 Software: Automate the SF330 Form',
+    name: 'SF330 form',
+    // Title and primary keyword follow the search, not the product. "sf330",
+    // "sf330 form", "sf 330", "form sf330" and "sf330 forms" are the whole
+    // query cluster this page ranks top-5 for; "sf330 software" is nobody's
+    // search. See the note in src/pages/solutions/sf330.astro.
+    title: 'SF330 Form: Download the Official PDF (Rev. 7/2021)',
     description:
-      'Complete the SF330 architect-engineer qualifications form faster. GovHub autofills Parts I and II from your company profile and past-performance library.',
-    primaryKeyword: 'SF330 software',
+      'Download the current SF330 architect-engineer qualifications form, a 14-page GSA PDF, plus what belongs in Part I, Part II, and Section E resumes.',
+    primaryKeyword: 'SF330 form',
     summary:
       'A dedicated workflow for the SF330 A-E qualifications form, Parts I and II populated from your profile, resumes, and project data.',
     wave: 2,

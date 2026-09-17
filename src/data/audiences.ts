@@ -7,6 +7,18 @@ export interface Audience {
   solutions: Array<{ title: string; description: string }>;
   art?: string; // Gold Country hero scene (public/brand/page-graphics/)
   faqs: Array<{ question: string; answer: string }>;
+  /**
+   * Case studies worth showing this segment, by slug.
+   *
+   * Every case study had exactly one contextual inbound link, the hub listing
+   * it, and nothing else on the site pointed at any of them. That is the
+   * "Page has only one dofollow incoming internal link" row in the Ahrefs
+   * crawl of 2026-09-09, and two of the five (the Air Force STTR and Commerce
+   * modernization studies) drew zero impressions in the 90 days to
+   * 2026-09-14. A second link from the segment page whose buyers these wins
+   * actually belong to is worth more than a third link from the hub.
+   */
+  caseStudySlugs?: string[];
 }
 
 /**
@@ -44,6 +56,7 @@ export const audiences: Audience[] = [
           'Reps & certs, SF-1449, SF-33, and standard cover pages autofill from your company profile.',
       },
     ],
+    caseStudySlugs: ['air-force-sttr-phase-ii', 'va-cybersecurity-sdvosb', 'sba-it-service-desk'],
     faqs: [
       {
         question: 'Is GovHub priced for small businesses?',
@@ -93,6 +106,7 @@ export const audiences: Audience[] = [
           "SAML SSO, role-based access, and a full audit trail on every edit, built for larger organizations' compliance requirements.",
       },
     ],
+    caseStudySlugs: ['sba-it-service-desk', 'dha-financial-program-management', 'commerce-it-modernization'],
     faqs: [
       {
         question: 'Does GovHub scale to 500+ page responses?',
