@@ -44,6 +44,16 @@ LOOKBACK_DAYS = int(os.environ.get("LOOKBACK_DAYS", "28"))
 EMERGING_MIN_IMPRESSIONS = int(os.environ.get("EMERGING_MIN_IMPRESSIONS", "3"))
 EMERGING_MAX_POSITION = float(os.environ.get("EMERGING_MAX_POSITION", "50"))
 
+# Impressions above which a query with no sibling phrasings is machine traffic
+# rather than demand. See is_singleton_probe().
+SINGLETON_MIN_IMPRESSIONS = int(os.environ.get("SINGLETON_MIN_IMPRESSIONS", "40"))
+# Expected clicks a query must have forgone, at zero actual clicks, before we
+# read it as nobody-is-searching-this. See is_dead_demand().
+DEAD_DEMAND_EXPECTED_CLICKS = float(os.environ.get("DEAD_DEMAND_EXPECTED_CLICKS", "3.0"))
+# Two queries are siblings when their token sets overlap this much. Shared by
+# the cluster builder and the singleton check so "related" means one thing.
+SIBLING_JACCARD = 0.3
+
 # Candidate bands, tried in order: (source label, min impressions, position range).
 #
 # The strict band is the one worth chasing, a query already on page one or two
@@ -222,6 +232,66 @@ def is_usable_topic(query: str) -> bool:
     return not (is_branded(query) or has_identifier(query) or is_navigational(query))
 
 
+def is_sibling(a_tokens: set, b_tokens: set) -> bool:
+    if not a_tokens or not b_tokens:
+        return False
+    return len(a_tokens & b_tokens) / len(a_tokens | b_tokens) >= SIBLING_JACCARD
+
+
+def sibling_count(query: str, pool: list) -> int:
+    """How many other real queries are phrasings of the same search."""
+    qt = tokens(query)
+    if not qt:
+        return 0
+    return sum(1 for r in pool if r["query"] != query and is_sibling(qt, tokens(r["query"])))
+
+
+def is_singleton_probe(row: dict, pool: list) -> bool:
+    """True if the query is one exact string on replay, not a search people make.
+
+    Human demand always arrives as a spread of phrasings. Over 90 days to
+    2026-09-14, every high-volume query on the property carries sibling
+    variants: "govhub" has 14, "sf330" has 14, "loopio pricing" has 24,
+    "govwin" has 42. A rank tracker or a scraper replays one fixed string, so
+    it shows up as volume with no variants at all.
+
+    Exactly two queries above 40 impressions have zero siblings, and both are
+    the shape this catches: "rhode island itsm contract awards" (762
+    impressions, position 3.2, zero clicks) and "federal tail spend" (69
+    impressions, position 68, zero clicks). The first one is why this check
+    exists. The picker chose it on 2026-09-07 off 33 impressions at position
+    8.3, the pipeline published a full guide for it, and the post now sits at
+    position 3 having earned no clicks at all, because no person was ever
+    typing it.
+
+    The sibling pool must be the usable queries only. Quoted scraper probes
+    come in families ("<title>" usaspending, "<title>" recipient, ...) and
+    would happily vouch for each other.
+    """
+    return (
+        row["impressions"] >= SINGLETON_MIN_IMPRESSIONS
+        and sibling_count(row["query"], pool) == 0
+    )
+
+
+def is_dead_demand(row: dict) -> bool:
+    """True if the query ranks well enough, on enough impressions, that zero
+    clicks means there is nobody behind it.
+
+    score() below is impressions x CTR shortfall, which means a query scores
+    highest precisely when it has volume and earns nothing. That is the
+    scoring function describing bot traffic and calling it opportunity. This
+    is the counterweight.
+
+    Priced off the same CTR curve the scorer uses, so it self-calibrates with
+    position instead of needing a hand-tuned impression floor: 30 impressions
+    at position 3 is damning, 300 at position 40 is not.
+    """
+    if row["clicks"] > 0 or row["position"] is None:
+        return False
+    return row["impressions"] * expected_ctr(row["position"]) >= DEAD_DEMAND_EXPECTED_CLICKS
+
+
 def covered_signatures() -> list:
     """Token sets for every topic the site already targets.
 
@@ -261,14 +331,61 @@ def covered_signatures() -> list:
             for match in re.findall(r"(?:slug|primaryKeyword|term):\s*'([^']+)'", text):
                 sigs.append(tokens(match.replace("-", " ")))
 
+    # Dynamic routes are skipped above because "[competitor].astro" names no
+    # topic, but the pages it builds absolutely do. /vs/<slug>/ and
+    # /alternatives/<slug>/ ship for every competitor in the catalog, and
+    # without these signatures the picker cannot see them.
+    #
+    # It did not see them. On 2026-08-10 it picked "loopio alternatives" and on
+    # 2026-08-31 "loopio competitors", while /alternatives/loopio/ had been
+    # live the whole time. Google resolved the pile-up by ignoring most of it:
+    # over the 90 days to 2026-09-14, /blog/loopio-alternatives-federal-proposals/
+    # took 0 impressions and /blog/loopio-competitors-federal-proposals/ took 3,
+    # while /alternatives/loopio/ took 706 at position 17.6 and /vs/loopio/ 258
+    # at 16.8. Four URLs, one query, zero clicks.
+    #
+    # One signature per competitor, not two: /vs/<slug>/ and
+    # /alternatives/<slug>/ answer the same "who else does this" search, and
+    # RIVAL_INTENT below treats every phrasing of it as the same page. A
+    # separate "vs" signature would also be inert, because "vs" is a stopword
+    # that tokens() strips before any query could match it.
+    competitors = DATA_DIR / "competitors.ts"
+    if competitors.exists():
+        for slug in re.findall(r"slug:\s*'([^']+)'", competitors.read_text()):
+            slug_tokens = tokens(slug.replace("-", " "))
+            if slug_tokens:
+                sigs.append(slug_tokens | {"alternatives"})
+
     return [s for s in sigs if s]
+
+
+# To a searcher and to Google, "<brand> alternatives" and "<brand> competitors"
+# are one query. The 0.7 overlap test below cannot see that: {loopio,
+# alternatives} against {loopio, competitors} scores 0.5 and passes as new.
+# "vs" is absent on purpose: it is already a stopword, so tokens() removes it
+# and it could never reach this set.
+RIVAL_INTENT = {"alternatives", "alternative", "competitors", "competitor", "comparison", "compare"}
+
+
+def rival_shape(toks: set):
+    """Split a '<brand> alternatives' query into (brand tokens, is that shape)."""
+    return frozenset(toks - RIVAL_INTENT), bool(toks & RIVAL_INTENT)
 
 
 def already_covered(query: str, sigs: list) -> bool:
     qt = tokens(query)
     if not qt:
         return True
-    return any(len(qt & s) / len(qt) >= 0.7 for s in sigs)
+    q_brand, q_is_rival = rival_shape(qt)
+    for s in sigs:
+        if len(qt & s) / len(qt) >= 0.7:
+            return True
+        # Same brand, both asking "who else does this": same page.
+        if q_is_rival and q_brand:
+            s_brand, s_is_rival = rival_shape(s)
+            if s_is_rival and q_brand == s_brand:
+                return True
+    return False
 
 
 def score(row: dict) -> float:
@@ -280,13 +397,10 @@ def score(row: dict) -> float:
 
 def build_cluster(winner: dict, pool: list, limit: int = 8) -> list:
     wt = tokens(winner["query"])
-    related = []
-    for r in pool:
-        if r["query"] == winner["query"]:
-            continue
-        rt = tokens(r["query"])
-        if rt and len(wt & rt) / len(wt | rt) >= 0.3:
-            related.append(r)
+    related = [
+        r for r in pool
+        if r["query"] != winner["query"] and is_sibling(wt, tokens(r["query"]))
+    ]
     related.sort(key=lambda r: r["impressions"], reverse=True)
     return related[:limit]
 
@@ -333,6 +447,11 @@ def main():
         print(f"GSC fetch failed ({exc}); falling back to seed bank", file=sys.stderr)
         rows = []
 
+    # Siblings are counted against every usable query on the property, not just
+    # the ones in the current position band, or a query would look like a
+    # singleton merely because its variants rank elsewhere.
+    sibling_pool = [r for r in rows if is_usable_topic(r["query"])]
+
     source, pool, candidates = None, [], []
     for label, min_impr, pos_lo, pos_hi in TIERS:
         pool = [
@@ -341,15 +460,27 @@ def main():
             and pos_lo <= r["position"] <= pos_hi
             and is_usable_topic(r["query"])
         ]
-        candidates = []
+        candidates, rejected = [], []
         for r in pool:
             if already_covered(r["query"], sigs):
+                continue
+            # Never silent: a query dropped as machine traffic gets named, so a
+            # guard that starts eating real topics is visible in the run log.
+            if is_singleton_probe(r, sibling_pool):
+                rejected.append(f"{r['query']!r} (no sibling phrasings at {r['impressions']} impressions)")
+                continue
+            if is_dead_demand(r):
+                expected = r["impressions"] * expected_ctr(r["position"])
+                rejected.append(f"{r['query']!r} (0 clicks against {expected:.0f} expected at position {r['position']:.1f})")
                 continue
             s = score(r)
             if s > 0:
                 candidates.append((s, r))
         print(f"Tier {label}: {len(pool)} in band, {len(candidates)} uncovered "
               f"and scoring above zero.", file=sys.stderr)
+        if rejected:
+            print(f"Tier {label}: dropped {len(rejected)} as machine traffic:\n  "
+                  + "\n  ".join(rejected), file=sys.stderr)
         if candidates:
             source = label
             break
@@ -368,6 +499,9 @@ def main():
             "clicks": winner["clicks"],
             "ctr": round(winner["ctr"], 4),
             "position": round(winner["position"], 1),
+            # Recorded so the ledger shows how broad the demand was, and a
+            # thin pick is auditable after the fact rather than a mystery.
+            "siblings": sibling_count(winner["query"], sibling_pool),
             "opportunity_clicks": round(best_score, 1),
             "related_queries": [
                 {

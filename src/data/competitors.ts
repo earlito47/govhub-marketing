@@ -198,6 +198,15 @@ export const competitors: Competitor[] = [
       href: '/blog/rfpio-alternative-federal-contractors/',
       label: 'RFPIO alternatives for federal contractors',
     },
+    // Same split GovWin IQ had, same fix. GSC over the 90 days to 2026-09-14
+    // for the "rfpio pricing" cluster: the post ranked 7.2 on 25 impressions,
+    // /alternatives/responsive/ ranked 17.6 on 352, and /vs/responsive/ 17.8
+    // on 105. Google was handed three candidates and served the two weaker
+    // ones to 95% of searchers. Nothing in the cluster has ever been clicked.
+    pricingCanonical: {
+      href: '/blog/rfpio-pricing-real-ranges/',
+      label: 'RFPIO pricing: real ranges, addons, and ROI math',
+    },
   },
   {
     slug: 'govwin-iq',
