@@ -146,6 +146,23 @@ export const competitors: Competitor[] = [
       href: '/blog/loopio-competitors-federal-proposals/',
       label: 'Loopio competitors for federal proposals',
     },
+    // Set preemptively, which is a deliberate departure from the rule above.
+    // The dedicated post shipped on 2026-09-14 and has no ranking history yet,
+    // so it cannot yet be shown to outrank /vs/ and /alternatives/.
+    //
+    // Waiting for that proof means reproducing a split we have now watched
+    // twice. Over the 90 days to 2026-09-14 "loopio pricing" was already
+    // divided between /alternatives/loopio/ at 20.8 and /vs/loopio/ at 25.0,
+    // with no clicks on either, and both GovWin IQ and RFPIO ended with the
+    // dedicated post ranking far ahead of the comparison pages once one
+    // existed. A third candidate carrying its own price table is what turns
+    // that into a three-way split, so the deferral goes in now rather than
+    // after the damage. If the post has not overtaken both pages by the end of
+    // 2026, remove this and the pages take their pricing detail back.
+    pricingCanonical: {
+      href: '/blog/loopio-pricing-real-ranges-addons-roi/',
+      label: 'Loopio pricing: real ranges, add-ons, ROI math',
+    },
     alternativesRoster: [
       {
         name: 'Privia',
