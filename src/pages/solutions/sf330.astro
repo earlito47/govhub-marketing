@@ -6,20 +6,38 @@ import FAQSchema from '../../components/seo/FAQSchema.astro';
 import CTABand from '../../components/CTABand.astro';
 import { getSolution } from '../../data/solutions';
 import { faqsForPage } from '../../data/faqs';
+import { SF330_FORM } from '../../data/forms';
 
 const solution = getSolution('sf330')!;
+
+// This page ranked 3.4 for "sf330" across the 90 days to 2026-09-14 on 82
+// impressions and took zero clicks, and the same for every variant under it:
+// "sf330 form", "sf 330", "form sf330", "sf330 forms", "330 form". Position
+// was never the problem. People searching "sf330" want the form, and the page
+// opened by selling software for it, so the result was right there and no use
+// to them. The download now leads; the product pitch follows the thing they
+// came for.
 const faqs = [
-  ...faqsForPage('/solutions/sf330/'),
   {
-    question: 'What is the SF330 form used for?',
+    question: 'Where can I download the SF330 form?',
+    answer: `The current SF330 is revision ${SF330_FORM.revision}, published by GSA under ${SF330_FORM.authority}. You can download the ${SF330_FORM.pages}-page PDF from the top of this page, or from GSA's forms library directly. It carries OMB control number ${SF330_FORM.ombControlNumber} and expires ${SF330_FORM.ombExpiration}.`,
+  },
+  {
+    question: 'Is there a Word version of the SF330?',
     answer:
-      'The SF330 is the standard form architect-engineer firms use to submit qualifications for federal A-E contracts under the Brooks Act (FAR Part 36.6). Agencies use it to shortlist firms based on professional qualifications and specialized experience rather than price.',
+      'Not an official one. GSA publishes the SF330 only as a fillable PDF, so any Word or Excel copy you find is somebody\'s recreation, not the government form. Agencies expect the official PDF. Where firms genuinely need Word is for the narrative content inside Sections E, F and H, which is drafted separately and then placed into the form.',
   },
   {
     question: 'What is the difference between Part I and Part II of the SF330?',
     answer:
-      'Part I covers contract-specific qualifications, the team, resumes, and example projects for one particular solicitation. Part II is a general statement of your firm’s qualifications that you reuse across submissions. GovHub keeps Part II current and tailors Part I per opportunity.',
+      'Part I covers contract-specific qualifications, the team, resumes, and example projects for one particular solicitation. Part II is a general statement of your firm’s qualifications that you reuse across submissions, filed for the firm and for each branch office involved. GovHub keeps Part II current and tailors Part I per opportunity.',
   },
+  {
+    question: 'What goes in an SF330 Section E resume?',
+    answer:
+      'Section E holds one resume per key person on the proposed team: name, role on this contract, total years of experience and years with the current firm, education, professional registrations, and relevant projects tied to the example projects in Section F. Agencies score the fit between the person and the role, so a generic resume is a scoring loss rather than a formatting nit.',
+  },
+  ...faqsForPage('/solutions/sf330/'),
 ];
 ---
 
@@ -34,18 +52,45 @@ const faqs = [
     />
 
     <article class="prose">
-      <h1>SF330 software: automate the architect-engineer qualifications form</h1>
+      <h1>SF330 form: download the current version and fill it faster</h1>
       <p class="lede">
-        The SF330 is repetitive, data-heavy, and unforgiving of inconsistency.
-        GovHub autofills Parts I and II from your company profile, resume library,
-        and past-performance data, so you assemble the form instead of retyping
-        the same information on every submission.
+        The SF330 is the Architect-Engineer Qualifications form federal agencies
+        use to shortlist A-E firms. The official form is below, followed by what
+        goes in each part and how to stop retyping it on every submission.
       </p>
 
+      <div class="form-download" id="download">
+        <div class="form-meta">
+          <p class="form-kicker">Official form</p>
+          <h2 class="form-title">Standard Form 330, Architect-Engineer Qualifications</h2>
+          <dl>
+            <div><dt>Revision</dt><dd>{SF330_FORM.revision}</dd></div>
+            <div><dt>Pages</dt><dd>{SF330_FORM.pages}</dd></div>
+            <div><dt>Authority</dt><dd>{SF330_FORM.authority}</dd></div>
+            <div><dt>OMB control number</dt><dd>{SF330_FORM.ombControlNumber}</dd></div>
+            <div><dt>OMB expiration</dt><dd>{SF330_FORM.ombExpiration}</dd></div>
+          </dl>
+        </div>
+        <p class="form-actions">
+          <a class="btn-primary" href={SF330_FORM.href} download>
+            Download the SF330 PDF
+          </a>
+          <a class="btn-secondary" href={SF330_FORM.officialSource} rel="nofollow noopener" target="_blank">
+            View on GSA.gov
+          </a>
+        </p>
+        <p class="form-note">
+          This is an unmodified copy of the GSA form, mirrored here so it is one
+          click away. A federal form is a US government work and free to
+          redistribute. GSA remains the authority: if the revision date above no
+          longer matches theirs, use their copy.
+        </p>
+      </div>
+
       <Tldr
-        what="A dedicated workflow for the SF330 architect-engineer qualifications form."
+        what="The current SF330 form, plus a workflow that fills Parts I and II for you."
         who="A-E firms completing SF330 Parts I and II for federal design contracts."
-        answer="GovHub autofills Parts I and II from your profile, resume library, and project data."
+        answer="Download the form here; GovHub autofills it from your profile, resume library, and project data."
       />
 
       <div class="gh-divider-ridge" aria-hidden="true"></div>
@@ -59,26 +104,55 @@ const faqs = [
         experience, and past performance, all captured on the SF330.
       </p>
 
-      <h2>The two parts of the SF330</h2>
+      <h2 id="part-i">Part I: contract-specific qualifications</h2>
+      <p>
+        Part I is written for one solicitation and covers Sections A through H:
+        the contract and firm details, the proposed team and its organizational
+        chart, resumes of key personnel, example projects, and a matrix tying
+        the two together.
+      </p>
       <ul>
-        <li>
-          <strong>Part I: Contract-Specific Qualifications</strong> (Sections A–H):
-          the proposed team, an organizational chart, resumes of key personnel
-          (Section E), and example projects demonstrating relevant experience
-          (Sections F and G), tailored to a single solicitation.
-        </li>
-        <li>
-          <strong>Part II: General Qualifications:</strong> a reusable statement
-          of your firm’s overall qualifications, disciplines, and size, submitted
-          for the firm and each branch office involved.
-        </li>
+        <li><strong>Sections A to D:</strong> the solicitation, your firm, and the proposed team structure.</li>
+        <li><strong>Section E:</strong> resumes of key personnel, one per person, scoped to their role on this contract.</li>
+        <li><strong>Section F:</strong> example projects that demonstrate the specialized experience the agency asked for.</li>
+        <li><strong>Section G:</strong> the matrix mapping each key person to the example projects they worked on.</li>
+        <li><strong>Section H:</strong> additional information, where the agency's evaluation criteria are addressed directly.</li>
       </ul>
+
+      <h2 id="section-e-resumes">SF330 resumes (Section E)</h2>
+      <p>
+        Section E is where most of the rewriting happens, and where most of the
+        scoring is lost. Each resume carries the person's role on this contract,
+        years of experience total and with the firm, education, registrations,
+        and projects that line up with Section F. The same engineer needs a
+        different Section E for a bridge pursuit than for a vertical
+        construction pursuit, which is why firms end up maintaining dozens of
+        near-duplicate resumes by hand.
+      </p>
+
+      <h2 id="part-ii">Part II: general qualifications</h2>
+      <p>
+        Part II is the reusable half: a statement of your firm's overall
+        qualifications, disciplines, and size. It is submitted for the firm and
+        for each branch office involved in the contract, which is where copies
+        drift apart. Keep one current Part II and file it everywhere rather than
+        editing last year's.
+      </p>
+
+      <h2 id="word-format">Is there an SF330 in Word or Excel?</h2>
+      <p>
+        No official one. GSA publishes the SF330 as a fillable PDF and nothing
+        else, so a Word or Excel SF330 is always somebody's recreation. Those
+        copies go stale, drop revisions, and can be rejected. Draft the narrative
+        content for Sections E, F and H wherever you like, then place it in the
+        official form.
+      </p>
 
       <h2>How GovHub speeds up the SF330</h2>
       <ol>
         <li>Maintain resumes, project profiles, and firm data once in a central library.</li>
         <li>GovHub populates Part II and drafts Part I Sections E, F, and G for the specific pursuit.</li>
-        <li>Match key personnel and example projects to the solicitation’s evaluation criteria.</li>
+        <li>Match key personnel and example projects to the solicitation's evaluation criteria.</li>
         <li>Export a consistent, correctly formatted SF330, no version drift between sections.</li>
       </ol>
 
@@ -90,7 +164,7 @@ const faqs = [
       </p>
     </article>
 
-    <FAQSchema faqs={faqs} heading="SF330 software: FAQ" />
+    <FAQSchema faqs={faqs} heading="SF330: FAQ" />
 
     <CTABand
       heading="Stop retyping your SF330"
@@ -124,5 +198,79 @@ const faqs = [
   }
   li {
     margin: 0.5rem 0;
+  }
+
+  .form-download {
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    margin: 2rem 0;
+  }
+  .form-kicker {
+    margin: 0;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--accent);
+    font-weight: 600;
+  }
+  .form-title {
+    margin: 0.35rem 0 1rem;
+    font-size: 1.1rem;
+  }
+  .form-download dl {
+    margin: 0;
+    display: grid;
+    gap: 0.35rem 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    font-size: 0.9rem;
+  }
+  .form-download dl > div {
+    display: flex;
+    gap: 0.4rem;
+  }
+  .form-download dt {
+    color: var(--fg-muted);
+  }
+  .form-download dt::after {
+    content: ':';
+  }
+  .form-download dd {
+    margin: 0;
+    font-weight: 600;
+    color: var(--fg);
+  }
+  .form-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin: 1.25rem 0 0;
+  }
+  .form-actions a {
+    display: inline-block;
+    padding: 0.6rem 1.1rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+  }
+  .btn-primary {
+    background: var(--accent);
+    color: var(--bg);
+  }
+  .btn-secondary {
+    border: 1px solid var(--border);
+    color: var(--fg);
+  }
+  .form-actions a:hover {
+    text-decoration: none;
+    opacity: 0.9;
+  }
+  .form-note {
+    margin: 1rem 0 0;
+    font-size: 0.85rem;
+    color: var(--fg-muted);
   }
 </style>

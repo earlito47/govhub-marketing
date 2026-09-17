@@ -55,6 +55,13 @@ https://govhub.online/*  https://www.govhub.online/:splat  301
 /glossary/compliance-matrix/    /blog/what-is-a-compliance-matrix/    301
 
 
+# Three of our own URLs were competing for "loopio alternatives" and Google
+# resolved it by ignoring two of them: over the 90 days to 2026-09-14 this post
+# took 0 impressions while /alternatives/loopio/ took 706 at position 17.6. Its
+# substance (the named roster of other tools) moved onto the alternatives page,
+# which is the one Google already serves, so the post consolidates into it.
+/blog/loopio-alternatives-federal-proposals/  /alternatives/loopio/  301
+
 # The weekly content pipeline picked a USAspending award identifier as a topic
 # and published a post titled after it. The article itself is sound, so it was
 # retargeted at the real question instead of deleted. See has_identifier in

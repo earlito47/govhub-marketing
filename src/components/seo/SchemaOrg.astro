@@ -36,9 +36,21 @@ const defaultsByType: Record<SchemaType, Record<string, unknown>> = {
   Organization: {
     '@id': `${siteUrl}/#organization`,
     name: 'GovHub',
-    // Brand-variant queries ("gov hub", "gob hub") should resolve to this entity.
-    alternateName: ['Gov Hub', 'GovHub.online'],
+    // Brand-variant queries should resolve to this entity. Every spelling here
+    // is one GSC recorded impressions for over the 90 days to 2026-09-14, not a
+    // guess: "gov hub" (289), "gov.hub" (142), "govhub.online" (76). The site
+    // ranked 6.9 for its own name, so the brand SERP is contested and the
+    // entity needs to state its own aliases.
+    alternateName: ['Gov Hub', 'Gov.Hub', 'GovHub.online', 'govhub.online'],
     url: siteUrl,
+    // Disambiguation, and the honest answer to the "is this official?"
+    // searches: a private company selling to contractors, not an agency.
+    knowsAbout: [
+      'Government proposal writing',
+      'Federal RFP responses',
+      'FAR and DFARS compliance',
+      'SF330 architect-engineer qualifications',
+    ],
     logo: `${siteUrl}/brand/logos/govhub-app-icon-512.png`,
     description: 'GovHub is an AI proposal writing platform for government contractors.',
     contactPoint: {

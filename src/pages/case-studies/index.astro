@@ -7,9 +7,22 @@ import { caseStudies } from '../../data/case-studies';
 import PageHero from '../../components/PageHero.astro';
 ---
 
+<!--
+  This page drew 207 impressions over the 90 days to 2026-09-14, all of them
+  from "federal government case studies" and "us federal government case
+  studies", at positions 79 and 84. That is page 8, and it is the right result:
+  those searchers want case studies ABOUT federal government programmes, which
+  is a different thing from five small businesses winning contracts. Chasing
+  that query would mean writing something this page should not be.
+
+  So the target moves to what the page can honestly win, the searches its own
+  content answers: the award types and agencies in the studies themselves.
+  Titles and the facet list below carry that vocabulary. Expect modest volume;
+  this was the weakest of the four opportunities in the review.
+-->
 <BaseLayout
-  title="Case Studies: Small Business Federal Contract Wins"
-  description="How small businesses use GovHub to win federal contracts, from a $1.79M Air Force STTR to a ~$49M SBA IT vehicle. Scenarios grounded in public award data."
+  title="Federal Contract Win Examples: STTR, SDVOSB, IDIQ"
+  description="Five worked examples of small businesses winning federal contracts, from a $1.79M Air Force STTR Phase II to a ~$49M SBA IT vehicle, on public award data."
  ogImage="/brand/page-graphics/case-studies-carts-of-proof@2x.png">
   <main class="container">
     <Breadcrumbs
@@ -26,7 +39,9 @@ import PageHero from '../../components/PageHero.astro';
         Five representative scenarios (spanning the Air Force, DHA, SBA, Commerce,
         and the VA) showing how lean teams use GovHub to compete on quality
         against much larger firms. Together they reflect roughly
-        <strong>$78.7M</strong> in small-business contract value.
+        <strong>$78.7M</strong> in small-business contract value, across an STTR
+        Phase II, an SDVOSB cybersecurity award, a multi-year IT service-desk
+        vehicle, and two agency modernization programs.
       </p>
       <p class="disclaimer" role="note">
         <strong>Illustrative scenarios.</strong> These are representative examples

@@ -82,7 +82,7 @@ These are ranges we have directly seen or validated with peers in 2025 and 2026.
 
 Expect one time onboarding fees from 2k to 10k. If you need migration of a legacy answer library with thousands of Q A pairs, budget time and internal labor, not just vendor dollars. The painful part is tagging and retiring stale content. Plan a weekly purge cadence.
 
-If you want deeper price breakdowns and ROI math, we covered a sister category in our RFPIO pricing post. For Loopio specific alternatives, we maintain a separate page that we update with real quotes and tradeoffs. See [Best Loopio alternatives for federal proposals](/blog/loopio-alternatives-federal-proposals/).
+If you want deeper price breakdowns and ROI math, we covered a sister category in our RFPIO pricing post. For Loopio specific alternatives, we maintain a page that we update with real quotes and tradeoffs. See [Loopio alternatives for government contractors](/alternatives/loopio/).
 
 ## Worked example, shredding L and M into a compliance matrix
 
