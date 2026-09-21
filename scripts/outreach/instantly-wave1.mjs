@@ -294,12 +294,19 @@ const CAMPAIGNS = [
     ],
     email1: A_EMAIL_1_BODY,
     daily_limit: 120, // 6 mailboxes x 20/day
-    // Halved from 40 for week 2 (2026-09-12). A has 697 untouched leads and the
-    // copy above is new and unvalidated; week 1 spent 200 of them on a premise
-    // that did not describe the segment. 20/day is roughly 100 contacts a week,
-    // enough to see whether positives exist at all without burning the rest of
-    // the list to find out. Restore to 40 once a week 2 read exists.
-    daily_max_leads: 20,
+    // Cut to 1 on 2026-09-21: this copy is the dead variant. It went live
+    // 2026-09-14 and produced 0 human replies from 169 first touches against a
+    // 3.8% old-copy baseline, which is a 0.1% outcome if the rate were really
+    // 3.8%. Per the signal-personalization runbook (Phase 0.4) its send budget
+    // moves to the five new angle campaigns.
+    //
+    // WHY 1 AND NOT 0. Several APIs read 0 as "no cap" rather than "no leads",
+    // and Instantly's docs do not state which it is. Guessing wrong here means
+    // blasting a message already proven dead at full volume, so the cap is set
+    // to the smallest unambiguous value instead. 1/day across A, B and C is 3
+    // new first touches a day rather than 50. Set to 0 once the semantics are
+    // confirmed. In-flight sequences are untouched and finish normally.
+    daily_max_leads: 1,
   },
   {
     key: 'B',
@@ -311,7 +318,8 @@ const CAMPAIGNS = [
     ],
     email1: B_EMAIL_1_BODY,
     daily_limit: 60, // 3 mailboxes x 20/day
-    daily_max_leads: 20,
+    daily_max_leads: 1, // dead variant, see campaign A note
+
   },
   {
     key: 'C',
@@ -325,9 +333,9 @@ const CAMPAIGNS = [
     ],
     email1: C_EMAIL_1_BODY,
     daily_limit: 60, // 3 mailboxes x 20/day
-    // Halved from 20 for week 2 (2026-09-12), same reasoning as A: 348 leads
-    // are still untouched and the re-engagement angle is unproven.
-    daily_max_leads: 10,
+    // Cut to 1 on 2026-09-21 with A and B: dead variant, budget moves to the
+    // five angle campaigns. See campaign A for why 1 rather than 0.
+    daily_max_leads: 1,
   },
 ];
 
