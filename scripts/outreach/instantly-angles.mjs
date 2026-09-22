@@ -1,6 +1,6 @@
 // Signal personalization v1: the five angle campaigns.
 //
-// Builds GH-A1-Recompete, GH-A2-MatchedRFP, GH-A3-SAMExpiry, GH-A4-CompetitorWon
+// Builds GH-A1-Recompete, GH-A2-MatchedRFP, GH-A4-CompetitorWon
 // and GH-A5-DebriefPain from the copy in docs/signal-personalization-runbook.md
 // Section 7, via POST /api/v2/campaigns. Created PAUSED with no leads: the push
 // job (job_push) is what puts anyone in them, and it will not run before the
@@ -83,16 +83,25 @@ const SCHEDULE = {
 // couple of weeks. Capacity check at steady state, 4 steps per sequence:
 //   A5 15 new/day x 4 =  60/day over 4 mailboxes (80 available)
 //   A1 10 new/day x 4 =  40/day over 2 mailboxes (40 available)
-//   A2 10 x 4         =  40/day over 2 (40)
-//   A3 10 x 4         =  40/day over 2 (40)
+//   A2 20 x 4         =  80/day over 4 (80)
 //   A4 10 x 4         =  40/day over 2 (40)
-// A1 to A4 are provisioned to the cap, but the runbook says their cells are
-// data-driven and will usually be smaller, so real load sits well under.
-// A5 carries the fallback and is the one that will actually run at its cap.
+// A3 WAS REMOVED: both SAM.gov keys failed, so it sat at 0% coverage while
+// holding 10 daily slots and two mailboxes open for mail it could never
+// generate. Its cap went to A2, which is the only angle whose supply exceeds
+// its cap by two orders of magnitude, and its two mailboxes went with it --
+// A2 at 20 new/day needs 80/day of sending room and two mailboxes only carry
+// 40. Raising a cap without moving the mailboxes would have throttled it right
+// back down.
+// A1 and A4 are provisioned to the cap, but their cells are data-driven and
+// will usually be smaller, so real load sits well under.
 const MAILBOXES = {
   A1: ['earl.knight@buildwithgovhub.com', 'earl.knight@usegovhub.com'],
-  A2: ['earl.knight@govhubcontracts.com', 'earl.knight@govhubprocurement.com'],
-  A3: ['earl.knight@govhubcapture.com', 'earl.knight@trygovhub.com'],
+  A2: [
+    'earl.knight@govhubcontracts.com',
+    'earl.knight@govhubprocurement.com',
+    'earl.knight@govhubcapture.com',   // freed by A3's removal
+    'earl.knight@trygovhub.com',       // freed by A3's removal
+  ],
   A4: ['earl.knight@getgovhub.com', 'earl.knight@govhubteam.com'],
   A5: [
     'earl.knight@govhubnow.com',
@@ -141,7 +150,7 @@ const A1 = {
 const A2 = {
   key: 'A2',
   name: 'GH-A2-MatchedRFP',
-  daily_max_leads: 10,
+  daily_max_leads: 20,
   required: ['sol_number', 'sol_agency_short', 'sol_close_date', 'naics_code', 'fit_line', 'check_line'],
   // naics_code is required by the runbook and is genuinely load-bearing, but it
   // never appears as a token in these bodies: it is interpolated INTO fit_line
@@ -159,38 +168,6 @@ const A2 = {
     },
     { delay: 2, lines: ['{{firstName}}, {{sol_number}} closes {{sol_close_date}}. Want the disqualifier list before then? Two minutes to read.'] },
     { delay: 4, lines: ['Should I record a 3 minute video walking through the flags on {{sol_number}} instead?'] },
-    { delay: 0, lines: ['Want me to close this out, {{firstName}}?'] },
-  ],
-};
-
-// ===========================================================================
-// A3  SAM registration expiring
-// ===========================================================================
-// Step 1 has no CTA on purpose. It is a favour; replies come from gratitude or
-// correction. The free-and-do-it-yourself sentence is what separates this from
-// the "your SAM is expiring, pay us" scam pattern contractors are flooded with,
-// so it is load-bearing copy, not filler. Watch this angle's reply TONE in week
-// one and pull the angle if people read it as the scam.
-const A3 = {
-  key: 'A3',
-  name: 'GH-A3-SAMExpiry',
-  daily_max_leads: 10,
-  required: ['sam_exp_date'],
-  subjects: ['sam.gov', '{{sam_exp_date}}'],
-  steps: [
-    {
-      delay: 4,
-      lines: [
-        'Hi {{firstName}}, quick heads up. SAM shows {{companyName}}\'s registration expiring {{sam_exp_date}}. If anything you\'re bidding closes after that date, even a short lapse can sink the award. GAO has upheld protests over exactly this. Renewal is free and you do it yourself at sam.gov, so ignore anyone who emails offering to charge you for it. That\'s the whole email, just didn\'t want it to bite you.',
-      ],
-    },
-    {
-      delay: 5,
-      lines: [
-        '{{firstName}}, did the renewal get handled? If yes, one more thing worth two minutes: when you lost your last federal bid, did you ever find out why? I wrote up the one page way to get a real answer out of the CO. Want it?',
-      ],
-    },
-    { delay: 4, lines: ['Want the debrief one pager? Happy to just send it, you keep it either way.'] },
     { delay: 0, lines: ['Want me to close this out, {{firstName}}?'] },
   ],
 };
@@ -254,7 +231,7 @@ const A5 = {
   ],
 };
 
-const ANGLES = [A1, A2, A3, A4, A5];
+const ANGLES = [A1, A2, A4, A5];
 
 // ---- Payload --------------------------------------------------------------
 const bodyHtml = (lines) =>
@@ -376,7 +353,7 @@ function check() {
     // wave 1 merged {{companyName}} off a messy SAM-derived list where blanks
     // were real and ungated.
     //
-    // Here the runbook deliberately specifies bare-token subjects for A2, A3 and
+    // Here the runbook deliberately specifies bare-token subjects for A2 and
     // A4 ("{{sol_agency_short}}" alone reads like an internal note, which is the
     // point), and rule 0.7 gates those variables TWICE: job_assign refuses to
     // assign the angle without them and job_push asserts completeness again. So
