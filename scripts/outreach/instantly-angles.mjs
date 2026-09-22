@@ -151,7 +151,7 @@ const A2 = {
   key: 'A2',
   name: 'GH-A2-MatchedRFP',
   daily_max_leads: 20,
-  required: ['sol_number', 'sol_agency_short', 'sol_close_date', 'naics_code', 'fit_line', 'check_line'],
+  required: ['sol_number', 'sol_agency_short', 'sol_close_date', 'naics_code', 'fit_line', 'check_line', 'cta_line', 'followup_line'],
   // naics_code is required by the runbook and is genuinely load-bearing, but it
   // never appears as a token in these bodies: it is interpolated INTO fit_line
   // by the push job before Instantly ever sees it. It is listed here so the
@@ -159,15 +159,25 @@ const A2 = {
   // read its absence from the template as a spec error.
   renderInputs: ['naics_code'],
   subjects: ['{{sol_agency_short}}', 'saw this'],
+  // THE ASK IS A TOKEN, NOT A LITERAL, and that is what makes the base-vs-speed
+  // A/B possible inside one campaign. job_assign renders cta_line and
+  // followup_line as finished sentences and records which set it used in
+  // body_variant, so both arms share these mailboxes, this schedule and this
+  // reply handling -- the only difference between them is the words, which is
+  // the only way the result means anything.
+  //
+  // Step 3 is deliberately variant-neutral. It said "the flags on {{sol_number}}",
+  // which is base-variant language and would have contradicted a speed opener
+  // three days later.
   steps: [
     {
       delay: 2,
       lines: [
-        'Hi {{firstName}}, {{sol_agency_short}} posted {{sol_number}} and {{fit_line}}. It closes {{sol_close_date}}. {{check_line}}. Want the list for this one? Free, no call, and you can bid it with or without us.',
+        'Hi {{firstName}}, {{sol_agency_short}} posted {{sol_number}} and {{fit_line}}. It closes {{sol_close_date}}. {{check_line}}. {{cta_line}}',
       ],
     },
-    { delay: 2, lines: ['{{firstName}}, {{sol_number}} closes {{sol_close_date}}. Want the disqualifier list before then? Two minutes to read.'] },
-    { delay: 4, lines: ['Should I record a 3 minute video walking through the flags on {{sol_number}} instead?'] },
+    { delay: 2, lines: ['{{firstName}}, {{sol_number}} closes {{sol_close_date}}. {{followup_line}}'] },
+    { delay: 4, lines: ['Should I record a 3 minute video on {{sol_number}} instead?'] },
     { delay: 0, lines: ['Want me to close this out, {{firstName}}?'] },
   ],
 };
