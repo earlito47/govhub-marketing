@@ -237,5 +237,11 @@ cuts 4%; what it cuts is wasted output).
 | A2 census at the new size | 4,844 / 7,326 = 66.1% |
 | Opportunities run accounting | 4,844 matched − 872 already assigned = 3,972 written, 3,972 replaced |
 | Assign preview over 2,000 | 670 A2 + 609 holdouts, 0 gate fallbacks |
-| Name rendering | "Sni United LLC", not "SNI UNITED LLC" |
+| Name rendering | "Knexus Research LLC", "Madison Avenue Support Services, Inc" |
+| Assign run, 300 companies | A1 4, A2 89, A4 18, A5 189, 99 holdouts, 0 gate fallbacks |
+| Push dry run | 211 candidates, 29 to outbox, 0 stale / 0 suppressed / 0 incomplete / 0 failed |
 | `dry_run` | still **true** — nothing has been sent |
+
+A2 shows 0 in the push run because all 89 sit at `needs_review`: manual
+approval is still on, which is the Phase 9 gate working as intended. The 29
+outbox rows are there to be read before any of this goes live.
