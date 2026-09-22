@@ -240,8 +240,23 @@ cuts 4%; what it cuts is wasted output).
 | Name rendering | "Knexus Research LLC", "Madison Avenue Support Services, Inc" |
 | Assign run, 300 companies | A1 4, A2 89, A4 18, A5 189, 99 holdouts, 0 gate fallbacks |
 | Push dry run | 211 candidates, 29 to outbox, 0 stale / 0 suppressed / 0 incomplete / 0 failed |
-| `dry_run` | still **true** — nothing has been sent |
+| `dry_run` | **false** since 2026-09-22 — the programme is live |
+| Campaigns | A1, A2, A4, A5 Active, start 2026-09-23, 09:00-16:00 America/Detroit |
+| First push | 49 leads, 0 failed, verified against the live API |
+| A2 live arm split | 11 base / 9 speed |
 
-A2 shows 0 in the push run because all 89 sit at `needs_review`: manual
-approval is still on, which is the Phase 9 gate working as intended. The 29
-outbox rows are there to be read before any of this goes live.
+Manual approval was turned off on go-live: the owner chose volume at scale,
+and the premise check every A2 row has to pass (a real solicitation whose
+NAICS matches this company) is enforced by job_assign's gate rather than by a
+human. `outreach-push` also had no cron entry, so leads only entered Instantly
+when triggered by hand; it now runs weekday mornings at 06:00 UTC, an hour
+after assign and seven hours before the sending window opens.
+
+**A note on one thing that did not go wrong.** The first live push looked, for
+about a minute, like it had written 20 A2 leads with every variable blank --
+"Hi Abel, undefined posted undefined". All four campaigns were paused and
+`dry_run` reverted on the strength of it. The leads were correct; the checker
+was reading `custom_variables`, which is the field job_push WRITES, while
+Instantly returns them under `payload` on read. Nothing had been sent. The
+verification is a committed tool now (`scripts/outreach-tests/verify-live-leads.mjs`
+in strata-parse) with that asymmetry documented at the top of it.
