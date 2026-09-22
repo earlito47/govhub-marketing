@@ -392,7 +392,22 @@ function check() {
   note(new Set(domains).size === domains.length, 'one mailbox per domain', `${new Set(domains).size} domains`);
   const names = ANGLES.map((a) => a.name);
   note(new Set(names).size === names.length, 'campaign names are unique');
-  note(new Date(SCHEDULE.start_date) > new Date(), 'start_date is still a live backstop', SCHEDULE.start_date);
+  // start_date WAS asserted to be in the future, which was right exactly once:
+  // before launch, when a date already past would have meant the campaigns
+  // began sending the moment they were activated. From the morning of the
+  // launch onward that assertion fails forever, and it fails the whole --check,
+  // which --sync refuses to run without. So the guard that protected the launch
+  // would have blocked every copy change after it.
+  //
+  // What is still worth catching is a typo: a start_date far in the future
+  // silently parks the campaigns and nothing sends, with no error anywhere.
+  const startDate = new Date(SCHEDULE.start_date);
+  const daysOut = (startDate - new Date()) / 864e5;
+  note(!Number.isNaN(startDate.valueOf()) && daysOut < 30,
+    'start_date is sane',
+    Number.isNaN(startDate.valueOf()) ? `UNPARSEABLE: ${SCHEDULE.start_date}`
+      : daysOut > 0 ? `${SCHEDULE.start_date}, ${Math.ceil(daysOut)}d out (pre-launch backstop)`
+      : `${SCHEDULE.start_date}, in the past (campaigns already launched)`);
 
   console.log(`\n${fail === 0 ? 'All guardrails pass.' : fail + ' FAILURES.'}`);
   return fail;
