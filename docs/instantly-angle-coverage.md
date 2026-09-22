@@ -78,16 +78,30 @@ outreach, or it stays at zero.
 ## 3. Projected steady-state mix
 
 The assigner's priority is A1 > A3 > A2 > A4 > A5, so a company with several
-signals takes the most specific one. Applying the measured rates in that order:
+signals takes the most specific one. That makes each angle's *marginal*
+contribution, not its standalone rate, the number that matters — and the angles
+are not independent.
 
-| Angle | Projected | Share |
-|---|---:|---:|
-| A1 Recompete | 320 | 13% |
-| A3 SAM expiry | 0 | 0% |
-| A2 Matched RFP | 1,363 | 57% |
-| A4 Competitor won | 309 | 13% |
-| A5 Generic | 393 | 16% |
-| **Personalized** | **1,992** | **84%** |
+**A4 overlaps A2 almost completely.** Of the 79 companies with a competitor
+award, 69 (87%) also have a matched RFP; of the 99 without one, only 50 (51%)
+do. A4-eligible firms are the same firms A2 already reaches, which stands to
+reason: both angles key off an active NAICS. A1 shows no such correlation — 69%
+of its hits also carry an A2 signal against 71% of its misses, which is nothing.
+
+| Angle | Standalone rate | Marginal after higher priority | Share |
+|---|---:|---:|---:|
+| A1 Recompete | 13.4% | 320 | 13% |
+| A3 SAM expiry | 0% | 0 | 0% |
+| A2 Matched RFP | 66.0% | 1,363 | 57% |
+| A4 Competitor won | 44.4% | **119** | 5% |
+| A5 Generic | — | 583 | 24% |
+| **Personalized** | | **1,802** | **76%** |
+
+**A4's 44% standalone rate is worth 5% of incremental reach.** It is also the
+most expensive angle to run: ~1,550 API calls and roughly two weeks of nightly
+scanning to complete a pass, for 119 companies A2 would not already have
+covered. Run A4 because its *message* may beat A2's, not to extend coverage —
+for reach it barely earns its keep.
 
 Half of the A2-eligible are coin-flipped into A5 with `holdout = true` — that is
 the experiment, and it is why the live A2 share will read lower than 57% until
@@ -142,10 +156,15 @@ full pass; nothing else needs to change.
    before it returns a result.
 3. **Stop waiting on A3.** It needs its own SAM key. Until then it is 0% and
    its 10 daily slots are dead capacity — reallocate them to A2.
-4. **Keep A1 despite the 13%.** It only has to fill 10 slots a day, and 320
-   companies is 32 days of supply. Low coverage is not the same as low value
-   when the cap is the binding constraint.
-5. **If reach is the goal, widen the profile, not the angles.** The B-profile
+4. **Keep A1 despite the 13%.** Its coverage is low but it is *uncorrelated*
+   with A2, so all 320 companies are reach A2 would not have delivered. It only
+   has to fill 10 slots a day, so 320 is 32 days of supply. Low coverage is not
+   low value when the cap is the binding constraint.
+5. **Treat A4 as a copy test, not a coverage play.** 87% of the companies it
+   reaches are already reachable by A2, so it adds ~119 companies for ~1,550 API
+   calls. Worth running to see whether "a competitor just won" outperforms "here
+   is a live RFP" — not worth running for reach.
+6. **If reach is the goal, widen the profile, not the angles.** The B-profile
    gate costs 10,663 contacts; the worst angle gap costs a few hundred.
 
 ---
