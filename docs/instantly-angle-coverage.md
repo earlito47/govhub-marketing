@@ -18,16 +18,30 @@ trouble?
 | ...with an email address | 20,552 | −3,448 |
 | ...deliverable (`mv_result = ok`) | 14,868 | −5,684 |
 | ...never contacted in a prior wave | 13,068 | −1,800 |
-| ...matching the B profile ($100K–1M obligations, 1–2 awards) | **2,405** | **−10,663** |
-| ...loaded and unsuppressed in `outreach.companies` | **2,385** | −20 |
+| ...matching the gate ($50K–5M obligations, ≤2 new awards) | 7,506 | −5,562 |
+| ...loaded and unsuppressed in `outreach.companies` | **7,326** | −180 |
 
-**The B-profile gate removes 82% of the reachable pool — far more than any
-angle's coverage gap.** Of the 13,068 deliverable, never-contacted contacts,
-7,120 sit *above* the band (>$1M obligations) and 2,104 below it. Widening the
-profile is a much bigger lever on reach than anything in the sections below,
-and the runbook deferred it deliberately rather than by accident.
+**The audience gate was widened on 2026-09-22, from $100K–1M with 1–2 awards to
+$50K–5M with at most 2.** The live universe went from 2,385 to 7,326.
 
-Every coverage figure that follows is against the 2,385 currently loaded.
+The widening was measured before it was made. A2's NAICS coverage is flat
+across every obligation band — 57% under $50K, 65% in the old band, 68% above
+$10M — so the old gate was never buying personalization quality. What the new
+ceiling protects is the *message*: above $5M or more than 2 awards a year,
+firms average 1.7 to 3.2 awards and plainly do have capture staff, so "you have
+no proposal team" would be addressing someone who is not there.
+
+| Obligation band | Contacts | A2 coverage |
+|---|---:|---:|
+| under $50K | 1,378 | 57.4% |
+| $50K–100K | 726 | 62.7% |
+| $100K–1M (old band) | 3,838 | 65.1% |
+| $1M–2.5M | 2,031 | 67.6% |
+| $2.5M–5M | 1,502 | 66.3% |
+| $5M–10M | 1,224 | 66.7% |
+| over $10M | 2,369 | 68.2% |
+
+Every coverage figure that follows is against the 7,326 now loaded.
 
 ---
 
@@ -35,158 +49,193 @@ Every coverage figure that follows is against the 2,385 currently loaded.
 
 | Angle | Signal | Coverage | How measured | External dependency |
 |---|---|---:|---|---|
-| **A2** Matched RFP | live solicitation in your NAICS closing in 8–21 days | **66.0%** (1,574 / 2,385) | full census, every company tested against every solicitation | **none** — free public CSV, no key, no quota |
-| **A4** Competitor won | award ≤45 days old in your NAICS + state | **44.4%** (79 / 178 scanned) | sample, ±7pp | USASpending API, no key, ~55 calls per run |
-| **A1** Recompete | your own contract ending 60–150 days out | **15.6%** (28 / 179 scanned) | sample, 95% CI 11–22% | USASpending API, no key, ~59 calls per run |
-| **A3** SAM expiry | registration lapsing in 14–75 days | **0%** | blocked before any measurement | **SAM.gov key — both keys failing** |
+| **A2** Matched RFP | live solicitation in your NAICS closing in 8–21 days | **66.1%** (4,844 / 7,326) | full census, every company against all 83,926 records | **none** — free public CSV, no key, no quota |
+| **A4** Competitor won | award ≤45 days old in your NAICS + state | 44.4% standalone (79 / 178) | sample, ±7pp | USASpending API, no key |
+| **A1** Recompete | your own contract ending 60–150 days out | 15.6% (28 / 179) | sample, 95% CI 11–22% | USASpending API, no key |
 | **A5** Generic | none | remainder | | none |
 
-### A2 is the one that carries the system
-
-One streaming pass over SAM's daily Contract Opportunities extract (236 MB,
-83,926 records) matched 1,574 of 2,385 companies. No API key, no quota, no
-per-company call — the entire universe is covered in a single ~3-minute run.
-
-It is also genuinely personalized rather than nominally so: 172 distinct
-solicitations were cited across those companies, a mean of 9.2 companies per
-solicitation. Two companies get the same RFP named only when they are direct
-competitors in the same NAICS, where the claim is equally true of both.
-
-The same NAICS codes cover **65.4% of the wider 13,068-contact pool** (8,548
-contacts), so A2's coverage is a property of the NAICS mix, not of this
-particular 2,385. It generalizes if the audience widens.
-
-**Caveat — A2's stock is a flow, not a reservoir.** 954 of today's 1,577
-eligible companies are keyed to solicitations closing 1–2 October, which leave
-the 8-day buffer within three days. The stock is refilled nightly from new
-postings, but "1,577 ready" is today's reading, not a balance.
-
-### A3 is dead until a key works
+**A3 (SAM registration expiring) was removed on 2026-09-22.** Both keys fail:
 
 ```
 SAM_API_KEY      → 401  {"code":"900901","message":"Invalid Credentials"}
 SAM_GOV_API_KEY  → 429  {"code":"900804","message":"Message throttled out"}
 ```
 
-`SAM_API_KEY` is rejected outright. `SAM_GOV_API_KEY` is valid but its daily
-quota is already spent — it is shared with the user-facing `company-lookup`
-feature, which has first claim on it. A3 needs a third key, dedicated to
-outreach, or it stays at zero.
+`SAM_GOV_API_KEY` is valid but its daily quota is spent on the user-facing
+`company-lookup` feature, which has first claim. The angle sat at 0% coverage
+while holding 10 of the 45 daily send slots and two mailboxes open for mail it
+could never generate. Its cap and its mailboxes went to A2. Restoring it needs
+a third SAM key dedicated to outreach; the code comment in `job_assign` lists
+exactly what to put back.
 
----
+### A2 is the one that carries the system
+
+One streaming pass over SAM's daily Contract Opportunities extract (236 MB,
+83,926 records) matched 4,844 of 7,326 companies. No API key, no quota, no
+per-company call — the whole universe is covered in a single run.
+
+It is also genuinely personalized rather than nominally so: at the old size,
+172 distinct solicitations were cited across 1,577 companies, a mean of 9.2
+each. Two companies get the same RFP named only when they are direct
+competitors in the same NAICS, where the claim is equally true of both.
+
+**Caveat — A2's stock is a flow, not a reservoir.** At the last reading, 954 of
+1,577 eligible companies were keyed to solicitations closing within three days
+of leaving the 8-day buffer. The stock is refilled nightly from new postings,
+but any single figure is that day's reading, not a balance.
 
 ## 3. Projected steady-state mix
 
-The assigner's priority is A1 > A3 > A2 > A4 > A5, so a company with several
-signals takes the most specific one. That makes each angle's *marginal*
-contribution, not its standalone rate, the number that matters — and the angles
-are not independent.
+The assigner's priority is A1 > A2 > A4 > A5, so what matters per angle is its
+*marginal* contribution after the ones above it, not its standalone rate.
 
-**A4 overlaps A2 almost completely.** Of the 79 companies with a competitor
-award, 69 (87%) also have a matched RFP; of the 99 without one, only 50 (51%)
-do. A4-eligible firms are the same firms A2 already reaches, which stands to
-reason: both angles key off an active NAICS. A1 shows no such correlation — 69%
-of its hits also carry an A2 signal against 71% of its misses, which is nothing.
+**A4 overlaps A2 heavily.** Of the companies A4 finds an award for, 87% also
+have a matched RFP, against 51% of the ones it finds nothing for — both angles
+key off the same active NAICS, so they reach the same firms. A1 shows no such
+correlation (69% of its hits carry an A2 signal against 71% of its misses).
+
+A4's rate *within the A2 remainder* is now measured directly rather than
+derived: **165 hits in 436 scanned, 37.8%**. An earlier version of this
+document put it at 17.5%, computed from a 2×2 overlap table whose relevant cell
+held ten observations; that figure was noise and is withdrawn. (The 436 come
+from the first ~120 NAICS+state pairs in id order, and larger pairs are
+over-represented, so treat 37.8% as the optimistic end of a 25–40% range.)
 
 | Angle | Standalone rate | Marginal after higher priority | Share |
 |---|---:|---:|---:|
-| A1 Recompete | 15.6% | 372 | 16% |
-| A3 SAM expiry | 0% | 0 | 0% |
-| A2 Matched RFP | 66.0% | 1,329 | 56% |
-| A4 Competitor won | 44.4% | **116** | 5% |
-| A5 Generic | — | 568 | 24% |
-| **Personalized** | | **1,817** | **76%** |
+| A1 Recompete | 15.6% | 1,143 | 16% |
+| A2 Matched RFP | 66.1% | 4,087 | 56% |
+| A4 Competitor won | 44.4% | 792 | 11% |
+| A5 Generic | — | 1,304 | 18% |
+| **Personalized** | | **6,022** | **82%** |
 
-**A4's 44% standalone rate is worth 5% of incremental reach.** It is also the
-most expensive angle to run: ~1,550 API calls and roughly two weeks of nightly
-scanning to complete a pass, for ~116 companies A2 would not already have
-covered. Run A4 because its *message* may beat A2's, not to extend coverage —
-for reach it barely earns its keep.
-
-Half of the A2-eligible are coin-flipped into A5 with `holdout = true` — that is
-the experiment, and it is why the live A2 share will read lower than 57% until
-the test concludes.
-
-**Currently 1,629 of 2,385 (68%) already carry a signal**, with A1 and A4 only
-7.5% and 12% scanned. The rest arrives as the scanners walk the list.
+Half of the A2-eligible are coin-flipped into A5 with `holdout = true` — that
+is the experiment, and it is why the live A2 share reads lower than 56% until
+the test concludes. A preview run over 2,000 companies gave 670 A2 and 609
+holdouts, a clean 50/50 of the 1,279 eligible, with **0 gate fallbacks**: every
+render passed the truthfulness gate.
 
 ---
 
 ## 4. Coverage is not the constraint. Sending capacity is.
 
-Daily caps are A1 10, A2 10, A3 10, A4 10, A5 15 — 55/day, or 45/day with A3 at
-zero. Against 2,385 companies that is **53 working days, about 11 weeks**.
+Daily caps after A3's removal: A1 10, A2 20, A4 10, A5 15 — **55/day**. Against
+7,326 companies that is **133 working days, about 6 months**.
 
-A2 alone has 1,577 companies ready against a cap of 10/day: **158 days of
-backlog from one angle**. Even if its supply halved it would still be 78× the
-rate at which it can be consumed.
+A2 alone has ~4,800 companies ready against a cap of 20/day: **240 days of
+backlog from one angle**. Total signal coverage exceeds sending capacity by
+roughly 100×.
 
-So the honest framing is not "do we have enough coverage" — coverage exceeds
-capacity by roughly 35×. It is "which angle do we want the 45 daily slots spent
-on", which is exactly what the A2-versus-holdout test is designed to answer.
+So the question is not "do we have enough coverage". It is "which angle gets
+the 55 daily slots", which is exactly what the A2-versus-holdout test measures.
+If volume is the goal, the lever is mailbox capacity and sending caps, not
+signal supply — and deliverability, not arithmetic, sets that ceiling.
 
 ---
 
 ## 5. Scanner throughput
 
-Both per-company angles are time-boxed to ~110 seconds per invocation:
+| Job | Per run | Full pass at 1 run/day |
+|---|---:|---:|
+| A2 opportunities | all 7,326 (one streamed pass) | 1 day |
+| A4 awards | ~60 API calls / ~377 companies | ~24 days |
+| A1 recompetes | ~59 companies | ~124 days |
 
-| Job | Per run | Full pass at 1 run/day | At hourly |
-|---|---:|---:|---:|
-| A1 recompetes | ~59 companies | 40 days | ~1.7 days |
-| A4 awards | ~55 API calls / ~178 companies | ~14 days | ~14 hours |
-| A2 opportunities | all 2,385 | 1 day | — |
+**A1's cron was weekly**, which at ~59 companies a run is 124 *weeks* for this
+universe — the angle would never have reached most of the audience. It is daily
+now, which matches its own 10/day send cap: 59 scans at 15.6% yields ~9 signals
+a day.
 
-A4 covers 3.2 companies per API call on the clustered pairs it has reached so
-far, but 77% of the 1,550 NAICS+state pairs are singletons, so the rate will
-fall toward 1:1 as it works into the tail.
-
-Raising the cron from nightly to hourly is the cheapest way to finish a first
-full pass; nothing else needs to change.
+**A4 now only scans companies A2 did not reach.** A signal for an A2-covered
+company is one the assigner will never read, since A2 outranks A4. In the run
+that proved this out, 4,599 companies were skipped on that basis and 377
+scanned. One correction to an earlier claim: this does *not* cut the API call
+count much — pairs are keyed NAICS+state and a pair survives if any member is
+uncovered, so the pair count only fell from 1,506 to 1,448. What it changes is
+that every signal produced is now incremental reach rather than dead weight,
+and each call serves 6.3 uncovered companies instead of 3.2 mixed ones.
 
 ---
 
 ## 6. Recommendation
 
 1. **Run it.** A2 alone justifies the system: 66% coverage, no key, no quota,
-   one run, and 158 days of backlog against its own send cap.
-2. **Do not make the emails more generic.** A5 already *is* the generic arm, and
-   half the A2-eligible population is being routed to it as a controlled
-   holdout. Making the personalized angles generic would delete the experiment
-   before it returns a result.
-3. **Stop waiting on A3.** It needs its own SAM key. Until then it is 0% and
-   its 10 daily slots are dead capacity — reallocate them to A2.
-4. **Keep A1 despite the 16%.** Its coverage is low but it is *uncorrelated*
-   with A2, so all ~372 companies are reach A2 would not have delivered. It only
-   has to fill 10 slots a day, so 372 is 37 days of supply. Low coverage is not
-   low value when the cap is the binding constraint.
-5. **Treat A4 as a copy test, not a coverage play.** 87% of the companies it
-   reaches are already reachable by A2, so it adds ~116 companies for ~1,550 API
-   calls. Worth running to see whether "a competitor just won" outperforms "here
-   is a live RFP" — not worth running for reach.
-6. **If reach is the goal, widen the profile, not the angles.** The B-profile
-   gate costs 10,663 contacts; the worst angle gap costs a few hundred.
+   one run, 240 days of backlog against its own send cap.
+2. **Do not make the emails more generic.** A5 already *is* the generic arm and
+   half the A2-eligible population is routed to it as a controlled holdout.
+   Making the personalized angles generic deletes the experiment before it
+   returns a result.
+3. **A3 is removed.** It needs its own SAM key. Its slots went to A2.
+4. **Keep A1 despite the 16%.** It is uncorrelated with A2, so all ~1,143
+   companies are reach A2 would not have delivered, and it only has to fill 10
+   slots a day.
+5. **Keep A4 too.** At 37.8% of the A2 remainder it contributes ~792 companies,
+   11% of reach — enough to be worth its ~1,448 API calls. An earlier version
+   of this document recommended demoting it to a copy test on the strength of a
+   17.5% estimate; that estimate was wrong.
+6. **The audience gate is widened** to $50K–5M with ≤2 awards, 2,385 → 7,326.
+   Further widening is available (no dollar gate at all reaches 11,993) but
+   costs message accuracy: past 2 awards a year the "no proposal staff" premise
+   stops being true.
 
 ---
 
-## 7. What this measurement fixed
+## 7. What measuring this turned up
 
-The first attempt at these numbers was unreconcilable — 28% of companies had an
-A2 signal, yet 68% of the first 800 assigned were A2-eligible. Chasing that
-contradiction surfaced five defects, none of which threw an error:
+Chasing a 28%-versus-68% contradiction, and then widening the audience, surfaced
+nine defects. Not one of them threw an error where anybody would see it.
 
-- **PostgREST `max_rows` truncation, four separate places.** The opportunities
-  NAICS index was built from the first 1,000 of 2,385 companies, which is the
-  whole 28%-versus-66% gap. `job_assign` would have reported "nothing
-  unassigned" while 1,385 companies sat untouched, the moment 1,000 were
-  assigned.
+**Silent data loss**
+- **PostgREST `max_rows` truncation, five places.** The opportunities NAICS
+  index was built from the first 1,000 of 2,385 companies — the entire
+  28%-versus-66% gap. `job_assign` would have reported "nothing unassigned"
+  while 1,385 companies sat untouched, the moment 1,000 were assigned.
 - **The A1 and A4 scanners never advanced.** Their only memory of "done" was
   "carries a live signal", so a company scanned and found to have nothing came
-  back in the next batch forever. At a 13% hit rate the cursor moved 16
-  companies per run instead of 60 — roughly 200 nights to walk the universe.
-- **Unbounded bulk writes.** Deleting 1,556 companies' old signals in one
-  `.in()` is a 57 KB request line; the worker died with `WORKER_RESOURCE_LIMIT`
-  while the identical dry run passed.
+  back in the next batch forever. At a 15.6% hit rate the cursor moved 16
+  companies a run instead of 119 — about 200 nights to walk the universe.
+- **`outreach-recompetes` ran weekly**, which is 124 weeks per pass at this
+  size.
 
-All are fixed, deployed and verified by re-running. The measurements above are
-from the fixed code.
+**Writes that half-succeeded**
+- **An unbounded 1,556-id `.in()` delete** — a 57 KB request line — killed the
+  worker. Chunking fixed it at 2,385; at 7,326 the chunked version wrote all
+  3,972 rows and *then* died returning, half-committing and reporting nothing.
+  Both are gone: the write is one set-based RPC.
+- **The signal refresh deleted rows an assignment pointed at**, correctly
+  rejected by `assignments_signal_id_fkey`.
+- **`job_assign` treated every assignment as final**, so a company whose signal
+  went stale between assign and push was burned permanently. At 500 assignments
+  a day against a 55/day send rate that would have quietly eaten the audience.
+- **`?preview=1` deleted rows** before reaching the preview check.
+
+**Wrong in front of the reader**
+- **Every first name was in capitals.** 2,383 of 2,385. Every email would have
+  opened "Hi PHONG," about "ADVANCED SOLUTIONS LIFE SCIENCES, LLC" — the most
+  visible text in the message, reading as an obvious mail merge, in a system
+  built to not look like one.
+- **A4's plausibility ceiling was a flat $5M**, right for a $100K–1M universe
+  and wrong at both ends of a $50K–5M one. It is ten times the reader's own
+  obligations now, checked per reader rather than per pair.
+
+All fixed, deployed, and verified by re-running. Two numbers published earlier
+in this document were also wrong and have been withdrawn above: A4's marginal
+rate (17.5%, from a ten-observation cell; directly measured at 37.8% on 436)
+and a claim that restricting A4's scan cuts two thirds of its API calls (it
+cuts 4%; what it cuts is wasted output).
+
+---
+
+## 8. Verification log, 2026-09-22
+
+| Check | Result |
+|---|---|
+| Live universe | 7,326 |
+| Suppression leaks vs every contacted lead, case-insensitive | **0** |
+| Unsuppressed rows matching a suppressed row by email case | **0** |
+| Rows missing uei / naics / state / first_name | **0** |
+| A2 census at the new size | 4,844 / 7,326 = 66.1% |
+| Opportunities run accounting | 4,844 matched − 872 already assigned = 3,972 written, 3,972 replaced |
+| Assign preview over 2,000 | 670 A2 + 609 holdouts, 0 gate fallbacks |
+| Name rendering | "Sni United LLC", not "SNI UNITED LLC" |
+| `dry_run` | still **true** — nothing has been sent |
