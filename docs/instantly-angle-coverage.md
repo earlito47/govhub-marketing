@@ -260,3 +260,83 @@ was reading `custom_variables`, which is the field job_push WRITES, while
 Instantly returns them under `payload` on read. Nothing had been sent. The
 verification is a committed tool now (`scripts/outreach-tests/verify-live-leads.mjs`
 in strata-parse) with that asymmetry documented at the top of it.
+
+---
+
+## 9. Day 1 — 2026-09-23
+
+First live sending day. Window 09:00–16:00 America/Detroit.
+
+| Angle | Contacted | Sent | Bounced | Human replies | Positive |
+|---|---:|---:|---:|---:|---:|
+| A1 Recompete | 4 | 4 | 0 | 1 | 0 |
+| A2 Matched RFP | 20 | 20 | 0 | 0 | 0 |
+| A4 Competitor won | 10 | 10 | 0 | 0 | 0 |
+| A5 Generic | 15 | 15 | 0 | 0 | 0 |
+| **Total** | **49** | **49** | **0** | **1** | **0** |
+
+Rates are over **contacted**, per the week-1 convention. Reply rate 2.0%
+(1/49) against wave 1's 2.12% overall and 5.0% for its closest segment — a
+difference of one reply either way would move it by two points, so the two are
+indistinguishable and neither number means anything yet.
+
+**This is a smoke test, not a result.** It answers three questions: did it
+send (yes, 49 for 49), did it bounce (no, 0.00% against a 2% gate and wave 1's
+0.64%), and did anything reply at all (yes, once). It cannot say anything
+about which angle or which A2 arm works. Detecting a doubling of reply rate
+needs roughly 440 contacts per arm — about 45 working days at these caps — and
+today put 11 in one A2 arm and 9 in the other.
+
+### The one reply
+
+A1, to a Maryland firm with $576K in obligations whose VA contract ends in
+December. The reply was **"No."** — negative, and the person's answer rather
+than the company's, which is why `stop_for_company` is false.
+
+Worth separating from wave 1's negatives: this one **did not dispute the
+premise**. Wave 1's campaign C drew "NO" from people whose stated premise was
+wrong about them, and reply rate there tracked premise accuracy rather than
+tone. A terse "No." to an accurate, checkable claim about the reader's own
+contract is a different thing — a no to the offer, not a correction.
+
+### Personalization verified in delivered mail
+
+Both A2 arms, read back from the sent feed rather than from the templates:
+
+> **Speed** — "Hi Acksa, DoD posted HR001126S0016 and on paper Defense
+> Consulting And Technology LLC clears the bar on NAICS 541715. It closes
+> Oct 2. Putting a full response together is usually a week or more of nights
+> and weekends… We turn the first draft around in about an hour."
+
+> **Base** — "Hi Clayton, DoD posted W912ER26RA017 and on paper Advantage
+> Paving & Excavating Inc clears the bar on NAICS 237310. It closes Oct 5.
+> There are a couple of things in it that typically get small firm bids tossed
+> before evaluation."
+
+Real solicitation numbers, real NAICS matches, real close dates, correct
+casing, signature and opt-out intact, zero unrendered tokens across all 94
+live leads.
+
+### Two caps, not one
+
+94 leads exist but 49 were contacted, because `daily_max_leads` gates entry to
+each Instantly campaign independently of `job_push`'s own caps, and every
+campaign hit its gate exactly. The two are near-balanced, which keeps the queue
+flat — but raising volume means raising **both**, and raising `daily_caps`
+alone would do nothing.
+
+### Fixed on the day
+
+- **A1 was structurally dead.** `job_assign` and the recompete scanner both
+  walk the universe in email order, and assign moves 150/day against the
+  scanner's 60 — so the scanner is permanently behind and every hit belongs to
+  a company already assigned. On launch morning that was 239 of 239. It found
+  20 real recompetes and wrote none. The scanners now skip assigned companies;
+  the re-run wrote 14 of 14. A1's four sends today were the last of the old
+  stock, and it refills tomorrow.
+- **`job_health` could not remember.** pg_net keeps responses ~5.5 hours, so by
+  evening every job from the small hours read "NO RESPONSE (overdue)" —
+  including five verified 200 at 06:35. Outcomes are now copied into
+  `outreach.job_run` by a harvester every ten minutes. This also repairs the
+  metrics job's incremental email read, which had fallen back to the epoch for
+  the same reason.
