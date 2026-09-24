@@ -340,3 +340,44 @@ alone would do nothing.
   `outreach.job_run` by a harvester every ten minutes. This also repairs the
   metrics job's incremental email read, which had fallen back to the epoch for
   the same reason.
+
+---
+
+## 10. Running log
+
+Cumulative, rates over **contacted**. One line a day; anything that needed a
+decision gets its own note below the table.
+
+| Day | Date | Contacted | Sent | Bounced | Human replies | Positive |
+|---|---|---:|---:|---:|---:|---:|
+| 1 | 2026-09-23 | 49 | 49 | 0 | 1 | 0 |
+| 2 | 2026-09-24 | 104 | 104 | 0 | 2 | 0 |
+
+Per angle at end of day 2 — A1 14, A2 40, A4 20, A5 30. Every campaign hit its
+`daily_max_leads` exactly both days, so throughput is cap-bound, not
+supply-bound. Bounce rate 0.00% against the 2% gate.
+
+**Reply 2 (day 2, A5, holdout).** A Maryland sole proprietor, to the generic
+debrief email: *"No."* It matters which arm this is — the lead is A2-eligible
+and was coin-flipped into the holdout, so it belongs to the
+A2-versus-generic comparison rather than to true-generic A5. Like reply 1 it
+disputes nothing: A5 asks a question rather than asserting anything about the
+reader, so there is no premise to be wrong about.
+
+Both replies so far are negative and neither is a correction. Wave 1's pattern
+was that reply rate tracked premise accuracy; two "No"s to accurate or
+premise-free copy is a different signal from campaign C's "NO"s to wrong ones,
+and it is far too early to read either way.
+
+### A2 base vs speed
+
+31 base / 29 speed pushed, 40 contacted so far. Against the ~440 per arm needed
+to detect a doubling, that is **about 4%**. Nothing is readable and no
+comparison should be attempted yet.
+
+### Open: A1 runway
+
+1.2 days (6 queued + 6 unassigned supply against a cap of 10). Two extra
+scanner runs were added at 01:00 and 08:00 UTC and have not fired yet — their
+first runs are the morning of the 25th. If A1 is still under two days after
+that, the scanner budget is the constraint, not the schedule.
