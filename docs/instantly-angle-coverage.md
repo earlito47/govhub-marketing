@@ -352,6 +352,7 @@ decision gets its own note below the table.
 |---|---|---:|---:|---:|---:|---:|
 | 1 | 2026-09-23 | 49 | 49 | 0 | 1 | 0 |
 | 2 | 2026-09-24 | 104 | 104 | 0 | 2 | 0 |
+| 3 | 2026-09-25 | 155 | 175 | 0 | 2 | **1** |
 
 Per angle at end of day 2 — A1 14, A2 40, A4 20, A5 30. Every campaign hit its
 `daily_max_leads` exactly both days, so throughput is cap-bound, not
@@ -381,3 +382,61 @@ comparison should be attempted yet.
 scanner runs were added at 01:00 and 08:00 UTC and have not fired yet — their
 first runs are the morning of the 25th. If A1 is still under two days after
 that, the scanner budget is the constraint, not the schedule.
+
+
+### Day 3 — the first positive reply, and a classifier that was inflating the count
+
+**First positive in the programme**, A2 **speed** arm, to a DoD solicitation:
+
+> *"Thanks for reaching out but not sure what is this all about nor how you
+> help. What is your cost to do this reply? Please advise. I have a hectic day
+> but I can try to have a call with you if this is of interest."*
+> — CEO, a California firm, on SPE4A626U4340
+
+Wave 1 got 0 positives on 471 contacts. This is 1 on 155. **It is one reply and
+it settles nothing** about base versus speed: at these counts a single reply
+moves an arm's rate by two points. Recorded because it is the first evidence
+that any of this copy can produce interest at all, not as a result.
+
+It is also a live question from a named CEO asking about price and offering a
+call. Fulfilment was deliberately deferred; this is what that decision now
+looks like in practice.
+
+**The classifier was counting a machine as a person.** Three autoresponders
+arrived on A2. Two announced themselves in the subject and were caught. The
+third came back as `Re: DoD` and read *"I am no longer involved in day-to-day
+operations at Lexset. Please reach out to Francis Bitonti."* — a delegation
+autoresponder, written by a person once and now sent by a machine to everyone.
+One in four A2 replies that day, on the metric the programme is judged on.
+
+Fixed with body-level matching over the sender's own words only (the quoted
+original sits below the reply, so matching the whole text classifies our own
+copy). The patterns are narrow on purpose: *"not interested"* and *"we already
+have a proposal team"* are human decisions and still count as human replies.
+Eight real cases now under test, including two rejections that must not be
+reclassified.
+
+### Day 3 — the A1 scanner, and two wrong diagnoses
+
+Throughput had collapsed from 40 companies a run to 8. I blamed cold-start
+latency, then time of day, and scheduled two extra runs off-peak on the
+strength of the second theory. Those runs scanned eight and nine.
+
+Timing the real query across twelve live UEIs settled it: **three of the first
+seven hung past thirty seconds** while the other four returned in 160ms, 295ms,
+2.2s and 2.3s. It is per-UEI — certain `recipient_search_text` values send the
+query down a slow path server-side and never come back.
+
+So the five-second timeout added the day before was right about the ceiling and
+wrong about the retry: a hanging UEI cost 5s x 3 attempts plus backoff, and
+adding the timeout made throughput **worse**. The tell was in the job's own
+output for a full day before I read it — `api_calls` had dropped *below*
+companies scanned, which can only mean calls were failing rather than slowing.
+
+Timeouts are no longer retried. Measured after: **50 scanned, 12 signals, 33
+api_calls** — 17 of 50 UEIs hung, a 34% rate matching the sample, and above the
+original 40.
+
+A1 runway is still only 1.4 days (2 queued + 12 supply against a cap of 10),
+but supply is now being produced faster than the cap consumes it, which it was
+not before.
