@@ -1,20 +1,20 @@
 {
   "pageType": "vendor",
   "slug": "amazon-web-services",
-  "title": "Who Buys From Amazon Web Services: $401M in FY2026",
+  "title": "Who Buys From Amazon Web Services: $570M in FY2026",
   "h1": "Amazon Web Services: Federal Contracts, Agencies & Awards",
-  "metaDescription": "Amazon Web Services won $401M in federal contract obligations in FY2026 to date. See its top agencies, markets, largest awards, and expiring contracts.",
-  "updated": "2026-08-22",
+  "metaDescription": "Amazon Web Services won $570M in federal contract obligations in FY2026 to date. See its top agencies, markets, largest awards, and expiring contracts.",
+  "updated": "2026-09-28",
   "fyWindow": {
     "label": "FY2026 to date",
     "start": "2025-10-01",
-    "end": "2026-08-22"
+    "end": "2026-09-28"
   },
   "stats": {
-    "totalObligations": 401231379.27,
-    "awardCount": 98,
-    "yoyGrowthPct": 27.6,
-    "avgAwardSize": 4094198,
+    "totalObligations": 570344974.56,
+    "awardCount": 119,
+    "yoyGrowthPct": 81.4,
+    "avgAwardSize": 4792815,
     "smallBusinessSharePct": null
   },
   "charts": [
@@ -48,13 +48,13 @@
             ],
             [
               "FY26",
-              401231379.27
+              570344974.56
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Obligations grew 27.6% year over year, from $314M in FY2025 to $401M in FY2026 to date."
+      "takeaway": "Obligations grew 81.4% year over year, from $314M in FY2025 to $570M in FY2026 to date."
     },
     {
       "id": "amazon-web-services-top-agencies",
@@ -66,27 +66,31 @@
           "points": [
             [
               "Department of Defense",
-              321762877.17
+              375840816.96
+            ],
+            [
+              "Department of Homeland Security",
+              102615002.8
             ],
             [
               "General Services Administration",
-              28819983.11
-            ],
-            [
-              "Department of Energy",
-              22039632.62
+              33471666.13
             ],
             [
               "Department of Justice",
-              20870870.37
+              25589370.37
+            ],
+            [
+              "Department of Energy",
+              24537363.62
             ],
             [
               "Department of Commerce",
-              7119450
+              7332139
             ],
             [
               "National Aeronautics and Space Administration",
-              348062
+              696124
             ],
             [
               "Department of Health and Human Services",
@@ -94,21 +98,17 @@
             ],
             [
               "Smithsonian Institution",
-              75000
+              111000
             ],
             [
               "Department of Transportation",
               5004
-            ],
-            [
-              "Department of the Interior",
-              500
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Department of Defense is Amazon Web Services's largest federal customer, with $322M obligated (80.2% of the company's federal obligations)."
+      "takeaway": "Department of Defense is Amazon Web Services's largest federal customer, with $376M obligated (65.9% of the company's federal obligations)."
     },
     {
       "id": "amazon-web-services-top-naics",
@@ -120,25 +120,29 @@
           "points": [
             [
               "Computing Infrastructure Providers, Data Processing, Web Hosting, and Related Services",
-              381993366.59
+              544527968.88
             ],
             [
               "Computer Systems Design Services",
-              18976396.68
+              23694896.68
             ],
             [
               "Custom Computer Programming Services",
-              261116
+              2121609
             ],
             [
               "Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology)",
               500
+            ],
+            [
+              "Other Computer Related Services",
+              0
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Computing Infrastructure Providers, Data Processing, Web Hosting, and Related Services is Amazon Web Services's largest federal market, with $382M in obligations."
+      "takeaway": "Computing Infrastructure Providers, Data Processing, Web Hosting, and Related Services is Amazon Web Services's largest federal market, with $545M in obligations."
     }
   ],
   "crossLinks": [
@@ -147,12 +151,12 @@
       "href": "/insights/agency/department-of-defense/"
     },
     {
-      "label": "General Services Administration contracts",
-      "href": "/insights/agency/general-services-administration/"
+      "label": "Department of Homeland Security contracts",
+      "href": "/insights/agency/department-of-homeland-security/"
     },
     {
-      "label": "Department of Energy contracts",
-      "href": "/insights/agency/department-of-energy/"
+      "label": "General Services Administration contracts",
+      "href": "/insights/agency/general-services-administration/"
     },
     {
       "label": "Department of Justice contracts",
@@ -169,6 +173,10 @@
     {
       "label": "NAICS 541715: Research and Development in the Physical, Engineering, and Life Sciences",
       "href": "/insights/naics/541715/"
+    },
+    {
+      "label": "NAICS 541519: Other Computer Related Services",
+      "href": "/insights/naics/541519/"
     }
   ],
   "tables": [
@@ -188,7 +196,7 @@
             "text": "W519TC25FA004",
             "href": "https://www.usaspending.gov/award/CONT_AWD_W519TC25FA004_9700_HC105023D0005_9700/"
           },
-          118314498.89,
+          163309800.1,
           "Department of Defense",
           "2028-04-21"
         ],
@@ -198,7 +206,7 @@
             "text": "47QDCB21F0015",
             "href": "https://www.usaspending.gov/award/CONT_AWD_47QDCB21F0015_4732_47QTCA19D000C_4732/"
           },
-          102914155.17,
+          105065838.19,
           "General Services Administration",
           "2026-08-31"
         ],
@@ -210,7 +218,7 @@
           },
           94751464,
           "Department of Defense",
-          "2026-06-30"
+          "2026-09-30"
         ],
         [
           4,
@@ -218,22 +226,32 @@
             "text": "FA872626FB004",
             "href": "https://www.usaspending.gov/award/CONT_AWD_FA872626FB004_9700_HC105023D0005_9700/"
           },
-          68110340.33,
+          66155673.12,
           "Department of Defense",
           "2026-12-07"
         ],
         [
           5,
           {
+            "text": "70RCSJ26FR0000028",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70RCSJ26FR0000028_7001_70RTAC26D00000004_7001/"
+          },
+          60400000,
+          "Department of Homeland Security",
+          "2027-08-31"
+        ],
+        [
+          6,
+          {
             "text": "HC105025F0064",
             "href": "https://www.usaspending.gov/award/CONT_AWD_HC105025F0064_9700_HC105023D0005_9700/"
           },
-          55054854.03,
+          58215734.23,
           "Department of Defense",
           "2026-09-29"
         ],
         [
-          6,
+          7,
           {
             "text": "N0042125F0127",
             "href": "https://www.usaspending.gov/award/CONT_AWD_N0042125F0127_9700_N6600123A0005_9700/"
@@ -243,17 +261,17 @@
           "2026-01-06"
         ],
         [
-          7,
+          8,
           {
             "text": "HS002124F0039",
             "href": "https://www.usaspending.gov/award/CONT_AWD_HS002124F0039_9700_HC105023D0005_9700/"
           },
-          39486056.92,
+          41110870.67,
           "Department of Defense",
           "2026-07-14"
         ],
         [
-          8,
+          9,
           {
             "text": "N0042126F1027",
             "href": "https://www.usaspending.gov/award/CONT_AWD_N0042126F1027_9700_N6600123A0005_9700/"
@@ -263,7 +281,7 @@
           "2026-06-30"
         ],
         [
-          9,
+          10,
           {
             "text": "HC105023F0035",
             "href": "https://www.usaspending.gov/award/CONT_AWD_HC105023F0035_9700_HC105023D0005_9700/"
@@ -273,7 +291,7 @@
           "2026-09-30"
         ],
         [
-          10,
+          11,
           {
             "text": "FA873024FB028",
             "href": "https://www.usaspending.gov/award/CONT_AWD_FA873024FB028_9700_HC105023D0005_9700/"
@@ -283,7 +301,7 @@
           "2026-09-26"
         ],
         [
-          11,
+          12,
           {
             "text": "HC105024F0049",
             "href": "https://www.usaspending.gov/award/CONT_AWD_HC105024F0049_9700_HC105023D0005_9700/"
@@ -293,7 +311,17 @@
           "2025-12-29"
         ],
         [
-          12,
+          13,
+          {
+            "text": "70RTAC26FR0000045",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70RTAC26FR0000045_7001_70RTAC26D00000004_7001/"
+          },
+          23903144.57,
+          "Department of Homeland Security",
+          "2027-08-31"
+        ],
+        [
+          14,
           {
             "text": "HC105024F0011",
             "href": "https://www.usaspending.gov/award/CONT_AWD_HC105024F0011_9700_HC105023D0005_9700/"
@@ -303,7 +331,7 @@
           "2027-03-21"
         ],
         [
-          13,
+          15,
           {
             "text": "FA830726FB006",
             "href": "https://www.usaspending.gov/award/CONT_AWD_FA830726FB006_9700_HC105023D0005_9700/"
@@ -313,7 +341,7 @@
           "2026-12-29"
         ],
         [
-          14,
+          16,
           {
             "text": "N6600124F0753",
             "href": "https://www.usaspending.gov/award/CONT_AWD_N6600124F0753_9700_N6600123A0005_9700/"
@@ -323,7 +351,17 @@
           "2026-08-31"
         ],
         [
-          15,
+          17,
+          {
+            "text": "70CTD026FR0000059",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70CTD026FR0000059_7012_70RTAC26D00000004_7001/"
+          },
+          18311858.23,
+          "Department of Homeland Security",
+          "2027-09-07"
+        ],
+        [
+          18,
           {
             "text": "HC105023F0012",
             "href": "https://www.usaspending.gov/award/CONT_AWD_HC105023F0012_9700_HC105023D0005_9700/"
@@ -333,7 +371,7 @@
           "2025-06-08"
         ],
         [
-          16,
+          19,
           {
             "text": "15JPSS21F00000961",
             "href": "https://www.usaspending.gov/award/CONT_AWD_15JPSS21F00000961_1501_15JPSS21A00000237_1501/"
@@ -343,7 +381,7 @@
           "2027-07-17"
         ],
         [
-          17,
+          20,
           {
             "text": "HC105025F0049",
             "href": "https://www.usaspending.gov/award/CONT_AWD_HC105025F0049_9700_HC105023D0005_9700/"
@@ -353,7 +391,7 @@
           "2026-09-17"
         ],
         [
-          18,
+          21,
           {
             "text": "89233126PNA000208",
             "href": "https://www.usaspending.gov/award/CONT_AWD_89233126PNA000208_8900_-NONE-_-NONE-/"
@@ -363,7 +401,7 @@
           "2027-01-04"
         ],
         [
-          19,
+          22,
           {
             "text": "89233124PNA000192",
             "href": "https://www.usaspending.gov/award/CONT_AWD_89233124PNA000192_8900_-NONE-_-NONE-/"
@@ -373,7 +411,7 @@
           "2027-09-30"
         ],
         [
-          20,
+          23,
           {
             "text": "N6600125F0026",
             "href": "https://www.usaspending.gov/award/CONT_AWD_N6600125F0026_9700_HC105023D0005_9700/"
@@ -383,7 +421,7 @@
           "2026-11-28"
         ],
         [
-          21,
+          24,
           {
             "text": "N0003925FE073",
             "href": "https://www.usaspending.gov/award/CONT_AWD_N0003925FE073_9700_N6600123A0005_9700/"
@@ -393,7 +431,7 @@
           "2026-09-30"
         ],
         [
-          22,
+          25,
           {
             "text": "N0042125F0558",
             "href": "https://www.usaspending.gov/award/CONT_AWD_N0042125F0558_9700_HC105023D0005_9700/"
@@ -401,36 +439,6 @@
           8411175.72,
           "Department of Defense",
           "2027-03-31"
-        ],
-        [
-          23,
-          {
-            "text": "15DDHQ25F00000860",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_15DDHQ25F00000860_1524_15JPSS21A00000237_1501/"
-          },
-          8021505,
-          "Department of Justice",
-          "2026-09-30"
-        ],
-        [
-          24,
-          {
-            "text": "1305M426F0030",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_1305M426F0030_1330_47QTCA19D000C_4732/"
-          },
-          7119450,
-          "Department of Commerce",
-          "2027-02-20"
-        ],
-        [
-          25,
-          {
-            "text": "N0017321F6005",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_N0017321F6005_9700_47QTCA19D000C_4732/"
-          },
-          6771593.77,
-          "Department of Defense",
-          "2026-09-29"
         ]
       ]
     },
@@ -445,12 +453,12 @@
       "rows": [
         [
           {
-            "text": "47QDCB21F0015",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_47QDCB21F0015_4732_47QTCA19D000C_4732/"
+            "text": "N6523624F0453",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N6523624F0453_9700_N6600123A0005_9700/"
           },
-          "General Services Administration",
-          102914155.17,
-          "2026-08-31"
+          "Department of Defense",
+          94751464,
+          "2026-09-30"
         ],
         [
           {
@@ -458,8 +466,17 @@
             "href": "https://www.usaspending.gov/award/CONT_AWD_FA872626FB004_9700_HC105023D0005_9700/"
           },
           "Department of Defense",
-          68110340.33,
+          66155673.12,
           "2026-12-07"
+        ],
+        [
+          {
+            "text": "70RCSJ26FR0000028",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70RCSJ26FR0000028_7001_70RTAC26D00000004_7001/"
+          },
+          "Department of Homeland Security",
+          60400000,
+          "2027-08-31"
         ],
         [
           {
@@ -467,7 +484,7 @@
             "href": "https://www.usaspending.gov/award/CONT_AWD_HC105025F0064_9700_HC105023D0005_9700/"
           },
           "Department of Defense",
-          55054854.03,
+          58215734.23,
           "2026-09-29"
         ],
         [
@@ -481,12 +498,12 @@
         ],
         [
           {
-            "text": "FA873024FB028",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_FA873024FB028_9700_HC105023D0005_9700/"
+            "text": "70RTAC26FR0000045",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70RTAC26FR0000045_7001_70RTAC26D00000004_7001/"
           },
-          "Department of Defense",
-          30945546.09,
-          "2026-09-26"
+          "Department of Homeland Security",
+          23903144.57,
+          "2027-08-31"
         ],
         [
           {
@@ -508,12 +525,12 @@
         ],
         [
           {
-            "text": "N6600124F0753",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_N6600124F0753_9700_N6600123A0005_9700/"
+            "text": "70CTD026FR0000059",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70CTD026FR0000059_7012_70RTAC26D00000004_7001/"
           },
-          "Department of Defense",
-          20450000,
-          "2026-08-31"
+          "Department of Homeland Security",
+          18311858.23,
+          "2027-09-07"
         ],
         [
           {
@@ -523,15 +540,6 @@
           "Department of Justice",
           10870099.08,
           "2027-07-17"
-        ],
-        [
-          {
-            "text": "HC105025F0049",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_HC105025F0049_9700_HC105023D0005_9700/"
-          },
-          "Department of Defense",
-          10100000,
-          "2026-09-17"
         ]
       ]
     },
@@ -562,34 +570,34 @@
     }
   ],
   "narrative": {
-    "intro": "Amazon Web Services has $401M in contract obligations in FY2026 to date. Amazon Web Services received 98 awards so far in the fiscal year, with an average award size of $4.1M. Obligations rose year over year, up 27.6% compared with the prior year. The Department of Defense is the largest buyer with $322M obligated, followed by the General Services Administration with $28.8M and the Department of Energy with $22M. Computing Infrastructure Providers, Data Processing, Web Hosting, and Related Services is the largest market for Amazon Web Services with $382M obligated. Other material markets include Computer Systems Design Services with $19M and Custom Computer Programming Services with $261K. Historical obligations show steady growth from FY21 through FY26, with FY21 at $39.2M, FY22 at $27.3M, FY23 at $98.6M, FY24 at $246M, FY25 at $314M, and FY26 at $401M. The mix of large DoD obligations and heavy emphasis on computing infrastructure signals that Amazon Web Services remains a central cloud and hosting supplier to the federal government this fiscal year.",
+    "intro": "Amazon Web Services obligated $570M in FY2026 to date. Amazon Web Services received 119 awards so far this fiscal year, with an average award size of $4.8M and obligations up 81.4% year over year. Annual obligations grew from $39.2M in FY21 to $27.3M in FY22, then rose to $98.6M in FY23, $246M in FY24, and $314M in FY25 before reaching $570M in FY26. The Department of Defense is the largest federal buyer, obligating $376M to Amazon Web Services in FY2026 to date, followed by the Department of Homeland Security at $103M and the General Services Administration at $33.5M. Computing Infrastructure Providers, Data Processing, Web Hosting, and Related Services is the dominant market for Amazon Web Services, accounting for $545M of obligations, with Computer Systems Design Services next at $23.7M. This profile shows concentrated demand from defense and cloud infrastructure spending so far this fiscal year.",
     "sections": [
       {
-        "heading": "Who are the biggest federal buyers of Amazon Web Services?",
-        "body": "The Department of Defense is the largest buyer with $322M in obligations in FY2026 to date. The General Services Administration follows with $28.8M, and the Department of Energy follows with $22M. Other buyers of note include the Department of Justice with $20.9M and the Department of Commerce with $7.1M."
+        "heading": "Who are the biggest buyers of Amazon Web Services in FY2026 to date?",
+        "body": "The Department of Defense obligated $376M to Amazon Web Services. The Department of Homeland Security obligated $103M and the General Services Administration obligated $33.5M. Other buyers include the Department of Justice at $25.6M and the Department of Energy at $24.5M."
       },
       {
-        "heading": "What markets and services drive Amazon Web Services' federal obligations?",
-        "body": "Computing Infrastructure Providers, Data Processing, Web Hosting, and Related Services drives most obligations with $382M in FY2026 to date. Computer Systems Design Services contributes $19M, and Custom Computer Programming Services contributes $261K. Small amounts appear in research and development services with $500."
+        "heading": "What markets and services dominate Amazon Web Services federal obligations?",
+        "body": "Computing Infrastructure Providers, Data Processing, Web Hosting, and Related Services accounted for $545M of obligations. Computer Systems Design Services accounted for $23.7M and Custom Computer Programming Services accounted for $2.1M. Research and Development in the Physical, Engineering, and Life Sciences accounted for $500 and Other Computer Related Services accounted for $0."
       }
     ]
   },
   "faq": [
     {
       "q": "How much does Amazon Web Services make from federal contracts?",
-      "a": "Amazon Web Services has $401M in federal contract obligations in FY2026 to date. Amazon Web Services received 98 awards so far this fiscal year, the average award size is $4.1M, and obligations are up 27.6% year over year."
+      "a": "Amazon Web Services obligated $570M in FY2026 to date under federal contracts. Amazon Web Services received 119 awards this fiscal year with an average award size of $4.8M, and obligations are up 81.4% year over year. Annual obligations rose from $39.2M in FY21 to $570M in FY26, showing increasing federal spending on AWS over the period."
     },
     {
       "q": "Which agencies buy from Amazon Web Services?",
-      "a": "The Department of Defense is the top buyer, with $322M in obligations in FY2026 to date. The General Services Administration is the second-largest buyer with $28.8M, followed by the Department of Energy with $22M, the Department of Justice with $20.9M, and the Department of Commerce with $7.1M."
+      "a": "The Department of Defense, the Department of Homeland Security, and the General Services Administration are the largest buyers of Amazon Web Services. The Department of Defense obligated $376M, the Department of Homeland Security obligated $103M, and the General Services Administration obligated $33.5M in FY2026 to date. Other buying agencies include the Department of Justice at $25.6M and the Department of Energy at $24.5M."
     },
     {
       "q": "What does Amazon Web Services sell to the government?",
-      "a": "Amazon Web Services sells cloud and related IT services, led by Computing Infrastructure Providers, Data Processing, Web Hosting, and Related Services with $382M in obligations. Other categories include Computer Systems Design Services with $19M and Custom Computer Programming Services with $261K, plus a small amount in Research and Development in the Physical, Engineering, and Life Sciences with $500."
+      "a": "Amazon Web Services primarily sells cloud and related computing services to the government. Computing Infrastructure Providers, Data Processing, Web Hosting, and Related Services accounted for $545M of obligations, with Computer Systems Design Services at $23.7M and Custom Computer Programming Services at $2.1M. Smaller reported markets include Research and Development in the Physical, Engineering, and Life Sciences at $500 and Other Computer Related Services at $0."
     },
     {
       "q": "Which Amazon Web Services contracts are expiring soon?",
-      "a": "The dataset does not list any expiring contracts for Amazon Web Services in the provided tables. The available tables show current-year obligations, top buyers, and top markets but do not include an expiring-contracts list."
+      "a": "No expiring contract values for Amazon Web Services appear in the listed Top items. The provided Top lists show largest buying agencies and markets but do not include contract-level expiring values."
     }
   ],
   "related": [
@@ -598,28 +606,28 @@
       "href": "/insights/expiring-federal-contracts/"
     },
     {
-      "label": "Brasfield and Gorrie federal contracts",
-      "href": "/insights/vendor/brasfield-and-gorrie/"
+      "label": "Modern Technology Solutions federal contracts",
+      "href": "/insights/vendor/modern-technology-solutions/"
     },
     {
-      "label": "Fedex Supply Chain Distribution System federal contracts",
-      "href": "/insights/vendor/fedex-supply-chain-distribution-system/"
+      "label": "Supplycore federal contracts",
+      "href": "/insights/vendor/supplycore/"
     },
     {
-      "label": "Torch Technologies federal contracts",
-      "href": "/insights/vendor/torch-technologies/"
+      "label": "Marathon Petroleum federal contracts",
+      "href": "/insights/vendor/marathon-petroleum/"
     },
     {
-      "label": "M C Dean federal contracts",
-      "href": "/insights/vendor/m-c-dean/"
+      "label": "Maximus Federal Services federal contracts",
+      "href": "/insights/vendor/maximus-federal-services/"
     },
     {
-      "label": "Corecivic federal contracts",
-      "href": "/insights/vendor/corecivic/"
+      "label": "Salus Worldwide Solutions federal contracts",
+      "href": "/insights/vendor/salus-worldwide-solutions/"
     },
     {
-      "label": "Beyond New Horizons federal contracts",
-      "href": "/insights/vendor/beyond-new-horizons/"
+      "label": "Tutor Perini federal contracts",
+      "href": "/insights/vendor/tutor-perini/"
     }
   ],
   "sources": [

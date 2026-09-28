@@ -1,20 +1,20 @@
 {
   "pageType": "naics",
   "slug": "541618",
-  "title": "NAICS 541618: $160M in Federal Contracts, FY2026",
+  "title": "NAICS 541618: $251M in Federal Contracts, FY2026",
   "h1": "Other Management Consulting Services (NAICS 541618): Federal Contract Market",
-  "metaDescription": "Federal agencies obligated $160M on Other Management Consulting Services (NAICS 541618) in FY2026 to date. See top vendors, top agencies, and trends.",
-  "updated": "2026-09-07",
+  "metaDescription": "Federal agencies obligated $251M on Other Management Consulting Services (NAICS 541618) in FY2026 to date. See top vendors, top agencies, and trends.",
+  "updated": "2026-09-28",
   "fyWindow": {
     "label": "FY2026 to date",
     "start": "2025-10-01",
-    "end": "2026-09-07"
+    "end": "2026-09-28"
   },
   "stats": {
-    "totalObligations": 160186870.65,
-    "awardCount": 591,
-    "yoyGrowthPct": -81,
-    "avgAwardSize": 271044,
+    "totalObligations": 251056287.99,
+    "awardCount": 658,
+    "yoyGrowthPct": -70.2,
+    "avgAwardSize": 381545,
     "smallBusinessSharePct": null
   },
   "charts": [
@@ -40,21 +40,21 @@
             ],
             [
               "FY24",
-              1266938848.09
+              1266738848.09
             ],
             [
               "FY25",
-              843190249.65
+              843266087.27
             ],
             [
               "FY26",
-              160186870.65
+              251056287.99
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Obligations fell 81.0% year over year, from $843M in FY2025 to $160M in FY2026 to date."
+      "takeaway": "Obligations fell 70.2% year over year, from $843M in FY2025 to $251M in FY2026 to date."
     },
     {
       "id": "541618-top-agencies",
@@ -66,49 +66,49 @@
           "points": [
             [
               "Department of Health and Human Services",
-              54973441.54
+              116384713.06
             ],
             [
               "Department of Defense",
-              53635232.32
+              53947284.67
             ],
             [
               "Department of State",
-              18115451.21
+              17941389.42
+            ],
+            [
+              "Department of the Treasury",
+              15565529.64
             ],
             [
               "Department of Energy",
-              12878197.29
-            ],
-            [
-              "Department of Transportation",
-              4992009.99
+              15141837.05
             ],
             [
               "General Services Administration",
-              3584816.11
+              9640454.11
             ],
             [
-              "Department of Commerce",
-              2382112.82
+              "Department of Transportation",
+              6229583.99
+            ],
+            [
+              "Department of Homeland Security",
+              3624980.38
             ],
             [
               "Department of the Interior",
-              1912954.01
+              2371526.09
             ],
             [
-              "Department of Veterans Affairs",
-              1772473.91
-            ],
-            [
-              "Nuclear Regulatory Commission",
-              1321889.99
+              "Department of Justice",
+              1853344.52
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Department of Health and Human Services was the top buyer, obligating $55M (34.3% of all obligations)."
+      "takeaway": "Department of Health and Human Services was the top buyer, obligating $116M (46.4% of all obligations)."
     },
     {
       "id": "541618-top-vendors",
@@ -118,6 +118,10 @@
         {
           "label": "Obligations",
           "points": [
+            [
+              "NATIONAL COLLEGIATE INVENTORS & INNOVATORS ALLIANCE, INC.",
+              68031466.8
+            ],
             [
               "ISLAND PEER REVIEW ORGANIZATION INC",
               52401393.26
@@ -132,37 +136,33 @@
             ],
             [
               "KADIAK LLC",
-              11525305.25
+              11358226.71
             ],
             [
               "ALLIANT HEALTH SOLUTIONS, INC.",
               10361561.14
             ],
             [
+              "THE MITRE CORPORATION",
+              9796716.7
+            ],
+            [
               "ANGAYUT, LLC",
               7412186.55
             ],
             [
+              "PCI GUIDEHOUSE JV LLC",
+              7151861.73
+            ],
+            [
               "ALUTIIQ SOLUTIONS, LLC",
-              7174921.06
-            ],
-            [
-              "NATIONAL COLLEGIATE INVENTORS & INNOVATORS ALLIANCE, INC.",
-              6992323.8
-            ],
-            [
-              "SGI GLOBAL LLC",
-              5716343.27
-            ],
-            [
-              "CORNERSTONE RESEARCH INC",
-              4565559.65
+              7044995.46
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "ISLAND PEER REVIEW ORGANIZATION INC led all vendors with $52.4M in obligations, 32.7% of the market."
+      "takeaway": "NATIONAL COLLEGIATE INVENTORS & INNOVATORS ALLIANCE, INC. led all vendors with $68M in obligations, 27.1% of the market."
     }
   ],
   "crossLinks": [
@@ -179,8 +179,8 @@
       "href": "/insights/agency/department-of-state/"
     },
     {
-      "label": "Department of Energy contracts",
-      "href": "/insights/agency/department-of-energy/"
+      "label": "Department of the Treasury contracts",
+      "href": "/insights/agency/department-of-the-treasury/"
     }
   ],
   "tables": [
@@ -195,13 +195,21 @@
         [
           1,
           {
+            "text": "NATIONAL COLLEGIATE INVENTORS & INNOVATORS ALLIANCE, INC.",
+            "href": "https://www.usaspending.gov/recipient/06d04ad7-87ef-1f5c-0a8b-4c7e1b9f9326-C/latest/"
+          },
+          68031466.8
+        ],
+        [
+          2,
+          {
             "text": "ISLAND PEER REVIEW ORGANIZATION INC",
             "href": "https://www.usaspending.gov/recipient/1547a502-d9a5-dd4e-8115-fe6649d1f630-C/latest/"
           },
           52401393.26
         ],
         [
-          2,
+          3,
           {
             "text": "PALANTIR USG INC",
             "href": "https://www.usaspending.gov/recipient/11a97fdb-cb3b-16d2-aa67-a0f7b265b4ae-C/latest/"
@@ -209,7 +217,7 @@
           27057536.43
         ],
         [
-          3,
+          4,
           {
             "text": "BATTELLE MEMORIAL INSTITUTE",
             "href": "https://www.usaspending.gov/recipient/d035b043-1694-6193-563e-4e6b32dbf656-C/latest/"
@@ -217,15 +225,15 @@
           14359064
         ],
         [
-          4,
+          5,
           {
             "text": "KADIAK LLC",
             "href": "https://www.usaspending.gov/recipient/ccff2236-58a4-bdbe-3deb-8a5333f10f7f-C/latest/"
           },
-          11525305.25
+          11358226.71
         ],
         [
-          5,
+          6,
           {
             "text": "ALLIANT HEALTH SOLUTIONS, INC.",
             "href": "https://www.usaspending.gov/recipient/630d962f-7ff7-9083-c3c4-d949da3444c9-C/latest/"
@@ -233,7 +241,15 @@
           10361561.14
         ],
         [
-          6,
+          7,
+          {
+            "text": "THE MITRE CORPORATION",
+            "href": "https://www.usaspending.gov/recipient/3903ae3c-2661-60bb-cdd3-1f26ad214167-C/latest/"
+          },
+          9796716.7
+        ],
+        [
+          8,
           {
             "text": "ANGAYUT, LLC",
             "href": "https://www.usaspending.gov/recipient/a42b70e0-872a-5ce8-5259-b98b40ab0c41-C/latest/"
@@ -241,36 +257,20 @@
           7412186.55
         ],
         [
-          7,
-          {
-            "text": "ALUTIIQ SOLUTIONS, LLC",
-            "href": "https://www.usaspending.gov/recipient/1e462578-7771-3dfe-8773-e3a48b5ad288-C/latest/"
-          },
-          7174921.06
-        ],
-        [
-          8,
-          {
-            "text": "NATIONAL COLLEGIATE INVENTORS & INNOVATORS ALLIANCE, INC.",
-            "href": "https://www.usaspending.gov/recipient/06d04ad7-87ef-1f5c-0a8b-4c7e1b9f9326-C/latest/"
-          },
-          6992323.8
-        ],
-        [
           9,
           {
-            "text": "SGI GLOBAL LLC",
-            "href": "https://www.usaspending.gov/recipient/a96d6459-9b65-a593-a87d-1144263a126a-C/latest/"
+            "text": "PCI GUIDEHOUSE JV LLC",
+            "href": "https://www.usaspending.gov/recipient/8fbfb1ce-4ad3-c0c5-580f-3231f79a7eb3-C/latest/"
           },
-          5716343.27
+          7151861.73
         ],
         [
           10,
           {
-            "text": "CORNERSTONE RESEARCH INC",
-            "href": "https://www.usaspending.gov/recipient/08614116-001a-69fc-6286-b38376597322-C/latest/"
+            "text": "ALUTIIQ SOLUTIONS, LLC",
+            "href": "https://www.usaspending.gov/recipient/1e462578-7771-3dfe-8773-e3a48b5ad288-C/latest/"
           },
-          4565559.65
+          7044995.46
         ]
       ]
     },
@@ -307,7 +307,7 @@
             "text": "KADIAK LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_89303021CIM000006_8900_-NONE-_-NONE-/"
           },
-          87378018.23,
+          87210939.69,
           "Department of Energy"
         ],
         [
@@ -316,7 +316,7 @@
             "text": "ALUTIIQ SOLUTIONS, LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_19AQMM22F2329_1900_19AQMM22D0071_1900/"
           },
-          81330690.41,
+          81200764.81,
           "Department of State"
         ],
         [
@@ -430,6 +430,15 @@
         [
           17,
           {
+            "text": "NATIONAL COLLEGIATE INVENTORS & INNOVATORS ALLIANCE, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75N98026F00002_7529_75N98026D00074_7529/"
+          },
+          35276389,
+          "Department of Health and Human Services"
+        ],
+        [
+          18,
+          {
             "text": "ISLAND PEER REVIEW ORGANIZATION INC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_75FCMC25FJ049_7530_75FCMC19D0029_7530/"
           },
@@ -437,7 +446,7 @@
           "Department of Health and Human Services"
         ],
         [
-          18,
+          19,
           {
             "text": "BATTELLE MEMORIAL INSTITUTE",
             "href": "https://www.usaspending.gov/award/CONT_AWD_75FCMC23C0010_7530_-NONE-_-NONE-/"
@@ -446,7 +455,16 @@
           "Department of Health and Human Services"
         ],
         [
-          19,
+          20,
+          {
+            "text": "NATIONAL COLLEGIATE INVENTORS & INNOVATORS ALLIANCE, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75N98026F00003_7529_75N92022D00013_7529/"
+          },
+          25762754,
+          "Department of Health and Human Services"
+        ],
+        [
+          21,
           {
             "text": "INSTITUTE FOR BUILDING TECHNOLOGY AND SAFETY",
             "href": "https://www.usaspending.gov/award/CONT_AWD_DU100H13C03_8600_-NONE-_-NONE-/"
@@ -455,7 +473,7 @@
           "Department of Housing and Urban Development"
         ],
         [
-          20,
+          22,
           {
             "text": "MOUNTAIN PACIFIC QUALITY HEALTH",
             "href": "https://www.usaspending.gov/award/CONT_AWD_75FCMC20F0001_7530_75FCMC19D0036_7530/"
@@ -464,7 +482,7 @@
           "Department of Health and Human Services"
         ],
         [
-          21,
+          23,
           {
             "text": "PAE GOVERNMENT SERVICES, INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_19AQMM24F1629_1900_SAQMMA17D0080_1900/"
@@ -473,7 +491,7 @@
           "Department of State"
         ],
         [
-          22,
+          24,
           {
             "text": "SOCIAL SOLUTIONS INTERNATIONAL, INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_72049220C00004_7200_-NONE-_-NONE-/"
@@ -482,30 +500,12 @@
           "Agency for International Development"
         ],
         [
-          23,
+          25,
           {
             "text": "COMAGINE HEALTH",
             "href": "https://www.usaspending.gov/award/CONT_AWD_HHSM500T0007_7530_HHSM5002014QIN007I_7530/"
           },
           18248215,
-          "Department of Health and Human Services"
-        ],
-        [
-          24,
-          {
-            "text": "SINCERUS GLOBAL SOLUTIONS INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_19AQMM24F2243_1900_SAQMMA17D0079_1900/"
-          },
-          17036040.73,
-          "Department of State"
-        ],
-        [
-          25,
-          {
-            "text": "IOWA HEALTHCARE COLLABORATIVE",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_75FCMC20F0002_7530_75FCMC19D0028_7530/"
-          },
-          16720330,
           "Department of Health and Human Services"
         ]
       ]
@@ -524,20 +524,6 @@
         [
           1,
           {
-            "text": "19AQMM19F0009",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_19AQMM19F0009_1900_SAQMMA17D0080_1900/"
-          },
-          {
-            "text": "PAE GOVERNMENT SERVICES, INC.",
-            "href": "https://www.usaspending.gov/recipient/fd602973-d119-7ced-a3e7-11ecee5a9318-C/latest/"
-          },
-          194021916.57,
-          "Department of State",
-          "2026-09-26"
-        ],
-        [
-          2,
-          {
             "text": "19AQMM22F2329",
             "href": "https://www.usaspending.gov/award/CONT_AWD_19AQMM22F2329_1900_19AQMM22D0071_1900/"
           },
@@ -545,12 +531,12 @@
             "text": "ALUTIIQ SOLUTIONS, LLC",
             "href": "https://www.usaspending.gov/recipient/1e462578-7771-3dfe-8773-e3a48b5ad288-C/latest/"
           },
-          81330690.41,
+          81200764.81,
           "Department of State",
-          "2026-09-30"
+          "2027-03-31"
         ],
         [
-          3,
+          2,
           {
             "text": "19AQMM23F2781",
             "href": "https://www.usaspending.gov/award/CONT_AWD_19AQMM23F2781_1900_SAQMMA17D0080_1900/"
@@ -564,7 +550,7 @@
           "2027-06-24"
         ],
         [
-          4,
+          3,
           {
             "text": "75FCMC23C0010",
             "href": "https://www.usaspending.gov/award/CONT_AWD_75FCMC23C0010_7530_-NONE-_-NONE-/"
@@ -578,7 +564,7 @@
           "2027-02-26"
         ],
         [
-          5,
+          4,
           {
             "text": "19AQMM24F1629",
             "href": "https://www.usaspending.gov/award/CONT_AWD_19AQMM24F1629_1900_SAQMMA17D0080_1900/"
@@ -592,7 +578,7 @@
           "2027-08-25"
         ],
         [
-          6,
+          5,
           {
             "text": "72026322C00001",
             "href": "https://www.usaspending.gov/award/CONT_AWD_72026322C00001_7200_-NONE-_-NONE-/"
@@ -604,35 +590,49 @@
           13707546.45,
           "Agency for International Development",
           "2027-08-30"
+        ],
+        [
+          6,
+          {
+            "text": "75D30124C20063",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75D30124C20063_7523_-NONE-_-NONE-/"
+          },
+          {
+            "text": "TANAQ MANAGEMENT SERVICES LLC",
+            "href": "https://www.usaspending.gov/recipient/34ec12f1-2326-3f27-97e0-6776fbe21237-C/latest/"
+          },
+          13128071.64,
+          "Department of Health and Human Services",
+          "2027-09-09"
         ]
       ]
     }
   ],
   "narrative": {
-    "intro": "Other Management Consulting Services (NAICS 541618) recorded $160M in obligations for FY2026 to date. The market posted 591 awards with an average award size of $271K, and obligations fell 81.0% year over year. Fiscal-year comparisons show a peak at $1.3B in FY24, followed by $843M in FY25 and $160M in FY26 to date. The Department of Health and Human Services leads buying with $55M, followed by the Department of Defense with $53.6M and the Department of State with $18.1M. ISLAND PEER REVIEW ORGANIZATION INC topped vendors with $52.4M, followed by PALANTIR USG INC at $27.1M and BATTELLE MEMORIAL INSTITUTE at $14.4M. The buying list also includes the Department of Energy at $12.9M and the Department of Transportation at $5M. The vendor list includes both specialized health contractors and analytics firms, with the top ten vendors ranging from $52.4M down to $4.6M. Contracting activity is concentrated: a few large buyers and vendors account for a sizable share of FY2026 to date obligations, while overall market obligations are materially lower than last fiscal year.",
+    "intro": "Total federal obligations for NAICS 541618 are $251M year to date and spread across 658 awards. Average award size for the industry is $382K. Obligations fell 70.2% year over year. Fiscal-year history shows variation with $537M in FY21, $913M in FY22, $864M in FY23, $1.3B in FY24, and $843M in FY25. Federal buyers concentrate spending: the Department of Health and Human Services leads with $116M, and the Department of Defense follows with $53.9M. Vendors capture a range of award sizes with NATIONAL COLLEGIATE INVENTORS & INNOVATORS ALLIANCE, INC. receiving $68M and ISLAND PEER REVIEW ORGANIZATION INC receiving $52.4M. This mix of agencies and prime contractors indicates demand is currently lower than last year but still meaningful for contractors that align to the top buyers and named vendors.",
     "sections": [
       {
-        "heading": "How did obligations change from FY2025 to FY2026 to date?",
-        "body": "NAICS 541618 obligations fell 81.0% year over year. FY25 obligations totaled $843M, and FY26 to date obligations are $160M. The drop follows a peak of $1.3B in FY24 and a decline to $843M in FY25."
+        "heading": "How active is the NAICS 541618 market this fiscal year?",
+        "body": "Total federal obligations for NAICS 541618 are $251M year to date across 658 awards. Average award size is $382K. Obligations fell 70.2% year over year, reflecting a substantial decline from prior fiscal years such as FY25 when obligations were $843M. Contractors should expect a smaller pool of dollars this fiscal year compared with FY24 and FY25."
       },
       {
-        "heading": "Which agencies and vendors dominate FY2026 to date buying?",
-        "body": "The Department of Health and Human Services obligated $55M and the Department of Defense obligated $53.6M. ISLAND PEER REVIEW ORGANIZATION INC received $52.4M and PALANTIR USG INC received $27.1M. The top ten buyers range from $55M down to $1.3M and the top ten vendors range from $52.4M down to $4.6M."
+        "heading": "Who are the major buyers and primes in NAICS 541618?",
+        "body": "The Department of Health and Human Services is the largest buyer with $116M, followed by the Department of Defense with $53.9M and the Department of State with $17.9M. NATIONAL COLLEGIATE INVENTORS & INNOVATORS ALLIANCE, INC. is the top vendor with $68M, followed by ISLAND PEER REVIEW ORGANIZATION INC with $52.4M and PALANTIR USG INC with $27.1M. These agencies and vendors account for a sizable share of the $251M obligated this fiscal year."
       }
     ]
   },
   "faq": [
     {
       "q": "How much does the federal government spend on NAICS 541618?",
-      "a": "The federal government obligated $160M for NAICS 541618 in FY2026 to date. The market recorded 591 awards and an average award size of $271K, and obligations fell 81.0% year over year. Fiscal-year history shows $537M in FY21, $913M in FY22, $864M in FY23, $1.3B in FY24, and $843M in FY25."
+      "a": "Total federal obligations for NAICS 541618 are $251M year to date. The market delivered 658 awards with an average award size of $382K, and obligations fell 70.2% year over year. Prior fiscal-year totals include $537M in FY21, $913M in FY22, $864M in FY23, $1.3B in FY24, and $843M in FY25."
     },
     {
       "q": "Which agencies buy the most NAICS 541618 services?",
-      "a": "The Department of Health and Human Services buys the most NAICS 541618 services in FY2026 to date, with $55M in obligations. The Department of Defense follows with $53.6M, the Department of State with $18.1M, and the Department of Energy with $12.9M. The top ten buying agencies range from $55M down to $1.3M."
+      "a": "The Department of Health and Human Services is the largest buyer with $116M. The Department of Defense is the second-largest buyer with $53.9M, followed by the Department of State with $17.9M and the Department of the Treasury with $15.6M."
     },
     {
       "q": "Who are the largest NAICS 541618 government contractors?",
-      "a": "ISLAND PEER REVIEW ORGANIZATION INC is the largest NAICS 541618 government contractor in FY2026 to date with $52.4M in obligations. PALANTIR USG INC is second with $27.1M and BATTELLE MEMORIAL INSTITUTE is third with $14.4M. The top ten vendors span from $52.4M down to $4.6M."
+      "a": "NATIONAL COLLEGIATE INVENTORS & INNOVATORS ALLIANCE, INC. is the largest NAICS 541618 government contractor with $68M. ISLAND PEER REVIEW ORGANIZATION INC is next with $52.4M, followed by PALANTIR USG INC with $27.1M and BATTELLE MEMORIAL INSTITUTE with $14.4M."
     }
   ],
   "related": [

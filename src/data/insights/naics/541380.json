@@ -1,20 +1,20 @@
 {
   "pageType": "naics",
   "slug": "541380",
-  "title": "NAICS 541380 Government Contracts: $419M in FY2026",
+  "title": "NAICS 541380 Government Contracts: $515M in FY2026",
   "h1": "Testing Laboratories (NAICS 541380): Federal Contract Market",
-  "metaDescription": "Federal agencies obligated $419M on Testing Laboratories (NAICS 541380) in FY2026 to date. See top vendors, top agencies, and trends.",
-  "updated": "2026-09-07",
+  "metaDescription": "Federal agencies obligated $515M on Testing Laboratories (NAICS 541380) in FY2026 to date. See top vendors, top agencies, and trends.",
+  "updated": "2026-09-28",
   "fyWindow": {
     "label": "FY2026 to date",
     "start": "2025-10-01",
-    "end": "2026-09-07"
+    "end": "2026-09-28"
   },
   "stats": {
-    "totalObligations": 418804470.86,
-    "awardCount": 3154,
-    "yoyGrowthPct": -27.1,
-    "avgAwardSize": 132785,
+    "totalObligations": 515239370.26,
+    "awardCount": 3495,
+    "yoyGrowthPct": -10.3,
+    "avgAwardSize": 147422,
     "smallBusinessSharePct": null
   },
   "charts": [
@@ -48,13 +48,13 @@
             ],
             [
               "FY26",
-              418804470.86
+              515239370.26
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Obligations fell 27.1% year over year, from $574M in FY2025 to $419M in FY2026 to date."
+      "takeaway": "Obligations fell 10.3% year over year, from $574M in FY2025 to $515M in FY2026 to date."
     },
     {
       "id": "541380-top-agencies",
@@ -66,49 +66,49 @@
           "points": [
             [
               "Department of Defense",
-              190352120.25
+              200152685.75
             ],
             [
               "Department of Veterans Affairs",
-              50806093.49
+              69429674.51
             ],
             [
               "Department of Health and Human Services",
-              34424033.9
+              64424929.13
             ],
             [
               "Department of Transportation",
-              32824325.67
+              51495669.56
             ],
             [
               "Department of Agriculture",
-              32793994.15
+              42410901.35
             ],
             [
               "National Aeronautics and Space Administration",
-              26890363.11
+              28321191.85
             ],
             [
               "Environmental Protection Agency",
-              24601293.07
+              27129950.61
             ],
             [
               "Department of the Interior",
-              10194679.89
-            ],
-            [
-              "Department of Justice",
-              5685303.09
+              11820123.51
             ],
             [
               "Department of Homeland Security",
-              3925869.48
+              6336621.7
+            ],
+            [
+              "Department of Justice",
+              5690044.06
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Department of Defense was the top buyer, obligating $190M (45.5% of all obligations)."
+      "takeaway": "Department of Defense was the top buyer, obligating $200M (38.8% of all obligations)."
     },
     {
       "id": "541380-top-vendors",
@@ -120,15 +120,19 @@
           "points": [
             [
               "AGILE DEFENSE, LLC",
-              39042800.59
+              42091610.27
             ],
             [
               "MERRICK & COMPANY",
-              28784489.14
+              37668149.14
             ],
             [
               "RAYTHEON COMPANY",
-              24917605.25
+              24887208.42
+            ],
+            [
+              "TRANSPORTATION RESEARCH CENTER INC",
+              24135104
             ],
             [
               "MANTECH ADVANCED SYSTEMS INTERNATIONAL, INC.",
@@ -140,29 +144,25 @@
             ],
             [
               "THE BIONETICS CORP",
-              21066863.04
+              21104534.68
             ],
             [
               "GINKGO BIOWORKS, INC.",
               20999983.85
             ],
             [
-              "TRANSPORTATION RESEARCH CENTER INC",
-              20496892.87
+              "EMORY UNIVERSITY",
+              19833874.06
             ],
             [
-              "TEMPUS AI, INC",
-              13591632.88
-            ],
-            [
-              "MCCRONE ASSOCIATES INC",
-              11036316.54
+              "INFINITY BIOLOGIX LLC",
+              15132510.57
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "AGILE DEFENSE, LLC led all vendors with $39M in obligations, 9.3% of the market."
+      "takeaway": "AGILE DEFENSE, LLC led all vendors with $42.1M in obligations, 8.2% of the market."
     }
   ],
   "crossLinks": [
@@ -198,7 +198,7 @@
             "text": "AGILE DEFENSE, LLC",
             "href": "https://www.usaspending.gov/recipient/f7101b2d-1601-28c3-6099-efd981538f28-C/latest/"
           },
-          39042800.59
+          42091610.27
         ],
         [
           2,
@@ -206,7 +206,7 @@
             "text": "MERRICK & COMPANY",
             "href": "https://www.usaspending.gov/recipient/5c3d2628-0297-607a-6d59-d72db45b9a46-C/latest/"
           },
-          28784489.14
+          37668149.14
         ],
         [
           3,
@@ -214,10 +214,18 @@
             "text": "RAYTHEON COMPANY",
             "href": "https://www.usaspending.gov/recipient/01c4a3a3-b4c5-ce4e-822b-d17f09985001-C/latest/"
           },
-          24917605.25
+          24887208.42
         ],
         [
           4,
+          {
+            "text": "TRANSPORTATION RESEARCH CENTER INC",
+            "href": "https://www.usaspending.gov/recipient/0be88ae1-cdad-3ef3-3c76-531fe7a77d40-C/latest/"
+          },
+          24135104
+        ],
+        [
+          5,
           {
             "text": "MANTECH ADVANCED SYSTEMS INTERNATIONAL, INC.",
             "href": "https://www.usaspending.gov/recipient/ceac1920-9ceb-17a6-9bf7-026817a02917-C/latest/"
@@ -225,7 +233,7 @@
           22073261
         ],
         [
-          5,
+          6,
           {
             "text": "ASTRION GROUP, LLC",
             "href": "https://www.usaspending.gov/recipient/fb0538c5-199f-69f8-9e3c-d40c49d6d6ce-C/latest/"
@@ -233,15 +241,15 @@
           21743178.69
         ],
         [
-          6,
+          7,
           {
             "text": "THE BIONETICS CORP",
             "href": "https://www.usaspending.gov/recipient/e70aaf33-e3ac-86b7-a6de-0dc3111f6e27-C/latest/"
           },
-          21066863.04
+          21104534.68
         ],
         [
-          7,
+          8,
           {
             "text": "GINKGO BIOWORKS, INC.",
             "href": "https://www.usaspending.gov/recipient/16a7afe1-5e29-bed6-05db-3061a3f082c5-C/latest/"
@@ -249,28 +257,20 @@
           20999983.85
         ],
         [
-          8,
-          {
-            "text": "TRANSPORTATION RESEARCH CENTER INC",
-            "href": "https://www.usaspending.gov/recipient/0be88ae1-cdad-3ef3-3c76-531fe7a77d40-C/latest/"
-          },
-          20496892.87
-        ],
-        [
           9,
           {
-            "text": "TEMPUS AI, INC",
-            "href": "https://www.usaspending.gov/recipient/9591870e-25fb-08ca-a7fa-2b614e25d829-C/latest/"
+            "text": "EMORY UNIVERSITY",
+            "href": "https://www.usaspending.gov/recipient/4d4ce585-e95e-2593-758c-86dc120820ad-C/latest/"
           },
-          13591632.88
+          19833874.06
         ],
         [
           10,
           {
-            "text": "MCCRONE ASSOCIATES INC",
-            "href": "https://www.usaspending.gov/recipient/0c5190ab-e775-5bbb-dfac-746f6e60856f-C/latest/"
+            "text": "INFINITY BIOLOGIX LLC",
+            "href": "https://www.usaspending.gov/recipient/6f47d195-12b2-1298-2c1c-8d6bc24eec97-C/latest/"
           },
-          11036316.54
+          15132510.57
         ]
       ]
     },
@@ -307,7 +307,7 @@
             "text": "THE BIONETICS CORP",
             "href": "https://www.usaspending.gov/award/CONT_AWD_FA226323C0002_9700_-NONE-_-NONE-/"
           },
-          77260888.01,
+          77298559.65,
           "Department of Defense"
         ],
         [
@@ -367,6 +367,24 @@
         [
           10,
           {
+            "text": "MERRICK & COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_1232SA25C0028_12H2_-NONE-_-NONE-/"
+          },
+          35848731.54,
+          "Department of Agriculture"
+        ],
+        [
+          11,
+          {
+            "text": "RAYTHEON COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA867521F3001_9700_FA867521D0030_9700/"
+          },
+          35629795.42,
+          "Department of Defense"
+        ],
+        [
+          12,
+          {
             "text": "THE CHARLES STARK DRAPER LABORATORY, INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_FA880721C0004_9700_-NONE-_-NONE-/"
           },
@@ -374,7 +392,7 @@
           "Department of Defense"
         ],
         [
-          11,
+          13,
           {
             "text": "ALUTIIQ ESSENTIAL SERVICES LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_80SSC020C0001_8000_-NONE-_-NONE-/"
@@ -383,16 +401,7 @@
           "National Aeronautics and Space Administration"
         ],
         [
-          12,
-          {
-            "text": "MERRICK & COMPANY",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_1232SA25C0028_12H2_-NONE-_-NONE-/"
-          },
-          26965071.54,
-          "Department of Agriculture"
-        ],
-        [
-          13,
+          14,
           {
             "text": "APPLIED GEO TECHNOLOGIES, INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_NNS04AB55C_8000_-NONE-_-NONE-/"
@@ -401,7 +410,7 @@
           "National Aeronautics and Space Administration"
         ],
         [
-          14,
+          15,
           {
             "text": "THE BROAD INSTITUTE, INC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_75N92024F00001_7529_75N92023D00013_7529/"
@@ -410,7 +419,16 @@
           "Department of Health and Human Services"
         ],
         [
-          15,
+          16,
+          {
+            "text": "CONSOLIDATED SAFETY SERVICES INCORPORATED",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_68HERH21F0185_6800_68HERH21D0002_6800/"
+          },
+          20893030.8,
+          "Environmental Protection Agency"
+        ],
+        [
+          17,
           {
             "text": "RAYTHEON COMPANY",
             "href": "https://www.usaspending.gov/award/CONT_AWD_FA867524F3001_9700_FA867521D0030_9700/"
@@ -419,7 +437,7 @@
           "Department of Defense"
         ],
         [
-          16,
+          18,
           {
             "text": "MERRICK & COMPANY",
             "href": "https://www.usaspending.gov/award/CONT_AWD_1232SA26C0001_12H2_-NONE-_-NONE-/"
@@ -428,7 +446,7 @@
           "Department of Agriculture"
         ],
         [
-          17,
+          19,
           {
             "text": "MRIGLOBAL",
             "href": "https://www.usaspending.gov/award/CONT_AWD_HQ003422C0090_9700_-NONE-_-NONE-/"
@@ -437,25 +455,25 @@
           "Department of Defense"
         ],
         [
-          18,
+          20,
           {
-            "text": "CONSOLIDATED SAFETY SERVICES INCORPORATED",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_68HERH21F0185_6800_68HERH21D0002_6800/"
+            "text": "EMORY UNIVERSITY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75N98026F00001_7529_75N92022D00015_7529/"
           },
-          19861591,
-          "Environmental Protection Agency"
+          18769273,
+          "Department of Health and Human Services"
         ],
         [
-          19,
+          21,
           {
             "text": "OLH TECHNICAL SERVICES, LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_15F06724F0001111_1549_15F06723D0002316_1549/"
           },
-          16092369.62,
+          16092369.59,
           "Department of Justice"
         ],
         [
-          20,
+          22,
           {
             "text": "BONNER ANALYTICAL TESTING CO",
             "href": "https://www.usaspending.gov/award/CONT_AWD_68HERH21F0030_6800_68HERH20D0009_6800/"
@@ -464,7 +482,7 @@
           "Environmental Protection Agency"
         ],
         [
-          21,
+          23,
           {
             "text": "AZENTA US INC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_75N91025C00001_7529_-NONE-_-NONE-/"
@@ -473,7 +491,7 @@
           "Department of Health and Human Services"
         ],
         [
-          22,
+          24,
           {
             "text": "TRANSPORTATION RESEARCH CENTER INC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_693JJ924F00107N_6940_693JJ923D000057_6940/"
@@ -482,31 +500,13 @@
           "Department of Transportation"
         ],
         [
-          23,
+          25,
           {
             "text": "BANGHAM ENGINEERING INC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_693KA924C00009_6920_-NONE-_-NONE-/"
           },
           13642758.07,
           "Department of Transportation"
-        ],
-        [
-          24,
-          {
-            "text": "THE CHARLES STARK DRAPER LABORATORY, INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_FA880718C0001_9700_-NONE-_-NONE-/"
-          },
-          12883271.12,
-          "Department of Defense"
-        ],
-        [
-          25,
-          {
-            "text": "UNIVERSITY OF WASHINGTON",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_75N92020F00001_7529_HHSN268201600032I_7529/"
-          },
-          12809655,
-          "Department of Health and Human Services"
         ]
       ]
     },
@@ -531,26 +531,12 @@
             "text": "THE BIONETICS CORP",
             "href": "https://www.usaspending.gov/recipient/e70aaf33-e3ac-86b7-a6de-0dc3111f6e27-C/latest/"
           },
-          77260888.01,
+          77298559.65,
           "Department of Defense",
           "2026-11-30"
         ],
         [
           2,
-          {
-            "text": "75D30124C18440",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_75D30124C18440_7523_-NONE-_-NONE-/"
-          },
-          {
-            "text": "VERILY HEALTH INC.",
-            "href": "https://www.usaspending.gov/recipient/0418e9c8-839f-9ad0-2270-f494b4a7b3a2-C/latest/"
-          },
-          42317282.38,
-          "Department of Health and Human Services",
-          "2026-09-14"
-        ],
-        [
-          3,
           {
             "text": "75N92023F00001",
             "href": "https://www.usaspending.gov/award/CONT_AWD_75N92023F00001_7529_75N92022D00015_7529/"
@@ -564,7 +550,7 @@
           "2027-03-26"
         ],
         [
-          4,
+          3,
           {
             "text": "75N92020F00001",
             "href": "https://www.usaspending.gov/award/CONT_AWD_75N92020F00001_7529_HHSN268201600034I_7529/"
@@ -578,7 +564,7 @@
           "2027-06-30"
         ],
         [
-          5,
+          4,
           {
             "text": "1232SA25C0028",
             "href": "https://www.usaspending.gov/award/CONT_AWD_1232SA25C0028_12H2_-NONE-_-NONE-/"
@@ -587,12 +573,40 @@
             "text": "MERRICK & COMPANY",
             "href": "https://www.usaspending.gov/recipient/5c3d2628-0297-607a-6d59-d72db45b9a46-C/latest/"
           },
-          26965071.54,
+          35848731.54,
           "Department of Agriculture",
           "2026-11-30"
         ],
         [
+          5,
+          {
+            "text": "75N92024F00001",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75N92024F00001_7529_75N92023D00013_7529/"
+          },
+          {
+            "text": "THE BROAD INSTITUTE, INC",
+            "href": "https://www.usaspending.gov/recipient/eb1c4bd6-22a0-1796-63d6-bdf7123782cd-C/latest/"
+          },
+          24477068.7,
+          "Department of Health and Human Services",
+          "2027-09-22"
+        ],
+        [
           6,
+          {
+            "text": "68HERH21F0185",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_68HERH21F0185_6800_68HERH21D0002_6800/"
+          },
+          {
+            "text": "CONSOLIDATED SAFETY SERVICES INCORPORATED",
+            "href": "https://www.usaspending.gov/recipient/0f0c8d75-b6dc-39cd-cd89-aac95b0de3d8-C/latest/"
+          },
+          20893030.8,
+          "Environmental Protection Agency",
+          "2027-08-31"
+        ],
+        [
+          7,
           {
             "text": "1232SA26C0001",
             "href": "https://www.usaspending.gov/award/CONT_AWD_1232SA26C0001_12H2_-NONE-_-NONE-/"
@@ -606,35 +620,7 @@
           "2026-11-30"
         ],
         [
-          7,
-          {
-            "text": "68HERH21F0185",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_68HERH21F0185_6800_68HERH21D0002_6800/"
-          },
-          {
-            "text": "CONSOLIDATED SAFETY SERVICES INCORPORATED",
-            "href": "https://www.usaspending.gov/recipient/0f0c8d75-b6dc-39cd-cd89-aac95b0de3d8-C/latest/"
-          },
-          19861591,
-          "Environmental Protection Agency",
-          "2027-08-31"
-        ],
-        [
           8,
-          {
-            "text": "75N92024F00001",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_75N92024F00001_7529_75N92023D00012_7529/"
-          },
-          {
-            "text": "BAYLOR COLLEGE OF MEDICINE",
-            "href": "https://www.usaspending.gov/recipient/ddcd398f-5e59-e840-2368-a57b84efdc7d-C/latest/"
-          },
-          16682492,
-          "Department of Health and Human Services",
-          "2026-09-22"
-        ],
-        [
-          9,
           {
             "text": "68HERH21F0030",
             "href": "https://www.usaspending.gov/award/CONT_AWD_68HERH21F0030_6800_68HERH20D0009_6800/"
@@ -648,7 +634,7 @@
           "2027-03-09"
         ],
         [
-          10,
+          9,
           {
             "text": "75N91025C00001",
             "href": "https://www.usaspending.gov/award/CONT_AWD_75N91025C00001_7529_-NONE-_-NONE-/"
@@ -662,7 +648,7 @@
           "2027-07-31"
         ],
         [
-          11,
+          10,
           {
             "text": "693KA924C00009",
             "href": "https://www.usaspending.gov/award/CONT_AWD_693KA924C00009_6920_-NONE-_-NONE-/"
@@ -676,7 +662,7 @@
           "2027-03-31"
         ],
         [
-          12,
+          11,
           {
             "text": "75N92020F00001",
             "href": "https://www.usaspending.gov/award/CONT_AWD_75N92020F00001_7529_HHSN268201600032I_7529/"
@@ -690,7 +676,7 @@
           "2027-06-30"
         ],
         [
-          13,
+          12,
           {
             "text": "693JJ923F000296",
             "href": "https://www.usaspending.gov/award/CONT_AWD_693JJ923F000296_6940_693JJ923D000057_6940/"
@@ -704,7 +690,7 @@
           "2027-06-30"
         ],
         [
-          14,
+          13,
           {
             "text": "68HERH21F0033",
             "href": "https://www.usaspending.gov/award/CONT_AWD_68HERH21F0033_6800_68HERH20D0012_6800/"
@@ -718,47 +704,61 @@
           "2027-03-09"
         ],
         [
+          14,
+          {
+            "text": "75N91022F00001",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75N91022F00001_7529_HHSN261201700015I_7529/"
+          },
+          {
+            "text": "RESEARCH INSTITUTE AT NATIONWIDE CHILDREN'S HOSPITAL",
+            "href": "https://www.usaspending.gov/recipient/24042a1a-03ec-326e-b5c2-89242d7c209d-C/latest/"
+          },
+          11357163,
+          "Department of Health and Human Services",
+          "2027-07-31"
+        ],
+        [
           15,
           {
-            "text": "FA855626FB002",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_FA855626FB002_9700_FA867521D0030_9700/"
+            "text": "68HE0921F0058",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_68HE0921F0058_6800_68HE0121D0002_6800/"
           },
           {
-            "text": "RAYTHEON COMPANY",
-            "href": "https://www.usaspending.gov/recipient/01c4a3a3-b4c5-ce4e-822b-d17f09985001-C/latest/"
+            "text": "ICF INCORPORATED, L.L.C.",
+            "href": "https://www.usaspending.gov/recipient/f7268051-dfb6-e5cf-ab3d-11235ea4137f-C/latest/"
           },
-          12151867.68,
-          "Department of Defense",
-          "2027-02-28"
+          11160337.08,
+          "Environmental Protection Agency",
+          "2026-11-17"
         ]
       ]
     }
   ],
   "narrative": {
-    "intro": "Testing Laboratories (NAICS 541380) has recorded $419M in federal contract obligations for FY2026 to date. Award activity totaled 3,154 obligations and the average award size was $133K. Obligations fell 27.1% year over year. Fiscal-year history shows obligations moved from $502M in FY21, to $575M in FY22, to $619M in FY23, to $671M in FY24, to $574M in FY25, and to $419M in FY26. The Department of Defense is the largest buyer in FY2026 to date with $190M obligated. The top vendors in FY2026 to date include AGILE DEFENSE, LLC with $39M and MERRICK & COMPANY with $28.8M. This market snapshot highlights where federal buying concentrated in the current fiscal year to date, which buyers are most active, and which vendors captured the largest shares of obligations.",
+    "intro": "Testing Laboratories (NAICS 541380) has $515M in federal contract obligations in FY2026 to date. The federal government executed 3,495 awards for this NAICS code with an average award size of $147K, and obligations fell 10.3% year over year. Fiscal-year obligations show a multi-year pattern: FY21 was $502M, FY22 was $575M, FY23 was $619M, FY24 was $671M, and FY25 was $574M. The Department of Defense is the largest buyer with $200M in obligations, followed by the Department of Veterans Affairs with $69.4M and the Department of Health and Human Services with $64.4M. AGILE DEFENSE, LLC, is the top vendor with $42.1M, followed by MERRICK & COMPANY with $37.7M and RAYTHEON COMPANY with $24.9M. Testing Laboratories obligations are concentrated among a handful of agencies and vendors, while annual totals have varied from $502M to $671M over the past six fiscal years. Readers should note current-year totals are partial and represent fiscal year to date activity.",
     "sections": [
       {
-        "heading": "Which agencies buy the most Testing Laboratories services?",
-        "body": "The Department of Defense obligated $190M in FY2026 to date. The Department of Veterans Affairs obligated $50.8M, the Department of Health and Human Services obligated $34.4M, and the Department of Transportation obligated $32.8M. The Department of Agriculture also obligated $32.8M, and NASA obligated $26.9M."
+        "heading": "What changed in FY2026 to date compared with prior years?",
+        "body": "The federal government obligated $515M for Testing Laboratories in FY2026 to date. Obligations fell 10.3% year over year. The award count was 3,495 with an average award size of $147K. Fiscal-year totals have ranged from $502M in FY21 to $671M in FY24."
       },
       {
-        "heading": "Who wins the largest Testing Laboratories contracts?",
-        "body": "AGILE DEFENSE, LLC received $39M in FY2026 to date. MERRICK & COMPANY received $28.8M, RAYTHEON COMPANY received $24.9M, and MANTECH ADVANCED SYSTEMS INTERNATIONAL, INC. received $22.1M. Other leading recipients include ASTRION GROUP, LLC with $21.7M and THE BIONETICS CORP with $21.1M."
+        "heading": "Who are the largest buyers and contractors in FY2026 to date?",
+        "body": "The Department of Defense obligated $200M, making it the largest buyer. The Departments of Veterans Affairs and Health and Human Services follow with $69.4M and $64.4M respectively. AGILE DEFENSE, LLC is the top vendor with $42.1M, followed by MERRICK & COMPANY with $37.7M and RAYTHEON COMPANY with $24.9M."
       }
     ]
   },
   "faq": [
     {
       "q": "How much does the federal government spend on NAICS 541380?",
-      "a": "The federal government has obligated $419M for NAICS 541380 in FY2026 to date. Award activity totaled 3,154 obligations and the average award size was $133K. Obligations fell 27.1% year over year."
+      "a": "The federal government has obligated $515M on NAICS 541380 in FY2026 to date. The market recorded 3,495 awards with an average award size of $147K, and obligations fell 10.3% year over year."
     },
     {
       "q": "Which agencies buy the most NAICS 541380 services?",
-      "a": "The Department of Defense buys the most NAICS 541380 services, with $190M obligated in FY2026 to date. The Department of Veterans Affairs follows with $50.8M, and the Department of Health and Human Services follows with $34.4M."
+      "a": "The Department of Defense buys the most NAICS 541380 services with $200M in obligations. The Department of Veterans Affairs and the Department of Health and Human Services are the next largest buyers with $69.4M and $64.4M respectively."
     },
     {
       "q": "Who are the largest NAICS 541380 government contractors?",
-      "a": "AGILE DEFENSE, LLC is the largest NAICS 541380 government contractor in FY2026 to date with $39M. MERRICK & COMPANY is second with $28.8M, and RAYTHEON COMPANY is third with $24.9M."
+      "a": "AGILE DEFENSE, LLC is the largest NAICS 541380 government contractor with $42.1M in obligations. MERRICK & COMPANY and RAYTHEON COMPANY are the next largest vendors with $37.7M and $24.9M respectively."
     }
   ],
   "related": [

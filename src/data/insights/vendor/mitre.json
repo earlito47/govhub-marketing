@@ -1,20 +1,20 @@
 {
   "pageType": "vendor",
   "slug": "mitre",
-  "title": "Who Buys From Mitre: $903M in FY2026",
+  "title": "Who Buys From Mitre: $1.2B in FY2026",
   "h1": "Mitre: Federal Contracts, Agencies & Awards",
-  "metaDescription": "Mitre won $903M in federal contract obligations in FY2026 to date. See its top agencies, markets, largest awards, and expiring contracts.",
-  "updated": "2026-08-24",
+  "metaDescription": "Mitre won $1.2B in federal contract obligations in FY2026 to date. See its top agencies, markets, largest awards, and expiring contracts.",
+  "updated": "2026-09-28",
   "fyWindow": {
     "label": "FY2026 to date",
     "start": "2025-10-01",
-    "end": "2026-08-24"
+    "end": "2026-09-28"
   },
   "stats": {
-    "totalObligations": 902670084.79,
-    "awardCount": 308,
-    "yoyGrowthPct": -31.6,
-    "avgAwardSize": 2930747,
+    "totalObligations": 1202957649.39,
+    "awardCount": 394,
+    "yoyGrowthPct": -8.8,
+    "avgAwardSize": 3053192,
     "smallBusinessSharePct": null
   },
   "charts": [
@@ -48,13 +48,13 @@
             ],
             [
               "FY26",
-              902670084.79
+              1202957649.39
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Obligations fell 31.6% year over year, from $1.3B in FY2025 to $903M in FY2026 to date."
+      "takeaway": "Obligations fell 8.8% year over year, from $1.3B in FY2025 to $1.2B in FY2026 to date."
     },
     {
       "id": "mitre-top-agencies",
@@ -66,49 +66,49 @@
           "points": [
             [
               "Department of Defense",
-              565451148.9
+              638645968.92
             ],
             [
               "Department of Transportation",
-              134746926.89
+              165470638.13
             ],
             [
               "Department of Health and Human Services",
-              75036461.44
+              149354632.69
             ],
             [
               "Department of Homeland Security",
-              51824048.32
+              97467924.18
             ],
             [
               "Department of Commerce",
-              40234905.57
+              89312203.68
             ],
             [
               "Department of Veterans Affairs",
-              33973491.72
+              47309884.87
+            ],
+            [
+              "Department of the Treasury",
+              8823159.94
             ],
             [
               "Department of Energy",
-              4003490.43
+              4378490.43
             ],
             [
               "Department of State",
-              2478832
+              2728832
             ],
             [
               "Social Security Administration",
               688593.7
-            ],
-            [
-              "Department of Agriculture",
-              530375.18
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Department of Defense is Mitre's largest federal customer, with $565M obligated (62.6% of the company's federal obligations)."
+      "takeaway": "Department of Defense is Mitre's largest federal customer, with $639M obligated (53.1% of the company's federal obligations)."
     },
     {
       "id": "mitre-top-naics",
@@ -120,27 +120,35 @@
           "points": [
             [
               "Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology)",
-              698386249.28
+              886540331.37
             ],
             [
               "Engineering Services",
-              131355211.89
+              163443923.13
             ],
             [
               "All Other Professional, Scientific, and Technical Services",
-              61367771.83
+              99241224.28
             ],
             [
               "Research and Development in the Social Sciences and Humanities",
-              8243351.7
+              36579053.51
+            ],
+            [
+              "Other Management Consulting Services",
+              9796716.7
+            ],
+            [
+              "Administrative Management and General Management Consulting Services",
+              3205260.42
             ],
             [
               "Computer Systems Design Services",
               3025646.3
             ],
             [
-              "Administrative Management and General Management Consulting Services",
-              1232404.42
+              "All Other Information Services",
+              999999.65
             ],
             [
               "Research and Development in the Physical, Engineering, and Life Sciences",
@@ -149,20 +157,12 @@
             [
               "All Other Legal Services",
               84722.79
-            ],
-            [
-              "Custom Computer Programming Services",
-              0
-            ],
-            [
-              "Other Computer Related Services",
-              -55694.05
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology) is Mitre's largest federal market, with $698M in obligations."
+      "takeaway": "Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology) is Mitre's largest federal market, with $887M in obligations."
     }
   ],
   "crossLinks": [
@@ -195,8 +195,8 @@
       "href": "/insights/naics/541990/"
     },
     {
-      "label": "NAICS 541512: Computer Systems Design Services",
-      "href": "/insights/naics/541512/"
+      "label": "NAICS 541618: Other Management Consulting Services",
+      "href": "/insights/naics/541618/"
     }
   ],
   "tables": [
@@ -216,7 +216,7 @@
             "text": "DTFAWA10C00080",
             "href": "https://www.usaspending.gov/award/CONT_AWD_DTFAWA10C00080_6920_-NONE-_-NONE-/"
           },
-          1701696966.84,
+          1701696956.72,
           "Department of Transportation",
           "2021-09-30"
         ],
@@ -226,7 +226,7 @@
             "text": "693KA822C00001",
             "href": "https://www.usaspending.gov/award/CONT_AWD_693KA822C00001_6920_-NONE-_-NONE-/"
           },
-          761410584.74,
+          790973934.1,
           "Department of Transportation",
           "2030-03-31"
         ],
@@ -236,7 +236,7 @@
             "text": "W56KGU24F0010",
             "href": "https://www.usaspending.gov/award/CONT_AWD_W56KGU24F0010_9700_W56KGU18D0004_9700/"
           },
-          751978547.31,
+          749479133.68,
           "Department of Defense",
           "2025-12-31"
         ],
@@ -263,22 +263,22 @@
         [
           6,
           {
+            "text": "W56KGU25F0015",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W56KGU25F0015_9700_W56KGU18D0004_9700/"
+          },
+          671027122.33,
+          "Department of Defense",
+          "2026-12-31"
+        ],
+        [
+          7,
+          {
             "text": "W56KGU21F0008",
             "href": "https://www.usaspending.gov/award/CONT_AWD_W56KGU21F0008_9700_W56KGU18D0004_9700/"
           },
           617943922.25,
           "Department of Defense",
           "2022-12-31"
-        ],
-        [
-          7,
-          {
-            "text": "W56KGU25F0015",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_W56KGU25F0015_9700_W56KGU18D0004_9700/"
-          },
-          598305744.33,
-          "Department of Defense",
-          "2026-12-31"
         ],
         [
           8,
@@ -313,6 +313,26 @@
         [
           11,
           {
+            "text": "75N98019F01202",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75N98019F01202_7529_75FCMC18D0047_7530/"
+          },
+          71701476.53,
+          "Department of Health and Human Services",
+          "2025-03-28"
+        ],
+        [
+          12,
+          {
+            "text": "75FCMC24F0196",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75FCMC24F0196_7530_75FCMC23D0004_7530/"
+          },
+          45440096.86,
+          "Department of Health and Human Services",
+          "2027-09-29"
+        ],
+        [
+          13,
+          {
             "text": "70B02C23F00000263",
             "href": "https://www.usaspending.gov/award/CONT_AWD_70B02C23F00000263_7014_70RSAT20D00000001_7001/"
           },
@@ -321,17 +341,27 @@
           "2026-03-23"
         ],
         [
-          12,
+          14,
           {
-            "text": "75FCMC24F0196",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_75FCMC24F0196_7530_75FCMC23D0004_7530/"
+            "text": "75H70421F80001",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75H70421F80001_7527_75FCMC18D0047_7530/"
           },
-          34831045,
+          39107480.03,
           "Department of Health and Human Services",
-          "2026-09-29"
+          "2023-01-23"
         ],
         [
-          13,
+          15,
+          {
+            "text": "75FCMC24F0200",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75FCMC24F0200_7530_75FCMC23D0004_7530/"
+          },
+          35210195,
+          "Department of Health and Human Services",
+          "2027-09-16"
+        ],
+        [
+          16,
           {
             "text": "75FCMC24F0100",
             "href": "https://www.usaspending.gov/award/CONT_AWD_75FCMC24F0100_7530_75FCMC23D0004_7530/"
@@ -341,7 +371,7 @@
           "2029-06-20"
         ],
         [
-          14,
+          17,
           {
             "text": "36C10A24N0032",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C10A24N0032_3600_36C10A20D0004_3600/"
@@ -351,7 +381,7 @@
           "2026-08-12"
         ],
         [
-          15,
+          18,
           {
             "text": "70B02C20F00000561",
             "href": "https://www.usaspending.gov/award/CONT_AWD_70B02C20F00000561_7014_70RSAT20D00000001_7001/"
@@ -361,7 +391,7 @@
           "2023-03-28"
         ],
         [
-          16,
+          19,
           {
             "text": "HQ003421F0181",
             "href": "https://www.usaspending.gov/award/CONT_AWD_HQ003421F0181_9700_HQ003421D0010_9700/"
@@ -371,7 +401,7 @@
           "2026-02-28"
         ],
         [
-          17,
+          20,
           {
             "text": "15F06720F0000527",
             "href": "https://www.usaspending.gov/award/CONT_AWD_15F06720F0000527_1549_15F06719D0000649_1549/"
@@ -381,7 +411,7 @@
           "2024-07-14"
         ],
         [
-          18,
+          21,
           {
             "text": "75FCMC19F0003",
             "href": "https://www.usaspending.gov/award/CONT_AWD_75FCMC19F0003_7530_75FCMC18D0047_7530/"
@@ -391,7 +421,7 @@
           "2022-06-19"
         ],
         [
-          19,
+          22,
           {
             "text": "75FCMC25FJ092",
             "href": "https://www.usaspending.gov/award/CONT_AWD_75FCMC25FJ092_7530_75FCMC23D0004_7530/"
@@ -401,7 +431,7 @@
           "2027-06-20"
         ],
         [
-          20,
+          23,
           {
             "text": "75ACF121F80013",
             "href": "https://www.usaspending.gov/award/CONT_AWD_75ACF121F80013_7590_75FCMC18D0047_7530/"
@@ -411,7 +441,7 @@
           "2022-11-29"
         ],
         [
-          21,
+          24,
           {
             "text": "1333ND25FNB770055",
             "href": "https://www.usaspending.gov/award/CONT_AWD_1333ND25FNB770055_1341_DOCSB134114CQ0010_1341/"
@@ -421,7 +451,7 @@
           "2026-09-29"
         ],
         [
-          22,
+          25,
           {
             "text": "75N98021F00275",
             "href": "https://www.usaspending.gov/award/CONT_AWD_75N98021F00275_7529_75FCMC18D0047_7530/"
@@ -429,36 +459,6 @@
           24966017.03,
           "Department of Health and Human Services",
           "2025-07-03"
-        ],
-        [
-          23,
-          {
-            "text": "273FCC24F0115",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_273FCC24F0115_2700_75FCMC23D0004_7530/"
-          },
-          20830205,
-          "Federal Communications Commission",
-          "2027-07-31"
-        ],
-        [
-          24,
-          {
-            "text": "36C10A21N0003",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10A21N0003_3600_36C10A20D0004_3600/"
-          },
-          18865838.84,
-          "Department of Veterans Affairs",
-          "2024-12-06"
-        ],
-        [
-          25,
-          {
-            "text": "36C10A22N0045",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10A22N0045_3600_36C10A20D0004_3600/"
-          },
-          17393823.47,
-          "Department of Veterans Affairs",
-          "2025-09-28"
         ]
       ]
     },
@@ -477,17 +477,17 @@
             "href": "https://www.usaspending.gov/award/CONT_AWD_W56KGU25F0015_9700_W56KGU18D0004_9700/"
           },
           "Department of Defense",
-          598305744.33,
+          671027122.33,
           "2026-12-31"
         ],
         [
           {
-            "text": "75FCMC24F0196",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_75FCMC24F0196_7530_75FCMC23D0004_7530/"
+            "text": "75FCMC24F0200",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75FCMC24F0200_7530_75FCMC23D0004_7530/"
           },
           "Department of Health and Human Services",
-          34831045,
-          "2026-09-29"
+          35210195,
+          "2027-09-16"
         ],
         [
           {
@@ -509,15 +509,6 @@
         ],
         [
           {
-            "text": "75FCMC24F0200",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_75FCMC24F0200_7530_75FCMC23D0004_7530/"
-          },
-          "Department of Health and Human Services",
-          23227251,
-          "2026-09-16"
-        ],
-        [
-          {
             "text": "273FCC24F0115",
             "href": "https://www.usaspending.gov/award/CONT_AWD_273FCC24F0115_2700_75FCMC23D0004_7530/"
           },
@@ -533,6 +524,15 @@
           "Department of Veterans Affairs",
           19166708.93,
           "2026-09-28"
+        ],
+        [
+          {
+            "text": "1305M223FNWWG0173",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_1305M223FNWWG0173_1330_1331L523D13OS0003_1301/"
+          },
+          "Department of Commerce",
+          18958653.1,
+          "2027-03-14"
         ]
       ]
     },
@@ -559,34 +559,34 @@
     }
   ],
   "narrative": {
-    "intro": "Mitre obligated $903M in FY2026 to date across 308 awards, with an average award size of $2.9M. Obligations fell 31.6% year over year. The Department of Defense is the largest buyer, obligating $565M, followed by the Department of Transportation at $135M and the Department of Health and Human Services at $75M. Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology) is the largest market, with $698M in obligations. Engineering Services accounts for $131M, and All Other Professional, Scientific, and Technical Services accounts for $61.4M. Historical obligations show multi-year scale: FY21 and FY22 were each $1.5B, FY23 and FY24 were each $1.7B, FY25 was $1.3B, and FY26 to date is $903M. These figures are contract obligations unless otherwise noted as total contract values. The mix of agencies and markets shows a heavy concentration in defense R&D and engineering work, with smaller pockets of activity in civilian agencies and other professional services.",
+    "intro": "Mitre obligated $1.2B in FY2026 to date across 394 awards, with an average award size of $3.1M. Mitre's obligations are down 8.8% year over year. Mitre's obligations by fiscal year were $1.5B in FY21, $1.5B in FY22, $1.7B in FY23, $1.7B in FY24, $1.3B in FY25, and $1.2B in FY26. The Department of Defense is the largest buyer, obligating $639M in FY2026 to date. Other top buyers include the Department of Transportation at $165M and the Department of Health and Human Services at $149M. Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology) is the largest market for Mitre, with obligations of $887M. Engineering Services accounted for $163M and All Other Professional, Scientific, and Technical Services accounted for $99.2M. This profile summarizes current-year obligations and the main buying agencies and markets that drive Mitre's federal contracting activity.",
     "sections": [
       {
-        "heading": "How concentrated are Mitre's FY2026 obligations by buyer?",
-        "body": "The Department of Defense obligated $565M, making it the dominant buyer in FY2026 to date. The next largest buyers are the Department of Transportation with $135M and the Department of Health and Human Services with $75M. Combined, these three agencies account for a large share of the $903M total obligations."
+        "heading": "Who are Mitre's biggest buyers this year?",
+        "body": "The Department of Defense is the largest buyer, obligating $639M in FY2026 to date. The Department of Transportation obligated $165M and the Department of Health and Human Services obligated $149M. The Department of Homeland Security and the Department of Commerce obligated $97.5M and $89.3M respectively."
       },
       {
-        "heading": "How have Mitre's obligations changed since FY21?",
-        "body": "FY21 and FY22 each show $1.5B in obligations, and FY23 and FY24 each show $1.7B. Obligations dropped to $1.3B in FY25 and are $903M in FY26 to date, a decline of 31.6% year over year."
+        "heading": "What work areas drive Mitre's obligations?",
+        "body": "Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology) is the largest market at $887M. Engineering Services accounted for $163M and All Other Professional, Scientific, and Technical Services accounted for $99.2M. Smaller markets include Research and Development in the Social Sciences and Humanities at $36.6M and Other Management Consulting Services at $9.8M."
       }
     ]
   },
   "faq": [
     {
       "q": "How much does Mitre make from federal contracts?",
-      "a": "Mitre obligated $903M in FY2026 to date across federal contracts. Mitre recorded 308 awards in FY2026 to date with an average award size of $2.9M, and obligations fell 31.6% year over year."
+      "a": "Mitre obligated $1.2B from federal contracts in FY2026 to date. Mitre received 394 awards in the period and the average award size was $3.1M. Obligations are down 8.8% year over year."
     },
     {
       "q": "Which agencies buy from Mitre?",
-      "a": "The Department of Defense is the largest buyer, obligating $565M in FY2026 to date. Other top buying agencies are the Department of Transportation with $135M, the Department of Health and Human Services with $75M, the Department of Homeland Security with $51.8M, and the Department of Commerce with $40.2M."
+      "a": "The Department of Defense is Mitre's largest buyer, obligating $639M in FY2026 to date. Other top buyers include the Department of Transportation at $165M and the Department of Health and Human Services at $149M. The Department of Homeland Security obligated $97.5M and the Department of Commerce obligated $89.3M."
     },
     {
       "q": "What does Mitre sell to the government?",
-      "a": "Mitre sells research and engineering services to the government, led by Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology) with $698M in obligations. Mitre also provides Engineering Services at $131M and All Other Professional, Scientific, and Technical Services at $61.4M, among other market categories."
+      "a": "Mitre sells research, engineering, and professional services to the government. Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology) accounted for $887M, Engineering Services accounted for $163M, and All Other Professional, Scientific, and Technical Services accounted for $99.2M."
     },
     {
       "q": "Which Mitre contracts are expiring soon?",
-      "a": "No expiring-contracts figures are provided in the data. The available tables list obligations, buying agencies, and top markets but do not include an expiring-contracts table with award-value figures."
+      "a": "No expiring-contracts figures are provided here. The available figures list current obligations, top buyers, and top markets but do not include an expiring-contracts table."
     }
   ],
   "related": [
@@ -595,28 +595,28 @@
       "href": "/insights/expiring-federal-contracts/"
     },
     {
+      "label": "Regents of the University of California federal contracts",
+      "href": "/insights/vendor/regents-of-the-university-of-california/"
+    },
+    {
+      "label": "V2X Systems federal contracts",
+      "href": "/insights/vendor/v2x-systems/"
+    },
+    {
+      "label": "Massachusetts Institute of Technology federal contracts",
+      "href": "/insights/vendor/massachusetts-institute-of-technology/"
+    },
+    {
       "label": "Harris federal contracts",
       "href": "/insights/vendor/harris/"
     },
     {
-      "label": "Mission Support and Test Services federal contracts",
-      "href": "/insights/vendor/mission-support-and-test-services/"
+      "label": "Hii Mission Technologies federal contracts",
+      "href": "/insights/vendor/hii-mission-technologies/"
     },
     {
-      "label": "American Centrifuge Operating federal contracts",
-      "href": "/insights/vendor/american-centrifuge-operating/"
-    },
-    {
-      "label": "At and T Enterprises federal contracts",
-      "href": "/insights/vendor/at-and-t-enterprises/"
-    },
-    {
-      "label": "General Matter federal contracts",
-      "href": "/insights/vendor/general-matter/"
-    },
-    {
-      "label": "Orano Federal Services federal contracts",
-      "href": "/insights/vendor/orano-federal-services/"
+      "label": "Bechtel National federal contracts",
+      "href": "/insights/vendor/bechtel-national/"
     }
   ],
   "sources": [

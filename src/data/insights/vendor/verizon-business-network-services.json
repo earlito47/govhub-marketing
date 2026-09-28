@@ -1,20 +1,20 @@
 {
   "pageType": "vendor",
   "slug": "verizon-business-network-services",
-  "title": "Who Buys From Verizon Business Network Services: $355M in FY2026",
+  "title": "Who Buys From Verizon Business Network Services: $407M in FY2026",
   "h1": "Verizon Business Network Services: Federal Contracts, Agencies & Awards",
-  "metaDescription": "Verizon Business Network Services won $355M in federal contract obligations in FY2026 to date. See its top agencies, markets, largest awards, and expiring con",
-  "updated": "2026-09-10",
+  "metaDescription": "Verizon Business Network Services won $407M in federal contract obligations in FY2026 to date. See its top agencies, markets, largest awards, and expiring con",
+  "updated": "2026-09-28",
   "fyWindow": {
     "label": "FY2026 to date",
     "start": "2025-10-01",
-    "end": "2026-09-10"
+    "end": "2026-09-28"
   },
   "stats": {
-    "totalObligations": 354575988.15,
-    "awardCount": 371,
-    "yoyGrowthPct": -18.7,
-    "avgAwardSize": 955730,
+    "totalObligations": 407257161.52,
+    "awardCount": 376,
+    "yoyGrowthPct": -6.6,
+    "avgAwardSize": 1083131,
     "smallBusinessSharePct": null
   },
   "charts": [
@@ -32,7 +32,7 @@
             ],
             [
               "FY22",
-              496124162.32
+              496424326.48
             ],
             [
               "FY23",
@@ -48,13 +48,13 @@
             ],
             [
               "FY26",
-              354575988.15
+              407257161.52
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Obligations fell 18.7% year over year, from $436M in FY2025 to $355M in FY2026 to date."
+      "takeaway": "Obligations fell 6.6% year over year, from $436M in FY2025 to $407M in FY2026 to date."
     },
     {
       "id": "verizon-business-network-services-top-agencies",
@@ -66,27 +66,31 @@
           "points": [
             [
               "Department of Defense",
-              115040464.43
+              114747519.87
             ],
             [
               "Department of Health and Human Services",
-              93646328.58
+              100816346.08
             ],
             [
               "Department of Justice",
-              55916275.95
+              61082491.64
             ],
             [
               "Social Security Administration",
               29624424.75
             ],
             [
+              "Department of the Treasury",
+              27412513.92
+            ],
+            [
               "Department of Commerce",
-              16022653.15
+              16063799.45
             ],
             [
               "Department of the Interior",
-              14910136.06
+              15004357.26
             ],
             [
               "Department of Labor",
@@ -94,21 +98,17 @@
             ],
             [
               "Department of Homeland Security",
-              5999928.84
+              6049928.84
             ],
             [
               "Department of Education",
               5723084.01
-            ],
-            [
-              "Department of Energy",
-              5108679.5
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Department of Defense is Verizon Business Network Services's largest federal customer, with $115M obligated (32.4% of the company's federal obligations)."
+      "takeaway": "Department of Defense is Verizon Business Network Services's largest federal customer, with $115M obligated (28.2% of the company's federal obligations)."
     },
     {
       "id": "verizon-business-network-services-top-naics",
@@ -120,7 +120,7 @@
           "points": [
             [
               "Wired Telecommunications Carriers",
-              300792713.91
+              353360710.03
             ],
             [
               "Wireless Telecommunications Carriers (except Satellite)",
@@ -128,11 +128,11 @@
             ],
             [
               "Wired Telecommunications Carriers",
-              12469692.31
+              12586267.04
             ],
             [
               "Telecommunications Resellers",
-              10165988.7
+              10146237.1
             ],
             [
               "Other Computer Related Services",
@@ -153,12 +153,16 @@
             [
               "Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology)",
               26600
+            ],
+            [
+              "Electrical Contractors and Other Wiring Installation Contractors",
+              16354.12
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Wired Telecommunications Carriers is Verizon Business Network Services's largest federal market, with $301M in obligations."
+      "takeaway": "Wired Telecommunications Carriers is Verizon Business Network Services's largest federal market, with $353M in obligations."
     }
   ],
   "crossLinks": [
@@ -175,8 +179,8 @@
       "href": "/insights/agency/department-of-justice/"
     },
     {
-      "label": "Department of Commerce contracts",
-      "href": "/insights/agency/department-of-commerce/"
+      "label": "Department of the Treasury contracts",
+      "href": "/insights/agency/department-of-the-treasury/"
     },
     {
       "label": "NAICS 541519: Other Computer Related Services",
@@ -189,6 +193,10 @@
     {
       "label": "NAICS 541715: Research and Development in the Physical, Engineering, and Life Sciences",
       "href": "/insights/naics/541715/"
+    },
+    {
+      "label": "NAICS 238210: Electrical Contractors and Other Wiring Installation Contractors",
+      "href": "/insights/naics/238210/"
     }
   ],
   "tables": [
@@ -208,12 +216,22 @@
             "text": "75P00120F80177",
             "href": "https://www.usaspending.gov/award/CONT_AWD_75P00120F80177_7570_GS00Q17NSD3009_4732/"
           },
-          490444024.84,
+          497614042.34,
           "Department of Health and Human Services",
           "2027-08-31"
         ],
         [
           2,
+          {
+            "text": "2032H519F00641",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_2032H519F00641_2050_GS00Q17NSD3009_4732/"
+          },
+          291727782.14,
+          "Department of the Treasury",
+          "2027-09-25"
+        ],
+        [
+          3,
           {
             "text": "28321319FDX030539",
             "href": "https://www.usaspending.gov/award/CONT_AWD_28321319FDX030539_2800_GS00Q17NSD3009_4732/"
@@ -223,22 +241,12 @@
           "2026-09-29"
         ],
         [
-          3,
-          {
-            "text": "2032H519F00641",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_2032H519F00641_2050_GS00Q17NSD3009_4732/"
-          },
-          251517840.14,
-          "Department of the Treasury",
-          "2026-09-25"
-        ],
-        [
           4,
           {
             "text": "15F06722F0000818",
             "href": "https://www.usaspending.gov/award/CONT_AWD_15F06722F0000818_1549_GS00Q17NSD3009_4732/"
           },
-          87135501.64,
+          92602111.38,
           "Department of Justice",
           "2027-05-19"
         ],
@@ -298,7 +306,7 @@
             "text": "HC101322F0005",
             "href": "https://www.usaspending.gov/award/CONT_AWD_HC101322F0005_9700_GS00Q17NSD3009_4732/"
           },
-          33223282.74,
+          31474340.51,
           "Department of Defense",
           "2026-10-27"
         ],
@@ -378,7 +386,7 @@
             "text": "HC101320F0074",
             "href": "https://www.usaspending.gov/award/CONT_AWD_HC101320F0074_9700_GS00Q17NSD3009_4732/"
           },
-          15949741,
+          16256080.78,
           "Department of Defense",
           "2026-08-31"
         ],
@@ -438,19 +446,19 @@
             "text": "HC101321F0096",
             "href": "https://www.usaspending.gov/award/CONT_AWD_HC101321F0096_9700_GS00Q17NSD3009_4732/"
           },
-          10337851.17,
+          10338071.97,
           "Department of Defense",
           "2026-07-31"
         ],
         [
           25,
           {
-            "text": "1331L521F13230059",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_1331L521F13230059_1301_GS00Q17NSD3009_4732/"
+            "text": "89303021FIM400049",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_89303021FIM400049_8900_GS00Q17NSD3009_4732/"
           },
-          9215858.32,
-          "Department of Commerce",
-          "2027-05-31"
+          9215200.16,
+          "Department of Energy",
+          "2027-04-30"
         ]
       ]
     },
@@ -469,8 +477,17 @@
             "href": "https://www.usaspending.gov/award/CONT_AWD_75P00120F80177_7570_GS00Q17NSD3009_4732/"
           },
           "Department of Health and Human Services",
-          490444024.84,
+          497614042.34,
           "2027-08-31"
+        ],
+        [
+          {
+            "text": "2032H519F00641",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_2032H519F00641_2050_GS00Q17NSD3009_4732/"
+          },
+          "Department of the Treasury",
+          291727782.14,
+          "2027-09-25"
         ],
         [
           {
@@ -483,20 +500,11 @@
         ],
         [
           {
-            "text": "2032H519F00641",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_2032H519F00641_2050_GS00Q17NSD3009_4732/"
-          },
-          "Department of the Treasury",
-          251517840.14,
-          "2026-09-25"
-        ],
-        [
-          {
             "text": "15F06722F0000818",
             "href": "https://www.usaspending.gov/award/CONT_AWD_15F06722F0000818_1549_GS00Q17NSD3009_4732/"
           },
           "Department of Justice",
-          87135501.64,
+          92602111.38,
           "2027-05-19"
         ],
         [
@@ -541,7 +549,7 @@
             "href": "https://www.usaspending.gov/award/CONT_AWD_HC101322F0005_9700_GS00Q17NSD3009_4732/"
           },
           "Department of Defense",
-          33223282.74,
+          31474340.51,
           "2026-10-27"
         ],
         [
@@ -582,34 +590,34 @@
     }
   ],
   "narrative": {
-    "intro": "Verizon Business Network Services obligated $355M in federal contract obligations in FY2026 to date. Verizon Business Network Services won 371 awards so far, with an average award size of $956K. Verizon Business Network Services obligations are down 18.7% year over year. Verizon Business Network Services annual obligations have moved from $265M in FY21 to $496M in FY22, $380M in FY23, $459M in FY24, $436M in FY25, and $355M in FY26. Verizon Business Network Services top buyers in FY2026 to date are the Department of Defense with $115M and the Department of Health and Human Services with $93.6M, followed by the Department of Justice with $55.9M and the Social Security Administration with $29.6M. Verizon Business Network Services principal markets are Wired Telecommunications Carriers with $301M and Wireless Telecommunications Carriers (except Satellite) with $28.8M. Verizon Business Network Services also records activity under Telecommunications Resellers and Other Computer Related Services alongside smaller NAICS categories.",
+    "intro": "Verizon Business Network Services obligated $407M in federal contract obligations during FY2026 to date. Verizon Business Network Services performed under 376 awards with an average award size of $1.1M, and obligations were down 6.6% year over year. Department of Defense accounted for $115M of obligations, Department of Health and Human Services accounted for $101M, and Department of Justice accounted for $61.1M. The FY trend shows obligations of $265M in FY21, $496M in FY22, $380M in FY23, $459M in FY24, $436M in FY25, and $407M in FY26. Verizon Business Network Services is concentrated in telecommunications markets. Wired Telecommunications Carriers appears with $353M, Wireless Telecommunications Carriers (except Satellite) appears with $28.8M, and Telecommunications Resellers appears with $10.1M. The FY2026 to date totals are partial because the fiscal year is ongoing. Use the agency and market breakdowns to prioritize capture and compliance work where federal demand and historical obligations are largest.",
     "sections": [
       {
-        "heading": "How do Verizon Business Network Services obligations compare to prior fiscal years?",
-        "body": "Verizon Business Network Services obligations in FY26 to date are $355M. Verizon Business Network Services obligations were $265M in FY21, $496M in FY22, $380M in FY23, $459M in FY24, and $436M in FY25."
+        "heading": "Which federal agencies buy most from Verizon Business Network Services?",
+        "body": "Department of Defense is the largest buyer with $115M in obligations. Department of Health and Human Services follows with $101M, and Department of Justice follows with $61.1M. Social Security Administration, Department of the Treasury, and Department of Commerce also appear among the top buyers with $29.6M, $27.4M, and $16.1M respectively."
       },
       {
-        "heading": "Who are the biggest federal buyers and what markets do they buy from Verizon Business Network Services?",
-        "body": "The Department of Defense is the largest buyer with $115M and the Department of Health and Human Services follows with $93.6M. Wired Telecommunications Carriers is the largest market with $301M, and Wireless Telecommunications Carriers (except Satellite) is the second market with $28.8M."
+        "heading": "What markets and NAICS sectors capture Verizon Business Network Services revenue?",
+        "body": "Wired Telecommunications Carriers is the dominant market with $353M in obligations. Wireless Telecommunications Carriers (except Satellite) accounts for $28.8M, and Telecommunications Resellers accounts for $10.1M. Smaller shares appear in Other Computer Related Services and several niche NAICS categories."
       }
     ]
   },
   "faq": [
     {
       "q": "How much does Verizon Business Network Services make from federal contracts?",
-      "a": "Verizon Business Network Services made $355M in federal contract obligations in FY2026 to date. Verizon Business Network Services has won 371 awards so far, with an average award size of $956K and obligations down 18.7% year over year."
+      "a": "Verizon Business Network Services obligated $407M in federal contract obligations during FY2026 to date. Verizon Business Network Services performed under 376 awards with an average award size of $1.1M, and obligations were down 6.6% year over year. Use those totals to size the current federal portfolio."
     },
     {
       "q": "Which agencies buy from Verizon Business Network Services?",
-      "a": "The Department of Defense buys the most from Verizon Business Network Services with $115M. The Department of Health and Human Services, the Department of Justice, and the Social Security Administration are the next largest buyers with $93.6M, $55.9M, and $29.6M respectively, followed by several other cabinet agencies."
+      "a": "Department of Defense, Department of Health and Human Services, and Department of Justice are the top buyers. Department of Defense obligated $115M, Department of Health and Human Services obligated $101M, and Department of Justice obligated $61.1M. Additional buyers in the top ten include Social Security Administration with $29.6M and Department of the Treasury with $27.4M."
     },
     {
       "q": "What does Verizon Business Network Services sell to the government?",
-      "a": "Verizon Business Network Services sells telecommunications and related services, led by Wired Telecommunications Carriers with $301M and Wireless Telecommunications Carriers (except Satellite) with $28.8M. Verizon Business Network Services also records sales under Telecommunications Resellers, Other Computer Related Services, and smaller NAICS categories."
+      "a": "Verizon Business Network Services primarily sells telecommunications and network services. Wired Telecommunications Carriers accounts for $353M in obligations, Wireless Telecommunications Carriers (except Satellite) accounts for $28.8M, and Telecommunications Resellers accounts for $10.1M. Other Computer Related Services and several smaller NAICS categories make up the remainder."
     },
     {
       "q": "Which Verizon Business Network Services contracts are expiring soon?",
-      "a": "No expiring contracts are listed. Verizon Business Network Services has top awards and obligations data but no expiring-contracts entries are provided for FY2026 to date."
+      "a": "No expiring-contract details are listed in the provided figures. The dataset includes total obligations, award count, average award size, agency buyers, and market NAICS breakdowns but does not list expiring-contract entries."
     }
   ],
   "related": [
@@ -618,28 +626,28 @@
       "href": "/insights/expiring-federal-contracts/"
     },
     {
-      "label": "Magellan Federal federal contracts",
-      "href": "/insights/vendor/magellan-federal/"
+      "label": "BP Products North America federal contracts",
+      "href": "/insights/vendor/bp-products-north-america/"
     },
     {
-      "label": "Management and Training federal contracts",
-      "href": "/insights/vendor/management-and-training/"
+      "label": "Defense Systems and Solutions federal contracts",
+      "href": "/insights/vendor/defense-systems-and-solutions/"
     },
     {
-      "label": "Bae Systems Space and Mission Systems federal contracts",
-      "href": "/insights/vendor/bae-systems-space-and-mission-systems/"
+      "label": "Fedex Supply Chain Distribution System federal contracts",
+      "href": "/insights/vendor/fedex-supply-chain-distribution-system/"
     },
     {
-      "label": "Fluor Intercontinental federal contracts",
-      "href": "/insights/vendor/fluor-intercontinental/"
+      "label": "World Wide Technology federal contracts",
+      "href": "/insights/vendor/world-wide-technology/"
     },
     {
-      "label": "National Government Services federal contracts",
-      "href": "/insights/vendor/national-government-services/"
+      "label": "Indra Air Traffic federal contracts",
+      "href": "/insights/vendor/indra-air-traffic/"
     },
     {
-      "label": "Moeve S A federal contracts",
-      "href": "/insights/vendor/moeve-s-a/"
+      "label": "Caci NSS federal contracts",
+      "href": "/insights/vendor/caci-nss/"
     }
   ],
   "sources": [

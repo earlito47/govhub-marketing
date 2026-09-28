@@ -1,20 +1,20 @@
 {
   "pageType": "state",
   "slug": "california",
-  "title": "California: $49.5B in Federal Contracts, FY2026",
+  "title": "California: $54B in Federal Contracts, FY2026",
   "h1": "Federal Contracts in California: Spending, Agencies & Vendors",
-  "metaDescription": "Federal agencies obligated $49.5B to contractors in California in FY2026 to date. See top buying agencies, top vendors, and industries.",
-  "updated": "2026-09-07",
+  "metaDescription": "Federal agencies obligated $54B to contractors in California in FY2026 to date. See top buying agencies, top vendors, and industries.",
+  "updated": "2026-09-28",
   "fyWindow": {
     "label": "FY2026 to date",
     "start": "2025-10-01",
-    "end": "2026-09-07"
+    "end": "2026-09-28"
   },
   "stats": {
-    "totalObligations": 49484290773.01,
-    "awardCount": 214210,
-    "yoyGrowthPct": -20.2,
-    "avgAwardSize": 231008,
+    "totalObligations": 54001911319.09,
+    "awardCount": 228296,
+    "yoyGrowthPct": -13,
+    "avgAwardSize": 236543,
     "smallBusinessSharePct": null
   },
   "charts": [
@@ -28,33 +28,33 @@
           "points": [
             [
               "FY21",
-              52103342960.17
+              52103308842.51
             ],
             [
               "FY22",
-              57535356159.42
+              57535393912.37
             ],
             [
               "FY23",
-              61450350561.57
+              61450349945.37
             ],
             [
               "FY24",
-              61719074133.25
+              61720231699.72
             ],
             [
               "FY25",
-              62036507529.87
+              62039298901.15
             ],
             [
               "FY26",
-              49484290773.01
+              54001911319.09
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Obligations fell 20.2% year over year, from $62B in FY2025 to $49.5B in FY2026 to date."
+      "takeaway": "Obligations fell 13.0% year over year, from $62B in FY2025 to $54B in FY2026 to date."
     },
     {
       "id": "california-top-agencies",
@@ -66,49 +66,49 @@
           "points": [
             [
               "Department of Defense",
-              27014309871.57
+              29025519114.01
             ],
             [
               "Department of Energy",
-              6617690769.82
+              6638780454.99
             ],
             [
               "Department of Homeland Security",
-              5004952549.2
+              5914356496.01
             ],
             [
               "National Aeronautics and Space Administration",
-              3242273900.45
+              3642676066.84
             ],
             [
               "Department of Veterans Affairs",
-              1972479563.11
+              2173525572.49
             ],
             [
               "General Services Administration",
-              1242766596
+              1395163755.7
             ],
             [
               "Department of Agriculture",
-              1158014536.9
+              1335004702.28
             ],
             [
               "Department of Transportation",
-              632568460.84
-            ],
-            [
-              "Department of the Interior",
-              613876631.75
+              870752157.49
             ],
             [
               "Department of Health and Human Services",
-              611625095.78
+              789086516.34
+            ],
+            [
+              "Department of the Interior",
+              707181378.85
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Department of Defense was the top federal buyer in California, obligating $27B (54.6% of the state total)."
+      "takeaway": "Department of Defense was the top federal buyer in California, obligating $29B (53.7% of the state total)."
     },
     {
       "id": "california-top-vendors",
@@ -124,23 +124,23 @@
             ],
             [
               "NATIONAL STEEL AND SHIPBUILDING COMPANY",
-              2775823200.29
+              2786633974.61
             ],
             [
               "FISHER SAND & GRAVEL CO",
               2463435000
             ],
             [
+              "GENERAL ATOMICS AERONAUTICAL SYSTEMS, INC.",
+              2163568096.56
+            ],
+            [
               "SPACE EXPLORATION TECHNOLOGIES CORP.",
-              2117891299.84
+              2127929098.84
             ],
             [
               "CALIFORNIA INSTITUTE OF TECHNOLOGY",
-              1850742698.74
-            ],
-            [
-              "GENERAL ATOMICS AERONAUTICAL SYSTEMS, INC.",
-              1332302656.21
+              2084448904.31
             ],
             [
               "BARNARD CONSTRUCTION COMPANY, INCORPORATED",
@@ -152,17 +152,17 @@
             ],
             [
               "PALANTIR USG INC",
-              1079298545.52
+              1109551065.03
             ],
             [
               "LOCKHEED MARTIN CORP",
-              1066855443.9
+              1098533350.06
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "LAWRENCE LIVERMORE NATIONAL SECURITY, LLC led all contractors in California with $3.6B, 7.3% of the state total."
+      "takeaway": "LAWRENCE LIVERMORE NATIONAL SECURITY, LLC led all contractors in California with $3.6B, 6.7% of the state total."
     },
     {
       "id": "california-top-naics",
@@ -174,49 +174,49 @@
           "points": [
             [
               "Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology)",
-              6661493354.01
+              7213610638.37
             ],
             [
               "Research and Development in the Physical, Engineering, and Life Sciences",
-              5556120480.47
+              5560955952.96
             ],
             [
               "Commercial and Institutional Building Construction",
-              4175659534.52
+              4756119277.42
             ],
             [
               "Ship Building and Repairing",
-              3433294208.49
+              3489515357
             ],
             [
               "Engineering Services",
-              2798080161.45
+              3055691730.54
             ],
             [
               "Aircraft Manufacturing",
-              2440240036.23
+              2810829655.42
             ],
             [
               "Nonscheduled Chartered Freight Air Transportation",
-              1977951941.38
+              1999568376.17
             ],
             [
               "Other Heavy and Civil Engineering Construction",
-              1942391769.3
+              1969273104.49
             ],
             [
               "Other Aircraft Parts and Auxiliary Equipment Manufacturing",
-              1382818351.66
+              1620569261.69
             ],
             [
               "Custom Computer Programming Services",
-              1193724405.06
+              1250541149.5
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology) was the largest industry in California, with $6.7B obligated."
+      "takeaway": "Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology) was the largest industry in California, with $7.2B obligated."
     }
   ],
   "crossLinks": [
@@ -276,7 +276,7 @@
             "text": "NATIONAL STEEL AND SHIPBUILDING COMPANY",
             "href": "https://www.usaspending.gov/recipient/d3b182df-5daa-6f63-c00e-d99b7ba7875e-C/latest/"
           },
-          2775823200.29
+          2786633974.61
         ],
         [
           3,
@@ -289,26 +289,26 @@
         [
           4,
           {
-            "text": "SPACE EXPLORATION TECHNOLOGIES CORP.",
-            "href": "https://www.usaspending.gov/recipient/8a3a5525-3218-a488-db0e-4823241ceb90-C/latest/"
+            "text": "GENERAL ATOMICS AERONAUTICAL SYSTEMS, INC.",
+            "href": "https://www.usaspending.gov/recipient/e262465b-a9eb-8206-020a-98327ae917fa-C/latest/"
           },
-          2117891299.84
+          2163568096.56
         ],
         [
           5,
           {
-            "text": "CALIFORNIA INSTITUTE OF TECHNOLOGY",
-            "href": "https://www.usaspending.gov/recipient/6e76fa33-2d96-c636-941c-bca1997db076-C/latest/"
+            "text": "SPACE EXPLORATION TECHNOLOGIES CORP.",
+            "href": "https://www.usaspending.gov/recipient/8a3a5525-3218-a488-db0e-4823241ceb90-C/latest/"
           },
-          1850742698.74
+          2127929098.84
         ],
         [
           6,
           {
-            "text": "GENERAL ATOMICS AERONAUTICAL SYSTEMS, INC.",
-            "href": "https://www.usaspending.gov/recipient/e262465b-a9eb-8206-020a-98327ae917fa-C/latest/"
+            "text": "CALIFORNIA INSTITUTE OF TECHNOLOGY",
+            "href": "https://www.usaspending.gov/recipient/6e76fa33-2d96-c636-941c-bca1997db076-C/latest/"
           },
-          1332302656.21
+          2084448904.31
         ],
         [
           7,
@@ -332,7 +332,7 @@
             "text": "PALANTIR USG INC",
             "href": "https://www.usaspending.gov/recipient/11a97fdb-cb3b-16d2-aa67-a0f7b265b4ae-C/latest/"
           },
-          1079298545.52
+          1109551065.03
         ],
         [
           10,
@@ -340,7 +340,7 @@
             "text": "LOCKHEED MARTIN CORP",
             "href": "https://www.usaspending.gov/recipient/46023044-eacc-a9ca-5b5e-ddc4673fc267-C/latest/"
           },
-          1066855443.9
+          1098533350.06
         ]
       ]
     },
@@ -368,7 +368,7 @@
             "text": "HEALTH NET FEDERAL SERVICES, LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_HT940216C0002_9700_-NONE-_-NONE-/"
           },
-          23482808066.07,
+          23484451360.07,
           "Department of Defense"
         ],
         [
@@ -395,7 +395,7 @@
             "text": "THE LELAND STANFORD JUNIOR UNIVERSITY",
             "href": "https://www.usaspending.gov/award/CONT_AWD_DEAC0276SF00515_8900_-NONE-_-NONE-/"
           },
-          14945793492.77,
+          14950328527.01,
           "Department of Energy"
         ],
         [
@@ -422,7 +422,7 @@
             "text": "LOCKHEED MARTIN CORP",
             "href": "https://www.usaspending.gov/award/CONT_AWD_FA881018C0005_9700_-NONE-_-NONE-/"
           },
-          7475763151.72,
+          7476775910.2,
           "Department of Defense"
         ],
         [
@@ -431,7 +431,7 @@
             "text": "NATIONAL STEEL AND SHIPBUILDING COMPANY",
             "href": "https://www.usaspending.gov/award/CONT_AWD_N0002416C2229_9700_-NONE-_-NONE-/"
           },
-          5902538040.23,
+          5912347321.23,
           "Department of Defense"
         ],
         [
@@ -449,7 +449,7 @@
             "text": "NORTHROP GRUMMAN SYSTEMS CORPORATION",
             "href": "https://www.usaspending.gov/award/CONT_AWD_FA881018C0006_9700_-NONE-_-NONE-/"
           },
-          3466202176.13,
+          3485513539.13,
           "Department of Defense"
         ],
         [
@@ -458,7 +458,7 @@
             "text": "AEROJET ROCKETDYNE OF DE, INC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_NNM16AA02C_8000_-NONE-_-NONE-/"
           },
-          3373486394.49,
+          3384867722.36,
           "National Aeronautics and Space Administration"
         ],
         [
@@ -530,7 +530,7 @@
             "text": "NATIONAL STEEL AND SHIPBUILDING COMPANY",
             "href": "https://www.usaspending.gov/award/CONT_AWD_N0002419C2235_9700_-NONE-_-NONE-/"
           },
-          1896240371.07,
+          1897345725.07,
           "Department of Defense"
         ],
         [
@@ -582,30 +582,30 @@
     }
   ],
   "narrative": {
-    "intro": "California federal contract obligations are $49.5B for FY2026 to date, with 214,210 awards and an average award size of $231K. Obligations fell 20.2% year over year. Fiscal-year trends show higher totals in prior years: FY21 was $52.1B, FY22 was $57.5B, FY23 was $61.5B, FY24 was $61.7B, and FY25 was $62B. The Department of Defense is the largest buyer in the state at $27B in obligations to date. Research and development categories lead industries, with Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology) at $6.7B and Research and Development in the Physical, Engineering, and Life Sciences at $5.6B. Commercial and Institutional Building Construction is $4.2B and Ship Building and Repairing is $3.4B. National labs, shipbuilders, construction firms, space companies, and major universities appear among the top vendors, led by LAWRENCE LIVERMORE NATIONAL SECURITY, LLC at $3.6B and NATIONAL STEEL AND SHIPBUILDING COMPANY at $2.8B.",
+    "intro": "California has received $54B in federal contract obligations in FY2026 to date. The state has 228,296 awards with an average award size of $237K. Obligations fell 13.0% year over year. The Department of Defense is the largest buyer in the state, obligating $29B. The Department of Energy obligated $6.6B and the Department of Homeland Security obligated $5.9B. LAWRENCE LIVERMORE NATIONAL SECURITY, LLC is the top vendor with $3.6B in obligations, followed by NATIONAL STEEL AND SHIPBUILDING COMPANY with $2.8B and FISHER SAND & GRAVEL CO with $2.5B. Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology) is the largest industry category at $7.2B, followed by Research and Development in the Physical, Engineering, and Life Sciences at $5.6B and Commercial and Institutional Building Construction at $4.8B. Fiscal-year obligations peaked at $62B in FY25 and are currently $54B in FY26 to date.",
     "sections": [
       {
-        "heading": "How has federal contracting in California changed year over year?",
-        "body": "California federal contract obligations for FY2026 to date are $49.5B. Obligations fell 20.2% year over year. California reached a peak of $62B in FY25 before the FY2026 to date total. California shows a multiyear trend of rising obligations from FY21 through FY25 followed by the FY2026 to date decline."
+        "heading": "How concentrated is federal buying in California?",
+        "body": "The Department of Defense is the top buyer, obligating $29B. The next largest buyers are the Department of Energy with $6.6B and the Department of Homeland Security with $5.9B. The top ten agencies together include civilian and defense buyers such as NASA at $3.6B and the Department of Veterans Affairs at $2.2B."
       },
       {
-        "heading": "Who are the biggest buyers and which industries dominate federal spending in California?",
-        "body": "The Department of Defense is the largest buyer at $27B in obligations to date. The Department of Energy is $6.6B and the Department of Homeland Security is $5B. Research and development categories top industries at $6.7B and $5.6B, followed by Commercial and Institutional Building Construction at $4.2B and Ship Building and Repairing at $3.4B."
+        "heading": "Which companies and industries dominate federal work in California?",
+        "body": "LAWRENCE LIVERMORE NATIONAL SECURITY, LLC leads vendors with $3.6B in obligations, followed by NATIONAL STEEL AND SHIPBUILDING COMPANY at $2.8B and FISHER SAND & GRAVEL CO at $2.5B. Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology) is the largest industry at $7.2B, with related R&D at $5.6B and Commercial and Institutional Building Construction at $4.8B rounding out the top sectors."
       }
     ]
   },
   "faq": [
     {
       "q": "How much federal contract money goes to California?",
-      "a": "California received $49.5B in federal contract obligations for FY2026 to date. California has 214,210 awards and an average award size of $231K. Fiscal-year obligations were higher in recent years, with FY25 at $62B and FY24 at $61.7B."
+      "a": "California received $54B in federal contract obligations in FY2026 to date. The state had 228,296 awards with an average award size of $237K, and obligations fell 13.0% year over year. Historical obligations show FY25 at $62B and FY26 at $54B so far."
     },
     {
       "q": "Which agencies award the most contracts in California?",
-      "a": "The Department of Defense is the largest buyer in California at $27B in obligations to date. The Department of Energy is $6.6B and the Department of Homeland Security is $5B. NASA is $3.2B and the Department of Veterans Affairs is $2B."
+      "a": "The Department of Defense awards the most contracts in California, obligating $29B in FY2026 to date. Other large buyers include the Department of Energy with $6.6B and the Department of Homeland Security with $5.9B. NASA obligated $3.6B and the Department of Veterans Affairs obligated $2.2B."
     },
     {
       "q": "Who are the largest federal contractors in California?",
-      "a": "LAWRENCE LIVERMORE NATIONAL SECURITY, LLC is the largest federal contractor in California at $3.6B in obligations to date. NATIONAL STEEL AND SHIPBUILDING COMPANY is $2.8B and FISHER SAND & GRAVEL CO is $2.5B. SPACE EXPLORATION TECHNOLOGIES CORP. is $2.1B and CALIFORNIA INSTITUTE OF TECHNOLOGY is $1.9B."
+      "a": "LAWRENCE LIVERMORE NATIONAL SECURITY, LLC is the largest federal contractor in California with $3.6B in obligations. Other major contractors include NATIONAL STEEL AND SHIPBUILDING COMPANY at $2.8B, FISHER SAND & GRAVEL CO at $2.5B, and GENERAL ATOMICS AERONAUTICAL SYSTEMS, INC. at $2.2B."
     }
   ],
   "related": [

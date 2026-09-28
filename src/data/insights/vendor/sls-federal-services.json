@@ -4,11 +4,11 @@
   "title": "SLS Federal Services Government Contracts: $2.4B (FY2026)",
   "h1": "SLS Federal Services: Federal Contracts, Agencies & Awards",
   "metaDescription": "SLS Federal Services won $2.4B in federal contract obligations in FY2026 to date. See its top agencies, markets, largest awards, and expiring contracts.",
-  "updated": "2026-09-07",
+  "updated": "2026-09-28",
   "fyWindow": {
     "label": "FY2026 to date",
     "start": "2025-10-01",
-    "end": "2026-09-07"
+    "end": "2026-09-28"
   },
   "stats": {
     "totalObligations": 2379100930,
@@ -102,6 +102,26 @@
       ]
     },
     {
+      "title": "Contracts expiring in the next 12 months",
+      "columns": [
+        "Award",
+        "Awarding Agency",
+        "Award Value",
+        "Ends"
+      ],
+      "rows": [
+        [
+          {
+            "text": "70B01C26F00000385",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70B01C26F00000385_7014_70B01C26D00000003_7014/"
+          },
+          "Department of Homeland Security",
+          1313227200,
+          "2027-09-14"
+        ]
+      ]
+    },
+    {
       "title": "Registration details",
       "columns": [
         "Detail",
@@ -124,34 +144,34 @@
     }
   ],
   "narrative": {
-    "intro": "SLS Federal Services has $2.4B in contract obligations for FY2026 to date. SLS Federal Services has won 3 awards in the current fiscal year, producing an average award size of $793M. SLS Federal Services recorded no obligations in FY21, FY22, FY23, FY24, or FY25, and all reported obligations in the dataset are for FY26. The current-year total is partial, reflecting fiscal year to date activity rather than a full-year sum. The concentration of obligations into FY26 and the large average award size indicate that a small number of high-value awards drive the vendor's federal revenue so far this fiscal year. Procurement teams and competitors should note that obligations prior to FY26 are shown as zero in this dataset, and that the note clarifies obligations are the measure used except where award-value figures are explicitly called out as total contract values.",
+    "intro": "SLS Federal Services shows $2.4B in contract obligations for FY2026 to date. SLS Federal Services has 3 awards recorded this fiscal year, with an average award size of $793M. The reported totals are partial because FY2026 is fiscal year to date, and the page notes that all figures are contract obligations except where award-value figures are explicitly called out. Obligations by fiscal year are reported as $0 for FY21, $0 for FY22, $0 for FY23, $0 for FY24, $0 for FY25, and $2.4B for FY26. The concentration of obligations in the current fiscal year implies recent award activity, but the dataset does not list historical obligations prior to FY21 or split obligations by agency, industry, or contract type. Use these figures as current-year, obligation-based totals when comparing SLS Federal Services to other vendors or when preparing summaries for procurement reviews or briefings.",
     "sections": [
       {
-        "heading": "What is SLS Federal Services' current contracting footprint?",
-        "body": "SLS Federal Services has $2.4B in contract obligations for FY2026 to date. SLS Federal Services has 3 awards in the current fiscal year. SLS Federal Services has an average award size of $793M, which reflects the mean of the reported awards. SLS Federal Services had no reported obligations in FY21 through FY25 in this dataset."
+        "heading": "How large is SLS Federal Services' federal contract portfolio right now?",
+        "body": "SLS Federal Services has $2.4B in contract obligations for FY2026 to date. SLS Federal Services has 3 awards this fiscal year and an average award size of $793M. The totals are partial because the period is fiscal year to date."
       },
       {
-        "heading": "How concentrated are SLS Federal Services' awards?",
-        "body": "SLS Federal Services shows obligations concentrated entirely in FY26 with $2.4B. SLS Federal Services shows 3 awards so far, producing an average award size of $793M. SLS Federal Services recorded $0 in obligations for FY21, FY22, FY23, FY24, and FY25, indicating the current-year obligations account for all reported federal spending in this record."
+        "heading": "How do obligations look across fiscal years?",
+        "body": "SLS Federal Services shows $0 in obligations for FY21, $0 for FY22, $0 for FY23, $0 for FY24, $0 for FY25, and $2.4B for FY26. The record indicates obligations concentrated in FY26 to date. No prior-year obligations are listed in the dataset."
       }
     ]
   },
   "faq": [
     {
       "q": "How much does SLS Federal Services make from federal contracts?",
-      "a": "SLS Federal Services has $2.4B in contract obligations for FY2026 to date. SLS Federal Services has 3 awards in the current fiscal year and an average award size of $793M. The dataset notes current-year totals are partial, reported fiscal year to date."
+      "a": "SLS Federal Services has $2.4B in contract obligations for FY2026 to date. The dataset reports 3 awards this fiscal year with an average award size of $793M and notes that current-year totals are partial because the period is fiscal year to date."
     },
     {
       "q": "Which agencies buy from SLS Federal Services?",
-      "a": "The dataset does not list agency names. The dataset reports obligations by fiscal year only, with $0 in FY21 through FY25 and $2.4B in FY26, but no agency breakdown is provided."
+      "a": "No agencies are listed for SLS Federal Services in the available data. The page does not provide a breakdown of obligations by purchasing agency."
     },
     {
       "q": "What does SLS Federal Services sell to the government?",
-      "a": "The dataset does not provide product or service descriptions. The dataset reports contract obligations and award counts, not line-item details on what SLS Federal Services sells to the government."
+      "a": "The available data does not list specific products or services sold to the government by SLS Federal Services. The page reports only obligation and award figures without item-level descriptions."
     },
     {
       "q": "Which SLS Federal Services contracts are expiring soon?",
-      "a": "The dataset does not list expiring contract details. The dataset provides total obligations, award count, average award size, and fiscal-year obligations, but no expiring-contract table entries are included."
+      "a": "No expiring contracts are listed for SLS Federal Services in the available data. The dataset includes obligations and award counts but does not include an expiring-contracts table."
     }
   ],
   "related": [
@@ -164,24 +184,24 @@
       "href": "/insights/vendor/ut-battelle/"
     },
     {
-      "label": "Amentum Services federal contracts",
-      "href": "/insights/vendor/amentum-services/"
+      "label": "Southwest Valley Constructors federal contracts",
+      "href": "/insights/vendor/southwest-valley-constructors/"
     },
     {
-      "label": "CACI Federal federal contracts",
-      "href": "/insights/vendor/caci-inc-federal/"
+      "label": "Leidos federal contracts",
+      "href": "/insights/vendor/leidos/"
     },
     {
       "label": "Spencer Construction federal contracts",
       "href": "/insights/vendor/spencer-construction/"
     },
     {
-      "label": "Deloitte Consulting federal contracts",
-      "href": "/insights/vendor/deloitte-consulting/"
+      "label": "QTC Medical Services federal contracts",
+      "href": "/insights/vendor/qtc-medical-services/"
     },
     {
-      "label": "Bollinger Shipyards Lockport L L C federal contracts",
-      "href": "/insights/vendor/bollinger-shipyards-lockport-l-l-c/"
+      "label": "Dell Federal Systems L P federal contracts",
+      "href": "/insights/vendor/dell-federal-systems-l-p/"
     }
   ],
   "sources": [

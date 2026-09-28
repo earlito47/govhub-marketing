@@ -4,14 +4,14 @@
   "title": "Top 50 government contractors by obligations (FY2026)",
   "h1": "Top government contractors, FY2026 to date",
   "metaDescription": "The largest federal contractors by obligations in FY2026 to date, led by Optum Public Sector Solutions at $19.9B. Ranked from USAspending.gov data.",
-  "updated": "2026-09-07",
+  "updated": "2026-09-28",
   "fyWindow": {
     "label": "FY2026 to date",
     "start": "2025-10-01",
-    "end": "2026-09-07"
+    "end": "2026-09-28"
   },
   "stats": {
-    "totalObligations": 249877726050.91998,
+    "totalObligations": 263124533898.04996,
     "awardCount": null,
     "yoyGrowthPct": null,
     "avgAwardSize": null,
@@ -28,11 +28,15 @@
           "points": [
             [
               "OPTUM PUBLIC SECTOR SOLUTIONS, INC.",
-              19906621767.76
+              19907506457.41
             ],
             [
               "TRIWEST HEALTHCARE ALLIANCE CORP",
-              14519109816
+              16544439285.56
+            ],
+            [
+              "LOCKHEED MARTIN CORPORATION",
+              14141692068.33
             ],
             [
               "FISHER SAND & GRAVEL CO",
@@ -40,31 +44,27 @@
             ],
             [
               "LOCKHEED MARTIN CORPORATION",
-              12704183672.06
-            ],
-            [
-              "LOCKHEED MARTIN CORPORATION",
-              12625536807.57
+              13143306020.97
             ],
             [
               "MCKESSON CORPORATION",
-              12279010326.4
+              12304826566.37
             ],
             [
               "ELECTRIC BOAT CORPORATION",
-              11282125320.73
-            ],
-            [
-              "THE BOEING COMPANY",
-              9013616266.96
+              11590210696.82
             ],
             [
               "RAYTHEON COMPANY",
-              8635162983.26
+              9861693542.55
             ],
             [
               "THE BOEING COMPANY",
-              6086121647.36
+              9104683477.67
+            ],
+            [
+              "THE BOEING COMPANY",
+              6262077911.8
             ]
           ]
         }
@@ -88,7 +88,7 @@
             "text": "OPTUM PUBLIC SECTOR SOLUTIONS, INC.",
             "href": "/insights/vendor/optum-public-sector-solutions/"
           },
-          19906621767.76
+          19907506457.41
         ],
         [
           2,
@@ -96,10 +96,18 @@
             "text": "TRIWEST HEALTHCARE ALLIANCE CORP",
             "href": "/insights/vendor/triwest-healthcare-alliance/"
           },
-          14519109816
+          16544439285.56
         ],
         [
           3,
+          {
+            "text": "LOCKHEED MARTIN CORPORATION",
+            "href": "/insights/vendor/lockheed-martin/"
+          },
+          14141692068.33
+        ],
+        [
+          4,
           {
             "text": "FISHER SAND & GRAVEL CO",
             "href": "/insights/vendor/fisher-sand-and-gravel/"
@@ -107,20 +115,12 @@
           13353127851.7
         ],
         [
-          4,
-          {
-            "text": "LOCKHEED MARTIN CORPORATION",
-            "href": "/insights/vendor/lockheed-martin/"
-          },
-          12704183672.06
-        ],
-        [
           5,
           {
             "text": "LOCKHEED MARTIN CORPORATION",
             "href": "/insights/vendor/lockheed-martin/"
           },
-          12625536807.57
+          13143306020.97
         ],
         [
           6,
@@ -128,7 +128,7 @@
             "text": "MCKESSON CORPORATION",
             "href": "/insights/vendor/mckesson/"
           },
-          12279010326.4
+          12304826566.37
         ],
         [
           7,
@@ -136,23 +136,23 @@
             "text": "ELECTRIC BOAT CORPORATION",
             "href": "/insights/vendor/electric-boat/"
           },
-          11282125320.73
+          11590210696.82
         ],
         [
           8,
           {
-            "text": "THE BOEING COMPANY",
-            "href": "/insights/vendor/boeing/"
+            "text": "RAYTHEON COMPANY",
+            "href": "/insights/vendor/raytheon/"
           },
-          9013616266.96
+          9861693542.55
         ],
         [
           9,
           {
-            "text": "RAYTHEON COMPANY",
-            "href": "/insights/vendor/raytheon/"
+            "text": "THE BOEING COMPANY",
+            "href": "/insights/vendor/boeing/"
           },
-          8635162983.26
+          9104683477.67
         ],
         [
           10,
@@ -160,18 +160,34 @@
             "text": "THE BOEING COMPANY",
             "href": "/insights/vendor/boeing/"
           },
-          6086121647.36
+          6262077911.8
         ],
         [
           11,
           {
-            "text": "BARNARD CONSTRUCTION COMPANY, INCORPORATED",
-            "href": "/insights/vendor/barnard-construction/"
+            "text": "AMERISOURCEBERGEN DRUG CORP",
+            "href": "/insights/vendor/amerisourcebergen-drug/"
           },
-          5882499588.72
+          5961135320.91
         ],
         [
           12,
+          {
+            "text": "BARNARD CONSTRUCTION COMPANY, INCORPORATED",
+            "href": "/insights/vendor/barnard-construction/"
+          },
+          5882256785.72
+        ],
+        [
+          13,
+          {
+            "text": "BOOZ ALLEN HAMILTON INC",
+            "href": "/insights/vendor/booz-allen-hamilton/"
+          },
+          5703137609.41
+        ],
+        [
+          14,
           {
             "text": "HUMANA GOVERNMENT BUSINESS INC",
             "href": "/insights/vendor/humana-government-business/"
@@ -179,15 +195,7 @@
           5632352229.53
         ],
         [
-          13,
-          {
-            "text": "AMERISOURCEBERGEN DRUG CORP",
-            "href": "/insights/vendor/amerisourcebergen-drug/"
-          },
-          5461737182.27
-        ],
-        [
-          14,
+          15,
           {
             "text": "TRIAD NATIONAL SECURITY, LLC",
             "href": "/insights/vendor/triad-national-security/"
@@ -195,55 +203,55 @@
           5276549894.81
         ],
         [
-          15,
+          16,
           {
             "text": "NATIONAL TECHNOLOGY & ENGINEERING SOLUTIONS OF SANDIA, LLC",
             "href": "/insights/vendor/national-technology-and-engineering-solutions-of-sandia/"
           },
-          5164213490.1
-        ],
-        [
-          16,
-          {
-            "text": "BOOZ ALLEN HAMILTON INC",
-            "href": "/insights/vendor/booz-allen-hamilton/"
-          },
-          4876490704.68
+          5164313490.1
         ],
         [
           17,
           {
-            "text": "FLUOR MARINE PROPULSION, LLC",
-            "href": "/insights/vendor/fluor-marine-propulsion/"
+            "text": "GENERAL DYNAMICS INFORMATION TECHNOLOGY, INC.",
+            "href": "/insights/vendor/general-dynamics-information-technology/"
           },
-          4209026190.21
+          4514155659.67
         ],
         [
           18,
           {
-            "text": "GENERAL DYNAMICS INFORMATION TECHNOLOGY, INC.",
-            "href": "/insights/vendor/general-dynamics-information-technology/"
+            "text": "ATLANTIC DIVING SUPPLY, INC.",
+            "href": "/insights/vendor/atlantic-diving-supply/"
           },
-          4032362833.82
+          4493512304.21
         ],
         [
           19,
           {
-            "text": "RTX CORPORATION",
-            "href": "/insights/vendor/rtx/"
+            "text": "FLUOR MARINE PROPULSION, LLC",
+            "href": "/insights/vendor/fluor-marine-propulsion/"
           },
-          3831177186.65
+          4258175010.79
         ],
         [
           20,
           {
-            "text": "ATLANTIC DIVING SUPPLY, INC.",
-            "href": "/insights/vendor/atlantic-diving-supply/"
+            "text": "RTX CORPORATION",
+            "href": "/insights/vendor/rtx/"
           },
-          3783529712.4
+          3963627633.81
         ],
         [
           21,
+          {
+            "text": "HUNTINGTON INGALLS INC",
+            "href": "/insights/vendor/huntington-ingalls/"
+          },
+          3804479115.46
+        ],
+        [
+          22,
           {
             "text": "LAWRENCE LIVERMORE NATIONAL SECURITY, LLC",
             "href": "/insights/vendor/lawrence-livermore-national-security/"
@@ -251,15 +259,23 @@
           3631693763.36
         ],
         [
-          22,
+          23,
           {
             "text": "HUNTINGTON INGALLS INCORPORATED",
             "href": "/insights/vendor/huntington-ingalls/"
           },
-          3588003172.5
+          3607612520.5
         ],
         [
-          23,
+          24,
+          {
+            "text": "SCIENCE APPLICATIONS INTERNATIONAL CORPORATION",
+            "href": "/insights/vendor/science-applications-international/"
+          },
+          3586568134.57
+        ],
+        [
+          25,
           {
             "text": "DAVIE DEFENSE INC.",
             "href": "/insights/vendor/davie-defense/"
@@ -267,15 +283,15 @@
           3500000000
         ],
         [
-          24,
+          26,
           {
             "text": "RAYTHEON COMPANY",
             "href": "/insights/vendor/raytheon/"
           },
-          3406742907.56
+          3474294108.39
         ],
         [
-          25,
+          27,
           {
             "text": "SAVANNAH RIVER NUCLEAR SOLUTIONS LLC",
             "href": "/insights/vendor/savannah-river-nuclear-solutions/"
@@ -283,7 +299,7 @@
           3396534933.18
         ],
         [
-          26,
+          28,
           {
             "text": "CONSOLIDATED NUCLEAR SECURITY, LLC",
             "href": "/insights/vendor/consolidated-nuclear-security/"
@@ -291,84 +307,68 @@
           3329261929.84
         ],
         [
-          27,
-          {
-            "text": "SCIENCE APPLICATIONS INTERNATIONAL CORPORATION",
-            "href": "/insights/vendor/science-applications-international/"
-          },
-          3243105992.13
-        ],
-        [
-          28,
-          {
-            "text": "HUNTINGTON INGALLS INC",
-            "href": "/insights/vendor/huntington-ingalls/"
-          },
-          3044612397.65
-        ],
-        [
           29,
           {
             "text": "ACCENTURE FEDERAL SERVICES LLC",
             "href": "/insights/vendor/accenture-federal-services/"
           },
-          2989760998.77
+          3216772250.83
         ],
         [
           30,
           {
-            "text": "SIKORSKY AIRCRAFT CORPORATION",
-            "href": "/insights/vendor/sikorsky-aircraft/"
+            "text": "AMENTUM SERVICES, INC.",
+            "href": "/insights/vendor/amentum-services/"
           },
-          2892652964.69
+          2982130921.47
         ],
         [
           31,
           {
-            "text": "NORTHROP GRUMMAN SYSTEMS CORP",
-            "href": "/insights/vendor/northrop-grumman-systems/"
+            "text": "SIKORSKY AIRCRAFT CORPORATION",
+            "href": "/insights/vendor/sikorsky-aircraft/"
           },
-          2860228574
+          2944474705.11
         ],
         [
           32,
           {
-            "text": "NATIONAL STEEL AND SHIPBUILDING COMPANY",
-            "href": "/insights/vendor/national-steel-and-shipbuilding/"
+            "text": "LOCKHEED MARTIN CORPORATION",
+            "href": "/insights/vendor/lockheed-martin/"
           },
-          2775823200.29
+          2937116032.63
         ],
         [
           33,
           {
-            "text": "UT-BATTELLE LLC",
-            "href": "/insights/vendor/ut-battelle/"
+            "text": "DELOITTE CONSULTING LLP",
+            "href": "/insights/vendor/deloitte-consulting/"
           },
-          2759158258.02
+          2887888537.55
         ],
         [
           34,
           {
-            "text": "AMENTUM SERVICES, INC.",
-            "href": "/insights/vendor/amentum-services/"
+            "text": "NORTHROP GRUMMAN SYSTEMS CORP",
+            "href": "/insights/vendor/northrop-grumman-systems/"
           },
-          2733899499.68
+          2860731574
         ],
         [
           35,
           {
-            "text": "LOCKHEED MARTIN CORPORATION",
-            "href": "/insights/vendor/lockheed-martin/"
+            "text": "SPACE EXPLORATION TECHNOLOGIES CORP.",
+            "href": "/insights/vendor/space-exploration-technologies/"
           },
-          2664978814.89
+          2849428422.54
         ],
         [
           36,
           {
-            "text": "THE BOEING COMPANY",
-            "href": "/insights/vendor/boeing/"
+            "text": "NATIONAL STEEL AND SHIPBUILDING COMPANY",
+            "href": "/insights/vendor/national-steel-and-shipbuilding/"
           },
-          2452014186.62
+          2786633974.61
         ],
         [
           37,
@@ -376,10 +376,50 @@
             "text": "CACI, INC. - FEDERAL",
             "href": "/insights/vendor/caci-inc-federal/"
           },
-          2390579947.89
+          2785951453.82
         ],
         [
           38,
+          {
+            "text": "UT-BATTELLE LLC",
+            "href": "/insights/vendor/ut-battelle/"
+          },
+          2759158258.02
+        ],
+        [
+          39,
+          {
+            "text": "LOCKHEED MARTIN CORPORATION",
+            "href": "/insights/vendor/lockheed-martin/"
+          },
+          2737471571.8
+        ],
+        [
+          40,
+          {
+            "text": "SOUTHWEST VALLEY CONSTRUCTORS CO",
+            "href": "/insights/vendor/southwest-valley-constructors/"
+          },
+          2486486944.76
+        ],
+        [
+          41,
+          {
+            "text": "THE BOEING COMPANY",
+            "href": "/insights/vendor/boeing/"
+          },
+          2453512137.87
+        ],
+        [
+          42,
+          {
+            "text": "LEIDOS, INC.",
+            "href": "/insights/vendor/leidos/"
+          },
+          2435497227.86
+        ],
+        [
+          43,
           {
             "text": "SLS FEDERAL SERVICES LLC",
             "href": "/insights/vendor/sls-federal-services/"
@@ -387,125 +427,85 @@
           2379100930
         ],
         [
-          39,
+          44,
           {
             "text": "SPENCER CONSTRUCTION LLC",
             "href": "/insights/vendor/spencer-construction/"
           },
-          2359541157.42
-        ],
-        [
-          40,
-          {
-            "text": "DELOITTE CONSULTING LLP",
-            "href": "/insights/vendor/deloitte-consulting/"
-          },
-          2313689724.34
-        ],
-        [
-          41,
-          {
-            "text": "BOLLINGER SHIPYARDS LOCKPORT, L.L.C.",
-            "href": "/insights/vendor/bollinger-shipyards-lockport-l-l-c/"
-          },
-          2303816932.07
-        ],
-        [
-          42,
-          {
-            "text": "THE BOEING COMPANY",
-            "href": "/insights/vendor/boeing/"
-          },
-          2296850863.87
-        ],
-        [
-          43,
-          {
-            "text": "LOCKHEED MARTIN CORPORATION",
-            "href": "/insights/vendor/lockheed-martin/"
-          },
-          2294952390.86
-        ],
-        [
-          44,
-          {
-            "text": "LOCKHEED MARTIN CORPORATION",
-            "href": "/insights/vendor/lockheed-martin/"
-          },
-          2275792134.64
+          2361541157.42
         ],
         [
           45,
           {
-            "text": "SPACE EXPLORATION TECHNOLOGIES CORP.",
-            "href": "/insights/vendor/space-exploration-technologies/"
+            "text": "QTC MEDICAL SERVICES INC",
+            "href": "/insights/vendor/qtc-medical-services/"
           },
-          2264035161.28
+          2359104168.91
         ],
         [
           46,
           {
-            "text": "QTC MEDICAL SERVICES INC",
-            "href": "/insights/vendor/qtc-medical-services/"
+            "text": "DELL FEDERAL SYSTEMS L.P",
+            "href": "/insights/vendor/dell-federal-systems-l-p/"
           },
-          2262160537.04
+          2335061677.06
         ],
         [
           47,
           {
-            "text": "LEIDOS, INC.",
-            "href": "/insights/vendor/leidos/"
+            "text": "BOLLINGER SHIPYARDS LOCKPORT, L.L.C.",
+            "href": "/insights/vendor/bollinger-shipyards-lockport-l-l-c/"
           },
-          2259620458.27
+          2304201932.07
         ],
         [
           48,
           {
-            "text": "SOUTHWEST VALLEY CONSTRUCTORS CO",
-            "href": "/insights/vendor/southwest-valley-constructors/"
+            "text": "THE BOEING COMPANY",
+            "href": "/insights/vendor/boeing/"
           },
-          2255814984.76
+          2300454042.89
         ],
         [
           49,
           {
-            "text": "HONEYWELL FEDERAL MANUFACTURING & TECHNOLOGIES, LLC",
-            "href": "/insights/vendor/honeywell-federal-manufacturing-and-technologies/"
+            "text": "LOCKHEED MARTIN CORPORATION",
+            "href": "/insights/vendor/lockheed-martin/"
           },
-          2202033343.31
+          2298522044.86
         ],
         [
           50,
           {
-            "text": "BECHTEL PLANT MACHINERY, INC.",
-            "href": "/insights/vendor/bechtel-plant-machinery/"
+            "text": "LOCKHEED MARTIN CORP",
+            "href": "/insights/vendor/lockheed-martin/"
           },
-          2196710419
+          2270069608.53
         ]
       ]
     }
   ],
   "narrative": {
-    "intro": "The Top government contractors list for FY2026 to date shows government contract obligations totaling $250B. OPTUM PUBLIC SECTOR SOLUTIONS, INC. leads the ranking with $19.9B in obligations. TRIWEST HEALTHCARE ALLIANCE CORP follows with $14.5B, and FISHER SAND & GRAVEL CO follows with $13.4B. LOCKHEED MARTIN CORPORATION appears twice with $12.7B and $12.6B. MCKESSON CORPORATION has $12.3B, ELECTRIC BOAT CORPORATION has $11.3B, THE BOEING COMPANY appears twice with $9B and $6.1B, and RAYTHEON COMPANY has $8.6B. The list is a snapshot of fiscal-year-to-date obligations; current-year totals are partial. Contractors in this ranking are ordered by reported obligations for FY2026 to date, which gives a sense of which firms currently receive the largest shares of obligated federal contract dollars. Readers should treat the totals as interim figures for the fiscal year.",
+    "intro": "The FY2026 to date ranking of top government contractors totals $263B in contract obligations. OPTUM PUBLIC SECTOR SOLUTIONS, INC. is the largest contractor with $19.9B in obligations. TRIWEST HEALTHCARE ALLIANCE CORP follows with $16.5B. LOCKHEED MARTIN CORPORATION appears twice in the list, with $14.1B and $13.1B in obligations. FISHER SAND & GRAVEL CO obligated $13.4B. MCKESSON CORPORATION obligated $12.3B. ELECTRIC BOAT CORPORATION obligated $11.6B. RAYTHEON COMPANY obligated $9.9B. THE BOEING COMPANY appears twice in the list, with $9.1B and $6.3B in obligations. The list shows large shares concentrated in healthcare, defense, and manufacturing firms, and current-year totals are partial because the fiscal year is still in progress. The rankings reflect contract obligations recorded so far in FY2026 rather than completed fiscal-year totals. This snapshot helps contractors and procurement analysts see which companies account for the largest share of federal spending to date and which firms have multiple large obligation entries in the current ranking.",
     "sections": [
       {
-        "heading": "Who leads the FY2026 to date contractor rankings?",
-        "body": "OPTUM PUBLIC SECTOR SOLUTIONS, INC. leads the FY2026 to date rankings with $19.9B in obligations. TRIWEST HEALTHCARE ALLIANCE CORP is second with $14.5B and FISHER SAND & GRAVEL CO is third with $13.4B. LOCKHEED MARTIN CORPORATION appears twice in the top ranks with $12.7B and $12.6B."
+        "heading": "Which companies top the FY2026 to date obligations list?",
+        "body": "OPTUM PUBLIC SECTOR SOLUTIONS, INC. leads the list with $19.9B. TRIWEST HEALTHCARE ALLIANCE CORP is second with $16.5B. LOCKHEED MARTIN CORPORATION, FISHER SAND & GRAVEL CO, and MCKESSON CORPORATION follow with $14.1B, $13.4B, and $12.3B respectively, and other major names include ELECTRIC BOAT CORPORATION, RAYTHEON COMPANY, and THE BOEING COMPANY."
       },
       {
-        "heading": "What does the total $250B represent?",
-        "body": "The $250B figure is the total of contract obligations for FY2026 to date. The $250B total reflects partial-year obligations and not final fiscal-year totals."
+        "heading": "What notable patterns appear in the FY2026 to date ranking?",
+        "body": "LOCKHEED MARTIN CORPORATION appears twice with $14.1B and $13.1B, and THE BOEING COMPANY appears twice with $9.1B and $6.3B. OPTUM PUBLIC SECTOR SOLUTIONS, INC. and TRIWEST HEALTHCARE ALLIANCE CORP hold the top two spots with $19.9B and $16.5B. The total obligations reported for the period equal $263B, and the list includes both healthcare and defense contractors among the leaders."
       }
     ]
   },
   "faq": [
     {
       "q": "Who is the largest federal contractor in FY2026?",
-      "a": "OPTUM PUBLIC SECTOR SOLUTIONS, INC. is the largest federal contractor in FY2026, with $19.9B in obligations. OPTUM PUBLIC SECTOR SOLUTIONS, INC. tops the provided list of contractors by obligations for the fiscal-year-to-date period."
+      "a": "OPTUM PUBLIC SECTOR SOLUTIONS, INC. is the largest federal contractor in FY2026, with $19.9B in obligations. The ranking shows the leading contractors by contract obligations for the fiscal year to date, and OPTUM PUBLIC SECTOR SOLUTIONS, INC. tops that list."
     },
     {
       "q": "How are these contractor rankings calculated?",
-      "a": "Rankings are calculated by contract obligations reported for FY2026 to date. The provided list orders contractors by their reported obligations and the page notes that current-year totals are partial."
+      "a": "Rankings are based on contract obligations for FY2026 to date. All figures are contract obligations; current-year totals are partial (fiscal year to date)."
     }
   ],
   "related": [

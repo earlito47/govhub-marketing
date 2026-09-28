@@ -1,0 +1,207 @@
+{
+  "pageType": "report",
+  "slug": "most-active-naics",
+  "week": "2026-w40",
+  "publishedDate": "2026-09-28",
+  "title": "Most Active Federal Markets This Week, Sep 22–28, 2026",
+  "h1": "Most active federal contract markets, week of Sep 22–28, 2026",
+  "metaDescription": "The most active federal contract industries (by newly reported obligations) the week of Sep 22–28, 2026, led by Commercial and Institutional Building Construc",
+  "updated": "2026-09-28",
+  "fyWindow": {
+    "label": "Week of Sep 22–28, 2026",
+    "start": "2026-09-22",
+    "end": "2026-09-28"
+  },
+  "stats": {
+    "totalObligations": 8617148421.300001,
+    "awardCount": null,
+    "yoyGrowthPct": null,
+    "avgAwardSize": null,
+    "smallBusinessSharePct": null
+  },
+  "charts": [
+    {
+      "id": "2026-w40-most-active-naics",
+      "type": "bar",
+      "title": "Most active industries (NAICS) by obligations, week of Sep 22–28, 2026",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "Commercial and Institutional Building Construction",
+              1491757231.96
+            ],
+            [
+              "Other Computer Related Services",
+              1301778971.83
+            ],
+            [
+              "Direct Health and Medical Insurance Carriers",
+              1206637090.74
+            ],
+            [
+              "Computer Systems Design Services",
+              1166142691.97
+            ],
+            [
+              "Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology)",
+              768113750.17
+            ],
+            [
+              "Engineering Services",
+              606031689.3
+            ],
+            [
+              "Process, Physical Distribution, and Logistics Consulting Services",
+              568752348.02
+            ],
+            [
+              "Telephone Apparatus Manufacturing",
+              560151931.76
+            ],
+            [
+              "Administrative Management and General Management Consulting Services",
+              512521476.93
+            ],
+            [
+              "Other Support Activities for Air Transportation",
+              435261238.62
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Commercial and Institutional Building Construction was the most active market, with $1.5B in newly reported obligations."
+    }
+  ],
+  "tables": [
+    {
+      "title": "Most active industries, week of Sep 22–28, 2026",
+      "columns": [
+        "Rank",
+        "Industry (NAICS)",
+        "Obligations"
+      ],
+      "rows": [
+        [
+          1,
+          {
+            "text": "Commercial and Institutional Building Construction (236220)",
+            "href": "/insights/naics/236220/"
+          },
+          1491757231.96
+        ],
+        [
+          2,
+          {
+            "text": "Other Computer Related Services (541519)",
+            "href": "/insights/naics/541519/"
+          },
+          1301778971.83
+        ],
+        [
+          3,
+          {
+            "text": "Direct Health and Medical Insurance Carriers (524114)",
+            "href": null
+          },
+          1206637090.74
+        ],
+        [
+          4,
+          {
+            "text": "Computer Systems Design Services (541512)",
+            "href": "/insights/naics/541512/"
+          },
+          1166142691.97
+        ],
+        [
+          5,
+          {
+            "text": "Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology) (541715)",
+            "href": "/insights/naics/541715/"
+          },
+          768113750.17
+        ],
+        [
+          6,
+          {
+            "text": "Engineering Services (541330)",
+            "href": "/insights/naics/541330/"
+          },
+          606031689.3
+        ],
+        [
+          7,
+          {
+            "text": "Process, Physical Distribution, and Logistics Consulting Services (541614)",
+            "href": null
+          },
+          568752348.02
+        ],
+        [
+          8,
+          {
+            "text": "Telephone Apparatus Manufacturing (334210)",
+            "href": null
+          },
+          560151931.76
+        ],
+        [
+          9,
+          {
+            "text": "Administrative Management and General Management Consulting Services (541611)",
+            "href": "/insights/naics/541611/"
+          },
+          512521476.93
+        ],
+        [
+          10,
+          {
+            "text": "Other Support Activities for Air Transportation (488190)",
+            "href": null
+          },
+          435261238.62
+        ]
+      ]
+    }
+  ],
+  "narrative": {
+    "intro": "Commercial and Institutional Building Construction was the most active federal contract market the week of Sep 22–28, 2026, with $1.5B in newly reported obligations. The ten most active industries obligated $8.6B combined.",
+    "sections": []
+  },
+  "faq": [],
+  "related": [
+    {
+      "label": "NAICS 236220: Commercial and Institutional Building Construction",
+      "href": "/insights/naics/236220/"
+    },
+    {
+      "label": "NAICS 541519: Other Computer Related Services",
+      "href": "/insights/naics/541519/"
+    },
+    {
+      "label": "NAICS 541512: Computer Systems Design Services",
+      "href": "/insights/naics/541512/"
+    },
+    {
+      "label": "NAICS 541715: Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology)",
+      "href": "/insights/naics/541715/"
+    },
+    {
+      "label": "NAICS 541330: Engineering Services",
+      "href": "/insights/naics/541330/"
+    },
+    {
+      "label": "NAICS 541611: Administrative Management and General Management Consulting Services",
+      "href": "/insights/naics/541611/"
+    }
+  ],
+  "sources": [
+    {
+      "label": "USAspending.gov award data",
+      "href": "https://www.usaspending.gov"
+    }
+  ]
+}

@@ -1,0 +1,566 @@
+{
+  "pageType": "vendor",
+  "slug": "ameresco",
+  "title": "Who Buys From Ameresco: $309M in FY2026",
+  "h1": "Ameresco: Federal Contracts, Agencies & Awards",
+  "metaDescription": "Ameresco won $309M in federal contract obligations in FY2026 to date. See its top agencies, markets, largest awards, and expiring contracts.",
+  "updated": "2026-09-28",
+  "fyWindow": {
+    "label": "FY2026 to date",
+    "start": "2025-10-01",
+    "end": "2026-09-28"
+  },
+  "stats": {
+    "totalObligations": 309353123.29,
+    "awardCount": 36,
+    "yoyGrowthPct": -42.8,
+    "avgAwardSize": 8593142,
+    "smallBusinessSharePct": null
+  },
+  "charts": [
+    {
+      "id": "ameresco-trend",
+      "type": "line",
+      "title": "Obligations by fiscal year",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "FY21",
+              94130987.27
+            ],
+            [
+              "FY22",
+              122158252.33
+            ],
+            [
+              "FY23",
+              107367677.06
+            ],
+            [
+              "FY24",
+              75848268.49
+            ],
+            [
+              "FY25",
+              541219451.33
+            ],
+            [
+              "FY26",
+              309353123.29
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Obligations fell 42.8% year over year, from $541M in FY2025 to $309M in FY2026 to date."
+    },
+    {
+      "id": "ameresco-top-agencies",
+      "type": "bar",
+      "title": "Top 10 buying agencies, FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "Department of Veterans Affairs",
+              228369686.29
+            ],
+            [
+              "Department of Defense",
+              68390786.23
+            ],
+            [
+              "Department of the Interior",
+              6219429.19
+            ],
+            [
+              "National Archives and Records Administration",
+              4545866
+            ],
+            [
+              "Department of Justice",
+              1235372.47
+            ],
+            [
+              "General Services Administration",
+              591983.11
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Department of Veterans Affairs is Ameresco's largest federal customer, with $228M obligated (73.8% of the company's federal obligations)."
+    },
+    {
+      "id": "ameresco-top-naics",
+      "type": "bar",
+      "title": "Top 10 markets (NAICS), FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "Engineering Services",
+              307333930.07
+            ],
+            [
+              "Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology)",
+              1345834
+            ],
+            [
+              "Commercial and Institutional Building Construction",
+              395109.22
+            ],
+            [
+              "Power and Communication Line and Related Structures Construction",
+              278250
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Engineering Services is Ameresco's largest federal market, with $307M in obligations."
+    }
+  ],
+  "crossLinks": [
+    {
+      "label": "Department of Veterans Affairs contracts",
+      "href": "/insights/agency/department-of-veterans-affairs/"
+    },
+    {
+      "label": "Department of Defense contracts",
+      "href": "/insights/agency/department-of-defense/"
+    },
+    {
+      "label": "Department of the Interior contracts",
+      "href": "/insights/agency/department-of-the-interior/"
+    },
+    {
+      "label": "Department of Justice contracts",
+      "href": "/insights/agency/department-of-justice/"
+    },
+    {
+      "label": "NAICS 541330: Engineering Services",
+      "href": "/insights/naics/541330/"
+    },
+    {
+      "label": "NAICS 541715: Research and Development in the Physical, Engineering, and Life Sciences",
+      "href": "/insights/naics/541715/"
+    },
+    {
+      "label": "NAICS 236220: Commercial and Institutional Building Construction",
+      "href": "/insights/naics/236220/"
+    }
+  ],
+  "tables": [
+    {
+      "title": "Largest awards, FY2026 to date",
+      "columns": [
+        "Rank",
+        "Award",
+        "Award Amount",
+        "Awarding Agency",
+        "Ends"
+      ],
+      "rows": [
+        [
+          1,
+          {
+            "text": "36E77620F0003",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36E77620F0003_3600_DEAM3609GO29029_8900/"
+          },
+          312410065.33,
+          "Department of Veterans Affairs",
+          "2038-10-01"
+        ],
+        [
+          2,
+          {
+            "text": "47PF0025F0227",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_47PF0025F0227_4740_DEEE0008027_8900/"
+          },
+          217262240,
+          "General Services Administration",
+          "2043-12-31"
+        ],
+        [
+          3,
+          {
+            "text": "N4740802F4965",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N4740802F4965_9700_DEAM3699EE73682_8900/"
+          },
+          112738110.61,
+          "Department of Defense",
+          "2027-09-30"
+        ],
+        [
+          4,
+          {
+            "text": "47PJ0025F0066",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_47PJ0025F0066_4740_DEEE0008027_8900/"
+          },
+          111902165,
+          "General Services Administration",
+          "2047-08-30"
+        ],
+        [
+          5,
+          {
+            "text": "FA448410F0001",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA448410F0001_9700_DEAM3699EE73682_8900/"
+          },
+          100765739.24,
+          "Department of Defense",
+          "2027-05-31"
+        ],
+        [
+          6,
+          {
+            "text": "DJBP0700PMESPC014",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_DJBP0700PMESPC014_1540_DEAM3609GO29029_8900/"
+          },
+          80651274,
+          "Department of Justice",
+          "2030-07-26"
+        ],
+        [
+          7,
+          {
+            "text": "N3943020F9901",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N3943020F9901_9700_DEAM3609GO29029_8900/"
+          },
+          75315725,
+          "Department of Defense",
+          "2044-12-12"
+        ],
+        [
+          8,
+          {
+            "text": "GSP0816JE7084",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_GSP0816JE7084_4740_DEAM3609GO29029_8900/"
+          },
+          72969175,
+          "General Services Administration",
+          "2041-01-31"
+        ],
+        [
+          9,
+          {
+            "text": "N3943017F1901",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N3943017F1901_9700_DEAM3609GO29029_8900/"
+          },
+          66631952,
+          "Department of Defense",
+          "2041-11-30"
+        ],
+        [
+          10,
+          {
+            "text": "IND15PD00353",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_IND15PD00353_1406_DEAM3609GO29029_8900/"
+          },
+          61267920.21,
+          "Department of the Interior",
+          "2039-03-31"
+        ],
+        [
+          11,
+          {
+            "text": "SP060418F8008",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_SP060418F8008_9700_DEAM3609GO29029_8900/"
+          },
+          60716494.84,
+          "Department of Defense",
+          "2043-07-10"
+        ],
+        [
+          12,
+          {
+            "text": "W912DY25F0329",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W912DY25F0329_9700_W912DY15D0041_9700/"
+          },
+          51715735,
+          "Department of Defense",
+          "2050-01-30"
+        ],
+        [
+          13,
+          {
+            "text": "NNG10AZ01D",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_NNG10AZ01D_8000_DEAM3699EE73682_8900/"
+          },
+          48129004.87,
+          "National Aeronautics and Space Administration",
+          "2029-11-01"
+        ],
+        [
+          14,
+          {
+            "text": "W912QR21C0018",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W912QR21C0018_9700_-NONE-_-NONE-/"
+          },
+          35030546.19,
+          "Department of Defense",
+          "2026-02-13"
+        ],
+        [
+          15,
+          {
+            "text": "N3943020F9904",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N3943020F9904_9700_DEAM3609GO29029_8900/"
+          },
+          31229342,
+          "Department of Defense",
+          "2044-03-01"
+        ],
+        [
+          16,
+          {
+            "text": "SP060422F8000",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_SP060422F8000_9700_DEEE0008027_8900/"
+          },
+          27772636.25,
+          "Department of Defense",
+          "2046-03-01"
+        ],
+        [
+          17,
+          {
+            "text": "36E77618F0034",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36E77618F0034_3600_DEAM3609GO29029_8900/"
+          },
+          27000446.72,
+          "Department of Veterans Affairs",
+          "2041-11-01"
+        ],
+        [
+          18,
+          {
+            "text": "N6247020F5599",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N6247020F5599_9700_N4008520D0032_9700/"
+          },
+          26160037.77,
+          "Department of Defense",
+          "2025-08-15"
+        ],
+        [
+          19,
+          {
+            "text": "36E77620F0002",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36E77620F0002_3600_DEAM3609GO29029_8900/"
+          },
+          21244462.57,
+          "Department of Veterans Affairs",
+          "2027-09-24"
+        ],
+        [
+          20,
+          {
+            "text": "W912QR22C0042",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W912QR22C0042_9700_-NONE-_-NONE-/"
+          },
+          19490073.73,
+          "Department of Defense",
+          "2025-11-27"
+        ],
+        [
+          21,
+          {
+            "text": "47PH1123F0001",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_47PH1123F0001_4740_DEEE0008027_8900/"
+          },
+          18831685.41,
+          "General Services Administration",
+          "2043-02-28"
+        ],
+        [
+          22,
+          {
+            "text": "GSP0816JE7074",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_GSP0816JE7074_4740_DEAM3609GO29029_8900/"
+          },
+          18610554.24,
+          "General Services Administration",
+          "2040-03-31"
+        ],
+        [
+          23,
+          {
+            "text": "GSP0517GB0001",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_GSP0517GB0001_4740_DEAM3609GO29029_8900/"
+          },
+          17727105.68,
+          "General Services Administration",
+          "2027-10-31"
+        ],
+        [
+          24,
+          {
+            "text": "N6247820C4002",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N6247820C4002_9700_-NONE-_-NONE-/"
+          },
+          14412129.55,
+          "Department of Defense",
+          "2023-01-26"
+        ],
+        [
+          25,
+          {
+            "text": "SP060015F8001",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_SP060015F8001_9700_DEAM3609GO29029_8900/"
+          },
+          12022415.89,
+          "Department of Defense",
+          "2034-12-23"
+        ]
+      ]
+    },
+    {
+      "title": "Contracts expiring in the next 12 months",
+      "columns": [
+        "Award",
+        "Awarding Agency",
+        "Award Value",
+        "Ends"
+      ],
+      "rows": [
+        [
+          {
+            "text": "FA448410F0001",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA448410F0001_9700_DEAM3699EE73682_8900/"
+          },
+          "Department of Defense",
+          100765739.24,
+          "2027-05-31"
+        ],
+        [
+          {
+            "text": "36E77620F0002",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36E77620F0002_3600_DEAM3609GO29029_8900/"
+          },
+          "Department of Veterans Affairs",
+          21244462.57,
+          "2027-09-24"
+        ],
+        [
+          {
+            "text": "36E77618F0017",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36E77618F0017_3600_DEAM3609GO29029_8900/"
+          },
+          "Department of Veterans Affairs",
+          6404055.82,
+          "2027-01-01"
+        ],
+        [
+          {
+            "text": "DJBP0700PMESPC018",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_DJBP0700PMESPC018_1540_DEAM3609GO29029_8900/"
+          },
+          "Department of Justice",
+          5822412.63,
+          "2026-09-30"
+        ],
+        [
+          {
+            "text": "W9133L26FA027",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W9133L26FA027_9700_DEAM3609GO29029_8900/"
+          },
+          "Department of Defense",
+          982707,
+          "2027-04-30"
+        ]
+      ]
+    },
+    {
+      "title": "Registration details",
+      "columns": [
+        "Detail",
+        "Registration"
+      ],
+      "rows": [
+        [
+          "Unique Entity ID (UEI)",
+          "DKL8RJPGE4R3"
+        ],
+        [
+          "Headquarters",
+          "Framingham, MA"
+        ],
+        [
+          "Business types",
+          "Category business; Corporate entity not tax exempt; Other than small business; Special designations; Us owned business"
+        ]
+      ]
+    }
+  ],
+  "narrative": {
+    "intro": "Ameresco obligated $309M in federal contract obligations in FY2026 to date. Ameresco won 36 awards this period, with an average award size of $8.6M. Ameresco's obligations are down 42.8% year over year. Ameresco's largest buyer in FY2026 to date is the Department of Veterans Affairs, which obligated $228M. The Department of Defense is the second-largest buyer, with $68.4M in obligations. Ameresco's primary market is Engineering Services, which accounted for $307M in obligations. Historical obligations show variation: FY21 was $94.1M, FY22 was $122M, FY23 was $107M, FY24 was $75.8M, and FY25 was $541M. The data reflect contract obligations; award-value figures in some tables are total contract values. Current-year totals are partial because the period is fiscal year to date. Use these figures to prioritize outreach to the Department of Veterans Affairs and to position Engineering Services capabilities for federal procurements.",
+    "sections": [
+      {
+        "heading": "How has Ameresco's federal business changed year over year?",
+        "body": "Ameresco's obligations fell 42.8% year over year. Ameresco's FY26 obligations of $309M follow FY25 obligations of $541M and earlier years of $75.8M (FY24), $107M (FY23), $122M (FY22), and $94.1M (FY21). These figures show that FY25 was an outlier high and FY26 is a partial fiscal-year total."
+      },
+      {
+        "heading": "Who are Ameresco's main federal customers and markets?",
+        "body": "Ameresco's top buyer in FY2026 to date is the Department of Veterans Affairs with $228M in obligations, followed by the Department of Defense with $68.4M. Ameresco's dominant market is Engineering Services, which accounted for $307M, with smaller activity in Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology) at $1.3M."
+      }
+    ]
+  },
+  "faq": [
+    {
+      "q": "How much does Ameresco make from federal contracts?",
+      "a": "Ameresco made $309M from federal contract obligations in FY2026 to date. Ameresco received 36 awards this period, with an average award size of $8.6M and obligations down 42.8% year over year."
+    },
+    {
+      "q": "Which agencies buy from Ameresco?",
+      "a": "The Department of Veterans Affairs buys the most from Ameresco, with $228M in obligations in FY2026 to date. The Department of Defense is the second-largest buyer with $68.4M, and smaller buyers include the Department of the Interior ($6.2M), the National Archives and Records Administration ($4.5M), and the Department of Justice ($1.2M)."
+    },
+    {
+      "q": "What does Ameresco sell to the government?",
+      "a": "Ameresco sells Engineering Services to the government, with $307M in obligations in that market in FY2026 to date. Ameresco also has obligations in Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology) at $1.3M, plus smaller amounts in construction-related NAICS categories."
+    },
+    {
+      "q": "Which Ameresco contracts are expiring soon?",
+      "a": "Ameresco's expiring-contract detail is not listed in the provided figures. The available figures list current obligations, buyers, and markets but do not include a table of expiring contracts or expiration dates."
+    }
+  ],
+  "related": [
+    {
+      "label": "Expiring federal contracts: recompete watch",
+      "href": "/insights/expiring-federal-contracts/"
+    },
+    {
+      "label": "Gulfstream Aerospace federal contracts",
+      "href": "/insights/vendor/gulfstream-aerospace/"
+    },
+    {
+      "label": "DDB Chicago federal contracts",
+      "href": "/insights/vendor/ddb-chicago/"
+    },
+    {
+      "label": "Techflow federal contracts",
+      "href": "/insights/vendor/techflow/"
+    },
+    {
+      "label": "United Launch Services federal contracts",
+      "href": "/insights/vendor/united-launch-services/"
+    },
+    {
+      "label": "Data Link Solutions federal contracts",
+      "href": "/insights/vendor/data-link-solutions/"
+    },
+    {
+      "label": "CDW Government federal contracts",
+      "href": "/insights/vendor/cdw-government/"
+    }
+  ],
+  "sources": [
+    {
+      "label": "USAspending.gov award data",
+      "href": "https://www.usaspending.gov"
+    }
+  ]
+}
