@@ -354,6 +354,7 @@ decision gets its own note below the table.
 | 2 | 2026-09-24 | 104 | 104 | 0 | 2 | 0 |
 | 3 | 2026-09-25 | 155 | 175 | 0 | 2 | **1** |
 | 4 | 2026-09-28 | 211 | 386 | 2 | 6 | **2** |
+| 5 | 2026-09-29 | 310 | 485 | 5 | 6 | **2** |
 
 Per angle at end of day 2 — A1 14, A2 40, A4 20, A5 30. Every campaign hit its
 `daily_max_leads` exactly both days, so throughput is cap-bound, not
@@ -742,3 +743,79 @@ run once. Verified: built into an empty schema twice, diffed against production
 (70/70 columns, 18/18 indexes, 5/5 functions, 20/20 constraints, zero
 difference), then applied to production with a before/after fingerprint over
 every object — identical.
+
+### Day 5 — 2026-09-29, the day before the ramp actually lands
+
+| Angle | Contacted | Sent | Bounced | Bounce % | Human replies | Positive |
+|---|---:|---:|---:|---:|---:|---:|
+| A1 Recompete | 44 | 67 | 2 | **4.55%** | 2 | 0 |
+| A2 Matched RFP | 120 | 198 | 1 | 0.83% | 2 | **1** |
+| A4 Competitor won | 56 | 86 | 1 | 1.79% | 1 | **1** |
+| A5 Generic | 90 | 134 | 1 | 1.11% | 1 | 0 |
+| **Total** | **310** | **485** | **5** | **1.61%** | **6** | **2** |
+
+**The scale-up had not taken effect yet.** Assign runs at 05:00 and push at
+06:00; everything in section 11 was changed around 17:00. So today sent at the
+OLD 55/day, and 1.61% is a pre-ramp number. The first day at 195/day is the 30th,
+which makes tomorrow's bounce reading the one that matters.
+
+**A1 is the one to watch: 4.55%, 2 of 44.** Under the 5% pause threshold and on a
+two-event sample whose confidence interval runs roughly 0.6% to 15%, so there is
+nothing to act on yet. A1 crosses 50 contacts tomorrow, at which point the rule
+fires on its own.
+
+No new replies today. Zero on 55 new contacts.
+
+Every job green except `outreach-opportunities`, which failed its 03:00 primary
+and was caught by the 03:25 retry — both of which ran hours **before** the
+byte-range fix was deployed, so that failure is the old bug, not a regression.
+
+The widened scanners are already visible: recompetes wrote 28 in its new 20:00
+run (its best yet) and awards wrote 49 at 21:45 against the ~25 it managed as a
+single daily run. A1 supply went 11 to 28, A4 supply 216 to 240.
+
+### Day 5 — the person-name fix had a hole in it, and mail went out through it
+
+A sample of what actually shipped today read:
+
+> on paper **Bruce Diamond** clears the bar on NAICS 541690
+
+The contact is Bruce. This is the exact defect fixed the previous morning, one
+day later.
+
+The detector required **both** parts of the contact's name before it would call a
+company field a person. `last_name` for this row is null — and that is not an
+edge case: **4,149 of 9,091 live rows, 46%, have no last_name at all.** Every one
+of them was invisible to it. Measured properly: the fix was catching 167 and
+missing 110. It solved 60% of the problem and reported success.
+
+Closed by testing on the first name alone when there is no surname: a short,
+marker-free company name carrying the contact's first name. Weaker by necessity,
+and it will occasionally take a real firm named after its founder — which costs a
+company-name mention while still saying something true, against the cost of
+telling a named person we think their own name is their company.
+
+Nine queued rows were repaired before the 06:00 push. A recheck of the whole
+queue under both rules returns zero.
+
+**What this says about the day before.** The fix was verified against the nine
+rows the detector itself had found, which is circular: it proved the detector
+agreed with itself. What it never asked was how many rows the detector could not
+see. The test that would have caught this is the one asked afterwards — how many
+live rows have no last_name — and it takes one query.
+
+### Day 5 — inventory
+
+| Angle | Queued | Unassigned supply | Cap | Days |
+|---|---:|---:|---:|---:|
+| A1 | 81 | 28 | 20 | 4.1 |
+| A2 | 1,040 (at ceiling) | 4,145 | 80 | 13.0 |
+| A4 | 159 | 240 | 35 | 4.5 |
+| A5 holdout | 1,308 | — | 60 | — |
+| A5 generic | 419 | — | | |
+
+A2 expired unsent: 111, down from 115 — the retry path is recycling them.
+
+A2 arms: 62 base / 58 speed pushed. The control arm (A5 holdout) is at 51 pushed
+against A2's 120, still behind, which the cap change addresses from tomorrow.
+Nothing is readable at these counts and no comparison should be attempted.
