@@ -353,6 +353,7 @@ decision gets its own note below the table.
 | 1 | 2026-09-23 | 49 | 49 | 0 | 1 | 0 |
 | 2 | 2026-09-24 | 104 | 104 | 0 | 2 | 0 |
 | 3 | 2026-09-25 | 155 | 175 | 0 | 2 | **1** |
+| 4 | 2026-09-28 | 211 | 386 | 2 | 6 | **2** |
 
 Per angle at end of day 2 — A1 14, A2 40, A4 20, A5 30. Every campaign hit its
 `daily_max_leads` exactly both days, so throughput is cap-bound, not
@@ -440,3 +441,137 @@ original 40.
 A1 runway is still only 1.4 days (2 queued + 12 supply against a cap of 10),
 but supply is now being produced faster than the cap consumes it, which it was
 not before.
+
+### Day 4 — 2026-09-28
+
+The log jumps from Friday to Monday because it should: `outreach-push` runs
+`0 6 * * 1-5`, so the weekend sent nothing. Day 4 is the fourth *sending* day.
+
+| Angle | Leads | Contacted | Sent | Bounced | Human replies | Positive |
+|---|---:|---:|---:|---:|---:|---:|
+| A1 Recompete | 34 | 34 | 57 | 0 | 2 | 0 |
+| A2 Matched RFP | 100 | 79 | 157 | 1 | 2 | **1** |
+| A4 Competitor won | 46 | 38 | 68 | 0 | 1 | **1** |
+| A5 Generic | 75 | 60 | 104 | 1 | 1 | 0 |
+| **Total** | **255** | **211** | **386** | **2** | **6** | **2** |
+
+Bounce rate **0.95%** (2 / 211) against the 2% gate. 386 emails on 211 people is
+1.83 each: the follow-up steps are now most of the volume, which is where the
+second positive came from.
+
+44 of the 255 pushed leads have not been emailed yet — `daily_max_leads` admits
+them tomorrow. Contacted, not pushed, is the denominator for every rate here.
+
+**What the six human replies actually say.** Four are a bare "No" — two on A1,
+one on A5, one on A2. Two are interested. That is the honest shape of the
+result: 1.9% say no in one word, 0.95% ask a question. Three more replies came
+from machines and are correctly excluded.
+
+### Day 4 — the second positive, on A4
+
+> *"What solution do you provide?"*
+> — Dependable On-Site Scan & Shred, Inc., Georgia
+
+It arrived on a **follow-up step**, not the first email, which is the first
+evidence that the sequence past step 1 earns anything. One reply settles
+nothing, but A4 now has 1 positive on 38 contacted and A2 has 1 on 79.
+
+Both positives are questions about what we do and what it costs. Fulfilment was
+deliberately deferred; two named people are now waiting on an answer.
+
+**The classifier fix holds in production.** The Lexset delegation autoresponder
+that was counted as a human reply on day 3 now reads `human_reply: false` in
+`outreach.outcomes`, and the two genuine one-word rejections that arrived today
+were *not* reclassified — which is the half of that fix that could have gone
+wrong quietly.
+
+### Day 4 — A2 was naming the reader instead of their company
+
+`Mcguire Tamara` replied "No" this morning. The email she got said:
+
+> on paper **Mcguire Tamara** clears the bar on NAICS 541620
+
+2.3% of the live universe — **167 of 7,326** — carries the contact's own name in
+the company field, usually surname-first. A2's fit line is the only copy in the
+whole programme that names the company, so every one of those rows reads as a
+mail merge artefact, addressed to the single reader able to recognise it, with
+their own name backwards. The pool has plenty of shapes: `Major Amy`,
+`Davidson Robert`, `Anderson Cynthia Elizabeth`, `Starr Constance R`.
+
+Nine had been assigned. **Four were already delivered** and cannot be taken
+back; one had gone stale; the four still queued were repaired in place before
+the 06:00 push.
+
+Fixed by treating a person-named company as an *absent* company name, so the
+line falls back to "on paper your team clears the bar on NAICS 541620" — true of
+every row, and no template change. The detector is deliberately conservative,
+because a false positive throws away real personalization while a false negative
+only leaves one odd sentence: any corporate marker wins, so "Knight Aerospace
+LLC" stays a company even when the contact is Earl Knight, and both parts of the
+person's name must appear, so plain "Mcguire" is left alone — it reads as a firm
+the way "Bechtel" does. 21 cases under test, including all nine live rows.
+
+This is the kind of defect the coverage numbers cannot see. A2 counted all nine
+as personalized, and by its own definition it was right.
+
+### Day 4 — the opportunities job, and a retry guard that fired for nothing
+
+`outreach-opportunities` streams the whole SAM export in one pass and fails on
+memory when it does not fit:
+
+| Date | Primary 03:00 | Retry 03:25 |
+|---|---|---|
+| 09-23 | 200 | — |
+| 09-24 | 200 | — |
+| 09-25 | 200 | — |
+| 09-26 | **546 WORKER_RESOURCE_LIMIT** | 200 |
+| 09-27 | **546** | **546** |
+| 09-28 | 200 | — |
+
+**Two of six primary runs failed, and Sunday lost both attempts** — no A2 signal
+refresh that day. Sending was unaffected, because the previous day's signals are
+still valid until their close dates; the cost of a lost day is staleness, not an
+outage. Added `outreach-opportunities-retry2` at `30 4 * * *` with a 120-minute
+window, so a day needs three failures to lose its refresh. The real fix is
+flushing in batches during the stream rather than holding the pass in memory,
+and it is still not done.
+
+**Testing that retry with a 24-hour window exposed a worse bug in the guard
+itself.** `retry_job_if_failed` read `net._http_response` directly, and pg_net
+drops those rows after about 5.5 hours — exactly the retention trap that made
+`job_health` read "NO RESPONSE (overdue)" for every overnight job last week. So
+a run that had *succeeded* twenty hours earlier read as "no attempt recorded",
+and the guard re-fired: a full 236MB re-stream of the SAM export for nothing.
+
+Fixed with `coalesce(jr.status_code, r.status_code)` so the guard reads the
+persisted `job_run` status first and pg_net only as a fallback — migration
+`outreach_retry_reads_persisted_status`. Both branches verified: a job that
+succeeded inside the window returns null, an unknown job still fires.
+
+The lesson is the same one twice. pg_net's table is a *buffer*, not a record, and
+anything that decides something hours later must read the harvested copy.
+
+### Day 4 — runway
+
+| Angle | Queued | Unassigned supply | Daily cap | Days of sending |
+|---|---:|---:|---:|---:|
+| A1 Recompete | 59 | 11 | 10 | **7.0** |
+| A2 Matched RFP | 259 | 4,309 | 20 | 228 |
+| A4 Competitor won | 9 | 375 | 10 | 38 |
+| A5 Generic | 836 | — | 15 | 56 |
+
+A1 was at 1.4 days on Friday. Not retrying the USASpending timeouts is what
+recovered it; the scanner now produces faster than the cap consumes.
+
+A2 arms: **53 base / 47 speed** pushed, against the ~440 per arm needed to detect
+a doubling of reply rate. That is **12%**. Still nothing to read.
+
+### Day 4 — still open
+
+- **Wave 1 migration.** ~1,205 never-contacted leads sit suppressed from the
+  personalized system, ~460 of which pass the current gate. Three options were
+  put up (release them, let wave 1 finish, leave it); releasing was the
+  recommendation. No decision yet, so nothing has been touched.
+- **Two positive replies** waiting on a fulfilment answer.
+- **Batched flushing** in the opportunities job, to stop the memory failures at
+  the source rather than adding retries around them.
