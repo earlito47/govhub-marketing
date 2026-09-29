@@ -1,0 +1,282 @@
+{
+  "pageType": "vendor",
+  "slug": "b-i",
+  "title": "Who Buys From B I: $254M in FY2026",
+  "h1": "B I: Federal Contracts, Agencies & Awards",
+  "metaDescription": "B I won $254M in federal contract obligations in FY2026 to date. See its top agencies, markets, largest awards, and expiring contracts.",
+  "updated": "2026-09-29",
+  "fyWindow": {
+    "label": "FY2026 to date",
+    "start": "2025-10-01",
+    "end": "2026-09-29"
+  },
+  "stats": {
+    "totalObligations": 253844740.47,
+    "awardCount": 5,
+    "yoyGrowthPct": 33.4,
+    "avgAwardSize": 50768948,
+    "smallBusinessSharePct": null
+  },
+  "charts": [
+    {
+      "id": "b-i-trend",
+      "type": "line",
+      "title": "Obligations by fiscal year",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "FY21",
+              281382937.72
+            ],
+            [
+              "FY22",
+              270123879.65
+            ],
+            [
+              "FY23",
+              314203898.87
+            ],
+            [
+              "FY24",
+              288316597.74
+            ],
+            [
+              "FY25",
+              190342054.96
+            ],
+            [
+              "FY26",
+              253844740.47
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Obligations grew 33.4% year over year, from $190M in FY2025 to $254M in FY2026 to date."
+    },
+    {
+      "id": "b-i-top-naics",
+      "type": "bar",
+      "title": "Top 10 markets (NAICS), FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "Facilities Support Services",
+              247346740.47
+            ],
+            [
+              "Investigation and Personal Background Check Services",
+              6498000
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Facilities Support Services is B I's largest federal market, with $247M in obligations."
+    }
+  ],
+  "crossLinks": [
+    {
+      "label": "NAICS 561210: Facilities Support Services",
+      "href": "/insights/naics/561210/"
+    }
+  ],
+  "tables": [
+    {
+      "title": "Largest awards, FY2026 to date",
+      "columns": [
+        "Rank",
+        "Award",
+        "Award Amount",
+        "Awarding Agency",
+        "Ends"
+      ],
+      "rows": [
+        [
+          1,
+          {
+            "text": "70CDCR24FR0000049",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70CDCR24FR0000049_7012_70CDCR20D00000011_7012/"
+          },
+          270442488.54,
+          "Department of Homeland Security",
+          "2025-09-30"
+        ],
+        [
+          2,
+          {
+            "text": "70CDCR25FR0000127",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70CDCR25FR0000127_7012_70CDCR25D00000062_7012/"
+          },
+          228516114.69,
+          "Department of Homeland Security",
+          "2026-09-29"
+        ],
+        [
+          3,
+          {
+            "text": "70CDCR26FR0000125",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70CDCR26FR0000125_7012_70CDCR25D00000062_7012/"
+          },
+          41018888.74,
+          "Department of Homeland Security",
+          "2027-09-29"
+        ],
+        [
+          4,
+          {
+            "text": "70CDCR26FR0000063",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70CDCR26FR0000063_7012_70CDCR26D00000005_7012/"
+          },
+          4873500,
+          "Department of Homeland Security",
+          "2026-11-24"
+        ],
+        [
+          5,
+          {
+            "text": "70CDCR26FR0000021",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70CDCR26FR0000021_7012_70CDCR26D00000005_7012/"
+          },
+          1624500,
+          "Department of Homeland Security",
+          "2026-05-14"
+        ]
+      ]
+    },
+    {
+      "title": "Contracts expiring in the next 12 months",
+      "columns": [
+        "Award",
+        "Awarding Agency",
+        "Award Value",
+        "Ends"
+      ],
+      "rows": [
+        [
+          {
+            "text": "70CDCR25FR0000127",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70CDCR25FR0000127_7012_70CDCR25D00000062_7012/"
+          },
+          "Department of Homeland Security",
+          228516114.69,
+          "2026-09-29"
+        ],
+        [
+          {
+            "text": "70CDCR26FR0000125",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70CDCR26FR0000125_7012_70CDCR25D00000062_7012/"
+          },
+          "Department of Homeland Security",
+          41018888.74,
+          "2027-09-29"
+        ],
+        [
+          {
+            "text": "70CDCR26FR0000063",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70CDCR26FR0000063_7012_70CDCR26D00000005_7012/"
+          },
+          "Department of Homeland Security",
+          4873500,
+          "2026-11-24"
+        ]
+      ]
+    },
+    {
+      "title": "Registration details",
+      "columns": [
+        "Detail",
+        "Registration"
+      ],
+      "rows": [
+        [
+          "Unique Entity ID (UEI)",
+          "PKK6L9KLMYR5"
+        ],
+        [
+          "Headquarters",
+          "Boulder, CO"
+        ],
+        [
+          "Parent company",
+          "THE GEO GROUP, INC."
+        ],
+        [
+          "Business types",
+          "Category business; Corporate entity not tax exempt; Other than small business; Special designations; Us owned business"
+        ]
+      ]
+    }
+  ],
+  "narrative": {
+    "intro": "B I shows concentrated federal contract activity in FY2026 to date. B I obligated $254M in contract obligations across 5 awards for the fiscal year to date, with an average award size of $50.8M and obligations up 33.4% year over year. Current-year totals are partial. Facilities Support Services accounts for the bulk of FY2026 to date obligations at $247M, with a smaller allocation to Investigation and Personal Background Check Services at $6.5M. Historical obligations trend shows variation by fiscal year: FY21 $281M, FY22 $270M, FY23 $314M, FY24 $288M, and FY25 $190M. The FY2026 to date total of $254M follows a lower FY25 and a higher FY23. This profile points to a business centered on facilities support, delivered through a small number of relatively large awards, and producing a notable year-over-year rise in obligations so far in FY2026.",
+    "sections": [
+      {
+        "heading": "How large is B I's FY2026 federal contracting program?",
+        "body": "B I obligated $254M in FY2026 to date. B I received 5 awards so far, with an average award size of $50.8M. B I's obligations are up 33.4% year over year. Current-year totals are partial."
+      },
+      {
+        "heading": "What industries and markets make up B I's work?",
+        "body": "Facilities Support Services is the largest market for B I at $247M in FY2026 to date. Investigation and Personal Background Check Services accounts for $6.5M. The concentration in Facilities Support Services explains most of the current-year obligations. Historical fiscal-year totals provide context for recent changes."
+      }
+    ]
+  },
+  "faq": [
+    {
+      "q": "How much does B I make from federal contracts?",
+      "a": "B I has $254M in contract obligations in FY2026 to date. B I recorded those obligations across 5 awards, with an average award size of $50.8M, and obligations up 33.4% year over year. Current-year totals are partial."
+    },
+    {
+      "q": "Which agencies buy from B I?",
+      "a": "No agencies are listed for B I in the provided figures. The available data does not include a breakdown by buying agency for FY2026 to date."
+    },
+    {
+      "q": "What does B I sell to the government?",
+      "a": "B I sells Facilities Support Services and Investigation and Personal Background Check Services to the government. Facilities Support Services accounts for $247M of FY2026 to date obligations, and Investigation and Personal Background Check Services accounts for $6.5M."
+    },
+    {
+      "q": "Which B I contracts are expiring soon?",
+      "a": "No expiring contracts are listed in the provided figures. The expiring-contracts table or details are not included in the supplied data."
+    }
+  ],
+  "related": [
+    {
+      "label": "Expiring federal contracts: recompete watch",
+      "href": "/insights/expiring-federal-contracts/"
+    },
+    {
+      "label": "Haskell federal contracts",
+      "href": "/insights/vendor/haskell/"
+    },
+    {
+      "label": "Detyens Shipyards federal contracts",
+      "href": "/insights/vendor/detyens-shipyards/"
+    },
+    {
+      "label": "Association of Universities for Research In Astronomy federal contracts",
+      "href": "/insights/vendor/association-of-universities-for-research-in-astronomy/"
+    },
+    {
+      "label": "DLT Solutions federal contracts",
+      "href": "/insights/vendor/dlt-solutions/"
+    },
+    {
+      "label": "Caci Technologies federal contracts",
+      "href": "/insights/vendor/caci-technologies/"
+    },
+    {
+      "label": "Siemens Medical Solutions Usa federal contracts",
+      "href": "/insights/vendor/siemens-medical-solutions-usa/"
+    }
+  ],
+  "sources": [
+    {
+      "label": "USAspending.gov award data",
+      "href": "https://www.usaspending.gov"
+    }
+  ]
+}
