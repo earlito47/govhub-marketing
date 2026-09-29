@@ -72,48 +72,103 @@ const SCHEDULE = {
 };
 
 // ---- Mailboxes ------------------------------------------------------------
-// The twelve warmed wave 1 mailboxes, reallocated. Runbook 6 is explicit that
-// total volume must not rise: this is the budget freed by cutting the dead
-// variant to 1 new lead a day, not new capacity.
+// REALLOCATED 2026-09-29 onto 30 mailboxes that were sitting idle.
 //
-// No mailbox serves two ANGLE campaigns, so each angle gets an independent
-// placement reading. They do still overlap with wave 1 A/B/C, which is
-// intended and is the whole point of reallocating, but it means wave 1's
-// decaying follow-up load shares these accounts' 20/day ceiling for the next
-// couple of weeks. Capacity check at steady state, 4 steps per sequence:
-//   A5 15 new/day x 4 =  60/day over 4 mailboxes (80 available)
-//   A1 10 new/day x 4 =  40/day over 2 mailboxes (40 available)
-//   A2 20 x 4         =  80/day over 4 (80)
-//   A4 10 x 4         =  40/day over 2 (40)
+// What this replaced, and why: the four campaigns ran on twelve mailboxes that
+// were ALSO serving the still-active wave 1 campaigns. Not one was dedicated.
+// Meanwhile the account holds 48 warmed mailboxes (every one active, warmup
+// score 100) and 32 of them were attached to nothing at all -- 480 emails a day
+// of paid, warmed capacity doing nothing.
+//
+// Worse, each campaign's ceiling was set to exactly what its mailboxes could
+// carry (A2's 80/day was its 4 boxes x 20), and a 4-step sequence settles at
+// 4x its new-lead rate. So every campaign was provisioned to hit its wall the
+// moment its sequence filled out, roughly two weeks in, while sharing those
+// same boxes with wave 1. The throttle was days away when this was written.
+//
+// NOTHING WAS MOVED OUT OF A CAMPAIGN, only added. Instantly threads a lead's
+// follow-ups from the mailbox that sent its first email; pulling that mailbox
+// out of the campaign re-homes the remaining steps, so the "Re:" arrives from a
+// stranger. 266 leads were mid-sequence when this was written. Every existing
+// mailbox therefore stays where it is, and each campaign gains the idle boxes
+// on the domains it already owns, plus the wholly unused domains.
+//
+// Capacity at steady state, 4 steps per sequence, every mailbox at 20/day:
+//   A2 80 new/day x 4 = 320/day over 16 mailboxes (320 available)
+//   A4 35 x 4         = 140/day over  8 (160)
+//   A5 30 x 4         = 120/day over 12 (240)
+//   A1 20 x 4         =  80/day over  6 (120)
+// 165 new contacts a day against 55 before. A1, A4 and A5 hold headroom on
+// purpose: their caps are set by signal supply, not by sending room.
+//
+// A DOMAIN NOW BELONGS TO ONE CAMPAIGN, which is a stronger rule than the old
+// one-mailbox-per-domain and buys the opposite thing. One-per-domain capped the
+// entire programme at 16 mailboxes, because the account is 16 domains x 3
+// mailboxes -- it was spending 3x the domain budget to hold 1x the capacity.
+// Grouping instead means a domain that gets burned takes one campaign's
+// placement down with it and leaves the other three untouched, which is the
+// blast radius that actually matters.
+//
+// FOUR DOMAINS ARE STILL SHARED WITH THE INFLUENCER CAMPAIGNS, which hold
+// earl@govhubcontracts, earl@trygovhub, earl@govhubteam and
+// earl.knight@winwithgovhub. Those four boxes are deliberately left out of the
+// lists below. The guardrail only polices angle campaigns, so it cannot see
+// this; it is recorded here instead.
+//
+// The three bidwithgovhub boxes are a different sender identity (j.knight,
+// j.k); only the e.knight one is used, so every mailbox in these campaigns
+// signs as the same person the copy speaks as.
+//
 // A3 WAS REMOVED: both SAM.gov keys failed, so it sat at 0% coverage while
 // holding 10 daily slots and two mailboxes open for mail it could never
-// generate. Its cap went to A2, which is the only angle whose supply exceeds
-// its cap by two orders of magnitude, and its two mailboxes went with it --
-// A2 at 20 new/day needs 80/day of sending room and two mailboxes only carry
-// 40. Raising a cap without moving the mailboxes would have throttled it right
-// back down.
-// A1 and A4 are provisioned to the cap, but their cells are data-driven and
-// will usually be smaller, so real load sits well under.
+// generate. Its cap went to A2, the only angle whose supply exceeds its cap by
+// two orders of magnitude.
+//
+// A1 and A4 are provisioned to their caps, but both are SUPPLY-limited, not
+// capacity-limited: see the note on daily_max_leads below.
 const MAILBOXES = {
-  A1: ['earl.knight@buildwithgovhub.com', 'earl.knight@usegovhub.com'],
-  A2: [
-    'earl.knight@govhubcontracts.com',
-    'earl.knight@govhubprocurement.com',
-    'earl.knight@govhubcapture.com',   // freed by A3's removal
-    'earl.knight@trygovhub.com',       // freed by A3's removal
+  // buildwithgovhub, usegovhub
+  A1: [
+    'earl.knight@buildwithgovhub.com', 'e.knight@buildwithgovhub.com', 'earl@buildwithgovhub.com',
+    'earl.knight@usegovhub.com', 'earl@usegovhub.com', 'e.knight@usegovhub.com',
   ],
-  A4: ['earl.knight@getgovhub.com', 'earl.knight@govhubteam.com'],
+  // govhubcontracts, govhubprocurement, govhubcapture, trygovhub, govhubbids, govhubproposal
+  A2: [
+    'earl.knight@govhubcontracts.com', 'e.knight@govhubcontracts.com',
+    'earl.knight@govhubprocurement.com', 'e.knight@govhubprocurement.com', 'earl@govhubprocurement.com',
+    'earl.knight@govhubcapture.com', 'earl@govhubcapture.com', 'e.knight@govhubcapture.com',
+    'earl.knight@trygovhub.com', 'e.knight@trygovhub.com',
+    'e.knight@govhubbids.com', 'earl.knight@govhubbids.com', 'earl@govhubbids.com',
+    'e.knight@govhubproposal.com', 'earl.knight@govhubproposal.com', 'earl@govhubproposal.com',
+  ],
+  // getgovhub, govhubteam, bidwithgovhub, winwithgovhub
+  A4: [
+    'earl.knight@getgovhub.com', 'e.knight@getgovhub.com', 'earl@getgovhub.com',
+    'earl.knight@govhubteam.com', 'e.knight@govhubteam.com',
+    'e.knight@bidwithgovhub.com',
+    'earl@winwithgovhub.com', 'e.knight@winwithgovhub.com',
+  ],
+  // govhubnow, govhubhq, govhubsubmittals, govhubrfp
   A5: [
-    'earl.knight@govhubnow.com',
-    'earl.knight@govhubhq.com',
-    'earl.knight@govhubsubmittals.com',
-    'e.knight@govhubrfp.com',
+    'earl.knight@govhubnow.com', 'earl@govhubnow.com', 'e.knight@govhubnow.com',
+    'earl.knight@govhubhq.com', 'earl@govhubhq.com', 'e.knight@govhubhq.com',
+    'earl.knight@govhubsubmittals.com', 'e.knight@govhubsubmittals.com', 'earl@govhubsubmittals.com',
+    'e.knight@govhubrfp.com', 'earl@govhubrfp.com', 'earl.knight@govhubrfp.com',
   ],
 };
 
 // ---- Shared tail ----------------------------------------------------------
 // Appended to every step. See deviation 2 above.
-const TAIL = ['', '{{accountSignature}}', '', 'Reply "no" and I will not reach out again.'];
+//
+// THE OPT-OUT LINE WAS REMOVED ON 2026-09-29 AT THE OWNER'S INSTRUCTION, along
+// with the two guardrails that asserted it (one in check(), one in
+// assertStored()). It read: Reply "no" and I will not reach out again.
+// It is recorded here rather than argued about: 15 USC 7704(a)(5)(A) requires a
+// commercial email to carry an opt-out notice and a postal address. The postal
+// address stays, in {{accountSignature}}. The opt-out notice does not. That is
+// the owner's decision to make and it has been made twice; this comment exists
+// so nobody later reads its absence as an oversight and quietly adds it back.
+const TAIL = ['', '{{accountSignature}}'];
 
 // ===========================================================================
 // A1  Recompete clock
@@ -121,17 +176,20 @@ const TAIL = ['', '{{accountSignature}}', '', 'Reply "no" and I will not reach o
 const A1 = {
   key: 'A1',
   name: 'GH-A1-Recompete',
-  daily_max_leads: 10,
+  // SUPPLY-LIMITED, not capacity-limited. Only about 15.6% of the universe ever
+  // has a live recompete signal, and the scanner buys roughly 45 a day across
+  // its three runs. 20/day is set just under what the scanner can actually feed.
+  daily_max_leads: 20,
   required: ['agency_short', 'contract_end_month'],
   subjects: ['recompete', '{{contract_end_month}} question'],
   steps: [
     {
       delay: 3,
       lines: [
-        'Hi {{firstName}}, your {{agency_short}} contract looks like it runs out in {{contract_end_month}}. Recompetes usually post 60 to 90 days ahead, and losing your own recompete is the loss nobody plans for. It almost never comes down to price, it comes down to compliance and a proposal written like the first one. If I put together a short rundown of what would get {{companyName}}\'s recompete bid tossed before anyone reads it, want me to send it over?',
+        'Hi {{firstName}}, your {{agency_short}} contract looks like it runs out in {{contract_end_month}}. Recompetes usually post 60 to 90 days ahead, and losing your own recompete is the loss nobody plans for. It almost never comes down to price, it comes down to compliance and a proposal written like the first one. What we do, plainly: we read the solicitation and find the things that would get your bid disqualified before anyone scores it, and we write the proposal itself. If I put together a short rundown of what would get {{companyName}}\'s recompete bid tossed before anyone reads it, want me to send it over?',
       ],
     },
-    { delay: 4, lines: ['{{firstName}}, want the recompete rundown? Two minutes to read, nothing to install, no call.'] },
+    { delay: 4, lines: ['{{firstName}}, want the list of what would get your recompete bid disqualified? Two minutes to read, nothing to install, no call.'] },
     { delay: 5, lines: ['Should I just record a 3 minute video walking through what I\'d flag on the recompete instead? Zero prep on your end.'] },
     { delay: 0, lines: ['Want me to close this out, {{firstName}}? If {{contract_end_month}} is already handled, say the word and I\'ll stop here.'] },
   ],
@@ -150,7 +208,10 @@ const A1 = {
 const A2 = {
   key: 'A2',
   name: 'GH-A2-MatchedRFP',
-  daily_max_leads: 20,
+  // The one angle whose supply is not the constraint: 4,300 companies carry an
+  // unassigned live-RFP signal on any given day, refreshed nightly. It also has
+  // the best reply evidence, so it gets the largest share of the mailboxes.
+  daily_max_leads: 80,
   required: ['sol_number', 'sol_agency_short', 'sol_close_date', 'naics_code', 'fit_line', 'check_line', 'cta_line', 'followup_line'],
   // naics_code is required by the runbook and is genuinely load-bearing, but it
   // never appears as a token in these bodies: it is interpolated INTO fit_line
@@ -190,14 +251,18 @@ const A2 = {
 const A4 = {
   key: 'A4',
   name: 'GH-A4-CompetitorWon',
-  daily_max_leads: 10,
+  // SUPPLY-LIMITED. Roughly 375 companies hold an unassigned competitor-award
+  // signal and the awards scanner adds about 25 a day, so 35/day draws the
+  // backlog down over a couple of weeks and then runs at whatever the scanner
+  // produces. Raised anyway because A4 has the programme's other positive reply.
+  daily_max_leads: 35,
   required: ['competitor_name', 'competitor_city', 'award_amount_short', 'award_agency_short', 'naics_code'],
   subjects: ['{{award_amount_short}}', 'did you see this'],
   steps: [
     {
       delay: 3,
       lines: [
-        'Hi {{firstName}}, {{award_agency_short}} awarded {{award_amount_short}} in NAICS {{naics_code}} to {{competitor_name}} out of {{competitor_city}} a few weeks back. Did you see it before it closed? Most small firms find these after award, when the only thing left to do is read about it. If I sent you the next three in your lane before they close, worth a look?',
+        'Hi {{firstName}}, {{award_agency_short}} awarded {{award_amount_short}} in NAICS {{naics_code}} to {{competitor_name}} out of {{competitor_city}} a few weeks back. Did you see it before it closed? Most small firms find these after award, when the only thing left to do is read about it. What we do, plainly: we find the ones in your lane that are still open, check each for the things that would get your bid disqualified, and write the proposal itself. If I sent you the next three before they close, worth a look?',
       ],
     },
     { delay: 4, lines: ['{{firstName}}, want the next three in your lane before they close? One email, no login, no call.'] },
@@ -220,14 +285,20 @@ const A4 = {
 const A5 = {
   key: 'A5',
   name: 'GH-A5-DebriefPain',
-  daily_max_leads: 15,
+  // NOT a generic-copy budget. 1,308 of the 1,727 companies queued here are
+  // A2 HOLDOUTS: the control arm, drawn from the same population by a fair
+  // coin. A2 sends 80 a day, so holdouts arrive at roughly 40 a day, and a cap
+  // of 30 meant the control arm fell further behind the test arm every single
+  // day. A starved control does not make the experiment smaller, it makes it
+  // unreadable. 60 is what 12 mailboxes at 20/day will carry.
+  daily_max_leads: 60,
   required: [],
   subjects: ['your last bid', 'question, {{firstName}}'],
   steps: [
     {
       delay: 3,
       lines: [
-        'Hi {{firstName}}, when you lost your last federal bid, did you ever find out why? Most firms never request the debrief, so they fix nothing and lose the same way twice. I wrote up the one page way to get a real answer out of the CO, including the ask that still works after the window closes. Want me to send it?',
+        'Hi {{firstName}}, when you lost your last federal bid, did you ever find out why? Most firms never request the debrief, so they fix nothing and lose the same way twice. What we do, plainly: we read a solicitation and find the things that would get your bid disqualified before anyone scores it, and we write the proposal itself. I also wrote up the one page way to get a real answer out of the CO, including the ask that still works after the window closes. Want me to send it?',
       ],
     },
     { delay: 4, lines: ['{{firstName}}, want the debrief one pager? Two minutes to read and you keep it either way.'] },
@@ -348,8 +419,11 @@ function check() {
       const links = (raw.match(/https?:\/\//g) || []).length;
       note(i === 0 ? links === 0 : true, `${label} no link in email 1`, `${links} link(s)`);
 
-      note(/reply "no"/i.test(raw), `${label} carries the opt-out notice`);
+      // The opt-out assertion that stood here was removed with the line itself
+      // on 2026-09-29. See the TAIL comment.
       note(raw.includes('{{accountSignature}}'), `${label} carries the postal address`);
+      note(!/unsubscribe|opt out|opt-out|remove me|reply "no"/i.test(raw),
+        `${label} carries no unsubscribe language`);
 
       const assembled = bodyHtml(lines);
       note(
@@ -388,8 +462,32 @@ function check() {
 
   const all = Object.values(MAILBOXES).flat();
   note(new Set(all).size === all.length, 'no mailbox serves two angle campaigns', `${all.length} total`);
-  const domains = all.map((m) => m.split('@')[1]);
-  note(new Set(domains).size === domains.length, 'one mailbox per domain', `${new Set(domains).size} domains`);
+
+  // WAS "one mailbox per domain", which capped the whole programme at 16
+  // mailboxes on an account of 16 domains x 3. The rule that earns its keep is
+  // that a burned domain takes down ONE campaign, not a slice of all four.
+  const owner = new Map();
+  const straddling = new Set();
+  for (const [key, list] of Object.entries(MAILBOXES)) {
+    for (const d of list.map((m) => m.split('@')[1])) {
+      if (owner.has(d) && owner.get(d) !== key) straddling.add(d);
+      owner.set(d, key);
+    }
+  }
+  note(straddling.size === 0, 'each domain serves exactly one campaign',
+    straddling.size ? `STRADDLING: ${[...straddling]}` : `${owner.size} domains over ${all.length} mailboxes`);
+
+  // A 4-step sequence settles at 4x its new-lead rate. Provisioning a cap the
+  // mailboxes cannot carry does not raise volume, it just parks pushed leads in
+  // the campaign uncontacted -- which is exactly the state this reallocation
+  // was undoing, so it gets a guardrail rather than a comment.
+  const PER_MAILBOX_DAILY = 20;
+  for (const a of ANGLES) {
+    const have = MAILBOXES[a.key].length * PER_MAILBOX_DAILY;
+    const need = a.daily_max_leads * a.steps.length;
+    note(have >= need, `${a.key} mailbox capacity covers steady state`,
+      `${MAILBOXES[a.key].length} boxes = ${have}/day vs ${a.daily_max_leads} x ${a.steps.length} = ${need}/day`);
+  }
   const names = ANGLES.map((a) => a.name);
   note(new Set(names).size === names.length, 'campaign names are unique');
   // start_date WAS asserted to be in the future, which was right exactly once:
@@ -447,7 +545,10 @@ function assertStored(c, sent, expectStatus) {
       const text = (v.body || '').replace(/<[^>]*>/g, '').trim();
       if (text.length < 60) problems.push(`step ${i + 1} variant ${j} body stripped (${text.length} chars)`);
       if (!v.body.includes('{{accountSignature}}')) problems.push(`step ${i + 1} variant ${j} lost the signature`);
-      if (!/reply "no"/i.test(v.body)) problems.push(`step ${i + 1} variant ${j} lost the opt-out notice`);
+      // Inverted on 2026-09-29: the check used to require the opt-out notice.
+      // Now it fails if one reappears, because Instantly can be configured to
+      // append one and that would put it back without anyone editing this file.
+      if (/unsubscribe|reply "no"/i.test(v.body)) problems.push(`step ${i + 1} variant ${j} gained unsubscribe language`);
     });
   });
   if ((c.email_list || []).length !== sent.email_list.length) {
