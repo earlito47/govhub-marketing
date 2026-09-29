@@ -575,3 +575,170 @@ a doubling of reply rate. That is **12%**. Still nothing to read.
 - **Two positive replies** waiting on a fulfilment answer.
 - **Batched flushing** in the opportunities job, to stop the memory failures at
   the source rather than adding retries around them.
+
+---
+
+## 11. 2026-09-29 — the scale-up
+
+Four things changed on the same day: capacity, audience, copy, and the job that
+feeds A2. Recorded together because they interact.
+
+### Capacity: 12 shared mailboxes to 42 dedicated ones
+
+The four campaigns had been running on twelve mailboxes **shared with the still
+active wave 1 campaigns**, while 32 of the account's 48 warmed mailboxes were
+attached to nothing at all. 480 emails a day of paid, warmed capacity idle.
+
+Worse, each campaign's ceiling was set to exactly what its own boxes could
+carry, and a 4-step sequence settles at 4x its new-lead rate:
+
+| | Mailboxes | Capacity | Steady state at old cap |
+|---|---:|---:|---:|
+| A2 | 4 | 80/day | 20 x 4 = **80/day** |
+| A1 | 2 | 40/day | 10 x 4 = **40/day** |
+| A4 | 2 | 40/day | 10 x 4 = **40/day** |
+
+Every campaign was provisioned to hit its wall the moment its sequence filled
+out, about a week away, while sharing those boxes with wave 1.
+
+**Nothing was moved out of a campaign, only added.** Instantly threads a lead's
+follow-ups from the mailbox that sent its first email, and 266 leads were
+mid-sequence; pulling a box out would have made their next "Re:" arrive from a
+stranger. Each campaign gained the idle boxes on domains it already owned, plus
+the unused domains.
+
+| | Mailboxes | Capacity | New cap | Steady state |
+|---|---:|---:|---:|---:|
+| A2 | 16 | 320/day | 80 | 320/day |
+| A5 | 12 | 240/day | 60 | 240/day |
+| A4 | 8 | 160/day | 35 | 140/day |
+| A1 | 6 | 120/day | 20 | 80/day |
+| **Total** | **42** | **840/day** | **195** | |
+
+**195 new contacts a day against 55.** Every mailbox set to 20/day.
+
+The one-mailbox-per-domain rule became one-campaign-per-domain. The old rule
+capped the programme at 16 mailboxes on an account of 16 domains x 3 — it spent
+3x the domain budget to hold 1x the capacity. The new rule keeps the property
+that matters: a burned domain takes one campaign down, not a slice of all four.
+
+### Audience: wave 1 closed, 1,765 contacts released
+
+All three wave 1 campaigns paused. 1,145 people were mid-sequence, so pausing
+cuts them off mid-thread; that is the cost of the decision and it was taken
+deliberately.
+
+Their contacts were then released from suppression into the personalized pool —
+**except anyone who replied or bounced**. 29 held on that rule, plus 6 that no
+longer matched a live campaign lead and were left suppressed as the conservative
+reading. The live universe went **7,326 to 9,091**, with 0 missing required
+fields and 0 suppression leaks.
+
+### Inventory: ceilings, because a deep queue is not free
+
+The ask was 2,500 queued contacts per angle. Two of the four cannot have that,
+and A2 should not:
+
+- **A2's signals die.** A solicitation is taken 8 to 21 days from closing and
+  push wants 8 days left, so an assignment is sendable for about 13 days. At
+  80/day the useful queue is ~1,040. Queue 2,500 and the excess closes unsent —
+  which is exactly what the **115 already-expired A2 rows** were.
+- **A1 and A4 are supply-limited.** A1 signals exist for ~15% of the universe;
+  A4 only gets companies A2 does not outrank. Neither reaches 2,500 at any cap.
+- **A5 could**, but every company parked in generic A5 is one that can never be
+  personalized later, so its generic queue is capped too.
+
+So each angle now stops at however many days of sending its signal survives:
+A2 13, A4 40, A1 60, generic A5 15. **An angle at its ceiling leaves the company
+unassigned** rather than spilling it into generic copy, keeping it available
+tomorrow against a fresh signal. The first live run left 1,131 companies
+unassigned for exactly that reason.
+
+The awards scanner went from 1 run a day to 4 and the recompete scanner from 3
+to 6, because A1 and A4 are fed by scanners bounded by the 150s function budget
+per run, so runs per day is the only lever.
+
+**A5 was two things wearing one label**, which the first version of the ceiling
+got wrong: of 1,727 rows queued there, **1,308 are A2 holdouts** — the control
+arm — and only 419 are true generics. A2 sends 80/day and A5 sent 30, so the
+control arm was falling further behind the test arm every day. A starved control
+does not make the experiment smaller, it makes it unreadable. A5's cap went to
+60 and the ceiling now counts generics only.
+
+| End of day | Queued | Cap | Days |
+|---|---:|---:|---:|
+| A1 | 81 | 20 | 4.1 |
+| A2 | 1,040 (at ceiling) | 80 | 13.0 |
+| A4 | 159 | 35 | 4.5 |
+| A5 holdout | 1,308 | 60 | — |
+| A5 generic | 419 | | |
+
+### Copy: say what the company does
+
+The emails never said what GovHub does. They offered a "rundown", a "one pager",
+"the next three in your lane". The programme's first positive reply opened *"not
+sure what is this all about nor how you help"*, which is the clearest possible
+verdict on that.
+
+Every angle now carries one plain sentence: **we read the solicitation and find
+the things that would get your bid disqualified before anyone scores it, and we
+write the proposal itself.** A2 carries it in the server-rendered lines so both
+arms of the base/speed test say it, and the 268 rows already queued were
+repaired in place rather than going out with the old wording.
+
+**The opt-out line is gone from every email**, at the owner's instruction, along
+with the two guardrails that asserted it. A guardrail now fails if unsubscribe
+language reappears, since Instantly can be configured to append one. The postal
+address stays.
+
+### The opportunities job was never running out of memory
+
+It had been diagnosed wrong for a week, by me. `WORKER_RESOURCE_LIMIT` on half
+its runs read as "it runs out of memory holding the matches", and the plan of
+record was to flush in batches during the stream. **That would have fixed
+nothing.**
+
+Instrumenting it settled it: **heap peaks at 20 MB and does not move.** Two
+identical dry runs two minutes apart, one killed and one clean, both nowhere
+near a memory ceiling.
+
+What the limit tracks is bytes pulled through **one response**. Bisecting with
+the record cap, twice at each size:
+
+| Records | Result |
+|---:|---|
+| 20,000 | passed, twice |
+| 45,000 | passed, twice |
+| 60,000 | passed, twice |
+| 75,001 | passed, twice |
+| 82,605 (all) | **killed, every time** |
+
+Stopping early cancels the download, so the only thing separating a run that
+lives from one that dies is the last 9% of a 222 MB file.
+
+Fixed by reading the extract as sequential 48 MB byte ranges, each request
+closed before the next opens, with one `TextDecoder` spanning all of them so a
+character split across a range seam survives. **Eight consecutive full runs
+since: 82,605 records, ~3 seconds, 20 MB.**
+
+Separately, the CSV parser was **14.6x slower than it needed to be** — the inner
+loop called `indexOf` four times per field, each scanning to the end of the
+buffer, and a quote is rare enough that the scan for it walked the whole
+remaining buffer on every plain field. 11,433 records/sec before, 167,118 after.
+Not the cause, found while chasing the CPU theory that preceded the right one.
+
+**The lesson, again:** this job has now been misdiagnosed three times, and each
+time the wrong answer was plausible enough to act on. The instrumentation stays,
+writing its trace to the database as it goes, so a killed run still says where
+it died.
+
+### The schema is finally in the repository
+
+All seventeen outreach migrations had been applied straight to the project and
+never committed, so five edge functions were reading tables git had never seen.
+Committed as **one idempotent baseline** rather than the seventeen, because the
+merge workflow re-applies migration files and several of those were written to
+run once. Verified: built into an empty schema twice, diffed against production
+(70/70 columns, 18/18 indexes, 5/5 functions, 20/20 constraints, zero
+difference), then applied to production with a before/after fingerprint over
+every object — identical.
