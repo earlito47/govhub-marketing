@@ -1,0 +1,599 @@
+{
+  "pageType": "vendor",
+  "slug": "dcs",
+  "title": "Who Buys From DCS: $217M in FY2026",
+  "h1": "DCS: Federal Contracts, Agencies & Awards",
+  "metaDescription": "DCS won $217M in federal contract obligations in FY2026 to date. See its top agencies, markets, largest awards, and expiring contracts.",
+  "updated": "2026-09-30",
+  "fyWindow": {
+    "label": "FY2026 to date",
+    "start": "2025-10-01",
+    "end": "2026-09-30"
+  },
+  "stats": {
+    "totalObligations": 216818698.83,
+    "awardCount": 73,
+    "yoyGrowthPct": -43.2,
+    "avgAwardSize": 2970119,
+    "smallBusinessSharePct": null
+  },
+  "charts": [
+    {
+      "id": "dcs-trend",
+      "type": "line",
+      "title": "Obligations by fiscal year",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "FY21",
+              325703871.69
+            ],
+            [
+              "FY22",
+              313085747.52
+            ],
+            [
+              "FY23",
+              355420174.48
+            ],
+            [
+              "FY24",
+              337810048.59
+            ],
+            [
+              "FY25",
+              381611263.96
+            ],
+            [
+              "FY26",
+              216818698.83
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Obligations fell 43.2% year over year, from $382M in FY2025 to $217M in FY2026 to date."
+    },
+    {
+      "id": "dcs-top-agencies",
+      "type": "bar",
+      "title": "Top 10 buying agencies, FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "Department of Defense",
+              215927363.19
+            ],
+            [
+              "General Services Administration",
+              891335.64
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Department of Defense is DCS's largest federal customer, with $216M obligated (99.6% of the company's federal obligations)."
+    },
+    {
+      "id": "dcs-top-naics",
+      "type": "bar",
+      "title": "Top 10 markets (NAICS), FY2026 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "Engineering Services",
+              127931520.73
+            ],
+            [
+              "Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology)",
+              53028703.24
+            ],
+            [
+              "Research and Development in the Physical, Engineering, and Life Sciences (except Biotechnology)",
+              26390627.15
+            ],
+            [
+              "Custom Computer Programming Services",
+              9203575.71
+            ],
+            [
+              "Administrative Management and General Management Consulting Services",
+              264272
+            ],
+            [
+              "Aircraft Manufacturing",
+              0
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Engineering Services is DCS's largest federal market, with $128M in obligations."
+    }
+  ],
+  "crossLinks": [
+    {
+      "label": "Department of Defense contracts",
+      "href": "/insights/agency/department-of-defense/"
+    },
+    {
+      "label": "General Services Administration contracts",
+      "href": "/insights/agency/general-services-administration/"
+    },
+    {
+      "label": "NAICS 541330: Engineering Services",
+      "href": "/insights/naics/541330/"
+    },
+    {
+      "label": "NAICS 541715: Research and Development in the Physical, Engineering, and Life Sciences",
+      "href": "/insights/naics/541715/"
+    },
+    {
+      "label": "NAICS 541511: Custom Computer Programming Services",
+      "href": "/insights/naics/541511/"
+    },
+    {
+      "label": "NAICS 541611: Administrative Management and General Management Consulting Services",
+      "href": "/insights/naics/541611/"
+    }
+  ],
+  "tables": [
+    {
+      "title": "Largest awards, FY2026 to date",
+      "columns": [
+        "Rank",
+        "Award",
+        "Award Amount",
+        "Awarding Agency",
+        "Ends"
+      ],
+      "rows": [
+        [
+          1,
+          {
+            "text": "W56HZV17C0062",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W56HZV17C0062_9700_-NONE-_-NONE-/"
+          },
+          503438549.81,
+          "Department of Defense",
+          "2026-04-20"
+        ],
+        [
+          2,
+          {
+            "text": "W91CRB19F0249",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W91CRB19F0249_9700_W15P7T17D0145_9700/"
+          },
+          130872710.09,
+          "Department of Defense",
+          "2025-09-15"
+        ],
+        [
+          3,
+          {
+            "text": "W56HZV24F0027",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W56HZV24F0027_9700_W56HZV23D0017_9700/"
+          },
+          117752440.78,
+          "Department of Defense",
+          "2027-09-30"
+        ],
+        [
+          4,
+          {
+            "text": "FA862221F8339",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA862221F8339_9700_GS00Q14OADS708_4732/"
+          },
+          106017256.47,
+          "Department of Defense",
+          "2026-09-18"
+        ],
+        [
+          5,
+          {
+            "text": "0003",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_0003_9700_W56HZV15DRD03_9700/"
+          },
+          96889157.9,
+          "Department of Defense",
+          "2025-12-30"
+        ],
+        [
+          6,
+          {
+            "text": "FA862219F8137",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA862219F8137_9700_GS00Q14OADS708_4732/"
+          },
+          95925121.37,
+          "Department of Defense",
+          "2024-12-28"
+        ],
+        [
+          7,
+          {
+            "text": "W56HZV23F0339",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W56HZV23F0339_9700_47QRAD20DU136_4732/"
+          },
+          68789348.93,
+          "Department of Defense",
+          "2027-07-30"
+        ],
+        [
+          8,
+          {
+            "text": "FA248623FA003",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA248623FA003_9700_GS00Q14OADS708_4732/"
+          },
+          68632676.47,
+          "Department of Defense",
+          "2026-09-30"
+        ],
+        [
+          9,
+          {
+            "text": "W56HZV24F0025",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W56HZV24F0025_9700_W56HZV23D0017_9700/"
+          },
+          60268476.74,
+          "Department of Defense",
+          "2027-06-30"
+        ],
+        [
+          10,
+          {
+            "text": "W56HZV24F0024",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W56HZV24F0024_9700_W56HZV23D0017_9700/"
+          },
+          57226068.45,
+          "Department of Defense",
+          "2027-09-30"
+        ],
+        [
+          11,
+          {
+            "text": "FA704621F0005",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA704621F0005_9700_GS00Q14OADU321_4732/"
+          },
+          49835625.42,
+          "Department of Defense",
+          "2026-12-04"
+        ],
+        [
+          12,
+          {
+            "text": "W56HZV24F0028",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W56HZV24F0028_9700_W56HZV23D0017_9700/"
+          },
+          45405096.47,
+          "Department of Defense",
+          "2027-07-31"
+        ],
+        [
+          13,
+          {
+            "text": "N0042117C0043",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0042117C0043_9700_-NONE-_-NONE-/"
+          },
+          43175708.77,
+          "Department of Defense",
+          "2023-05-31"
+        ],
+        [
+          14,
+          {
+            "text": "FA862220F8240",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA862220F8240_9700_GS00Q14OADS708_4732/"
+          },
+          40937271.2,
+          "Department of Defense",
+          "2025-07-31"
+        ],
+        [
+          15,
+          {
+            "text": "W56HZV24F0051",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W56HZV24F0051_9700_W56HZV23D0017_9700/"
+          },
+          39607018.4,
+          "Department of Defense",
+          "2027-06-30"
+        ],
+        [
+          16,
+          {
+            "text": "FA865021F2603",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA865021F2603_9700_FA865021D2602_9700/"
+          },
+          32504093.13,
+          "Department of Defense",
+          "2028-05-14"
+        ],
+        [
+          17,
+          {
+            "text": "W56HZV24F0029",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W56HZV24F0029_9700_W56HZV23D0017_9700/"
+          },
+          32224862.85,
+          "Department of Defense",
+          "2027-07-31"
+        ],
+        [
+          18,
+          {
+            "text": "N0042123F3004",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0042123F3004_9700_N0017819D7484_9700/"
+          },
+          27611455.94,
+          "Department of Defense",
+          "2027-05-31"
+        ],
+        [
+          19,
+          {
+            "text": "0015",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_0015_9700_N6893611D0001_9700/"
+          },
+          26916576.71,
+          "Department of Defense",
+          "2018-03-31"
+        ],
+        [
+          20,
+          {
+            "text": "W91CRB25CA018",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W91CRB25CA018_9700_-NONE-_-NONE-/"
+          },
+          26248358.86,
+          "Department of Defense",
+          "2026-09-15"
+        ],
+        [
+          21,
+          {
+            "text": "FA865020F6226",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA865020F6226_9700_FA865020D6207_9700/"
+          },
+          24744743,
+          "Department of Defense",
+          "2028-02-22"
+        ],
+        [
+          22,
+          {
+            "text": "N0017324C2008",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0017324C2008_9700_-NONE-_-NONE-/"
+          },
+          19075642.27,
+          "Department of Defense",
+          "2027-04-14"
+        ],
+        [
+          23,
+          {
+            "text": "W912CH24CL069",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W912CH24CL069_9700_-NONE-_-NONE-/"
+          },
+          18762611.11,
+          "Department of Defense",
+          "2029-08-06"
+        ],
+        [
+          24,
+          {
+            "text": "FA865023F2600",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA865023F2600_9700_FA865021D2606_9700/"
+          },
+          18740992,
+          "Department of Defense",
+          "2027-05-03"
+        ],
+        [
+          25,
+          {
+            "text": "0016",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_0016_9700_N6893611D0001_9700/"
+          },
+          18480726.75,
+          "Department of Defense",
+          "2018-03-31"
+        ]
+      ]
+    },
+    {
+      "title": "Contracts expiring in the next 12 months",
+      "columns": [
+        "Award",
+        "Awarding Agency",
+        "Award Value",
+        "Ends"
+      ],
+      "rows": [
+        [
+          {
+            "text": "W56HZV22C0069",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W56HZV22C0069_9700_-NONE-_-NONE-/"
+          },
+          "Department of Defense",
+          127739694.74,
+          "2026-09-30"
+        ],
+        [
+          {
+            "text": "W56HZV24F0027",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W56HZV24F0027_9700_W56HZV23D0017_9700/"
+          },
+          "Department of Defense",
+          117752440.78,
+          "2027-09-30"
+        ],
+        [
+          {
+            "text": "W56HZV23F0339",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W56HZV23F0339_9700_47QRAD20DU136_4732/"
+          },
+          "Department of Defense",
+          68789348.93,
+          "2027-07-30"
+        ],
+        [
+          {
+            "text": "FA248623FA003",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA248623FA003_9700_GS00Q14OADS708_4732/"
+          },
+          "Department of Defense",
+          68632676.47,
+          "2026-09-30"
+        ],
+        [
+          {
+            "text": "W56HZV24F0025",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W56HZV24F0025_9700_W56HZV23D0017_9700/"
+          },
+          "Department of Defense",
+          60268476.74,
+          "2027-06-30"
+        ],
+        [
+          {
+            "text": "W56HZV24F0024",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W56HZV24F0024_9700_W56HZV23D0017_9700/"
+          },
+          "Department of Defense",
+          57226068.45,
+          "2027-09-30"
+        ],
+        [
+          {
+            "text": "FA704621F0005",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA704621F0005_9700_GS00Q14OADU321_4732/"
+          },
+          "Department of Defense",
+          49835625.42,
+          "2026-12-04"
+        ],
+        [
+          {
+            "text": "W56HZV24F0028",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W56HZV24F0028_9700_W56HZV23D0017_9700/"
+          },
+          "Department of Defense",
+          45405096.47,
+          "2027-07-31"
+        ],
+        [
+          {
+            "text": "W56HZV24F0051",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W56HZV24F0051_9700_W56HZV23D0017_9700/"
+          },
+          "Department of Defense",
+          39607018.4,
+          "2027-06-30"
+        ],
+        [
+          {
+            "text": "W56HZV24F0029",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W56HZV24F0029_9700_W56HZV23D0017_9700/"
+          },
+          "Department of Defense",
+          32224862.85,
+          "2027-07-31"
+        ]
+      ]
+    },
+    {
+      "title": "Registration details",
+      "columns": [
+        "Detail",
+        "Registration"
+      ],
+      "rows": [
+        [
+          "Unique Entity ID (UEI)",
+          "FJS8P9C6B368"
+        ],
+        [
+          "Headquarters",
+          "Alexandria, VA"
+        ],
+        [
+          "Business types",
+          "Category business; Corporate entity not tax exempt; Manufacturer of goods; Small business; Special designations; Us owned business"
+        ]
+      ]
+    }
+  ],
+  "narrative": {
+    "intro": "DCS has $217M in contract obligations in FY2026 to date. DCS secured 73 awards so far, with an average award size of $3M. Obligations are down 43.2% year over year. Yearly obligations show a peak of $382M in FY25 and a low of $217M in FY26 to date. The Department of Defense is the dominant buyer, obligating $216M. The General Services Administration obligated $891K. Engineering Services is the largest market for DCS at $128M, followed by Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology) at $53M and Research and Development in the Physical, Engineering, and Life Sciences (except Biotechnology) at $26.4M. Other FY2026 markets include Custom Computer Programming Services at $9.2M, Administrative Management and General Management Consulting Services at $264K, and Aircraft Manufacturing at $0. These figures are fiscal year to date and represent contract obligations unless otherwise noted.",
+    "sections": [
+      {
+        "heading": "How did DCS perform in FY2026 to date?",
+        "body": "Total obligations are $217M across 73 awards, with an average award size of $3M. Obligations fell 43.2% year over year. Fiscal-year history shows obligations ranged from $326M in FY21 to $382M in FY25, with $217M in FY26 to date. The Department of Defense is the primary source of obligations at $216M."
+      },
+      {
+        "heading": "Who buys from DCS and what does DCS sell?",
+        "body": "The Department of Defense and the General Services Administration are the top buying agencies, with $216M and $891K in obligations respectively. Engineering Services is the largest market at $128M. Research and development markets account for $53M and $26.4M respectively, and Custom Computer Programming Services accounts for $9.2M. Administrative Management and General Management Consulting Services account for $264K, and Aircraft Manufacturing accounts for $0."
+      }
+    ]
+  },
+  "faq": [
+    {
+      "q": "How much does DCS make from federal contracts?",
+      "a": "DCS has $217M in contract obligations in FY2026 to date. DCS received 73 awards so far, with an average award size of $3M, and obligations are down 43.2% year over year."
+    },
+    {
+      "q": "Which agencies buy from DCS?",
+      "a": "The Department of Defense and the General Services Administration buy from DCS. The Department of Defense obligated $216M and the General Services Administration obligated $891K in FY2026 to date."
+    },
+    {
+      "q": "What does DCS sell to the government?",
+      "a": "DCS sells engineering and research services to the government. Engineering Services accounts for $128M, Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology) accounts for $53M, Research and Development in the Physical, Engineering, and Life Sciences (except Biotechnology) accounts for $26.4M, Custom Computer Programming Services accounts for $9.2M, Administrative Management and General Management Consulting Services accounts for $264K, and Aircraft Manufacturing accounts for $0."
+    },
+    {
+      "q": "Which DCS contracts are expiring soon?",
+      "a": "No expiring-contract figures are listed. The provided figures cover obligations and award values but do not include an expiring-contracts table with dates or expiration values."
+    }
+  ],
+  "related": [
+    {
+      "label": "Expiring federal contracts: recompete watch",
+      "href": "/insights/expiring-federal-contracts/"
+    },
+    {
+      "label": "Reed Technology and Information Services federal contracts",
+      "href": "/insights/vendor/reed-technology-and-information-services/"
+    },
+    {
+      "label": "Softrams federal contracts",
+      "href": "/insights/vendor/softrams/"
+    },
+    {
+      "label": "Us Foods federal contracts",
+      "href": "/insights/vendor/us-foods/"
+    },
+    {
+      "label": "C J Mahan Construction federal contracts",
+      "href": "/insights/vendor/c-j-mahan-construction/"
+    },
+    {
+      "label": "Mistral federal contracts",
+      "href": "/insights/vendor/mistral/"
+    },
+    {
+      "label": "Forgen Odin federal contracts",
+      "href": "/insights/vendor/forgen-odin/"
+    }
+  ],
+  "sources": [
+    {
+      "label": "USAspending.gov award data",
+      "href": "https://www.usaspending.gov"
+    }
+  ]
+}
