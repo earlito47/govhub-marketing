@@ -355,6 +355,7 @@ decision gets its own note below the table.
 | 3 | 2026-09-25 | 155 | 175 | 0 | 2 | **1** |
 | 4 | 2026-09-28 | 211 | 386 | 2 | 6 | **2** |
 | 5 | 2026-09-29 | 310 | 485 | 5 | 6 | **2** |
+| 6 | 2026-09-30 | 495 | 727 | 8 | 7 | **2** |
 
 Per angle at end of day 2 — A1 14, A2 40, A4 20, A5 30. Every campaign hit its
 `daily_max_leads` exactly both days, so throughput is cap-bound, not
@@ -819,3 +820,110 @@ A2 expired unsent: 111, down from 115 — the retry path is recycling them.
 A2 arms: 62 base / 58 speed pushed. The control arm (A5 holdout) is at 51 pushed
 against A2's 120, still behind, which the cap change addresses from tomorrow.
 Nothing is readable at these counts and no comparison should be attempted.
+
+### Day 6 — 2026-09-30, the first day at 195/day
+
+**The bounce rate did not move.** 1.61% yesterday at 55 contacts a day, 1.62%
+today at 195. That was the one thing worth being nervous about and it held.
+
+| Angle | Contacted | Sent | Bounced | Bounce % | Human replies | Positive |
+|---|---:|---:|---:|---:|---:|---:|
+| A1 Recompete | 64 | 87 | 2 | 3.12% | 2 | 0 |
+| A2 Matched RFP | 190 | 325 | 3 | 1.58% | 2 | **1** |
+| A4 Competitor won | 91 | 121 | 1 | 1.10% | 1 | **1** |
+| A5 Generic | 150 | 194 | 2 | 1.33% | 2 | 0 |
+| **Total** | **495** | **727** | **8** | **1.62%** | **7** | **2** |
+
+All four caps filled exactly: A2 80, A5 60, A4 35, A1 20. Nothing waiting
+uncontacted in any campaign. A1's bounce rate came DOWN, 4.55% to 3.12%, as its
+denominator grew — which is what a two-event sample does and why it was not
+acted on.
+
+One new reply, a polite decline on A5: *"Thanks for the outreach, but we are not
+interested at this time."* Human, counted, not positive.
+
+The new copy is live and reads as intended. An actual A2 send from today:
+
+> Hi Chase, DoD posted FA469026Q0027 and on paper Arctic Plumbing And Heating,
+> LLC clears the bar on NAICS 238220. It closes Oct 9. **We read solicitations
+> for the things that get small firm bids disqualified before anyone scores
+> them, then write the proposal itself.** There are a couple of those in this
+> one. Want the list of what would disqualify you on this one?
+
+### Day 6 — push was ordering by arrival instead of by deadline
+
+A2 assignments dropped unsent went from 111 to **245**, 134 of them in one day.
+
+Two questions mattered: were they genuinely dead, and was the ceiling wrong.
+Neither. **All 245 were still open**, closing between 1 and 8 days out, and none
+was dropped for being too far out. They were created between 09-22 and 09-28,
+which is the backlog built while A2 sent 20 a day — so most of that number is a
+one-time cost of the old rate, exactly as predicted when the ceilings went in.
+
+But it exposed a real defect underneath. Push fetched candidates ordered by
+`created_at`, with a comment explaining that "the oldest assignment is the one
+whose signal is closest to expiring." That is a proxy for urgency, and the wrong
+one: a row created today against a solicitation closing in 9 days is more urgent
+than one created three days ago against a solicitation closing in 22. **Expiry
+was a function of queue position rather than of the deadline.**
+
+Now sorted by the signal's own deadline, soonest first. A dry run after the
+change filled all four caps and dropped 21 instead of 134. That is not yet a
+clean before-and-after — today's remaining queue is almost entirely one close
+date, so ordering had little to chew on — and tomorrow's drop count is the real
+test.
+
+**A dry run was also never dry.** Previewing the change wrote 21 `dropped_stale`
+rows and expired their signals, because the staleness and failure updates ran
+regardless of the flag. The rows were genuinely unsendable so nothing was lost,
+but the entire reason `dry_run` exists in this job is that it sends real mail to
+real people. All three update sites are gated now.
+
+### Day 6 — the opportunities primary, three days running
+
+03:00 failed, 03:25 succeeded. Third consecutive day, and now on the byte-range
+code that ran eight consecutive clean full passes when tested. So the failure
+mode that was measured is fixed and a different one is left.
+
+It behaves like the other thing this 546 means: **a cold worker refused at
+boot**. The 03:00 call is the first invocation after nine idle hours; every
+warm call succeeds. The reported durations are useless for confirming this —
+`settled_at` is when the harvester noticed, so they read as exactly 600s or
+300s, the polling interval.
+
+Two changes to settle it rather than argue it:
+
+- The trace now keeps the **last five runs** instead of one. It kept one, so the
+  03:25 success overwrote the only evidence of the 03:00 failure. It also writes
+  a `boot` row before any work, which makes the *absence* of rows a reading: a
+  failed run with no trace never executed.
+- A cheap warmup call at 02:58 (a request with no `?job=`, which returns the
+  usage error without touching SAM or the database) boots the worker two minutes
+  ahead. If the primary stops failing, cold start was the cause.
+
+Retry moved 03:25 to 03:08, because the job takes three seconds now, not
+minutes.
+
+### Day 6 — inventory and the experiment
+
+| Angle | Queued | Supply | Cap | Days |
+|---|---:|---:|---:|---:|
+| A1 | 101 | 125 | 20 | 11.3 |
+| A2 | 815 | 4,108 | 80 | 10.2 |
+| A4 | 172 | 301 | 35 | 13.5 |
+| A5 holdout | 1,277 | — | 60 | — |
+| A5 generic | 401 | — | | |
+
+A1 supply went 28 to 125 and A4 216 to 301 — the widened scanners working. A1
+was at 4.1 days yesterday and is at 11.3 today.
+
+A2 arms: **105 base / 85 speed** pushed. Against a fair coin over 190 that gap
+is noise.
+
+**The control arm is still behind and that now sets the timetable.** The holdout
+lives in A5 and has 82 pushed against A2's 190 contacted. A5's cap of 60 is
+shared with generics, so holdouts accrue at roughly 35 a day against A2's 80,
+and A5 is already at its mailbox ceiling (12 boxes x 20 = 240 = 60 x 4). The
+test arm reaches the ~440 it needs in about three days; the control needs about
+ten. **The experiment finishes when the slower arm does, so nothing should be
+read from it before roughly 10 October.**
