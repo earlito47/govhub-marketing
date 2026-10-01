@@ -356,6 +356,7 @@ decision gets its own note below the table.
 | 4 | 2026-09-28 | 211 | 386 | 2 | 6 | **2** |
 | 5 | 2026-09-29 | 310 | 485 | 5 | 6 | **2** |
 | 6 | 2026-09-30 | 495 | 727 | 8 | 7 | **2** |
+| 7 | 2026-10-01 | 725 | 980 | 9 | 11 | **4** |
 
 Per angle at end of day 2 — A1 14, A2 40, A4 20, A5 30. Every campaign hit its
 `daily_max_leads` exactly both days, so throughput is cap-bound, not
@@ -927,3 +928,113 @@ and A5 is already at its mailbox ceiling (12 boxes x 20 = 240 = 60 x 4). The
 test arm reaches the ~440 it needs in about three days; the control needs about
 ten. **The experiment finishes when the slower arm does, so nothing should be
 read from it before roughly 10 October.**
+
+### Day 7 — 2026-10-01, two more positives and the bounce rate falling
+
+| Angle | Contacted | Sent | Bounced | Bounce % | Human replies | Positive |
+|---|---:|---:|---:|---:|---:|---:|
+| A1 Recompete | 85 | 114 | 2 | 2.35% | 4 | **1** |
+| A2 Matched RFP | 285 | 441 | 3 | 1.05% | 4 | **2** |
+| A4 Competitor won | 130 | 157 | 2 | 1.54% | 2 | **1** |
+| A5 Generic | 225 | 268 | 2 | 0.89% | 1 | 0 |
+| **Total** | **725** | **980** | **9** | **1.24%** | **11** | **4** |
+
+**Bounce rate is falling as volume rises**: 1.61% at 55/day, 1.62% at 195/day,
+**1.24%** today. A1 came down again, 4.55% to 3.12% to 2.35%.
+
+**Two new positives, both on copy that says what we do.** Day one of the plain
+English version reaching inboxes at scale:
+
+> **"Yes, please"**
+> — George, 310 Buncombe LLC, South Carolina, on USDA 57-6395-25-006 (A2)
+
+> **"Sure"**
+> — Dave Henderson, President, The Stronghold Group LLC, Pennsylvania (A1)
+
+That is the first unambiguous yes the programme has had, and the first positive
+on A1. Four positives now, on 725 contacted. Two replies is still two replies
+and the copy change is not proven by them, but both arrived on the first day the
+new wording was out at volume.
+
+**Both predictions from yesterday held.** The 03:00 opportunities primary
+succeeded for the first time in four days, with no retry needed — so the
+02:58 warmup call settles it: the residual failure was a cold worker refused at
+boot, not a resource ceiling. And the A1 and A4 scanners kept supply ahead of
+their caps.
+
+### Day 7 — A2 was queueing hundreds of rows against a single close date
+
+A2 rows dropped unsent went 245 to **682**. Yesterday's reading was that push
+sent them in the wrong ORDER. That was true, and it was not the cause.
+
+| Closes | Days out | Ready | Dropped | Pushed | Sendable before it closes |
+|---|---:|---:|---:|---:|---:|
+| 2026-10-02 | 1 | 0 | 63 | 27 | 0 |
+| 2026-10-05 | 4 | 0 | 60 | 15 | 0 |
+| 2026-10-08 | 7 | 0 | 64 | 17 | 0 |
+| **2026-10-09** | **8** | 9 | **433** | 25 | **0** |
+| 2026-10-12 | 11 | 115 | 0 | 97 | 240 |
+| 2026-10-13 | 12 | 143 | 0 | 16 | 320 |
+
+**467 A2 rows closed on the same day.** At 80 a day with the 8-day floor the
+sequence needs, at most 80 could ever be sent before 10-09. The other 433 were
+arithmetic the moment they were assigned, and they died together the morning the
+date crossed the floor. No send order rescues 467 rows sharing one deadline.
+
+The flat 13-day ceiling assumed close dates spread evenly over those 13 days.
+They do not: the opportunities job takes the **closest-deadline** solicitation
+per company, and federal notices cluster on a handful of dates, so the queue
+arrives in lumps.
+
+Admission is now budgeted **per date**: for a solicitation closing on C the
+sending days available are (C − today − 8), every queued row closing on or
+before C competes for them, and a row is admitted only while that cumulative
+count is under the budget. A preview over 1,200 companies refuses **863** on
+this rule and admits 116 — still above the 80 a day A2 sends. Refused companies
+are left unassigned and keep their turn.
+
+One consolation: `dropped_stale` is retryable, so those 682 companies return to
+the pool rather than being burned. The cost was wasted renders and a queue that
+looked deeper than it was.
+
+### Day 7 — three things reading the replies turned up
+
+Counts would have shown none of these.
+
+**A "Stop" from a named person, on A4.** The programme carries no opt-out line
+by the owner's decision, which makes honouring the requests that arrive anyway
+more important rather than less. Suppressed at the person level, which is the
+standing rule here.
+
+**The person-name fix never reached `{{companyName}}`.** Brenda Unrein was asked
+what would get "Brenda Unrein's" recompete bid tossed, and answered "No, thank
+you". The fix two days ago reached A2's `fit_line` because that is the only copy
+`job_assign` renders; A1's first email uses Instantly's own `{{companyName}}`
+built-in, filled from the lead `job_push` creates, which nothing in assign could
+touch. A token census found it — and the earlier census had missed it, because
+it grepped for lowercase `{{snake_case}}` and so skipped every camelCase
+built-in. Now fixed on the lead payload, which covers every template use at
+once. 277 of 9,091 live rows are in this shape.
+
+**An address-change notice counted as a human reply.** *"My email account will
+now be ... please update your files accordingly"* — written by a person once,
+now sent by a machine to everyone. Exactly the Lexset shape from a week ago.
+Three patterns added; the classifier test now carries twelve real replies,
+including both of today's positives and the one-word "Stop", none of which may
+be reclassified as machine. Today's count was corrected: 11 human, not 12.
+
+### Day 7 — inventory
+
+| Angle | Queued | Supply | Cap | Days |
+|---|---:|---:|---:|---:|
+| A1 | 141 | 43 | 20 | 7.1 |
+| A2 | 529 | 3,588 | 80 | 6.6 |
+| A4 | 188 | 296 | 35 | 5.4 |
+| A5 holdout | 1,507 | — | 60 | — |
+| A5 generic | 400 | — | | |
+
+The A2 queue is within its per-date budget on every date for the first time,
+which is what the new rule is for. Arms: the control arm now has 1,507 queued
+against A2's 529, so the holdout is no longer the starved side of the
+experiment — but it is still the slower one to *send*, and nothing should be
+read from base-vs-generic before about 10 October.
