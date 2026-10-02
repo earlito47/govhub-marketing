@@ -357,6 +357,7 @@ decision gets its own note below the table.
 | 5 | 2026-09-29 | 310 | 485 | 5 | 6 | **2** |
 | 6 | 2026-09-30 | 495 | 727 | 8 | 7 | **2** |
 | 7 | 2026-10-01 | 725 | 980 | 9 | 11 | **4** |
+| 8 | 2026-10-02 | 896 | 1,351 | 12 | 15 | **5** |
 
 Per angle at end of day 2 — A1 14, A2 40, A4 20, A5 30. Every campaign hit its
 `daily_max_leads` exactly both days, so throughput is cap-bound, not
@@ -1038,3 +1039,88 @@ which is what the new rule is for. Arms: the control arm now has 1,507 queued
 against A2's 529, so the holdout is no longer the starved side of the
 experiment — but it is still the slower one to *send*, and nothing should be
 read from base-vs-generic before about 10 October.
+
+### Day 8 — 2026-10-02, the date budget held
+
+| Angle | Contacted | Sent | Bounced | Bounce % | Human replies | Positive |
+|---|---:|---:|---:|---:|---:|---:|
+| A1 Recompete | 98 | 148 | 3 | 3.06% | 4 | 1 |
+| A2 Matched RFP | 331 | 570 | 4 | 1.21% | 6 | 2 |
+| A4 Competitor won | 168 | 231 | 2 | 1.19% | 2 | 1 |
+| A5 Generic | 299 | 402 | 3 | 1.00% | 3 | **1** |
+| **Total** | **896** | **1,351** | **12** | **1.34%** | **15** | **5** |
+
+**Zero new A2 drops.** The per-date budget did what it was built for. Every
+close date is now inside its sending budget:
+
+| Closes | Days out | Ready | Sendable before it closes |
+|---|---:|---:|---:|
+| 2026-10-12 | 10 | 52 | 160 |
+| 2026-10-13 | 11 | 143 | 240 (cumulative 195) |
+| 2026-10-14 | 12 | 94 | 320 (cumulative 289) |
+| 2026-10-15 | 13 | 69 | 400 (cumulative 358) |
+| 2026-10-16 | 14 | 65 | 480 (cumulative 423) |
+
+And push's own staleness count tracks it: **134 dropped on 09-30, 21 on 10-01,
+3 today**. The expired total went DOWN, 682 to 671, as retried companies were
+re-assigned against fresh solicitations.
+
+The dry run used to check this was also confirmed read-only — the expired count
+was identical before and after, which is what yesterday's fix was for.
+
+### Day 8 — the fifth positive is on the control arm
+
+> **"Yes, please send."**
+> — Anthony, Williams Roofing & Construction Inc, Florida
+
+That is **A5, and specifically a holdout**: an A2-eligible company that lost the
+coin flip and got the generic debrief email instead of its own matched
+solicitation. It said yes anyway.
+
+That is worth more than another A2 positive would have been, because it is the
+first evidence bearing on the question the holdout exists to answer. The three
+cells as they stand:
+
+| Cell | Contacted | Human replies | Positive | Contacts to 440 |
+|---|---:|---:|---:|---:|
+| A2 personalized (test) | 347 | 4 | 2 | 93 |
+| A5 holdout (control, same population) | 150 | 2 | 1 | 290 |
+| A5 generic (no signal population) | 120 | 1 | 0 | 320 |
+
+0.58% positive on the test arm against 0.67% on the control. **That is three
+replies in total and means nothing**, but it is a useful corrective: nothing in
+the data so far says personalization is winning, and the programme should not
+assume it will.
+
+Seven out-of-office autoresponders arrived (Friday afternoon), every one
+correctly classified as machine — the classifier work holding up under the first
+real volume of them. One human decline on A2: *"We have our internal team that
+does this."*
+
+### Day 8 — the control arm now gets A5's whole budget
+
+A5's 60 a day was split between the holdout and true generics, so the control
+accrued at roughly 30 against the test arm's 80: A2 was 93 contacts from a
+readable sample and its own control was 290 away. An experiment finishes when
+its slower arm does, so that gap was the schedule.
+
+Generics are the least valuable sends here — no signal, no deadline, nothing
+expiring if they wait — so they now yield. A dry run after the change gives all
+60 A5 slots to holdouts and none to generics, which puts the control about five
+days from readable rather than ten. The generic queue is capped at 900 anyway
+and nothing under it can go stale.
+
+### Day 8 — inventory
+
+| Angle | Queued | Supply | Cap | Days |
+|---|---:|---:|---:|---:|
+| A1 | 152 | 108 | 20 | 7.6 |
+| A2 | 485 | 3,540 | 80 | 6.1 |
+| A4 | 209 | 317 | 35 | 6.0 |
+| A5 holdout | 1,511 | — | 60 | — |
+| A5 generic | 424 | — | | |
+
+A2's queue is deliberately shallower now — the date budget refuses what cannot
+be sent in time, so 6.1 days of queue is 6.1 days of *sendable* queue rather
+than a number inflated by rows that were going to die. Bounce rate 1.34%,
+eighth day under the gate.
