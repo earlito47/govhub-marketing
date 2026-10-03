@@ -212,13 +212,18 @@ const A2 = {
   // unassigned live-RFP signal on any given day, refreshed nightly. It also has
   // the best reply evidence, so it gets the largest share of the mailboxes.
   daily_max_leads: 80,
-  required: ['sol_number', 'sol_agency_short', 'sol_close_date', 'naics_code', 'fit_line', 'check_line', 'cta_line', 'followup_line'],
+  required: ['sol_line', 'sol_short', 'sol_agency_short', 'sol_close_date', 'naics_code', 'fit_line', 'check_line', 'cta_line', 'followup_line'],
   // naics_code is required by the runbook and is genuinely load-bearing, but it
   // never appears as a token in these bodies: it is interpolated INTO fit_line
   // by the push job before Instantly ever sees it. It is listed here so the
   // completeness gate still demands it and the "unused variable" check does not
   // read its absence from the template as a spec error.
-  renderInputs: ['naics_code'],
+  renderInputs: ['naics_code', 'sol_number'],
+  // sol_number is still gated and still load-bearing, but it no longer appears
+  // as a token: job_assign folds it into sol_line and sol_short. See
+  // solHeadline in _shared/outreach.ts for why the TITLE cannot be used raw --
+  // a quarter of them are catalogue codes in block capitals and read worse
+  // than the number they would replace.
   subjects: ['{{sol_agency_short}}', 'saw this'],
   // THE ASK IS A TOKEN, NOT A LITERAL, and that is what makes the base-vs-speed
   // A/B possible inside one campaign. job_assign renders cta_line and
@@ -234,11 +239,11 @@ const A2 = {
     {
       delay: 2,
       lines: [
-        'Hi {{firstName}}, {{sol_agency_short}} posted {{sol_number}} and {{fit_line}}. It closes {{sol_close_date}}. {{check_line}}. {{cta_line}}',
+        'Hi {{firstName}}, {{sol_agency_short}} posted {{sol_line}} and {{fit_line}}. It closes {{sol_close_date}}. {{check_line}}. {{cta_line}}',
       ],
     },
-    { delay: 2, lines: ['{{firstName}}, {{sol_number}} closes {{sol_close_date}}. {{followup_line}}'] },
-    { delay: 4, lines: ['Should I record a 3 minute video on {{sol_number}} instead?'] },
+    { delay: 2, lines: ['{{firstName}}, {{sol_short}} closes {{sol_close_date}}. {{followup_line}}'] },
+    { delay: 4, lines: ['Should I record a 3 minute video on {{sol_short}} instead?'] },
     { delay: 0, lines: ['Want me to close this out, {{firstName}}?'] },
   ],
 };
