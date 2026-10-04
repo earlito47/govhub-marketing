@@ -1,0 +1,145 @@
+# Reply desk: answer positive Instantly replies with what the email promised.
+#
+# Every 30 minutes on weekdays: read new replies, build the promised
+# deliverable for each yes (disqualifier list, recompete rundown, next open
+# solicitations, debrief one-pager, partner terms), draft Earl's reply, and
+# email him the drafts. NOTHING IS SENT TO A PROSPECT unless either
+#   - Earl runs this workflow by hand with the id(s) in "send_ids", or
+#   - a playbook is marked autoSend in a reviewed commit AND the repo variable
+#     REPLY_DESK_AUTOSEND is "true".
+# See scripts/outreach/reply-desk.mjs and docs/reply-desk.md.
+#
+# SHIPS DISABLED. Until the repo variable REPLY_DESK_ENABLED is "true", the
+# scheduled run only runs the self-test. Same gate pattern as vendor-outreach.
+#
+# Setup (one-time, by a maintainer):
+#   Secrets:   INSTANTLY_API_KEY  (emails:read, emails:write, leads:read)
+#              OPENAI_API_KEY
+#              RESEND_API_KEY     (already present for vendor-outreach)
+#   Variables: REPLY_DESK_ENABLED  "true" to draft + notify on schedule
+#              REPLY_DESK_AUTOSEND "true" to let autoSend playbooks send
+#              REPLY_DESK_BCC      optional, BCC on every send
+#              REPLY_DESK_NOTIFY_TO optional, defaults to the digest recipients
+#
+# Drafts contain prospect replies, so they never touch git. They live in the
+# Actions cache (.cache/reply-desk), restored at the start of each run and
+# saved at the end, which is what lets a hand-run "send" find the draft the
+# scheduled run wrote. Only data/reply-desk.json (ids and statuses) is
+# committed.
+
+name: reply-desk
+
+on:
+  schedule:
+    - cron: "*/30 12-22 * * 1-5" # weekdays, ~8am-6pm Eastern
+  workflow_dispatch:
+    inputs:
+      send_ids:
+        description: "Approve and send these draft ids (space-separated). Leave empty to just scan."
+        required: false
+        default: ""
+      send_now:
+        description: "Send even outside 8:40-17:20 ET"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: reply-desk
+  cancel-in-progress: false
+
+jobs:
+  desk:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Set up Node
+        uses: actions/setup-node@v5
+        with:
+          node-version: 20
+
+      # No npm ci: the reply desk is stdlib-only. pdftotext reads solicitation PDFs.
+      - name: Install pdftotext
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq poppler-utils
+
+      - name: Self-test (lint, classifier rules, routing, timing)
+        run: node scripts/outreach/reply-desk.selftest.mjs
+
+      - name: Restore the draft queue
+        if: vars.REPLY_DESK_ENABLED == 'true' || github.event_name == 'workflow_dispatch'
+        uses: actions/cache/restore@v4
+        with:
+          path: .cache/reply-desk
+          key: reply-desk-${{ github.run_id }}
+          restore-keys: reply-desk-
+
+      # A hand run with ids is an approval: send those, as written, before
+      # anything else touches the queue.
+      - name: Send approved drafts
+        if: github.event_name == 'workflow_dispatch' && inputs.send_ids != ''
+        # Through env, never interpolated into the script, and each id must be
+        # an Instantly email uuid before it reaches the command line.
+        run: |
+          ids=()
+          for id in $SEND_IDS; do
+            [[ "$id" =~ ^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$ ]] || { echo "::error::not an email id: $id"; exit 1; }
+            ids+=("$id")
+          done
+          extra=()
+          [ "$SEND_NOW" = "true" ] && extra+=(--now)
+          node scripts/outreach/reply-desk.mjs send "${ids[@]}" "${extra[@]}"
+        env:
+          SEND_IDS: ${{ inputs.send_ids }}
+          SEND_NOW: ${{ inputs.send_now }}
+          INSTANTLY_API_KEY: ${{ secrets.INSTANTLY_API_KEY }}
+          REPLY_DESK_BCC: ${{ vars.REPLY_DESK_BCC }}
+
+      - name: Scan, draft, and auto-send trusted playbooks
+        if: vars.REPLY_DESK_ENABLED == 'true' && (github.event_name == 'schedule' || inputs.send_ids == '')
+        run: node scripts/outreach/reply-desk.mjs auto
+        env:
+          INSTANTLY_API_KEY: ${{ secrets.INSTANTLY_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          REPLY_DESK_AUTOSEND: ${{ vars.REPLY_DESK_AUTOSEND }}
+          REPLY_DESK_BCC: ${{ vars.REPLY_DESK_BCC }}
+
+      - name: Email Earl the new drafts
+        if: vars.REPLY_DESK_ENABLED == 'true'
+        run: node scripts/outreach/reply-desk.mjs notify
+        env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          REPLY_DESK_NOTIFY_TO: ${{ vars.REPLY_DESK_NOTIFY_TO }}
+          DIGEST_TO: ${{ vars.DIGEST_TO }}
+
+      - name: Save the draft queue
+        if: always() && (vars.REPLY_DESK_ENABLED == 'true' || github.event_name == 'workflow_dispatch')
+        uses: actions/cache/save@v4
+        with:
+          path: .cache/reply-desk
+          key: reply-desk-${{ github.run_id }}
+
+      # The ledger is the send record: committing it is what stops the next
+      # run from drafting, or sending, the same reply twice. always(), for the
+      # same reason as vendor-outreach: a send that fails partway has still
+      # mailed the people ahead of it.
+      - name: Commit ledger
+        if: always() && (vars.REPLY_DESK_ENABLED == 'true' || github.event_name == 'workflow_dispatch')
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          [ -f data/reply-desk.json ] || { echo "No ledger yet."; exit 0; }
+          git add data/reply-desk.json
+          if git diff --cached --quiet; then
+            echo "Ledger unchanged."
+            exit 0
+          fi
+          git commit -m "reply desk: ledger update $(date -u +%FT%H:%MZ) [skip ci]"
+          PUSH_ATTEMPTS=6 scripts/ci/git-push-retry.sh || {
+            echo "::error::The reply desk ledger was not pushed. Sends from this run are NOT recorded; do not re-run until it is committed by hand."
+            exit 1
+          }
