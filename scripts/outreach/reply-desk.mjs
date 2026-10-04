@@ -104,6 +104,13 @@ const textPath = (id) => join(QUEUE, `${id}.txt`);
 const loadMeta = (id) => JSON.parse(readFileSync(metaPath(id), 'utf8'));
 const saveMeta = (m) => { mkdirSync(QUEUE, { recursive: true }); writeFileSync(metaPath(m.id), JSON.stringify(m, null, 2) + '\n'); };
 
+// Draft files are named by Instantly email id (a uuid). Anything else in the
+// directory (REVIEW.md, a hand-run ledger pointed here by REPLY_DESK_LEDGER)
+// is not a draft and must never be read as one.
+const DRAFT_FILE = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\.json$/;
+const draftIds = () => (existsSync(QUEUE) ? readdirSync(QUEUE).filter((f) => DRAFT_FILE.test(f)).map((f) => f.slice(0, -5)) : []);
+const queueMetas = () => draftIds().map(loadMeta);
+
 // ---- Timing ---------------------------------------------------------------
 // A reply that lands ninety seconds after "Yes, please" at 11pm reads as a
 // bot. Earl's real cadence: within a couple of hours, during the working day.
@@ -364,7 +371,7 @@ function redirectIn(text, leadEmail) {
 
 function writeReview() {
   if (!existsSync(QUEUE)) return;
-  const metas = readdirSync(QUEUE).filter((f) => f.endsWith('.json')).map((f) => JSON.parse(readFileSync(join(QUEUE, f), 'utf8')));
+  const metas = queueMetas();
   const waiting = metas.filter((m) => !['sent', 'dismissed', 'answered'].includes(ledger.emails[m.id]?.status || m.status));
   const order = { drafted: 0, needs_input: 1, needs_content: 2, needs_human: 3, referral: 4 };
   waiting.sort((a, b) => (order[a.status] ?? 9) - (order[b.status] ?? 9) || String(a.received_at).localeCompare(String(b.received_at)));
@@ -472,8 +479,7 @@ async function send(ids, { auto = false } = {}) {
 
 async function notify() {
   if (!existsSync(QUEUE)) { console.log('queue empty.'); return 0; }
-  const fresh = readdirSync(QUEUE).filter((f) => f.endsWith('.json'))
-    .map((f) => JSON.parse(readFileSync(join(QUEUE, f), 'utf8')))
+  const fresh = queueMetas()
     .filter((m) => ['drafted', 'needs_input', 'needs_content', 'needs_human', 'referral'].includes(ledger.emails[m.id]?.status))
     .filter((m) => !ledger.emails[m.id]?.notified_at);
   if (!fresh.length) { console.log('nothing new to notify.'); return 0; }
@@ -522,7 +528,7 @@ async function notify() {
 // ---- show / status / auto -------------------------------------------------------
 
 function show(ids) {
-  const list = ids.length ? ids : readdirSync(QUEUE).filter((f) => f.endsWith('.txt')).map((f) => f.slice(0, -4));
+  const list = ids.length ? ids : draftIds().filter((id) => existsSync(textPath(id)));
   for (const id of list) {
     const m = loadMeta(id);
     console.log(`\n=== ${id}  ${m.status}  ${m.campaign}  ${m.lead} (${m.company})`);
@@ -563,8 +569,7 @@ async function auto() {
     console.log('REPLY_DESK_AUTOSEND is not "true": drafted only, nothing sent.');
     return 0;
   }
-  const eligible = readdirSync(QUEUE).filter((f) => f.endsWith('.json') && f !== 'REVIEW.md')
-    .map((f) => JSON.parse(readFileSync(join(QUEUE, f), 'utf8')))
+  const eligible = queueMetas()
     .filter((m) => m.status === 'drafted' && m.campaign && PLAYBOOKS[m.campaign]?.autoSend && ledger.emails[m.id]?.status === 'drafted')
     .map((m) => m.id);
   if (!eligible.length) { console.log('nothing eligible for auto-send.'); return 0; }

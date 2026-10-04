@@ -256,11 +256,11 @@ export async function recompeteRundown({ companyName, agencyShort, endMonth }) {
       (!agencyShort || agencyMatches(a.agency, agencyShort));
   });
   // The contracts a real recompete could be about: still running, ending within
-  // two years, biggest first.
+  // two years, services before products, biggest first.
   const live = awards
     .filter((a) => Date.parse(a.end) > now && Date.parse(a.end) < now + 730 * 86400000)
-    .sort((a, b) => (b.amount || 0) - (a.amount || 0));
-  const focus = [...new Map([...claimed.slice(0, 2), ...live.slice(0, 3)].map((a) => [a.piid, a])).values()];
+    .sort((a, b) => isService(b) - isService(a) || (b.amount || 0) - (a.amount || 0));
+  const focus = [...new Map([...claimed.slice(0, 2), ...live.slice(0, 4)].map((a) => [a.piid, a])).values()];
   // Detail is best-effort: an award a few days old is in the search index but
   // 404s on the detail endpoint (seen live: a Sept 30 HHS award, Oct 4).
   const details = [];
@@ -269,6 +269,31 @@ export async function recompeteRundown({ companyName, agencyShort, endMonth }) {
     try { extra = await awardDetail(a.internalId); } catch { extra = { detailUnavailable: true }; }
     details.push({ ...a, ...extra });
   }
+
+  // WHICH CONTRACT THE RUNDOWN IS ABOUT is decided here, not by the model. Left
+  // to the model, the same inputs produced a rundown that corrected the cold
+  // email ("that December order is a supply delivery order") and then planned
+  // the whole recompete around that same order. A delivery order under a parent
+  // vehicle, or a product buy, is not recompeted; a standalone services
+  // contract is. Of those, the one ending soonest is the one to plan for.
+  const claimedDetail = details.find((d) => claimed.some((c) => c.piid === d.piid)) || null;
+  const claimHolds = Boolean(claimedDetail && recompetable(claimedDetail));
+  // The conversation is about the agency the email named, so a contract with
+  // that agency wins over a sooner one elsewhere (left alone, the rule chose
+  // an SEC insurance policy for a reply about a VA recompete).
+  const sameAgency = (d) => (agencyShort && agencyMatches(d.agency, agencyShort) ? 1 : 0);
+  const chosen = claimHolds
+    ? claimedDetail
+    : details.filter(recompetable)
+      .sort((a, b) => sameAgency(b) - sameAgency(a) || Date.parse(a.currentEnd || a.end) - Date.parse(b.currentEnd || b.end))[0] || null;
+  const claimNote = !claimedDetail
+    ? `No ${agencyShort || ''} award ending in ${endMonth || '?'} was found, so the cold email's date cannot be matched. Say so plainly in claim_check.`
+    : claimHolds
+      ? 'The claimed contract is a standalone services contract; the claim holds. claim_check must be "".'
+      : `The claimed contract ${claimedDetail.piid} is ${claimedDetail.parentIdv ? `a delivery order under parent vehicle ${claimedDetail.parentIdv}` : 'a product buy'}${isService(claimedDetail) ? '' : ' for supplies'}, which is not recompeted the way a services contract is. claim_check must say so.`;
+  const focusNote = chosen
+    ? `THE CONTRACT TO PLAN AROUND (decided; focus and every item must be about this one, not any other): ${chosen.piid}, ${chosen.description}, ${chosen.awardingOffice || chosen.agency}, ends ${chosen.currentEnd || chosen.end}${chosen.potentialEnd ? ` (potential ${String(chosen.potentialEnd).slice(0, 10)})` : ''}, set-aside: ${chosen.setAside || 'unknown'}, procedure: ${chosen.solicitationProcedures || 'unknown'}, offers: ${chosen.offersReceived || 'unknown'}, NAICS ${chosen.naics || 'unknown'}.`
+    : 'No standalone services contract ends in the next two years. Say plainly that nothing on their record is up for recompete soon, and make the items about what gets a bid on their kind of work tossed in general, grounded in their award history.';
 
   const followOn = [];
   for (const d of details.slice(0, 2)) {
@@ -291,6 +316,9 @@ ${VOICE}`,
     user: `COMPANY: ${companyName}
 COLD EMAIL CLAIM: ${agencyShort || '?'} contract ending ${endMonth || '?'}
 TODAY: ${new Date().toISOString().slice(0, 10)}
+
+CLAIM CHECK (decided): ${claimNote}
+${focusNote}
 
 AWARDS MATCHING THE CLAIM:
 ${claimed.map(fmtAward).join('\n') || '(none)'}
@@ -411,6 +439,18 @@ function summary(d) {
 
 function fmtAward(a) {
   return `${a.piid} | ${a.agency}${a.subAgency && a.subAgency !== a.agency ? ` / ${a.subAgency}` : ''} | ends ${a.end} | $${Math.round(a.amount || 0).toLocaleString()} | ${a.description}`;
+}
+
+// PSC codes starting with a letter are services (R706 logistics support);
+// all-digit codes are products (6515 medical supplies).
+export function isService(a) { return /^[A-Z]/i.test(String(a.psc || '').trim()); }
+// Recompeted the normal way: a services contract that is not an order placed
+// under someone's schedule or IDIQ. The parent also lives in the USASpending
+// id (CONT_AWD_<piid>_<agency>_<parent piid or -NONE->_<agency>), which is all
+// there is when the detail endpoint 404s on a brand-new award.
+export function recompetable(d) {
+  const parent = d.parentIdv || String(d.internalId || '').split('_')[4]?.replace('-NONE-', '') || '';
+  return isService(d) && !parent && !/delivery order|task order|bpa call/i.test(d.type || '');
 }
 
 const AGENCY_ALIASES = {

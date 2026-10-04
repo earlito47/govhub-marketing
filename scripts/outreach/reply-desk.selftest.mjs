@@ -7,7 +7,7 @@ import { lint, assemble, toHtml, quoteText } from './reply-desk/voice.mjs';
 import { freshText, ruleCategory } from './reply-desk/classify.mjs';
 import { scrub, replySubject } from './reply-desk/compose.mjs';
 import { CAMPAIGNS, PLAYBOOKS, laneKeywords } from './reply-desk/playbooks.mjs';
-import { partnerTerms, creatorTerms, debriefOnePager } from './reply-desk/deliverables.mjs';
+import { partnerTerms, creatorTerms, debriefOnePager, recompetable } from './reply-desk/deliverables.mjs';
 import { DEBRIEF_ONE_PAGER } from './reply-desk/content.mjs';
 import { inBusinessHours, sendAfter } from './reply-desk.mjs';
 import { deadlineMs, fmtDeadline } from './reply-desk/sources.mjs';
@@ -91,6 +91,15 @@ test('scrub removes dashes and bold without touching ranges', () => {
 });
 test('a fixed list does not reuse the one-pager numbering inside sections', () => {
   assert.ok(!/^\d+\.\s+\d+\./m.test(DEBRIEF_ONE_PAGER.text));
+});
+test('a supply delivery order under a schedule is not a recompete (Stronghold, Oct 4)', () => {
+  assert.equal(recompetable({ psc: '6515', type: 'DELIVERY ORDER', parentIdv: '36F79722D0150', internalId: 'CONT_AWD_36C24526F0394_3600_36F79722D0150_3600' }), false);
+});
+test('a standalone services purchase order is', () => {
+  assert.equal(recompetable({ psc: 'R706 LOGISTICS SUPPORT SERVICES', type: 'PURCHASE ORDER', parentIdv: '', internalId: 'CONT_AWD_36C25726P0573_3600_-NONE-_-NONE-' }), true);
+});
+test('an order is caught from its id when award detail 404s', () => {
+  assert.equal(recompetable({ psc: 'S222', internalId: 'CONT_AWD_70FB7026F00000102_7022_70FB7026D00000016_7022' }), false);
 });
 test('reply subject keeps one Re:', () => { assert.equal(replySubject('Re: USDA'), 'Re: USDA'); assert.equal(replySubject('USDA'), 'Re: USDA'); });
 

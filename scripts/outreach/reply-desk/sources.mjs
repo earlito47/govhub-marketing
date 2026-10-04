@@ -220,6 +220,7 @@ export async function recipientAwards(recipientName, { years = 5, limit = 60 } =
     subAgency: r['Awarding Sub Agency'],
     description: r.Description,
     naics: typeof r.NAICS === 'object' ? r.NAICS?.code : r.NAICS,
+    psc: typeof r.PSC === 'object' ? r.PSC?.code : r.PSC,
     internalId: r.generated_internal_id,
   }));
 }
