@@ -93,13 +93,100 @@ export async function samDetail(noticeId) {
   };
 }
 
-/** Attachment metadata for a notice. */
+/** Attachment metadata for a notice. Links (type "link") carry a `uri` instead of a file. */
 export async function samAttachments(noticeId) {
   const d = await getJson(`${SAM}/opps/v3/opportunities/${noticeId}/resources`, { headers: HAL });
   return (d._embedded?.opportunityAttachmentList || [])
     .flatMap((a) => a.attachments || [])
     .filter((a) => a.accessLevel === 'public' && a.deletedFlag !== '1')
-    .map((a) => ({ name: a.name, size: a.size, resourceId: a.resourceId }));
+    .map((a) => ({ name: a.name, size: a.size, resourceId: a.resourceId, type: a.type || 'file', uri: a.uri || '' }));
+}
+
+// ---- FedConnect -------------------------------------------------------------
+// Some agencies (NRC, DOE sites, parts of DOI and HHS) post only a link on SAM
+// and keep the package on FedConnect. Public opportunities need no account,
+// but every document is behind an ASP.NET TreeView postback. Replaying it
+// works only with EVERY form field the page carries (the TreeView's
+// ExpandState, SelectedNode and PopulateLog included); a postback with just
+// the hidden __VIEWSTATE fields lands on VipErrorPage. Verified 2026-10-05
+// on NRC 31310026R0029: RFP, Amendment 0001 and four attachments.
+
+function cookieJar() {
+  const jar = new Map();
+  return {
+    take(res) {
+      for (const c of res.headers.getSetCookie?.() || []) {
+        const [pair] = c.split(';');
+        const i = pair.indexOf('=');
+        if (i > 0) jar.set(pair.slice(0, i).trim(), pair.slice(i + 1).trim());
+      }
+    },
+    header: () => [...jar].map(([k, v]) => `${k}=${v}`).join('; '),
+  };
+}
+
+async function fcFetch(url, jar, init = {}) {
+  // Follow redirects by hand so every hop's cookies are kept.
+  for (let hop = 0; hop < 6; hop++) {
+    const res = await fetch(url, { ...init, redirect: 'manual', headers: { 'User-Agent': 'Mozilla/5.0 (GovHub reply desk)', Cookie: jar.header(), ...(init.headers || {}) } });
+    jar.take(res);
+    if (res.status >= 300 && res.status < 400 && res.headers.get('location')) {
+      url = new URL(res.headers.get('location'), url).toString();
+      init = { method: 'GET' };
+      continue;
+    }
+    return { res, url };
+  }
+  throw new Error(`FedConnect: too many redirects for ${url}`);
+}
+
+const attr = (tag, name) => {
+  const m = tag.match(new RegExp(`\\b${name}\\s*=\\s*"([^"]*)"`, 'i'));
+  return m ? decodeEntities(m[1]) : null;
+};
+const decodeEntities = (s) => s.replace(/&#39;/g, "'").replace(/&quot;/g, '"').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;/g, '&');
+
+function formFields(page) {
+  const fields = {};
+  for (const tag of page.match(/<input\b[^>]*>/gi) || []) {
+    const name = attr(tag, 'name');
+    const type = (attr(tag, 'type') || 'text').toLowerCase();
+    if (!name || ['submit', 'button', 'image', 'checkbox', 'radio'].includes(type)) continue;
+    fields[name] = attr(tag, 'value') || '';
+  }
+  return fields;
+}
+
+/** Every document in a public FedConnect package: [{ name, buf }]. */
+export async function fedconnectDocuments(uri) {
+  const jar = cookieJar();
+  const first = await fcFetch(uri, jar);
+  let page = await first.res.text();
+  const action = new URL(decodeEntities((page.match(/<form\b[^>]*\baction="([^"]*)"/i) || [])[1] || first.url), first.url).toString();
+  // Anchors look like href="javascript:__doPostBack('<target>','<arg>')" with
+  // the JS string escaped twice (HTML entities, then \\ for a backslash).
+  const links = [...page.matchAll(/__doPostBack\(&#39;([^&]*Tree_Attachments)&#39;,&#39;([^&]*SUPPORTDOC,\d+)&#39;\)"[^>]*>([^<]*)</g)]
+    .map((m) => ({ target: m[1], arg: m[2].replace(/\\\\/g, '\\'), label: decodeEntities(m[3]).trim() }))
+    // Each document has an icon anchor (no text) and a name anchor; drop the
+    // icons BEFORE de-duplicating, or the icon wins and the name is thrown away.
+    .filter((l) => l.label)
+    .filter((l, i, all) => all.findIndex((o) => o.arg === l.arg) === i);
+  const out = [];
+  for (const l of links) {
+    const body = new URLSearchParams({ ...formFields(page), __EVENTTARGET: l.target, __EVENTARGUMENT: l.arg });
+    const { res } = await fcFetch(action, jar, { method: 'POST', body, headers: { 'Content-Type': 'application/x-www-form-urlencoded' } });
+    const type = res.headers.get('content-type') || '';
+    if (type.includes('html')) {
+      const p = await res.text();
+      if (!/VipErrorPage/i.test(p)) page = p; // a refreshed page carries the next postback's state
+      continue;
+    }
+    const disp = res.headers.get('content-disposition') || '';
+    const name = (disp.match(/filename="?([^";]+)/i) || [])[1] || `${l.label}.bin`;
+    out.push({ name: name.trim(), buf: Buffer.from(await res.arrayBuffer()) });
+    await sleep(300);
+  }
+  return out;
 }
 
 /**
@@ -108,12 +195,20 @@ export async function samAttachments(noticeId) {
  * the disqualifiers. Returns { docs: [{name, text}], skipped: [name] }.
  */
 export async function samAttachmentText(noticeId, { maxDocs = 8, maxCharsPerDoc = 60000, maxTotal = 180000 } = {}) {
-  const atts = await samAttachments(noticeId);
+  const all = await samAttachments(noticeId);
+  const atts = all.filter((a) => a.type !== 'link' && a.resourceId);
+  // A package kept on FedConnect shows up on SAM as a single link.
+  const fedconnect = all.find((a) => a.type === 'link' && /fedconnect\.net/i.test(a.uri));
+  if (fedconnect) {
+    try {
+      for (const f of await fedconnectDocuments(fedconnect.uri)) atts.push({ name: f.name, size: f.buf.length, buf: f.buf });
+    } catch { /* fall through with whatever SAM itself has */ }
+  }
   // Solicitation documents first: they hold instructions and gates. Wage
   // determinations and drawings are long and rarely disqualify on their own.
   const rank = (n) => {
     const s = n.toLowerCase();
-    if (/(rfp|rfq|rlp|ifb|solicitation|sf ?1449|sf ?33|sf ?1442|instructions|section l|section m|provisions|combined)/.test(s)) return 0;
+    if (/(rfp|rfq|rlp|ifb|solicitation|^sol[_ -]|amendment|_amd|sf ?1449|sf ?33|sf ?1442|instructions|section l|section m|provisions|combined)/.test(s)) return 0;
     if (/(sow|pws|statement of work|requirements|specification|security|clauses)/.test(s)) return 1;
     if (/(wage|wd |determination|drawing|dwg|photo|map)/.test(s)) return 3;
     return 2;
@@ -126,12 +221,18 @@ export async function samAttachmentText(noticeId, { maxDocs = 8, maxCharsPerDoc 
   try {
     for (const a of atts) {
       if (docs.length >= maxDocs || total >= maxTotal) { skipped.push(a.name); continue; }
-      const res = await fetch(`${SAM}/opps/v3/opportunities/resources/files/${a.resourceId}/download`, { headers: HAL, redirect: 'follow' });
-      if (!res.ok) { skipped.push(a.name); continue; }
-      const buf = Buffer.from(await res.arrayBuffer());
+      let buf = a.buf;
+      if (!buf) {
+        const res = await fetch(`${SAM}/opps/v3/opportunities/resources/files/${a.resourceId}/download`, { headers: HAL, redirect: 'follow' });
+        if (!res.ok) { skipped.push(a.name); continue; }
+        buf = Buffer.from(await res.arrayBuffer());
+      }
       const text = extractText(a.name, buf, dir);
       if (!text || text.trim().length < 200) { skipped.push(a.name); continue; }
-      const clipped = text.slice(0, Math.min(maxCharsPerDoc, maxTotal - total));
+      // The solicitation itself gets a bigger share: its instructions and
+      // evaluation sections are where the disqualifiers live.
+      const cap = Math.min(rank(a.name) === 0 ? Math.max(maxCharsPerDoc, 90000) : maxCharsPerDoc, maxTotal - total);
+      const clipped = clipText(text, cap);
       docs.push({ name: a.name, text: clipped, truncated: clipped.length < text.length });
       total += clipped.length;
       await sleep(300);
@@ -175,6 +276,22 @@ export async function samOpen({ naics, q, minDays = 7, maxDays = 60, size = 100,
     .filter((o) => (o.daysLeft === null ? noticeTypes !== 'o,k' : o.daysLeft >= minDays && o.daysLeft <= maxDays))
     // Amendments re-list the same notice under the same solicitation number.
     .filter((o, i, all) => all.findIndex((p) => norm(p.solicitationNumber) === norm(o.solicitationNumber)) === i);
+}
+
+/**
+ * Cut a long document without losing its end. In a UCF solicitation Sections
+ * L (instructions) and M (evaluation) come LAST, so a plain head cut sends the
+ * model the cover sheet and the clauses and none of the rules that get an
+ * offer rejected. Seen live on NRC 31310026R0029: 194k characters, proposal
+ * instructions starting about 87 percent of the way in. Searching for a
+ * "Section L" heading does not work either: the first match is usually a
+ * cross-reference in the middle. So: the opening (cover sheet, scope) plus
+ * the whole end.
+ */
+export function clipText(text, cap) {
+  if (text.length <= cap) return text;
+  const head = Math.floor(cap * 0.3);
+  return `${text.slice(0, head)}\n\n[... middle of the document omitted ...]\n\n${text.slice(text.length - (cap - head))}`;
 }
 
 // ---- USASpending -----------------------------------------------------------

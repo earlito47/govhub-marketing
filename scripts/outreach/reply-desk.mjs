@@ -40,6 +40,7 @@
 // Usage: node scripts/outreach/reply-desk.mjs scan [--since=2026-09-01] [--lead=a@b.com] [--redo]
 //        node scripts/outreach/reply-desk.mjs show [<id>...]
 //        node scripts/outreach/reply-desk.mjs send <id>... [--dry-run] [--now]
+//        node scripts/outreach/reply-desk.mjs write <id> <file>      a reply written by hand
 //        node scripts/outreach/reply-desk.mjs dismiss <id>...        decide not to send
 //        node scripts/outreach/reply-desk.mjs auto
 //        node scripts/outreach/reply-desk.mjs notify [--dry-run] [--all] [--to=a@b.com]   email the review
@@ -53,7 +54,7 @@ import { randomUUID } from 'node:crypto';
 import { instantly, stamp, isInbound } from './reply-desk/instantly.mjs';
 import { classify, freshText } from './reply-desk/classify.mjs';
 import { PLAYBOOKS, CAMPAIGNS } from './reply-desk/playbooks.mjs';
-import { compose } from './reply-desk/compose.mjs';
+import { compose, replySubject } from './reply-desk/compose.mjs';
 import { lint, assemble, toHtml, quoteText, attribution } from './reply-desk/voice.mjs';
 import { DEBRIEF_ONE_PAGER, PARTNER_TERMS, CREATOR_TERMS } from './reply-desk/content.mjs';
 import { renderReviewEmail } from './reply-desk/review-email.mjs';
@@ -537,6 +538,45 @@ function show(ids) {
   }
 }
 
+/**
+ * A reply a person wrote, for a message the desk could not route (needs_human,
+ * referral): `write <id> <file>`. It becomes an ordinary draft with the same
+ * sending details as any other (the receiving mailbox, the thread, a Gmail
+ * quote of their message) and goes through the same lint and `send` checks.
+ */
+function write(id, file) {
+  if (!id || !file) { console.error('usage: write <id> <file with the reply text>'); return 1; }
+  if (!existsSync(metaPath(id))) { console.error(`not in the queue: ${id}`); return 1; }
+  const m = loadMeta(id);
+  const text = readFileSync(file, 'utf8').trim();
+  // A person writing the reply may link our own site on purpose; anything
+  // else still trips the lint. The prospect already replied, so this is not
+  // the "no links in email 1" case instantly-angles.mjs guards.
+  const allowLinks = [...new Set([...(m.allow_links || []), 'https://www.govhub.online/', 'https://govhub.online/'])];
+  const issues = lint(text, { asks: text, allowLinks });
+  const inbound = m.inbound || {};
+  saveMeta({
+    ...m,
+    status: issues.length ? 'needs_input' : 'drafted',
+    eaccount: m.eaccount || inbound.eaccount,
+    reply_to_uuid: m.reply_to_uuid || id,
+    subject: m.subject || replySubject(inbound.subject),
+    received_at: m.received_at || inbound.at,
+    send_after: m.send_after || sendAfter(inbound.at),
+    allow_links: allowLinks,
+    quote: m.quote || { attribution: attribution(inbound.at, '', inbound.from || m.lead), body: m.cls?.text || '' },
+    deliverable: m.deliverable?.kind ? m.deliverable : { kind: 'written', sources: [], gaps: [], warnings: [], needsInput: [], needsApproval: false, facts: {} },
+    issues,
+    asks: text,
+    written_by_hand: true,
+  });
+  writeFileSync(textPath(id), text + '\n');
+  record(id, { status: issues.length ? 'needs_input' : 'drafted', deliverable: 'written' });
+  console.log(issues.length ? `lint: ${issues.map((i) => `${i.rule} (${i.detail})`).join('; ')}` : `drafted ${id}`);
+  writeReview();
+  return issues.length ? 1 : 0;
+}
+
 /** Decide not to send a draft. Frees a lane watch that was waiting on it. */
 function dismiss(ids) {
   for (const id of ids) {
@@ -582,9 +622,10 @@ if (isMain) {
     scan, auto, status, notify,
     show: () => show(positional),
     dismiss: () => dismiss(positional),
+    write: () => write(positional[0], positional[1]),
     send: () => (positional.length ? send(positional) : (console.error('send needs at least one id'), 1)),
   }[cmd];
-  if (!run) { console.error(`unknown command "${cmd}". Use scan | show | send | dismiss | auto | notify | status.`); process.exit(2); }
+  if (!run) { console.error(`unknown command "${cmd}". Use scan | show | send | write | dismiss | auto | notify | status.`); process.exit(2); }
   const code = await run();
   if (typeof code === 'number' && code > 0 && cmd === 'send') process.exit(1);
 }

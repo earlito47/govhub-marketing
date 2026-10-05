@@ -10,7 +10,7 @@ import { CAMPAIGNS, PLAYBOOKS, laneKeywords } from './reply-desk/playbooks.mjs';
 import { partnerTerms, creatorTerms, debriefOnePager, recompetable } from './reply-desk/deliverables.mjs';
 import { DEBRIEF_ONE_PAGER, PARTNER_TERMS, CREATOR_TERMS, promoCode } from './reply-desk/content.mjs';
 import { inBusinessHours, sendAfter } from './reply-desk.mjs';
-import { deadlineMs, fmtDeadline } from './reply-desk/sources.mjs';
+import { deadlineMs, fmtDeadline, clipText } from './reply-desk/sources.mjs';
 import { renderReviewEmail, draftToHtml, trimQuote } from './reply-desk/review-email.mjs';
 
 let failed = 0;
@@ -148,6 +148,14 @@ test('a bare-date deadline is that day, not the evening before', () => {
   assert.ok(deadlineMs('2026-10-02') > Date.parse('2026-10-02T20:00:00Z'));
 });
 test('a timestamped deadline keeps its day in Eastern', () => assert.equal(fmtDeadline('2026-10-12T09:00:00-05:00'), 'Oct 12'));
+
+test('a long solicitation keeps its end, where Sections L and M live', () => {
+  const doc = 'COVER SHEET ' + 'clause text '.repeat(20000) + 'SECTION L page limit 50 pages SECTION M evaluation factors';
+  const c = clipText(doc, 30000);
+  assert.ok(c.length <= 30100);
+  assert.ok(c.startsWith('COVER SHEET'));
+  assert.ok(c.endsWith('evaluation factors'));
+});
 
 console.log('timing');
 test('Saturday is not business hours', () => assert.equal(inBusinessHours(new Date('2026-10-03T15:00:00Z')), false));
