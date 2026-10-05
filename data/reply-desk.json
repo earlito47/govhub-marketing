@@ -1,0 +1,596 @@
+{
+  "version": 1,
+  "cursor": "2026-09-30T15:06:05.000Z",
+  "emails": {
+    "01a07bf7-8d8a-7d1c-b87e-76208ed81963": {
+      "lead": "amirl@seetrue.ai",
+      "status": "superseded",
+      "by": "01a07c24-6bcf-72f3-a9fe-0292704f2d11",
+      "updated_at": "2026-10-04T01:35:09.838Z"
+    },
+    "01a07c06-2c29-7a52-a8a9-0e11596d4bbf": {
+      "lead": "timwebb@duttonwebb.com",
+      "campaign": "W1B",
+      "received_at": "2026-09-07T13:19:18.000Z",
+      "category": "not_interested",
+      "classified_by": "rule",
+      "status": "no_action",
+      "updated_at": "2026-10-04T01:35:10.950Z"
+    },
+    "01a07c11-4c30-7c33-a644-d72e0dbeaf2c": {
+      "lead": "carold@cnsbuilding.com",
+      "campaign": "W1A",
+      "status": "answered",
+      "answered_at": "2026-09-10T13:34:31.000Z",
+      "updated_at": "2026-10-04T01:35:11.518Z"
+    },
+    "01a07c24-6bcf-72f3-a9fe-0292704f2d11": {
+      "lead": "amirl@seetrue.ai",
+      "campaign": "W1B",
+      "received_at": "2026-09-07T13:52:19.000Z",
+      "category": "not_interested",
+      "classified_by": "rule",
+      "status": "no_action",
+      "updated_at": "2026-10-04T01:35:10.397Z"
+    },
+    "01a08156-8e14-7bce-91fe-3df8f4b442a3": {
+      "lead": "dcole@breakpoint-labs.com",
+      "campaign": "W1C",
+      "status": "answered",
+      "answered_at": "2026-09-14T14:40:42.000Z",
+      "updated_at": "2026-10-04T01:35:12.082Z"
+    },
+    "01a08628-3bc9-73e8-9c9a-9fac7267f133": {
+      "lead": "shauna.weatherly@fedsubk.com",
+      "status": "superseded",
+      "by": "01a0a0f9-6eaf-7947-a7c6-14d6852d5b0b",
+      "updated_at": "2026-10-04T01:35:12.083Z"
+    },
+    "01a086f5-973c-708e-9983-934065d62c0b": {
+      "lead": "robert@bigwoodystreeservice.com",
+      "campaign": "W1B",
+      "received_at": "2026-09-09T16:16:58.000Z",
+      "category": "not_interested",
+      "classified_by": "rule",
+      "status": "no_action",
+      "updated_at": "2026-10-04T01:35:16.126Z"
+    },
+    "01a086fe-f2f5-79bf-b325-4d71cedf37d9": {
+      "lead": "alan.kopelove@questthermal.com",
+      "campaign": "W1B",
+      "received_at": "2026-09-09T16:27:15.000Z",
+      "category": "not_interested",
+      "classified_by": "model",
+      "status": "no_action",
+      "updated_at": "2026-10-04T01:35:17.792Z"
+    },
+    "01a08b8b-9cfd-7c45-a594-b1aee6030e85": {
+      "lead": "finance@boretideconstruction.com",
+      "campaign": "W1C",
+      "received_at": "2026-09-10T13:38:58.000Z",
+      "category": "not_interested",
+      "classified_by": "rule",
+      "status": "no_action",
+      "updated_at": "2026-10-04T01:35:18.354Z"
+    },
+    "01a08b95-a4ae-7c4a-95b1-06b06bf6b1d5": {
+      "lead": "cindy@tliconstruction.net",
+      "status": "no_action",
+      "error": "GET /emails?limit=100&lead=cindy%40tliconstruction.net&starting_after=01a07c11-1038-7723-b5d8-e97c5ad9a379 -> gave up after retries",
+      "updated_at": "2026-10-04T01:46:24.857Z",
+      "campaign": "W1A",
+      "received_at": "2026-09-10T13:49:49.000Z",
+      "category": "not_interested",
+      "classified_by": "model"
+    },
+    "01a08bb1-ad56-741b-8db2-e9d7160121f6": {
+      "lead": "jdscheiber@gmail.com",
+      "campaign": "W1A",
+      "received_at": "2026-09-10T14:20:47.000Z",
+      "category": "not_interested",
+      "classified_by": "rule",
+      "status": "no_action",
+      "updated_at": "2026-10-04T01:36:11.381Z"
+    },
+    "01a08beb-7880-7937-a3b8-aa0cb8078201": {
+      "lead": "sflaugher@veteranselectricllc.com",
+      "campaign": "W1C",
+      "received_at": "2026-09-10T15:24:13.000Z",
+      "category": "not_interested",
+      "classified_by": "rule",
+      "status": "no_action",
+      "updated_at": "2026-10-04T01:36:11.940Z"
+    },
+    "01a08c79-c140-735f-b825-4c06549192e2": {
+      "lead": "laurence.r.keefe@gmail.com",
+      "campaign": "W1C",
+      "received_at": "2026-09-10T17:59:29.000Z",
+      "category": "not_interested",
+      "classified_by": "rule",
+      "status": "no_action",
+      "updated_at": "2026-10-04T01:36:12.496Z"
+    },
+    "01a090f9-cac1-7285-b946-43aa00ef2d8b": {
+      "lead": "malisa.fearing@koboutility.com",
+      "campaign": "W1A",
+      "status": "answered",
+      "answered_at": "2026-09-14T18:04:35.000Z",
+      "updated_at": "2026-10-04T01:36:13.056Z"
+    },
+    "01a09200-1f7f-7409-b17f-149fae2e20de": {
+      "lead": "heatherh@mtnw-usa.com",
+      "campaign": "W1B",
+      "received_at": "2026-09-11T19:44:26.000Z",
+      "category": "not_interested",
+      "classified_by": "model",
+      "status": "no_action",
+      "updated_at": "2026-10-04T01:36:17.218Z"
+    },
+    "01a09ffe-b52b-7d9f-b234-e1635c2c5b69": {
+      "lead": "cwells1@uwf.edu",
+      "campaign": "C5",
+      "received_at": "2026-09-14T12:57:31.000Z",
+      "category": "not_interested",
+      "classified_by": "rule",
+      "status": "no_action",
+      "updated_at": "2026-10-04T01:36:17.789Z"
+    },
+    "01a0a012-de72-7904-a960-cec53495017d": {
+      "lead": "shauna.weatherly@fedsubk.com",
+      "status": "superseded",
+      "by": "01a0a0f9-6eaf-7947-a7c6-14d6852d5b0b",
+      "updated_at": "2026-10-04T01:35:12.083Z"
+    },
+    "01a0a018-1940-70a5-8644-36865965e8c4": {
+      "lead": "hello@govproposals.com",
+      "campaign": "C4",
+      "received_at": "2026-09-14T13:25:04.000Z",
+      "category": "not_interested",
+      "classified_by": "model",
+      "status": "no_action",
+      "updated_at": "2026-10-04T01:36:19.878Z"
+    },
+    "01a0a035-4b0c-787b-b7dd-a5b26cc055b6": {
+      "lead": "wjmims@gmail.com",
+      "campaign": "W1B",
+      "received_at": "2026-09-14T13:57:03.000Z",
+      "category": "not_interested",
+      "classified_by": "model",
+      "status": "no_action",
+      "updated_at": "2026-10-04T01:36:21.568Z"
+    },
+    "01a0a0f9-6eaf-7947-a7c6-14d6852d5b0b": {
+      "lead": "shauna.weatherly@fedsubk.com",
+      "campaign": "C1",
+      "received_at": "2026-09-14T17:31:12.000Z",
+      "category": "not_interested",
+      "classified_by": "model",
+      "status": "no_action",
+      "updated_at": "2026-10-04T01:35:15.059Z"
+    },
+    "01a0a10b-255f-7fc8-95c4-72fa0a1fd70e": {
+      "lead": "boydcollc@gmail.com",
+      "campaign": "W1B",
+      "received_at": "2026-09-14T17:50:41.000Z",
+      "category": "not_interested",
+      "classified_by": "rule",
+      "status": "no_action",
+      "updated_at": "2026-10-04T01:36:22.136Z"
+    },
+    "01a0a524-1dbc-7a53-ab81-4bfe03b81fd1": {
+      "lead": "info@cavalryconsulting.com",
+      "status": "no_action",
+      "error": "GET /emails?limit=100&lead=info%40cavalryconsulting.com&starting_after=01a08b64-3571-7661-a7bc-1f86c10c2b39 -> gave up after retries",
+      "updated_at": "2026-10-04T01:46:24.943Z",
+      "campaign": "C4",
+      "received_at": "2026-09-15T12:56:31.000Z",
+      "category": "auto_reply",
+      "classified_by": "rule"
+    },
+    "01a0a558-4c91-713a-9997-8645b77e8671": {
+      "lead": "mgalarza@yerba-buena.net",
+      "campaign": "W1A",
+      "status": "answered",
+      "answered_at": "2026-09-17T14:31:09.000Z",
+      "updated_at": "2026-10-04T01:37:12.041Z"
+    },
+    "01a0a55c-35fd-796a-b584-27085825e0e6": {
+      "lead": "federalproposal@gmail.com",
+      "campaign": "C4",
+      "received_at": "2026-09-15T13:52:01.000Z",
+      "category": "not_interested",
+      "classified_by": "rule",
+      "status": "no_action",
+      "updated_at": "2026-10-04T01:37:12.669Z"
+    },
+    "01a0a592-0de9-711d-8365-080460c46754": {
+      "lead": "bcox@coxdesignassociates.com",
+      "campaign": "W1A",
+      "received_at": "2026-09-15T14:56:12.000Z",
+      "category": "not_interested",
+      "classified_by": "rule",
+      "status": "no_action",
+      "updated_at": "2026-10-04T01:37:13.264Z"
+    },
+    "01a0a750-0715-71cf-9358-e82a9b9605de": {
+      "lead": "chrisobryan@lacreekdevelopment.com",
+      "campaign": "W1A",
+      "received_at": "2026-09-15T23:03:30.000Z",
+      "category": "not_interested",
+      "classified_by": "rule",
+      "status": "no_action",
+      "updated_at": "2026-10-04T01:37:13.838Z"
+    },
+    "01a0aa5f-a1e1-7637-ae9a-5a1c611b1dc4": {
+      "lead": "jocelyn@boldreuse.com",
+      "campaign": "W1B",
+      "status": "answered",
+      "answered_at": "2026-09-24T13:00:37.000Z",
+      "updated_at": "2026-10-04T01:37:14.425Z"
+    },
+    "01a0b5a8-a925-7edd-8fd3-3f69a45d7ea2": {
+      "lead": "randy@doublebronzestar.com",
+      "campaign": "W1A",
+      "status": "answered",
+      "answered_at": "2026-09-21T16:48:24.000Z",
+      "updated_at": "2026-10-04T01:37:15.004Z"
+    },
+    "01a0b5b6-34e2-77e7-a8f3-0f3a0566e32a": {
+      "lead": "abby.akinmboni@fiscalnote.com",
+      "campaign": "W1A",
+      "status": "answered",
+      "answered_at": "2026-09-21T16:14:44.000Z",
+      "updated_at": "2026-10-04T01:37:15.615Z"
+    },
+    "01a0b5c0-ccc7-7578-b3a4-02a4246197c7": {
+      "lead": "mynameistimhirt@gmail.com",
+      "campaign": "W1A",
+      "received_at": "2026-09-18T18:21:12.000Z",
+      "category": "not_interested",
+      "classified_by": "rule",
+      "status": "no_action",
+      "updated_at": "2026-10-04T01:37:16.197Z"
+    },
+    "01a0c44b-134a-73c1-9dc5-c112e4ba2531": {
+      "lead": "shawn.silliman@frs247.com",
+      "campaign": "W1C",
+      "received_at": "2026-09-21T14:06:55.000Z",
+      "category": "unsubscribe",
+      "classified_by": "model",
+      "status": "no_action",
+      "updated_at": "2026-10-04T01:37:18.134Z"
+    },
+    "01a0c50b-ef45-7097-87ef-5c526eaaafc3": {
+      "lead": "steve@strhoadesinc.com",
+      "status": "no_action",
+      "error": "GET /emails?limit=100&lead=steve%40strhoadesinc.com&starting_after=01a0aa8a-6d69-730d-b9d5-60e1338f075e -> gave up after retries",
+      "updated_at": "2026-10-04T01:46:25.025Z",
+      "campaign": "W1B",
+      "received_at": "2026-09-21T17:37:46.000Z",
+      "category": "not_interested",
+      "classified_by": "rule"
+    },
+    "01a0c950-d2ec-71fa-b808-6045f5558455": {
+      "lead": "success@govtribe.com",
+      "campaign": "C3",
+      "received_at": "2026-09-22T13:31:41.000Z",
+      "category": "not_interested",
+      "classified_by": "rule",
+      "status": "no_action",
+      "updated_at": "2026-10-04T01:38:17.387Z"
+    },
+    "01a0ca52-d5d8-75b4-b700-a6609d4b929d": {
+      "lead": "info@nsbgca.org",
+      "campaign": "C6",
+      "received_at": "2026-09-22T17:54:21.000Z",
+      "category": "not_interested",
+      "classified_by": "model",
+      "status": "no_action",
+      "updated_at": "2026-10-04T01:38:19.238Z"
+    },
+    "01a0cec2-2e90-7df2-be39-527f78db1703": {
+      "lead": "aderinokun01@gmail.com",
+      "campaign": "A1",
+      "received_at": "2026-09-23T13:26:53.000Z",
+      "category": "not_interested",
+      "classified_by": "rule",
+      "status": "no_action",
+      "updated_at": "2026-10-04T01:38:20.389Z"
+    },
+    "01a0d50c-daa8-726a-92a1-1bdf5f12be18": {
+      "lead": "alainbru@gmail.com",
+      "campaign": "A5",
+      "received_at": "2026-09-24T20:12:18.000Z",
+      "category": "not_interested",
+      "classified_by": "rule",
+      "status": "no_action",
+      "updated_at": "2026-10-04T01:38:37.162Z"
+    },
+    "01a0d8bf-8298-7b8f-a75c-a3e2d01f5df5": {
+      "lead": "a.schilffarth@usnc-tech.com",
+      "campaign": "A2",
+      "status": "answered",
+      "answered_at": "2026-10-02T13:00:25.000Z",
+      "updated_at": "2026-10-04T01:38:37.734Z"
+    },
+    "01a0d8ca-3d8a-793b-9615-0f3b107a299b": {
+      "lead": "ayazdani@exergycorp.com",
+      "campaign": "A2",
+      "received_at": "2026-09-25T13:30:25.000Z",
+      "category": "question",
+      "classified_by": "model",
+      "status": "sent",
+      "playbook": "A2",
+      "deliverable": "next_open",
+      "updated_at": "2026-10-05T16:02:07.864Z",
+      "notified_at": "2026-10-05T15:46:30.587Z",
+      "sent_at": "2026-10-05T16:02:07.864Z",
+      "sent_email_id": "01a10ccd-0a9c-70f8-be8c-f039cad95d8a",
+      "sent_by": "approved"
+    },
+    "01a0d90e-650d-7f4d-b3e7-e4f0716d3a2d": {
+      "lead": "t@redclaycreative.com",
+      "campaign": "W1C",
+      "received_at": "2026-09-25T14:39:22.000Z",
+      "category": "auto_reply",
+      "classified_by": "model",
+      "status": "no_action",
+      "updated_at": "2026-10-04T01:39:22.027Z",
+      "redirect": "laura@redclaycreative.com"
+    },
+    "01a0d90f-2b89-7131-9a2a-ea8646a31881": {
+      "lead": "amber@customcasepros.com",
+      "campaign": "A2",
+      "status": "answered",
+      "answered_at": "2026-09-28T15:57:36.000Z",
+      "updated_at": "2026-10-04T01:39:22.592Z"
+    },
+    "01a0da7e-9f06-7cac-9e53-b3f5d4b9157f": {
+      "lead": "azam@lexset.ai",
+      "status": "superseded",
+      "by": "01a0e81b-f5cc-7dba-8d88-ac78730091ca",
+      "updated_at": "2026-10-04T01:38:19.239Z"
+    },
+    "01a0e81b-f5cc-7dba-8d88-ac78730091ca": {
+      "lead": "azam@lexset.ai",
+      "campaign": "A2",
+      "status": "answered",
+      "answered_at": "2026-10-02T13:00:25.000Z",
+      "updated_at": "2026-10-04T01:38:19.824Z"
+    },
+    "01a0e82e-54ba-76e0-8368-de28efa3ac83": {
+      "lead": "aadams@oowinc.com",
+      "campaign": "A2",
+      "received_at": "2026-09-28T13:22:17.000Z",
+      "category": "auto_reply",
+      "classified_by": "rule",
+      "status": "no_action",
+      "updated_at": "2026-10-04T01:39:23.165Z"
+    },
+    "01a0e8aa-f696-7a0f-b1fe-36519bc67f7b": {
+      "lead": "admin@documentsecuritysolutions.net",
+      "campaign": "A4",
+      "received_at": "2026-09-28T15:38:25.000Z",
+      "category": "question",
+      "classified_by": "model",
+      "status": "sent",
+      "playbook": "A4",
+      "deliverable": "next_open",
+      "updated_at": "2026-10-05T16:02:12.003Z",
+      "watch": {
+        "naics": "561990",
+        "keywords": [
+          "shredding",
+          "recycling"
+        ],
+        "companyName": "Dependable On-Site Scan & Shred, Inc.",
+        "context": "A1 Shredding And Recycling, Incorporated (Marietta) won a $5K DHS award in NAICS 561990, which is how we found them. Company name: Dependable On-Site Scan & Shred, Inc..",
+        "count": 3,
+        "exclude": [],
+        "until": "2026-11-18T01:48:54.724Z",
+        "eaccount": "earl.knight@getgovhub.com",
+        "subject": "Re: did you see this",
+        "campaign_id": "39bc9fab-a9a7-4ed6-b34c-ccabeb9e76ee",
+        "firstName": "Parish"
+      },
+      "notified_at": "2026-10-05T15:46:30.588Z",
+      "sent_at": "2026-10-05T16:02:12.003Z",
+      "sent_email_id": "01a10ccd-1667-76f0-aecd-cdb99c13a838",
+      "sent_by": "approved"
+    },
+    "01a0e8d0-4554-7665-a2ce-99a6b3d80c91": {
+      "lead": "cgallimore@harkind.com",
+      "campaign": "A1",
+      "received_at": "2026-09-28T16:19:05.000Z",
+      "category": "not_interested",
+      "classified_by": "rule",
+      "status": "no_action",
+      "updated_at": "2026-10-04T01:39:34.574Z"
+    },
+    "01a0e8f1-e9d3-7a6f-a07d-7164b70a09f4": {
+      "lead": "aquawildliferesearch@gmail.com",
+      "status": "superseded",
+      "by": "01a0e9d7-972c-7f23-a93d-1355824f6656",
+      "updated_at": "2026-10-04T01:39:34.576Z"
+    },
+    "01a0e9d7-972c-7f23-a93d-1355824f6656": {
+      "lead": "aquawildliferesearch@gmail.com",
+      "campaign": "A2",
+      "received_at": "2026-09-28T21:06:41.000Z",
+      "category": "not_interested",
+      "classified_by": "rule",
+      "status": "no_action",
+      "updated_at": "2026-10-04T01:39:35.172Z"
+    },
+    "01a0ed44-14ba-732e-9428-61117fd79539": {
+      "lead": "contracts@sdvinternational.com",
+      "campaign": "W1C",
+      "received_at": "2026-09-29T13:04:01.000Z",
+      "category": "auto_reply",
+      "classified_by": "rule",
+      "status": "no_action",
+      "updated_at": "2026-10-04T01:39:35.831Z"
+    },
+    "01a0f28b-7346-7bef-8dca-ac08e1a34e62": {
+      "lead": "adam.drew@huppaerospace.com",
+      "campaign": "A5",
+      "received_at": "2026-09-30T13:40:09.000Z",
+      "category": "auto_reply",
+      "classified_by": "rule",
+      "status": "no_action",
+      "updated_at": "2026-10-04T01:39:36.402Z",
+      "redirect": "ed.dixon@huppaerospace.com"
+    },
+    "01a0f3b0-9c16-7a7b-bb16-e4c9f35d33b9": {
+      "lead": "abu.malik@metric5.com",
+      "campaign": "A5",
+      "received_at": "2026-09-30T19:00:07.000Z",
+      "category": "not_interested",
+      "classified_by": "model",
+      "status": "no_action",
+      "updated_at": "2026-10-04T01:39:37.922Z"
+    },
+    "01a0f793-eb52-7a09-8eac-98a29654d34b": {
+      "lead": "breezye@yahoo.com",
+      "status": "no_action",
+      "error": "GET /emails?limit=100&lead=breezye%40yahoo.com&starting_after=01a0e8b4-ff5f-76e0-bb08-0f10d8fc1972 -> gave up after retries",
+      "updated_at": "2026-10-04T01:46:25.106Z",
+      "campaign": "A1",
+      "received_at": "2026-10-01T13:07:28.000Z",
+      "category": "not_interested",
+      "classified_by": "rule"
+    },
+    "01a0f7be-1f4e-7fde-95b8-64e1e718f519": {
+      "lead": "dave@strongholdcare.com",
+      "status": "sent",
+      "error": "GET https://api.usaspending.gov/api/v2/awards/CONT_AWD_75A50326C00011_7505_-NONE-_-NONE-/ -> 404 {\"detail\":\"No Award found with: {'generated_unique_award_id_legacy': 'CONT_AWD_75A50326C00011_7505_-NONE-_-NONE-'}\"}",
+      "updated_at": "2026-10-05T16:02:14.814Z",
+      "campaign": "A1",
+      "received_at": "2026-10-01T13:53:12.000Z",
+      "category": "accept",
+      "classified_by": "model",
+      "playbook": "A1",
+      "deliverable": "recompete",
+      "notified_at": "2026-10-05T15:46:30.588Z",
+      "sent_at": "2026-10-05T16:02:14.814Z",
+      "sent_email_id": "01a10ccd-266b-7787-a22f-61b24db80a95",
+      "sent_by": "approved"
+    },
+    "01a0f7cf-671e-73a9-8ece-2d8caaaebf63": {
+      "lead": "gcthornton@gmail.com",
+      "campaign": "A2",
+      "received_at": "2026-10-01T14:12:15.000Z",
+      "category": "accept",
+      "classified_by": "model",
+      "status": "sent",
+      "playbook": "A2",
+      "deliverable": "disqualifiers",
+      "updated_at": "2026-10-05T16:01:51.981Z",
+      "notified_at": "2026-10-05T15:46:30.590Z",
+      "sent_at": "2026-10-05T16:01:51.981Z",
+      "sent_email_id": "01a10ccc-ce70-7779-b785-c60f62502220",
+      "sent_by": "approved"
+    },
+    "01a0f7d6-ca6d-746b-82d4-929a7a8c9545": {
+      "lead": "hayes.fountain@widescopeccs.com",
+      "status": "superseded",
+      "by": "01a0f7d6-cbfa-703c-8702-856525cbeed5",
+      "updated_at": "2026-10-04T01:41:09.040Z"
+    },
+    "01a0f7d6-cbfa-703c-8702-856525cbeed5": {
+      "lead": "hayes.fountain@widescopeccs.com",
+      "campaign": "A2",
+      "received_at": "2026-10-01T14:20:36.000Z",
+      "category": "auto_reply",
+      "classified_by": "rule",
+      "status": "no_action",
+      "updated_at": "2026-10-04T01:41:09.762Z",
+      "redirect": "hayes.fountain@widescope.com"
+    },
+    "01a0f7f1-9a1f-7f3f-a84b-a6f0b0f650e9": {
+      "lead": "jb@inthewhitespace.com",
+      "campaign": "A4",
+      "received_at": "2026-10-01T14:49:47.000Z",
+      "category": "unsubscribe",
+      "classified_by": "rule",
+      "status": "no_action",
+      "updated_at": "2026-10-04T01:41:10.352Z"
+    },
+    "01a0fcb3-a72f-786a-9260-e4d1e860d8c9": {
+      "lead": "denita.conway@provenmgmt.com",
+      "campaign": "A1",
+      "received_at": "2026-10-02T13:00:17.000Z",
+      "category": "auto_reply",
+      "classified_by": "rule",
+      "status": "no_action",
+      "updated_at": "2026-10-04T01:41:10.927Z"
+    },
+    "01a0fcc4-bfd3-7a26-9b2c-3e1b430b57c3": {
+      "lead": "chris@weareavp.com",
+      "campaign": "A2",
+      "received_at": "2026-10-02T13:18:57.000Z",
+      "category": "auto_reply",
+      "classified_by": "rule",
+      "status": "no_action",
+      "updated_at": "2026-10-04T01:41:11.503Z",
+      "redirect": "mike@weareavp.com"
+    },
+    "01a0fcdb-a612-73ea-b3ae-31c72fba2283": {
+      "lead": "ali.caulkins@aecmep.com",
+      "campaign": "A5",
+      "received_at": "2026-10-02T13:44:01.000Z",
+      "category": "auto_reply",
+      "classified_by": "rule",
+      "status": "no_action",
+      "updated_at": "2026-10-04T01:41:12.077Z",
+      "redirect": "scott.porter@aecmep.com"
+    },
+    "01a0fce8-3aac-7641-a986-97fd8eb6fa65": {
+      "lead": "aabuzaakouk@conceptplus.com",
+      "campaign": "A5",
+      "received_at": "2026-10-02T13:57:41.000Z",
+      "category": "auto_reply",
+      "classified_by": "rule",
+      "status": "no_action",
+      "updated_at": "2026-10-04T01:41:12.646Z"
+    },
+    "01a0fcf0-0dad-71ce-80b7-58195253f790": {
+      "lead": "cole@coreecologygroup.com",
+      "campaign": "A2",
+      "received_at": "2026-10-02T14:06:10.000Z",
+      "category": "not_interested",
+      "classified_by": "model",
+      "status": "no_action",
+      "updated_at": "2026-10-04T01:41:15.004Z"
+    },
+    "01a0fcf6-fe7e-765a-a4b1-ebcd2022b128": {
+      "lead": "awade@gatewayrecycle.com",
+      "campaign": "A5",
+      "received_at": "2026-10-02T14:13:52.000Z",
+      "category": "auto_reply",
+      "classified_by": "rule",
+      "status": "no_action",
+      "updated_at": "2026-10-04T01:41:26.340Z",
+      "redirect": "gwconfidential@gatewayrecycle.com"
+    },
+    "01a0fd1a-5995-7cac-a12a-bbdfdb8ab90b": {
+      "lead": "anthony@pasantennas.com",
+      "campaign": "A5",
+      "received_at": "2026-10-02T14:52:19.000Z",
+      "category": "auto_reply",
+      "classified_by": "rule",
+      "status": "no_action",
+      "updated_at": "2026-10-04T01:41:30.306Z",
+      "redirect": "arnie@pasantennas.com"
+    },
+    "01a0fd26-aa4c-78f5-b12d-58d7b59f41fe": {
+      "lead": "ben.hogan@eikonresearch.com",
+      "campaign": "A2",
+      "received_at": "2026-10-02T15:05:46.000Z",
+      "category": "auto_reply",
+      "classified_by": "rule",
+      "status": "no_action",
+      "updated_at": "2026-10-04T01:41:30.860Z"
+    }
+  }
+}
