@@ -134,7 +134,7 @@ const MAILBOXES = {
   ],
   // govhubcontracts, govhubprocurement, govhubcapture, trygovhub, govhubbids, govhubproposal
   A2: [
-    'earl.knight@govhubcontracts.com', 'e.knight@govhubcontracts.com',
+    'earl.knight@govhubcontracts.com', 'e.knight@govhubcontracts.com', 'earl@govhubcontracts.com',
     'earl.knight@govhubprocurement.com', 'e.knight@govhubprocurement.com', 'earl@govhubprocurement.com',
     'earl.knight@govhubcapture.com', 'earl@govhubcapture.com', 'e.knight@govhubcapture.com',
     'earl.knight@trygovhub.com', 'e.knight@trygovhub.com',
@@ -146,7 +146,7 @@ const MAILBOXES = {
     'earl.knight@getgovhub.com', 'e.knight@getgovhub.com', 'earl@getgovhub.com',
     'earl.knight@govhubteam.com', 'e.knight@govhubteam.com',
     'e.knight@bidwithgovhub.com',
-    'earl@winwithgovhub.com', 'e.knight@winwithgovhub.com',
+    'earl@winwithgovhub.com', 'e.knight@winwithgovhub.com', 'earl.knight@winwithgovhub.com',
   ],
   // govhubnow, govhubhq, govhubsubmittals, govhubrfp
   A5: [
@@ -211,7 +211,7 @@ const A2 = {
   // The one angle whose supply is not the constraint: 4,300 companies carry an
   // unassigned live-RFP signal on any given day, refreshed nightly. It also has
   // the best reply evidence, so it gets the largest share of the mailboxes.
-  daily_max_leads: 80,
+  daily_max_leads: 85,
   required: ['sol_line', 'sol_short', 'sol_agency_short', 'sol_close_date', 'naics_code', 'fit_line', 'check_line', 'cta_line', 'followup_line'],
   // naics_code is required by the runbook and is genuinely load-bearing, but it
   // never appears as a token in these bodies: it is interpolated INTO fit_line
