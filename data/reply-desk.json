@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "cursor": "2026-10-03T18:58:18.000Z",
+  "cursor": "2026-10-03T22:15:49.000Z",
   "emails": {
     "01a07bf7-8d8a-7d1c-b87e-76208ed81963": {
       "lead": "amirl@seetrue.ai",
@@ -406,7 +406,7 @@
       "status": "sent",
       "playbook": "A4",
       "deliverable": "next_open",
-      "updated_at": "2026-10-05T16:02:12.003Z",
+      "updated_at": "2026-10-05T23:14:53.283Z",
       "watch": {
         "naics": "561990",
         "keywords": [
@@ -421,7 +421,8 @@
         "eaccount": "earl.knight@getgovhub.com",
         "subject": "Re: did you see this",
         "campaign_id": "39bc9fab-a9a7-4ed6-b34c-ccabeb9e76ee",
-        "firstName": "Parish"
+        "firstName": "Parish",
+        "last_checked": "2026-10-05T23:14:53.283Z"
       },
       "notified_at": "2026-10-05T15:46:30.588Z",
       "sent_at": "2026-10-05T16:02:12.003Z",
@@ -713,6 +714,15 @@
       "sent_at": "2026-10-05T19:36:56.139Z",
       "sent_email_id": "01a10d91-ad78-788f-ba74-3db7989ef57c",
       "sent_by": "approved"
+    },
+    "01a10e23-2fa3-709f-bd34-775c1d681cfe": {
+      "lead": "acsfencing@gmail.com",
+      "campaign": "A5",
+      "received_at": "2026-10-05T22:15:26.000Z",
+      "category": "not_interested",
+      "classified_by": "model",
+      "status": "no_action",
+      "updated_at": "2026-10-05T23:14:53.149Z"
     }
   }
 }
