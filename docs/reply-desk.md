@@ -232,16 +232,104 @@ approved about five of that playbook's drafts without edits. Suggested order:
 
 ## 4. Decisions only Earl can make
 
-1. **C4 partner terms** (`content.mjs PARTNER_TERMS`): the recurring share
-   percentage, how many client workspaces, how a referral is attributed, and
-   payout timing and method.
-2. **C1 creator terms** (`content.mjs CREATOR_TERMS`): the recurring share
-   percentage, the audience rate, and the code or link.
-3. **The debrief one-pager** (`content.mjs DEBRIEF_ONE_PAGER`): check the FAR
-   citations listed in `verify` against the current FAR, which the 2025
-   overhaul renumbered in places, then set `approved: true`. Re-draft anyone
-   waiting on it with `scan --redo --lead=<email>`, so their draft picks up the
-   approved text.
+1. **C4 partner terms** and **C1 creator terms**: recommended numbers are in
+   `content.mjs` (section 5 below). Approve them by setting `approved: true`
+   on `PARTNER_TERMS` and `CREATOR_TERMS`, after creating the Stripe codes the
+   replies quote.
+2. **The debrief one-pager** (`content.mjs DEBRIEF_ONE_PAGER`): verified
+   against the current FAR on 2026-10-05, and corrected where the first draft
+   oversimplified (RFQ explanations, the protest and stay clocks, unit prices,
+   task orders, competitive-range cuts). Set `approved: true` to release it,
+   and recheck when the FAR overhaul's final rules publish.
+3. After approving any of these, re-draft anyone waiting on it with
+   `scan --redo --lead=<email>`, so their draft picks up the approved text.
 4. **A2 "draft it free"**: the draft playbook asks for a capability statement
    and two or three past jobs before drafting. Producing the draft itself is
    still a manual run of the app.
+
+---
+
+## 5. Partner and creator terms (recommended 2026-10-05, not yet approved)
+
+The cold emails already promised the shape of both deals: a free account,
+and a recurring share "for as long as they stay". Only the numbers were
+open. Both sets of terms live in `reply-desk/content.mjs` with
+`approved: false`. Their drafts are written, but they cannot send until the
+flag is flipped in a reviewed commit.
+
+### Why these numbers
+
+- **The share is the whole cost.** When the share is paid for as long as the
+  customer stays, partner payouts and customer value both scale with tenure.
+  So LTV:CAC is gross margin divided by the share, whatever the churn rate.
+  At about 80 percent margin, 20 percent gives 4.0, 25 percent gives 3.2,
+  and 30 percent gives 2.7. If AI costs pull margin toward 60 percent, the
+  ceiling drops to about 20.
+- **Benchmarks.** HubSpot Solutions Partner pays agencies 20 percent of net
+  revenue. Gusto pays accountants up to 20. Rewardful's average across 2,847
+  programs is 24 percent. The TrackRev B2B SaaS median is 20. beehiiv gives
+  its audience a 14-day trial plus 20 percent off the first 3 months.
+
+| | Consultant partner (C4) | Creator (C1) |
+|---|---|---|
+| Share | 20 percent of net collected revenue, for as long as the client stays | 30 percent of year one, then 20 percent for as long as they stay (about 24 blended) |
+| Their own account | Pro, free while a partner | No cap (Team), theirs to keep |
+| Client or audience rate | 10 percent off the first 3 months, with the partner's code | 20 percent off the first 3 months, on top of the 14-day trial |
+| Attribution | Per-partner Stripe promotion code, e.g. `AADVIK` | Creator code, e.g. `KIZZY` |
+| Payout | Monthly ACH, 30 days after month end, $50 minimum rolling over, W-9 first | Same |
+
+The creator gets more in year one because one creator can reach a whole
+audience (Kizzy Parks: about 80k YouTube subscribers and a 15k-member
+group). The long tail stays at the sustainable 20.
+
+### What the product can and cannot do today
+
+- **Client workspaces do not exist.** The `accounts` and `account_memberships`
+  tables are there, but there is no invite, switcher or UI. The partner
+  reply says so instead of promising them.
+- **There is no comp mechanism.** The admin console's plan change does not
+  change what the product does, so a real free account means a 100 percent
+  Stripe code.
+- **Attribution only works by promotion code.** Stripe records the code on the
+  subscription for both email and Google signups. UTM capture misses Google
+  OAuth signups, and its `landing_path` column is never written, because the
+  client sends `landing_page`.
+- **Plan limits are display-only.** "No cap on solicitations" is true today,
+  but only because nothing caps anyone.
+- **Commissions have to be worked out by hand from Stripe.** Nothing in the app
+  stores the code used or tracks commissions.
+
+### Stripe setup (Dashboard, Billing, Coupons)
+
+1. **Comp coupon:** 100 percent off, duration Forever. Add one promotion code
+   per person, with max redemptions set to 1: `AADVIK-ACCOUNT` on Pro and
+   `KIZZY-ACCOUNT` on Team. They enter it at checkout. Checkout will still
+   ask for a card, because `create-checkout-session` does not set
+   `payment_method_collection: 'if_required'`, but nothing is charged.
+2. **Partner client coupon:** 10 percent off, duration repeating, 3 months.
+   Promotion code `AADVIK`, with metadata `partner=aadvik-solutions`.
+3. **Creator audience coupon:** 20 percent off, duration repeating, 3 months.
+   Promotion code `KIZZY`, with metadata `partner=kizzy-parks`.
+4. **Watch annual plans.** A repeating coupon applies to the whole first annual
+   invoice, which means 20 percent off year one. Either accept that or
+   restrict the code to the monthly prices.
+5. **Each month,** list the subscriptions on coupons 2 and 3, sum the invoices
+   paid in the month, multiply by the share, and pay 30 days later.
+
+Do the Stripe codes **before** sending, because both replies quote them.
+
+### Guardrails for the written terms
+
+- **No success fees.** Never pay on a client winning a contract (FAR 52.203-5).
+- **Exclusions:** self-referrals, federal employees, and employees of the
+  buying company (41 USC 8701).
+- **APEX and SBDC counselors cannot take a share** (13 CFR 130.470), which is
+  why C5 never offers one.
+- **Clawback** on refunds and chargebacks. "Stays" means a continuous paid
+  subscription; a lapse of more than 60 days resets attribution.
+- **Disclosure.** Partners tell clients in writing that they get a referral
+  share. Creators disclose in the video (FTC Endorsement Guides, 16 CFR 255).
+- **Comped accounts are not for resale.** Client work runs in an account the
+  client pays for.
+- **Changes going forward.** Rate changes apply to future referrals only, and
+  existing referrals keep paying if the program ends.

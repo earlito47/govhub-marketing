@@ -8,7 +8,7 @@ import { freshText, ruleCategory } from './reply-desk/classify.mjs';
 import { scrub, replySubject } from './reply-desk/compose.mjs';
 import { CAMPAIGNS, PLAYBOOKS, laneKeywords } from './reply-desk/playbooks.mjs';
 import { partnerTerms, creatorTerms, debriefOnePager, recompetable } from './reply-desk/deliverables.mjs';
-import { DEBRIEF_ONE_PAGER } from './reply-desk/content.mjs';
+import { DEBRIEF_ONE_PAGER, PARTNER_TERMS, CREATOR_TERMS, promoCode } from './reply-desk/content.mjs';
 import { inBusinessHours, sendAfter } from './reply-desk.mjs';
 import { deadlineMs, fmtDeadline } from './reply-desk/sources.mjs';
 import { renderReviewEmail, draftToHtml, trimQuote } from './reply-desk/review-email.mjs';
@@ -79,13 +79,24 @@ console.log('routing and deliverables');
 test('every live campaign has a playbook', () => { for (const k of Object.values(CAMPAIGNS)) assert.ok(PLAYBOOKS[k], `missing playbook ${k}`); });
 test('no playbook auto-sends without a reviewed commit', () => { for (const [k, p] of Object.entries(PLAYBOOKS)) assert.equal(p.autoSend, false, `${k} has autoSend on`); });
 test('lane keywords come from the work, not the legal name', () => assert.deepEqual(laneKeywords('A1 Shredding And Recycling, Incorporated', 'Dependable On-Site Scan & Shred, Inc.'), ['shredding', 'recycling']));
-test('partner terms with no numbers hold for input', () => {
-  const d = partnerTerms();
-  assert.ok(d.needsInput.length > 0);
-  assert.ok(rules(d.body).includes('placeholder'));
+test('partner terms read clean and hold until approved', () => {
+  const d = partnerTerms({ companyName: 'Aadvik Solutions' });
+  assert.deepEqual(rules(d.body, { asks: '' }), []);
+  assert.match(d.body, /code, AADVIK\./);
+  assert.match(d.body, /client workspaces/);
+  assert.equal(d.needsApproval, !PARTNER_TERMS.approved);
 });
-test('creator terms with no numbers hold for input', () => assert.ok(creatorTerms().needsInput.length > 0));
-test('debrief one-pager passes the voice lint', () => assert.deepEqual(rules(DEBRIEF_ONE_PAGER.text, { asks: '', maxWords: 700 }), []));
+test('creator terms read clean and hold until approved', () => {
+  const d = creatorTerms({ firstName: 'Kizzy' });
+  assert.deepEqual(rules(d.body, { asks: '' }), []);
+  assert.match(d.body, /code KIZZY/);
+  assert.equal(d.needsApproval, !CREATOR_TERMS.approved);
+});
+test('promotion codes come from the name', () => {
+  assert.equal(promoCode('Aadvik Solutions'), 'AADVIK');
+  assert.equal(promoCode('Dependable On-Site Scan & Shred, Inc.'), 'DEPENDABLE');
+});
+test('debrief one-pager passes the voice lint', () => assert.deepEqual(rules(DEBRIEF_ONE_PAGER.text, { asks: '', maxWords: 800 }), []));
 test('unapproved one-pager cannot send', () => assert.equal(debriefOnePager().needsApproval, !DEBRIEF_ONE_PAGER.approved));
 test('scrub removes dashes and bold without touching ranges', () => {
   assert.equal(scrub('a — b **c** 2,300–2,722'), 'a, b c 2,300–2,722');

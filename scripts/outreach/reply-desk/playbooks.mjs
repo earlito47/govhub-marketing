@@ -123,9 +123,9 @@ export const PLAYBOOKS = {
     name: 'Creator offer',
     promise: 'an account with no cap, a recurring share of subscriptions their audience starts, and a better rate for their audience',
     autoSend: false,
-    async build({ cls }) {
+    async build({ lead, cls }) {
       return {
-        deliverable: creatorTerms(),
+        deliverable: creatorTerms({ firstName: lead.first_name || lead.company_name }),
         allowLinks: links(cls),
         instructions: `They are a GovCon content creator and answered the creator outreach.${ANSWER(cls)} Lay out the offer below plainly. Close with ONE question asking which solicitation they would like run first, so they have something to film.${CALL(cls)}`,
       };
@@ -136,9 +136,9 @@ export const PLAYBOOKS = {
     name: 'Consultant partner terms',
     promise: 'the partner terms: free partner account with client workspaces, recurring share of referred subscriptions',
     autoSend: false,
-    async build({ cls }) {
+    async build({ lead, cls }) {
       return {
-        deliverable: partnerTerms(),
+        deliverable: partnerTerms({ companyName: lead.company_name }),
         allowLinks: links(cls),
         instructions: `They are a proposal consultancy and asked for the partner details.${ANSWER(cls)} Hand over the terms below in one short line. Close with ONE question: whether Earl should set up their partner account this week.${CALL(cls)}`,
       };

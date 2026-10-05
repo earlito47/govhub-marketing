@@ -20,7 +20,7 @@ import {
   samBySolNumber, samDetail, samAttachmentText, samOpen, recipientAwards, awardDetail, deadlineMs, fmtDeadline,
 } from './sources.mjs';
 import { VOICE } from './voice.mjs';
-import { DEBRIEF_ONE_PAGER, PARTNER_TERMS, CREATOR_TERMS, MATRIX_BUILDER_URL } from './content.mjs';
+import { DEBRIEF_ONE_PAGER, PARTNER_TERMS, CREATOR_TERMS, MATRIX_BUILDER_URL, promoCode } from './content.mjs';
 
 const fmtDate = fmtDeadline;
 const cleanTitle = (t) => String(t || '').replace(/^[A-Z0-9]{3,5}\s*--\s*/, '').replace(/\s+/g, ' ').trim().replace(/[.,;]+$/, '');
@@ -368,46 +368,54 @@ export function debriefOnePager() {
   };
 }
 
-export function partnerTerms() {
+export function partnerTerms({ companyName } = {}) {
   const t = PARTNER_TERMS;
-  const missing = Object.entries({
-    'PARTNER_TERMS.revenueSharePercent': t.revenueSharePercent,
-    'PARTNER_TERMS.clientWorkspaces': t.clientWorkspaces,
-    'PARTNER_TERMS.attribution': t.attribution,
-    'PARTNER_TERMS.payout': t.payout,
-  }).filter(([, v]) => v === null || v === '').map(([k]) => k);
-  const v = (x, label) => (x === null || x === '' ? `[${label}]` : x);
+  const code = promoCode(companyName);
   const body = [
-    `1. A partner account for you at no cost, with ${v(t.clientWorkspaces, 'NUMBER OF CLIENT WORKSPACES')} client workspaces under it. Setup takes ${t.setupTime}.`,
-    `2. ${v(t.revenueSharePercent, 'SHARE PERCENT')}${t.revenueSharePercent ? ' percent' : ''} of whatever a client you refer pays, every month, for as long as they stay subscribed.`,
-    `3. Referrals are tracked by ${v(t.attribution, 'HOW A REFERRAL IS ATTRIBUTED')}. Paid ${v(t.payout, 'PAYOUT TIMING AND METHOD')}.`,
-    '4. No exclusivity, no minimum, and no requirement that you ever mention us. You keep the client relationship and the invoice.',
+    `1. ${cap(t.account)}. Setup takes ${t.setupTime}.`,
+    `2. ${t.revenueSharePercent} percent of whatever a client you refer pays us, every month, for as long as they stay subscribed.`,
+    `3. Your clients get ${t.clientRate} with your code, ${code}. The code is also how we credit the referral to you, so have them use it when they sign up.`,
+    `4. Paid ${t.payout}.`,
+    '5. No exclusivity, no minimum, and no requirement that you ever mention us. You keep the client relationship and the invoice. We only ask that clients know you get a referral share.',
+    '',
+    t.workspacesNote,
   ].join('\n');
+  const verify = [
+    `${t.revenueSharePercent} percent recurring share for as long as the client stays`,
+    'free Pro account, comped with a single-use 100 percent Stripe code',
+    `Stripe promotion code ${code} (${t.clientRate}) exists before this is sent`,
+    `payout: ${t.payout}`,
+    'the reply says client workspaces are not live yet',
+  ];
   return {
-    kind: 'partner_terms', body, facts: {}, sources: ['content.mjs PARTNER_TERMS'], gaps: [],
-    warnings: [], needsInput: missing, needsApproval: false,
+    kind: 'partner_terms', body, facts: { code }, sources: ['content.mjs PARTNER_TERMS'], gaps: [],
+    warnings: t.approved ? [] : [`recommended partner terms not yet approved in content.mjs; verify: ${verify.join('; ')}`],
+    needsInput: [], needsApproval: !t.approved,
   };
 }
 
-export function creatorTerms() {
+export function creatorTerms({ firstName } = {}) {
   const t = CREATOR_TERMS;
-  const missing = Object.entries({
-    'CREATOR_TERMS.revenueSharePercent': t.revenueSharePercent,
-    'CREATOR_TERMS.audienceRate': t.audienceRate,
-    'CREATOR_TERMS.attribution': t.attribution,
-  }).filter(([, v]) => v === null || v === '').map(([k]) => k);
-  const v = (x, label) => (x === null || x === '' ? `[${label}]` : x);
+  const code = promoCode(firstName);
   const body = [
-    `1. ${t.account[0].toUpperCase()}${t.account.slice(1)}.`,
-    `2. ${v(t.revenueSharePercent, 'SHARE PERCENT')}${t.revenueSharePercent ? ' percent' : ''} of every subscription your audience starts, paid monthly for as long as they stay.`,
-    `3. ${v(t.audienceRate, 'AUDIENCE RATE')} for your audience, through ${v(t.attribution, 'CODE OR LINK')}. That is a better rate than our own site offers.`,
+    `1. ${cap(t.account)}.`,
+    `2. ${t.shareFirstYearPercent} percent of everything your audience pays in their first year, then ${t.shareAfterPercent} percent for as long as they stay, paid monthly.`,
+    `3. Your audience gets ${t.audienceRate} with the code ${code}, on top of our 14-day trial. That is a better rate than our own site offers.`,
     '4. Send me any solicitation your audience would recognize and I will run it and send back everything it produces, yours to use however you like.',
   ].join('\n');
+  const verify = [
+    `${t.shareFirstYearPercent} percent of year one, then ${t.shareAfterPercent} percent for as long as they stay`,
+    'free account, comped with a single-use 100 percent Stripe code',
+    `Stripe promotion code ${code} (${t.audienceRate}) exists before this is sent`,
+  ];
   return {
-    kind: 'creator_terms', body, facts: {}, sources: ['content.mjs CREATOR_TERMS'], gaps: [],
-    warnings: [], needsInput: missing, needsApproval: false,
+    kind: 'creator_terms', body, facts: { code }, sources: ['content.mjs CREATOR_TERMS'], gaps: [],
+    warnings: t.approved ? [] : [`recommended creator terms not yet approved in content.mjs; verify: ${verify.join('; ')}`],
+    needsInput: [], needsApproval: !t.approved,
   };
 }
+
+const cap = (s) => `${String(s)[0].toUpperCase()}${String(s).slice(1)}`;
 
 export function matrixBuilder() {
   return {

@@ -64,7 +64,7 @@ Length: match them. A one or two word reply gets an opening of one or two short 
   const issues = lint(text, {
     asks: `${last.opening}\n${last.closing}`,
     allowLinks: plan.allowLinks || [],
-    maxWords: d.kind === 'debrief_one_pager' ? 700 : 520,
+    maxWords: d.kind === 'debrief_one_pager' ? 800 : 520,
   });
   return {
     subject: replySubject(inbound.subject),

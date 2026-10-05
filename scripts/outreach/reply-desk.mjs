@@ -55,7 +55,7 @@ import { classify, freshText } from './reply-desk/classify.mjs';
 import { PLAYBOOKS, CAMPAIGNS } from './reply-desk/playbooks.mjs';
 import { compose } from './reply-desk/compose.mjs';
 import { lint, assemble, toHtml, quoteText, attribution } from './reply-desk/voice.mjs';
-import { DEBRIEF_ONE_PAGER } from './reply-desk/content.mjs';
+import { DEBRIEF_ONE_PAGER, PARTNER_TERMS, CREATOR_TERMS } from './reply-desk/content.mjs';
 import { renderReviewEmail } from './reply-desk/review-email.mjs';
 
 const ROOT = fileURLToPath(new URL('../..', import.meta.url));
@@ -427,13 +427,16 @@ async function send(ids, { auto = false } = {}) {
     const m = loadMeta(id);
     const status = ledger.emails[id]?.status || m.status;
     if (status === 'sent') { refuse('already sent'); continue; }
-    if (status === 'needs_content' && !(m.deliverable?.kind === 'debrief_one_pager' && DEBRIEF_ONE_PAGER.approved)) {
-      refuse('the fixed deliverable is not approved yet (content.mjs)'); continue;
+    // Fixed text and business terms are approved once, in content.mjs, by a
+    // reviewed commit. Until then a draft built on them cannot go.
+    const contentApproved = { debrief_one_pager: DEBRIEF_ONE_PAGER.approved, partner_terms: PARTNER_TERMS.approved, creator_terms: CREATOR_TERMS.approved };
+    if (status === 'needs_content' && !contentApproved[m.deliverable?.kind]) {
+      refuse(`the ${m.deliverable?.kind || 'fixed'} content is not approved yet (content.mjs)`); continue;
     }
     if (!SENDABLE.has(status) && status !== 'needs_content') { refuse(`status is ${status}`); continue; }
 
     const text = readFileSync(textPath(id), 'utf8').trim();
-    const issues = lint(text, { asks: m.asks, allowLinks: m.allow_links, maxWords: m.deliverable?.kind === 'debrief_one_pager' ? 700 : 520 });
+    const issues = lint(text, { asks: m.asks, allowLinks: m.allow_links, maxWords: m.deliverable?.kind === 'debrief_one_pager' ? 800 : 520 });
     if (issues.length) { refuse(`lint: ${issues.map((i) => `${i.rule} (${i.detail})`).join('; ')}`); continue; }
 
     if (!now && !inBusinessHours(new Date())) { refuse('outside 8:40-17:20 ET on a weekday (use --now to override)'); continue; }
