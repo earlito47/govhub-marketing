@@ -18,7 +18,7 @@
 // overhaul's Part 15 deviation, check that 15.506(a)(1), 15.506(a)(4) and
 // 15.506(d) still carry the same rules under the same numbers.
 export const DEBRIEF_ONE_PAGER = {
-  approved: false,
+  approved: true, // approved by the owner 2026-10-05
   // Checked against primary sources on 2026-10-05: acquisition.gov FAR (FAC
   // 2026-01), eCFR current to 2026-10-01, the FAR overhaul (RFO) deviation
   // text for Parts 12-15 and 33, 4 CFR 21.2, 31 USC 3553. Every citation is
@@ -77,7 +77,7 @@ This is general information, not legal advice.`,
 // exclusivity, no minimum, no obligation to mention GovHub, and the
 // consultant keeps the client relationship and the invoice.
 //
-// RECOMMENDED 2026-10-05, not yet approved (docs/reply-desk.md section 5):
+// APPROVED 2026-10-05 as recommended (docs/reply-desk.md section 5):
 // - 20 percent: with the share paid for as long as the client stays, LTV:CAC
 //   is gross margin / share, so ~80 percent margin -> 4:1. 25 percent is the
 //   ceiling for 3:1. HubSpot Solutions Partners and Gusto sit at 20.
@@ -92,7 +92,7 @@ This is general information, not legal advice.`,
 // - The referral share must be disclosed to clients; APEX and SBDC counselors
 //   cannot take it at all (13 CFR 130.470), which is why C5 never offers it.
 export const PARTNER_TERMS = {
-  approved: false,
+  approved: true, // approved by the owner 2026-10-05
   account: 'a GovHub Pro account for your own team at no cost, for as long as you are a partner',
   revenueSharePercent: 20,
   clientRate: '10 percent off their first 3 months',
@@ -105,7 +105,7 @@ export const PARTNER_TERMS = {
 // Promised in GovHub Influencer C1 step 3. "discount" is a banned word in this
 // programme's copy; the offer is phrased as a better rate than the site's.
 //
-// RECOMMENDED 2026-10-05, not yet approved: 30 percent of the first year,
+// APPROVED 2026-10-05 as recommended: 30 percent of the first year,
 // then 20 percent for as long as they stay (about 24 percent blended; beats
 // the B2B SaaS median of 20 for a creator with ~80k YouTube subscribers and a
 // 15k-member group, while the long tail stays at the sustainable 20). The
@@ -113,7 +113,7 @@ export const PARTNER_TERMS = {
 // (Stripe coupon percent_off 20, duration repeating, duration_in_months 3).
 // The creator must disclose the relationship in the video (FTC 16 CFR 255).
 export const CREATOR_TERMS = {
-  approved: false,
+  approved: true, // approved by the owner 2026-10-05
   account: 'an account with no cap on solicitations, yours to keep whether or not GovHub ever comes up on your channel',
   shareFirstYearPercent: 30,
   shareAfterPercent: 20,
