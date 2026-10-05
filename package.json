@@ -33,6 +33,10 @@
     "influencers:signatures": "node scripts/outreach/set-signatures.mjs",
     "influencers:replies": "node scripts/outreach/instantly-replies.mjs --report",
     "influencers:replies:send": "node scripts/outreach/instantly-replies.mjs",
+    "replies:scan": "node scripts/outreach/reply-desk.mjs scan",
+    "replies:show": "node scripts/outreach/reply-desk.mjs show",
+    "replies:status": "node scripts/outreach/reply-desk.mjs status",
+    "replies:selftest": "node scripts/outreach/reply-desk.selftest.mjs",
     "digest": "node scripts/digest/marketing-digest.mjs",
     "guard:emdash": "node scripts/check-emdash.mjs"
   },
