@@ -549,7 +549,11 @@ function write(id, file) {
   if (!existsSync(metaPath(id))) { console.error(`not in the queue: ${id}`); return 1; }
   const m = loadMeta(id);
   const text = readFileSync(file, 'utf8').trim();
-  const issues = lint(text, { asks: text });
+  // A person writing the reply may link our own site on purpose; anything
+  // else still trips the lint. The prospect already replied, so this is not
+  // the "no links in email 1" case instantly-angles.mjs guards.
+  const allowLinks = [...new Set([...(m.allow_links || []), 'https://www.govhub.online/', 'https://govhub.online/'])];
+  const issues = lint(text, { asks: text, allowLinks });
   const inbound = m.inbound || {};
   saveMeta({
     ...m,
@@ -559,7 +563,7 @@ function write(id, file) {
     subject: m.subject || replySubject(inbound.subject),
     received_at: m.received_at || inbound.at,
     send_after: m.send_after || sendAfter(inbound.at),
-    allow_links: m.allow_links || [],
+    allow_links: allowLinks,
     quote: m.quote || { attribution: attribution(inbound.at, '', inbound.from || m.lead), body: m.cls?.text || '' },
     deliverable: m.deliverable?.kind ? m.deliverable : { kind: 'written', sources: [], gaps: [], warnings: [], needsInput: [], needsApproval: false, facts: {} },
     issues,
