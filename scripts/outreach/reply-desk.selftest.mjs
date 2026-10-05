@@ -11,6 +11,7 @@ import { partnerTerms, creatorTerms, debriefOnePager, recompetable } from './rep
 import { DEBRIEF_ONE_PAGER } from './reply-desk/content.mjs';
 import { inBusinessHours, sendAfter } from './reply-desk.mjs';
 import { deadlineMs, fmtDeadline } from './reply-desk/sources.mjs';
+import { renderReviewEmail, draftToHtml, trimQuote } from './reply-desk/review-email.mjs';
 
 let failed = 0;
 function test(name, fn) {
@@ -102,6 +103,33 @@ test('an order is caught from its id when award detail 404s', () => {
   assert.equal(recompetable({ psc: 'S222', internalId: 'CONT_AWD_70FB7026F00000102_7022_70FB7026D00000016_7022' }), false);
 });
 test('reply subject keeps one Re:', () => { assert.equal(replySubject('Re: USDA'), 'Re: USDA'); assert.equal(replySubject('USDA'), 'Re: USDA'); });
+
+console.log('review email');
+test('draft renders lists as lists and greys the signature', () => {
+  const h = draftToHtml('Here it is.\n\n1. Floodplain is a hard stop (RLP 2.02).\n2. SAM must be active (3516A).\n\nWant me to write it?');
+  assert.match(h, /<ol[^>]*><li[^>]*>Floodplain is a hard stop/);
+  assert.match(h, /Founder, GovHub/);
+  assert.ok(!h.includes('1. Floodplain'));
+});
+test('unfilled numbers are highlighted, and prospect text is escaped', () => {
+  assert.match(draftToHtml('You get [SHARE PERCENT] of it.'), /background:#FDE68A[^>]*>\[SHARE PERCENT\]/);
+  assert.ok(!draftToHtml('a <script>x</script>').includes('<script>'));
+});
+test('their quote drops the signature and legal footer', () => {
+  assert.equal(trimQuote('Sure--\nVery Respectfully,\n\nDave Henderson\nPresident & CEO'), 'Sure');
+  assert.equal(trimQuote('What is your cost?\n\nAzita Yazdani\nCEO\n*** Note: This e-mail is covered', 'Azita Yazdani'), 'What is your cost?');
+  assert.equal(trimQuote('Send details. Thanks.\n--\nWarm Regards'), 'Send details. Thanks.');
+});
+test('the email counts what is ready and what is waiting', () => {
+  const metas = [
+    { id: 'a', status: 'drafted', lead: 'a@x.com', company: 'A', cls: { text: 'Yes' }, deliverable: {} },
+    { id: 'b', status: 'needs_input', lead: 'b@x.com', company: 'B', cls: { text: 'Tell me' }, deliverable: { needsInput: ['PARTNER_TERMS.payout'] } },
+  ];
+  const e = renderReviewEmail(metas, { readText: () => 'Here it is.' });
+  assert.equal(e.subject, 'Reply desk: 1 ready to send, 1 waiting on you');
+  assert.match(e.html, /1 needs your numbers/);
+  assert.match(e.html, /When and how partners get paid/);
+});
 
 console.log('deadlines');
 test('a bare-date deadline is that day, not the evening before', () => {

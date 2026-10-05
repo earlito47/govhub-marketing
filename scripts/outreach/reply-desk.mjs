@@ -42,7 +42,7 @@
 //        node scripts/outreach/reply-desk.mjs send <id>... [--dry-run] [--now]
 //        node scripts/outreach/reply-desk.mjs dismiss <id>...        decide not to send
 //        node scripts/outreach/reply-desk.mjs auto
-//        node scripts/outreach/reply-desk.mjs notify [--dry-run]   email Earl what is new
+//        node scripts/outreach/reply-desk.mjs notify [--dry-run] [--all] [--to=a@b.com]   email the review
 //        node scripts/outreach/reply-desk.mjs status
 
 import { readFileSync, writeFileSync, existsSync, mkdirSync, readdirSync } from 'node:fs';
@@ -56,6 +56,7 @@ import { PLAYBOOKS, CAMPAIGNS } from './reply-desk/playbooks.mjs';
 import { compose } from './reply-desk/compose.mjs';
 import { lint, assemble, toHtml, quoteText, attribution } from './reply-desk/voice.mjs';
 import { DEBRIEF_ONE_PAGER } from './reply-desk/content.mjs';
+import { renderReviewEmail } from './reply-desk/review-email.mjs';
 
 const ROOT = fileURLToPath(new URL('../..', import.meta.url));
 // The committed ledger is the scheduled workflow's. A hand run that is trying
@@ -404,7 +405,12 @@ function writeReview() {
   }
   mkdirSync(QUEUE, { recursive: true });
   writeFileSync(join(QUEUE, 'REVIEW.md'), out.join('\n'));
-  console.log(`\nreview: ${join(QUEUE, 'REVIEW.md').replace(ROOT, '')}  (${waiting.length} waiting)`);
+  // The same cards as the email, for reading in a browser.
+  const html = renderReviewEmail(waiting.map((m) => ({ ...m, status: ledger.emails[m.id]?.status || m.status })), {
+    readText: (id) => (existsSync(textPath(id)) ? readFileSync(textPath(id), 'utf8') : null),
+  }).html;
+  writeFileSync(join(QUEUE, 'REVIEW.html'), html);
+  console.log(`\nreview: ${join(QUEUE, 'REVIEW.html').replace(ROOT, '')}  (${waiting.length} waiting)`);
 }
 
 // ---- send -----------------------------------------------------------------
@@ -479,49 +485,38 @@ async function send(ids, { auto = false } = {}) {
 
 async function notify() {
   if (!existsSync(QUEUE)) { console.log('queue empty.'); return 0; }
-  const fresh = queueMetas()
-    .filter((m) => ['drafted', 'needs_input', 'needs_content', 'needs_human', 'referral'].includes(ledger.emails[m.id]?.status))
-    .filter((m) => !ledger.emails[m.id]?.notified_at);
+  // Default: only what Earl has not been emailed about yet. --all re-sends
+  // everything still waiting (e.g. after changing the recipient).
+  const waiting = queueMetas()
+    .map((m) => ({ ...m, status: ledger.emails[m.id]?.status || m.status }))
+    .filter((m) => ['drafted', 'needs_input', 'needs_content', 'needs_human', 'referral'].includes(m.status));
+  const fresh = flag('all') ? waiting : waiting.filter((m) => !ledger.emails[m.id]?.notified_at);
   if (!fresh.length) { console.log('nothing new to notify.'); return 0; }
 
   const repo = process.env.GITHUB_REPOSITORY || 'earlito47/govhub-marketing';
-  const runUrl = `https://github.com/${repo}/actions/workflows/reply-desk.yml`;
-  const blocks = fresh.map((m) => {
-    const lines = [
-      `${m.status.toUpperCase()}  ${m.company || m.lead} <${m.lead}>  (${m.campaign || '?'}, ${m.playbook || 'no playbook'})`,
-      `They wrote: "${(m.cls?.text || '').replace(/\s+/g, ' ').slice(0, 400)}"`,
-      ...(m.deliverable?.needsInput || []).map((n) => `NEEDS YOUR INPUT: ${n}`),
-      ...(m.deliverable?.warnings || []).map((w) => `Warning: ${w}`),
-      ...(m.issues || []).map((i) => `Lint: ${i.rule} (${i.detail})`),
-      `id: ${m.id}`,
-    ];
-    if (existsSync(textPath(m.id))) lines.push('', `Subject: ${m.subject}`, '', assemble(readFileSync(textPath(m.id), 'utf8')));
-    return lines.join('\n');
+  const email = renderReviewEmail(fresh, {
+    readText: (id) => (existsSync(textPath(id)) ? readFileSync(textPath(id), 'utf8') : null),
+    runUrl: `https://github.com/${repo}/actions/workflows/reply-desk.yml`,
   });
-  const names = fresh.map((m) => (m.company || m.lead).split(/[ ,]/)[0]).slice(0, 4).join(', ');
-  const text = [
-    `${fresh.length} repl${fresh.length === 1 ? 'y' : 'ies'} waiting on you. Nothing below has been sent.`,
-    '',
-    `To send one as written: ${runUrl} -> Run workflow -> paste the id(s) into "send_ids".`,
-    'To change one first: edit .cache/reply-desk/<id>.txt in a local checkout, then node scripts/outreach/reply-desk.mjs send <id>.',
-    '',
-    ...blocks.flatMap((b) => ['='.repeat(72), b, '']),
-  ].join('\n');
+  const to = (flagValue('to') || process.env.REPLY_DESK_NOTIFY_TO || process.env.DIGEST_TO || 'earljknight@gmail.com,earl@govhub.online')
+    .split(',').map((s) => s.trim()).filter(Boolean);
 
-  const to = (process.env.REPLY_DESK_NOTIFY_TO || process.env.DIGEST_TO || 'earljknight@gmail.com,earl@govhub.online').split(',').map((s) => s.trim()).filter(Boolean);
-  const subject = `Reply desk: ${fresh.length} waiting (${names})`;
-  if (flag('dry-run')) { console.log(`would email ${to.join(', ')}\nSubject: ${subject}\n\n${text}`); return 0; }
+  if (flag('dry-run')) {
+    const out = join(QUEUE, 'NOTIFY-PREVIEW.html');
+    writeFileSync(out, email.html);
+    console.log(`would email ${to.join(', ')}\nSubject: ${email.subject}\npreview: ${out.replace(ROOT, '')}`);
+    return 0;
+  }
   const key = process.env.RESEND_API_KEY;
   if (!key) throw new Error('RESEND_API_KEY is not set');
-  const esc = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
   const res = await fetch('https://api.resend.com/emails', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${key}` },
-    body: JSON.stringify({ from: 'GovHub Ops <hello@govhub.online>', to, subject, text, html: `<pre style="font:13px/1.5 ui-monospace,Menlo,monospace;white-space:pre-wrap">${esc(text)}</pre>` }),
+    body: JSON.stringify({ from: 'GovHub Reply Desk <hello@govhub.online>', to, subject: email.subject, html: email.html, text: email.text }),
   });
   if (!res.ok) throw new Error(`resend: HTTP ${res.status} ${(await res.text()).slice(0, 200)}`);
   for (const m of fresh) record(m.id, { notified_at: new Date().toISOString() });
-  console.log(`notified ${to.join(', ')} about ${fresh.length} item(s).`);
+  console.log(`emailed ${to.join(', ')} about ${fresh.length} item(s): "${email.subject}"`);
   return 0;
 }
 

@@ -178,6 +178,30 @@ reply through the API, so it is unverified whether Instantly appends the
 quoted thread itself. The desk adds a Gmail-style quote of their message. If
 the BCC copy shows it twice, set `REPLY_DESK_QUOTE=0`.
 
+### Reading the drafts
+
+Every scan writes `.cache/reply-desk/REVIEW.html`, and `notify` emails the
+same view (`reply-desk/review-email.mjs`). Each card shows:
+
+- what they wrote, with their signature and legal footer trimmed;
+- the reply exactly as it would land, with lists as lists, and any unfilled
+  number highlighted in yellow;
+- what the deliverable was built from, with links to the SAM.gov notices and
+  USASpending awards;
+- anything to check first;
+- the id to approve it with.
+
+Ready replies come first, and how long each person has been waiting is
+called out.
+
+```
+node scripts/outreach/reply-desk.mjs notify --dry-run          # writes NOTIFY-PREVIEW.html
+node scripts/outreach/reply-desk.mjs notify --all --to=you@x.com
+```
+
+`--all` re-sends everything still waiting, not just what is new. `--to`
+overrides `REPLY_DESK_NOTIFY_TO`, which defaults to the digest recipients.
+
 ### On a schedule
 
 `.github/workflows/reply-desk.yml` runs every 30 minutes on weekdays. It

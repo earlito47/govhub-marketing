@@ -221,7 +221,7 @@ export async function nextOpen({ naics, keywords = [], companyName, context = ''
     },
     sources,
     gaps,
-    warnings: picked.length < count ? [`only ${picked.length} of ${count} open in lane; the desk will watch and draft a follow-up when the next one posts`] : [],
+    warnings: picked.length < count ? [`${picked.length ? `Only ${picked.length} of the ${count} promised` : 'Nothing'} open in their lane right now. Once this is sent, the desk checks daily and drafts a follow-up when the next one posts.`] : [],
     needsInput: [],
     needsApproval: false,
     watch,
