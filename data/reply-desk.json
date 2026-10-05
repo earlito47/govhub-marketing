@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "cursor": "2026-09-30T15:06:05.000Z",
+  "cursor": "2026-10-03T18:58:18.000Z",
   "emails": {
     "01a07bf7-8d8a-7d1c-b87e-76208ed81963": {
       "lead": "amirl@seetrue.ai",
@@ -636,6 +636,83 @@
       "classified_by": "rule",
       "status": "no_action",
       "updated_at": "2026-10-04T01:41:30.860Z"
+    },
+    "01a10c3e-d533-7521-8df5-10a18cf8071f": {
+      "lead": "cirillo@pinyon-env.com",
+      "campaign": "A1",
+      "received_at": "2026-10-05T13:26:33.000Z",
+      "category": "auto_reply",
+      "classified_by": "rule",
+      "status": "no_action",
+      "updated_at": "2026-10-05T19:07:07.720Z",
+      "redirect": "dwenger@pinyon-env.com"
+    },
+    "01a10c45-32a3-73e7-a15b-3e721e848ef6": {
+      "lead": "hunter.garbacz@quindar.space",
+      "campaign": "A4",
+      "received_at": "2026-10-05T13:33:28.000Z",
+      "category": "auto_reply",
+      "classified_by": "rule",
+      "status": "no_action",
+      "updated_at": "2026-10-05T19:07:07.865Z",
+      "redirect": "joel.meredith@quindar.space"
+    },
+    "01a10c6f-6f27-71ef-a367-4f19f040423c": {
+      "lead": "cdixon@beckwoodpress.com",
+      "campaign": "A2",
+      "received_at": "2026-10-05T14:19:41.000Z",
+      "category": "auto_reply",
+      "classified_by": "rule",
+      "status": "no_action",
+      "updated_at": "2026-10-05T19:07:08.210Z"
+    },
+    "01a10cef-25b7-7ffb-badc-a9e13bb5aa1d": {
+      "lead": "matthew.yoo@ilcreations.com",
+      "campaign": "A4",
+      "received_at": "2026-10-05T16:39:11.000Z",
+      "category": "auto_reply",
+      "classified_by": "model",
+      "status": "no_action",
+      "updated_at": "2026-10-05T19:07:10.961Z",
+      "redirect": "andrew.ko@ilcreations.com"
+    },
+    "01a10cf9-8943-7e01-84c6-762a6d95c3e9": {
+      "lead": "jwilder@stericert.com",
+      "campaign": "A2",
+      "received_at": "2026-10-05T16:49:52.000Z",
+      "category": "accept",
+      "classified_by": "model",
+      "status": "sent",
+      "playbook": "A2",
+      "deliverable": "disqualifiers",
+      "updated_at": "2026-10-05T19:16:00.067Z",
+      "notified_at": "2026-10-05T19:14:48.753Z",
+      "sent_at": "2026-10-05T19:16:00.067Z",
+      "sent_email_id": "01a10d7e-87fc-7689-b499-c35396355d7c",
+      "sent_by": "approved"
+    },
+    "01a10cff-7181-7d0e-858a-e858506567ea": {
+      "lead": "jdebaker@detectachem.com",
+      "campaign": "A2",
+      "received_at": "2026-10-05T16:56:54.000Z",
+      "category": "not_interested",
+      "classified_by": "model",
+      "status": "no_action",
+      "updated_at": "2026-10-05T19:07:21.621Z"
+    },
+    "01a10d6e-5838-7996-b587-0c45de619132": {
+      "lead": "acsfencing@gmail.com",
+      "campaign": "A5",
+      "received_at": "2026-10-05T18:57:56.000Z",
+      "category": "other",
+      "classified_by": "model",
+      "status": "sent",
+      "updated_at": "2026-10-05T19:36:56.141Z",
+      "notified_at": "2026-10-05T19:23:18.772Z",
+      "deliverable": "written",
+      "sent_at": "2026-10-05T19:36:56.139Z",
+      "sent_email_id": "01a10d91-ad78-788f-ba74-3db7989ef57c",
+      "sent_by": "approved"
     }
   }
 }
