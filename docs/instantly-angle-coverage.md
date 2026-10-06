@@ -1387,3 +1387,114 @@ At **25 emails/mailbox/day** (what is live as of 10-06):
 | **A2 + A4** | 28 | 700 | 170 | **15,400** | **3,740** |
 
 A1 is the recompete angle, not A4. A4 is "a competitor near you just won".
+
+### Day 10 (10-06 sending) — the first day on the new capacity, and push could not finish
+
+Both push runs returned **504 IDLE_TIMEOUT**. The cap raise took the day's work
+from 195 leads to 282, and the duplicate-move path added the same day sleeps
+2.5s per hit against ~593 queued rows that collide with wave 1. Edge Functions
+cut a request off at 150s idle and this job streams nothing until the end, so
+06:00 died after 80 leads and the 06:25 retry after 178.
+
+The 504 hid three separate failures, because the summary never returned:
+
+| | Cap | Pushed 10-06 |
+|---|---:|---:|
+| A2 | 125 | **201** |
+| A4 | 45 | 49 |
+| A1 | 37 | **8** |
+| A5 | 75 | **0** |
+
+- **A second run spent a second full cap.** The retry started from scratch, so
+  A2 took 201 against a day the close-date budget had sized for 125. The cap is
+  a daily budget, so a run now reads what the day already pushed and takes only
+  what is left. That is also what makes the new continuation crons safe.
+- **The sort order became a starvation order.** Candidates sort deadline-first
+  and A5 carries no deadline, so it sits at the very back: A5 got nothing and
+  A1 got 8 of 37. A5 holds the control arm of the only experiment this
+  programme exists to run, so the control lost a day to a timeout. Each angle
+  now keeps its own deadline-sorted queue and the run takes one row from each in
+  turn.
+- **A run that cannot finish now says so** — a 115s budget reported as
+  `stopped_on_time_budget`, rather than a 504 that says nothing. Two
+  unconditional continuation crons at 06:50 and 07:15 finish the day's budget;
+  `retry_job_if_failed` could not, because a run that stops early returns 200.
+
+Cheaper per lead too: the move is no longer confirmed inline (the next run
+confirms it for free — Instantly answers with the lead already in our campaign
+and the landing check passes) and the inter-lead sleep goes 350ms to 200ms,
+which alone was 99s of the budget spent waiting.
+
+**TWO CONTACTS WERE BEING EMAILED WITH NO RECORD.** The campaigns held 133 and
+624 against 132 and 623 in the queue. Both extras were created in Instantly at
+06:03 — the minute the first run died — so the kill landed between the Instantly
+write and the Supabase write. One of them, a wave 1 lead moved into A1, was
+contacted at 13:08 with nothing in our database saying so: invisible to
+metrics, to suppression and to reply handling. Both repaired.
+
+The window is real but it closes itself: the rows were still `ready`, so the
+next run posts them again, Instantly answers with the lead already in our
+campaign, and yesterday's landing check marks them pushed without sending
+twice. The fix for the cause is the time budget; the landing check is what
+makes the leftovers harmless.
+
+### Day 10 — what went right
+
+**The pacing held.** Today's 202 A2 emails spread over 60 solicitations, the
+largest taking 26. Monday's 80 took 52 from one. 13% against 65%.
+
+**Assign filled the new ceiling.** 595 written (A2 257, A5 297), A2's queue to
+635, and `a2_left_close_date_full` down to **605** from 1,508 before the window
+widened — the refusals are now a third of what they were.
+
+**Bounce 1.11%**, 17 of 1,536 contacted, tenth day under the gate and the
+lowest reading yet. A1 1.69%, A2 0.94%, A4 1.72%, A5 0.69%.
+
+### Day 10 — replies, and a fifth autoresponder shape
+
+Six replies. One new positive on A2 — *"Yes, I would be interested."* — which
+makes **seven** awaiting a fulfilment answer, the oldest from 09-25. Two real
+declines worth reading, both naming price rather than process: *"It always comes
+down to price. We are always compliant and do it in house."* (A1) and *"I don't
+see this solicitation has anything to do with what we could offer."* (A2).
+
+A delegation notice counted as a human reply: *"For all business matters, please
+reach out to Jordan Martin at jordan@titantechinc.org"* plus a signature. The
+existing delegation pattern wants a trailing "instead", "in my absence" or "for
+urgent" and this had none. Naming someone else's address IS the redirect, so
+the address is the tell. Row reclassified, A4's human count 3 to 2.
+
+The lookahead on that pattern is the whole distinction, and the test for it
+failed on the first cut: *"email me at dave@..."* is a human answering and
+handing over a better address, not a redirect.
+
+### Day 10 — 112 joint ventures were going out as "Jv"
+
+Found by reading five of today's fit lines rather than by any counter: *"on
+paper Eb-Mei One, Jv clears the bar on NAICS 238210"*. JV is a genuine
+initialism and it was missing from both title-case lists, so `initcap` lowered
+it at load and the name was persisted that way. 112 companies, 52 of them
+queued or already sent. Repaired: the names, the copy already rendered from
+them, and the 22 live Instantly payloads so the remaining sequence steps render
+it too.
+
+Not fixed, and not fixable from a word list: the same names carry arbitrary
+acronyms `initcap` also lowered — "Aci-Ac", "Aims-Usgp", "Aici-Archirodon".
+That is the case `solHeadline` already refuses to guess at, and the original
+casing is gone from the database for these rows. 21% of queued A2 rows still
+render the bare solicitation number (88 of 410), down from 25%.
+
+### Day 10 — inventory
+
+| Angle | Queued | Cap | Sending days of queue |
+|---|---:|---:|---:|
+| A1 | 355 | 37 | 9.6 |
+| A2 | 410 | 125 | 3.3 |
+| A4 | 399 | 45 | 8.9 |
+| A5 holdout | 1,824 | 75 | — |
+| A5 generic | 650 | | — |
+
+A2 at 3.3 days is the shallowest it has been, and that is the capacity raise
+working rather than a supply problem: assign queued 257 A2 rows today against
+125 sent. The experiment still reads on its slower side — the A5 holdout
+control sits at 210 contacted against A2's 624, and today's zero cost it a day.
