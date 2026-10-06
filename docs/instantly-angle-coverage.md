@@ -1275,3 +1275,52 @@ go too far.
 25% of queued A2 rows (96 of 378) still render `sol_short` as the bare
 solicitation number, because `solHeadline` rejects their title. That is the
 "too computerized" look, at a quarter of the batch rather than all of it.
+
+### Day 9 — why A2 does not hold the whole pool, and what 25/mailbox buys
+
+The pool number on the chart is real: **7,393** companies hold a live matched
+solicitation today, 5,042 of them with the 8 days the sequence needs. The
+campaign holds 422. The gap is not a loading problem and loading them would not
+send one more email.
+
+**A lead in Instantly is a scheduled send, not a stored contact.** Instantly
+meters by mailbox. 20 mailboxes x 25 emails is 500 a day; a 4-step sequence
+settles at 500/4 = 125 new leads a day whether the campaign holds 500 leads or
+7,393. The only difference is that 7,000 would sit in it uncontacted.
+
+**And they would go stale in the campaign.** A2's email names a solicitation
+and its close date. It is true the day it is sent and false after the
+solicitation closes, and the 4-step sequence needs 8 days to run, so a lead
+loaded today and reached in 40 days ships a dead RFP. That is what sank wave
+1's campaign C. The queue is therefore sized to what can be sent in time, which
+is what `a2_left_close_date_full` counts: 1,508 companies refused in today's
+preview, every one of them because its close date is already fully booked.
+
+So the pool is a flow, not a backlog. The opportunities job writes ~4,100
+matched solicitations a day; at 125/day A2 reaches about 2,750 a month. It will
+never contain the pool — it will always be rate-limited, and the rate is
+mailboxes.
+
+Applied today, owner's call, 25 stated as the ceiling:
+
+| | Before | After |
+|---|---:|---:|
+| Per mailbox, emails/day | 20 | 25 |
+| A2 mailboxes | 17 | 20 |
+| A2 emails/day | 340 | 500 |
+| **A2 new leads/day** | **85** | **125** |
+| A1 / A4 / A5 new leads/day | 20 / 35 / 60 | 37 / 45 / 75 |
+
+A2's preview under the new cap queues 237 rather than 83, taking the queue to
+615. A4 is held at 45 rather than the 50 its boxes carry, because its scanner
+does not refill until 10-13.
+
+What it would actually take to hold 7,393 sendable leads inside the 13-day
+queue window: 569 sends a day, 2,276 emails a day, **92 mailboxes** — 72 more
+than now, roughly 24 more domains. That is the price of the ask, and it is a
+domain-buying decision rather than a software one.
+
+The one-campaign-per-domain guardrail earned its keep on this change: putting
+the two idle bidwithgovhub boxes on A2 split that domain across A2 and A4, and
+the check refused to sync until A4's box on it followed. A blacklisted domain
+has to be able to take down one campaign, not two.
