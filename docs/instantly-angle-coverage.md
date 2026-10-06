@@ -1324,3 +1324,66 @@ The one-campaign-per-domain guardrail earned its keep on this change: putting
 the two idle bidwithgovhub boxes on A2 split that domain across A2 and A4, and
 the check refused to sync until A4's box on it followed. A blacklisted domain
 has to be able to take down one campaign, not two.
+
+### Day 9 — the close window was below the cap
+
+Raising A2 to 125 sends a day did not get 125 sends. The dry run filled **106**,
+and the missing 19 were not a supply problem: **92 of the 378 queued A2 rows
+close more than 21 days out**, and `A2_close_max_days` was 21. At 85 a day that
+ceiling never bound, because the queue always held more rows inside the window
+than a day could send. At 125 it binds hard.
+
+Measured both ways on the same queue:
+
+| `A2_close_max_days` | A2 sends today | Held for being early |
+|---|---:|---:|
+| 21 | 106 | 92 |
+| 30 | 122 | 0 |
+
+Widened to 30. `QUEUE_DAYS.A2` follows from 13 to 22 — the 13 was 21 minus the
+8-day floor, the widest a cohort's seats could be under the old window, and
+left alone it becomes the new silent cap. Assign's preview now queues 344 A2
+rather than 237, with `a2_left_close_date_full` down from 1,508 to 1,272.
+
+**The cost is urgency, and it is the thing to watch.** The sequence runs about
+12 days, so the last step now lands 18 days before the close rather than 9, and
+step 1 says "closes in a month" where it said "three weeks". A2 carries the
+best reply evidence in the programme. If the reply rate moves, this is the
+first thing to put back, and it reverts with one row in
+`outreach.config.freshness_buffers` — no deploy.
+
+**A latent bug surfaced while measuring this.** `freshEnough` returned a
+boolean and the caller writes `dropped_stale` on a false, so a row whose
+solicitation closed too FAR out was expired *for being early* — discarded, with
+its signal marked expired, when a week's wait would have made it ideal. It had
+cost nothing yet purely by luck: candidates sort deadline-first, so far-out
+rows sit at the back and get skipped over the daily cap before the check ever
+sees them. The first day A2's queue fell below its cap, all 92 would have gone.
+Three answers now — ok, stale, early — and `held_close_date_too_far_out` is
+what showed the window was the binding constraint in the first place.
+
+### Day 9 — the 30-day sending ceiling, for the record
+
+30 calendar days from 10-06 is **22 sending days** (job_push runs weekdays).
+Mailboxes today: A1 6, A2 20, A4 8, A5 12. A 4-step sequence settles at a
+quarter of the mailbox email capacity.
+
+At **20 emails/mailbox/day**:
+
+| Angle | Boxes | Emails/day | New leads/day | 30-day emails | 30-day contacts |
+|---|---:|---:|---:|---:|---:|
+| A2 matched RFP | 20 | 400 | 100 | 8,800 | 2,200 |
+| A4 competitor won | 8 | 160 | 40 | 3,520 | 880 |
+| A1 recompete | 6 | 120 | 30 | 2,640 | 660 |
+| **A2 + A4** | 28 | 560 | 140 | **12,320** | **3,080** |
+
+At **25 emails/mailbox/day** (what is live as of 10-06):
+
+| Angle | Boxes | Emails/day | New leads/day | 30-day emails | 30-day contacts |
+|---|---:|---:|---:|---:|---:|
+| A2 | 20 | 500 | 125 | 11,000 | 2,750 |
+| A4 | 8 | 200 | 50 (capped 45) | 4,400 | 990 |
+| A1 | 6 | 150 | 37 | 3,300 | 814 |
+| **A2 + A4** | 28 | 700 | 170 | **15,400** | **3,740** |
+
+A1 is the recompete angle, not A4. A4 is "a competitor near you just won".
