@@ -194,7 +194,7 @@ export async function fedconnectDocuments(uri) {
  * 400-page technical exhibit cannot crowd out the RLP that actually carries
  * the disqualifiers. Returns { docs: [{name, text}], skipped: [name] }.
  */
-export async function samAttachmentText(noticeId, { maxDocs = 8, maxCharsPerDoc = 60000, maxTotal = 180000 } = {}) {
+export async function samAttachmentText(noticeId, { maxDocs = 10, maxCharsPerDoc = 40000, maxTotal = 230000 } = {}) {
   const all = await samAttachments(noticeId);
   const atts = all.filter((a) => a.type !== 'link' && a.resourceId);
   // A package kept on FedConnect shows up on SAM as a single link.
@@ -208,12 +208,19 @@ export async function samAttachmentText(noticeId, { maxDocs = 8, maxCharsPerDoc 
   // determinations and drawings are long and rarely disqualify on their own.
   const rank = (n) => {
     const s = n.toLowerCase();
-    if (/(rfp|rfq|rlp|ifb|solicitation|^sol[_ -]|amendment|_amd|sf ?1449|sf ?33|sf ?1442|instructions|section l|section m|provisions|combined)/.test(s)) return 0;
-    if (/(sow|pws|statement of work|requirements|specification|security|clauses)/.test(s)) return 1;
+    if (/(rfp|rfq|rlp|ifb|solicitation|^sol[_ -]|amendment|_amd|sf ?1449|sf ?33|sf ?1442|instructions|section l|section m|provisions|combined|vendor ?response)/.test(s)) return 0;
+    if (/(sow|pws|statement of work|requirements|specification|salient|security|clauses|pricing)/.test(s)) return 1;
     if (/(wage|wd |determination|drawing|dwg|photo|map)/.test(s)) return 3;
     return 2;
   };
-  atts.sort((a, b) => rank(a.name) - rank(b.name) || (a.size || 0) - (b.size || 0));
+  // Within the solicitation tier, biggest first: the base solicitation is
+  // almost always the largest file and its amendments the smallest. Sorting
+  // that tier small-first filled every slot with amendments on VA FSS 621I
+  // (nine of them) and never read the solicitation or the vendor response
+  // document, which is where the eligibility rules are. clipText keeps a big
+  // one from crowding out the rest.
+  atts.sort((a, b) => rank(a.name) - rank(b.name)
+    || (rank(a.name) === 0 ? (b.size || 0) - (a.size || 0) : (a.size || 0) - (b.size || 0)));
   const docs = [];
   const skipped = [];
   let total = 0;

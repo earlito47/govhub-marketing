@@ -151,7 +151,7 @@ function card(m, text, now) {
     blocks.push(label('What we would send'));
     blocks.push(`<div style="border:1px solid ${C.line};border-radius:10px;overflow:hidden">
       <div style="padding:9px 14px;background:${C.oat};border-bottom:1px solid ${C.line};font-size:12px;color:${C.muted};line-height:1.5">
-        From <strong style="color:${C.ink}">${esc(m.eaccount || '')}</strong> to ${esc(m.lead)}<br>${esc(m.subject || '')}
+        From <strong style="color:${C.ink}">${esc(m.eaccount || '')}</strong> to ${esc(m.lead)}${m.cc ? `, cc ${esc(m.cc)}` : ''}<br>${esc(m.subject || '')}
       </div>
       <div style="padding:14px 16px;font-size:15px;line-height:1.6;color:${C.ink}">${draftToHtml(text)}</div>
     </div>`);

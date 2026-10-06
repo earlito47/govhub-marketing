@@ -40,7 +40,7 @@
 // Usage: node scripts/outreach/reply-desk.mjs scan [--since=2026-09-01] [--lead=a@b.com] [--redo]
 //        node scripts/outreach/reply-desk.mjs show [<id>...]
 //        node scripts/outreach/reply-desk.mjs send <id>... [--dry-run] [--now]
-//        node scripts/outreach/reply-desk.mjs write <id> <file>      a reply written by hand
+//        node scripts/outreach/reply-desk.mjs write <id> <file> [--cc=a@b.com]   a reply written by hand
 //        node scripts/outreach/reply-desk.mjs dismiss <id>...        decide not to send
 //        node scripts/outreach/reply-desk.mjs auto
 //        node scripts/outreach/reply-desk.mjs notify [--dry-run] [--all] [--to=a@b.com]   email the review
@@ -392,7 +392,7 @@ function writeReview() {
     }
     for (const i of m.issues || []) out.push(`- lint: ${i.rule} (${i.detail})`);
     if (m.reviewer_note) out.push(`- note: ${m.reviewer_note}`);
-    if (m.send_after) out.push(`- from: ${m.eaccount}, earliest send ${m.send_after}`);
+    if (m.send_after) out.push(`- from: ${m.eaccount}${m.cc ? `, cc ${m.cc}` : ''}, earliest send ${m.send_after}`);
     if (existsSync(textPath(m.id))) {
       out.push('', '```', `Subject: ${m.subject}`, '', assemble(readFileSync(textPath(m.id), 'utf8')), '```');
     }
@@ -458,10 +458,11 @@ async function send(ids, { auto = false } = {}) {
       subject: m.subject,
       text: full + quoteText(quote),
       html: toHtml(full, quote),
+      cc: m.cc || undefined,
       bcc: process.env.REPLY_DESK_BCC || undefined,
     };
     if (dryRun) {
-      console.log(`\n--- would send ${id} from ${m.eaccount} to ${m.lead}\nSubject: ${m.subject}\n\n${payload.text}\n`);
+      console.log(`\n--- would send ${id} from ${m.eaccount} to ${m.lead}${m.cc ? `, cc ${m.cc}` : ''}\nSubject: ${m.subject}\n\n${payload.text}\n`);
       continue;
     }
     // Record BEFORE reporting success and never retry a 5xx (instantly.mjs):
@@ -530,7 +531,7 @@ function show(ids) {
   const list = ids.length ? ids : draftIds().filter((id) => existsSync(textPath(id)));
   for (const id of list) {
     const m = loadMeta(id);
-    console.log(`\n=== ${id}  ${m.status}  ${m.campaign}  ${m.lead} (${m.company})`);
+    console.log(`\n=== ${id}  ${m.status}  ${m.campaign}  ${m.lead}${m.company ? ` (${m.company})` : ''}${m.cc ? `  cc ${m.cc}` : ''}`);
     for (const w of m.deliverable?.warnings || []) console.log(`  WARNING ${w}`);
     for (const n of m.deliverable?.needsInput || []) console.log(`  NEEDS INPUT ${n}`);
     for (const i of m.issues || []) console.log(`  lint ${i.rule}: ${i.detail}`);
@@ -543,10 +544,25 @@ function show(ids) {
  * referral): `write <id> <file>`. It becomes an ordinary draft with the same
  * sending details as any other (the receiving mailbox, the thread, a Gmail
  * quote of their message) and goes through the same lint and `send` checks.
+ * `--cc=` copies someone in, for a referral that should go in the same thread.
+ *
+ * A message the desk closed as no_action can be answered too ("I'm getting
+ * close to retiring" deserves two lines back): it has no queue file, so the
+ * email is read from Instantly and queued first.
  */
-function write(id, file) {
-  if (!id || !file) { console.error('usage: write <id> <file with the reply text>'); return 1; }
-  if (!existsSync(metaPath(id))) { console.error(`not in the queue: ${id}`); return 1; }
+async function write(id, file) {
+  if (!id || !file) { console.error('usage: write <id> <file with the reply text> [--cc=a@b.com]'); return 1; }
+  const cc = flagValue('cc');
+  const ccList = cc ? cc.split(',').map((x) => x.trim().toLowerCase()).filter(Boolean) : [];
+  if (cc && (!ccList.length || ccList.some((x) => !/^[^@\s]+@[^@\s]+\.[a-z]{2,}$/.test(x)))) { console.error(`--cc is not a list of addresses: ${cc}`); return 1; }
+  if (!existsSync(metaPath(id))) {
+    const row = ledger.emails[id];
+    if (!row) { console.error(`not in the queue or the ledger: ${id}`); return 1; }
+    const e = await instantly().api('GET', `/emails/${id}`);
+    if (!isInbound(e)) { console.error(`${id} is not a message from them`); return 1; }
+    const lead = row.lead || e.lead || e.from_address_email;
+    saveMeta({ id, status: row.status, lead, campaign: row.campaign || CAMPAIGNS[e.campaign_id] || null, cls: { text: freshText(e) }, inbound: slim(e) });
+  }
   const m = loadMeta(id);
   const text = readFileSync(file, 'utf8').trim();
   // A person writing the reply may link our own site on purpose; anything
@@ -569,6 +585,7 @@ function write(id, file) {
     issues,
     asks: text,
     written_by_hand: true,
+    ...(ccList.length ? { cc: ccList.join(',') } : {}),
   });
   writeFileSync(textPath(id), text + '\n');
   record(id, { status: issues.length ? 'needs_input' : 'drafted', deliverable: 'written' });

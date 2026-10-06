@@ -142,6 +142,11 @@ test('the email counts what is ready and what is waiting', () => {
   assert.match(e.html, /When and how partners get paid/);
 });
 
+test('a referral reply shows who is copied', () => {
+  const metas = [{ id: 'c', status: 'drafted', lead: 'lynn@x.com', cc: 'jordan@x.com', eaccount: 'e@y.com', cls: { text: 'Talk to Jordan' }, deliverable: {} }];
+  assert.match(renderReviewEmail(metas, { readText: () => 'Thanks, Lynn.' }).html, /to lynn@x\.com, cc jordan@x\.com/);
+});
+
 console.log('deadlines');
 test('a bare-date deadline is that day, not the evening before', () => {
   assert.equal(fmtDeadline('2026-10-02'), 'Oct 2');

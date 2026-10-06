@@ -83,9 +83,14 @@ export function instantly(key = process.env.INSTANTLY_API_KEY) {
       return items.find((l) => !campaignId || l.campaign === campaignId) || items[0] || null;
     },
 
-    /** Reply in-thread from the mailbox that received the lead's message. Never retried on 5xx. */
-    async reply({ eaccount, replyToUuid, subject, text, html, bcc }) {
+    /**
+     * Reply in-thread from the mailbox that received the lead's message. Never
+     * retried on 5xx. `cc` copies someone in, comma-separated (a referral:
+     * "thanks Lynn, copying Jordan"); the lead stays the To address.
+     */
+    async reply({ eaccount, replyToUuid, subject, text, html, cc, bcc }) {
       const body = { eaccount, reply_to_uuid: replyToUuid, subject, body: { text, html } };
+      if (cc) body.cc_address_email_list = cc;
       if (bcc) body.bcc_address_email_list = bcc;
       return api('POST', '/emails/reply', body, { retry5xx: false });
     },
