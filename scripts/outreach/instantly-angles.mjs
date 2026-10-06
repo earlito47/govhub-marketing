@@ -115,9 +115,16 @@ const SCHEDULE = {
 // lists below. The guardrail only polices angle campaigns, so it cannot see
 // this; it is recorded here instead.
 //
-// The three bidwithgovhub boxes are a different sender identity (j.knight,
-// j.k); only the e.knight one is used, so every mailbox in these campaigns
-// signs as the same person the copy speaks as.
+// THE TWO OTHER bidwithgovhub SENDERS ARE NOW IN USE, on A2. j.knight@ and
+// j.k@ are a different sender identity from the e.knight/earl.knight/earl
+// pattern every other box uses, and they were left idle for that reason: a
+// mailbox should sign as the person the copy speaks as. They were also the only
+// two fully warmed boxes (warmup score 100, created 08-05) attached to nothing,
+// and A2 is capacity-bound rather than supply-bound -- 7,393 companies hold a
+// live matched solicitation against 85 sends a day. Two idle boxes is 10 A2
+// contacts a day not being reached, which costs more than the signature
+// mismatch. The copy signs with {{accountSignature}}, so each box signs as
+// itself and nothing claims to be someone it is not.
 //
 // A3 WAS REMOVED: both SAM.gov keys failed, so it sat at 0% coverage while
 // holding 10 daily slots and two mailboxes open for mail it could never
@@ -126,6 +133,13 @@ const SCHEDULE = {
 //
 // A1 and A4 are provisioned to their caps, but both are SUPPLY-limited, not
 // capacity-limited: see the note on daily_max_leads below.
+//
+// bidwithgovhub MOVED WHOLE, NOT IN PART. Putting j.knight@ and j.k@ on A2 left
+// e.knight@bidwithgovhub on A4, which straddled the domain across two
+// campaigns -- the guardrail caught it, which is the first time it has earned
+// its keep. A domain blacklist has to be able to take down one campaign, not
+// two, so the third box followed its domain-mates to A2. A4 keeps 8 boxes,
+// which still covers 45 x 4 = 180 against 200/day.
 const MAILBOXES = {
   // buildwithgovhub, usegovhub
   A1: [
@@ -140,12 +154,12 @@ const MAILBOXES = {
     'earl.knight@trygovhub.com', 'e.knight@trygovhub.com',
     'e.knight@govhubbids.com', 'earl.knight@govhubbids.com', 'earl@govhubbids.com',
     'e.knight@govhubproposal.com', 'earl.knight@govhubproposal.com', 'earl@govhubproposal.com',
+    'j.knight@bidwithgovhub.com', 'j.k@bidwithgovhub.com', 'e.knight@bidwithgovhub.com',
   ],
   // getgovhub, govhubteam, bidwithgovhub, winwithgovhub
   A4: [
     'earl.knight@getgovhub.com', 'e.knight@getgovhub.com', 'earl@getgovhub.com',
     'earl.knight@govhubteam.com', 'e.knight@govhubteam.com',
-    'e.knight@bidwithgovhub.com',
     'earl@winwithgovhub.com', 'e.knight@winwithgovhub.com', 'earl.knight@winwithgovhub.com',
   ],
   // govhubnow, govhubhq, govhubsubmittals, govhubrfp
@@ -179,7 +193,7 @@ const A1 = {
   // SUPPLY-LIMITED, not capacity-limited. Only about 15.6% of the universe ever
   // has a live recompete signal, and the scanner buys roughly 45 a day across
   // its three runs. 20/day is set just under what the scanner can actually feed.
-  daily_max_leads: 20,
+  daily_max_leads: 37,
   required: ['agency_short', 'contract_end_month'],
   subjects: ['recompete', '{{contract_end_month}} question'],
   steps: [
@@ -208,10 +222,22 @@ const A1 = {
 const A2 = {
   key: 'A2',
   name: 'GH-A2-MatchedRFP',
-  // The one angle whose supply is not the constraint: 4,300 companies carry an
-  // unassigned live-RFP signal on any given day, refreshed nightly. It also has
-  // the best reply evidence, so it gets the largest share of the mailboxes.
-  daily_max_leads: 85,
+  // THE ONE ANGLE WHOSE SUPPLY IS NOT THE CONSTRAINT, by three orders of
+  // magnitude: 7,393 companies hold a live matched solicitation, 5,042 of them
+  // with the 8 days the sequence needs. Everything that limits A2 is send
+  // capacity. 20 mailboxes x 25 emails = 500 a day, over a 4-step sequence,
+  // settles at 125 new leads a day; job_assign refused 923 companies on 10-05
+  // with a2_left_close_date_full, which is the same number said from the other
+  // side. It also has the best reply evidence, so it gets the largest share of
+  // the mailboxes.
+  //
+  // LOADING THE WHOLE POOL INTO THE CAMPAIGN WOULD NOT SEND ONE MORE EMAIL.
+  // Instantly meters sends by mailbox, so 7,393 leads in the campaign would
+  // still leave at 475 emails a day -- the only difference is that 7,000 of
+  // them would sit uncontacted while the solicitation each one names closes.
+  // A2's copy is only true before its close date, which is why the queue is
+  // sized to what can be sent in time rather than to the size of the pool.
+  daily_max_leads: 125,
   required: ['sol_line', 'sol_short', 'sol_agency_short', 'sol_close_date', 'naics_code', 'fit_line', 'check_line', 'cta_line', 'followup_line'],
   // naics_code is required by the runbook and is genuinely load-bearing, but it
   // never appears as a token in these bodies: it is interpolated INTO fit_line
@@ -256,11 +282,17 @@ const A2 = {
 const A4 = {
   key: 'A4',
   name: 'GH-A4-CompetitorWon',
-  // SUPPLY-LIMITED. Roughly 375 companies hold an unassigned competitor-award
-  // signal and the awards scanner adds about 25 a day, so 35/day draws the
-  // backlog down over a couple of weeks and then runs at whatever the scanner
-  // produces. Raised anyway because A4 has the programme's other positive reply.
-  daily_max_leads: 35,
+  // SUPPLY-LIMITED, AND DELIBERATELY BELOW ITS OWN CEILING. Nine mailboxes at
+  // 25 carry 56 new leads a day; this is 45. The awards scanner has walked
+  // every pair it is allowed to see -- measured 10-06, 0 of 1,354 eligible
+  // companies are scannable, because all of them were scanned inside the
+  // 21-day recheck window -- and it does not refill until stamps start
+  // expiring on 10-13, in volume 10-21 to 10-26. 45/day carries the 436 queued
+  // rows to the day supply returns; 56 would drain them by 10-16 and leave
+  // nine warmed mailboxes idle, which is worse for reputation than sending a
+  // steady number. Only 95 of the 436 signals expire before 10-19, so nothing
+  // is lost by the slower rate. Raise it to 56 once the scanner is producing.
+  daily_max_leads: 45,
   required: ['competitor_name', 'competitor_city', 'award_amount_short', 'award_agency_short', 'naics_code'],
   subjects: ['{{award_amount_short}}', 'did you see this'],
   steps: [
@@ -296,7 +328,7 @@ const A5 = {
   // of 30 meant the control arm fell further behind the test arm every single
   // day. A starved control does not make the experiment smaller, it makes it
   // unreadable. 60 is what 12 mailboxes at 20/day will carry.
-  daily_max_leads: 60,
+  daily_max_leads: 75,
   required: [],
   subjects: ['your last bid', 'question, {{firstName}}'],
   steps: [
@@ -486,7 +518,8 @@ function check() {
   // mailboxes cannot carry does not raise volume, it just parks pushed leads in
   // the campaign uncontacted -- which is exactly the state this reallocation
   // was undoing, so it gets a guardrail rather than a comment.
-  const PER_MAILBOX_DAILY = 20;
+  // 20 -> 25 on 10-06. Owner's ceiling: "shouldn't go higher than that".
+  const PER_MAILBOX_DAILY = 25;
   for (const a of ANGLES) {
     const have = MAILBOXES[a.key].length * PER_MAILBOX_DAILY;
     const need = a.daily_max_leads * a.steps.length;
