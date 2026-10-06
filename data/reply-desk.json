@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "cursor": "2026-10-03T22:15:49.000Z",
+  "cursor": "2026-10-04T15:46:00.000Z",
   "emails": {
     "01a07bf7-8d8a-7d1c-b87e-76208ed81963": {
       "lead": "amirl@seetrue.ai",
@@ -723,6 +723,78 @@
       "classified_by": "model",
       "status": "no_action",
       "updated_at": "2026-10-05T23:14:53.149Z"
+    },
+    "01a10eeb-2f6b-7484-99a1-0827cb8875ec": {
+      "lead": "kparks@kpcinc.com",
+      "campaign": "C1",
+      "received_at": "2026-10-06T01:53:28.000Z",
+      "category": "accept",
+      "classified_by": "model",
+      "status": "drafted",
+      "playbook": "C1",
+      "deliverable": "creator_terms",
+      "updated_at": "2026-10-06T17:40:11.773Z",
+      "notified_at": "2026-10-06T17:40:11.772Z"
+    },
+    "01a10eeb-ab91-72d1-bc37-3e45ccbc8180": {
+      "lead": "hlin@haltechnologies.com",
+      "campaign": "A2",
+      "received_at": "2026-10-06T01:54:30.000Z",
+      "category": "not_interested",
+      "classified_by": "model",
+      "status": "no_action",
+      "updated_at": "2026-10-06T17:39:30.691Z"
+    },
+    "01a1118e-b0c0-7619-86d5-0d1cc2e405ad": {
+      "lead": "josborne@perikin.com",
+      "campaign": "A2",
+      "received_at": "2026-10-06T14:11:49.000Z",
+      "category": "auto_reply",
+      "classified_by": "rule",
+      "status": "no_action",
+      "updated_at": "2026-10-06T17:39:30.801Z",
+      "redirect": "rrodden@perikin.com"
+    },
+    "01a1119e-300a-7984-b9f9-6a01546aa56c": {
+      "lead": "deanna.smith@atwrealtyllc.com",
+      "campaign": "A4",
+      "received_at": "2026-10-06T14:28:53.000Z",
+      "category": "auto_reply",
+      "classified_by": "rule",
+      "status": "no_action",
+      "updated_at": "2026-10-06T17:39:30.934Z"
+    },
+    "01a1119e-8b58-7e58-9d38-19ac8db4e89e": {
+      "lead": "lynn@titantechinc.org",
+      "campaign": "A4",
+      "received_at": "2026-10-06T14:29:16.000Z",
+      "category": "referral",
+      "classified_by": "model",
+      "status": "referral",
+      "referral": "jordan@titantechinc.org",
+      "updated_at": "2026-10-06T17:40:11.773Z",
+      "notified_at": "2026-10-06T17:40:11.773Z"
+    },
+    "01a111dd-bd27-7c15-84fa-3243225a26ba": {
+      "lead": "dporter@staffingetc.net",
+      "campaign": "A2",
+      "received_at": "2026-10-06T15:38:08.000Z",
+      "category": "accept",
+      "classified_by": "model",
+      "status": "drafted",
+      "playbook": "A2",
+      "deliverable": "disqualifiers",
+      "updated_at": "2026-10-06T17:40:11.774Z",
+      "notified_at": "2026-10-06T17:40:11.774Z"
+    },
+    "01a111e4-a866-74d6-a473-21a8d4bf313f": {
+      "lead": "brian@iscinc.org",
+      "campaign": "A1",
+      "received_at": "2026-10-06T15:45:34.000Z",
+      "category": "not_interested",
+      "classified_by": "model",
+      "status": "no_action",
+      "updated_at": "2026-10-06T17:40:11.465Z"
     }
   }
 }
