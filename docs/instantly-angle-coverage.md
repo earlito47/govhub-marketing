@@ -1124,3 +1124,266 @@ A2's queue is deliberately shallower now — the date budget refuses what cannot
 be sent in time, so 6.1 days of queue is 6.1 days of *sendable* queue rather
 than a number inflated by rows that were going to die. Bounce rate 1.34%,
 eighth day under the gate.
+
+### Day 9 (2026-10-06) — the queue said sent, Instantly said somewhere else
+
+The chart and the campaigns disagreed, and the chart was wrong. Queue against
+what the four campaigns actually hold, before the repair:
+
+| Angle | Rows marked pushed | Leads in the campaign | Missing |
+|---|---:|---:|---:|
+| A1 | 124 | 86 | 38 |
+| A2 | 422 | 357 | 65 |
+| A4 | 194 | 179 | 15 |
+| A5 | 330 | 330 | 0 |
+
+Every one of the 118 was a wave 1 contact released into the angle pool on
+10-01, and every one of them was still sitting in a **paused wave 1 campaign**,
+where nothing is sending. Fetching the stored lead ids says so directly: 83 in
+wave 1 A, 22 in B, 44 in C, none of them with a reply.
+
+The cause is one flag doing exactly what it says. `job_push` sends
+`skip_if_in_workspace: true`, and Instantly does not error on a duplicate — it
+answers **200 with the lead that already exists**, carrying the id of the
+campaign that lead is already in. The push stored that id, marked the row
+pushed and moved on. The flag was right while wave 1 was live, because the one
+thing that must not happen is two campaigns mailing the same person. It became
+the thing blocking those contacts the moment wave 1 was closed and its people
+were released.
+
+Two things were wrong at once and only one of them was the flag:
+
+- **Reported.** A row recorded as pushed with no email behind it. Three days of
+  inventory and runway numbers were overstated by 118.
+- **Unsent.** 593 more queued rows — 18% of the whole queue, A1 116, A2 76,
+  A4 51, A5 350 — share an email with a lead still parked in a paused wave 1
+  campaign, and would have gone the same way over the coming fortnight.
+
+Repaired: all 118 moved into their angle campaigns (Instantly's move is a
+background job per source/target pair; nine jobs, confirmed landed). Queue and
+campaigns now agree exactly at 124/422/194/330. `job_push` now checks the
+landing campaign instead of assuming it: a lead that did not land here is not a
+push, it is moved when the campaign holding it is paused, and left ready and
+counted when that campaign is active.
+
+**The lesson is the one from the person-name fix, in a different place.** A 200
+is not evidence that the thing you asked for happened. Both times the check
+that would have caught it was cheap and both times it was skipped because the
+API said OK.
+
+### Day 9 — one solicitation took 52 of 80 A2 emails
+
+Yesterday's A2 batch, by solicitation:
+
+| Solicitation | Emails |
+|---|---:|
+| 15JPSS26R00000038 — ICITAP/OPDAT Worldwide Support Services | 52 |
+| W9128F26QA099 | 14 |
+| 47PD5526Q0052 — IRS Intrusion Detection System, C. Clifton Young Fed. Bldg. | 6 |
+| 19BE2026Q0620 — NEC Rail Waterproofing Membrane Repair | 2 |
+| W519TC26RA054 — EAGLE Fort Riley KS | 1 |
+
+The deadline sort caused it, by working: a cohort shares a close date, so it
+leaves together. Nothing in those 52 emails was untrue and no reader saw
+another, but 52 consulting firms in one NAICS asked about one RFP on one
+morning is a blast with a merge field in it, and the first two of them to
+compare notes can see that. It also concentrates the premise risk — one
+cancelled solicitation would be 52 wrong emails rather than a handful.
+
+A flat per-solicitation cap would have paced rows past the 8-day floor and
+turned concentration into drops, which is strictly worse. So the rate is the
+slowest one that still clears: **cohort size over sending days left, rounded
+up**, and no cap at all on the last day. Measured on today's queue the summed
+allowance is 148 against a cap of 85, so the spread is free — the dry run still
+fills all 85 and the largest solicitation falls from 52 of 80 to 11 of 85.
+
+`sendingDaysUntil` moved to `_shared` for it. The budget `job_assign` sizes and
+the pace `job_push` runs have to agree about what a day is, or the budget
+promises seats the pace never fills.
+
+### Day 9 — A2's lead count, which is a send-capacity number and nothing else
+
+A2 has no supply problem. 3,500 companies hold a live matched solicitation
+right now; 800 of them have ever been assigned to A2. Yesterday's assign run
+refused **923** of them with `a2_left_close_date_full` — the close-date budget
+saying there is no sending day left before those solicitations close.
+
+The whole chain, in the only unit that matters:
+
+| Stage | A2 |
+|---|---:|
+| Live matched solicitations (companies) | 3,500 |
+| Max queue the date budget will hold (13 days x 85) | 1,105 |
+| Queued now | 378 |
+| Sends per day | 85 |
+| Refused yesterday for want of a sending day | 923 |
+
+85/day is 17 mailboxes x 20 emails / 4 sequence steps. Every lever is a
+capacity lever:
+
+| Lever | A2 leads/day | Change |
+|---|---:|---|
+| Now | 85 | 17 mailboxes x 20 |
+| Per-mailbox 20 -> 30 | 127 | +50%, no new domains |
+| A5's 12 mailboxes to A2 (after the holdout reads) | 145 | +71% |
+| Both | 217 | +155% |
+
+### Day 9 — the awards scanner has finished its walk
+
+Three of the four awards runs returned `naics_state_pairs: 0` and did no work.
+Not a failure: the scanner has walked every pair it is allowed to see. Measured
+directly — of 11,013 non-suppressed companies, 5,738 are unassigned, 1,354 of
+those are not already covered by A2, and **0** of those 1,354 are scannable
+(248 hold a live award signal, 1,352 were scanned inside the 21-day recheck
+window). Stamps start expiring 10-13 at ~40/day and in volume 10-21 to 10-26
+(1,088 over six days), so the runs resume on their own. A4 has 436 queued, 12
+days at 35/day, which outlasts the gap.
+
+Worth naming rather than acting on: A4's eligible set is small *because A2
+claims 4,384 of the 5,738 unassigned companies*, and A2 can mail 85 a day. The
+rule that A2 outranks A4 was measured and correct — 87% of the companies A4
+finds an award for already hold an A2 signal, so the call bought a signal the
+assigner would never read. It assumed A2 had the capacity to use them. With 923
+refused a day for want of a sending day, thousands of companies are reserved
+for an angle that cannot reach them and withheld from one that could.
+
+### Day 9 — inventory and replies
+
+| Angle | Queued | Cap | Sending days of queue |
+|---|---:|---:|---:|
+| A1 | 335 | 20 | 16.8 |
+| A2 | 378 | 85 | 4.4 |
+| A4 | 436 | 35 | 12.5 |
+| A5 holdout | 1,606 | 60 | — |
+| A5 generic | 571 | | — |
+
+Bounce 1.34% (15 of 1,119 contacted), ninth day under the 2% gate; no angle
+over 2.8%. Replies 32 total, 16 human, 6 positive. New yesterday: one positive
+on A2 (*"Sure."*), one human decline (*"This opportunity does not match our
+product line"*), and one real answer on an A5 holdout worth reading — *"I lost
+the last bid because I was higher on my quote than others and also the gov is
+asking for too much ridiculous information on employees and their
+qualifications"* — a generic email with no signal in it getting the exact pain
+point the programme is built on.
+
+A fourth autoresponder shape got through as a human reply: an out-of-office in
+the future tense (*"I will be on leave beginning Sept. 29 and will be returning
+on Oct. 13"*). Row reclassified, A4's human count 3 -> 2, three patterns added,
+and a case added for a human who happens to say "returning" so the fix cannot
+go too far.
+
+25% of queued A2 rows (96 of 378) still render `sol_short` as the bare
+solicitation number, because `solHeadline` rejects their title. That is the
+"too computerized" look, at a quarter of the batch rather than all of it.
+
+### Day 9 — why A2 does not hold the whole pool, and what 25/mailbox buys
+
+The pool number on the chart is real: **7,393** companies hold a live matched
+solicitation today, 5,042 of them with the 8 days the sequence needs. The
+campaign holds 422. The gap is not a loading problem and loading them would not
+send one more email.
+
+**A lead in Instantly is a scheduled send, not a stored contact.** Instantly
+meters by mailbox. 20 mailboxes x 25 emails is 500 a day; a 4-step sequence
+settles at 500/4 = 125 new leads a day whether the campaign holds 500 leads or
+7,393. The only difference is that 7,000 would sit in it uncontacted.
+
+**And they would go stale in the campaign.** A2's email names a solicitation
+and its close date. It is true the day it is sent and false after the
+solicitation closes, and the 4-step sequence needs 8 days to run, so a lead
+loaded today and reached in 40 days ships a dead RFP. That is what sank wave
+1's campaign C. The queue is therefore sized to what can be sent in time, which
+is what `a2_left_close_date_full` counts: 1,508 companies refused in today's
+preview, every one of them because its close date is already fully booked.
+
+So the pool is a flow, not a backlog. The opportunities job writes ~4,100
+matched solicitations a day; at 125/day A2 reaches about 2,750 a month. It will
+never contain the pool — it will always be rate-limited, and the rate is
+mailboxes.
+
+Applied today, owner's call, 25 stated as the ceiling:
+
+| | Before | After |
+|---|---:|---:|
+| Per mailbox, emails/day | 20 | 25 |
+| A2 mailboxes | 17 | 20 |
+| A2 emails/day | 340 | 500 |
+| **A2 new leads/day** | **85** | **125** |
+| A1 / A4 / A5 new leads/day | 20 / 35 / 60 | 37 / 45 / 75 |
+
+A2's preview under the new cap queues 237 rather than 83, taking the queue to
+615. A4 is held at 45 rather than the 50 its boxes carry, because its scanner
+does not refill until 10-13.
+
+What it would actually take to hold 7,393 sendable leads inside the 13-day
+queue window: 569 sends a day, 2,276 emails a day, **92 mailboxes** — 72 more
+than now, roughly 24 more domains. That is the price of the ask, and it is a
+domain-buying decision rather than a software one.
+
+The one-campaign-per-domain guardrail earned its keep on this change: putting
+the two idle bidwithgovhub boxes on A2 split that domain across A2 and A4, and
+the check refused to sync until A4's box on it followed. A blacklisted domain
+has to be able to take down one campaign, not two.
+
+### Day 9 — the close window was below the cap
+
+Raising A2 to 125 sends a day did not get 125 sends. The dry run filled **106**,
+and the missing 19 were not a supply problem: **92 of the 378 queued A2 rows
+close more than 21 days out**, and `A2_close_max_days` was 21. At 85 a day that
+ceiling never bound, because the queue always held more rows inside the window
+than a day could send. At 125 it binds hard.
+
+Measured both ways on the same queue:
+
+| `A2_close_max_days` | A2 sends today | Held for being early |
+|---|---:|---:|
+| 21 | 106 | 92 |
+| 30 | 122 | 0 |
+
+Widened to 30. `QUEUE_DAYS.A2` follows from 13 to 22 — the 13 was 21 minus the
+8-day floor, the widest a cohort's seats could be under the old window, and
+left alone it becomes the new silent cap. Assign's preview now queues 344 A2
+rather than 237, with `a2_left_close_date_full` down from 1,508 to 1,272.
+
+**The cost is urgency, and it is the thing to watch.** The sequence runs about
+12 days, so the last step now lands 18 days before the close rather than 9, and
+step 1 says "closes in a month" where it said "three weeks". A2 carries the
+best reply evidence in the programme. If the reply rate moves, this is the
+first thing to put back, and it reverts with one row in
+`outreach.config.freshness_buffers` — no deploy.
+
+**A latent bug surfaced while measuring this.** `freshEnough` returned a
+boolean and the caller writes `dropped_stale` on a false, so a row whose
+solicitation closed too FAR out was expired *for being early* — discarded, with
+its signal marked expired, when a week's wait would have made it ideal. It had
+cost nothing yet purely by luck: candidates sort deadline-first, so far-out
+rows sit at the back and get skipped over the daily cap before the check ever
+sees them. The first day A2's queue fell below its cap, all 92 would have gone.
+Three answers now — ok, stale, early — and `held_close_date_too_far_out` is
+what showed the window was the binding constraint in the first place.
+
+### Day 9 — the 30-day sending ceiling, for the record
+
+30 calendar days from 10-06 is **22 sending days** (job_push runs weekdays).
+Mailboxes today: A1 6, A2 20, A4 8, A5 12. A 4-step sequence settles at a
+quarter of the mailbox email capacity.
+
+At **20 emails/mailbox/day**:
+
+| Angle | Boxes | Emails/day | New leads/day | 30-day emails | 30-day contacts |
+|---|---:|---:|---:|---:|---:|
+| A2 matched RFP | 20 | 400 | 100 | 8,800 | 2,200 |
+| A4 competitor won | 8 | 160 | 40 | 3,520 | 880 |
+| A1 recompete | 6 | 120 | 30 | 2,640 | 660 |
+| **A2 + A4** | 28 | 560 | 140 | **12,320** | **3,080** |
+
+At **25 emails/mailbox/day** (what is live as of 10-06):
+
+| Angle | Boxes | Emails/day | New leads/day | 30-day emails | 30-day contacts |
+|---|---:|---:|---:|---:|---:|
+| A2 | 20 | 500 | 125 | 11,000 | 2,750 |
+| A4 | 8 | 200 | 50 (capped 45) | 4,400 | 990 |
+| A1 | 6 | 150 | 37 | 3,300 | 814 |
+| **A2 + A4** | 28 | 700 | 170 | **15,400** | **3,740** |
+
+A1 is the recompete angle, not A4. A4 is "a competitor near you just won".
