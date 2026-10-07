@@ -1498,3 +1498,104 @@ A2 at 3.3 days is the shallowest it has been, and that is the capacity raise
 working rather than a supply problem: assign queued 257 A2 rows today against
 125 sent. The experiment still reads on its slower side — the A5 holdout
 control sits at 210 contacted against A2's 624, and today's zero cost it a day.
+
+### Day 11 (10-07 sending) — push landed exactly on budget, and broke two other things
+
+The timeout fix worked, precisely. Three runs, all 200, and every angle finished
+on its cap:
+
+| | 06:00 | 06:50 | 07:15 | Total | Cap |
+|---|---:|---:|---:|---:|---:|
+| A1 | 8 | 24 | 5 | **37** | 37 |
+| A2 | — | 60 | 65 | **125** | 125 |
+| A4 | 13 | 32 | — | **45** | 45 |
+| A5 | 16 | 59 | — | **75** | 75 |
+
+Two runs stopped on the time budget and said so; the third finished early. The
+06:25 retry correctly did not fire, because nothing failed. `a2_left_close_date_full`
+fell again, to **419** from 605 and from 1,508 before the window widened.
+
+Then both of yesterday's own fixes turned out to have the same flaw in a new
+place: **per-run state where the day is the unit.**
+
+**A MOVED LEAD IS LIVE IMMEDIATELY.** I stopped confirming the
+retired-campaign move inline, reasoning the next run would confirm it for free.
+That ignored what a move does. It lands within seconds, the lead is then in a
+LIVE campaign, and Instantly emails it at once. **31 contacts went through a
+sequence on 10-07 while their rows still said `ready`** — every one already
+contacted when I checked, none with an outcomes row, so invisible to metrics
+and to reply attribution, and healed only by the next morning's run. The
+campaigns held 175/773/290 against 170/749/288 in the queue; that gap was the
+whole of it.
+
+Fixed by confirming at the *end of the same run* rather than inline or next
+run: the move goes on a list walked after the main loop, by which point the
+earliest are minutes old and the latest seconds old — all the settling a
+background job needs, at one GET per duplicate instead of a 2.5s sleep. The
+loop gives up 20s of its budget for that pass. A queued move now also spends
+the angle's budget and the solicitation's allowance at the moment it is queued,
+because the move is the irreversible act.
+
+**THE SOLICITATION PACE RESET EVERY RUN.** push runs three times a morning and
+`solSentToday` was run-local, so each run recomputed the cohort, started its
+counter at zero and spent a fresh allowance. 49 of the day's 149 A2 emails went
+to one solicitation — W50S8A27BA001, a 70-row cohort with 3 sending days left
+and an allowance of 24, spent twice over. The day's sends per solicitation are
+now read from the database alongside the angle totals, and the cohort includes
+them, so the allowance is the same number at 06:00 and at 07:15.
+
+The pace test now simulates three runs over one cohort: seeded from the day it
+spends its allowance once, unseeded three times.
+
+**And the cap was overshot after all** — A2 sent 149, not 125 — because the 24
+moved leads were never counted against it. Both halves of that are now closed.
+
+### Day 11 — the lesson, stated plainly
+
+Three days running, the bug has been the same shape: a number that was correct
+when one run owned the day, and wrong once the day had several runs or several
+paths into it. The daily cap, the solicitation pace, and the push record all
+broke that way. Anything that spends a budget now reads what the day has
+already spent out of the database rather than assuming it starts at zero.
+
+### Day 11 — replies, and five suppressions
+
+Eleven replies, eight of them machine and all eight correctly classified — the
+first clean day for the classifier since the shapes started arriving.
+
+Three human declines, two of them naming price or scope rather than process:
+*"We are not quoting these types of contract"* (A1) and *"No, thanks"* (A2).
+And **two explicit stops**: *"Stop emailing me."* (A2) and *"Stop"* (A5).
+
+All five suppressed at the person level, which is the standing rule — a no is
+that person's answer, not their employer's — and each of the five is the only
+row for its company, so nothing company-wide happened. Their sequences were
+already halted: `stop_on_reply` is on for all four campaigns and
+`stop_on_auto_reply` is off, which is the right pair of settings and worth
+recording, because it means an autoresponder does not end a sequence but a
+real reply does.
+
+No new positives. **Seven are still waiting on a fulfilment answer**, the
+oldest from 09-25.
+
+### Day 11 — the rest
+
+**Bounce 1.10%**, 21 of 1,915 contacted, eleventh day under the gate. A1 1.35%,
+A2 1.00%, A4 1.42%, A5 0.93%.
+
+| Angle | Queued | Cap | Sending days of queue |
+|---|---:|---:|---:|
+| A1 | 380 | 37 | 10.3 |
+| A2 | 523 | 125 | 4.2 |
+| A4 | 391 | 45 | 8.7 |
+| A5 holdout | 2,049 | 75 | — |
+| A5 generic | 739 | | — |
+
+The awards scanner produced again on its own: 32 written at 03:45 as the first
+scan stamps aged past the 21-day window, exactly as the 10-13 estimate said it
+would start. Bare solicitation numbers down to 16% of queued A2 rows (82 of
+523) from 21%.
+
+The holdout control is moving now that A5 is no longer starved: 285 contacted
+against A2's 773. Still the slower side, still short of the ~440 per arm a
+readable answer needs.
