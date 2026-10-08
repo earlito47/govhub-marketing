@@ -1637,12 +1637,16 @@ title, the A2 steps were changed to use them, and the 291 leads already in
 flight were never backfilled. Their steps 2 and 3 have been going out with the
 title slot empty ever since.
 
-Repaired. The 347 whose stored render also lacked the two keys were recomputed
-with the **shipped** `solHeadline` rather than a reimplementation, so they got
-exactly what `job_assign` would have written: 289 a real title, 58 the bare
-number, which is the documented 75% hit rate. Then all 563 live leads were
-patched from their assignment render. `job_push` now sends the payload on a
-confirmed move as well as on a create.
+Repaired in two halves. The queue side is done: the 347 whose stored render
+also lacked the two keys were recomputed with the **shipped** `solHeadline`
+rather than a reimplementation, so they hold exactly what `job_assign` would
+have written — 289 a real title, 58 the bare number, which is the documented
+75% hit rate — and no pushed A2 row is missing `sol_line` any more. The
+Instantly side is 563 PATCHes at the 20-request-a-minute rate limit, about half
+an hour, and was still running when this was written; the count to re-check is
+leads in an angle campaign missing a key from `REQUIRED`, which should be 0.
+`job_push` already sends the payload on a confirmed move as well as on a
+create, so nothing new joins the broken set.
 
 **The gate was only guarding one of the two ways in.** Rule 0.7 — no blank
 variable reaches a reader — is asserted in `job_assign` and again in
