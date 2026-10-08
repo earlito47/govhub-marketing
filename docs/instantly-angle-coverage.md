@@ -1599,3 +1599,102 @@ would start. Bare solicitation numbers down to 16% of queued A2 rows (82 of
 The holdout control is moving now that A5 is no longer starved: 285 contacted
 against A2's 773. Still the slower side, still short of the ~440 per arm a
 readable answer needs.
+
+### Day 12 (10-08 sending) — the machinery is right, and the emails were still broken
+
+Everything a counter can see was green. Every job 2xx. Push ran three times and
+every angle landed exactly on its cap — A1 37, A2 125, A4 45, A5 75. All 58
+retired-campaign moves were queued, confirmed and recorded in the same run,
+`moves_left_for_next_run` 0 on all three runs, and `blocked_duplicate_elsewhere`
+0. Queue and campaigns agreed exactly in both directions: 212/898/335/480, zero
+unclaimed, zero missing — yesterday's 31 became none. Bounce **0.94%**, first
+day under 1%, twelfth under the gate.
+
+Then a reply said this:
+
+> What is this regarding?
+> On Thu, Oct 8, 2026 at 9:04 AM Earl Knight wrote:
+> > **Brandon, closes .**
+
+**A MOVE CARRIES THE LEAD, NOT THE RENDER.** `/leads/move` changes which
+campaign a lead sits in and nothing else, so a moved wave 1 lead arrived in A2
+still holding its wave 1 custom variables — `segment`, `new_awards`,
+`last_award_date` — and none of A2's. Instantly then rendered the sequence
+against variables that do not exist. The close date was blank because the lead
+had no `sol_close_date` at all.
+
+Audited every lead in all four campaigns against `REQUIRED`:
+
+| Cause | Leads | Missing |
+|---|---:|---|
+| Moved wave 1 leads (A1 81, A2 164, A4 27) | 272 | every variable the angle needs |
+| A2 leads pushed before 10-03 | 291 | `sol_line`, `sol_short` only |
+| **Total, all already contacted** | **563** | |
+
+The second group is a different mistake with the same consequence: `sol_line`
+and `sol_short` were added on 10-03 when the owner asked for the solicitation
+title, the A2 steps were changed to use them, and the 291 leads already in
+flight were never backfilled. Their steps 2 and 3 have been going out with the
+title slot empty ever since.
+
+Repaired. The 347 whose stored render also lacked the two keys were recomputed
+with the **shipped** `solHeadline` rather than a reimplementation, so they got
+exactly what `job_assign` would have written: 289 a real title, 58 the bare
+number, which is the documented 75% hit rate. Then all 563 live leads were
+patched from their assignment render. `job_push` now sends the payload on a
+confirmed move as well as on a create.
+
+**The gate was only guarding one of the two ways in.** Rule 0.7 — no blank
+variable reaches a reader — is asserted in `job_assign` and again in
+`job_push`, and both assertions are on the create path. The move path was added
+on 10-06 and bypassed both. Every angle variable in the programme was
+guaranteed by a check that a new code path simply walked around.
+
+### Day 12 — the measurement that was nearly wrong
+
+The first audit reported 212 of 212 A1 leads broken, which was obviously false
+— A1 has been getting replies that quote its copy. The script was checking a
+`REQUIRED` map I had typed from memory, and A1's real keys are `agency_short`
+and `contract_end_month`, not `fit_line`. Read off `_shared/outreach.ts`, the
+count was 81. **694 would have been reported as broken on a guessed key list.**
+
+### Day 12 — concentration, which is working correctly now
+
+46 of today's 125 A2 emails named one solicitation, and that is the pace doing
+its job rather than failing: ARPA-H-SOL-26-163 has 92 unsent rows and closes
+10-18, so with the 8-day floor it had **two sending days** left. 92 over 2 is
+46. The other 46 go tomorrow.
+
+The pace can spread a cohort across the days it has; it cannot create days. A
+cohort that matched late arrives with no runway, and the only remedy — refusing
+the excess — means dropping it, which is worse. Worth watching rather than
+fixing: this is the second 90-plus firm cohort in one NAICS inside a week.
+
+### Day 12 — the rest
+
+**A4's cap goes 45 to 50**, its true ceiling (8 mailboxes x 25, over 4 steps).
+It was held back from 10-06 while the awards scanner had nothing to do; the
+scan stamps aged out on schedule and the scanner wrote 32 signals on 10-07 and
+8 on 10-08, so the brake comes off. 411 queued at 50 a day is 8 sending days
+with the scanner refilling behind it.
+
+The recompete scanner reached `still_unscanned: 0` at 20:00 — it has now walked
+all 11,008 companies for the first time. A1's supply will thin until its 30-day
+stamps start expiring.
+
+Four replies, two machine and both correctly classified. Two humans, both
+asking what this is: *"What is this regarding?"* (the broken one above) and
+*"What are you offering to debreif?"* (A5). Neither counted positive and
+neither is a decline — they are people who would answer a clear email. No new
+positives; **seven are still waiting on a fulfilment answer**, oldest 09-25.
+
+| Angle | Queued | Cap | Sending days |
+|---|---:|---:|---:|
+| A1 | 421 | 37 | 11.4 |
+| A2 | 552 | 125 | 4.4 |
+| A4 | 411 | 50 | 8.2 |
+| A5 holdout | 2,143 | 75 | — |
+| A5 generic | 830 | | — |
+
+Holdout control 360 contacted against A2's 898. Bare solicitation numbers 15%
+of queued A2 rows (82 of 552).

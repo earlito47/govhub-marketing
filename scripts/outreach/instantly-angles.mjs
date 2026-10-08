@@ -282,17 +282,16 @@ const A2 = {
 const A4 = {
   key: 'A4',
   name: 'GH-A4-CompetitorWon',
-  // SUPPLY-LIMITED, AND DELIBERATELY BELOW ITS OWN CEILING. Nine mailboxes at
-  // 25 carry 56 new leads a day; this is 45. The awards scanner has walked
-  // every pair it is allowed to see -- measured 10-06, 0 of 1,354 eligible
-  // companies are scannable, because all of them were scanned inside the
-  // 21-day recheck window -- and it does not refill until stamps start
-  // expiring on 10-13, in volume 10-21 to 10-26. 45/day carries the 436 queued
-  // rows to the day supply returns; 56 would drain them by 10-16 and leave
-  // nine warmed mailboxes idle, which is worse for reputation than sending a
-  // steady number. Only 95 of the 436 signals expire before 10-19, so nothing
-  // is lost by the slower rate. Raise it to 56 once the scanner is producing.
-  daily_max_leads: 45,
+  // SUPPLY-LIMITED, AND NOW AT ITS CEILING. Eight mailboxes at 25 carry exactly
+  // 50 new leads a day over a 4-step sequence, which is what this is.
+  //
+  // It was held at 45 from 10-06 while the awards scanner had nothing to do:
+  // measured that day, 0 of 1,354 eligible companies were scannable, all of
+  // them stamped inside the 21-day recheck window, and the queue had to last
+  // until the stamps aged out. They did, on schedule -- 32 signals written on
+  // 10-07 and 8 more on 10-08 -- so the brake comes off. 411 rows queued at 50
+  // a day is 8 sending days, and the scanner is refilling behind it.
+  daily_max_leads: 50,
   required: ['competitor_name', 'competitor_city', 'award_amount_short', 'award_agency_short', 'naics_code'],
   subjects: ['{{award_amount_short}}', 'did you see this'],
   steps: [
