@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "cursor": "2026-10-05T19:49:34.000Z",
+  "cursor": "2026-10-06T14:18:17.000Z",
   "emails": {
     "01a07bf7-8d8a-7d1c-b87e-76208ed81963": {
       "lead": "amirl@seetrue.ai",
@@ -910,6 +910,49 @@
       "classified_by": "model",
       "status": "no_action",
       "updated_at": "2026-10-07T23:13:48.620Z"
+    },
+    "01a11b9e-ad34-7765-88de-3d0ba0f10123": {
+      "lead": "gidcleveland@gmail.com",
+      "campaign": "A2",
+      "received_at": "2026-10-08T13:05:18.000Z",
+      "category": "question",
+      "classified_by": "model",
+      "status": "needs_human",
+      "playbook": "A2",
+      "deliverable": "disqualifiers",
+      "updated_at": "2026-10-08T18:13:30.490Z",
+      "notified_at": "2026-10-08T18:13:30.490Z"
+    },
+    "01a11bb7-1d04-7f97-8036-389b6483611c": {
+      "lead": "barbara.anderson@jlha.com",
+      "campaign": "A5",
+      "received_at": "2026-10-08T13:32:09.000Z",
+      "category": "auto_reply",
+      "classified_by": "rule",
+      "status": "no_action",
+      "updated_at": "2026-10-08T18:13:26.873Z",
+      "redirect": "ryan.nicholos@jlha.com"
+    },
+    "01a11bb8-197a-7175-8c5d-4c7e905946e4": {
+      "lead": "bcollins@secretariat-intl.com",
+      "campaign": "A5",
+      "received_at": "2026-10-08T13:33:25.000Z",
+      "category": "auto_reply",
+      "classified_by": "rule",
+      "status": "no_action",
+      "updated_at": "2026-10-08T18:13:26.980Z"
+    },
+    "01a11be1-1139-7242-a56f-6948e87fd94b": {
+      "lead": "ameerah@mathjr.org",
+      "campaign": "A5",
+      "received_at": "2026-10-08T14:17:51.000Z",
+      "category": "question",
+      "classified_by": "model",
+      "status": "drafted",
+      "playbook": "A5",
+      "deliverable": "debrief_one_pager",
+      "updated_at": "2026-10-08T18:13:30.491Z",
+      "notified_at": "2026-10-08T18:13:30.491Z"
     }
   }
 }
