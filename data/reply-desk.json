@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "cursor": "2026-10-07T17:18:22.000Z",
+  "cursor": "2026-10-07T21:13:16.000Z",
   "emails": {
     "01a07bf7-8d8a-7d1c-b87e-76208ed81963": {
       "lead": "amirl@seetrue.ai",
@@ -406,7 +406,7 @@
       "status": "sent",
       "playbook": "A4",
       "deliverable": "next_open",
-      "updated_at": "2026-10-08T23:29:11.902Z",
+      "updated_at": "2026-10-09T22:03:24.203Z",
       "watch": {
         "naics": "561990",
         "keywords": [
@@ -422,7 +422,7 @@
         "subject": "Re: did you see this",
         "campaign_id": "39bc9fab-a9a7-4ed6-b34c-ccabeb9e76ee",
         "firstName": "Parish",
-        "last_checked": "2026-10-08T23:29:11.902Z"
+        "last_checked": "2026-10-09T22:03:24.203Z"
       },
       "notified_at": "2026-10-05T15:46:30.588Z",
       "sent_at": "2026-10-05T16:02:12.003Z",
@@ -1043,6 +1043,34 @@
       "status": "no_action",
       "updated_at": "2026-10-09T17:47:22.076Z",
       "redirect": "carlosgerardo@lvw.com"
+    },
+    "01a12283-586a-7d01-958c-55c73de6aea4": {
+      "lead": "kalden@aldenlg.com",
+      "campaign": "A4",
+      "received_at": "2026-10-09T21:12:50.000Z",
+      "category": "question",
+      "classified_by": "model",
+      "status": "drafted",
+      "playbook": "A4",
+      "deliverable": "next_open",
+      "updated_at": "2026-10-09T22:03:32.105Z",
+      "watch": {
+        "naics": "541110",
+        "keywords": [
+          "shaw",
+          "bransford"
+        ],
+        "companyName": "Alden Law Group PLLC",
+        "context": "Shaw, Bransford, & Roth P.C. (Washington) won a $350K DOE award in NAICS 541110, which is how we found them. Company name: Alden Law Group PLLC.",
+        "count": 3,
+        "exclude": [],
+        "until": "2026-11-23T22:03:24.030Z",
+        "eaccount": "earl.knight@govhubteam.com",
+        "subject": "RE: did you see this",
+        "campaign_id": "39bc9fab-a9a7-4ed6-b34c-ccabeb9e76ee",
+        "firstName": "Kristin"
+      },
+      "notified_at": "2026-10-09T22:03:32.105Z"
     }
   }
 }
