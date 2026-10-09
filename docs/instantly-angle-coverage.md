@@ -1704,3 +1704,81 @@ positives; **seven are still waiting on a fulfilment answer**, oldest 09-25.
 
 Holdout control 360 contacted against A2's 898. Bare solicitation numbers 15%
 of queued A2 rows (82 of 552).
+
+### Day 13 (10-09 sending) — clean, and a correction I owe the log
+
+First fully clean day since the ramp. Every job 2xx. Push hit every cap exactly
+— A1 37, A2 125, A4 50 (its new ceiling), A5 75. All 49 retired-campaign moves
+queued, confirmed and recorded in-run, `moves_left_for_next_run` 0 on all three
+runs, `blocked_duplicate_elsewhere` 0. The full audit across 2,212 leads:
+
+| | Queue says | Campaign holds | Unclaimed | Missing | Blank variables |
+|---|---:|---:|---:|---:|---:|
+| A1 | 249 | 249 | 0 | 0 | 0 |
+| A2 | 1,023 | 1,023 | 0 | 0 | 0 |
+| A4 | 385 | 385 | 0 | 0 | 0 |
+| A5 | 555 | 555 | 0 | 0 | 0 |
+
+Bounce **0.94%**, 28 of 2,966, thirteenth day under the gate and the second
+under 1%.
+
+**THE CORRECTION.** This log and the daily routine have said for several days
+that "seven positive replies are awaiting a fulfilment answer, the oldest from
+09-25". That was wrong in two ways.
+
+It was read off `outcomes.positive`, which mirrors Instantly's lead-interest
+flag — something a person or Instantly's own model sets and can change. It read
+7 on 10-07 and 5 today with no new data, because the flag moved. **A count that
+can go down on its own is not a tally**, and I was quoting it as one.
+
+And the premise was wrong. The reply desk built in the other session has been
+answering them. Its ledger (`data/reply-desk.json`, 108 entries) says of the
+ten replies that actually asked for something: **six sent** — Exergy, Document
+Security Solutions, Stronghold, Thornton, WR-C, StériCert — and **four
+drafted**: Staffing Etc, Mathematician Jr, Smith (Certified Surface
+Inspection), Alden LG. One is `needs_human`: Cleveland (A2), whose question
+was *"What is this regarding?"* in reply to the blank-variable email from
+10-08 — so the one reply the desk cannot answer is one this programme caused.
+
+So the standing item is not "seven unanswered since 09-25". It is: **one
+`needs_human`, four drafts waiting to go out.** The routine now says to read
+the ledger rather than count a flag.
+
+### Day 13 — a seventh autoresponder shape
+
+A bilingual out-of-office counted as a human reply: *"Bonjour, je serai de
+retour au bureau le 13 octobre... Hi, I am out of the office and will return on
+October 13."* Neither half matched — `i will be out of the office` wants "will
+be", and `will be returning on` does not cover "will return on". Fourth of the
+seven shapes whose only fault was a verb tense the pattern had not anticipated.
+Three patterns added, including the French, and a case for a human who is away
+and still answers, so the present-tense pattern cannot eat them.
+
+### Day 13 — two scanners are now idle, both by design
+
+`recompetes` wrote 0 on all six runs: `still_unscanned: 0`, and every company
+is assigned, holds a live signal, or was scanned inside the 30-day window. It
+has walked the whole universe once. `awards` is in the same state most runs.
+Neither is broken and neither needs touching — A1 has 472 queued at 37 a day
+(12.8 sending days) and A4 394 at 50 (7.9), and the 30-day and 21-day stamps
+start expiring inside both windows.
+
+What this does change is A2's share of the pool: `a2_left_close_date_full` rose
+to **857** from 419, because the opportunities job keeps matching new
+solicitations while the other two angles stop claiming companies.
+
+### Day 13 — inventory
+
+| Angle | Queued | Cap | Sending days |
+|---|---:|---:|---:|
+| A1 | 472 | 37 | 12.8 |
+| A2 | 486 | 125 | 3.9 |
+| A4 | 394 | 50 | 7.9 |
+| A5 holdout | 2,153 | 75 | — |
+| A5 generic | 891 | | — |
+
+A2 base 537 contacted against speed 486. Holdout control 435 against A2's
+1,023 — still the slower side but gaining 75 a day now that A5 is not starved.
+45 of today's 125 A2 emails named one solicitation, the same short-runway
+cohort arithmetic as 10-08. Bare solicitation numbers 14% of queued A2 rows (69
+of 486).
