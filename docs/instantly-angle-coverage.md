@@ -1642,11 +1642,13 @@ also lacked the two keys were recomputed with the **shipped** `solHeadline`
 rather than a reimplementation, so they hold exactly what `job_assign` would
 have written — 289 a real title, 58 the bare number, which is the documented
 75% hit rate — and no pushed A2 row is missing `sol_line` any more. The
-Instantly side is 563 PATCHes at the 20-request-a-minute rate limit, about half
-an hour, and was still running when this was written; the count to re-check is
-leads in an angle campaign missing a key from `REQUIRED`, which should be 0.
-`job_push` already sends the payload on a confirmed move as well as on a
-create, so nothing new joins the broken set.
+Instantly side took two passes — 563 PATCHes at the 20-request-a-minute rate
+limit is about half an hour, and the first background job was stopped at a
+28-minute cap I had set myself rather than the two hours allowed, after 470 of
+them. Re-auditing rather than resuming from a log position found exactly 93
+left (A2 66, A4 27); those patched clean. **Final audit: 1,925 leads across the
+four campaigns, 0 missing a key from `REQUIRED`.** `job_push` sends the payload
+on a confirmed move as well as on a create, so nothing new joins the set.
 
 **The gate was only guarding one of the two ways in.** Rule 0.7 — no blank
 variable reaches a reader — is asserted in `job_assign` and again in
