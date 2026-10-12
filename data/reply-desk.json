@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "cursor": "2026-10-07T21:13:16.000Z",
+  "cursor": "2026-10-10T18:31:25.000Z",
   "emails": {
     "01a07bf7-8d8a-7d1c-b87e-76208ed81963": {
       "lead": "amirl@seetrue.ai",
@@ -406,7 +406,7 @@
       "status": "sent",
       "playbook": "A4",
       "deliverable": "next_open",
-      "updated_at": "2026-10-09T22:03:24.203Z",
+      "updated_at": "2026-10-12T20:41:10.061Z",
       "watch": {
         "naics": "561990",
         "keywords": [
@@ -422,7 +422,7 @@
         "subject": "Re: did you see this",
         "campaign_id": "39bc9fab-a9a7-4ed6-b34c-ccabeb9e76ee",
         "firstName": "Parish",
-        "last_checked": "2026-10-09T22:03:24.203Z"
+        "last_checked": "2026-10-12T20:41:10.061Z"
       },
       "notified_at": "2026-10-05T15:46:30.588Z",
       "sent_at": "2026-10-05T16:02:12.003Z",
@@ -1071,6 +1071,117 @@
         "firstName": "Kristin"
       },
       "notified_at": "2026-10-09T22:03:32.105Z"
+    },
+    "01a13036-a8a0-707f-ab64-57a16b10b76d": {
+      "lead": "kristine.corbo@itl.us",
+      "campaign": "A4",
+      "received_at": "2026-10-12T13:03:59.000Z",
+      "category": "auto_reply",
+      "classified_by": "rule",
+      "status": "no_action",
+      "updated_at": "2026-10-12T20:38:26.441Z",
+      "redirect": "vincent.corbo@itl.us"
+    },
+    "01a13049-c247-747e-8190-03d17a451830": {
+      "lead": "info@customlawnservice.com",
+      "campaign": "A2",
+      "received_at": "2026-10-12T13:24:47.000Z",
+      "category": "not_interested",
+      "classified_by": "rule",
+      "status": "no_action",
+      "updated_at": "2026-10-12T20:38:26.621Z"
+    },
+    "01a130f5-e098-7276-801a-015a2ef6dc6d": {
+      "lead": "beni@monacomech.com",
+      "campaign": "A4",
+      "received_at": "2026-10-12T16:32:46.000Z",
+      "category": "accept",
+      "classified_by": "model",
+      "status": "drafted",
+      "playbook": "A4",
+      "deliverable": "next_open",
+      "updated_at": "2026-10-12T20:41:17.640Z",
+      "notified_at": "2026-10-12T20:41:17.640Z"
+    },
+    "01a130fa-5ed6-7792-8788-3f1c01f36361": {
+      "lead": "greglayman1968@gmail.com",
+      "campaign": "A2",
+      "received_at": "2026-10-12T16:37:39.000Z",
+      "category": "not_interested",
+      "classified_by": "model",
+      "status": "no_action",
+      "updated_at": "2026-10-12T20:39:11.834Z"
+    },
+    "01a13113-99ea-7208-8247-a98ebf880f17": {
+      "lead": "emilyj@cascadiamountaininstitute.com",
+      "campaign": "A2",
+      "received_at": "2026-10-12T17:05:00.000Z",
+      "category": "unsubscribe",
+      "classified_by": "model",
+      "status": "no_action",
+      "updated_at": "2026-10-12T20:39:13.257Z"
+    },
+    "01a13131-f2ef-7d2a-b1b9-22c4edc80ea5": {
+      "lead": "bj@kuboske.com",
+      "campaign": "A5",
+      "received_at": "2026-10-12T17:38:26.000Z",
+      "category": "auto_reply",
+      "classified_by": "rule",
+      "status": "no_action",
+      "updated_at": "2026-10-12T20:39:13.506Z",
+      "redirect": "zane@kuboske.com"
+    },
+    "01a13139-ac09-72c6-bf20-77724fe6c196": {
+      "lead": "jasonharrington@sterilelink.com",
+      "campaign": "A2",
+      "received_at": "2026-10-12T17:47:00.000Z",
+      "category": "auto_reply",
+      "classified_by": "rule",
+      "status": "no_action",
+      "updated_at": "2026-10-12T20:39:13.626Z",
+      "redirect": "aldamisenheimer@sterilelink.com"
+    },
+    "01a1313a-7e39-7a12-a576-2e2bba37d881": {
+      "lead": "precisionsepticandpumping@gmail.com",
+      "campaign": "A4",
+      "received_at": "2026-10-12T17:47:34.000Z",
+      "category": "accept",
+      "classified_by": "model",
+      "status": "drafted",
+      "playbook": "A4",
+      "deliverable": "next_open",
+      "updated_at": "2026-10-12T20:41:17.641Z",
+      "watch": {
+        "naics": "562991",
+        "keywords": [
+          "advanced",
+          "septic"
+        ],
+        "companyName": "Precision Septic And Pumping Services, LLC",
+        "context": "Advanced Septic Pros LLC (Alamogordo) won a $29K DOI award in NAICS 562991, which is how we found them. Company name: Precision Septic And Pumping Services, LLC.",
+        "count": 2,
+        "exclude": [
+          "FA527027QB006"
+        ],
+        "until": "2026-11-26T20:39:48.241Z",
+        "eaccount": "e.knight@getgovhub.com",
+        "subject": "Re: did you see this",
+        "campaign_id": "39bc9fab-a9a7-4ed6-b34c-ccabeb9e76ee",
+        "firstName": "Danielle"
+      },
+      "notified_at": "2026-10-12T20:41:17.641Z"
+    },
+    "01a13162-3ec0-73b8-969e-68e8c7a6f9c1": {
+      "lead": "alohacleaningexperts@gmail.com",
+      "campaign": "A2",
+      "received_at": "2026-10-12T18:31:02.000Z",
+      "category": "question",
+      "classified_by": "model",
+      "status": "drafted",
+      "playbook": "A2",
+      "deliverable": "disqualifiers",
+      "updated_at": "2026-10-12T20:41:17.641Z",
+      "notified_at": "2026-10-12T20:41:17.641Z"
     }
   }
 }
