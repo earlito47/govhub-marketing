@@ -1782,3 +1782,109 @@ A2 base 537 contacted against speed 486. Holdout control 435 against A2's
 45 of today's 125 A2 emails named one solicitation, the same short-runway
 cohort arithmetic as 10-08. Bare solicitation numbers 14% of queued A2 rows (69
 of 486).
+
+### Day 14 (10-12 sending) — 99 rows died of an off-by-one between two clocks
+
+Everything else was clean. All 17 jobs 2xx, every cap hit exactly (A1 37, A2
+125, A4 50, A5 75), the three-way Instantly audit zero on all counts across
+2,499 leads, bounce **0.97%** on the fourteenth day under the gate, and the
+tightest concentration since the pace shipped — 16 of 125 on the largest
+solicitation.
+
+The one number out of place was `dropped_stale: 92` in the 06:50 run, against a
+normal 0 to 9. It was a whole cohort dying at once, and the cause is two parts
+of the system measuring the same thing differently.
+
+`futureOk` compares a close date against **`Date.now()`**. `sendingDaysUntil`,
+which sizes the close-date budget that admits an A2 row in the first place,
+compares **midnight to midnight**. So for a solicitation closing 10-20, at a
+06:50 push on 10-12:
+
+| | says |
+|---|---|
+| Whole days out | **8** — at the floor |
+| `futureOk` at 06:50 | **7.715** — under the floor |
+| Sending days the budget counted | **1**, today |
+| A2 rows dropped | **99** |
+
+Every cohort has been promised a final day job_push would not spend, and this
+one was relying on it. They are not recoverable: tomorrow they are 7 days out,
+under the floor however it is measured. **99 firms with a live matched
+solicitation will not hear from us about it.**
+
+All three places now ask in whole days — the floor and the far edge of the
+window in `job_push`, and the signal gate in `job_assign`, which was refusing
+the same rows at 05:00 by the same arithmetic. Dates are what the copy says
+("closes Oct 20") and what the budget counts, so dates are what gets checked.
+57 queued rows sit one day above the floor tonight and would have hit that
+boundary tomorrow; a new test pins the floor, the budget and the gate to each
+other so they cannot drift apart again.
+
+**This is the fifth instance of one shape of mistake.** The daily cap, the
+solicitation pace, the push record, the lead render, and now the floor: each was
+correct in the one place it was written and wrong against a second place that
+had to agree with it. The rule the log has been accumulating — assert a
+guarantee on every path that reaches the same place — extends to units. Two
+correct calculations in different units are one bug.
+
+### Day 14 — we sent 287 emails on a federal holiday
+
+Found in an autoresponder: *"I will be out of the office Friday October 9th,
+returning to work Tuesday October 13th **due to the federal holiday on Monday
+October 12th**."*
+
+Today was Columbus Day. The push cron is `0 6 * * 1-5` and knows about weekends
+but not holidays, so a day's full cap — 287 contacts — went to federal
+contractors on a day the agencies they sell to were shut. That is not a defect
+and nothing is broken, but it is a wasted day of capacity against the one
+audience for whom federal holidays are not ordinary days, and the expensive
+ones are close: Thanksgiving (11-26 and the Friday after), Christmas, New Year.
+
+Not changed unilaterally, because it is a judgement about timing rather than a
+fault, and the harm cannot be measured from here — link tracking is off and the
+reply samples are too small to separate a holiday from noise. The cheap version
+is a list of federal dates that `job_push` returns early on, which also stops
+the close-date budget counting them as sending days. Worth a decision before
+the last week of November.
+
+### Day 14 — replies, and a second reader who could not tell what we wanted
+
+Nine replies since Friday, four machine and all four correctly classified. Two
+new accepts, both drafted by the reply desk: *"I like Face Time then Emails
+please send me your cell number"* (A4) and *"Yes I was aware. Sure send me some
+info"* (A4).
+
+Two declines, suppressed at person level: *"I don't have an interest"* and
+*"I don't know you, you don't know me... I have no interest in paying someone
+to find contracts for me. Please do not contact me again."*
+
+And a third: *"I have no idea what your talking about....zero understanding"*
+(A2). The quoted email was rendered correctly, so this is not the 10-08
+blank-variable bug — it is a reader who read a correct email and could not tell
+what was being offered. **Second one this week**, after *"What is this
+regarding?"*, which was the broken one. I suppressed her and then reversed it:
+the reply desk classified it a question and drafted an answer, and suppressing
+someone who asked the programme something would stop the programme answering.
+
+Two confused readers in five days, out of 28 human replies, is worth watching
+rather than acting on — but the copy was already rewritten once for clarity on
+the owner's instruction, and these are the smallest firms in the pool.
+
+Reply desk ledger: **one `needs_human`** (still Cleveland, the 10-08 blank
+email) and **nine drafted**, up from four on Friday. The drafts are the backlog
+worth clearing — every one is someone who asked for the deliverable.
+
+### Day 14 — inventory
+
+| Angle | Queued | Cap | Sending days |
+|---|---:|---:|---:|
+| A1 | 585 | 37 | 15.8 |
+| A2 | 600 | 125 | 4.8 |
+| A4 | 418 | 50 | 8.4 |
+| A5 holdout | — | 75 | — |
+| A5 generic | 3,406 total A5 | | — |
+
+A2 base 595 contacted against speed 553. Holdout control 510 against A2's
+1,148. Bare solicitation numbers rose to 19.5% of queued A2 rows (117 of 600)
+from 14%, which is new solicitations arriving with titles `solHeadline` will not
+vouch for rather than anything changing in the code.
