@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "cursor": "2026-10-10T18:31:25.000Z",
+  "cursor": "2026-10-11T16:06:56.000Z",
   "emails": {
     "01a07bf7-8d8a-7d1c-b87e-76208ed81963": {
       "lead": "amirl@seetrue.ai",
@@ -406,7 +406,7 @@
       "status": "sent",
       "playbook": "A4",
       "deliverable": "next_open",
-      "updated_at": "2026-10-12T20:41:10.061Z",
+      "updated_at": "2026-10-13T18:41:38.743Z",
       "watch": {
         "naics": "561990",
         "keywords": [
@@ -422,7 +422,7 @@
         "subject": "Re: did you see this",
         "campaign_id": "39bc9fab-a9a7-4ed6-b34c-ccabeb9e76ee",
         "firstName": "Parish",
-        "last_checked": "2026-10-12T20:41:10.061Z"
+        "last_checked": "2026-10-13T18:41:38.743Z"
       },
       "notified_at": "2026-10-05T15:46:30.588Z",
       "sent_at": "2026-10-05T16:02:12.003Z",
@@ -1182,6 +1182,105 @@
       "deliverable": "disqualifiers",
       "updated_at": "2026-10-12T20:41:17.641Z",
       "notified_at": "2026-10-12T20:41:17.641Z"
+    },
+    "01a1355a-0d05-78ed-a752-591ba37d6c9f": {
+      "lead": "alext@redballoonsecurity.com",
+      "campaign": "A4",
+      "received_at": "2026-10-13T13:00:42.000Z",
+      "category": "auto_reply",
+      "classified_by": "rule",
+      "status": "no_action",
+      "updated_at": "2026-10-13T18:41:25.327Z",
+      "redirect": "himanshu@redballoonsecurity.com"
+    },
+    "01a1355d-5d7c-77bd-9965-90dd35d9ddff": {
+      "lead": "dbain@sourceonecs.com",
+      "campaign": "A1",
+      "received_at": "2026-10-13T13:04:10.000Z",
+      "category": "not_interested",
+      "classified_by": "rule",
+      "status": "no_action",
+      "updated_at": "2026-10-13T18:41:25.456Z"
+    },
+    "01a1356d-686e-7c1d-bd2d-774083f90784": {
+      "lead": "bamajackllc@gmail.com",
+      "campaign": "A1",
+      "received_at": "2026-10-13T13:21:43.000Z",
+      "category": "not_interested",
+      "classified_by": "model",
+      "status": "no_action",
+      "updated_at": "2026-10-13T18:41:27.985Z"
+    },
+    "01a13574-b30b-75bd-9843-f358b1027ccd": {
+      "lead": "matthew.yoo@ilcreations.com",
+      "campaign": "A4",
+      "received_at": "2026-10-13T13:29:54.000Z",
+      "category": "auto_reply",
+      "classified_by": "model",
+      "status": "no_action",
+      "updated_at": "2026-10-13T18:41:31.066Z",
+      "redirect": "andrew.ko@ilcreations.com"
+    },
+    "01a13597-3829-7e9f-9c9a-ded23e66802d": {
+      "lead": "cdewitt@bkma.com",
+      "campaign": "A5",
+      "received_at": "2026-10-13T14:07:25.000Z",
+      "category": "auto_reply",
+      "classified_by": "rule",
+      "status": "no_action",
+      "updated_at": "2026-10-13T18:41:31.482Z",
+      "redirect": "krubeling@bkma.com"
+    },
+    "01a1359c-7c27-79c9-90ae-02a288214a78": {
+      "lead": "lynn@titantechinc.org",
+      "campaign": "A4",
+      "received_at": "2026-10-13T14:13:02.000Z",
+      "category": "referral",
+      "classified_by": "model",
+      "status": "referral",
+      "referral": "jordan@titantechinc.org",
+      "updated_at": "2026-10-13T18:41:46.655Z",
+      "notified_at": "2026-10-13T18:41:46.655Z"
+    },
+    "01a135b0-7016-76b8-9abb-eb4d9afa13f1": {
+      "lead": "chelsea.thompson@hinckelectric.com",
+      "campaign": "A5",
+      "received_at": "2026-10-13T14:35:07.000Z",
+      "category": "referral",
+      "classified_by": "model",
+      "status": "referral",
+      "referral": "barbara.mcgivney@hinckelectric.com",
+      "updated_at": "2026-10-13T18:41:46.656Z",
+      "notified_at": "2026-10-13T18:41:46.656Z"
+    },
+    "01a135b3-db04-7acc-b5ab-e92b6b5d14a7": {
+      "lead": "philowens@wheatstone.com",
+      "campaign": "A2",
+      "received_at": "2026-10-13T14:38:36.000Z",
+      "category": "not_interested",
+      "classified_by": "model",
+      "status": "no_action",
+      "updated_at": "2026-10-13T18:41:38.275Z"
+    },
+    "01a135f6-43a2-7393-9f42-9fd4ee284393": {
+      "lead": "smorris@mpulsesoftware.com",
+      "campaign": "A4",
+      "received_at": "2026-10-13T15:51:27.000Z",
+      "category": "auto_reply",
+      "classified_by": "rule",
+      "status": "no_action",
+      "updated_at": "2026-10-13T18:41:38.442Z",
+      "redirect": "rbrous@mpulsesoftware.com"
+    },
+    "01a13604-5485-72a8-a21b-5fceff4b9d4e": {
+      "lead": "jessica@tronsonmfg.com",
+      "campaign": "A2",
+      "received_at": "2026-10-13T16:06:33.000Z",
+      "category": "auto_reply",
+      "classified_by": "rule",
+      "status": "no_action",
+      "updated_at": "2026-10-13T18:41:38.531Z",
+      "redirect": "derek@tronson.onmicrosoft.com"
     }
   }
 }
