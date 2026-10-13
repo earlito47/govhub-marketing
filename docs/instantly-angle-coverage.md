@@ -1888,3 +1888,106 @@ A2 base 595 contacted against speed 553. Holdout control 510 against A2's
 1,148. Bare solicitation numbers rose to 19.5% of queued A2 rows (117 of 600)
 from 14%, which is new solicitations arriving with titles `solHeadline` will not
 vouch for rather than anything changing in the code.
+
+### Day 15 (10-13 sending) — the holdout experiment is readable, and it does not support the premise
+
+Both arms have passed the sample the experiment was designed around. This is
+the comparison the whole system was built to make, so here it is plainly.
+
+| Arm | Contacted | Human replies | Rate |
+|---|---:|---:|---:|
+| A2 personalized (named solicitation, close date, fit line) | 1,273 | 16 | **1.26%** |
+| A5 holdout — the SAME population, generic copy | 585 | 6 | **1.03%** |
+| A5 generic — no signal at all | 928 | 14 | **1.51%** |
+
+A2 against its own holdout: **z = 0.43, p = 0.67.** Indistinguishable. The
+arm with no personalization at all has the highest rate of the three.
+
+On the better metric — people who asked for the deliverable, which is what the
+business actually sells — A2 has 4 accepts to all of A5's 2: 0.31% against
+0.13%, **p = 0.30**. Also indistinguishable, though the direction favours A2.
+
+**What is now ruled out:** that personalization doubles the reply rate. The
+~440-per-arm target was sized to detect a doubling, and at 1,273 and 585 a
+doubling would be visible. It is not there.
+
+**What cannot be settled this way:** a difference of the size actually
+observed. At 1.26% against 1.03%, confirming it at 80% power needs roughly
+**33,000 contacts per arm** — 265 sending days at the current cap. That is not
+a number this programme will reach, so no amount of further sending will turn
+this into a clean answer.
+
+Three honest caveats, because the headline is stark:
+
+1. The holdout is not "no email". It gets A5's generic debrief question, which
+   is a good email. This measures personalized copy against generic copy, not
+   personalization against silence.
+2. 16 replies and 6 replies are small absolute numbers. The confidence interval
+   on each rate is wide.
+3. Reply rate is not revenue. A2's accepts arrive attached to a live
+   solicitation with a deadline; A5's arrive attached to nothing. Whether that
+   converts differently downstream is not visible from here and is the only
+   question that would actually settle the matter.
+
+So the finding is not "turn A2 off". It is that **the expensive machinery —
+solicitation scanning, NAICS matching, close-date budgets, per-solicitation
+pacing, the whole render pipeline — has not bought a measurable reply-rate
+advantage over a well-written generic question**, and the case for it now rests
+entirely on what happens to those four accepts. That is a decision for the
+owner, and the data to make it is downstream conversion, not more sending.
+
+### Day 15 — the off-by-one fix did exactly what it should
+
+`dropped_stale: 0` on all three push runs, against 92 yesterday. The cohort
+that would have died: close 10-21, exactly 8 whole days out today, 145 rows —
+**62 sent today, 0 dropped, 0 left waiting.** Every cap hit exactly (A1 37, A2
+125, A4 50, A5 75), 31 moves queued and all 31 confirmed in-run, and the
+three-way audit clean across 2,786 leads.
+
+Bounce **0.82%** — 36 of 4,381, the lowest reading yet and the fifteenth day
+under the gate.
+
+### Day 15 — replies, and one match that was wrong
+
+Nine replies, six machine and all six correctly classified, including two
+shapes this log added patterns for last week (the future-tense leave notice and
+the Titan Tech delegation) — they are being caught now rather than counted.
+
+Three declines, suppressed at person level. One is worth keeping:
+
+> Thanks but no thanks. **We don't make antennas.**
+
+A2 matched Wheatstone to a solicitation outside what they actually do. The
+copy hedges correctly — "on paper you clear the bar on NAICS 334220" — and on
+paper they do, because that is the code they are registered under. This is the
+inherent cost of NAICS matching rather than a bug, and the hedge is doing its
+job, but it is the first reply to name it outright. One instance; worth
+counting, not acting on.
+
+### Day 15 — bare solicitation numbers are climbing
+
+27% of queued A2 rows now render `sol_short` as the bare number, up from 19.5%
+and 14% on the two previous days. The cause is not the code: sampling the
+rejected titles shows they are the two cases `solHeadline` refuses on purpose
+— ALL CAPS ("RENOVATE MILITARY FAMILY HOUSING TOWER 4511, CAMP COURTNEY",
+"CONTRACTOR-OPERATED PARTS STORE (COPARS)") and over-length (110, 152, 200
+characters, against a 90 limit).
+
+So this is the incoming mix changing, not a regression. But over a quarter of
+the queue now shows the "too computerized" look the owner objected to on 10-03,
+and two of the three causes look addressable: an ALL CAPS title could be
+title-cased if the acronym problem were solved, and a 200-character title could
+be truncated at a clause boundary. Neither is free and both risk a worse render
+than the bare number. Flagged rather than attempted.
+
+### Day 15 — inventory
+
+| Angle | Queued | Cap | Sending days |
+|---|---:|---:|---:|
+| A1 | 578 | 37 | 15.6 |
+| A2 | 652 | 125 | 5.2 |
+| A4 | 394 | 50 | 7.9 |
+| A5 | 3,539 | 75 | — |
+
+Reply desk: **one `needs_human`** (still Cleveland) and **nine drafted**,
+unchanged from yesterday. Largest solicitation 15 of today's 125 A2 emails.
