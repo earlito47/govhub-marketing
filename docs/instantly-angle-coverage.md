@@ -1991,3 +1991,95 @@ than the bare number. Flagged rather than attempted.
 
 Reply desk: **one `needs_human`** (still Cleveland) and **nine drafted**,
 unchanged from yesterday. Largest solicitation 15 of today's 125 A2 emails.
+
+### Day 16 (10-14 sending) — green, and a narrow leak the detector cannot see
+
+All 17 jobs 2xx, every cap exact (A1 37, A2 125, A4 50, A5 75), 31 moves all
+confirmed in-run, the three-way audit clean across **3,073 leads**, one stale
+drop, and bounce **0.81%** — 40 of 4,934, the lowest yet and the sixteenth day
+under the gate. Largest solicitation 15 of 125.
+
+Two replies, both human. One decline, suppressed. The other was *"I am not even
+sure what you're talking about"* — the third of that shape in a week, so I read
+the email rather than the counter. It was this:
+
+> on paper **Woods Electric LLC** clears the bar on NAICS 238210
+> **CLWTP FISMA Compliance** (140R4026Q0108), DOI, closes Oct 16
+
+Josh Woods is an electrician in Big Pine Key. FISMA is the federal information
+security statute. The solicitation is coded 238210 — electrical contractors —
+because the work sits inside a water treatment plant, and he is registered
+under 238210, so "on paper you clear the bar" is literally true and completely
+useless. **His reply is the correct response to our email, not a confused one.**
+
+Same shape as 10-13's *"we don't make antennas"*. Two in two days.
+
+**But a sample says the matching is mostly sound, so the generalisation does
+not hold.** Fourteen of today's A2 matches read by eye: an independent artist
+(NAICS 711510) matched to an art-in-architecture project, a drilling firm to a
+water treatment rehab, a plumbing contractor to reverse-osmosis modifications,
+site-work firms to a wildlife water catchment. Those are good. The bad ones are
+a tail, and NAICS is assigned to the *procurement* by a contracting officer,
+not validated against the work — so the tail is inherent, and the "on paper"
+hedge is what carries it. Counted, not acted on.
+
+### Day 16 — isPersonName cannot see a stranger's name
+
+Reading that sample turned up two company fields that are people: `Frye Rebecca
+G` (contact Rebecca Frye) rendered **"your team"** — correct — and `Matthew
+Foust`, whose contact is **Jacy Serva**, rendered *"on paper Matthew Foust
+clears the bar"*.
+
+That is the gap. `isPersonName` asks "is the company field THIS contact's
+name?" and cannot ask "is it SOMEBODY's name?". Separating the live leaks from
+the original September bug:
+
+| | |
+|---|---|
+| Pre-fix, 09-23 to 09-29 | 7 rows — the known bug, repaired at the time |
+| Post-fix leaks | **3** — `Comer Lphelps` / Sid Phelps (10-12), `Matthew Foust` / Jacy Serva (10-14), `Kathryn Johnson` / Robert Johnson (queued) |
+
+Two sent, one caught before it went. The queued one is repaired to "your team".
+
+**And a measurement caution worth recording.** My first pass at sizing this
+used a regex for "two capitalised words, no corporate marker" and reported
+**38**. Reading the 38 by eye, most are real companies — Banks Lawn Care,
+Imperial Cleaning, Kiowa Tribe Of Oklahoma, Tazlina River Contractors. The real
+number is 3. A crude filter over a name column produces a confident wrong
+number, which is the same mistake as the `REQUIRED` list typed from memory on
+10-08.
+
+**Not fixed, because the fix is a judgement rather than a correction.** A pure
+shape test (2-3 capitalised words, no marker) would catch Matthew Foust and
+also turn Banks Lawn Care into "your team", losing real personalization. The
+asymmetry favours over-triggering — "your team" to a real company is harmless,
+naming a stranger is not — but it is still a trade, and there are two ways to
+make it:
+
+1. **A given-name test built from our own data.** The universe has 11,008
+   `first_name` values. If the company field's first token appears among them,
+   has no corporate marker and is at most three words, treat it as a person.
+   Self-contained, testable, no external list. "Matthew" and "Kathryn" hit;
+   "Imperial" and "Brandywine" do not.
+2. **A trade-word stoplist** — Cleaning, Lawn, Engineering, Contractors. Open
+   ended and needs maintaining.
+
+(1) is the better shape. 3 rows in two weeks is the size of the problem, so it
+is worth doing deliberately rather than at the end of a daily check.
+
+### Day 16 — inventory and the open desk
+
+| Angle | Queued | Cap | Sending days |
+|---|---:|---:|---:|
+| A1 | 588 | 37 | 15.9 |
+| A2 | 699 | 125 | 5.6 |
+| A4 | 383 | 50 | 7.7 |
+| A5 | 3,706 | 75 | — |
+
+Holdout control 660 contacted against A2's 1,398, so yesterday's reading is
+firming rather than changing. Bare solicitation numbers 25% (178 of 699), level
+with yesterday.
+
+Reply desk: **one `needs_human`** (still Cleveland) and **ten drafted**, up
+from nine. Six of the ten are accepts — people who asked for the deliverable —
+and the oldest has been drafted since 10-06.
