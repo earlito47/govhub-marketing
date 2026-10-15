@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "cursor": "2026-10-12T16:25:58.000Z",
+  "cursor": "2026-10-13T13:57:13.000Z",
   "emails": {
     "01a07bf7-8d8a-7d1c-b87e-76208ed81963": {
       "lead": "amirl@seetrue.ai",
@@ -406,7 +406,7 @@
       "status": "sent",
       "playbook": "A4",
       "deliverable": "next_open",
-      "updated_at": "2026-10-14T16:14:30.171Z",
+      "updated_at": "2026-10-15T16:01:31.673Z",
       "watch": {
         "naics": "561990",
         "keywords": [
@@ -415,14 +415,17 @@
         ],
         "companyName": "Dependable On-Site Scan & Shred, Inc.",
         "context": "A1 Shredding And Recycling, Incorporated (Marietta) won a $5K DHS award in NAICS 561990, which is how we found them. Company name: Dependable On-Site Scan & Shred, Inc..",
-        "count": 3,
-        "exclude": [],
+        "count": 2,
+        "exclude": [
+          "W9124M27QA005"
+        ],
         "until": "2026-11-18T01:48:54.724Z",
         "eaccount": "earl.knight@getgovhub.com",
         "subject": "Re: did you see this",
         "campaign_id": "39bc9fab-a9a7-4ed6-b34c-ccabeb9e76ee",
         "firstName": "Parish",
-        "last_checked": "2026-10-14T16:14:30.171Z"
+        "last_checked": "2026-10-14T16:14:30.171Z",
+        "pending": "430b01b5-be33-46b6-86ad-68e1dc0ee14d"
       },
       "notified_at": "2026-10-05T15:46:30.588Z",
       "sent_at": "2026-10-05T16:02:12.003Z",
@@ -1302,6 +1305,33 @@
       "classified_by": "model",
       "status": "no_action",
       "updated_at": "2026-10-14T20:16:23.302Z"
+    },
+    "01a13d17-003c-7b8d-8e74-d63f1fa8d421": {
+      "lead": "jackie@bronzestarmedical.com",
+      "campaign": "A2",
+      "received_at": "2026-10-15T01:04:23.000Z",
+      "category": "not_interested",
+      "classified_by": "model",
+      "status": "no_action",
+      "updated_at": "2026-10-15T16:00:54.421Z"
+    },
+    "01a13fda-4aae-7add-af62-d1a0fe9e233f": {
+      "lead": "agbusiness895@gmail.com",
+      "campaign": "A2",
+      "received_at": "2026-10-15T05:35:56.000Z",
+      "category": "unsubscribe",
+      "classified_by": "model",
+      "status": "no_action",
+      "updated_at": "2026-10-15T16:00:57.130Z"
+    },
+    "430b01b5-be33-46b6-86ad-68e1dc0ee14d": {
+      "lead": "admin@documentsecuritysolutions.net",
+      "campaign": "A4",
+      "status": "drafted",
+      "follow_up_of": "01a0e8aa-f696-7a0f-b1fe-36519bc67f7b",
+      "deliverable": "next_open",
+      "updated_at": "2026-10-15T16:01:32.007Z",
+      "notified_at": "2026-10-15T16:01:32.006Z"
     }
   }
 }
