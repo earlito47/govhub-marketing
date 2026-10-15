@@ -2083,3 +2083,90 @@ with yesterday.
 Reply desk: **one `needs_human`** (still Cleveland) and **ten drafted**, up
 from nine. Six of the ten are accepts — people who asked for the deliverable —
 and the oldest has been drafted since 10-06.
+
+### Day 17 (10-15 sending) — green, and the warm leads are the bottleneck now
+
+All 17 jobs 2xx, every cap exact (A1 37, A2 125, A4 50, A5 75), the three-way
+audit clean across **3,360 leads**, two stale drops, and bounce **0.74%** — 42
+of 5,652, the lowest yet and the seventeenth day under the gate. Two replies,
+both declines, both suppressed.
+
+Nothing in the machinery needs fixing. The thing that does need attention is
+not a bug.
+
+### Day 17 — eleven drafted replies are not going out
+
+The reply desk's open items, by the date the reply arrived:
+
+| Drafted since | Lead | Campaign | Category |
+|---|---|---|---|
+| 10-06 | kparks@kpcinc.com | C1 | accept |
+| 10-06 | dporter@staffingetc.net | A2 | accept |
+| 10-07 | alan@eyesonearth.org | A5 | accept |
+| **10-08** | **gidcleveland@gmail.com** | A2 | **needs_human** |
+| 10-08 | ameerah@mathjr.org | A5 | question |
+| 10-09 | ads81460@gmail.com | A2 | accept |
+| 10-09 | kalden@aldenlg.com | A4 | question |
+| 10-12 | beni@monacomech.com | A4 | accept |
+| 10-12 | precisionsepticandpumping@gmail.com | A4 | accept |
+| 10-12 | alohacleaningexperts@gmail.com | A2 | question |
+| 10-14 | jwoodselectric@gmail.com | A2 | question |
+
+Plus one with no received date recorded. The count has gone **4 → 9 → 10 → 11
+→ 12** across the week while `sent` has stayed at 9. Drafts are accumulating,
+not clearing, and the oldest has been drafted for **nine days**.
+
+Six of them are accepts — people who read a cold email and asked for the
+deliverable. That is the entire output of seventeen days of sending, and it is
+the one number in this programme that is not a proxy for anything. The desk is
+built and run from another session and is not mine to touch, so this is a
+report rather than a repair: **the constraint on this programme has moved from
+the sending side to the answering side.** Nothing about more capacity, better
+pacing or cleaner renders matters while these sit.
+
+### Day 17 — A4's constraint has flipped from signals to mailboxes
+
+The awards scanner came back hard, exactly as the 21-day stamps predicted,
+starting a week earlier than my 10-21 estimate:
+
+| Run | Signals written |
+|---|---:|
+| 09:45 | 128 |
+| 15:45 | 97 |
+| 21:45 | 10 |
+
+Live `competitor_award` signals now **1,054**, against 248 on 10-06, with 283
+of them on companies that have no assignment at all. A1's scanner has started
+too — 31 written at 08:00 as its 30-day stamps began expiring.
+
+So A4 is no longer supply-limited. Its queue is 342 at 50 a day, and 50 is the
+hard ceiling of its 8 mailboxes over a 4-step sequence. A4 has the second-best
+accept rate in the programme (3 of the 6 open accepts) and now has the signals
+to feed more capacity, so if mailboxes are to move anywhere, A4 is where the
+case is strongest. Not acted on — it is a reallocation decision, and A2's 20
+boxes are the only place they would come from.
+
+### Day 17 — the rest
+
+`assign` wrote only 117 against 503 yesterday, with
+`left_unassigned_at_ceiling: {A5: 408}` — A5's generic queue hit its ceiling
+exactly (1,125 = 15 days x 75) for the first time. Working as designed:
+generics are the least valuable sends and yield first.
+
+| Angle | Queued | Cap | Sending days |
+|---|---:|---:|---:|
+| A1 | 565 | 37 | 15.3 |
+| A2 | 611 | 125 | 4.9 |
+| A4 | 342 | 50 | 6.8 |
+| A5 | 3,686 | 75 | — |
+
+Holdout control 735 contacted against A2's 1,523 — the 10-13 reading is firming
+with every day, not shifting. Largest solicitation 29 of today's 125. Bare
+solicitation numbers down to 20% (121 of 611) from 25%.
+
+One reply was *"Please put us on a do not email list."* Allied Imperium Global
+is the only row for that company, so suppressing the person is the whole of the
+request, and nothing was inferred about anybody else — the person-level rule
+and an explicit company-level request did not actually conflict here. Worth
+noting that they could, on a company with several contacts, and that would be a
+decision for the owner rather than a default.
