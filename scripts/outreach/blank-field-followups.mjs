@@ -218,7 +218,7 @@ function draftA1(entry, lead) {
 
 /** The one open solicitation for an A2 or A4 lead, or null. */
 // One solicitation must not carry the program. Batch 1 (10-16) named the
-// Inyo National Forest job, 1240BH26Q0078, to 13 construction firms in one
+// Inyo National Forest job, 1240BH26Q0078, to 11 construction firms in one
 // afternoon: true for each, and a blast with a merge field in it to any two
 // who compare notes (the same reason outreach-push paces A2 per
 // solicitation). Past this many corrections it is excluded, so the picker
