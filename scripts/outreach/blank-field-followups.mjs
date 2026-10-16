@@ -217,7 +217,15 @@ function draftA1(entry, lead) {
 }
 
 /** The one open solicitation for an A2 or A4 lead, or null. */
-async function openPick(entry, lead) {
+// One solicitation must not carry the program. Batch 1 (10-16) named the
+// Inyo National Forest job, 1240BH26Q0078, to 13 construction firms in one
+// afternoon: true for each, and a blast with a merge field in it to any two
+// who compare notes (the same reason outreach-push paces A2 per
+// solicitation). Past this many corrections it is excluded, so the picker
+// moves on to the next fitting notice or the plain version.
+const MAX_PER_SOL = 3;
+
+async function openPick(entry, lead, overused = []) {
   const { nextOpen } = await import('./reply-desk/deliverables.mjs');
   const p = lead.payload || {};
   const company = companyOf(lead);
@@ -231,7 +239,7 @@ async function openPick(entry, lead) {
         context: `${p.competitor_name} (${p.competitor_city}) won a ${p.award_amount_short} ${p.award_agency_short} award in NAICS ${p.naics_code}, which is how we found them. Company name: ${company}.${PICK_HINT}`,
       };
   // Up to three, so one that turns out to be restricted can give way to the next.
-  const d = await nextOpen({ ...args, count: 3 });
+  const d = await nextOpen({ ...args, count: 3, excludeSol: [...args.excludeSol, ...overused] });
   if (!d.facts?.open) return null;
   const lines = d.body.split('\n\n')[0].split('\n').map((l) => l.replace(/^\d+\.\s*/, '').trim());
   const i = lines.findIndex((l, n) => n < d.facts.open && !RESTRICTED.test(l) && !BEYOND_SCALE.test(l));
@@ -240,7 +248,7 @@ async function openPick(entry, lead) {
     skipped_restricted: lines.slice(0, i) };
 }
 
-async function build(ix, entry, { ignoreWait = false, mailboxFull = () => false } = {}) {
+async function build(ix, entry, { ignoreWait = false, mailboxFull = () => false, overused = [] } = {}) {
   const ctx = await readLead(ix, entry);
   const hold = holdReason(ctx, entry);
   if (hold && !(ignoreWait && hold === 'wait')) return { hold, ctx };
@@ -255,7 +263,7 @@ async function build(ix, entry, { ignoreWait = false, mailboxFull = () => false 
   } else {
     const p = lead.payload || {};
     if (!p.naics_code) return { hold: 'no NAICS on the lead', ctx };
-    pick = await openPick(entry, lead);
+    pick = await openPick(entry, lead, overused);
     variant = `${entry.campaign.toLowerCase()}_${pick ? 'open' : 'plain'}`;
     text = entry.campaign === 'A2' ? draftA2(entry, lead, pick?.line) : draftA4(entry, lead, pick?.line);
   }
@@ -316,7 +324,10 @@ async function send() {
     // One lead's read failing (Instantly 5xxs some lead-filtered reads) must
     // not end the batch: it stays pending and is tried again next run.
     let built;
-    try { built = await build(ix, entry, { mailboxFull: (box) => (usedBox[box] || 0) >= perMailbox }); }
+    const solUse = {};
+    for (const l of Object.values(ledger.leads)) if (l.status === 'sent' && l.sol) solUse[l.sol] = (solUse[l.sol] || 0) + 1;
+    const overused = Object.keys(solUse).filter((s) => solUse[s] >= MAX_PER_SOL);
+    try { built = await build(ix, entry, { mailboxFull: (box) => (usedBox[box] || 0) >= perMailbox, overused }); }
     catch (e) { console.log(`  error ${entry.lead}: ${e.message.split('\n')[0]}`); continue; }
     const { draft, hold } = built;
     if (hold === 'mailbox_full') continue;   // its mailbox is full today; next run
