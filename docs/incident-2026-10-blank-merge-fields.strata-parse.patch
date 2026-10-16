@@ -1,0 +1,362 @@
+diff --git a/scripts/outreach-tests/lead-gate.test.mjs b/scripts/outreach-tests/lead-gate.test.mjs
+new file mode 100644
+index 0000000..8996378
+--- /dev/null
++++ b/scripts/outreach-tests/lead-gate.test.mjs
+@@ -0,0 +1,121 @@
++// leadMissing, isOpenSolicitationType and job_push's fillLead, read out of the
++// shipped source rather than copied.
++//
++// All three guard the 10-06 failure. leadMissing is the check on what
++// Instantly will RENDER (the lead's payload), which is what diverged from the
++// assignment row when a wave 1 lead was moved into A2 with none of its
++// variables. fillLead is how push makes a found lead render before it can be
++// sent. isOpenSolicitationType is the signal job's notice-type test, which let
++// presolicitations through as a substring match.
++import { readFileSync } from 'node:fs';
++const SHARED = readFileSync(new URL('../../supabase/functions/_shared/outreach.ts', import.meta.url), 'utf8');
++const PUSH = readFileSync(new URL('../../supabase/functions/outreach-push/index.ts', import.meta.url), 'utf8');
++
++function slice(src, marker, end = '\n}\n') {
++  const i = src.indexOf(marker);
++  if (i === -1) throw new Error(`${marker} not found`);
++  return src.slice(i, src.indexOf(end, i) + end.length);
++}
++const shared = [
++  slice(SHARED, 'export const REQUIRED', '\n};\n'),
++  slice(SHARED, 'export function leadMissing'),
++  slice(SHARED, 'export const OPEN_SOLICITATION_TYPES', ';\n'),
++  slice(SHARED, 'export function isOpenSolicitationType'),
++].join('\n')
++  .replace(/export /g, '')
++  .replace(/: Record<string, string\[\]>/, '')
++  .replace('(angle: string, lead: Record<string, unknown> | null | undefined): string[] {', '(angle, lead) {')
++  .replace('((lead?.payload ?? {}) as Record<string, unknown>)', '(lead?.payload ?? {})')
++  .replace('(type: string | null | undefined): boolean {', '(type) {');
++const fill = slice(PUSH, 'async function fillLead(')
++  .replace(/async function fillLead\([\s\S]*?\): Promise<string\[\]> \{/, 'async function fillLead(leadId, key, angle, custom, payload, existed) {')
++  .replace('const fill: Record<string, unknown> =', 'const fill =');
++
++const calls = [];
++let patchReply = null;
++// apiCall stub: records every request, answers a PATCH with patchReply.
++const apiCall = async (path, key, method, body) => { calls.push({ path, method, body }); return patchReply; };
++const { leadMissing, isOpenSolicitationType, fillLead } =
++  new Function('apiCall', `${shared}\n${fill}\nreturn { leadMissing, isOpenSolicitationType, fillLead };`)(apiCall);
++
++let bad = 0, n = 0;
++const t = (label, got, want) => {
++  n++;
++  if (JSON.stringify(got) !== JSON.stringify(want)) {
++    bad++; console.error(`FAIL  ${label}\n  got:  ${JSON.stringify(got)}\n  want: ${JSON.stringify(want)}`);
++  }
++};
++
++// ---- leadMissing ----------------------------------------------------------
++// The lead as Instantly held it on 10-06: wave 1's payload, moved into A2.
++const wave1Lead = { payload: { firstName: 'Brandon', companyName: 'G.i.d Construction', uei: 'X', segment: 'serial_bidder' } };
++const A2_ALL = ['sol_line', 'sol_short', 'sol_agency_short', 'sol_close_date', 'naics_code', 'fit_line', 'check_line', 'cta_line', 'followup_line'];
++t('moved wave 1 lead is missing every A2 variable', leadMissing('A2', wave1Lead), A2_ALL);
++t('moved wave 1 lead is missing every A1 variable', leadMissing('A1', wave1Lead), ['agency_short', 'contract_end_month']);
++
++const full = {
++  sol_line: 'Housing (W912)', sol_short: 'W912', sol_agency_short: 'Army', sol_close_date: 'Oct 16',
++  naics_code: '236220', fit_line: 'it fits', check_line: 'checked', cta_line: 'want it?', followup_line: 'still?',
++};
++const complete = { payload: { ...wave1Lead.payload, ...full } };
++t('complete A2 lead passes', leadMissing('A2', complete), []);
++t('whitespace counts as blank', leadMissing('A2', { payload: { ...full, sol_close_date: '  ' } }), ['sol_close_date']);
++t('a leaked token counts as blank', leadMissing('A2', { payload: { ...full, fit_line: '{{naics_code}} fits' } }), ['fit_line']);
++t('a non-string counts as blank', leadMissing('A2', { payload: { ...full, naics_code: 236220 } }), ['naics_code']);
++// The 10-03 copy change: sol_short added to steps 2 and 3, leads pushed before
++// it never had it. That is a lead missing exactly one variable.
++const { sol_short: _s, ...beforeSolShort } = full;
++t('lead pushed before sol_short existed', leadMissing('A2', { payload: beforeSolShort }), ['sol_short']);
++// The write shape is not the read shape: a lead with only custom_variables
++// has not been read back, and must not pass.
++t('custom_variables (write shape) is not read', leadMissing('A2', { custom_variables: full }).length, 9);
++t('null lead', leadMissing('A1', null), ['agency_short', 'contract_end_month']);
++t('A5 requires nothing', leadMissing('A5', wave1Lead), []);
++t('unknown angle requires nothing', leadMissing('A9', wave1Lead), []);
++
++// ---- fillLead -------------------------------------------------------------
++const payload = { company_name: 'G.i.d Construction', email: 'x@example.com' };
++calls.length = 0; patchReply = complete;
++t('found lead: written, response renders', await fillLead('L1', 'k', 'A2', full, payload, true), []);
++t('found lead: one PATCH to the lead', calls.map((c) => `${c.method} ${c.path}`), ['PATCH /leads/L1']);
++t('found lead: PATCH carries the variables and company name', calls[0]?.body,
++  { custom_variables: full, company_name: 'G.i.d Construction' });
++
++calls.length = 0; patchReply = wave1Lead;
++t('PATCH did not take: still missing', await fillLead('L1', 'k', 'A2', full, payload, true), A2_ALL);
++
++calls.length = 0; patchReply = {};
++t('PATCH answered with no payload: still missing', (await fillLead('L1', 'k', 'A2', full, payload, true)).length, 9);
++
++calls.length = 0;
++t('created this run: trusted', await fillLead('L2', 'k', 'A2', full, payload, false), []);
++t('created this run: no API call', calls.length, 0);
++
++// A found A5 lead has nothing to gate but still gets the safe company name,
++// which is what the deployed confirm pass did for every moved lead.
++calls.length = 0; patchReply = wave1Lead;
++t('found A5 lead: renders', await fillLead('L3', 'k', 'A5', {}, payload, true), []);
++t('found A5 lead: still written', calls.map((c) => c.method), ['PATCH']);
++
++// ---- isOpenSolicitationType -----------------------------------------------
++// Every Type label in the live extract (sampled 2026-10-16), and what A2 may name.
++const TYPES = [
++  ['Solicitation', true],
++  ['Combined Synopsis/Solicitation', true],
++  ['Presolicitation', false],                 // the one the substring test let through
++  ['Sources Sought', false],
++  ['Special Notice', false],
++  ['Award Notice', false],
++  ['Justification', false],
++  ['Sale of Surplus Property', false],
++  ['Consolidate/(Substantially) Bundle', false],
++  ['Intent to Bundle Requirements (DoD-Funded)', false],
++  [' Solicitation ', true],                   // stray whitespace in the CSV
++  ['', false],
++  [null, false],
++  [undefined, false],
++];
++for (const [type, want] of TYPES) t(`type ${JSON.stringify(type)}`, isOpenSolicitationType(type), want);
++
++console.log(`${n - bad}/${n} passed`);
++process.exit(bad ? 1 : 0);
+diff --git a/supabase/functions/_shared/outreach.ts b/supabase/functions/_shared/outreach.ts
+index 76d7c72..35a1d8e 100644
+--- a/supabase/functions/_shared/outreach.ts
++++ b/supabase/functions/_shared/outreach.ts
+@@ -836,6 +836,46 @@ export function gate(angle: string, vars: Record<string, string>): Record<string
+   return vars;
+ }
+ 
++/** The required variables a lead AS INSTANTLY HOLDS IT is missing.
++ *
++ * gate() checks what we meant to send. This checks what Instantly will render,
++ * which is the lead's own payload, and the two diverge whenever POST /leads
++ * finds a lead that already exists: skip_if_in_workspace skips the write, so
++ * the lead keeps whatever it held before. On 10-06 that was a wave 1 payload,
++ * moved into A2, and step 1 sent "Hi Brandon,  posted  and . It closes . ."
++ * while every gate on the assignment row was green.
++ *
++ * Reads `payload`, the READ shape. A fetched lead has no `custom_variables`
++ * (see scripts/outreach-tests/verify-live-leads.mjs), so checking that key
++ * would report every lead as empty. */
++export function leadMissing(angle: string, lead: Record<string, unknown> | null | undefined): string[] {
++  const p = ((lead?.payload ?? {}) as Record<string, unknown>);
++  return (REQUIRED[angle] ?? []).filter((k) => {
++    const v = p[k];
++    return typeof v !== "string" || v.trim() === "" || /\{\{|\}\}/.test(v);
++  });
++}
++
++/** Notice types A2 may name: SAM codes o (Solicitation) and k (Combined
++ * Synopsis/Solicitation). Everything else has nothing to bid on yet, or no
++ * longer has.
++ *
++ * AN EXACT MATCH, NOT A SUBSTRING. The extract's Type column carries labels,
++ * and the test here was `.includes("solicitation")`, which "Presolicitation"
++ * passes. A2's copy says the agency "posted" it, that "it closes" on the
++ * response date and that there are disqualifiers "in this one": three claims a
++ * presolicitation cannot back, because there is no solicitation document yet.
++ * On 10-16, 48 of the 487 notices A2 had ever assigned were presolicitations,
++ * behind 146 leads already emailed.
++ *
++ * Type is the CURRENT type: a presolicitation since posted as a solicitation
++ * reads "Solicitation" here while BaseType keeps "Presolicitation", so this
++ * keys on Type. */
++export const OPEN_SOLICITATION_TYPES = new Set(["Solicitation", "Combined Synopsis/Solicitation"]);
++export function isOpenSolicitationType(type: string | null | undefined): boolean {
++  return OPEN_SOLICITATION_TYPES.has((type ?? "").trim());
++}
++
+ /** Dates that must still be in the future at render time. */
+ export function futureOk(iso: string | null | undefined, minDaysOut = 0): boolean {
+   if (!iso) return false;
+diff --git a/supabase/functions/outreach-push/index.ts b/supabase/functions/outreach-push/index.ts
+index b35cdd8..23c4120 100644
+--- a/supabase/functions/outreach-push/index.ts
++++ b/supabase/functions/outreach-push/index.ts
+@@ -22,7 +22,7 @@
+ 
+ import {
+   assertCron, db, log, getConfig, instantlyKey, futureOk, sleep, JSON_HEADERS, REQUIRED,
+-  fetchAllRows, isPersonName, isoDate, sendingDaysUntil, wholeDaysUntil,
++  fetchAllRows, isPersonName, isoDate, sendingDaysUntil, wholeDaysUntil, leadMissing,
+ } from "../_shared/outreach.ts";
+ 
+ const API = "https://api.instantly.ai/api/v2";
+@@ -227,8 +227,9 @@ Deno.serve(async (req) => {
+   // The main loop stops early enough to leave the move-confirmation pass room
+   // to finish inside the same request. A move confirmed next run is a contact
+   // emailed with nobody watching, which is the thing being fixed.
+-  const runDeadline = Date.now() + RUN_MS - 20_000;
+-  const confirmDeadline = Date.now() + RUN_MS;
++  const runStart = Date.now();
++  const runDeadline = runStart + RUN_MS - 20_000;
++  const confirmDeadline = runStart + RUN_MS;
+   let outOfTime = false;
+ 
+   const used: Record<string, number> = {};
+@@ -237,6 +238,7 @@ Deno.serve(async (req) => {
+   const suppressedHits: string[] = [];
+   let pushed = 0, failed = 0, skippedCap = 0, incomplete = 0;
+   let moveQueued = 0, duplicates = 0, tooEarly = 0, movesConfirmed = 0, movesUnconfirmed = 0;
++  let blankOnLead = 0, refilled = 0;
+   const campaignActivity = new Map<string, boolean>();
+   const pendingMoves: {
+     a: Record<string, unknown>; leadId: string; campaignId: string; angle: string;
+@@ -425,6 +427,23 @@ Deno.serve(async (req) => {
+         // every time a campaign is wound down.
+         const active = from ? await campaignActive(from, key, campaignActivity) : true;
+         if (from && !active) {
++          // THE VARIABLES GO ON BEFORE THE MOVE. The confirm pass below also
++          // writes them, but only after the lead is already live, and only for
++          // a move it confirms before confirmDeadline. A move it does not
++          // confirm stays ready, and the next run's POST finds the lead already
++          // in this campaign, takes the ordinary path and records it with its
++          // wave 1 payload -- the 10-06 blank email again, with nobody told.
++          // Written here, while the lead still sits where nothing sends, the
++          // move can only ever carry a lead that renders.
++          refilled++;
++          const unfilled = await fillLead(leadId, key, angle, custom, payload, true);
++          if (unfilled.length) {
++            blankOnLead++;
++            log("push", "variables did not land on the existing lead, so it was not moved", {
++              email: company.email, angle, missing: unfilled,
++            });
++            continue;   // still ready, still parked where nothing sends
++          }
+           await apiCall("/leads/move", key, "POST",
+             { ids: [leadId], campaign: from, to_campaign_id: campaignId });
+           moveQueued++;
+@@ -461,6 +480,30 @@ Deno.serve(async (req) => {
+         }
+       }
+ 
++      // RULE 0.7 ON THE LEAD, NOT THE ROW. The completeness check above reads
++      // assignments.variables, which is what we meant to send. Instantly
++      // renders the lead's payload. They differ exactly when this POST found a
++      // lead that already existed -- a move confirmed late, or never -- and
++      // that lead is now in a live campaign, so it is made to render or taken
++      // out: a blank email cannot be unsent, a deleted lead can be pushed again.
++      if (leadId) {
++        // Created by THIS request, or found? A lead created before the run
++        // started was found, and found leads are the ones the POST did not
++        // write. No timestamp counts as found: an extra PATCH costs ~0.3s, a
++        // blank email cannot be taken back. leads_refilled in the summary shows
++        // the cost; if it tracks `pushed`, the create response carries no
++        // timestamp_created and this test needs another signal.
++        const created = Date.parse(String(res?.timestamp_created ?? ""));
++        const existed = Number.isNaN(created) || created < runStart;
++        if (existed) refilled++;
++        const blank = await fillLead(leadId, key, angle, custom, payload, existed);
++        if (blank.length) {
++          await dropBlankLead(sb, a, leadId, key, angle, company.email as string, blank);
++          blankOnLead++;
++          continue;
++        }
++      }
++
+       await recordPush(a, leadId, campaignId, angle);
+ 
+       pushed++;
+@@ -503,10 +546,17 @@ Deno.serve(async (req) => {
+         // The create path sends this payload and the move path has to as well,
+         // or the gate that guarantees no blank variable reaches a reader is
+         // only guarding one of the two ways in.
+-        await apiCall(`/leads/${m.leadId}`, key, "PATCH", {
+-          company_name: m.payload.company_name,
+-          custom_variables: m.custom,
+-        });
++        //
++        // The variables now go on BEFORE the move (see the loop), so this is
++        // the read-back: normally a no-op, a second write if the read comes
++        // back blank, and the lead comes out if it still would not render.
++        let blank = leadMissing(m.angle, after);
++        if (blank.length) { refilled++; blank = await fillLead(m.leadId, key, m.angle, m.custom, m.payload, true); }
++        if (blank.length) {
++          await dropBlankLead(sb, m.a, m.leadId, key, m.angle, String(m.payload.email ?? ""), blank);
++          blankOnLead++;
++          continue;
++        }
+         if (!dryRun) await recordPush(m.a, m.leadId, m.campaignId, m.angle);
+         movesConfirmed++;
+         pushed++;   // the angle's budget was spent when the move was queued
+@@ -541,6 +591,8 @@ Deno.serve(async (req) => {
+     moves_queued_from_retired_campaign: moveQueued,
+     moves_confirmed_and_recorded: movesConfirmed,
+     moves_left_for_next_run: movesUnconfirmed,
++    blocked_blank_on_lead: blankOnLead,
++    leads_refilled: refilled,
+     blocked_duplicate_elsewhere: duplicates,
+     skipped_over_cap: skippedCap,
+     failed,
+@@ -607,6 +659,41 @@ function freshEnough(
+   return "stale";
+ }
+ 
++/** Write this assignment's variables onto a lead POST /leads did not write.
++ * Returns what is still missing; empty means it will render.
++ *
++ * A lead that `existed` before this run is exactly the one skip_if_in_workspace
++ * handed back untouched, so it is always written -- even when it already holds
++ * every variable, because they may be ANOTHER assignment's (a retried row whose
++ * lead survived would otherwise name the old solicitation). The PATCH RESPONSE
++ * is what is checked: it echoes the merged payload at once, while a re-read can
++ * lag and look like a write that failed (govhub-marketing
++ * wave1-display-names.mjs). A lead this run created is trusted: its variables
++ * were in the create body. */
++async function fillLead(
++  leadId: string, key: string, angle: string,
++  custom: Record<string, unknown>, payload: Record<string, unknown>,
++  existed: boolean,
++): Promise<string[]> {
++  if (!existed) return [];
++  // custom_variables MERGES on PATCH, so a moved lead keeps its wave 1 keys.
++  const fill: Record<string, unknown> = { custom_variables: custom };
++  if (payload.company_name) fill.company_name = payload.company_name;
++  const patched = await apiCall(`/leads/${leadId}`, key, "PATCH", fill);
++  return leadMissing(angle, patched);
++}
++
++/** A lead that is in a live campaign and will not render comes out, and its
++ * row goes to failed, which job_assign retries. */
++async function dropBlankLead(
++  sb: ReturnType<typeof db>, a: Record<string, unknown>, leadId: string, key: string,
++  angle: string, email: string, missing: string[],
++): Promise<void> {
++  await apiCall(`/leads/${leadId}`, key, "DELETE");
++  await sb.from("assignments").update({ status: "failed" }).eq("id", a.id);
++  log("push", "lead would have rendered blank and was removed", { email, angle, missing });
++}
++
+ /** Is this campaign still sending? Cached per run: the duplicate path hits the
+  * same handful of retired campaigns over and over. Instantly's campaign status
+  * is 1 for active; anything else (paused, completed, draft) sends nothing. On a
+diff --git a/supabase/functions/outreach-signals/index.ts b/supabase/functions/outreach-signals/index.ts
+index ba9b425..f216153 100644
+--- a/supabase/functions/outreach-signals/index.ts
++++ b/supabase/functions/outreach-signals/index.ts
+@@ -40,7 +40,7 @@
+ import {
+   assertCron, db, log, JSON_HEADERS, isoDate, sleep,
+   recompetesForUei, recentAwards, awardCity, isDod, agencyShort, amountShort, fetchAllRows,
+-  monthName, shortDate, titleCaseName, chunk,
++  monthName, shortDate, titleCaseName, chunk, isOpenSolicitationType,
+ } from "../_shared/outreach.ts";
+ 
+ const EXTRACT =
+@@ -428,7 +428,8 @@ async function fetchOpportunities(sb: ReturnType<typeof db>, dry: boolean, limit
+     // object for all 81,512 records was the expensive part; these four tests
+     // throw away roughly 99% of them for the cost of an array index.
+     if ((fields[idx.Active] ?? "").toLowerCase() !== "yes") continue;
+-    if (!(fields[idx.Type] ?? "").toLowerCase().includes("solicitation")) continue;
++    // o and k only. A substring test let every Presolicitation through.
++    if (!isOpenSolicitationType(fields[idx.Type])) continue;
+ 
+     const naics = (fields[idx.NaicsCode] ?? "").trim();
+     const cands = byNaics.get(naics);
