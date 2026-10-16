@@ -240,11 +240,13 @@ async function openPick(entry, lead) {
     skipped_restricted: lines.slice(0, i) };
 }
 
-async function build(ix, entry, { ignoreWait = false } = {}) {
+async function build(ix, entry, { ignoreWait = false, mailboxFull = () => false } = {}) {
   const ctx = await readLead(ix, entry);
   const hold = holdReason(ctx, entry);
   if (hold && !(ignoreWait && hold === 'wait')) return { hold, ctx };
   const { lead, ours } = ctx;
+  // Checked before the lane search, which is the slow and paid part.
+  if (mailboxFull(ours[ours.length - 1].eaccount)) return { hold: 'mailbox_full', ctx };
   let text, variant, pick = null;
   if (entry.campaign === 'A1') {
     const p = lead.payload || {};
@@ -309,7 +311,10 @@ async function send() {
   let sent = 0, held = 0;
   for (const [k, entry] of pending) {
     if (sent >= batch) break;
-    const { draft, hold } = await build(ix, entry);
+    // A batch takes an hour or more to build, so the window is checked per send.
+    if (!dryRun && !inBusinessHours(new Date())) { console.log('  send window closed; the rest wait for the next run.'); break; }
+    const { draft, hold } = await build(ix, entry, { mailboxFull: (box) => (usedBox[box] || 0) >= perMailbox });
+    if (hold === 'mailbox_full') continue;   // its mailbox is full today; next run
     if (hold === 'wait') { if (!dryRun) record(k, { status: 'waiting' }); held++; continue; }
     if (hold) { if (!dryRun) record(k, { status: 'skipped', skip_reason: hold }); console.log(`  skip ${entry.lead}: ${hold}`); continue; }
     if (draft.issues.length) { console.log(`  lint ${entry.lead}: ${draft.issues.map((i) => i.rule).join(', ')}`); if (!dryRun) record(k, { status: 'needs_review', skip_reason: 'lint' }); continue; }
