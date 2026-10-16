@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "cursor": "2026-10-13T13:57:13.000Z",
+  "cursor": "2026-10-14T19:06:23.000Z",
   "emails": {
     "01a07bf7-8d8a-7d1c-b87e-76208ed81963": {
       "lead": "amirl@seetrue.ai",
@@ -1323,6 +1323,174 @@
       "classified_by": "model",
       "status": "no_action",
       "updated_at": "2026-10-15T16:00:57.130Z"
+    },
+    "01a144dc-d6be-71af-818d-178e24a8204e": {
+      "lead": "agillespie@howelllabs.com",
+      "campaign": "A5",
+      "received_at": "2026-10-16T13:17:54.000Z",
+      "category": "auto_reply",
+      "classified_by": "rule",
+      "status": "no_action",
+      "updated_at": "2026-10-16T15:49:45.780Z",
+      "redirect": "cmerrill@howelllabs.com"
+    },
+    "01a14513-bb7b-717e-bc60-6430e4aa96f9": {
+      "lead": "brittany@puritancleaning.com",
+      "campaign": "A5",
+      "received_at": "2026-10-16T14:17:07.000Z",
+      "category": "auto_reply",
+      "classified_by": "rule",
+      "status": "no_action",
+      "updated_at": "2026-10-16T15:49:45.971Z",
+      "redirect": "casey@puritancleaning.com"
+    },
+    "01a1451c-16c1-727c-9c49-62d0231284b5": {
+      "lead": "creid@chpsolutionstoday.com",
+      "campaign": "A2",
+      "received_at": "2026-10-16T14:25:46.000Z",
+      "category": "accept",
+      "classified_by": "model",
+      "status": "drafted",
+      "playbook": "A2",
+      "deliverable": "disqualifiers",
+      "updated_at": "2026-10-16T15:51:11.388Z",
+      "notified_at": "2026-10-16T15:51:11.388Z"
+    },
+    "01a14536-1199-7621-a032-906a8c2aa670": {
+      "lead": "kurt.marisa@human-domain.com",
+      "campaign": "A4",
+      "received_at": "2026-10-16T14:45:43.000Z",
+      "category": "accept",
+      "classified_by": "model",
+      "status": "drafted",
+      "playbook": "A4",
+      "deliverable": "next_open",
+      "updated_at": "2026-10-16T15:51:11.389Z",
+      "watch": {
+        "naics": "611430",
+        "keywords": [
+          "vertical",
+          "jobs"
+        ],
+        "companyName": "Human Domain Solutions, LLC",
+        "context": "Vertical Jobs, Inc. (Leesburg) won a $178K State Department award in NAICS 611430, which is how we found them. Company name: Human Domain Solutions, LLC.",
+        "count": 2,
+        "exclude": [
+          "80NSSC27947456Q"
+        ],
+        "until": "2026-11-30T15:51:10.837Z",
+        "eaccount": "e.knight@getgovhub.com",
+        "subject": "Re: did you see this",
+        "campaign_id": "39bc9fab-a9a7-4ed6-b34c-ccabeb9e76ee",
+        "firstName": "Kurt"
+      },
+      "notified_at": "2026-10-16T15:51:11.389Z"
+    },
+    "01a1455e-93f2-76b7-b3c7-9b7c86b50a3c": {
+      "lead": "f.rheaves@greatlakesmgmt.net",
+      "campaign": "A5",
+      "received_at": "2026-10-16T15:39:42.000Z",
+      "category": "auto_reply",
+      "classified_by": "rule",
+      "status": "no_action",
+      "updated_at": "2026-10-16T15:51:11.010Z"
+    },
+    "01a145ad-c1b4-7c0b-a250-ff6e9a5ca8be": {
+      "lead": "lynn@titantechinc.org",
+      "campaign": "A4",
+      "received_at": "2026-10-16T17:06:00.000Z",
+      "category": "not_interested",
+      "classified_by": "rule",
+      "status": "no_action",
+      "updated_at": "2026-10-16T19:09:30.257Z"
+    },
+    "01a145b1-2c43-76d2-a83b-63b480a8da11": {
+      "lead": "mjarrard@biocircuit.com",
+      "campaign": "A1",
+      "received_at": "2026-10-16T17:09:52.000Z",
+      "category": "auto_reply",
+      "classified_by": "rule",
+      "status": "no_action",
+      "updated_at": "2026-10-16T19:09:30.441Z",
+      "redirect": "tgoede@biocircuit.com"
+    },
+    "01a145c2-ae52-70eb-a11e-c9bc47985267": {
+      "lead": "extremecontractingcorp@gmail.com",
+      "campaign": "A2",
+      "received_at": "2026-10-16T17:28:52.000Z",
+      "category": "not_interested",
+      "classified_by": "model",
+      "status": "no_action",
+      "updated_at": "2026-10-16T19:09:33.370Z"
+    },
+    "01a145c5-4f39-7c06-b81b-83d5a8a66b7a": {
+      "lead": "alicia.washington@hrpassociates.com",
+      "campaign": "A2",
+      "received_at": "2026-10-16T17:31:51.000Z",
+      "category": "auto_reply",
+      "classified_by": "rule",
+      "status": "no_action",
+      "updated_at": "2026-10-16T19:09:33.544Z"
+    },
+    "01a145d5-09b8-7d95-9c0d-f469caa35392": {
+      "lead": "janine@eiieq.com",
+      "campaign": "A2",
+      "received_at": "2026-10-16T17:49:02.000Z",
+      "category": "auto_reply",
+      "classified_by": "rule",
+      "status": "no_action",
+      "updated_at": "2026-10-16T19:09:33.845Z",
+      "redirect": "melanie@eiieq.com"
+    },
+    "01a145e1-ed73-7ef1-ab49-d4a7fec67f83": {
+      "lead": "paul@usfoamandetch.com",
+      "campaign": "A2",
+      "received_at": "2026-10-16T18:03:06.000Z",
+      "category": "auto_reply",
+      "classified_by": "rule",
+      "status": "no_action",
+      "updated_at": "2026-10-16T19:09:34.037Z",
+      "redirect": "kevin@usfoamandetch.com"
+    },
+    "01a145f0-b017-76ff-9904-687856b01d31": {
+      "lead": "thomas.showman@gmail.com",
+      "campaign": "A2",
+      "received_at": "2026-10-16T18:18:52.000Z",
+      "category": "accept",
+      "classified_by": "model",
+      "status": "drafted",
+      "playbook": "A2",
+      "deliverable": "disqualifiers",
+      "updated_at": "2026-10-16T19:12:02.350Z",
+      "notified_at": "2026-10-16T19:12:02.350Z"
+    },
+    "01a145f4-30a0-70fa-bdda-2ae9385f2093": {
+      "lead": "setapart.excavatingservices@gmail.com",
+      "status": "superseded",
+      "by": "01a1461b-b141-7542-bc56-c44bf11e4648",
+      "updated_at": "2026-10-16T19:10:34.420Z"
+    },
+    "01a1460e-b326-733d-a50d-d21ac49e6f41": {
+      "lead": "ssiegwald@firelakeco.com",
+      "campaign": "A1",
+      "received_at": "2026-10-16T18:51:58.000Z",
+      "category": "auto_reply",
+      "classified_by": "rule",
+      "status": "no_action",
+      "updated_at": "2026-10-16T19:12:01.956Z",
+      "redirect": "csisk@firelakeco.com"
+    },
+    "01a1461b-b141-7542-bc56-c44bf11e4648": {
+      "lead": "setapart.excavatingservices@gmail.com",
+      "campaign": "A2",
+      "received_at": "2026-10-16T19:05:57.000Z",
+      "category": "accept",
+      "classified_by": "model",
+      "status": "drafted",
+      "playbook": "A2",
+      "deliverable": "disqualifiers",
+      "updated_at": "2026-10-16T19:12:02.351Z",
+      "notified_at": "2026-10-16T19:12:02.351Z"
     },
     "430b01b5-be33-46b6-86ad-68e1dc0ee14d": {
       "lead": "admin@documentsecuritysolutions.net",

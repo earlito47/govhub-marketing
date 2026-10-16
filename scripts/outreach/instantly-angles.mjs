@@ -45,8 +45,13 @@
 // Usage:
 //   node scripts/outreach/instantly-angles.mjs --check    guardrails, no API calls
 //   node scripts/outreach/instantly-angles.mjs --dry-run  print the exact payloads
-//   node scripts/outreach/instantly-angles.mjs --sync     create or update in place
+//   node scripts/outreach/instantly-angles.mjs --sync     create or update in place; refuses if
+//                                                         a lead still in sequence lacks a variable
 //   node scripts/outreach/instantly-angles.mjs --verify   re-read and assert the copy
+//   node scripts/outreach/instantly-angles.mjs --audit-leads
+//                                                         every lead still in sequence holds its
+//                                                         variables and every mailbox has a
+//                                                         signature (read-only)
 //   node scripts/outreach/instantly-angles.mjs --config   print SQL to store campaign ids
 
 const API = 'https://api.instantly.ai/api/v2';
@@ -602,6 +607,87 @@ function assertStored(c, sent, expectStatus) {
   return problems;
 }
 
+// ---- Live merge-field audit ----------------------------------------------
+// THE LEAD, NOT THE TEMPLATE. check() proves every token the copy uses is a
+// declared variable. Instantly renders each one from the LEAD's payload, and
+// on 10-05 to 10-08, 671 sends went out with variables that were declared,
+// gated and absent from the lead (docs/incident-2026-10-blank-merge-fields.md):
+//
+//   - 272 wave 1 contacts were moved into A1/A2/A4 by job_push still holding
+//     their wave 1 payload, so step 1 read "Hi {first name},  posted  and .
+//     It closes . ." while the assignment row it was gated on was complete.
+//   - 207 A2 leads were mid-sequence when 4698831 put {{sol_short}} into
+//     steps 2 and 3. They were pushed before sol_short existed, so --sync
+//     shipped copy their leads could not fill: "video on  instead?".
+//
+// The second is this file's to stop, which is why --sync now runs this first.
+//
+// Instantly lead status: 1 active, 2 paused, 3 completed, negatives bounced,
+// unsubscribed or skipped. Only 1 and 2 can still be sent a step.
+const SENDABLE = new Set([1, 2]);
+
+async function auditLeads() {
+  let bad = 0;
+  for (const a of ANGLES) {
+    if (!a.required.length) { console.log(` ok   ${a.key.padEnd(3)} no required variables`); continue; }
+    const c = await findByName(a.name);
+    if (!c) { console.log(` --   ${a.key.padEnd(3)} no campaign yet, no leads to check`); continue; }
+    let total = 0, live = 0;
+    const blank = [];
+    let cursor = null;
+    for (let i = 0; i < 200; i++) {
+      const body = { limit: 100, campaign: c.id };
+      if (cursor) body.starting_after = cursor;
+      const d = await api('POST', '/leads/list', body);
+      const items = d.items || [];
+      for (const l of items) {
+        total++;
+        // Custom variables come back under `payload`, not `custom_variables`.
+        const p = l.payload || {};
+        const missing = a.required.filter((k) => typeof p[k] !== 'string' || !p[k].trim() || /\{\{|\}\}/.test(p[k]));
+        const sendable = SENDABLE.has(Number(l.status));
+        if (sendable) live++;
+        if (missing.length) blank.push({ email: l.email, status: l.status, sendable, missing });
+      }
+      cursor = d.next_starting_after;
+      if (!items.length || !cursor) break;
+    }
+    const liveBlank = blank.filter((b) => b.sendable);
+    if (liveBlank.length) bad++;
+    console.log(`${liveBlank.length ? 'FAIL' : ' ok '}  ${a.key.padEnd(3)} ${total} leads, ${live} still in sequence, ` +
+      `${liveBlank.length} of those missing a required variable (${blank.length - liveBlank.length} more already finished)`);
+    for (const b of liveBlank) console.log(`        ${b.email}  status=${b.status}  missing: ${b.missing.join(', ')}`);
+  }
+  return bad;
+}
+
+// {{accountSignature}} is a merge field too, filled from the sending mailbox,
+// and it is where the postal address lives (see TAIL). set-signatures.mjs
+// covers the 21 influencer and wave 1 boxes; the 2026-09-29 reallocation put
+// boxes it never touched onto these campaigns, and every send from them went
+// out with that line empty. Returns the number of angle mailboxes without one.
+async function auditSignatures() {
+  const sig = new Map();
+  let cursor = null;
+  for (let i = 0; i < 10; i++) {
+    const q = new URLSearchParams({ limit: '100' });
+    if (cursor) q.set('starting_after', cursor);
+    const d = await api('GET', `/accounts?${q}`);
+    for (const m of d.items || []) sig.set((m.email || '').toLowerCase(), String(m.signature || '').trim().length > 0);
+    cursor = d.next_starting_after;
+    if (!(d.items || []).length || !cursor) break;
+  }
+  let bad = 0;
+  for (const a of ANGLES) {
+    const missing = MAILBOXES[a.key].filter((m) => !sig.get(m.toLowerCase()));
+    bad += missing.length;
+    console.log(`${missing.length ? 'FAIL' : ' ok '}  ${a.key.padEnd(3)} {{accountSignature}} set on ` +
+      `${MAILBOXES[a.key].length - missing.length} of ${MAILBOXES[a.key].length} mailboxes`);
+    for (const m of missing) console.log(`        ${m}  no signature, so no postal address`);
+  }
+  return bad;
+}
+
 const arg = process.argv[2] || '--check';
 
 if (arg === '--check') {
@@ -611,6 +697,17 @@ if (arg === '--check') {
 } else if (arg === '--sync') {
   if (check() !== 0) { console.error('\nGuardrails failed. Nothing sent to the API.'); process.exit(1); }
   if (!KEY) { console.error('INSTANTLY_API_KEY is not set'); process.exit(1); }
+  // Copy that names a variable a live lead does not hold renders it blank on
+  // that lead's next step. Fill the leads first (job_push writes the variable,
+  // or PATCH them), then sync. The signature audit only warns: it is a mailbox
+  // setting a copy change cannot fix, and blocking on it would hold up every
+  // unrelated edit.
+  console.log('\nlive leads against the copy about to sync:');
+  if (await auditLeads()) {
+    console.error('\nA lead still in sequence would render a variable blank. Nothing sent to the API.');
+    process.exit(1);
+  }
+  if (await auditSignatures()) console.log('WARNING: some sending mailboxes have no signature (see above).');
   let bad = 0;
   const ids = {};
   for (const a of ANGLES) {
@@ -653,6 +750,14 @@ if (arg === '--check') {
     if (problems.length) { bad++; problems.forEach((p) => console.log(`        ${p}`)); }
   }
   process.exit(bad === 0 ? 0 : 1);
+} else if (arg === '--audit-leads') {
+  // Read-only. Exits 1 if any lead that can still be emailed is missing a
+  // required variable, or any angle mailbox would render {{accountSignature}}
+  // empty. See auditLeads and auditSignatures.
+  if (!KEY) { console.error('INSTANTLY_API_KEY is not set'); process.exit(1); }
+  const blankLeads = await auditLeads();
+  const blankSigs = await auditSignatures();
+  process.exit(blankLeads + blankSigs === 0 ? 0 : 1);
 } else if (arg === '--config') {
   const ids = {};
   for (const a of ANGLES) {
