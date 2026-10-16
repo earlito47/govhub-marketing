@@ -2170,3 +2170,78 @@ request, and nothing was inferred about anybody else — the person-level rule
 and an explicit company-level request did not actually conflict here. Worth
 noting that they could, on a company with several contacts, and that would be a
 decision for the owner rather than a default.
+
+### Day 18 (10-16 sending) — the best reply day, and the backlog grew with it
+
+Thirteen replies, the most of any day. Eight machine, all eight correctly
+classified. **Three new accepts** — *"Yes"* (A2), *"Sure"* (A4), *"Yes, I would
+be interested"* (A2) — plus a fourth the desk also booked as an accept.
+
+Every cap exact (A1 37, A2 125, A4 50, A5 75), the three-way audit clean across
+**3,647 leads**, two stale drops, bounce **0.79%** on the eighteenth day under
+the gate.
+
+And the reply desk went **12 open to 16**. `sent` is still 9, unchanged for
+eight days. Nine of the sixteen are accepts, and the oldest two have been
+drafted since 10-06 — ten days.
+
+| | 10-15 | 10-16 |
+|---|---:|---:|
+| Drafted | 11 | **15** |
+| needs_human | 1 | 1 |
+| Sent | 9 | **9** |
+
+Yesterday's entry said the constraint had moved from sending to answering. A
+day later the sending side produced its best result yet and the answering side
+absorbed none of it. Nine firms have now asked for a deliverable and not had
+one.
+
+### Day 18 — opportunities hit WORKER_RESOURCE_LIMIT, and the trace said why
+
+First 546 since the ranged-read fix on 09-29 — seventeen clean days. The 03:08
+guarded retry succeeded, and the instrumentation answered the question in one
+query, which is what it was built for:
+
+| Stage | Failed 03:00 | Retry 03:08 |
+|---|---:|---:|
+| after_index | 2,728 ms, 15 MB | 1,714 ms, 15 MB |
+| 65,536 records | 7,018 ms, 20 MB | 4,653 ms, 19 MB |
+| after_stream | **died here** | 4,944 ms, 21 MB |
+
+**Not memory.** Heap was flat at 19-21 MB in both, the same as every clean run
+since 09-29. The failed run was roughly 50% slower at every checkpoint on
+identical work and died in the last ~6,000 records of the stream. That is CPU
+or a slow worker, which `WORKER_RESOURCE_LIMIT` also covers — the distinction
+that took a week of misdiagnosis to learn in September and one query to settle
+now. No change made.
+
+### Day 18 — a reply that argues with the deadline-first sort
+
+> We already submitted our bid for this opportunity.
+
+A correct match — right firm, right solicitation, Hickman Wildlife Water
+Catchment — that arrived after they had already bid. The disqualifier list was
+no use to them by then.
+
+`job_push` sorts deadline-first, which is what stops rows dying under the
+8-day floor, so the rows that go out are the ones closest to closing. That is
+right for not wasting a matched signal and wrong for being useful to the
+reader, who wants the list while there is still time to act on it. One data
+point against an ordering that exists for a measured reason (245 A2 rows died
+of arrival-order on 09-30), so this is recorded rather than acted on. If a
+second or third arrives, the question is whether the window's early end is
+worth more than its late end.
+
+### Day 18 — inventory
+
+| Angle | Queued | Cap | Sending days |
+|---|---:|---:|---:|
+| A1 | 542 | 37 | 14.6 |
+| A2 | 472 | 125 | 3.8 |
+| A4 | 310 | 50 | 6.2 |
+| A5 | 3,635 | 75 | — |
+
+`assign` wrote 82 against yesterday's 117, with A5 at its ceiling again (223
+left unassigned) and `a2_left_close_date_full` back up to 895. A2's queue is at
+its thinnest since the ramp — 3.8 sending days — which is the close-date budget
+refusing what cannot be sent in time rather than a supply problem.
