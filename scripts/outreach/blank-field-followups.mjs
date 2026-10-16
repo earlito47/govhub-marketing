@@ -313,7 +313,12 @@ async function send() {
     if (sent >= batch) break;
     // A batch takes an hour or more to build, so the window is checked per send.
     if (!dryRun && !inBusinessHours(new Date())) { console.log('  send window closed; the rest wait for the next run.'); break; }
-    const { draft, hold } = await build(ix, entry, { mailboxFull: (box) => (usedBox[box] || 0) >= perMailbox });
+    // One lead's read failing (Instantly 5xxs some lead-filtered reads) must
+    // not end the batch: it stays pending and is tried again next run.
+    let built;
+    try { built = await build(ix, entry, { mailboxFull: (box) => (usedBox[box] || 0) >= perMailbox }); }
+    catch (e) { console.log(`  error ${entry.lead}: ${e.message.split('\n')[0]}`); continue; }
+    const { draft, hold } = built;
     if (hold === 'mailbox_full') continue;   // its mailbox is full today; next run
     if (hold === 'wait') { if (!dryRun) record(k, { status: 'waiting' }); held++; continue; }
     if (hold) { if (!dryRun) record(k, { status: 'skipped', skip_reason: hold }); console.log(`  skip ${entry.lead}: ${hold}`); continue; }
