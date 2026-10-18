@@ -2417,3 +2417,83 @@ when the retry looks. That `coalesce` is load-bearing: without it a successful
 job whose row had not been swept would read as failed and be re-run, and a
 spurious `job_push` retry is exactly what spent 201 against a cap of 125 on
 10-06.
+
+### Day 20 — spike: can we fetch solicitation documents server-side?
+
+The question was whether a proposal can be built for a lead who replies without
+asking them to upload anything. The whole v2 pipeline starts from user uploads,
+and the only SAM endpoint this programme uses is the entity API, so the premise
+was that server-side document fetch was the blocking unknown. It is not a
+blocker, and the thing that is one turned out to be somewhere else entirely.
+
+**Documents are public and need no key.** Three sam.gov front-end endpoints,
+unauthenticated, no login.gov, no API key, no quota:
+
+```
+/api/prod/opps/v2/opportunities/{noticeId}            metadata + full narrative
+/api/prod/opps/v3/opportunities/{noticeId}/resources  attachment list
+/api/prod/opps/v3/opportunities/resources/files/{resourceId}/download
+```
+
+The narrative text is inline in the first response at `description[0].body` as
+HTML; there is no `/description` sub-path and asking for one 404s. The
+attachment list carries `accessLevel`, `accessStatus`, `fileExists`, `size` and
+`mimeType`, so a gated or missing file is visible before anything is downloaded.
+
+And **we already hold the notice id**: `signals.source_url` is
+`https://sam.gov/workspace/contract/opp/<32-hex>/view` for every `rfp_match`,
+so there is no search step. This matters because the SAM Opportunities API
+would have made the idea unaffordable — `SAM_API_KEY` returns 401 on every form
+(recorded in `_shared/outreach.ts` since 09-21) and the working
+`SAM_GOV_API_KEY` is noted there as ~10 Opportunities calls a day. The
+unauthenticated path has neither limit.
+
+**Measured against the 28 distinct solicitations named in real replies:**
+
+| | Notices | |
+|---|---:|---:|
+| Documents fetched | 21 | 75.0% |
+| Narrative text only (>= 1,500 chars) | 1 | 3.6% |
+| Nothing to build from | 6 | 21.4% |
+
+122 attachments listed, 121 public, **exactly one access-gated**. 116 of the 121
+public files downloaded — 95.9% — for 167 MB of real pdf, docx and xlsx,
+verified by magic bytes rather than by status code. The five misses were
+individual files, not notices.
+
+For **the six accepts that name a solicitation, four yield documents.** The two
+that do not have no attachments at all: the notice is a short text posting, 224
+and 357 characters, too thin for a compliance matrix.
+
+**The actual blocker is the close date.** Of the 29 replies with a solicitation
+attached, **4 are still open today**. The median gap from reply to close is
+**6 days**, and four replies arrived *after* their solicitation had already
+closed. Of the nine accepts, exactly one — Terra Umbris, closing 10-22 — is
+still live on the thing they answered.
+
+That last number was nearly reported as "one of nine is servable", which would
+have been wrong. The opportunities job skips companies that already hold an
+assignment (6,553 skipped on 10-18), so a zero in our signals table is our own
+bookkeeping and not a statement about the market. Checked against live
+solicitations in each company's NAICS instead: **seven of the nine have one to
+three open right now**, closing 10-19 to 11-09. The backlog is servable, but
+with a different solicitation than the one they replied to.
+
+**What the replies say about building this automatically.** Three of the 23 A2
+repliers told us the solicitation was irrelevant to them — "does not match our
+product line", "nothing to do with what we could offer", "we don't make
+antennas". A NAICS match is not a judgement that the work is biddable, so an
+auto-generated proposal would hand those readers a confidently wrong document,
+which is worse than sending nothing. Any such flow has to propose the
+solicitation and have the reader confirm it, not assume it.
+
+**Integration, for when this is built.** `process-solicitation` reads files
+through `downloadDoc` against `v2_files` rows under an owner id, so the
+server-side feed is: fetch, upload to the `v2-files` bucket under an owner,
+insert `v2_files`, create `v2_submissions`, POST. Magic links are not missing
+either — Supabase supports them and `signInWithOtp` is simply unwired in
+`AuthContext`.
+
+The design consequence is the six-day median: this cannot be a batch job over a
+backlog. It has to fire within hours of a reply landing, which the queue-backed
+pipeline can do, but which means the trigger belongs to the reply desk.
