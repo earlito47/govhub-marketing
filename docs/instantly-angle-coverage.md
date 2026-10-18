@@ -2393,3 +2393,27 @@ now moot and the cap can stay where it is.
 The three-way audit reads zero on all three counts for the twentieth
 consecutive day: 3,647 leads in the campaigns, 3,647 in the database, 0
 unclaimed, 0 missing, 0 rendering a blank variable.
+
+### Days 19-20 — a null `status_code` is not a failure, and the retry knows that
+
+Investigated and found to be nothing, recorded so it is not investigated again.
+A manually fired run sat in `outreach.job_run` with `status_code` null and an
+empty body and looked like a job that had vanished. It had been eight minutes.
+`outreach-harvest` runs `*/10` and copies `net._http_response` into `job_run`;
+the row settled at the next sweep with a 200.
+
+Two properties worth knowing while reading that table:
+
+**A null is normal for up to ten minutes after a fire.** The watcher that
+chased this had a seven-minute limit, shorter than the sweep interval, so it
+was guaranteed to give up before an answer existed. Any poll of `job_run` needs
+to outlast the harvest, not the job.
+
+**`retry_job_if_failed` does not depend on the harvest at all.** It reads
+`coalesce(jr.status_code, r.status_code)` and joins `net._http_response`
+itself, so an unswept row still reports its real status. `pg_net.ttl` is 6
+hours against a 45-minute retry window, so the response is always still there
+when the retry looks. That `coalesce` is load-bearing: without it a successful
+job whose row had not been swept would read as failed and be re-run, and a
+spurious `job_push` retry is exactly what spent 201 against a cap of 125 on
+10-06.
