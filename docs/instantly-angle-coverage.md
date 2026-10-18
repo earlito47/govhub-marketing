@@ -2245,3 +2245,151 @@ worth more than its late end.
 left unassigned) and `a2_left_close_date_full` back up to 895. A2's queue is at
 its thinnest since the ramp — 3.8 sending days — which is the close-date budget
 refusing what cannot be sent in time rather than a supply problem.
+
+### Days 19-20 — every rate in this document was divided by a junk number
+
+The bounce rates reported here since launch — 1.61%, 1.62%, 1.24%, 1.34%,
+0.79% — were computed as `bounced_count / contacted_count`, straight from
+Instantly's lifetime campaign analytics. `contacted_count` is not a count of
+people. It is not a count of anything that holds still.
+
+A2 on 10-18, from one API response:
+
+| Field | Value |
+|---|---:|
+| `leads_count` | 1,648 |
+| `contacted_count` | 3,147 |
+| `emails_sent_count` | 3,903 |
+
+3,147 is larger than the number of leads in the campaign and smaller than the
+number of emails sent. It cannot be unique people contacted, because a campaign
+cannot contact more people than it holds. It is not a send counter, because it
+is not the send count. And it is not a lagging copy of one: across the four
+campaigns `contacted_count` rose **847 on Saturday 10-17**, a day the daily
+series reports `sent: 0` for every campaign. A denominator that moves while
+nothing is sent cannot carry a rate.
+
+The daily series is self-consistent, which is why it is believed instead. Summed
+over A2's whole life: daily `sent` 3,903, equal to `emails_sent_count` to the
+digit. Daily `new_leads_contacted` 1,386 — the unique-people number the label
+`contacted` was reaching for. And `leads_count` is confirmed against our own
+books rather than trusted: 434 / 1,648 / 635 / 930 is exactly the count of
+assignments at status `pushed` per angle, which is what the three-way audit
+reconciles every day.
+
+The honest numbers, for the whole programme:
+
+| Angle | First emailed | Sent | Bounced | Per person | Per send | Pushed, not yet mailed |
+|---|---:|---:|---:|---:|---:|---:|
+| A1 | 398 | 975 | 4 | 1.01% | 0.41% | 36 |
+| A2 | 1,386 | 3,903 | 26 | **1.88%** | 0.67% | 262 |
+| A4 | 574 | 1,475 | 10 | 1.74% | 0.68% | 61 |
+| A5 | 853 | 2,229 | 13 | 1.52% | 0.58% | 77 |
+| **All** | **3,211** | **8,582** | **53** | **1.65%** | **0.62%** | **436** |
+
+Both rates ship from now on, because they answer different questions. Per
+person is how dead the list is, and it is what predicts the rest of the 11,008
+pool. Per send is what a mailbox provider sees. The number this document has
+been quoting, 0.73%, answers neither — it was 53 over a denominator that
+corresponds to nothing.
+
+**What this changes.** The claim "eighteen consecutive days under the 2% gate"
+survives: 1.65% is under 2%. The claim that it was comfortably under does not.
+A2 on its own is at 1.88%, twelve hundredths of a point from the gate, and A2
+is the angle carrying the most volume and the whole close-date ramp. Nothing
+was ever gated automatically on this number, so no decision was taken on it —
+the damage is confined to what was reported, which is bad enough.
+
+**And a third number nobody had.** 436 leads are pushed into Instantly and
+have not yet received a first email; they sit in its own daily queue behind
+`daily_max_leads`. Every report to date counted them as mailed. A2's 262 is
+two days of its cap.
+
+The reasoning that put rates over people rather than over sends was right and
+is unchanged: follow-up steps inflate sends for reasons that have nothing to do
+with the copy, so a rate over sends drifts down as a sequence rolls out. Only
+the field claiming to be the people number has changed. Fixed in
+`outreach-metrics` and in `instantly-baseline.mjs`, which froze the same junk
+denominator into every weekly snapshot it has ever written.
+
+### Days 19-20 — `outcomes.first_touch_at` holds the push, not the touch
+
+Found while looking for a second source for the denominator above. Our own
+table has a column for when a company was first emailed, and it is populated
+for 3,645 of 3,647 rows — suspiciously exactly our pushed count, when Instantly
+says only 3,211 have been emailed.
+
+Measured: of 3,645 rows joined to their assignment, **3,556 have
+`first_touch_at` within two minutes of `pushed_at`**. It is the push clock.
+
+Two paths write it. `outreach-push` stamps `new Date()` at push time. `metrics`
+writes the real first-send timestamp from the email feed — but only for
+companies that replied, and only within the feed window it reads, so for almost
+every row the push time stands. The column therefore means "when we handed the
+lead over" for 97.6% of rows and "when the first email actually went out" for
+the rest. One column, two meanings, no way to tell which from the value.
+
+This is the shape this programme keeps producing: a value that was correct
+while one path owned it, wrong once a second path reached the same place. The
+A2 cap spending itself twice, the render guarantee asserted twice with both
+assertions on the create path, the solicitation pace reset on every run — all
+the same defect wearing different clothes. Nothing reads the column yet — grep finds no consumer
+outside the writer itself — which is the only reason this is a note rather than
+a repair. It is recorded now because the first cohort analysis keyed on "first
+touch" will be wrong by up to the queue depth, and 436 leads deep is not a
+rounding error. `assignments.pushed_at` is the honest push clock and should be
+what any such query uses.
+
+### Days 19-20 — the `positive` flag, scored against five real replies
+
+Five human replies landed on 10-16. Read by eye against what Instantly's
+`lt_interest_status` said about each:
+
+| Reply | Flag | Truth |
+|---|---|---|
+| "Yes" | positive | **decline** — it answers our own "Want me to close this out?" |
+| "Sure" | positive | accept |
+| "At this time we are not interested" | not positive | decline |
+| "Yes, I would be interested." | **not positive** | accept |
+| "We already submitted our bid" | not positive | neither |
+
+Two of five wrong, in both directions: a decline marked positive and an
+unambiguous accept missed. The first is the more interesting failure — "Yes" is
+positive or negative depending entirely on what was asked, and a close-out
+question inverts it. No classifier reading the reply alone can get that right
+without the outbound question beside it.
+
+This is the flag that produced "seven positives awaiting answer since 09-25",
+repeated here for days before it was corrected. It is not evidence. Accepts are
+counted by reading the replies.
+
+### Days 19-20 — inventory
+
+| Angle | Queued | Cap | Sending days |
+|---|---:|---:|---:|
+| A1 | 546 | 37 | 14.8 |
+| A2 | 620 | 125 | 5.0 |
+| A4 | 326 | 50 | 6.5 |
+| A5 | 3,797 | 75 | — |
+
+No `job_push` run on either day, which is correct: the cron is `0 6 * * 1-5`
+and both were weekend days. The daily series confirms it from the other side,
+`sent: 0` on 10-17 for all four campaigns. The first send after this is Monday
+10-19.
+
+`assign` wrote 210 on 10-17 and 120 on 10-18, A5 at its ceiling both days (239
+then 397 left unassigned) and `a2_left_close_date_full` easing from 751 to 683.
+A2's queue has recovered from day 18's 3.8 sending days to 5.0 without any
+change — the close-date budget letting through what the 30-day window admits.
+
+**A4's awards scanner has refilled, four days ahead of the estimate.** It wrote
+37 signals on 10-17 and 103 on 10-18 against 0 for the week before, with 15
+NAICS/state pairs still unscanned at the end of today's run — the first time
+that number has been non-zero since the walk completed. The day-9 note put the
+refill at 10-21 to 10-26 from scan-stamp expiry; it started on 10-17. A4 is at
+326 queued against a cap of 50, so the 45-vs-50 question that held it back is
+now moot and the cap can stay where it is.
+
+The three-way audit reads zero on all three counts for the twentieth
+consecutive day: 3,647 leads in the campaigns, 3,647 in the database, 0
+unclaimed, 0 missing, 0 rendering a blank variable.
