@@ -1,17 +1,17 @@
 {
   "pageType": "ranking",
   "slug": "federal-spending-by-agency",
-  "title": "Federal Spending by Agency, FY2026",
-  "h1": "Federal contract spending by agency, FY2026 to date",
-  "metaDescription": "Which federal agencies spend the most on contracts in FY2026 to date. Ranked by obligations from USAspending.gov, led by Department of Defense.",
-  "updated": "2026-09-28",
+  "title": "Federal Spending by Agency, FY2027",
+  "h1": "Federal contract spending by agency, FY2027 to date",
+  "metaDescription": "Which federal agencies spend the most on contracts in FY2027 to date. Ranked by obligations from USAspending.gov, led by Department of Veterans Affairs.",
+  "updated": "2026-10-19",
   "fyWindow": {
-    "label": "FY2026 to date",
-    "start": "2025-10-01",
-    "end": "2026-09-28"
+    "label": "FY2027 to date",
+    "start": "2026-10-01",
+    "end": "2026-10-19"
   },
   "stats": {
-    "totalObligations": 696957097874.94,
+    "totalObligations": 4718827739.620003,
     "awardCount": null,
     "yoyGrowthPct": null,
     "avgAwardSize": null,
@@ -21,61 +21,61 @@
     {
       "id": "federal-spending-by-agency-bar",
       "type": "bar",
-      "title": "Federal contract obligations by agency, FY2026 to date",
+      "title": "Federal contract obligations by agency, FY2027 to date",
       "series": [
         {
           "label": "Obligations",
           "points": [
             [
-              "Department of Defense",
-              360027551619.14
-            ],
-            [
               "Department of Veterans Affairs",
-              79572966098.44
-            ],
-            [
-              "Department of Homeland Security",
-              69061962700.29
-            ],
-            [
-              "Department of Energy",
-              52660057672.94
-            ],
-            [
-              "General Services Administration",
-              27027041662.71
-            ],
-            [
-              "Department of Health and Human Services",
-              22493178285.87
+              3427270076.11
             ],
             [
               "National Aeronautics and Space Administration",
-              15387376727.84
+              353620929.37
             ],
             [
-              "Department of Transportation",
-              13347457415.53
+              "Department of the Treasury",
+              212633990.52
             ],
             [
-              "Department of Agriculture",
-              10075337882.91
+              "General Services Administration",
+              161762332.59
             ],
             [
               "Department of Justice",
-              9709567180.69
+              98149552.87
+            ],
+            [
+              "Department of Commerce",
+              92147965.32
+            ],
+            [
+              "Department of Energy",
+              85927568.13
+            ],
+            [
+              "Department of Agriculture",
+              69784554.17
+            ],
+            [
+              "Department of Health and Human Services",
+              59847561.57
+            ],
+            [
+              "Department of Homeland Security",
+              58056415.37
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Department of Defense obligated the most on contracts in FY2026 to date, with $360B."
+      "takeaway": "Department of Veterans Affairs obligated the most on contracts in FY2027 to date, with $3.4B."
     }
   ],
   "tables": [
     {
-      "title": "Federal contract spending by agency, FY2026 to date",
+      "title": "Federal contract spending by agency, FY2027 to date",
       "columns": [
         "Rank",
         "Agency",
@@ -85,223 +85,223 @@
         [
           1,
           {
-            "text": "Department of Defense",
-            "href": "/insights/agency/department-of-defense/"
+            "text": "Department of Veterans Affairs",
+            "href": "/insights/agency/department-of-veterans-affairs/"
           },
-          360027551619.14
+          3427270076.11
         ],
         [
           2,
           {
-            "text": "Department of Veterans Affairs",
-            "href": "/insights/agency/department-of-veterans-affairs/"
+            "text": "National Aeronautics and Space Administration",
+            "href": "/insights/agency/national-aeronautics-and-space-administration/"
           },
-          79572966098.44
+          353620929.37
         ],
         [
           3,
           {
-            "text": "Department of Homeland Security",
-            "href": "/insights/agency/department-of-homeland-security/"
+            "text": "Department of the Treasury",
+            "href": "/insights/agency/department-of-the-treasury/"
           },
-          69061962700.29
+          212633990.52
         ],
         [
           4,
           {
-            "text": "Department of Energy",
-            "href": "/insights/agency/department-of-energy/"
+            "text": "General Services Administration",
+            "href": "/insights/agency/general-services-administration/"
           },
-          52660057672.94
+          161762332.59
         ],
         [
           5,
           {
-            "text": "General Services Administration",
-            "href": "/insights/agency/general-services-administration/"
+            "text": "Department of Justice",
+            "href": "/insights/agency/department-of-justice/"
           },
-          27027041662.71
+          98149552.87
         ],
         [
           6,
           {
-            "text": "Department of Health and Human Services",
-            "href": "/insights/agency/department-of-health-and-human-services/"
+            "text": "Department of Commerce",
+            "href": "/insights/agency/department-of-commerce/"
           },
-          22493178285.87
+          92147965.32
         ],
         [
           7,
           {
-            "text": "National Aeronautics and Space Administration",
-            "href": "/insights/agency/national-aeronautics-and-space-administration/"
+            "text": "Department of Energy",
+            "href": "/insights/agency/department-of-energy/"
           },
-          15387376727.84
+          85927568.13
         ],
         [
           8,
           {
-            "text": "Department of Transportation",
-            "href": "/insights/agency/department-of-transportation/"
+            "text": "Department of Agriculture",
+            "href": "/insights/agency/department-of-agriculture/"
           },
-          13347457415.53
+          69784554.17
         ],
         [
           9,
           {
-            "text": "Department of Agriculture",
-            "href": "/insights/agency/department-of-agriculture/"
+            "text": "Department of Health and Human Services",
+            "href": "/insights/agency/department-of-health-and-human-services/"
           },
-          10075337882.91
+          59847561.57
         ],
         [
           10,
           {
-            "text": "Department of Justice",
-            "href": "/insights/agency/department-of-justice/"
+            "text": "Department of Homeland Security",
+            "href": "/insights/agency/department-of-homeland-security/"
           },
-          9709567180.69
+          58056415.37
         ],
         [
           11,
           {
-            "text": "Department of State",
-            "href": "/insights/agency/department-of-state/"
+            "text": "Department of Transportation",
+            "href": "/insights/agency/department-of-transportation/"
           },
-          7857667658.55
+          26723751.05
         ],
         [
           12,
           {
-            "text": "Department of the Interior",
-            "href": "/insights/agency/department-of-the-interior/"
+            "text": "Environmental Protection Agency",
+            "href": null
           },
-          6798464078.59
+          19173442.29
         ],
         [
           13,
           {
-            "text": "Department of the Treasury",
-            "href": "/insights/agency/department-of-the-treasury/"
+            "text": "Department of State",
+            "href": "/insights/agency/department-of-state/"
           },
-          6709640898.5
+          13533902.08
         ],
         [
           14,
           {
-            "text": "Department of Commerce",
-            "href": "/insights/agency/department-of-commerce/"
+            "text": "Department of the Interior",
+            "href": "/insights/agency/department-of-the-interior/"
           },
-          5040550459.14
+          12942382.97
         ],
         [
           15,
           {
-            "text": "Department of Education",
-            "href": "/insights/agency/department-of-education/"
+            "text": "National Archives and Records Administration",
+            "href": null
           },
-          2423349525.37
+          7406084.89
         ],
         [
           16,
           {
-            "text": "Department of Labor",
-            "href": null
+            "text": "Department of Defense",
+            "href": "/insights/agency/department-of-defense/"
           },
-          2187565176.52
+          5001011.34
         ],
         [
           17,
           {
-            "text": "Social Security Administration",
+            "text": "Consumer Financial Protection Bureau",
             "href": null
           },
-          1611644760.62
+          3493504.56
         ],
         [
           18,
           {
-            "text": "Environmental Protection Agency",
+            "text": "Department of Labor",
             "href": null
           },
-          1184520689.32
+          3173199.72
         ],
         [
           19,
           {
-            "text": "Department of Housing and Urban Development",
+            "text": "Smithsonian Institution",
             "href": null
           },
-          972940704.31
+          2147868.6
         ],
         [
           20,
           {
-            "text": "Agency for International Development",
+            "text": "Department of Housing and Urban Development",
             "href": null
           },
-          962717947.45
+          2071822.56
         ],
         [
           21,
           {
-            "text": "National Science Foundation",
+            "text": "Railroad Retirement Board",
             "href": null
           },
-          622807590.84
+          1742411.97
         ],
         [
           22,
           {
-            "text": "Securities and Exchange Commission",
+            "text": "Government Accountability Office",
             "href": null
           },
-          540971262.29
+          1345513.81
         ],
         [
           23,
           {
-            "text": "Pension Benefit Guaranty Corporation",
+            "text": "Consumer Product Safety Commission",
             "href": null
           },
-          239145604.58
+          487408.17
         ],
         [
           24,
           {
-            "text": "Smithsonian Institution",
+            "text": "National Labor Relations Board",
             "href": null
           },
-          238364878.5
+          260630.5
         ],
         [
           25,
           {
-            "text": "National Archives and Records Administration",
+            "text": "Federal Communications Commission",
             "href": null
           },
-          204249394
+          123859.09
         ]
       ]
     }
   ],
   "narrative": {
-    "intro": "The ranking shows federal contract obligations for FY2026 to date totaling $697B. The Department of Defense obligated $360B, making the Department of Defense the largest contracting agency in dollar terms. The Department of Veterans Affairs obligated $79.6B, the Department of Homeland Security obligated $69.1B, and the Department of Energy obligated $52.7B. General Services Administration obligated $27B, the Department of Health and Human Services obligated $22.5B, and National Aeronautics and Space Administration obligated $15.4B. The Department of Transportation obligated $13.3B, the Department of Agriculture obligated $10.1B, and the Department of Justice obligated $9.7B. These figures are contract obligations and current-year totals are partial, fiscal year to date. Use the list when sizing pursuit strategies, prioritizing agency business development, or benchmarking capture plans against peer agency spending levels.",
+    "intro": "Federal contract obligations through FY2027 to date total $4.7B. The Department of Veterans Affairs obligated $3.4B, making Veterans Affairs the single largest contracting agency in this partial-year snapshot. National Aeronautics and Space Administration obligated $354M, followed by the Department of the Treasury at $213M and the General Services Administration at $162M. The Department of Justice obligated $98.1M, the Department of Commerce obligated $92.1M, and the Department of Energy obligated $85.9M. The Department of Agriculture obligated $69.8M, the Department of Health and Human Services obligated $59.8M, and the Department of Homeland Security obligated $58.1M. These ten agencies together represent the ranking of federal contract obligations for FY2027 to date. Contract totals are fiscal year to date and therefore partial for the current fiscal year. Use these figures as a snapshot of current federal buying patterns rather than full-year totals.",
     "sections": [
       {
-        "heading": "Who are the top federal contract spenders?",
-        "body": "The Department of Defense leads with $360B in obligations. The Department of Veterans Affairs follows with $79.6B, and the Department of Homeland Security follows with $69.1B. The Department of Energy, General Services Administration, and Department of Health and Human Services round out the mid-range spenders with $52.7B, $27B, and $22.5B respectively."
+        "heading": "Which agency leads contract obligations in FY2027 to date?",
+        "body": "The Department of Veterans Affairs leads contract obligations with $3.4B. National Aeronautics and Space Administration is the next largest with $354M, followed by the Department of the Treasury with $213M. General Services Administration follows with $162M."
       },
       {
-        "heading": "How concentrated are contract obligations among agencies?",
-        "body": "The total of federal contract obligations for FY2026 to date is $697B. The Department of Defense accounts for $360B of that total. Nine other agencies in the top ten report obligations from $79.6B down to $9.7B. These figures are partial fiscal year totals and represent reported contract obligations to date."
+        "heading": "How distributed are contract obligations across the top agencies?",
+        "body": "Total federal contract obligations for FY2027 to date equal $4.7B. Nine other agencies have obligations ranging from $354M to $58.1M, including Department of Justice at $98.1M and Department of Commerce at $92.1M. These figures reflect partial-year obligations and represent the current distribution among the top ten contracting agencies."
       }
     ]
   },
   "faq": [
     {
       "q": "Which federal agency spends the most on contracts?",
-      "a": "The Department of Defense spends the most on contracts. The Department of Defense obligated $360B in FY2026 to date, out of $697B in total federal contract obligations for the period."
+      "a": "The Department of Veterans Affairs spends the most on contracts. The Department of Veterans Affairs obligated $3.4B in FY2027 to date, compared with total federal contract obligations of $4.7B for the fiscal year to date."
     }
   ],
   "related": [

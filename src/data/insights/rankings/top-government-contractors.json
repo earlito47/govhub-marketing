@@ -1,17 +1,17 @@
 {
   "pageType": "ranking",
   "slug": "top-government-contractors",
-  "title": "Top 50 government contractors by obligations (FY2026)",
-  "h1": "Top government contractors, FY2026 to date",
-  "metaDescription": "The largest federal contractors by obligations in FY2026 to date, led by Optum Public Sector Solutions at $19.9B. Ranked from USAspending.gov data.",
-  "updated": "2026-09-28",
+  "title": "Top 50 government contractors by obligations (FY2027)",
+  "h1": "Top government contractors, FY2027 to date",
+  "metaDescription": "The largest federal contractors by obligations in FY2027 to date, led by Triwest Healthcare Alliance at $900M. Ranked from USAspending.gov data.",
+  "updated": "2026-10-19",
   "fyWindow": {
-    "label": "FY2026 to date",
-    "start": "2025-10-01",
-    "end": "2026-09-28"
+    "label": "FY2027 to date",
+    "start": "2026-10-01",
+    "end": "2026-10-19"
   },
   "stats": {
-    "totalObligations": 263124533898.04996,
+    "totalObligations": 2906482798.05,
     "awardCount": null,
     "yoyGrowthPct": null,
     "avgAwardSize": null,
@@ -21,61 +21,61 @@
     {
       "id": "top-government-contractors-bar",
       "type": "bar",
-      "title": "Top government contractors by obligations, FY2026 to date",
+      "title": "Top government contractors by obligations, FY2027 to date",
       "series": [
         {
           "label": "Obligations",
           "points": [
             [
-              "OPTUM PUBLIC SECTOR SOLUTIONS, INC.",
-              19907506457.41
-            ],
-            [
               "TRIWEST HEALTHCARE ALLIANCE CORP",
-              16544439285.56
+              900485186.84
             ],
             [
-              "LOCKHEED MARTIN CORPORATION",
-              14141692068.33
+              "AT&T ENTERPRISES, LLC",
+              164409632
             ],
             [
-              "FISHER SAND & GRAVEL CO",
-              13353127851.7
+              "THUNDERCAT TECHNOLOGY, LLC",
+              143002044.9
             ],
             [
-              "LOCKHEED MARTIN CORPORATION",
-              13143306020.97
+              "FEDEX SUPPLY CHAIN DISTRIBUTION SYSTEM, INC.",
+              102039790.78
             ],
             [
-              "MCKESSON CORPORATION",
-              12304826566.37
+              "PEACHTREE LUMBER COMPANY, INC",
+              99575262
             ],
             [
-              "ELECTRIC BOAT CORPORATION",
-              11590210696.82
+              "STONEX FINANCIAL LTD",
+              91701128.51
             ],
             [
-              "RAYTHEON COMPANY",
-              9861693542.55
+              "LUMEN TECHNOLOGIES GOVERNMENT SOLUTIONS, INC.",
+              91274192.57
             ],
             [
-              "THE BOEING COMPANY",
-              9104683477.67
+              "THE JOHNS HOPKINS UNIVERSITY APPLIED PHYSICS LABORATORY LLC",
+              85272128
             ],
             [
-              "THE BOEING COMPANY",
-              6262077911.8
+              "GENERAL DYNAMICS INFORMATION TECHNOLOGY, INC.",
+              81160631
+            ],
+            [
+              "UCHICAGO ARGONNE, LLC",
+              81138891
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "OPTUM PUBLIC SECTOR SOLUTIONS, INC. is the largest federal contractor in FY2026 to date, with $19.9B in obligations."
+      "takeaway": "TRIWEST HEALTHCARE ALLIANCE CORP is the largest federal contractor in FY2027 to date, with $900M in obligations."
     }
   ],
   "tables": [
     {
-      "title": "Top government contractors, FY2026 to date",
+      "title": "Top government contractors, FY2027 to date",
       "columns": [
         "Rank",
         "Contractor",
@@ -85,427 +85,427 @@
         [
           1,
           {
-            "text": "OPTUM PUBLIC SECTOR SOLUTIONS, INC.",
-            "href": "/insights/vendor/optum-public-sector-solutions/"
+            "text": "TRIWEST HEALTHCARE ALLIANCE CORP",
+            "href": "/insights/vendor/triwest-healthcare-alliance/"
           },
-          19907506457.41
+          900485186.84
         ],
         [
           2,
           {
-            "text": "TRIWEST HEALTHCARE ALLIANCE CORP",
-            "href": "/insights/vendor/triwest-healthcare-alliance/"
+            "text": "AT&T ENTERPRISES, LLC",
+            "href": "/insights/vendor/at-and-t-enterprises/"
           },
-          16544439285.56
+          164409632
         ],
         [
           3,
           {
-            "text": "LOCKHEED MARTIN CORPORATION",
-            "href": "/insights/vendor/lockheed-martin/"
+            "text": "THUNDERCAT TECHNOLOGY, LLC",
+            "href": "/insights/vendor/thundercat-technology/"
           },
-          14141692068.33
+          143002044.9
         ],
         [
           4,
           {
-            "text": "FISHER SAND & GRAVEL CO",
-            "href": "/insights/vendor/fisher-sand-and-gravel/"
+            "text": "FEDEX SUPPLY CHAIN DISTRIBUTION SYSTEM, INC.",
+            "href": "/insights/vendor/fedex-supply-chain-distribution-system/"
           },
-          13353127851.7
+          102039790.78
         ],
         [
           5,
           {
-            "text": "LOCKHEED MARTIN CORPORATION",
-            "href": "/insights/vendor/lockheed-martin/"
+            "text": "PEACHTREE LUMBER COMPANY, INC",
+            "href": "/insights/vendor/peachtree-lumber/"
           },
-          13143306020.97
+          99575262
         ],
         [
           6,
           {
-            "text": "MCKESSON CORPORATION",
-            "href": "/insights/vendor/mckesson/"
+            "text": "STONEX FINANCIAL LTD",
+            "href": "/insights/vendor/stonex-financial/"
           },
-          12304826566.37
+          91701128.51
         ],
         [
           7,
           {
-            "text": "ELECTRIC BOAT CORPORATION",
-            "href": "/insights/vendor/electric-boat/"
+            "text": "LUMEN TECHNOLOGIES GOVERNMENT SOLUTIONS, INC.",
+            "href": "/insights/vendor/lumen-technologies-government-solutions/"
           },
-          11590210696.82
+          91274192.57
         ],
         [
           8,
           {
-            "text": "RAYTHEON COMPANY",
-            "href": "/insights/vendor/raytheon/"
+            "text": "THE JOHNS HOPKINS UNIVERSITY APPLIED PHYSICS LABORATORY LLC",
+            "href": "/insights/vendor/johns-hopkins-university-applied-physics-laboratory/"
           },
-          9861693542.55
+          85272128
         ],
         [
           9,
           {
-            "text": "THE BOEING COMPANY",
-            "href": "/insights/vendor/boeing/"
+            "text": "GENERAL DYNAMICS INFORMATION TECHNOLOGY, INC.",
+            "href": "/insights/vendor/general-dynamics-information-technology/"
           },
-          9104683477.67
+          81160631
         ],
         [
           10,
           {
-            "text": "THE BOEING COMPANY",
-            "href": "/insights/vendor/boeing/"
+            "text": "UCHICAGO ARGONNE, LLC",
+            "href": "/insights/vendor/uchicago-argonne/"
           },
-          6262077911.8
+          81138891
         ],
         [
           11,
           {
-            "text": "AMERISOURCEBERGEN DRUG CORP",
-            "href": "/insights/vendor/amerisourcebergen-drug/"
+            "text": "CALIFORNIA INSTITUTE OF TECHNOLOGY",
+            "href": "/insights/vendor/california-institute-of-technology/"
           },
-          5961135320.91
+          78430942
         ],
         [
           12,
           {
-            "text": "BARNARD CONSTRUCTION COMPANY, INCORPORATED",
-            "href": "/insights/vendor/barnard-construction/"
+            "text": "FEDERAL EXPRESS CORPORATION",
+            "href": "/insights/vendor/federal-express/"
           },
-          5882256785.72
+          75338500.86
         ],
         [
           13,
           {
-            "text": "BOOZ ALLEN HAMILTON INC",
-            "href": "/insights/vendor/booz-allen-hamilton/"
+            "text": "AMERESCO INC",
+            "href": "/insights/vendor/ameresco/"
           },
-          5703137609.41
+          56404616.99
         ],
         [
           14,
           {
-            "text": "HUMANA GOVERNMENT BUSINESS INC",
-            "href": "/insights/vendor/humana-government-business/"
+            "text": "BLUE ORIGIN, LLC",
+            "href": "https://www.usaspending.gov/recipient/2c023317-2253-d360-9710-a68608d3963f-C/latest/"
           },
-          5632352229.53
+          46070000
         ],
         [
           15,
           {
-            "text": "TRIAD NATIONAL SECURITY, LLC",
-            "href": "/insights/vendor/triad-national-security/"
+            "text": "QUEST DIAGNOSTICS INCORPORATED",
+            "href": "https://www.usaspending.gov/recipient/a9415e64-b17c-f292-0379-5ac52f31d54a-C/latest/"
           },
-          5276549894.81
+          43970317.46
         ],
         [
           16,
           {
-            "text": "NATIONAL TECHNOLOGY & ENGINEERING SOLUTIONS OF SANDIA, LLC",
-            "href": "/insights/vendor/national-technology-and-engineering-solutions-of-sandia/"
+            "text": "ABBOTT LABORATORIES INC.",
+            "href": "https://www.usaspending.gov/recipient/f740eb86-a84e-ddf4-03cf-fe9834b257e5-C/latest/"
           },
-          5164313490.1
+          37915950.59
         ],
         [
           17,
           {
-            "text": "GENERAL DYNAMICS INFORMATION TECHNOLOGY, INC.",
-            "href": "/insights/vendor/general-dynamics-information-technology/"
+            "text": "IMPULSE SPACE, INC.",
+            "href": "https://www.usaspending.gov/recipient/e65ac258-fc58-864a-a7bd-2fc374a50731-C/latest/"
           },
-          4514155659.67
+          37130000
         ],
         [
           18,
           {
-            "text": "ATLANTIC DIVING SUPPLY, INC.",
-            "href": "/insights/vendor/atlantic-diving-supply/"
+            "text": "CEPHEID",
+            "href": "https://www.usaspending.gov/recipient/f6397cdb-c833-3628-6fb3-a38803b567f6-C/latest/"
           },
-          4493512304.21
+          31740709.21
         ],
         [
           19,
           {
-            "text": "FLUOR MARINE PROPULSION, LLC",
-            "href": "/insights/vendor/fluor-marine-propulsion/"
+            "text": "UNITED PARCEL SERVICE CO.",
+            "href": "https://www.usaspending.gov/recipient/a8e90c7c-8175-41a5-b841-5b038f67a07d-C/latest/"
           },
-          4258175010.79
+          31048210.18
         ],
         [
           20,
           {
-            "text": "RTX CORPORATION",
-            "href": "/insights/vendor/rtx/"
+            "text": "SIEMENS MEDICAL SOLUTIONS USA, INC.",
+            "href": "https://www.usaspending.gov/recipient/fd8478b1-626d-1d4a-edc9-c5fd5914996f-C/latest/"
           },
-          3963627633.81
+          28995039.67
         ],
         [
           21,
           {
-            "text": "HUNTINGTON INGALLS INC",
-            "href": "/insights/vendor/huntington-ingalls/"
+            "text": "CELLCO PARTNERSHIP",
+            "href": "https://www.usaspending.gov/recipient/f02045e8-ef98-57c5-2968-cd9f60dbc24a-C/latest/"
           },
-          3804479115.46
+          28408267.84
         ],
         [
           22,
           {
-            "text": "LAWRENCE LIVERMORE NATIONAL SECURITY, LLC",
-            "href": "/insights/vendor/lawrence-livermore-national-security/"
+            "text": "BECKMAN COULTER, INC",
+            "href": "https://www.usaspending.gov/recipient/790cc276-b1e8-5d50-e48e-4b2a8304b4b5-C/latest/"
           },
-          3631693763.36
+          27911292.18
         ],
         [
           23,
           {
-            "text": "HUNTINGTON INGALLS INCORPORATED",
-            "href": "/insights/vendor/huntington-ingalls/"
+            "text": "BIOMERIEUX INC",
+            "href": "https://www.usaspending.gov/recipient/d91909b1-ebd8-1290-63e1-383f4ec40193-C/latest/"
           },
-          3607612520.5
+          25314512.47
         ],
         [
           24,
           {
-            "text": "SCIENCE APPLICATIONS INTERNATIONAL CORPORATION",
-            "href": "/insights/vendor/science-applications-international/"
+            "text": "OLYMPUS AMERICA INC",
+            "href": "https://www.usaspending.gov/recipient/a757e8e0-8720-428e-64bc-1d025227406d-C/latest/"
           },
-          3586568134.57
+          25272906.13
         ],
         [
           25,
           {
-            "text": "DAVIE DEFENSE INC.",
-            "href": "/insights/vendor/davie-defense/"
+            "text": "BLUESTAQ LLC",
+            "href": "https://www.usaspending.gov/recipient/2a158929-2aa4-64c0-bde6-f28f2102a1b3-C/latest/"
           },
-          3500000000
+          24274076
         ],
         [
           26,
           {
-            "text": "RAYTHEON COMPANY",
-            "href": "/insights/vendor/raytheon/"
+            "text": "AMERICAN TYPE CULTURE COLLECTION",
+            "href": "https://www.usaspending.gov/recipient/4b62b5d8-fc5a-7d10-a260-7955f3fee2bf-C/latest/"
           },
-          3474294108.39
+          23510310
         ],
         [
           27,
           {
-            "text": "SAVANNAH RIVER NUCLEAR SOLUTIONS LLC",
-            "href": "/insights/vendor/savannah-river-nuclear-solutions/"
+            "text": "METROIBR JV LLC",
+            "href": "https://www.usaspending.gov/recipient/696984e9-df32-7a5d-27b2-5f17d2f06567-C/latest/"
           },
-          3396534933.18
+          22723637.04
         ],
         [
           28,
           {
-            "text": "CONSOLIDATED NUCLEAR SECURITY, LLC",
-            "href": "/insights/vendor/consolidated-nuclear-security/"
+            "text": "ROCHE DIAGNOSTICS CORPORATION",
+            "href": "https://www.usaspending.gov/recipient/421d7508-3321-6311-abf5-e50fdddfd818-C/latest/"
           },
-          3329261929.84
+          22595971.11
         ],
         [
           29,
           {
-            "text": "ACCENTURE FEDERAL SERVICES LLC",
-            "href": "/insights/vendor/accenture-federal-services/"
+            "text": "VALOR HEALTHCARE INC",
+            "href": "https://www.usaspending.gov/recipient/df822c86-4385-9615-7abf-ce7dec0f7b3c-C/latest/"
           },
-          3216772250.83
+          22335072.42
         ],
         [
           30,
           {
-            "text": "AMENTUM SERVICES, INC.",
-            "href": "/insights/vendor/amentum-services/"
+            "text": "CONSTELLATION NEWENERGY, INC.",
+            "href": "https://www.usaspending.gov/recipient/9ffb2959-0a9b-e538-2f96-294976314f9b-C/latest/"
           },
-          2982130921.47
+          22287411.57
         ],
         [
           31,
           {
-            "text": "SIKORSKY AIRCRAFT CORPORATION",
-            "href": "/insights/vendor/sikorsky-aircraft/"
+            "text": "PRIMARY CARE SOLUTIONS INC",
+            "href": "https://www.usaspending.gov/recipient/d54992e8-9425-098f-4c7f-446d6fa0c2d3-C/latest/"
           },
-          2944474705.11
+          22280390.76
         ],
         [
           32,
           {
-            "text": "LOCKHEED MARTIN CORPORATION",
-            "href": "/insights/vendor/lockheed-martin/"
+            "text": "PINTER MEMORIALS INC",
+            "href": "https://www.usaspending.gov/recipient/de394b64-d519-d4ed-65b6-8213863bcfed-C/latest/"
           },
-          2937116032.63
+          21997134.6
         ],
         [
           33,
           {
-            "text": "DELOITTE CONSULTING LLP",
-            "href": "/insights/vendor/deloitte-consulting/"
+            "text": "MATOS-GRUNLEY JOINT VENTURE",
+            "href": "https://www.usaspending.gov/recipient/72b84ab8-9677-4fe9-1055-f72b9f4552eb-C/latest/"
           },
-          2887888537.55
+          21405048.73
         ],
         [
           34,
           {
-            "text": "NORTHROP GRUMMAN SYSTEMS CORP",
-            "href": "/insights/vendor/northrop-grumman-systems/"
+            "text": "LABORATORY CORPORATION OF AMERICA",
+            "href": "https://www.usaspending.gov/recipient/43c3801f-7847-15fb-337a-8c20cb2a5e11-C/latest/"
           },
-          2860731574
+          21388520.13
         ],
         [
           35,
           {
-            "text": "SPACE EXPLORATION TECHNOLOGIES CORP.",
-            "href": "/insights/vendor/space-exploration-technologies/"
+            "text": "CRANE & CO., INC.",
+            "href": "https://www.usaspending.gov/recipient/57d990eb-6c0b-82fd-a854-5b67e14a3b54-C/latest/"
           },
-          2849428422.54
+          20351140.8
         ],
         [
           36,
           {
-            "text": "NATIONAL STEEL AND SHIPBUILDING COMPANY",
-            "href": "/insights/vendor/national-steel-and-shipbuilding/"
+            "text": "DIRECT ENERGY BUSINESS LLC",
+            "href": "https://www.usaspending.gov/recipient/9e5ae602-d931-8e79-815e-643e2556e83b-C/latest/"
           },
-          2786633974.61
+          19431444.71
         ],
         [
           37,
           {
-            "text": "CACI, INC. - FEDERAL",
-            "href": "/insights/vendor/caci-inc-federal/"
+            "text": "STANDARD COMMUNICATIONS INC",
+            "href": "https://www.usaspending.gov/recipient/aa1eefb9-aa81-f6de-d238-ab8b4948df53-C/latest/"
           },
-          2785951453.82
+          19292206.89
         ],
         [
           38,
           {
-            "text": "UT-BATTELLE LLC",
-            "href": "/insights/vendor/ut-battelle/"
+            "text": "GE PRECISION HEALTHCARE LLC",
+            "href": "https://www.usaspending.gov/recipient/df31c503-bd81-c7e7-3f7a-659eb76e1b08-C/latest/"
           },
-          2759158258.02
+          18750195.54
         ],
         [
           39,
           {
-            "text": "LOCKHEED MARTIN CORPORATION",
-            "href": "/insights/vendor/lockheed-martin/"
+            "text": "PERATON INC.",
+            "href": "https://www.usaspending.gov/recipient/129fccb1-783c-9fd1-7b6d-6ddea65ace79-C/latest/"
           },
-          2737471571.8
+          18687421.3
         ],
         [
           40,
           {
-            "text": "SOUTHWEST VALLEY CONSTRUCTORS CO",
-            "href": "/insights/vendor/southwest-valley-constructors/"
+            "text": "WIELAND ROLLED PRODUCTS NORTH AMERICA, LLC",
+            "href": "https://www.usaspending.gov/recipient/f5c94e5f-0c97-f038-ac92-9f0668fd7115-C/latest/"
           },
-          2486486944.76
+          17876251.2
         ],
         [
           41,
           {
-            "text": "THE BOEING COMPANY",
-            "href": "/insights/vendor/boeing/"
+            "text": "PHILIPS NORTH AMERICA LLC",
+            "href": "https://www.usaspending.gov/recipient/e7ca1519-17c6-3176-c3cf-cbe3b37f1f77-C/latest/"
           },
-          2453512137.87
+          16433160.06
         ],
         [
           42,
           {
-            "text": "LEIDOS, INC.",
-            "href": "/insights/vendor/leidos/"
+            "text": "A-TEAM SOLUTIONS LLC",
+            "href": "https://www.usaspending.gov/recipient/ef1986be-2c20-6930-0b1d-e814940b48ef-C/latest/"
           },
-          2435497227.86
+          16356478.2
         ],
         [
           43,
           {
-            "text": "SLS FEDERAL SERVICES LLC",
-            "href": "/insights/vendor/sls-federal-services/"
+            "text": "SIEMENS HEALTHCARE DIAGNOSTICS INC.",
+            "href": "https://www.usaspending.gov/recipient/aaac8e0a-87b1-aeb8-e8d0-0e3f64051778-C/latest/"
           },
-          2379100930
+          16150428.51
         ],
         [
           44,
           {
-            "text": "SPENCER CONSTRUCTION LLC",
-            "href": "/insights/vendor/spencer-construction/"
+            "text": "ERNST & YOUNG LLP",
+            "href": "https://www.usaspending.gov/recipient/dd8305ba-1d9b-c594-9391-076ac5a963ad-C/latest/"
           },
-          2361541157.42
+          15557365.88
         ],
         [
           45,
           {
-            "text": "QTC MEDICAL SERVICES INC",
-            "href": "/insights/vendor/qtc-medical-services/"
+            "text": "VANDERBILT UNIVERSITY MEDICAL CENTER",
+            "href": "https://www.usaspending.gov/recipient/af8e08af-9f61-5dc4-b13f-32b17f32dc92-C/latest/"
           },
-          2359104168.91
+          15366627.08
         ],
         [
           46,
           {
-            "text": "DELL FEDERAL SYSTEMS L.P",
-            "href": "/insights/vendor/dell-federal-systems-l-p/"
+            "text": "LC FLUHARTY CONSTRUCTION LLC",
+            "href": "https://www.usaspending.gov/recipient/892c231d-2691-73f7-764f-4638875f31fe-C/latest/"
           },
-          2335061677.06
+          14851012.97
         ],
         [
           47,
           {
-            "text": "BOLLINGER SHIPYARDS LOCKPORT, L.L.C.",
-            "href": "/insights/vendor/bollinger-shipyards-lockport-l-l-c/"
+            "text": "PMX INDUSTRIES, INC.",
+            "href": "https://www.usaspending.gov/recipient/7ac9c230-cad5-6fc9-a095-a7f14a4f5665-C/latest/"
           },
-          2304201932.07
+          14731310.35
         ],
         [
           48,
           {
-            "text": "THE BOEING COMPANY",
-            "href": "/insights/vendor/boeing/"
+            "text": "SYSMEX AMERICA, INC",
+            "href": "https://www.usaspending.gov/recipient/e07fa036-e1d9-625b-d429-3253b4c7b133-C/latest/"
           },
-          2300454042.89
+          14679944.57
         ],
         [
           49,
           {
-            "text": "LOCKHEED MARTIN CORPORATION",
-            "href": "/insights/vendor/lockheed-martin/"
+            "text": "CARDINAL HEALTH 414, LLC",
+            "href": "https://www.usaspending.gov/recipient/40992dfb-2861-fc12-128f-a0c27663d4e5-C/latest/"
           },
-          2298522044.86
+          14630835.14
         ],
         [
           50,
           {
-            "text": "LOCKHEED MARTIN CORP",
-            "href": "/insights/vendor/lockheed-martin/"
+            "text": "T-MOBILE USA, INC.",
+            "href": "https://www.usaspending.gov/recipient/9ca06d06-287d-7bc5-0748-b773d09f12eb-C/latest/"
           },
-          2270069608.53
+          14529249.31
         ]
       ]
     }
   ],
   "narrative": {
-    "intro": "The FY2026 to date ranking of top government contractors totals $263B in contract obligations. OPTUM PUBLIC SECTOR SOLUTIONS, INC. is the largest contractor with $19.9B in obligations. TRIWEST HEALTHCARE ALLIANCE CORP follows with $16.5B. LOCKHEED MARTIN CORPORATION appears twice in the list, with $14.1B and $13.1B in obligations. FISHER SAND & GRAVEL CO obligated $13.4B. MCKESSON CORPORATION obligated $12.3B. ELECTRIC BOAT CORPORATION obligated $11.6B. RAYTHEON COMPANY obligated $9.9B. THE BOEING COMPANY appears twice in the list, with $9.1B and $6.3B in obligations. The list shows large shares concentrated in healthcare, defense, and manufacturing firms, and current-year totals are partial because the fiscal year is still in progress. The rankings reflect contract obligations recorded so far in FY2026 rather than completed fiscal-year totals. This snapshot helps contractors and procurement analysts see which companies account for the largest share of federal spending to date and which firms have multiple large obligation entries in the current ranking.",
+    "intro": "TRIWEST HEALTHCARE ALLIANCE CORP is the largest contractor by obligations in FY2027 to date with $900M. The top ten list of contractors accounts for major shares of the $2.9B in total obligations recorded for the fiscal year to date. AT&T ENTERPRISES, LLC follows with $164M, and THUNDERCAT TECHNOLOGY, LLC holds $143M. The remaining top-ten positions include FEDEX SUPPLY CHAIN DISTRIBUTION SYSTEM, INC. at $102M, PEACHTREE LUMBER COMPANY, INC at $99.6M, STONEX FINANCIAL LTD at $91.7M, LUMEN TECHNOLOGIES GOVERNMENT SOLUTIONS, INC. at $91.3M, THE JOHNS HOPKINS UNIVERSITY APPLIED PHYSICS LABORATORY LLC at $85.3M, GENERAL DYNAMICS INFORMATION TECHNOLOGY, INC. at $81.2M, and UCHICAGO ARGONNE, LLC at $81.1M. The list shows one dominant contractor and a mix of communications, logistics, finance, research, and IT providers among the top obligations. Observing absolute obligations highlights which suppliers are receiving the largest federal spend through the fiscal year to date and which firms comprise the most significant individual shares of the $2.9B total.",
     "sections": [
       {
-        "heading": "Which companies top the FY2026 to date obligations list?",
-        "body": "OPTUM PUBLIC SECTOR SOLUTIONS, INC. leads the list with $19.9B. TRIWEST HEALTHCARE ALLIANCE CORP is second with $16.5B. LOCKHEED MARTIN CORPORATION, FISHER SAND & GRAVEL CO, and MCKESSON CORPORATION follow with $14.1B, $13.4B, and $12.3B respectively, and other major names include ELECTRIC BOAT CORPORATION, RAYTHEON COMPANY, and THE BOEING COMPANY."
+        "heading": "How concentrated are obligations among the top contractors?",
+        "body": "TRIWEST HEALTHCARE ALLIANCE CORP commands the largest single share with $900M in obligations. The next two firms, AT&T ENTERPRISES, LLC and THUNDERCAT TECHNOLOGY, LLC, hold $164M and $143M respectively. The other seven top-ten contractors each account for obligations between $81.1M and $102M, showing a sharp drop from the leader but relative parity among the lower-ranked firms."
       },
       {
-        "heading": "What notable patterns appear in the FY2026 to date ranking?",
-        "body": "LOCKHEED MARTIN CORPORATION appears twice with $14.1B and $13.1B, and THE BOEING COMPANY appears twice with $9.1B and $6.3B. OPTUM PUBLIC SECTOR SOLUTIONS, INC. and TRIWEST HEALTHCARE ALLIANCE CORP hold the top two spots with $19.9B and $16.5B. The total obligations reported for the period equal $263B, and the list includes both healthcare and defense contractors among the leaders."
+        "heading": "Which contractors rounded out the top ten and what are their obligations?",
+        "body": "FEDEX SUPPLY CHAIN DISTRIBUTION SYSTEM, INC. had $102M in obligations and PEACHTREE LUMBER COMPANY, INC had $99.6M. STONEX FINANCIAL LTD held $91.7M and LUMEN TECHNOLOGIES GOVERNMENT SOLUTIONS, INC. held $91.3M. THE JOHNS HOPKINS UNIVERSITY APPLIED PHYSICS LABORATORY LLC had $85.3M, GENERAL DYNAMICS INFORMATION TECHNOLOGY, INC. had $81.2M, and UCHICAGO ARGONNE, LLC had $81.1M."
       }
     ]
   },
   "faq": [
     {
-      "q": "Who is the largest federal contractor in FY2026?",
-      "a": "OPTUM PUBLIC SECTOR SOLUTIONS, INC. is the largest federal contractor in FY2026, with $19.9B in obligations. The ranking shows the leading contractors by contract obligations for the fiscal year to date, and OPTUM PUBLIC SECTOR SOLUTIONS, INC. tops that list."
+      "q": "Who is the largest federal contractor in FY2027?",
+      "a": "TRIWEST HEALTHCARE ALLIANCE CORP is the largest federal contractor in FY2027 with $900M in obligations. The top-ten ranking shows TRIWEST well ahead of the next firms, with total obligations for the period summing to $2.9B."
     },
     {
       "q": "How are these contractor rankings calculated?",
-      "a": "Rankings are based on contract obligations for FY2026 to date. All figures are contract obligations; current-year totals are partial (fiscal year to date)."
+      "a": "Rankings are calculated by total contract obligations during FY2027 to date. The list orders contractors by the dollar value of obligations each firm received in the fiscal year to date."
     }
   ],
   "related": [

@@ -1,20 +1,20 @@
 {
   "pageType": "naics",
   "slug": "339112",
-  "title": "NAICS 339112: $1.1B in Federal Contracts, FY2026",
+  "title": "NAICS 339112: $58.5M in Federal Contracts, FY2027",
   "h1": "Surgical and Medical Instrument Manufacturing (NAICS 339112): Federal Contract Market",
-  "metaDescription": "Federal agencies obligated $1.1B on Surgical and Medical Instrument Manufacturing (NAICS 339112) in FY2026 to date. See top vendors, top agencies, and tren",
-  "updated": "2026-09-28",
+  "metaDescription": "Federal agencies obligated $58.5M on Surgical and Medical Instrument Manufacturing (NAICS 339112) in FY2027 to date. See top vendors, top agencies, and tre",
+  "updated": "2026-10-19",
   "fyWindow": {
-    "label": "FY2026 to date",
-    "start": "2025-10-01",
-    "end": "2026-09-28"
+    "label": "FY2027 to date",
+    "start": "2026-10-01",
+    "end": "2026-10-19"
   },
   "stats": {
-    "totalObligations": 1060965741.01,
-    "awardCount": 10876,
-    "yoyGrowthPct": -34.1,
-    "avgAwardSize": 97551,
+    "totalObligations": 58506779.65,
+    "awardCount": 328,
+    "yoyGrowthPct": -94.7,
+    "avgAwardSize": 178374,
     "smallBusinessSharePct": null
   },
   "charts": [
@@ -27,12 +27,8 @@
           "label": "Obligations",
           "points": [
             [
-              "FY21",
-              2319155425.61
-            ],
-            [
               "FY22",
-              1134249161.59
+              1134082421.85
             ],
             [
               "FY23",
@@ -48,121 +44,105 @@
             ],
             [
               "FY26",
-              1060965741.01
+              1104145332.24
+            ],
+            [
+              "FY27",
+              58506779.65
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Obligations fell 34.1% year over year, from $1.6B in FY2025 to $1.1B in FY2026 to date."
+      "takeaway": "Obligations fell 94.7% year over year, from $1.1B in FY2026 to $58.5M in FY2027 to date."
     },
     {
       "id": "339112-top-agencies",
       "type": "bar",
-      "title": "Top 10 buying agencies, FY2026 to date",
+      "title": "Top 10 buying agencies, FY2027 to date",
       "series": [
         {
           "label": "Obligations",
           "points": [
             [
               "Department of Veterans Affairs",
-              898639503.93
-            ],
-            [
-              "Department of Defense",
-              67991673.5
-            ],
-            [
-              "Department of Health and Human Services",
-              61498633.72
+              58374688.87
             ],
             [
               "Department of Justice",
-              16461942.98
+              146023.2
+            ],
+            [
+              "Environmental Protection Agency",
+              35604.5
             ],
             [
               "Department of the Interior",
-              11931733.66
+              0
             ],
             [
-              "Department of Homeland Security",
-              1722620.33
-            ],
-            [
-              "General Services Administration",
-              1171559.64
-            ],
-            [
-              "Department of Agriculture",
-              884647.62
-            ],
-            [
-              "Department of Labor",
-              317130.46
-            ],
-            [
-              "Department of Commerce",
-              137086.5
+              "Department of Health and Human Services",
+              -49536.92
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Department of Veterans Affairs was the top buyer, obligating $899M (84.7% of all obligations)."
+      "takeaway": "Department of Veterans Affairs was the top buyer, obligating $58.4M (99.8% of all obligations)."
     },
     {
       "id": "339112-top-vendors",
       "type": "bar",
-      "title": "Top 10 vendors, FY2026 to date",
+      "title": "Top 10 vendors, FY2027 to date",
       "series": [
         {
           "label": "Obligations",
           "points": [
             [
-              "SDV OFFICE SYSTEMS LLC",
-              194472566.94
-            ],
-            [
-              "FIRST NATION GROUP LLC",
-              102798528.78
-            ],
-            [
               "OLYMPUS AMERICA INC",
-              90141682.04
-            ],
-            [
-              "MEDICAL PLACE INC",
-              68586192.89
+              18302066.55
             ],
             [
               "SCRIPTPRO USA INC",
-              37988801.35
+              6921981.95
             ],
             [
-              "MEDLINE INDUSTRIES, LP",
-              37820844.33
+              "HILL-ROM, INC.",
+              5420625.37
             ],
             [
               "OMNICELL, INC.",
-              36249221.9
+              3539183.92
             ],
             [
-              "TRILLAMED LLC",
-              33708934.82
-            ],
-            [
-              "L1 ENTERPRISES INCORPORATED",
-              24231693.95
+              "PROAIM AMERICAS, LLC.",
+              3260801.77
             ],
             [
               "CAREFUSION SOLUTIONS, LLC",
-              23051470.9
+              3075187.69
+            ],
+            [
+              "LOVELL GOVERNMENT SERVICES INC.",
+              2465744.08
+            ],
+            [
+              "VERATHON INC",
+              2308759.24
+            ],
+            [
+              "L1 ENTERPRISES INCORPORATED",
+              1464929.44
+            ],
+            [
+              "O R ELDER INC",
+              1144170.68
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "SDV OFFICE SYSTEMS LLC led all vendors with $194M in obligations, 18.3% of the market."
+      "takeaway": "OLYMPUS AMERICA INC led all vendors with $18.3M in obligations, 31.3% of the market."
     }
   ],
   "crossLinks": [
@@ -171,16 +151,16 @@
       "href": "/insights/agency/department-of-veterans-affairs/"
     },
     {
-      "label": "Department of Defense contracts",
-      "href": "/insights/agency/department-of-defense/"
+      "label": "Department of Justice contracts",
+      "href": "/insights/agency/department-of-justice/"
+    },
+    {
+      "label": "Department of the Interior contracts",
+      "href": "/insights/agency/department-of-the-interior/"
     },
     {
       "label": "Department of Health and Human Services contracts",
       "href": "/insights/agency/department-of-health-and-human-services/"
-    },
-    {
-      "label": "Department of Justice contracts",
-      "href": "/insights/agency/department-of-justice/"
     }
   ],
   "tables": [
@@ -195,66 +175,66 @@
         [
           1,
           {
-            "text": "SDV OFFICE SYSTEMS LLC",
-            "href": "https://www.usaspending.gov/recipient/88b54a53-a6bb-87a0-c4c9-391906338911-C/latest/"
+            "text": "OLYMPUS AMERICA INC",
+            "href": "https://www.usaspending.gov/recipient/a757e8e0-8720-428e-64bc-1d025227406d-C/latest/"
           },
-          194472566.94
+          18302066.55
         ],
         [
           2,
           {
-            "text": "FIRST NATION GROUP LLC",
-            "href": "https://www.usaspending.gov/recipient/48b0e8ee-5d59-6197-6d43-8871927ecab0-C/latest/"
+            "text": "SCRIPTPRO USA INC",
+            "href": "https://www.usaspending.gov/recipient/7b9bb773-c0a8-39d5-4010-8e7f81fa790c-C/latest/"
           },
-          102798528.78
+          6921981.95
         ],
         [
           3,
           {
-            "text": "OLYMPUS AMERICA INC",
-            "href": "https://www.usaspending.gov/recipient/a757e8e0-8720-428e-64bc-1d025227406d-C/latest/"
+            "text": "HILL-ROM, INC.",
+            "href": "https://www.usaspending.gov/recipient/c467f53d-e57e-c871-3e4f-b3ed6635bb53-C/latest/"
           },
-          90141682.04
+          5420625.37
         ],
         [
           4,
           {
-            "text": "MEDICAL PLACE INC",
-            "href": "https://www.usaspending.gov/recipient/78ae7b8d-4fea-93a6-9e16-b31d62927309-C/latest/"
+            "text": "OMNICELL, INC.",
+            "href": "https://www.usaspending.gov/recipient/567c857c-8d91-d6b1-2f6d-9161d3dece3c-C/latest/"
           },
-          68586192.89
+          3539183.92
         ],
         [
           5,
           {
-            "text": "SCRIPTPRO USA INC",
-            "href": "https://www.usaspending.gov/recipient/7b9bb773-c0a8-39d5-4010-8e7f81fa790c-C/latest/"
+            "text": "PROAIM AMERICAS, LLC.",
+            "href": "https://www.usaspending.gov/recipient/6736db21-17ec-5d96-a4e3-cf97eba86c10-C/latest/"
           },
-          37988801.35
+          3260801.77
         ],
         [
           6,
           {
-            "text": "MEDLINE INDUSTRIES, LP",
-            "href": "https://www.usaspending.gov/recipient/e69126ba-ae4e-13a4-4552-7eae9f4ad09d-C/latest/"
+            "text": "CAREFUSION SOLUTIONS, LLC",
+            "href": "https://www.usaspending.gov/recipient/e49d369a-94b2-f4ea-4093-82ac9abed726-C/latest/"
           },
-          37820844.33
+          3075187.69
         ],
         [
           7,
           {
-            "text": "OMNICELL, INC.",
-            "href": "https://www.usaspending.gov/recipient/567c857c-8d91-d6b1-2f6d-9161d3dece3c-C/latest/"
+            "text": "LOVELL GOVERNMENT SERVICES INC.",
+            "href": "https://www.usaspending.gov/recipient/a936692c-d010-1b4b-6612-32f756b400f7-C/latest/"
           },
-          36249221.9
+          2465744.08
         ],
         [
           8,
           {
-            "text": "TRILLAMED LLC",
-            "href": "https://www.usaspending.gov/recipient/45e59e37-b289-1207-3481-6c9bea251dd8-C/latest/"
+            "text": "VERATHON INC",
+            "href": "https://www.usaspending.gov/recipient/3b5fff8b-fcb7-ea41-f6f6-febf8ddaea3a-C/latest/"
           },
-          33708934.82
+          2308759.24
         ],
         [
           9,
@@ -262,20 +242,20 @@
             "text": "L1 ENTERPRISES INCORPORATED",
             "href": "https://www.usaspending.gov/recipient/9845be94-5753-d92b-1ce1-9f6e19b45efc-C/latest/"
           },
-          24231693.95
+          1464929.44
         ],
         [
           10,
           {
-            "text": "CAREFUSION SOLUTIONS, LLC",
-            "href": "https://www.usaspending.gov/recipient/e49d369a-94b2-f4ea-4093-82ac9abed726-C/latest/"
+            "text": "O R ELDER INC",
+            "href": "https://www.usaspending.gov/recipient/e386c24f-7b52-35cc-8d67-ce229f3e77e9-C/latest/"
           },
-          23051470.9
+          1144170.68
         ]
       ]
     },
     {
-      "title": "Largest awards, FY2026 to date",
+      "title": "Largest awards, FY2027 to date",
       "columns": [
         "Rank",
         "Recipient",
@@ -286,226 +266,226 @@
         [
           1,
           {
-            "text": "STRING KING LACROSSE LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_75A50324C00008_7505_-NONE-_-NONE-/"
+            "text": "CAREFUSION SOLUTIONS, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C24924P0472_3600_-NONE-_-NONE-/"
           },
-          95943638.84,
-          "Department of Health and Human Services"
+          7620793,
+          "Department of Veterans Affairs"
         ],
         [
           2,
           {
-            "text": "SDV OFFICE SYSTEMS LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10G26K0027_3600_36C10G25D0013_3600/"
+            "text": "OLYMPUS AMERICA INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C25724F0018_3600_36F79721D0168_3600/"
           },
-          32062211,
+          6871510.37,
           "Department of Veterans Affairs"
         ],
         [
           3,
           {
-            "text": "FIRST NATION GROUP LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C79126F0026_3600_36C79123A0003_3600/"
+            "text": "KARL STORZ ENDOSCOPY-AMERICA INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C24822P0727_3600_-NONE-_-NONE-/"
           },
-          17683744.15,
+          5640351.32,
           "Department of Veterans Affairs"
         ],
         [
           4,
           {
-            "text": "MEDICAL PLACE INC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C79126F0020_3600_36C79123A0002_3600/"
+            "text": "CAREFUSION SOLUTIONS, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C26325N0806_3600_36C24125D0034_3600/"
           },
-          17249639.95,
+          5510535.34,
           "Department of Veterans Affairs"
         ],
         [
           5,
           {
-            "text": "SCRIPTPRO USA INC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_HT001124F0007_9700_36F79719D0135_3600/"
+            "text": "OLYMPUS AMERICA INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C26125F0131_3600_36F79721D0168_3600/"
           },
-          16000631.97,
-          "Department of Defense"
+          4553351.85,
+          "Department of Veterans Affairs"
         ],
         [
           6,
           {
-            "text": "AVON PROTECTION SYSTEMS INCORPORATED",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_W911SR22F0081_9700_W911SR20D0001_9700/"
+            "text": "OLYMPUS AMERICA INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C24723N0008_3600_36F79721D0168_3600/"
           },
-          15083147.4,
-          "Department of Defense"
+          4450496.12,
+          "Department of Veterans Affairs"
         ],
         [
           7,
           {
-            "text": "FIRST NATION GROUP LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C79126F0005_3600_36C79123A0003_3600/"
+            "text": "HILL-ROM, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C25625N0122_3600_36F79721D0160_3600/"
           },
-          14989469.44,
+          3407455.14,
           "Department of Veterans Affairs"
         ],
         [
           8,
           {
-            "text": "AVON PROTECTION SYSTEMS INCORPORATED",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_W911SR26FA038_9700_W911SR20D0001_9700/"
+            "text": "VERATHON INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10X27K0037_3600_36C10G24D0083_3600/"
           },
-          14051050.28,
-          "Department of Defense"
+          2308759.24,
+          "Department of Veterans Affairs"
         ],
         [
           9,
           {
-            "text": "FIRST NATION GROUP LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C79126F0014_3600_36C79123A0003_3600/"
+            "text": "OLYMPUS AMERICA INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C24927N0087_3600_36C24925A0040_3600/"
           },
-          12951757.8,
+          2228587.8,
           "Department of Veterans Affairs"
         ],
         [
           10,
           {
-            "text": "ELEKTA INC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_140D0426C0150_1406_-NONE-_-NONE-/"
+            "text": "WELCH ALLYN, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C24723P0015_3600_-NONE-_-NONE-/"
           },
-          10654356.68,
-          "Department of the Interior"
+          2222750.94,
+          "Department of Veterans Affairs"
         ],
         [
           11,
           {
-            "text": "FIRST NATION GROUP LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C79126F0030_3600_36C79123A0003_3600/"
+            "text": "OLYMPUS AMERICA INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C25624N1146_3600_36F79721D0168_3600/"
           },
-          10601525.7,
+          2220476.88,
           "Department of Veterans Affairs"
         ],
         [
           12,
           {
-            "text": "SDV OFFICE SYSTEMS LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C24725F0303_3600_36C10G25D0013_3600/"
+            "text": "HILL-ROM, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C26127N0136_3600_36C26123A0017_3600/"
           },
-          10122919,
+          2000000,
           "Department of Veterans Affairs"
         ],
         [
           13,
           {
-            "text": "FIRST NATION GROUP LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C79126F0007_3600_36C79123A0003_3600/"
+            "text": "OLYMPUS AMERICA INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C26025F0006_3600_36F79721D0168_3600/"
           },
-          9078042,
+          1933608.24,
           "Department of Veterans Affairs"
         ],
         [
           14,
           {
-            "text": "MEDLINE INDUSTRIES, LP",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_75H71126F27020_7527_75H71125A00016_7527/"
+            "text": "CAREFUSION SOLUTIONS, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C24726N0360_3600_36C24125D0034_3600/"
           },
-          9000000,
-          "Department of Health and Human Services"
+          1868476.51,
+          "Department of Veterans Affairs"
         ],
         [
           15,
           {
-            "text": "MEDICAL PLACE INC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C79126F0006_3600_36C79123A0002_3600/"
+            "text": "LOVELL GOVERNMENT SERVICES INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C24226N0444_3600_36F79725D0128_3600/"
           },
-          8848156.06,
+          1710341.9,
           "Department of Veterans Affairs"
         ],
         [
           16,
           {
-            "text": "MEDICAL PLACE INC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C79126F0017_3600_36C79123A0002_3600/"
+            "text": "OLYMPUS AMERICA INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C26125F0259_3600_36F79721D0168_3600/"
           },
-          8663916.32,
+          1554104.09,
           "Department of Veterans Affairs"
         ],
         [
           17,
           {
-            "text": "KARL STORZ ENDOSCOPY-AMERICA INC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C24926N0553_3600_36F79723D0185_3600/"
+            "text": "BEACON POINT ASSOCIATES LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C26223P1048_3600_-NONE-_-NONE-/"
           },
-          8465752.37,
+          1443980.16,
           "Department of Veterans Affairs"
         ],
         [
           18,
           {
-            "text": "CAREFUSION SOLUTIONS, LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C24926P0466_3600_-NONE-_-NONE-/"
+            "text": "PROAIM AMERICAS, LLC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10X27K0205_3600_36C10G25D0027_3600/"
           },
-          7990385.63,
+          1408687.26,
           "Department of Veterans Affairs"
         ],
         [
           19,
           {
-            "text": "FIRST NATION GROUP LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C79126F0021_3600_36C79123A0003_3600/"
+            "text": "OLYMPUS AMERICA INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C25624N0022_3600_36F79721D0168_3600/"
           },
-          7834170.89,
+          1391246.28,
           "Department of Veterans Affairs"
         ],
         [
           20,
           {
-            "text": "MEDICAL PLACE INC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C79126F0027_3600_36C79123A0002_3600/"
+            "text": "KCI USA, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C26124F0383_3600_36F79723D0119_3600/"
           },
-          7603195.4,
+          1365183.11,
           "Department of Veterans Affairs"
         ],
         [
           21,
           {
-            "text": "OLYMPUS AMERICA INC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C24124N0541_3600_36F79721D0168_3600/"
+            "text": "PROAIM AMERICAS, LLC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10X27K0204_3600_36C10G25D0015_3600/"
           },
-          7486298.83,
+          1363470.92,
           "Department of Veterans Affairs"
         ],
         [
           22,
           {
             "text": "OLYMPUS AMERICA INC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C26325P1082_3600_-NONE-_-NONE-/"
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C24726N0875_3600_36F79721D0168_3600/"
           },
-          7322161.97,
+          1334049.43,
           "Department of Veterans Affairs"
         ],
         [
           23,
           {
-            "text": "FIRST NATION GROUP LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C79126F0004_3600_36C79123A0003_3600/"
+            "text": "OLYMPUS AMERICA INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C24423N0930_3600_36C24423A0023_3600/"
           },
-          7140582.25,
+          1245864.66,
           "Department of Veterans Affairs"
         ],
         [
           24,
           {
-            "text": "VARIAN MEDICAL SYSTEMS, INC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_SPE2D126F0129_9700_SPE2D125D0009_9700/"
+            "text": "O R ELDER INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10X27K0006_3600_36C10G24D0062_3600/"
           },
-          6915144,
-          "Department of Defense"
+          1114854.86,
+          "Department of Veterans Affairs"
         ],
         [
           25,
           {
-            "text": "SDV OFFICE SYSTEMS LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C25026N0849_3600_36C10G25D0013_3600/"
+            "text": "L1 ENTERPRISES INCORPORATED",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10X27K0208_3600_36C10X26D0018_3600/"
           },
-          6648840,
+          1077933.1,
           "Department of Veterans Affairs"
         ]
       ]
@@ -590,35 +570,49 @@
           14051050.28,
           "Department of Defense",
           "2027-05-11"
+        ],
+        [
+          6,
+          {
+            "text": "36C10B26N0201",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10B26N0201_3600_36C10B26D0017_3600/"
+          },
+          {
+            "text": "PAR EXCELLENCE SYSTEMS, INC",
+            "href": "https://www.usaspending.gov/recipient/449367c5-f1dd-69dd-cbaa-b6b644d637f2-C/latest/"
+          },
+          12674430,
+          "Department of Veterans Affairs",
+          "2027-09-28"
         ]
       ]
     }
   ],
   "narrative": {
-    "intro": "Surgical and Medical Instrument Manufacturing (NAICS 339112) has seen $1.1B in federal contract obligations in FY2026 to date. Total award activity includes 10,876 awards with an average award size of $97.6K. Obligations fell 34.1% year over year. Fiscal-year trends show a peak at $2.3B in FY21, declines to $1.1B in FY22, recoveries to $1.5B in FY23 and $2B in FY24, and a decline to $1.6B in FY25 before returning to $1.1B in FY26. The Department of Veterans Affairs is the dominant buyer with $899M in obligations so far this year. The Department of Defense follows with $68M and the Department of Health and Human Services with $61.5M. The vendor list is led by SDV OFFICE SYSTEMS LLC at $194M, FIRST NATION GROUP LLC at $103M, and OLYMPUS AMERICA INC at $90.1M. Contracting officers and small business teams should weigh VA demand and the concentration among a few large vendors when planning capture and partnership strategies.",
+    "intro": "Surgical and Medical Instrument Manufacturing (NAICS 339112) obligated $58.5M in FY2027 to date. The market recorded 328 awards with an average award size of $178K, and obligations fell 94.7% year over year. Fiscal-year obligations were $1.1B in FY22, $1.5B in FY23, $2B in FY24, $1.6B in FY25, $1.1B in FY26, and $58.5M in FY27 to date. The Department of Veterans Affairs accounted for $58.4M of FY2027 to date buying. OLYMPUS AMERICA INC received $18.3M in FY2027 to date, and nine other vendors received amounts ranging from $6.9M to $1.1M. All figures are contract obligations and current-year totals are partial, reflecting fiscal year to date activity rather than full-year totals.",
     "sections": [
       {
-        "heading": "Why did obligations change year over year?",
-        "body": "The market recorded obligations down 34.1% year over year. Fiscal-year history shows variability, with obligations at $2.3B in FY21, $1.1B in FY22, $1.5B in FY23, $2B in FY24, $1.6B in FY25, and $1.1B in FY26. Buyers and award cadence drove the swings, led by large VA activity in the current year. Program funding timing and multi-year procurements likely explain the peaks and troughs."
+        "heading": "Why did obligations fall so much year over year?",
+        "body": "Obligations fell 94.7% year over year. Fiscal-year obligations were $2B in FY24 and then declined to $1.6B in FY25 and $1.1B in FY26, arriving at $58.5M in FY27 to date. The Department of Veterans Affairs accounted for $58.4M of the FY2027 to date total."
       },
       {
-        "heading": "Who concentrates buying and supply in this NAICS?",
-        "body": "The Department of Veterans Affairs concentrates buying with $899M in FY2026 to date. The Department of Defense and the Department of Health and Human Services follow with $68M and $61.5M respectively. Vendor concentration is visible, with SDV OFFICE SYSTEMS LLC at $194M and FIRST NATION GROUP LLC at $103M leading suppliers. Smaller agency buys and many single awards make up the remainder of the $1.1B total."
+        "heading": "Who are the main buyers and suppliers in FY2027 to date?",
+        "body": "The Department of Veterans Affairs is the main buyer with $58.4M in obligations. The Department of Justice obligated $146K and the Environmental Protection Agency obligated $35.6K, while the Department of the Interior obligated $0. OLYMPUS AMERICA INC is the largest supplier with $18.3M, followed by SCRIPTPRO USA INC with $6.9M and HILL-ROM, INC. with $5.4M."
       }
     ]
   },
   "faq": [
     {
       "q": "How much does the federal government spend on NAICS 339112?",
-      "a": "The federal government has obligated $1.1B in NAICS 339112 so far in FY2026 to date. Total obligations across recent fiscal years were $2.3B in FY21, $1.1B in FY22, $1.5B in FY23, $2B in FY24, and $1.6B in FY25. Activity this year includes 10,876 awards at an average award size of $97.6K."
+      "a": "The federal government obligated $58.5M on NAICS 339112 in FY2027 to date. The sector recorded 328 awards with an average award size of $178K. Fiscal-year obligations were $1.1B in FY22, $1.5B in FY23, $2B in FY24, $1.6B in FY25, $1.1B in FY26, and $58.5M in FY27 to date, and obligations fell 94.7% year over year."
     },
     {
       "q": "Which agencies buy the most NAICS 339112 services?",
-      "a": "The Department of Veterans Affairs buys the most NAICS 339112 services, with $899M in FY2026 to date. The Department of Defense is the second-largest buyer with $68M, followed by the Department of Health and Human Services with $61.5M. Other buyers include the Department of Justice at $16.5M and the Department of the Interior at $11.9M."
+      "a": "The Department of Veterans Affairs buys the most NAICS 339112 services, obligating $58.4M in FY2027 to date. The Department of Justice obligated $146K and the Environmental Protection Agency obligated $35.6K in the same period. The Department of the Interior obligated $0."
     },
     {
       "q": "Who are the largest NAICS 339112 government contractors?",
-      "a": "SDV OFFICE SYSTEMS LLC, FIRST NATION GROUP LLC, and OLYMPUS AMERICA INC are the largest NAICS 339112 government contractors in FY2026 to date. SDV OFFICE SYSTEMS LLC has $194M in obligations, FIRST NATION GROUP LLC has $103M, and OLYMPUS AMERICA INC has $90.1M. Other top vendors include MEDICAL PLACE INC at $68.6M and SCRIPTPRO USA INC at $38M."
+      "a": "OLYMPUS AMERICA INC is the largest NAICS 339112 government contractor in FY2027 to date with $18.3M in obligations. Other top vendors are SCRIPTPRO USA INC with $6.9M, HILL-ROM, INC. with $5.4M, OMNICELL, INC. with $3.5M, PROAIM AMERICAS, LLC. with $3.3M, CAREFUSION SOLUTIONS, LLC with $3.1M, LOVELL GOVERNMENT SERVICES INC. with $2.5M, VERATHON INC with $2.3M, L1 ENTERPRISES INCORPORATED with $1.5M, and O R ELDER INC with $1.1M."
     }
   ],
   "related": [
@@ -656,5 +650,6 @@
       "label": "USAspending.gov award data",
       "href": "https://www.usaspending.gov"
     }
-  ]
+  ],
+  "noindex": true
 }

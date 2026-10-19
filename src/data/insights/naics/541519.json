@@ -1,20 +1,20 @@
 {
   "pageType": "naics",
   "slug": "541519",
-  "title": "NAICS 541519: $21.9B in Federal Contracts, FY2026",
+  "title": "NAICS 541519: $340M in Federal Contracts, FY2027",
   "h1": "Other Computer Related Services (NAICS 541519): Federal Contract Market",
-  "metaDescription": "Federal agencies obligated $21.9B on Other Computer Related Services (NAICS 541519) in FY2026 to date. See top vendors, top agencies, and trends.",
-  "updated": "2026-09-28",
+  "metaDescription": "Federal agencies obligated $340M on Other Computer Related Services (NAICS 541519) in FY2027 to date. See top vendors, top agencies, and trends.",
+  "updated": "2026-10-19",
   "fyWindow": {
-    "label": "FY2026 to date",
-    "start": "2025-10-01",
-    "end": "2026-09-28"
+    "label": "FY2027 to date",
+    "start": "2026-10-01",
+    "end": "2026-10-19"
   },
   "stats": {
-    "totalObligations": 21918009502.17,
-    "awardCount": 30504,
-    "yoyGrowthPct": -11.8,
-    "avgAwardSize": 718529,
+    "totalObligations": 340060244.79,
+    "awardCount": 589,
+    "yoyGrowthPct": -98.6,
+    "avgAwardSize": 577352,
     "smallBusinessSharePct": null
   },
   "charts": [
@@ -27,12 +27,8 @@
           "label": "Obligations",
           "points": [
             [
-              "FY21",
-              22447539809.46
-            ],
-            [
               "FY22",
-              23423631855.65
+              23423790855.65
             ],
             [
               "FY23",
@@ -40,147 +36,151 @@
             ],
             [
               "FY24",
-              25296476185.69
+              25199672868.5
             ],
             [
               "FY25",
-              24860786818.88
+              24862255334.22
             ],
             [
               "FY26",
-              21918009502.17
+              24242972877.53
+            ],
+            [
+              "FY27",
+              340060244.79
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Obligations fell 11.8% year over year, from $24.9B in FY2025 to $21.9B in FY2026 to date."
+      "takeaway": "Obligations fell 98.6% year over year, from $24.2B in FY2026 to $340M in FY2027 to date."
     },
     {
       "id": "541519-top-agencies",
       "type": "bar",
-      "title": "Top 10 buying agencies, FY2026 to date",
+      "title": "Top 10 buying agencies, FY2027 to date",
       "series": [
         {
           "label": "Obligations",
           "points": [
             [
-              "Department of Defense",
-              5738311439.72
-            ],
-            [
               "Department of Veterans Affairs",
-              2884032559.17
-            ],
-            [
-              "Department of Homeland Security",
-              2545485772.52
-            ],
-            [
-              "Department of Health and Human Services",
-              1949320701.33
-            ],
-            [
-              "Department of Justice",
-              1348341616.39
-            ],
-            [
-              "Department of the Treasury",
-              1190106785.34
+              207314427.66
             ],
             [
               "Department of Commerce",
-              912313606.76
+              61842715.51
             ],
             [
-              "Department of State",
-              903238009.07
+              "Department of the Treasury",
+              24147114.54
             ],
             [
               "General Services Administration",
-              583920709.52
+              17355011.51
+            ],
+            [
+              "National Archives and Records Administration",
+              5740902.77
             ],
             [
               "Social Security Administration",
-              558628811.77
+              5343042.39
+            ],
+            [
+              "Environmental Protection Agency",
+              4833686.45
+            ],
+            [
+              "National Aeronautics and Space Administration",
+              3966515.39
+            ],
+            [
+              "Department of Health and Human Services",
+              3244459.61
+            ],
+            [
+              "Department of Agriculture",
+              1715606.34
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Department of Defense was the top buyer, obligating $5.7B (26.2% of all obligations)."
+      "takeaway": "Department of Veterans Affairs was the top buyer, obligating $207M (61.0% of all obligations)."
     },
     {
       "id": "541519-top-vendors",
       "type": "bar",
-      "title": "Top 10 vendors, FY2026 to date",
+      "title": "Top 10 vendors, FY2027 to date",
       "series": [
         {
           "label": "Obligations",
           "points": [
             [
               "THUNDERCAT TECHNOLOGY, LLC",
-              1010323863.53
+              143002044.9
             ],
             [
-              "FOUR POINTS TECHNOLOGY, L.L.C.",
-              994361373.42
-            ],
-            [
-              "V3GATE, LLC",
-              972210696.71
-            ],
-            [
-              "FCN, INC.",
-              807194160.22
+              "GENERAL DYNAMICS INFORMATION TECHNOLOGY, INC.",
+              60488251.95
             ],
             [
               "CGI FEDERAL INC.",
-              569097792.09
+              9167518.39
+            ],
+            [
+              "FCN, INC.",
+              9017907.75
+            ],
+            [
+              "ERNST & YOUNG LLP",
+              8771468.27
             ],
             [
               "MINBURN TECHNOLOGY GROUP, LLC",
-              448664596.63
+              7972633.78
             ],
             [
-              "DELOITTE & TOUCHE LLP",
-              418529094.46
+              "ALVAREZ LLC",
+              6477759.53
             ],
             [
-              "NEW TECH SOLUTIONS, INC.",
-              385045885.96
+              "BRUCKEDWARDS, INC.",
+              6227104.18
             ],
             [
-              "EMERGENT, LLC",
-              334348476.48
+              "KING STREET TECHNOLOGY PARTNERS, LLC",
+              6220357.2
             ],
             [
-              "CACI NSS, LLC",
-              311669863.38
+              "ODDCORE JV, LLC",
+              5472643.02
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "THUNDERCAT TECHNOLOGY, LLC led all vendors with $1B in obligations, 4.6% of the market."
+      "takeaway": "THUNDERCAT TECHNOLOGY, LLC led all vendors with $143M in obligations, 42.1% of the market."
     }
   ],
   "crossLinks": [
-    {
-      "label": "Department of Defense contracts",
-      "href": "/insights/agency/department-of-defense/"
-    },
     {
       "label": "Department of Veterans Affairs contracts",
       "href": "/insights/agency/department-of-veterans-affairs/"
     },
     {
-      "label": "Department of Homeland Security contracts",
-      "href": "/insights/agency/department-of-homeland-security/"
+      "label": "Department of Commerce contracts",
+      "href": "/insights/agency/department-of-commerce/"
     },
     {
-      "label": "Department of Health and Human Services contracts",
-      "href": "/insights/agency/department-of-health-and-human-services/"
+      "label": "Department of the Treasury contracts",
+      "href": "/insights/agency/department-of-the-treasury/"
+    },
+    {
+      "label": "General Services Administration contracts",
+      "href": "/insights/agency/general-services-administration/"
     }
   ],
   "tables": [
@@ -198,23 +198,23 @@
             "text": "THUNDERCAT TECHNOLOGY, LLC",
             "href": "https://www.usaspending.gov/recipient/dbceb126-f729-60e7-d55a-ba235f519653-C/latest/"
           },
-          1010323863.53
+          143002044.9
         ],
         [
           2,
           {
-            "text": "FOUR POINTS TECHNOLOGY, L.L.C.",
-            "href": "https://www.usaspending.gov/recipient/2a4d3db7-e268-7b36-3610-c75337f0b7e1-C/latest/"
+            "text": "GENERAL DYNAMICS INFORMATION TECHNOLOGY, INC.",
+            "href": "https://www.usaspending.gov/recipient/455555be-773d-eab1-1e6b-7b94400b757e-C/latest/"
           },
-          994361373.42
+          60488251.95
         ],
         [
           3,
           {
-            "text": "V3GATE, LLC",
-            "href": "https://www.usaspending.gov/recipient/d46ad2a7-ed19-9535-4f24-787705845610-C/latest/"
+            "text": "CGI FEDERAL INC.",
+            "href": "https://www.usaspending.gov/recipient/d86df7af-f6c1-a07a-ccc4-ec74331bafc5-C/latest/"
           },
-          972210696.71
+          9167518.39
         ],
         [
           4,
@@ -222,15 +222,15 @@
             "text": "FCN, INC.",
             "href": "https://www.usaspending.gov/recipient/3792ca7f-d5d2-d89c-872b-8c64e4e6390e-C/latest/"
           },
-          807194160.22
+          9017907.75
         ],
         [
           5,
           {
-            "text": "CGI FEDERAL INC.",
-            "href": "https://www.usaspending.gov/recipient/d86df7af-f6c1-a07a-ccc4-ec74331bafc5-C/latest/"
+            "text": "ERNST & YOUNG LLP",
+            "href": "https://www.usaspending.gov/recipient/dd8305ba-1d9b-c594-9391-076ac5a963ad-C/latest/"
           },
-          569097792.09
+          8771468.27
         ],
         [
           6,
@@ -238,44 +238,44 @@
             "text": "MINBURN TECHNOLOGY GROUP, LLC",
             "href": "https://www.usaspending.gov/recipient/625ff1da-e9a2-cbdc-c8b3-fdd521fd1efc-C/latest/"
           },
-          448664596.63
+          7972633.78
         ],
         [
           7,
           {
-            "text": "DELOITTE & TOUCHE LLP",
-            "href": "https://www.usaspending.gov/recipient/921ab747-c89d-0aa2-e86e-5fa9b858e626-C/latest/"
+            "text": "ALVAREZ LLC",
+            "href": "https://www.usaspending.gov/recipient/d55dabdb-0c89-b6e8-e4f5-5817d2be7b63-C/latest/"
           },
-          418529094.46
+          6477759.53
         ],
         [
           8,
           {
-            "text": "NEW TECH SOLUTIONS, INC.",
-            "href": "https://www.usaspending.gov/recipient/e0f8746a-9a3b-810a-257a-cae2d63868da-C/latest/"
+            "text": "BRUCKEDWARDS, INC.",
+            "href": "https://www.usaspending.gov/recipient/fbe9bd81-5fb7-0dc3-4165-a4af7cc92f35-C/latest/"
           },
-          385045885.96
+          6227104.18
         ],
         [
           9,
           {
-            "text": "EMERGENT, LLC",
-            "href": "https://www.usaspending.gov/recipient/d20dbc28-ffde-003c-e506-9e3a16d343b6-C/latest/"
+            "text": "KING STREET TECHNOLOGY PARTNERS, LLC",
+            "href": "https://www.usaspending.gov/recipient/7b4ac4f2-2d67-d7eb-4df3-ec6ca3822a3f-C/latest/"
           },
-          334348476.48
+          6220357.2
         ],
         [
           10,
           {
-            "text": "CACI NSS, LLC",
-            "href": "https://www.usaspending.gov/recipient/49aa319d-7bfb-ef1b-d43e-e82eed09d3bf-C/latest/"
+            "text": "ODDCORE JV, LLC",
+            "href": "https://www.usaspending.gov/recipient/2fa28948-75b5-2956-376f-7d226f77f508-C/latest/"
           },
-          311669863.38
+          5472643.02
         ]
       ]
     },
     {
-      "title": "Largest awards, FY2026 to date",
+      "title": "Largest awards, FY2027 to date",
       "columns": [
         "Rank",
         "Recipient",
@@ -286,227 +286,227 @@
         [
           1,
           {
-            "text": "LEIDOS, INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_28321322FDS030130_2800_SS001760016_2800/"
+            "text": "THUNDERCAT TECHNOLOGY, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10B26F0287_3600_NNG15SD26B_8000/"
           },
-          1063049268.31,
-          "Social Security Administration"
+          359034041.28,
+          "Department of Veterans Affairs"
         ],
         [
           2,
           {
-            "text": "LEIDOS, INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_DTFA0101CA0065CALL0001_6920_DTFA0101CA0065_6920/"
+            "text": "FCN, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_2032H523F00493_2050_NNG15SC71B_8000/"
           },
-          685079600.02,
-          "Department of Transportation"
+          233451576.07,
+          "Department of the Treasury"
         ],
         [
           3,
           {
-            "text": "WORLD WIDE TECHNOLOGY LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_HC108421F0175_9700_NNG15SC55B_8000/"
+            "text": "FOUR POINTS TECHNOLOGY, L.L.C.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_80TECH24FA015_8000_NNG15SD22B_8000/"
           },
-          627456697.85,
-          "Department of Defense"
+          138628963.65,
+          "National Aeronautics and Space Administration"
         ],
         [
           4,
           {
-            "text": "V3GATE, LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10B23F0172_3600_NNG15SD27B_8000/"
+            "text": "H2 TECHNOLOGY GROUP, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10B24F0430_3600_47QTCA24D008Y_4732/"
           },
-          576889048.72,
+          119358180.38,
           "Department of Veterans Affairs"
         ],
         [
           5,
           {
-            "text": "FOUR POINTS TECHNOLOGY, L.L.C.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10B22F0207_3600_NNG15SD22B_8000/"
+            "text": "IRON VINE SECURITY LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_1333LB21F00000320_1323_47QTCA19D00HF_4732/"
           },
-          521824443.39,
-          "Department of Veterans Affairs"
+          104028980.33,
+          "Department of Commerce"
         ],
         [
           6,
           {
-            "text": "I3 FEDERAL LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_75D30122F15723_7523_NNG15SD31B_8000/"
+            "text": "XPECT SOLUTIONS LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_15F06723F0001542_1549_GS35F457AA_4732/"
           },
-          517998604.78,
-          "Department of Health and Human Services"
+          88626141.6,
+          "Department of Justice"
         ],
         [
           7,
           {
-            "text": "SERCO INC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_W911S018C0004_9700_-NONE-_-NONE-/"
+            "text": "ERNST & YOUNG LLP",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_47QFDA22F0017_4732_47QTCA18D003W_4732/"
           },
-          507327809.31,
-          "Department of Defense"
+          87856732.49,
+          "General Services Administration"
         ],
         [
           8,
           {
-            "text": "EMERGENT, LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_FA877122F0022_9700_NNG15SC33B_8000/"
+            "text": "DELOITTE & TOUCHE LLP",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75N92022F00065_7529_GS00F029DA_4732/"
           },
-          419737159.16,
-          "Department of Defense"
+          87480576,
+          "Department of Health and Human Services"
         ],
         [
           9,
           {
-            "text": "METGREEN SOLUTIONS INC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10B23F0319_3600_NNG15SD37B_8000/"
+            "text": "ECS FEDERAL, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_EPG12H00442_6800_GS35F0601K_4730/"
           },
-          389497831.12,
-          "Department of Veterans Affairs"
+          68610159.77,
+          "Environmental Protection Agency"
         ],
         [
           10,
           {
-            "text": "MINBURN TECHNOLOGY GROUP, LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_19AQMM24F0570_1900_NNG15SD34B_8000/"
+            "text": "SYSTALEX CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_68HERD21F0106_6800_47QTCA20D0006_4732/"
           },
-          380440675.42,
-          "Department of State"
+          65806396.3,
+          "Environmental Protection Agency"
         ],
         [
           11,
           {
             "text": "GENERAL DYNAMICS INFORMATION TECHNOLOGY, INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_HC102819F0141_9700_HC102819A0001_9700/"
+            "href": "https://www.usaspending.gov/award/CONT_AWD_1333BJ27C00280001_1344_-NONE-_-NONE-/"
           },
-          372673129.51,
-          "Department of Defense"
+          60488251.95,
+          "Department of Commerce"
         ],
         [
           12,
           {
-            "text": "ACCENTURE FEDERAL SERVICES LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_HSBP1017C00137_7014_-NONE-_-NONE-/"
+            "text": "IMPRES TECHNOLOGY SOLUTIONS, INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_47QACA26F0076_4732_47QACA25A0090_4732/"
           },
-          370125532.06,
-          "Department of Homeland Security"
+          45694160.02,
+          "General Services Administration"
         ],
         [
           13,
           {
-            "text": "LANCER INFORMATION SOLUTIONS, LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_2032H325F00032_2001_NNG15SD29B_8000/"
+            "text": "DELOITTE & TOUCHE LLP",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_2031JW22F00004_2046_GS00F029DA_4732/"
           },
-          352353496.68,
+          42414688,
           "Department of the Treasury"
         ],
         [
           14,
           {
-            "text": "CDW GOVERNMENT LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_19AQMM19F0913_1900_NNG15SC28B_8000/"
+            "text": "THUNDERCAT TECHNOLOGY, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10A22F0162_3600_NNG15SD26B_8000/"
           },
-          340169525.67,
-          "Department of State"
+          38799806.98,
+          "Department of Veterans Affairs"
         ],
         [
           15,
           {
-            "text": "IRON BOW TECHNOLOGIES, LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_HC108421F0168_9700_NNG15SC41B_8000/"
+            "text": "DISTRIBUTED SOLUTIONS, INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10B23F0009_3600_47QTCA18D0095_4732/"
           },
-          328626550,
-          "Department of Defense"
+          35630595.06,
+          "Department of Veterans Affairs"
         ],
         [
           16,
           {
-            "text": "LEIDOS, INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_70B04C24F00000739_7014_70B04C20A00000008_7014/"
+            "text": "REGAN TECHNOLOGIES CORP",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_47QACA25F0279_4732_NNG15SD39B_8000/"
           },
-          318445309.86,
-          "Department of Homeland Security"
+          20507622.46,
+          "General Services Administration"
         ],
         [
           17,
           {
-            "text": "CARAHSOFT TECHNOLOGY CORP",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_12314420F0355_1205_NNG15SC27B_8000/"
+            "text": "PERATON INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_15F06726F0000743_1549_15F06724A0000305_1549/"
           },
-          294589912.53,
-          "Department of Agriculture"
+          19899764.67,
+          "Department of Justice"
         ],
         [
           18,
           {
-            "text": "IRON BOW TECHNOLOGIES, LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_HC108422F0162_9700_HC108422D0001_9700/"
+            "text": "ODDCORE JV, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10B25N00070008_3600_36C10B25D0007_3600/"
           },
-          293246375.91,
-          "Department of Defense"
+          19628421.38,
+          "Department of Veterans Affairs"
         ],
         [
           19,
           {
-            "text": "DLT SOLUTIONS, LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_N0018923FR338_9700_NNG15SC98B_8000/"
+            "text": "THUNDERCAT TECHNOLOGY, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C24422F0587_3600_NNG15SD26B_8000/"
           },
-          272395594.35,
-          "Department of Defense"
+          18728359.3,
+          "Department of Veterans Affairs"
         ],
         [
           20,
           {
-            "text": "FOUR LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_2032H523F00382_2050_NNG15SC73B_8000/"
+            "text": "KING STREET TECHNOLOGY PARTNERS, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10B25F0266_3600_47QTCA23D00ET_4732/"
           },
-          259389462.26,
-          "Department of the Treasury"
+          18663485.36,
+          "Department of Veterans Affairs"
         ],
         [
           21,
           {
-            "text": "KARSUN SOLUTIONS LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_0008_6920_DTFACT17D00007_6920/"
+            "text": "GOVCIO, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_20340925C00001_2036_-NONE-_-NONE-/"
           },
-          251496806.61,
-          "Department of Transportation"
+          16547677.09,
+          "Department of the Treasury"
         ],
         [
           22,
           {
-            "text": "CACI ENTERPRISE SOLUTIONS, LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_SP470922F0028_9700_SP470917D0009_9700/"
+            "text": "DEFINITIVE LOGIC CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70B01C23F00001026_7014_70RTAC21A00000012_7001/"
           },
-          249284549.86,
-          "Department of Defense"
+          16499505.02,
+          "Department of Homeland Security"
         ],
         [
           23,
           {
-            "text": "CACI NSS, LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10B20F0250_3600_GS35F349CA_4732/"
+            "text": "DATA COMPUTER CORPORATION OF AMERICA",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75FCMC21F0059_7530_GS35F303GA_4732/"
           },
-          244582347.7,
-          "Department of Veterans Affairs"
+          16222256.48,
+          "Department of Health and Human Services"
         ],
         [
           24,
           {
-            "text": "FCN, INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_2032H523F00058_2050_47QTCA19D00CB_4732/"
+            "text": "CGI FEDERAL INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10B26F0001_3600_GS35F281DA_4732/"
           },
-          242713808.56,
-          "Department of the Treasury"
+          14705744.03,
+          "Department of Veterans Affairs"
         ],
         [
           25,
           {
-            "text": "MANTECH ADVANCED SYSTEMS INTERNATIONAL, INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_15F06722C0000304_1549_-NONE-_-NONE-/"
+            "text": "FEDSTORE CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10B25F0024_3600_NNG15SD21B_8000/"
           },
-          241848117.9,
-          "Department of Justice"
+          13698280.44,
+          "Department of Veterans Affairs"
         ]
       ]
     },
@@ -531,9 +531,9 @@
             "text": "LEIDOS, INC.",
             "href": "https://www.usaspending.gov/recipient/32109085-1976-8da6-d5cd-7c8077389b75-C/latest/"
           },
-          1063049268.31,
+          1305112748.86,
           "Social Security Administration",
-          "2026-12-31"
+          "2027-09-28"
         ],
         [
           2,
@@ -552,6 +552,20 @@
         [
           3,
           {
+            "text": "75D30122F15723",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75D30122F15723_7523_NNG15SD31B_8000/"
+          },
+          {
+            "text": "I3 FEDERAL LLC",
+            "href": "https://www.usaspending.gov/recipient/d466924a-46e8-7e29-9360-266030d4c8d9-C/latest/"
+          },
+          517998604.78,
+          "Department of Health and Human Services",
+          "2027-09-29"
+        ],
+        [
+          4,
+          {
             "text": "36C10B23F0319",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C10B23F0319_3600_NNG15SD37B_8000/"
           },
@@ -564,7 +578,7 @@
           "2027-03-21"
         ],
         [
-          4,
+          5,
           {
             "text": "19AQMM24F0570",
             "href": "https://www.usaspending.gov/award/CONT_AWD_19AQMM24F0570_1900_NNG15SD34B_8000/"
@@ -573,12 +587,26 @@
             "text": "MINBURN TECHNOLOGY GROUP, LLC",
             "href": "https://www.usaspending.gov/recipient/625ff1da-e9a2-cbdc-c8b3-fdd521fd1efc-C/latest/"
           },
-          380440675.42,
+          381129548.01,
           "Department of State",
           "2027-02-28"
         ],
         [
-          5,
+          6,
+          {
+            "text": "36C10B26F0287",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10B26F0287_3600_NNG15SD26B_8000/"
+          },
+          {
+            "text": "THUNDERCAT TECHNOLOGY, LLC",
+            "href": "https://www.usaspending.gov/recipient/dbceb126-f729-60e7-d55a-ba235f519653-C/latest/"
+          },
+          359034041.28,
+          "Department of Veterans Affairs",
+          "2027-03-31"
+        ],
+        [
+          7,
           {
             "text": "2032H325F00032",
             "href": "https://www.usaspending.gov/award/CONT_AWD_2032H325F00032_2001_NNG15SD29B_8000/"
@@ -592,7 +620,7 @@
           "2027-04-14"
         ],
         [
-          6,
+          8,
           {
             "text": "70B04C24F00000739",
             "href": "https://www.usaspending.gov/award/CONT_AWD_70B04C24F00000739_7014_70B04C20A00000008_7014/"
@@ -606,7 +634,7 @@
           "2027-05-30"
         ],
         [
-          7,
+          9,
           {
             "text": "HC108422F0162",
             "href": "https://www.usaspending.gov/award/CONT_AWD_HC108422F0162_9700_HC108422D0001_9700/"
@@ -620,7 +648,7 @@
           "2027-06-20"
         ],
         [
-          8,
+          10,
           {
             "text": "2032H523F00382",
             "href": "https://www.usaspending.gov/award/CONT_AWD_2032H523F00382_2050_NNG15SC73B_8000/"
@@ -634,7 +662,7 @@
           "2027-06-29"
         ],
         [
-          9,
+          11,
           {
             "text": "0008",
             "href": "https://www.usaspending.gov/award/CONT_AWD_0008_6920_DTFACT17D00007_6920/"
@@ -648,21 +676,7 @@
           "2027-08-14"
         ],
         [
-          10,
-          {
-            "text": "36C10B20F0250",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10B20F0250_3600_GS35F349CA_4732/"
-          },
-          {
-            "text": "CACI NSS, LLC",
-            "href": "https://www.usaspending.gov/recipient/49aa319d-7bfb-ef1b-d43e-e82eed09d3bf-C/latest/"
-          },
-          244582347.7,
-          "Department of Veterans Affairs",
-          "2026-09-30"
-        ],
-        [
-          11,
+          12,
           {
             "text": "2032H523F00058",
             "href": "https://www.usaspending.gov/award/CONT_AWD_2032H523F00058_2050_47QTCA19D00CB_4732/"
@@ -676,7 +690,7 @@
           "2026-11-30"
         ],
         [
-          12,
+          13,
           {
             "text": "70B04C24F00000413",
             "href": "https://www.usaspending.gov/award/CONT_AWD_70B04C24F00000413_7014_NNG15SD22B_8000/"
@@ -690,7 +704,21 @@
           "2026-12-31"
         ],
         [
-          13,
+          14,
+          {
+            "text": "28321324FA0010214",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_28321324FA0010214_2800_28321321A00040003_2800/"
+          },
+          {
+            "text": "FOUR POINTS TECHNOLOGY, L.L.C.",
+            "href": "https://www.usaspending.gov/recipient/2a4d3db7-e268-7b36-3610-c75337f0b7e1-C/latest/"
+          },
+          234794253.74,
+          "Social Security Administration",
+          "2027-09-29"
+        ],
+        [
+          15,
           {
             "text": "2032H523F00493",
             "href": "https://www.usaspending.gov/award/CONT_AWD_2032H523F00493_2050_NNG15SC71B_8000/"
@@ -702,63 +730,35 @@
           233451576.07,
           "Department of the Treasury",
           "2027-08-24"
-        ],
-        [
-          14,
-          {
-            "text": "36C10B26F0287",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10B26F0287_3600_NNG15SD26B_8000/"
-          },
-          {
-            "text": "THUNDERCAT TECHNOLOGY, LLC",
-            "href": "https://www.usaspending.gov/recipient/dbceb126-f729-60e7-d55a-ba235f519653-C/latest/"
-          },
-          221952278.4,
-          "Department of Veterans Affairs",
-          "2026-09-30"
-        ],
-        [
-          15,
-          {
-            "text": "36C10B26F0195",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10B26F0195_3600_NNG15SD27B_8000/"
-          },
-          {
-            "text": "V3GATE, LLC",
-            "href": "https://www.usaspending.gov/recipient/d46ad2a7-ed19-9535-4f24-787705845610-C/latest/"
-          },
-          219947682.77,
-          "Department of Veterans Affairs",
-          "2027-07-25"
         ]
       ]
     }
   ],
   "narrative": {
-    "intro": "Other Computer Related Services (NAICS 541519) recorded $21.9B in federal contract obligations in FY2026 to date. The market delivered 30,504 awards with an average award size of $719K. Obligations fell 11.8% year over year. Obligations peaked at $25.4B in FY23 and remained near that level in FY24 and FY25 before moving to $21.9B in FY26 to date. The Department of Defense led buying with $5.7B, followed by the Department of Veterans Affairs with $2.9B and the Department of Homeland Security with $2.5B. THUNDERCAT TECHNOLOGY, LLC, FOUR POINTS TECHNOLOGY, L.L.C., and V3GATE, LLC are the top vendors with $1B, $994M, and $972M in obligations respectively. The market shows concentration at the top buyers and top vendors while the overall obligation total declined year over year. Contractors should note award volume, average award size, and the agency concentration when considering pursuit strategies in this NAICS for the current fiscal year.",
+    "intro": "Other Computer Related Services (NAICS 541519) recorded $340M in federal contract obligations in FY2027 to date. The market produced 589 awards with an average award size of $577K. Obligations are down 98.6% year over year compared with prior full fiscal years, reflecting a sharp decline in current-year spending. The Department of Veterans Affairs is the largest buyer in FY2027 to date at $207M, followed by the Department of Commerce at $61.8M and the Department of the Treasury at $24.1M. THUNDERCAT TECHNOLOGY, LLC leads vendors with $143M in obligations, and GENERAL DYNAMICS INFORMATION TECHNOLOGY, INC. is second at $60.5M. Fiscal-year history shows much larger annual totals: FY22 was $23.4B, FY23 was $25.4B, FY24 was $25.2B, FY25 was $24.9B, and FY26 was $24.2B. Current-year totals are partial and reflect fiscal year to date activity rather than a complete fiscal year, so FY2027 to date should be considered a snapshot of a still-open year.",
     "sections": [
       {
-        "heading": "How has the NAICS 541519 market trended recently?",
-        "body": "Obligations fell 11.8% year over year. Obligations moved from $25.4B in FY23 to $25.3B in FY24 and $24.9B in FY25 before reaching $21.9B in FY26 to date. Award volume is 30,504 with an average award size of $719K. The trend shows a lower total in the current fiscal year to date compared with prior years."
+        "heading": "How big is federal spending on NAICS 541519 right now?",
+        "body": "The federal government obligated $340M on NAICS 541519 in FY2027 to date. The market produced 589 awards with an average award size of $577K. Obligations are down 98.6% year over year, and current-year totals are partial because the fiscal year is ongoing."
       },
       {
-        "heading": "Who are the biggest buyers and sellers in NAICS 541519?",
-        "body": "The Department of Defense bought $5.7B, the Department of Veterans Affairs bought $2.9B, and the Department of Homeland Security bought $2.5B in FY2026 to date. THUNDERCAT TECHNOLOGY, LLC received $1B, FOUR POINTS TECHNOLOGY, L.L.C. received $994M, and V3GATE, LLC received $972M in obligations. The top ten buyers and vendors together show where most obligations are concentrated. Agencies and contractors at the top dominate the current fiscal-year flow."
+        "heading": "Who are the top buyers and contractors in this NAICS?",
+        "body": "The Department of Veterans Affairs is the top buyer in FY2027 to date at $207M, followed by the Department of Commerce at $61.8M and the Department of the Treasury at $24.1M. THUNDERCAT TECHNOLOGY, LLC is the largest contractor at $143M, and GENERAL DYNAMICS INFORMATION TECHNOLOGY, INC. is second at $60.5M."
       }
     ]
   },
   "faq": [
     {
       "q": "How much does the federal government spend on NAICS 541519?",
-      "a": "The federal government spent $21.9B on NAICS 541519 in FY2026 to date. Total obligations for the NAICS are $21.9B, distributed across 30,504 awards with an average award size of $719K. Obligations fell 11.8% year over year."
+      "a": "The federal government obligated $340M on NAICS 541519 in FY2027 to date. Fiscal-year history shows FY22 at $23.4B, FY23 at $25.4B, FY24 at $25.2B, FY25 at $24.9B, and FY26 at $24.2B, and current-year totals are partial because the fiscal year is ongoing."
     },
     {
       "q": "Which agencies buy the most NAICS 541519 services?",
-      "a": "The Department of Defense, the Department of Veterans Affairs, and the Department of Homeland Security buy the most NAICS 541519 services. The Department of Defense obligated $5.7B, the Department of Veterans Affairs obligated $2.9B, and the Department of Homeland Security obligated $2.5B in FY2026 to date. Several other agencies, including HHS and DOJ, also appear among the top ten buyers."
+      "a": "The Department of Veterans Affairs is the largest buyer of NAICS 541519 services in FY2027 to date at $207M, followed by the Department of Commerce at $61.8M and the Department of the Treasury at $24.1M. Additional top buyers include the General Services Administration at $17.4M and the National Archives and Records Administration at $5.7M."
     },
     {
       "q": "Who are the largest NAICS 541519 government contractors?",
-      "a": "THUNDERCAT TECHNOLOGY, LLC, FOUR POINTS TECHNOLOGY, L.L.C., and V3GATE, LLC are the largest NAICS 541519 government contractors. THUNDERCAT TECHNOLOGY, LLC received $1B, FOUR POINTS TECHNOLOGY, L.L.C. received $994M, and V3GATE, LLC received $972M in FY2026 to date. Other top vendors include FCN, INC. at $807M and CGI FEDERAL INC. at $569M."
+      "a": "THUNDERCAT TECHNOLOGY, LLC is the largest NAICS 541519 government contractor in FY2027 to date at $143M, followed by GENERAL DYNAMICS INFORMATION TECHNOLOGY, INC. at $60.5M. Other top vendors include CGI FEDERAL INC. at $9.2M and FCN, INC. at $9M."
     }
   ],
   "related": [

@@ -1,0 +1,207 @@
+{
+  "pageType": "report",
+  "slug": "most-active-naics",
+  "week": "2026-w43",
+  "publishedDate": "2026-10-19",
+  "title": "Most Active Federal Markets This Week, Oct 13–19, 2026",
+  "h1": "Most active federal contract markets, week of Oct 13–19, 2026",
+  "metaDescription": "The most active federal contract industries (by newly reported obligations) the week of Oct 13–19, 2026, led by Research and Development in the Physical, Engi",
+  "updated": "2026-10-19",
+  "fyWindow": {
+    "label": "Week of Oct 13–19, 2026",
+    "start": "2026-10-13",
+    "end": "2026-10-19"
+  },
+  "stats": {
+    "totalObligations": 636284534.51,
+    "awardCount": null,
+    "yoyGrowthPct": null,
+    "avgAwardSize": null,
+    "smallBusinessSharePct": null
+  },
+  "charts": [
+    {
+      "id": "2026-w43-most-active-naics",
+      "type": "bar",
+      "title": "Most active industries (NAICS) by obligations, week of Oct 13–19, 2026",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology)",
+              193346623.74
+            ],
+            [
+              "Nonferrous Metal (except Aluminum) Smelting and Refining",
+              91701128.51
+            ],
+            [
+              "Research and Development in the Physical, Engineering, and Life Sciences",
+              81138891
+            ],
+            [
+              "Engineering Services",
+              67694968.42
+            ],
+            [
+              "Custom Computer Programming Services",
+              58561591.13
+            ],
+            [
+              "Computer Systems Design Services",
+              37980107.6
+            ],
+            [
+              "Other Computer Related Services",
+              33100825.84
+            ],
+            [
+              "Commercial and Institutional Building Construction",
+              29729838.73
+            ],
+            [
+              "All Other Professional, Scientific, and Technical Services",
+              24851623.77
+            ],
+            [
+              "Facilities Support Services",
+              18178935.77
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology) was the most active market, with $193M in newly reported obligations."
+    }
+  ],
+  "tables": [
+    {
+      "title": "Most active industries, week of Oct 13–19, 2026",
+      "columns": [
+        "Rank",
+        "Industry (NAICS)",
+        "Obligations"
+      ],
+      "rows": [
+        [
+          1,
+          {
+            "text": "Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology) (541715)",
+            "href": "/insights/naics/541715/"
+          },
+          193346623.74
+        ],
+        [
+          2,
+          {
+            "text": "Nonferrous Metal (except Aluminum) Smelting and Refining (331410)",
+            "href": null
+          },
+          91701128.51
+        ],
+        [
+          3,
+          {
+            "text": "Research and Development in the Physical, Engineering, and Life Sciences (541710)",
+            "href": null
+          },
+          81138891
+        ],
+        [
+          4,
+          {
+            "text": "Engineering Services (541330)",
+            "href": "/insights/naics/541330/"
+          },
+          67694968.42
+        ],
+        [
+          5,
+          {
+            "text": "Custom Computer Programming Services (541511)",
+            "href": "/insights/naics/541511/"
+          },
+          58561591.13
+        ],
+        [
+          6,
+          {
+            "text": "Computer Systems Design Services (541512)",
+            "href": "/insights/naics/541512/"
+          },
+          37980107.6
+        ],
+        [
+          7,
+          {
+            "text": "Other Computer Related Services (541519)",
+            "href": "/insights/naics/541519/"
+          },
+          33100825.84
+        ],
+        [
+          8,
+          {
+            "text": "Commercial and Institutional Building Construction (236220)",
+            "href": "/insights/naics/236220/"
+          },
+          29729838.73
+        ],
+        [
+          9,
+          {
+            "text": "All Other Professional, Scientific, and Technical Services (541990)",
+            "href": "/insights/naics/541990/"
+          },
+          24851623.77
+        ],
+        [
+          10,
+          {
+            "text": "Facilities Support Services (561210)",
+            "href": "/insights/naics/561210/"
+          },
+          18178935.77
+        ]
+      ]
+    }
+  ],
+  "narrative": {
+    "intro": "Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology) was the most active federal contract market the week of Oct 13–19, 2026, with $193M in newly reported obligations. The ten most active industries obligated $636M combined.",
+    "sections": []
+  },
+  "faq": [],
+  "related": [
+    {
+      "label": "NAICS 541715: Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology)",
+      "href": "/insights/naics/541715/"
+    },
+    {
+      "label": "NAICS 541330: Engineering Services",
+      "href": "/insights/naics/541330/"
+    },
+    {
+      "label": "NAICS 541511: Custom Computer Programming Services",
+      "href": "/insights/naics/541511/"
+    },
+    {
+      "label": "NAICS 541512: Computer Systems Design Services",
+      "href": "/insights/naics/541512/"
+    },
+    {
+      "label": "NAICS 541519: Other Computer Related Services",
+      "href": "/insights/naics/541519/"
+    },
+    {
+      "label": "NAICS 236220: Commercial and Institutional Building Construction",
+      "href": "/insights/naics/236220/"
+    }
+  ],
+  "sources": [
+    {
+      "label": "USAspending.gov award data",
+      "href": "https://www.usaspending.gov"
+    }
+  ]
+}

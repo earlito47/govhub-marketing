@@ -1,20 +1,20 @@
 {
   "pageType": "agency",
   "slug": "department-of-homeland-security",
-  "title": "DHS Federal Contracts: $69.1B in FY2026",
+  "title": "DHS Federal Contracts: $58.1M in FY2027",
   "h1": "Department of Homeland Security: Federal Contract Spending & Top Vendors",
-  "metaDescription": "Department of Homeland Security obligated $69.1B in federal contracts in FY2026 to date. See what it buys, its top vendors, and multi-year trend.",
-  "updated": "2026-09-28",
+  "metaDescription": "Department of Homeland Security obligated $58.1M in federal contracts in FY2027 to date. See what it buys, its top vendors, and multi-year trend.",
+  "updated": "2026-10-19",
   "fyWindow": {
-    "label": "FY2026 to date",
-    "start": "2025-10-01",
-    "end": "2026-09-28"
+    "label": "FY2027 to date",
+    "start": "2026-10-01",
+    "end": "2026-10-19"
   },
   "stats": {
-    "totalObligations": 69061962700.29,
-    "awardCount": 30042,
-    "yoyGrowthPct": 143.7,
-    "avgAwardSize": 2298847,
+    "totalObligations": 58056415.37,
+    "awardCount": 335,
+    "yoyGrowthPct": -99.9,
+    "avgAwardSize": 173303,
     "smallBusinessSharePct": null
   },
   "charts": [
@@ -27,10 +27,6 @@
           "label": "Obligations",
           "points": [
             [
-              "FY21",
-              19737219274.56
-            ],
-            [
               "FY22",
               20838075967.51
             ],
@@ -40,143 +36,147 @@
             ],
             [
               "FY24",
-              23604370475.8
+              23604102846.01
             ],
             [
               "FY25",
-              28337175908.31
+              28337151316.26
             ],
             [
               "FY26",
-              69061962700.29
+              73318825282.99
+            ],
+            [
+              "FY27",
+              58056415.37
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Obligations grew 143.7% year over year, from $28.3B in FY2025 to $69.1B in FY2026 to date."
+      "takeaway": "Obligations fell 99.9% year over year, from $73.3B in FY2026 to $58.1M in FY2027 to date."
     },
     {
       "id": "department-of-homeland-security-top-naics",
       "type": "bar",
-      "title": "Top 10 categories (NAICS), FY2026 to date",
+      "title": "Top 10 categories (NAICS), FY2027 to date",
       "series": [
         {
           "label": "Obligations",
           "points": [
             [
-              "Commercial and Institutional Building Construction",
-              30281042023.09
+              "Custom Computer Programming Services",
+              37183179
             ],
             [
-              "Ship Building and Repairing",
-              7945460244.21
-            ],
-            [
-              "Security Guards and Patrol Services",
-              4340723076.74
-            ],
-            [
-              "Process, Physical Distribution, and Logistics Consulting Services",
-              3174948538.38
-            ],
-            [
-              "Other Computer Related Services",
-              2545485772.52
+              "Office Administrative Services",
+              11400591.18
             ],
             [
               "Computer Systems Design Services",
-              2515499532.03
+              11217126.74
+            ],
+            [
+              "All Other Support Services",
+              2881332
+            ],
+            [
+              "Offices of Certified Public Accountants",
+              2338771.39
+            ],
+            [
+              "Other Computer Related Services",
+              1438935.78
             ],
             [
               "Engineering Services",
-              1756915713.41
+              559242.98
             ],
             [
-              "All Other Travel Arrangement and Reservation Services",
-              1180794540.44
+              "Ship Building and Repairing",
+              527920.21
             ],
             [
-              "Other Support Activities for Air Transportation",
-              1078407912.22
+              "Other Engine Equipment Manufacturing",
+              111505.84
             ],
             [
-              "Search, Detection, Navigation, Guidance, Aeronautical, and Nautical System and Instrument Manufacturing",
-              943450224.55
+              "Security Guards and Patrol Services",
+              97938.44
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Commercial and Institutional Building Construction was Homeland Security's largest contract category, with $30.3B obligated (43.8% of contract spending)."
+      "takeaway": "Custom Computer Programming Services was Homeland Security's largest contract category, with $37.2M obligated (64.0% of contract spending)."
     },
     {
       "id": "department-of-homeland-security-top-vendors",
       "type": "bar",
-      "title": "Top 10 vendors, FY2026 to date",
+      "title": "Top 10 vendors, FY2027 to date",
       "series": [
         {
           "label": "Obligations",
           "points": [
             [
-              "FISHER SAND & GRAVEL CO",
-              13353127851.7
+              "METROIBR JV LLC",
+              22723637.04
             ],
             [
-              "BARNARD CONSTRUCTION COMPANY, INCORPORATED",
-              4543208700.7
+              "KYC ADVISORS LLC",
+              11827019.88
             ],
             [
-              "DAVIE DEFENSE INC.",
-              3500000000
+              "KONIAG BRILLIENT, LLC",
+              11400591.18
             ],
             [
-              "SOUTHWEST VALLEY CONSTRUCTORS CO",
-              2474599831
+              "SPATIAL FRONT INC",
+              6544719.65
             ],
             [
-              "SLS FEDERAL SERVICES LLC",
-              2379100930
+              "STELLA JV, LLC",
+              5981676.48
             ],
             [
-              "SPENCER CONSTRUCTION LLC",
-              2361541157.42
+              "INTERNATIONAL ORGANIZATION FOR MIGRATION",
+              2837692
             ],
             [
-              "BOLLINGER SHIPYARDS LOCKPORT, L.L.C.",
-              2205175896
+              "KEARNEY & COMPANY, P.C.",
+              2338771.39
             ],
             [
-              "AMI METALS, INC",
-              2022176160.58
+              "1 SOURCE CONSULTING, INC.",
+              2003826.24
             ],
             [
-              "CSI AVIATION, INC",
-              1285342228.91
+              "ALVAREZ LLC",
+              1983364.87
             ],
             [
-              "RAUMA MARINE CONSTRUCTIONS OY",
-              1122648775.26
+              "APPDDICTIONSTUDIO LIMITED LIABILITY COMPANY",
+              628695.84
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "FISHER SAND & GRAVEL CO led all Homeland Security contractors with $13.4B, 19.3% of obligations."
+      "takeaway": "METROIBR JV LLC led all Homeland Security contractors with $22.7M, 39.1% of obligations."
     }
   ],
   "crossLinks": [
     {
-      "label": "NAICS 236220: Commercial and Institutional Building Construction",
-      "href": "/insights/naics/236220/"
+      "label": "NAICS 541511: Custom Computer Programming Services",
+      "href": "/insights/naics/541511/"
     },
     {
-      "label": "NAICS 336611: Ship Building and Repairing",
-      "href": "/insights/naics/336611/"
+      "label": "NAICS 561110: Office Administrative Services",
+      "href": "/insights/naics/561110/"
     },
     {
-      "label": "NAICS 561612: Security Guards and Patrol Services",
-      "href": "/insights/naics/561612/"
+      "label": "NAICS 541512: Computer Systems Design Services",
+      "href": "/insights/naics/541512/"
     },
     {
       "label": "NAICS 541519: Other Computer Related Services",
@@ -195,87 +195,87 @@
         [
           1,
           {
-            "text": "FISHER SAND & GRAVEL CO",
-            "href": "https://www.usaspending.gov/recipient/fa0b2d2c-6660-adbe-e0ea-4035b15e4cbd-C/latest/"
+            "text": "METROIBR JV LLC",
+            "href": "https://www.usaspending.gov/recipient/696984e9-df32-7a5d-27b2-5f17d2f06567-C/latest/"
           },
-          13353127851.7
+          22723637.04
         ],
         [
           2,
           {
-            "text": "BARNARD CONSTRUCTION COMPANY, INCORPORATED",
-            "href": "https://www.usaspending.gov/recipient/cbd00b80-79b9-687c-5847-be4d1bf8750e-C/latest/"
+            "text": "KYC ADVISORS LLC",
+            "href": "https://www.usaspending.gov/recipient/84f14403-64a2-0804-41b9-3885e7b9b0f0-C/latest/"
           },
-          4543208700.7
+          11827019.88
         ],
         [
           3,
           {
-            "text": "DAVIE DEFENSE INC.",
-            "href": "https://www.usaspending.gov/recipient/5031fdd2-5638-1b1c-9677-dc765a235f9b-C/latest/"
+            "text": "KONIAG BRILLIENT, LLC",
+            "href": "https://www.usaspending.gov/recipient/32487f57-d90d-4a93-11f1-dbead074308c-C/latest/"
           },
-          3500000000
+          11400591.18
         ],
         [
           4,
           {
-            "text": "SOUTHWEST VALLEY CONSTRUCTORS CO",
-            "href": "https://www.usaspending.gov/recipient/50730e17-bc78-a2a6-9220-91b71f88258c-C/latest/"
+            "text": "SPATIAL FRONT INC",
+            "href": "https://www.usaspending.gov/recipient/f702b7a6-2200-5cd4-c840-cdab470fcb25-C/latest/"
           },
-          2474599831
+          6544719.65
         ],
         [
           5,
           {
-            "text": "SLS FEDERAL SERVICES LLC",
-            "href": "https://www.usaspending.gov/recipient/fdc361df-c43a-750c-1330-a98395979fe8-C/latest/"
+            "text": "STELLA JV, LLC",
+            "href": "https://www.usaspending.gov/recipient/c7dacd25-c9ff-299e-dfa1-bb2b6494cfb3-C/latest/"
           },
-          2379100930
+          5981676.48
         ],
         [
           6,
           {
-            "text": "SPENCER CONSTRUCTION LLC",
-            "href": "https://www.usaspending.gov/recipient/148518d6-82fd-540c-2ffd-74c9fad5b562-C/latest/"
+            "text": "INTERNATIONAL ORGANIZATION FOR MIGRATION",
+            "href": "https://www.usaspending.gov/recipient/472c2dc8-009a-30c6-7578-72bf109e7057-C/latest/"
           },
-          2361541157.42
+          2837692
         ],
         [
           7,
           {
-            "text": "BOLLINGER SHIPYARDS LOCKPORT, L.L.C.",
-            "href": "https://www.usaspending.gov/recipient/4499d230-8e56-a301-f0fa-ac4352a522c4-C/latest/"
+            "text": "KEARNEY & COMPANY, P.C.",
+            "href": "https://www.usaspending.gov/recipient/7d1bb88e-f48f-cd06-289d-f7f1940c634e-C/latest/"
           },
-          2205175896
+          2338771.39
         ],
         [
           8,
           {
-            "text": "AMI METALS, INC",
-            "href": "https://www.usaspending.gov/recipient/4f4ae48a-542a-1485-34b7-6e6af0dd143c-C/latest/"
+            "text": "1 SOURCE CONSULTING, INC.",
+            "href": "https://www.usaspending.gov/recipient/4ea5c1e1-ddcc-1711-561f-8bc821b1ae6b-C/latest/"
           },
-          2022176160.58
+          2003826.24
         ],
         [
           9,
           {
-            "text": "CSI AVIATION, INC",
-            "href": "https://www.usaspending.gov/recipient/965e0a8e-62bd-79ee-4305-1f66e9bc7c87-C/latest/"
+            "text": "ALVAREZ LLC",
+            "href": "https://www.usaspending.gov/recipient/d55dabdb-0c89-b6e8-e4f5-5817d2be7b63-C/latest/"
           },
-          1285342228.91
+          1983364.87
         ],
         [
           10,
           {
-            "text": "RAUMA MARINE CONSTRUCTIONS OY",
-            "href": "https://www.usaspending.gov/recipient/034a63ea-a740-7158-6104-217442d63ef1-C/latest/"
+            "text": "APPDDICTIONSTUDIO LIMITED LIABILITY COMPANY",
+            "href": "https://www.usaspending.gov/recipient/ee44e898-2436-c09a-a673-520165a1693a-C/latest/"
           },
-          1122648775.26
+          628695.84
         ]
       ]
     },
     {
-      "title": "Largest awards, FY2026 to date",
+      "title": "Largest awards, FY2027 to date",
       "columns": [
         "Rank",
         "Recipient",
@@ -285,231 +285,231 @@
         [
           1,
           {
-            "text": "DAVIE DEFENSE INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_70Z02326C93210003_7008_-NONE-_-NONE-/"
+            "text": "SLS FEDERAL SERVICES LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70B01C26F00000003_7014_70B01C26D00000003_7014/"
           },
-          3500000000
+          380349800
         ],
         [
           2,
           {
-            "text": "FISHER SAND & GRAVEL CO",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_70B01C26F00000017_7014_70B01C26D00000012_7014/"
+            "text": "TUTOR PERINI CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70Z05026F43000039_7008_70Z04723DPCNI0004_7008/"
           },
-          2833494611.7
+          315000000
         ],
         [
           3,
           {
-            "text": "FISHER SAND & GRAVEL CO",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_70B01C26F00000405_7014_70B01C26D00000012_7014/"
+            "text": "MANTECH ADVANCED SYSTEMS INTERNATIONAL, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70B04C20F00001357_7014_47QTCK18D0031_4732/"
           },
-          2594040000
+          251240777.48
         ],
         [
           4,
           {
-            "text": "BOLLINGER SHIPYARDS LOCKPORT, L.L.C.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_70Z02326C93210002_7008_-NONE-_-NONE-/"
+            "text": "SOUTHWEST VALLEY CONSTRUCTORS CO",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70B01C26F00001093_7014_70B01C26D00000025_7014/"
           },
-          2142956960
+          144000000
         ],
         [
           5,
           {
-            "text": "BOLLINGER SHIPYARDS LOCKPORT, L.L.C.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_HSCG2316CAFR625_7008_-NONE-_-NONE-/"
+            "text": "KONIAG BRILLIENT, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70SBUR21C00000015_7003_-NONE-_-NONE-/"
           },
-          2089442660.08
+          114368513.74
         ],
         [
           6,
           {
-            "text": "AMI METALS, INC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_70B01C26C00000006_7014_-NONE-_-NONE-/"
+            "text": "ADG-REI TECHNOLOGY VENTURES, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70SBUR22F00000112_7003_75N98120D00031_7529/"
           },
-          2022176160.58
+          109512195.47
         ],
         [
           7,
           {
-            "text": "FISHER SAND & GRAVEL CO",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_70B01C26F00000073_7014_70B01C26D00000012_7014/"
+            "text": "GARDAWORLD FEDERAL SERVICES LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70CDCR26C00000023_7012_-NONE-_-NONE-/"
           },
-          1787500000
+          100467801.3
         ],
         [
           8,
           {
-            "text": "SOUTHWEST VALLEY CONSTRUCTORS CO",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_70B01C26F00000345_7014_70B01C26D00000007_7014/"
+            "text": "METROIBR JV LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70SBUR23F00000008_7003_47QTCA22D00AB_4732/"
           },
-          1720040000
+          98880253.64
         ],
         [
           9,
           {
-            "text": "FISHER SAND & GRAVEL CO",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_70B01C26F00000044_7014_70B01C26D00000012_7014/"
+            "text": "SMITHS DETECTION INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70T04023F7672N007_7013_70T04023G7672N001_7013/"
           },
-          1650754000
+          83066200
         ],
         [
           10,
           {
-            "text": "BARNARD CONSTRUCTION COMPANY, INCORPORATED",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_70B01C26F00000292_7014_70B01C26D00000006_7014/"
+            "text": "SCIENCE APPLICATIONS INTERNATIONAL CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70RSAT23CB0000003_7001_-NONE-_-NONE-/"
           },
-          1585324926
+          50002730.55
         ],
         [
           11,
           {
-            "text": "EASTERN SHIPBUILDING GROUP, INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_HSCG2314CAPC002_7008_-NONE-_-NONE-/"
+            "text": "TRIPLE CANOPY INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70RFP225FREC00012_7001_70RFP224DEC000011_7001/"
           },
-          1578692803.24
+          47581167.34
         ],
         [
           12,
           {
-            "text": "AUSTAL USA, LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_70Z02322C93220001_7008_-NONE-_-NONE-/"
+            "text": "ANDURIL INDUSTRIES, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70B02C25F00000422_7014_70B02C20D00000019_7014/"
           },
-          1434937513.97
+          42066939.56
         ],
         [
           13,
           {
-            "text": "SLS FEDERAL SERVICES LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_70B01C26F00000385_7014_70B01C26D00000003_7014/"
+            "text": "T47 INTERNATIONAL, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70LGLY25CGLB00004_7015_-NONE-_-NONE-/"
           },
-          1313227200
+          36638811.28
         ],
         [
           14,
           {
-            "text": "CSI AVIATION, INC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_70CDCR26FC0000001_7012_70CDCR24A00000001_7012/"
+            "text": "LMI CONSULTING, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70RSAT23FR0000076_7001_GS00Q14OADU141_4732/"
           },
-          1290404814.91
+          36634684.12
         ],
         [
           15,
           {
-            "text": "FISHER SAND & GRAVEL CO",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_70B01C25F00001112_7014_70B01C23D00000010_7014/"
+            "text": "GOLDEN SVCS, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70RFP224FREC00033_7001_70RFP224DEC000006_7001/"
           },
-          1225325000
+          35454081.57
         ],
         [
           16,
           {
-            "text": "FISHER SAND & GRAVEL CO",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_70B01C26F00000169_7014_70B01C26D00000012_7014/"
+            "text": "VMD SYSTEMS INTEGRATORS, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70T05024F5900N012_7013_HSTS0516DSPP913_7013/"
           },
-          1223124000
+          34998692.1
         ],
         [
           17,
           {
-            "text": "SPENCER CONSTRUCTION LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_70B01C26F00000261_7014_70B01C26D00000013_7014/"
+            "text": "WHITING-TURNER CONTRACTING COMPANY, THE",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70LGLY24FSSB00134_7015_70Z04723DPCNI0006_7008/"
           },
-          1147001057.42
+          31618380
         ],
         [
           18,
           {
-            "text": "RAUMA MARINE CONSTRUCTIONS OY",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_70Z02326C93210001_7008_-NONE-_-NONE-/"
+            "text": "THE NEW MEXICO COMMISION FOR BLIND",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70LART23CPFB00001_7015_-NONE-_-NONE-/"
           },
-          1122648775.26
+          31043009.75
         ],
         [
           19,
           {
-            "text": "GENERAL ATOMICS AERONAUTICAL SYSTEMS, INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_70B02C22C00000016_7014_-NONE-_-NONE-/"
+            "text": "BEN FITZGERALD REAL ESTATE SERVICES, L.L.C.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70B01C20F00001058_7014_GS06Q17BQDS204_4732/"
           },
-          1039938438.57
+          25514986.72
         ],
         [
           20,
           {
-            "text": "BARNARD CONSTRUCTION COMPANY, INCORPORATED",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_70B01C26F00000152_7014_70B01C26D00000006_7014/"
+            "text": "RED RIVER SCIENCE & TECHNOLOGY, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70B02C21F00000968_7014_47QRAA18D00BY_4732/"
           },
-          1025996158
+          25101908.55
         ],
         [
           21,
           {
-            "text": "BARNARD CONSTRUCTION COMPANY, INCORPORATED",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_70B01C26F00000201_7014_70B01C26D00000006_7014/"
+            "text": "DELOITTE CONSULTING LLP",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70B04C26C00000142_7014_-NONE-_-NONE-/"
           },
-          960423540
+          24380808
         ],
         [
           22,
           {
-            "text": "BCCG A JOINT VENTURE",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_70B01C25F00001121_7014_70B01C23D00000009_7014/"
+            "text": "UNIVERSAL PROTECTION SERVICE, LIMITED PARTNERSHIP",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70RFPW25FRW900007_7001_70RFP224DEC000009_7001/"
           },
-          873510388.5
+          24023662.76
         ],
         [
           23,
           {
-            "text": "LEIDOS, INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_70T04019C9DAP3006_7013_-NONE-_-NONE-/"
+            "text": "SALIENT CRGT, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70SBUR26F00000002_7003_47QTCK18D0060_4732/"
           },
-          862390010.14
+          23895601.21
         ],
         [
           24,
           {
-            "text": "FISHER SAND & GRAVEL CO",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_70B01C26F00000311_7014_70B01C26D00000012_7014/"
+            "text": "UNIVERSAL PROTECTION SERVICE, LIMITED PARTNERSHIP",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70RFP426FRE700022_7001_70RFP224DEC000001_7001/"
           },
-          847040000
+          22644780.59
         ],
         [
           25,
           {
-            "text": "TECHFLOW, INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_70T04024C7672N001_7013_-NONE-_-NONE-/"
+            "text": "KYC ADVISORS LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70SBUR25F00000045_7003_47QTCA21D0061_4732/"
           },
-          822520663.97
+          22511725.02
         ]
       ]
     }
   ],
   "narrative": {
-    "intro": "The Department of Homeland Security has obligated $69.1B in contracts in FY2026 to date. The Department of Homeland Security executed 30,042 awards with an average award size of $2.3M, and obligations are up 143.7% year over year. Fiscal-year obligations rose from $19.7B in FY21 to $69.1B in FY26, with intermediate totals of $20.8B in FY22, $23.9B in FY23, $23.6B in FY24, and $28.3B in FY25. Commercial and Institutional Building Construction is the largest NAICS category at $30.3B. Ship Building and Repairing follows at $7.9B, then Security Guards and Patrol Services at $4.3B, and Process, Physical Distribution, and Logistics Consulting Services at $3.2B. Vendor concentration is notable: FISHER SAND & GRAVEL CO is the top contractor at $13.4B, followed by BARNARD CONSTRUCTION COMPANY, INCORPORATED at $4.5B and DAVIE DEFENSE INC. at $3.5B. The Department of Homeland Security’s FY2026 to date profile shows heavy construction, shipbuilding, and security services spending, with a small set of vendors receiving very large obligations.",
+    "intro": "The Department of Homeland Security obligated $58.1M in FY2027 to date. The agency recorded 335 awards with an average award size of $173K. Obligations are down 99.9% year over year. Historical fiscal-year obligations show a sharp contrast: FY22 was $20.8B, FY23 was $23.9B, FY24 was $23.6B, FY25 was $28.3B, and FY26 was $73.3B, followed by the FY27 to date total of $58.1M. The largest spending categories so far in FY2027 are Custom Computer Programming Services at $37.2M, Office Administrative Services at $11.4M, and Computer Systems Design Services at $11.2M. The top vendors in FY2027 to date include METROIBR JV LLC at $22.7M, KYC ADVISORS LLC at $11.8M, and KONIAG BRILLIENT, LLC at $11.4M. The distribution of obligations in FY2027 to date is concentrated in a few software and professional services categories and a small group of prime contractors, reflecting the partial, fiscal-year-to-date nature of the total.",
     "sections": [
       {
-        "heading": "How has DHS contract spending changed year over year?",
-        "body": "The Department of Homeland Security’s obligations are up 143.7% year over year. Fiscal obligations grew from $28.3B in FY25 to $69.1B in FY26. The Department of Homeland Security shows a multi-year increase from $19.7B in FY21 through $23.9B in FY23, with a dip to $23.6B in FY24 before the FY25 and FY26 increases. These figures reflect the fiscal-year-to-date snapshot for FY2026."
+        "heading": "What are the biggest spending categories so far in FY2027?",
+        "body": "Custom Computer Programming Services is the largest category at $37.2M. Office Administrative Services and Computer Systems Design Services follow at $11.4M and $11.2M, respectively. Other notable categories include All Other Support Services at $2.9M and Offices of Certified Public Accountants at $2.3M."
       },
       {
-        "heading": "Which industries and vendors dominate DHS contracting?",
-        "body": "Commercial and Institutional Building Construction leads with $30.3B in obligations. Ship Building and Repairing is second at $7.9B, and Security Guards and Patrol Services is third at $4.3B. FISHER SAND & GRAVEL CO is the largest vendor at $13.4B, followed by BARNARD CONSTRUCTION COMPANY, INCORPORATED at $4.5B and DAVIE DEFENSE INC. at $3.5B."
+        "heading": "Which vendors received the most obligations in FY2027?",
+        "body": "METROIBR JV LLC received the largest obligations at $22.7M. KYC ADVISORS LLC and KONIAG BRILLIENT, LLC received $11.8M and $11.4M, respectively. Additional top recipients include SPATIAL FRONT INC at $6.5M and STELLA JV, LLC at $6M."
       }
     ]
   },
   "faq": [
     {
       "q": "How much does Department of Homeland Security spend on contracts?",
-      "a": "The Department of Homeland Security has obligated $69.1B on contracts in FY2026 to date. The Department of Homeland Security recorded 30,042 awards with an average award size of $2.3M. The Department of Homeland Security’s obligations are up 143.7% year over year."
+      "a": "The Department of Homeland Security obligated $58.1M in FY2027 to date. The agency made 335 awards with an average award size of $173K, and obligations are down 99.9% year over year. Historical annual obligations show FY22 at $20.8B, FY23 at $23.9B, FY24 at $23.6B, FY25 at $28.3B, and FY26 at $73.3B."
     },
     {
       "q": "What does Homeland Security buy?",
-      "a": "The Department of Homeland Security buys construction, shipbuilding, security services, logistics consulting, and IT and engineering services. Commercial and Institutional Building Construction accounts for $30.3B, Ship Building and Repairing accounts for $7.9B, Security Guards and Patrol Services accounts for $4.3B, Process, Physical Distribution, and Logistics Consulting Services accounts for $3.2B, and Other Computer Related Services and Computer Systems Design Services each account for $2.5B."
+      "a": "Custom Computer Programming Services is the largest single category at $37.2M. Homeland Security also bought Office Administrative Services at $11.4M, Computer Systems Design Services at $11.2M, All Other Support Services at $2.9M, and Offices of Certified Public Accountants at $2.3M, among other categories."
     },
     {
       "q": "Who are Homeland Security's largest contractors?",
-      "a": "FISHER SAND & GRAVEL CO is the largest DHS contractor at $13.4B. Other top contractors include BARNARD CONSTRUCTION COMPANY, INCORPORATED at $4.5B, DAVIE DEFENSE INC. at $3.5B, SOUTHWEST VALLEY CONSTRUCTORS CO at $2.5B, and SLS FEDERAL SERVICES LLC at $2.4B."
+      "a": "METROIBR JV LLC is the largest contractor at $22.7M. Other top contractors include KYC ADVISORS LLC at $11.8M, KONIAG BRILLIENT, LLC at $11.4M, SPATIAL FRONT INC at $6.5M, and STELLA JV, LLC at $6M."
     }
   ],
   "related": [
@@ -543,5 +543,6 @@
       "label": "USAspending.gov award data",
       "href": "https://www.usaspending.gov"
     }
-  ]
+  ],
+  "noindex": true
 }

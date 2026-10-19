@@ -1,17 +1,17 @@
 {
   "pageType": "ranking",
   "slug": "fastest-growing-federal-markets",
-  "title": "Fastest-Growing Federal Markets, FY2026",
-  "h1": "Fastest-growing federal contract markets, FY2026 to date",
-  "metaDescription": "The fastest-growing federal contract markets by same-period year-over-year growth in FY2026 to date, from USAspending.gov. Led by Process, Physical Distributi",
-  "updated": "2026-09-28",
+  "title": "Fastest-Growing Federal Markets, FY2027",
+  "h1": "Fastest-growing federal contract markets, FY2027 to date",
+  "metaDescription": "The fastest-growing federal contract markets by same-period year-over-year growth in FY2027 to date, from USAspending.gov. Led by Other Computer Related Servi",
+  "updated": "2026-10-19",
   "fyWindow": {
-    "label": "FY2026 to date",
-    "start": "2025-10-01",
-    "end": "2026-09-28"
+    "label": "FY2027 to date",
+    "start": "2026-10-01",
+    "end": "2026-10-19"
   },
   "stats": {
-    "totalObligations": 202850456047.11002,
+    "totalObligations": 1739338167.0900002,
     "awardCount": null,
     "yoyGrowthPct": null,
     "avgAwardSize": null,
@@ -21,61 +21,45 @@
     {
       "id": "fastest-growing-federal-markets-bar",
       "type": "bar",
-      "title": "Fastest-growing federal markets (year-over-year, same period), FY2026 to date",
+      "title": "Fastest-growing federal markets (year-over-year, same period), FY2027 to date",
       "series": [
         {
           "label": "Year-over-year growth",
           "points": [
             [
-              "Process, Physical Distribution, and Logistics Consulting Services",
-              124.9
+              "Other Computer Related Services",
+              19.5
             ],
             [
-              "Highway, Street, and Bridge Construction",
-              111.3
+              "Couriers and Express Delivery Services",
+              13.6
             ],
             [
-              "Automobile Manufacturing",
-              76.8
+              "Analytical Laboratory Instrument Manufacturing",
+              9.9
+            ],
+            [
+              "All Other Business Support Services",
+              -0.9
+            ],
+            [
+              "Direct Health and Medical Insurance Carriers",
+              -24.2
             ],
             [
               "Commercial and Institutional Building Construction",
-              75.2
-            ],
-            [
-              "Bare Printed Circuit Board Manufacturing",
-              53.2
-            ],
-            [
-              "All Other Travel Arrangement and Reservation Services",
-              50.1
-            ],
-            [
-              "Research and Development in Biotechnology (except Nanobiotechnology)",
-              45.4
-            ],
-            [
-              "Software Publishers",
-              37.1
-            ],
-            [
-              "Telecommunications Resellers",
-              28.4
-            ],
-            [
-              "Security Guards and Patrol Services",
-              23
+              -35.9
             ]
           ]
         }
       ],
       "unit": "pct",
-      "takeaway": "Process, Physical Distribution, and Logistics Consulting Services was the fastest-growing established federal market, up 124.9% versus the same period a year earlier."
+      "takeaway": "Other Computer Related Services was the fastest-growing established federal market, up 19.5% versus the same period a year earlier."
     }
   ],
   "tables": [
     {
-      "title": "Fastest-growing federal markets, FY2026 to date",
+      "title": "Fastest-growing federal markets, FY2027 to date",
       "columns": [
         "Rank",
         "Industry (NAICS)",
@@ -87,277 +71,87 @@
         [
           1,
           {
-            "text": "Process, Physical Distribution, and Logistics Consulting Services (541614)",
-            "href": null
+            "text": "Other Computer Related Services (541519)",
+            "href": "/insights/naics/541519/"
           },
-          4411287483.38,
-          1961262544.97,
-          "+124.9%"
+          340060244.79,
+          284617012.37,
+          "+19.5%"
         ],
         [
           2,
           {
-            "text": "Highway, Street, and Bridge Construction (237310)",
-            "href": "/insights/naics/237310/"
+            "text": "Couriers and Express Delivery Services (492110)",
+            "href": null
           },
-          2248556073.96,
-          1064377760.09,
-          "+111.3%"
+          117528011.75,
+          103434248.14,
+          "+13.6%"
         ],
         [
           3,
           {
-            "text": "Automobile Manufacturing (336111)",
+            "text": "Analytical Laboratory Instrument Manufacturing (334516)",
             "href": null
           },
-          2516979896.06,
-          1423391915.68,
-          "+76.8%"
+          161370535.05,
+          146844586.27,
+          "+9.9%"
         ],
         [
           4,
           {
-            "text": "Commercial and Institutional Building Construction (236220)",
-            "href": "/insights/naics/236220/"
+            "text": "All Other Business Support Services (561499)",
+            "href": null
           },
-          50006981194.02,
-          28549272486.28,
-          "+75.2%"
+          103957108.12,
+          104952263.04,
+          "-0.9%"
         ],
         [
           5,
           {
-            "text": "Bare Printed Circuit Board Manufacturing (334412)",
+            "text": "Direct Health and Medical Insurance Carriers (524114)",
             "href": null
           },
-          1172714622.08,
-          765316252.12,
-          "+53.2%"
+          901362689.92,
+          1189054758.28,
+          "-24.2%"
         ],
         [
           6,
           {
-            "text": "All Other Travel Arrangement and Reservation Services (561599)",
-            "href": null
+            "text": "Commercial and Institutional Building Construction (236220)",
+            "href": "/insights/naics/236220/"
           },
-          1197219619.71,
-          797810809.36,
-          "+50.1%"
-        ],
-        [
-          7,
-          {
-            "text": "Research and Development in Biotechnology (except Nanobiotechnology) (541714)",
-            "href": null
-          },
-          1829271901.17,
-          1258155973.23,
-          "+45.4%"
-        ],
-        [
-          8,
-          {
-            "text": "Software Publishers (513210)",
-            "href": null
-          },
-          1997239511.86,
-          1456777525.52,
-          "+37.1%"
-        ],
-        [
-          9,
-          {
-            "text": "Telecommunications Resellers (517310)",
-            "href": null
-          },
-          1171985532.39,
-          912411989.65,
-          "+28.4%"
-        ],
-        [
-          10,
-          {
-            "text": "Security Guards and Patrol Services (561612)",
-            "href": "/insights/naics/561612/"
-          },
-          6991461663.71,
-          5684592457.18,
-          "+23.0%"
-        ],
-        [
-          11,
-          {
-            "text": "Computing Infrastructure Providers, Data Processing, Web Hosting, and Related Services (518210)",
-            "href": null
-          },
-          3818252403.8,
-          3132208416.68,
-          "+21.9%"
-        ],
-        [
-          12,
-          {
-            "text": "Water and Sewer Line and Related Structures Construction (237110)",
-            "href": null
-          },
-          1109268778.84,
-          930794854.48,
-          "+19.2%"
-        ],
-        [
-          13,
-          {
-            "text": "Guided Missile and Space Vehicle Manufacturing (336414)",
-            "href": null
-          },
-          34765477918.68,
-          29330751766.48,
-          "+18.5%"
-        ],
-        [
-          14,
-          {
-            "text": "Other Technical and Trade Schools (611519)",
-            "href": null
-          },
-          1342848588.6,
-          1160757960.4,
-          "+15.7%"
-        ],
-        [
-          15,
-          {
-            "text": "Electronic and Precision Equipment Repair and Maintenance (811210)",
-            "href": null
-          },
-          1742503133.99,
-          1535749583.86,
-          "+13.5%"
-        ],
-        [
-          16,
-          {
-            "text": "Unknown",
-            "href": null
-          },
-          1134938027.16,
-          1007227217.69,
-          "+12.7%"
-        ],
-        [
-          17,
-          {
-            "text": "Other Heavy and Civil Engineering Construction (237990)",
-            "href": null
-          },
-          11029812186.04,
-          9838064031.6,
-          "+12.1%"
-        ],
-        [
-          18,
-          {
-            "text": "Research and Development in the Physical, Engineering, and Life Sciences (541710)",
-            "href": null
-          },
-          8544114705.46,
-          7945375042.13,
-          "+7.5%"
-        ],
-        [
-          19,
-          {
-            "text": "Nonscheduled Chartered Freight Air Transportation (481212)",
-            "href": null
-          },
-          4148331598.27,
-          3882463218.34,
-          "+6.8%"
-        ],
-        [
-          20,
-          {
-            "text": "Custom Computer Programming Services (541511)",
-            "href": "/insights/naics/541511/"
-          },
-          10655010556.58,
-          10013528210.41,
-          "+6.4%"
-        ],
-        [
-          21,
-          {
-            "text": "Nonscheduled Chartered Passenger Air Transportation (481211)",
-            "href": null
-          },
-          2281291281.7,
-          2161916962.26,
-          "+5.5%"
-        ],
-        [
-          22,
-          {
-            "text": "Petroleum Refineries (324110)",
-            "href": null
-          },
-          8582261563.24,
-          8224510697.37,
-          "+4.3%"
-        ],
-        [
-          23,
-          {
-            "text": "Nonferrous Metal (except Aluminum) Smelting and Refining (331410)",
-            "href": null
-          },
-          1533834543.73,
-          1480645384.48,
-          "+3.6%"
-        ],
-        [
-          24,
-          {
-            "text": "Medical, Dental, and Hospital Equipment and Supplies Merchant Wholesalers (423450)",
-            "href": null
-          },
-          2507630289.05,
-          2429883906.8,
-          "+3.2%"
-        ],
-        [
-          25,
-          {
-            "text": "Facilities Support Services (561210)",
-            "href": "/insights/naics/561210/"
-          },
-          36111182973.63,
-          35169125461.76,
-          "+2.7%"
+          115059577.46,
+          179522974.26,
+          "-35.9%"
         ]
       ]
     }
   ],
   "narrative": {
-    "intro": "The federal contracting market totaled $203B in obligations for FY2026 to date. Process, Physical Distribution, and Logistics Consulting Services grew 124.9% year over year. Highway, Street, and Bridge Construction grew 111.3% year over year. Automobile Manufacturing grew 76.8% year over year. Commercial and Institutional Building Construction grew 75.2% year over year. Bare Printed Circuit Board Manufacturing grew 53.2% year over year. All Other Travel Arrangement and Reservation Services grew 50.1% year over year. Research and Development in Biotechnology (except Nanobiotechnology) grew 45.4% year over year. Software Publishers grew 37.1% year over year. Telecommunications Resellers grew 28.4% year over year. Security Guards and Patrol Services grew 23.0% year over year. This ranking lists the ten fastest-growing federal contract markets by year-over-year change for the same fiscal period in FY2026 to date.",
+    "intro": "This ranking shows year-over-year growth in federal contract obligations for FY2027 to date. Total obligations in this snapshot are $1.7B. Other Computer Related Services is the fastest-growing market at 19.5%, followed by Couriers and Express Delivery Services at 13.6% and Analytical Laboratory Instrument Manufacturing at 9.9%. The list highlights markets that gained the most momentum in federal buying during the fiscal-year-to-date window. Current-year totals are partial, so use this snapshot to compare relative movement between markets rather than to infer full-year outcomes. The ranking reports changes in contract obligations for the same period year over year and focuses on where federal obligations increased most in the available data window.",
     "sections": [
       {
-        "heading": "Which markets are expanding fastest year over year?",
-        "body": "Process, Physical Distribution, and Logistics Consulting Services grew 124.9% year over year and ranks first. Highway, Street, and Bridge Construction grew 111.3% year over year and ranks second. The remaining top ten are Automobile Manufacturing at 76.8%, Commercial and Institutional Building Construction at 75.2%, Bare Printed Circuit Board Manufacturing at 53.2%, All Other Travel Arrangement and Reservation Services at 50.1%, Research and Development in Biotechnology (except Nanobiotechnology) at 45.4%, Software Publishers at 37.1%, Telecommunications Resellers at 28.4%, and Security Guards and Patrol Services at 23.0%."
+        "heading": "Which markets posted the strongest growth?",
+        "body": "Other Computer Related Services grew 19.5%. Couriers and Express Delivery Services grew 13.6%. Analytical Laboratory Instrument Manufacturing grew 9.9%."
       },
       {
-        "heading": "How should contractors use a growth ranking like this?",
-        "body": "Contractors can treat the ranking as a snapshot of where federal obligations rose fastest for the same fiscal period year over year. The ranking does not show absolute market size, contract count, or duration of contracts. The ranking also reflects obligations for FY2026 to date, so totals are partial for the fiscal year. Contractors should pair this growth view with contract-level and agency-level data before changing business strategy."
+        "heading": "How should contractors use this ranking?",
+        "body": "Use the ranking to identify sectors with rising federal demand in the fiscal-year-to-date window. Compare the 19.5%, 13.6%, and 9.9% growth figures to prioritize outreach and pursuit activity based on recent momentum."
       }
     ]
   },
   "faq": [
     {
       "q": "What are the fastest-growing federal contract markets?",
-      "a": "The fastest-growing federal contract markets are the ten industries listed in the ranking, led by Process, Physical Distribution, and Logistics Consulting Services at 124.9%. Highway, Street, and Bridge Construction grew 111.3%. Automobile Manufacturing grew 76.8%. Commercial and Institutional Building Construction grew 75.2%. Bare Printed Circuit Board Manufacturing grew 53.2%. All Other Travel Arrangement and Reservation Services grew 50.1%. Research and Development in Biotechnology (except Nanobiotechnology) grew 45.4%. Software Publishers grew 37.1%. Telecommunications Resellers grew 28.4%. Security Guards and Patrol Services grew 23.0%."
+      "a": "The fastest-growing federal contract markets are Other Computer Related Services, Couriers and Express Delivery Services, and Analytical Laboratory Instrument Manufacturing. Other Computer Related Services grew 19.5%, Couriers and Express Delivery Services grew 13.6%, and Analytical Laboratory Instrument Manufacturing grew 9.9%."
     },
     {
       "q": "How is market growth measured here?",
-      "a": "Market growth is measured by year-over-year change in contract obligations for the same fiscal period. The ranking compares obligations for FY2026 to date with obligations for the same period in the prior year. The page note states that current-year totals are partial because they are fiscal year to date."
+      "a": "Market growth here is measured as year-over-year change in contract obligations for the same fiscal-year-to-date period. Total obligations in this snapshot are $1.7B and current-year totals are partial."
     }
   ],
   "related": [
