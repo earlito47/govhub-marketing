@@ -2497,3 +2497,62 @@ either — Supabase supports them and `signInWithOtp` is simply unwired in
 The design consequence is the six-day median: this cannot be a batch job over a
 backlog. It has to fire within hours of a reply landing, which the queue-backed
 pipeline can do, but which means the trigger belongs to the reply desk.
+
+### Day 21 — all four angles on cap, and the concentration arithmetic checked
+
+First day every angle landed exactly on its cap: A1 37, A2 125, A4 50, A5 75,
+across three push runs. Two of the three stopped on the time budget and the
+third finished with room, which is the continuation crons doing what they were
+added for.
+
+**A4 looked one over and was not.** Summing `per_angle` across the three runs
+gives A4 51 against a cap of 50, and the 07:15 run reported only 49 already
+pushed. The database says 50. That is the known and legitimate divergence: a
+queued move spends the budget when it is queued and is recorded when it is
+confirmed, so a move straddling two runs is counted once in each place at
+different moments. The DB count is the one to trust, and it is on cap.
+
+**53 of 125 on one solicitation, and that is correct.** RFQHT001426QE048, a
+cohort of 107, closes 2026-10-28. The A2 floor is 8 days
+(`A2_close_min_days`), so the last day it may be sent is 10-20, not 10-28 —
+today is 9 days out and tomorrow is 8. Two sending days, 107 rows, allowance
+`ceil(107/2) = 54`, sent 53, and the remaining 53 go tomorrow on the final day
+where the pace deliberately uncaps. The arithmetic is the formula working, not
+a fault; recorded here with the numbers so the next check does not re-derive
+it. The 36 rows `held_for_solicitation_pace` in the 07:15 run are other
+cohorts being paced correctly at the same time.
+
+**Bounce, on the honest denominators:** 1.65% per person first-emailed and
+0.57% per email sent, over 3,330 people and 9,654 sends. A4 1.86% and A2 1.85%
+are the two closest to the 2% gate; nothing is near the 5% per-angle trip.
+
+**The bare solicitation number has doubled.** 132 of 467 queued A2 rows render
+`sol_short` as the bare number — 28.3%, against 14% on 10-09. `solHeadline`
+refuses ALL CAPS and over-length titles on purpose, so this is the refusal
+firing more often rather than a regression, but it has gone from one row in
+seven to one in four and the copy reads materially worse for them: "DoD posted
+SPE7M127U0795" against "DoD posted Hospital Communications Support
+(RFQHT001426QE048)". Worth a decision on loosening the refusal rather than
+leaving it to drift further.
+
+**The wrong-match rate is now measurable: 5 of 51 human replies, 9.8%**, up
+from 3 of 45. Today added "We don't do protein engineering" and "We're a cold
+weather training company". A NAICS match is not a judgement that the work is
+biddable, and this is the number that decides how a built proposal may be
+offered — at one in ten, a proposal auto-sent on the match alone would be
+confidently wrong for every tenth reader, which is worse than sending nothing.
+
+Five human replies, all honoured by suppressing the person: one out of
+business, two declines, two wrong-match declines, and one explicit stop
+covering "all entities affiliated with GovHub". Each of the five is the only
+contact at their company, so the person-not-company rule did not bite today —
+checked rather than assumed. Three autoresponders were classified correctly,
+including a "no longer working for" and two future-tense out-of-offices.
+
+Reply desk: 1 `needs_human`, 15 `drafted`, `sent` still 9. Drafted has run
+4 → 16 → 15 across eleven days while sent has not moved, so the queue is
+accumulating answers nobody has released.
+
+Three-way audit clean for the twenty-first consecutive day: 3,934 leads in the
+campaigns, 3,934 in the database, 0 unclaimed, 0 missing, 0 rendering a blank
+variable. All nine A2 required keys are populated across today's 125 pushes.
