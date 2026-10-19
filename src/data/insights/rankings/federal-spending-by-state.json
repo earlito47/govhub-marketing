@@ -1,17 +1,17 @@
 {
   "pageType": "ranking",
   "slug": "federal-spending-by-state",
-  "title": "Federal Spending by State, FY2026",
-  "h1": "Federal contract spending by state, FY2026 to date",
-  "metaDescription": "Which states receive the most federal contract dollars in FY2026 to date. Ranked by obligations from USAspending.gov, led by Virginia.",
-  "updated": "2026-09-28",
+  "title": "Federal Spending by State, FY2027",
+  "h1": "Federal contract spending by state, FY2027 to date",
+  "metaDescription": "Which states receive the most federal contract dollars in FY2027 to date. Ranked by obligations from USAspending.gov, led by Virginia.",
+  "updated": "2026-10-19",
   "fyWindow": {
-    "label": "FY2026 to date",
-    "start": "2025-10-01",
-    "end": "2026-09-28"
+    "label": "FY2027 to date",
+    "start": "2026-10-01",
+    "end": "2026-10-19"
   },
   "stats": {
-    "totalObligations": 671969219568.1299,
+    "totalObligations": 4659819764.57,
     "awardCount": null,
     "yoyGrowthPct": null,
     "avgAwardSize": null,
@@ -21,61 +21,61 @@
     {
       "id": "federal-spending-by-state-bar",
       "type": "bar",
-      "title": "Federal contract obligations by state, FY2026 to date",
+      "title": "Federal contract obligations by state, FY2027 to date",
       "series": [
         {
           "label": "Obligations",
           "points": [
             [
               "Virginia",
-              108588111353.61
+              1333492211.5
             ],
             [
               "Texas",
-              93476294419.54
+              410294554.55
             ],
             [
               "California",
-              54001911319.09
+              399348949.25
             ],
             [
-              "Maryland",
-              34579221626.4
-            ],
-            [
-              "District Of Columbia",
-              30401246643.64
-            ],
-            [
-              "Arizona",
-              29300098166.85
+              "Illinois",
+              245330189.68
             ],
             [
               "Florida",
-              27857523185.56
+              180378796.38
             ],
             [
-              "Pennsylvania",
-              23715859209.5
+              "Maryland",
+              180251159.14
             ],
             [
-              "Connecticut",
-              19635159568.59
+              "North Carolina",
+              152514913.61
             ],
             [
-              "Washington",
-              18491456030.12
+              "New York",
+              130034957.64
+            ],
+            [
+              "District Of Columbia",
+              129063206.15
+            ],
+            [
+              "Tennessee",
+              118568752.1
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Virginia led all states with $109B in federal contract obligations."
+      "takeaway": "Virginia led all states with $1.3B in federal contract obligations."
     }
   ],
   "tables": [
     {
-      "title": "Federal contract spending by state, FY2026 to date",
+      "title": "Federal contract spending by state, FY2027 to date",
       "columns": [
         "Rank",
         "State",
@@ -88,7 +88,7 @@
             "text": "Virginia",
             "href": "/insights/state/virginia/"
           },
-          108588111353.61
+          1333492211.5
         ],
         [
           2,
@@ -96,7 +96,7 @@
             "text": "Texas",
             "href": "/insights/state/texas/"
           },
-          93476294419.54
+          410294554.55
         ],
         [
           3,
@@ -104,143 +104,143 @@
             "text": "California",
             "href": "/insights/state/california/"
           },
-          54001911319.09
+          399348949.25
         ],
         [
           4,
           {
-            "text": "Maryland",
-            "href": "/insights/state/maryland/"
+            "text": "Illinois",
+            "href": "/insights/state/illinois/"
           },
-          34579221626.4
+          245330189.68
         ],
         [
           5,
           {
-            "text": "District Of Columbia",
-            "href": "/insights/state/district-of-columbia/"
+            "text": "Florida",
+            "href": "/insights/state/florida/"
           },
-          30401246643.64
+          180378796.38
         ],
         [
           6,
           {
-            "text": "Arizona",
-            "href": "/insights/state/arizona/"
+            "text": "Maryland",
+            "href": "/insights/state/maryland/"
           },
-          29300098166.85
+          180251159.14
         ],
         [
           7,
           {
-            "text": "Florida",
-            "href": "/insights/state/florida/"
+            "text": "North Carolina",
+            "href": "/insights/state/north-carolina/"
           },
-          27857523185.56
+          152514913.61
         ],
         [
           8,
           {
-            "text": "Pennsylvania",
-            "href": "/insights/state/pennsylvania/"
+            "text": "New York",
+            "href": "/insights/state/new-york/"
           },
-          23715859209.5
+          130034957.64
         ],
         [
           9,
           {
-            "text": "Connecticut",
-            "href": "/insights/state/connecticut/"
+            "text": "District Of Columbia",
+            "href": "/insights/state/district-of-columbia/"
           },
-          19635159568.59
+          129063206.15
         ],
         [
           10,
           {
-            "text": "Washington",
-            "href": "/insights/state/washington/"
+            "text": "Tennessee",
+            "href": "/insights/state/tennessee/"
           },
-          18491456030.12
+          118568752.1
         ],
         [
           11,
           {
-            "text": "Massachusetts",
-            "href": "/insights/state/massachusetts/"
+            "text": "Alabama",
+            "href": "/insights/state/alabama/"
           },
-          16809410803.26
+          113303986.5
         ],
         [
           12,
           {
-            "text": "Alabama",
-            "href": "/insights/state/alabama/"
+            "text": "Massachusetts",
+            "href": "/insights/state/massachusetts/"
           },
-          15790697240.63
+          97009252.87
         ],
         [
           13,
           {
-            "text": "New Mexico",
-            "href": "/insights/state/new-mexico/"
+            "text": "Arizona",
+            "href": "/insights/state/arizona/"
           },
-          14961694590.87
+          84750656.01
         ],
         [
           14,
           {
-            "text": "Colorado",
-            "href": "/insights/state/colorado/"
+            "text": "Pennsylvania",
+            "href": "/insights/state/pennsylvania/"
           },
-          13317047656.23
+          82197353.77
         ],
         [
           15,
           {
-            "text": "Missouri",
-            "href": "/insights/state/missouri/"
+            "text": "South Carolina",
+            "href": "/insights/state/south-carolina/"
           },
-          11852670093.19
+          72449176.15
         ],
         [
           16,
           {
-            "text": "Tennessee",
-            "href": "/insights/state/tennessee/"
+            "text": "Washington",
+            "href": "/insights/state/washington/"
           },
-          11694202229.91
+          61591906
         ],
         [
           17,
           {
-            "text": "Illinois",
-            "href": "/insights/state/illinois/"
+            "text": "Kentucky",
+            "href": "/insights/state/kentucky/"
           },
-          11145435086.54
+          59464136.11
         ],
         [
           18,
           {
-            "text": "New York",
-            "href": "/insights/state/new-york/"
+            "text": "Ohio",
+            "href": "/insights/state/ohio/"
           },
-          10080490323
+          54933742.89
         ],
         [
           19,
           {
-            "text": "South Carolina",
-            "href": "/insights/state/south-carolina/"
+            "text": "New Jersey",
+            "href": "/insights/state/new-jersey/"
           },
-          9543836808.97
+          54851361.37
         ],
         [
           20,
           {
-            "text": "New Jersey",
-            "href": "/insights/state/new-jersey/"
+            "text": "Kansas",
+            "href": "/insights/state/kansas/"
           },
-          8946853276.58
+          53953968.96
         ],
         [
           21,
@@ -248,268 +248,268 @@
             "text": "Georgia",
             "href": "/insights/state/georgia/"
           },
-          8898457804.49
+          52654378.5
         ],
         [
           22,
           {
-            "text": "Kentucky",
-            "href": "/insights/state/kentucky/"
+            "text": "Indiana",
+            "href": "/insights/state/indiana/"
           },
-          8762344279.47
+          47808233.38
         ],
         [
           23,
           {
-            "text": "Ohio",
-            "href": "/insights/state/ohio/"
+            "text": "Mississippi",
+            "href": "/insights/state/mississippi/"
           },
-          7469364423.53
+          47118640.67
         ],
         [
           24,
           {
-            "text": "Michigan",
-            "href": "/insights/state/michigan/"
+            "text": "Colorado",
+            "href": "/insights/state/colorado/"
           },
-          6724406818.59
+          45325270.73
         ],
         [
           25,
           {
-            "text": "Utah",
-            "href": "/insights/state/utah/"
+            "text": "West Virginia",
+            "href": "/insights/state/west-virginia/"
           },
-          6076806536.07
+          39793135.02
         ],
         [
           26,
           {
-            "text": "Mississippi",
-            "href": "/insights/state/mississippi/"
+            "text": "Utah",
+            "href": "/insights/state/utah/"
           },
-          5988820177.2
+          36471325.34
         ],
         [
           27,
           {
-            "text": "Louisiana",
-            "href": "/insights/state/louisiana/"
+            "text": "Michigan",
+            "href": "/insights/state/michigan/"
           },
-          5593565768.67
+          33225667.94
         ],
         [
           28,
           {
-            "text": "North Carolina",
-            "href": "/insights/state/north-carolina/"
+            "text": "Iowa",
+            "href": "/insights/state/iowa/"
           },
-          4842159310.82
+          32641300.17
         ],
         [
           29,
           {
-            "text": "Oklahoma",
-            "href": "/insights/state/oklahoma/"
+            "text": "Missouri",
+            "href": "/insights/state/missouri/"
           },
-          4582557745.48
+          31892790.53
         ],
         [
           30,
           {
-            "text": "Indiana",
-            "href": "/insights/state/indiana/"
+            "text": "Wisconsin",
+            "href": "/insights/state/wisconsin/"
           },
-          4076964626.77
+          28491688.36
         ],
         [
           31,
           {
-            "text": "Alaska",
-            "href": "/insights/state/alaska/"
+            "text": "Oklahoma",
+            "href": "/insights/state/oklahoma/"
           },
-          4054427944
+          28371923.45
         ],
         [
           32,
           {
-            "text": "Idaho",
-            "href": "/insights/state/idaho/"
+            "text": "Oregon",
+            "href": "/insights/state/oregon/"
           },
-          3968556287.56
+          26037199.79
         ],
         [
           33,
           {
-            "text": "Wisconsin",
-            "href": "/insights/state/wisconsin/"
+            "text": "Minnesota",
+            "href": "/insights/state/minnesota/"
           },
-          3864928409.11
+          25141721.93
         ],
         [
           34,
           {
-            "text": "Kansas",
-            "href": "/insights/state/kansas/"
+            "text": "Louisiana",
+            "href": "/insights/state/louisiana/"
           },
-          3707572978.4
+          23971189.96
         ],
         [
           35,
           {
-            "text": "Nevada",
-            "href": "/insights/state/nevada/"
+            "text": "Arkansas",
+            "href": "/insights/state/arkansas/"
           },
-          3401110763.25
+          21929902.28
         ],
         [
           36,
           {
-            "text": "Maine",
-            "href": "/insights/state/maine/"
+            "text": "Nevada",
+            "href": "/insights/state/nevada/"
           },
-          3054283856.74
+          19596065.07
         ],
         [
           37,
           {
-            "text": "Hawaii",
-            "href": "/insights/state/hawaii/"
+            "text": "Puerto Rico",
+            "href": null
           },
-          2908460800.72
+          17268053.42
         ],
         [
           38,
           {
-            "text": "Oregon",
-            "href": "/insights/state/oregon/"
+            "text": "Connecticut",
+            "href": "/insights/state/connecticut/"
           },
-          2398906829.71
+          15778463.26
         ],
         [
           39,
           {
-            "text": "Puerto Rico",
-            "href": null
+            "text": "New Mexico",
+            "href": "/insights/state/new-mexico/"
           },
-          2041937928.95
+          12971072.83
         ],
         [
           40,
           {
-            "text": "Minnesota",
-            "href": "/insights/state/minnesota/"
+            "text": "Hawaii",
+            "href": "/insights/state/hawaii/"
           },
-          1928308202.76
+          11610276.16
         ],
         [
           41,
           {
-            "text": "New Hampshire",
-            "href": "/insights/state/new-hampshire/"
+            "text": "Maine",
+            "href": "/insights/state/maine/"
           },
-          1855421518.38
+          8025561.5
         ],
         [
           42,
           {
-            "text": "Iowa",
-            "href": "/insights/state/iowa/"
+            "text": "Montana",
+            "href": "/insights/state/montana/"
           },
-          1695353482.05
+          7904877.79
         ],
         [
           43,
           {
-            "text": "West Virginia",
-            "href": "/insights/state/west-virginia/"
+            "text": "Alaska",
+            "href": "/insights/state/alaska/"
           },
-          1677907485.47
+          6935810.18
         ],
         [
           44,
           {
-            "text": "Guam",
-            "href": null
+            "text": "Rhode Island",
+            "href": "/insights/state/rhode-island/"
           },
-          1643082809.42
+          5767769.69
         ],
         [
           45,
           {
-            "text": "Montana",
-            "href": "/insights/state/montana/"
+            "text": "New Hampshire",
+            "href": "/insights/state/new-hampshire/"
           },
-          1328221464.05
+          4802125.56
         ],
         [
           46,
           {
-            "text": "Nebraska",
-            "href": "/insights/state/nebraska/"
+            "text": "South Dakota",
+            "href": "/insights/state/south-dakota/"
           },
-          1244290919.81
+          4539062.06
         ],
         [
           47,
           {
-            "text": "Arkansas",
-            "href": "/insights/state/arkansas/"
+            "text": "Nebraska",
+            "href": "/insights/state/nebraska/"
           },
-          976994512.32
+          2830691.78
         ],
         [
           48,
           {
-            "text": "Rhode Island",
-            "href": "/insights/state/rhode-island/"
+            "text": "Vermont",
+            "href": "/insights/state/vermont/"
           },
-          825447011.1
+          1911113.18
         ],
         [
           49,
           {
-            "text": "North Dakota",
-            "href": "/insights/state/north-dakota/"
+            "text": "Delaware",
+            "href": "/insights/state/delaware/"
           },
-          792977023.86
+          1814895.57
         ],
         [
           50,
           {
-            "text": "South Dakota",
-            "href": "/insights/state/south-dakota/"
+            "text": "Wyoming",
+            "href": "/insights/state/wyoming/"
           },
-          780211284.29
+          1747620.25
         ],
         [
           51,
           {
-            "text": "Wyoming",
-            "href": "/insights/state/wyoming/"
+            "text": "North Dakota",
+            "href": "/insights/state/north-dakota/"
           },
-          616150933.01
+          1658707.59
         ]
       ]
     }
   ],
   "narrative": {
-    "intro": "This table shows federal contract obligations by state for FY2026 to date. Total obligations across all states are $672B. Virginia received $109B, the largest single-state total in this ranking. Texas received $93.5B and California received $54B, making those three the top recipients so far in the fiscal year. Maryland received $34.6B and the District Of Columbia received $30.4B. Arizona received $29.3B, Florida received $27.9B, and Pennsylvania received $23.7B. Connecticut received $19.6B and Washington received $18.5B. All figures are contract obligations and the current-year totals are partial because the fiscal year is still in progress. Use these figures to compare scale and to prioritize outreach or business development where the largest contract flows are already present in FY2026 to date.",
+    "intro": "This ranking shows federal contract obligations by state for FY2027 to date. The nationwide total of recorded obligations stands at $4.7B. Virginia leads the list with $1.3B in obligations. Texas follows with $410M and California with $399M. Illinois recorded $245M, and both Florida and Maryland recorded $180M each. North Carolina posted $153M, New York posted $130M, the District Of Columbia posted $129M, and Tennessee posted $119M. These figures are partial because they cover the fiscal year to date rather than a complete fiscal year. Contract obligations reflect funds that agencies committed during the reporting period, not necessarily cash outlays. Readers focused on regional planning or business development can use the state-level dollar amounts to identify where federal procurement activity is concentrated so far in FY2027.",
     "sections": [
       {
-        "heading": "Which states lead federal contract obligations in FY2026 to date?",
-        "body": "Virginia received $109B and leads the list. Texas received $93.5B and California received $54B, placing them second and third. Maryland, the District Of Columbia, and Arizona round out the next group with $34.6B, $30.4B, and $29.3B respectively."
+        "heading": "Which states lead in federal contract obligations?",
+        "body": "Virginia is the top state with $1.3B in obligations. Texas is second with $410M and California is third with $399M. Illinois, Florida, and Maryland follow with $245M, $180M, and $180M respectively."
       },
       {
-        "heading": "How should contractors view the FY2026 to date totals?",
-        "body": "The totals are contract obligations and reflect partial fiscal-year activity. Virginia, Texas, and California represent the largest absolute pools of obligations so far in FY2026 to date, which can guide market focus and competitive efforts."
+        "heading": "How concentrated are obligations among the top states?",
+        "body": "Ten jurisdictions are listed with obligations ranging from $1.3B to $119M. Virginia stands out at $1.3B while the other nine range between $410M and $119M. The data cover FY2027 to date, so these totals are partial for the fiscal year."
       }
     ]
   },
   "faq": [
     {
       "q": "Which state gets the most federal contract money?",
-      "a": "Virginia received $109B. Virginia is the top state for federal contract obligations in FY2026 to date, followed by Texas with $93.5B and California with $54B."
+      "a": "Virginia receives the most federal contract money. Virginia recorded $1.3B in federal contract obligations in FY2027 to date."
     }
   ],
   "related": [
@@ -552,257 +552,257 @@
     {
       "code": "VA",
       "name": "Virginia",
-      "value": 108588111353.61
+      "value": 1333492211.5
     },
     {
       "code": "TX",
       "name": "Texas",
-      "value": 93476294419.54
+      "value": 410294554.55
     },
     {
       "code": "CA",
       "name": "California",
-      "value": 54001911319.09
-    },
-    {
-      "code": "MD",
-      "name": "Maryland",
-      "value": 34579221626.4
-    },
-    {
-      "code": "DC",
-      "name": "District Of Columbia",
-      "value": 30401246643.64
-    },
-    {
-      "code": "AZ",
-      "name": "Arizona",
-      "value": 29300098166.85
-    },
-    {
-      "code": "FL",
-      "name": "Florida",
-      "value": 27857523185.56
-    },
-    {
-      "code": "PA",
-      "name": "Pennsylvania",
-      "value": 23715859209.5
-    },
-    {
-      "code": "CT",
-      "name": "Connecticut",
-      "value": 19635159568.59
-    },
-    {
-      "code": "WA",
-      "name": "Washington",
-      "value": 18491456030.12
-    },
-    {
-      "code": "MA",
-      "name": "Massachusetts",
-      "value": 16809410803.26
-    },
-    {
-      "code": "AL",
-      "name": "Alabama",
-      "value": 15790697240.63
-    },
-    {
-      "code": "NM",
-      "name": "New Mexico",
-      "value": 14961694590.87
-    },
-    {
-      "code": "CO",
-      "name": "Colorado",
-      "value": 13317047656.23
-    },
-    {
-      "code": "MO",
-      "name": "Missouri",
-      "value": 11852670093.19
-    },
-    {
-      "code": "TN",
-      "name": "Tennessee",
-      "value": 11694202229.91
+      "value": 399348949.25
     },
     {
       "code": "IL",
       "name": "Illinois",
-      "value": 11145435086.54
+      "value": 245330189.68
     },
     {
-      "code": "NY",
-      "name": "New York",
-      "value": 10080490323
+      "code": "FL",
+      "name": "Florida",
+      "value": 180378796.38
     },
     {
-      "code": "SC",
-      "name": "South Carolina",
-      "value": 9543836808.97
-    },
-    {
-      "code": "NJ",
-      "name": "New Jersey",
-      "value": 8946853276.58
-    },
-    {
-      "code": "GA",
-      "name": "Georgia",
-      "value": 8898457804.49
-    },
-    {
-      "code": "KY",
-      "name": "Kentucky",
-      "value": 8762344279.47
-    },
-    {
-      "code": "OH",
-      "name": "Ohio",
-      "value": 7469364423.53
-    },
-    {
-      "code": "MI",
-      "name": "Michigan",
-      "value": 6724406818.59
-    },
-    {
-      "code": "UT",
-      "name": "Utah",
-      "value": 6076806536.07
-    },
-    {
-      "code": "MS",
-      "name": "Mississippi",
-      "value": 5988820177.2
-    },
-    {
-      "code": "LA",
-      "name": "Louisiana",
-      "value": 5593565768.67
+      "code": "MD",
+      "name": "Maryland",
+      "value": 180251159.14
     },
     {
       "code": "NC",
       "name": "North Carolina",
-      "value": 4842159310.82
+      "value": 152514913.61
     },
     {
-      "code": "OK",
-      "name": "Oklahoma",
-      "value": 4582557745.48
+      "code": "NY",
+      "name": "New York",
+      "value": 130034957.64
     },
     {
-      "code": "IN",
-      "name": "Indiana",
-      "value": 4076964626.77
+      "code": "DC",
+      "name": "District Of Columbia",
+      "value": 129063206.15
     },
     {
-      "code": "AK",
-      "name": "Alaska",
-      "value": 4054427944
+      "code": "TN",
+      "name": "Tennessee",
+      "value": 118568752.1
     },
     {
-      "code": "ID",
-      "name": "Idaho",
-      "value": 3968556287.56
+      "code": "AL",
+      "name": "Alabama",
+      "value": 113303986.5
     },
     {
-      "code": "WI",
-      "name": "Wisconsin",
-      "value": 3864928409.11
+      "code": "MA",
+      "name": "Massachusetts",
+      "value": 97009252.87
+    },
+    {
+      "code": "AZ",
+      "name": "Arizona",
+      "value": 84750656.01
+    },
+    {
+      "code": "PA",
+      "name": "Pennsylvania",
+      "value": 82197353.77
+    },
+    {
+      "code": "SC",
+      "name": "South Carolina",
+      "value": 72449176.15
+    },
+    {
+      "code": "WA",
+      "name": "Washington",
+      "value": 61591906
+    },
+    {
+      "code": "KY",
+      "name": "Kentucky",
+      "value": 59464136.11
+    },
+    {
+      "code": "OH",
+      "name": "Ohio",
+      "value": 54933742.89
+    },
+    {
+      "code": "NJ",
+      "name": "New Jersey",
+      "value": 54851361.37
     },
     {
       "code": "KS",
       "name": "Kansas",
-      "value": 3707572978.4
+      "value": 53953968.96
     },
     {
-      "code": "NV",
-      "name": "Nevada",
-      "value": 3401110763.25
+      "code": "GA",
+      "name": "Georgia",
+      "value": 52654378.5
     },
     {
-      "code": "ME",
-      "name": "Maine",
-      "value": 3054283856.74
+      "code": "IN",
+      "name": "Indiana",
+      "value": 47808233.38
     },
     {
-      "code": "HI",
-      "name": "Hawaii",
-      "value": 2908460800.72
+      "code": "MS",
+      "name": "Mississippi",
+      "value": 47118640.67
     },
     {
-      "code": "OR",
-      "name": "Oregon",
-      "value": 2398906829.71
-    },
-    {
-      "code": "PR",
-      "name": "Puerto Rico",
-      "value": 2041937928.95
-    },
-    {
-      "code": "MN",
-      "name": "Minnesota",
-      "value": 1928308202.76
-    },
-    {
-      "code": "NH",
-      "name": "New Hampshire",
-      "value": 1855421518.38
-    },
-    {
-      "code": "IA",
-      "name": "Iowa",
-      "value": 1695353482.05
+      "code": "CO",
+      "name": "Colorado",
+      "value": 45325270.73
     },
     {
       "code": "WV",
       "name": "West Virginia",
-      "value": 1677907485.47
+      "value": 39793135.02
     },
     {
-      "code": "GU",
-      "name": "Guam",
-      "value": 1643082809.42
+      "code": "UT",
+      "name": "Utah",
+      "value": 36471325.34
     },
     {
-      "code": "MT",
-      "name": "Montana",
-      "value": 1328221464.05
+      "code": "MI",
+      "name": "Michigan",
+      "value": 33225667.94
     },
     {
-      "code": "NE",
-      "name": "Nebraska",
-      "value": 1244290919.81
+      "code": "IA",
+      "name": "Iowa",
+      "value": 32641300.17
+    },
+    {
+      "code": "MO",
+      "name": "Missouri",
+      "value": 31892790.53
+    },
+    {
+      "code": "WI",
+      "name": "Wisconsin",
+      "value": 28491688.36
+    },
+    {
+      "code": "OK",
+      "name": "Oklahoma",
+      "value": 28371923.45
+    },
+    {
+      "code": "OR",
+      "name": "Oregon",
+      "value": 26037199.79
+    },
+    {
+      "code": "MN",
+      "name": "Minnesota",
+      "value": 25141721.93
+    },
+    {
+      "code": "LA",
+      "name": "Louisiana",
+      "value": 23971189.96
     },
     {
       "code": "AR",
       "name": "Arkansas",
-      "value": 976994512.32
+      "value": 21929902.28
+    },
+    {
+      "code": "NV",
+      "name": "Nevada",
+      "value": 19596065.07
+    },
+    {
+      "code": "PR",
+      "name": "Puerto Rico",
+      "value": 17268053.42
+    },
+    {
+      "code": "CT",
+      "name": "Connecticut",
+      "value": 15778463.26
+    },
+    {
+      "code": "NM",
+      "name": "New Mexico",
+      "value": 12971072.83
+    },
+    {
+      "code": "HI",
+      "name": "Hawaii",
+      "value": 11610276.16
+    },
+    {
+      "code": "ME",
+      "name": "Maine",
+      "value": 8025561.5
+    },
+    {
+      "code": "MT",
+      "name": "Montana",
+      "value": 7904877.79
+    },
+    {
+      "code": "AK",
+      "name": "Alaska",
+      "value": 6935810.18
     },
     {
       "code": "RI",
       "name": "Rhode Island",
-      "value": 825447011.1
+      "value": 5767769.69
     },
     {
-      "code": "ND",
-      "name": "North Dakota",
-      "value": 792977023.86
+      "code": "NH",
+      "name": "New Hampshire",
+      "value": 4802125.56
     },
     {
       "code": "SD",
       "name": "South Dakota",
-      "value": 780211284.29
+      "value": 4539062.06
+    },
+    {
+      "code": "NE",
+      "name": "Nebraska",
+      "value": 2830691.78
+    },
+    {
+      "code": "VT",
+      "name": "Vermont",
+      "value": 1911113.18
+    },
+    {
+      "code": "DE",
+      "name": "Delaware",
+      "value": 1814895.57
     },
     {
       "code": "WY",
       "name": "Wyoming",
-      "value": 616150933.01
+      "value": 1747620.25
+    },
+    {
+      "code": "ND",
+      "name": "North Dakota",
+      "value": 1658707.59
     }
   ]
 }

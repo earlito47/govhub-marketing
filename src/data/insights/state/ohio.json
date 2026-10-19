@@ -1,20 +1,20 @@
 {
   "pageType": "state",
   "slug": "ohio",
-  "title": "Federal Contracts in Ohio: $7.5B (FY2026)",
+  "title": "Federal Contracts in Ohio: $54.9M (FY2027)",
   "h1": "Federal Contracts in Ohio: Spending, Agencies & Vendors",
-  "metaDescription": "Federal agencies obligated $7.5B to contractors in Ohio in FY2026 to date. See top buying agencies, top vendors, and industries.",
-  "updated": "2026-09-28",
+  "metaDescription": "Federal agencies obligated $54.9M to contractors in Ohio in FY2027 to date. See top buying agencies, top vendors, and industries.",
+  "updated": "2026-10-19",
   "fyWindow": {
-    "label": "FY2026 to date",
-    "start": "2025-10-01",
-    "end": "2026-09-28"
+    "label": "FY2027 to date",
+    "start": "2026-10-01",
+    "end": "2026-10-19"
   },
   "stats": {
-    "totalObligations": 7469364423.53,
-    "awardCount": 56702,
-    "yoyGrowthPct": -24,
-    "avgAwardSize": 131730,
+    "totalObligations": 54933742.89,
+    "awardCount": 298,
+    "yoyGrowthPct": -99.3,
+    "avgAwardSize": 184341,
     "smallBusinessSharePct": null
   },
   "charts": [
@@ -27,230 +27,230 @@
           "label": "Obligations",
           "points": [
             [
-              "FY21",
-              8372281818.24
-            ],
-            [
               "FY22",
               7760514262.71
             ],
             [
               "FY23",
-              10062117581.94
+              10062105081.94
             ],
             [
               "FY24",
-              8996203281.43
+              8996074322.93
             ],
             [
               "FY25",
-              9831310933.86
+              9835707047.94
             ],
             [
               "FY26",
-              7469364423.53
+              7908638760.83
+            ],
+            [
+              "FY27",
+              54933742.89
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Obligations fell 24.0% year over year, from $9.8B in FY2025 to $7.5B in FY2026 to date."
+      "takeaway": "Obligations fell 99.3% year over year, from $7.9B in FY2026 to $54.9M in FY2027 to date."
     },
     {
       "id": "ohio-top-agencies",
       "type": "bar",
-      "title": "Top 10 buying agencies, FY2026 to date",
+      "title": "Top 10 buying agencies, FY2027 to date",
       "series": [
         {
           "label": "Obligations",
           "points": [
             [
-              "Department of Defense",
-              4892703160.33
-            ],
-            [
-              "General Services Administration",
-              561699151.02
-            ],
-            [
-              "Department of Energy",
-              498514573.64
-            ],
-            [
               "Department of Veterans Affairs",
-              440871049.57
+              50056616.72
             ],
             [
               "National Aeronautics and Space Administration",
-              287186865.19
+              1804813.98
             ],
             [
-              "Department of Homeland Security",
-              190334020.69
+              "Social Security Administration",
+              1387924
             ],
             [
-              "Department of Health and Human Services",
-              147468644.38
+              "General Services Administration",
+              1133920.54
             ],
             [
-              "Department of Agriculture",
-              96052382.12
+              "Department of the Treasury",
+              996054.08
             ],
             [
-              "Department of Commerce",
-              72500159.82
+              "Department of Justice",
+              471766.39
             ],
             [
-              "National Science Foundation",
-              49774517.74
+              "Environmental Protection Agency",
+              323479.57
+            ],
+            [
+              "Department of Labor",
+              165105
+            ],
+            [
+              "Department of Energy",
+              0
+            ],
+            [
+              "Federal Communications Commission",
+              0
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Department of Defense was the top federal buyer in Ohio, obligating $4.9B (65.5% of the state total)."
+      "takeaway": "Department of Veterans Affairs was the top federal buyer in Ohio, obligating $50.1M (91.1% of the state total)."
     },
     {
       "id": "ohio-top-vendors",
       "type": "bar",
-      "title": "Top 10 vendors, FY2026 to date",
+      "title": "Top 10 vendors, FY2027 to date",
       "series": [
         {
           "label": "Obligations",
           "points": [
             [
-              "GENERAL ELECTRIC COMPANY",
-              638847493.42
+              "LC FLUHARTY CONSTRUCTION LLC",
+              14851012.97
             ],
             [
-              "MARATHON PETROLEUM COMPANY LP",
-              571554547.89
+              "CARDINAL HEALTH 414, LLC",
+              9754260.51
             ],
             [
-              "SOUTHERN OHIO CLEANUP COMPANY LLC",
-              377322975.48
+              "CONSTELLATION NEWENERGY, INC.",
+              2860000
             ],
             [
-              "BATTELLE MEMORIAL INSTITUTE",
-              294201784.61
+              "UNITED PARCEL SERVICE CO.",
+              2702999.99
             ],
             [
-              "UNIVERSITY OF DAYTON",
-              170292959.93
+              "ARROW ARC LLC",
+              2153412.4
             ],
             [
-              "LINQUEST CORPORATION",
-              141094515.91
+              "OHIO AMBULANCE SOLUTIONS, LLC",
+              2086753
             ],
             [
-              "BAXTERS NORTH AMERICA, INC.",
-              140364010.19
+              "CINCOM SYSTEMS, INC.",
+              1387924
             ],
             [
-              "L3HARRIS FUZING AND ORDNANCE SYSTEMS, INC.",
-              131728864.8
+              "UNIQUE CLEANING SERVICE, INC.",
+              1321276.2
             ],
             [
-              "DAVENPORT AVIATION INC",
-              112525263.35
+              "PAIN MANAGEMENT TECHNOLOGIES, INC.",
+              1258984
             ],
             [
-              "WEST VALLEY CLEANUP ALLIANCE, LLC",
-              87716848.43
+              "STERIS CORPORATION",
+              1239767.06
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "GENERAL ELECTRIC COMPANY led all contractors in Ohio with $639M, 8.6% of the state total."
+      "takeaway": "LC FLUHARTY CONSTRUCTION LLC led all contractors in Ohio with $14.9M, 27.0% of the state total."
     },
     {
       "id": "ohio-top-naics",
       "type": "bar",
-      "title": "Top 10 industries (NAICS), FY2026 to date",
+      "title": "Top 10 industries (NAICS), FY2027 to date",
       "series": [
         {
           "label": "Obligations",
           "points": [
             [
-              "Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology)",
-              1445307125.1
-            ],
-            [
-              "Petroleum Refineries",
-              636150473.53
-            ],
-            [
-              "Aircraft Engine and Engine Parts Manufacturing",
-              554890880.76
-            ],
-            [
-              "Remediation Services",
-              496608776.76
-            ],
-            [
-              "Other Computer Related Services",
-              310096445.77
-            ],
-            [
               "Commercial and Institutional Building Construction",
-              277993297.24
+              16136168.2
             ],
             [
-              "Other Aircraft Parts and Auxiliary Equipment Manufacturing",
-              273437404.44
+              "Pharmaceutical Preparation Manufacturing",
+              10588567.58
             ],
             [
-              "Ammunition (except Small Arms) Manufacturing",
-              215259423.41
+              "Couriers and Express Delivery Services",
+              2936416.55
             ],
             [
-              "Engineering Services",
-              160495594.55
+              "Electric Power Distribution",
+              2855901.27
             ],
             [
-              "Custom Computer Programming Services",
-              155048152.09
+              "Temporary Help Services",
+              2436450
+            ],
+            [
+              "Electronic and Precision Equipment Repair and Maintenance",
+              2123008.59
+            ],
+            [
+              "Ambulance Services",
+              2086753
+            ],
+            [
+              "Software Publishers",
+              1387924
+            ],
+            [
+              "Janitorial Services",
+              1347015.51
+            ],
+            [
+              "Surgical and Medical Instrument Manufacturing",
+              1262255.64
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology) was the largest industry in Ohio, with $1.4B obligated."
+      "takeaway": "Commercial and Institutional Building Construction was the largest industry in Ohio, with $16.1M obligated."
     }
   ],
   "crossLinks": [
     {
-      "label": "Department of Defense contracts",
-      "href": "/insights/agency/department-of-defense/"
+      "label": "Department of Veterans Affairs contracts",
+      "href": "/insights/agency/department-of-veterans-affairs/"
+    },
+    {
+      "label": "National Aeronautics and Space Administration contracts",
+      "href": "/insights/agency/national-aeronautics-and-space-administration/"
     },
     {
       "label": "General Services Administration contracts",
       "href": "/insights/agency/general-services-administration/"
     },
     {
-      "label": "Department of Energy contracts",
-      "href": "/insights/agency/department-of-energy/"
-    },
-    {
-      "label": "Department of Veterans Affairs contracts",
-      "href": "/insights/agency/department-of-veterans-affairs/"
-    },
-    {
-      "label": "NAICS 541715: Research and Development in the Physical, Engineering, and Life Sciences",
-      "href": "/insights/naics/541715/"
-    },
-    {
-      "label": "NAICS 336412: Aircraft Engine and Engine Parts Manufacturing",
-      "href": "/insights/naics/336412/"
-    },
-    {
-      "label": "NAICS 541519: Other Computer Related Services",
-      "href": "/insights/naics/541519/"
+      "label": "Department of the Treasury contracts",
+      "href": "/insights/agency/department-of-the-treasury/"
     },
     {
       "label": "NAICS 236220: Commercial and Institutional Building Construction",
       "href": "/insights/naics/236220/"
+    },
+    {
+      "label": "NAICS 325412: Pharmaceutical Preparation Manufacturing",
+      "href": "/insights/naics/325412/"
+    },
+    {
+      "label": "NAICS 561720: Janitorial Services",
+      "href": "/insights/naics/561720/"
+    },
+    {
+      "label": "NAICS 339112: Surgical and Medical Instrument Manufacturing",
+      "href": "/insights/naics/339112/"
     }
   ],
   "tables": [
@@ -265,87 +265,87 @@
         [
           1,
           {
-            "text": "GENERAL ELECTRIC COMPANY",
-            "href": "https://www.usaspending.gov/recipient/61dfb4da-ba2f-398f-13e9-5792607bf051-C/latest/"
+            "text": "LC FLUHARTY CONSTRUCTION LLC",
+            "href": "https://www.usaspending.gov/recipient/892c231d-2691-73f7-764f-4638875f31fe-C/latest/"
           },
-          638847493.42
+          14851012.97
         ],
         [
           2,
           {
-            "text": "MARATHON PETROLEUM COMPANY LP",
-            "href": "https://www.usaspending.gov/recipient/8878e10c-20f9-85e0-d6e3-e61e5e367aac-C/latest/"
+            "text": "CARDINAL HEALTH 414, LLC",
+            "href": "https://www.usaspending.gov/recipient/40992dfb-2861-fc12-128f-a0c27663d4e5-C/latest/"
           },
-          571554547.89
+          9754260.51
         ],
         [
           3,
           {
-            "text": "SOUTHERN OHIO CLEANUP COMPANY LLC",
-            "href": "https://www.usaspending.gov/recipient/18b90060-5da1-364d-19c7-7dcda439ad6b-C/latest/"
+            "text": "CONSTELLATION NEWENERGY, INC.",
+            "href": "https://www.usaspending.gov/recipient/9ffb2959-0a9b-e538-2f96-294976314f9b-C/latest/"
           },
-          377322975.48
+          2860000
         ],
         [
           4,
           {
-            "text": "BATTELLE MEMORIAL INSTITUTE",
-            "href": "https://www.usaspending.gov/recipient/d035b043-1694-6193-563e-4e6b32dbf656-C/latest/"
+            "text": "UNITED PARCEL SERVICE CO.",
+            "href": "https://www.usaspending.gov/recipient/a8e90c7c-8175-41a5-b841-5b038f67a07d-C/latest/"
           },
-          294201784.61
+          2702999.99
         ],
         [
           5,
           {
-            "text": "UNIVERSITY OF DAYTON",
-            "href": "https://www.usaspending.gov/recipient/58d13fb1-427c-0461-53db-341b90f81c0c-C/latest/"
+            "text": "ARROW ARC LLC",
+            "href": "https://www.usaspending.gov/recipient/4330f4e2-e129-648a-843b-004a7547bd68-C/latest/"
           },
-          170292959.93
+          2153412.4
         ],
         [
           6,
           {
-            "text": "LINQUEST CORPORATION",
-            "href": "https://www.usaspending.gov/recipient/94657412-ad9f-323d-a845-cf0021e8dfb7-C/latest/"
+            "text": "OHIO AMBULANCE SOLUTIONS, LLC",
+            "href": "https://www.usaspending.gov/recipient/3dc81338-8078-b7ec-a0c3-ed5c76fb815c-C/latest/"
           },
-          141094515.91
+          2086753
         ],
         [
           7,
           {
-            "text": "BAXTERS NORTH AMERICA, INC.",
-            "href": "https://www.usaspending.gov/recipient/586eb4a8-f2fc-034b-e1e3-a23fe80db4ff-C/latest/"
+            "text": "CINCOM SYSTEMS, INC.",
+            "href": "https://www.usaspending.gov/recipient/6de2b741-0b07-6e87-8801-4bab84ca3007-C/latest/"
           },
-          140364010.19
+          1387924
         ],
         [
           8,
           {
-            "text": "L3HARRIS FUZING AND ORDNANCE SYSTEMS, INC.",
-            "href": "https://www.usaspending.gov/recipient/03cd4adf-0052-ef23-c433-3d39eb602520-C/latest/"
+            "text": "UNIQUE CLEANING SERVICE, INC.",
+            "href": "https://www.usaspending.gov/recipient/b993cbfa-287e-86a4-165f-7adb57c39953-C/latest/"
           },
-          131728864.8
+          1321276.2
         ],
         [
           9,
           {
-            "text": "DAVENPORT AVIATION INC",
-            "href": "https://www.usaspending.gov/recipient/3cf73963-592e-a8f1-5c01-261fcfabb80e-C/latest/"
+            "text": "PAIN MANAGEMENT TECHNOLOGIES, INC.",
+            "href": "https://www.usaspending.gov/recipient/327fdf1c-affb-41e5-82ff-1bdbaef5bd98-C/latest/"
           },
-          112525263.35
+          1258984
         ],
         [
           10,
           {
-            "text": "WEST VALLEY CLEANUP ALLIANCE, LLC",
-            "href": "https://www.usaspending.gov/recipient/73b86d50-542e-047f-81e0-c80a74fdeffa-C/latest/"
+            "text": "STERIS CORPORATION",
+            "href": "https://www.usaspending.gov/recipient/437688b7-6fc2-8c51-1405-9477da96649c-C/latest/"
           },
-          87716848.43
+          1239767.06
         ]
       ]
     },
     {
-      "title": "Largest awards, FY2026 to date",
+      "title": "Largest awards, FY2027 to date",
       "columns": [
         "Rank",
         "Recipient",
@@ -356,256 +356,256 @@
         [
           1,
           {
-            "text": "FLUOR-BWXT PORTSMOUTH LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_DEAC3010CC40017_8900_-NONE-_-NONE-/"
+            "text": "WHITING-TURNER CONTRACTING COMPANY, THE",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_47PF0021C0003_4740_-NONE-_-NONE-/"
           },
-          4464785978.44,
-          "Department of Energy"
+          99567390.74,
+          "General Services Administration"
         ],
         [
           2,
           {
-            "text": "GENERAL ELECTRIC COMPANY",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_FA862616C2138_9700_-NONE-_-NONE-/"
+            "text": "INSIGHTS TRAINING GROUP, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_1605JW22C0004_1605_-NONE-_-NONE-/"
           },
-          2091752457.02,
-          "Department of Defense"
+          46659999.21,
+          "Department of Labor"
         ],
         [
           3,
           {
-            "text": "GENERAL ELECTRIC COMPANY",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_FA862622C0002_9700_-NONE-_-NONE-/"
+            "text": "BOOZ ALLEN HAMILTON INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_47QFWA26F0006_4732_47QTCK18D0004_4732/"
           },
-          1238736416.75,
-          "Department of Defense"
+          38452810.7,
+          "General Services Administration"
         ],
         [
           4,
           {
-            "text": "MID-AMERICA CONVERSION SERVICES, LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_DEEM0004559_8900_-NONE-_-NONE-/"
+            "text": "MESSER CONSTRUCTION CO",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_47PF0024C0019_4740_-NONE-_-NONE-/"
           },
-          973855086.64,
-          "Department of Energy"
+          22581570,
+          "General Services Administration"
         ],
         [
           5,
           {
-            "text": "GENERAL ELECTRIC COMPANY",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_FA862620F0029_9700_FA862618D0029_9700/"
+            "text": "UNIVERSITY OF DAYTON",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_47QFLA22F0156_4732_47QFLA18D0006_4732/"
           },
-          421031853,
-          "Department of Defense"
+          18424820.78,
+          "General Services Administration"
         ],
         [
           6,
           {
-            "text": "GENERAL ELECTRIC COMPANY",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_FA862623F0003_9700_FA862622D0010_9700/"
+            "text": "LC FLUHARTY CONSTRUCTION LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C25027C0008_3600_-NONE-_-NONE-/"
           },
-          408498267.36,
-          "Department of Defense"
+          14851012.97,
+          "Department of Veterans Affairs"
         ],
         [
           7,
           {
-            "text": "SOUTHERN OHIO CLEANUP COMPANY LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_89303125FEM400428_8900_89303323DEM000089_8900/"
+            "text": "CINCOM SYSTEMS, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_28321324P00050012_2800_-NONE-_-NONE-/"
           },
-          399660463.32,
-          "Department of Energy"
+          6014338,
+          "Social Security Administration"
         ],
         [
           8,
           {
-            "text": "L3HARRIS FUZING AND ORDNANCE SYSTEMS, INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_W15QKN17C0024_9700_-NONE-_-NONE-/"
+            "text": "STERIS CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C25921F0536_3600_GS30F022GA_4732/"
           },
-          371742090.33,
-          "Department of Defense"
+          5485868,
+          "Department of Veterans Affairs"
         ],
         [
           9,
           {
-            "text": "AMERICAN CENTRIFUGE OPERATING, LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_89243223CNE000030_8900_-NONE-_-NONE-/"
+            "text": "COLEMAN PROFESSIONAL SERVICES, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70B04C24P00000146_7014_-NONE-_-NONE-/"
           },
-          332041412.48,
-          "Department of Energy"
+          5291369.03,
+          "Department of Homeland Security"
         ],
         [
           10,
           {
-            "text": "ICON GOVERNMENT AND PUBLIC HEALTH SOLUTIONS, INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_75A50123F33006_7505_75A50120D00017_7505/"
+            "text": "R.J. RUNGE COMPANY, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_80GRC024F0061_8000_80GRC020D0013_8000/"
           },
-          330226484,
-          "Department of Health and Human Services"
+          5221568,
+          "National Aeronautics and Space Administration"
         ],
         [
           11,
           {
-            "text": "BAE SYSTEMS INFORMATION AND ELECTRONIC SYSTEMS INTEGRATION INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_SPE7MX21C0002_9700_-NONE-_-NONE-/"
+            "text": "ERIE AFFILIATES INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_80GRC025F7061_8000_80GRC020D0009_8000/"
           },
-          328573678.35,
-          "Department of Defense"
+          4203713,
+          "National Aeronautics and Space Administration"
         ],
         [
           12,
           {
-            "text": "GENERAL ELECTRIC COMPANY",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_FA862625FB012_9700_FA862622D0010_9700/"
+            "text": "CARDINAL HEALTH 414, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C24523P0041_3600_-NONE-_-NONE-/"
           },
-          314988005.26,
-          "Department of Defense"
+          3923256.91,
+          "Department of Veterans Affairs"
         ],
         [
           13,
           {
-            "text": "FRONTIER TECHNOLOGY INC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_47QFCA21C0024_4732_-NONE-_-NONE-/"
+            "text": "JOHNSONS CONSULTING LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75D30120C07864_7523_-NONE-_-NONE-/"
           },
-          284868715.41,
-          "General Services Administration"
+          3587322.33,
+          "Department of Health and Human Services"
         ],
         [
           14,
           {
-            "text": "BATTELLE MEMORIAL INSTITUTE",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_49100420C0001_4900_-NONE-_-NONE-/"
+            "text": "MILE TWO LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_47QFLA24F0078_4732_47QFLA23D0001_4732/"
           },
-          283013649.25,
-          "National Science Foundation"
+          3476923.08,
+          "General Services Administration"
         ],
         [
           15,
           {
-            "text": "GE AVIATION SYSTEMS LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_N0001918C0004_9700_-NONE-_-NONE-/"
+            "text": "CARDINAL HEALTH 414, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C24827N0041_3600_36C24823D0049_3600/"
           },
-          251320826.3,
-          "Department of Defense"
+          3113743.39,
+          "Department of Veterans Affairs"
         ],
         [
           16,
           {
-            "text": "L3 TECHNOLOGIES, INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002422C5514_9700_-NONE-_-NONE-/"
+            "text": "ERIE AFFILIATES INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_80GRC026F7021_8000_80GRC020D0009_8000/"
           },
-          235314661.81,
-          "Department of Defense"
+          2842644,
+          "National Aeronautics and Space Administration"
         ],
         [
           17,
           {
-            "text": "SUMARIA SYSTEMS, LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_FA862222F8449_9700_GS00Q14OADS732_4732/"
+            "text": "UNITED PARCEL SERVICE CO.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C25027F0007_3600_HTC71123DC025_9700/"
           },
-          219772922.97,
-          "Department of Defense"
+          2701999.99,
+          "Department of Veterans Affairs"
         ],
         [
           18,
           {
-            "text": "GENERAL ELECTRIC COMPANY",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_80AFRC21CA021_8000_-NONE-_-NONE-/"
+            "text": "ORIANA HOUSE INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_15BRRC26F00000158_1540_15BRRC21D00000304_1540/"
           },
-          214925975.66,
-          "National Aeronautics and Space Administration"
+          2612468.74,
+          "Department of Justice"
         ],
         [
           19,
           {
-            "text": "UNWIN CO",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_89303020CEA000004_8900_-NONE-_-NONE-/"
+            "text": "STERIS CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C25225F0006_3600_GS30F022GA_4732/"
           },
-          213640542.3,
-          "Department of Energy"
+          2478921.6,
+          "Department of Veterans Affairs"
         ],
         [
           20,
           {
-            "text": "OHIO VALLEY ELECTRIC CORPORATION",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_DEAC0503OR22988_8900_-NONE-_-NONE-/"
+            "text": "ARROW ARC LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C25027F0042_3600_36C10X24D0003_3600/"
           },
-          204323016.77,
-          "Department of Energy"
+          2153412.4,
+          "Department of Veterans Affairs"
         ],
         [
           21,
           {
-            "text": "LOCKHEED MARTIN CORPORATION",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_N0003021C0015_9700_-NONE-_-NONE-/"
+            "text": "MONONGAHELA POWER COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_15B12126F00000005_1540_47PA0418D0034_4740/"
           },
-          200361773.43,
-          "Department of Defense"
+          2089266.1,
+          "Department of Justice"
         ],
         [
           22,
           {
-            "text": "FRONTIER TECHNOLOGY INC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_FA880619C0004_9700_-NONE-_-NONE-/"
+            "text": "OHIO AMBULANCE SOLUTIONS, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C25027N5521_3600_36C25026D5521_3600/"
           },
-          180676831,
-          "Department of Defense"
+          2086753,
+          "Department of Veterans Affairs"
         ],
         [
           23,
           {
-            "text": "NORTH WIND PORTAGE, INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_W912P421C0014_9700_-NONE-_-NONE-/"
+            "text": "COMMUNITY SUPPORT SERVICES INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C25022P0014_3600_-NONE-_-NONE-/"
           },
-          157058714.97,
-          "Department of Defense"
+          2056700,
+          "Department of Veterans Affairs"
         ],
         [
           24,
           {
-            "text": "CACI-ISS, LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_FA877021FB002_9700_W52P1J18DA138_9700/"
+            "text": "GENERAL ELECTRIC COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_80LARC24F0005_8000_80LARC21D0002_8000/"
           },
-          152862782.13,
-          "Department of Defense"
+          1935524,
+          "National Aeronautics and Space Administration"
         ],
         [
           25,
           {
-            "text": "BATTELLE MEMORIAL INSTITUTE",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_HHSN273201400015C_7529_-NONE-_-NONE-/"
+            "text": "GENERAL ELECTRIC COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_80LARC24F0041_8000_80LARC21D0002_8000/"
           },
-          147591497.86,
-          "Department of Health and Human Services"
+          1823415,
+          "National Aeronautics and Space Administration"
         ]
       ]
     }
   ],
   "narrative": {
-    "intro": "Ohio recorded $7.5B in federal contract obligations for FY2026 to date. The federal government issued 56,702 awards in the state at an average award size of $132K, and obligations fell 24.0% year over year. The Department of Defense is the largest buyer in Ohio, obligating $4.9B so far this fiscal year. Research and Development in the Physical, Engineering, and Life Sciences is the largest industry by obligations at $1.4B, followed by Petroleum Refineries at $636M and Aircraft Engine and Engine Parts Manufacturing at $555M. FY2026 to date obligations of $7.5B follow a sequence of annual totals: FY21 $8.4B, FY22 $7.8B, FY23 $10.1B, FY24 $9B, and FY25 $9.8B. Major vendors active in Ohio include GENERAL ELECTRIC COMPANY at $639M and MARATHON PETROLEUM COMPANY LP at $572M. All figures are contract obligations and current-year totals are partial (fiscal year to date).",
+    "intro": "Ohio recorded $54.9M in federal contract obligations in FY2027 to date. All figures are contract obligations; current-year totals are partial (fiscal year to date). Obligations fell 99.3% year over year. The Department of Veterans Affairs obligated $50.1M in FY2027 to date. The state has seen much larger annual totals in recent years: FY22 obligations were $7.8B, FY23 obligations were $10.1B, FY24 obligations were $9B, FY25 obligations were $9.8B, and FY26 obligations were $7.9B. Award activity for FY2027 to date shows 298 awards with an average award size of $184K. Commercial and Institutional Building Construction is the largest industry in FY2027 to date with $16.1M. LC FLUHARTY CONSTRUCTION LLC is the largest vendor in FY2027 to date with $14.9M. The current-year data shows a concentrated set of buyers, industries, and vendors that account for most obligations so far in FY2027.",
     "sections": [
       {
-        "heading": "How did federal obligations in Ohio change versus prior years?",
-        "body": "Obligations fell 24.0% year over year in FY2026 to date. Ohio obligations for FY2026 to date are $7.5B, compared with FY25 $9.8B and FY23 $10.1B. The state saw a peak of $10.1B in FY23 and has trended lower through FY26 to date. The current-year total is partial because the fiscal year is still in progress."
+        "heading": "How concentrated is federal spending in Ohio this fiscal year?",
+        "body": "The Department of Veterans Affairs obligated $50.1M in FY2027 to date. The total for Ohio is $54.9M, so VA spending accounts for the majority of current-year obligations. Award activity shows 298 awards and an average award size of $184K. Prior fiscal years were much larger, for example FY26 obligations were $7.9B."
       },
       {
-        "heading": "Which agencies and vendors dominate Ohio contracting?",
-        "body": "The Department of Defense is the largest buyer, obligating $4.9B in FY2026 to date. The General Services Administration obligated $562M, the Department of Energy obligated $499M, and the Department of Veterans Affairs obligated $441M. GENERAL ELECTRIC COMPANY received $639M and MARATHON PETROLEUM COMPANY LP received $572M, with SOUTHERN OHIO CLEANUP COMPANY LLC at $377M and BATTELLE MEMORIAL INSTITUTE at $294M rounding out the top vendors."
+        "heading": "Which industries and vendors dominate FY2027 federal contracting in Ohio?",
+        "body": "Commercial and Institutional Building Construction leads industries with $16.1M. Pharmaceutical Preparation Manufacturing follows with $10.6M, and Couriers and Express Delivery Services and Electric Power Distribution each have $2.9M. LC FLUHARTY CONSTRUCTION LLC is the top vendor with $14.9M, followed by CARDINAL HEALTH 414, LLC with $9.8M and CONSTELLATION NEWENERGY, INC. with $2.9M."
       }
     ]
   },
   "faq": [
     {
       "q": "How much federal contract money goes to Ohio?",
-      "a": "Ohio received $7.5B in federal contract obligations in FY2026 to date. The federal government issued 56,702 awards in the state at an average award size of $132K, and obligations fell 24.0% year over year."
+      "a": "Ohio received $54.9M in federal contract obligations in FY2027 to date. Award activity in FY2027 to date includes 298 awards and an average award size of $184K. Obligations fell 99.3% year over year and prior fiscal years were larger: FY22 was $7.8B, FY23 was $10.1B, FY24 was $9B, FY25 was $9.8B, and FY26 was $7.9B."
     },
     {
       "q": "Which agencies award the most contracts in Ohio?",
-      "a": "The Department of Defense is the largest buyer, obligating $4.9B. The General Services Administration obligated $562M, the Department of Energy obligated $499M, the Department of Veterans Affairs obligated $441M, and other top buyers include NASA at $287M and the Department of Homeland Security at $190M."
+      "a": "The Department of Veterans Affairs awards the most contracts in Ohio, obligating $50.1M in FY2027 to date. The next-largest buyers in FY2027 to date are National Aeronautics and Space Administration with $1.8M, Social Security Administration with $1.4M, and General Services Administration with $1.1M. Department of the Treasury obligated $996K, Department of Justice obligated $472K, Environmental Protection Agency obligated $323K, Department of Labor obligated $165K."
     },
     {
       "q": "Who are the largest federal contractors in Ohio?",
-      "a": "GENERAL ELECTRIC COMPANY is the largest contractor at $639M. Other top contractors include MARATHON PETROLEUM COMPANY LP at $572M, SOUTHERN OHIO CLEANUP COMPANY LLC at $377M, and BATTELLE MEMORIAL INSTITUTE at $294M."
+      "a": "LC FLUHARTY CONSTRUCTION LLC is the largest federal contractor in Ohio in FY2027 to date with $14.9M. CARDINAL HEALTH 414, LLC follows with $9.8M, CONSTELLATION NEWENERGY, INC. has $2.9M, UNITED PARCEL SERVICE CO. has $2.7M, and ARROW ARC LLC has $2.2M. Other top vendors include OHIO AMBULANCE SOLUTIONS, LLC with $2.1M and CINCOM SYSTEMS, INC. with $1.4M."
     }
   ],
   "related": [
@@ -639,5 +639,6 @@
       "label": "USAspending.gov award data",
       "href": "https://www.usaspending.gov"
     }
-  ]
+  ],
+  "noindex": true
 }

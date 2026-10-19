@@ -1,20 +1,20 @@
 {
   "pageType": "naics",
   "slug": "325412",
-  "title": "Federal Contracts in NAICS 325412: $13.3B (FY2026)",
+  "title": "Federal Contracts in NAICS 325412: $74.9M (FY2027)",
   "h1": "Pharmaceutical Preparation Manufacturing (NAICS 325412): Federal Contract Market",
-  "metaDescription": "Federal agencies obligated $13.3B on Pharmaceutical Preparation Manufacturing (NAICS 325412) in FY2026 to date. See top vendors, top agencies, and trends.",
-  "updated": "2026-09-28",
+  "metaDescription": "Federal agencies obligated $74.9M on Pharmaceutical Preparation Manufacturing (NAICS 325412) in FY2027 to date. See top vendors, top agencies, and trends.",
+  "updated": "2026-10-19",
   "fyWindow": {
-    "label": "FY2026 to date",
-    "start": "2025-10-01",
-    "end": "2026-09-28"
+    "label": "FY2027 to date",
+    "start": "2026-10-01",
+    "end": "2026-10-19"
   },
   "stats": {
-    "totalObligations": 13268026102.85,
-    "awardCount": 15403,
-    "yoyGrowthPct": 1.4,
-    "avgAwardSize": 861392,
+    "totalObligations": 74909345.91,
+    "awardCount": 244,
+    "yoyGrowthPct": -99.5,
+    "avgAwardSize": 307006,
     "smallBusinessSharePct": null
   },
   "charts": [
@@ -27,10 +27,6 @@
           "label": "Obligations",
           "points": [
             [
-              "FY21",
-              19528450912.06
-            ],
-            [
               "FY22",
               34447590288.98
             ],
@@ -40,129 +36,101 @@
             ],
             [
               "FY24",
-              10077399803.55
+              10077505403.55
             ],
             [
               "FY25",
-              13091271288.31
+              13091275895.31
             ],
             [
               "FY26",
-              13268026102.85
+              14522615519.24
+            ],
+            [
+              "FY27",
+              74909345.91
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Obligations grew 1.4% year over year, from $13.1B in FY2025 to $13.3B in FY2026 to date."
+      "takeaway": "Obligations fell 99.5% year over year, from $14.5B in FY2026 to $74.9M in FY2027 to date."
     },
     {
       "id": "325412-top-agencies",
       "type": "bar",
-      "title": "Top 10 buying agencies, FY2026 to date",
+      "title": "Top 10 buying agencies, FY2027 to date",
       "series": [
         {
           "label": "Obligations",
           "points": [
             [
               "Department of Veterans Affairs",
-              12282723382.96
-            ],
-            [
-              "Department of Health and Human Services",
-              692199311.65
+              70582479.32
             ],
             [
               "Department of Justice",
-              200563043.68
-            ],
-            [
-              "Department of Defense",
-              64757799.77
-            ],
-            [
-              "Department of Homeland Security",
-              22185325.87
-            ],
-            [
-              "Department of Agriculture",
-              4144676
-            ],
-            [
-              "Department of State",
-              701372
-            ],
-            [
-              "Peace Corps",
-              458888.61
-            ],
-            [
-              "Department of Commerce",
-              133218.37
-            ],
-            [
-              "Department of the Interior",
-              119773.76
+              4326866.59
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Department of Veterans Affairs was the top buyer, obligating $12.3B (92.6% of all obligations)."
+      "takeaway": "Department of Veterans Affairs was the top buyer, obligating $70.6M (94.2% of all obligations)."
     },
     {
       "id": "325412-top-vendors",
       "type": "bar",
-      "title": "Top 10 vendors, FY2026 to date",
+      "title": "Top 10 vendors, FY2027 to date",
       "series": [
         {
           "label": "Obligations",
           "points": [
             [
-              "MCKESSON CORPORATION",
-              12298408073.78
-            ],
-            [
-              "EMERGENT BIOSOLUTIONS CANADA INC",
-              118251472
-            ],
-            [
-              "PHLOW CORP.",
-              105274409.1
-            ],
-            [
-              "BAVARIAN NORDIC A/S",
-              96961504
-            ],
-            [
-              "EXELAN PHARMACEUTICALS INC",
-              95752309.61
-            ],
-            [
-              "DLA TROOP SUPPORT",
-              68310123.49
-            ],
-            [
-              "MCKESSON SPECIALTY DISTRIBUTION LLC",
-              51103444.57
-            ],
-            [
-              "PARTNER THERAPEUTICS, INC.",
-              50234675.87
-            ],
-            [
-              "NOVARTIS PHARMACEUTICALS CORPORATION",
-              39709932.04
+              "CARDINAL HEALTH 414, LLC",
+              14630835.14
             ],
             [
               "PROGENICS PHARMACEUTICALS INC",
-              38150544.67
+              12118579.3
+            ],
+            [
+              "NOVARTIS PHARMACEUTICALS CORPORATION",
+              8397012.62
+            ],
+            [
+              "EXELAN PHARMACEUTICALS INC",
+              5519715.19
+            ],
+            [
+              "OPTUM INFUSION SERVICES 308, LLC",
+              4760613.52
+            ],
+            [
+              "MCKESSON CORPORATION",
+              4210740.94
+            ],
+            [
+              "JUBILANT DRAXIMAGE RADIOPHARMACIES, INC.",
+              2505724.23
+            ],
+            [
+              "PETNET SOLUTIONS, INC.",
+              2304404.9
+            ],
+            [
+              "SOFIE CO.",
+              2286357.88
+            ],
+            [
+              "TELIX PHARMACEUTICALS US INC",
+              2280000
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "MCKESSON CORPORATION led all vendors with $12.3B in obligations, 92.7% of the market."
+      "takeaway": "CARDINAL HEALTH 414, LLC led all vendors with $14.6M in obligations, 19.5% of the market."
     }
   ],
   "crossLinks": [
@@ -171,16 +139,8 @@
       "href": "/insights/agency/department-of-veterans-affairs/"
     },
     {
-      "label": "Department of Health and Human Services contracts",
-      "href": "/insights/agency/department-of-health-and-human-services/"
-    },
-    {
       "label": "Department of Justice contracts",
       "href": "/insights/agency/department-of-justice/"
-    },
-    {
-      "label": "Department of Defense contracts",
-      "href": "/insights/agency/department-of-defense/"
     }
   ],
   "tables": [
@@ -195,87 +155,87 @@
         [
           1,
           {
-            "text": "MCKESSON CORPORATION",
-            "href": "https://www.usaspending.gov/recipient/b54de748-ee64-a1e6-546e-e7007b054797-C/latest/"
+            "text": "CARDINAL HEALTH 414, LLC",
+            "href": "https://www.usaspending.gov/recipient/40992dfb-2861-fc12-128f-a0c27663d4e5-C/latest/"
           },
-          12298408073.78
+          14630835.14
         ],
         [
           2,
           {
-            "text": "EMERGENT BIOSOLUTIONS CANADA INC",
-            "href": "https://www.usaspending.gov/recipient/8fc3acaa-883e-30d0-a39f-445374bdccc6-C/latest/"
+            "text": "PROGENICS PHARMACEUTICALS INC",
+            "href": "https://www.usaspending.gov/recipient/4ef0181e-36b1-4a54-78ed-884078355b01-C/latest/"
           },
-          118251472
+          12118579.3
         ],
         [
           3,
           {
-            "text": "PHLOW CORP.",
-            "href": "https://www.usaspending.gov/recipient/b087b3ac-0c88-4e4e-1a08-01ed69055984-C/latest/"
+            "text": "NOVARTIS PHARMACEUTICALS CORPORATION",
+            "href": "https://www.usaspending.gov/recipient/0445e669-1cfe-aed5-2930-182f0bec7eb7-C/latest/"
           },
-          105274409.1
+          8397012.62
         ],
         [
           4,
           {
-            "text": "BAVARIAN NORDIC A/S",
-            "href": "https://www.usaspending.gov/recipient/9ae602e7-e5ab-f71a-c999-877c423efe91-C/latest/"
+            "text": "EXELAN PHARMACEUTICALS INC",
+            "href": "https://www.usaspending.gov/recipient/fd180f17-935a-1d34-e226-7aeefdb3549c-C/latest/"
           },
-          96961504
+          5519715.19
         ],
         [
           5,
           {
-            "text": "EXELAN PHARMACEUTICALS INC",
-            "href": "https://www.usaspending.gov/recipient/fd180f17-935a-1d34-e226-7aeefdb3549c-C/latest/"
+            "text": "OPTUM INFUSION SERVICES 308, LLC",
+            "href": "https://www.usaspending.gov/recipient/136e47c1-2fd0-02b1-44eb-264cbc9d4bf9-C/latest/"
           },
-          95752309.61
+          4760613.52
         ],
         [
           6,
           {
-            "text": "DLA TROOP SUPPORT",
-            "href": "https://www.usaspending.gov/recipient/e5f182e0-a450-9f03-714f-b337a83f79f1-C/latest/"
+            "text": "MCKESSON CORPORATION",
+            "href": "https://www.usaspending.gov/recipient/b54de748-ee64-a1e6-546e-e7007b054797-C/latest/"
           },
-          68310123.49
+          4210740.94
         ],
         [
           7,
           {
-            "text": "MCKESSON SPECIALTY DISTRIBUTION LLC",
-            "href": "https://www.usaspending.gov/recipient/97abd44f-2906-37fd-4204-8421831a9414-C/latest/"
+            "text": "JUBILANT DRAXIMAGE RADIOPHARMACIES, INC.",
+            "href": "https://www.usaspending.gov/recipient/c7780925-789b-f0ef-7bf7-cc395712d480-C/latest/"
           },
-          51103444.57
+          2505724.23
         ],
         [
           8,
           {
-            "text": "PARTNER THERAPEUTICS, INC.",
-            "href": "https://www.usaspending.gov/recipient/b0d22dd9-a052-acb7-5aac-e9e04bec332b-C/latest/"
+            "text": "PETNET SOLUTIONS, INC.",
+            "href": "https://www.usaspending.gov/recipient/7ed04646-b89d-f945-1af7-73897b74784c-C/latest/"
           },
-          50234675.87
+          2304404.9
         ],
         [
           9,
           {
-            "text": "NOVARTIS PHARMACEUTICALS CORPORATION",
-            "href": "https://www.usaspending.gov/recipient/0445e669-1cfe-aed5-2930-182f0bec7eb7-C/latest/"
+            "text": "SOFIE CO.",
+            "href": "https://www.usaspending.gov/recipient/20164e6a-f05c-d73c-0d80-bcf062f8a9f4-C/latest/"
           },
-          39709932.04
+          2286357.88
         ],
         [
           10,
           {
-            "text": "PROGENICS PHARMACEUTICALS INC",
-            "href": "https://www.usaspending.gov/recipient/4ef0181e-36b1-4a54-78ed-884078355b01-C/latest/"
+            "text": "TELIX PHARMACEUTICALS US INC",
+            "href": "https://www.usaspending.gov/recipient/2439f38f-c811-3de7-3b8d-ad9e4136201c-C/latest/"
           },
-          38150544.67
+          2280000
         ]
       ]
     },
     {
-      "title": "Largest awards, FY2026 to date",
+      "title": "Largest awards, FY2027 to date",
       "columns": [
         "Rank",
         "Recipient",
@@ -286,227 +246,227 @@
         [
           1,
           {
-            "text": "MCKESSON CORPORATION",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C24026K1002_3600_36W79720D0001_3600/"
+            "text": "SOFIE CO.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C25924P0003_3600_-NONE-_-NONE-/"
           },
-          1406868182.35,
+          5137935.38,
           "Department of Veterans Affairs"
         ],
         [
           2,
           {
-            "text": "MCKESSON CORPORATION",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C24026K1008_3600_36W79720D0001_3600/"
+            "text": "NOVARTIS PHARMACEUTICALS CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C26226N0112_3600_36F79720D0180_3600/"
           },
-          1398025092.11,
+          4299446.99,
           "Department of Veterans Affairs"
         ],
         [
           3,
           {
-            "text": "BAVARIAN NORDIC A/S",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_HHSO100201700019C_7505_-NONE-_-NONE-/"
+            "text": "NOVARTIS PHARMACEUTICALS CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C26127N0063_3600_36F79720D0180_3600/"
           },
-          1264240981,
-          "Department of Health and Human Services"
+          4115311.2,
+          "Department of Veterans Affairs"
         ],
         [
           4,
           {
-            "text": "MCKESSON CORPORATION",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C24026K1010_3600_36W79720D0001_3600/"
+            "text": "CARDINAL HEALTH 414, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C24523P0041_3600_-NONE-_-NONE-/"
           },
-          1194619137.2,
+          3923256.91,
           "Department of Veterans Affairs"
         ],
         [
           5,
           {
-            "text": "MCKESSON CORPORATION",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C24026K1009_3600_36W79720D0001_3600/"
+            "text": "BOSTON SCIENTIFIC CORP",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C25623P0027_3600_-NONE-_-NONE-/"
           },
-          1191973257.74,
+          3800340,
           "Department of Veterans Affairs"
         ],
         [
           6,
           {
-            "text": "MCKESSON CORPORATION",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C24026K1007_3600_36W79720D0001_3600/"
+            "text": "PROGENICS PHARMACEUTICALS INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C26226F0031_3600_36F79725D0093_3600/"
           },
-          1191348080.87,
+          3761416.48,
           "Department of Veterans Affairs"
         ],
         [
           7,
           {
-            "text": "MCKESSON CORPORATION",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C24026K1001_3600_36W79720D0001_3600/"
+            "text": "CLINICAL PHARMACY SERVICES, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C24924P0483_3600_-NONE-_-NONE-/"
           },
-          1184200532.33,
+          3225781.12,
           "Department of Veterans Affairs"
         ],
         [
           8,
           {
-            "text": "MCKESSON CORPORATION",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C24026K1006_3600_36W79720D0001_3600/"
+            "text": "CARDINAL HEALTH 414, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C24827N0041_3600_36C24823D0049_3600/"
           },
-          1175683450.7,
+          3113743.39,
           "Department of Veterans Affairs"
         ],
         [
           9,
           {
-            "text": "MCKESSON CORPORATION",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C24026K1003_3600_36W79720D0001_3600/"
+            "text": "PROGENICS PHARMACEUTICALS INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C24724F0045_3600_36F79719D0170_3600/"
           },
-          1110402103.93,
+          2650800.48,
           "Department of Veterans Affairs"
         ],
         [
           10,
           {
-            "text": "MCKESSON CORPORATION",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C24026K1004_3600_36W79720D0001_3600/"
+            "text": "EXELAN PHARMACEUTICALS INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C24827N0053_3600_36F79720D0227_3600/"
           },
-          1087989765.81,
+          2469521.88,
           "Department of Veterans Affairs"
         ],
         [
           11,
           {
-            "text": "MCKESSON CORPORATION",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C24026K1005_3600_36W79720D0001_3600/"
+            "text": "RLS (USA) INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C24724C0063_3600_-NONE-_-NONE-/"
           },
-          1060268795.34,
+          2069199.7,
           "Department of Veterans Affairs"
         ],
         [
           12,
           {
-            "text": "PHLOW CORP.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_75A50120C00092_7505_-NONE-_-NONE-/"
+            "text": "CARDINAL HEALTH 414, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C24827N0075_3600_36C24823D0049_3600/"
           },
-          696665953.98,
-          "Department of Health and Human Services"
+          1968100.92,
+          "Department of Veterans Affairs"
         ],
         [
           13,
           {
-            "text": "EMERGENT BIOSOLUTIONS CANADA INC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_75A50119C00037_7505_-NONE-_-NONE-/"
+            "text": "OPTUM INFUSION SERVICES 308, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C24227N0114_3600_36C24227D0007_3600/"
           },
-          422315784,
-          "Department of Health and Human Services"
+          1893442.3,
+          "Department of Veterans Affairs"
         ],
         [
           14,
           {
-            "text": "EMERGENT BIOSOLUTIONS CANADA INC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_75A50119C00075_7505_-NONE-_-NONE-/"
+            "text": "NOVARTIS PHARMACEUTICALS CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C26127N0055_3600_36F79720D0180_3600/"
           },
-          320923453,
-          "Department of Health and Human Services"
+          1851890.04,
+          "Department of Veterans Affairs"
         ],
         [
           15,
           {
-            "text": "MCKESSON SPECIALTY DISTRIBUTION LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_75D30123C17978_7523_-NONE-_-NONE-/"
+            "text": "PETNET SOLUTIONS, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C26327N0037_3600_36C26326A0004_3600/"
           },
-          203925444.57,
-          "Department of Health and Human Services"
+          1851105.42,
+          "Department of Veterans Affairs"
         ],
         [
           16,
           {
-            "text": "MERCK SHARP & DOHME LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_75A50124C00057_7505_-NONE-_-NONE-/"
+            "text": "PROGENICS PHARMACEUTICALS INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C26127N0083_3600_36F79725D0093_3600/"
           },
-          156033983,
-          "Department of Health and Human Services"
+          1732185.6,
+          "Department of Veterans Affairs"
         ],
         [
           17,
           {
-            "text": "CHARTWELL RX LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_75A50325F80009_7505_36F79720D0198_3600/"
+            "text": "PROGENICS PHARMACEUTICALS INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C26027N0034_3600_36C26027A0001_3600/"
           },
-          144579701.76,
-          "Department of Health and Human Services"
+          1623924,
+          "Department of Veterans Affairs"
         ],
         [
           18,
           {
-            "text": "PARTNER THERAPEUTICS, INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_75A50323F80027_7505_36F79723D0171_3600/"
+            "text": "EXELAN PHARMACEUTICALS INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C26027F0002_3600_36F79720D0227_3600/"
           },
-          133514342.37,
-          "Department of Health and Human Services"
+          1510593.31,
+          "Department of Veterans Affairs"
         ],
         [
           19,
           {
-            "text": "ELUSYS THERAPEUTICS INC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_75A50324C00006_7505_-NONE-_-NONE-/"
+            "text": "TELIX PHARMACEUTICALS US INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C24827N0014_3600_36E79722A0025_3600/"
           },
-          124523123.01,
-          "Department of Health and Human Services"
+          1500000,
+          "Department of Veterans Affairs"
         ],
         [
           20,
           {
-            "text": "FRESENIUS KABI, LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_75A50325C00004_7505_-NONE-_-NONE-/"
+            "text": "NOVARTIS PHARMACEUTICALS CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C26126F0008_3600_36F79720D0180_3600/"
           },
-          111677559.41,
-          "Department of Health and Human Services"
+          1348841.44,
+          "Department of Veterans Affairs"
         ],
         [
           21,
           {
-            "text": "CHARTWELL RX LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_75A50322F80030_7505_36F79720D0198_3600/"
+            "text": "RLS (USA) INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C25627N0165_3600_36C25627D0016_3600/"
           },
-          99047470.08,
-          "Department of Health and Human Services"
+          1348836.49,
+          "Department of Veterans Affairs"
         ],
         [
           22,
           {
-            "text": "DLA TROOP SUPPORT",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_75N90025C00008_7529_-NONE-_-NONE-/"
+            "text": "NOVARTIS PHARMACEUTICALS CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C25027N0038_3600_36C25026A0001_3600/"
           },
-          93536123.49,
-          "Department of Health and Human Services"
+          1303181.88,
+          "Department of Veterans Affairs"
         ],
         [
           23,
           {
-            "text": "DLA TROOP SUPPORT",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_75N98026C00026_7529_-NONE-_-NONE-/"
+            "text": "PROGENICS PHARMACEUTICALS INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C25627N0040_3600_36F79725D0093_3600/"
           },
-          77389000,
-          "Department of Health and Human Services"
+          1299139.2,
+          "Department of Veterans Affairs"
         ],
         [
           24,
           {
-            "text": "CANGENE CORPORATION",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_HHSO10033001T_7505_HHSO100201300009I_7505/"
+            "text": "MCKESSON CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_15B12026F00000005_1540_36W79720D0001_3600/"
           },
-          63304734,
-          "Department of Health and Human Services"
+          1275614.91,
+          "Department of Justice"
         ],
         [
           25,
           {
-            "text": "INDIVIOR INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_75A50123C00068_7505_-NONE-_-NONE-/"
+            "text": "BOSTON SCIENTIFIC CORP",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C25624P0339_3600_-NONE-_-NONE-/"
           },
-          55172093,
-          "Department of Health and Human Services"
+          1226225,
+          "Department of Veterans Affairs"
         ]
       ]
     },
@@ -636,20 +596,6 @@
         [
           9,
           {
-            "text": "75A50324C00015",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_75A50324C00015_7505_-NONE-_-NONE-/"
-          },
-          {
-            "text": "MERIDIAN MEDICAL TECHNOLOGIES, LLC",
-            "href": "https://www.usaspending.gov/recipient/8ae912b6-454c-ece3-7b6d-27a1d552273e-C/latest/"
-          },
-          82223186.4,
-          "Department of Health and Human Services",
-          "2026-09-29"
-        ],
-        [
-          10,
-          {
             "text": "75N98026C00026",
             "href": "https://www.usaspending.gov/award/CONT_AWD_75N98026C00026_7529_-NONE-_-NONE-/"
           },
@@ -662,7 +608,7 @@
           "2027-04-09"
         ],
         [
-          11,
+          10,
           {
             "text": "75A50325F80014",
             "href": "https://www.usaspending.gov/award/CONT_AWD_75A50325F80014_7505_36F79720D0227_3600/"
@@ -674,35 +620,77 @@
           74055620,
           "Department of Health and Human Services",
           "2027-06-29"
+        ],
+        [
+          11,
+          {
+            "text": "75A50325F80036",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75A50325F80036_7505_36F79723D0219_3600/"
+          },
+          {
+            "text": "GENENTECH USA, INC",
+            "href": "https://www.usaspending.gov/recipient/8b92ab18-2fb8-af3a-2e0e-dc7adb161525-C/latest/"
+          },
+          37485000,
+          "Department of Health and Human Services",
+          "2027-09-29"
+        ],
+        [
+          12,
+          {
+            "text": "75A50325C00020",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75A50325C00020_7505_-NONE-_-NONE-/"
+          },
+          {
+            "text": "RAFA LABORATORIES LTD",
+            "href": "https://www.usaspending.gov/recipient/7d4608bf-2c14-d563-8476-452738baa7fd-C/latest/"
+          },
+          33392937,
+          "Department of Health and Human Services",
+          "2027-09-29"
+        ],
+        [
+          13,
+          {
+            "text": "75A50326F80004",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75A50326F80004_7505_36F79723D0101_3600/"
+          },
+          {
+            "text": "USANTIBIOTICS LLC",
+            "href": "https://www.usaspending.gov/recipient/d2455606-8b8a-abcb-062a-e24a32ea8b01-C/latest/"
+          },
+          29998678,
+          "Department of Health and Human Services",
+          "2027-05-28"
         ]
       ]
     }
   ],
   "narrative": {
-    "intro": "Pharmaceutical Preparation Manufacturing recorded $13.3B in federal contract obligations for FY2026 to date. Award activity includes 15,403 obligations with an average award size of $861K. Obligations are up 1.4% year over year. Fiscal-year comparisons show a peak at $34.4B in FY22, with FY21 at $19.5B, FY23 at $12.8B, FY24 at $10.1B, and FY25 at $13.1B. The Department of Veterans Affairs is the dominant buyer with $12.3B in obligations for FY2026 to date. MCKESSON CORPORATION is the dominant vendor with $12.3B in obligations for FY2026 to date. Other meaningful buyers include the Department of Health and Human Services at $692M and the Department of Justice at $201M. Other notable vendors include EMERGENT BIOSOLUTIONS CANADA INC at $118M and PHLOW CORP. at $105M. This profile shows concentration in both buying and supplying within the NAICS 325412 federal market for the current fiscal year to date.",
+    "intro": "Pharmaceutical Preparation Manufacturing had total federal contract obligations of $74.9M in FY2027 to date. FY2027 to date totals are partial. Obligations fell 99.5% year over year. The federal government made 244 awards in the NAICS 325412 market so far this fiscal year, with an average award size of $307K. FY22 through FY26 show much larger annual obligations: FY22 was $34.4B, FY23 was $12.8B, FY24 was $10.1B, FY25 was $13.1B, and FY26 was $14.5B. The Department of Veterans Affairs accounted for $70.6M of FY2027 to date obligations. The Department of Justice accounted for $4.3M of FY2027 to date obligations. CARDINAL HEALTH 414, LLC received $14.6M so far in FY2027 to date, PROGENICS PHARMACEUTICALS INC received $12.1M, and NOVARTIS PHARMACEUTICALS CORPORATION received $8.4M. Other named vendors with FY2027 to date obligations include EXELAN PHARMACEUTICALS INC ($5.5M), OPTUM INFUSION SERVICES 308, LLC ($4.8M), and MCKESSON CORPORATION ($4.2M).",
     "sections": [
       {
-        "heading": "What happened to spending over time?",
-        "body": "Fiscal-year obligations rose to $34.4B in FY22 and then fell to $12.8B in FY23. Obligations continued lower at $10.1B in FY24 and then moved up to $13.1B in FY25. Obligations are $13.3B for FY26 to date, representing an increase of up 1.4% year over year."
+        "heading": "How concentrated are FY2027 obligations within the market?",
+        "body": "The Department of Veterans Affairs is the dominant buyer with $70.6M in FY2027 to date obligations. The Department of Justice is the next largest buyer with $4.3M in FY2027 to date obligations. CARDINAL HEALTH 414, LLC received $14.6M in FY2027 to date and PROGENICS PHARMACEUTICALS INC received $12.1M in FY2027 to date, indicating concentration among top suppliers at the vendor level."
       },
       {
-        "heading": "Who dominates buying and contracting in FY2026 to date?",
-        "body": "The Department of Veterans Affairs obligated $12.3B for FY2026 to date. MCKESSON CORPORATION obligated $12.3B as the top vendor for FY2026 to date, with EMERGENT BIOSOLUTIONS CANADA INC at $118M and PHLOW CORP. at $105M following. The Department of Health and Human Services obligated $692M and the Department of Justice obligated $201M in FY2026 to date."
+        "heading": "How does FY2027 to date compare with prior fiscal years?",
+        "body": "FY2027 to date obligations are $74.9M, a sharp change from prior full fiscal years: FY26 was $14.5B, FY25 was $13.1B, FY24 was $10.1B, FY23 was $12.8B, and FY22 was $34.4B. Obligations fell 99.5% year over year. The count of FY2027 to date awards is 244 with an average award size of $307K."
       }
     ]
   },
   "faq": [
     {
       "q": "How much does the federal government spend on NAICS 325412?",
-      "a": "Obligations are $13.3B for FY2026 to date. Total award activity includes 15,403 obligations with an average award size of $861K and year over year change up 1.4%."
+      "a": "Total federal obligations for NAICS 325412 are $74.9M in FY2027 to date. FY22 through FY26 annual obligations were substantially larger: FY22 was $34.4B, FY23 was $12.8B, FY24 was $10.1B, FY25 was $13.1B, and FY26 was $14.5B. The FY2027 to date total is partial for the fiscal year."
     },
     {
       "q": "Which agencies buy the most NAICS 325412 services?",
-      "a": "The Department of Veterans Affairs buys the most, with obligations of $12.3B for FY2026 to date. The Department of Health and Human Services obligated $692M and the Department of Justice obligated $201M for FY2026 to date."
+      "a": "The Department of Veterans Affairs buys the most NAICS 325412 services with $70.6M in FY2027 to date obligations. The Department of Justice is the next largest buyer with $4.3M in FY2027 to date obligations."
     },
     {
       "q": "Who are the largest NAICS 325412 government contractors?",
-      "a": "MCKESSON CORPORATION is the largest contractor, with obligations of $12.3B for FY2026 to date. EMERGENT BIOSOLUTIONS CANADA INC obligated $118M and PHLOW CORP. obligated $105M for FY2026 to date."
+      "a": "CARDINAL HEALTH 414, LLC, PROGENICS PHARMACEUTICALS INC, and NOVARTIS PHARMACEUTICALS CORPORATION are the largest NAICS 325412 government contractors in FY2027 to date. CARDINAL HEALTH 414, LLC received $14.6M, PROGENICS PHARMACEUTICALS INC received $12.1M, and NOVARTIS PHARMACEUTICALS CORPORATION received $8.4M in FY2027 to date obligations."
     }
   ],
   "related": [
@@ -740,5 +728,6 @@
       "label": "USAspending.gov award data",
       "href": "https://www.usaspending.gov"
     }
-  ]
+  ],
+  "noindex": true
 }

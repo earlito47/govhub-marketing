@@ -1,20 +1,20 @@
 {
   "pageType": "state",
   "slug": "georgia",
-  "title": "Federal Contracts in Georgia: $8.9B (FY2026)",
+  "title": "Federal Contracts in Georgia: $52.7M (FY2027)",
   "h1": "Federal Contracts in Georgia: Spending, Agencies & Vendors",
-  "metaDescription": "Federal agencies obligated $8.9B to contractors in Georgia in FY2026 to date. See top buying agencies, top vendors, and industries.",
-  "updated": "2026-09-28",
+  "metaDescription": "Federal agencies obligated $52.7M to contractors in Georgia in FY2027 to date. See top buying agencies, top vendors, and industries.",
+  "updated": "2026-10-19",
   "fyWindow": {
-    "label": "FY2026 to date",
-    "start": "2025-10-01",
-    "end": "2026-09-28"
+    "label": "FY2027 to date",
+    "start": "2026-10-01",
+    "end": "2026-10-19"
   },
   "stats": {
-    "totalObligations": 8898457804.49,
-    "awardCount": 78378,
-    "yoyGrowthPct": -23.6,
-    "avgAwardSize": 113533,
+    "totalObligations": 52654378.5,
+    "awardCount": 1206,
+    "yoyGrowthPct": -99.5,
+    "avgAwardSize": 43660,
     "smallBusinessSharePct": null
   },
   "charts": [
@@ -27,10 +27,6 @@
           "label": "Obligations",
           "points": [
             [
-              "FY21",
-              11136398309.97
-            ],
-            [
               "FY22",
               8510174082.73
             ],
@@ -40,217 +36,221 @@
             ],
             [
               "FY24",
-              10401136023.35
+              10401134046.96
             ],
             [
               "FY25",
-              11649426628.74
+              11649582273.42
             ],
             [
               "FY26",
-              8898457804.49
+              9770815396.64
+            ],
+            [
+              "FY27",
+              52654378.5
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Obligations fell 23.6% year over year, from $11.6B in FY2025 to $8.9B in FY2026 to date."
+      "takeaway": "Obligations fell 99.5% year over year, from $9.8B in FY2026 to $52.7M in FY2027 to date."
     },
     {
       "id": "georgia-top-agencies",
       "type": "bar",
-      "title": "Top 10 buying agencies, FY2026 to date",
+      "title": "Top 10 buying agencies, FY2027 to date",
       "series": [
         {
           "label": "Obligations",
           "points": [
             [
-              "Department of Defense",
-              4721770782.87
-            ],
-            [
-              "Department of Health and Human Services",
-              1355983003.64
-            ],
-            [
-              "General Services Administration",
-              1016070618.65
-            ],
-            [
-              "Department of Homeland Security",
-              477617084.08
-            ],
-            [
-              "Department of Agriculture",
-              346441410.47
-            ],
-            [
               "Department of Veterans Affairs",
-              312513211.3
+              48830652.25
             ],
             [
               "Department of Justice",
-              141173754.23
-            ],
-            [
-              "Department of Commerce",
-              139384847.98
+              4948273.92
             ],
             [
               "Department of Transportation",
-              106676777.42
+              1451070
+            ],
+            [
+              "National Aeronautics and Space Administration",
+              1303762
+            ],
+            [
+              "General Services Administration",
+              1039512.01
+            ],
+            [
+              "Department of Agriculture",
+              169719.92
             ],
             [
               "Environmental Protection Agency",
-              65900391.63
+              126801.56
+            ],
+            [
+              "Smithsonian Institution",
+              72000
+            ],
+            [
+              "Department of the Treasury",
+              8344.79
+            ],
+            [
+              "Department of the Interior",
+              0
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Department of Defense was the top federal buyer in Georgia, obligating $4.7B (53.1% of the state total)."
+      "takeaway": "Department of Veterans Affairs was the top federal buyer in Georgia, obligating $48.8M (92.7% of the state total)."
     },
     {
       "id": "georgia-top-vendors",
       "type": "bar",
-      "title": "Top 10 vendors, FY2026 to date",
+      "title": "Top 10 vendors, FY2027 to date",
       "series": [
         {
           "label": "Obligations",
           "points": [
             [
-              "LOCKHEED MARTIN CORP",
-              710186664.1
+              "FLIGHTWORKS INC",
+              4735180
             ],
             [
-              "MANHATTAN TORCON A JOINT VENTURE",
-              491767189
+              "VETMED GROUP LLC",
+              4720189
             ],
             [
-              "GEORGIA TECH APPLIED RESEARCH CORP",
-              298500869.65
+              "ARROW ARC LLC",
+              3940529
             ],
             [
-              "PERATON INC.",
-              198869602.37
+              "JMG VETERAN CONTRACTING LLC",
+              3765653
             ],
             [
-              "BOOZ ALLEN HAMILTON INC",
-              184478052.3
+              "APPOINTED WORLDWIDE HOLDINGS LLC",
+              3596808.5
             ],
             [
-              "INTEGRATED QUALITY SOLUTIONS, LLC",
-              167942067.8
+              "TITAN-AUXO, LLC",
+              3332680
             ],
             [
-              "INTERNATIONAL AUTO LOGISTICS, LLC",
-              139760456.45
+              "PRO CARE EMERGENCY MEDICAL SERVICES, LLC",
+              3326261.14
             ],
             [
-              "LOCKHEED MARTIN CORPORATION",
-              136418423
+              "HILLCREST GRANITE CO",
+              3118165
             ],
             [
-              "SCIENTIFIC RESEARCH CORPORATION",
-              134730246.4
+              "EXCELSIOR DEFENSE, INC",
+              2867231.6
             ],
             [
-              "LOCKHEED MARTIN CORPORATION",
-              133658348.54
+              "EXCELSIOR AMBULANCE SERVICE INC",
+              2464400
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "LOCKHEED MARTIN CORP led all contractors in Georgia with $710M, 8.0% of the state total."
+      "takeaway": "FLIGHTWORKS INC led all contractors in Georgia with $4.7M, 9.0% of the state total."
     },
     {
       "id": "georgia-top-naics",
       "type": "bar",
-      "title": "Top 10 industries (NAICS), FY2026 to date",
+      "title": "Top 10 industries (NAICS), FY2027 to date",
       "series": [
         {
           "label": "Obligations",
           "points": [
             [
-              "Commercial and Institutional Building Construction",
-              1060565749.5
+              "Temporary Help Services",
+              12096693.07
             ],
             [
-              "Aircraft Manufacturing",
-              807105035.62
+              "Ambulance Services",
+              9387469.64
             ],
             [
-              "Engineering Services",
-              704820454.52
+              "Cut Stone and Stone Product Manufacturing",
+              6883818
+            ],
+            [
+              "Nonscheduled Chartered Passenger Air Transportation",
+              4959660
+            ],
+            [
+              "Security Guards and Patrol Services",
+              2867231.6
             ],
             [
               "Facilities Support Services",
-              474805456.57
+              1491410.64
             ],
             [
-              "Computer Systems Design Services",
-              446380478.73
+              "Irradiation Apparatus Manufacturing",
+              1466007.28
+            ],
+            [
+              "Offices of Physicians (except Mental Health Specialists)",
+              1328045.14
+            ],
+            [
+              "Custom Computer Programming Services",
+              1299044.43
             ],
             [
               "Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology)",
-              392640175.1
-            ],
-            [
-              "Other Aircraft Parts and Auxiliary Equipment Manufacturing",
-              314953898.71
-            ],
-            [
-              "Refrigerated Warehousing and Storage",
-              196245147.8
-            ],
-            [
-              "Other Computer Related Services",
-              160951663.63
-            ],
-            [
-              "Construction Machinery Manufacturing",
-              144348714.22
+              1274662
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Commercial and Institutional Building Construction was the largest industry in Georgia, with $1.1B obligated."
+      "takeaway": "Temporary Help Services was the largest industry in Georgia, with $12.1M obligated."
     }
   ],
   "crossLinks": [
     {
-      "label": "Department of Defense contracts",
-      "href": "/insights/agency/department-of-defense/"
+      "label": "Department of Veterans Affairs contracts",
+      "href": "/insights/agency/department-of-veterans-affairs/"
     },
     {
-      "label": "Department of Health and Human Services contracts",
-      "href": "/insights/agency/department-of-health-and-human-services/"
+      "label": "Department of Justice contracts",
+      "href": "/insights/agency/department-of-justice/"
     },
     {
-      "label": "General Services Administration contracts",
-      "href": "/insights/agency/general-services-administration/"
+      "label": "Department of Transportation contracts",
+      "href": "/insights/agency/department-of-transportation/"
     },
     {
-      "label": "Department of Homeland Security contracts",
-      "href": "/insights/agency/department-of-homeland-security/"
+      "label": "National Aeronautics and Space Administration contracts",
+      "href": "/insights/agency/national-aeronautics-and-space-administration/"
     },
     {
-      "label": "NAICS 236220: Commercial and Institutional Building Construction",
-      "href": "/insights/naics/236220/"
-    },
-    {
-      "label": "NAICS 336411: Aircraft Manufacturing",
-      "href": "/insights/naics/336411/"
-    },
-    {
-      "label": "NAICS 541330: Engineering Services",
-      "href": "/insights/naics/541330/"
+      "label": "NAICS 561612: Security Guards and Patrol Services",
+      "href": "/insights/naics/561612/"
     },
     {
       "label": "NAICS 561210: Facilities Support Services",
       "href": "/insights/naics/561210/"
+    },
+    {
+      "label": "NAICS 541511: Custom Computer Programming Services",
+      "href": "/insights/naics/541511/"
+    },
+    {
+      "label": "NAICS 541715: Research and Development in the Physical, Engineering, and Life Sciences",
+      "href": "/insights/naics/541715/"
     }
   ],
   "tables": [
@@ -265,87 +265,87 @@
         [
           1,
           {
-            "text": "LOCKHEED MARTIN CORP",
-            "href": "https://www.usaspending.gov/recipient/4051d253-67f0-30bd-2c7f-5eb539533924-C/latest/"
+            "text": "FLIGHTWORKS INC",
+            "href": "https://www.usaspending.gov/recipient/cce15e52-9876-12d2-3cfd-2b166ddf2d35-C/latest/"
           },
-          710186664.1
+          4735180
         ],
         [
           2,
           {
-            "text": "MANHATTAN TORCON A JOINT VENTURE",
-            "href": "https://www.usaspending.gov/recipient/407fcecd-ffe3-5b48-fa41-b108718ad544-C/latest/"
+            "text": "VETMED GROUP LLC",
+            "href": "https://www.usaspending.gov/recipient/30c5b432-5fe0-d11a-1e80-20f5879a52cd-C/latest/"
           },
-          491767189
+          4720189
         ],
         [
           3,
           {
-            "text": "GEORGIA TECH APPLIED RESEARCH CORP",
-            "href": "https://www.usaspending.gov/recipient/36ac2fcd-7f60-603d-ffe7-a3101dd0bc95-C/latest/"
+            "text": "ARROW ARC LLC",
+            "href": "https://www.usaspending.gov/recipient/4330f4e2-e129-648a-843b-004a7547bd68-C/latest/"
           },
-          298500869.65
+          3940529
         ],
         [
           4,
           {
-            "text": "PERATON INC.",
-            "href": "https://www.usaspending.gov/recipient/129fccb1-783c-9fd1-7b6d-6ddea65ace79-C/latest/"
+            "text": "JMG VETERAN CONTRACTING LLC",
+            "href": "https://www.usaspending.gov/recipient/cd12f733-8982-8529-fd0f-0f4077e59542-C/latest/"
           },
-          198869602.37
+          3765653
         ],
         [
           5,
           {
-            "text": "BOOZ ALLEN HAMILTON INC",
-            "href": "https://www.usaspending.gov/recipient/ffca72e5-fba2-798a-6969-2a6c45e9f985-C/latest/"
+            "text": "APPOINTED WORLDWIDE HOLDINGS LLC",
+            "href": "https://www.usaspending.gov/recipient/4d9a77e5-4c29-1b8b-048d-2cbcfb513d70-C/latest/"
           },
-          184478052.3
+          3596808.5
         ],
         [
           6,
           {
-            "text": "INTEGRATED QUALITY SOLUTIONS, LLC",
-            "href": "https://www.usaspending.gov/recipient/ed38c2a8-24ec-443d-7546-1d619c5beab7-C/latest/"
+            "text": "TITAN-AUXO, LLC",
+            "href": "https://www.usaspending.gov/recipient/9dfd2b83-39c3-ad19-bc47-d1e4709fe735-C/latest/"
           },
-          167942067.8
+          3332680
         ],
         [
           7,
           {
-            "text": "INTERNATIONAL AUTO LOGISTICS, LLC",
-            "href": "https://www.usaspending.gov/recipient/45735626-9598-1536-348c-b28c97aafd5b-C/latest/"
+            "text": "PRO CARE EMERGENCY MEDICAL SERVICES, LLC",
+            "href": "https://www.usaspending.gov/recipient/3d06a9d9-cccc-9d53-d870-3aff6414ecf4-C/latest/"
           },
-          139760456.45
+          3326261.14
         ],
         [
           8,
           {
-            "text": "LOCKHEED MARTIN CORPORATION",
-            "href": "https://www.usaspending.gov/recipient/4de935fd-7eb9-654c-bd76-c9bd3a6943db-C/latest/"
+            "text": "HILLCREST GRANITE CO",
+            "href": "https://www.usaspending.gov/recipient/9b174acd-65e6-22c9-f25d-a9fee063a1d8-C/latest/"
           },
-          136418423
+          3118165
         ],
         [
           9,
           {
-            "text": "SCIENTIFIC RESEARCH CORPORATION",
-            "href": "https://www.usaspending.gov/recipient/7905361a-d6ee-2495-f5e3-9ed8ce4fcd1b-C/latest/"
+            "text": "EXCELSIOR DEFENSE, INC",
+            "href": "https://www.usaspending.gov/recipient/6963f3b8-a6ed-4695-c033-0cdaca0902cb-C/latest/"
           },
-          134730246.4
+          2867231.6
         ],
         [
           10,
           {
-            "text": "LOCKHEED MARTIN CORPORATION",
-            "href": "https://www.usaspending.gov/recipient/ea75ddee-2d00-ac7f-5e72-6f42d7c88c8c-C/latest/"
+            "text": "EXCELSIOR AMBULANCE SERVICE INC",
+            "href": "https://www.usaspending.gov/recipient/c7852b30-9d2c-91e3-dfd6-193b3410e4a3-C/latest/"
           },
-          133658348.54
+          2464400
         ]
       ]
     },
     {
-      "title": "Largest awards, FY2026 to date",
+      "title": "Largest awards, FY2027 to date",
       "columns": [
         "Rank",
         "Recipient",
@@ -356,256 +356,256 @@
         [
           1,
           {
-            "text": "LOCKHEED MARTIN CORP",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_FA862511C6597_9700_-NONE-_-NONE-/"
+            "text": "BOOZ ALLEN HAMILTON INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_47QFCA23F0058_4732_47QTCK18D0004_4732/"
           },
-          4410630126.34,
-          "Department of Defense"
+          561184437.17,
+          "General Services Administration"
         ],
         [
           2,
           {
-            "text": "LOCKHEED MARTIN CORP",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_FA862518F7027_9700_FA862516D6458_9700/"
+            "text": "ODLE MANAGEMENT GROUP, L.L.C.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_1605JE24C0013_1605_-NONE-_-NONE-/"
           },
-          3811949623.54,
-          "Department of Defense"
+          57370135.74,
+          "Department of Labor"
         ],
         [
           3,
           {
-            "text": "LOCKHEED MARTIN CORP",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_FA862521F3012_9700_FA862520D3000_9700/"
+            "text": "CHENEGA ENTERPRISE SYSTEMS & SOLUTIONS, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75D30126C21564_7523_-NONE-_-NONE-/"
           },
-          646493418.29,
-          "Department of Defense"
+          37385494.95,
+          "Department of Health and Human Services"
         ],
         [
           4,
           {
-            "text": "ALBERICI-MORTENSON A JOINT VENTURE",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_N6945020C0016_9700_-NONE-_-NONE-/"
+            "text": "T47 INTERNATIONAL, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70LGLY25CGLB00004_7015_-NONE-_-NONE-/"
           },
-          620217197.39,
-          "Department of Defense"
+          36638811.28,
+          "Department of Homeland Security"
         ],
         [
           5,
           {
-            "text": "LOCKHEED MARTIN CORP",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_FA862519F8000_9700_FA862516D6458_9700/"
+            "text": "WHITING-TURNER CONTRACTING COMPANY, THE",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70LGLY24FSSB00134_7015_70Z04723DPCNI0006_7008/"
           },
-          599532231.43,
-          "Department of Defense"
+          31618380,
+          "Department of Homeland Security"
         ],
         [
           6,
           {
-            "text": "THE GEO GROUP, INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_DJJODT8C0005_1501_-NONE-_-NONE-/"
+            "text": "DIGITAL MANAGEMENT LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75D30123F17456_7523_47QTCK18D0019_4732/"
           },
-          568057994.73,
-          "Department of Justice"
+          21908995.69,
+          "Department of Health and Human Services"
         ],
         [
           7,
           {
-            "text": "BOOZ ALLEN HAMILTON INC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_47QFCA23F0058_4732_47QTCK18D0004_4732/"
+            "text": "NTT DATA SERVICES FEDERAL GOVERNMENT, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75D30122F13294_7523_HHSN316201200017W_7529/"
           },
-          561413853.02,
-          "General Services Administration"
+          17329680.37,
+          "Department of Health and Human Services"
         ],
         [
           8,
           {
-            "text": "LOCKHEED MARTIN CORP",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_FA862521F3201_9700_FA862520D3000_9700/"
+            "text": "BOOZ ALLEN HAMILTON INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75D30121F10510_7523_75D30119A06642_7523/"
           },
-          504136628.25,
-          "Department of Defense"
+          14182428.02,
+          "Department of Health and Human Services"
         ],
         [
           9,
           {
-            "text": "MANHATTAN TORCON A JOINT VENTURE",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_75D30126C21245_7523_-NONE-_-NONE-/"
+            "text": "BIOMERIEUX INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C24723C0005_3600_-NONE-_-NONE-/"
           },
-          491767189,
-          "Department of Health and Human Services"
+          12888256.73,
+          "Department of Veterans Affairs"
         ],
         [
           10,
           {
-            "text": "LOCKHEED MARTIN CORPORATION",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_1305M224C0039_1330_-NONE-_-NONE-/"
+            "text": "FLIGHTWORKS INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_15M30024FA3700031_1544_GS33F0008U_4730/"
           },
-          489927931,
-          "Department of Commerce"
+          10850420.31,
+          "Department of Justice"
         ],
         [
           11,
           {
-            "text": "PERATON INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_47QFCA24F0006_4732_GS00Q14OADU117_4732/"
+            "text": "METROPOLITAN SECURITY SERVICES, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_15M10525FD1926CSO_1544_15M10523DA4700070_1544/"
           },
-          414916328.79,
-          "General Services Administration"
+          9602462.03,
+          "Department of Justice"
         ],
         [
           12,
           {
-            "text": "PHOENIX AIR GROUP, INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_19AQMM19F3103_1900_19AQMM19D0125_1900/"
+            "text": "BCT PARTNERS LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_HHSP23337003T_7570_HHSP233201500135I_7555/"
           },
-          400540821.44,
-          "Department of State"
+          8428995.38,
+          "Department of Health and Human Services"
         ],
         [
           13,
           {
-            "text": "PLOWSHARE GROUP, INC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_75D30120F09371_7523_GS23F0158L_4730/"
+            "text": "TITAN-AUXO, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C24726N0005_3600_36C10X24D0008_3600/"
           },
-          373880937.69,
-          "Department of Health and Human Services"
+          5624083.74,
+          "Department of Veterans Affairs"
         ],
         [
           14,
           {
-            "text": "LOCKHEED MARTIN CORP",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_FA862525FB007_9700_FA862520D3000_9700/"
+            "text": "ARROW ARC LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C24725N0020_3600_36C10X24D0003_3600/"
           },
-          372163495,
-          "Department of Defense"
+          4673053.15,
+          "Department of Veterans Affairs"
         ],
         [
           15,
           {
-            "text": "VS2 LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_0001_9700_W52P1J13G0029_9700/"
+            "text": "VETMED GROUP LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C24727P0018_3600_-NONE-_-NONE-/"
           },
-          366105950.43,
-          "Department of Defense"
+          4420196.5,
+          "Department of Veterans Affairs"
         ],
         [
           16,
           {
-            "text": "CACI, INC. - FEDERAL",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_47QFCA24F0011_4732_GS00Q14OADU309_4732/"
+            "text": "COOPER THOMAS LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C24722N0006_3600_36C10G21A0003_3600/"
           },
-          295554853,
-          "General Services Administration"
+          4235926.43,
+          "Department of Veterans Affairs"
         ],
         [
           17,
           {
-            "text": "V2X SYSTEMS LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_W52P1J21F0035_9700_W52P1J17G0066_9700/"
+            "text": "HELICOPTER EXPRESS LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_1202SA24K9300_12C2_1202SA23T9316_12C2/"
           },
-          282169468.32,
-          "Department of Defense"
+          4167853.64,
+          "Department of Agriculture"
         ],
         [
           18,
           {
-            "text": "LOCKHEED MARTIN CORP",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_FA862520F7031_9700_FA862516D6458_9700/"
+            "text": "V LINE SERVICES L.L.C.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C77623C0167_3600_-NONE-_-NONE-/"
           },
-          259512017.59,
-          "Department of Defense"
+          3905012.02,
+          "Department of Veterans Affairs"
         ],
         [
           19,
           {
-            "text": "GULFSTREAM AEROSPACE CORPORATION",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_1305M219CNMAN0018_1330_-NONE-_-NONE-/"
+            "text": "JMG VETERAN CONTRACTING LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C78627N0002_3600_36C78623D0002_3600/"
           },
-          251560059.15,
-          "Department of Commerce"
+          3765653,
+          "Department of Veterans Affairs"
         ],
         [
           20,
           {
-            "text": "DAWSON'S REALTY & MORTGAGES, INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_12SAD223F0014_12E3_12SAD223D0001_12E3/"
+            "text": "SIEMENS MEDICAL SOLUTIONS USA, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C24723F0010_3600_SPE2D117D0023_9700/"
           },
-          248737969.04,
-          "Department of Agriculture"
+          3663350.6,
+          "Department of Veterans Affairs"
         ],
         [
           21,
           {
-            "text": "HCBECK, LTD.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_75D30121C10098_7523_-NONE-_-NONE-/"
+            "text": "APPOINTED WORLDWIDE HOLDINGS LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C24727N0001_3600_36C24724D0001_3600/"
           },
-          221114401,
-          "Department of Health and Human Services"
+          3596808.5,
+          "Department of Veterans Affairs"
         ],
         [
           22,
           {
-            "text": "RQ CONSTRUCTION, LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_N6945024C0004_9700_-NONE-_-NONE-/"
+            "text": "TYSON FOODS INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_123J1426C1369_12K2_-NONE-_-NONE-/"
           },
-          195682451.57,
-          "Department of Defense"
+          3490905.6,
+          "Department of Agriculture"
         ],
         [
           23,
           {
-            "text": "LOCKHEED MARTIN CORP",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_FA862518F7001_9700_FA862516D6458_9700/"
+            "text": "VECNA TECHNOLOGIES, INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C24723F0018_3600_47QTCA21D009J_4732/"
           },
-          192064083.22,
-          "Department of Defense"
+          3366900,
+          "Department of Veterans Affairs"
         ],
         [
           24,
           {
-            "text": "MICROSOFT CORPORATION",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_HC102821F1170_9700_HC102817D0001_9700/"
+            "text": "PRO CARE EMERGENCY MEDICAL SERVICES, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C24727N0018_3600_36C24723D0021_3600/"
           },
-          172503499.89,
-          "Department of Defense"
+          3326261.14,
+          "Department of Veterans Affairs"
         ],
         [
           25,
           {
-            "text": "AUGUSTA-RICHMOND COUNTY GOVERNMENT",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_SP060007C8259_9700_-NONE-_-NONE-/"
+            "text": "SOLVE TECHNOLOGIES, L.L.C.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_693JK326F00006N_6957_47QTCA20D000T_4732/"
           },
-          167687993.64,
-          "Department of Defense"
+          3149767.5,
+          "Department of Transportation"
         ]
       ]
     }
   ],
   "narrative": {
-    "intro": "Georgia received $8.9B in federal contract obligations in FY2026 to date. Award activity in Georgia reached 78,378 awards, with an average award size of $114K. Obligations fell 23.6% year over year. The Department of Defense obligated $4.7B, making the Department of Defense the largest buyer in the state for the current fiscal year to date. The Department of Health and Human Services obligated $1.4B and the General Services Administration obligated $1B, placing those agencies among the top buyers. LOCKHEED MARTIN CORP received $710M, making LOCKHEED MARTIN CORP the largest single vendor by obligations. Commercial and Institutional Building Construction led industries with $1.1B, and Aircraft Manufacturing followed with $807M. Historical standings show variability: FY21 and FY23 each recorded $11.1B, FY22 recorded $8.5B, FY24 recorded $10.4B, and FY25 recorded $11.6B. The figures are contract obligations and the current-year totals are partial, fiscal year to date.",
+    "intro": "Georgia recorded $52.7M in contract obligations in FY2027 to date. Georgia saw 1,206 awards, with an average award size of $43.7K, and obligations were down 99.5% year over year. Prior fiscal years show much larger annual totals: FY22 totaled $8.5B, FY23 totaled $11.1B, FY24 totaled $10.4B, FY25 totaled $11.6B, and FY26 totaled $9.8B. The FY2027 to date total is concentrated in a few buyers and industries: the Department of Veterans Affairs obligated $48.8M, and Temporary Help Services accounted for $12.1M of obligations. The FY2027 to date list of top vendors includes FLIGHTWORKS INC and VETMED GROUP LLC at $4.7M each, ARROW ARC LLC at $3.9M, and JMG VETERAN CONTRACTING LLC at $3.8M. All figures are contract obligations and current-year totals are partial (fiscal year to date). This page summarizes the state-level spending pattern, buying agencies, leading vendors, and the NAICS industries that received the largest shares of FY2027 to date obligations in Georgia.",
     "sections": [
       {
-        "heading": "How have federal obligations to Georgia changed over recent fiscal years?",
-        "body": "Fiscal-year totals show variation: FY21 recorded $11.1B, FY22 recorded $8.5B, FY23 recorded $11.1B, FY24 recorded $10.4B, FY25 recorded $11.6B, and FY26 recorded $8.9B. Obligations fell 23.6% year over year for the current fiscal-year-to-date period. The Department of Defense obligated $4.7B in FY2026 to date, a large share of the current-year total."
+        "heading": "Why are FY2027 obligations so small compared with prior years?",
+        "body": "Georgia obligations in FY2027 to date totaled $52.7M, compared with prior full fiscal years that ranged from $8.5B to $11.6B. Obligations are down 99.5% year over year, so FY2027 to date represents a steep drop relative to FY26, which totaled $9.8B. The Department of Veterans Affairs is the largest buyer in FY2027 to date with $48.8M, which explains much of the current total."
       },
       {
-        "heading": "Which agencies, vendors, and industries dominate Georgia contract spending right now?",
-        "body": "The Department of Defense, the Department of Health and Human Services, and the General Services Administration are the top three buyers, with $4.7B, $1.4B, and $1B respectively. LOCKHEED MARTIN CORP, MANHATTAN TORCON A JOINT VENTURE, and GEORGIA TECH APPLIED RESEARCH CORP are the top three vendors, with $710M, $492M, and $299M respectively. Commercial and Institutional Building Construction and Aircraft Manufacturing are the top two industries, with $1.1B and $807M respectively."
+        "heading": "Which industries and vendors account for most FY2027 to date obligations?",
+        "body": "Temporary Help Services is the largest industry in FY2027 to date with $12.1M in obligations, followed by Ambulance Services with $9.4M and Cut Stone and Stone Product Manufacturing with $6.9M. FLIGHTWORKS INC and VETMED GROUP LLC are the top vendors in FY2027 to date with $4.7M each, and ARROW ARC LLC and JMG VETERAN CONTRACTING LLC follow with $3.9M and $3.8M respectively."
       }
     ]
   },
   "faq": [
     {
       "q": "How much federal contract money goes to Georgia?",
-      "a": "The federal government obligated $8.9B to Georgia in FY2026 to date. Award activity included 78,378 awards with an average award size of $114K. The current-year total is partial, fiscal year to date."
+      "a": "Georgia received $52.7M in federal contract obligations in FY2027 to date. Georgia had 1,206 awards and the average award size was $43.7K. Obligations were down 99.5% year over year, and prior full fiscal years show totals of $8.5B in FY22, $11.1B in FY23, $10.4B in FY24, $11.6B in FY25, and $9.8B in FY26."
     },
     {
       "q": "Which agencies award the most contracts in Georgia?",
-      "a": "The Department of Defense, the Department of Health and Human Services, and the General Services Administration award the most contracts in Georgia. The Department of Defense obligated $4.7B, the Department of Health and Human Services obligated $1.4B, and the General Services Administration obligated $1B in FY2026 to date."
+      "a": "The Department of Veterans Affairs awards the most contracts in Georgia, obligating $48.8M in FY2027 to date. The Department of Justice obligated $4.9M, the Department of Transportation obligated $1.5M, and the National Aeronautics and Space Administration obligated $1.3M. Other buyers in the top ten include the General Services Administration at $1M and the Department of Agriculture at $170K."
     },
     {
       "q": "Who are the largest federal contractors in Georgia?",
-      "a": "LOCKHEED MARTIN CORP, MANHATTAN TORCON A JOINT VENTURE, and GEORGIA TECH APPLIED RESEARCH CORP are the largest federal contractors in Georgia by obligations. LOCKHEED MARTIN CORP received $710M, MANHATTAN TORCON A JOINT VENTURE received $492M, and GEORGIA TECH APPLIED RESEARCH CORP received $299M in FY2026 to date."
+      "a": "FLIGHTWORKS INC and VETMED GROUP LLC are the largest federal contractors in Georgia, each with $4.7M in FY2027 to date obligations. ARROW ARC LLC obligated $3.9M, JMG VETERAN CONTRACTING LLC obligated $3.8M, and APPOINTED WORLDWIDE HOLDINGS LLC obligated $3.6M among the top vendors."
     }
   ],
   "related": [
@@ -639,5 +639,6 @@
       "label": "USAspending.gov award data",
       "href": "https://www.usaspending.gov"
     }
-  ]
+  ],
+  "noindex": true
 }

@@ -1,17 +1,17 @@
 {
   "pageType": "ranking",
   "slug": "largest-federal-contracts-fy2026",
-  "title": "Largest Federal Contracts, FY2026",
-  "h1": "Largest federal contracts by total value, FY2026 to date",
-  "metaDescription": "The federal contracts with the largest total award value active in FY2026 to date, from USAspending.gov. Led by Humana Government Business.",
-  "updated": "2026-09-28",
+  "title": "Largest Federal Contracts, FY2027",
+  "h1": "Largest federal contracts by total value, FY2027 to date",
+  "metaDescription": "The federal contracts with the largest total award value active in FY2027 to date, from USAspending.gov. Led by National Technology and Engineering Solutions ",
+  "updated": "2026-10-19",
   "fyWindow": {
-    "label": "FY2026 to date",
-    "start": "2025-10-01",
-    "end": "2026-09-28"
+    "label": "FY2027 to date",
+    "start": "2026-10-01",
+    "end": "2026-10-19"
   },
   "stats": {
-    "totalObligations": 51269205263.03,
+    "totalObligations": 43460682794.89,
     "awardCount": null,
     "yoyGrowthPct": null,
     "avgAwardSize": null,
@@ -21,61 +21,61 @@
     {
       "id": "largest-federal-contracts-fy2026-bar",
       "type": "bar",
-      "title": "Largest federal contracts by total value, FY2026 to date",
+      "title": "Largest federal contracts by total value, FY2027 to date",
       "series": [
         {
           "label": "Award value",
           "points": [
             [
-              "HUMANA GOVERNMENT BUSINESS INC",
-              51269205263.03
-            ],
-            [
-              "LOCKHEED MARTIN CORP",
-              48063737196.35
-            ],
-            [
               "NATIONAL TECHNOLOGY & ENGINEERING SOLUTIONS OF SANDIA, LLC",
-              43198666451.99
-            ],
-            [
-              "UT-BATTELLE LLC",
-              42436211927.7
+              43460682794.89
             ],
             [
               "LAWRENCE LIVERMORE NATIONAL SECURITY, LLC",
-              41519790021.9
-            ],
-            [
-              "REGENTS OF THE UNIVERSITY OF CALIFORNIA, THE",
-              35295925219.18
-            ],
-            [
-              "TRIAD NATIONAL SECURITY, LLC",
-              35199796916.66
-            ],
-            [
-              "LOCKHEED MARTIN CORPORATION",
-              35135514910.2
-            ],
-            [
-              "ELECTRIC BOAT CORPORATION",
-              34923769778
+              41607031193.88
             ],
             [
               "CONSOLIDATED NUCLEAR SECURITY, LLC",
-              34654023638.7
+              34661763245.24
+            ],
+            [
+              "THE BOEING COMPANY",
+              22653589199.84
+            ],
+            [
+              "HONEYWELL FEDERAL MANUFACTURING & TECHNOLOGIES, LLC",
+              17732163524.12
+            ],
+            [
+              "UCHICAGO ARGONNE, LLC",
+              17695775611.67
+            ],
+            [
+              "LOCKHEED MARTIN CORP",
+              15578682243.1
+            ],
+            [
+              "MISSION SUPPORT & TEST SERVICES LLC",
+              7708654017.32
+            ],
+            [
+              "MAXIMUS FEDERAL SERVICES, INC.",
+              3314910843
+            ],
+            [
+              "CALIFORNIA INSTITUTE OF TECHNOLOGY",
+              2985859580.98
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "HUMANA GOVERNMENT BUSINESS INC holds the largest federal contract by total value active in FY2026 to date, at $51.3B."
+      "takeaway": "NATIONAL TECHNOLOGY & ENGINEERING SOLUTIONS OF SANDIA, LLC holds the largest federal contract by total value active in FY2027 to date, at $43.5B."
     }
   ],
   "tables": [
     {
-      "title": "Largest federal contracts, FY2026 to date",
+      "title": "Largest federal contracts, FY2027 to date",
       "columns": [
         "Rank",
         "Recipient",
@@ -86,473 +86,473 @@
         [
           1,
           {
-            "text": "HUMANA GOVERNMENT BUSINESS INC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_HT940216C0001_9700_-NONE-_-NONE-/"
+            "text": "NATIONAL TECHNOLOGY & ENGINEERING SOLUTIONS OF SANDIA, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_DENA0003525_8900_-NONE-_-NONE-/"
           },
-          51269205263.03,
-          "Department of Defense"
+          43460682794.89,
+          "Department of Energy"
         ],
         [
           2,
           {
-            "text": "LOCKHEED MARTIN CORP",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_DEAC0494AL85000_8900_-NONE-_-NONE-/"
+            "text": "LAWRENCE LIVERMORE NATIONAL SECURITY, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_DEAC5207NA27344_8900_-NONE-_-NONE-/"
           },
-          48063737196.35,
+          41607031193.88,
           "Department of Energy"
         ],
         [
           3,
           {
-            "text": "NATIONAL TECHNOLOGY & ENGINEERING SOLUTIONS OF SANDIA, LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_DENA0003525_8900_-NONE-_-NONE-/"
+            "text": "CONSOLIDATED NUCLEAR SECURITY, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_DENA0001942_8900_-NONE-_-NONE-/"
           },
-          43198666451.99,
+          34661763245.24,
           "Department of Energy"
         ],
         [
           4,
           {
-            "text": "UT-BATTELLE LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_DEAC0500OR22725_8900_-NONE-_-NONE-/"
+            "text": "THE BOEING COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_NAS1510000_8000_-NONE-_-NONE-/"
           },
-          42436211927.7,
-          "Department of Energy"
+          22653589199.84,
+          "National Aeronautics and Space Administration"
         ],
         [
           5,
           {
-            "text": "LAWRENCE LIVERMORE NATIONAL SECURITY, LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_DEAC5207NA27344_8900_-NONE-_-NONE-/"
+            "text": "HONEYWELL FEDERAL MANUFACTURING & TECHNOLOGIES, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_DENA0002839_8900_-NONE-_-NONE-/"
           },
-          41519790021.9,
+          17732163524.12,
           "Department of Energy"
         ],
         [
           6,
           {
-            "text": "REGENTS OF THE UNIVERSITY OF CALIFORNIA, THE",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_DEAC3243AL00036_8900_-NONE-_-NONE-/"
+            "text": "UCHICAGO ARGONNE, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_DEAC0206CH11357_8900_-NONE-_-NONE-/"
           },
-          35295925219.18,
+          17695775611.67,
           "Department of Energy"
         ],
         [
           7,
           {
-            "text": "TRIAD NATIONAL SECURITY, LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_89233218CNA000001_8900_-NONE-_-NONE-/"
+            "text": "LOCKHEED MARTIN CORP",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_NNJ06TA25C_8000_-NONE-_-NONE-/"
           },
-          35199796916.66,
-          "Department of Energy"
+          15578682243.1,
+          "National Aeronautics and Space Administration"
         ],
         [
           8,
           {
-            "text": "LOCKHEED MARTIN CORPORATION",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_N0001917C0001_9700_-NONE-_-NONE-/"
+            "text": "MISSION SUPPORT & TEST SERVICES LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_DENA0003624_8900_-NONE-_-NONE-/"
           },
-          35135514910.2,
-          "Department of Defense"
+          7708654017.32,
+          "Department of Energy"
         ],
         [
           9,
           {
-            "text": "ELECTRIC BOAT CORPORATION",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002417C2100_9700_-NONE-_-NONE-/"
+            "text": "MAXIMUS FEDERAL SERVICES, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75FCMC22C0038_7530_-NONE-_-NONE-/"
           },
-          34923769778,
-          "Department of Defense"
+          3314910843,
+          "Department of Health and Human Services"
         ],
         [
           10,
           {
-            "text": "CONSOLIDATED NUCLEAR SECURITY, LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_DENA0001942_8900_-NONE-_-NONE-/"
+            "text": "CALIFORNIA INSTITUTE OF TECHNOLOGY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_80NM0018F0615_8000_80NM0018D0004_8000/"
           },
-          34654023638.7,
-          "Department of Energy"
+          2985859580.98,
+          "National Aeronautics and Space Administration"
         ],
         [
           11,
           {
             "text": "THE BOEING COMPANY",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_FA862511C6600_9700_-NONE-_-NONE-/"
+            "href": "https://www.usaspending.gov/award/CONT_AWD_80MSFC20C0052_8000_-NONE-_-NONE-/"
           },
-          31972918249.03,
-          "Department of Defense"
+          2753683081,
+          "National Aeronautics and Space Administration"
         ],
         [
           12,
           {
-            "text": "ELECTRIC BOAT CORPORATION",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002417C2117_9700_-NONE-_-NONE-/"
+            "text": "LOCKHEED MARTIN CORP",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_NNG09HR00C_8000_-NONE-_-NONE-/"
           },
-          31193149004,
-          "Department of Defense"
+          2032829134.57,
+          "National Aeronautics and Space Administration"
         ],
         [
           13,
           {
-            "text": "BATTELLE MEMORIAL INSTITUTE",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_DEAC0576RL01830_8900_-NONE-_-NONE-/"
+            "text": "AMENTUM TECHNOLOGY, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_80MSFC18C0011_8000_-NONE-_-NONE-/"
           },
-          30912550571.06,
-          "Department of Energy"
+          2012496049.86,
+          "National Aeronautics and Space Administration"
         ],
         [
           14,
           {
-            "text": "LOCKHEED MARTIN CORPORATION",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_N0001920C0009_9700_-NONE-_-NONE-/"
+            "text": "IDAHO ENVIRONMENTAL COALITION LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_89304223FEM400000_8900_89303321DEM000061_8900/"
           },
-          30154748689.06,
-          "Department of Defense"
+          1657305176.37,
+          "Department of Energy"
         ],
         [
           15,
           {
-            "text": "SAVANNAH RIVER NUCLEAR SOLUTIONS LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_DEAC0908SR22470_8900_-NONE-_-NONE-/"
+            "text": "AT&T ENTERPRISES, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10A20F0309_3600_GS00Q17NSD3000_4732/"
           },
-          27613237659.31,
-          "Department of Energy"
+          1570962675.79,
+          "Department of Veterans Affairs"
         ],
         [
           16,
           {
-            "text": "LOS ALAMOS NATIONAL SECURITY LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_DEAC5206NA25396_8900_-NONE-_-NONE-/"
+            "text": "SCIENCE APPLICATIONS INTERNATIONAL CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_47QFSA20F0057_4732_GS00Q14OADU428_4732/"
           },
-          27420180285.12,
-          "Department of Energy"
+          1426694597.2,
+          "General Services Administration"
         ],
         [
           17,
           {
-            "text": "BATTELLE ENERGY ALLIANCE, LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_DEAC0705ID14517_8900_-NONE-_-NONE-/"
+            "text": "THE JOHNS HOPKINS UNIVERSITY APPLIED PHYSICS LABORATORY LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_80MSFC22F0048_8000_80MSFC20D0004_8000/"
           },
-          26444741719.86,
-          "Department of Energy"
+          1414827399,
+          "National Aeronautics and Space Administration"
         ],
         [
           18,
           {
-            "text": "LOCKHEED MARTIN CORPORATION",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_N0001923C0003_9700_-NONE-_-NONE-/"
+            "text": "THE BOEING COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_NNM12AA82C_8000_-NONE-_-NONE-/"
           },
-          24587934868,
-          "Department of Defense"
+          1336720376,
+          "National Aeronautics and Space Administration"
         ],
         [
           19,
           {
-            "text": "HEALTH NET FEDERAL SERVICES, LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_HT940216C0002_9700_-NONE-_-NONE-/"
+            "text": "CALIFORNIA INSTITUTE OF TECHNOLOGY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_80NM0018F0616_8000_80NM0018D0004_8000/"
           },
-          23484451360.07,
-          "Department of Defense"
+          1298997991.01,
+          "National Aeronautics and Space Administration"
         ],
         [
           20,
           {
-            "text": "THE BOEING COMPANY",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_NAS1510000_8000_-NONE-_-NONE-/"
+            "text": "IOWA STATE UNIVERSITY OF SCIENCE AND TECHNOLOGY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_DEAC0207CH11358_8900_-NONE-_-NONE-/"
           },
-          22653518818.25,
-          "National Aeronautics and Space Administration"
+          1151375067.62,
+          "Department of Energy"
         ],
         [
           21,
           {
-            "text": "LOCKHEED MARTIN SERVICES, LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_DEAC0584OR21400_8900_-NONE-_-NONE-/"
+            "text": "CENTRAL PLATEAU CLEANUP COMPANY, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_89303924FEM400054_8900_89303320DEM000030_8900/"
           },
-          20646113720.09,
+          1115135671.74,
           "Department of Energy"
         ],
         [
           22,
           {
-            "text": "ELECTRIC BOAT CORPORATION",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002412C2115_9700_-NONE-_-NONE-/"
+            "text": "KBR WYLE SERVICES, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_80JSC017C0006_8000_-NONE-_-NONE-/"
           },
-          20392422353,
-          "Department of Defense"
+          1057002179.33,
+          "National Aeronautics and Space Administration"
         ],
         [
           23,
           {
-            "text": "THE REGENTS OF THE UNIVERSITY OF CALIFORNIA",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_DEAC0205CH11231_8900_-NONE-_-NONE-/"
+            "text": "TRIWEST HEALTHCARE ALLIANCE CORP",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10G27K0004_3600_36C10G19D0038_3600/"
           },
-          19926468209.5,
-          "Department of Energy"
+          900485186.84,
+          "Department of Veterans Affairs"
         ],
         [
           24,
           {
-            "text": "THE BOEING COMPANY",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_N0001914C0067_9700_-NONE-_-NONE-/"
+            "text": "PTSI MANAGED SERVICES INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_693KA923F00076_6920_693KA923D00005_6920/"
           },
-          18111838529.78,
-          "Department of Defense"
+          724718527.01,
+          "Department of Transportation"
         ],
         [
           25,
           {
-            "text": "THE REGENTS OF THE UNIVERSITY OF CALIFORNIA",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_DEAC0343SF00048_8900_-NONE-_-NONE-/"
+            "text": "SCIENCE APPLICATIONS INTERNATIONAL CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_47QFCA25F0009_4732_47QFCA22D0337_4732/"
           },
-          18009881071.27,
-          "Department of Energy"
+          723493849.29,
+          "General Services Administration"
         ],
         [
           26,
           {
-            "text": "BECHTEL NATIONAL, INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_DEAC2701RV14136_8900_-NONE-_-NONE-/"
+            "text": "AMENTUM SPACEPORT LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_80KSC018C0017_8000_-NONE-_-NONE-/"
           },
-          17827524132.9,
-          "Department of Energy"
+          662257531.11,
+          "National Aeronautics and Space Administration"
         ],
         [
           27,
           {
-            "text": "HONEYWELL FEDERAL MANUFACTURING & TECHNOLOGIES, LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_DENA0002839_8900_-NONE-_-NONE-/"
+            "text": "ROHDE & SCHWARZ USA, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_693KA826F00088_6920_693KA826D00002_6920/"
           },
-          17654763333.19,
-          "Department of Energy"
+          637469681.87,
+          "Department of Transportation"
         ],
         [
           28,
           {
-            "text": "UCHICAGO ARGONNE, LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_DEAC0206CH11357_8900_-NONE-_-NONE-/"
+            "text": "CLARK CONSTRUCTION GROUP LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_47PM0024C0001_4740_-NONE-_-NONE-/"
           },
-          17507033619.58,
-          "Department of Energy"
+          616333356.58,
+          "General Services Administration"
         ],
         [
           29,
           {
-            "text": "ELECTRIC BOAT CORPORATION",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002409C2104_9700_-NONE-_-NONE-/"
+            "text": "BLUESTAQ LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_47QFCA19C0016_4732_-NONE-_-NONE-/"
           },
-          16238775949,
-          "Department of Defense"
+          580415713.24,
+          "General Services Administration"
         ],
         [
           30,
           {
-            "text": "LOCKHEED MARTIN CORP",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_NNJ06TA25C_8000_-NONE-_-NONE-/"
+            "text": "BOOZ ALLEN HAMILTON INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_47QFCA23F0058_4732_47QTCK18D0004_4732/"
           },
-          15578433007.93,
-          "National Aeronautics and Space Administration"
+          561184437.17,
+          "General Services Administration"
         ],
         [
           31,
           {
-            "text": "FLUOR MARINE PROPULSION, LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002418C2130_9700_-NONE-_-NONE-/"
+            "text": "HANFORD LABORATORY MANAGEMENT AND INTEGRATION LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_89303320CEM000075_8900_-NONE-_-NONE-/"
           },
-          14961089932.48,
-          "Department of Defense"
+          559230977.14,
+          "Department of Energy"
         ],
         [
           32,
           {
-            "text": "THE LELAND STANFORD JUNIOR UNIVERSITY",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_DEAC0276SF00515_8900_-NONE-_-NONE-/"
+            "text": "NOVITAS SOLUTIONS, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75FCMC21C0019_7530_-NONE-_-NONE-/"
           },
-          14950328527.01,
-          "Department of Energy"
+          544992327.49,
+          "Department of Health and Human Services"
         ],
         [
           33,
           {
-            "text": "FLUOR MARINE PROPULSION, LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_89233018CNR000004_8900_-NONE-_-NONE-/"
+            "text": "LOCKHEED MARTIN CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_80AFRC18C0018_8000_-NONE-_-NONE-/"
           },
-          14753060287.21,
-          "Department of Energy"
+          539458571.19,
+          "National Aeronautics and Space Administration"
         ],
         [
           34,
           {
-            "text": "NORTHROP GRUMMAN SYSTEMS CORP",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_FA821920C0006_9700_-NONE-_-NONE-/"
+            "text": "PARSONS GOVERNMENT SERVICES INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_47QFCA23F0024_4732_47QFCA22D0383_4732/"
           },
-          13720293923.19,
-          "Department of Defense"
+          536914131.16,
+          "General Services Administration"
         ],
         [
           35,
           {
-            "text": "HUNTINGTON INGALLS INC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002416C2116_9700_-NONE-_-NONE-/"
+            "text": "WELLPOINT FEDERAL SOLUTIONS, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_HHSM500201700002C_7530_-NONE-_-NONE-/"
           },
-          13423551689.85,
-          "Department of Defense"
+          505264738,
+          "Department of Health and Human Services"
         ],
         [
           36,
           {
-            "text": "UNITEDHEALTH MILITARY & VETERANS SERVICES, LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_HT940212C0001_9700_-NONE-_-NONE-/"
+            "text": "BAE SYSTEMS SPACE & MISSION SYSTEMS INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_NNG10XA01C_8000_-NONE-_-NONE-/"
           },
-          13145560374.49,
-          "Department of Defense"
+          485892042.65,
+          "National Aeronautics and Space Administration"
         ],
         [
           37,
           {
-            "text": "LOCKHEED MARTIN CORPORATION",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_N0001916C0033_9700_-NONE-_-NONE-/"
+            "text": "DAVIS CONSTRUCTORS & ENGINEERS, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_47PB5326C0006_4740_-NONE-_-NONE-/"
           },
-          12269145508.23,
-          "Department of Defense"
+          469907907.01,
+          "General Services Administration"
         ],
         [
           38,
           {
-            "text": "THE BOEING COMPANY",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_FA863412C2651_9700_-NONE-_-NONE-/"
+            "text": "GUIDEHOUSE INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_140D0423F0882_1406_HHSN316201200040W_7529/"
           },
-          11204226412.65,
-          "Department of Defense"
+          449573999.7,
+          "Department of the Interior"
         ],
         [
           39,
           {
-            "text": "ALLIANCE FOR ENERGY INNOVATION, LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_DEAC3608GO28308_8900_-NONE-_-NONE-/"
+            "text": "LOCKHEED MARTIN CORP",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_NNG12FD66C_8000_-NONE-_-NONE-/"
           },
-          11062841994.16,
-          "Department of Energy"
+          443567131,
+          "National Aeronautics and Space Administration"
         ],
         [
           40,
           {
-            "text": "BELL BOEING JOINT PROJECT OFFICE",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_N0001907C0001_9700_-NONE-_-NONE-/"
+            "text": "SLS FEDERAL SERVICES LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70B01C26F00000003_7014_70B01C26D00000003_7014/"
           },
-          11040980157.1,
-          "Department of Defense"
+          380349800,
+          "Department of Homeland Security"
         ],
         [
           41,
           {
-            "text": "WASHINGTON RIVER PROTECTION SOLUTIONS LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_DEAC2708RV14800_8900_-NONE-_-NONE-/"
+            "text": "KRATOS S2, INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_47QFCA20C0019_4732_-NONE-_-NONE-/"
           },
-          10560504771.54,
-          "Department of Energy"
+          371699225.6,
+          "General Services Administration"
         ],
         [
           42,
           {
-            "text": "THE BOEING COMPANY",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_NNM07AB03C_8000_-NONE-_-NONE-/"
+            "text": "ACCENTURE FEDERAL SERVICES LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_12314418F0020_1205_HHSN316201200002W_7529/"
           },
-          10517828993,
-          "National Aeronautics and Space Administration"
+          369005149.99,
+          "Department of Agriculture"
         ],
         [
           43,
           {
-            "text": "LOCKHEED MARTIN CORPORATION",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_W31P4Q20C0023_9700_-NONE-_-NONE-/"
+            "text": "AMERESCO INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36E77620F0003_3600_DEAM3609GO29029_8900/"
           },
-          10478694385.9,
-          "Department of Defense"
+          364707235.32,
+          "Department of Veterans Affairs"
         ],
         [
           44,
           {
-            "text": "LOCKHEED MARTIN CORPORATION",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_W31P4Q24C0022_9700_-NONE-_-NONE-/"
+            "text": "THUNDERCAT TECHNOLOGY, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10B26F0287_3600_NNG15SD26B_8000/"
           },
-          10181587045.43,
-          "Department of Defense"
+          359034041.28,
+          "Department of Veterans Affairs"
         ],
         [
           45,
           {
-            "text": "NORTHROP GRUMMAN SYSTEMS CORPORATION",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_F4261098C0001_9700_-NONE-_-NONE-/"
+            "text": "LUMEN TECHNOLOGIES GOVERNMENT SOLUTIONS, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10A20F0326_3600_GS00Q17NSD3006_4732/"
           },
-          10008567439.01,
-          "Department of Defense"
+          355731656.77,
+          "Department of Veterans Affairs"
         ],
         [
           46,
           {
-            "text": "SIKORSKY AIRCRAFT CORPORATION",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_W58RGZ08C0003_9700_-NONE-_-NONE-/"
+            "text": "LOCKHEED MARTIN CORP",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_NNG17FD73C_8000_-NONE-_-NONE-/"
           },
-          9971022710.49,
-          "Department of Defense"
+          352834981.32,
+          "National Aeronautics and Space Administration"
         ],
         [
           47,
           {
-            "text": "HUMANA GOVERNMENT BUSINESS INC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_HT940223C0001_9700_-NONE-_-NONE-/"
+            "text": "L3HARRIS TECHNOLOGIES, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_80GSFC23CA044_8000_-NONE-_-NONE-/"
           },
-          9371533861.69,
-          "Department of Defense"
+          343955638,
+          "National Aeronautics and Space Administration"
         ],
         [
           48,
           {
-            "text": "TRIWEST HEALTHCARE ALLIANCE CORP",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_HT940223C0002_9700_-NONE-_-NONE-/"
+            "text": "HENSEL PHELPS CONSTRUCTION CO.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_47PK0122C0005_4740_-NONE-_-NONE-/"
           },
-          9229784861.9,
-          "Department of Defense"
+          343322925,
+          "General Services Administration"
         ],
         [
           49,
           {
-            "text": "LOCKHEED MARTIN CORPORATION",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_HQ014717C0032_9700_-NONE-_-NONE-/"
+            "text": "EMPOWER AI, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_47QFCA21F0014_4732_47QTCK18D0055_4732/"
           },
-          9095170079.66,
-          "Department of Defense"
+          328155100.64,
+          "General Services Administration"
         ],
         [
           50,
           {
-            "text": "LOCKHEED MARTIN CORP",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_F0470102C0002_9700_-NONE-_-NONE-/"
+            "text": "MAXIMUS FEDERAL SERVICES, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_91003125C0011_9100_-NONE-_-NONE-/"
           },
-          9032605785.68,
-          "Department of Defense"
+          327711283.98,
+          "Department of Education"
         ]
       ]
     }
   ],
   "narrative": {
-    "intro": "Largest federal contracts by total value, FY2026 to date lists the top contract holders based on full contract values through the current fiscal year. HUMANA GOVERNMENT BUSINESS INC leads the list with $51.3B in total contract value. The list is a ranking of full contract values, not single-year obligations. The rankings include ten entities ranging from HUMANA GOVERN BUSINESS INC at the top to CONSOLIDATED NUCLEAR SECURITY, LLC at the tenth position. LOCKHEED MARTIN CORP and LOCKHEED MARTIN CORPORATION both appear on the list with different total values. The table treats total award value as the full contract value, so readers should interpret each entry as the cumulative contract value rather than a measure of annual spending. Total obligations for the period are $51.3B, recorded on the page titled \"Largest federal contracts by total value, FY2026 to date.\"",
+    "intro": "The ranking lists the largest federal contracts by total award value for FY2027 to date. The largest single contract holder is NATIONAL TECHNOLOGY & ENGINEERING SOLUTIONS OF SANDIA, LLC with a total award value of $43.5B. Lawrence Livermore National Security, LLC follows with $41.6B, and Consolidated Nuclear Security, LLC holds $34.7B. The Boeing Company appears at $22.7B, with Honeywell Federal Manufacturing & Technologies, LLC and UChicago Argonne, LLC each at $17.7B. Lockheed Martin Corp holds $15.6B. Mission Support & Test Services LLC, Maximus Federal Services, Inc., and California Institute of Technology round out the top ten at $7.7B, $3.3B, and $3B respectively. The page notes that total award value figures are full contract values, not single-year obligations. The summary total of obligated funds shown on the page is $43.5B.",
     "sections": [
       {
-        "heading": "Which contractor tops the list?",
-        "body": "HUMANA GOVERN BUSINESS INC tops the list with $51.3B in total contract value. LOCKHEED MARTIN CORP follows with $48.1B. The ranking shows the top ten contract holders by full contract value for FY2026 to date."
+        "heading": "Which contractors hold the largest total award values?",
+        "body": "NATIONAL TECHNOLOGY & ENGINEERING SOLUTIONS OF SANDIA, LLC tops the list with $43.5B. LAWRENCE LIVERMORE NATIONAL SECURITY, LLC and CONSOLIDATED NUCLEAR SECURITY, LLC hold $41.6B and $34.7B respectively. THE BOEING COMPANY, HONEYWELL FEDERAL MANUFACTURING & TECHNOLOGIES, LLC, UCHICAGO ARGONNE, LLC, and LOCKHEED MARTIN CORP follow with $22.7B, $17.7B, $17.7B, and $15.6B."
       },
       {
-        "heading": "Who else appears among the top contract holders?",
-        "body": "NATIONAL TECHNOLOGY & ENGINEERING SOLUTIONS OF SANDIA, LLC appears with $43.2B. UT-BATTELLE LLC has $42.4B, LAWRENCE LIVERMORE NATIONAL SECURITY, LLC has $41.5B, REGENTS OF THE UNIVERSITY OF CALIFORNIA, THE has $35.3B, TRIAD NATIONAL SECURITY, LLC has $35.2B, LOCKHEED MARTIN CORPORATION has $35.1B, ELECTRIC BOAT CORPORATION has $34.9B, and CONSOLIDATED NUCLEAR SECURITY, LLC has $34.7B."
+        "heading": "How do smaller organizations compare in total award value?",
+        "body": "MISSION SUPPORT & TEST SERVICES LLC has $7.7B in total award value, while MAXIMUS FEDERAL SERVICES, INC. and CALIFORNIA INSTITUTE OF TECHNOLOGY have $3.3B and $3B. These figures are full contract values and are listed below the large national labs and major defense contractors. The list shows concentration of large total award values among a few contractors."
       }
     ]
   },
   "faq": [
     {
-      "q": "What is the largest federal contract in FY2026?",
-      "a": "HUMANA GOVERN BUSINESS INC is the largest federal contract in FY2026 with $51.3B in total contract value. The ranking reports full contract values rather than single-year obligations."
+      "q": "What is the largest federal contract in FY2027?",
+      "a": "NATIONAL TECHNOLOGY & ENGINEERING SOLUTIONS OF SANDIA, LLC holds the largest federal contract in FY2027, with a total award value of $43.5B. The page also reports total obligations of $43.5B, and notes that listed award values are full contract values, not single-year obligations."
     }
   ],
   "related": [

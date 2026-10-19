@@ -1,20 +1,20 @@
 {
   "pageType": "state",
   "slug": "north-carolina",
-  "title": "Federal Contracts in North Carolina: $4.8B (FY2026)",
+  "title": "Federal Contracts in North Carolina: $153M (FY2027)",
   "h1": "Federal Contracts in North Carolina: Spending, Agencies & Vendors",
-  "metaDescription": "Federal agencies obligated $4.8B to contractors in North Carolina in FY2026 to date. See top buying agencies, top vendors, and industries.",
-  "updated": "2026-09-28",
+  "metaDescription": "Federal agencies obligated $153M to contractors in North Carolina in FY2027 to date. See top buying agencies, top vendors, and industries.",
+  "updated": "2026-10-19",
   "fyWindow": {
-    "label": "FY2026 to date",
-    "start": "2025-10-01",
-    "end": "2026-09-28"
+    "label": "FY2027 to date",
+    "start": "2026-10-01",
+    "end": "2026-10-19"
   },
   "stats": {
-    "totalObligations": 4842159310.82,
-    "awardCount": 163507,
-    "yoyGrowthPct": -48.1,
-    "avgAwardSize": 29614,
+    "totalObligations": 152514913.61,
+    "awardCount": 736,
+    "yoyGrowthPct": -97.3,
+    "avgAwardSize": 207221,
     "smallBusinessSharePct": null
   },
   "charts": [
@@ -26,10 +26,6 @@
         {
           "label": "Obligations",
           "points": [
-            [
-              "FY21",
-              6673636973.73
-            ],
             [
               "FY22",
               8594051729.09
@@ -44,189 +40,185 @@
             ],
             [
               "FY25",
-              9337925581.97
+              9337574191.97
             ],
             [
               "FY26",
-              4842159310.82
+              5629174651.76
+            ],
+            [
+              "FY27",
+              152514913.61
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Obligations fell 48.1% year over year, from $9.3B in FY2025 to $4.8B in FY2026 to date."
+      "takeaway": "Obligations fell 97.3% year over year, from $5.6B in FY2026 to $153M in FY2027 to date."
     },
     {
       "id": "north-carolina-top-agencies",
       "type": "bar",
-      "title": "Top 10 buying agencies, FY2026 to date",
+      "title": "Top 10 buying agencies, FY2027 to date",
       "series": [
         {
           "label": "Obligations",
           "points": [
             [
-              "Department of Defense",
-              1996846039.32
-            ],
-            [
-              "General Services Administration",
-              725508514.17
+              "Department of Agriculture",
+              99376584.8
             ],
             [
               "Department of Veterans Affairs",
-              633118705.79
+              38477737.87
             ],
             [
               "Department of Health and Human Services",
-              438053210.27
-            ],
-            [
-              "Department of Homeland Security",
-              337852640.59
-            ],
-            [
-              "Department of Agriculture",
-              170508791.97
-            ],
-            [
-              "Department of Transportation",
-              117710265.58
-            ],
-            [
-              "Department of Justice",
-              116011693.42
+              5910917.43
             ],
             [
               "Environmental Protection Agency",
-              71776032.04
+              4188743.31
             ],
             [
-              "Department of Commerce",
-              55288327.27
+              "Department of Justice",
+              2435014.62
+            ],
+            [
+              "General Services Administration",
+              1544521.92
+            ],
+            [
+              "National Aeronautics and Space Administration",
+              327306.29
+            ],
+            [
+              "Department of Homeland Security",
+              254087.37
+            ],
+            [
+              "Export-Import Bank of the United States",
+              0
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Department of Defense was the top federal buyer in North Carolina, obligating $2B (41.2% of the state total)."
+      "takeaway": "Department of Agriculture was the top federal buyer in North Carolina, obligating $99.4M (65.2% of the state total)."
     },
     {
       "id": "north-carolina-top-vendors",
       "type": "bar",
-      "title": "Top 10 vendors, FY2026 to date",
+      "title": "Top 10 vendors, FY2027 to date",
       "series": [
         {
           "label": "Obligations",
           "points": [
             [
-              "RESEARCH TRIANGLE INSTITUTE",
-              286708951.53
+              "PEACHTREE LUMBER COMPANY, INC",
+              99575262
             ],
             [
-              "SDV OFFICE SYSTEMS LLC",
-              225830875.46
+              "KING STREET TECHNOLOGY PARTNERS, LLC",
+              6220357.2
             ],
             [
-              "GENERAL DYNAMICS INFORMATION TECHNOLOGY, INC.",
-              186395761.05
+              "LOCUS BIOSCIENCES INC",
+              5271052
             ],
             [
-              "BOOZ ALLEN HAMILTON INC",
-              161353128.89
+              "LABORATORY CORPORATION OF AMERICA",
+              4881859.43
             ],
             [
-              "LC INDUSTRIES INC",
-              127914481.43
+              "AMERICAN NATIONAL RED CROSS, THE",
+              4510388.3
             ],
             [
-              "SODEXO MANAGEMENT INC.",
-              93048725.23
+              "RELIANCE MEDICAL TRANSPORT, LLC",
+              3492021.69
             ],
             [
-              "CACI NSS, LLC",
-              80113201.78
+              "VALIANT SOLUTIONS, LLC",
+              3035091.14
             ],
             [
-              "SALIENT CRGT, INC.",
-              73280811
+              "DURHAM EXCHANGE CLUB INDUSTRIES, INC",
+              2335632.84
             ],
             [
-              "CORVID TECHNOLOGIES, LLC",
-              67909725.2
+              "EXELAN PHARMACEUTICALS INC",
+              2300193.31
             ],
             [
-              "VIASAT INC",
-              56953978.41
+              "PHILIPS NORTH AMERICA LLC",
+              2166720.53
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "RESEARCH TRIANGLE INSTITUTE led all contractors in North Carolina with $287M, 5.9% of the state total."
+      "takeaway": "PEACHTREE LUMBER COMPANY, INC led all contractors in North Carolina with $99.6M, 65.3% of the state total."
     },
     {
       "id": "north-carolina-top-naics",
       "type": "bar",
-      "title": "Top 10 industries (NAICS), FY2026 to date",
+      "title": "Top 10 industries (NAICS), FY2027 to date",
       "series": [
         {
           "label": "Obligations",
           "points": [
             [
+              "Logging",
+              99575262
+            ],
+            [
+              "Other Computer Related Services",
+              6498769.94
+            ],
+            [
+              "Research and Development in Biotechnology (except Nanobiotechnology)",
+              5267725
+            ],
+            [
+              "Medical Laboratories",
+              5247675.01
+            ],
+            [
+              "Irradiation Apparatus Manufacturing",
+              3577913.06
+            ],
+            [
+              "Ambulance Services",
+              3492021.69
+            ],
+            [
+              "Blood and Organ Banks",
+              3152437.3
+            ],
+            [
               "Computer Systems Design Services",
-              504847492.59
+              3035091.14
             ],
             [
-              "Commercial and Institutional Building Construction",
-              352718598.49
+              "Pharmaceutical Preparation Manufacturing",
+              2410997.71
             ],
             [
-              "Engineering Services",
-              307420483.17
-            ],
-            [
-              "Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology)",
-              285406575.27
-            ],
-            [
-              "Administrative Management and General Management Consulting Services",
-              254829784.19
-            ],
-            [
-              "All Other Professional, Scientific, and Technical Services",
-              195291288.49
-            ],
-            [
-              "Surgical and Medical Instrument Manufacturing",
-              190791631.4
-            ],
-            [
-              "Facilities Support Services",
-              140797682.8
-            ],
-            [
-              "Highway, Street, and Bridge Construction",
-              140112399.31
-            ],
-            [
-              "Food Service Contractors",
-              104829687.25
+              "Services for the Elderly and Persons with Disabilities",
+              2335632.84
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Computer Systems Design Services was the largest industry in North Carolina, with $505M obligated."
+      "takeaway": "Logging was the largest industry in North Carolina, with $99.6M obligated."
     }
   ],
   "crossLinks": [
     {
-      "label": "Department of Defense contracts",
-      "href": "/insights/agency/department-of-defense/"
-    },
-    {
-      "label": "General Services Administration contracts",
-      "href": "/insights/agency/general-services-administration/"
+      "label": "Department of Agriculture contracts",
+      "href": "/insights/agency/department-of-agriculture/"
     },
     {
       "label": "Department of Veterans Affairs contracts",
@@ -237,20 +229,24 @@
       "href": "/insights/agency/department-of-health-and-human-services/"
     },
     {
+      "label": "Department of Justice contracts",
+      "href": "/insights/agency/department-of-justice/"
+    },
+    {
+      "label": "NAICS 541519: Other Computer Related Services",
+      "href": "/insights/naics/541519/"
+    },
+    {
+      "label": "NAICS 621511: Medical Laboratories",
+      "href": "/insights/naics/621511/"
+    },
+    {
       "label": "NAICS 541512: Computer Systems Design Services",
       "href": "/insights/naics/541512/"
     },
     {
-      "label": "NAICS 236220: Commercial and Institutional Building Construction",
-      "href": "/insights/naics/236220/"
-    },
-    {
-      "label": "NAICS 541330: Engineering Services",
-      "href": "/insights/naics/541330/"
-    },
-    {
-      "label": "NAICS 541715: Research and Development in the Physical, Engineering, and Life Sciences",
-      "href": "/insights/naics/541715/"
+      "label": "NAICS 325412: Pharmaceutical Preparation Manufacturing",
+      "href": "/insights/naics/325412/"
     }
   ],
   "tables": [
@@ -265,87 +261,87 @@
         [
           1,
           {
-            "text": "RESEARCH TRIANGLE INSTITUTE",
-            "href": "https://www.usaspending.gov/recipient/8303ed9b-9fb4-3e90-ca81-50bbcf400948-C/latest/"
+            "text": "PEACHTREE LUMBER COMPANY, INC",
+            "href": "https://www.usaspending.gov/recipient/e2ea971d-9ad7-2945-0d38-35892d0ca1ce-C/latest/"
           },
-          286708951.53
+          99575262
         ],
         [
           2,
           {
-            "text": "SDV OFFICE SYSTEMS LLC",
-            "href": "https://www.usaspending.gov/recipient/88b54a53-a6bb-87a0-c4c9-391906338911-C/latest/"
+            "text": "KING STREET TECHNOLOGY PARTNERS, LLC",
+            "href": "https://www.usaspending.gov/recipient/7b4ac4f2-2d67-d7eb-4df3-ec6ca3822a3f-C/latest/"
           },
-          225830875.46
+          6220357.2
         ],
         [
           3,
           {
-            "text": "GENERAL DYNAMICS INFORMATION TECHNOLOGY, INC.",
-            "href": "https://www.usaspending.gov/recipient/455555be-773d-eab1-1e6b-7b94400b757e-C/latest/"
+            "text": "LOCUS BIOSCIENCES INC",
+            "href": "https://www.usaspending.gov/recipient/f50bb837-ea8b-a133-a9f9-513b699c1dda-C/latest/"
           },
-          186395761.05
+          5271052
         ],
         [
           4,
           {
-            "text": "BOOZ ALLEN HAMILTON INC",
-            "href": "https://www.usaspending.gov/recipient/ffca72e5-fba2-798a-6969-2a6c45e9f985-C/latest/"
+            "text": "LABORATORY CORPORATION OF AMERICA",
+            "href": "https://www.usaspending.gov/recipient/43c3801f-7847-15fb-337a-8c20cb2a5e11-C/latest/"
           },
-          161353128.89
+          4881859.43
         ],
         [
           5,
           {
-            "text": "LC INDUSTRIES INC",
-            "href": "https://www.usaspending.gov/recipient/a208121f-a7d1-058d-e34f-2963c871ae55-C/latest/"
+            "text": "AMERICAN NATIONAL RED CROSS, THE",
+            "href": "https://www.usaspending.gov/recipient/a375f105-597b-1639-8189-363ae0c09d4d-C/latest/"
           },
-          127914481.43
+          4510388.3
         ],
         [
           6,
           {
-            "text": "SODEXO MANAGEMENT INC.",
-            "href": "https://www.usaspending.gov/recipient/0176f789-4d36-f170-e11b-ad7ed43891d4-C/latest/"
+            "text": "RELIANCE MEDICAL TRANSPORT, LLC",
+            "href": "https://www.usaspending.gov/recipient/97f20703-8a6b-7614-0235-79ec1497239e-C/latest/"
           },
-          93048725.23
+          3492021.69
         ],
         [
           7,
           {
-            "text": "CACI NSS, LLC",
-            "href": "https://www.usaspending.gov/recipient/b5d927cd-b446-286a-877d-dbdc6e0d20d5-C/latest/"
+            "text": "VALIANT SOLUTIONS, LLC",
+            "href": "https://www.usaspending.gov/recipient/0eb731a1-05a5-3ded-505b-64c2af785b40-C/latest/"
           },
-          80113201.78
+          3035091.14
         ],
         [
           8,
           {
-            "text": "SALIENT CRGT, INC.",
-            "href": "https://www.usaspending.gov/recipient/fd25b722-602d-ec58-3a7a-d6555b8d8ea7-C/latest/"
+            "text": "DURHAM EXCHANGE CLUB INDUSTRIES, INC",
+            "href": "https://www.usaspending.gov/recipient/3cfc08ef-40fc-d93c-a510-eeea61bfddef-C/latest/"
           },
-          73280811
+          2335632.84
         ],
         [
           9,
           {
-            "text": "CORVID TECHNOLOGIES, LLC",
-            "href": "https://www.usaspending.gov/recipient/56aed6b3-aba1-ff0b-d0d8-82f4c8891e89-C/latest/"
+            "text": "EXELAN PHARMACEUTICALS INC",
+            "href": "https://www.usaspending.gov/recipient/fd180f17-935a-1d34-e226-7aeefdb3549c-C/latest/"
           },
-          67909725.2
+          2300193.31
         ],
         [
           10,
           {
-            "text": "VIASAT INC",
-            "href": "https://www.usaspending.gov/recipient/3e01e0d6-80fd-1df8-fd7c-08efc2828a82-C/latest/"
+            "text": "PHILIPS NORTH AMERICA LLC",
+            "href": "https://www.usaspending.gov/recipient/e7ca1519-17c6-3176-c3cf-cbe3b37f1f77-C/latest/"
           },
-          56953978.41
+          2166720.53
         ]
       ]
     },
     {
-      "title": "Largest awards, FY2026 to date",
+      "title": "Largest awards, FY2027 to date",
       "columns": [
         "Rank",
         "Recipient",
@@ -356,256 +352,256 @@
         [
           1,
           {
-            "text": "BOOZ ALLEN HAMILTON INC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_47QFCA20F0014_4732_GS00Q14OADU108_4732/"
+            "text": "RESEARCH TRIANGLE INSTITUTE",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75S20322C00001_7522_-NONE-_-NONE-/"
           },
-          1066387866.16,
-          "General Services Administration"
+          220989089,
+          "Department of Health and Human Services"
         ],
         [
           2,
           {
-            "text": "SODEXO MANAGEMENT INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_M9549418C0018_9700_-NONE-_-NONE-/"
+            "text": "PEACHTREE LUMBER COMPANY, INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_12363N27C4000_12C2_-NONE-_-NONE-/"
           },
-          913816628.05,
-          "Department of Defense"
+          99575262,
+          "Department of Agriculture"
         ],
         [
           3,
           {
-            "text": "CACI NSS, LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_47QFCA21F0087_4732_GS00Q14OADU121_4732/"
+            "text": "VALIANT SOLUTIONS, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_68HERD24F0032_6800_75N98120D00102_7529/"
           },
-          794102618.82,
-          "General Services Administration"
+          31884869.95,
+          "Environmental Protection Agency"
         ],
         [
           4,
           {
-            "text": "OLD NORTH UTILITY SERVICES, INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_SP060007C8258_9700_-NONE-_-NONE-/"
+            "text": "VALIANT CONSTRUCTION LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C24626C0037_3600_-NONE-_-NONE-/"
           },
-          654724917.37,
-          "Department of Defense"
+          23905280,
+          "Department of Veterans Affairs"
         ],
         [
           5,
           {
-            "text": "V2X SYSTEMS LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_0001_9700_W52P1J13G0027_9700/"
+            "text": "SIGO VALIANT JV II LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C24626C0048_3600_-NONE-_-NONE-/"
           },
-          601237371.68,
-          "Department of Defense"
+          22954198,
+          "Department of Veterans Affairs"
         ],
         [
           6,
           {
-            "text": "GENERAL DYNAMICS INFORMATION TECHNOLOGY, INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_47QFCA22F0018_4732_47QTCK18D0003_4732/"
+            "text": "RESEARCH TRIANGLE INSTITUTE",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75FCMC26F0138_7530_GS00F354CA_4732/"
           },
-          450259426,
-          "General Services Administration"
+          21628322,
+          "Department of Health and Human Services"
         ],
         [
           7,
           {
-            "text": "ARCHER WESTERN FEDERAL JV",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_N4008520C0060_9700_-NONE-_-NONE-/"
+            "text": "PCI AVIATION LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_47QFRA23C0005_4732_-NONE-_-NONE-/"
           },
-          408734090.28,
-          "Department of Defense"
+          19732548.83,
+          "General Services Administration"
         ],
         [
           8,
           {
-            "text": "SALIENT CRGT, INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_47QFCA22F0026_4732_47QTCK18D0060_4732/"
+            "text": "VALIANT CONSTRUCTION LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C24626C0064_3600_-NONE-_-NONE-/"
           },
-          332883782,
-          "General Services Administration"
+          19363490,
+          "Department of Veterans Affairs"
         ],
         [
           9,
           {
-            "text": "ASHBRITT INC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_W912PM25F0005_9700_W912EK22D0002_9700/"
+            "text": "KING STREET TECHNOLOGY PARTNERS, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10B25F0266_3600_47QTCA23D00ET_4732/"
           },
-          320189176.47,
-          "Department of Defense"
+          18663485.36,
+          "Department of Veterans Affairs"
         ],
         [
           10,
           {
-            "text": "SCIENCE APPLICATIONS INTERNATIONAL CORPORATION",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_GSQ0017AJ0036_4732_GS00Q09BGD0048_4735/"
+            "text": "DEFENSE CONTRACTING ACTIVITY, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_68HERC24F0204_6800_GS07F0085Y_4732/"
           },
-          290837026.9,
-          "General Services Administration"
+          15175382.14,
+          "Environmental Protection Agency"
         ],
         [
           11,
           {
-            "text": "FAMILY HEALTH INTERNATIONAL",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_7200AA24C00092_7200_-NONE-_-NONE-/"
+            "text": "LOCUS BIOSCIENCES INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75N93025C00035_7529_-NONE-_-NONE-/"
           },
-          276771964.75,
-          "Agency for International Development"
+          13166917,
+          "Department of Health and Human Services"
         ],
         [
           12,
           {
-            "text": "GENERAL DYNAMICS INFORMATION TECHNOLOGY, INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_47QFCA20F0018_4732_47QTCK18D0003_4732/"
+            "text": "PREMIER HEALTHCARE SOLUTIONS, INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_7571MN26C00062_7571_-NONE-_-NONE-/"
           },
-          272576643.03,
-          "General Services Administration"
+          11252000,
+          "Department of Health and Human Services"
         ],
         [
           13,
           {
-            "text": "SIKORSKY AIRCRAFT CORPORATION",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_70Z02321FAMH00300_7008_70Z02321DAMH00400_7008/"
+            "text": "MSK CONSTRUCTION INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_VA24617C0233_3600_-NONE-_-NONE-/"
           },
-          249199452.54,
-          "Department of Homeland Security"
+          11219803.65,
+          "Department of Veterans Affairs"
         ],
         [
           14,
           {
-            "text": "ACTIONABLE SOLUTIONS GROUP, LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_H9240219C0006_9700_-NONE-_-NONE-/"
+            "text": "AVMAC LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_47QFRA24F0004_4732_47QMCA20D0043_4732/"
           },
-          243119095.47,
-          "Department of Defense"
+          9431874.02,
+          "General Services Administration"
         ],
         [
           15,
           {
-            "text": "WALSH FEDERAL LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_N4008522C0016_9700_-NONE-_-NONE-/"
+            "text": "UNIVERSITY OF NORTH CAROLINA AT CHAPEL HILL",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75R60224C00016_7526_-NONE-_-NONE-/"
           },
-          240025901.84,
-          "Department of Defense"
+          7004369,
+          "Department of Health and Human Services"
         ],
         [
           16,
           {
-            "text": "EMERGENT BIODEFENSE OPERATIONS LANSING LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_75A50122C00047_7505_-NONE-_-NONE-/"
+            "text": "LEIDOS, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_68HERD25F0001_6800_GS35F116AA_4732/"
           },
-          213770068,
-          "Department of Health and Human Services"
+          6584157.99,
+          "Environmental Protection Agency"
         ],
         [
           17,
           {
-            "text": "CACI, INC. - FEDERAL",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_H9240221C0005_9700_-NONE-_-NONE-/"
+            "text": "TRANSYLVANIA VOCATIONAL SERVICES, INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_123J1426C1093_12K2_-NONE-_-NONE-/"
           },
-          212775350.11,
-          "Department of Defense"
+          6111418.1,
+          "Department of Agriculture"
         ],
         [
           18,
           {
-            "text": "WHITING-TURNER CONTRACTING COMPANY, THE",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_N4008520C0072_9700_-NONE-_-NONE-/"
+            "text": "NATIONAL PROJECT MANAGEMENT LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C24623C0039_3600_-NONE-_-NONE-/"
           },
-          209943551.87,
-          "Department of Defense"
+          5996185.05,
+          "Department of Veterans Affairs"
         ],
         [
           19,
           {
-            "text": "ARCHER WESTERN FEDERAL JV",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_N4008521C0017_9700_-NONE-_-NONE-/"
+            "text": "SUPERIOR KEYSTONE LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C24623P1367_3600_-NONE-_-NONE-/"
           },
-          206352927.22,
-          "Department of Defense"
+          5362497,
+          "Department of Veterans Affairs"
         ],
         [
           20,
           {
-            "text": "ASHBRITT INC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_W912PM25F0052_9700_W912EK22D0002_9700/"
+            "text": "RESEARCH TRIANGLE INSTITUTE",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75F40125F19048_7524_75F40120A00017_7524/"
           },
-          201746320.59,
-          "Department of Defense"
+          4996563.96,
+          "Department of Health and Human Services"
         ],
         [
           21,
           {
-            "text": "RESEARCH TRIANGLE INSTITUTE",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_75S20322C00001_7522_-NONE-_-NONE-/"
+            "text": "BLUE CORD DESIGN AND CONSTRUCTION, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C24621C0040_3600_-NONE-_-NONE-/"
           },
-          196989089,
-          "Department of Health and Human Services"
+          4713313.82,
+          "Department of Veterans Affairs"
         ],
         [
           22,
           {
-            "text": "RWE CLEAN ENERGY SOLUTIONS, INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_VA70116F0067_3600_DEAM3609GO29032_8900/"
+            "text": "RESEARCH TRIANGLE INSTITUTE",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75FCMC25FJ040_7530_GS00F354CA_4732/"
           },
-          180701715.55,
-          "Department of Veterans Affairs"
+          4073623,
+          "Department of Health and Human Services"
         ],
         [
           23,
           {
-            "text": "APPLIED RESEARCH ASSOCIATES, INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_HDTRA119F0005_9700_HDTRA114D0003_9700/"
+            "text": "EMPLOYMENT SOURCE INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C24625C0002_3600_-NONE-_-NONE-/"
           },
-          170973002.25,
-          "Department of Defense"
+          4033316.94,
+          "Department of Veterans Affairs"
         ],
         [
           24,
           {
-            "text": "RQ-DPR JV",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_N4008520C0044_9700_-NONE-_-NONE-/"
+            "text": "GREENWAY USA, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C24623C0081_3600_-NONE-_-NONE-/"
           },
-          168941622.3,
-          "Department of Defense"
+          3430000,
+          "Department of Veterans Affairs"
         ],
         [
           25,
           {
-            "text": "BOOZ ALLEN HAMILTON INC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_47QFCA26F0018_4732_47QTCK18D0004_4732/"
+            "text": "ACHUTI LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_68HERF26C0017_6800_-NONE-_-NONE-/"
           },
-          165559462,
-          "General Services Administration"
+          3382903,
+          "Environmental Protection Agency"
         ]
       ]
     }
   ],
   "narrative": {
-    "intro": "North Carolina federal contract obligations total $4.8B in FY2026 to date. North Carolina received 163,507 awards so far, and the average award size is $29.6K. North Carolina federal contract obligations are down 48.1% year over year. North Carolina saw the Department of Defense lead buying with $2B, followed by the General Services Administration with $726M and the Department of Veterans Affairs with $633M. North Carolina vendors leading receipts include RESEARCH TRIANGLE INSTITUTE with $287M and SDV OFFICE SYSTEMS LLC with $226M. North Carolina industries with the largest contract dollars are Computer Systems Design Services at $505M and Commercial and Institutional Building Construction at $353M. North Carolina obligations by fiscal year show a peak at $9.3B in FY25 and the current FY26 total of $4.8B. North Carolina contract counts and dollar totals are partial for the fiscal year to date, so the FY2026 total is not a full-year figure.",
+    "intro": "North Carolina recorded total obligations of $153M in federal contract awards for FY2027 to date. Obligations fell 97.3% year over year. The state received 736 awards with an average award size of $207K. Fiscal-year history shows a sharp drop from multi‑billion-dollar totals in recent years: FY22 was $8.6B, FY23 was $7B, FY24 was $7.2B, FY25 was $9.3B, and FY26 was $5.6B. The Department of Agriculture is the largest buyer so far in FY2027 to date, with obligations of $99.4M. PEACHTREE LUMBER COMPANY, INC is the largest vendor, with $99.6M in obligations, and Logging is the largest industry by NAICS with $99.6M. The Department of Veterans Affairs obligated $38.5M and the Department of Health and Human Services obligated $5.9M. Other notable agencies include the Environmental Protection Agency with $4.2M and the Department of Justice with $2.4M. Top vendor and industry concentrations show that a few large awards account for a majority of the current-year total.",
     "sections": [
       {
-        "heading": "Who are the biggest buyers in North Carolina right now?",
-        "body": "The Department of Defense is the largest buyer with $2B in obligations. The General Services Administration follows with $726M and the Department of Veterans Affairs follows with $633M. The Department of Health and Human Services and the Department of Homeland Security round out the top five with $438M and $338M respectively."
+        "heading": "How does FY2027 to date compare with prior fiscal years?",
+        "body": "FY2027 to date obligations are $153M. FY22 obligations were $8.6B, FY23 obligations were $7B, FY24 obligations were $7.2B, FY25 obligations were $9.3B, and FY26 obligations were $5.6B. Obligations fell 97.3% year over year."
       },
       {
-        "heading": "Which contractors and industries dominate North Carolina federal spending?",
-        "body": "RESEARCH TRIANGLE INSTITUTE is the top vendor at $287M, followed by SDV OFFICE SYSTEMS LLC at $226M and GENERAL DYNAMICS INFORMATION TECHNOLOGY, INC. at $186M. Computer Systems Design Services leads industries with $505M, and Commercial and Institutional Building Construction follows with $353M. Engineering Services and Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology) also rank high at $307M and $285M respectively."
+        "heading": "Which agencies, vendors, and industries dominate spending in FY2027 to date?",
+        "body": "The Department of Agriculture obligated $99.4M and the Department of Veterans Affairs obligated $38.5M. PEACHTREE LUMBER COMPANY, INC received $99.6M and KING STREET TECHNOLOGY PARTNERS, LLC received $6.2M. Logging is the largest industry with $99.6M and Other Computer Related Services is the second with $6.5M."
       }
     ]
   },
   "faq": [
     {
       "q": "How much federal contract money goes to North Carolina?",
-      "a": "North Carolina received $4.8B in federal contract obligations in FY2026 to date. North Carolina received 163,507 awards and the average award size is $29.6K. North Carolina obligations are down 48.1% year over year and the FY2026 total is a fiscal year to date figure, not a full-year total."
+      "a": "North Carolina received $153M in federal contract obligations in FY2027 to date. The state has 736 awards so far in the fiscal year, with an average award size of $207K, and obligations fell 97.3% year over year compared with prior periods."
     },
     {
       "q": "Which agencies award the most contracts in North Carolina?",
-      "a": "The Department of Defense awards the most contracts in North Carolina, with $2B in obligations. The General Services Administration is second with $726M and the Department of Veterans Affairs is third with $633M. The Department of Health and Human Services and the Department of Homeland Security follow with $438M and $338M respectively."
+      "a": "The Department of Agriculture is the largest buying agency in FY2027 to date with obligations of $99.4M. The Department of Veterans Affairs follows with $38.5M, and other buying agencies include the Department of Health and Human Services with $5.9M and the Environmental Protection Agency with $4.2M."
     },
     {
       "q": "Who are the largest federal contractors in North Carolina?",
-      "a": "RESEARCH TRIANGLE INSTITUTE is the largest federal contractor in North Carolina at $287M. SDV OFFICE SYSTEMS LLC and GENERAL DYNAMICS INFORMATION TECHNOLOGY, INC. follow with $226M and $186M respectively. Other top vendors include BOOZ ALLEN HAMILTON INC at $161M and LC INDUSTRIES INC at $128M."
+      "a": "PEACHTREE LUMBER COMPANY, INC is the largest federal contractor in North Carolina in FY2027 to date with $99.6M in obligations. Other top vendors include KING STREET TECHNOLOGY PARTNERS, LLC with $6.2M and LOCUS BIOSCIENCES INC with $5.3M."
     }
   ],
   "related": [

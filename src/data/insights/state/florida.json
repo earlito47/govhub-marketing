@@ -1,20 +1,20 @@
 {
   "pageType": "state",
   "slug": "florida",
-  "title": "Federal Contracts in Florida: $27.9B (FY2026)",
+  "title": "Federal Contracts in Florida: $180M (FY2027)",
   "h1": "Federal Contracts in Florida: Spending, Agencies & Vendors",
-  "metaDescription": "Federal agencies obligated $27.9B to contractors in Florida in FY2026 to date. See top buying agencies, top vendors, and industries.",
-  "updated": "2026-09-28",
+  "metaDescription": "Federal agencies obligated $180M to contractors in Florida in FY2027 to date. See top buying agencies, top vendors, and industries.",
+  "updated": "2026-10-19",
   "fyWindow": {
-    "label": "FY2026 to date",
-    "start": "2025-10-01",
-    "end": "2026-09-28"
+    "label": "FY2027 to date",
+    "start": "2026-10-01",
+    "end": "2026-10-19"
   },
   "stats": {
-    "totalObligations": 27857523185.56,
-    "awardCount": 179318,
-    "yoyGrowthPct": -14.1,
-    "avgAwardSize": 155353,
+    "totalObligations": 180378796.38,
+    "awardCount": 1077,
+    "yoyGrowthPct": -99.4,
+    "avgAwardSize": 167483,
     "smallBusinessSharePct": null
   },
   "charts": [
@@ -27,12 +27,8 @@
           "label": "Obligations",
           "points": [
             [
-              "FY21",
-              25671074777.08
-            ],
-            [
               "FY22",
-              26600671437.49
+              26596824080.02
             ],
             [
               "FY23",
@@ -40,217 +36,221 @@
             ],
             [
               "FY24",
-              31320626353.66
+              31320602605.66
             ],
             [
               "FY25",
-              32441747455.8
+              32448656306.69
             ],
             [
               "FY26",
-              27857523185.56
+              32099165920.59
+            ],
+            [
+              "FY27",
+              180378796.38
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Obligations fell 14.1% year over year, from $32.4B in FY2025 to $27.9B in FY2026 to date."
+      "takeaway": "Obligations fell 99.4% year over year, from $32.1B in FY2026 to $180M in FY2027 to date."
     },
     {
       "id": "florida-top-agencies",
       "type": "bar",
-      "title": "Top 10 buying agencies, FY2026 to date",
+      "title": "Top 10 buying agencies, FY2027 to date",
       "series": [
         {
           "label": "Obligations",
           "points": [
             [
-              "Department of Defense",
-              18303375481.72
-            ],
-            [
               "Department of Veterans Affairs",
-              2805496547.93
-            ],
-            [
-              "General Services Administration",
-              1783008571.76
-            ],
-            [
-              "Department of Homeland Security",
-              1331631419.52
+              93806117
             ],
             [
               "National Aeronautics and Space Administration",
-              1329278133.87
+              58695274.45
             ],
             [
-              "Department of Transportation",
-              926617532.38
+              "Department of Homeland Security",
+              22010972.98
+            ],
+            [
+              "General Services Administration",
+              3346786.21
             ],
             [
               "Department of Justice",
-              389663892.31
+              2672191.19
             ],
             [
               "Department of the Interior",
-              216339666.57
+              82959.68
             ],
             [
-              "Department of Health and Human Services",
-              180823781.38
+              "Department of Agriculture",
+              62183.56
             ],
             [
-              "Department of Commerce",
-              149315322.68
+              "Department of the Treasury",
+              37739
+            ],
+            [
+              "Social Security Administration",
+              0
+            ],
+            [
+              "Export-Import Bank of the United States",
+              0
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Department of Defense was the top federal buyer in Florida, obligating $18.3B (65.7% of the state total)."
+      "takeaway": "Department of Veterans Affairs was the top federal buyer in Florida, obligating $93.8M (52.0% of the state total)."
     },
     {
       "id": "florida-top-vendors",
       "type": "bar",
-      "title": "Top 10 vendors, FY2026 to date",
+      "title": "Top 10 vendors, FY2027 to date",
       "series": [
         {
           "label": "Obligations",
           "points": [
             [
-              "LOCKHEED MARTIN CORPORATION",
-              2714779673.02
+              "BLUE ORIGIN, LLC",
+              46070000
             ],
             [
-              "LOCKHEED MARTIN CORPORATION",
-              2285109803.86
+              "METROIBR JV LLC",
+              22723637.04
             ],
             [
-              "THALLE CONSTRUCTION CO INC",
-              1913973473.64
+              "BLUE CORD DESIGN AND CONSTRUCTION, LLC",
+              12974316
             ],
             [
-              "LOYAL SOURCE GOVERNMENT SERVICES LLC",
-              1837697842.69
+              "AMENTUM SPACEPORT LLC",
+              12384749.02
             ],
             [
-              "NORTHROP GRUMMAN SYSTEMS CORPORATION",
-              1434720021.51
+              "NAPC & HSCC JV LLC",
+              10720445
             ],
             [
-              "CROWLEY GOVERNMENT SERVICES, INC.",
-              582198523
+              "QUEST DIAGNOSTICS INCORPORATED",
+              9912755.25
             ],
             [
-              "SPACE EXPLORATION TECHNOLOGIES CORP.",
-              519393669.31
+              "VETERANS HEALTHCARE SUPPLY SOLUTIONS, INC",
+              3851425.23
             ],
             [
-              "PERATON INC.",
-              466177123.94
+              "VOLUNTEERS OF AMERICA OF FLORIDA INC",
+              3536850
             ],
             [
-              "L3HARRIS TECHNOLOGIES, INC.",
-              356960947.69
+              "EXELAN PHARMACEUTICALS INC",
+              3219521.88
             ],
             [
-              "THE GEO GROUP, INC.",
-              338809711.86
+              "LIFEFLEET SOUTHEAST INC",
+              3219462.35
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "LOCKHEED MARTIN CORPORATION led all contractors in Florida with $2.7B, 9.7% of the state total."
+      "takeaway": "BLUE ORIGIN, LLC led all contractors in Florida with $46.1M, 25.5% of the state total."
     },
     {
       "id": "florida-top-naics",
       "type": "bar",
-      "title": "Top 10 industries (NAICS), FY2026 to date",
+      "title": "Top 10 industries (NAICS), FY2027 to date",
       "series": [
         {
           "label": "Obligations",
           "points": [
             [
-              "Guided Missile and Space Vehicle Manufacturing",
-              5154339745.88
-            ],
-            [
-              "Other Heavy and Civil Engineering Construction",
-              2315607855.22
-            ],
-            [
-              "Engineering Services",
-              2016352435.16
-            ],
-            [
-              "Other Aircraft Parts and Auxiliary Equipment Manufacturing",
-              1858361286.69
-            ],
-            [
-              "Offices of Physicians (except Mental Health Specialists)",
-              1843533569.44
-            ],
-            [
-              "Computer Systems Design Services",
-              989339104.51
+              "Nonscheduled Chartered Freight Air Transportation",
+              46070000
             ],
             [
               "Commercial and Institutional Building Construction",
-              928727145.35
+              25963307.49
             ],
             [
-              "Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology)",
-              647264478.43
+              "Custom Computer Programming Services",
+              23198636.06
             ],
             [
-              "Search, Detection, Navigation, Guidance, Aeronautical, and Nautical System and Instrument Manufacturing",
-              641273217.11
+              "Facilities Support Services",
+              12366458.58
             ],
             [
-              "Deep Sea Freight Transportation",
-              615045196.19
+              "Medical Laboratories",
+              10618648.79
+            ],
+            [
+              "Pharmaceutical Preparation Manufacturing",
+              8058192.23
+            ],
+            [
+              "Temporary Shelters",
+              5320624.7
+            ],
+            [
+              "Ambulance Services",
+              5159467.6
+            ],
+            [
+              "Electronic and Precision Equipment Repair and Maintenance",
+              4582821.64
+            ],
+            [
+              "Blood and Organ Banks",
+              4431765.08
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Guided Missile and Space Vehicle Manufacturing was the largest industry in Florida, with $5.2B obligated."
+      "takeaway": "Nonscheduled Chartered Freight Air Transportation was the largest industry in Florida, with $46.1M obligated."
     }
   ],
   "crossLinks": [
-    {
-      "label": "Department of Defense contracts",
-      "href": "/insights/agency/department-of-defense/"
-    },
     {
       "label": "Department of Veterans Affairs contracts",
       "href": "/insights/agency/department-of-veterans-affairs/"
     },
     {
-      "label": "General Services Administration contracts",
-      "href": "/insights/agency/general-services-administration/"
+      "label": "National Aeronautics and Space Administration contracts",
+      "href": "/insights/agency/national-aeronautics-and-space-administration/"
     },
     {
       "label": "Department of Homeland Security contracts",
       "href": "/insights/agency/department-of-homeland-security/"
     },
     {
-      "label": "NAICS 541330: Engineering Services",
-      "href": "/insights/naics/541330/"
-    },
-    {
-      "label": "NAICS 541512: Computer Systems Design Services",
-      "href": "/insights/naics/541512/"
+      "label": "General Services Administration contracts",
+      "href": "/insights/agency/general-services-administration/"
     },
     {
       "label": "NAICS 236220: Commercial and Institutional Building Construction",
       "href": "/insights/naics/236220/"
     },
     {
-      "label": "NAICS 541715: Research and Development in the Physical, Engineering, and Life Sciences",
-      "href": "/insights/naics/541715/"
+      "label": "NAICS 541511: Custom Computer Programming Services",
+      "href": "/insights/naics/541511/"
+    },
+    {
+      "label": "NAICS 561210: Facilities Support Services",
+      "href": "/insights/naics/561210/"
+    },
+    {
+      "label": "NAICS 621511: Medical Laboratories",
+      "href": "/insights/naics/621511/"
     }
   ],
   "tables": [
@@ -265,87 +265,87 @@
         [
           1,
           {
-            "text": "LOCKHEED MARTIN CORPORATION",
-            "href": "https://www.usaspending.gov/recipient/695d5739-ecc3-8484-ba2b-f9c8b4652a4a-C/latest/"
+            "text": "BLUE ORIGIN, LLC",
+            "href": "https://www.usaspending.gov/recipient/2c023317-2253-d360-9710-a68608d3963f-C/latest/"
           },
-          2714779673.02
+          46070000
         ],
         [
           2,
           {
-            "text": "LOCKHEED MARTIN CORPORATION",
-            "href": "https://www.usaspending.gov/recipient/8a7abf83-bb31-a229-bb3a-31eb356988eb-C/latest/"
+            "text": "METROIBR JV LLC",
+            "href": "https://www.usaspending.gov/recipient/696984e9-df32-7a5d-27b2-5f17d2f06567-C/latest/"
           },
-          2285109803.86
+          22723637.04
         ],
         [
           3,
           {
-            "text": "THALLE CONSTRUCTION CO INC",
-            "href": "https://www.usaspending.gov/recipient/880ef35a-f087-3ed6-ac27-9d2211947165-C/latest/"
+            "text": "BLUE CORD DESIGN AND CONSTRUCTION, LLC",
+            "href": "https://www.usaspending.gov/recipient/41a4a29f-ecf4-5534-5441-0b5e6e3cdc9b-C/latest/"
           },
-          1913973473.64
+          12974316
         ],
         [
           4,
           {
-            "text": "LOYAL SOURCE GOVERNMENT SERVICES LLC",
-            "href": "https://www.usaspending.gov/recipient/a11a2c49-b200-c5b0-6719-7b2d0bb9764c-C/latest/"
+            "text": "AMENTUM SPACEPORT LLC",
+            "href": "https://www.usaspending.gov/recipient/a01c5eb0-9d0f-4631-24a6-75917712d54d-C/latest/"
           },
-          1837697842.69
+          12384749.02
         ],
         [
           5,
           {
-            "text": "NORTHROP GRUMMAN SYSTEMS CORPORATION",
-            "href": "https://www.usaspending.gov/recipient/a398e5f8-3381-5983-2fb6-c60a3f701eb4-C/latest/"
+            "text": "NAPC & HSCC JV LLC",
+            "href": "https://www.usaspending.gov/recipient/7043dff8-74e8-2943-954f-6a6397c84a15-C/latest/"
           },
-          1434720021.51
+          10720445
         ],
         [
           6,
           {
-            "text": "CROWLEY GOVERNMENT SERVICES, INC.",
-            "href": "https://www.usaspending.gov/recipient/572e442b-f0f8-e4ab-6a99-b97521c958ef-C/latest/"
+            "text": "QUEST DIAGNOSTICS INCORPORATED",
+            "href": "https://www.usaspending.gov/recipient/a9415e64-b17c-f292-0379-5ac52f31d54a-C/latest/"
           },
-          582198523
+          9912755.25
         ],
         [
           7,
           {
-            "text": "SPACE EXPLORATION TECHNOLOGIES CORP.",
-            "href": "https://www.usaspending.gov/recipient/8a3a5525-3218-a488-db0e-4823241ceb90-C/latest/"
+            "text": "VETERANS HEALTHCARE SUPPLY SOLUTIONS, INC",
+            "href": "https://www.usaspending.gov/recipient/9371b086-8782-4452-2811-e33b46e17b11-C/latest/"
           },
-          519393669.31
+          3851425.23
         ],
         [
           8,
           {
-            "text": "PERATON INC.",
-            "href": "https://www.usaspending.gov/recipient/129fccb1-783c-9fd1-7b6d-6ddea65ace79-C/latest/"
+            "text": "VOLUNTEERS OF AMERICA OF FLORIDA INC",
+            "href": "https://www.usaspending.gov/recipient/400039f3-52df-3187-42f0-9c8437d21bf3-C/latest/"
           },
-          466177123.94
+          3536850
         ],
         [
           9,
           {
-            "text": "L3HARRIS TECHNOLOGIES, INC.",
-            "href": "https://www.usaspending.gov/recipient/8cdf9a30-6987-41a0-fdc4-f48e1b88b1bf-C/latest/"
+            "text": "EXELAN PHARMACEUTICALS INC",
+            "href": "https://www.usaspending.gov/recipient/fd180f17-935a-1d34-e226-7aeefdb3549c-C/latest/"
           },
-          356960947.69
+          3219521.88
         ],
         [
           10,
           {
-            "text": "THE GEO GROUP, INC.",
-            "href": "https://www.usaspending.gov/recipient/9b308edb-a62c-659b-704b-ef4e5cf3f795-C/latest/"
+            "text": "LIFEFLEET SOUTHEAST INC",
+            "href": "https://www.usaspending.gov/recipient/8e8288ad-9ecf-7225-9cef-35b70624c4b9-C/latest/"
           },
-          338809711.86
+          3219462.35
         ]
       ]
     },
     {
-      "title": "Largest awards, FY2026 to date",
+      "title": "Largest awards, FY2027 to date",
       "columns": [
         "Rank",
         "Recipient",
@@ -356,256 +356,256 @@
         [
           1,
           {
-            "text": "NORTHROP GRUMMAN SYSTEMS CORPORATION",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_N0001918C1037_9700_-NONE-_-NONE-/"
+            "text": "AMENTUM SPACEPORT LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_80KSC018C0017_8000_-NONE-_-NONE-/"
           },
-          8494620560.67,
-          "Department of Defense"
+          662257531.11,
+          "National Aeronautics and Space Administration"
         ],
         [
           2,
           {
-            "text": "LOCKHEED MARTIN CORPORATION",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_FA868224CB001_9700_-NONE-_-NONE-/"
+            "text": "ASTRION GROUP, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_80KSC022CA010_8000_-NONE-_-NONE-/"
           },
-          7202488023.22,
-          "Department of Defense"
+          164275691.82,
+          "National Aeronautics and Space Administration"
         ],
         [
           3,
           {
-            "text": "NORTHROP GRUMMAN SYSTEMS CORPORATION",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_N0001913C9999_9700_-NONE-_-NONE-/"
+            "text": "SOUTHWEST VALLEY CONSTRUCTORS CO",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70B01C26F00001093_7014_70B01C26D00000025_7014/"
           },
-          5375141527.12,
-          "Department of Defense"
+          144000000,
+          "Department of Homeland Security"
         ],
         [
           4,
           {
-            "text": "SPACE EXPLORATION TECHNOLOGIES CORP.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_NNK17MA01T_8000_NNK14MA74C_8000/"
+            "text": "ARES TECHNICAL SERVICES CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_80KSC019C0016_8000_-NONE-_-NONE-/"
           },
-          3549243793,
+          122298132.02,
           "National Aeronautics and Space Administration"
         ],
         [
           5,
           {
-            "text": "LOCKHEED MARTIN CORPORATION",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_W31P4Q18C0130_9700_-NONE-_-NONE-/"
+            "text": "BLUE ORIGIN, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_80KSC023FA102_8000_80KSC022DA102_8000/"
           },
-          3158372223.06,
-          "Department of Defense"
+          99569229.71,
+          "National Aeronautics and Space Administration"
         ],
         [
           6,
           {
-            "text": "LOCKHEED MARTIN CORPORATION",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_N0003024C0100_9700_-NONE-_-NONE-/"
+            "text": "METROIBR JV LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70SBUR23F00000008_7003_47QTCA22D00AB_4732/"
           },
-          2956217026,
-          "Department of Defense"
+          98880253.64,
+          "Department of Homeland Security"
         ],
         [
           7,
           {
-            "text": "THALLE CONSTRUCTION CO INC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_W912EP24C0018_9700_-NONE-_-NONE-/"
+            "text": "PLANNED SYSTEMS INTERNATIONAL INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_47QFSA22F0101_4732_47QTCK18D0039_4732/"
           },
-          2514144742.31,
-          "Department of Defense"
+          83130895.15,
+          "General Services Administration"
         ],
         [
           8,
           {
-            "text": "LOCKHEED MARTIN CORPORATION",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_W31P4Q23C0005_9700_-NONE-_-NONE-/"
+            "text": "ESA SOUTH, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C24822C0110_3600_-NONE-_-NONE-/"
           },
-          2213842633.09,
-          "Department of Defense"
+          58870322.54,
+          "Department of Veterans Affairs"
         ],
         [
           9,
           {
-            "text": "GENERAL ELECTRIC CO",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_DEAC0476DP00656_8900_-NONE-_-NONE-/"
+            "text": "BOOZ ALLEN HAMILTON INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_47QFSA23F0008_4732_47QTCK18D0004_4732/"
           },
-          1874374490.91,
-          "Department of Energy"
+          53610416.86,
+          "General Services Administration"
         ],
         [
           10,
           {
-            "text": "L3HARRIS TECHNOLOGIES, INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_DOCDG133E09CN0094_1330_-NONE-_-NONE-/"
+            "text": "BOOZ ALLEN HAMILTON INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_47QFSA24F0018_4732_47QFCA22D0406_4732/"
           },
-          1826088581.86,
-          "Department of Commerce"
+          43421627.88,
+          "General Services Administration"
         ],
         [
           11,
           {
-            "text": "HARRIS CORPORATION",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_DTFA0102D03006CALL0001_6920_DTFA0102D03006_6920/"
+            "text": "VMD SYSTEMS INTEGRATORS, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70T05024F5900N012_7013_HSTS0516DSPP913_7013/"
           },
-          1590352857.43,
-          "Department of Transportation"
+          34998692.1,
+          "Department of Homeland Security"
         ],
         [
           12,
           {
-            "text": "EASTERN SHIPBUILDING GROUP, INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_HSCG2314CAPC002_7008_-NONE-_-NONE-/"
+            "text": "TL SERVICES, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C77625C0067_3600_-NONE-_-NONE-/"
           },
-          1578692803.24,
-          "Department of Homeland Security"
+          21153679,
+          "Department of Veterans Affairs"
         ],
         [
           13,
           {
-            "text": "LOCKHEED MARTIN CORPORATION",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_FA868118C0021_9700_-NONE-_-NONE-/"
+            "text": "BLUE CORD DESIGN AND CONSTRUCTION, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C24827C0001_3600_-NONE-_-NONE-/"
           },
-          1334629676,
-          "Department of Defense"
+          12974316,
+          "Department of Veterans Affairs"
         ],
         [
           14,
           {
-            "text": "RELIANCE TEST & TECHNOLOGY, LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_FA248616C0002_9700_-NONE-_-NONE-/"
+            "text": "TL SERVICES, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C24824C0012_3600_-NONE-_-NONE-/"
           },
-          1310483207.19,
-          "Department of Defense"
+          11809164.11,
+          "Department of Veterans Affairs"
         ],
         [
           15,
           {
-            "text": "LOCKHEED MARTIN CORPORATION",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_N0003025C0100_9700_-NONE-_-NONE-/"
+            "text": "NAPC & HSCC JV LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C24827C0004_3600_-NONE-_-NONE-/"
           },
-          1304105969,
-          "Department of Defense"
+          10720445,
+          "Department of Veterans Affairs"
         ],
         [
           16,
           {
-            "text": "LOCKHEED MARTIN CORPORATION",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_N0003023C0100_9700_-NONE-_-NONE-/"
+            "text": "HELICOPTER EXPRESS LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_1202SA24K9305_12C2_1202SA23T9316_12C2/"
           },
-          1284180703,
-          "Department of Defense"
+          9470226.17,
+          "Department of Agriculture"
         ],
         [
           17,
           {
-            "text": "HARRIS CORPORATION",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_DTFA0102D03006CALL0016_6920_DTFA0102D03006_6920/"
+            "text": "KTS SOLUTIONS, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C24822P0001_3600_-NONE-_-NONE-/"
           },
-          1240322564.94,
-          "Department of Transportation"
+          9056141,
+          "Department of Veterans Affairs"
         ],
         [
           18,
           {
-            "text": "LOCKHEED MARTIN CORPORATION",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_N0003020C0100_9700_-NONE-_-NONE-/"
+            "text": "TELECOMMUNICATION SUPPORT SERVICES, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_1305M221FNWWG0143_1330_DOCRA133W18CQ0019_1330/"
           },
-          1223668877.36,
-          "Department of Defense"
+          8301811.35,
+          "Department of Commerce"
         ],
         [
           19,
           {
-            "text": "LOCKHEED MARTIN CORPORATION",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_N0003021C0100_9700_-NONE-_-NONE-/"
+            "text": "TRILLAMED LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C24824C0079_3600_-NONE-_-NONE-/"
           },
-          1182419416.82,
-          "Department of Defense"
+          7770680.64,
+          "Department of Veterans Affairs"
         ],
         [
           20,
           {
-            "text": "NORTHROP GRUMMAN SYSTEMS CORPORATION",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_N0001925C0130_9700_-NONE-_-NONE-/"
+            "text": "OLYMPUS AMERICA INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C24824P2082_3600_-NONE-_-NONE-/"
           },
-          1167849793,
-          "Department of Defense"
+          7656327.61,
+          "Department of Veterans Affairs"
         ],
         [
           21,
           {
-            "text": "LOCKHEED MARTIN CORPORATION",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_FA868223CB001_9700_-NONE-_-NONE-/"
+            "text": "FLETCHER FLYING SERVICE INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_140D0425F0216_1406_140D0424D0064_1406/"
           },
-          1164277426,
-          "Department of Defense"
+          7642888.41,
+          "Department of the Interior"
         ],
         [
           22,
           {
-            "text": "AEROJET ROCKETDYNE COLEMAN AEROSPACE INC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_HQ014714C0001_9700_-NONE-_-NONE-/"
+            "text": "YERKES SOUTH - ADVANCED ROOFING JV1 LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C25623C0088_3600_-NONE-_-NONE-/"
           },
-          1131842212.91,
-          "Department of Defense"
+          7509578.32,
+          "Department of Veterans Affairs"
         ],
         [
           23,
           {
-            "text": "LOCKHEED MARTIN CORPORATION",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_FA868221C0001_9700_-NONE-_-NONE-/"
+            "text": "INLAND CONSTRUCTION & ENGINEERING INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70Z08226FCEUM0017_7008_70Z08219DPMV11600_7008/"
           },
-          1114490573.13,
-          "Department of Defense"
+          7239000,
+          "Department of Homeland Security"
         ],
         [
           24,
           {
-            "text": "LOCKHEED MARTIN CORPORATION",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_N0003022C0100_9700_-NONE-_-NONE-/"
+            "text": "CASO LOGZONE LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_68HERC22C0063_6800_-NONE-_-NONE-/"
           },
-          1032798036,
-          "Department of Defense"
+          6809568.26,
+          "Environmental Protection Agency"
         ],
         [
           25,
           {
-            "text": "LOCKHEED MARTIN CORPORATION",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_W58RGZ25F0182_9700_W58RGZ23D0011_9700/"
+            "text": "MILICON INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C24823C0049_3600_-NONE-_-NONE-/"
           },
-          956764300.77,
-          "Department of Defense"
+          6706373.31,
+          "Department of Veterans Affairs"
         ]
       ]
     }
   ],
   "narrative": {
-    "intro": "The state of Florida has received $27.9B in federal contract obligations in FY2026 to date. The federal government executed 179,318 awards in Florida, with an average award size of $155K. Obligations in Florida are down 14.1% year over year. Fiscal-year obligations moved from $25.7B in FY21 to $26.6B in FY22, $29B in FY23, $31.3B in FY24, $32.4B in FY25, and $27.9B in FY26. The Department of Defense is the largest buyer in Florida, obligating $18.3B so far in FY2026 to date. Guided Missile and Space Vehicle Manufacturing is the largest industry by obligations, totaling $5.2B in FY2026 to date. The state’s vendor list includes large obligations to LOCKHEED MARTIN CORPORATION at $2.7B and $2.3B, THALLE CONSTRUCTION CO INC at $1.9B, and LOYAL SOURCE GOVERNMENT SERVICES LLC at $1.8B. This mix of large defense buys, space-sector manufacturing, construction, and healthcare services shapes federal contracting activity in Florida in the current fiscal year to date.",
+    "intro": "Florida has $180M in federal contract obligations for FY2027 to date. Obligations fell 99.4% year over year. The state saw 1,077 awards with an average award size of $167K. Year-over-year totals show a sharp drop from prior full fiscal years: FY22 had $26.6B, FY23 had $29B, FY24 had $31.3B, FY25 had $32.4B, and FY26 had $32.1B. The Department of Veterans Affairs is the largest buyer so far with $93.8M obligated, followed by the National Aeronautics and Space Administration with $58.7M and the Department of Homeland Security with $22M. BLUE ORIGIN, LLC is the top vendor with $46.1M in obligations, followed by METROIBR JV LLC with $22.7M and BLUE CORD DESIGN AND CONSTRUCTION, LLC with $13M. Nonscheduled Chartered Freight Air Transportation is the largest industry by obligation with $46.1M, followed by Commercial and Institutional Building Construction with $26M and Custom Computer Programming Services with $23.2M.",
     "sections": [
       {
-        "heading": "Which agencies drive federal spending in Florida?",
-        "body": "The Department of Defense is the largest buyer, obligating $18.3B in FY2026 to date. The Department of Veterans Affairs follows with $2.8B, and the General Services Administration obligates $1.8B. Other significant buyers are the Department of Homeland Security and the National Aeronautics and Space Administration, each obligating $1.3B."
+        "heading": "What changed year over year in Florida federal contracting?",
+        "body": "Florida obligations fell 99.4% year over year. The state recorded $180M in FY2027 to date after full-year totals of $32.1B in FY26 and $32.4B in FY25. The count of awards in FY2027 to date is 1,077 with an average award size of $167K."
       },
       {
-        "heading": "Which vendors and industries dominate contracts in Florida?",
-        "body": "LOCKHEED MARTIN CORPORATION is the largest vendor by obligations, with entries of $2.7B and $2.3B. THALLE CONSTRUCTION CO INC obligates $1.9B and LOYAL SOURCE GOVERNMENT SERVICES LLC obligates $1.8B. Guided Missile and Space Vehicle Manufacturing leads industries with $5.2B, followed by Other Heavy and Civil Engineering Construction at $2.3B and Engineering Services at $2B."
+        "heading": "Who are the top buying agencies and vendors in Florida right now?",
+        "body": "The Department of Veterans Affairs is the top buying agency with $93.8M in obligations. The National Aeronautics and Space Administration follows with $58.7M and the Department of Homeland Security with $22M. BLUE ORIGIN, LLC is the top vendor with $46.1M, followed by METROIBR JV LLC with $22.7M and BLUE CORD DESIGN AND CONSTRUCTION, LLC with $13M."
       }
     ]
   },
   "faq": [
     {
       "q": "How much federal contract money goes to Florida?",
-      "a": "Florida has received $27.9B in federal contract obligations in FY2026 to date. The state saw 179,318 awards and an average award size of $155K, and obligations are down 14.1% year over year."
+      "a": "Florida receives $180M in federal contract obligations for FY2027 to date. Florida had much larger full-year totals in prior years, including $32.1B in FY26 and $32.4B in FY25, reflecting the current-year total is partial and the reported year-over-year change is down 99.4%."
     },
     {
       "q": "Which agencies award the most contracts in Florida?",
-      "a": "The Department of Defense awards the most contracts in Florida, obligating $18.3B in FY2026 to date. Other top buying agencies include the Department of Veterans Affairs at $2.8B and the General Services Administration at $1.8B."
+      "a": "The Department of Veterans Affairs awards the most contracts in Florida with $93.8M in obligations. The National Aeronautics and Space Administration is second with $58.7M, and the Department of Homeland Security is third with $22M. Other buyers with obligations in FY2027 to date include the General Services Administration with $3.3M and the Department of Justice with $2.7M."
     },
     {
       "q": "Who are the largest federal contractors in Florida?",
-      "a": "LOCKHEED MARTIN CORPORATION is the largest federal contractor in Florida, with obligations of $2.7B and $2.3B listed among top vendors. Other large contractors include THALLE CONSTRUCTION CO INC at $1.9B, LOYAL SOURCE GOVERNMENT SERVICES LLC at $1.8B, and NORTHROP GRUMMAN SYSTEMS CORPORATION at $1.4B."
+      "a": "BLUE ORIGIN, LLC is the largest federal contractor in Florida with $46.1M in obligations. METROIBR JV LLC is second with $22.7M and BLUE CORD DESIGN AND CONSTRUCTION, LLC is third with $13M. Other notable vendors include AMENTUM SPACEPORT LLC with $12.4M and NAPC & HSCC JV LLC with $10.7M."
     }
   ],
   "related": [
