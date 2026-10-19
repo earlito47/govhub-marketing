@@ -117,7 +117,15 @@ async function readLead(ix, entry) {
   const campaignId = CAMPAIGN_IDS[entry.campaign];
   const d = await ix.api('POST', '/leads/list', { limit: 10, contacts: [entry.lead], campaign: campaignId });
   const lead = (d.items || []).find((x) => (x.email || '').toLowerCase() === entry.lead) || null;
-  const thread = await ix.thread(entry.lead);
+  // The same few thread reads 5xx'd in both 10-16 and 10-19 batches, right
+  // after a burst of reads for leads still mid-sequence, and read fine on their
+  // own minutes later. So: pace, and give a failed read two slower retries.
+  let thread;
+  for (let attempt = 0; ; attempt++) {
+    try { thread = await ix.thread(entry.lead); break; }
+    catch (e) { if (attempt >= 2) throw e; await new Promise((r) => setTimeout(r, 15000 * (attempt + 1))); }
+  }
+  await new Promise((r) => setTimeout(r, 300));
   const ours = thread.filter((e) => e.campaign_id === campaignId && Number(e.ue_type) === 1);
   return { lead, thread, ours, campaignId };
 }
@@ -242,7 +250,12 @@ async function openPick(entry, lead, overused = []) {
   const d = await nextOpen({ ...args, count: 3, excludeSol: [...args.excludeSol, ...overused] });
   if (!d.facts?.open) return null;
   const lines = d.body.split('\n\n')[0].split('\n').map((l) => l.replace(/^\d+\.\s*/, '').trim());
-  const i = lines.findIndex((l, n) => n < d.facts.open && !RESTRICTED.test(l) && !BEYOND_SCALE.test(l));
+  // The line is model-written, so it can trip the voice rules on its own
+  // (10-19: five lines held for a banned word, likely the FAR term "bid
+  // guarantee"). One that does gives way to the next pick, like a restricted one.
+  const clean = (l) => !lint(l, { allowLinks: [], minWords: 0, maxWords: 200 })
+    .some((x) => ['banned_word', 'ai_tell', 'em_dash', 'en_dash', 'exclamation', 'link', 'placeholder', 'markdown'].includes(x.rule));
+  const i = lines.findIndex((l, n) => n < d.facts.open && !RESTRICTED.test(l) && !BEYOND_SCALE.test(l) && clean(l));
   if (i === -1) return null;
   return { line: lines[i], sol: d.facts.openSol?.[i] || null, source: d.sources?.[i] || null, why: d.facts.why?.[i] || '', gaps: d.gaps || [],
     skipped_restricted: lines.slice(0, i) };
