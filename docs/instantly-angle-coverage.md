@@ -2556,3 +2556,36 @@ accumulating answers nobody has released.
 Three-way audit clean for the twenty-first consecutive day: 3,934 leads in the
 campaigns, 3,934 in the database, 0 unclaimed, 0 missing, 0 rendering a blank
 variable. All nine A2 required keys are populated across today's 125 pushes.
+
+### Day 22 — "15 drafted" was overstating the backlog by six
+
+Six of the eight accepts queued for a holding reply had already been answered,
+and the ledger did not know. Caught by re-reading each thread before sending,
+which is the desk's own rule and the reason it exists: *a duplicate reply to a
+yes is worse than a missing one.*
+
+On 2026-10-16 a holding note went out by hand from the Instantly inbox to
+kparks@kpcinc.com, dporter@staffingetc.net, alan@eyesonearth.org,
+ads81460@gmail.com, beni@monacomech.com and
+precisionsepticandpumping@gmail.com — "sorry for the slow reply, we've had a
+lot of demand on this". Sent outside the desk, so nothing wrote it back to
+`data/reply-desk.json`, which still carries all six as `drafted` while its
+`sent` counter sits at 9.
+
+So the queue depth this log has been reporting is wrong in a specific way: the
+ledger records what the DESK sent, not what the LEAD received. Of the 15
+`drafted`, six are already answered, two are misclassified (Chp Solutions said
+"Yes" to our own "want me to close this out?", Set-Apart said "We already
+submitted our bid" — both tagged `accept` by the model), and two more are
+genuinely unanswered accepts who replied on 10-16 and missed that batch:
+kurt.marisa@human-domain.com and thomas.showman@gmail.com.
+
+Two things follow. The daily check should stop quoting `drafted` as a backlog
+without reading the threads behind it — the number is an upper bound, not a
+count. And any sender other than the desk has to write back to the ledger or
+re-read the thread first; this one re-reads, because writing to the desk is
+another session's business.
+
+The send itself is blocked in this session by the outbound-email permission and
+is not done. The two messages are drafted and approved; the remaining step is
+someone with send rights running them.
