@@ -2589,3 +2589,69 @@ another session's business.
 The send itself is blocked in this session by the outbound-email permission and
 is not done. The two messages are drafted and approved; the remaining step is
 someone with send rights running them.
+
+### Day 22 — the loosened renderer in production, and an accept the pipeline cannot serve
+
+Second day with every angle exactly on cap: A1 37, A2 125, A4 50, A5 75. The
+caps in the push bodies still read A4 50 because the raise to 55 landed after
+the morning runs; it binds tomorrow. A4 summed to 51 across runs and the
+database says 50 — the queued-move divergence again, same as 10-19.
+
+Bounce 1.66% per person and 0.57% per send over 3,622 people and 10,491 sends.
+A2 1.89% and A4 1.86% are still the two nearest the gate and neither moved
+materially.
+
+**The renderer change held.** The bare-number share is 10.2% of the queued A2
+rows, where it was 28.3% before the fix, and the lines that went out today read
+as intended: "Bonneville Lock and Dam - Navigation Lock 1 Bridge Replacement
+(W9127N26BA024)", "Construction Contract Sources Sought (89233126NNA000150)",
+"Hospital Communications Support (RFQHT001426QE048)". The two bare numbers in a
+sample of ten were SPE7LX27U0239 and SPE7M127U0828 — both DLA parts stubs,
+refused on purpose.
+
+**Yesterday's concentration arithmetic predicted today exactly.** RFQHT001426QE048
+closes 10-28; with an 8-day floor, today at 8 days out was its last sendable
+day, and it sent precisely the 53 rows that yesterday's note said would carry
+over. 53 of 125 again, and correct again, for the reason already written down.
+
+**A2's queue is at 3.1 sending days**, its thinnest yet (3.7 on 10-18, 5.2 on
+10-19). Not a fault — the close-date budget refusing what cannot be sent in
+time — but it is the number to watch, because a queue under a day would start
+costing sends rather than deferring them.
+
+**An accept arrived that this pipeline cannot serve.** Dr. Bailey at Music
+Ministry International, on A1: *"Please send over the information regarding the
+potential pitfalls for the recompete bid; I would be interested in reviewing
+your assessment."* Articulate, warm, and asking for exactly what the analysis
+produces — a disqualifier list.
+
+It is recorded in `outreach.proposal_accepts` and `stage_candidates` correctly
+returns nothing for them, because A1 is the recompete angle: there is no open
+solicitation to stage, and `live_sols` is 0. The staged-proposal flow is built
+on a matched solicitation and A1 has none by construction. So the one thing this
+reader asked for is the one thing the pipeline cannot hand them, and what they
+want is a different deliverable — an assessment of a contract that is ending,
+not a quotation for a solicitation that is open.
+
+Worth deciding deliberately rather than letting it sit: either A1 accepts get a
+recompete assessment built from the expiring contract, or they get matched to a
+live solicitation in their NAICS and told so, or they are answered by hand. The
+third is what happens today by default.
+
+Two declines honoured by suppressing the person: "Not interested" and "Pls. do
+not include me in your mailing list". Two autoresponders classified correctly,
+one of them an out-of-office whose stated return date (29 August 2026) is
+already two months past.
+
+**The reply-desk ledger is now wrong about my own sends.** 16 `drafted`, 1
+`needs_human`, `sent` still 9. kurt.marisa@human-domain.com and
+thomas.showman@gmail.com both still read `drafted` although both were answered
+on 10-20 from the Instantly mailbox. A bulk release of that queue would
+double-send to exactly the two people who did get a reply. Same defect as the
+six from 10-16, with the difference that this time it is a reply this session
+sent. Any sender outside the desk has to write back to the ledger or the ledger
+stops describing reality — re-reading the thread catches it at send time, but
+only for whoever re-reads.
+
+Three-way audit clean for the twenty-second consecutive day: 4,221 leads in the
+campaigns, 4,221 in the database, 0 unclaimed, 0 missing, 0 blank-variable.
