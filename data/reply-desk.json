@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "cursor": "2026-10-18T21:46:10.000Z",
+  "cursor": "2026-10-19T15:53:06.000Z",
   "emails": {
     "01a07bf7-8d8a-7d1c-b87e-76208ed81963": {
       "lead": "amirl@seetrue.ai",
@@ -1633,6 +1633,111 @@
       "classified_by": "model",
       "status": "no_action",
       "updated_at": "2026-10-20T23:16:07.710Z"
+    },
+    "01a15ecb-0b37-7dfd-9a20-fccfd172b50e": {
+      "lead": "john@sim-vivo.com",
+      "campaign": "A4",
+      "received_at": "2026-10-21T14:08:24.000Z",
+      "category": "not_interested",
+      "classified_by": "rule",
+      "status": "no_action",
+      "updated_at": "2026-10-21T16:22:17.891Z"
+    },
+    "01a15edd-40cf-7ee5-a47d-4c0b5916f938": {
+      "lead": "jjaqkcon@gmail.com",
+      "campaign": "A2",
+      "received_at": "2026-10-21T14:28:02.000Z",
+      "category": "accept",
+      "classified_by": "model",
+      "status": "drafted",
+      "playbook": "A2",
+      "deliverable": "next_open",
+      "updated_at": "2026-10-21T16:23:14.924Z",
+      "watch": {
+        "naics": "812332",
+        "keywords": [],
+        "companyName": "J Jaqk Construction LLC",
+        "context": "They were pitched W911SA27QA003, \"88th RD PPC, Shop Towels, and Laundering Services\" (DoD, NAICS 812332), which closed Oct 16 before we answered. That item is the best evidence of what they make or do; nothing else is known about them.",
+        "count": 2,
+        "exclude": [
+          "W911SA27QA003"
+        ],
+        "until": "2026-12-05T16:22:45.868Z",
+        "eaccount": "earl.knight@govhubbids.com",
+        "subject": "Re: DoD",
+        "campaign_id": "c977a531-a8e5-47d3-b27b-5f8aacfab33b",
+        "firstName": "Quenten"
+      },
+      "notified_at": "2026-10-21T16:23:14.924Z"
+    },
+    "01a15ee9-bc3e-7977-a069-f772bd1cb187": {
+      "lead": "john@truthintelligence.com",
+      "campaign": "A4",
+      "received_at": "2026-10-21T14:42:04.000Z",
+      "category": "other",
+      "classified_by": "model",
+      "status": "needs_human",
+      "updated_at": "2026-10-21T16:23:14.925Z",
+      "notified_at": "2026-10-21T16:23:14.925Z"
+    },
+    "01a15ef7-1f1e-771e-a169-61cd95f8ab33": {
+      "lead": "rtaylor@veschicago.com",
+      "campaign": "A2",
+      "received_at": "2026-10-21T14:56:45.000Z",
+      "category": "auto_reply",
+      "classified_by": "rule",
+      "status": "no_action",
+      "updated_at": "2026-10-21T16:22:48.474Z",
+      "redirect": "jblye@veschicago.com"
+    },
+    "01a15ef7-7fa6-7de5-beb9-33dceaf889cc": {
+      "lead": "ernesto.mondelo@gmail.com",
+      "campaign": "A4",
+      "received_at": "2026-10-21T14:56:59.000Z",
+      "category": "question",
+      "classified_by": "model",
+      "status": "drafted",
+      "playbook": "A4",
+      "deliverable": "next_open",
+      "updated_at": "2026-10-21T16:23:14.925Z",
+      "watch": {
+        "naics": "611430",
+        "keywords": [
+          "vertical",
+          "jobs"
+        ],
+        "companyName": "Social Project Institute, LLC",
+        "context": "Vertical Jobs, Inc. (Leesburg) won a $178K State Department award in NAICS 611430, which is how we found them. Company name: Social Project Institute, LLC.",
+        "count": 3,
+        "exclude": [],
+        "until": "2026-12-05T16:23:14.468Z",
+        "eaccount": "e.knight@winwithgovhub.com",
+        "subject": "Re: $178K",
+        "campaign_id": "39bc9fab-a9a7-4ed6-b34c-ccabeb9e76ee",
+        "firstName": "Ernesto"
+      },
+      "notified_at": "2026-10-21T16:23:14.925Z"
+    },
+    "01a15f04-2e45-7114-b391-ade012e2f06b": {
+      "lead": "sgoldfine@sierra-peaks.com",
+      "campaign": "A2",
+      "received_at": "2026-10-21T15:11:05.000Z",
+      "category": "auto_reply",
+      "classified_by": "rule",
+      "status": "no_action",
+      "updated_at": "2026-10-21T16:23:14.609Z"
+    },
+    "01a15f2a-8886-7623-8bfb-ebd6411b478f": {
+      "lead": "bill.bailey@musicministryintl.com",
+      "campaign": "A1",
+      "received_at": "2026-10-21T15:52:16.000Z",
+      "category": "accept",
+      "classified_by": "model",
+      "status": "drafted",
+      "playbook": "A1",
+      "deliverable": "recompete",
+      "updated_at": "2026-10-21T16:23:14.926Z",
+      "notified_at": "2026-10-21T16:23:14.926Z"
     },
     "430b01b5-be33-46b6-86ad-68e1dc0ee14d": {
       "lead": "admin@documentsecuritysolutions.net",
