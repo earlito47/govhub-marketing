@@ -48,7 +48,11 @@ import { laneKeywords } from './reply-desk/playbooks.mjs';
 
 const ROOT = fileURLToPath(new URL('../..', import.meta.url));
 const SOURCE = join(ROOT, 'data/blank-merge-fields-2026-10.json');
-const LEDGER = join(ROOT, 'data/blank-field-followups.json');
+// BFF_LEDGER points a run at a scratch copy, which is copied back and
+// committed once at the end. Safe because the ledger is not what prevents a
+// second correction: every send first re-reads the thread and skips anyone
+// who already has a manual email from us after the campaign.
+const LEDGER = process.env.BFF_LEDGER || join(ROOT, 'data/blank-field-followups.json');
 const QUEUE = join(ROOT, '.cache/blank-field-followups');
 const SIGNUP = 'https://app.govhub.online/signup';
 
