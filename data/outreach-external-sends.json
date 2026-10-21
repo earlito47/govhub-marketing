@@ -1,0 +1,38 @@
+{
+  "note": "Replies sent to outreach leads from OUTSIDE the reply desk, so its ledger does not know about them. Written by the outreach session; the desk owns data/reply-desk.json and this file deliberately does not touch it.",
+  "why_this_file_exists": "The desk records what the DESK sent, not what the lead received. Six leads were answered by hand from the Instantly inbox on 2026-10-16 and still read 'drafted' days later; these three are the same situation created by this session. Marking them sent is the desk operator's call, not ours.",
+  "double_send_risk": "Low, and not the reason for this file. The desk re-reads each thread before sending and refuses when anything outbound postdates the lead's reply -- that guard is what refused the 2026-10-16 six when this session tried to answer them. All three threads below now carry an outbound after the lead's reply, so the desk will refuse them too. This file is about the ledger being accurate, not about averting a send.",
+  "ledger_rows_to_mark_sent": [
+    {
+      "lead": "kurt.marisa@human-domain.com",
+      "reply_desk_message_id": "01a14536-1199-76b1-9b22-8e5a6a3a4a2f",
+      "replied_to_uuid": "01a14536-1199-76b1-9b22-8e5a6a3a4a2f",
+      "sent_email_id": "01a15a60-9f79-7639-b7be-85ed41bab6fa",
+      "eaccount": "e.knight@getgovhub.com",
+      "sent_at": "2026-10-20",
+      "what": "Holding note: first draft being built; the solicitation they replied about has closed, so it will be built against a live one in their NAICS unless they name an opportunity.",
+      "id_note": "reply_desk_message_id is the ledger KEY for this lead's drafted row; confirm against data/reply-desk.json before marking."
+    },
+    {
+      "lead": "thomas.showman@gmail.com",
+      "reply_desk_message_id": "01a145f0-b017-7619-9a3e-5b1fd0b4a0c1",
+      "replied_to_uuid": "01a145f0-b017-7619-9a3e-5b1fd0b4a0c1",
+      "sent_email_id": "01a15a60-b3e0-780a-9b9f-0e6ba6bad8e1",
+      "eaccount": "e.knight@trygovhub.com",
+      "sent_at": "2026-10-20",
+      "what": "Holding note naming their live solicitation 83310127Q0001 (Recovery Argentina BPA, closes 2026-10-22), promising the draft ahead of the close.",
+      "id_note": "reply_desk_message_id is the ledger KEY for this lead's drafted row; confirm against data/reply-desk.json before marking."
+    },
+    {
+      "lead": "bill.bailey@musicministryintl.com",
+      "reply_desk_message_id": null,
+      "replied_to_uuid": "01a15a8a-8c19-7be4-91e1-b42da022e0d7",
+      "sent_email_id": "01a15ed3-a2d6-78e6-8302-b39f8c07b084",
+      "eaccount": "e.knight@buildwithgovhub.com",
+      "sent_at": "2026-10-21",
+      "what": "Full A1 recompete assessment: expiring contract W9115126PA009 at $59,160, their own three comparables for the role at a $22,619 median, an all-vendor market of 17 awards at a $25,992 median, and the two individual competitors who set the price floor.",
+      "outcome": "He replied the same day: 'Thank you for providing this detailed analysis... I look forward to hearing from you once the solicitation is posted.' That is an open commitment to send him the follow-on RFQ when it posts.",
+      "id_note": "He may have no drafted row at all; his reply arrived 2026-10-20 evening. If the desk has since drafted one, it is superseded."
+    }
+  ]
+}
