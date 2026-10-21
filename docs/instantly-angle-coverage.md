@@ -2655,3 +2655,58 @@ only for whoever re-reads.
 
 Three-way audit clean for the twenty-second consecutive day: 4,221 leads in the
 campaigns, 4,221 in the database, 0 unclaimed, 0 missing, 0 blank-variable.
+
+### Day 23 — the A1 recompete assessment, and what public award data can carry
+
+Answered Dr. Bailey at Music Ministry International, who asked for "the
+potential pitfalls for the recompete bid". Built from USASpending rather than
+from the solicitation, because there is no solicitation: A1 fires on a contract
+that is ending, and the follow-on RFQ has not posted. That is the whole
+distinction between this and the A2 staged-proposal flow, and it turns out not
+to be a limitation.
+
+**The contract.** W9115126PA009, Army, FY26 Catholic Pastoral Life Coordinator,
+$59,160, expiring 2027-01-29. Found by matching the recompete signal's
+end_date and amount against their award history; our own signal payload carries
+only the month and the agency.
+
+**Pricing led the assessment, on the owner's instruction and because another
+reader on this programme had already said "it always comes down to price". The
+finding was sharper than expected and it is entirely public.** Their four
+Catholic Pastoral Life Coordinator awards since 2024 run $21,852 (Fort Benning,
+expiring the same day), $22,619 (BENELUX/SHAPE), $26,496 (USAG Bavaria) and
+$59,160 (the expiring Texas one). Their own median for the role is $24,557.
+Across all vendors there have been 17 such awards since 2024, $14,820 to
+$94,800, median $25,992 — so the expiring contract sits at about 2.3x the
+market median, and a contracting officer doing market research sees every one
+of those figures.
+
+The assessment says that without claiming it is overpriced: hours and scope
+differ by installation and an "Administrative Pastoral Life Coordinator" is not
+the same job. The point put to them is that this is the first question market
+research raises and the answer has to be inside the quote.
+
+**The competitive field is thin and includes individuals.** They hold 4 of the
+17, more than any vendor; Family Tree Secured 3, Mack Global 2, the rest single
+awards with at least two to what look like individuals rather than companies.
+That is the real pricing floor: a sole practitioner's rate, which no company
+carrying overhead beats on price alone.
+
+**Two facts worth the lookup.** A company-lookup sam_entity call on their UEI
+returned SAM active to 2027-07-28, which clears the award and removes a generic
+worry rather than inventing one, plus Minority-Owned and Self Certified Small
+Disadvantaged Business status. If the requirement comes out as a set-aside the
+field of 17 narrows sharply and the price comparison changes with it. Neither
+fact was in our database: `sam_expiration` was null and `enriched_at` never
+set, because outreach-enrich has no cron.
+
+**What this establishes.** An A1 accept can be served without a solicitation.
+The deliverable is a market-position assessment from public award data, not a
+proposal, and for a recompete it may be the more useful artifact: it is about
+the question the contracting officer will ask, which no proposal can answer
+after the fact. Worth building as its own path rather than treating A1 accepts
+as cases the pipeline cannot reach.
+
+Sent in-thread from e.knight@buildwithgovhub.com after the same staleness check
+the reply desk uses. Nothing was written back to the desk's ledger, which still
+does not know about this session's three sends.
