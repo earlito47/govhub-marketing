@@ -2710,3 +2710,137 @@ as cases the pipeline cannot reach.
 Sent in-thread from e.knight@buildwithgovhub.com after the same staleness check
 the reply desk uses. Nothing was written back to the desk's ledger, which still
 does not know about this session's three sends.
+
+## Day 24 (2026-10-21) — the audience runs out before the experiment finishes
+
+**Everything green on the gates.** Bounce 1.64% over 3,899 contacted, the
+twenty-fourth day under the 2% gate, and no angle over 5%: A1 1.06%, A2 1.75%,
+A4 1.85%, A5 1.59%. All sixteen jobs 200/ok with no retry fired. The three push
+runs summed onto cap for every angle — A1 37/37, A2 124/125, A4 55/55, A5 75/75
+— and the Instantly audit read zero on all three questions across 4,512 leads,
+which is now the expected result rather than a finding.
+
+A cross-check worth keeping: the overview field `new_leads_contacted_count`
+matched the daily-series sum exactly for all four campaigns. After the junk
+denominator, the daily series was the only figure trusted for contacted; the
+overview field is equivalent and one call instead of five.
+
+**Both signal scanners came back to life, by design.** `recompetes` wrote 8, 4
+and 1 across its runs and `awards` 43 and 12, after days of writing nothing with
+`still_unscanned: 0`. The 30-day and 21-day scan stamps are expiring inside the
+queue runway exactly as predicted, so the scanners are re-walking a universe
+they had finished. Not a fault, and nothing to touch.
+
+**The finding: the programme has under two weeks of audience left.** Every
+company carries exactly one assignment, ever — 9,692 companies, 9,692
+assignment rows, no company twice. So the universe is strictly consumed, and
+nothing has added a company to it since 2026-10-03 (loaded in three batches on
+09-21, 09-22 and 10-03, 11,168 rows).
+
+Against 292 sends a day the non-holdout queue holds 2,203 rows, which is 7.5
+days, and 1,322 companies have never been assigned behind it. Per angle, counting
+the pools each can actually draw on:
+
+| angle | queued | cap/day | days | fresh pool behind it |
+|---|---|---|---|---|
+| A1 | 463 | 37 | 12.5 | 108 companies with a recompete signal |
+| A2 | 420 | 125 | 3.4 | 465 held on close date, recycling in → ~7 days |
+| A4 | 194 | 55 | 3.5 | 127 companies with a competitor_award signal → ~5.8 days |
+| A5 generic | 1,127 | 75 | 15.0 | 741 companies carrying no signal |
+
+A4 is the one to watch: `assign` wrote it 5 rows today against 55 spent. There
+are 1,218 unassigned competitor_award *signals*, which looks like plenty until
+you count companies instead — only 127 of them sit on a company with no
+assignment. A signal on an already-assigned company is unusable, because the
+company has had its one email. Signal supply was never A4's constraint and is
+not now; company supply is.
+
+Nothing here is a bug. Signal-bearing companies already sort to the front of
+`assign`, which was the fix for A4 starving once before. This is the audience
+being finite, and it is a decision about where more companies come from rather
+than something to repair.
+
+**The A2 test cannot finish inside that runway.** Arms are past the ~440 per arm
+the routine set: base 1,034, speed 988, A5 holdout control 1,035. Human reply
+rates are 1.16%, 1.72% and 0.87%. None of the three differences clears
+significance — speed against control is the widest at 0.85pp against a 0.50pp
+standard error, z≈1.7, p≈0.09.
+
+The ~440 threshold was calibrated for a larger effect than the ~1% reply rates
+these angles actually produce. Confirming the gap now observed between speed and
+control needs roughly 2,800 per arm at 80% power, which is 29 more days at A2's
+current split — against under two weeks of audience. **At current caps the test
+runs out of people before it can return an answer.** Either the caps rise, the
+universe grows, or the test is called on the practical grounds that three arms
+sitting inside noise after 3,000 sends is itself the finding.
+
+**A4 named an aggregation bucket as a competitor, nine times.** Reading the
+lines that went out, one A4 row told Global Power Group that Pacific Gas and
+Electric had won in their space, and nine told small firms their competitor was
+"Miscellaneous Foreign Awardees" — a USASpending aggregation bucket, not a
+company. Three more signals were pending, one already a queued email.
+
+No counter was wrong. The signal had a recipient, a city, an amount and an
+agency, so it passed every gate including REQUIRED; the award was real and only
+the name was not a company. This is item 8's whole justification: the bug is
+invisible to every number and obvious in one line of prose.
+
+Fixed in `outreach-signals` v29 with `notACompany()`, a list rather than a word
+filter — "Miscellaneous Supply Company" and "Unknown Brewing Company" are real
+firms a keyword match would discard, and both are in the 32-case test. The
+pending signals are expired and the queued email dropped to `dropped_stale`,
+which is retryable, so those companies take a different angle next run.
+
+Left as a question rather than fixed: Lockheed Martin (16 sends), Dell Federal
+Systems (13) and The Rand Corporation (6) are real companies that passed the
+plausibility ceiling honestly, because that ceiling tests the *award* size
+against the reader's scale, not the firm's. Whether "a firm like yours just won
+this" survives naming a mega-prime is a copy judgement, not a bug.
+
+**17.7% of A2 sends rendered a bare solicitation number, and the fix is
+working.** Up from 10.2% after the backfill, but the cause is today's cohort:
+18 of the 22 are DLA numbers (`SPE7M1`, `SPE7LX`, `SPE4A6`), and their titles
+are `61--ADAPTER,POWER SUPPLY` and `48--VALVE,REGULATING,TEMPE` — FSC-prefixed
+catalogue stubs truncated mid-word. The FSC rule refuses them correctly.
+
+Measuring the nomenclature field shows hard truncation caps with spikes at 22
+characters (212 rows) and 46 (59 rows, the ` IN REPAIR/MODIFICATION OF` form
+cut to 19). "ADAPTER,POWER SUPPLY" at 20 is complete; "ABSORBER,AIRCRAFT A" at
+19 is not, so length alone cannot tell them apart, and no cheap test separates
+"ELECTRON" the real word from "ELECTRONIC" truncated.
+
+Not attempted, and the reason is targeting rather than difficulty: these are
+parts buys. The goods/services gate built on 10-20 exists because the proposal
+product is for services bids, and 22 of 124 A2 sends today pitched proposal
+drafting on a DLA parts RFQ. Polishing the headline would word a better email
+for an offer that may not fit. **Whether A2 should send on FSC-prefixed parts
+buys at all is the question, and it is the user's.**
+
+**Replies.** Eight inbound since 10-20, five of them real. Dr. Bailey answered
+the recompete assessment — "very helpful information to have as we prepare" —
+and restated the commitment that still has nothing watching it: *"I look forward
+to hearing from you once the solicitation is posted."* Nothing watches SAM for
+W9115126PA009's successor. Quenten at J Jaqk wants the disqualifier list and
+amendment alerts; Andrew Pregl answered "Yes, please!" to closing his out. Three
+were autoresponders, correctly not counted.
+
+Two suppressions applied, person only and never the company, per the standing
+rule. Brandt McMillan asked to be unsubscribed. Ramsi Taylor's autoreply says he
+has left Virtual Energy Solutions and refers inquiries to jblye@veschicago.com —
+suppressed as a dead address with the referral recorded in the reason, and
+neither person had a colleague in the universe to lose.
+
+The reply desk now holds 20 drafted and 2 needs_human, five of them new today,
+and still carries a second drafted reply to Bailey against a thread already
+answered by hand. It has not marked this session's three sends.
+
+**A column read as evidence that nothing writes.** `outcomes.substantive` is
+NULL for all 4,512 rows and no function assigns it; `outreach-metrics` only
+reads it, including in the recommendation rule at line 514, where
+`r.substantive >= 2` is one of three triggers for "SCALE: raise caps". The rule
+still fires on its other two triggers so nothing is currently blocked, but a
+scaling decision has a dead input. Same shape as the junk denominator: a figure
+consumed as though something populated it. Not fixed here because what counts as
+substantive is a definition worth agreeing before it gates a cap increase, and
+`positive` — the other trigger — mirrors the Instantly flag this routine already
+says not to trust.
