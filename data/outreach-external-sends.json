@@ -5,34 +5,34 @@
   "ledger_rows_to_mark_sent": [
     {
       "lead": "kurt.marisa@human-domain.com",
-      "reply_desk_message_id": "01a14536-1199-76b1-9b22-8e5a6a3a4a2f",
+      "reply_desk_message_id": "01a14536-1199-7621-a032-906a8c2aa670",
       "replied_to_uuid": "01a14536-1199-76b1-9b22-8e5a6a3a4a2f",
       "sent_email_id": "01a15a60-9f79-7639-b7be-85ed41bab6fa",
       "eaccount": "e.knight@getgovhub.com",
       "sent_at": "2026-10-20",
       "what": "Holding note: first draft being built; the solicitation they replied about has closed, so it will be built against a live one in their NAICS unless they name an opportunity.",
-      "id_note": "reply_desk_message_id is the ledger KEY for this lead's drafted row; confirm against data/reply-desk.json before marking."
+      "id_note": "Ledger key read from data/reply-desk.json at origin/main on 2026-10-21."
     },
     {
       "lead": "thomas.showman@gmail.com",
-      "reply_desk_message_id": "01a145f0-b017-7619-9a3e-5b1fd0b4a0c1",
+      "reply_desk_message_id": "01a145f0-b017-76ff-9904-687856b01d31",
       "replied_to_uuid": "01a145f0-b017-7619-9a3e-5b1fd0b4a0c1",
       "sent_email_id": "01a15a60-b3e0-780a-9b9f-0e6ba6bad8e1",
       "eaccount": "e.knight@trygovhub.com",
       "sent_at": "2026-10-20",
       "what": "Holding note naming their live solicitation 83310127Q0001 (Recovery Argentina BPA, closes 2026-10-22), promising the draft ahead of the close.",
-      "id_note": "reply_desk_message_id is the ledger KEY for this lead's drafted row; confirm against data/reply-desk.json before marking."
+      "id_note": "Ledger key read from data/reply-desk.json at origin/main on 2026-10-21."
     },
     {
       "lead": "bill.bailey@musicministryintl.com",
-      "reply_desk_message_id": null,
+      "reply_desk_message_id": "01a15a8a-8c19-7be4-91e1-b42da022e0d7",
       "replied_to_uuid": "01a15a8a-8c19-7be4-91e1-b42da022e0d7",
       "sent_email_id": "01a15ed3-a2d6-78e6-8302-b39f8c07b084",
       "eaccount": "e.knight@buildwithgovhub.com",
       "sent_at": "2026-10-21",
       "what": "Full A1 recompete assessment: expiring contract W9115126PA009 at $59,160, their own three comparables for the role at a $22,619 median, an all-vendor market of 17 awards at a $25,992 median, and the two individual competitors who set the price floor.",
       "outcome": "He replied the same day: 'Thank you for providing this detailed analysis... I look forward to hearing from you once the solicitation is posted.' That is an open commitment to send him the follow-on RFQ when it posts.",
-      "id_note": "He may have no drafted row at all; his reply arrived 2026-10-20 evening. If the desk has since drafted one, it is superseded."
+      "id_note": "Ledger key read from data/reply-desk.json at origin/main on 2026-10-21. He DOES have a drafted row and it is keyed on the same id as his reply, so the desk drafted an answer after this session had already sent one."
     }
   ]
 }
