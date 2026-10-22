@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "cursor": "2026-10-19T21:37:23.000Z",
+  "cursor": "2026-10-20T13:18:07.000Z",
   "emails": {
     "01a07bf7-8d8a-7d1c-b87e-76208ed81963": {
       "lead": "amirl@seetrue.ai",
@@ -1769,6 +1769,33 @@
       "classified_by": "model",
       "status": "no_action",
       "updated_at": "2026-10-21T23:29:33.094Z"
+    },
+    "01a16174-275d-799b-a135-f6dc3c42c3e2": {
+      "lead": "mhyde@phoenixenergycorp.net",
+      "campaign": "A2",
+      "received_at": "2026-10-22T02:32:28.000Z",
+      "category": "unsubscribe",
+      "classified_by": "rule",
+      "status": "no_action",
+      "updated_at": "2026-10-22T16:22:26.696Z"
+    },
+    "01a1621e-1be3-7dec-bcf5-8df677cb43fe": {
+      "lead": "stengesdal@baosystems.com",
+      "campaign": "A2",
+      "received_at": "2026-10-22T05:38:03.000Z",
+      "category": "accept",
+      "classified_by": "model",
+      "status": "drafted",
+      "playbook": "A2",
+      "deliverable": "disqualifiers",
+      "updated_at": "2026-10-22T16:23:50.495Z",
+      "notified_at": "2026-10-22T16:23:50.494Z"
+    },
+    "01a163c3-66bf-7fc0-9373-4507f161db83": {
+      "lead": "brandon.bcelectric@gmail.com",
+      "status": "failed",
+      "error": "OpenAI 429: {\n    \"error\": {\n        \"message\": \"You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.\",\n        \"type\": \"insufficient",
+      "updated_at": "2026-10-22T16:23:50.156Z"
     },
     "430b01b5-be33-46b6-86ad-68e1dc0ee14d": {
       "lead": "admin@documentsecuritysolutions.net",
