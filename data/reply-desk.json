@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "cursor": "2026-10-20T13:18:07.000Z",
+  "cursor": "2026-10-20T18:41:35.000Z",
   "emails": {
     "01a07bf7-8d8a-7d1c-b87e-76208ed81963": {
       "lead": "amirl@seetrue.ai",
@@ -1793,9 +1793,34 @@
     },
     "01a163c3-66bf-7fc0-9373-4507f161db83": {
       "lead": "brandon.bcelectric@gmail.com",
-      "status": "failed",
+      "status": "drafted",
       "error": "OpenAI 429: {\n    \"error\": {\n        \"message\": \"You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.\",\n        \"type\": \"insufficient",
-      "updated_at": "2026-10-22T16:23:50.156Z"
+      "updated_at": "2026-10-22T20:15:02.898Z",
+      "campaign": "A2",
+      "received_at": "2026-10-22T13:18:07.000Z",
+      "category": "accept",
+      "classified_by": "model",
+      "playbook": "A2",
+      "deliverable": "disqualifiers",
+      "notified_at": "2026-10-22T20:15:02.898Z"
+    },
+    "01a164dd-03f0-7465-946b-4b51b101fe49": {
+      "lead": "morgan@lohmanhelicopter.com",
+      "campaign": "A2",
+      "received_at": "2026-10-22T18:25:59.000Z",
+      "category": "auto_reply",
+      "classified_by": "rule",
+      "status": "no_action",
+      "updated_at": "2026-10-22T20:14:59.957Z"
+    },
+    "01a164eb-247c-7109-bc01-04ebeb417753": {
+      "lead": "tom.ross574@gmail.com",
+      "campaign": "A2",
+      "received_at": "2026-10-22T18:41:06.000Z",
+      "category": "not_interested",
+      "classified_by": "model",
+      "status": "no_action",
+      "updated_at": "2026-10-22T20:15:02.460Z"
     },
     "430b01b5-be33-46b6-86ad-68e1dc0ee14d": {
       "lead": "admin@documentsecuritysolutions.net",
