@@ -1387,3 +1387,1460 @@ At **25 emails/mailbox/day** (what is live as of 10-06):
 | **A2 + A4** | 28 | 700 | 170 | **15,400** | **3,740** |
 
 A1 is the recompete angle, not A4. A4 is "a competitor near you just won".
+
+### Day 10 (10-06 sending) — the first day on the new capacity, and push could not finish
+
+Both push runs returned **504 IDLE_TIMEOUT**. The cap raise took the day's work
+from 195 leads to 282, and the duplicate-move path added the same day sleeps
+2.5s per hit against ~593 queued rows that collide with wave 1. Edge Functions
+cut a request off at 150s idle and this job streams nothing until the end, so
+06:00 died after 80 leads and the 06:25 retry after 178.
+
+The 504 hid three separate failures, because the summary never returned:
+
+| | Cap | Pushed 10-06 |
+|---|---:|---:|
+| A2 | 125 | **201** |
+| A4 | 45 | 49 |
+| A1 | 37 | **8** |
+| A5 | 75 | **0** |
+
+- **A second run spent a second full cap.** The retry started from scratch, so
+  A2 took 201 against a day the close-date budget had sized for 125. The cap is
+  a daily budget, so a run now reads what the day already pushed and takes only
+  what is left. That is also what makes the new continuation crons safe.
+- **The sort order became a starvation order.** Candidates sort deadline-first
+  and A5 carries no deadline, so it sits at the very back: A5 got nothing and
+  A1 got 8 of 37. A5 holds the control arm of the only experiment this
+  programme exists to run, so the control lost a day to a timeout. Each angle
+  now keeps its own deadline-sorted queue and the run takes one row from each in
+  turn.
+- **A run that cannot finish now says so** — a 115s budget reported as
+  `stopped_on_time_budget`, rather than a 504 that says nothing. Two
+  unconditional continuation crons at 06:50 and 07:15 finish the day's budget;
+  `retry_job_if_failed` could not, because a run that stops early returns 200.
+
+Cheaper per lead too: the move is no longer confirmed inline (the next run
+confirms it for free — Instantly answers with the lead already in our campaign
+and the landing check passes) and the inter-lead sleep goes 350ms to 200ms,
+which alone was 99s of the budget spent waiting.
+
+**TWO CONTACTS WERE BEING EMAILED WITH NO RECORD.** The campaigns held 133 and
+624 against 132 and 623 in the queue. Both extras were created in Instantly at
+06:03 — the minute the first run died — so the kill landed between the Instantly
+write and the Supabase write. One of them, a wave 1 lead moved into A1, was
+contacted at 13:08 with nothing in our database saying so: invisible to
+metrics, to suppression and to reply handling. Both repaired.
+
+The window is real but it closes itself: the rows were still `ready`, so the
+next run posts them again, Instantly answers with the lead already in our
+campaign, and yesterday's landing check marks them pushed without sending
+twice. The fix for the cause is the time budget; the landing check is what
+makes the leftovers harmless.
+
+### Day 10 — what went right
+
+**The pacing held.** Today's 202 A2 emails spread over 60 solicitations, the
+largest taking 26. Monday's 80 took 52 from one. 13% against 65%.
+
+**Assign filled the new ceiling.** 595 written (A2 257, A5 297), A2's queue to
+635, and `a2_left_close_date_full` down to **605** from 1,508 before the window
+widened — the refusals are now a third of what they were.
+
+**Bounce 1.11%**, 17 of 1,536 contacted, tenth day under the gate and the
+lowest reading yet. A1 1.69%, A2 0.94%, A4 1.72%, A5 0.69%.
+
+### Day 10 — replies, and a fifth autoresponder shape
+
+Six replies. One new positive on A2 — *"Yes, I would be interested."* — which
+makes **seven** awaiting a fulfilment answer, the oldest from 09-25. Two real
+declines worth reading, both naming price rather than process: *"It always comes
+down to price. We are always compliant and do it in house."* (A1) and *"I don't
+see this solicitation has anything to do with what we could offer."* (A2).
+
+A delegation notice counted as a human reply: *"For all business matters, please
+reach out to Jordan Martin at jordan@titantechinc.org"* plus a signature. The
+existing delegation pattern wants a trailing "instead", "in my absence" or "for
+urgent" and this had none. Naming someone else's address IS the redirect, so
+the address is the tell. Row reclassified, A4's human count 3 to 2.
+
+The lookahead on that pattern is the whole distinction, and the test for it
+failed on the first cut: *"email me at dave@..."* is a human answering and
+handing over a better address, not a redirect.
+
+### Day 10 — 112 joint ventures were going out as "Jv"
+
+Found by reading five of today's fit lines rather than by any counter: *"on
+paper Eb-Mei One, Jv clears the bar on NAICS 238210"*. JV is a genuine
+initialism and it was missing from both title-case lists, so `initcap` lowered
+it at load and the name was persisted that way. 112 companies, 52 of them
+queued or already sent. Repaired: the names, the copy already rendered from
+them, and the 22 live Instantly payloads so the remaining sequence steps render
+it too.
+
+Not fixed, and not fixable from a word list: the same names carry arbitrary
+acronyms `initcap` also lowered — "Aci-Ac", "Aims-Usgp", "Aici-Archirodon".
+That is the case `solHeadline` already refuses to guess at, and the original
+casing is gone from the database for these rows. 21% of queued A2 rows still
+render the bare solicitation number (88 of 410), down from 25%.
+
+### Day 10 — inventory
+
+| Angle | Queued | Cap | Sending days of queue |
+|---|---:|---:|---:|
+| A1 | 355 | 37 | 9.6 |
+| A2 | 410 | 125 | 3.3 |
+| A4 | 399 | 45 | 8.9 |
+| A5 holdout | 1,824 | 75 | — |
+| A5 generic | 650 | | — |
+
+A2 at 3.3 days is the shallowest it has been, and that is the capacity raise
+working rather than a supply problem: assign queued 257 A2 rows today against
+125 sent. The experiment still reads on its slower side — the A5 holdout
+control sits at 210 contacted against A2's 624, and today's zero cost it a day.
+
+### Day 11 (10-07 sending) — push landed exactly on budget, and broke two other things
+
+The timeout fix worked, precisely. Three runs, all 200, and every angle finished
+on its cap:
+
+| | 06:00 | 06:50 | 07:15 | Total | Cap |
+|---|---:|---:|---:|---:|---:|
+| A1 | 8 | 24 | 5 | **37** | 37 |
+| A2 | — | 60 | 65 | **125** | 125 |
+| A4 | 13 | 32 | — | **45** | 45 |
+| A5 | 16 | 59 | — | **75** | 75 |
+
+Two runs stopped on the time budget and said so; the third finished early. The
+06:25 retry correctly did not fire, because nothing failed. `a2_left_close_date_full`
+fell again, to **419** from 605 and from 1,508 before the window widened.
+
+Then both of yesterday's own fixes turned out to have the same flaw in a new
+place: **per-run state where the day is the unit.**
+
+**A MOVED LEAD IS LIVE IMMEDIATELY.** I stopped confirming the
+retired-campaign move inline, reasoning the next run would confirm it for free.
+That ignored what a move does. It lands within seconds, the lead is then in a
+LIVE campaign, and Instantly emails it at once. **31 contacts went through a
+sequence on 10-07 while their rows still said `ready`** — every one already
+contacted when I checked, none with an outcomes row, so invisible to metrics
+and to reply attribution, and healed only by the next morning's run. The
+campaigns held 175/773/290 against 170/749/288 in the queue; that gap was the
+whole of it.
+
+Fixed by confirming at the *end of the same run* rather than inline or next
+run: the move goes on a list walked after the main loop, by which point the
+earliest are minutes old and the latest seconds old — all the settling a
+background job needs, at one GET per duplicate instead of a 2.5s sleep. The
+loop gives up 20s of its budget for that pass. A queued move now also spends
+the angle's budget and the solicitation's allowance at the moment it is queued,
+because the move is the irreversible act.
+
+**THE SOLICITATION PACE RESET EVERY RUN.** push runs three times a morning and
+`solSentToday` was run-local, so each run recomputed the cohort, started its
+counter at zero and spent a fresh allowance. 49 of the day's 149 A2 emails went
+to one solicitation — W50S8A27BA001, a 70-row cohort with 3 sending days left
+and an allowance of 24, spent twice over. The day's sends per solicitation are
+now read from the database alongside the angle totals, and the cohort includes
+them, so the allowance is the same number at 06:00 and at 07:15.
+
+The pace test now simulates three runs over one cohort: seeded from the day it
+spends its allowance once, unseeded three times.
+
+**And the cap was overshot after all** — A2 sent 149, not 125 — because the 24
+moved leads were never counted against it. Both halves of that are now closed.
+
+### Day 11 — the lesson, stated plainly
+
+Three days running, the bug has been the same shape: a number that was correct
+when one run owned the day, and wrong once the day had several runs or several
+paths into it. The daily cap, the solicitation pace, and the push record all
+broke that way. Anything that spends a budget now reads what the day has
+already spent out of the database rather than assuming it starts at zero.
+
+### Day 11 — replies, and five suppressions
+
+Eleven replies, eight of them machine and all eight correctly classified — the
+first clean day for the classifier since the shapes started arriving.
+
+Three human declines, two of them naming price or scope rather than process:
+*"We are not quoting these types of contract"* (A1) and *"No, thanks"* (A2).
+And **two explicit stops**: *"Stop emailing me."* (A2) and *"Stop"* (A5).
+
+All five suppressed at the person level, which is the standing rule — a no is
+that person's answer, not their employer's — and each of the five is the only
+row for its company, so nothing company-wide happened. Their sequences were
+already halted: `stop_on_reply` is on for all four campaigns and
+`stop_on_auto_reply` is off, which is the right pair of settings and worth
+recording, because it means an autoresponder does not end a sequence but a
+real reply does.
+
+No new positives. **Seven are still waiting on a fulfilment answer**, the
+oldest from 09-25.
+
+### Day 11 — the rest
+
+**Bounce 1.10%**, 21 of 1,915 contacted, eleventh day under the gate. A1 1.35%,
+A2 1.00%, A4 1.42%, A5 0.93%.
+
+| Angle | Queued | Cap | Sending days of queue |
+|---|---:|---:|---:|
+| A1 | 380 | 37 | 10.3 |
+| A2 | 523 | 125 | 4.2 |
+| A4 | 391 | 45 | 8.7 |
+| A5 holdout | 2,049 | 75 | — |
+| A5 generic | 739 | | — |
+
+The awards scanner produced again on its own: 32 written at 03:45 as the first
+scan stamps aged past the 21-day window, exactly as the 10-13 estimate said it
+would start. Bare solicitation numbers down to 16% of queued A2 rows (82 of
+523) from 21%.
+
+The holdout control is moving now that A5 is no longer starved: 285 contacted
+against A2's 773. Still the slower side, still short of the ~440 per arm a
+readable answer needs.
+
+### Day 12 (10-08 sending) — the machinery is right, and the emails were still broken
+
+Everything a counter can see was green. Every job 2xx. Push ran three times and
+every angle landed exactly on its cap — A1 37, A2 125, A4 45, A5 75. All 58
+retired-campaign moves were queued, confirmed and recorded in the same run,
+`moves_left_for_next_run` 0 on all three runs, and `blocked_duplicate_elsewhere`
+0. Queue and campaigns agreed exactly in both directions: 212/898/335/480, zero
+unclaimed, zero missing — yesterday's 31 became none. Bounce **0.94%**, first
+day under 1%, twelfth under the gate.
+
+Then a reply said this:
+
+> What is this regarding?
+> On Thu, Oct 8, 2026 at 9:04 AM Earl Knight wrote:
+> > **Brandon, closes .**
+
+**A MOVE CARRIES THE LEAD, NOT THE RENDER.** `/leads/move` changes which
+campaign a lead sits in and nothing else, so a moved wave 1 lead arrived in A2
+still holding its wave 1 custom variables — `segment`, `new_awards`,
+`last_award_date` — and none of A2's. Instantly then rendered the sequence
+against variables that do not exist. The close date was blank because the lead
+had no `sol_close_date` at all.
+
+Audited every lead in all four campaigns against `REQUIRED`:
+
+| Cause | Leads | Missing |
+|---|---:|---|
+| Moved wave 1 leads (A1 81, A2 164, A4 27) | 272 | every variable the angle needs |
+| A2 leads pushed before 10-03 | 291 | `sol_line`, `sol_short` only |
+| **Total, all already contacted** | **563** | |
+
+The second group is a different mistake with the same consequence: `sol_line`
+and `sol_short` were added on 10-03 when the owner asked for the solicitation
+title, the A2 steps were changed to use them, and the 291 leads already in
+flight were never backfilled. Their steps 2 and 3 have been going out with the
+title slot empty ever since.
+
+Repaired in two halves. The queue side is done: the 347 whose stored render
+also lacked the two keys were recomputed with the **shipped** `solHeadline`
+rather than a reimplementation, so they hold exactly what `job_assign` would
+have written — 289 a real title, 58 the bare number, which is the documented
+75% hit rate — and no pushed A2 row is missing `sol_line` any more. The
+Instantly side took two passes — 563 PATCHes at the 20-request-a-minute rate
+limit is about half an hour, and the first background job was stopped at a
+28-minute cap I had set myself rather than the two hours allowed, after 470 of
+them. Re-auditing rather than resuming from a log position found exactly 93
+left (A2 66, A4 27); those patched clean. **Final audit: 1,925 leads across the
+four campaigns, 0 missing a key from `REQUIRED`.** `job_push` sends the payload
+on a confirmed move as well as on a create, so nothing new joins the set.
+
+**The gate was only guarding one of the two ways in.** Rule 0.7 — no blank
+variable reaches a reader — is asserted in `job_assign` and again in
+`job_push`, and both assertions are on the create path. The move path was added
+on 10-06 and bypassed both. Every angle variable in the programme was
+guaranteed by a check that a new code path simply walked around.
+
+### Day 12 — the measurement that was nearly wrong
+
+The first audit reported 212 of 212 A1 leads broken, which was obviously false
+— A1 has been getting replies that quote its copy. The script was checking a
+`REQUIRED` map I had typed from memory, and A1's real keys are `agency_short`
+and `contract_end_month`, not `fit_line`. Read off `_shared/outreach.ts`, the
+count was 81. **694 would have been reported as broken on a guessed key list.**
+
+### Day 12 — concentration, which is working correctly now
+
+46 of today's 125 A2 emails named one solicitation, and that is the pace doing
+its job rather than failing: ARPA-H-SOL-26-163 has 92 unsent rows and closes
+10-18, so with the 8-day floor it had **two sending days** left. 92 over 2 is
+46. The other 46 go tomorrow.
+
+The pace can spread a cohort across the days it has; it cannot create days. A
+cohort that matched late arrives with no runway, and the only remedy — refusing
+the excess — means dropping it, which is worse. Worth watching rather than
+fixing: this is the second 90-plus firm cohort in one NAICS inside a week.
+
+### Day 12 — the rest
+
+**A4's cap goes 45 to 50**, its true ceiling (8 mailboxes x 25, over 4 steps).
+It was held back from 10-06 while the awards scanner had nothing to do; the
+scan stamps aged out on schedule and the scanner wrote 32 signals on 10-07 and
+8 on 10-08, so the brake comes off. 411 queued at 50 a day is 8 sending days
+with the scanner refilling behind it.
+
+The recompete scanner reached `still_unscanned: 0` at 20:00 — it has now walked
+all 11,008 companies for the first time. A1's supply will thin until its 30-day
+stamps start expiring.
+
+Four replies, two machine and both correctly classified. Two humans, both
+asking what this is: *"What is this regarding?"* (the broken one above) and
+*"What are you offering to debreif?"* (A5). Neither counted positive and
+neither is a decline — they are people who would answer a clear email. No new
+positives; **seven are still waiting on a fulfilment answer**, oldest 09-25.
+
+| Angle | Queued | Cap | Sending days |
+|---|---:|---:|---:|
+| A1 | 421 | 37 | 11.4 |
+| A2 | 552 | 125 | 4.4 |
+| A4 | 411 | 50 | 8.2 |
+| A5 holdout | 2,143 | 75 | — |
+| A5 generic | 830 | | — |
+
+Holdout control 360 contacted against A2's 898. Bare solicitation numbers 15%
+of queued A2 rows (82 of 552).
+
+### Day 13 (10-09 sending) — clean, and a correction I owe the log
+
+First fully clean day since the ramp. Every job 2xx. Push hit every cap exactly
+— A1 37, A2 125, A4 50 (its new ceiling), A5 75. All 49 retired-campaign moves
+queued, confirmed and recorded in-run, `moves_left_for_next_run` 0 on all three
+runs, `blocked_duplicate_elsewhere` 0. The full audit across 2,212 leads:
+
+| | Queue says | Campaign holds | Unclaimed | Missing | Blank variables |
+|---|---:|---:|---:|---:|---:|
+| A1 | 249 | 249 | 0 | 0 | 0 |
+| A2 | 1,023 | 1,023 | 0 | 0 | 0 |
+| A4 | 385 | 385 | 0 | 0 | 0 |
+| A5 | 555 | 555 | 0 | 0 | 0 |
+
+Bounce **0.94%**, 28 of 2,966, thirteenth day under the gate and the second
+under 1%.
+
+**THE CORRECTION.** This log and the daily routine have said for several days
+that "seven positive replies are awaiting a fulfilment answer, the oldest from
+09-25". That was wrong in two ways.
+
+It was read off `outcomes.positive`, which mirrors Instantly's lead-interest
+flag — something a person or Instantly's own model sets and can change. It read
+7 on 10-07 and 5 today with no new data, because the flag moved. **A count that
+can go down on its own is not a tally**, and I was quoting it as one.
+
+And the premise was wrong. The reply desk built in the other session has been
+answering them. Its ledger (`data/reply-desk.json`, 108 entries) says of the
+ten replies that actually asked for something: **six sent** — Exergy, Document
+Security Solutions, Stronghold, Thornton, WR-C, StériCert — and **four
+drafted**: Staffing Etc, Mathematician Jr, Smith (Certified Surface
+Inspection), Alden LG. One is `needs_human`: Cleveland (A2), whose question
+was *"What is this regarding?"* in reply to the blank-variable email from
+10-08 — so the one reply the desk cannot answer is one this programme caused.
+
+So the standing item is not "seven unanswered since 09-25". It is: **one
+`needs_human`, four drafts waiting to go out.** The routine now says to read
+the ledger rather than count a flag.
+
+### Day 13 — a seventh autoresponder shape
+
+A bilingual out-of-office counted as a human reply: *"Bonjour, je serai de
+retour au bureau le 13 octobre... Hi, I am out of the office and will return on
+October 13."* Neither half matched — `i will be out of the office` wants "will
+be", and `will be returning on` does not cover "will return on". Fourth of the
+seven shapes whose only fault was a verb tense the pattern had not anticipated.
+Three patterns added, including the French, and a case for a human who is away
+and still answers, so the present-tense pattern cannot eat them.
+
+### Day 13 — two scanners are now idle, both by design
+
+`recompetes` wrote 0 on all six runs: `still_unscanned: 0`, and every company
+is assigned, holds a live signal, or was scanned inside the 30-day window. It
+has walked the whole universe once. `awards` is in the same state most runs.
+Neither is broken and neither needs touching — A1 has 472 queued at 37 a day
+(12.8 sending days) and A4 394 at 50 (7.9), and the 30-day and 21-day stamps
+start expiring inside both windows.
+
+What this does change is A2's share of the pool: `a2_left_close_date_full` rose
+to **857** from 419, because the opportunities job keeps matching new
+solicitations while the other two angles stop claiming companies.
+
+### Day 13 — inventory
+
+| Angle | Queued | Cap | Sending days |
+|---|---:|---:|---:|
+| A1 | 472 | 37 | 12.8 |
+| A2 | 486 | 125 | 3.9 |
+| A4 | 394 | 50 | 7.9 |
+| A5 holdout | 2,153 | 75 | — |
+| A5 generic | 891 | | — |
+
+A2 base 537 contacted against speed 486. Holdout control 435 against A2's
+1,023 — still the slower side but gaining 75 a day now that A5 is not starved.
+45 of today's 125 A2 emails named one solicitation, the same short-runway
+cohort arithmetic as 10-08. Bare solicitation numbers 14% of queued A2 rows (69
+of 486).
+
+### Day 14 (10-12 sending) — 99 rows died of an off-by-one between two clocks
+
+Everything else was clean. All 17 jobs 2xx, every cap hit exactly (A1 37, A2
+125, A4 50, A5 75), the three-way Instantly audit zero on all counts across
+2,499 leads, bounce **0.97%** on the fourteenth day under the gate, and the
+tightest concentration since the pace shipped — 16 of 125 on the largest
+solicitation.
+
+The one number out of place was `dropped_stale: 92` in the 06:50 run, against a
+normal 0 to 9. It was a whole cohort dying at once, and the cause is two parts
+of the system measuring the same thing differently.
+
+`futureOk` compares a close date against **`Date.now()`**. `sendingDaysUntil`,
+which sizes the close-date budget that admits an A2 row in the first place,
+compares **midnight to midnight**. So for a solicitation closing 10-20, at a
+06:50 push on 10-12:
+
+| | says |
+|---|---|
+| Whole days out | **8** — at the floor |
+| `futureOk` at 06:50 | **7.715** — under the floor |
+| Sending days the budget counted | **1**, today |
+| A2 rows dropped | **99** |
+
+Every cohort has been promised a final day job_push would not spend, and this
+one was relying on it. They are not recoverable: tomorrow they are 7 days out,
+under the floor however it is measured. **99 firms with a live matched
+solicitation will not hear from us about it.**
+
+All three places now ask in whole days — the floor and the far edge of the
+window in `job_push`, and the signal gate in `job_assign`, which was refusing
+the same rows at 05:00 by the same arithmetic. Dates are what the copy says
+("closes Oct 20") and what the budget counts, so dates are what gets checked.
+57 queued rows sit one day above the floor tonight and would have hit that
+boundary tomorrow; a new test pins the floor, the budget and the gate to each
+other so they cannot drift apart again.
+
+**This is the fifth instance of one shape of mistake.** The daily cap, the
+solicitation pace, the push record, the lead render, and now the floor: each was
+correct in the one place it was written and wrong against a second place that
+had to agree with it. The rule the log has been accumulating — assert a
+guarantee on every path that reaches the same place — extends to units. Two
+correct calculations in different units are one bug.
+
+### Day 14 — we sent 287 emails on a federal holiday
+
+Found in an autoresponder: *"I will be out of the office Friday October 9th,
+returning to work Tuesday October 13th **due to the federal holiday on Monday
+October 12th**."*
+
+Today was Columbus Day. The push cron is `0 6 * * 1-5` and knows about weekends
+but not holidays, so a day's full cap — 287 contacts — went to federal
+contractors on a day the agencies they sell to were shut. That is not a defect
+and nothing is broken, but it is a wasted day of capacity against the one
+audience for whom federal holidays are not ordinary days, and the expensive
+ones are close: Thanksgiving (11-26 and the Friday after), Christmas, New Year.
+
+Not changed unilaterally, because it is a judgement about timing rather than a
+fault, and the harm cannot be measured from here — link tracking is off and the
+reply samples are too small to separate a holiday from noise. The cheap version
+is a list of federal dates that `job_push` returns early on, which also stops
+the close-date budget counting them as sending days. Worth a decision before
+the last week of November.
+
+### Day 14 — replies, and a second reader who could not tell what we wanted
+
+Nine replies since Friday, four machine and all four correctly classified. Two
+new accepts, both drafted by the reply desk: *"I like Face Time then Emails
+please send me your cell number"* (A4) and *"Yes I was aware. Sure send me some
+info"* (A4).
+
+Two declines, suppressed at person level: *"I don't have an interest"* and
+*"I don't know you, you don't know me... I have no interest in paying someone
+to find contracts for me. Please do not contact me again."*
+
+And a third: *"I have no idea what your talking about....zero understanding"*
+(A2). The quoted email was rendered correctly, so this is not the 10-08
+blank-variable bug — it is a reader who read a correct email and could not tell
+what was being offered. **Second one this week**, after *"What is this
+regarding?"*, which was the broken one. I suppressed her and then reversed it:
+the reply desk classified it a question and drafted an answer, and suppressing
+someone who asked the programme something would stop the programme answering.
+
+Two confused readers in five days, out of 28 human replies, is worth watching
+rather than acting on — but the copy was already rewritten once for clarity on
+the owner's instruction, and these are the smallest firms in the pool.
+
+Reply desk ledger: **one `needs_human`** (still Cleveland, the 10-08 blank
+email) and **nine drafted**, up from four on Friday. The drafts are the backlog
+worth clearing — every one is someone who asked for the deliverable.
+
+### Day 14 — inventory
+
+| Angle | Queued | Cap | Sending days |
+|---|---:|---:|---:|
+| A1 | 585 | 37 | 15.8 |
+| A2 | 600 | 125 | 4.8 |
+| A4 | 418 | 50 | 8.4 |
+| A5 holdout | — | 75 | — |
+| A5 generic | 3,406 total A5 | | — |
+
+A2 base 595 contacted against speed 553. Holdout control 510 against A2's
+1,148. Bare solicitation numbers rose to 19.5% of queued A2 rows (117 of 600)
+from 14%, which is new solicitations arriving with titles `solHeadline` will not
+vouch for rather than anything changing in the code.
+
+### Day 15 (10-13 sending) — the holdout experiment is readable, and it does not support the premise
+
+Both arms have passed the sample the experiment was designed around. This is
+the comparison the whole system was built to make, so here it is plainly.
+
+| Arm | Contacted | Human replies | Rate |
+|---|---:|---:|---:|
+| A2 personalized (named solicitation, close date, fit line) | 1,273 | 16 | **1.26%** |
+| A5 holdout — the SAME population, generic copy | 585 | 6 | **1.03%** |
+| A5 generic — no signal at all | 928 | 14 | **1.51%** |
+
+A2 against its own holdout: **z = 0.43, p = 0.67.** Indistinguishable. The
+arm with no personalization at all has the highest rate of the three.
+
+On the better metric — people who asked for the deliverable, which is what the
+business actually sells — A2 has 4 accepts to all of A5's 2: 0.31% against
+0.13%, **p = 0.30**. Also indistinguishable, though the direction favours A2.
+
+**What is now ruled out:** that personalization doubles the reply rate. The
+~440-per-arm target was sized to detect a doubling, and at 1,273 and 585 a
+doubling would be visible. It is not there.
+
+**What cannot be settled this way:** a difference of the size actually
+observed. At 1.26% against 1.03%, confirming it at 80% power needs roughly
+**33,000 contacts per arm** — 265 sending days at the current cap. That is not
+a number this programme will reach, so no amount of further sending will turn
+this into a clean answer.
+
+Three honest caveats, because the headline is stark:
+
+1. The holdout is not "no email". It gets A5's generic debrief question, which
+   is a good email. This measures personalized copy against generic copy, not
+   personalization against silence.
+2. 16 replies and 6 replies are small absolute numbers. The confidence interval
+   on each rate is wide.
+3. Reply rate is not revenue. A2's accepts arrive attached to a live
+   solicitation with a deadline; A5's arrive attached to nothing. Whether that
+   converts differently downstream is not visible from here and is the only
+   question that would actually settle the matter.
+
+So the finding is not "turn A2 off". It is that **the expensive machinery —
+solicitation scanning, NAICS matching, close-date budgets, per-solicitation
+pacing, the whole render pipeline — has not bought a measurable reply-rate
+advantage over a well-written generic question**, and the case for it now rests
+entirely on what happens to those four accepts. That is a decision for the
+owner, and the data to make it is downstream conversion, not more sending.
+
+### Day 15 — the off-by-one fix did exactly what it should
+
+`dropped_stale: 0` on all three push runs, against 92 yesterday. The cohort
+that would have died: close 10-21, exactly 8 whole days out today, 145 rows —
+**62 sent today, 0 dropped, 0 left waiting.** Every cap hit exactly (A1 37, A2
+125, A4 50, A5 75), 31 moves queued and all 31 confirmed in-run, and the
+three-way audit clean across 2,786 leads.
+
+Bounce **0.82%** — 36 of 4,381, the lowest reading yet and the fifteenth day
+under the gate.
+
+### Day 15 — replies, and one match that was wrong
+
+Nine replies, six machine and all six correctly classified, including two
+shapes this log added patterns for last week (the future-tense leave notice and
+the Titan Tech delegation) — they are being caught now rather than counted.
+
+Three declines, suppressed at person level. One is worth keeping:
+
+> Thanks but no thanks. **We don't make antennas.**
+
+A2 matched Wheatstone to a solicitation outside what they actually do. The
+copy hedges correctly — "on paper you clear the bar on NAICS 334220" — and on
+paper they do, because that is the code they are registered under. This is the
+inherent cost of NAICS matching rather than a bug, and the hedge is doing its
+job, but it is the first reply to name it outright. One instance; worth
+counting, not acting on.
+
+### Day 15 — bare solicitation numbers are climbing
+
+27% of queued A2 rows now render `sol_short` as the bare number, up from 19.5%
+and 14% on the two previous days. The cause is not the code: sampling the
+rejected titles shows they are the two cases `solHeadline` refuses on purpose
+— ALL CAPS ("RENOVATE MILITARY FAMILY HOUSING TOWER 4511, CAMP COURTNEY",
+"CONTRACTOR-OPERATED PARTS STORE (COPARS)") and over-length (110, 152, 200
+characters, against a 90 limit).
+
+So this is the incoming mix changing, not a regression. But over a quarter of
+the queue now shows the "too computerized" look the owner objected to on 10-03,
+and two of the three causes look addressable: an ALL CAPS title could be
+title-cased if the acronym problem were solved, and a 200-character title could
+be truncated at a clause boundary. Neither is free and both risk a worse render
+than the bare number. Flagged rather than attempted.
+
+### Day 15 — inventory
+
+| Angle | Queued | Cap | Sending days |
+|---|---:|---:|---:|
+| A1 | 578 | 37 | 15.6 |
+| A2 | 652 | 125 | 5.2 |
+| A4 | 394 | 50 | 7.9 |
+| A5 | 3,539 | 75 | — |
+
+Reply desk: **one `needs_human`** (still Cleveland) and **nine drafted**,
+unchanged from yesterday. Largest solicitation 15 of today's 125 A2 emails.
+
+### Day 16 (10-14 sending) — green, and a narrow leak the detector cannot see
+
+All 17 jobs 2xx, every cap exact (A1 37, A2 125, A4 50, A5 75), 31 moves all
+confirmed in-run, the three-way audit clean across **3,073 leads**, one stale
+drop, and bounce **0.81%** — 40 of 4,934, the lowest yet and the sixteenth day
+under the gate. Largest solicitation 15 of 125.
+
+Two replies, both human. One decline, suppressed. The other was *"I am not even
+sure what you're talking about"* — the third of that shape in a week, so I read
+the email rather than the counter. It was this:
+
+> on paper **Woods Electric LLC** clears the bar on NAICS 238210
+> **CLWTP FISMA Compliance** (140R4026Q0108), DOI, closes Oct 16
+
+Josh Woods is an electrician in Big Pine Key. FISMA is the federal information
+security statute. The solicitation is coded 238210 — electrical contractors —
+because the work sits inside a water treatment plant, and he is registered
+under 238210, so "on paper you clear the bar" is literally true and completely
+useless. **His reply is the correct response to our email, not a confused one.**
+
+Same shape as 10-13's *"we don't make antennas"*. Two in two days.
+
+**But a sample says the matching is mostly sound, so the generalisation does
+not hold.** Fourteen of today's A2 matches read by eye: an independent artist
+(NAICS 711510) matched to an art-in-architecture project, a drilling firm to a
+water treatment rehab, a plumbing contractor to reverse-osmosis modifications,
+site-work firms to a wildlife water catchment. Those are good. The bad ones are
+a tail, and NAICS is assigned to the *procurement* by a contracting officer,
+not validated against the work — so the tail is inherent, and the "on paper"
+hedge is what carries it. Counted, not acted on.
+
+### Day 16 — isPersonName cannot see a stranger's name
+
+Reading that sample turned up two company fields that are people: `Frye Rebecca
+G` (contact Rebecca Frye) rendered **"your team"** — correct — and `Matthew
+Foust`, whose contact is **Jacy Serva**, rendered *"on paper Matthew Foust
+clears the bar"*.
+
+That is the gap. `isPersonName` asks "is the company field THIS contact's
+name?" and cannot ask "is it SOMEBODY's name?". Separating the live leaks from
+the original September bug:
+
+| | |
+|---|---|
+| Pre-fix, 09-23 to 09-29 | 7 rows — the known bug, repaired at the time |
+| Post-fix leaks | **3** — `Comer Lphelps` / Sid Phelps (10-12), `Matthew Foust` / Jacy Serva (10-14), `Kathryn Johnson` / Robert Johnson (queued) |
+
+Two sent, one caught before it went. The queued one is repaired to "your team".
+
+**And a measurement caution worth recording.** My first pass at sizing this
+used a regex for "two capitalised words, no corporate marker" and reported
+**38**. Reading the 38 by eye, most are real companies — Banks Lawn Care,
+Imperial Cleaning, Kiowa Tribe Of Oklahoma, Tazlina River Contractors. The real
+number is 3. A crude filter over a name column produces a confident wrong
+number, which is the same mistake as the `REQUIRED` list typed from memory on
+10-08.
+
+**Not fixed, because the fix is a judgement rather than a correction.** A pure
+shape test (2-3 capitalised words, no marker) would catch Matthew Foust and
+also turn Banks Lawn Care into "your team", losing real personalization. The
+asymmetry favours over-triggering — "your team" to a real company is harmless,
+naming a stranger is not — but it is still a trade, and there are two ways to
+make it:
+
+1. **A given-name test built from our own data.** The universe has 11,008
+   `first_name` values. If the company field's first token appears among them,
+   has no corporate marker and is at most three words, treat it as a person.
+   Self-contained, testable, no external list. "Matthew" and "Kathryn" hit;
+   "Imperial" and "Brandywine" do not.
+2. **A trade-word stoplist** — Cleaning, Lawn, Engineering, Contractors. Open
+   ended and needs maintaining.
+
+(1) is the better shape. 3 rows in two weeks is the size of the problem, so it
+is worth doing deliberately rather than at the end of a daily check.
+
+### Day 16 — inventory and the open desk
+
+| Angle | Queued | Cap | Sending days |
+|---|---:|---:|---:|
+| A1 | 588 | 37 | 15.9 |
+| A2 | 699 | 125 | 5.6 |
+| A4 | 383 | 50 | 7.7 |
+| A5 | 3,706 | 75 | — |
+
+Holdout control 660 contacted against A2's 1,398, so yesterday's reading is
+firming rather than changing. Bare solicitation numbers 25% (178 of 699), level
+with yesterday.
+
+Reply desk: **one `needs_human`** (still Cleveland) and **ten drafted**, up
+from nine. Six of the ten are accepts — people who asked for the deliverable —
+and the oldest has been drafted since 10-06.
+
+### Day 17 (10-15 sending) — green, and the warm leads are the bottleneck now
+
+All 17 jobs 2xx, every cap exact (A1 37, A2 125, A4 50, A5 75), the three-way
+audit clean across **3,360 leads**, two stale drops, and bounce **0.74%** — 42
+of 5,652, the lowest yet and the seventeenth day under the gate. Two replies,
+both declines, both suppressed.
+
+Nothing in the machinery needs fixing. The thing that does need attention is
+not a bug.
+
+### Day 17 — eleven drafted replies are not going out
+
+The reply desk's open items, by the date the reply arrived:
+
+| Drafted since | Lead | Campaign | Category |
+|---|---|---|---|
+| 10-06 | kparks@kpcinc.com | C1 | accept |
+| 10-06 | dporter@staffingetc.net | A2 | accept |
+| 10-07 | alan@eyesonearth.org | A5 | accept |
+| **10-08** | **gidcleveland@gmail.com** | A2 | **needs_human** |
+| 10-08 | ameerah@mathjr.org | A5 | question |
+| 10-09 | ads81460@gmail.com | A2 | accept |
+| 10-09 | kalden@aldenlg.com | A4 | question |
+| 10-12 | beni@monacomech.com | A4 | accept |
+| 10-12 | precisionsepticandpumping@gmail.com | A4 | accept |
+| 10-12 | alohacleaningexperts@gmail.com | A2 | question |
+| 10-14 | jwoodselectric@gmail.com | A2 | question |
+
+Plus one with no received date recorded. The count has gone **4 → 9 → 10 → 11
+→ 12** across the week while `sent` has stayed at 9. Drafts are accumulating,
+not clearing, and the oldest has been drafted for **nine days**.
+
+Six of them are accepts — people who read a cold email and asked for the
+deliverable. That is the entire output of seventeen days of sending, and it is
+the one number in this programme that is not a proxy for anything. The desk is
+built and run from another session and is not mine to touch, so this is a
+report rather than a repair: **the constraint on this programme has moved from
+the sending side to the answering side.** Nothing about more capacity, better
+pacing or cleaner renders matters while these sit.
+
+### Day 17 — A4's constraint has flipped from signals to mailboxes
+
+The awards scanner came back hard, exactly as the 21-day stamps predicted,
+starting a week earlier than my 10-21 estimate:
+
+| Run | Signals written |
+|---|---:|
+| 09:45 | 128 |
+| 15:45 | 97 |
+| 21:45 | 10 |
+
+Live `competitor_award` signals now **1,054**, against 248 on 10-06, with 283
+of them on companies that have no assignment at all. A1's scanner has started
+too — 31 written at 08:00 as its 30-day stamps began expiring.
+
+So A4 is no longer supply-limited. Its queue is 342 at 50 a day, and 50 is the
+hard ceiling of its 8 mailboxes over a 4-step sequence. A4 has the second-best
+accept rate in the programme (3 of the 6 open accepts) and now has the signals
+to feed more capacity, so if mailboxes are to move anywhere, A4 is where the
+case is strongest. Not acted on — it is a reallocation decision, and A2's 20
+boxes are the only place they would come from.
+
+### Day 17 — the rest
+
+`assign` wrote only 117 against 503 yesterday, with
+`left_unassigned_at_ceiling: {A5: 408}` — A5's generic queue hit its ceiling
+exactly (1,125 = 15 days x 75) for the first time. Working as designed:
+generics are the least valuable sends and yield first.
+
+| Angle | Queued | Cap | Sending days |
+|---|---:|---:|---:|
+| A1 | 565 | 37 | 15.3 |
+| A2 | 611 | 125 | 4.9 |
+| A4 | 342 | 50 | 6.8 |
+| A5 | 3,686 | 75 | — |
+
+Holdout control 735 contacted against A2's 1,523 — the 10-13 reading is firming
+with every day, not shifting. Largest solicitation 29 of today's 125. Bare
+solicitation numbers down to 20% (121 of 611) from 25%.
+
+One reply was *"Please put us on a do not email list."* Allied Imperium Global
+is the only row for that company, so suppressing the person is the whole of the
+request, and nothing was inferred about anybody else — the person-level rule
+and an explicit company-level request did not actually conflict here. Worth
+noting that they could, on a company with several contacts, and that would be a
+decision for the owner rather than a default.
+
+### Day 18 (10-16 sending) — the best reply day, and the backlog grew with it
+
+Thirteen replies, the most of any day. Eight machine, all eight correctly
+classified. **Three new accepts** — *"Yes"* (A2), *"Sure"* (A4), *"Yes, I would
+be interested"* (A2) — plus a fourth the desk also booked as an accept.
+
+Every cap exact (A1 37, A2 125, A4 50, A5 75), the three-way audit clean across
+**3,647 leads**, two stale drops, bounce **0.79%** on the eighteenth day under
+the gate.
+
+And the reply desk went **12 open to 16**. `sent` is still 9, unchanged for
+eight days. Nine of the sixteen are accepts, and the oldest two have been
+drafted since 10-06 — ten days.
+
+| | 10-15 | 10-16 |
+|---|---:|---:|
+| Drafted | 11 | **15** |
+| needs_human | 1 | 1 |
+| Sent | 9 | **9** |
+
+Yesterday's entry said the constraint had moved from sending to answering. A
+day later the sending side produced its best result yet and the answering side
+absorbed none of it. Nine firms have now asked for a deliverable and not had
+one.
+
+### Day 18 — opportunities hit WORKER_RESOURCE_LIMIT, and the trace said why
+
+First 546 since the ranged-read fix on 09-29 — seventeen clean days. The 03:08
+guarded retry succeeded, and the instrumentation answered the question in one
+query, which is what it was built for:
+
+| Stage | Failed 03:00 | Retry 03:08 |
+|---|---:|---:|
+| after_index | 2,728 ms, 15 MB | 1,714 ms, 15 MB |
+| 65,536 records | 7,018 ms, 20 MB | 4,653 ms, 19 MB |
+| after_stream | **died here** | 4,944 ms, 21 MB |
+
+**Not memory.** Heap was flat at 19-21 MB in both, the same as every clean run
+since 09-29. The failed run was roughly 50% slower at every checkpoint on
+identical work and died in the last ~6,000 records of the stream. That is CPU
+or a slow worker, which `WORKER_RESOURCE_LIMIT` also covers — the distinction
+that took a week of misdiagnosis to learn in September and one query to settle
+now. No change made.
+
+### Day 18 — a reply that argues with the deadline-first sort
+
+> We already submitted our bid for this opportunity.
+
+A correct match — right firm, right solicitation, Hickman Wildlife Water
+Catchment — that arrived after they had already bid. The disqualifier list was
+no use to them by then.
+
+`job_push` sorts deadline-first, which is what stops rows dying under the
+8-day floor, so the rows that go out are the ones closest to closing. That is
+right for not wasting a matched signal and wrong for being useful to the
+reader, who wants the list while there is still time to act on it. One data
+point against an ordering that exists for a measured reason (245 A2 rows died
+of arrival-order on 09-30), so this is recorded rather than acted on. If a
+second or third arrives, the question is whether the window's early end is
+worth more than its late end.
+
+### Day 18 — inventory
+
+| Angle | Queued | Cap | Sending days |
+|---|---:|---:|---:|
+| A1 | 542 | 37 | 14.6 |
+| A2 | 472 | 125 | 3.8 |
+| A4 | 310 | 50 | 6.2 |
+| A5 | 3,635 | 75 | — |
+
+`assign` wrote 82 against yesterday's 117, with A5 at its ceiling again (223
+left unassigned) and `a2_left_close_date_full` back up to 895. A2's queue is at
+its thinnest since the ramp — 3.8 sending days — which is the close-date budget
+refusing what cannot be sent in time rather than a supply problem.
+
+### Days 19-20 — every rate in this document was divided by a junk number
+
+The bounce rates reported here since launch — 1.61%, 1.62%, 1.24%, 1.34%,
+0.79% — were computed as `bounced_count / contacted_count`, straight from
+Instantly's lifetime campaign analytics. `contacted_count` is not a count of
+people. It is not a count of anything that holds still.
+
+A2 on 10-18, from one API response:
+
+| Field | Value |
+|---|---:|
+| `leads_count` | 1,648 |
+| `contacted_count` | 3,147 |
+| `emails_sent_count` | 3,903 |
+
+3,147 is larger than the number of leads in the campaign and smaller than the
+number of emails sent. It cannot be unique people contacted, because a campaign
+cannot contact more people than it holds. It is not a send counter, because it
+is not the send count. And it is not a lagging copy of one: across the four
+campaigns `contacted_count` rose **847 on Saturday 10-17**, a day the daily
+series reports `sent: 0` for every campaign. A denominator that moves while
+nothing is sent cannot carry a rate.
+
+The daily series is self-consistent, which is why it is believed instead. Summed
+over A2's whole life: daily `sent` 3,903, equal to `emails_sent_count` to the
+digit. Daily `new_leads_contacted` 1,386 — the unique-people number the label
+`contacted` was reaching for. And `leads_count` is confirmed against our own
+books rather than trusted: 434 / 1,648 / 635 / 930 is exactly the count of
+assignments at status `pushed` per angle, which is what the three-way audit
+reconciles every day.
+
+The honest numbers, for the whole programme:
+
+| Angle | First emailed | Sent | Bounced | Per person | Per send | Pushed, not yet mailed |
+|---|---:|---:|---:|---:|---:|---:|
+| A1 | 398 | 975 | 4 | 1.01% | 0.41% | 36 |
+| A2 | 1,386 | 3,903 | 26 | **1.88%** | 0.67% | 262 |
+| A4 | 574 | 1,475 | 10 | 1.74% | 0.68% | 61 |
+| A5 | 853 | 2,229 | 13 | 1.52% | 0.58% | 77 |
+| **All** | **3,211** | **8,582** | **53** | **1.65%** | **0.62%** | **436** |
+
+Both rates ship from now on, because they answer different questions. Per
+person is how dead the list is, and it is what predicts the rest of the 11,008
+pool. Per send is what a mailbox provider sees. The number this document has
+been quoting, 0.73%, answers neither — it was 53 over a denominator that
+corresponds to nothing.
+
+**What this changes.** The claim "eighteen consecutive days under the 2% gate"
+survives: 1.65% is under 2%. The claim that it was comfortably under does not.
+A2 on its own is at 1.88%, twelve hundredths of a point from the gate, and A2
+is the angle carrying the most volume and the whole close-date ramp. Nothing
+was ever gated automatically on this number, so no decision was taken on it —
+the damage is confined to what was reported, which is bad enough.
+
+**And a third number nobody had.** 436 leads are pushed into Instantly and
+have not yet received a first email; they sit in its own daily queue behind
+`daily_max_leads`. Every report to date counted them as mailed. A2's 262 is
+two days of its cap.
+
+The reasoning that put rates over people rather than over sends was right and
+is unchanged: follow-up steps inflate sends for reasons that have nothing to do
+with the copy, so a rate over sends drifts down as a sequence rolls out. Only
+the field claiming to be the people number has changed. Fixed in
+`outreach-metrics` and in `instantly-baseline.mjs`, which froze the same junk
+denominator into every weekly snapshot it has ever written.
+
+### Days 19-20 — `outcomes.first_touch_at` holds the push, not the touch
+
+Found while looking for a second source for the denominator above. Our own
+table has a column for when a company was first emailed, and it is populated
+for 3,645 of 3,647 rows — suspiciously exactly our pushed count, when Instantly
+says only 3,211 have been emailed.
+
+Measured: of 3,645 rows joined to their assignment, **3,556 have
+`first_touch_at` within two minutes of `pushed_at`**. It is the push clock.
+
+Two paths write it. `outreach-push` stamps `new Date()` at push time. `metrics`
+writes the real first-send timestamp from the email feed — but only for
+companies that replied, and only within the feed window it reads, so for almost
+every row the push time stands. The column therefore means "when we handed the
+lead over" for 97.6% of rows and "when the first email actually went out" for
+the rest. One column, two meanings, no way to tell which from the value.
+
+This is the shape this programme keeps producing: a value that was correct
+while one path owned it, wrong once a second path reached the same place. The
+A2 cap spending itself twice, the render guarantee asserted twice with both
+assertions on the create path, the solicitation pace reset on every run — all
+the same defect wearing different clothes. Nothing reads the column yet — grep finds no consumer
+outside the writer itself — which is the only reason this is a note rather than
+a repair. It is recorded now because the first cohort analysis keyed on "first
+touch" will be wrong by up to the queue depth, and 436 leads deep is not a
+rounding error. `assignments.pushed_at` is the honest push clock and should be
+what any such query uses.
+
+### Days 19-20 — the `positive` flag, scored against five real replies
+
+Five human replies landed on 10-16. Read by eye against what Instantly's
+`lt_interest_status` said about each:
+
+| Reply | Flag | Truth |
+|---|---|---|
+| "Yes" | positive | **decline** — it answers our own "Want me to close this out?" |
+| "Sure" | positive | accept |
+| "At this time we are not interested" | not positive | decline |
+| "Yes, I would be interested." | **not positive** | accept |
+| "We already submitted our bid" | not positive | neither |
+
+Two of five wrong, in both directions: a decline marked positive and an
+unambiguous accept missed. The first is the more interesting failure — "Yes" is
+positive or negative depending entirely on what was asked, and a close-out
+question inverts it. No classifier reading the reply alone can get that right
+without the outbound question beside it.
+
+This is the flag that produced "seven positives awaiting answer since 09-25",
+repeated here for days before it was corrected. It is not evidence. Accepts are
+counted by reading the replies.
+
+### Days 19-20 — inventory
+
+| Angle | Queued | Cap | Sending days |
+|---|---:|---:|---:|
+| A1 | 546 | 37 | 14.8 |
+| A2 | 620 | 125 | 5.0 |
+| A4 | 326 | 50 | 6.5 |
+| A5 | 3,797 | 75 | — |
+
+No `job_push` run on either day, which is correct: the cron is `0 6 * * 1-5`
+and both were weekend days. The daily series confirms it from the other side,
+`sent: 0` on 10-17 for all four campaigns. The first send after this is Monday
+10-19.
+
+`assign` wrote 210 on 10-17 and 120 on 10-18, A5 at its ceiling both days (239
+then 397 left unassigned) and `a2_left_close_date_full` easing from 751 to 683.
+A2's queue has recovered from day 18's 3.8 sending days to 5.0 without any
+change — the close-date budget letting through what the 30-day window admits.
+
+**A4's awards scanner has refilled, four days ahead of the estimate.** It wrote
+37 signals on 10-17 and 103 on 10-18 against 0 for the week before, with 15
+NAICS/state pairs still unscanned at the end of today's run — the first time
+that number has been non-zero since the walk completed. The day-9 note put the
+refill at 10-21 to 10-26 from scan-stamp expiry; it started on 10-17. A4 is at
+326 queued against a cap of 50, so the 45-vs-50 question that held it back is
+now moot and the cap can stay where it is.
+
+The three-way audit reads zero on all three counts for the twentieth
+consecutive day: 3,647 leads in the campaigns, 3,647 in the database, 0
+unclaimed, 0 missing, 0 rendering a blank variable.
+
+### Days 19-20 — a null `status_code` is not a failure, and the retry knows that
+
+Investigated and found to be nothing, recorded so it is not investigated again.
+A manually fired run sat in `outreach.job_run` with `status_code` null and an
+empty body and looked like a job that had vanished. It had been eight minutes.
+`outreach-harvest` runs `*/10` and copies `net._http_response` into `job_run`;
+the row settled at the next sweep with a 200.
+
+Two properties worth knowing while reading that table:
+
+**A null is normal for up to ten minutes after a fire.** The watcher that
+chased this had a seven-minute limit, shorter than the sweep interval, so it
+was guaranteed to give up before an answer existed. Any poll of `job_run` needs
+to outlast the harvest, not the job.
+
+**`retry_job_if_failed` does not depend on the harvest at all.** It reads
+`coalesce(jr.status_code, r.status_code)` and joins `net._http_response`
+itself, so an unswept row still reports its real status. `pg_net.ttl` is 6
+hours against a 45-minute retry window, so the response is always still there
+when the retry looks. That `coalesce` is load-bearing: without it a successful
+job whose row had not been swept would read as failed and be re-run, and a
+spurious `job_push` retry is exactly what spent 201 against a cap of 125 on
+10-06.
+
+### Day 20 — spike: can we fetch solicitation documents server-side?
+
+The question was whether a proposal can be built for a lead who replies without
+asking them to upload anything. The whole v2 pipeline starts from user uploads,
+and the only SAM endpoint this programme uses is the entity API, so the premise
+was that server-side document fetch was the blocking unknown. It is not a
+blocker, and the thing that is one turned out to be somewhere else entirely.
+
+**Documents are public and need no key.** Three sam.gov front-end endpoints,
+unauthenticated, no login.gov, no API key, no quota:
+
+```
+/api/prod/opps/v2/opportunities/{noticeId}            metadata + full narrative
+/api/prod/opps/v3/opportunities/{noticeId}/resources  attachment list
+/api/prod/opps/v3/opportunities/resources/files/{resourceId}/download
+```
+
+The narrative text is inline in the first response at `description[0].body` as
+HTML; there is no `/description` sub-path and asking for one 404s. The
+attachment list carries `accessLevel`, `accessStatus`, `fileExists`, `size` and
+`mimeType`, so a gated or missing file is visible before anything is downloaded.
+
+And **we already hold the notice id**: `signals.source_url` is
+`https://sam.gov/workspace/contract/opp/<32-hex>/view` for every `rfp_match`,
+so there is no search step. This matters because the SAM Opportunities API
+would have made the idea unaffordable — `SAM_API_KEY` returns 401 on every form
+(recorded in `_shared/outreach.ts` since 09-21) and the working
+`SAM_GOV_API_KEY` is noted there as ~10 Opportunities calls a day. The
+unauthenticated path has neither limit.
+
+**Measured against the 28 distinct solicitations named in real replies:**
+
+| | Notices | |
+|---|---:|---:|
+| Documents fetched | 21 | 75.0% |
+| Narrative text only (>= 1,500 chars) | 1 | 3.6% |
+| Nothing to build from | 6 | 21.4% |
+
+122 attachments listed, 121 public, **exactly one access-gated**. 116 of the 121
+public files downloaded — 95.9% — for 167 MB of real pdf, docx and xlsx,
+verified by magic bytes rather than by status code. The five misses were
+individual files, not notices.
+
+For **the six accepts that name a solicitation, four yield documents.** The two
+that do not have no attachments at all: the notice is a short text posting, 224
+and 357 characters, too thin for a compliance matrix.
+
+**The actual blocker is the close date.** Of the 29 replies with a solicitation
+attached, **4 are still open today**. The median gap from reply to close is
+**6 days**, and four replies arrived *after* their solicitation had already
+closed. Of the nine accepts, exactly one — Terra Umbris, closing 10-22 — is
+still live on the thing they answered.
+
+That last number was nearly reported as "one of nine is servable", which would
+have been wrong. The opportunities job skips companies that already hold an
+assignment (6,553 skipped on 10-18), so a zero in our signals table is our own
+bookkeeping and not a statement about the market. Checked against live
+solicitations in each company's NAICS instead: **seven of the nine have one to
+three open right now**, closing 10-19 to 11-09. The backlog is servable, but
+with a different solicitation than the one they replied to.
+
+**What the replies say about building this automatically.** Three of the 23 A2
+repliers told us the solicitation was irrelevant to them — "does not match our
+product line", "nothing to do with what we could offer", "we don't make
+antennas". A NAICS match is not a judgement that the work is biddable, so an
+auto-generated proposal would hand those readers a confidently wrong document,
+which is worse than sending nothing. Any such flow has to propose the
+solicitation and have the reader confirm it, not assume it.
+
+**Integration, for when this is built.** `process-solicitation` reads files
+through `downloadDoc` against `v2_files` rows under an owner id, so the
+server-side feed is: fetch, upload to the `v2-files` bucket under an owner,
+insert `v2_files`, create `v2_submissions`, POST. Magic links are not missing
+either — Supabase supports them and `signInWithOtp` is simply unwired in
+`AuthContext`.
+
+The design consequence is the six-day median: this cannot be a batch job over a
+backlog. It has to fire within hours of a reply landing, which the queue-backed
+pipeline can do, but which means the trigger belongs to the reply desk.
+
+### Day 21 — all four angles on cap, and the concentration arithmetic checked
+
+First day every angle landed exactly on its cap: A1 37, A2 125, A4 50, A5 75,
+across three push runs. Two of the three stopped on the time budget and the
+third finished with room, which is the continuation crons doing what they were
+added for.
+
+**A4 looked one over and was not.** Summing `per_angle` across the three runs
+gives A4 51 against a cap of 50, and the 07:15 run reported only 49 already
+pushed. The database says 50. That is the known and legitimate divergence: a
+queued move spends the budget when it is queued and is recorded when it is
+confirmed, so a move straddling two runs is counted once in each place at
+different moments. The DB count is the one to trust, and it is on cap.
+
+**53 of 125 on one solicitation, and that is correct.** RFQHT001426QE048, a
+cohort of 107, closes 2026-10-28. The A2 floor is 8 days
+(`A2_close_min_days`), so the last day it may be sent is 10-20, not 10-28 —
+today is 9 days out and tomorrow is 8. Two sending days, 107 rows, allowance
+`ceil(107/2) = 54`, sent 53, and the remaining 53 go tomorrow on the final day
+where the pace deliberately uncaps. The arithmetic is the formula working, not
+a fault; recorded here with the numbers so the next check does not re-derive
+it. The 36 rows `held_for_solicitation_pace` in the 07:15 run are other
+cohorts being paced correctly at the same time.
+
+**Bounce, on the honest denominators:** 1.65% per person first-emailed and
+0.57% per email sent, over 3,330 people and 9,654 sends. A4 1.86% and A2 1.85%
+are the two closest to the 2% gate; nothing is near the 5% per-angle trip.
+
+**The bare solicitation number has doubled.** 132 of 467 queued A2 rows render
+`sol_short` as the bare number — 28.3%, against 14% on 10-09. `solHeadline`
+refuses ALL CAPS and over-length titles on purpose, so this is the refusal
+firing more often rather than a regression, but it has gone from one row in
+seven to one in four and the copy reads materially worse for them: "DoD posted
+SPE7M127U0795" against "DoD posted Hospital Communications Support
+(RFQHT001426QE048)". Worth a decision on loosening the refusal rather than
+leaving it to drift further.
+
+**The wrong-match rate is now measurable: 5 of 51 human replies, 9.8%**, up
+from 3 of 45. Today added "We don't do protein engineering" and "We're a cold
+weather training company". A NAICS match is not a judgement that the work is
+biddable, and this is the number that decides how a built proposal may be
+offered — at one in ten, a proposal auto-sent on the match alone would be
+confidently wrong for every tenth reader, which is worse than sending nothing.
+
+Five human replies, all honoured by suppressing the person: one out of
+business, two declines, two wrong-match declines, and one explicit stop
+covering "all entities affiliated with GovHub". Each of the five is the only
+contact at their company, so the person-not-company rule did not bite today —
+checked rather than assumed. Three autoresponders were classified correctly,
+including a "no longer working for" and two future-tense out-of-offices.
+
+Reply desk: 1 `needs_human`, 15 `drafted`, `sent` still 9. Drafted has run
+4 → 16 → 15 across eleven days while sent has not moved, so the queue is
+accumulating answers nobody has released.
+
+Three-way audit clean for the twenty-first consecutive day: 3,934 leads in the
+campaigns, 3,934 in the database, 0 unclaimed, 0 missing, 0 rendering a blank
+variable. All nine A2 required keys are populated across today's 125 pushes.
+
+### Day 22 — "15 drafted" was overstating the backlog by six
+
+Six of the eight accepts queued for a holding reply had already been answered,
+and the ledger did not know. Caught by re-reading each thread before sending,
+which is the desk's own rule and the reason it exists: *a duplicate reply to a
+yes is worse than a missing one.*
+
+On 2026-10-16 a holding note went out by hand from the Instantly inbox to
+kparks@kpcinc.com, dporter@staffingetc.net, alan@eyesonearth.org,
+ads81460@gmail.com, beni@monacomech.com and
+precisionsepticandpumping@gmail.com — "sorry for the slow reply, we've had a
+lot of demand on this". Sent outside the desk, so nothing wrote it back to
+`data/reply-desk.json`, which still carries all six as `drafted` while its
+`sent` counter sits at 9.
+
+So the queue depth this log has been reporting is wrong in a specific way: the
+ledger records what the DESK sent, not what the LEAD received. Of the 15
+`drafted`, six are already answered, two are misclassified (Chp Solutions said
+"Yes" to our own "want me to close this out?", Set-Apart said "We already
+submitted our bid" — both tagged `accept` by the model), and two more are
+genuinely unanswered accepts who replied on 10-16 and missed that batch:
+kurt.marisa@human-domain.com and thomas.showman@gmail.com.
+
+Two things follow. The daily check should stop quoting `drafted` as a backlog
+without reading the threads behind it — the number is an upper bound, not a
+count. And any sender other than the desk has to write back to the ledger or
+re-read the thread first; this one re-reads, because writing to the desk is
+another session's business.
+
+The send itself is blocked in this session by the outbound-email permission and
+is not done. The two messages are drafted and approved; the remaining step is
+someone with send rights running them.
+
+### Day 22 — the loosened renderer in production, and an accept the pipeline cannot serve
+
+Second day with every angle exactly on cap: A1 37, A2 125, A4 50, A5 75. The
+caps in the push bodies still read A4 50 because the raise to 55 landed after
+the morning runs; it binds tomorrow. A4 summed to 51 across runs and the
+database says 50 — the queued-move divergence again, same as 10-19.
+
+Bounce 1.66% per person and 0.57% per send over 3,622 people and 10,491 sends.
+A2 1.89% and A4 1.86% are still the two nearest the gate and neither moved
+materially.
+
+**The renderer change held.** The bare-number share is 10.2% of the queued A2
+rows, where it was 28.3% before the fix, and the lines that went out today read
+as intended: "Bonneville Lock and Dam - Navigation Lock 1 Bridge Replacement
+(W9127N26BA024)", "Construction Contract Sources Sought (89233126NNA000150)",
+"Hospital Communications Support (RFQHT001426QE048)". The two bare numbers in a
+sample of ten were SPE7LX27U0239 and SPE7M127U0828 — both DLA parts stubs,
+refused on purpose.
+
+**Yesterday's concentration arithmetic predicted today exactly.** RFQHT001426QE048
+closes 10-28; with an 8-day floor, today at 8 days out was its last sendable
+day, and it sent precisely the 53 rows that yesterday's note said would carry
+over. 53 of 125 again, and correct again, for the reason already written down.
+
+**A2's queue is at 3.1 sending days**, its thinnest yet (3.7 on 10-18, 5.2 on
+10-19). Not a fault — the close-date budget refusing what cannot be sent in
+time — but it is the number to watch, because a queue under a day would start
+costing sends rather than deferring them.
+
+**An accept arrived that this pipeline cannot serve.** Dr. Bailey at Music
+Ministry International, on A1: *"Please send over the information regarding the
+potential pitfalls for the recompete bid; I would be interested in reviewing
+your assessment."* Articulate, warm, and asking for exactly what the analysis
+produces — a disqualifier list.
+
+It is recorded in `outreach.proposal_accepts` and `stage_candidates` correctly
+returns nothing for them, because A1 is the recompete angle: there is no open
+solicitation to stage, and `live_sols` is 0. The staged-proposal flow is built
+on a matched solicitation and A1 has none by construction. So the one thing this
+reader asked for is the one thing the pipeline cannot hand them, and what they
+want is a different deliverable — an assessment of a contract that is ending,
+not a quotation for a solicitation that is open.
+
+Worth deciding deliberately rather than letting it sit: either A1 accepts get a
+recompete assessment built from the expiring contract, or they get matched to a
+live solicitation in their NAICS and told so, or they are answered by hand. The
+third is what happens today by default.
+
+Two declines honoured by suppressing the person: "Not interested" and "Pls. do
+not include me in your mailing list". Two autoresponders classified correctly,
+one of them an out-of-office whose stated return date (29 August 2026) is
+already two months past.
+
+**The reply-desk ledger is now wrong about my own sends.** 16 `drafted`, 1
+`needs_human`, `sent` still 9. kurt.marisa@human-domain.com and
+thomas.showman@gmail.com both still read `drafted` although both were answered
+on 10-20 from the Instantly mailbox. A bulk release of that queue would
+double-send to exactly the two people who did get a reply. Same defect as the
+six from 10-16, with the difference that this time it is a reply this session
+sent. Any sender outside the desk has to write back to the ledger or the ledger
+stops describing reality — re-reading the thread catches it at send time, but
+only for whoever re-reads.
+
+Three-way audit clean for the twenty-second consecutive day: 4,221 leads in the
+campaigns, 4,221 in the database, 0 unclaimed, 0 missing, 0 blank-variable.
+
+### Day 23 — the A1 recompete assessment, and what public award data can carry
+
+Answered Dr. Bailey at Music Ministry International, who asked for "the
+potential pitfalls for the recompete bid". Built from USASpending rather than
+from the solicitation, because there is no solicitation: A1 fires on a contract
+that is ending, and the follow-on RFQ has not posted. That is the whole
+distinction between this and the A2 staged-proposal flow, and it turns out not
+to be a limitation.
+
+**The contract.** W9115126PA009, Army, FY26 Catholic Pastoral Life Coordinator,
+$59,160, expiring 2027-01-29. Found by matching the recompete signal's
+end_date and amount against their award history; our own signal payload carries
+only the month and the agency.
+
+**Pricing led the assessment, on the owner's instruction and because another
+reader on this programme had already said "it always comes down to price". The
+finding was sharper than expected and it is entirely public.** Their four
+Catholic Pastoral Life Coordinator awards since 2024 run $21,852 (Fort Benning,
+expiring the same day), $22,619 (BENELUX/SHAPE), $26,496 (USAG Bavaria) and
+$59,160 (the expiring Texas one). Their own median for the role is $24,557.
+Across all vendors there have been 17 such awards since 2024, $14,820 to
+$94,800, median $25,992 — so the expiring contract sits at about 2.3x the
+market median, and a contracting officer doing market research sees every one
+of those figures.
+
+The assessment says that without claiming it is overpriced: hours and scope
+differ by installation and an "Administrative Pastoral Life Coordinator" is not
+the same job. The point put to them is that this is the first question market
+research raises and the answer has to be inside the quote.
+
+**The competitive field is thin and includes individuals.** They hold 4 of the
+17, more than any vendor; Family Tree Secured 3, Mack Global 2, the rest single
+awards with at least two to what look like individuals rather than companies.
+That is the real pricing floor: a sole practitioner's rate, which no company
+carrying overhead beats on price alone.
+
+**Two facts worth the lookup.** A company-lookup sam_entity call on their UEI
+returned SAM active to 2027-07-28, which clears the award and removes a generic
+worry rather than inventing one, plus Minority-Owned and Self Certified Small
+Disadvantaged Business status. If the requirement comes out as a set-aside the
+field of 17 narrows sharply and the price comparison changes with it. Neither
+fact was in our database: `sam_expiration` was null and `enriched_at` never
+set, because outreach-enrich has no cron.
+
+**What this establishes.** An A1 accept can be served without a solicitation.
+The deliverable is a market-position assessment from public award data, not a
+proposal, and for a recompete it may be the more useful artifact: it is about
+the question the contracting officer will ask, which no proposal can answer
+after the fact. Worth building as its own path rather than treating A1 accepts
+as cases the pipeline cannot reach.
+
+Sent in-thread from e.knight@buildwithgovhub.com after the same staleness check
+the reply desk uses. Nothing was written back to the desk's ledger, which still
+does not know about this session's three sends.
+
+## Day 24 (2026-10-21) — the audience runs out before the experiment finishes
+
+**Everything green on the gates.** Bounce 1.64% over 3,899 contacted, the
+twenty-fourth day under the 2% gate, and no angle over 5%: A1 1.06%, A2 1.75%,
+A4 1.85%, A5 1.59%. All sixteen jobs 200/ok with no retry fired. The three push
+runs summed onto cap for every angle — A1 37/37, A2 124/125, A4 55/55, A5 75/75
+— and the Instantly audit read zero on all three questions across 4,512 leads,
+which is now the expected result rather than a finding.
+
+A cross-check worth keeping: the overview field `new_leads_contacted_count`
+matched the daily-series sum exactly for all four campaigns. After the junk
+denominator, the daily series was the only figure trusted for contacted; the
+overview field is equivalent and one call instead of five.
+
+**Both signal scanners came back to life, by design.** `recompetes` wrote 8, 4
+and 1 across its runs and `awards` 43 and 12, after days of writing nothing with
+`still_unscanned: 0`. The 30-day and 21-day scan stamps are expiring inside the
+queue runway exactly as predicted, so the scanners are re-walking a universe
+they had finished. Not a fault, and nothing to touch.
+
+**The finding: the programme has under two weeks of audience left.** Every
+company carries exactly one assignment, ever — 9,692 companies, 9,692
+assignment rows, no company twice. So the universe is strictly consumed, and
+nothing has added a company to it since 2026-10-03 (loaded in three batches on
+09-21, 09-22 and 10-03, 11,168 rows).
+
+Against 292 sends a day the non-holdout queue holds 2,203 rows, which is 7.5
+days, and 1,322 companies have never been assigned behind it. Per angle, counting
+the pools each can actually draw on:
+
+| angle | queued | cap/day | days | fresh pool behind it |
+|---|---|---|---|---|
+| A1 | 463 | 37 | 12.5 | 108 companies with a recompete signal |
+| A2 | 420 | 125 | 3.4 | 465 held on close date, recycling in → ~7 days |
+| A4 | 194 | 55 | 3.5 | 127 companies with a competitor_award signal → ~5.8 days |
+| A5 generic | 1,127 | 75 | 15.0 | 741 companies carrying no signal |
+
+A4 is the one to watch: `assign` wrote it 5 rows today against 55 spent. There
+are 1,218 unassigned competitor_award *signals*, which looks like plenty until
+you count companies instead — only 127 of them sit on a company with no
+assignment. A signal on an already-assigned company is unusable, because the
+company has had its one email. Signal supply was never A4's constraint and is
+not now; company supply is.
+
+Nothing here is a bug. Signal-bearing companies already sort to the front of
+`assign`, which was the fix for A4 starving once before. This is the audience
+being finite, and it is a decision about where more companies come from rather
+than something to repair.
+
+**The A2 test cannot finish inside that runway.** Arms are past the ~440 per arm
+the routine set: base 1,034, speed 988, A5 holdout control 1,035. Human reply
+rates are 1.16%, 1.72% and 0.87%. None of the three differences clears
+significance — speed against control is the widest at 0.85pp against a 0.50pp
+standard error, z≈1.7, p≈0.09.
+
+The ~440 threshold was calibrated for a larger effect than the ~1% reply rates
+these angles actually produce. Confirming the gap now observed between speed and
+control needs roughly 2,800 per arm at 80% power, which is 29 more days at A2's
+current split — against under two weeks of audience. **At current caps the test
+runs out of people before it can return an answer.** Either the caps rise, the
+universe grows, or the test is called on the practical grounds that three arms
+sitting inside noise after 3,000 sends is itself the finding.
+
+**A4 named an aggregation bucket as a competitor, nine times.** Reading the
+lines that went out, one A4 row told Global Power Group that Pacific Gas and
+Electric had won in their space, and nine told small firms their competitor was
+"Miscellaneous Foreign Awardees" — a USASpending aggregation bucket, not a
+company. Three more signals were pending, one already a queued email.
+
+No counter was wrong. The signal had a recipient, a city, an amount and an
+agency, so it passed every gate including REQUIRED; the award was real and only
+the name was not a company. This is item 8's whole justification: the bug is
+invisible to every number and obvious in one line of prose.
+
+Fixed in `outreach-signals` v29 with `notACompany()`, a list rather than a word
+filter — "Miscellaneous Supply Company" and "Unknown Brewing Company" are real
+firms a keyword match would discard, and both are in the 32-case test. The
+pending signals are expired and the queued email dropped to `dropped_stale`,
+which is retryable, so those companies take a different angle next run.
+
+Left as a question rather than fixed: Lockheed Martin (16 sends), Dell Federal
+Systems (13) and The Rand Corporation (6) are real companies that passed the
+plausibility ceiling honestly, because that ceiling tests the *award* size
+against the reader's scale, not the firm's. Whether "a firm like yours just won
+this" survives naming a mega-prime is a copy judgement, not a bug.
+
+**17.7% of A2 sends rendered a bare solicitation number, and the fix is
+working.** Up from 10.2% after the backfill, but the cause is today's cohort:
+18 of the 22 are DLA numbers (`SPE7M1`, `SPE7LX`, `SPE4A6`), and their titles
+are `61--ADAPTER,POWER SUPPLY` and `48--VALVE,REGULATING,TEMPE` — FSC-prefixed
+catalogue stubs truncated mid-word. The FSC rule refuses them correctly.
+
+Measuring the nomenclature field shows hard truncation caps with spikes at 22
+characters (212 rows) and 46 (59 rows, the ` IN REPAIR/MODIFICATION OF` form
+cut to 19). "ADAPTER,POWER SUPPLY" at 20 is complete; "ABSORBER,AIRCRAFT A" at
+19 is not, so length alone cannot tell them apart, and no cheap test separates
+"ELECTRON" the real word from "ELECTRONIC" truncated.
+
+Not attempted, and the reason is targeting rather than difficulty: these are
+parts buys. The goods/services gate built on 10-20 exists because the proposal
+product is for services bids, and 22 of 124 A2 sends today pitched proposal
+drafting on a DLA parts RFQ. Polishing the headline would word a better email
+for an offer that may not fit. **Whether A2 should send on FSC-prefixed parts
+buys at all is the question, and it is the user's.**
+
+**Replies.** Eight inbound since 10-20, five of them real. Dr. Bailey answered
+the recompete assessment — "very helpful information to have as we prepare" —
+and restated the commitment that still has nothing watching it: *"I look forward
+to hearing from you once the solicitation is posted."* Nothing watches SAM for
+W9115126PA009's successor. Quenten at J Jaqk wants the disqualifier list and
+amendment alerts; Andrew Pregl answered "Yes, please!" to closing his out. Three
+were autoresponders, correctly not counted.
+
+Two suppressions applied, person only and never the company, per the standing
+rule. Brandt McMillan asked to be unsubscribed. Ramsi Taylor's autoreply says he
+has left Virtual Energy Solutions and refers inquiries to jblye@veschicago.com —
+suppressed as a dead address with the referral recorded in the reason, and
+neither person had a colleague in the universe to lose.
+
+The reply desk now holds 20 drafted and 2 needs_human, five of them new today,
+and still carries a second drafted reply to Bailey against a thread already
+answered by hand. It has not marked this session's three sends.
+
+**A column read as evidence that nothing writes.** `outcomes.substantive` is
+NULL for all 4,512 rows and no function assigns it; `outreach-metrics` only
+reads it, including in the recommendation rule at line 514, where
+`r.substantive >= 2` is one of three triggers for "SCALE: raise caps". The rule
+still fires on its other two triggers so nothing is currently blocked, but a
+scaling decision has a dead input. Same shape as the junk denominator: a figure
+consumed as though something populated it. Not fixed here because what counts as
+substantive is a definition worth agreeing before it gates a cap increase, and
+`positive` — the other trigger — mirrors the Instantly flag this routine already
+says not to trust.

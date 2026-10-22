@@ -116,9 +116,28 @@ const SCHEDULE = {
 //
 // FOUR DOMAINS ARE STILL SHARED WITH THE INFLUENCER CAMPAIGNS, which hold
 // earl@govhubcontracts, earl@trygovhub, earl@govhubteam and
-// earl.knight@winwithgovhub. Those four boxes are deliberately left out of the
+// earl.knight@winwithgovhub. Those four boxes were deliberately left out of the
 // lists below. The guardrail only polices angle campaigns, so it cannot see
 // this; it is recorded here instead.
+//
+// TWO OF THEM CAME BACK ON 2026-10-20. earl@trygovhub and earl@govhubteam both
+// sit on C5, and C5 is status 3 -- completed. A completed campaign sends
+// nothing, so those two boxes were idle capacity that the comment above was
+// still reserving for a campaign that had finished. Checked against the live
+// account rather than taken from this comment, which is why the stale half of
+// it was found at all. earl@govhubcontracts and earl.knight@winwithgovhub stay
+// out: their campaigns were not re-checked.
+//
+// EACH WENT TO ITS OWN DOMAIN'S CAMPAIGN, NOT BOTH TO A4. govhubteam is an A4
+// domain and trygovhub is an A2 domain, so sending both to A4 would have
+// straddled trygovhub across two campaigns -- the same mistake bidwithgovhub
+// made, and the one the one-campaign-per-domain guardrail exists to catch. The
+// request was for A4 capacity; the domain rule decides which box can supply it.
+//
+// Both were created 2026-08-06, the same vintage as the j.knight/j.k boxes that
+// report a warmup score of 100, with warmup_status active and their domains
+// already sending at volume. Their daily_limit was 15 rather than 25 and is
+// raised by --sync with the rest.
 //
 // THE TWO OTHER bidwithgovhub SENDERS ARE NOW IN USE, on A2. j.knight@ and
 // j.k@ are a different sender identity from the e.knight/earl.knight/earl
@@ -156,7 +175,7 @@ const MAILBOXES = {
     'earl.knight@govhubcontracts.com', 'e.knight@govhubcontracts.com', 'earl@govhubcontracts.com',
     'earl.knight@govhubprocurement.com', 'e.knight@govhubprocurement.com', 'earl@govhubprocurement.com',
     'earl.knight@govhubcapture.com', 'earl@govhubcapture.com', 'e.knight@govhubcapture.com',
-    'earl.knight@trygovhub.com', 'e.knight@trygovhub.com',
+    'earl.knight@trygovhub.com', 'e.knight@trygovhub.com', 'earl@trygovhub.com',
     'e.knight@govhubbids.com', 'earl.knight@govhubbids.com', 'earl@govhubbids.com',
     'e.knight@govhubproposal.com', 'earl.knight@govhubproposal.com', 'earl@govhubproposal.com',
     'j.knight@bidwithgovhub.com', 'j.k@bidwithgovhub.com', 'e.knight@bidwithgovhub.com',
@@ -164,7 +183,7 @@ const MAILBOXES = {
   // getgovhub, govhubteam, bidwithgovhub, winwithgovhub
   A4: [
     'earl.knight@getgovhub.com', 'e.knight@getgovhub.com', 'earl@getgovhub.com',
-    'earl.knight@govhubteam.com', 'e.knight@govhubteam.com',
+    'earl.knight@govhubteam.com', 'e.knight@govhubteam.com', 'earl@govhubteam.com',
     'earl@winwithgovhub.com', 'e.knight@winwithgovhub.com', 'earl.knight@winwithgovhub.com',
   ],
   // govhubnow, govhubhq, govhubsubmittals, govhubrfp
@@ -287,17 +306,25 @@ const A2 = {
 const A4 = {
   key: 'A4',
   name: 'GH-A4-CompetitorWon',
-  // SUPPLY-LIMITED, AND DELIBERATELY BELOW ITS OWN CEILING. Nine mailboxes at
-  // 25 carry 56 new leads a day; this is 45. The awards scanner has walked
-  // every pair it is allowed to see -- measured 10-06, 0 of 1,354 eligible
-  // companies are scannable, because all of them were scanned inside the
-  // 21-day recheck window -- and it does not refill until stamps start
-  // expiring on 10-13, in volume 10-21 to 10-26. 45/day carries the 436 queued
-  // rows to the day supply returns; 56 would drain them by 10-16 and leave
-  // nine warmed mailboxes idle, which is worse for reputation than sending a
-  // steady number. Only 95 of the 436 signals expire before 10-19, so nothing
-  // is lost by the slower rate. Raise it to 56 once the scanner is producing.
-  daily_max_leads: 45,
+  // SUPPLY-LIMITED, AND NOW AT ITS CEILING. Eight mailboxes at 25 carry exactly
+  // 50 new leads a day over a 4-step sequence, which is what this is.
+  //
+  // It was held at 45 from 10-06 while the awards scanner had nothing to do:
+  // measured that day, 0 of 1,354 eligible companies were scannable, all of
+  // them stamped inside the 21-day recheck window, and the queue had to last
+  // until the stamps aged out. They did, on schedule -- 32 signals written on
+  // 10-07 and 8 more on 10-08 -- so the brake comes off. 411 rows queued at 50
+  // a day is 8 sending days, and the scanner is refilling behind it.
+  // 50 -> 55 on 2026-10-20, on the ninth mailbox (earl@govhubteam, recovered
+  // from the completed C5 campaign). 9 x 25 = 225/day of capacity against
+  // 55 x 4 = 220, so there is 5/day of slack; at 56 it would be 224 against 225
+  // and one bounced mailbox would put the campaign over its own ceiling.
+  //
+  // The awards scanner has refilled, which is what makes the extra room worth
+  // having: 0 written for the week to 10-16, then 37, 103 and 56 on 10-17 to
+  // 10-19, with the 21- and 30-day scan stamps now expiring in volume. The
+  // queue is 284 rows, 5.7 days at 50 and 5.2 at 55.
+  daily_max_leads: 55,
   required: ['competitor_name', 'competitor_city', 'award_amount_short', 'award_agency_short', 'naics_code'],
   subjects: ['{{award_amount_short}}', 'did you see this'],
   steps: [

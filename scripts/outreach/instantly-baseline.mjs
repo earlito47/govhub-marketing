@@ -45,6 +45,11 @@ const ROOT = fileURLToPath(new URL('../..', import.meta.url));
 const API = 'https://api.instantly.ai/api/v2';
 const KEY = process.env.INSTANTLY_API_KEY;
 
+// Earliest day any campaign here could have sent. A lifetime rate needs a
+// lifetime denominator, so the daily series is summed from here and not from
+// the snapshot window.
+const EPOCH = '2026-08-01';
+
 const CAMPAIGNS = {
   A: '31fc2282-4153-42f9-b8d7-94517162b47c',
   B: '61c3b5df-22b6-4f98-ae56-290a750f1833',
@@ -68,15 +73,32 @@ const INTEREST = {
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
+// Instantly allows 20 requests a minute. This script used to pace at 300-400 ms
+// between calls, which is 150-200 a minute, and api() threw on any non-OK
+// status including 429 -- so a snapshot would die part-written on a rate limit
+// it was guaranteed to provoke. It had not happened yet only because nothing
+// ran it often enough to collide with another job. The edge functions already
+// use 3.2 s for this reason; the same figure belongs here.
+const PACE_MS = 3200;
+
 async function api(method, path, body) {
   const headers = { Authorization: `Bearer ${KEY}` };
   if (body) headers['Content-Type'] = 'application/json';
-  const res = await fetch(`${API}${path}`, {
-    method, headers, body: body ? JSON.stringify(body) : undefined,
-  });
-  const text = await res.text();
-  if (!res.ok) throw new Error(`${method} ${path} -> ${res.status}\n${text.slice(0, 300)}`);
-  return text ? JSON.parse(text) : {};
+  for (let attempt = 0; ; attempt++) {
+    const res = await fetch(`${API}${path}`, {
+      method, headers, body: body ? JSON.stringify(body) : undefined,
+    });
+    const text = await res.text();
+    if (res.ok) return text ? JSON.parse(text) : {};
+    // A snapshot is the comparison baseline for every later week, so a partial
+    // one is worse than a slow one. Back off on the limit and on 5xx; fail
+    // loudly on anything else, which is a real error and not a wait.
+    const retryable = res.status === 429 || res.status >= 500;
+    if (!retryable || attempt >= 4) {
+      throw new Error(`${method} ${path} -> ${res.status}\n${text.slice(0, 300)}`);
+    }
+    await sleep(Math.max(PACE_MS, 4000 * (attempt + 1)));
+  }
 }
 
 async function allLeads(campaignId) {
@@ -90,7 +112,7 @@ async function allLeads(campaignId) {
     out.push(...items);
     cursor = d.next_starting_after;
     if (!items.length || !cursor) break;
-    await sleep(400);
+    await sleep(PACE_MS);
   }
   return out;
 }
@@ -125,12 +147,19 @@ async function snapshot({ label, from, to }) {
     captured_at: new Date().toISOString(),
     // Anything reading this file should use these definitions, not its own.
     definitions: {
-      contacted: 'unique leads that received a first touch (contacted_count)',
+      contacted: 'unique leads that received a first touch, summed from the '
+        + 'daily series new_leads_contacted. NOT contacted_count, which is not '
+        + 'a count of people -- see the comment above this block.',
+      leads: 'leads currently in the campaign (leads_count)',
+      pushed_not_yet_touched: 'leads - contacted: handed to Instantly and '
+        + 'waiting in its daily queue. Not yet mailed, and not a denominator.',
       sent: 'total emails sent including follow-up steps (emails_sent_count)',
       replies_human: 'reply_count, which excludes auto-replies',
       replies_auto: 'reply_count_automatic (out-of-office and similar)',
       positive: 'leads with lt_interest_status >= 1 (interested or better)',
       reply_rate_pct: 'replies_human / contacted, NOT over sent',
+      bounce_rate_pct: 'bounced / contacted: how dead the list is',
+      bounce_rate_per_send_pct: 'bounced / sent: what a mailbox provider sees',
     },
     campaigns: {},
     daily: [],
@@ -152,7 +181,26 @@ async function snapshot({ label, from, to }) {
       if (Number(s) >= 1) positive++;
     }
 
-    const contacted = a?.contacted_count ?? 0;
+    // contacted_count IS NOT A COUNT OF PEOPLE, and it was the denominator of
+    // every rate this file froze for the first eighteen days of the programme.
+    // Measured 2026-10-18 on the A2 angle campaign: 1,648 leads in the
+    // campaign, 3,903 emails sent, contacted_count 3,147 -- bigger than the
+    // leads, smaller than the sends, equal to neither. It also rose 847 across
+    // the four angle campaigns on a Saturday when the daily series reported
+    // sent: 0 for every one of them, so it is not a lagging send counter. A
+    // denominator that moves while nothing is sent cannot carry a rate.
+    //
+    // The daily series is self-consistent: its `sent` sums exactly to
+    // emails_sent_count (3,903 = 3,903), and new_leads_contacted is the unique
+    // people the old label was reaching for. The reasoning that put rates over
+    // contacted rather than over sent was right and is unchanged -- follow-up
+    // steps inflate sends for reasons that have nothing to do with the copy.
+    // Only the field that claimed to be that number has changed.
+    await sleep(PACE_MS);
+    const series = await api('GET', `/campaigns/analytics/daily`
+      + `?campaign_id=${encodeURIComponent(id)}&start_date=${EPOCH}&end_date=${to}`);
+    const contacted = (series || []).reduce((n, d) => n + (d.new_leads_contacted || 0), 0);
+    const leadsInCampaign = a?.leads_count ?? leads.length;
     out.campaigns[key] = {
       id,
       name: campaign.name,
@@ -170,8 +218,9 @@ async function snapshot({ label, from, to }) {
       },
       copy_fingerprint: fingerprintSteps(campaign),
       counts: {
-        leads: a?.leads_count ?? leads.length,
+        leads: leadsInCampaign,
         contacted,
+        pushed_not_yet_touched: leadsInCampaign - contacted,
         sent: a?.emails_sent_count ?? 0,
         bounced: a?.bounced_count ?? 0,
         replies_human: a?.reply_count ?? 0,
@@ -185,10 +234,11 @@ async function snapshot({ label, from, to }) {
         reply_rate_pct: pct(a?.reply_count ?? 0, contacted),
         positive_rate_pct: pct(positive, contacted),
         bounce_rate_pct: pct(a?.bounced_count ?? 0, contacted),
+        bounce_rate_per_send_pct: pct(a?.bounced_count ?? 0, a?.emails_sent_count ?? 0),
       },
       interest_distribution: interest,
     };
-    await sleep(300);
+    await sleep(PACE_MS);
   }
 
   const daily = await api('GET', `/campaigns/analytics/daily?start_date=${from}&end_date=${to}`);
@@ -214,6 +264,7 @@ async function snapshot({ label, from, to }) {
     reply_rate_pct: pct(sum((c) => c.counts.replies_human), contacted),
     positive_rate_pct: pct(sum((c) => c.counts.positive), contacted),
     bounce_rate_pct: pct(sum((c) => c.counts.bounced), contacted),
+    bounce_rate_per_send_pct: pct(sum((c) => c.counts.bounced), sum((c) => c.counts.sent)),
   };
   return out;
 }
