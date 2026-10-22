@@ -116,6 +116,27 @@ const MAILBOXES = [
   'earl.knight@govhubhq.com',          // C registered_no_awards
   'earl.knight@govhubsubmittals.com',  // C
   'e.knight@govhubrfp.com',            // C
+
+  // Angle campaigns A1/A2/A4/A5. The 09-29 reallocation moved these idle boxes
+  // onto the angle campaigns, and this list never followed, so {{accountSignature}}
+  // rendered empty on 4,514 sends and they carried no postal address
+  // (docs/incident-2026-10-blank-merge-fields.md section 6). Added 2026-10-16
+  // on the owner's approval. j.knight@ and j.k@ were left out before because
+  // their address names someone else; their From name is "Earl Knight", so
+  // this signature matches what the reader already sees.
+  'e.knight@bidwithgovhub.com', 'j.k@bidwithgovhub.com', 'j.knight@bidwithgovhub.com',   // A2
+  'e.knight@buildwithgovhub.com', 'e.knight@usegovhub.com',                             // A1
+  'e.knight@govhubbids.com', 'earl.knight@govhubbids.com', 'earl@govhubbids.com',       // A2
+  'e.knight@govhubcapture.com', 'earl@govhubcapture.com',                               // A2
+  'e.knight@govhubcontracts.com',                                                       // A2
+  'e.knight@govhubprocurement.com', 'earl@govhubprocurement.com',                       // A2
+  'e.knight@govhubproposal.com', 'earl.knight@govhubproposal.com', 'earl@govhubproposal.com', // A2
+  'e.knight@trygovhub.com',                                                             // A2
+  'e.knight@getgovhub.com', 'e.knight@govhubteam.com',                                  // A4
+  'e.knight@winwithgovhub.com', 'earl@winwithgovhub.com',                               // A4
+  'e.knight@govhubhq.com', 'e.knight@govhubnow.com',                                    // A5
+  'e.knight@govhubsubmittals.com', 'earl@govhubsubmittals.com',                         // A5
+  'earl.knight@govhubrfp.com', 'earl@govhubrfp.com',                                    // A5
 ];
 
 async function api(method, path, body) {
