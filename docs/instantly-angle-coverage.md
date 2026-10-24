@@ -2844,3 +2844,51 @@ consumed as though something populated it. Not fixed here because what counts as
 substantive is a definition worth agreeing before it gates a cap increase, and
 `positive` — the other trigger — mirrors the Instantly flag this routine already
 says not to trust.
+
+## 2026-10-23 — the A2 speed arm has been dead for 24 days
+
+`verify-live-leads.mjs` reports the A2 arms every morning and the routine says
+each arm needs roughly 440 contacts before a winner can be called. The speed
+arm last received a lead on **2026-09-29**. It has been frozen at 58 while base
+grew to 2,214 — zero speed pushes on every one of the last ten send days.
+
+So the daily "do not call a winner, ~440 needed" has been reporting on a test
+that stopped running three weeks ago. At zero per day it will never conclude.
+Whether to restart the arm or retire the test is a decision about the
+experiment, so nothing was changed here. The A5 holdout control is healthy by
+contrast: 1,185 contacted against A2's 2,272, still the slower side and still
+gaining.
+
+This is the recurring bug shape wearing new clothes. The counter was right —
+58 is 58 — and nobody read it as "stopped", because a small number that grows
+slowly and a small number that has stopped growing look identical in a daily
+line. The arm split needs an assertion that both arms moved today, not just a
+count of where they stand.
+
+## 2026-10-23 — "JV" was not on the initialism list, so the audit cried wolf daily
+
+The live-lead audit failed every morning with 54 ALL-CAPS names across all four
+angles. Every one of the 54 was the token `JV` — "Bay Marine JV LLC",
+"King-Albert JV LLC", "Aici-Archirodon JV LLC". Zero were genuine shouts.
+
+`INITIALISMS` in `scripts/outreach-tests/verify-live-leads.mjs` stripped LLC,
+PLLC, LLP, PC, USA, II–IV and INC but not JV, which is how a joint venture
+writes its own name. Added. The audit now passes clean on all four angles with
+the lead counts matching `outreach.assignments` exactly.
+
+The comment above that regex already described this exact failure from launch
+morning, when "Retina Consultants Of Oklahoma PLLC" was reported as a defect.
+It was one initialism short of being right. A check that fails every day over
+correct data teaches everyone to scroll past it, which costs more than the
+check was worth.
+
+## 2026-10-23 — daily_caps A4 is 55, not 50
+
+`outreach.config.daily_caps` reads `{"A1": 37, "A2": 125, "A4": 55, "A5": 75}`,
+updated 2026-10-20 14:27. A4 has pushed exactly 55 on 10-21, 10-22 and 10-23,
+and exactly 50 before that. The routine's stored context still says A4 50, so
+three days of correct behaviour read as five-over-cap until config was checked.
+All four angles land exactly ON cap; nothing is overshooting.
+
+The cap rise shortened A4's runway: 122 sendable queued is 2.2 days at 55,
+where it would be 2.4 at 50. A4 is now the angle nearest the ~2-day flag.
