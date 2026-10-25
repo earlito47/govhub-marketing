@@ -57,20 +57,36 @@ them to learn."
 | `brandon.bcelectric@gmail.com` | B & C Electric Solutions, L.l.c | T--NHOTIC AV SYSTEM REPLACEMENT (140L4326Q0126) | 2026-10-25 18:25 UTC | `earl.knight@govhubprocurement.com` | `01a1744f-9090-7ae1-93d3-0258b57279d5` |
 | `bill.bailey@musicministryintl.com` | Music Ministry International Inc | Chaplin Priest Services (N0018927QW013) | 2026-10-25 18:25 UTC | `e.knight@buildwithgovhub.com` | `01a1744f-9bd3-7a73-bf65-fb84c9015d68` |
 | `thomas.showman@gmail.com` | Terra Umbris Legal And Land Services, LLC | Recovery Worldwide BPA (83310127Q0007) | 2026-10-25 18:25 UTC | `e.knight@trygovhub.com` | `01a1744f-a1e7-763a-8047-21bd9cdbfd3f` |
+| `setapart.excavatingservices@gmail.com` | Set-Apart Excavating & Services, LLC | Y--Hickman Wildlife Water Catchment and Pipe Fence (140L1726Q0054) | 2026-10-25 19:45 UTC | `earl.knight@trygovhub.com` | `01a17499-1edc-7b6a-aae5-dbcc81b04be2` |
+| `creid@chpsolutionstoday.com` | Chp Solutions LLC | Scaffolding for Repair and Repoint Chalmette Monum (140D0427Q0915) | 2026-10-25 19:45 UTC | `earl@govhubprocurement.com` | `01a17499-2bc0-7492-b076-4b64a04d0c4d` |
+| `precisionsepticandpumping@gmail.com` | Precision Septic And Pumping Services, LLC | Septic Toilet Pumping for Chippewa National Forest (12444527Q0003) | 2026-10-25 19:45 UTC | `e.knight@getgovhub.com` | `01a17499-311a-76cd-9159-50befa5db4e4` |
+| `beni@monacomech.com` | Monaco Mechanical, Inc. | J041--Condenser Coils Replacement for the VA Illiana Heal... (36C25227Q0051) | 2026-10-25 19:46 UTC | `earl.knight@getgovhub.com` | `01a17499-35f0-70a4-b73c-6a877ca9a005` |
+| `ads81460@gmail.com` | Certified Surface Inspections LLC | USAG Pressure Washing (W91247-27-Q-A001) | 2026-10-25 19:46 UTC | `earl.knight@trygovhub.com` | `01a17499-3da9-7145-95b5-03359fb26e1a` |
+| `dporter@staffingetc.net` | D.h. Porter Enterprises, LLC | ISBEE Solicitation: Firm-Fixed-Price (FFP), non-personal ... (75H70627R00005 ) | 2026-10-25 19:46 UTC | `j.k@bidwithgovhub.com` | `01a17499-42d7-7609-8f6b-77e767e29d07` |
+| `jwilder@stericert.com` | H & W Technology, LLC | Monitoring and Evaluation of Russian River Coho Salmon  (W912P727QA002) | 2026-10-25 19:46 UTC | `earl.knight@govhubproposal.com` | `01a17499-4b89-7c6c-aefd-495addac0ad2` |
+| `anthony@wr-cinc.com` | Williams Roofing & Construction Inc | Fenn Ranger Station roofing replacement (1240LU26Q0130) | 2026-10-25 19:46 UTC | `earl@govhubrfp.com` | `01a17499-aee3-7a62-bab5-c84544c2a173` |
+| `gcthornton@gmail.com` | 310 Buncombe LLC | General Services Administration (GSA) seeks to lease Ware... (4WA0688) | 2026-10-25 19:46 UTC | `earl@govhubproposal.com` | `01a17499-bb43-71ac-b7d8-7b7390b29870` |
+| `dave@strongholdcare.com` | The Stronghold Group LLC | USNS CODY (T-EPF 14) - Eye Wash Stations (N3220527Q7011) | 2026-10-25 19:46 UTC | `earl@buildwithgovhub.com` | `01a17499-bf7c-7c5d-83e8-e109e452c57d` |
 Each carries a link to a built proposal package for that solicitation, and for
 the A2 leads the disqualifier list they asked for, quoted from the solicitation
 with page numbers.
 
 ## What is coming
 
-Eight more are building and will be sent the same way once reviewed. Two are
-**held** deliberately -- H & W Technology and The Stronghold Group, where the
-NAICS match found work the firm probably does not do -- and will not be sent
-unless the hold is cleared. Four cannot be served at all: every biddable notice
-in their NAICS closes too soon to be worth handing anyone.
+All fourteen servable accepts have now been answered. The two that were briefly
+held -- H & W Technology and The Stronghold Group, where the NAICS match found
+work the firm probably does not do -- were released on Earl's instruction and
+sent, on the reasoning that the copy already says we picked the solicitation and
+invites the correction.
 
-Holds live in `outreach.staged_proposals.send_hold_at`, with a reason and who
-set it.
+Four of the eighteen accepts cannot be served at all: every biddable notice in
+their NAICS closes too soon to be worth handing anyone (Pregl Services 333994,
+J Jaqk Construction 812332, Human Domain Solutions 611430, Eyes On Earth
+813312). They have had no reply from this pipeline.
+
+The hold mechanism remains in `outreach.staged_proposals.send_hold_at`, with a
+reason and who set it, and excludes a lead from both the send queue and the
+build queue.
 
 ## Not written from this side
 
