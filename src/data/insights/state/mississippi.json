@@ -1,20 +1,20 @@
 {
   "pageType": "state",
   "slug": "mississippi",
-  "title": "Mississippi: $6B in Federal Contracts, FY2026",
+  "title": "Mississippi: $57.8M in Federal Contracts, FY2027",
   "h1": "Federal Contracts in Mississippi: Spending, Agencies & Vendors",
-  "metaDescription": "Federal agencies obligated $6B to contractors in Mississippi in FY2026 to date. See top buying agencies, top vendors, and industries.",
-  "updated": "2026-09-28",
+  "metaDescription": "Federal agencies obligated $57.8M to contractors in Mississippi in FY2027 to date. See top buying agencies, top vendors, and industries.",
+  "updated": "2026-10-26",
   "fyWindow": {
-    "label": "FY2026 to date",
-    "start": "2025-10-01",
-    "end": "2026-09-28"
+    "label": "FY2027 to date",
+    "start": "2026-10-01",
+    "end": "2026-10-26"
   },
   "stats": {
-    "totalObligations": 5988820177.2,
-    "awardCount": 85905,
-    "yoyGrowthPct": -25.2,
-    "avgAwardSize": 69714,
+    "totalObligations": 57791889.48,
+    "awardCount": 1427,
+    "yoyGrowthPct": -99.1,
+    "avgAwardSize": 40499,
     "smallBusinessSharePct": null
   },
   "charts": [
@@ -27,12 +27,8 @@
           "label": "Obligations",
           "points": [
             [
-              "FY21",
-              4865574993.48
-            ],
-            [
               "FY22",
-              4994954582.33
+              4994954432.33
             ],
             [
               "FY23",
@@ -40,7 +36,7 @@
             ],
             [
               "FY24",
-              6252731923.18
+              6254594855.88
             ],
             [
               "FY25",
@@ -48,209 +44,213 @@
             ],
             [
               "FY26",
-              5988820177.2
+              6267454445.73
+            ],
+            [
+              "FY27",
+              57791889.48
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Obligations fell 25.2% year over year, from $8B in FY2025 to $6B in FY2026 to date."
+      "takeaway": "Obligations fell 99.1% year over year, from $6.3B in FY2026 to $57.8M in FY2027 to date."
     },
     {
       "id": "mississippi-top-agencies",
       "type": "bar",
-      "title": "Top 10 buying agencies, FY2026 to date",
+      "title": "Top 10 buying agencies, FY2027 to date",
       "series": [
         {
           "label": "Obligations",
           "points": [
             [
-              "Department of Defense",
-              5017289595.74
-            ],
-            [
-              "National Aeronautics and Space Administration",
-              350067672.43
-            ],
-            [
               "Department of Veterans Affairs",
-              160888452.34
-            ],
-            [
-              "Department of Agriculture",
-              86048001.32
+              44730327.54
             ],
             [
               "Department of Homeland Security",
-              79308048.55
+              6544008.12
             ],
             [
-              "Department of Commerce",
-              67566982.2
+              "National Aeronautics and Space Administration",
+              2907256.49
             ],
             [
               "Department of Justice",
-              66868936.16
-            ],
-            [
-              "General Services Administration",
-              45397196.73
+              1867743.39
             ],
             [
               "Department of Labor",
-              31759791.12
+              997702.05
+            ],
+            [
+              "General Services Administration",
+              442666.8
+            ],
+            [
+              "Department of Agriculture",
+              253160
             ],
             [
               "Department of the Interior",
-              30104542.86
+              78000
+            ],
+            [
+              "Department of Transportation",
+              0
+            ],
+            [
+              "Department of Commerce",
+              -28974.91
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Department of Defense was the top federal buyer in Mississippi, obligating $5B (83.8% of the state total)."
+      "takeaway": "Department of Veterans Affairs was the top federal buyer in Mississippi, obligating $44.7M (77.4% of the state total)."
     },
     {
       "id": "mississippi-top-vendors",
       "type": "bar",
-      "title": "Top 10 vendors, FY2026 to date",
+      "title": "Top 10 vendors, FY2027 to date",
       "series": [
         {
           "label": "Obligations",
           "points": [
             [
-              "HUNTINGTON INGALLS INCORPORATED",
-              3607612520.5
+              "COLUMBUS MARBLE WORKS, INC.",
+              6811022
             ],
             [
-              "V2X AEROSPACE LLC",
-              466447654.57
+              "SPATIAL FRONT INC",
+              6544719.65
             ],
             [
-              "NOVA SPACE SOLUTIONS, LLC",
-              109368387.44
+              "PARAMOUNT CONSTRUCTION GROUP, LLC",
+              4875579
             ],
             [
-              "M1 SUPPORT SERVICES, L.P.",
-              86506834.07
+              "VETERANS MONUMENT COMPANY, LLC",
+              3495420
             ],
             [
-              "TAYLOR DEFENSE PRODUCTS, LLC",
-              70775156.87
+              "RAS ENTERPRISES LLC",
+              2592257.55
             ],
             [
-              "BAE SYSTEMS TECHNOLOGY SOLUTIONS & SERVICES INC.",
-              56319667.39
+              "VALOR HEALTHCARE INC",
+              2260560
             ],
             [
-              "NOBLE SUPPLY & LOGISTICS, LLC",
-              53015215.9
+              "LABORATORY CORPORATION OF AMERICA",
+              2021027.86
             ],
             [
-              "HEALTHEON, INC",
-              43100820
+              "CHENEGA GLOBAL PROTECTION, LLC",
+              1839035.07
             ],
             [
-              "JBW GROUP LLC",
-              37101236.65
+              "UNITED PARCEL SERVICE CO.",
+              1803726
             ],
             [
-              "TENAX AEROSPACE LLC",
-              37048356.27
+              "CENTERRA GROUP, LLC",
+              1577830.2
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "HUNTINGTON INGALLS INCORPORATED led all contractors in Mississippi with $3.6B, 60.2% of the state total."
+      "takeaway": "COLUMBUS MARBLE WORKS, INC. led all contractors in Mississippi with $6.8M, 11.8% of the state total."
     },
     {
       "id": "mississippi-top-naics",
       "type": "bar",
-      "title": "Top 10 industries (NAICS), FY2026 to date",
+      "title": "Top 10 industries (NAICS), FY2027 to date",
       "series": [
         {
           "label": "Obligations",
           "points": [
             [
-              "Ship Building and Repairing",
-              3709755518.26
-            ],
-            [
-              "Other Support Activities for Air Transportation",
-              506831870.8
-            ],
-            [
-              "Facilities Support Services",
-              169012224.16
-            ],
-            [
-              "Other Heavy and Civil Engineering Construction",
-              155365809.88
-            ],
-            [
-              "Industrial Building Construction",
-              115415428.13
-            ],
-            [
-              "Commercial and Institutional Building Construction",
-              95183992.19
+              "Cut Stone and Stone Product Manufacturing",
+              10306442
             ],
             [
               "Computer Systems Design Services",
-              67564556.35
+              6657633.65
             ],
             [
-              "Construction Machinery Manufacturing",
-              66628532
+              "Commercial and Institutional Building Construction",
+              4882029
             ],
             [
-              "Engineering Services",
-              55345767.84
+              "Security Guards and Patrol Services",
+              3585901.3
             ],
             [
-              "Bolt, Nut, Screw, Rivet, and Washer Manufacturing",
-              51480223.57
+              "Industrial Gas Manufacturing",
+              2558317.11
+            ],
+            [
+              "Temporary Help Services",
+              2512875.76
+            ],
+            [
+              "Irradiation Apparatus Manufacturing",
+              2240987.64
+            ],
+            [
+              "Medical Laboratories",
+              2122582.84
+            ],
+            [
+              "Couriers and Express Delivery Services",
+              1932623
+            ],
+            [
+              "All Other Outpatient Care Centers",
+              1923186.72
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Ship Building and Repairing was the largest industry in Mississippi, with $3.7B obligated."
+      "takeaway": "Cut Stone and Stone Product Manufacturing was the largest industry in Mississippi, with $10.3M obligated."
     }
   ],
   "crossLinks": [
     {
-      "label": "Department of Defense contracts",
-      "href": "/insights/agency/department-of-defense/"
+      "label": "Department of Veterans Affairs contracts",
+      "href": "/insights/agency/department-of-veterans-affairs/"
+    },
+    {
+      "label": "Department of Homeland Security contracts",
+      "href": "/insights/agency/department-of-homeland-security/"
     },
     {
       "label": "National Aeronautics and Space Administration contracts",
       "href": "/insights/agency/national-aeronautics-and-space-administration/"
     },
     {
-      "label": "Department of Veterans Affairs contracts",
-      "href": "/insights/agency/department-of-veterans-affairs/"
+      "label": "Department of Justice contracts",
+      "href": "/insights/agency/department-of-justice/"
     },
     {
-      "label": "Department of Agriculture contracts",
-      "href": "/insights/agency/department-of-agriculture/"
-    },
-    {
-      "label": "NAICS 336611: Ship Building and Repairing",
-      "href": "/insights/naics/336611/"
-    },
-    {
-      "label": "NAICS 561210: Facilities Support Services",
-      "href": "/insights/naics/561210/"
+      "label": "NAICS 541512: Computer Systems Design Services",
+      "href": "/insights/naics/541512/"
     },
     {
       "label": "NAICS 236220: Commercial and Institutional Building Construction",
       "href": "/insights/naics/236220/"
     },
     {
-      "label": "NAICS 541512: Computer Systems Design Services",
-      "href": "/insights/naics/541512/"
+      "label": "NAICS 561612: Security Guards and Patrol Services",
+      "href": "/insights/naics/561612/"
+    },
+    {
+      "label": "NAICS 621511: Medical Laboratories",
+      "href": "/insights/naics/621511/"
     }
   ],
   "tables": [
@@ -265,87 +265,87 @@
         [
           1,
           {
-            "text": "HUNTINGTON INGALLS INCORPORATED",
-            "href": "https://www.usaspending.gov/recipient/1eb5d9d6-aabf-3228-e6ab-79cf9729c9d7-C/latest/"
+            "text": "COLUMBUS MARBLE WORKS, INC.",
+            "href": "https://www.usaspending.gov/recipient/14dc90f8-6564-b3d0-ee97-74fb8d78fee1-C/latest/"
           },
-          3607612520.5
+          6811022
         ],
         [
           2,
           {
-            "text": "V2X AEROSPACE LLC",
-            "href": "https://www.usaspending.gov/recipient/fb63ba18-02ee-d557-7366-681926c60e0d-C/latest/"
+            "text": "SPATIAL FRONT INC",
+            "href": "https://www.usaspending.gov/recipient/f702b7a6-2200-5cd4-c840-cdab470fcb25-C/latest/"
           },
-          466447654.57
+          6544719.65
         ],
         [
           3,
           {
-            "text": "NOVA SPACE SOLUTIONS, LLC",
-            "href": "https://www.usaspending.gov/recipient/3375aa27-1225-18d6-7c4b-a7f4a005ef92-C/latest/"
+            "text": "PARAMOUNT CONSTRUCTION GROUP, LLC",
+            "href": "https://www.usaspending.gov/recipient/d0d42a06-f25a-b570-293c-37b95b0eb935-C/latest/"
           },
-          109368387.44
+          4875579
         ],
         [
           4,
           {
-            "text": "M1 SUPPORT SERVICES, L.P.",
-            "href": "https://www.usaspending.gov/recipient/f4832a42-513d-107f-4852-9539b2c518e1-C/latest/"
+            "text": "VETERANS MONUMENT COMPANY, LLC",
+            "href": "https://www.usaspending.gov/recipient/ce9a2034-7bcb-1dcc-7d1a-e76602af8628-C/latest/"
           },
-          86506834.07
+          3495420
         ],
         [
           5,
           {
-            "text": "TAYLOR DEFENSE PRODUCTS, LLC",
-            "href": "https://www.usaspending.gov/recipient/959efc9f-eb45-c5c9-ec3c-ac4319f9d6d5-C/latest/"
+            "text": "RAS ENTERPRISES LLC",
+            "href": "https://www.usaspending.gov/recipient/eb359117-71f9-5a05-33df-ca159bec7464-C/latest/"
           },
-          70775156.87
+          2592257.55
         ],
         [
           6,
           {
-            "text": "BAE SYSTEMS TECHNOLOGY SOLUTIONS & SERVICES INC.",
-            "href": "https://www.usaspending.gov/recipient/2e141abe-fe8f-7ddc-e6a3-8bb2165836be-C/latest/"
+            "text": "VALOR HEALTHCARE INC",
+            "href": "https://www.usaspending.gov/recipient/df822c86-4385-9615-7abf-ce7dec0f7b3c-C/latest/"
           },
-          56319667.39
+          2260560
         ],
         [
           7,
           {
-            "text": "NOBLE SUPPLY & LOGISTICS, LLC",
-            "href": "https://www.usaspending.gov/recipient/f1addd3f-8f09-bd87-cec8-f143401629ba-C/latest/"
+            "text": "LABORATORY CORPORATION OF AMERICA",
+            "href": "https://www.usaspending.gov/recipient/43c3801f-7847-15fb-337a-8c20cb2a5e11-C/latest/"
           },
-          53015215.9
+          2021027.86
         ],
         [
           8,
           {
-            "text": "HEALTHEON, INC",
-            "href": "https://www.usaspending.gov/recipient/10efc83e-47b0-0e63-d0d7-52f861ff3b3b-C/latest/"
+            "text": "CHENEGA GLOBAL PROTECTION, LLC",
+            "href": "https://www.usaspending.gov/recipient/a3dca9a1-e9d8-84cf-319d-89482407e6a0-C/latest/"
           },
-          43100820
+          1839035.07
         ],
         [
           9,
           {
-            "text": "JBW GROUP LLC",
-            "href": "https://www.usaspending.gov/recipient/82a5a405-f704-9692-1f5d-f13d307a5f80-C/latest/"
+            "text": "UNITED PARCEL SERVICE CO.",
+            "href": "https://www.usaspending.gov/recipient/a8e90c7c-8175-41a5-b841-5b038f67a07d-C/latest/"
           },
-          37101236.65
+          1803726
         ],
         [
           10,
           {
-            "text": "TENAX AEROSPACE LLC",
-            "href": "https://www.usaspending.gov/recipient/1ee6edf8-2db3-d98f-9f0a-a86b2b9f0821-C/latest/"
+            "text": "CENTERRA GROUP, LLC",
+            "href": "https://www.usaspending.gov/recipient/170470f0-8d47-72dd-c09c-8affb0d48e5b-C/latest/"
           },
-          37048356.27
+          1577830.2
         ]
       ]
     },
     {
-      "title": "Largest awards, FY2026 to date",
+      "title": "Largest awards, FY2027 to date",
       "columns": [
         "Rank",
         "Recipient",
@@ -356,256 +356,256 @@
         [
           1,
           {
-            "text": "HUNTINGTON INGALLS INCORPORATED",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002423C2307_9700_-NONE-_-NONE-/"
+            "text": "SCIENCE APPLICATIONS INTERNATIONAL CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_80NSSC19C0050_8000_-NONE-_-NONE-/"
           },
-          8319625828.83,
-          "Department of Defense"
+          103097706.85,
+          "National Aeronautics and Space Administration"
         ],
         [
           2,
           {
-            "text": "HUNTINGTON INGALLS INCORPORATED",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002418C2307_9700_-NONE-_-NONE-/"
+            "text": "SYNCOM SPACE SERVICES LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_80SSC023FA001_8000_NNS15AA01C_8000/"
           },
-          6957381008.74,
-          "Department of Defense"
+          99767343.65,
+          "National Aeronautics and Space Administration"
         ],
         [
           3,
           {
-            "text": "HUNTINGTON INGALLS INCORPORATED",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002418C2406_9700_-NONE-_-NONE-/"
+            "text": "BOLLINGER MISSISSIPPI REPAIR, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_1305M222CNMAN0006_1330_-NONE-_-NONE-/"
           },
-          4725472612.5,
-          "Department of Defense"
+          77849429.69,
+          "Department of Commerce"
         ],
         [
           4,
           {
-            "text": "HUNTINGTON INGALLS INCORPORATED",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002416C2427_9700_-NONE-_-NONE-/"
+            "text": "ADAMS AND ASSOCIATES INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_1605JE21C0006_1605_-NONE-_-NONE-/"
           },
-          3373949545.4,
-          "Department of Defense"
+          54687972.37,
+          "Department of Labor"
         ],
         [
           5,
           {
-            "text": "HUNTINGTON INGALLS INCORPORATED",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002413C2307_9700_-NONE-_-NONE-/"
+            "text": "ADVON CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_80SSC026F7001_8000_80SSC018D0010_8000/"
           },
-          3345822881,
-          "Department of Defense"
+          34200530.26,
+          "National Aeronautics and Space Administration"
         ],
         [
           6,
           {
-            "text": "HUNTINGTON INGALLS INCORPORATED",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002420C2437_9700_-NONE-_-NONE-/"
+            "text": "EDUCATION & TRAINING RESOURCES LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_1605JE24C0008_1605_-NONE-_-NONE-/"
           },
-          3155693794,
-          "Department of Defense"
+          26943489.68,
+          "Department of Labor"
         ],
         [
           7,
           {
-            "text": "HUNTINGTON INGALLS INCORPORATED",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002424C2473_9700_-NONE-_-NONE-/"
+            "text": "COLSA CORP",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_80NSSC25FA952_8000_80NSSC23DA006_8000/"
           },
-          2171412000,
-          "Department of Defense"
+          23815113.08,
+          "National Aeronautics and Space Administration"
         ],
         [
           8,
           {
-            "text": "BOLLINGER MISSISSIPPI SHIPBUILDING, LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002419C2210_9700_-NONE-_-NONE-/"
+            "text": "MESSER LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_80SSC024FA014_8000_80KSC024DA012_8000/"
           },
-          2019738356.06,
-          "Department of Defense"
+          19235655.63,
+          "National Aeronautics and Space Administration"
         ],
         [
           9,
           {
-            "text": "SYNCOM SPACE SERVICES LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_NNS15AA77T_8000_NNS15AA01C_8000/"
+            "text": "SIERRA LOBO INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_80SSC025FA004_8000_GS00Q14OADS616_4732/"
           },
-          817360951,
+          18365652.33,
           "National Aeronautics and Space Administration"
         ],
         [
           10,
           {
-            "text": "HUNTINGTON INGALLS INCORPORATED",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002424C2467_9700_-NONE-_-NONE-/"
+            "text": "NOVA SPACE SOLUTIONS, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_80SSC026F0011_8000_80SSC025D0001_8000/"
           },
-          806951059,
-          "Department of Defense"
+          12161782.67,
+          "National Aeronautics and Space Administration"
         ],
         [
           11,
           {
-            "text": "V2X AEROSPACE LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_N6134021F0007_9700_N6134019D1010_9700/"
+            "text": "COLSA CORP",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_80NSSC26FA790_8000_80NSSC23DA006_8000/"
           },
-          562160427.24,
-          "Department of Defense"
+          10983494.46,
+          "National Aeronautics and Space Administration"
         ],
         [
           12,
           {
-            "text": "V2X AEROSPACE LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_FA810618C0001_9700_-NONE-_-NONE-/"
+            "text": "SPATIAL FRONT INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70SBUR25F00000152_7003_47QTCB21D0044_4732/"
           },
-          560040621.6,
-          "Department of Defense"
+          10831013.28,
+          "Department of Homeland Security"
         ],
         [
           13,
           {
-            "text": "SYNCOM SPACE SERVICES LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_NNS15AA75T_8000_NNS15AA01C_8000/"
+            "text": "DILLIGAS CORP",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C25622F0122_3600_V797D40278_3600/"
           },
-          391657013.05,
-          "National Aeronautics and Space Administration"
+          10151940.16,
+          "Department of Veterans Affairs"
         ],
         [
           14,
           {
-            "text": "BAE SYSTEMS TECHNOLOGY SOLUTIONS & SERVICES INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_W912DY22F0105_9700_47QTCK18D0053_4732/"
+            "text": "CHENEGA GLOBAL PROTECTION, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_80SSC025FA015_8000_80KSC022DA001_8000/"
           },
-          378158239.65,
-          "Department of Defense"
+          8799729.59,
+          "National Aeronautics and Space Administration"
         ],
         [
           15,
           {
-            "text": "HUNTINGTON INGALLS INCORPORATED",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002421C4205_9700_-NONE-_-NONE-/"
+            "text": "TENAX AEROSPACE LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_1202SA23K9405_12C2_1202SA23T9450_12C2/"
           },
-          363359150.7,
-          "Department of Defense"
+          8012667.4,
+          "Department of Agriculture"
         ],
         [
           16,
           {
-            "text": "HUNTINGTON INGALLS INCORPORATED",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002423C2324_9700_-NONE-_-NONE-/"
+            "text": "TENAX AEROSPACE LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_1202SA23K9403_12C2_1202SA23T9450_12C2/"
           },
-          344054777,
-          "Department of Defense"
+          7804551.71,
+          "Department of Agriculture"
         ],
         [
           17,
           {
-            "text": "BOLLINGER MISSISSIPPI SHIPBUILDING, LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002418C2230_9700_-NONE-_-NONE-/"
+            "text": "CIVIL WORKS CONTRACTING LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_80SSC021F0022_8000_80SSC018D0008_8000/"
           },
-          336504825,
-          "Department of Defense"
+          7796038.86,
+          "National Aeronautics and Space Administration"
         ],
         [
           18,
           {
-            "text": "M1 SUPPORT SERVICES, L.P.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_FA300219F0050_9700_N6134019D1012_9700/"
+            "text": "TENAX AEROSPACE LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_1202SA23K9404_12C2_1202SA23T9450_12C2/"
           },
-          310004094.55,
-          "Department of Defense"
+          7625278.8,
+          "Department of Agriculture"
         ],
         [
           19,
           {
-            "text": "OLIN WINCHESTER, LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_W52P1J21C0016_9700_-NONE-_-NONE-/"
+            "text": "A-TEAM SOLUTIONS LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C25622F0025_3600_V797D50442_3600/"
           },
-          309756353.38,
-          "Department of Defense"
+          7597687.96,
+          "Department of Veterans Affairs"
         ],
         [
           20,
           {
-            "text": "HUNTINGTON INGALLS INCORPORATED",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002422C2300_9700_-NONE-_-NONE-/"
+            "text": "TENAX AEROSPACE LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_1202SA23K9402_12C2_1202SA23T9450_12C2/"
           },
-          305851639,
-          "Department of Defense"
+          7456261.01,
+          "Department of Agriculture"
         ],
         [
           21,
           {
-            "text": "RAYTHEON COMPANY",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_H9240821C0001_9700_-NONE-_-NONE-/"
+            "text": "TENAX AEROSPACE LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_1202SA23K9416_12C2_1202SA23T9450_12C2/"
           },
-          278221227.8,
-          "Department of Defense"
+          7387847.19,
+          "Department of Agriculture"
         ],
         [
           22,
           {
-            "text": "M1 SUPPORT SERVICES, L.P.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_FA300223F0071_9700_FA300220D0015_9700/"
+            "text": "MCKENZIE CONSTRUCTION & SITE DEVELOPMENT LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_693C7324C000001_6925_-NONE-_-NONE-/"
           },
-          243555993.95,
-          "Department of Defense"
+          7363047.65,
+          "Department of Transportation"
         ],
         [
           23,
           {
-            "text": "V2X AEROSPACE LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_15DDHQ19C00000002_1524_-NONE-_-NONE-/"
+            "text": "NOVA SPACE SOLUTIONS, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_80SSC025F0006_8000_80SSC025D0001_8000/"
           },
-          223067839.47,
-          "Department of Justice"
+          7209712.8,
+          "National Aeronautics and Space Administration"
         ],
         [
           24,
           {
-            "text": "V2X AEROSPACE LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_S1110A20F0175_9700_N0001914D0011_9700/"
+            "text": "TENAX AEROSPACE LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_1202SA23K9415_12C2_1202SA23T9450_12C2/"
           },
-          205839816.25,
-          "Department of Defense"
+          6567957.75,
+          "Department of Agriculture"
         ],
         [
           25,
           {
-            "text": "HUNTINGTON INGALLS INCORPORATED",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002419C4313_9700_-NONE-_-NONE-/"
+            "text": "TENAX AEROSPACE LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_1202SA23K9414_12C2_1202SA23T9450_12C2/"
           },
-          201682771.51,
-          "Department of Defense"
+          6490065,
+          "Department of Agriculture"
         ]
       ]
     }
   ],
   "narrative": {
-    "intro": "Mississippi recorded $6B in federal contract obligations in FY2026 to date. The state has 85,905 awards so far, with an average award size of $69.7K. Obligations are down 25.2% year over year. The Department of Defense is the dominant buyer, obligating $5B, and Ship Building and Repairing is the largest industry by obligations at $3.7B. HUNTINGTON INGALLS INCORPORATED is the largest vendor by obligations at $3.6B. These figures reflect fiscal year to date totals and are partial for the current fiscal year.",
+    "intro": "The State of Mississippi has received $57.8M in federal contract obligations so far in FY2027. The award count stands at 1,427 and the average award size is $40.5K. Obligations fell 99.1% year over year. Fiscal-year comparisons show prior peaks well above the current year: FY22 recorded $5B, FY23 recorded $8.7B, FY24 recorded $6.3B, FY25 recorded $8B, and FY26 recorded $6.3B. The Department of Veterans Affairs is the largest buyer in FY2027 to date, obligating $44.7M, followed by the Department of Homeland Security at $6.5M and the National Aeronautics and Space Administration at $2.9M. Cut Stone and Stone Product Manufacturing is the largest industry by obligations at $10.3M, and Computer Systems Design Services follows at $6.7M. Top vendors include COLUMBUS MARBLE WORKS, INC. at $6.8M, SPATIAL FRONT INC at $6.5M, and PARAMOUNT CONSTRUCTION GROUP, LLC at $4.9M. These figures reflect fiscal-year-to-date totals and current-year totals are partial (fiscal year to date).",
     "sections": [
       {
-        "heading": "Who are the top buying agencies in Mississippi?",
-        "body": "The Department of Defense obligated $5B in FY2026 to date. The National Aeronautics and Space Administration obligated $350M, and the Department of Veterans Affairs obligated $161M. Other notable buyers include the Department of Agriculture at $86M and the Department of Homeland Security at $79.3M."
+        "heading": "Which agencies are buying in Mississippi?",
+        "body": "The Department of Veterans Affairs obligated $44.7M in FY2027 to date. The Department of Homeland Security obligated $6.5M and the National Aeronautics and Space Administration obligated $2.9M. The Department of Justice obligated $1.9M and the Department of Labor obligated $998K."
       },
       {
-        "heading": "Which industries capture the most federal dollars in Mississippi?",
-        "body": "Ship Building and Repairing captured $3.7B in FY2026 to date. Other top industries include Other Support Activities for Air Transportation at $507M and Facilities Support Services at $169M. Construction-related industries together show significant obligations, for example Other Heavy and Civil Engineering Construction at $155M and Industrial Building Construction at $115M."
+        "heading": "Who are the largest vendors and which industries lead?",
+        "body": "COLUMBUS MARBLE WORKS, INC. received $6.8M and SPATIAL FRONT INC received $6.5M in FY2027 to date. Cut Stone and Stone Product Manufacturing leads industries with $10.3M and Computer Systems Design Services follows with $6.7M. Commercial and Institutional Building Construction received $4.9M and Security Guards and Patrol Services received $3.6M."
       }
     ]
   },
   "faq": [
     {
       "q": "How much federal contract money goes to Mississippi?",
-      "a": "Mississippi received $6B in federal contract obligations in FY2026 to date. The state recorded 85,905 awards with an average award size of $69.7K. Obligations are down 25.2% year over year and these totals are partial for the current fiscal year."
+      "a": "The State of Mississippi has received $57.8M in federal contract obligations so far in FY2027. The award count is 1,427 and the average award size is $40.5K. Obligations fell 99.1% year over year. Fiscal-year history shows much larger totals in prior years: FY22 $5B, FY23 $8.7B, FY24 $6.3B, FY25 $8B, FY26 $6.3B."
     },
     {
       "q": "Which agencies award the most contracts in Mississippi?",
-      "a": "The Department of Defense, the National Aeronautics and Space Administration, and the Department of Veterans Affairs award the most contracts in Mississippi. The Department of Defense obligated $5B, the National Aeronautics and Space Administration obligated $350M, and the Department of Veterans Affairs obligated $161M in FY2026 to date."
+      "a": "The Department of Veterans Affairs awarded the most contracts, obligating $44.7M in FY2027 to date. The Department of Homeland Security obligated $6.5M and the National Aeronautics and Space Administration obligated $2.9M. Other notable buyers include the Department of Justice at $1.9M and the Department of Labor at $998K."
     },
     {
       "q": "Who are the largest federal contractors in Mississippi?",
-      "a": "HUNTINGTON INGALLS INCORPORATED, V2X AEROSPACE LLC, and NOVA SPACE SOLUTIONS, LLC are the largest federal contractors in Mississippi by obligations. HUNTINGTON INGALLS INCORPORATED received $3.6B, V2X AEROSPACE LLC received $466M, and NOVA SPACE SOLUTIONS, LLC received $109M in FY2026 to date."
+      "a": "COLUMBUS MARBLE WORKS, INC. is the largest federal contractor in Mississippi, with $6.8M obligated in FY2027 to date. SPATIAL FRONT INC is the next largest at $6.5M and PARAMOUNT CONSTRUCTION GROUP, LLC is third at $4.9M. Industry leaders include Cut Stone and Stone Product Manufacturing at $10.3M and Computer Systems Design Services at $6.7M."
     }
   ],
   "related": [
@@ -639,5 +639,6 @@
       "label": "USAspending.gov award data",
       "href": "https://www.usaspending.gov"
     }
-  ]
+  ],
+  "noindex": true
 }

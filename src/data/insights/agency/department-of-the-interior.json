@@ -1,20 +1,20 @@
 {
   "pageType": "agency",
   "slug": "department-of-the-interior",
-  "title": "What Interior Dept. Buys: $6.8B in Contracts, FY2026",
+  "title": "What Interior Dept. Buys: $53.3M in Contracts, FY2027",
   "h1": "Department of the Interior: Federal Contract Spending & Top Vendors",
-  "metaDescription": "Department of the Interior obligated $6.8B in federal contracts in FY2026 to date. See what it buys, its top vendors, and multi-year trend.",
-  "updated": "2026-09-28",
+  "metaDescription": "Department of the Interior obligated $53.3M in federal contracts in FY2027 to date. See what it buys, its top vendors, and multi-year trend.",
+  "updated": "2026-10-26",
   "fyWindow": {
-    "label": "FY2026 to date",
-    "start": "2025-10-01",
-    "end": "2026-09-28"
+    "label": "FY2027 to date",
+    "start": "2026-10-01",
+    "end": "2026-10-26"
   },
   "stats": {
-    "totalObligations": 6798464078.59,
-    "awardCount": 25180,
-    "yoyGrowthPct": 3.5,
-    "avgAwardSize": 269995,
+    "totalObligations": 53259050.86,
+    "awardCount": 701,
+    "yoyGrowthPct": -99.2,
+    "avgAwardSize": 75976,
     "smallBusinessSharePct": null
   },
   "charts": [
@@ -26,10 +26,6 @@
         {
           "label": "Obligations",
           "points": [
-            [
-              "FY21",
-              5082951629.48
-            ],
             [
               "FY22",
               6518251842.52
@@ -48,139 +44,139 @@
             ],
             [
               "FY26",
-              6798464078.59
+              6819395351.86
+            ],
+            [
+              "FY27",
+              53259050.86
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Obligations grew 3.5% year over year, from $6.6B in FY2025 to $6.8B in FY2026 to date."
+      "takeaway": "Obligations fell 99.2% year over year, from $6.8B in FY2026 to $53.3M in FY2027 to date."
     },
     {
       "id": "department-of-the-interior-top-naics",
       "type": "bar",
-      "title": "Top 10 categories (NAICS), FY2026 to date",
+      "title": "Top 10 categories (NAICS), FY2027 to date",
       "series": [
         {
           "label": "Obligations",
           "points": [
             [
-              "Water and Sewer Line and Related Structures Construction",
-              752009916.02
-            ],
-            [
-              "Commercial and Institutional Building Construction",
-              542184749.88
-            ],
-            [
-              "Other Computer Related Services",
-              519946473.68
+              "Other Heavy and Civil Engineering Construction",
+              20330226.17
             ],
             [
               "Computer Systems Design Services",
-              516181166.52
+              9321253.32
             ],
             [
-              "Other Heavy and Civil Engineering Construction",
-              494275554.77
-            ],
-            [
-              "Administrative Management and General Management Consulting Services",
-              312136548.41
-            ],
-            [
-              "Custom Computer Programming Services",
-              294176005.6
+              "Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology)",
+              5291380.96
             ],
             [
               "Support Activities for Forestry",
-              287696250.53
+              4917822.54
             ],
             [
-              "Engineering Services",
-              193176530.89
+              "Nonscheduled Chartered Passenger Air Transportation",
+              4817915.16
             ],
             [
-              "Highway, Street, and Bridge Construction",
-              191991362.16
+              "Facilities Support Services",
+              2111091.33
+            ],
+            [
+              "Nonscheduled Chartered Freight Air Transportation",
+              1953375.54
+            ],
+            [
+              "Environmental Consulting Services",
+              1894187.24
+            ],
+            [
+              "Software Publishers",
+              1058080.71
+            ],
+            [
+              "Support Activities for Animal Production",
+              844319.84
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Water and Sewer Line and Related Structures Construction was Interior's largest contract category, with $752M obligated (11.1% of contract spending)."
+      "takeaway": "Other Heavy and Civil Engineering Construction was Interior's largest contract category, with $20.3M obligated (38.2% of contract spending)."
     },
     {
       "id": "department-of-the-interior-top-vendors",
       "type": "bar",
-      "title": "Top 10 vendors, FY2026 to date",
+      "title": "Top 10 vendors, FY2027 to date",
       "series": [
         {
           "label": "Obligations",
           "points": [
             [
-              "GENERAL DYNAMICS INFORMATION TECHNOLOGY, INC.",
-              239454599.72
-            ],
-            [
-              "GUIDEHOUSE INC.",
-              136121875.14
-            ],
-            [
-              "AMES FEDERAL CONTRACTING GROUP LLC",
-              132451620.71
-            ],
-            [
-              "RECORD STEEL AND CONSTRUCTION, INC.",
-              129810665
-            ],
-            [
               "NW CONSTRUCTION, INC",
-              126718908.99
+              11685361.99
             ],
             [
-              "PERIMETER SOLUTIONS LP",
-              115825044.42
+              "MANTECH ADVANCED SYSTEMS INTERNATIONAL, INC.",
+              7890948.88
             ],
             [
-              "G.S.E. CONSTRUCTION COMPANY, INC.",
-              109487800
+              "HSG PARK JOINT VENTURE 3, LLC",
+              7529000
             ],
             [
-              "KIEWIT INFRASTRUCTURE WEST CO.",
-              103945938
+              "BRIDGER AEROSPACE GROUP, LLC",
+              5231233.93
             ],
             [
-              "FLATLAND ENERGY SERVICES LLC",
-              75532921
+              "VANTOR SERVICES INC.",
+              4398854.96
             ],
             [
-              "KBR WYLE SERVICES, LLC",
-              74528665.35
+              "HENRYS AERIAL SERVICE INC",
+              2566937.46
+            ],
+            [
+              "AERO SPRAY INC",
+              2258027.35
+            ],
+            [
+              "DIDLAKE INC",
+              1479293.08
+            ],
+            [
+              "TIMBERLINE HELICOPTERS INC",
+              1195481.69
+            ],
+            [
+              "KOKOSING CONSTRUCTION COMPANY, INC.",
+              1096028.18
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "GENERAL DYNAMICS INFORMATION TECHNOLOGY, INC. led all Interior contractors with $239M, 3.5% of obligations."
+      "takeaway": "NW CONSTRUCTION, INC led all Interior contractors with $11.7M, 21.9% of obligations."
     }
   ],
   "crossLinks": [
-    {
-      "label": "NAICS 236220: Commercial and Institutional Building Construction",
-      "href": "/insights/naics/236220/"
-    },
-    {
-      "label": "NAICS 541519: Other Computer Related Services",
-      "href": "/insights/naics/541519/"
-    },
     {
       "label": "NAICS 541512: Computer Systems Design Services",
       "href": "/insights/naics/541512/"
     },
     {
-      "label": "NAICS 541611: Administrative Management and General Management Consulting Services",
-      "href": "/insights/naics/541611/"
+      "label": "NAICS 541715: Research and Development in the Physical, Engineering, and Life Sciences",
+      "href": "/insights/naics/541715/"
+    },
+    {
+      "label": "NAICS 561210: Facilities Support Services",
+      "href": "/insights/naics/561210/"
     }
   ],
   "tables": [
@@ -195,87 +191,87 @@
         [
           1,
           {
-            "text": "GENERAL DYNAMICS INFORMATION TECHNOLOGY, INC.",
-            "href": "https://www.usaspending.gov/recipient/455555be-773d-eab1-1e6b-7b94400b757e-C/latest/"
+            "text": "NW CONSTRUCTION, INC",
+            "href": "https://www.usaspending.gov/recipient/e130b27b-e353-3fa4-e8d1-31e07705bef6-C/latest/"
           },
-          239454599.72
+          11685361.99
         ],
         [
           2,
           {
-            "text": "GUIDEHOUSE INC.",
-            "href": "https://www.usaspending.gov/recipient/a0cb5664-8703-c7dc-a188-4a96f90a16c9-C/latest/"
+            "text": "MANTECH ADVANCED SYSTEMS INTERNATIONAL, INC.",
+            "href": "https://www.usaspending.gov/recipient/ceac1920-9ceb-17a6-9bf7-026817a02917-C/latest/"
           },
-          136121875.14
+          7890948.88
         ],
         [
           3,
           {
-            "text": "AMES FEDERAL CONTRACTING GROUP LLC",
-            "href": "https://www.usaspending.gov/recipient/fb2de91e-4643-f712-a8fb-9659424f527d-C/latest/"
+            "text": "HSG PARK JOINT VENTURE 3, LLC",
+            "href": "https://www.usaspending.gov/recipient/e2f07c1e-c0af-5ffe-8fdf-f0c87e4a343e-C/latest/"
           },
-          132451620.71
+          7529000
         ],
         [
           4,
           {
-            "text": "RECORD STEEL AND CONSTRUCTION, INC.",
-            "href": "https://www.usaspending.gov/recipient/a0c4db84-5a51-9128-a33d-a27a13b317b1-C/latest/"
+            "text": "BRIDGER AEROSPACE GROUP, LLC",
+            "href": "https://www.usaspending.gov/recipient/0c31743a-4641-a928-db69-8bc9f57b2c5c-C/latest/"
           },
-          129810665
+          5231233.93
         ],
         [
           5,
           {
-            "text": "NW CONSTRUCTION, INC",
-            "href": "https://www.usaspending.gov/recipient/e130b27b-e353-3fa4-e8d1-31e07705bef6-C/latest/"
+            "text": "VANTOR SERVICES INC.",
+            "href": "https://www.usaspending.gov/recipient/cf81c5b4-ac6b-9f54-4647-7906f1b1ccd0-C/latest/"
           },
-          126718908.99
+          4398854.96
         ],
         [
           6,
           {
-            "text": "PERIMETER SOLUTIONS LP",
-            "href": "https://www.usaspending.gov/recipient/d7665c4a-faef-2a5a-e1c1-ac4f097e6df0-C/latest/"
+            "text": "HENRYS AERIAL SERVICE INC",
+            "href": "https://www.usaspending.gov/recipient/b49d191b-695e-d80d-d383-ef209723352d-C/latest/"
           },
-          115825044.42
+          2566937.46
         ],
         [
           7,
           {
-            "text": "G.S.E. CONSTRUCTION COMPANY, INC.",
-            "href": "https://www.usaspending.gov/recipient/42800bf0-ed89-8bcd-aedc-feaf70997738-C/latest/"
+            "text": "AERO SPRAY INC",
+            "href": "https://www.usaspending.gov/recipient/0b7a8138-2bc7-94c8-3fa1-798e8f05fab2-C/latest/"
           },
-          109487800
+          2258027.35
         ],
         [
           8,
           {
-            "text": "KIEWIT INFRASTRUCTURE WEST CO.",
-            "href": "https://www.usaspending.gov/recipient/d0dc1da3-ded5-f485-0458-2b2a216eab92-C/latest/"
+            "text": "DIDLAKE INC",
+            "href": "https://www.usaspending.gov/recipient/d62a1ea5-5523-3370-d429-de744397f1ac-C/latest/"
           },
-          103945938
+          1479293.08
         ],
         [
           9,
           {
-            "text": "FLATLAND ENERGY SERVICES LLC",
-            "href": "https://www.usaspending.gov/recipient/16596635-6143-006e-a244-d98b90b645d2-C/latest/"
+            "text": "TIMBERLINE HELICOPTERS INC",
+            "href": "https://www.usaspending.gov/recipient/96a71d21-5698-b50d-cc39-52e1cd82d098-C/latest/"
           },
-          75532921
+          1195481.69
         ],
         [
           10,
           {
-            "text": "KBR WYLE SERVICES, LLC",
-            "href": "https://www.usaspending.gov/recipient/eb13e842-2068-e3ee-0453-d02b9582e5cd-C/latest/"
+            "text": "KOKOSING CONSTRUCTION COMPANY, INC.",
+            "href": "https://www.usaspending.gov/recipient/a37e08df-433e-165a-525e-5995ca30a6a3-C/latest/"
           },
-          74528665.35
+          1096028.18
         ]
       ]
     },
     {
-      "title": "Largest awards, FY2026 to date",
+      "title": "Largest awards, FY2027 to date",
       "columns": [
         "Rank",
         "Recipient",
@@ -285,101 +281,21 @@
         [
           1,
           {
-            "text": "ACACIA CENTER FOR JUSTICE",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_140D0422C0009_1406_-NONE-_-NONE-/"
-          },
-          832386515.82
-        ],
-        [
-          2,
-          {
             "text": "GUIDEHOUSE INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_140D0423F0882_1406_HHSN316201200040W_7529/"
           },
           449573999.7
         ],
         [
-          3,
-          {
-            "text": "CDM CONSTRUCTORS INC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_INR17PC00023_1425_-NONE-_-NONE-/"
-          },
-          364042516
-        ],
-        [
-          4,
-          {
-            "text": "FAMILY ENDEAVORS, INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_140D0424F0005_1406_140D0423D0063_1406/"
-          },
-          346530745.39
-        ],
-        [
-          5,
-          {
-            "text": "DEEP MILE NETWORKS LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_140D0423F0030_1406_GS02Q16DCR0076_4732/"
-          },
-          334904396.86
-        ],
-        [
-          6,
-          {
-            "text": "JACOBS PROJECT MANAGEMENT CO.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_140R4024C0013_1425_-NONE-_-NONE-/"
-          },
-          271036181.7
-        ],
-        [
-          7,
-          {
-            "text": "THE PROVIDENCIA GROUP LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_140D0422C0037_1406_-NONE-_-NONE-/"
-          },
-          270411982.16
-        ],
-        [
-          8,
+          2,
           {
             "text": "NW CONSTRUCTION, INC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_140R2025C0004_1425_-NONE-_-NONE-/"
           },
-          257398219.12
+          269083581.11
         ],
         [
-          9,
-          {
-            "text": "LUMEN TECHNOLOGIES GOVERNMENT SOLUTIONS, INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_140D0419F0326_1406_GS00Q17NSD3006_4732/"
-          },
-          247001220.25
-        ],
-        [
-          10,
-          {
-            "text": "BOOZ ALLEN HAMILTON INC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_IND15PD01062_1406_HHSN316201200008W_7529/"
-          },
-          244961186.29
-        ],
-        [
-          11,
-          {
-            "text": "STRONGHOLD ENGINEERING INC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_140P2023C0001_1443_-NONE-_-NONE-/"
-          },
-          226387484
-        ],
-        [
-          12,
-          {
-            "text": "TEPA EC, LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_140A1624F0105_1450_140A1623D0026_1450/"
-          },
-          220628844.16
-        ],
-        [
-          13,
+          3,
           {
             "text": "KIEWIT INFRASTRUCTURE WEST CO.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_140P2025C0038_1443_-NONE-_-NONE-/"
@@ -387,129 +303,209 @@
           217879373
         ],
         [
+          4,
+          {
+            "text": "MANTECH ADVANCED SYSTEMS INTERNATIONAL, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_140D0422F0251_1406_HHSN316201200022W_7529/"
+          },
+          74802649.27
+        ],
+        [
+          5,
+          {
+            "text": "VERIZON BUSINESS NETWORK SERVICES LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_140A1620F0013_1450_GS00Q17NSD3009_4732/"
+          },
+          54727241.21
+        ],
+        [
+          6,
+          {
+            "text": "HARTMAN-WALSH PAINTING COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_140R1020C0012_1425_-NONE-_-NONE-/"
+          },
+          37726650.97
+        ],
+        [
+          7,
+          {
+            "text": "MEDVOLT - ROUNDHOUSE JV",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_140P2025C0054_1443_-NONE-_-NONE-/"
+          },
+          34435416.16
+        ],
+        [
+          8,
+          {
+            "text": "HARTMAN-WALSH PAINTING COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_140R1020C0014_1425_-NONE-_-NONE-/"
+          },
+          20199773.61
+        ],
+        [
+          9,
+          {
+            "text": "AERO SPRAY INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_140D0426F0241_1406_140D0426D0039_1406/"
+          },
+          19380440.24
+        ],
+        [
+          10,
+          {
+            "text": "KOKOSING CONSTRUCTION COMPANY, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_140P2023C0046_1443_-NONE-_-NONE-/"
+          },
+          16159637.11
+        ],
+        [
+          11,
+          {
+            "text": "HENRYS AERIAL SERVICE INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_140D0426F0245_1406_140D0426D0043_1406/"
+          },
+          15529011.08
+        ],
+        [
+          12,
+          {
+            "text": "ISENPAI LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_140D0424F1074_1406_GS35F480GA_4732/"
+          },
+          12926313.14
+        ],
+        [
+          13,
+          {
+            "text": "PHOENIX AIR GROUP, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_140D0426F0027_1406_140D0425D0001_1406/"
+          },
+          12546749.69
+        ],
+        [
           14,
           {
-            "text": "PLANET TECHNOLOGIES, INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_140D0419F0183_1406_47QTCA19D0036_4732/"
+            "text": "MAGELLAN FEDERAL, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_140D0424F0753_1406_GS02F027BA_4732/"
           },
-          201569596.46
+          10409044.2
         ],
         [
           15,
           {
-            "text": "BWI TPC, A JOINT VENTURE",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_140R2022C0001_1425_-NONE-_-NONE-/"
+            "text": "CHICKASAW HEALTH CONSULTING, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_140D0425F0766_1406_47QTCA20D00BR_4732/"
           },
-          187852653.69
+          9973351.61
         ],
         [
           16,
           {
-            "text": "DLH, LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_140D0420F0422_1406_GS00F062CA_4732/"
+            "text": "HENDALL INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_140D0425F0920_1406_47QRAA19D001A_4732/"
           },
-          180029198.46
+          9951348.4
         ],
         [
           17,
           {
-            "text": "CGI FEDERAL INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_140D0419F0357_1406_IND13PC00021_1406/"
+            "text": "AMERICAN FORESTS",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_140F0S23C0009_1448_-NONE-_-NONE-/"
           },
-          162705698.39
+          9630035.16
         ],
         [
           18,
           {
-            "text": "DEPLOYED SERVICES, LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_140D0423F1122_1406_140D0423D0059_1406/"
+            "text": "GLOBAL CONNECTIONS TO EMPLOYMENT, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_140D0426C9408_1406_-NONE-_-NONE-/"
           },
-          156848246.42
+          9579353.19
         ],
         [
           19,
           {
-            "text": "MAGELLAN FEDERAL, INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_140D0423F0623_1406_GS02F013BA_4732/"
+            "text": "RJS CONSTRUCTION INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_140A2325F0167_1450_140A1623D0024_1450/"
           },
-          153744103.02
+          8359832.34
         ],
         [
           20,
           {
-            "text": "NW CONSTRUCTION, INC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_140R2022C0007_1425_-NONE-_-NONE-/"
+            "text": "WATERFLEET, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_140PS126P0049_1443_-NONE-_-NONE-/"
           },
-          139347477.87
+          8000000
         ],
         [
           21,
           {
-            "text": "GENERAL DYNAMICS INFORMATION TECHNOLOGY, INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_140D0425F0041_1406_140D0424D0001_1406/"
+            "text": "WESTERN PILOT SERVICE INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_140D0424F0618_1406_140D0424D0068_1406/"
           },
-          138049220.59
+          7913433.59
         ],
         [
           22,
           {
-            "text": "OSCAR RENDA CONTRACTING INC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_140R6024C0015_1425_-NONE-_-NONE-/"
+            "text": "WCA CONSTRUCTION, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_140R4025C0010_1425_-NONE-_-NONE-/"
           },
-          133783289.44
+          7899821.41
         ],
         [
           23,
           {
-            "text": "RECORD STEEL AND CONSTRUCTION, INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_140P2026C0016_1443_-NONE-_-NONE-/"
+            "text": "FLETCHER FLYING SERVICE INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_140D0425F0216_1406_140D0424D0064_1406/"
           },
-          129150000
+          7642888.41
         ],
         [
           24,
           {
-            "text": "CENTERPOINT LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_140D0420F0335_1406_GS35F515DA_4732/"
+            "text": "TEKSYNAP CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_140E0126F0059_1436_140E0123A0006_1436/"
           },
-          126253491.63
+          7612157.44
         ],
         [
           25,
           {
-            "text": "HENSEL PHELPS CONSTRUCTION CO",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_140G0322C0005_1434_-NONE-_-NONE-/"
+            "text": "HSG PARK JOINT VENTURE 3, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_140PP027C0002_1406_-NONE-_-NONE-/"
           },
-          117951014.46
+          7529000
         ]
       ]
     }
   ],
   "narrative": {
-    "intro": "The Department of the Interior obligated $6.8B in FY2026 to date. Obligations are up 3.5% year over year. The agency executed 25,180 awards with an average award size of $270K. Construction and information technology account for the largest buckets of spending so far. Water and Sewer Line and Related Structures Construction leads the sector list at $752M, followed by Commercial and Institutional Building Construction at $542M, and Other Computer Related Services at $520M. Other notable categories include Computer Systems Design Services at $516M and Other Heavy and Civil Engineering Construction at $494M. Large civil contractors and several IT services firms sit at the top of the vendor list. GENERAL DYNAMICS INFORMATION TECHNOLOGY, INC. received $239M, GUIDEHOUSE INC. received $136M, and AMES FEDERAL CONTRACTING GROUP LLC received $132M. The FY21–FY26 time series shows that obligations peaked at $8.1B in FY24 and moved to $6.6B in FY25 before rising to $6.8B in FY26 to date. These figures are contract obligations and FY2026 totals are partial, fiscal year to date.",
+    "intro": "The Department of the Interior obligated $53.3M in FY2027 to date. The Department of the Interior processed 701 awards so far this fiscal year, with an average award size of $76K. The Department of the Interior's obligations are down 99.2% year over year, a sharp drop compared with prior fiscal years that reported multibillion-dollar totals. The Department of the Interior obligated $6.8B in FY26, $6.6B in FY25, $8.1B in FY24, $7.6B in FY23, and $6.5B in FY22. The Department of the Interior's spending in FY2027 to date concentrates in a few categories, led by Other Heavy and Civil Engineering Construction at $20.3M and Computer Systems Design Services at $9.3M. The Department of the Interior's top contractors for FY2027 to date include NW CONSTRUCTION, INC with $11.7M and MANTECH ADVANCED SYSTEMS INTERNATIONAL, INC. with $7.9M. The Department of the Interior's current-year totals are partial because figures are contract obligations and fiscal year totals are still in progress.",
     "sections": [
       {
-        "heading": "What are the biggest contract categories for the Department of the Interior?",
-        "body": "The Department of the Interior spends most on construction and IT-related services. Water and Sewer Line and Related Structures Construction received $752M, Commercial and Institutional Building Construction received $542M, and Other Computer Related Services received $520M. Computer Systems Design Services received $516M and Other Heavy and Civil Engineering Construction received $494M."
+        "heading": "How does FY2027 to date compare with recent years?",
+        "body": "The Department of the Interior obligated $53.3M in FY2027 to date, compared with $6.8B in FY26 and $8.1B in FY24. The Department of the Interior's obligations are down 99.2% year over year. The Department of the Interior recorded 701 awards so far in FY2027, with an average award size of $76K."
       },
       {
-        "heading": "Who are the largest contractors working with the Department of the Interior?",
-        "body": "GENERAL DYNAMICS INFORMATION TECHNOLOGY, INC. is the top recipient with $239M in obligations. GUIDEHOUSE INC. received $136M and AMES FEDERAL CONTRACTING GROUP LLC received $132M. RECORD STEEL AND CONSTRUCTION, INC. received $130M and NW CONSTRUCTION, INC received $127M."
+        "heading": "Where is Interior spending concentrated this fiscal year?",
+        "body": "Other Heavy and Civil Engineering Construction leads Interior spending at $20.3M, followed by Computer Systems Design Services at $9.3M and Research and Development in the Physical, Engineering, and Life Sciences at $5.3M. The Department of the Interior also obligated funds for Support Activities for Forestry ($4.9M), Nonscheduled Chartered Passenger Air Transportation ($4.8M), and Facilities Support Services ($2.1M)."
       }
     ]
   },
   "faq": [
     {
       "q": "How much does Department of the Interior spend on contracts?",
-      "a": "The Department of the Interior obligated $6.8B in contracts in FY2026 to date. The agency executed 25,180 awards with an average award size of $270K, and obligations are up 3.5% year over year. FY21–FY26 obligations show $5.1B in FY21, $6.5B in FY22, $7.6B in FY23, $8.1B in FY24, and $6.6B in FY25."
+      "a": "The Department of the Interior obligated $53.3M in contracts in FY2027 to date. The Department of the Interior recorded 701 awards this fiscal year to date and the average award size was $76K. The Department of the Interior's obligations are down 99.2% year over year. The Department of the Interior's prior fiscal year totals were $6.8B in FY26, $6.6B in FY25, $8.1B in FY24, $7.6B in FY23, and $6.5B in FY22."
     },
     {
       "q": "What does Interior buy?",
-      "a": "Interior buys construction, IT services, engineering, forestry support, and management consulting services. Top categories include Water and Sewer Line and Related Structures Construction at $752M, Commercial and Institutional Building Construction at $542M, Other Computer Related Services at $520M, Computer Systems Design Services at $516M, and Other Heavy and Civil Engineering Construction at $494M."
+      "a": "The Department of the Interior buys construction, IT, research, forestry support, and air transport services. The Department of the Interior's top NAICS categories in FY2027 to date are Other Heavy and Civil Engineering Construction ($20.3M), Computer Systems Design Services ($9.3M), Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology) ($5.3M), Support Activities for Forestry ($4.9M), and Nonscheduled Chartered Passenger Air Transportation ($4.8M). The Department of the Interior also obligated funds for Facilities Support Services ($2.1M), Nonscheduled Chartered Freight Air Transportation ($2M), Environmental Consulting Services ($1.9M), Software Publishers ($1.1M), and Support Activities for Animal Production ($844K)."
     },
     {
       "q": "Who are Interior's largest contractors?",
-      "a": "GENERAL DYNAMICS INFORMATION TECHNOLOGY, INC. and several construction and services firms are Interior's largest contractors by obligations. GENERAL DYNAMICS INFORMATION TECHNOLOGY, INC. received $239M, GUIDEHOUSE INC. received $136M, AMES FEDERAL CONTRACTING GROUP LLC received $132M, RECORD STEEL AND CONSTRUCTION, INC. received $130M, and NW CONSTRUCTION, INC received $127M."
+      "a": "The Department of the Interior's largest contractors in FY2027 to date are NW CONSTRUCTION, INC ($11.7M), MANTECH ADVANCED SYSTEMS INTERNATIONAL, INC. ($7.9M), and HSG PARK JOINT VENTURE 3, LLC ($7.5M). The Department of the Interior also obligated funds to BRIDGER AEROSPACE GROUP, LLC ($5.2M), VANTOR SERVICES INC. ($4.4M), HENRYS AERIAL SERVICE INC ($2.6M), AERO SPRAY INC ($2.3M), DIDLAKE INC ($1.5M), TIMBERLINE HELICOPTERS INC ($1.2M), and KOKOSING CONSTRUCTION COMPANY, INC. ($1.1M)."
     }
   ],
   "related": [
@@ -543,5 +539,6 @@
       "label": "USAspending.gov award data",
       "href": "https://www.usaspending.gov"
     }
-  ]
+  ],
+  "noindex": true
 }

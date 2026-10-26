@@ -1,20 +1,20 @@
 {
   "pageType": "state",
   "slug": "utah",
-  "title": "Federal Contracts in Utah: $6.1B (FY2026)",
+  "title": "Federal Contracts in Utah: $50.1M (FY2027)",
   "h1": "Federal Contracts in Utah: Spending, Agencies & Vendors",
-  "metaDescription": "Federal agencies obligated $6.1B to contractors in Utah in FY2026 to date. See top buying agencies, top vendors, and industries.",
-  "updated": "2026-09-28",
+  "metaDescription": "Federal agencies obligated $50.1M to contractors in Utah in FY2027 to date. See top buying agencies, top vendors, and industries.",
+  "updated": "2026-10-26",
   "fyWindow": {
-    "label": "FY2026 to date",
-    "start": "2025-10-01",
-    "end": "2026-09-28"
+    "label": "FY2027 to date",
+    "start": "2026-10-01",
+    "end": "2026-10-26"
   },
   "stats": {
-    "totalObligations": 6076806536.07,
-    "awardCount": 9832,
-    "yoyGrowthPct": 16.3,
-    "avgAwardSize": 618064,
+    "totalObligations": 50119940.38,
+    "awardCount": 211,
+    "yoyGrowthPct": -99.3,
+    "avgAwardSize": 237535,
     "smallBusinessSharePct": null
   },
   "charts": [
@@ -27,16 +27,12 @@
           "label": "Obligations",
           "points": [
             [
-              "FY21",
-              4022231666.87
-            ],
-            [
               "FY22",
-              5261077285.11
+              5261079982.69
             ],
             [
               "FY23",
-              6287006252.35
+              6287005476.67
             ],
             [
               "FY24",
@@ -44,190 +40,186 @@
             ],
             [
               "FY25",
-              5224548715.36
+              5224545541.36
             ],
             [
               "FY26",
-              6076806536.07
+              7024655101.43
+            ],
+            [
+              "FY27",
+              50119940.38
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Obligations grew 16.3% year over year, from $5.2B in FY2025 to $6.1B in FY2026 to date."
+      "takeaway": "Obligations fell 99.3% year over year, from $7B in FY2026 to $50.1M in FY2027 to date."
     },
     {
       "id": "utah-top-agencies",
       "type": "bar",
-      "title": "Top 10 buying agencies, FY2026 to date",
+      "title": "Top 10 buying agencies, FY2027 to date",
       "series": [
         {
           "label": "Obligations",
           "points": [
             [
-              "Department of Defense",
-              4370043483.54
-            ],
-            [
-              "Department of the Treasury",
-              654330008.64
-            ],
-            [
               "Department of Veterans Affairs",
-              330231027
+              37204095.21
+            ],
+            [
+              "Department of Housing and Urban Development",
+              10893610
             ],
             [
               "Department of Agriculture",
-              152995371.32
+              1238399.24
             ],
             [
-              "Department of Homeland Security",
-              97425541.86
-            ],
-            [
-              "General Services Administration",
-              93137812.91
+              "Department of Justice",
+              798646.67
             ],
             [
               "Department of the Interior",
-              77207908.08
+              254821.74
             ],
             [
-              "Department of Transportation",
-              65335376.27
+              "General Services Administration",
+              64990.04
             ],
             [
-              "Department of Energy",
-              54216609.61
+              "Department of the Treasury",
+              29246.91
             ],
             [
               "Department of Labor",
-              42805375.26
+              16000
+            ],
+            [
+              "National Aeronautics and Space Administration",
+              0
+            ],
+            [
+              "Environmental Protection Agency",
+              0
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Department of Defense was the top federal buyer in Utah, obligating $4.4B (71.9% of the state total)."
+      "takeaway": "Department of Veterans Affairs was the top federal buyer in Utah, obligating $37.2M (74.2% of the state total)."
     },
     {
       "id": "utah-top-vendors",
       "type": "bar",
-      "title": "Top 10 vendors, FY2026 to date",
+      "title": "Top 10 vendors, FY2027 to date",
       "series": [
         {
           "label": "Obligations",
           "points": [
             [
-              "NORTHROP GRUMMAN SYSTEMS CORP",
-              2860731574
+              "BIOMERIEUX INC",
+              20661797.74
             ],
             [
-              "ASAHI REFINING USA INC",
-              591913199.02
+              "ALPINE COMPANIES, INC.",
+              10893610
             ],
             [
-              "L3 TECHNOLOGIES, INC.",
-              320753921.92
+              "UNIVERSITY OF UTAH",
+              7589471.86
             ],
             [
-              "HSGS-AMERESCO, LLC",
-              201638618.79
+              "GOVTRANZ, LLC",
+              4879524.06
             ],
             [
-              "UTAH STATE UNIVERSITY SPACE DYNAMICS LABORATORY",
-              152667620.55
+              "ARUP LABORATORIES INC",
+              1223440.61
             ],
             [
-              "THE BOEING COMPANY",
-              88663484.02
+              "REDCASTLE RESOURCES INC",
+              856202.8
             ],
             [
-              "MANAGEMENT & TRAINING CORPORATION",
-              86934318.55
+              "ROTAK LLC",
+              629819.84
             ],
             [
-              "NORTHROP GRUMMAN SYSTEMS CORPORATION",
-              64111472.02
+              "METROPOLITAN SECURITY SERVICES, INC.",
+              625982.4
             ],
             [
-              "THE BOEING COMPANY",
-              55889506.85
+              "IMAGE FIRST HOLDINGS LLC",
+              584000
             ],
             [
-              "NORTH WIND PORTAGE, INC.",
-              53763658.84
+              "ALL AMERICAN EXPRESS SOLUTIONS LLC",
+              510600
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "NORTHROP GRUMMAN SYSTEMS CORP led all contractors in Utah with $2.9B, 47.1% of the state total."
+      "takeaway": "BIOMERIEUX INC led all contractors in Utah with $20.7M, 41.2% of the state total."
     },
     {
       "id": "utah-top-naics",
       "type": "bar",
-      "title": "Top 10 industries (NAICS), FY2026 to date",
+      "title": "Top 10 industries (NAICS), FY2027 to date",
       "series": [
         {
           "label": "Obligations",
           "points": [
             [
-              "Guided Missile and Space Vehicle Manufacturing",
-              2859034000
+              "In-Vitro Diagnostic Substance Manufacturing",
+              19710941.36
             ],
             [
-              "Nonferrous Metal (except Copper and Aluminum) Rolling, Drawing, and Extruding",
-              592470470.1
+              "Residential Property Managers",
+              10893610
             ],
             [
-              "Commercial and Institutional Building Construction",
-              315205398.71
+              "Colleges, Universities, and Professional Schools",
+              7505141.86
             ],
             [
-              "Engineering Services",
-              265867563.19
+              "Special Needs Transportation",
+              4879524.06
             ],
             [
-              "Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology)",
-              191648897.6
+              "Medical Laboratories",
+              1210945.61
             ],
             [
-              "Research and Development in Biotechnology (except Nanobiotechnology)",
-              120148321.22
+              "Analytical Laboratory Instrument Manufacturing",
+              1126525.08
             ],
             [
-              "Radio and Television Broadcasting and Wireless Communications Equipment Manufacturing",
-              112999018.74
+              "All Other Professional, Scientific, and Technical Services",
+              856202.8
             ],
             [
-              "Other Aircraft Parts and Auxiliary Equipment Manufacturing",
-              94527009.09
+              "Couriers and Express Delivery Services",
+              835600.4
             ],
             [
               "Security Guards and Patrol Services",
-              87153236.2
+              749380.03
             ],
             [
-              "Custom Computer Programming Services",
-              86835171.05
+              "Drycleaning and Laundry Services (except Coin-Operated)",
+              584000
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Guided Missile and Space Vehicle Manufacturing was the largest industry in Utah, with $2.9B obligated."
+      "takeaway": "In-Vitro Diagnostic Substance Manufacturing was the largest industry in Utah, with $19.7M obligated."
     }
   ],
   "crossLinks": [
-    {
-      "label": "Department of Defense contracts",
-      "href": "/insights/agency/department-of-defense/"
-    },
-    {
-      "label": "Department of the Treasury contracts",
-      "href": "/insights/agency/department-of-the-treasury/"
-    },
     {
       "label": "Department of Veterans Affairs contracts",
       "href": "/insights/agency/department-of-veterans-affairs/"
@@ -237,16 +229,20 @@
       "href": "/insights/agency/department-of-agriculture/"
     },
     {
-      "label": "NAICS 236220: Commercial and Institutional Building Construction",
-      "href": "/insights/naics/236220/"
+      "label": "Department of Justice contracts",
+      "href": "/insights/agency/department-of-justice/"
     },
     {
-      "label": "NAICS 541330: Engineering Services",
-      "href": "/insights/naics/541330/"
+      "label": "Department of the Interior contracts",
+      "href": "/insights/agency/department-of-the-interior/"
     },
     {
-      "label": "NAICS 541715: Research and Development in the Physical, Engineering, and Life Sciences",
-      "href": "/insights/naics/541715/"
+      "label": "NAICS 621511: Medical Laboratories",
+      "href": "/insights/naics/621511/"
+    },
+    {
+      "label": "NAICS 541990: All Other Professional, Scientific, and Technical Services",
+      "href": "/insights/naics/541990/"
     },
     {
       "label": "NAICS 561612: Security Guards and Patrol Services",
@@ -265,87 +261,87 @@
         [
           1,
           {
-            "text": "NORTHROP GRUMMAN SYSTEMS CORP",
-            "href": "https://www.usaspending.gov/recipient/a039e3c2-edcd-2b9b-4459-dcde55990ab4-C/latest/"
+            "text": "BIOMERIEUX INC",
+            "href": "https://www.usaspending.gov/recipient/d91909b1-ebd8-1290-63e1-383f4ec40193-C/latest/"
           },
-          2860731574
+          20661797.74
         ],
         [
           2,
           {
-            "text": "ASAHI REFINING USA INC",
-            "href": "https://www.usaspending.gov/recipient/bb19d6bf-9975-f10a-ee78-4404ebdc6d61-C/latest/"
+            "text": "ALPINE COMPANIES, INC.",
+            "href": "https://www.usaspending.gov/recipient/fb160c3e-1afa-9252-a136-edfcdac5dfe4-C/latest/"
           },
-          591913199.02
+          10893610
         ],
         [
           3,
           {
-            "text": "L3 TECHNOLOGIES, INC.",
-            "href": "https://www.usaspending.gov/recipient/b09dcd04-a8c9-ee78-bf74-30e428504408-C/latest/"
+            "text": "UNIVERSITY OF UTAH",
+            "href": "https://www.usaspending.gov/recipient/105d3de4-6fbf-6e42-7259-4c62267aa84f-C/latest/"
           },
-          320753921.92
+          7589471.86
         ],
         [
           4,
           {
-            "text": "HSGS-AMERESCO, LLC",
-            "href": "https://www.usaspending.gov/recipient/b8c9e8ab-54cb-2ba6-141c-5d49a3713f7c-C/latest/"
+            "text": "GOVTRANZ, LLC",
+            "href": "https://www.usaspending.gov/recipient/d14d78e2-baf9-f441-ff55-7ef617f05b79-C/latest/"
           },
-          201638618.79
+          4879524.06
         ],
         [
           5,
           {
-            "text": "UTAH STATE UNIVERSITY SPACE DYNAMICS LABORATORY",
-            "href": "https://www.usaspending.gov/recipient/d40557c2-6876-05d9-0860-a0e72d4483ab-C/latest/"
+            "text": "ARUP LABORATORIES INC",
+            "href": "https://www.usaspending.gov/recipient/cb568a83-20c8-0444-a791-2ba5dfce1092-C/latest/"
           },
-          152667620.55
+          1223440.61
         ],
         [
           6,
           {
-            "text": "THE BOEING COMPANY",
-            "href": "https://www.usaspending.gov/recipient/83d28e4e-178a-9f16-9a62-306da1ad99c1-C/latest/"
+            "text": "REDCASTLE RESOURCES INC",
+            "href": "https://www.usaspending.gov/recipient/f8bf3252-8f4e-a9a4-c84a-860e25ace0d6-C/latest/"
           },
-          88663484.02
+          856202.8
         ],
         [
           7,
           {
-            "text": "MANAGEMENT & TRAINING CORPORATION",
-            "href": "https://www.usaspending.gov/recipient/05d0fd70-3b91-2efe-b533-5d973d1ea671-C/latest/"
+            "text": "ROTAK LLC",
+            "href": "https://www.usaspending.gov/recipient/a3c39310-d064-af41-8939-76398582ab7a-C/latest/"
           },
-          86934318.55
+          629819.84
         ],
         [
           8,
           {
-            "text": "NORTHROP GRUMMAN SYSTEMS CORPORATION",
-            "href": "https://www.usaspending.gov/recipient/c7602c83-2868-dfdb-38a7-abfb83b5f232-C/latest/"
+            "text": "METROPOLITAN SECURITY SERVICES, INC.",
+            "href": "https://www.usaspending.gov/recipient/835e42fb-f461-4e30-e17e-3205a1805635-C/latest/"
           },
-          64111472.02
+          625982.4
         ],
         [
           9,
           {
-            "text": "THE BOEING COMPANY",
-            "href": "https://www.usaspending.gov/recipient/41da8303-3af5-fe35-995a-1befcc8f5cb6-C/latest/"
+            "text": "IMAGE FIRST HOLDINGS LLC",
+            "href": "https://www.usaspending.gov/recipient/d3757c9c-1958-3612-47e2-5024f4400920-C/latest/"
           },
-          55889506.85
+          584000
         ],
         [
           10,
           {
-            "text": "NORTH WIND PORTAGE, INC.",
-            "href": "https://www.usaspending.gov/recipient/0987ae8f-e732-c210-3851-79a20fca4454-C/latest/"
+            "text": "ALL AMERICAN EXPRESS SOLUTIONS LLC",
+            "href": "https://www.usaspending.gov/recipient/3cc53b7a-1617-61f5-fb8e-8696bc2c390a-C/latest/"
           },
-          53763658.84
+          510600
         ]
       ]
     },
     {
-      "title": "Largest awards, FY2026 to date",
+      "title": "Largest awards, FY2027 to date",
       "columns": [
         "Rank",
         "Recipient",
@@ -356,24 +352,6 @@
         [
           1,
           {
-            "text": "NORTHROP GRUMMAN SYSTEMS CORP",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_FA821920C0006_9700_-NONE-_-NONE-/"
-          },
-          13720293923.19,
-          "Department of Defense"
-        ],
-        [
-          2,
-          {
-            "text": "NORTHROP GRUMMAN SYSTEMS CORPORATION",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_F4261098C0001_9700_-NONE-_-NONE-/"
-          },
-          10008567439.01,
-          "Department of Defense"
-        ],
-        [
-          3,
-          {
             "text": "NORTHROP GRUMMAN SYSTEMS CORPORATION",
             "href": "https://www.usaspending.gov/award/CONT_AWD_NNM07AA75C_8000_-NONE-_-NONE-/"
           },
@@ -381,231 +359,249 @@
           "National Aeronautics and Space Administration"
         ],
         [
-          4,
-          {
-            "text": "THE BOEING COMPANY",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_FA821415C0001_9700_-NONE-_-NONE-/"
-          },
-          629632134.36,
-          "Department of Defense"
-        ],
-        [
-          5,
-          {
-            "text": "ADVANTAGED SOLUTIONS, LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_SP470122F0180_9700_47QTCA22D004D_4732/"
-          },
-          518092991.75,
-          "Department of Defense"
-        ],
-        [
-          6,
-          {
-            "text": "L3 TECHNOLOGIES, INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_N0001924C0061_9700_-NONE-_-NONE-/"
-          },
-          265052755.31,
-          "Department of Defense"
-        ],
-        [
-          7,
-          {
-            "text": "NORTH WIND PORTAGE, INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_DEDT0011049_8900_DEEM0000842_8900/"
-          },
-          210230204.54,
-          "Department of Energy"
-        ],
-        [
-          8,
-          {
-            "text": "HSGS-AMERESCO, LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C77625N0495_3600_36C77622D0024_3600/"
-          },
-          201638618.79,
-          "Department of Veterans Affairs"
-        ],
-        [
-          9,
-          {
-            "text": "NORTH WIND PORTAGE, INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_89303323FEM400390_8900_89303322DEM000073_8900/"
-          },
-          195665554.12,
-          "Department of Energy"
-        ],
-        [
-          10,
-          {
-            "text": "NORTHROP GRUMMAN SYSTEMS CORPORATION",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_FA821421F0008_9700_FA821421D0002_9700/"
-          },
-          183353159.15,
-          "Department of Defense"
-        ],
-        [
-          11,
-          {
-            "text": "MANAGEMENT & TRAINING CORPORATION",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_1630J417C0009_1605_-NONE-_-NONE-/"
-          },
-          147082637,
-          "Department of Labor"
-        ],
-        [
-          12,
-          {
-            "text": "BIG-D CONSTRUCTION CORP",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_47PJ0021C0045_4740_-NONE-_-NONE-/"
-          },
-          134656134.73,
-          "General Services Administration"
-        ],
-        [
-          13,
+          2,
           {
             "text": "MANAGEMENT & TRAINING CORPORATION",
             "href": "https://www.usaspending.gov/award/CONT_AWD_1605JW22C0015_1605_-NONE-_-NONE-/"
           },
-          123659080.38,
+          123675080.38,
           "Department of Labor"
+        ],
+        [
+          3,
+          {
+            "text": "ROTAK LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_1202SA25K9216_12C2_1202SA25T9231_12C2/"
+          },
+          21481506.36,
+          "Department of Agriculture"
+        ],
+        [
+          4,
+          {
+            "text": "UNIVERSITY OF UTAH",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C25926N0251_3600_36C25926D0021_3600/"
+          },
+          14978283.72,
+          "Department of Veterans Affairs"
+        ],
+        [
+          5,
+          {
+            "text": "CAPITOL HELICOPTERS, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_1202SA24K9222_12C2_1202SA23T9256_12C2/"
+          },
+          13367313.61,
+          "Department of Agriculture"
+        ],
+        [
+          6,
+          {
+            "text": "ALPINE COMPANIES, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_86614527F00001_8600_86614526D00007_8600/"
+          },
+          8010038,
+          "Department of Housing and Urban Development"
+        ],
+        [
+          7,
+          {
+            "text": "MSC DESIGN BUILD LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C25924N0536_3600_36C25924D0038_3600/"
+          },
+          7841897.05,
+          "Department of Veterans Affairs"
+        ],
+        [
+          8,
+          {
+            "text": "KERBEROS INTERNATIONAL, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70RFPW26FRW800002_7001_70RFP225DEC000008_7001/"
+          },
+          7308574.56,
+          "Department of Homeland Security"
+        ],
+        [
+          9,
+          {
+            "text": "AIR RESOURCES HELICOPTERS, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_1202SA25K9233_12C2_1202SA25T9201_12C2/"
+          },
+          7126290.33,
+          "Department of Agriculture"
+        ],
+        [
+          10,
+          {
+            "text": "SIEMENS MEDICAL SOLUTIONS USA, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C25922F0282_3600_SPE2D117D0023_9700/"
+          },
+          5893547.47,
+          "Department of Veterans Affairs"
+        ],
+        [
+          11,
+          {
+            "text": "GOVTRANZ, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C24927N0148_3600_36C24924D0031_3600/"
+          },
+          4879524.06,
+          "Department of Veterans Affairs"
+        ],
+        [
+          12,
+          {
+            "text": "JACKSON EXCAVATION, INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_1240LT26C0018_12C2_-NONE-_-NONE-/"
+          },
+          3843479,
+          "Department of Agriculture"
+        ],
+        [
+          13,
+          {
+            "text": "GOLD SYSTEMS, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_68HERH20F0035_6800_GS35F0387P_4730/"
+          },
+          3000269.18,
+          "Environmental Protection Agency"
         ],
         [
           14,
           {
-            "text": "NORTHROP GRUMMAN SYSTEMS CORPORATION",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_FA821421F0009_9700_FA821421D0002_9700/"
+            "text": "ALPINE COMPANIES, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_86614527F00002_8600_86614526D00008_8600/"
           },
-          122467242.4,
-          "Department of Defense"
+          2883572,
+          "Department of Housing and Urban Development"
         ],
         [
           15,
           {
-            "text": "AMES FEDERAL CONTRACTING GROUP LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_140R4025C0005_1425_-NONE-_-NONE-/"
+            "text": "IMAGE FIRST HOLDINGS LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C25923P0027_3600_-NONE-_-NONE-/"
           },
-          115063658.27,
-          "Department of the Interior"
+          2498600.14,
+          "Department of Veterans Affairs"
         ],
         [
           16,
           {
-            "text": "AMERICAN WATER OPERATIONS AND MAINTENANCE, LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_SP060014C8290_9700_-NONE-_-NONE-/"
+            "text": "PAPILLON AIRWAYS INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_1202SA24K9336_12C2_1202SA23T9331_12C2/"
           },
-          111619072.88,
-          "Department of Defense"
+          2463259.83,
+          "Department of Agriculture"
         ],
         [
           17,
           {
-            "text": "M. A. MORTENSON COMPANY",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_W9123822C0006_9700_-NONE-_-NONE-/"
+            "text": "KAIVA TECH, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70RSAT22C00000060_7001_-NONE-_-NONE-/"
           },
-          111230867.99,
-          "Department of Defense"
+          2325842.27,
+          "Department of Homeland Security"
         ],
         [
           18,
           {
-            "text": "CITY LIGHT & POWER, INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_SP060014C8291_9700_-NONE-_-NONE-/"
+            "text": "ARROWHEAD DENTAL, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C25921C0131_3600_-NONE-_-NONE-/"
           },
-          109343038.66,
-          "Department of Defense"
+          1657805.76,
+          "Department of Veterans Affairs"
         ],
         [
           19,
           {
-            "text": "L3 TECHNOLOGIES, INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_N0001918C1030_9700_-NONE-_-NONE-/"
+            "text": "ARUP LABORATORIES INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C25025F0723_3600_36F79720D0079_3600/"
           },
-          107805129.11,
-          "Department of Defense"
+          1657275.7,
+          "Department of Veterans Affairs"
         ],
         [
           20,
           {
-            "text": "THE BOEING COMPANY",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_FA821425FB003_9700_FA821421D0003_9700/"
+            "text": "BIOMERIEUX INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C24824F0021_3600_36F79722D0030_3600/"
           },
-          106276628.48,
-          "Department of Defense"
+          1630830.51,
+          "Department of Veterans Affairs"
         ],
         [
           21,
           {
-            "text": "AMENTUM TECHNOLOGY, INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_W9115121C0006_9700_-NONE-_-NONE-/"
+            "text": "BIOMERIEUX INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C24927N0177_3600_36C24926D0023_3600/"
           },
-          102642740.01,
-          "Department of Defense"
+          1350346.44,
+          "Department of Veterans Affairs"
         ],
         [
           22,
           {
-            "text": "SGJV, LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_W9123823C0003_9700_-NONE-_-NONE-/"
+            "text": "ENVIRONMENTAL SEEDS WEST LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_140L3726C0005_1422_-NONE-_-NONE-/"
           },
-          95908735.81,
-          "Department of Defense"
+          1283021,
+          "Department of the Interior"
         ],
         [
           23,
           {
-            "text": "SCIENCE APPLICATIONS INTERNATIONAL CORPORATION",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_W519TC23F0132_9700_W52P1J22D0040_9700/"
+            "text": "ARUP LABORATORIES INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C25927F0015_3600_36F79720D0079_3600/"
           },
-          91670043.32,
-          "Department of Defense"
+          1195000,
+          "Department of Veterans Affairs"
         ],
         [
           24,
           {
-            "text": "L3 TECHNOLOGIES, INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_W58RGZ24F0375_9700_W58RGZ24D0065_9700/"
+            "text": "BIOMERIEUX INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C25227N0023_3600_36C25225A0002_3600/"
           },
-          90553903.32,
-          "Department of Defense"
+          1182963.72,
+          "Department of Veterans Affairs"
         ],
         [
           25,
           {
-            "text": "ADVANTAGED SOLUTIONS, LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_SP470124F0084_9700_GS35F0926R_4730/"
+            "text": "SOFTWARE INFORMATION RESOURCE CORP.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_140D0425F0828_1406_140D0424D0093_1406/"
           },
-          88566847.53,
-          "Department of Defense"
+          1162418.11,
+          "Department of the Interior"
         ]
       ]
     }
   ],
   "narrative": {
-    "intro": "The state received $6.1B in federal contract obligations in FY2026 to date, with 9,832 awards and an average award size of $618K. Obligations are up 16.3% year over year. Fiscal-year totals show variation: FY21 was $4B, FY22 was $5.3B, FY23 was $6.3B, FY24 was $7.2B, and FY25 was $5.2B. The Department of Defense is the dominant buyer, obligating $4.4B, while the Department of the Treasury obligated $654M and the Department of Veterans Affairs obligated $330M. NORTHROP GRUMMAN SYSTEMS CORP is the largest vendor, receiving $2.9B, and ASAHI REFINING USA INC received $592M. Guided Missile and Space Vehicle Manufacturing is the largest industry by obligations at $2.9B, and Nonferrous Metal (except Copper and Aluminum) Rolling, Drawing, and Extruding follows at $592M. The mix of large defense awards and concentrated vendor spending helps explain the high average award size, and the year-over-year increase signals larger or more numerous awards in the current fiscal-year-to-date period.",
+    "intro": "The state of Utah has $50.1M in federal contract obligations in FY2027 to date. The federal government made 211 awards in Utah so far this fiscal year, with an average award size of $238K. Obligations fell 99.3% year over year. Fiscal-year history shows large swings before FY2027: FY22 registered $5.3B, FY23 registered $6.3B, FY24 registered $7.2B, FY25 registered $5.2B, and FY26 registered $7B. The current-year total is partial and covers fiscal year to date. Spending in FY2027 to date is concentrated: the Department of Veterans Affairs obligated $37.2M and the Department of Housing and Urban Development obligated $10.9M. Vendor concentration is clear: BIOMERIEUX INC received $20.7M and ALPINE COMPANIES, INC. received $10.9M. Industry concentration mirrors vendor totals: In-Vitro Diagnostic Substance Manufacturing received $19.7M and Residential Property Managers received $10.9M. This snapshot shows a much smaller FY2027 to date total compared with prior full fiscal years and a high concentration of obligations in a few agencies, vendors, and industries.",
     "sections": [
       {
-        "heading": "How has federal contracting trended in Utah recently?",
-        "body": "Fiscal-year obligations rose and fell over the last several years: FY21 was $4B, FY22 was $5.3B, FY23 was $6.3B, FY24 was $7.2B, FY25 was $5.2B, and FY26 is $6.1B. Obligations are up 16.3% year over year in the current fiscal-year-to-date period. The Department of Defense led the increase by obligating $4.4B in FY2026 to date. The combination of a high average award size of $618K and 9,832 awards helped drive the total to $6.1B."
+        "heading": "How does FY2027 spending compare to prior years?",
+        "body": "FY2027 to date obligations are $50.1M. FY22 obligations were $5.3B, FY23 obligations were $6.3B, FY24 obligations were $7.2B, FY25 obligations were $5.2B, and FY26 obligations were $7B. Obligations fell 99.3% year over year. The current FY2027 total is partial and covers fiscal year to date."
       },
       {
-        "heading": "Which sectors and vendors drive federal spending in Utah?",
-        "body": "Guided Missile and Space Vehicle Manufacturing is the largest industry at $2.9B, and Nonferrous Metal (except Copper and Aluminum) Rolling, Drawing, and Extruding is second at $592M. NORTHROP GRUMMAN SYSTEMS CORP is the top vendor with $2.9B, ASAHI REFINING USA INC is second with $592M, and L3 TECHNOLOGIES, INC. is third with $321M. The Department of Defense is the main buyer, obligating $4.4B, which concentrates spending in defense-related industries."
+        "heading": "Which agencies and vendors drive FY2027 to date obligations?",
+        "body": "The Department of Veterans Affairs obligated $37.2M and the Department of Housing and Urban Development obligated $10.9M. The Department of Agriculture obligated $1.2M and the Department of Justice obligated $799K. BIOMERIEUX INC received $20.7M and ALPINE COMPANIES, INC. received $10.9M. The UNIVERSITY OF UTAH received $7.6M and GOVTRANZ, LLC received $4.9M."
       }
     ]
   },
   "faq": [
     {
       "q": "How much federal contract money goes to Utah?",
-      "a": "Utah received $6.1B in federal contract obligations in FY2026 to date. The state had 9,832 awards with an average award size of $618K, and obligations are up 16.3% year over year."
+      "a": "Utah received $50.1M in federal contract obligations in FY2027 to date. Obligations fell 99.3% year over year, and prior full fiscal years included $5.3B in FY22, $6.3B in FY23, $7.2B in FY24, $5.2B in FY25, and $7B in FY26."
     },
     {
       "q": "Which agencies award the most contracts in Utah?",
-      "a": "The Department of Defense obligates the most contracts in Utah, with $4.4B in FY2026 to date. The Department of the Treasury follows with $654M and the Department of Veterans Affairs follows with $330M."
+      "a": "The Department of Veterans Affairs awards the most contracts in Utah, with $37.2M in obligations. The Department of Housing and Urban Development follows with $10.9M, and the Department of Agriculture follows with $1.2M; other buyers include the Department of Justice with $799K and the Department of the Interior with $255K."
     },
     {
       "q": "Who are the largest federal contractors in Utah?",
-      "a": "NORTHROP GRUMMAN SYSTEMS CORP is the largest federal contractor in Utah, receiving $2.9B in FY2026 to date. ASAHI REFINING USA INC is next with $592M, followed by L3 TECHNOLOGIES, INC. with $321M."
+      "a": "BIOMERIEUX INC is the largest federal contractor in Utah, with $20.7M in obligations. ALPINE COMPANIES, INC. is next with $10.9M, followed by the UNIVERSITY OF UTAH with $7.6M and GOVTRANZ, LLC with $4.9M."
     }
   ],
   "related": [
@@ -639,5 +635,6 @@
       "label": "USAspending.gov award data",
       "href": "https://www.usaspending.gov"
     }
-  ]
+  ],
+  "noindex": true
 }

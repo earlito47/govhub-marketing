@@ -1,20 +1,20 @@
 {
   "pageType": "state",
   "slug": "kansas",
-  "title": "Federal Contracts in Kansas: $54M (FY2027)",
+  "title": "Federal Contracts in Kansas: $56.9M (FY2027)",
   "h1": "Federal Contracts in Kansas: Spending, Agencies & Vendors",
-  "metaDescription": "Federal agencies obligated $54M to contractors in Kansas in FY2027 to date. See top buying agencies, top vendors, and industries.",
-  "updated": "2026-10-19",
+  "metaDescription": "Federal agencies obligated $56.9M to contractors in Kansas in FY2027 to date. See top buying agencies, top vendors, and industries.",
+  "updated": "2026-10-26",
   "fyWindow": {
     "label": "FY2027 to date",
     "start": "2026-10-01",
-    "end": "2026-10-19"
+    "end": "2026-10-26"
   },
   "stats": {
-    "totalObligations": 53953968.96,
-    "awardCount": 566,
-    "yoyGrowthPct": -98.6,
-    "avgAwardSize": 95325,
+    "totalObligations": 56916161.4,
+    "awardCount": 987,
+    "yoyGrowthPct": -98.5,
+    "avgAwardSize": 57666,
     "smallBusinessSharePct": null
   },
   "charts": [
@@ -40,21 +40,21 @@
             ],
             [
               "FY25",
-              3587649591.93
+              3595909591.93
             ],
             [
               "FY26",
-              3766337315.21
+              3772816763.48
             ],
             [
               "FY27",
-              53953968.96
+              56916161.4
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Obligations fell 98.6% year over year, from $3.8B in FY2026 to $54M in FY2027 to date."
+      "takeaway": "Obligations fell 98.5% year over year, from $3.8B in FY2026 to $56.9M in FY2027 to date."
     },
     {
       "id": "kansas-top-agencies",
@@ -66,45 +66,49 @@
           "points": [
             [
               "Department of Veterans Affairs",
-              50944451.18
+              51550679.05
             ],
             [
               "Consumer Financial Protection Bureau",
               1567334.4
             ],
             [
-              "Department of Transportation",
-              961689.8
-            ],
-            [
               "General Services Administration",
-              376847.45
+              1340937.47
             ],
             [
-              "Department of Agriculture",
-              45797.85
-            ],
-            [
-              "National Archives and Records Administration",
-              30000
+              "Department of Transportation",
+              1288245.24
             ],
             [
               "Department of Justice",
-              29938.14
-            ],
-            [
-              "Department of the Interior",
-              0
+              824634.58
             ],
             [
               "Environmental Protection Agency",
-              -2089.86
+              262667.61
+            ],
+            [
+              "National Archives and Records Administration",
+              149003.2
+            ],
+            [
+              "Department of Labor",
+              100000
+            ],
+            [
+              "Department of Homeland Security",
+              6435
+            ],
+            [
+              "Department of Health and Human Services",
+              -135
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Department of Veterans Affairs was the top federal buyer in Kansas, obligating $50.9M (94.4% of the state total)."
+      "takeaway": "Department of Veterans Affairs was the top federal buyer in Kansas, obligating $51.6M (90.6% of the state total)."
     },
     {
       "id": "kansas-top-vendors",
@@ -124,7 +128,11 @@
             ],
             [
               "FEDEX SUPPLY CHAIN DISTRIBUTION SYSTEM, INC.",
-              8730005.06
+              8564463.21
+            ],
+            [
+              "SCRIPTPRO USA INC",
+              1726800.64
             ],
             [
               "ALPHAVETS, INC",
@@ -133,10 +141,6 @@
             [
               "GOLDEN IT LLC",
               1567334.4
-            ],
-            [
-              "SCRIPTPRO USA INC",
-              1521917.08
             ],
             [
               "CYNERGY PROFESSIONAL SYSTEMS LLC",
@@ -148,17 +152,17 @@
             ],
             [
               "CMP COMMERCIAL CONSTRUCTION INC",
-              961689.8
+              1030533.2
             ],
             [
-              "TIGER NATURAL GAS, INC.",
-              682000
+              "BKM CONSTRUCTION LLC",
+              918826
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "FEDERAL EXPRESS CORPORATION led all contractors in Kansas with $20.2M, 37.4% of the state total."
+      "takeaway": "FEDERAL EXPRESS CORPORATION led all contractors in Kansas with $20.2M, 35.5% of the state total."
     },
     {
       "id": "kansas-top-naics",
@@ -174,15 +178,19 @@
             ],
             [
               "Facilities Support Services",
-              13343676.2
+              13436813.43
             ],
             [
               "All Other Business Support Services",
-              8727915.2
+              8562373.35
             ],
             [
               "Natural Gas Extraction",
               1838118.75
+            ],
+            [
+              "Surgical and Medical Instrument Manufacturing",
+              1696372.6
             ],
             [
               "Sanitary Paper Product Manufacturing",
@@ -193,20 +201,16 @@
               1567334.4
             ],
             [
-              "Surgical and Medical Instrument Manufacturing",
-              1483090.24
-            ],
-            [
               "Security Systems Services (except Locksmiths)",
               1327130.15
             ],
             [
-              "Water and Sewer Line and Related Structures Construction",
-              961689.8
+              "Commercial and Institutional Building Construction",
+              1209259
             ],
             [
-              "Special Needs Transportation",
-              631423
+              "Water and Sewer Line and Related Structures Construction",
+              1030398.2
             ]
           ]
         }
@@ -221,28 +225,32 @@
       "href": "/insights/agency/department-of-veterans-affairs/"
     },
     {
-      "label": "Department of Transportation contracts",
-      "href": "/insights/agency/department-of-transportation/"
-    },
-    {
       "label": "General Services Administration contracts",
       "href": "/insights/agency/general-services-administration/"
     },
     {
-      "label": "Department of Agriculture contracts",
-      "href": "/insights/agency/department-of-agriculture/"
+      "label": "Department of Transportation contracts",
+      "href": "/insights/agency/department-of-transportation/"
+    },
+    {
+      "label": "Department of Justice contracts",
+      "href": "/insights/agency/department-of-justice/"
     },
     {
       "label": "NAICS 561210: Facilities Support Services",
       "href": "/insights/naics/561210/"
     },
     {
+      "label": "NAICS 339112: Surgical and Medical Instrument Manufacturing",
+      "href": "/insights/naics/339112/"
+    },
+    {
       "label": "NAICS 541511: Custom Computer Programming Services",
       "href": "/insights/naics/541511/"
     },
     {
-      "label": "NAICS 339112: Surgical and Medical Instrument Manufacturing",
-      "href": "/insights/naics/339112/"
+      "label": "NAICS 236220: Commercial and Institutional Building Construction",
+      "href": "/insights/naics/236220/"
     }
   ],
   "tables": [
@@ -276,10 +284,18 @@
             "text": "FEDEX SUPPLY CHAIN DISTRIBUTION SYSTEM, INC.",
             "href": "https://www.usaspending.gov/recipient/5196bee3-3520-4d0f-a473-5763e5da1b05-C/latest/"
           },
-          8730005.06
+          8564463.21
         ],
         [
           4,
+          {
+            "text": "SCRIPTPRO USA INC",
+            "href": "https://www.usaspending.gov/recipient/7b9bb773-c0a8-39d5-4010-8e7f81fa790c-C/latest/"
+          },
+          1726800.64
+        ],
+        [
+          5,
           {
             "text": "ALPHAVETS, INC",
             "href": "https://www.usaspending.gov/recipient/f7ee08f6-d374-3f1c-c507-612b22363aa7-C/latest/"
@@ -287,20 +303,12 @@
           1681970.4
         ],
         [
-          5,
+          6,
           {
             "text": "GOLDEN IT LLC",
             "href": "https://www.usaspending.gov/recipient/143eecef-c926-3893-e836-72473ed0a7f3-C/latest/"
           },
           1567334.4
-        ],
-        [
-          6,
-          {
-            "text": "SCRIPTPRO USA INC",
-            "href": "https://www.usaspending.gov/recipient/7b9bb773-c0a8-39d5-4010-8e7f81fa790c-C/latest/"
-          },
-          1521917.08
         ],
         [
           7,
@@ -324,15 +332,15 @@
             "text": "CMP COMMERCIAL CONSTRUCTION INC",
             "href": "https://www.usaspending.gov/recipient/fbd9db17-a299-c3c1-648f-2966a5f876e0-C/latest/"
           },
-          961689.8
+          1030533.2
         ],
         [
           10,
           {
-            "text": "TIGER NATURAL GAS, INC.",
-            "href": "https://www.usaspending.gov/recipient/2b1a8669-f41b-9b48-6325-9f8a1e52fde6-C/latest/"
+            "text": "BKM CONSTRUCTION LLC",
+            "href": "https://www.usaspending.gov/recipient/a605ffe3-04f7-9037-5177-6f504f981706-C/latest/"
           },
-          682000
+          918826
         ]
       ]
     },
@@ -348,6 +356,24 @@
         [
           1,
           {
+            "text": "SERRATO CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_1605JW21C0015_1605_-NONE-_-NONE-/"
+          },
+          49845014.6,
+          "Department of Labor"
+        ],
+        [
+          2,
+          {
+            "text": "FEDEX SUPPLY CHAIN DISTRIBUTION SYSTEM, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C77026N0002_3600_36C77020A0009_3600/"
+          },
+          40139658.79,
+          "Department of Veterans Affairs"
+        ],
+        [
+          3,
+          {
             "text": "SGJV2, LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C25522C0083_3600_-NONE-_-NONE-/"
           },
@@ -355,7 +381,7 @@
           "Department of Veterans Affairs"
         ],
         [
-          2,
+          4,
           {
             "text": "FLOYD CONSTRUCTION CORP",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C77625C0055_3600_-NONE-_-NONE-/"
@@ -364,7 +390,7 @@
           "Department of Veterans Affairs"
         ],
         [
-          3,
+          5,
           {
             "text": "FEDERAL EXPRESS CORPORATION",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C77027F0009_3600_HTC71123DC023_9700/"
@@ -373,16 +399,16 @@
           "Department of Veterans Affairs"
         ],
         [
-          4,
+          6,
           {
             "text": "CMP COMMERCIAL CONSTRUCTION INC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_697DCK23C00356_6920_-NONE-_-NONE-/"
           },
-          14153229.9,
+          14222073.3,
           "Department of Transportation"
         ],
         [
-          5,
+          7,
           {
             "text": "A-TEAM SOLUTIONS LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C77027N0013_3600_36C77025D0003_3600/"
@@ -391,7 +417,7 @@
           "Department of Veterans Affairs"
         ],
         [
-          6,
+          8,
           {
             "text": "FEDEX SUPPLY CHAIN DISTRIBUTION SYSTEM, INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C77027N0004_3600_36C77027A0001_3600/"
@@ -400,7 +426,25 @@
           "Department of Veterans Affairs"
         ],
         [
-          7,
+          9,
+          {
+            "text": "LEADING TECHNOLOGY COMPOSITES INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70CMSW25FR0000149_7012_70B06C24D00000014_7014/"
+          },
+          7586652,
+          "Department of Homeland Security"
+        ],
+        [
+          10,
+          {
+            "text": "CHENHALL SEDONA SOLUTIONS JOINT VENTURE LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_140D0423F0657_1406_140A1620D0010_1450/"
+          },
+          5474300.92,
+          "Department of the Interior"
+        ],
+        [
+          11,
           {
             "text": "FEDERAL EXPRESS CORPORATION",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C77027F0002_3600_HTC71123DC023_9700/"
@@ -409,7 +453,7 @@
           "Department of Veterans Affairs"
         ],
         [
-          8,
+          12,
           {
             "text": "TWENTY-FIRST CENTURY BEAN PROCESSING LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_123J1426C1998_12K2_-NONE-_-NONE-/"
@@ -418,7 +462,25 @@
           "Department of Agriculture"
         ],
         [
-          9,
+          13,
+          {
+            "text": "EVERGY KANSAS CENTRAL INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_140A2321C0049_1450_-NONE-_-NONE-/"
+          },
+          3753758.21,
+          "Department of the Interior"
+        ],
+        [
+          14,
+          {
+            "text": "ADC LTD NM",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_88310321F00086_8800_GS07F0657X_4732/"
+          },
+          3501781.19,
+          "National Archives and Records Administration"
+        ],
+        [
+          15,
           {
             "text": "ENVIRONMENTAL RESTORATION LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_68HE0724F0051_6800_68HE0724D0001_6800/"
@@ -427,7 +489,7 @@
           "Environmental Protection Agency"
         ],
         [
-          10,
+          16,
           {
             "text": "ENVIRONMENTAL RESTORATION LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_68HE0724F0038_6800_68HE0724D0001_6800/"
@@ -436,7 +498,7 @@
           "Environmental Protection Agency"
         ],
         [
-          11,
+          17,
           {
             "text": "THE MIRROR, INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_15BRRC26F00000148_1540_15BRRC24D00000014_1540/"
@@ -445,7 +507,7 @@
           "Department of Justice"
         ],
         [
-          12,
+          18,
           {
             "text": "PRAIRIE BAND CONSTRUCTION, INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_140A2324C0010_1450_-NONE-_-NONE-/"
@@ -454,7 +516,16 @@
           "Department of the Interior"
         ],
         [
-          13,
+          19,
+          {
+            "text": "LIM SERVICE INDUSTRIES INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_697DCK25C00043_6920_-NONE-_-NONE-/"
+          },
+          2147729.3,
+          "Department of Transportation"
+        ],
+        [
+          20,
           {
             "text": "BKM CONSTRUCTION LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_47PG0225F0021_4740_47PG0220D0003_4740/"
@@ -463,7 +534,16 @@
           "General Services Administration"
         ],
         [
-          14,
+          21,
+          {
+            "text": "TEPA EXPRESS CONTRACTING, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_1232SA26F0123_12H2_12805B21D0007_12H2/"
+          },
+          1717260.86,
+          "Department of Agriculture"
+        ],
+        [
+          22,
           {
             "text": "ALPHAVETS, INC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C77027F0014_3600_47QSMS24D007V_4732/"
@@ -472,7 +552,16 @@
           "Department of Veterans Affairs"
         ],
         [
-          15,
+          23,
+          {
+            "text": "GEO REENTRY INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_15BRRC26F00000310_1540_15BRRC19D00000149_1540/"
+          },
+          1584953.59,
+          "Department of Justice"
+        ],
+        [
+          24,
           {
             "text": "GOLDEN IT LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_9531CB27F0001_955F_9531CB26A0006_955F/"
@@ -481,104 +570,23 @@
           "Consumer Financial Protection Bureau"
         ],
         [
-          16,
+          25,
           {
             "text": "ENVIRONMENTAL RESTORATION LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_68HE0724F0084_6800_68HE0724D0001_6800/"
           },
           1550000,
           "Environmental Protection Agency"
-        ],
-        [
-          17,
-          {
-            "text": "AD ASTRA COLLABORATIVE LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_12FPC323F0058_12D0_12SPEC18D0015_12C3/"
-          },
-          1359377.96,
-          "Department of Agriculture"
-        ],
-        [
-          18,
-          {
-            "text": "CYNERGY PROFESSIONAL SYSTEMS LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C77027N0002_3600_36C77026D0001_3600/"
-          },
-          1327130.16,
-          "Department of Veterans Affairs"
-        ],
-        [
-          19,
-          {
-            "text": "ENVIRONMENTAL RESTORATION LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_68HE0724F0021_6800_68HE0724D0001_6800/"
-          },
-          1231648.39,
-          "Environmental Protection Agency"
-        ],
-        [
-          20,
-          {
-            "text": "AD ASTRA COLLABORATIVE LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_12FPC322F0196_12D0_12SPEC18D0015_12C3/"
-          },
-          1221713.4,
-          "Department of Agriculture"
-        ],
-        [
-          21,
-          {
-            "text": "SCRIPTPRO USA INC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C25927N0009_3600_36F79719D0135_3600/"
-          },
-          999460.86,
-          "Department of Veterans Affairs"
-        ],
-        [
-          22,
-          {
-            "text": "SCRIPTPRO USA INC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C25526F0110_3600_36F79719D0135_3600/"
-          },
-          955590.72,
-          "Department of Veterans Affairs"
-        ],
-        [
-          23,
-          {
-            "text": "SAGE ENERGY TRADING LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C25527F0010_3600_SPE60425D7519_9700/"
-          },
-          809000,
-          "Department of Veterans Affairs"
-        ],
-        [
-          24,
-          {
-            "text": "J.E. FEDERAL ENTERPRISES, LLC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C25523C0007_3600_-NONE-_-NONE-/"
-          },
-          748107.8,
-          "Department of Veterans Affairs"
-        ],
-        [
-          25,
-          {
-            "text": "SAGE ENERGY TRADING LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C25526F0009_3600_SPE60425D7519_9700/"
-          },
-          694237.5,
-          "Department of Veterans Affairs"
         ]
       ]
     }
   ],
   "narrative": {
-    "intro": "In FY2027 to date, federal agencies obligated $54M across 566 contract awards. That is down 98.6% year over year. The average award size was $95.3K.",
+    "intro": "In FY2027 to date, federal agencies obligated $56.9M across 987 contract awards. That is down 98.5% year over year. The average award size was $57.7K.",
     "sections": [
       {
         "heading": "Which agencies award the most contracts in Kansas?",
-        "body": "Department of Veterans Affairs was the largest federal buyer in Kansas, obligating $50.9M in FY2027 to date, or 94.4% of the state total."
+        "body": "Department of Veterans Affairs was the largest federal buyer in Kansas, obligating $51.6M in FY2027 to date, or 90.6% of the state total."
       },
       {
         "heading": "Who are the top federal contractors in Kansas?",
@@ -589,11 +597,11 @@
   "faq": [
     {
       "q": "How much federal contract money goes to Kansas?",
-      "a": "Federal agencies obligated $54M to contractors performing work in Kansas in FY2027 to date, across 566 awards."
+      "a": "Federal agencies obligated $56.9M to contractors performing work in Kansas in FY2027 to date, across 987 awards."
     },
     {
       "q": "Which agencies award the most contracts in Kansas?",
-      "a": "Department of Veterans Affairs is the largest federal buyer in Kansas, with $50.9M obligated in FY2027 to date."
+      "a": "Department of Veterans Affairs is the largest federal buyer in Kansas, with $51.6M obligated in FY2027 to date."
     },
     {
       "q": "Who are the largest federal contractors in Kansas?",

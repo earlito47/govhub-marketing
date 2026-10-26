@@ -1,20 +1,20 @@
 {
   "pageType": "state",
   "slug": "illinois",
-  "title": "Illinois: $245M in Federal Contracts, FY2027",
+  "title": "Illinois: $264M in Federal Contracts, FY2027",
   "h1": "Federal Contracts in Illinois: Spending, Agencies & Vendors",
-  "metaDescription": "Federal agencies obligated $245M to contractors in Illinois in FY2027 to date. See top buying agencies, top vendors, and industries.",
-  "updated": "2026-10-19",
+  "metaDescription": "Federal agencies obligated $264M to contractors in Illinois in FY2027 to date. See top buying agencies, top vendors, and industries.",
+  "updated": "2026-10-26",
   "fyWindow": {
     "label": "FY2027 to date",
     "start": "2026-10-01",
-    "end": "2026-10-19"
+    "end": "2026-10-26"
   },
   "stats": {
-    "totalObligations": 245330189.68,
-    "awardCount": 8731,
-    "yoyGrowthPct": -98,
-    "avgAwardSize": 28099,
+    "totalObligations": 263600920.96,
+    "awardCount": 12548,
+    "yoyGrowthPct": -97.8,
+    "avgAwardSize": 21007,
     "smallBusinessSharePct": null
   },
   "charts": [
@@ -40,21 +40,21 @@
             ],
             [
               "FY25",
-              12427635602.92
+              12427640773.76
             ],
             [
               "FY26",
-              12026514284.99
+              12208531542.46
             ],
             [
               "FY27",
-              245330189.68
+              263600920.96
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Obligations fell 98.0% year over year, from $12B in FY2026 to $245M in FY2027 to date."
+      "takeaway": "Obligations fell 97.8% year over year, from $12.2B in FY2026 to $264M in FY2027 to date."
     },
     {
       "id": "illinois-top-agencies",
@@ -66,7 +66,7 @@
           "points": [
             [
               "Department of Veterans Affairs",
-              138727836.11
+              140746018.76
             ],
             [
               "Department of Energy",
@@ -74,11 +74,19 @@
             ],
             [
               "General Services Administration",
-              17051068.09
+              23454424.94
+            ],
+            [
+              "Department of Justice",
+              7575745.28
             ],
             [
               "Department of the Treasury",
               2916000
+            ],
+            [
+              "Department of Health and Human Services",
+              2410361.05
             ],
             [
               "National Aeronautics and Space Administration",
@@ -86,29 +94,21 @@
             ],
             [
               "Railroad Retirement Board",
-              1742411.97
-            ],
-            [
-              "Department of Justice",
-              1209191.58
+              1677888.15
             ],
             [
               "Department of Agriculture",
-              888402.13
+              1639841.91
             ],
             [
-              "Department of Labor",
-              46800
-            ],
-            [
-              "Department of State",
-              1158.21
+              "Department of Transportation",
+              382549.5
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Department of Veterans Affairs was the top federal buyer in Illinois, obligating $139M (56.5% of the state total)."
+      "takeaway": "Department of Veterans Affairs was the top federal buyer in Illinois, obligating $141M (53.4% of the state total)."
     },
     {
       "id": "illinois-top-vendors",
@@ -124,7 +124,7 @@
             ],
             [
               "ABBOTT LABORATORIES INC.",
-              25896407.24
+              25985254.4
             ],
             [
               "FEDEX SUPPLY CHAIN DISTRIBUTION SYSTEM, INC.",
@@ -132,7 +132,7 @@
             ],
             [
               "SYSMEX AMERICA, INC",
-              12299104.47
+              12148658.75
             ],
             [
               "QUEST DIAGNOSTICS INCORPORATED",
@@ -147,22 +147,22 @@
               9151419.04
             ],
             [
+              "W.W. GRAINGER, INC.",
+              8935907.22
+            ],
+            [
               "MODESTO MANAGEMENT LLC",
               8259790.24
             ],
             [
               "LUMEN TECHNOLOGIES GOVERNMENT SOLUTIONS, INC.",
-              8012606
-            ],
-            [
-              "FEDERAL EXPRESS CORPORATION",
-              7648586.7
+              8018366.85
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "UCHICAGO ARGONNE, LLC led all contractors in Illinois with $81.1M, 33.1% of the state total."
+      "takeaway": "UCHICAGO ARGONNE, LLC led all contractors in Illinois with $81.1M, 30.8% of the state total."
     },
     {
       "id": "illinois-top-naics",
@@ -178,7 +178,7 @@
             ],
             [
               "Analytical Laboratory Instrument Manufacturing",
-              40207387.82
+              40473210.73
             ],
             [
               "All Other Business Support Services",
@@ -186,11 +186,11 @@
             ],
             [
               "Facilities Support Services",
-              10589838.62
+              11714761.83
             ],
             [
               "Medical Laboratories",
-              10307801.88
+              10332255
             ],
             [
               "Wholesale Trade Agents and Brokers",
@@ -198,19 +198,19 @@
             ],
             [
               "Couriers and Express Delivery Services",
-              9497184.67
+              9492889.14
+            ],
+            [
+              "Home Centers",
+              8947174.89
             ],
             [
               "Wired Telecommunications Carriers",
-              8012606
+              7993224.43
             ],
             [
               "Electric Power Distribution",
               6998775.04
-            ],
-            [
-              "Janitorial Services",
-              6695190.24
             ]
           ]
         }
@@ -233,8 +233,8 @@
       "href": "/insights/agency/general-services-administration/"
     },
     {
-      "label": "Department of the Treasury contracts",
-      "href": "/insights/agency/department-of-the-treasury/"
+      "label": "Department of Justice contracts",
+      "href": "/insights/agency/department-of-justice/"
     },
     {
       "label": "NAICS 541715: Research and Development in the Physical, Engineering, and Life Sciences",
@@ -247,10 +247,6 @@
     {
       "label": "NAICS 621511: Medical Laboratories",
       "href": "/insights/naics/621511/"
-    },
-    {
-      "label": "NAICS 561720: Janitorial Services",
-      "href": "/insights/naics/561720/"
     }
   ],
   "tables": [
@@ -276,7 +272,7 @@
             "text": "ABBOTT LABORATORIES INC.",
             "href": "https://www.usaspending.gov/recipient/f740eb86-a84e-ddf4-03cf-fe9834b257e5-C/latest/"
           },
-          25896407.24
+          25985254.4
         ],
         [
           3,
@@ -292,7 +288,7 @@
             "text": "SYSMEX AMERICA, INC",
             "href": "https://www.usaspending.gov/recipient/e07fa036-e1d9-625b-d429-3253b4c7b133-C/latest/"
           },
-          12299104.47
+          12148658.75
         ],
         [
           5,
@@ -321,26 +317,26 @@
         [
           8,
           {
+            "text": "W.W. GRAINGER, INC.",
+            "href": "https://www.usaspending.gov/recipient/02d96557-827b-7983-b39e-007f84487932-C/latest/"
+          },
+          8935907.22
+        ],
+        [
+          9,
+          {
             "text": "MODESTO MANAGEMENT LLC",
             "href": "https://www.usaspending.gov/recipient/b9765153-7934-5287-0830-91e3d97a2171-C/latest/"
           },
           8259790.24
         ],
         [
-          9,
+          10,
           {
             "text": "LUMEN TECHNOLOGIES GOVERNMENT SOLUTIONS, INC.",
             "href": "https://www.usaspending.gov/recipient/dcc7220d-7604-b0b5-8961-5a07865199ea-C/latest/"
           },
-          8012606
-        ],
-        [
-          10,
-          {
-            "text": "FEDERAL EXPRESS CORPORATION",
-            "href": "https://www.usaspending.gov/recipient/079718fe-322b-0b89-6522-302314b5d75f-C/latest/"
-          },
-          7648586.7
+          8018366.85
         ]
       ]
     },
@@ -392,6 +388,15 @@
         [
           5,
           {
+            "text": "UNIVERSAL PROTECTION SERVICE, LIMITED PARTNERSHIP",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70RFP425FRE500009_7001_70RFP224DEC000001_7001/"
+          },
+          34527193.24,
+          "Department of Homeland Security"
+        ],
+        [
+          6,
+          {
             "text": "BLUE PACIFIC JV LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C25223C0072_3600_-NONE-_-NONE-/"
           },
@@ -399,7 +404,16 @@
           "Department of Veterans Affairs"
         ],
         [
-          6,
+          7,
+          {
+            "text": "NATIONAL OPINION RESEARCH CENTER",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75N91018C00005_7529_-NONE-_-NONE-/"
+          },
+          21432411.55,
+          "Department of Health and Human Services"
+        ],
+        [
+          8,
           {
             "text": "CONVERGINT TECHNOLOGIES LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_75P00119F37001_7570_HHSP233201500003B_7555/"
@@ -408,7 +422,7 @@
           "Department of Health and Human Services"
         ],
         [
-          7,
+          9,
           {
             "text": "FIS CAPITAL MARKETS US LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_2033H622C00003_2036_-NONE-_-NONE-/"
@@ -417,7 +431,7 @@
           "Department of the Treasury"
         ],
         [
-          8,
+          10,
           {
             "text": "TROOP CONTRACTING INC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C77624C0175_3600_-NONE-_-NONE-/"
@@ -426,7 +440,7 @@
           "Department of Veterans Affairs"
         ],
         [
-          9,
+          11,
           {
             "text": "FEDEX SUPPLY CHAIN DISTRIBUTION SYSTEM, INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C77027N0009_3600_36C77027A0001_3600/"
@@ -435,7 +449,7 @@
           "Department of Veterans Affairs"
         ],
         [
-          10,
+          12,
           {
             "text": "SKILLSOFT (US) LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_47QFLA22F0001_4732_47QTCA19D002B_4732/"
@@ -444,7 +458,7 @@
           "General Services Administration"
         ],
         [
-          11,
+          13,
           {
             "text": "MODESTO MANAGEMENT LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C25223P0485_3600_-NONE-_-NONE-/"
@@ -453,7 +467,16 @@
           "Department of Veterans Affairs"
         ],
         [
-          12,
+          14,
+          {
+            "text": "KRUECK & SEXTON ARCHITECTS, LTD",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_47PG0221F0045_4740_GS07P16UCD7000_4740/"
+          },
+          9791469.18,
+          "General Services Administration"
+        ],
+        [
+          15,
           {
             "text": "CITADEL FEDERAL SOLUTIONS LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C77027N0011_3600_36C77025D0002_3600/"
@@ -462,7 +485,7 @@
           "Department of Veterans Affairs"
         ],
         [
-          13,
+          16,
           {
             "text": "TETRA TECH, INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_68HE0525F0025_6800_68HE0525D0004_6800/"
@@ -471,7 +494,7 @@
           "Environmental Protection Agency"
         ],
         [
-          14,
+          17,
           {
             "text": "FEDERAL EXPRESS CORPORATION",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C77027F0007_3600_HTC71123DC023_9700/"
@@ -480,7 +503,7 @@
           "Department of Veterans Affairs"
         ],
         [
-          15,
+          18,
           {
             "text": "CHEROKEE NATION SYSTEM SOLUTIONS LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_60RRBH23C0080_6000_-NONE-_-NONE-/"
@@ -489,7 +512,7 @@
           "Railroad Retirement Board"
         ],
         [
-          16,
+          19,
           {
             "text": "QUEST DIAGNOSTICS INCORPORATED",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C25227N0098_3600_36C25227D0005_3600/"
@@ -498,7 +521,7 @@
           "Department of Veterans Affairs"
         ],
         [
-          17,
+          20,
           {
             "text": "NATIONAL OPINION RESEARCH CENTER",
             "href": "https://www.usaspending.gov/award/CONT_AWD_75FCMC19F0001_7530_HHSM500201400035I_7530/"
@@ -507,7 +530,7 @@
           "Department of Health and Human Services"
         ],
         [
-          18,
+          21,
           {
             "text": "JV6 CONTRACTING V2 LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C25225C0051_3600_-NONE-_-NONE-/"
@@ -516,7 +539,7 @@
           "Department of Veterans Affairs"
         ],
         [
-          19,
+          22,
           {
             "text": "RELIANCE RELOCATION SERVICES, INC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_70CMSW26FCL000010_7012_70CMSW24A00000003_7012/"
@@ -525,7 +548,7 @@
           "Department of Homeland Security"
         ],
         [
-          20,
+          23,
           {
             "text": "ABBOTT MOLECULAR INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C26124F0252_3600_V797P7323A_3600/"
@@ -534,7 +557,7 @@
           "Department of Veterans Affairs"
         ],
         [
-          21,
+          24,
           {
             "text": "TL SERVICES, INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C25223F0177_3600_GS21F0185W_4730/"
@@ -543,69 +566,42 @@
           "Department of Veterans Affairs"
         ],
         [
-          22,
+          25,
           {
             "text": "CONSTELLATION NEWENERGY, INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C25227F0012_3600_47PA0825D0001_4740/"
           },
           5200000,
           "Department of Veterans Affairs"
-        ],
-        [
-          23,
-          {
-            "text": "MODESTO MANAGEMENT LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C25223P0784_3600_-NONE-_-NONE-/"
-          },
-          5137334.65,
-          "Department of Veterans Affairs"
-        ],
-        [
-          24,
-          {
-            "text": "AGILE DECISION SCIENCES, LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_68HE0523F0029_6800_68HERD23D0003_6800/"
-          },
-          4862035.64,
-          "Environmental Protection Agency"
-        ],
-        [
-          25,
-          {
-            "text": "ABBOTT LABORATORIES INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C24725N0006_3600_36F79719D0024_3600/"
-          },
-          4715407.81,
-          "Department of Veterans Affairs"
         ]
       ]
     }
   ],
   "narrative": {
-    "intro": "Federal contracting in Illinois is concentrated and reduced in FY2027 to date. The state shows total obligations of $245M across 8,731 awards, with an average award size of $28.1K and obligations down 98.0% year over year. Historical fiscal-year totals show much larger rounds of spending: FY22 totaled $13.6B, FY23 totaled $13B, FY24 totaled $13.4B, FY25 totaled $12.4B, and FY26 totaled $12B. Top industries in FY2027 to date include Research and Development in the Physical, Engineering, and Life Sciences at $81.1M and Analytical Laboratory Instrument Manufacturing at $40.2M. Top vendors include UCHICAGO ARGONNE, LLC at $81.1M and ABBOTT LABORATORIES INC. at $25.9M. Top buying agencies in FY2027 to date include the Department of Veterans Affairs at $139M and the Department of Energy at $81.1M. All figures are contract obligations; FY2027 totals are partial (fiscal year to date).",
+    "intro": "The state of Illinois received $264M in federal contract obligations in FY2027 to date. The state recorded 12,548 awards with an average award size of $21K, and obligations fell 97.8% year over year. The Department of Veterans Affairs is the largest buyer in Illinois, obligating $141M so far, followed by the Department of Energy with $81.1M and the General Services Administration with $23.5M. UCHICAGO ARGONNE, LLC is the largest vendor, receiving $81.1M in obligations, and ABBOTT LABORATORIES INC. is the second-largest vendor at $26M. Research and Development in the Physical, Engineering, and Life Sciences is the top industry by obligations at $81.1M, followed by Analytical Laboratory Instrument Manufacturing at $40.5M. FY22 through FY26 show multi-year context with yearly obligations between $12.2B and $13.6B, and FY27 to date sits at $264M. All figures are contract obligations; current-year totals are partial (fiscal year to date).",
     "sections": [
       {
-        "heading": "How have federal contract obligations in Illinois changed year over year?",
-        "body": "Obligations fell 98.0% year over year in FY2027 to date compared with prior full fiscal years. Illinois recorded $245M in obligations for FY2027 to date, after totals of $13.6B in FY22, $13B in FY23, $13.4B in FY24, $12.4B in FY25, and $12B in FY26. The average award size in FY2027 to date is $28.1K across 8,731 awards. The FY2027 total is a partial, fiscal year to date figure."
+        "heading": "How large is FY2027 federal contracting in Illinois compared with prior years?",
+        "body": "FY27 to date obligations total $264M. FY22 obligations were $13.6B, FY23 obligations were $13B, FY24 obligations were $13.4B, FY25 obligations were $12.4B, and FY26 obligations were $12.2B. Obligations fell 97.8% year over year. The current FY27 total is a partial, fiscal year to date figure."
       },
       {
-        "heading": "Which agencies and vendors lead federal contracting in Illinois in FY2027 to date?",
-        "body": "The Department of Veterans Affairs obligated $139M and the Department of Energy obligated $81.1M in FY2027 to date. UCHICAGO ARGONNE, LLC received $81.1M and ABBOTT LABORATORIES INC. received $25.9M in FY2027 to date. Research and Development in the Physical, Engineering, and Life Sciences is the top industry at $81.1M and Analytical Laboratory Instrument Manufacturing is second at $40.2M."
+        "heading": "Which agencies, vendors, and industries lead FY2027 to date in Illinois?",
+        "body": "The Department of Veterans Affairs obligated $141M, and the Department of Energy obligated $81.1M. UCHICAGO ARGONNE, LLC received $81.1M and ABBOTT LABORATORIES INC. received $26M. Research and Development in the Physical, Engineering, and Life Sciences is the largest industry at $81.1M, and Analytical Laboratory Instrument Manufacturing is next at $40.5M."
       }
     ]
   },
   "faq": [
     {
       "q": "How much federal contract money goes to Illinois?",
-      "a": "Illinois receives $245M in federal contract obligations in FY2027 to date. That total comes from 8,731 awards with an average award size of $28.1K, and obligations are down 98.0% year over year compared with prior full fiscal years."
+      "a": "Illinois received $264M in federal contract obligations in FY2027 to date. The state recorded 12,548 awards with an average award size of $21K, and obligations fell 97.8% year over year. FY22 through FY26 obligations ranged from $12.2B to $13.6B, providing multi-year context while FY27 remains a partial total."
     },
     {
       "q": "Which agencies award the most contracts in Illinois?",
-      "a": "The Department of Veterans Affairs awards the most contracts in Illinois in FY2027 to date, obligating $139M. The Department of Energy follows with $81.1M, and the General Services Administration obligated $17.1M in FY2027 to date."
+      "a": "The Department of Veterans Affairs obligated $141M, and the Department of Energy obligated $81.1M in Illinois in FY2027 to date. The General Services Administration obligated $23.5M, and other buying agencies include the Department of Justice at $7.6M and the Department of the Treasury at $2.9M."
     },
     {
       "q": "Who are the largest federal contractors in Illinois?",
-      "a": "UCHICAGO ARGONNE, LLC is the largest federal contractor in Illinois in FY2027 to date at $81.1M. ABBOTT LABORATORIES INC. is the next largest at $25.9M, followed by FEDEX SUPPLY CHAIN DISTRIBUTION SYSTEM, INC. at $17.2M."
+      "a": "UCHICAGO ARGONNE, LLC is the largest federal contractor in Illinois at $81.1M, and ABBOTT LABORATORIES INC. is next at $26M. Other top vendors include FEDEX SUPPLY CHAIN DISTRIBUTION SYSTEM, INC. at $17.2M and SYSMEX AMERICA, INC at $12.1M."
     }
   ],
   "related": [

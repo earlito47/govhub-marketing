@@ -1,20 +1,20 @@
 {
   "pageType": "state",
   "slug": "alabama",
-  "title": "Federal Contracts in Alabama: $113M (FY2027)",
+  "title": "Federal Contracts in Alabama: $139M (FY2027)",
   "h1": "Federal Contracts in Alabama: Spending, Agencies & Vendors",
-  "metaDescription": "Federal agencies obligated $113M to contractors in Alabama in FY2027 to date. See top buying agencies, top vendors, and industries.",
-  "updated": "2026-10-19",
+  "metaDescription": "Federal agencies obligated $139M to contractors in Alabama in FY2027 to date. See top buying agencies, top vendors, and industries.",
+  "updated": "2026-10-26",
   "fyWindow": {
     "label": "FY2027 to date",
     "start": "2026-10-01",
-    "end": "2026-10-19"
+    "end": "2026-10-26"
   },
   "stats": {
-    "totalObligations": 113303986.5,
-    "awardCount": 223,
-    "yoyGrowthPct": -99.3,
-    "avgAwardSize": 508090,
+    "totalObligations": 139418998.54,
+    "awardCount": 316,
+    "yoyGrowthPct": -99.2,
+    "avgAwardSize": 441199,
     "smallBusinessSharePct": null
   },
   "charts": [
@@ -36,25 +36,25 @@
             ],
             [
               "FY24",
-              17348141566.6
+              17346200560.55
             ],
             [
               "FY25",
-              18144714893.85
+              18145151010.88
             ],
             [
               "FY26",
-              17231864896.28
+              17601494809.09
             ],
             [
               "FY27",
-              113303986.5
+              139418998.54
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Obligations fell 99.3% year over year, from $17.2B in FY2026 to $113M in FY2027 to date."
+      "takeaway": "Obligations fell 99.2% year over year, from $17.6B in FY2026 to $139M in FY2027 to date."
     },
     {
       "id": "alabama-top-agencies",
@@ -66,49 +66,49 @@
           "points": [
             [
               "Department of Veterans Affairs",
-              84567874.83
+              84824564.17
             ],
             [
               "National Aeronautics and Space Administration",
-              22843428.5
+              30107393.48
             ],
             [
               "Department of Justice",
-              3912289.3
+              21519665.42
             ],
             [
               "General Services Administration",
-              1063499.11
+              1413807.82
             ],
             [
               "Department of the Treasury",
               756000
             ],
             [
-              "Department of Transportation",
-              62602.56
-            ],
-            [
               "Department of Homeland Security",
-              56200
+              361802.8
             ],
             [
               "Department of the Interior",
-              38110
+              173201.59
             ],
             [
-              "Department of Agriculture",
-              3982.2
+              "Department of Labor",
+              100000
             ],
             [
-              "Department of Health and Human Services",
-              0
+              "Environmental Protection Agency",
+              70964
+            ],
+            [
+              "Department of Transportation",
+              62602.56
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Department of Veterans Affairs was the top federal buyer in Alabama, obligating $84.6M (74.6% of the state total)."
+      "takeaway": "Department of Veterans Affairs was the top federal buyer in Alabama, obligating $84.8M (60.8% of the state total)."
     },
     {
       "id": "alabama-top-vendors",
@@ -127,6 +127,10 @@
               17916303.6
             ],
             [
+              "NAPHCARE LLC",
+              17752533.45
+            ],
+            [
               "AMENTUM TECHNOLOGY, INC.",
               10502539.38
             ],
@@ -135,34 +139,30 @@
               8400000
             ],
             [
-              "NAPHCARE LLC",
-              2945450.45
+              "TELEDYNE BROWN ENGINEERING, INC.",
+              4548593.56
+            ],
+            [
+              "THUNDERCAT TECHNOLOGY, LLC",
+              3744125.9
             ],
             [
               "H2 TECHNOLOGY GROUP, LLC",
               2540392.96
             ],
             [
+              "METROPOLITAN SECURITY SERVICES, INC.",
+              2223472.12
+            ],
+            [
               "DELOITTE CONSULTING LLP",
               1199958.75
-            ],
-            [
-              "TELEDYNE BROWN ENGINEERING, INC.",
-              1093976
-            ],
-            [
-              "SCIENCE APPLICATIONS INTERNATIONAL CORPORATION",
-              1018165.5
-            ],
-            [
-              "AKIMA GLOBAL LOGISTICS, LLC",
-              994047.27
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "AMERESCO INC led all contractors in Alabama with $52.3M, 46.2% of the state total."
+      "takeaway": "AMERESCO INC led all contractors in Alabama with $52.3M, 37.5% of the state total."
     },
     {
       "id": "alabama-top-naics",
@@ -177,12 +177,16 @@
               54188233.68
             ],
             [
+              "General Medical and Surgical Hospitals",
+              18002511.23
+            ],
+            [
               "Cut Stone and Stone Product Manufacturing",
               16713013.6
             ],
             [
               "Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology)",
-              11721045.38
+              12975662.94
             ],
             [
               "Industrial Building Construction",
@@ -190,27 +194,23 @@
             ],
             [
               "Other Computer Related Services",
-              2956552.16
-            ],
-            [
-              "General Medical and Surgical Hospitals",
-              2945428.23
+              6647018.13
             ],
             [
               "Facilities Support Services",
-              2815968.58
+              2827538.58
+            ],
+            [
+              "Security Guards and Patrol Services",
+              2529643.28
+            ],
+            [
+              "Research and Development in the Physical, Engineering, and Life Sciences (except Biotechnology)",
+              2199785.37
             ],
             [
               "Administrative Management and General Management Consulting Services",
-              1383991.9
-            ],
-            [
-              "All Other Support Services",
-              1203289.97
-            ],
-            [
-              "Irradiation Apparatus Manufacturing",
-              968779.95
+              1393053.35
             ]
           ]
         }
@@ -281,13 +281,21 @@
         [
           3,
           {
+            "text": "NAPHCARE LLC",
+            "href": "https://www.usaspending.gov/recipient/d11fd97e-be81-3cac-3a64-cda5ed4b8619-C/latest/"
+          },
+          17752533.45
+        ],
+        [
+          4,
+          {
             "text": "AMENTUM TECHNOLOGY, INC.",
             "href": "https://www.usaspending.gov/recipient/435aa33d-8ca5-7631-ec18-85dbb07c6fa1-C/latest/"
           },
           10502539.38
         ],
         [
-          4,
+          5,
           {
             "text": "BIRMINGHAM INDUSTRIAL CONSTRUCTION, LLC",
             "href": "https://www.usaspending.gov/recipient/c01c82a2-19f5-ecc1-dacc-7d00b93e94b9-C/latest/"
@@ -295,15 +303,23 @@
           8400000
         ],
         [
-          5,
+          6,
           {
-            "text": "NAPHCARE LLC",
-            "href": "https://www.usaspending.gov/recipient/d11fd97e-be81-3cac-3a64-cda5ed4b8619-C/latest/"
+            "text": "TELEDYNE BROWN ENGINEERING, INC.",
+            "href": "https://www.usaspending.gov/recipient/78ec491d-7c2b-71fe-33cf-48692f533970-C/latest/"
           },
-          2945450.45
+          4548593.56
         ],
         [
-          6,
+          7,
+          {
+            "text": "THUNDERCAT TECHNOLOGY, LLC",
+            "href": "https://www.usaspending.gov/recipient/dbceb126-f729-60e7-d55a-ba235f519653-C/latest/"
+          },
+          3744125.9
+        ],
+        [
+          8,
           {
             "text": "H2 TECHNOLOGY GROUP, LLC",
             "href": "https://www.usaspending.gov/recipient/25b814a9-0d8d-47b0-212a-14e680c79176-C/latest/"
@@ -311,36 +327,20 @@
           2540392.96
         ],
         [
-          7,
+          9,
+          {
+            "text": "METROPOLITAN SECURITY SERVICES, INC.",
+            "href": "https://www.usaspending.gov/recipient/835e42fb-f461-4e30-e17e-3205a1805635-C/latest/"
+          },
+          2223472.12
+        ],
+        [
+          10,
           {
             "text": "DELOITTE CONSULTING LLP",
             "href": "https://www.usaspending.gov/recipient/92663aec-4451-0476-502b-d8c6919e98e0-C/latest/"
           },
           1199958.75
-        ],
-        [
-          8,
-          {
-            "text": "TELEDYNE BROWN ENGINEERING, INC.",
-            "href": "https://www.usaspending.gov/recipient/78ec491d-7c2b-71fe-33cf-48692f533970-C/latest/"
-          },
-          1093976
-        ],
-        [
-          9,
-          {
-            "text": "SCIENCE APPLICATIONS INTERNATIONAL CORPORATION",
-            "href": "https://www.usaspending.gov/recipient/20af0683-f17d-1f8f-38ee-2f11bd124559-C/latest/"
-          },
-          1018165.5
-        ],
-        [
-          10,
-          {
-            "text": "AKIMA GLOBAL LOGISTICS, LLC",
-            "href": "https://www.usaspending.gov/recipient/ded7256c-011c-2248-ec90-35326ab8066e-C/latest/"
-          },
-          994047.27
         ]
       ]
     },
@@ -413,11 +413,29 @@
             "text": "TELEDYNE BROWN ENGINEERING, INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_80MSFC22CA016_8000_-NONE-_-NONE-/"
           },
-          276221881.16,
+          277476498.72,
           "National Aeronautics and Space Administration"
         ],
         [
           8,
+          {
+            "text": "RSI-QUANTITECH JV LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_80MSFC23CA004_8000_-NONE-_-NONE-/"
+          },
+          268069068.05,
+          "National Aeronautics and Space Administration"
+        ],
+        [
+          9,
+          {
+            "text": "TELEDYNE BROWN ENGINEERING, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_NNM14AA89D_8000_NNM13AA35C_8000/"
+          },
+          210886024,
+          "National Aeronautics and Space Administration"
+        ],
+        [
+          10,
           {
             "text": "H2 TECHNOLOGY GROUP, LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C10B24F0430_3600_47QTCA24D008Y_4732/"
@@ -426,7 +444,16 @@
           "Department of Veterans Affairs"
         ],
         [
-          9,
+          11,
+          {
+            "text": "NAPHCARE LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_15BRRC23F00000001_1540_15BRRC23D00000004_1540/"
+          },
+          49084632.26,
+          "Department of Justice"
+        ],
+        [
+          12,
           {
             "text": "L3 TECHNOLOGIES, INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_47QFLA24F0117_4732_47QFLA20D0014_4732/"
@@ -435,7 +462,16 @@
           "General Services Administration"
         ],
         [
-          10,
+          13,
+          {
+            "text": "AUBURN UNIVERSITY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70RSAT22CB0000002_7001_-NONE-_-NONE-/"
+          },
+          21852013,
+          "Department of Homeland Security"
+        ],
+        [
+          14,
           {
             "text": "AHTNA TARGET JV, LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_80MSFC25C0005_8000_-NONE-_-NONE-/"
@@ -444,7 +480,25 @@
           "National Aeronautics and Space Administration"
         ],
         [
-          11,
+          15,
+          {
+            "text": "HUNTSVILLE REHABILITATION FOUNDATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10G22C0008_3600_-NONE-_-NONE-/"
+          },
+          20224189.44,
+          "Department of Veterans Affairs"
+        ],
+        [
+          16,
+          {
+            "text": "STRAITSYS INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_15F06723C0002351_1549_-NONE-_-NONE-/"
+          },
+          16520346.86,
+          "Department of Justice"
+        ],
+        [
+          17,
           {
             "text": "AKIMA GLOBAL LOGISTICS, LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_80MSFC24FA101_8000_80MSFC24DA025_8000/"
@@ -453,7 +507,34 @@
           "National Aeronautics and Space Administration"
         ],
         [
-          12,
+          18,
+          {
+            "text": "SUVI GLOBAL SERVICES LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_15F06722C0000719_1549_-NONE-_-NONE-/"
+          },
+          13956035.82,
+          "Department of Justice"
+        ],
+        [
+          19,
+          {
+            "text": "NAPHCARE LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_15BRRC26F00000353_1540_15BRRC25D00000010_1540/"
+          },
+          13400000,
+          "Department of Justice"
+        ],
+        [
+          20,
+          {
+            "text": "NAPHCARE LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_15BRRC25F00000003_1540_15BRRC24D00000053_1540/"
+          },
+          12269927.74,
+          "Department of Justice"
+        ],
+        [
+          21,
           {
             "text": "4M RESEARCH, INC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_80MSFC22F0109_8000_80MSFC21A0006_8000/"
@@ -462,7 +543,7 @@
           "National Aeronautics and Space Administration"
         ],
         [
-          13,
+          22,
           {
             "text": "AAECON GENERAL CONTRACTING LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C24725C0101_3600_-NONE-_-NONE-/"
@@ -471,7 +552,7 @@
           "Department of Veterans Affairs"
         ],
         [
-          14,
+          23,
           {
             "text": "BIRMINGHAM INDUSTRIAL CONSTRUCTION, LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_80MSFC27F7050_8000_80SSC018D0011_8000/"
@@ -480,7 +561,7 @@
           "National Aeronautics and Space Administration"
         ],
         [
-          15,
+          24,
           {
             "text": "STRUCTURAL BUILDERS, INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C24723N0489_3600_36C24719D0018_3600/"
@@ -489,123 +570,42 @@
           "Department of Veterans Affairs"
         ],
         [
-          16,
+          25,
           {
             "text": "PINTER MEMORIALS INC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C78627N0031_3600_36C78623D0005_3600/"
           },
           6516643.31,
           "Department of Veterans Affairs"
-        ],
-        [
-          17,
-          {
-            "text": "PINTER MEMORIALS INC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C78627N0034_3600_36C78623D0003_3600/"
-          },
-          6299366.04,
-          "Department of Veterans Affairs"
-        ],
-        [
-          18,
-          {
-            "text": "COBURN CONTRACTORS, LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C24719C0044_3600_-NONE-_-NONE-/"
-          },
-          5432155.6,
-          "Department of Veterans Affairs"
-        ],
-        [
-          19,
-          {
-            "text": "OPTICAL SCIENCES, LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_80MSFC22FA012_8000_80MSFC22DA006_8000/"
-          },
-          4891091.69,
-          "National Aeronautics and Space Administration"
-        ],
-        [
-          20,
-          {
-            "text": "COBURN CONTRACTORS, LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C24724N0134_3600_36C24719D0014_3600/"
-          },
-          4520273.09,
-          "Department of Veterans Affairs"
-        ],
-        [
-          21,
-          {
-            "text": "SEVENTH SENSE, LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_80MSFC24FA036_8000_80NSSC24AA016_8000/"
-          },
-          4362937.45,
-          "National Aeronautics and Space Administration"
-        ],
-        [
-          22,
-          {
-            "text": "AKIMA GLOBAL LOGISTICS, LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_80MSFC25FA087_8000_80MSFC24DA025_8000/"
-          },
-          4339870.02,
-          "National Aeronautics and Space Administration"
-        ],
-        [
-          23,
-          {
-            "text": "ARROWS EDGE LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_80MSFC26F0039_8000_80MSFC26D0004_8000/"
-          },
-          3982631.56,
-          "National Aeronautics and Space Administration"
-        ],
-        [
-          24,
-          {
-            "text": "ADTRAV CORP",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_2031JW24F00001_2046_GS33F0003P_4730/"
-          },
-          2628000,
-          "Department of the Treasury"
-        ],
-        [
-          25,
-          {
-            "text": "DOMINGUEZ & PERSONS, LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_140FGA25C0013_1448_-NONE-_-NONE-/"
-          },
-          2364945.09,
-          "Department of the Interior"
         ]
       ]
     }
   ],
   "narrative": {
-    "intro": "Alabama's federal contract obligations for FY2027 to date are $113M. The Federal government awarded 223 contracts in the state, with an average award size of $508K. Obligations are down 99.3% year over year. Historical context shows prior fiscal years with much larger totals: FY22 was $14.1B, FY23 was $14.9B, FY24 was $17.3B, FY25 was $18.1B, and FY26 was $17.2B. The Department of Veterans Affairs leads buying in FY2027 to date with $84.6M, followed by the National Aeronautics and Space Administration with $22.8M and the Department of Justice with $3.9M. AMERESCO INC is the largest vendor in FY2027 to date with $52.3M, followed by PINTER MEMORIALS INC with $17.9M and AMENTUM TECHNOLOGY, INC. with $10.5M. Engineering Services is the top industry in FY2027 to date at $54.2M, followed by Cut Stone and Stone Product Manufacturing at $16.7M and Research and Development in the Physical, Engineering, and Life Sciences at $11.7M. All figures are contract obligations; current-year totals are partial.",
+    "intro": "Alabama recorded $139M in federal contract obligations in FY2027 to date. The federal government made 316 awards in Alabama so far this fiscal year, with an average award size of $441K. Obligations fell 99.2% year over year. The Department of Veterans Affairs accounted for the largest share of FY2027 to date obligations with $84.8M, followed by the National Aeronautics and Space Administration with $30.1M and the Department of Justice with $21.5M. AMERESCO INC led vendors with $52.3M in obligations, followed by PINTER MEMORIALS INC with $17.9M and NAPHCARE LLC with $17.8M. Engineering Services is the top industry in FY2027 to date with $54.2M in obligations, and General Medical and Surgical Hospitals and Cut Stone and Stone Product Manufacturing follow with $18M and $16.7M respectively. Earlier fiscal years show much larger totals, including $18.1B in FY25 and $17.6B in FY26, highlighting the current-year totals are partial and fiscal year to date.",
     "sections": [
       {
-        "heading": "What changed in federal contract spending for Alabama this fiscal year?",
-        "body": "Alabama's federal contract obligations are $113M for FY2027 to date. Obligations are down 99.3% year over year. Prior fiscal years show much higher totals, with FY26 at $17.2B and FY25 at $18.1B. The drop in FY2027 to date contrasts with the multi-year trend that peaked at $18.1B in FY25."
+        "heading": "How do current obligations compare with recent fiscal years?",
+        "body": "FY27 obligations stand at $139M compared with $17.6B in FY26 and $18.1B in FY25. FY24 obligations were $17.3B, FY23 obligations were $14.9B, and FY22 obligations were $14.1B. Obligations fell 99.2% year over year, and the note clarifies current-year totals are partial (fiscal year to date)."
       },
       {
-        "heading": "Who are the major buyers and contractors in Alabama right now?",
-        "body": "The Department of Veterans Affairs is the top buyer in FY2027 to date with $84.6M, followed by the National Aeronautics and Space Administration with $22.8M and the Department of Justice with $3.9M. AMERESCO INC is the top vendor in FY2027 to date with $52.3M, followed by PINTER MEMORIALS INC with $17.9M and AMENTUM TECHNOLOGY, INC. with $10.5M. Engineering Services is the largest industry in FY2027 to date at $54.2M."
+        "heading": "Which agencies and vendors dominate FY2027 to date?",
+        "body": "The Department of Veterans Affairs obligated $84.8M, the National Aeronautics and Space Administration obligated $30.1M, and the Department of Justice obligated $21.5M in FY2027 to date. AMERESCO INC received $52.3M, PINTER MEMORIALS INC received $17.9M, and NAPHCARE LLC received $17.8M. Engineering Services is the largest industry with $54.2M, followed by General Medical and Surgical Hospitals with $18M and Cut Stone and Stone Product Manufacturing with $16.7M."
       }
     ]
   },
   "faq": [
     {
       "q": "How much federal contract money goes to Alabama?",
-      "a": "Alabama receives $113M in federal contract obligations for FY2027 to date. Alabama had 223 awards in FY2027 to date and an average award size of $508K. Prior fiscal years were larger: FY26 was $17.2B, FY25 was $18.1B, FY24 was $17.3B, FY23 was $14.9B, and FY22 was $14.1B."
+      "a": "Alabama received $139M in federal contract obligations in FY2027 to date. The federal government made 316 awards in Alabama so far this fiscal year, with an average award size of $441K. The dataset notes current-year totals are partial (fiscal year to date) and obligations fell 99.2% year over year."
     },
     {
       "q": "Which agencies award the most contracts in Alabama?",
-      "a": "The Department of Veterans Affairs awards the most contracts in Alabama in FY2027 to date with $84.6M. The National Aeronautics and Space Administration is next with $22.8M, followed by the Department of Justice with $3.9M. Other buyers in the top ten include the General Services Administration with $1.1M and the Department of the Treasury with $756K."
+      "a": "The Department of Veterans Affairs awarded the most contracts in Alabama, obligating $84.8M in FY2027 to date. The National Aeronautics and Space Administration obligated $30.1M and the Department of Justice obligated $21.5M. Other buying agencies in the top ten include the General Services Administration with $1.4M and the Department of the Treasury with $756K."
     },
     {
       "q": "Who are the largest federal contractors in Alabama?",
-      "a": "AMERESCO INC is the largest federal contractor in Alabama in FY2027 to date with $52.3M. PINTER MEMORIALS INC is the second largest with $17.9M, and AMENTUM TECHNOLOGY, INC. is third with $10.5M. The top industries include Engineering Services at $54.2M and Cut Stone and Stone Product Manufacturing at $16.7M."
+      "a": "AMERESCO INC is the largest federal contractor in Alabama with $52.3M in obligations in FY2027 to date. PINTER MEMORIALS INC and NAPHCARE LLC follow with $17.9M and $17.8M respectively. The top ten vendors also include AMENTUM TECHNOLOGY, INC. with $10.5M and BIRMINGHAM INDUSTRIAL CONSTRUCTION, LLC with $8.4M."
     }
   ],
   "related": [

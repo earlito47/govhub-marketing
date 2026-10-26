@@ -4,14 +4,14 @@
   "title": "Government Contracts by NAICS, FY2027",
   "h1": "Government contracts by NAICS code, FY2027 to date",
   "metaDescription": "The largest federal contract markets by NAICS industry code in FY2027 to date, from USAspending.gov. Led by Direct Health and Medical Insurance Carriers.",
-  "updated": "2026-10-19",
+  "updated": "2026-10-26",
   "fyWindow": {
     "label": "FY2027 to date",
     "start": "2026-10-01",
-    "end": "2026-10-19"
+    "end": "2026-10-26"
   },
   "stats": {
-    "totalObligations": 3821115518.7900004,
+    "totalObligations": 5248764597.059999,
     "awardCount": null,
     "yoyGrowthPct": null,
     "avgAwardSize": null,
@@ -28,49 +28,49 @@
           "points": [
             [
               "Direct Health and Medical Insurance Carriers",
-              901362689.92
-            ],
-            [
-              "Other Computer Related Services",
-              340060244.79
-            ],
-            [
-              "Wired Telecommunications Carriers",
-              256810410.73
+              901517866.75
             ],
             [
               "Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology)",
-              233403670.93
+              726806922.82
             ],
             [
-              "Analytical Laboratory Instrument Manufacturing",
-              161370535.05
-            ],
-            [
-              "Couriers and Express Delivery Services",
-              117528011.75
+              "Other Computer Related Services",
+              394360602.73
             ],
             [
               "Commercial and Institutional Building Construction",
-              115059577.46
+              296492572.05
             ],
             [
-              "All Other Business Support Services",
-              103957108.12
+              "Wired Telecommunications Carriers",
+              258472791.27
             ],
             [
-              "Logging",
-              99575262
+              "Computer Systems Design Services",
+              253603915.25
             ],
             [
-              "Facilities Support Services",
-              96042531.06
+              "Engineering Services",
+              179110507.05
+            ],
+            [
+              "Analytical Laboratory Instrument Manufacturing",
+              166423639.64
+            ],
+            [
+              "Security Guards and Patrol Services",
+              158140665.04
+            ],
+            [
+              "Nonferrous Metal (except Aluminum) Smelting and Refining",
+              144439005.82
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Direct Health and Medical Insurance Carriers was the largest federal contract market in FY2027 to date, with $901M obligated."
+      "takeaway": "Direct Health and Medical Insurance Carriers was the largest federal contract market in FY2027 to date, with $902M obligated."
     }
   ],
   "tables": [
@@ -88,66 +88,138 @@
             "text": "Direct Health and Medical Insurance Carriers (524114)",
             "href": null
           },
-          901362689.92
+          901517866.75
         ],
         [
           2,
           {
-            "text": "Other Computer Related Services (541519)",
-            "href": "/insights/naics/541519/"
+            "text": "Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology) (541715)",
+            "href": "/insights/naics/541715/"
           },
-          340060244.79
+          726806922.82
         ],
         [
           3,
           {
-            "text": "Wired Telecommunications Carriers (517110)",
-            "href": null
+            "text": "Other Computer Related Services (541519)",
+            "href": "/insights/naics/541519/"
           },
-          256810410.73
+          394360602.73
         ],
         [
           4,
           {
-            "text": "Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology) (541715)",
-            "href": "/insights/naics/541715/"
+            "text": "Commercial and Institutional Building Construction (236220)",
+            "href": "/insights/naics/236220/"
           },
-          233403670.93
+          296492572.05
         ],
         [
           5,
           {
-            "text": "Analytical Laboratory Instrument Manufacturing (334516)",
+            "text": "Wired Telecommunications Carriers (517110)",
             "href": null
           },
-          161370535.05
+          258472791.27
         ],
         [
           6,
           {
-            "text": "Couriers and Express Delivery Services (492110)",
-            "href": null
+            "text": "Computer Systems Design Services (541512)",
+            "href": "/insights/naics/541512/"
           },
-          117528011.75
+          253603915.25
         ],
         [
           7,
           {
-            "text": "Commercial and Institutional Building Construction (236220)",
-            "href": "/insights/naics/236220/"
+            "text": "Engineering Services (541330)",
+            "href": "/insights/naics/541330/"
           },
-          115059577.46
+          179110507.05
         ],
         [
           8,
           {
-            "text": "All Other Business Support Services (561499)",
+            "text": "Analytical Laboratory Instrument Manufacturing (334516)",
             "href": null
           },
-          103957108.12
+          166423639.64
         ],
         [
           9,
+          {
+            "text": "Security Guards and Patrol Services (561612)",
+            "href": "/insights/naics/561612/"
+          },
+          158140665.04
+        ],
+        [
+          10,
+          {
+            "text": "Nonferrous Metal (except Aluminum) Smelting and Refining (331410)",
+            "href": null
+          },
+          144439005.82
+        ],
+        [
+          11,
+          {
+            "text": "Couriers and Express Delivery Services (492110)",
+            "href": null
+          },
+          120068814.12
+        ],
+        [
+          12,
+          {
+            "text": "Facilities Support Services (561210)",
+            "href": "/insights/naics/561210/"
+          },
+          118389512.62
+        ],
+        [
+          13,
+          {
+            "text": "Nonscheduled Chartered Freight Air Transportation (481212)",
+            "href": null
+          },
+          113371762.29
+        ],
+        [
+          14,
+          {
+            "text": "Hazardous Waste Treatment and Disposal (562211)",
+            "href": null
+          },
+          104346587.55
+        ],
+        [
+          15,
+          {
+            "text": "All Other Business Support Services (561499)",
+            "href": null
+          },
+          102673841.84
+        ],
+        [
+          16,
+          {
+            "text": "Surgical and Medical Instrument Manufacturing (339112)",
+            "href": "/insights/naics/339112/"
+          },
+          99780190.57
+        ],
+        [
+          17,
+          {
+            "text": "Temporary Help Services (561320)",
+            "href": null
+          },
+          99680652.05
+        ],
+        [
+          18,
           {
             "text": "Logging (113310)",
             "href": null
@@ -155,63 +227,31 @@
           99575262
         ],
         [
-          10,
-          {
-            "text": "Facilities Support Services (561210)",
-            "href": "/insights/naics/561210/"
-          },
-          96042531.06
-        ],
-        [
-          11,
+          19,
           {
             "text": "Custom Computer Programming Services (541511)",
             "href": "/insights/naics/541511/"
           },
-          95426274.13
+          99037456.88
         ],
         [
-          12,
-          {
-            "text": "Nonscheduled Chartered Freight Air Transportation (481212)",
-            "href": null
-          },
-          95251826.58
-        ],
-        [
-          13,
-          {
-            "text": "Nonferrous Metal (except Aluminum) Smelting and Refining (331410)",
-            "href": null
-          },
-          91701128.51
-        ],
-        [
-          14,
-          {
-            "text": "Temporary Help Services (561320)",
-            "href": null
-          },
-          87725427.32
-        ],
-        [
-          15,
+          20,
           {
             "text": "Colleges, Universities, and Professional Schools (611310)",
             "href": null
           },
-          87117614.94
+          95582640.08
         ],
         [
-          16,
+          21,
           {
-            "text": "Engineering Services (541330)",
-            "href": "/insights/naics/541330/"
+            "text": "Medical Laboratories (621511)",
+            "href": "/insights/naics/621511/"
           },
-          85542553.62
+          87925750.19
         ],
         [
-          17,
+          22,
           {
             "text": "Research and Development in the Physical, Engineering, and Life Sciences (541710)",
             "href": null
@@ -219,129 +259,89 @@
           84971385
         ],
         [
-          18,
-          {
-            "text": "Medical Laboratories (621511)",
-            "href": "/insights/naics/621511/"
-          },
-          79227106.79
-        ],
-        [
-          19,
+          23,
           {
             "text": "Pharmaceutical Preparation Manufacturing (325412)",
             "href": "/insights/naics/325412/"
           },
-          74909345.91
-        ],
-        [
-          20,
-          {
-            "text": "Ambulance Services (621910)",
-            "href": null
-          },
-          69688314.37
-        ],
-        [
-          21,
-          {
-            "text": "All Other Outpatient Care Centers (621498)",
-            "href": null
-          },
-          64314359.85
-        ],
-        [
-          22,
-          {
-            "text": "Irradiation Apparatus Manufacturing (334517)",
-            "href": null
-          },
-          64280917.68
-        ],
-        [
-          23,
-          {
-            "text": "Surgical and Medical Instrument Manufacturing (339112)",
-            "href": "/insights/naics/339112/"
-          },
-          58506779.65
+          84190405.19
         ],
         [
           24,
           {
-            "text": "Electric Power Distribution (221122)",
+            "text": "All Other Outpatient Care Centers (621498)",
             "href": null
           },
-          57961259.51
+          80555325.34
         ],
         [
           25,
           {
-            "text": "In-Vitro Diagnostic Substance Manufacturing (325413)",
+            "text": "Irradiation Apparatus Manufacturing (334517)",
             "href": null
           },
-          57377215.2
+          77152435.54
         ],
         [
           26,
           {
-            "text": "Computer Systems Design Services (541512)",
-            "href": "/insights/naics/541512/"
+            "text": "Ambulance Services (621910)",
+            "href": null
           },
-          52700478.06
+          72426840.07
         ],
         [
           27,
           {
-            "text": "Wireless Telecommunications Carriers (except Satellite) (517112)",
+            "text": "Electric Power Distribution (221122)",
             "href": null
           },
-          52490502.53
+          62679430.13
         ],
         [
           28,
           {
-            "text": "Cut Stone and Stone Product Manufacturing (327991)",
+            "text": "In-Vitro Diagnostic Substance Manufacturing (325413)",
             "href": null
           },
-          47213805.28
+          57718016.65
         ],
         [
           29,
           {
-            "text": "Special Needs Transportation (485991)",
+            "text": "Computing Infrastructure Providers, Data Processing, Web Hosting, and Related Services (518210)",
             "href": null
           },
-          46629288.42
+          54685208.75
         ],
         [
           30,
           {
-            "text": "Electronic and Precision Equipment Repair and Maintenance (811210)",
+            "text": "Special Needs Transportation (485991)",
             "href": null
           },
-          42909893.63
+          54584591.78
         ]
       ]
     }
   ],
   "narrative": {
-    "intro": "The ranking lists federal contract obligations by NAICS code for FY2027 to date. Total obligations for the period are $3.8B. Direct Health and Medical Insurance Carriers leads the list with $901M in obligations. Other Computer Related Services follows with $340M, Wired Telecommunications Carriers with $257M, and Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology) with $233M. The top ten also include Analytical Laboratory Instrument Manufacturing at $161M, Couriers and Express Delivery Services at $118M, Commercial and Institutional Building Construction at $115M, All Other Business Support Services at $104M, Logging at $99.6M, and Facilities Support Services at $96M. The list mixes health insurance, IT services, telecommunications, research, manufacturing, logistics, construction, business support, natural resources, and facilities work, showing a broad set of industries receiving obligations in the current fiscal year to date.",
+    "intro": "The dataset covers federal contract obligations by NAICS for FY2027 to date. The federal government obligated $5.2B in reported contract obligations so far this fiscal year. Direct Health and Medical Insurance Carriers is the largest NAICS category with $902M in obligations, followed by Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology) with $727M. Other Computer Related Services, Commercial and Institutional Building Construction, and Wired Telecommunications Carriers round out the next three largest categories with $394M, $296M, and $258M respectively. The list also shows substantial obligations in Computer Systems Design Services, Engineering Services, Analytical Laboratory Instrument Manufacturing, Security Guards and Patrol Services, and Nonferrous Metal (except Aluminum) Smelting and Refining. The figures represent partial fiscal year totals; they are current-year obligations to date, not full-year totals.",
     "sections": [
       {
-        "heading": "Which NAICS codes received the most federal obligations in FY2027 to date?",
-        "body": "Direct Health and Medical Insurance Carriers received $901M in obligations, the largest single NAICS on the list. Other Computer Related Services received $340M and Wired Telecommunications Carriers received $257M. Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology) received $233M."
+        "heading": "Which industries lead federal obligations by NAICS?",
+        "body": "Direct Health and Medical Insurance Carriers leads with $902M in obligations. Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology) follows with $727M. Other Computer Related Services, Commercial and Institutional Building Construction, and Wired Telecommunications Carriers report $394M, $296M, and $258M respectively."
       },
       {
-        "heading": "What industry types appear among the top NAICS codes?",
-        "body": "Health insurance, IT services, and telecommunications appear near the top of the ranking. The top ten also include research, manufacturing, logistics, construction, business support, natural resources, and facilities services. These entries range from $96M to $901M in obligations."
+        "heading": "What other NAICS categories appear in the top ten?",
+        "body": "Computer Systems Design Services shows $254M in obligations. Engineering Services and Analytical Laboratory Instrument Manufacturing report $179M and $166M respectively. Security Guards and Patrol Services and Nonferrous Metal (except Aluminum) Smelting and Refining record $158M and $144M."
       }
     ]
   },
   "faq": [
     {
       "q": "What are the biggest federal contracting industries?",
-      "a": "Direct Health and Medical Insurance Carriers is the biggest federal contracting industry with $901M in obligations. Other major industries by obligation are Other Computer Related Services at $340M, Wired Telecommunications Carriers at $257M, and Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology) at $233M. The top ten list also includes Analytical Laboratory Instrument Manufacturing at $161M, Couriers and Express Delivery Services at $118M, Commercial and Institutional Building Construction at $115M, All Other Business Support Services at $104M, Logging at $99.6M, and Facilities Support Services at $96M."
+      "a": "Direct Health and Medical Insurance Carriers is the biggest federal contracting industry, with $902M in obligations. Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology) is the second largest with $727M. Other large industries include Other Computer Related Services at $394M, Commercial and Institutional Building Construction at $296M, and Wired Telecommunications Carriers at $258M. The top ten list also includes Computer Systems Design Services at $254M, Engineering Services at $179M, Analytical Laboratory Instrument Manufacturing at $166M, Security Guards and Patrol Services at $158M, and Nonferrous Metal (except Aluminum) Smelting and Refining at $144M."
     }
   ],
   "related": [

@@ -1,20 +1,20 @@
 {
   "pageType": "agency",
   "slug": "department-of-justice",
-  "title": "DOJ Contract Spending: $98.1M in FY2027",
+  "title": "DOJ Contract Spending: $337M in FY2027",
   "h1": "Department of Justice: Federal Contract Spending & Top Vendors",
-  "metaDescription": "Department of Justice obligated $98.1M in federal contracts in FY2027 to date. See what it buys, its top vendors, and multi-year trend.",
-  "updated": "2026-10-19",
+  "metaDescription": "Department of Justice obligated $337M in federal contracts in FY2027 to date. See what it buys, its top vendors, and multi-year trend.",
+  "updated": "2026-10-26",
   "fyWindow": {
     "label": "FY2027 to date",
     "start": "2026-10-01",
-    "end": "2026-10-19"
+    "end": "2026-10-26"
   },
   "stats": {
-    "totalObligations": 98149552.87,
-    "awardCount": 1384,
-    "yoyGrowthPct": -99,
-    "avgAwardSize": 70917,
+    "totalObligations": 337253230.64,
+    "awardCount": 3061,
+    "yoyGrowthPct": -96.7,
+    "avgAwardSize": 110177,
     "smallBusinessSharePct": null
   },
   "charts": [
@@ -36,25 +36,25 @@
             ],
             [
               "FY24",
-              9311558552.62
+              9311505116.04
             ],
             [
               "FY25",
-              8552918781.5
+              8513700698.66
             ],
             [
               "FY26",
-              10240768104.33
+              10265590572
             ],
             [
               "FY27",
-              98149552.87
+              337253230.64
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Obligations fell 99.0% year over year, from $10.2B in FY2026 to $98.1M in FY2027 to date."
+      "takeaway": "Obligations fell 96.7% year over year, from $10.3B in FY2026 to $337M in FY2027 to date."
     },
     {
       "id": "department-of-justice-top-naics",
@@ -65,8 +65,28 @@
           "label": "Obligations",
           "points": [
             [
+              "Security Guards and Patrol Services",
+              119092719.3
+            ],
+            [
               "General Medical and Surgical Hospitals",
-              12894301.87
+              39521883.34
+            ],
+            [
+              "All Other Legal Services",
+              18218447.82
+            ],
+            [
+              "All Other Miscellaneous Food Manufacturing",
+              16458889.78
+            ],
+            [
+              "Pharmaceutical Preparation Manufacturing",
+              14578317.92
+            ],
+            [
+              "Other Residential Care Facilities",
+              12530440.84
             ],
             [
               "Other Support Activities for Air Transportation",
@@ -74,41 +94,21 @@
             ],
             [
               "Software Publishers",
-              10401100.8
+              10477337.17
             ],
             [
-              "All Other Miscellaneous Food Manufacturing",
-              10309533.15
+              "Other Computer Related Services",
+              7821933.24
             ],
             [
               "Offices of Certified Public Accountants",
-              6785897.6
-            ],
-            [
-              "Office Furniture (except Wood) Manufacturing",
-              5849571.33
-            ],
-            [
-              "Nonscheduled Chartered Passenger Air Transportation",
-              5205421
-            ],
-            [
-              "Engineering Services",
-              4406422
-            ],
-            [
-              "Pharmaceutical Preparation Manufacturing",
-              4326866.59
-            ],
-            [
-              "Translation and Interpretation Services",
-              3622548.97
+              6983104.2
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "General Medical and Surgical Hospitals was Justice's largest contract category, with $12.9M obligated (13.1% of contract spending)."
+      "takeaway": "Security Guards and Patrol Services was Justice's largest contract category, with $119M obligated (35.3% of contract spending)."
     },
     {
       "id": "department-of-justice-top-vendors",
@@ -119,8 +119,28 @@
           "label": "Obligations",
           "points": [
             [
+              "METROPOLITAN SECURITY SERVICES, INC.",
+              102100883.19
+            ],
+            [
+              "NAPHCARE LLC",
+              21987826.77
+            ],
+            [
+              "FORFEITURE SUPPORT ASSOCIATES LLC",
+              16251145.94
+            ],
+            [
+              "MCKESSON CORPORATION",
+              14453948.09
+            ],
+            [
               "AAR AIRCRAFT SERVICES, INC.",
               12350665.74
+            ],
+            [
+              "CENTERRA GROUP, LLC",
+              10552343.89
             ],
             [
               "ADVANCED TECHNOLOGIES GROUP LLC",
@@ -128,51 +148,35 @@
             ],
             [
               "ERNST & YOUNG LLP",
-              6785897.6
-            ],
-            [
-              "NAPHCARE LLC",
-              5124014
-            ],
-            [
-              "FLIGHTWORKS INC",
-              4735180
+              6983104.2
             ],
             [
               "MAYVIN, INC.",
-              4406422
-            ],
-            [
-              "MCKESSON CORPORATION",
-              4214240.94
-            ],
-            [
-              "SHAVER FOODS LLC",
-              3161017.45
-            ],
-            [
-              "NIGHTINGALE CORP",
-              3033703.13
+              5995952.39
             ],
             [
               "SEVEN CORNERS INC",
-              2785885.96
+              5402398.58
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "AAR AIRCRAFT SERVICES, INC. led all Justice contractors with $12.4M, 12.6% of obligations."
+      "takeaway": "METROPOLITAN SECURITY SERVICES, INC. led all Justice contractors with $102M, 30.3% of obligations."
     }
   ],
   "crossLinks": [
     {
-      "label": "NAICS 541330: Engineering Services",
-      "href": "/insights/naics/541330/"
+      "label": "NAICS 561612: Security Guards and Patrol Services",
+      "href": "/insights/naics/561612/"
     },
     {
       "label": "NAICS 325412: Pharmaceutical Preparation Manufacturing",
       "href": "/insights/naics/325412/"
+    },
+    {
+      "label": "NAICS 541519: Other Computer Related Services",
+      "href": "/insights/naics/541519/"
     }
   ],
   "tables": [
@@ -187,13 +191,53 @@
         [
           1,
           {
+            "text": "METROPOLITAN SECURITY SERVICES, INC.",
+            "href": "https://www.usaspending.gov/recipient/835e42fb-f461-4e30-e17e-3205a1805635-C/latest/"
+          },
+          102100883.19
+        ],
+        [
+          2,
+          {
+            "text": "NAPHCARE LLC",
+            "href": "https://www.usaspending.gov/recipient/d11fd97e-be81-3cac-3a64-cda5ed4b8619-C/latest/"
+          },
+          21987826.77
+        ],
+        [
+          3,
+          {
+            "text": "FORFEITURE SUPPORT ASSOCIATES LLC",
+            "href": "https://www.usaspending.gov/recipient/24515b84-620e-1924-974e-c6d0b649f793-C/latest/"
+          },
+          16251145.94
+        ],
+        [
+          4,
+          {
+            "text": "MCKESSON CORPORATION",
+            "href": "https://www.usaspending.gov/recipient/b54de748-ee64-a1e6-546e-e7007b054797-C/latest/"
+          },
+          14453948.09
+        ],
+        [
+          5,
+          {
             "text": "AAR AIRCRAFT SERVICES, INC.",
             "href": "https://www.usaspending.gov/recipient/3ffcf4e9-e2b9-522e-1fae-d1a76d4f0fd9-C/latest/"
           },
           12350665.74
         ],
         [
-          2,
+          6,
+          {
+            "text": "CENTERRA GROUP, LLC",
+            "href": "https://www.usaspending.gov/recipient/170470f0-8d47-72dd-c09c-8affb0d48e5b-C/latest/"
+          },
+          10552343.89
+        ],
+        [
+          7,
           {
             "text": "ADVANCED TECHNOLOGIES GROUP LLC",
             "href": "https://www.usaspending.gov/recipient/dc0e9c5c-58c5-b57c-ef4e-c4b2bd60ecd4-C/latest/"
@@ -201,60 +245,20 @@
           10380985.68
         ],
         [
-          3,
+          8,
           {
             "text": "ERNST & YOUNG LLP",
             "href": "https://www.usaspending.gov/recipient/dd8305ba-1d9b-c594-9391-076ac5a963ad-C/latest/"
           },
-          6785897.6
-        ],
-        [
-          4,
-          {
-            "text": "NAPHCARE LLC",
-            "href": "https://www.usaspending.gov/recipient/d11fd97e-be81-3cac-3a64-cda5ed4b8619-C/latest/"
-          },
-          5124014
-        ],
-        [
-          5,
-          {
-            "text": "FLIGHTWORKS INC",
-            "href": "https://www.usaspending.gov/recipient/cce15e52-9876-12d2-3cfd-2b166ddf2d35-C/latest/"
-          },
-          4735180
-        ],
-        [
-          6,
-          {
-            "text": "MAYVIN, INC.",
-            "href": "https://www.usaspending.gov/recipient/854dd877-03d8-4083-8892-11c59f0901c3-C/latest/"
-          },
-          4406422
-        ],
-        [
-          7,
-          {
-            "text": "MCKESSON CORPORATION",
-            "href": "https://www.usaspending.gov/recipient/b54de748-ee64-a1e6-546e-e7007b054797-C/latest/"
-          },
-          4214240.94
-        ],
-        [
-          8,
-          {
-            "text": "SHAVER FOODS LLC",
-            "href": "https://www.usaspending.gov/recipient/b9191be4-e258-2942-40a7-d5b727123098-C/latest/"
-          },
-          3161017.45
+          6983104.2
         ],
         [
           9,
           {
-            "text": "NIGHTINGALE CORP",
-            "href": "https://www.usaspending.gov/recipient/3efe330f-e90a-0e4e-1f01-f199541af313-C/latest/"
+            "text": "MAYVIN, INC.",
+            "href": "https://www.usaspending.gov/recipient/854dd877-03d8-4083-8892-11c59f0901c3-C/latest/"
           },
-          3033703.13
+          5995952.39
         ],
         [
           10,
@@ -262,7 +266,7 @@
             "text": "SEVEN CORNERS INC",
             "href": "https://www.usaspending.gov/recipient/1566640c-e32f-d759-cb4e-0e95ea51cba1-C/latest/"
           },
-          2785885.96
+          5402398.58
         ]
       ]
     },
@@ -277,13 +281,29 @@
         [
           1,
           {
+            "text": "THE GEO GROUP, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_DJJODT8C0005_1501_-NONE-_-NONE-/"
+          },
+          568055447.37
+        ],
+        [
+          2,
+          {
             "text": "SOS INTERNATIONAL LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_15JPSS24F00000704_1501_15JPSS20D00000366_1501/"
           },
           110523676.37
         ],
         [
-          2,
+          3,
+          {
+            "text": "VERIZON BUSINESS NETWORK SERVICES LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_15F06722F0000818_1549_GS00Q17NSD3009_4732/"
+          },
+          92602111.38
+        ],
+        [
+          4,
           {
             "text": "XPECT SOLUTIONS LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_15F06723F0001542_1549_GS35F457AA_4732/"
@@ -291,7 +311,31 @@
           88626141.6
         ],
         [
-          3,
+          5,
+          {
+            "text": "EAGLE HARBOR, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_15DDHQ22F00000334_1524_47QRAD20D8111_4732/"
+          },
+          81056067.64
+        ],
+        [
+          6,
+          {
+            "text": "ECS FEDERAL, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_15F06725F0001248_1549_15F06724A0000314_1549/"
+          },
+          50589964.9
+        ],
+        [
+          7,
+          {
+            "text": "NAPHCARE LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_15BRRC23F00000001_1540_15BRRC23D00000004_1540/"
+          },
+          49084632.26
+        ],
+        [
+          8,
           {
             "text": "AAR AIRCRAFT SERVICES, INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_15M30023PA3700014_1544_-NONE-_-NONE-/"
@@ -299,7 +343,23 @@
           48307743.12
         ],
         [
-          4,
+          9,
+          {
+            "text": "FIVE STONES INTELLIGENCE, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_15A00023FAQA00214_1560_15JPSS23D00000067_1501/"
+          },
+          38345514
+        ],
+        [
+          10,
+          {
+            "text": "EAGLE HARBOR, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_15DDHQ21F00001671_1524_47QRAD20D8111_4732/"
+          },
+          35896301.46
+        ],
+        [
+          11,
           {
             "text": "GUIDEHOUSE INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_15F06722F0001858_1549_15F06722A0000176_1549/"
@@ -307,7 +367,7 @@
           24246473.14
         ],
         [
-          5,
+          12,
           {
             "text": "MELWOOD HORTICULTURAL TRAINING CENTER, INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_15F06722C0000285_1549_-NONE-_-NONE-/"
@@ -315,7 +375,15 @@
           23715206.32
         ],
         [
-          6,
+          13,
+          {
+            "text": "HILL ASC, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_15JPSS24F00000188_1501_GS35F0235U_4730/"
+          },
+          20368401.96
+        ],
+        [
+          14,
           {
             "text": "PERATON INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_15F06726F0000743_1549_15F06724A0000305_1549/"
@@ -323,7 +391,55 @@
           19899764.67
         ],
         [
-          7,
+          15,
+          {
+            "text": "FORFEITURE SUPPORT ASSOCIATES LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_15A00025FAQA00183_1560_15JPSS20D00000271_1501/"
+          },
+          19570997.5
+        ],
+        [
+          16,
+          {
+            "text": "NTT DATA SERVICES FEDERAL GOVERNMENT, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_15DDHQ25F00000448_1524_47QRAA19D0069_4732/"
+          },
+          18760609.14
+        ],
+        [
+          17,
+          {
+            "text": "PAE LABAT-ANDERSON LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_15JPSS21F00000478_1501_15JPSS20D00000373_1501/"
+          },
+          17091584.93
+        ],
+        [
+          18,
+          {
+            "text": "STRAITSYS INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_15F06723C0002351_1549_-NONE-_-NONE-/"
+          },
+          16520346.86
+        ],
+        [
+          19,
+          {
+            "text": "AT&T ENTERPRISES, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_15F06722F0001994_1549_GS00Q17NSD3000_4732/"
+          },
+          16132199.43
+        ],
+        [
+          20,
+          {
+            "text": "SUVI GLOBAL SERVICES LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_15F06722C0000719_1549_-NONE-_-NONE-/"
+          },
+          13956035.82
+        ],
+        [
+          21,
           {
             "text": "GUIDEHOUSE INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_15F06723F0001401_1549_15F06722A0000176_1549/"
@@ -331,177 +447,65 @@
           13829261.89
         ],
         [
-          8,
-          {
-            "text": "PANAMERICA COMPUTERS, INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_15F06725F0002152_1549_NNG15SD02B_8000/"
-          },
-          11403049.85
-        ],
-        [
-          9,
-          {
-            "text": "FLIGHTWORKS INC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_15M30024FA3700031_1544_GS33F0008U_4730/"
-          },
-          10850420.31
-        ],
-        [
-          10,
-          {
-            "text": "INTER-CON SECURITY SYSTEMS, INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_15M40025FA3500022_1544_15M40025AA3500030_1544/"
-          },
-          10665296.68
-        ],
-        [
-          11,
-          {
-            "text": "ADVANCED TECHNOLOGIES GROUP LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_15BNAS26P00000199_1540_-NONE-_-NONE-/"
-          },
-          10380985.68
-        ],
-        [
-          12,
-          {
-            "text": "OMNI CONSULTING SOLUTIONS, INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_15F06724F0001309_1549_15F06722A0000178_1549/"
-          },
-          9744816.78
-        ],
-        [
-          13,
-          {
-            "text": "WESTWIND COMPUTER PRODUCTS, INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_15BPCC26F00000167_1540_NNG15SD04B_8000/"
-          },
-          9678581
-        ],
-        [
-          14,
-          {
-            "text": "METROPOLITAN SECURITY SERVICES, INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_15M10525FD1926CSO_1544_15M10523DA4700070_1544/"
-          },
-          9602462.03
-        ],
-        [
-          15,
-          {
-            "text": "CORECIVIC, INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_15M40026FA3500014_1544_70CDCR25D00000010_7012/"
-          },
-          8545912
-        ],
-        [
-          16,
-          {
-            "text": "PERSONNEL DECISIONS RESEARCH INSTITUTES, LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_15F06722F0001170_1549_GS02Q16DCR0061_4732/"
-          },
-          7282367.17
-        ],
-        [
-          17,
-          {
-            "text": "ERNST & YOUNG LLP",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_15JPSS26F00001483_1501_15JPSS21A00000068_1501/"
-          },
-          6785897.6
-        ],
-        [
-          18,
-          {
-            "text": "LIGHTFEATHER IO LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_15M30023FA3700077_1544_47QTCA21D000X_4732/"
-          },
-          6395253
-        ],
-        [
-          19,
-          {
-            "text": "METROPOLITAN SECURITY SERVICES, INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_15M10524FD6725CSO_1544_15M10522DA4700004_1544/"
-          },
-          6050788.51
-        ],
-        [
-          20,
-          {
-            "text": "DISMAS HOUSE OF ST. LOUIS",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_15BRRC26F00000229_1540_15BRRC24D00000027_1540/"
-          },
-          5448900
-        ],
-        [
-          21,
-          {
-            "text": "EVIGILANT.COM, LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_15M20021FA32NPA18_1544_15M20019AA32NP01A_1544/"
-          },
-          5057931.39
-        ],
-        [
           22,
           {
-            "text": "PGLS LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_15BNAS26F00000227_1540_15BNAS26A00000130_1540/"
+            "text": "AMERICAN EAGLE PROTECTIVE SERVICES CORP",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_15JPSS26F00001168_1501_47QSMS26D0048_4732/"
           },
-          4775867.45
+          13682666.15
         ],
         [
           23,
           {
-            "text": "STARSIDE SECURITY & INVESTIGATION INC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_15M40025FA3500027_1544_15M40025AA3500016_1544/"
+            "text": "LENTECH, INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_15F06723F0000377_1549_GS35F0451V_4730/"
           },
-          4565671.71
+          13634152.94
         ],
         [
           24,
           {
-            "text": "DISMAS CHARITIES INC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_15BRRC26F00000152_1540_15BRRC19D00000073_1540/"
+            "text": "NAPHCARE LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_15BRRC26F00000353_1540_15BRRC25D00000010_1540/"
           },
-          4055354.71
+          13400000
         ],
         [
           25,
           {
-            "text": "INTELLIDYNE, L.L.C.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_15JA0521F00000159_1501_GS35F0151S_4730/"
+            "text": "FORFEITURE SUPPORT ASSOCIATES LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_15DDHQ25F00000755_1524_15JPSS20D00000271_1501/"
           },
-          3973408.41
+          12400004.9
         ]
       ]
     }
   ],
   "narrative": {
-    "intro": "The Department of Justice has obligated $98.1M in contracts in FY2027 to date. The agency recorded 1,384 awards so far, with an average award size of $70.9K. Obligations fell 99.0% year over year. The DOJ’s fiscal-year obligations for prior years were $9B in FY22, $10B in FY23, $9.3B in FY24, $8.6B in FY25, and $10.2B in FY26. The FY2027 total is a partial, fiscal year to date figure. Top spending categories in FY2027 to date include General Medical and Surgical Hospitals at $12.9M, Other Support Activities for Air Transportation at $12.5M, and Software Publishers at $10.4M, followed by All Other Miscellaneous Food Manufacturing at $10.3M and Offices of Certified Public Accountants at $6.8M. Leading vendors in FY2027 to date include AAR AIRCRAFT SERVICES, INC. at $12.4M, ADVANCED TECHNOLOGIES GROUP LLC at $10.4M, and ERNST & YOUNG LLP at $6.8M. The Department of Justice’s current-year obligations show a much lower dollar total compared with recent full fiscal years.",
+    "intro": "The Department of Justice obligated $337M in FY2027 to date, across 3,061 awards with an average award size of $110K. Obligations fell 96.7% year over year. Historical annual obligations show a much larger baseline: FY22 was $9B, FY23 was $10B, FY24 was $9.3B, FY25 was $8.5B, and FY26 was $10.3B. The FY2027 to date total is concentrated in a handful of categories and vendors, with Security Guards and Patrol Services accounting for $119M of obligations and METROPOLITAN SECURITY SERVICES, INC. receiving $102M. Other notable categories include General Medical and Surgical Hospitals at $39.5M and All Other Legal Services at $18.2M. Other vendors with meaningful FY2027 to date obligations include NAPHCARE LLC at $22M and FORFEITURE SUPPORT ASSOCIATES LLC at $16.3M. This year to date data is a partial view; FY2027 totals are fiscal year to date and may change as the year progresses.",
     "sections": [
       {
-        "heading": "How does DOJ spending in FY2027 to date compare with prior years?",
-        "body": "The Department of Justice has obligated $98.1M in FY2027 to date, compared with $10.2B in FY26 and $9.3B in FY24. Obligations fell 99.0% year over year. FY22 through FY26 totals were $9B, $10B, $9.3B, $8.6B, and $10.2B respectively."
+        "heading": "Why are FY2027 to date obligations much lower than prior years?",
+        "body": "The Department of Justice obligated $337M in FY2027 to date, compared with single-year totals of $9B, $10B, $9.3B, $8.5B, and $10.3B in FY22 through FY26. Obligations fell 96.7% year over year. The FY2027 figure is a fiscal year to date total, not a full fiscal year tally. The award count for FY2027 to date is 3,061 with an average award size of $110K."
       },
       {
-        "heading": "What are the largest industries and contractors in FY2027 to date?",
-        "body": "General Medical and Surgical Hospitals is the largest NAICS category at $12.9M, followed by Other Support Activities for Air Transportation at $12.5M and Software Publishers at $10.4M. AAR AIRCRAFT SERVICES, INC. is the top vendor at $12.4M, followed by ADVANCED TECHNOLOGIES GROUP LLC at $10.4M and ERNST & YOUNG LLP at $6.8M."
+        "heading": "Which vendors and NAICS categories dominate FY2027 to date obligations?",
+        "body": "Security Guards and Patrol Services is the largest category at $119M, followed by General Medical and Surgical Hospitals at $39.5M and All Other Legal Services at $18.2M. METROPOLITAN SECURITY SERVICES, INC. is the top vendor at $102M, followed by NAPHCARE LLC at $22M and FORFEITURE SUPPORT ASSOCIATES LLC at $16.3M. Several other vendors and categories contribute smaller amounts, including MCKESSON CORPORATION at $14.5M and Software Publishers at $10.5M."
       }
     ]
   },
   "faq": [
     {
       "q": "How much does Department of Justice spend on contracts?",
-      "a": "The Department of Justice has obligated $98.1M in contracts in FY2027 to date. The agency recorded 1,384 awards with an average award size of $70.9K. Obligations fell 99.0% year over year, and prior full fiscal-year obligations were $9B in FY22, $10B in FY23, $9.3B in FY24, $8.6B in FY25, and $10.2B in FY26."
+      "a": "The Department of Justice obligated $337M on contracts in FY2027 to date. The Department of Justice recorded 3,061 awards in FY2027 to date with an average award size of $110K, and obligations fell 96.7% year over year. Historical annual obligations were $9B in FY22, $10B in FY23, $9.3B in FY24, $8.5B in FY25, and $10.3B in FY26."
     },
     {
       "q": "What does Justice buy?",
-      "a": "The Department of Justice is buying a mix of services and goods. Top NAICS categories in FY2027 to date include General Medical and Surgical Hospitals at $12.9M, Other Support Activities for Air Transportation at $12.5M, Software Publishers at $10.4M, and All Other Miscellaneous Food Manufacturing at $10.3M, with Offices of Certified Public Accountants at $6.8M rounding out the top five."
+      "a": "Justice buys security, medical, legal, food, pharmaceutical, care, aviation support, and software services; the top category is Security Guards and Patrol Services at $119M. Other top categories are General Medical and Surgical Hospitals at $39.5M, All Other Legal Services at $18.2M, All Other Miscellaneous Food Manufacturing at $16.5M, and Pharmaceutical Preparation Manufacturing at $14.6M."
     },
     {
       "q": "Who are Justice's largest contractors?",
-      "a": "AAR AIRCRAFT SERVICES, INC. is the largest contractor to the Department of Justice in FY2027 to date at $12.4M. Other leading contractors include ADVANCED TECHNOLOGIES GROUP LLC at $10.4M, ERNST & YOUNG LLP at $6.8M, NAPHCARE LLC at $5.1M, and FLIGHTWORKS INC at $4.7M."
+      "a": "METROPOLITAN SECURITY SERVICES, INC. is Justice's largest contractor at $102M. Other top contractors are NAPHCARE LLC at $22M, FORFEITURE SUPPORT ASSOCIATES LLC at $16.3M, MCKESSON CORPORATION at $14.5M, and AAR AIRCRAFT SERVICES, INC. at $12.4M."
     }
   ],
   "related": [
@@ -535,6 +539,5 @@
       "label": "USAspending.gov award data",
       "href": "https://www.usaspending.gov"
     }
-  ],
-  "noindex": true
+  ]
 }

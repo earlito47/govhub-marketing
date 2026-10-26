@@ -1,0 +1,207 @@
+{
+  "pageType": "report",
+  "slug": "most-active-naics",
+  "week": "2026-w44",
+  "publishedDate": "2026-10-26",
+  "title": "Most Active Federal Markets This Week, Oct 20–26, 2026",
+  "h1": "Most active federal contract markets, week of Oct 20–26, 2026",
+  "metaDescription": "The most active federal contract industries (by newly reported obligations) the week of Oct 20–26, 2026, led by Research and Development in the Physical, Engi",
+  "updated": "2026-10-26",
+  "fyWindow": {
+    "label": "Week of Oct 20–26, 2026",
+    "start": "2026-10-20",
+    "end": "2026-10-26"
+  },
+  "stats": {
+    "totalObligations": 1324948785.81,
+    "awardCount": null,
+    "yoyGrowthPct": null,
+    "avgAwardSize": null,
+    "smallBusinessSharePct": null
+  },
+  "charts": [
+    {
+      "id": "2026-w44-most-active-naics",
+      "type": "bar",
+      "title": "Most active industries (NAICS) by obligations, week of Oct 20–26, 2026",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology)",
+              457797274.99
+            ],
+            [
+              "Computer Systems Design Services",
+              221660639.58
+            ],
+            [
+              "Commercial and Institutional Building Construction",
+              157121563.28
+            ],
+            [
+              "Security Guards and Patrol Services",
+              127943532.34
+            ],
+            [
+              "Hazardous Waste Treatment and Disposal",
+              100178508.21
+            ],
+            [
+              "Engineering Services",
+              86757740.07
+            ],
+            [
+              "Nonferrous Metal (except Aluminum) Smelting and Refining",
+              52737877.31
+            ],
+            [
+              "Pharmacy Benefit Management and Other Third Party Administration of Insurance and Pension Funds",
+              44769832.26
+            ],
+            [
+              "Surgical and Medical Instrument Manufacturing",
+              40779177.74
+            ],
+            [
+              "Other Computer Related Services",
+              35202640.03
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology) was the most active market, with $458M in newly reported obligations."
+    }
+  ],
+  "tables": [
+    {
+      "title": "Most active industries, week of Oct 20–26, 2026",
+      "columns": [
+        "Rank",
+        "Industry (NAICS)",
+        "Obligations"
+      ],
+      "rows": [
+        [
+          1,
+          {
+            "text": "Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology) (541715)",
+            "href": "/insights/naics/541715/"
+          },
+          457797274.99
+        ],
+        [
+          2,
+          {
+            "text": "Computer Systems Design Services (541512)",
+            "href": "/insights/naics/541512/"
+          },
+          221660639.58
+        ],
+        [
+          3,
+          {
+            "text": "Commercial and Institutional Building Construction (236220)",
+            "href": "/insights/naics/236220/"
+          },
+          157121563.28
+        ],
+        [
+          4,
+          {
+            "text": "Security Guards and Patrol Services (561612)",
+            "href": "/insights/naics/561612/"
+          },
+          127943532.34
+        ],
+        [
+          5,
+          {
+            "text": "Hazardous Waste Treatment and Disposal (562211)",
+            "href": null
+          },
+          100178508.21
+        ],
+        [
+          6,
+          {
+            "text": "Engineering Services (541330)",
+            "href": "/insights/naics/541330/"
+          },
+          86757740.07
+        ],
+        [
+          7,
+          {
+            "text": "Nonferrous Metal (except Aluminum) Smelting and Refining (331410)",
+            "href": null
+          },
+          52737877.31
+        ],
+        [
+          8,
+          {
+            "text": "Pharmacy Benefit Management and Other Third Party Administration of Insurance and Pension Funds (524292)",
+            "href": null
+          },
+          44769832.26
+        ],
+        [
+          9,
+          {
+            "text": "Surgical and Medical Instrument Manufacturing (339112)",
+            "href": "/insights/naics/339112/"
+          },
+          40779177.74
+        ],
+        [
+          10,
+          {
+            "text": "Other Computer Related Services (541519)",
+            "href": "/insights/naics/541519/"
+          },
+          35202640.03
+        ]
+      ]
+    }
+  ],
+  "narrative": {
+    "intro": "Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology) was the most active federal contract market the week of Oct 20–26, 2026, with $458M in newly reported obligations. The ten most active industries obligated $1.3B combined.",
+    "sections": []
+  },
+  "faq": [],
+  "related": [
+    {
+      "label": "NAICS 541715: Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology)",
+      "href": "/insights/naics/541715/"
+    },
+    {
+      "label": "NAICS 541512: Computer Systems Design Services",
+      "href": "/insights/naics/541512/"
+    },
+    {
+      "label": "NAICS 236220: Commercial and Institutional Building Construction",
+      "href": "/insights/naics/236220/"
+    },
+    {
+      "label": "NAICS 561612: Security Guards and Patrol Services",
+      "href": "/insights/naics/561612/"
+    },
+    {
+      "label": "NAICS 541330: Engineering Services",
+      "href": "/insights/naics/541330/"
+    },
+    {
+      "label": "NAICS 339112: Surgical and Medical Instrument Manufacturing",
+      "href": "/insights/naics/339112/"
+    }
+  ],
+  "sources": [
+    {
+      "label": "USAspending.gov award data",
+      "href": "https://www.usaspending.gov"
+    }
+  ]
+}
