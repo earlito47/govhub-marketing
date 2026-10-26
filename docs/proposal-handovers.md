@@ -60,29 +60,42 @@ them to learn."
 | `setapart.excavatingservices@gmail.com` | Set-Apart Excavating & Services, LLC | Y--Hickman Wildlife Water Catchment and Pipe Fence (140L1726Q0054) | 2026-10-25 19:45 UTC | `earl.knight@trygovhub.com` | `01a17499-1edc-7b6a-aae5-dbcc81b04be2` |
 | `creid@chpsolutionstoday.com` | Chp Solutions LLC | Scaffolding for Repair and Repoint Chalmette Monum (140D0427Q0915) | 2026-10-25 19:45 UTC | `earl@govhubprocurement.com` | `01a17499-2bc0-7492-b076-4b64a04d0c4d` |
 | `precisionsepticandpumping@gmail.com` | Precision Septic And Pumping Services, LLC | Septic Toilet Pumping for Chippewa National Forest (12444527Q0003) | 2026-10-25 19:45 UTC | `e.knight@getgovhub.com` | `01a17499-311a-76cd-9159-50befa5db4e4` |
-| `beni@monacomech.com` | Monaco Mechanical, Inc. | J041--Condenser Coils Replacement for the VA Illiana Heal... (36C25227Q0051) | 2026-10-25 19:46 UTC | `earl.knight@getgovhub.com` | `01a17499-35f0-70a4-b73c-6a877ca9a005` |
+| `beni@monacomech.com` | Monaco Mechanical, Inc. | J041--Condenser Coils Replacement for the VA Illiana He... (36C25227Q0051) | 2026-10-25 19:46 UTC | `earl.knight@getgovhub.com` | `01a17499-35f0-70a4-b73c-6a877ca9a005` |
 | `ads81460@gmail.com` | Certified Surface Inspections LLC | USAG Pressure Washing (W91247-27-Q-A001) | 2026-10-25 19:46 UTC | `earl.knight@trygovhub.com` | `01a17499-3da9-7145-95b5-03359fb26e1a` |
-| `dporter@staffingetc.net` | D.h. Porter Enterprises, LLC | ISBEE Solicitation: Firm-Fixed-Price (FFP), non-personal ... (75H70627R00005 ) | 2026-10-25 19:46 UTC | `j.k@bidwithgovhub.com` | `01a17499-42d7-7609-8f6b-77e767e29d07` |
+| `dporter@staffingetc.net` | D.h. Porter Enterprises, LLC | ISBEE Solicitation: Firm-Fixed-Price (FFP), non-persona... (75H70627R00005 ) | 2026-10-25 19:46 UTC | `j.k@bidwithgovhub.com` | `01a17499-42d7-7609-8f6b-77e767e29d07` |
 | `jwilder@stericert.com` | H & W Technology, LLC | Monitoring and Evaluation of Russian River Coho Salmon  (W912P727QA002) | 2026-10-25 19:46 UTC | `earl.knight@govhubproposal.com` | `01a17499-4b89-7c6c-aefd-495addac0ad2` |
 | `anthony@wr-cinc.com` | Williams Roofing & Construction Inc | Fenn Ranger Station roofing replacement (1240LU26Q0130) | 2026-10-25 19:46 UTC | `earl@govhubrfp.com` | `01a17499-aee3-7a62-bab5-c84544c2a173` |
-| `gcthornton@gmail.com` | 310 Buncombe LLC | General Services Administration (GSA) seeks to lease Ware... (4WA0688) | 2026-10-25 19:46 UTC | `earl@govhubproposal.com` | `01a17499-bb43-71ac-b7d8-7b7390b29870` |
+| `gcthornton@gmail.com` | 310 Buncombe LLC | General Services Administration (GSA) seeks to lease Wa... (4WA0688) | 2026-10-25 19:46 UTC | `earl@govhubproposal.com` | `01a17499-bb43-71ac-b7d8-7b7390b29870` |
 | `dave@strongholdcare.com` | The Stronghold Group LLC | USNS CODY (T-EPF 14) - Eye Wash Stations (N3220527Q7011) | 2026-10-25 19:46 UTC | `earl@buildwithgovhub.com` | `01a17499-bf7c-7c5d-83e8-e109e452c57d` |
+| `jjaqkcon@gmail.com` | J Jaqk Construction LLC | 9 RW Linen Services ( FA468627QS002) | 2026-10-26 14:43 UTC | `earl.knight@govhubbids.com` | `01a178aa-52b1-7e88-94d9-1dd72236895f` |
+| `kurt.marisa@human-domain.com` | Human Domain Solutions, LLC | NNSY FY27 DOT/NRC RAD WASTE TRAINING (N4215827QE002) | 2026-10-26 14:43 UTC | `e.knight@getgovhub.com` | `01a178aa-58cd-7de7-bcd1-e4e8d991de16` |
+| `andrew.pregl@pregl.com` | Pregl Services Inc | Preventative Maintenance Gas Detection System (Re-Bid) (N6852026Q1069) | 2026-10-26 14:43 UTC | `e.knight@govhubhq.com` | `01a178aa-5d80-79d6-8966-f042b9564d4b` |
 Each carries a link to a built proposal package for that solicitation, and for
 the A2 leads the disqualifier list they asked for, quoted from the solicitation
 with page numbers.
 
 ## What is coming
 
-All fourteen servable accepts have now been answered. The two that were briefly
+All seventeen servable accepts have now been answered. The two that were briefly
 held -- H & W Technology and The Stronghold Group, where the NAICS match found
 work the firm probably does not do -- were released on Earl's instruction and
 sent, on the reasoning that the copy already says we picked the solicitation and
 invites the correction.
 
-Four of the eighteen accepts cannot be served at all: every biddable notice in
-their NAICS closes too soon to be worth handing anyone (Pregl Services 333994,
-J Jaqk Construction 812332, Human Domain Solutions 611430, Eyes On Earth
-813312). They have had no reply from this pipeline.
+ONE of the eighteen accepts remains unserved: Eyes On Earth Inc. Its registered
+NAICS 813312 is "Environment, Conservation and Wildlife Organizations" and holds
+exactly one biddable notice in all of SAM, which is closed. Widening it would
+mean guessing their business rather than reading it -- their website is a
+JavaScript shell whose only text is the page title, and SAM's unauthenticated
+entity index returns no NAICS -- so it has deliberately not been guessed. They
+are the ONLY accept where sending a drafted reply from this repository would not
+duplicate something.
+
+Three others were rescued after the first round: J Jaqk Construction and Human
+Domain Solutions once the close-date floor was dropped, and Pregl Services by
+searching NAICS 811310 (machinery repair) alongside their registered 333994,
+on the evidence of their own homepage title, "Repair & Parts for Vacuum
+Furnaces, Hot Zones, and Control Systems".
 
 The hold mechanism remains in `outreach.staged_proposals.send_hold_at`, with a
 reason and who set it, and excludes a lead from both the send queue and the
