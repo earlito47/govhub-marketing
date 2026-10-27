@@ -2892,3 +2892,149 @@ All four angles land exactly ON cap; nothing is overshooting.
 
 The cap rise shortened A4's runway: 122 sendable queued is 2.2 days at 55,
 where it would be 2.4 at 50. A4 is now the angle nearest the ~2-day flag.
+
+## 2026-10-26 — the A2 speed arm was never dead; the classifier was
+
+The 10-23 entry above says the speed arm had been frozen at 58 since 09-29 and
+asked whether to restart it or retire the test. Both arms are in fact running
+and have been all along: **base 1,211, speed 1,186**, and both moved on every
+send day of the week (10-26 55/70, 10-23 67/58, 10-22 55/70, 10-21 58/66,
+10-20 63/62 — nothing on 10-24 or 10-25, which were the weekend).
+
+`verify-live-leads.mjs` read the arm back out of the rendered prose, because
+push strips `body_variant` before the lead reaches Instantly, so a live lead
+carries only the copy. The speed line changed on 09-29 from "we turn the first
+draft **around** in about an hour" to "first draft **back** in about an hour".
+The test matched the retired wording and **everything that did not match fell
+through to `base`** — so 1,128 live speed leads were counted as base, base read
+2,214, and speed read the 58 that still carried the old sentence.
+
+Two independent readings now agree: the audit reports
+`arms {"base":1211,"speed":1186}` and `body_variant` on the assignment rows
+gives the same split. Both arms are past the ~440 the routine asks for, and the
+A5 holdout control is at 1,260. Still not calling a winner — that is a decision
+about the experiment — but it is a live experiment with enough data, not a dead
+one.
+
+The fix is the shape of the lesson rather than a better regex. A classifier with
+a fallback **cannot report its own ignorance**: every lead landed in some arm
+whether or not the patterns still matched anything, so the arms always summed to
+the lead count and the line always looked plausible. Both arms are now matched
+explicitly, anything unrecognised is counted as `unclassified`, and an
+unclassified row fails the audit. Removing the current speed phrase reproduces
+the original defect exactly — `{"base":1211,"unclassified":1128,"speed":58}` —
+where the old code printed `{"base":2214,"speed":58}` and passed.
+
+This is the same recurring bug the 10-23 entry named, one level up. That entry
+asked for "an assertion that both arms moved today". The deeper problem was that
+the arm numbers were not measuring the arms at all.
+
+## 2026-10-26 — the scanners are idle because the universe is spoken for
+
+Both signal scanners report `naics_state_pairs: 0` and the routine's standing
+context reads that as "idle BY DESIGN ... the 30-day and 21-day scan stamps
+start expiring inside the current queue runway". The stamps have expired —
+2,583 of 4,488 `competitor_award` rows are past their 21-day recheck — and the
+scanners still produce nothing, because that was never the binding constraint.
+
+`companiesToSkip` excludes three sets: companies with a live signal, companies
+scanned recently, and **every company that already carries an assignment**. The
+summary printed the first two and said nothing about the third. On 10-26 it was
+**10,029 of 10,984 non-suppressed companies already assigned**, against 1,905
+held by the recheck window. One company takes one angle for good, so an expiring
+scan stamp cannot free any of those 10,029: the signal it might find is one
+`job_assign` will never read.
+
+Both scanners now report `already_assigned`. The awards dry run reads:
+
+    "skipped_a2_covered": 262, "already_had_signal": 1058,
+    "recently_scanned": 1905, "already_assigned": 10029
+
+The two readings call for opposite decisions — wait for the windows, or go and
+acquire more companies — and until today the summary carried no number that
+could tell them apart.
+
+**What this means for runway.** 985 non-suppressed companies are unassigned.
+Daily burn is 292 (A1 37, A2 125, A4 55, A5 75). Inventory in sending days at
+cap: **A4 1.96** (108 ready — under the ~2-day flag), **A2 2.19** (274),
+**A1 9.92** (367), A5 51.3 (3,848, of which 2,795 is the holdout). A1+A2+A4 hold
+749 between them and burn 217 a day, so the three angles that carry the
+programme's reach have roughly three and a half days left. `assign` is not
+holding anything back: `left_unassigned_at_ceiling` is 0 for A1, A2 and A4.
+
+## 2026-10-26 — two of three "accepts" were people asking us to stop
+
+The reply desk's model classified three replies as accepts on 10-26. Reading the
+words, two of them are declines, and both were produced by the same mechanism:
+our own step-4 line asks **"Want me to close this out?"**, so agreement with it
+is a refusal.
+
+- `chris.dcouto@agnisemi.ai` — "Sure. Please close this out."
+- `luke.cawleythd@gmail.com` — "Yes - close it please, we do not provide Boiler
+  services."
+
+Scored `accept` on "Sure" and "Yes". `sync-proposal-accepts.mjs` writes nothing
+without `--apply` and prints the quote for exactly this reason; applied blind,
+both would have had an account provisioned and a first-draft proposal emailed to
+them minutes after asking to be left alone. Both suppressed — **the person's row
+only, with reason and date, no colleague affected**; neither company has a
+sibling contact row.
+
+The third, `cam@tgha.co` ("Sure, please recored a quick video"), is a genuine
+accept and is now in `outreach.proposal_accepts`. Note what he agreed to is a
+**video**; the pipeline builds a proposal. The send is manual, so that is a
+human's call.
+
+This is the failure the `proposal_accepts` migration was written to prevent,
+and it is worth restating because the category flag keeps looking authoritative:
+`outcomes.positive` and the desk's `category` are both model judgements, and a
+"yes" is only as good as the question it answers. Seven autoresponder shapes and
+now three "close this out" agreements have been miscounted as interest.
+
+Also found: `luke.cawleythd@gmail.com` was pitched *Boiler Rental Montrose VAMC*
+on NAICS 238220 and replied that his firm does not do boilers — the NAICS was
+right and the work was not, which is what the relevance signal added on 10-26
+exists to catch. And `chris.dcouto@agnisemi.ai` was addressed as "Gerard"
+throughout, four emails, because that is the contact name on the lead.
+
+## 2026-10-26 — 14 of the reply desk's 27 drafts have already been answered
+
+`data/reply-desk.json` holds 27 `drafted` and 2 `needs_human`. **14 of the 27
+drafts (13 distinct people) already had a reply** — the proposal pipeline
+answered them in their own Instantly threads on 10-25 and 10-26, which is what
+`docs/proposal-handovers.md` records. Sending those drafts would be a second
+answer to the same inbound email.
+
+Of the 2 `needs_human`, only one is genuinely waiting:
+`john@truthintelligence.com` (10-21, "I don't believe I notice that. But
+thanks!" — a polite non-answer to "Want me to close this out?", not a decline,
+so no suppression). `gidcleveland@gmail.com` is marked `needs_human` since 10-08
+but **was answered on 10-16**; the status is stale. That is the same lag the
+routine warns about in the other direction, and it is the second time a count
+taken from a status field has disagreed with the thread. The thread is the
+record.
+
+## 2026-10-26 — a move-leads job blocks creates in the same campaign
+
+New Instantly behaviour, seen in the 06:50 push: after that run queued 33
+`/leads/move` calls, a subsequent `/leads` create returned
+
+    409 Conflict — There is a move-leads job in progress. You cannot add or
+    remove leads from this campaign until the process is complete.
+
+It cost one push (`sorensoninstallations@gmail.com`, correctly marked `failed`;
+`apiCall` fails fast on a non-429 4xx rather than retrying a rejected payload).
+The coupling is worth knowing: the more duplicates a run moves out of retired
+campaigns, the likelier later creates in that campaign are rejected. It is
+self-healing — the row stays ready and the next run takes it — but a morning
+with a large move backlog will under-send by about the number of moves.
+
+Unresolved from the same run: `per_angle` reported A4 39 where 35 rows recorded,
+and the day's totals still landed exactly on cap (A1 37, A2 125, A4 55, A5 75)
+because the budget reads the database rather than trusting the counter. Nothing
+in the logs names a cause, every pushed row has a lead id and a `pushed_at`, the
+campaign/queue audit is 0/0/0 across 5,388 leads, and the direction is the safe
+one — over-counting `used` makes a run stop early. `recordPush` now checks its
+writes and the summary carries `live_but_unrecorded`, so if it is a lost write
+the next occurrence will say so instead of having to be reconstructed from
+timestamps.
