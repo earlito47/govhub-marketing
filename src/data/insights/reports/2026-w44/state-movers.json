@@ -1,0 +1,212 @@
+{
+  "pageType": "report",
+  "slug": "state-movers",
+  "week": "2026-w44",
+  "publishedDate": "2026-10-26",
+  "title": "Top States This Week, Oct 20–26, 2026",
+  "h1": "Top states by newly reported federal obligations, week of Oct 20–26, 2026",
+  "metaDescription": "The states with the most newly reported federal contract obligations the week of Oct 20–26, 2026, led by Pennsylvania.",
+  "updated": "2026-10-26",
+  "fyWindow": {
+    "label": "Week of Oct 20–26, 2026",
+    "start": "2026-10-20",
+    "end": "2026-10-26"
+  },
+  "stats": {
+    "totalObligations": 1325323229.9599998,
+    "awardCount": null,
+    "yoyGrowthPct": null,
+    "avgAwardSize": null,
+    "smallBusinessSharePct": null
+  },
+  "charts": [
+    {
+      "id": "2026-w44-state-movers",
+      "type": "bar",
+      "title": "Top states by newly reported obligations, week of Oct 20–26, 2026",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "Pennsylvania",
+              388536857.58
+            ],
+            [
+              "Virginia",
+              287913996.45
+            ],
+            [
+              "Florida",
+              120924768.07
+            ],
+            [
+              "Washington",
+              111135577.64
+            ],
+            [
+              "District Of Columbia",
+              89236680.6
+            ],
+            [
+              "California",
+              85185585.55
+            ],
+            [
+              "Texas",
+              72723639.61
+            ],
+            [
+              "Maryland",
+              64007064.84
+            ],
+            [
+              "New York",
+              53196310.24
+            ],
+            [
+              "Colorado",
+              52462749.38
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Pennsylvania saw the most newly reported federal contract activity, with $389M obligated."
+    }
+  ],
+  "tables": [
+    {
+      "title": "Top states, week of Oct 20–26, 2026",
+      "columns": [
+        "Rank",
+        "State",
+        "Obligations"
+      ],
+      "rows": [
+        [
+          1,
+          {
+            "text": "Pennsylvania",
+            "href": "/insights/state/pennsylvania/"
+          },
+          388536857.58
+        ],
+        [
+          2,
+          {
+            "text": "Virginia",
+            "href": "/insights/state/virginia/"
+          },
+          287913996.45
+        ],
+        [
+          3,
+          {
+            "text": "Florida",
+            "href": "/insights/state/florida/"
+          },
+          120924768.07
+        ],
+        [
+          4,
+          {
+            "text": "Washington",
+            "href": "/insights/state/washington/"
+          },
+          111135577.64
+        ],
+        [
+          5,
+          {
+            "text": "District Of Columbia",
+            "href": "/insights/state/district-of-columbia/"
+          },
+          89236680.6
+        ],
+        [
+          6,
+          {
+            "text": "California",
+            "href": "/insights/state/california/"
+          },
+          85185585.55
+        ],
+        [
+          7,
+          {
+            "text": "Texas",
+            "href": "/insights/state/texas/"
+          },
+          72723639.61
+        ],
+        [
+          8,
+          {
+            "text": "Maryland",
+            "href": "/insights/state/maryland/"
+          },
+          64007064.84
+        ],
+        [
+          9,
+          {
+            "text": "New York",
+            "href": "/insights/state/new-york/"
+          },
+          53196310.24
+        ],
+        [
+          10,
+          {
+            "text": "Colorado",
+            "href": "/insights/state/colorado/"
+          },
+          52462749.38
+        ]
+      ]
+    }
+  ],
+  "narrative": {
+    "intro": "Contractors performing work in Pennsylvania saw the most newly reported federal obligations the week of Oct 20–26, 2026, $389M. The top ten states accounted for $1.3B combined.",
+    "sections": []
+  },
+  "faq": [
+    {
+      "q": "Which state saw the most federal contract activity the week of Oct 20–26, 2026?",
+      "a": "Pennsylvania, with $389M in newly reported obligations."
+    }
+  ],
+  "related": [
+    {
+      "label": "Pennsylvania federal contracts",
+      "href": "/insights/state/pennsylvania/"
+    },
+    {
+      "label": "Virginia federal contracts",
+      "href": "/insights/state/virginia/"
+    },
+    {
+      "label": "Florida federal contracts",
+      "href": "/insights/state/florida/"
+    },
+    {
+      "label": "Washington federal contracts",
+      "href": "/insights/state/washington/"
+    },
+    {
+      "label": "District Of Columbia federal contracts",
+      "href": "/insights/state/district-of-columbia/"
+    },
+    {
+      "label": "California federal contracts",
+      "href": "/insights/state/california/"
+    }
+  ],
+  "sources": [
+    {
+      "label": "USAspending.gov award data",
+      "href": "https://www.usaspending.gov"
+    }
+  ]
+}

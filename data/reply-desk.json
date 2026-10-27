@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "cursor": "2026-10-21T21:59:35.000Z",
+  "cursor": "2026-10-24T20:38:11.000Z",
   "emails": {
     "01a07bf7-8d8a-7d1c-b87e-76208ed81963": {
       "lead": "amirl@seetrue.ai",
@@ -1860,6 +1860,91 @@
       "classified_by": "rule",
       "status": "no_action",
       "updated_at": "2026-10-23T22:58:40.472Z"
+    },
+    "01a17884-23c0-7cdc-95b1-4735e9fb61e8": {
+      "lead": "chris.dcouto@agnisemi.ai",
+      "campaign": "A5",
+      "received_at": "2026-10-26T14:01:04.000Z",
+      "category": "accept",
+      "classified_by": "model",
+      "status": "drafted",
+      "playbook": "A5",
+      "deliverable": "debrief_one_pager",
+      "updated_at": "2026-10-26T18:00:50.253Z",
+      "notified_at": "2026-10-26T18:00:50.253Z"
+    },
+    "01a17889-543a-7c27-9662-5398eed1fa50": {
+      "lead": "supplierinfo@dtn.com",
+      "campaign": "A4",
+      "received_at": "2026-10-26T14:01:37.000Z",
+      "category": "auto_reply",
+      "classified_by": "model",
+      "status": "no_action",
+      "updated_at": "2026-10-26T17:59:21.374Z"
+    },
+    "01a178e8-ddd0-7a76-8f90-72ea7d1cb32e": {
+      "lead": "luke.cawleythd@gmail.com",
+      "campaign": "A2",
+      "received_at": "2026-10-26T15:50:53.000Z",
+      "category": "accept",
+      "classified_by": "model",
+      "status": "drafted",
+      "playbook": "A2",
+      "deliverable": "next_open",
+      "updated_at": "2026-10-26T18:00:50.254Z",
+      "notified_at": "2026-10-26T18:00:50.254Z"
+    },
+    "01a178f1-6bbf-7f3b-b260-3e5b38a415dd": {
+      "lead": "melissa.boudreault@frontgrade.com",
+      "campaign": "A2",
+      "received_at": "2026-10-26T16:00:42.000Z",
+      "category": "auto_reply",
+      "classified_by": "rule",
+      "status": "no_action",
+      "updated_at": "2026-10-26T18:00:10.802Z",
+      "redirect": "michael.turner@frontgrade.com"
+    },
+    "01a1794c-688e-7052-bedf-dc0380952484": {
+      "lead": "cam@tgha.co",
+      "campaign": "A4",
+      "received_at": "2026-10-26T17:39:55.000Z",
+      "category": "accept",
+      "classified_by": "model",
+      "status": "drafted",
+      "playbook": "A4",
+      "deliverable": "next_open",
+      "updated_at": "2026-10-26T18:00:50.255Z",
+      "watch": {
+        "naics": "483212",
+        "keywords": [
+          "marine",
+          "express"
+        ],
+        "companyName": "Tgha",
+        "context": "Marine Express, Inc. (Pittsburg) won a $15K DHS award in NAICS 483212, which is how we found them. Company name: Tgha.",
+        "count": 2,
+        "exclude": [
+          "W900KK-27-D-SSV2"
+        ],
+        "until": "2026-12-10T18:00:49.768Z",
+        "eaccount": "earl.knight@winwithgovhub.com",
+        "subject": "Re: did you see this",
+        "campaign_id": "39bc9fab-a9a7-4ed6-b34c-ccabeb9e76ee",
+        "firstName": "Cameron"
+      },
+      "notified_at": "2026-10-26T18:00:50.255Z"
+    },
+    "01a179ef-5455-74d2-b2ed-9aa2e4608832": {
+      "lead": "noel@gearjumptech.com",
+      "campaign": "A2",
+      "received_at": "2026-10-26T20:37:50.000Z",
+      "category": "question",
+      "classified_by": "model",
+      "status": "drafted",
+      "playbook": "A2",
+      "deliverable": "next_open",
+      "updated_at": "2026-10-26T22:24:13.098Z",
+      "notified_at": "2026-10-26T22:24:13.098Z"
     },
     "430b01b5-be33-46b6-86ad-68e1dc0ee14d": {
       "lead": "admin@documentsecuritysolutions.net",

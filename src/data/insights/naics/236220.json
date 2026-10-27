@@ -1,20 +1,20 @@
 {
   "pageType": "naics",
   "slug": "236220",
-  "title": "NAICS 236220 Government Contracts: $115M in FY2027",
+  "title": "NAICS 236220 Government Contracts: $296M in FY2027",
   "h1": "Commercial and Institutional Building Construction (NAICS 236220): Federal Contract Market",
-  "metaDescription": "Federal agencies obligated $115M on Commercial and Institutional Building Construction (NAICS 236220) in FY2027 to date. See top vendors, top agencies, and",
-  "updated": "2026-10-19",
+  "metaDescription": "Federal agencies obligated $296M on Commercial and Institutional Building Construction (NAICS 236220) in FY2027 to date. See top vendors, top agencies, and",
+  "updated": "2026-10-26",
   "fyWindow": {
     "label": "FY2027 to date",
     "start": "2026-10-01",
-    "end": "2026-10-19"
+    "end": "2026-10-26"
   },
   "stats": {
-    "totalObligations": 115059577.46,
-    "awardCount": 354,
-    "yoyGrowthPct": -99.8,
-    "avgAwardSize": 325027,
+    "totalObligations": 296492572.05,
+    "awardCount": 572,
+    "yoyGrowthPct": -99.4,
+    "avgAwardSize": 518344,
     "smallBusinessSharePct": null
   },
   "charts": [
@@ -44,17 +44,17 @@
             ],
             [
               "FY26",
-              53227685665.66
+              53526355386.16
             ],
             [
               "FY27",
-              115059577.46
+              296492572.05
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Obligations fell 99.8% year over year, from $53.2B in FY2026 to $115M in FY2027 to date."
+      "takeaway": "Obligations fell 99.4% year over year, from $53.5B in FY2026 to $296M in FY2027 to date."
     },
     {
       "id": "236220-top-agencies",
@@ -66,49 +66,49 @@
           "points": [
             [
               "Department of Veterans Affairs",
-              77390819.99
+              207082936.75
             ],
             [
               "General Services Administration",
-              34346554.14
+              57787727.65
+            ],
+            [
+              "Smithsonian Institution",
+              17771123.24
             ],
             [
               "National Aeronautics and Space Administration",
-              2973921.83
+              11544429.07
             ],
             [
-              "Department of Justice",
-              988128.6
-            ],
-            [
-              "Department of Transportation",
-              600789.17
+              "Department of Health and Human Services",
+              1268800.08
             ],
             [
               "Department of Agriculture",
-              381351.9
+              1001683.58
+            ],
+            [
+              "Department of Transportation",
+              943210.42
+            ],
+            [
+              "Department of Labor",
+              827329.17
+            ],
+            [
+              "Department of Justice",
+              681316.52
             ],
             [
               "Environmental Protection Agency",
               246576.49
-            ],
-            [
-              "Department of Health and Human Services",
-              29620.9
-            ],
-            [
-              "Department of the Interior",
-              0
-            ],
-            [
-              "Department of State",
-              0
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Department of Veterans Affairs was the top buyer, obligating $77.4M (67.3% of all obligations)."
+      "takeaway": "Department of Veterans Affairs was the top buyer, obligating $207M (69.8% of all obligations)."
     },
     {
       "id": "236220-top-vendors",
@@ -119,12 +119,28 @@
           "label": "Obligations",
           "points": [
             [
+              "VETERANS DEVELOPMENT CORPORATION, INC.",
+              63117507.88
+            ],
+            [
+              "VALIANT CONSTRUCTION LLC",
+              22288546
+            ],
+            [
               "MATOS-GRUNLEY JOINT VENTURE",
               21405048.73
             ],
             [
               "STANDARD COMMUNICATIONS INC",
               19448537.79
+            ],
+            [
+              "POINTER CONSTRUCTION GROUP LLC",
+              17278188
+            ],
+            [
+              "GRUNLEY CONSTRUCTION CO., INC.",
+              17179000
             ],
             [
               "LC FLUHARTY CONSTRUCTION LLC",
@@ -139,30 +155,14 @@
               10720445
             ],
             [
-              "HAMILTON PACIFIC CHAMBERLAIN LLC",
-              7183608
-            ],
-            [
-              "BIRMINGHAM INDUSTRIAL CONSTRUCTION, LLC",
-              4402363
-            ],
-            [
-              "HAMLINE CONSTRUCTION INC",
-              3279769.2
-            ],
-            [
-              "FASONE CONSTRUCTION, INC.",
-              2308762.64
-            ],
-            [
-              "OCS CONSTRUCTION SERVICES INC",
-              2123363
+              "KMK CONSTRUCTION, INC",
+              10340307.1
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "MATOS-GRUNLEY JOINT VENTURE led all vendors with $21.4M in obligations, 18.6% of the market."
+      "takeaway": "VETERANS DEVELOPMENT CORPORATION, INC. led all vendors with $63.1M in obligations, 21.3% of the market."
     }
   ],
   "crossLinks": [
@@ -179,8 +179,8 @@
       "href": "/insights/agency/national-aeronautics-and-space-administration/"
     },
     {
-      "label": "Department of Justice contracts",
-      "href": "/insights/agency/department-of-justice/"
+      "label": "Department of Health and Human Services contracts",
+      "href": "/insights/agency/department-of-health-and-human-services/"
     }
   ],
   "tables": [
@@ -195,13 +195,29 @@
         [
           1,
           {
+            "text": "VETERANS DEVELOPMENT CORPORATION, INC.",
+            "href": "https://www.usaspending.gov/recipient/87798ff6-9a29-9efd-f1b2-b3e3bbf326a4-C/latest/"
+          },
+          63117507.88
+        ],
+        [
+          2,
+          {
+            "text": "VALIANT CONSTRUCTION LLC",
+            "href": "https://www.usaspending.gov/recipient/eeb4e9e0-f8b4-2c39-8b74-3bba1f767b3e-C/latest/"
+          },
+          22288546
+        ],
+        [
+          3,
+          {
             "text": "MATOS-GRUNLEY JOINT VENTURE",
             "href": "https://www.usaspending.gov/recipient/72b84ab8-9677-4fe9-1055-f72b9f4552eb-C/latest/"
           },
           21405048.73
         ],
         [
-          2,
+          4,
           {
             "text": "STANDARD COMMUNICATIONS INC",
             "href": "https://www.usaspending.gov/recipient/aa1eefb9-aa81-f6de-d238-ab8b4948df53-C/latest/"
@@ -209,7 +225,23 @@
           19448537.79
         ],
         [
-          3,
+          5,
+          {
+            "text": "POINTER CONSTRUCTION GROUP LLC",
+            "href": "https://www.usaspending.gov/recipient/11ed2a94-4190-3cae-9381-c4e29aa07ef7-C/latest/"
+          },
+          17278188
+        ],
+        [
+          6,
+          {
+            "text": "GRUNLEY CONSTRUCTION CO., INC.",
+            "href": "https://www.usaspending.gov/recipient/200196e0-e25e-1fdc-7a2c-38055ee78825-C/latest/"
+          },
+          17179000
+        ],
+        [
+          7,
           {
             "text": "LC FLUHARTY CONSTRUCTION LLC",
             "href": "https://www.usaspending.gov/recipient/892c231d-2691-73f7-764f-4638875f31fe-C/latest/"
@@ -217,7 +249,7 @@
           14851012.97
         ],
         [
-          4,
+          8,
           {
             "text": "BLUE CORD DESIGN AND CONSTRUCTION, LLC",
             "href": "https://www.usaspending.gov/recipient/41a4a29f-ecf4-5534-5441-0b5e6e3cdc9b-C/latest/"
@@ -225,7 +257,7 @@
           12974316
         ],
         [
-          5,
+          9,
           {
             "text": "NAPC & HSCC JV LLC",
             "href": "https://www.usaspending.gov/recipient/7043dff8-74e8-2943-954f-6a6397c84a15-C/latest/"
@@ -233,44 +265,12 @@
           10720445
         ],
         [
-          6,
-          {
-            "text": "HAMILTON PACIFIC CHAMBERLAIN LLC",
-            "href": "https://www.usaspending.gov/recipient/ed307c29-aefa-ff1b-e916-57e4e5222536-C/latest/"
-          },
-          7183608
-        ],
-        [
-          7,
-          {
-            "text": "BIRMINGHAM INDUSTRIAL CONSTRUCTION, LLC",
-            "href": "https://www.usaspending.gov/recipient/c01c82a2-19f5-ecc1-dacc-7d00b93e94b9-C/latest/"
-          },
-          4402363
-        ],
-        [
-          8,
-          {
-            "text": "HAMLINE CONSTRUCTION INC",
-            "href": "https://www.usaspending.gov/recipient/dd1e2b82-37be-5bac-74c4-0946e98a412b-C/latest/"
-          },
-          3279769.2
-        ],
-        [
-          9,
-          {
-            "text": "FASONE CONSTRUCTION, INC.",
-            "href": "https://www.usaspending.gov/recipient/8c63f8f0-a1be-c5b2-0d44-ccb42c5e5c4d-C/latest/"
-          },
-          2308762.64
-        ],
-        [
           10,
           {
-            "text": "OCS CONSTRUCTION SERVICES INC",
-            "href": "https://www.usaspending.gov/recipient/b044abf4-2190-0ca6-a0ec-e298158aa398-C/latest/"
+            "text": "KMK CONSTRUCTION, INC",
+            "href": "https://www.usaspending.gov/recipient/82535e70-1c4b-fb8d-2f8d-30587f14f578-C/latest/"
           },
-          2123363
+          10340307.1
         ]
       ]
     },
@@ -340,6 +340,24 @@
         [
           7,
           {
+            "text": "BRASFIELD & GORRIE LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_47PH0825F0006_4740_47PH0821D0004_4740/"
+          },
+          266795541,
+          "General Services Administration"
+        ],
+        [
+          8,
+          {
+            "text": "HENSEL PHELPS CONSTRUCTION CO",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75N99022F00002_7529_75N99019D00016_7529/"
+          },
+          195719846,
+          "Department of Health and Human Services"
+        ],
+        [
+          9,
+          {
             "text": "SOUTHWEST VALLEY CONSTRUCTORS CO",
             "href": "https://www.usaspending.gov/award/CONT_AWD_70B01C26F00001093_7014_70B01C26D00000025_7014/"
           },
@@ -347,7 +365,16 @@
           "Department of Homeland Security"
         ],
         [
-          8,
+          10,
+          {
+            "text": "CLARK CONSTRUCTION GROUP LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70B01C26F00001079_7014_70B01C26D00000021_7014/"
+          },
+          117000000,
+          "Department of Homeland Security"
+        ],
+        [
+          11,
           {
             "text": "WHITING-TURNER CONTRACTING COMPANY, THE",
             "href": "https://www.usaspending.gov/award/CONT_AWD_47PF0021C0003_4740_-NONE-_-NONE-/"
@@ -356,7 +383,16 @@
           "General Services Administration"
         ],
         [
-          9,
+          12,
+          {
+            "text": "JAYNES CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75H70126C00025_7527_-NONE-_-NONE-/"
+          },
+          96728838,
+          "Department of Health and Human Services"
+        ],
+        [
+          13,
           {
             "text": "STRUCTSURE PROJECTS INC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_697DCK25C00252_6920_-NONE-_-NONE-/"
@@ -365,7 +401,25 @@
           "Department of Transportation"
         ],
         [
-          10,
+          14,
+          {
+            "text": "VETERANS DEVELOPMENT CORPORATION, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C24827C0008_3600_-NONE-_-NONE-/"
+          },
+          63117507.88,
+          "Department of Veterans Affairs"
+        ],
+        [
+          15,
+          {
+            "text": "WALSH FEDERAL LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_697DCK25F00267_6920_697DCK23G00011_6920/"
+          },
+          60723094,
+          "Department of Transportation"
+        ],
+        [
+          16,
           {
             "text": "ESA SOUTH, INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C24822C0110_3600_-NONE-_-NONE-/"
@@ -374,7 +428,7 @@
           "Department of Veterans Affairs"
         ],
         [
-          11,
+          17,
           {
             "text": "ESA SOUTH, INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C77626C0075_3600_-NONE-_-NONE-/"
@@ -383,7 +437,25 @@
           "Department of Veterans Affairs"
         ],
         [
-          12,
+          18,
+          {
+            "text": "BRISTON CONSTRUCTION, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C77622C0126_3600_-NONE-_-NONE-/"
+          },
+          41856905.87,
+          "Department of Veterans Affairs"
+        ],
+        [
+          19,
+          {
+            "text": "NV SERVICES LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_1605AE21C0017_1605_-NONE-_-NONE-/"
+          },
+          41394627.03,
+          "Department of Labor"
+        ],
+        [
+          20,
           {
             "text": "SGJV2, LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C25522C0083_3600_-NONE-_-NONE-/"
@@ -392,7 +464,7 @@
           "Department of Veterans Affairs"
         ],
         [
-          13,
+          21,
           {
             "text": "CARIBE TECNO CRL",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C10F21C0002_3600_-NONE-_-NONE-/"
@@ -401,7 +473,7 @@
           "Department of Veterans Affairs"
         ],
         [
-          14,
+          22,
           {
             "text": "MEDVOLT - ROUNDHOUSE JV",
             "href": "https://www.usaspending.gov/award/CONT_AWD_140P2025C0054_1443_-NONE-_-NONE-/"
@@ -410,103 +482,31 @@
           "Department of the Interior"
         ],
         [
-          15,
+          23,
           {
             "text": "MURNANE BUILDING CONTRACTORS, INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_47PB5126C0008_4740_-NONE-_-NONE-/"
           },
-          32914661.25,
+          32917629.65,
           "General Services Administration"
         ],
         [
-          16,
+          24,
+          {
+            "text": "DEAN SNYDER CONSTRUCTION CO.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_12639526C0001_12K3_-NONE-_-NONE-/"
+          },
+          32885020.22,
+          "Department of Agriculture"
+        ],
+        [
+          25,
           {
             "text": "WHITING-TURNER CONTRACTING COMPANY, THE",
             "href": "https://www.usaspending.gov/award/CONT_AWD_70LGLY24FSSB00134_7015_70Z04723DPCNI0006_7008/"
           },
           31618380,
           "Department of Homeland Security"
-        ],
-        [
-          17,
-          {
-            "text": "ROSS GROUP CONSTRUCTION CORPORATION, LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_47PH0823F0041_4740_47PH0821D0012_4740/"
-          },
-          30613019,
-          "General Services Administration"
-        ],
-        [
-          18,
-          {
-            "text": "BURCHICK CONSTRUCTION CO INC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_47PD0224C0003_4740_-NONE-_-NONE-/"
-          },
-          28997516.03,
-          "General Services Administration"
-        ],
-        [
-          19,
-          {
-            "text": "CAPEX & D SQUARE, A JOINT VENTURE LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C77624C0145_3600_-NONE-_-NONE-/"
-          },
-          24436749,
-          "Department of Veterans Affairs"
-        ],
-        [
-          20,
-          {
-            "text": "FLOYD CONSTRUCTION CORP",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C77625C0055_3600_-NONE-_-NONE-/"
-          },
-          24402210,
-          "Department of Veterans Affairs"
-        ],
-        [
-          21,
-          {
-            "text": "VALIANT CONSTRUCTION LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C24626C0037_3600_-NONE-_-NONE-/"
-          },
-          23905280,
-          "Department of Veterans Affairs"
-        ],
-        [
-          22,
-          {
-            "text": "MATOS-GRUNLEY JOINT VENTURE",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_47PD0224C0026_4740_-NONE-_-NONE-/"
-          },
-          23367289.24,
-          "General Services Administration"
-        ],
-        [
-          23,
-          {
-            "text": "MDM CONSTRUCTION LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C77625C0109_3600_-NONE-_-NONE-/"
-          },
-          23155575,
-          "Department of Veterans Affairs"
-        ],
-        [
-          24,
-          {
-            "text": "SIGO VALIANT JV II LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C24626C0048_3600_-NONE-_-NONE-/"
-          },
-          22954198,
-          "Department of Veterans Affairs"
-        ],
-        [
-          25,
-          {
-            "text": "CDEEM CO",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C24225C0030_3600_-NONE-_-NONE-/"
-          },
-          22900000,
-          "Department of Veterans Affairs"
         ]
       ]
     },
@@ -735,30 +735,30 @@
     }
   ],
   "narrative": {
-    "intro": "Commercial and Institutional Building Construction (NAICS 236220) recorded $115M in federal contract obligations in FY2027 to date. The market delivered 354 awards with an average award size of $325K, and obligations fell 99.8% year over year. Fiscal history shows much larger annual totals: FY22 totaled $28.9B, FY23 totaled $32.9B, FY24 totaled $30.9B, FY25 totaled $30.6B, and FY26 totaled $53.2B. The Department of Veterans Affairs obligated $77.4M in FY2027 to date and the General Services Administration obligated $34.3M. The remaining top buyers include the National Aeronautics and Space Administration with $3M and other agencies that obligated smaller amounts. MATOS-GRUNLEY JOINT VENTURE led vendors with $21.4M, followed by STANDARD COMMUNICATIONS INC with $19.4M and LC FLUHARTY CONSTRUCTION LLC with $14.9M. The FY2027 to date snapshot reflects a dramatically smaller obligation flow compared with prior full fiscal years, concentrated in a few agencies and a small set of vendors.",
+    "intro": "Commercial and Institutional Building Construction (NAICS 236220) federal contracting slowed sharply in FY2027 to date. Total obligations reached $296M across 572 awards. Average award size was $518K. Obligations fell 99.4% year over year. Historical annual obligations were $28.9B in FY22, $32.9B in FY23, $30.9B in FY24, $30.6B in FY25, and $53.5B in FY26, showing that FY2027 to date is a much smaller slice of recent annual activity. Department of Veterans Affairs led buying in FY2027 to date with $207M, followed by General Services Administration with $57.8M and Smithsonian Institution with $17.8M. VETERANS DEVELOPMENT CORPORATION, INC. was the top vendor with $63.1M, followed by VALIANT CONSTRUCTION LLC with $22.3M and MATOS-GRUNLEY JOINT VENTURE with $21.4M. This file covers contract obligations only and notes that current-year totals are partial because FY2027 is fiscal year to date.",
     "sections": [
       {
-        "heading": "What explains the FY2027 to date totals?",
-        "body": "The market recorded $115M in obligations in FY2027 to date, and obligations fell 99.8% year over year. The large drop follows FY26 total obligations of $53.2B, so FY2027 to date represents a much smaller, partial fiscal-year flow. The award mix is concentrated: 354 awards with an average award size of $325K."
+        "heading": "What changed in FY2027 to date for NAICS 236220?",
+        "body": "Obligations fell 99.4% year over year in FY2027 to date. Total obligations were $296M across 572 awards, with an average award size of $518K. Annual comparisons show much larger totals in prior years, including $53.5B in FY26 and $30.6B in FY25. Current-year totals are partial for the fiscal year to date."
       },
       {
-        "heading": "Which agencies and vendors dominate FY2027 to date?",
-        "body": "The Department of Veterans Affairs obligated $77.4M and the General Services Administration obligated $34.3M in FY2027 to date. The National Aeronautics and Space Administration obligated $3M, and other agencies contributed smaller amounts. MATOS-GRUNLEY JOINT VENTURE obligated $21.4M, STANDARD COMMUNICATIONS INC obligated $19.4M, and LC FLUHARTY CONSTRUCTION LLC obligated $14.9M."
+        "heading": "Which agencies and vendors dominated FY2027 to date?",
+        "body": "Department of Veterans Affairs accounted for the largest share with $207M in FY2027 to date. General Services Administration followed with $57.8M and Smithsonian Institution with $17.8M. VETERANS DEVELOPMENT CORPORATION, INC. was the top vendor with $63.1M, followed by VALIANT CONSTRUCTION LLC with $22.3M and MATOS-GRUNLEY JOINT VENTURE with $21.4M."
       }
     ]
   },
   "faq": [
     {
       "q": "How much does the federal government spend on NAICS 236220?",
-      "a": "The federal government obligated $115M on NAICS 236220 in FY2027 to date. Annual historical totals were much larger: FY22 was $28.9B, FY23 was $32.9B, FY24 was $30.9B, FY25 was $30.6B, and FY26 was $53.2B."
+      "a": "The federal government obligated $296M on NAICS 236220 in FY2027 to date. Historical annual obligations were $28.9B in FY22, $32.9B in FY23, $30.9B in FY24, $30.6B in FY25, and $53.5B in FY26."
     },
     {
       "q": "Which agencies buy the most NAICS 236220 services?",
-      "a": "The Department of Veterans Affairs and the General Services Administration buy the most NAICS 236220 services in FY2027 to date. The Department of Veterans Affairs obligated $77.4M and the General Services Administration obligated $34.3M; the National Aeronautics and Space Administration obligated $3M and other agencies obligated smaller amounts."
+      "a": "Department of Veterans Affairs buys the most NAICS 236220 services, with $207M in FY2027 to date. General Services Administration bought $57.8M and Smithsonian Institution bought $17.8M in FY2027 to date."
     },
     {
       "q": "Who are the largest NAICS 236220 government contractors?",
-      "a": "MATOS-GRUNLEY JOINT VENTURE, STANDARD COMMUNICATIONS INC, and LC FLUHARTY CONSTRUCTION LLC are the largest NAICS 236220 contractors in FY2027 to date. MATOS-GRUNLEY JOINT VENTURE obligated $21.4M, STANDARD COMMUNICATIONS INC obligated $19.4M, and LC FLUHARTY CONSTRUCTION LLC obligated $14.9M."
+      "a": "VETERANS DEVELOPMENT CORPORATION, INC. is the largest NAICS 236220 government contractor in FY2027 to date with $63.1M. VALIANT CONSTRUCTION LLC had $22.3M and MATOS-GRUNLEY JOINT VENTURE had $21.4M in FY2027 to date."
     }
   ],
   "related": [

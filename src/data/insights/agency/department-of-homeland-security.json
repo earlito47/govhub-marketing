@@ -1,20 +1,20 @@
 {
   "pageType": "agency",
   "slug": "department-of-homeland-security",
-  "title": "DHS Federal Contracts: $58.1M in FY2027",
+  "title": "DHS Federal Contracts: $175M in FY2027",
   "h1": "Department of Homeland Security: Federal Contract Spending & Top Vendors",
-  "metaDescription": "Department of Homeland Security obligated $58.1M in federal contracts in FY2027 to date. See what it buys, its top vendors, and multi-year trend.",
-  "updated": "2026-10-19",
+  "metaDescription": "Department of Homeland Security obligated $175M in federal contracts in FY2027 to date. See what it buys, its top vendors, and multi-year trend.",
+  "updated": "2026-10-26",
   "fyWindow": {
     "label": "FY2027 to date",
     "start": "2026-10-01",
-    "end": "2026-10-19"
+    "end": "2026-10-26"
   },
   "stats": {
-    "totalObligations": 58056415.37,
-    "awardCount": 335,
-    "yoyGrowthPct": -99.9,
-    "avgAwardSize": 173303,
+    "totalObligations": 174811261.24,
+    "awardCount": 818,
+    "yoyGrowthPct": -99.8,
+    "avgAwardSize": 213706,
     "smallBusinessSharePct": null
   },
   "charts": [
@@ -28,7 +28,7 @@
           "points": [
             [
               "FY22",
-              20838075967.51
+              20838052367.27
             ],
             [
               "FY23",
@@ -40,21 +40,21 @@
             ],
             [
               "FY25",
-              28337151316.26
+              28337151336.26
             ],
             [
               "FY26",
-              73318825282.99
+              73319064337.65
             ],
             [
               "FY27",
-              58056415.37
+              174811261.24
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Obligations fell 99.9% year over year, from $73.3B in FY2026 to $58.1M in FY2027 to date."
+      "takeaway": "Obligations fell 99.8% year over year, from $73.3B in FY2026 to $175M in FY2027 to date."
     },
     {
       "id": "department-of-homeland-security-top-naics",
@@ -65,50 +65,50 @@
           "label": "Obligations",
           "points": [
             [
+              "Pharmacy Benefit Management and Other Third Party Administration of Insurance and Pension Funds",
+              44769832.26
+            ],
+            [
               "Custom Computer Programming Services",
-              37183179
+              36779591.66
+            ],
+            [
+              "Computing Infrastructure Providers, Data Processing, Web Hosting, and Related Services",
+              29424035.34
+            ],
+            [
+              "Computer Systems Design Services",
+              24179872.65
+            ],
+            [
+              "Engineering Services",
+              21426463.05
             ],
             [
               "Office Administrative Services",
               11400591.18
             ],
             [
-              "Computer Systems Design Services",
-              11217126.74
+              "Janitorial Services",
+              10132523.57
             ],
             [
               "All Other Support Services",
-              2881332
+              2836372.5
             ],
             [
               "Offices of Certified Public Accountants",
               2338771.39
             ],
             [
-              "Other Computer Related Services",
-              1438935.78
-            ],
-            [
-              "Engineering Services",
-              559242.98
-            ],
-            [
               "Ship Building and Repairing",
-              527920.21
-            ],
-            [
-              "Other Engine Equipment Manufacturing",
-              111505.84
-            ],
-            [
-              "Security Guards and Patrol Services",
-              97938.44
+              2151232.9
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Custom Computer Programming Services was Homeland Security's largest contract category, with $37.2M obligated (64.0% of contract spending)."
+      "takeaway": "Pharmacy Benefit Management and Other Third Party Administration of Insurance and Pension Funds was Homeland Security's largest contract category, with $44.8M obligated (25.6% of contract spending)."
     },
     {
       "id": "department-of-homeland-security-top-vendors",
@@ -119,8 +119,20 @@
           "label": "Obligations",
           "points": [
             [
+              "ARDENT GROUP, LLC",
+              44769832.26
+            ],
+            [
+              "ACENTRA HEALTH LLC",
+              29393065.95
+            ],
+            [
               "METROIBR JV LLC",
               22723637.04
+            ],
+            [
+              "SALIENT CRGT, INC.",
+              19483128
             ],
             [
               "KYC ADVISORS LLC",
@@ -131,38 +143,26 @@
               11400591.18
             ],
             [
+              "ADELANTE DEVELOPMENT CENTER INC",
+              10132523.57
+            ],
+            [
+              "INTUITIVE INFORMATION SYSTEMS TECHNOLOGIES LLC",
+              7154398.21
+            ],
+            [
               "SPATIAL FRONT INC",
               6544719.65
             ],
             [
               "STELLA JV, LLC",
               5981676.48
-            ],
-            [
-              "INTERNATIONAL ORGANIZATION FOR MIGRATION",
-              2837692
-            ],
-            [
-              "KEARNEY & COMPANY, P.C.",
-              2338771.39
-            ],
-            [
-              "1 SOURCE CONSULTING, INC.",
-              2003826.24
-            ],
-            [
-              "ALVAREZ LLC",
-              1983364.87
-            ],
-            [
-              "APPDDICTIONSTUDIO LIMITED LIABILITY COMPANY",
-              628695.84
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "METROIBR JV LLC led all Homeland Security contractors with $22.7M, 39.1% of obligations."
+      "takeaway": "ARDENT GROUP, LLC led all Homeland Security contractors with $44.8M, 25.6% of obligations."
     }
   ],
   "crossLinks": [
@@ -171,16 +171,16 @@
       "href": "/insights/naics/541511/"
     },
     {
-      "label": "NAICS 561110: Office Administrative Services",
-      "href": "/insights/naics/561110/"
-    },
-    {
       "label": "NAICS 541512: Computer Systems Design Services",
       "href": "/insights/naics/541512/"
     },
     {
-      "label": "NAICS 541519: Other Computer Related Services",
-      "href": "/insights/naics/541519/"
+      "label": "NAICS 541330: Engineering Services",
+      "href": "/insights/naics/541330/"
+    },
+    {
+      "label": "NAICS 561110: Office Administrative Services",
+      "href": "/insights/naics/561110/"
     }
   ],
   "tables": [
@@ -195,13 +195,37 @@
         [
           1,
           {
+            "text": "ARDENT GROUP, LLC",
+            "href": "https://www.usaspending.gov/recipient/2cc52085-49b8-9c14-3657-54cf2012a27a-C/latest/"
+          },
+          44769832.26
+        ],
+        [
+          2,
+          {
+            "text": "ACENTRA HEALTH LLC",
+            "href": "https://www.usaspending.gov/recipient/389f0397-ee39-c8dd-f9de-644dfbdf8c8d-C/latest/"
+          },
+          29393065.95
+        ],
+        [
+          3,
+          {
             "text": "METROIBR JV LLC",
             "href": "https://www.usaspending.gov/recipient/696984e9-df32-7a5d-27b2-5f17d2f06567-C/latest/"
           },
           22723637.04
         ],
         [
-          2,
+          4,
+          {
+            "text": "SALIENT CRGT, INC.",
+            "href": "https://www.usaspending.gov/recipient/fd25b722-602d-ec58-3a7a-d6555b8d8ea7-C/latest/"
+          },
+          19483128
+        ],
+        [
+          5,
           {
             "text": "KYC ADVISORS LLC",
             "href": "https://www.usaspending.gov/recipient/84f14403-64a2-0804-41b9-3885e7b9b0f0-C/latest/"
@@ -209,7 +233,7 @@
           11827019.88
         ],
         [
-          3,
+          6,
           {
             "text": "KONIAG BRILLIENT, LLC",
             "href": "https://www.usaspending.gov/recipient/32487f57-d90d-4a93-11f1-dbead074308c-C/latest/"
@@ -217,7 +241,23 @@
           11400591.18
         ],
         [
-          4,
+          7,
+          {
+            "text": "ADELANTE DEVELOPMENT CENTER INC",
+            "href": "https://www.usaspending.gov/recipient/6752b040-8cdf-0067-c23d-c42340431e43-C/latest/"
+          },
+          10132523.57
+        ],
+        [
+          8,
+          {
+            "text": "INTUITIVE INFORMATION SYSTEMS TECHNOLOGIES LLC",
+            "href": "https://www.usaspending.gov/recipient/e6bca4a5-7d65-62f1-396f-87b6552974b2-C/latest/"
+          },
+          7154398.21
+        ],
+        [
+          9,
           {
             "text": "SPATIAL FRONT INC",
             "href": "https://www.usaspending.gov/recipient/f702b7a6-2200-5cd4-c840-cdab470fcb25-C/latest/"
@@ -225,52 +265,12 @@
           6544719.65
         ],
         [
-          5,
+          10,
           {
             "text": "STELLA JV, LLC",
             "href": "https://www.usaspending.gov/recipient/c7dacd25-c9ff-299e-dfa1-bb2b6494cfb3-C/latest/"
           },
           5981676.48
-        ],
-        [
-          6,
-          {
-            "text": "INTERNATIONAL ORGANIZATION FOR MIGRATION",
-            "href": "https://www.usaspending.gov/recipient/472c2dc8-009a-30c6-7578-72bf109e7057-C/latest/"
-          },
-          2837692
-        ],
-        [
-          7,
-          {
-            "text": "KEARNEY & COMPANY, P.C.",
-            "href": "https://www.usaspending.gov/recipient/7d1bb88e-f48f-cd06-289d-f7f1940c634e-C/latest/"
-          },
-          2338771.39
-        ],
-        [
-          8,
-          {
-            "text": "1 SOURCE CONSULTING, INC.",
-            "href": "https://www.usaspending.gov/recipient/4ea5c1e1-ddcc-1711-561f-8bc821b1ae6b-C/latest/"
-          },
-          2003826.24
-        ],
-        [
-          9,
-          {
-            "text": "ALVAREZ LLC",
-            "href": "https://www.usaspending.gov/recipient/d55dabdb-0c89-b6e8-e4f5-5817d2be7b63-C/latest/"
-          },
-          1983364.87
-        ],
-        [
-          10,
-          {
-            "text": "APPDDICTIONSTUDIO LIMITED LIABILITY COMPANY",
-            "href": "https://www.usaspending.gov/recipient/ee44e898-2436-c09a-a673-520165a1693a-C/latest/"
-          },
-          628695.84
         ]
       ]
     },
@@ -285,13 +285,21 @@
         [
           1,
           {
+            "text": "SCIENCE APPLICATIONS INTERNATIONAL CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70B04C20F00001359_7014_47QTCK18D0001_4732/"
+          },
+          615468205.02
+        ],
+        [
+          2,
+          {
             "text": "SLS FEDERAL SERVICES LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_70B01C26F00000003_7014_70B01C26D00000003_7014/"
           },
           380349800
         ],
         [
-          2,
+          3,
           {
             "text": "TUTOR PERINI CORPORATION",
             "href": "https://www.usaspending.gov/award/CONT_AWD_70Z05026F43000039_7008_70Z04723DPCNI0004_7008/"
@@ -299,7 +307,15 @@
           315000000
         ],
         [
-          3,
+          4,
+          {
+            "text": "ACCENTURE FEDERAL SERVICES LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70B04C23F00000074_7014_47QTCK18D0036_4732/"
+          },
+          277857783.13
+        ],
+        [
+          5,
           {
             "text": "MANTECH ADVANCED SYSTEMS INTERNATIONAL, INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_70B04C20F00001357_7014_47QTCK18D0031_4732/"
@@ -307,7 +323,31 @@
           251240777.48
         ],
         [
-          4,
+          6,
+          {
+            "text": "FOUR POINTS TECHNOLOGY, L.L.C.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70B04C24F00000413_7014_NNG15SD22B_8000/"
+          },
+          227195012.42
+        ],
+        [
+          7,
+          {
+            "text": "ACENTRA HEALTH LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70CDCR26C00000002_7012_-NONE-_-NONE-/"
+          },
+          163125147.01
+        ],
+        [
+          8,
+          {
+            "text": "INTERNATIONAL BUSINESS MACHINES CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70SBUR24F00000103_7003_GS35F110DA_4732/"
+          },
+          157800222.81
+        ],
+        [
+          9,
           {
             "text": "SOUTHWEST VALLEY CONSTRUCTORS CO",
             "href": "https://www.usaspending.gov/award/CONT_AWD_70B01C26F00001093_7014_70B01C26D00000025_7014/"
@@ -315,7 +355,15 @@
           144000000
         ],
         [
-          5,
+          10,
+          {
+            "text": "CLARK CONSTRUCTION GROUP LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70B01C26F00001079_7014_70B01C26D00000021_7014/"
+          },
+          117000000
+        ],
+        [
+          11,
           {
             "text": "KONIAG BRILLIENT, LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_70SBUR21C00000015_7003_-NONE-_-NONE-/"
@@ -323,15 +371,15 @@
           114368513.74
         ],
         [
-          6,
+          12,
           {
             "text": "ADG-REI TECHNOLOGY VENTURES, LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_70SBUR22F00000112_7003_75N98120D00031_7529/"
           },
-          109512195.47
+          109291471.51
         ],
         [
-          7,
+          13,
           {
             "text": "GARDAWORLD FEDERAL SERVICES LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_70CDCR26C00000023_7012_-NONE-_-NONE-/"
@@ -339,7 +387,7 @@
           100467801.3
         ],
         [
-          8,
+          14,
           {
             "text": "METROIBR JV LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_70SBUR23F00000008_7003_47QTCA22D00AB_4732/"
@@ -347,7 +395,31 @@
           98880253.64
         ],
         [
-          9,
+          15,
+          {
+            "text": "ACCENTURE FEDERAL SERVICES LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70T02022F7500N001_7013_47QTCK18D0036_4732/"
+          },
+          93564175.3
+        ],
+        [
+          16,
+          {
+            "text": "ARDENT GROUP, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70CDCR26C00000003_7012_-NONE-_-NONE-/"
+          },
+          90958141.74
+        ],
+        [
+          17,
+          {
+            "text": "AMAZON WEB SERVICES, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70RCSJ26FR0000028_7001_70RTAC26D00000004_7001/"
+          },
+          83417225.4
+        ],
+        [
+          18,
           {
             "text": "SMITHS DETECTION INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_70T04023F7672N007_7013_70T04023G7672N001_7013/"
@@ -355,7 +427,15 @@
           83066200
         ],
         [
-          10,
+          19,
+          {
+            "text": "SALIENT CRGT, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70CDCR24FR0000059_7012_47QRAD20DU127_4732/"
+          },
+          59511872.62
+        ],
+        [
+          20,
           {
             "text": "SCIENCE APPLICATIONS INTERNATIONAL CORPORATION",
             "href": "https://www.usaspending.gov/award/CONT_AWD_70RSAT23CB0000003_7001_-NONE-_-NONE-/"
@@ -363,7 +443,7 @@
           50002730.55
         ],
         [
-          11,
+          21,
           {
             "text": "TRIPLE CANOPY INC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_70RFP225FREC00012_7001_70RFP224DEC000011_7001/"
@@ -371,7 +451,7 @@
           47581167.34
         ],
         [
-          12,
+          22,
           {
             "text": "ANDURIL INDUSTRIES, INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_70B02C25F00000422_7014_70B02C20D00000019_7014/"
@@ -379,7 +459,7 @@
           42066939.56
         ],
         [
-          13,
+          23,
           {
             "text": "T47 INTERNATIONAL, INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_70LGLY25CGLB00004_7015_-NONE-_-NONE-/"
@@ -387,7 +467,7 @@
           36638811.28
         ],
         [
-          14,
+          24,
           {
             "text": "LMI CONSULTING, LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_70RSAT23FR0000076_7001_GS00Q14OADU141_4732/"
@@ -395,121 +475,41 @@
           36634684.12
         ],
         [
-          15,
-          {
-            "text": "GOLDEN SVCS, LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_70RFP224FREC00033_7001_70RFP224DEC000006_7001/"
-          },
-          35454081.57
-        ],
-        [
-          16,
-          {
-            "text": "VMD SYSTEMS INTEGRATORS, LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_70T05024F5900N012_7013_HSTS0516DSPP913_7013/"
-          },
-          34998692.1
-        ],
-        [
-          17,
-          {
-            "text": "WHITING-TURNER CONTRACTING COMPANY, THE",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_70LGLY24FSSB00134_7015_70Z04723DPCNI0006_7008/"
-          },
-          31618380
-        ],
-        [
-          18,
-          {
-            "text": "THE NEW MEXICO COMMISION FOR BLIND",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_70LART23CPFB00001_7015_-NONE-_-NONE-/"
-          },
-          31043009.75
-        ],
-        [
-          19,
-          {
-            "text": "BEN FITZGERALD REAL ESTATE SERVICES, L.L.C.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_70B01C20F00001058_7014_GS06Q17BQDS204_4732/"
-          },
-          25514986.72
-        ],
-        [
-          20,
-          {
-            "text": "RED RIVER SCIENCE & TECHNOLOGY, LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_70B02C21F00000968_7014_47QRAA18D00BY_4732/"
-          },
-          25101908.55
-        ],
-        [
-          21,
-          {
-            "text": "DELOITTE CONSULTING LLP",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_70B04C26C00000142_7014_-NONE-_-NONE-/"
-          },
-          24380808
-        ],
-        [
-          22,
-          {
-            "text": "UNIVERSAL PROTECTION SERVICE, LIMITED PARTNERSHIP",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_70RFPW25FRW900007_7001_70RFP224DEC000009_7001/"
-          },
-          24023662.76
-        ],
-        [
-          23,
-          {
-            "text": "SALIENT CRGT, INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_70SBUR26F00000002_7003_47QTCK18D0060_4732/"
-          },
-          23895601.21
-        ],
-        [
-          24,
-          {
-            "text": "UNIVERSAL PROTECTION SERVICE, LIMITED PARTNERSHIP",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_70RFP426FRE700022_7001_70RFP224DEC000001_7001/"
-          },
-          22644780.59
-        ],
-        [
           25,
           {
-            "text": "KYC ADVISORS LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_70SBUR25F00000045_7003_47QTCA21D0061_4732/"
+            "text": "INTUITIVE INFORMATION SYSTEMS TECHNOLOGIES LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70FA3122F00000073_7022_75N98119D00059_7529/"
           },
-          22511725.02
+          35612943.77
         ]
       ]
     }
   ],
   "narrative": {
-    "intro": "The Department of Homeland Security obligated $58.1M in FY2027 to date. The agency recorded 335 awards with an average award size of $173K. Obligations are down 99.9% year over year. Historical fiscal-year obligations show a sharp contrast: FY22 was $20.8B, FY23 was $23.9B, FY24 was $23.6B, FY25 was $28.3B, and FY26 was $73.3B, followed by the FY27 to date total of $58.1M. The largest spending categories so far in FY2027 are Custom Computer Programming Services at $37.2M, Office Administrative Services at $11.4M, and Computer Systems Design Services at $11.2M. The top vendors in FY2027 to date include METROIBR JV LLC at $22.7M, KYC ADVISORS LLC at $11.8M, and KONIAG BRILLIENT, LLC at $11.4M. The distribution of obligations in FY2027 to date is concentrated in a few software and professional services categories and a small group of prime contractors, reflecting the partial, fiscal-year-to-date nature of the total.",
+    "intro": "The Department of Homeland Security obligated $175M on contracts in FY2027 to date. The Department awarded 818 contracts with an average award size of $214K. Obligations fell 99.8% year over year. The FY2027 to date total sits well below recent full fiscal year totals, which include $73.3B in FY26, $28.3B in FY25, $23.6B in FY24, $23.9B in FY23, and $20.8B in FY22. Contracting in FY2027 to date is concentrated in a few service categories and vendors: Pharmacy Benefit Management and Other Third Party Administration of Insurance and Pension Funds leads NAICS categories with $44.8M, and ARDENT GROUP, LLC leads vendors with $44.8M. IT services categories such as Custom Computer Programming Services and Computing Infrastructure Providers, Data Processing, Web Hosting, and Related Services also account for substantial shares, with $36.8M and $29.4M respectively. The FY2027 to date picture reflects partial-year obligations and a sharp year-over-year decline in spending.",
     "sections": [
       {
-        "heading": "What are the biggest spending categories so far in FY2027?",
-        "body": "Custom Computer Programming Services is the largest category at $37.2M. Office Administrative Services and Computer Systems Design Services follow at $11.4M and $11.2M, respectively. Other notable categories include All Other Support Services at $2.9M and Offices of Certified Public Accountants at $2.3M."
+        "heading": "How large are DHS's FY2027 to date contract obligations?",
+        "body": "The Department of Homeland Security obligated $175M in FY2027 to date. The Department made 818 awards with an average award size of $214K. Obligations fell 99.8% year over year. Full fiscal year comparators include $73.3B in FY26 and $28.3B in FY25."
       },
       {
-        "heading": "Which vendors received the most obligations in FY2027?",
-        "body": "METROIBR JV LLC received the largest obligations at $22.7M. KYC ADVISORS LLC and KONIAG BRILLIENT, LLC received $11.8M and $11.4M, respectively. Additional top recipients include SPATIAL FRONT INC at $6.5M and STELLA JV, LLC at $6M."
+        "heading": "Which industries and vendors dominate DHS contracting in FY2027 to date?",
+        "body": "Pharmacy Benefit Management and Other Third Party Administration of Insurance and Pension Funds is the top NAICS category with $44.8M. Custom Computer Programming Services and Computing Infrastructure Providers, Data Processing, Web Hosting, and Related Services follow with $36.8M and $29.4M. ARDENT GROUP, LLC is the top vendor with $44.8M, followed by ACENTRA HEALTH LLC with $29.4M and METROIBR JV LLC with $22.7M."
       }
     ]
   },
   "faq": [
     {
       "q": "How much does Department of Homeland Security spend on contracts?",
-      "a": "The Department of Homeland Security obligated $58.1M in FY2027 to date. The agency made 335 awards with an average award size of $173K, and obligations are down 99.9% year over year. Historical annual obligations show FY22 at $20.8B, FY23 at $23.9B, FY24 at $23.6B, FY25 at $28.3B, and FY26 at $73.3B."
+      "a": "The Department of Homeland Security obligated $175M in contracts in FY2027 to date. The Department made 818 awards with an average award size of $214K. Obligations fell 99.8% year over year, and recent full fiscal year totals include $73.3B in FY26 and $28.3B in FY25."
     },
     {
       "q": "What does Homeland Security buy?",
-      "a": "Custom Computer Programming Services is the largest single category at $37.2M. Homeland Security also bought Office Administrative Services at $11.4M, Computer Systems Design Services at $11.2M, All Other Support Services at $2.9M, and Offices of Certified Public Accountants at $2.3M, among other categories."
+      "a": "Homeland Security buys services such as Pharmacy Benefit Management and Other Third Party Administration of Insurance and Pension Funds, which received $44.8M, and Custom Computer Programming Services, which received $36.8M. Homeland Security also bought Computing Infrastructure Providers, Data Processing, Web Hosting, and Related Services for $29.4M and Computer Systems Design Services for $24.2M in FY2027 to date."
     },
     {
       "q": "Who are Homeland Security's largest contractors?",
-      "a": "METROIBR JV LLC is the largest contractor at $22.7M. Other top contractors include KYC ADVISORS LLC at $11.8M, KONIAG BRILLIENT, LLC at $11.4M, SPATIAL FRONT INC at $6.5M, and STELLA JV, LLC at $6M."
+      "a": "ARDENT GROUP, LLC is the largest contractor in FY2027 to date with $44.8M in obligations. ACENTRA HEALTH LLC is next with $29.4M, followed by METROIBR JV LLC with $22.7M and SALIENT CRGT, INC. with $19.5M."
     }
   ],
   "related": [
@@ -543,6 +543,5 @@
       "label": "USAspending.gov award data",
       "href": "https://www.usaspending.gov"
     }
-  ],
-  "noindex": true
+  ]
 }

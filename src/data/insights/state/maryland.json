@@ -1,20 +1,20 @@
 {
   "pageType": "state",
   "slug": "maryland",
-  "title": "Federal Contracts in Maryland: $180M (FY2027)",
+  "title": "Federal Contracts in Maryland: $226M (FY2027)",
   "h1": "Federal Contracts in Maryland: Spending, Agencies & Vendors",
-  "metaDescription": "Federal agencies obligated $180M to contractors in Maryland in FY2027 to date. See top buying agencies, top vendors, and industries.",
-  "updated": "2026-10-19",
+  "metaDescription": "Federal agencies obligated $226M to contractors in Maryland in FY2027 to date. See top buying agencies, top vendors, and industries.",
+  "updated": "2026-10-26",
   "fyWindow": {
     "label": "FY2027 to date",
     "start": "2026-10-01",
-    "end": "2026-10-19"
+    "end": "2026-10-26"
   },
   "stats": {
-    "totalObligations": 180251159.14,
-    "awardCount": 723,
-    "yoyGrowthPct": -99.5,
-    "avgAwardSize": 249310,
+    "totalObligations": 226451657.08,
+    "awardCount": 1234,
+    "yoyGrowthPct": -99.4,
+    "avgAwardSize": 183510,
     "smallBusinessSharePct": null
   },
   "charts": [
@@ -40,21 +40,21 @@
             ],
             [
               "FY25",
-              39689477650.17
+              39690398763.98
             ],
             [
               "FY26",
-              37207527118.48
+              37549621588.38
             ],
             [
               "FY27",
-              180251159.14
+              226451657.08
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Obligations fell 99.5% year over year, from $37.2B in FY2026 to $180M in FY2027 to date."
+      "takeaway": "Obligations fell 99.4% year over year, from $37.5B in FY2026 to $226M in FY2027 to date."
     },
     {
       "id": "maryland-top-agencies",
@@ -66,23 +66,31 @@
           "points": [
             [
               "National Aeronautics and Space Administration",
-              89521688.43
+              106712658.48
             ],
             [
               "Department of Veterans Affairs",
-              48466005.33
-            ],
-            [
-              "General Services Administration",
-              20311839.38
+              55513310.05
             ],
             [
               "Department of Health and Human Services",
-              11858040.92
+              33763551.74
+            ],
+            [
+              "General Services Administration",
+              20477951.06
+            ],
+            [
+              "Department of Transportation",
+              10796700.46
             ],
             [
               "Department of the Treasury",
-              9497453.32
+              10384430.15
+            ],
+            [
+              "Department of Agriculture",
+              9133275.7
             ],
             [
               "National Archives and Records Administration",
@@ -90,25 +98,17 @@
             ],
             [
               "Department of Justice",
-              3099904.01
+              5587445.78
             ],
             [
-              "Department of Labor",
-              1446453.72
-            ],
-            [
-              "Department of Agriculture",
-              840911.75
-            ],
-            [
-              "Environmental Protection Agency",
-              686711.55
+              "Department of Homeland Security",
+              4767537.15
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "National Aeronautics and Space Administration was the top federal buyer in Maryland, obligating $89.5M (49.7% of the state total)."
+      "takeaway": "National Aeronautics and Space Administration was the top federal buyer in Maryland, obligating $107M (47.1% of the state total)."
     },
     {
       "id": "maryland-top-vendors",
@@ -127,8 +127,16 @@
               21405048.73
             ],
             [
+              "ARINC INCORPORATED",
+              10661559
+            ],
+            [
               "AT&T MOBILITY NATIONAL ACCOUNTS LLC",
               9635561.92
+            ],
+            [
+              "AXLE INFORMATICS, LLC",
+              7528547.61
             ],
             [
               "HAMILTON PACIFIC CHAMBERLAIN LLC",
@@ -140,29 +148,21 @@
             ],
             [
               "INTERNATIONAL BUSINESS MACHINES CORPORATION",
-              5170666.66
+              5169586.66
             ],
             [
-              "L1 ENTERPRISES INCORPORATED",
-              3749007.76
+              "GUIDEHOUSE INC.",
+              4842742.31
             ],
             [
-              "ASCELLON CORPORATION",
-              2840925.83
-            ],
-            [
-              "QUEST DIAGNOSTICS INCORPORATED",
-              2700000
-            ],
-            [
-              "RTW MANAGEMENT LLC",
-              2568948
+              "BLUE WATER THINKING,LLC",
+              4402006.94
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "THE JOHNS HOPKINS UNIVERSITY APPLIED PHYSICS LABORATORY LLC led all contractors in Maryland with $85.3M, 47.3% of the state total."
+      "takeaway": "THE JOHNS HOPKINS UNIVERSITY APPLIED PHYSICS LABORATORY LLC led all contractors in Maryland with $85.3M, 37.7% of the state total."
     },
     {
       "id": "maryland-top-naics",
@@ -174,49 +174,49 @@
           "points": [
             [
               "Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology)",
-              89375040.34
-            ],
-            [
-              "Commercial and Institutional Building Construction",
-              28842659.22
+              99112069.63
             ],
             [
               "Other Computer Related Services",
-              15688121.56
+              32357033.43
             ],
             [
-              "Wireless Telecommunications Carriers (except Satellite)",
-              9635561.92
+              "Commercial and Institutional Building Construction",
+              29211244.8
+            ],
+            [
+              "Engineering Services",
+              16007923.68
             ],
             [
               "Administrative Management and General Management Consulting Services",
-              6340698.27
+              12006289.28
             ],
             [
-              "Computing Infrastructure Providers, Data Processing, Web Hosting, and Related Services",
-              5111666.66
+              "Wireless Telecommunications Carriers (except Satellite)",
+              9635555.52
             ],
             [
               "Facilities Support Services",
-              3638568.11
+              6443680.76
             ],
             [
-              "Temporary Help Services",
-              2992891.36
+              "Computing Infrastructure Providers, Data Processing, Web Hosting, and Related Services",
+              6061666.66
             ],
             [
-              "Medical Laboratories",
-              2725607.98
+              "Security Guards and Patrol Services",
+              4502019.32
             ],
             [
-              "All Other Transit and Ground Passenger Transportation",
-              2568948
+              "Office Administrative Services",
+              3854753.9
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology) was the largest industry in Maryland, with $89.4M obligated."
+      "takeaway": "Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology) was the largest industry in Maryland, with $99.1M obligated."
     }
   ],
   "crossLinks": [
@@ -229,28 +229,28 @@
       "href": "/insights/agency/department-of-veterans-affairs/"
     },
     {
-      "label": "General Services Administration contracts",
-      "href": "/insights/agency/general-services-administration/"
-    },
-    {
       "label": "Department of Health and Human Services contracts",
       "href": "/insights/agency/department-of-health-and-human-services/"
+    },
+    {
+      "label": "General Services Administration contracts",
+      "href": "/insights/agency/general-services-administration/"
     },
     {
       "label": "NAICS 541715: Research and Development in the Physical, Engineering, and Life Sciences",
       "href": "/insights/naics/541715/"
     },
     {
-      "label": "NAICS 236220: Commercial and Institutional Building Construction",
-      "href": "/insights/naics/236220/"
-    },
-    {
       "label": "NAICS 541519: Other Computer Related Services",
       "href": "/insights/naics/541519/"
     },
     {
-      "label": "NAICS 541611: Administrative Management and General Management Consulting Services",
-      "href": "/insights/naics/541611/"
+      "label": "NAICS 236220: Commercial and Institutional Building Construction",
+      "href": "/insights/naics/236220/"
+    },
+    {
+      "label": "NAICS 541330: Engineering Services",
+      "href": "/insights/naics/541330/"
     }
   ],
   "tables": [
@@ -281,13 +281,29 @@
         [
           3,
           {
+            "text": "ARINC INCORPORATED",
+            "href": "https://www.usaspending.gov/recipient/8d53c10e-37d1-b137-87dd-36e855a2445c-C/latest/"
+          },
+          10661559
+        ],
+        [
+          4,
+          {
             "text": "AT&T MOBILITY NATIONAL ACCOUNTS LLC",
             "href": "https://www.usaspending.gov/recipient/0b29563c-bcdb-9f5e-b2eb-88e814082bc3-C/latest/"
           },
           9635561.92
         ],
         [
-          4,
+          5,
+          {
+            "text": "AXLE INFORMATICS, LLC",
+            "href": "https://www.usaspending.gov/recipient/42cd8754-63c7-5fcd-2bef-651175ecc88f-C/latest/"
+          },
+          7528547.61
+        ],
+        [
+          6,
           {
             "text": "HAMILTON PACIFIC CHAMBERLAIN LLC",
             "href": "https://www.usaspending.gov/recipient/ed307c29-aefa-ff1b-e916-57e4e5222536-C/latest/"
@@ -295,7 +311,7 @@
           7183608
         ],
         [
-          5,
+          7,
           {
             "text": "ISLAND EMPIRE TECHNOLOGY SYSTEMS LLC",
             "href": "https://www.usaspending.gov/recipient/97547d15-8fdb-3e38-7203-4a5b39a08262-C/latest/"
@@ -303,44 +319,28 @@
           5250566.49
         ],
         [
-          6,
+          8,
           {
             "text": "INTERNATIONAL BUSINESS MACHINES CORPORATION",
             "href": "https://www.usaspending.gov/recipient/6ffc4386-853e-ef89-67e8-22c28ddcf15c-C/latest/"
           },
-          5170666.66
-        ],
-        [
-          7,
-          {
-            "text": "L1 ENTERPRISES INCORPORATED",
-            "href": "https://www.usaspending.gov/recipient/9845be94-5753-d92b-1ce1-9f6e19b45efc-C/latest/"
-          },
-          3749007.76
-        ],
-        [
-          8,
-          {
-            "text": "ASCELLON CORPORATION",
-            "href": "https://www.usaspending.gov/recipient/fa20df7e-e8a8-dd14-1c3e-01e011eeed63-C/latest/"
-          },
-          2840925.83
+          5169586.66
         ],
         [
           9,
           {
-            "text": "QUEST DIAGNOSTICS INCORPORATED",
-            "href": "https://www.usaspending.gov/recipient/a9415e64-b17c-f292-0379-5ac52f31d54a-C/latest/"
+            "text": "GUIDEHOUSE INC.",
+            "href": "https://www.usaspending.gov/recipient/a0cb5664-8703-c7dc-a188-4a96f90a16c9-C/latest/"
           },
-          2700000
+          4842742.31
         ],
         [
           10,
           {
-            "text": "RTW MANAGEMENT LLC",
-            "href": "https://www.usaspending.gov/recipient/94d34361-3975-94d9-9c99-2b1aee3737a3-C/latest/"
+            "text": "BLUE WATER THINKING,LLC",
+            "href": "https://www.usaspending.gov/recipient/c33e911c-8a6f-8664-5cf9-4d239129fa2c-C/latest/"
           },
-          2568948
+          4402006.94
         ]
       ]
     },
@@ -365,6 +365,15 @@
         [
           2,
           {
+            "text": "KBR WYLE SERVICES, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_80GSFC22CA020_8000_-NONE-_-NONE-/"
+          },
+          681573350.45,
+          "National Aeronautics and Space Administration"
+        ],
+        [
+          3,
+          {
             "text": "ROHDE & SCHWARZ USA, INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_693KA826F00088_6920_693KA826D00002_6920/"
           },
@@ -372,7 +381,7 @@
           "Department of Transportation"
         ],
         [
-          3,
+          4,
           {
             "text": "GUIDEHOUSE INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_140D0423F0882_1406_HHSN316201200040W_7529/"
@@ -381,16 +390,43 @@
           "Department of the Interior"
         ],
         [
-          4,
+          5,
+          {
+            "text": "SPACE NETWORK SOLUTIONS LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_80GSFC23CA051_8000_-NONE-_-NONE-/"
+          },
+          314975465.39,
+          "National Aeronautics and Space Administration"
+        ],
+        [
+          6,
+          {
+            "text": "ADNET SYSTEMS INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_80GSFC23CA040_8000_-NONE-_-NONE-/"
+          },
+          283650256.06,
+          "National Aeronautics and Space Administration"
+        ],
+        [
+          7,
+          {
+            "text": "MITCHELL VANTAGE SYSTEMS LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_80GSFC22CA056_8000_-NONE-_-NONE-/"
+          },
+          273163049.14,
+          "National Aeronautics and Space Administration"
+        ],
+        [
+          8,
           {
             "text": "ASRC FEDERAL FACILITIES LOGISTICS LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_80GSFC23CA052_8000_-NONE-_-NONE-/"
           },
-          259856193.46,
+          260073710.82,
           "National Aeronautics and Space Administration"
         ],
         [
-          5,
+          9,
           {
             "text": "FCN, INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_2032H523F00493_2050_NNG15SC71B_8000/"
@@ -399,7 +435,34 @@
           "Department of the Treasury"
         ],
         [
-          6,
+          10,
+          {
+            "text": "OPR LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_80GSFC19C0072_8000_-NONE-_-NONE-/"
+          },
+          223543675.91,
+          "National Aeronautics and Space Administration"
+        ],
+        [
+          11,
+          {
+            "text": "HENSEL PHELPS CONSTRUCTION CO",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75N99022F00002_7529_75N99019D00016_7529/"
+          },
+          195719846,
+          "Department of Health and Human Services"
+        ],
+        [
+          12,
+          {
+            "text": "INTERNATIONAL BUSINESS MACHINES CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70SBUR24F00000103_7003_GS35F110DA_4732/"
+          },
+          157800222.81,
+          "Department of Homeland Security"
+        ],
+        [
+          13,
           {
             "text": "COLUMBUS TECHNOLOGIES AND SERVICES, INC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_80GSFC25CA034_8000_-NONE-_-NONE-/"
@@ -408,7 +471,7 @@
           "National Aeronautics and Space Administration"
         ],
         [
-          7,
+          14,
           {
             "text": "THE AEROSPACE CORPORATION",
             "href": "https://www.usaspending.gov/award/CONT_AWD_80GSFC19F0127_8000_80GSFC19D0011_8000/"
@@ -417,7 +480,25 @@
           "National Aeronautics and Space Administration"
         ],
         [
-          8,
+          15,
+          {
+            "text": "ARINC INCORPORATED",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_693KA723C00005_6920_-NONE-_-NONE-/"
+          },
+          140779374.24,
+          "Department of Transportation"
+        ],
+        [
+          16,
+          {
+            "text": "MANTECH ADVANCED SYSTEMS INTERNATIONAL, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_47QFCA23F0027_4732_47QFCA22D0327_4732/"
+          },
+          137910619.63,
+          "General Services Administration"
+        ],
+        [
+          17,
           {
             "text": "IT CONCEPTS, INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_28321321FA0010272_2800_28321320A00040024_2800/"
@@ -426,16 +507,25 @@
           "Social Security Administration"
         ],
         [
-          9,
+          18,
           {
             "text": "ADG-REI TECHNOLOGY VENTURES, LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_70SBUR22F00000112_7003_75N98120D00031_7529/"
           },
-          109512195.47,
+          109291471.51,
           "Department of Homeland Security"
         ],
         [
-          10,
+          19,
+          {
+            "text": "IT CONCEPTS, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_28321322FA0010338_2800_28321320A00040024_2800/"
+          },
+          107772236.42,
+          "Social Security Administration"
+        ],
+        [
+          20,
           {
             "text": "IRON VINE SECURITY LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_1333LB21F00000320_1323_47QTCA19D00HF_4732/"
@@ -444,7 +534,7 @@
           "Department of Commerce"
         ],
         [
-          11,
+          21,
           {
             "text": "GENERAL DYNAMICS INFORMATION TECHNOLOGY, INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_75FCMC22F0001_7530_HHSM500201600005I_7530/"
@@ -453,7 +543,16 @@
           "Department of Health and Human Services"
         ],
         [
-          12,
+          22,
+          {
+            "text": "ACCENTURE FEDERAL SERVICES LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70T02022F7500N001_7013_47QTCK18D0036_4732/"
+          },
+          93564175.3,
+          "Department of Homeland Security"
+        ],
+        [
+          23,
           {
             "text": "PERATON TECHNOLOGY SERVICES INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_47QFMA23F0019_4732_GS00Q16AJD0002_4732/"
@@ -462,7 +561,7 @@
           "General Services Administration"
         ],
         [
-          13,
+          24,
           {
             "text": "DELOITTE & TOUCHE LLP",
             "href": "https://www.usaspending.gov/award/CONT_AWD_75N92022F00065_7529_GS00F029DA_4732/"
@@ -471,141 +570,42 @@
           "Department of Health and Human Services"
         ],
         [
-          14,
+          25,
           {
             "text": "VENTERA LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_75FCMC23F0035_7530_47QTCA21D006H_4732/"
           },
           83737440.2,
           "Department of Health and Human Services"
-        ],
-        [
-          15,
-          {
-            "text": "SMITHS DETECTION INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_70T04023F7672N007_7013_70T04023G7672N001_7013/"
-          },
-          83066200,
-          "Department of Homeland Security"
-        ],
-        [
-          16,
-          {
-            "text": "NEXTGEN FEDERAL SYSTEMS LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_47QFCA23F0033_4732_47QRAD20D3166_4732/"
-          },
-          54740502.95,
-          "General Services Administration"
-        ],
-        [
-          17,
-          {
-            "text": "THE WHITESTONE GROUP, INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_75P00122F80086_7570_GS07F9142S_4730/"
-          },
-          51818963.87,
-          "Department of Health and Human Services"
-        ],
-        [
-          18,
-          {
-            "text": "TRIPLE CANOPY INC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_70RFP225FREC00012_7001_70RFP224DEC000011_7001/"
-          },
-          47581167.34,
-          "Department of Homeland Security"
-        ],
-        [
-          19,
-          {
-            "text": "DELOITTE CONSULTING LLP",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_75F40122C00143_7524_-NONE-_-NONE-/"
-          },
-          47188963.8,
-          "Department of Health and Human Services"
-        ],
-        [
-          20,
-          {
-            "text": "MELE ASSOCIATES INC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_89233123FNA400555_8900_GS00F243CA_4732/"
-          },
-          45772453.15,
-          "Department of Energy"
-        ],
-        [
-          21,
-          {
-            "text": "AT&T MOBILITY NATIONAL ACCOUNTS LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10B23C0016_3600_-NONE-_-NONE-/"
-          },
-          42304879.19,
-          "Department of Veterans Affairs"
-        ],
-        [
-          22,
-          {
-            "text": "OPTUMSERVE TECHNOLOGY SERVICES, INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_75R60225C00001_7526_-NONE-_-NONE-/"
-          },
-          37410472.46,
-          "Department of Health and Human Services"
-        ],
-        [
-          23,
-          {
-            "text": "SKYWARD IT SOLUTIONS, LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_75FCMC24F0059_7530_47QTCA19D00AB_4732/"
-          },
-          36035293.88,
-          "Department of Health and Human Services"
-        ],
-        [
-          24,
-          {
-            "text": "THE LEWIN GROUP, INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_75FCMC24F0036_7530_75FCMC19D0096_7530/"
-          },
-          29428669.64,
-          "Department of Health and Human Services"
-        ],
-        [
-          25,
-          {
-            "text": "THE JOHNS HOPKINS UNIVERSITY APPLIED PHYSICS LABORATORY LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_80MSFC24F0017_8000_80MSFC20D0004_8000/"
-          },
-          27907916,
-          "National Aeronautics and Space Administration"
         ]
       ]
     }
   ],
   "narrative": {
-    "intro": "Maryland received $180M in federal contract obligations in FY2027 to date. Obligations fell 99.5% year over year. Award activity to date shows 723 awards with an average award size of $249K. Fiscal-year comparisons show prior full-year totals of $42.1B in FY22, $41.7B in FY23, $46.3B in FY24, $39.7B in FY25, and $37.2B in FY26. Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology) is the largest industry by obligations, receiving $89.4M. The National Aeronautics and Space Administration is the largest buying agency so far, obligating $89.5M. THE JOHNS HOPKINS UNIVERSITY APPLIED PHYSICS LABORATORY LLC is the largest vendor so far, receiving $85.3M. Construction, information technology services, and telecommunications also appear among the top industries by obligations. These figures are partial because FY2027 totals are fiscal year to date.",
+    "intro": "Maryland received $226M in federal contract obligations in FY2027 to date. Maryland recorded 1,234 awards in the same period, with an average award size of $184K. Maryland obligations were down 99.4% year over year. National Aeronautics and Space Administration is the largest buying agency with $107M in obligations, followed by Department of Veterans Affairs with $55.5M and Department of Health and Human Services with $33.8M. THE JOHNS HOPKINS UNIVERSITY APPLIED PHYSICS LABORATORY LLC is the largest vendor with $85.3M in obligations. Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology) is the largest industry by obligations at $99.1M. Maryland FY22 obligations were $42.1B, FY23 obligations were $41.7B, FY24 obligations were $46.3B, FY25 obligations were $39.7B, and FY26 obligations were $37.5B. The FY2027 to date total of $226M is a partial fiscal year total and reflects obligations recorded so far in the fiscal year.",
     "sections": [
       {
-        "heading": "What changed versus prior fiscal years?",
-        "body": "Obligations fell 99.5% year over year. FY27 to date obligations are $180M compared with prior full-year totals: FY22 $42.1B, FY23 $41.7B, FY24 $46.3B, FY25 $39.7B, and FY26 $37.2B. The number of awards to date is 723 and the average award size is $249K. These FY2027 totals are fiscal year to date and therefore partial."
+        "heading": "What explains the FY2027 to date total and trajectory?",
+        "body": "Maryland obligations are $226M in FY2027 to date, and obligations were down 99.4% year over year. Fiscal-year comparisons show prior full-year obligations of $42.1B in FY22, $41.7B in FY23, $46.3B in FY24, $39.7B in FY25, and $37.5B in FY26. The FY2027 figure is a partial, fiscal year to date total. Users should note the FY2027 total reflects obligations recorded so far in the fiscal year."
       },
       {
-        "heading": "Who are the top agencies and vendors right now?",
-        "body": "The National Aeronautics and Space Administration obligated $89.5M and the Department of Veterans Affairs obligated $48.5M. THE JOHNS HOPKINS UNIVERSITY APPLIED PHYSICS LABORATORY LLC received $85.3M and MATOS-GRUNLEY JOINT VENTURE received $21.4M. Other notable buyers include the General Services Administration with $20.3M and the Department of Health and Human Services with $11.9M. Top industries include Research and Development with $89.4M and Commercial and Institutional Building Construction with $28.8M."
+        "heading": "Which agencies and vendors dominate Maryland contracting?",
+        "body": "National Aeronautics and Space Administration leads buying agencies with $107M in FY2027 to date, followed by Department of Veterans Affairs with $55.5M and Department of Health and Human Services with $33.8M. THE JOHNS HOPKINS UNIVERSITY APPLIED PHYSICS LABORATORY LLC is the top vendor at $85.3M, with MATOS-GRUNLEY JOINT VENTURE next at $21.4M and ARINC INCORPORATED at $10.7M. Research and Development in the Physical, Engineering, and Life Sciences is the top industry at $99.1M."
       }
     ]
   },
   "faq": [
     {
       "q": "How much federal contract money goes to Maryland?",
-      "a": "Maryland received $180M in federal contract obligations in FY2027 to date. The state recorded 723 awards and an average award size of $249K. Obligations fell 99.5% year over year, and prior full-year totals were FY22 $42.1B, FY23 $41.7B, FY24 $46.3B, FY25 $39.7B, and FY26 $37.2B."
+      "a": "Maryland received $226M in federal contract obligations in FY2027 to date. Maryland recorded 1,234 awards with an average award size of $184K, and obligations were down 99.4% year over year. Historical full-year obligations were $42.1B in FY22, $41.7B in FY23, $46.3B in FY24, $39.7B in FY25, and $37.5B in FY26."
     },
     {
       "q": "Which agencies award the most contracts in Maryland?",
-      "a": "The National Aeronautics and Space Administration awarded the most, obligating $89.5M in FY2027 to date. The Department of Veterans Affairs obligated $48.5M and the General Services Administration obligated $20.3M. Other buying agencies in the top ten include the Department of Health and Human Services with $11.9M and the Department of the Treasury with $9.5M."
+      "a": "National Aeronautics and Space Administration is the largest contracting agency in Maryland with $107M in FY2027 to date. Department of Veterans Affairs follows with $55.5M, and Department of Health and Human Services follows with $33.8M. Other top buyers include General Services Administration at $20.5M and Department of Transportation at $10.8M."
     },
     {
       "q": "Who are the largest federal contractors in Maryland?",
-      "a": "THE JOHNS HOPKINS UNIVERSITY APPLIED PHYSICS LABORATORY LLC is the largest federal contractor in Maryland so far, receiving $85.3M. Other top vendors include MATOS-GRUNLEY JOINT VENTURE with $21.4M and AT&T MOBILITY NATIONAL ACCOUNTS LLC with $9.6M. The top industries in the state include Research and Development in the Physical, Engineering, and Life Sciences with $89.4M and Commercial and Institutional Building Construction with $28.8M."
+      "a": "THE JOHNS HOPKINS UNIVERSITY APPLIED PHYSICS LABORATORY LLC is the largest federal contractor in Maryland with $85.3M in FY2027 to date. MATOS-GRUNLEY JOINT VENTURE is next at $21.4M, followed by ARINC INCORPORATED at $10.7M, AT&T MOBILITY NATIONAL ACCOUNTS LLC at $9.6M, and AXLE INFORMATICS, LLC at $7.5M."
     }
   ],
   "related": [

@@ -1,20 +1,20 @@
 {
   "pageType": "agency",
   "slug": "department-of-the-treasury",
-  "title": "Treasury Contract Spending: $213M in FY2027",
+  "title": "Treasury Contract Spending: $277M in FY2027",
   "h1": "Department of the Treasury: Federal Contract Spending & Top Vendors",
-  "metaDescription": "Department of the Treasury obligated $213M in federal contracts in FY2027 to date. See what it buys, its top vendors, and multi-year trend.",
-  "updated": "2026-10-19",
+  "metaDescription": "Department of the Treasury obligated $277M in federal contracts in FY2027 to date. See what it buys, its top vendors, and multi-year trend.",
+  "updated": "2026-10-26",
   "fyWindow": {
     "label": "FY2027 to date",
     "start": "2026-10-01",
-    "end": "2026-10-19"
+    "end": "2026-10-26"
   },
   "stats": {
-    "totalObligations": 212633990.52,
-    "awardCount": 245,
-    "yoyGrowthPct": -97,
-    "avgAwardSize": 867894,
+    "totalObligations": 277215961.46,
+    "awardCount": 336,
+    "yoyGrowthPct": -96,
+    "avgAwardSize": 825048,
     "smallBusinessSharePct": null
   },
   "charts": [
@@ -32,7 +32,7 @@
             ],
             [
               "FY23",
-              10257997190.58
+              10258131183.52
             ],
             [
               "FY24",
@@ -44,17 +44,17 @@
             ],
             [
               "FY26",
-              6979363760.93
+              6979397286.03
             ],
             [
               "FY27",
-              212633990.52
+              277215961.46
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Obligations fell 97.0% year over year, from $7B in FY2026 to $213M in FY2027 to date."
+      "takeaway": "Obligations fell 96.0% year over year, from $7B in FY2026 to $277M in FY2027 to date."
     },
     {
       "id": "department-of-the-treasury-top-naics",
@@ -66,15 +66,15 @@
           "points": [
             [
               "Nonferrous Metal (except Aluminum) Smelting and Refining",
-              91701128.51
+              144439005.82
             ],
             [
               "Copper Rolling, Drawing, Extruding, and Alloying",
-              32607561.55
+              32633203.75
             ],
             [
               "Other Computer Related Services",
-              24147114.54
+              25740338.02
             ],
             [
               "Paper Mills",
@@ -89,26 +89,26 @@
               10162196.66
             ],
             [
+              "Administrative Management and General Management Consulting Services",
+              5169182.23
+            ],
+            [
+              "Computer Systems Design Services",
+              4137378.17
+            ],
+            [
               "Electric Power Distribution",
               4038250
             ],
             [
-              "Administrative Management and General Management Consulting Services",
-              3997234.99
-            ],
-            [
               "Hydroelectric Power Generation",
               2250000
-            ],
-            [
-              "Web Search Portals and All Other Information Services",
-              1468959.8
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Nonferrous Metal (except Aluminum) Smelting and Refining was Treasury's largest contract category, with $91.7M obligated (43.1% of contract spending)."
+      "takeaway": "Nonferrous Metal (except Aluminum) Smelting and Refining was Treasury's largest contract category, with $144M obligated (52.1% of contract spending)."
     },
     {
       "id": "department-of-the-treasury-top-vendors",
@@ -120,7 +120,7 @@
           "points": [
             [
               "STONEX FINANCIAL LTD",
-              91701128.51
+              144439005.82
             ],
             [
               "CRANE & CO., INC.",
@@ -128,7 +128,7 @@
             ],
             [
               "WIELAND ROLLED PRODUCTS NORTH AMERICA, LLC",
-              17876251.2
+              17901893.4
             ],
             [
               "PMX INDUSTRIES, INC.",
@@ -136,7 +136,7 @@
             ],
             [
               "FCN, INC.",
-              8852138.89
+              9663286.18
             ],
             [
               "MINBURN TECHNOLOGY GROUP, LLC",
@@ -162,7 +162,7 @@
         }
       ],
       "unit": "usd",
-      "takeaway": "STONEX FINANCIAL LTD led all Treasury contractors with $91.7M, 43.1% of obligations."
+      "takeaway": "STONEX FINANCIAL LTD led all Treasury contractors with $144M, 52.1% of obligations."
     }
   ],
   "crossLinks": [
@@ -173,6 +173,10 @@
     {
       "label": "NAICS 541611: Administrative Management and General Management Consulting Services",
       "href": "/insights/naics/541611/"
+    },
+    {
+      "label": "NAICS 541512: Computer Systems Design Services",
+      "href": "/insights/naics/541512/"
     }
   ],
   "tables": [
@@ -190,7 +194,7 @@
             "text": "STONEX FINANCIAL LTD",
             "href": "https://www.usaspending.gov/recipient/9e88e310-e87a-d26a-2ddb-dd18f27b49a5-C/latest/"
           },
-          91701128.51
+          144439005.82
         ],
         [
           2,
@@ -206,7 +210,7 @@
             "text": "WIELAND ROLLED PRODUCTS NORTH AMERICA, LLC",
             "href": "https://www.usaspending.gov/recipient/f5c94e5f-0c97-f038-ac92-9f0668fd7115-C/latest/"
           },
-          17876251.2
+          17901893.4
         ],
         [
           4,
@@ -222,7 +226,7 @@
             "text": "FCN, INC.",
             "href": "https://www.usaspending.gov/recipient/3792ca7f-d5d2-d89c-872b-8c64e4e6390e-C/latest/"
           },
-          8852138.89
+          9663286.18
         ],
         [
           6,
@@ -325,21 +329,29 @@
         [
           7,
           {
+            "text": "KOENIG & BAUER BANKNOTE SOLUTIONS SA",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_2031ZA25F00191_2041_2031ZA25D00001_2041/"
+          },
+          26019519.6
+        ],
+        [
+          8,
+          {
             "text": "PMX INDUSTRIES, INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_2031JG26F71128_2044_2031JG23D00002_2044/"
           },
           21902056.49
         ],
         [
-          8,
+          9,
           {
             "text": "WIELAND ROLLED PRODUCTS NORTH AMERICA, LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_2031JG27F70148_2044_2031JG23D00001_2044/"
           },
-          17876251.2
+          17901893.4
         ],
         [
-          9,
+          10,
           {
             "text": "FIS CAPITAL MARKETS US LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_2033H622C00003_2036_-NONE-_-NONE-/"
@@ -347,7 +359,7 @@
           17523139.33
         ],
         [
-          10,
+          11,
           {
             "text": "GOVCIO, LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_20340925C00001_2036_-NONE-_-NONE-/"
@@ -355,7 +367,7 @@
           16547677.09
         ],
         [
-          11,
+          12,
           {
             "text": "PMX INDUSTRIES, INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_2031JG27F71130_2044_2031JG23D00002_2044/"
@@ -363,7 +375,7 @@
           14728410
         ],
         [
-          12,
+          13,
           {
             "text": "AFFIGENT, LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_2033H623F00008_2036_NNG15SC59B_8000/"
@@ -371,7 +383,7 @@
           12566322.01
         ],
         [
-          13,
+          14,
           {
             "text": "PERATON TECHNOLOGY SERVICES INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_2031JW23F00065_2046_2031JW23A00001_2046/"
@@ -379,7 +391,7 @@
           11733341.23
         ],
         [
-          14,
+          15,
           {
             "text": "THE CBE GROUP, INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_2033H625F00063_2036_47QRAA24D0062_4732/"
@@ -387,7 +399,7 @@
           11249660.76
         ],
         [
-          15,
+          16,
           {
             "text": "TRANSWORLD SYSTEMS INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_2033H625F00067_2036_47QRAA20D001D_4732/"
@@ -395,7 +407,7 @@
           11150573.56
         ],
         [
-          16,
+          17,
           {
             "text": "MINBURN TECHNOLOGY GROUP, LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_2031JW26F00010_2046_2032H524A00003_2050/"
@@ -403,7 +415,7 @@
           11124832.6
         ],
         [
-          17,
+          18,
           {
             "text": "CRANE & CO., INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_2031ZA27F00007_2041_2031ZA26D00001_2041/"
@@ -411,7 +423,7 @@
           10479176
         ],
         [
-          18,
+          19,
           {
             "text": "SCIENCE APPLICATIONS INTERNATIONAL CORPORATION",
             "href": "https://www.usaspending.gov/award/CONT_AWD_2033H624F00070_2036_GS35F486BA_4732/"
@@ -419,7 +431,7 @@
           10189364.55
         ],
         [
-          19,
+          20,
           {
             "text": "POTOMAC ELECTRIC POWER CO",
             "href": "https://www.usaspending.gov/award/CONT_AWD_2031ZA26F00031_2041_2031ZA23D00003_2041/"
@@ -427,7 +439,7 @@
           9900000
         ],
         [
-          20,
+          21,
           {
             "text": "THUNDERCAT TECHNOLOGY, LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_20341523F00001_2036_NNG15SD26B_8000/"
@@ -435,7 +447,7 @@
           9300000
         ],
         [
-          21,
+          22,
           {
             "text": "FCN, INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_2033H625F00010_2036_NNG15SC71B_8000/"
@@ -443,7 +455,7 @@
           9142086.08
         ],
         [
-          22,
+          23,
           {
             "text": "SHOREPOINT LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_2031ZB25F00058_2041_2032H525A00009_2050/"
@@ -451,7 +463,7 @@
           8989260.12
         ],
         [
-          23,
+          24,
           {
             "text": "CRANE & CO., INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_2031ZA27F00008_2041_2031ZA26D00001_2041/"
@@ -459,49 +471,41 @@
           8769414.4
         ],
         [
-          24,
+          25,
           {
             "text": "COAST PROFESSIONAL, INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_2033H625F00064_2036_47QRAA23D0089_4732/"
           },
           6808998.42
-        ],
-        [
-          25,
-          {
-            "text": "APTNEXUS LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_2031ZB25C00003_2041_-NONE-_-NONE-/"
-          },
-          6442359.21
         ]
       ]
     }
   ],
   "narrative": {
-    "intro": "The Department of the Treasury obligated $213M in contracts in FY2027 to date. The Department awarded 245 contracts so far, with an average award size of $868K. Obligations fell 97.0% year over year. The Department’s FY2027 to date total is small compared with prior fiscal years: FY22 totaled $9.3B, FY23 totaled $10.3B, FY24 totaled $9.3B, FY25 totaled $8.6B, and FY26 totaled $7B. The FY2027 to date picture shows concentration in a few categories and vendors. Nonferrous Metal (except Aluminum) Smelting and Refining is the largest category at $91.7M. STONEX FINANCIAL LTD is the largest vendor at $91.7M. Software, data processing, and other computer-related services appear among the top categories but at much smaller totals than the metal and paper sectors. All figures are contract obligations and current-year totals are partial, fiscal year to date.",
+    "intro": "The Department of the Treasury obligated $277M in FY2027 to date for federal contracts. The Department awarded 336 contracts so far this fiscal year, with an average award size of $825K. The Department's current-year obligations are down 96.0% year over year. The Department historically obligated higher totals: FY22 $9.3B, FY23 $10.3B, FY24 $9.3B, FY25 $8.6B, and FY26 $7B. The Department's FY2027 mix is concentrated: Nonferrous Metal (except Aluminum) Smelting and Refining accounts for $144M, while Copper Rolling, Drawing, Extruding, and Alloying accounts for $32.6M. The Department also obligated funds for Other Computer Related Services at $25.7M and Paper Mills at $19.2M. The Department's vendor list reflects that concentration. STONEX FINANCIAL LTD received $144M, CRANE & CO., INC. received $20.4M, and WIELAND ROLLED PRODUCTS NORTH AMERICA, LLC received $17.9M. The Department's totals are partial because current-year figures are fiscal year to date and not full-year amounts.",
     "sections": [
       {
-        "heading": "Why are FY2027 obligations much lower than prior years?",
-        "body": "The Department of the Treasury obligated $213M in FY2027 to date, versus multi-billion dollar totals in FY22 through FY26. Obligations fell 97.0% year over year. The FY2027 to date total is partial and represents fiscal year to date obligations, which explains part of the year-over-year gap."
+        "heading": "What drove the drop in Treasury contract obligations?",
+        "body": "The Department of the Treasury obligated $277M in FY2027 to date, down 96.0% year over year. The Department's fiscal history shows larger obligations in prior years: FY26 $7B and FY25 $8.6B, which explains the magnitude of the decline when compared to the current fiscal year to date total. The Department's top single sector allocation to Nonferrous Metal at $144M and a small set of large vendor awards concentrated spending in FY2027 to date."
       },
       {
-        "heading": "Where is Treasury spending concentrated in FY2027 to date?",
-        "body": "Nonferrous Metal (except Aluminum) Smelting and Refining is the largest category at $91.7M. STONEX FINANCIAL LTD is the largest vendor at $91.7M, followed by CRANE & CO., INC. at $20.4M and WIELAND ROLLED PRODUCTS NORTH AMERICA, LLC at $17.9M. Other notable categories include Copper Rolling, Drawing, Extruding, and Alloying at $32.6M and Other Computer Related Services at $24.1M."
+        "heading": "Which vendors and industries received Treasury contract dollars in FY2027 to date?",
+        "body": "The Department allocated $144M to Nonferrous Metal (except Aluminum) Smelting and Refining and $32.6M to Copper Rolling, Drawing, Extruding, and Alloying. The Department's top vendors are STONEX FINANCIAL LTD at $144M, CRANE & CO., INC. at $20.4M, and WIELAND ROLLED PRODUCTS NORTH AMERICA, LLC at $17.9M. The Department also obligated funds for computing and services categories such as Other Computer Related Services at $25.7M and Software Publishers at $12.7M."
       }
     ]
   },
   "faq": [
     {
       "q": "How much does Department of the Treasury spend on contracts?",
-      "a": "The Department of the Treasury obligated $213M in contracts in FY2027 to date. The Department made 245 awards, with an average award size of $868K. Obligations fell 97.0% year over year, and current-year totals are partial, fiscal year to date."
+      "a": "The Department of the Treasury obligated $277M in contracts in FY2027 to date. The Department issued 336 awards so far this fiscal year, with an average award size of $825K, and obligations are down 96.0% year over year."
     },
     {
       "q": "What does Treasury buy?",
-      "a": "Treasury buys a mix of industrial, manufacturing, and IT-related goods and services. The largest category in FY2027 to date is Nonferrous Metal (except Aluminum) Smelting and Refining at $91.7M, followed by Copper Rolling, Drawing, Extruding, and Alloying at $32.6M, and Other Computer Related Services at $24.1M. Paper Mills, Software Publishers, and computing infrastructure services also appear among the top categories."
+      "a": "Treasury buys a mix of metals, industrial and technology services, and power generation, led by Nonferrous Metal (except Aluminum) Smelting and Refining at $144M. The Department also obligated $32.6M for Copper Rolling, Drawing, Extruding, and Alloying, $25.7M for Other Computer Related Services, and $19.2M for Paper Mills, among other categories."
     },
     {
       "q": "Who are Treasury's largest contractors?",
-      "a": "Treasury's largest contractors in FY2027 to date are STONEX FINANCIAL LTD at $91.7M, CRANE & CO., INC. at $20.4M, and WIELAND ROLLED PRODUCTS NORTH AMERICA, LLC at $17.9M. Other top vendors include PMX INDUSTRIES, INC. at $14.7M and FCN, INC. at $8.9M."
+      "a": "Treasury's largest contractors in FY2027 to date are STONEX FINANCIAL LTD at $144M, CRANE & CO., INC. at $20.4M, and WIELAND ROLLED PRODUCTS NORTH AMERICA, LLC at $17.9M. The Department also awarded PMX INDUSTRIES, INC. $14.7M and FCN, INC. $9.7M, with additional vendors receiving smaller amounts."
     }
   ],
   "related": [

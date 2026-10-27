@@ -1,20 +1,20 @@
 {
   "pageType": "naics",
   "slug": "541715",
-  "title": "Federal Contracts in NAICS 541715: $233M (FY2027)",
+  "title": "Federal Contracts in NAICS 541715: $727M (FY2027)",
   "h1": "Research and Development in the Physical, Engineering, and Life Sciences (NAICS 541715): Federal Contract Market",
-  "metaDescription": "Federal agencies obligated $233M on Research and Development in the Physical, Engineering, and Life Sciences (NAICS 541715) in FY2027 to date. See top vend",
-  "updated": "2026-10-19",
+  "metaDescription": "Federal agencies obligated $727M on Research and Development in the Physical, Engineering, and Life Sciences (NAICS 541715) in FY2027 to date. See top vend",
+  "updated": "2026-10-26",
   "fyWindow": {
     "label": "FY2027 to date",
     "start": "2026-10-01",
-    "end": "2026-10-19"
+    "end": "2026-10-26"
   },
   "stats": {
-    "totalObligations": 233403670.93,
-    "awardCount": 213,
-    "yoyGrowthPct": -99.5,
-    "avgAwardSize": 1095792,
+    "totalObligations": 726806922.82,
+    "awardCount": 367,
+    "yoyGrowthPct": -98.3,
+    "avgAwardSize": 1980400,
     "smallBusinessSharePct": null
   },
   "charts": [
@@ -32,7 +32,7 @@
             ],
             [
               "FY23",
-              42570060792.12
+              42570002434.92
             ],
             [
               "FY24",
@@ -40,21 +40,21 @@
             ],
             [
               "FY25",
-              46393827965.2
+              46393827784.2
             ],
             [
               "FY26",
-              43359947565.26
+              43839089712.52
             ],
             [
               "FY27",
-              233403670.93
+              726806922.82
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Obligations fell 99.5% year over year, from $43.4B in FY2026 to $233M in FY2027 to date."
+      "takeaway": "Obligations fell 98.3% year over year, from $43.8B in FY2026 to $727M in FY2027 to date."
     },
     {
       "id": "541715-top-agencies",
@@ -65,50 +65,50 @@
           "label": "Obligations",
           "points": [
             [
+              "Department of Energy",
+              397996141.1
+            ],
+            [
               "National Aeronautics and Space Administration",
-              198756188.49
+              277082315.77
             ],
             [
               "Department of Health and Human Services",
-              23806963.45
+              27753651.45
             ],
             [
               "General Services Administration",
-              8515029.21
-            ],
-            [
-              "Department of Veterans Affairs",
-              2219516.83
-            ],
-            [
-              "Environmental Protection Agency",
-              397607
-            ],
-            [
-              "Department of the Treasury",
-              222254
+              15769885.97
             ],
             [
               "Department of the Interior",
-              0
+              5291380.96
             ],
             [
-              "Department of Energy",
-              0
+              "Department of Veterans Affairs",
+              2357903.58
             ],
             [
-              "Department of Agriculture",
-              -38950
+              "Environmental Protection Agency",
+              615078.23
+            ],
+            [
+              "Department of the Treasury",
+              262247
             ],
             [
               "Department of Transportation",
-              -83531.6
+              231826.8
+            ],
+            [
+              "Nuclear Regulatory Commission",
+              130000
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "National Aeronautics and Space Administration was the top buyer, obligating $199M (85.2% of all obligations)."
+      "takeaway": "Department of Energy was the top buyer, obligating $398M (54.8% of all obligations)."
     },
     {
       "id": "541715-top-vendors",
@@ -119,12 +119,20 @@
           "label": "Obligations",
           "points": [
             [
+              "FLUOR MARINE PROPULSION, LLC",
+              372532961.92
+            ],
+            [
+              "CALIFORNIA INSTITUTE OF TECHNOLOGY",
+              128484666
+            ],
+            [
               "THE JOHNS HOPKINS UNIVERSITY APPLIED PHYSICS LABORATORY LLC",
               85272128
             ],
             [
-              "CALIFORNIA INSTITUTE OF TECHNOLOGY",
-              78430942
+              "BATTELLE SAVANNAH RIVER ALLIANCE, LLC",
+              25463179.18
             ],
             [
               "AMERICAN TYPE CULTURE COLLECTION",
@@ -135,37 +143,33 @@
               10502539.38
             ],
             [
+              "KBR WYLE SERVICES, LLC",
+              7461734.68
+            ],
+            [
               "MAINSAIL - OASIS JOINT VENTURE LLC",
               4802458.05
             ],
             [
-              "TRUWEATHER SOLUTIONS, INC",
-              2549961
+              "VANTOR SERVICES INC.",
+              4398854.96
             ],
             [
-              "PARSONS GOVERNMENT SERVICES INC.",
-              2115777.11
-            ],
-            [
-              "UNIVERSITY OF MARYLAND, BALTIMORE",
-              2060343.88
-            ],
-            [
-              "NANORACKS, LLC",
-              2000000
-            ],
-            [
-              "COLUMBUS TECHNOLOGIES AND SERVICES, INC",
-              1721534.46
+              "GALAPAGOS FEDERAL SYSTEMS LLC",
+              3976402.82
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "THE JOHNS HOPKINS UNIVERSITY APPLIED PHYSICS LABORATORY LLC led all vendors with $85.3M in obligations, 36.5% of the market."
+      "takeaway": "FLUOR MARINE PROPULSION, LLC led all vendors with $373M in obligations, 51.3% of the market."
     }
   ],
   "crossLinks": [
+    {
+      "label": "Department of Energy contracts",
+      "href": "/insights/agency/department-of-energy/"
+    },
     {
       "label": "National Aeronautics and Space Administration contracts",
       "href": "/insights/agency/national-aeronautics-and-space-administration/"
@@ -177,10 +181,6 @@
     {
       "label": "General Services Administration contracts",
       "href": "/insights/agency/general-services-administration/"
-    },
-    {
-      "label": "Department of Veterans Affairs contracts",
-      "href": "/insights/agency/department-of-veterans-affairs/"
     }
   ],
   "tables": [
@@ -195,10 +195,10 @@
         [
           1,
           {
-            "text": "THE JOHNS HOPKINS UNIVERSITY APPLIED PHYSICS LABORATORY LLC",
-            "href": "https://www.usaspending.gov/recipient/4eae43e5-e1f1-0e77-b2fe-09a12a9a552c-C/latest/"
+            "text": "FLUOR MARINE PROPULSION, LLC",
+            "href": "https://www.usaspending.gov/recipient/27de0316-220e-8297-411f-f99b6f60443a-C/latest/"
           },
-          85272128
+          372532961.92
         ],
         [
           2,
@@ -206,10 +206,26 @@
             "text": "CALIFORNIA INSTITUTE OF TECHNOLOGY",
             "href": "https://www.usaspending.gov/recipient/6e76fa33-2d96-c636-941c-bca1997db076-C/latest/"
           },
-          78430942
+          128484666
         ],
         [
           3,
+          {
+            "text": "THE JOHNS HOPKINS UNIVERSITY APPLIED PHYSICS LABORATORY LLC",
+            "href": "https://www.usaspending.gov/recipient/4eae43e5-e1f1-0e77-b2fe-09a12a9a552c-C/latest/"
+          },
+          85272128
+        ],
+        [
+          4,
+          {
+            "text": "BATTELLE SAVANNAH RIVER ALLIANCE, LLC",
+            "href": "https://www.usaspending.gov/recipient/9a7b543a-2b81-001e-d309-3a0f027dff01-C/latest/"
+          },
+          25463179.18
+        ],
+        [
+          5,
           {
             "text": "AMERICAN TYPE CULTURE COLLECTION",
             "href": "https://www.usaspending.gov/recipient/4b62b5d8-fc5a-7d10-a260-7955f3fee2bf-C/latest/"
@@ -217,7 +233,7 @@
           23510310
         ],
         [
-          4,
+          6,
           {
             "text": "AMENTUM TECHNOLOGY, INC.",
             "href": "https://www.usaspending.gov/recipient/435aa33d-8ca5-7631-ec18-85dbb07c6fa1-C/latest/"
@@ -225,7 +241,15 @@
           10502539.38
         ],
         [
-          5,
+          7,
+          {
+            "text": "KBR WYLE SERVICES, LLC",
+            "href": "https://www.usaspending.gov/recipient/eb13e842-2068-e3ee-0453-d02b9582e5cd-C/latest/"
+          },
+          7461734.68
+        ],
+        [
+          8,
           {
             "text": "MAINSAIL - OASIS JOINT VENTURE LLC",
             "href": "https://www.usaspending.gov/recipient/ccb8d05f-0a9f-585b-19dc-57ef079a6318-C/latest/"
@@ -233,44 +257,20 @@
           4802458.05
         ],
         [
-          6,
-          {
-            "text": "TRUWEATHER SOLUTIONS, INC",
-            "href": "https://www.usaspending.gov/recipient/de635172-ec64-f442-ebea-3d0aabc85f93-C/latest/"
-          },
-          2549961
-        ],
-        [
-          7,
-          {
-            "text": "PARSONS GOVERNMENT SERVICES INC.",
-            "href": "https://www.usaspending.gov/recipient/cb0d434a-9ad7-93b5-09dc-6067d8c45d71-C/latest/"
-          },
-          2115777.11
-        ],
-        [
-          8,
-          {
-            "text": "UNIVERSITY OF MARYLAND, BALTIMORE",
-            "href": "https://www.usaspending.gov/recipient/23b1535c-77e8-dafd-4ece-46b518206e5d-C/latest/"
-          },
-          2060343.88
-        ],
-        [
           9,
           {
-            "text": "NANORACKS, LLC",
-            "href": "https://www.usaspending.gov/recipient/70064d95-43ea-d703-a8af-63d23686f07f-C/latest/"
+            "text": "VANTOR SERVICES INC.",
+            "href": "https://www.usaspending.gov/recipient/cf81c5b4-ac6b-9f54-4647-7906f1b1ccd0-C/latest/"
           },
-          2000000
+          4398854.96
         ],
         [
           10,
           {
-            "text": "COLUMBUS TECHNOLOGIES AND SERVICES, INC",
-            "href": "https://www.usaspending.gov/recipient/9d446292-c342-42e3-5715-76f8fe17acf8-C/latest/"
+            "text": "GALAPAGOS FEDERAL SYSTEMS LLC",
+            "href": "https://www.usaspending.gov/recipient/fff7b97c-2c49-3aea-0239-288216e117d3-C/latest/"
           },
-          1721534.46
+          3976402.82
         ]
       ]
     },
@@ -286,6 +286,15 @@
         [
           1,
           {
+            "text": "FLUOR MARINE PROPULSION, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_89233018CNR000004_8900_-NONE-_-NONE-/"
+          },
+          15126647249.13,
+          "Department of Energy"
+        ],
+        [
+          2,
+          {
             "text": "CALIFORNIA INSTITUTE OF TECHNOLOGY",
             "href": "https://www.usaspending.gov/award/CONT_AWD_80NM0018F0615_8000_80NM0018D0004_8000/"
           },
@@ -293,7 +302,7 @@
           "National Aeronautics and Space Administration"
         ],
         [
-          2,
+          3,
           {
             "text": "AMENTUM TECHNOLOGY, INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_80MSFC18C0011_8000_-NONE-_-NONE-/"
@@ -302,7 +311,25 @@
           "National Aeronautics and Space Administration"
         ],
         [
-          3,
+          4,
+          {
+            "text": "BATTELLE SAVANNAH RIVER ALLIANCE, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_89303321CEM000080_8900_-NONE-_-NONE-/"
+          },
+          1668948147.93,
+          "Department of Energy"
+        ],
+        [
+          5,
+          {
+            "text": "CALIFORNIA INSTITUTE OF TECHNOLOGY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_80NM0018F0850_8000_80NM0018D0004_8000/"
+          },
+          1580872192.58,
+          "National Aeronautics and Space Administration"
+        ],
+        [
+          6,
           {
             "text": "THE JOHNS HOPKINS UNIVERSITY APPLIED PHYSICS LABORATORY LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_80MSFC22F0048_8000_80MSFC20D0004_8000/"
@@ -311,7 +338,7 @@
           "National Aeronautics and Space Administration"
         ],
         [
-          4,
+          7,
           {
             "text": "CALIFORNIA INSTITUTE OF TECHNOLOGY",
             "href": "https://www.usaspending.gov/award/CONT_AWD_80NM0018F0616_8000_80NM0018D0004_8000/"
@@ -320,7 +347,25 @@
           "National Aeronautics and Space Administration"
         ],
         [
-          5,
+          8,
+          {
+            "text": "CALIFORNIA INSTITUTE OF TECHNOLOGY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_80NM0018F0645_8000_80NM0018D0004_8000/"
+          },
+          826465671.59,
+          "National Aeronautics and Space Administration"
+        ],
+        [
+          9,
+          {
+            "text": "BOOZ ALLEN HAMILTON INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_47QFCA23F0014_4732_47QFCA22D0357_4732/"
+          },
+          547729109.4,
+          "General Services Administration"
+        ],
+        [
+          10,
           {
             "text": "PARSONS GOVERNMENT SERVICES INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_47QFCA23F0024_4732_47QFCA22D0383_4732/"
@@ -329,7 +374,16 @@
           "General Services Administration"
         ],
         [
-          6,
+          11,
+          {
+            "text": "CALIFORNIA INSTITUTE OF TECHNOLOGY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_80NM0018F0652_8000_80NM0018D0004_8000/"
+          },
+          397858199,
+          "National Aeronautics and Space Administration"
+        ],
+        [
+          12,
           {
             "text": "KRATOS S2, INC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_47QFCA20C0019_4732_-NONE-_-NONE-/"
@@ -338,7 +392,16 @@
           "General Services Administration"
         ],
         [
-          7,
+          13,
+          {
+            "text": "SPACE NETWORK SOLUTIONS LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_80GSFC23CA051_8000_-NONE-_-NONE-/"
+          },
+          314975465.39,
+          "National Aeronautics and Space Administration"
+        ],
+        [
+          14,
           {
             "text": "CALIFORNIA INSTITUTE OF TECHNOLOGY",
             "href": "https://www.usaspending.gov/award/CONT_AWD_80NM0018F0607_8000_80NM0018D0004_8000/"
@@ -347,7 +410,7 @@
           "National Aeronautics and Space Administration"
         ],
         [
-          8,
+          15,
           {
             "text": "SURATECH LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_89243126CSC000213_8900_-NONE-_-NONE-/"
@@ -356,25 +419,52 @@
           "Department of Energy"
         ],
         [
-          9,
+          16,
+          {
+            "text": "ADNET SYSTEMS INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_80GSFC23CA040_8000_-NONE-_-NONE-/"
+          },
+          283650256.06,
+          "National Aeronautics and Space Administration"
+        ],
+        [
+          17,
           {
             "text": "TELEDYNE BROWN ENGINEERING, INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_80MSFC22CA016_8000_-NONE-_-NONE-/"
           },
-          276221881.16,
+          277476498.72,
           "National Aeronautics and Space Administration"
         ],
         [
-          10,
+          18,
+          {
+            "text": "MITCHELL VANTAGE SYSTEMS LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_80GSFC22CA056_8000_-NONE-_-NONE-/"
+          },
+          273163049.14,
+          "National Aeronautics and Space Administration"
+        ],
+        [
+          19,
+          {
+            "text": "RSI-QUANTITECH JV LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_80MSFC23CA004_8000_-NONE-_-NONE-/"
+          },
+          268069068.05,
+          "National Aeronautics and Space Administration"
+        ],
+        [
+          20,
           {
             "text": "KBR WYLE SERVICES, LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_80JSC025F0042_8000_80JSC025D0068_8000/"
           },
-          219122751.53,
+          226584486.21,
           "National Aeronautics and Space Administration"
         ],
         [
-          11,
+          21,
           {
             "text": "CALIFORNIA INSTITUTE OF TECHNOLOGY",
             "href": "https://www.usaspending.gov/award/CONT_AWD_80NM0018F0629_8000_80NM0018D0004_8000/"
@@ -383,7 +473,7 @@
           "National Aeronautics and Space Administration"
         ],
         [
-          12,
+          22,
           {
             "text": "CALIFORNIA INSTITUTE OF TECHNOLOGY",
             "href": "https://www.usaspending.gov/award/CONT_AWD_80NM0018F0603_8000_80NM0018D0004_8000/"
@@ -392,7 +482,16 @@
           "National Aeronautics and Space Administration"
         ],
         [
-          13,
+          23,
+          {
+            "text": "CALIFORNIA INSTITUTE OF TECHNOLOGY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_80NM0019F0044_8000_80NM0018D0004_8000/"
+          },
+          169308588,
+          "National Aeronautics and Space Administration"
+        ],
+        [
+          24,
           {
             "text": "COLUMBUS TECHNOLOGIES AND SERVICES, INC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_80GSFC25CA034_8000_-NONE-_-NONE-/"
@@ -401,111 +500,12 @@
           "National Aeronautics and Space Administration"
         ],
         [
-          14,
+          25,
           {
             "text": "THE AEROSPACE CORPORATION",
             "href": "https://www.usaspending.gov/award/CONT_AWD_80GSFC19F0127_8000_80GSFC19D0011_8000/"
           },
           141160683.92,
-          "National Aeronautics and Space Administration"
-        ],
-        [
-          15,
-          {
-            "text": "CALIFORNIA INSTITUTE OF TECHNOLOGY",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_80NM0018F0560_8000_80NM0018D0004_8000/"
-          },
-          118235064.54,
-          "National Aeronautics and Space Administration"
-        ],
-        [
-          16,
-          {
-            "text": "G2 OPS, INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_47QFLA21C0011_4732_-NONE-_-NONE-/"
-          },
-          114662490,
-          "General Services Administration"
-        ],
-        [
-          17,
-          {
-            "text": "CALIFORNIA INSTITUTE OF TECHNOLOGY",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_80NM0026F7029_8000_80NM0018D0004_8000/"
-          },
-          112298234,
-          "National Aeronautics and Space Administration"
-        ],
-        [
-          18,
-          {
-            "text": "CALIFORNIA INSTITUTE OF TECHNOLOGY",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_80NM0020F0035_8000_80NM0018D0004_8000/"
-          },
-          102622625,
-          "National Aeronautics and Space Administration"
-        ],
-        [
-          19,
-          {
-            "text": "CALIFORNIA INSTITUTE OF TECHNOLOGY",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_80NM0024F0002_8000_80NM0018D0004_8000/"
-          },
-          95126171,
-          "National Aeronautics and Space Administration"
-        ],
-        [
-          20,
-          {
-            "text": "CALIFORNIA INSTITUTE OF TECHNOLOGY",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_80NM0018F0595_8000_80NM0018D0004_8000/"
-          },
-          93991610.18,
-          "National Aeronautics and Space Administration"
-        ],
-        [
-          21,
-          {
-            "text": "AMERICAN TYPE CULTURE COLLECTION",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_75N93024C00001_7529_-NONE-_-NONE-/"
-          },
-          91580433,
-          "Department of Health and Human Services"
-        ],
-        [
-          22,
-          {
-            "text": "ADVANCED SPACE LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_80NSSC24CA188_8000_-NONE-_-NONE-/"
-          },
-          76985659,
-          "National Aeronautics and Space Administration"
-        ],
-        [
-          23,
-          {
-            "text": "REGENTS OF THE UNIVERSITY OF CALIFORNIA, THE",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_80MSFC19C0041_8000_-NONE-_-NONE-/"
-          },
-          69791724.88,
-          "National Aeronautics and Space Administration"
-        ],
-        [
-          24,
-          {
-            "text": "SCIENCE APPLICATIONS INTERNATIONAL CORPORATION",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_70RSAT23CB0000003_7001_-NONE-_-NONE-/"
-          },
-          50002730.55,
-          "Department of Homeland Security"
-        ],
-        [
-          25,
-          {
-            "text": "THE REGENTS OF THE UNIVERSITY OF COLORADO",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_80GSFC23CA035_8000_-NONE-_-NONE-/"
-          },
-          49430922,
           "National Aeronautics and Space Administration"
         ]
       ]
@@ -573,7 +573,7 @@
             "text": "THE MITRE CORPORATION",
             "href": "https://www.usaspending.gov/recipient/3903ae3c-2661-60bb-cdd3-1f26ad214167-C/latest/"
           },
-          704329233.83,
+          710829033.83,
           "Department of Defense",
           "2026-12-31"
         ],
@@ -657,7 +657,7 @@
             "text": "BOOZ ALLEN HAMILTON INC",
             "href": "https://www.usaspending.gov/recipient/ffca72e5-fba2-798a-6969-2a6c45e9f985-C/latest/"
           },
-          547156193.4,
+          547729109.4,
           "General Services Administration",
           "2027-02-23"
         ],
@@ -713,7 +713,7 @@
             "text": "CACI, INC. - FEDERAL",
             "href": "https://www.usaspending.gov/recipient/28eee911-76af-7147-f760-4ec5f90bec2d-C/latest/"
           },
-          483930903.15,
+          484962470.34,
           "Department of Defense",
           "2027-05-04"
         ],
@@ -735,30 +735,30 @@
     }
   ],
   "narrative": {
-    "intro": "Research and Development in the Physical, Engineering, and Life Sciences (NAICS 541715) saw $233M in federal contract obligations in FY2027 to date. The market recorded 213 awards with an average award size of $1.1M. Obligations fell 99.5% year over year. Fiscal year histories show FY22 at $35B, FY23 at $42.6B, FY24 at $43.2B, FY25 at $46.4B, FY26 at $43.4B, and FY27 at $233M. National Aeronautics and Space Administration led buying in FY2027 to date with $199M, followed by Department of Health and Human Services with $23.8M and General Services Administration with $8.5M. THE JOHNS HOPKINS UNIVERSITY APPLIED PHYSICS LABORATORY LLC and CALIFORNIA INSTITUTE OF TECHNOLOGY were the top vendors in FY2027 to date with $85.3M and $78.4M respectively. The dataset is partial for the current fiscal year, so FY2027 totals reflect fiscal year to date obligations only.",
+    "intro": "Research and Development in the Physical, Engineering, and Life Sciences (NAICS 541715) shows a sharp pullback in FY2027 to date. FY27 obligations are $727M, across 367 awards, with an average award size of $2M. Obligations fell 98.3% year over year. Fiscal-year comparisons show FY22 obligations of $35B, FY23 obligations of $42.6B, FY24 obligations of $43.2B, FY25 obligations of $46.4B, and FY26 obligations of $43.8B. The Department of Energy is the largest buyer in FY2027 to date with $398M in obligations, followed by the National Aeronautics and Space Administration with $277M. FLUOR MARINE PROPULSION, LLC is the largest vendor in FY2027 to date with $373M in obligations, followed by CALIFORNIA INSTITUTE OF TECHNOLOGY with $128M and THE JOHNS HOPKINS UNIVERSITY APPLIED PHYSICS LABORATORY LLC with $85.3M. The FY2027 to date pattern shows a concentration of spending in a handful of agencies and vendors while overall market size has contracted markedly versus prior fiscal years.",
     "sections": [
       {
-        "heading": "What changed in FY2027 to date?",
-        "body": "Obligations fell 99.5% year over year in FY2027 to date. The market recorded $233M in obligations compared with prior full fiscal years that ranged from $35B to $46.4B. The market counted 213 awards with an average award size of $1.1M during the fiscal year to date. The current-year totals are partial, fiscal year to date."
+        "heading": "What drove the change in FY2027 obligations?",
+        "body": "Obligations fell 98.3% year over year. FY27 obligations are $727M compared with FY26 obligations of $43.8B, indicating a large reduction in contract awards in the sector. The Department of Energy and NASA together account for the majority of FY2027 to date obligations, which concentrates the remaining spend."
       },
       {
-        "heading": "Who are the top buyers and vendors in FY2027 to date?",
-        "body": "National Aeronautics and Space Administration obligated $199M, Department of Health and Human Services obligated $23.8M, and General Services Administration obligated $8.5M in FY2027 to date. THE JOHNS HOPKINS UNIVERSITY APPLIED PHYSICS LABORATORY LLC received $85.3M and CALIFORNIA INSTITUTE OF TECHNOLOGY received $78.4M in FY2027 to date. AMERICAN TYPE CULTURE COLLECTION received $23.5M and AMENTUM TECHNOLOGY, INC. received $10.5M in FY2027 to date. Several agencies and vendors recorded small or zero obligations in the current fiscal year to date."
+        "heading": "Where is the money concentrated in FY2027 to date?",
+        "body": "The Department of Energy obligated $398M and the National Aeronautics and Space Administration obligated $277M in FY2027 to date. FLUOR MARINE PROPULSION, LLC received $373M, CALIFORNIA INSTITUTE OF TECHNOLOGY received $128M, and THE JOHNS HOPKINS UNIVERSITY APPLIED PHYSICS LABORATORY LLC received $85.3M. The top buyers and top vendors together represent most of the $727M in obligations for the period."
       }
     ]
   },
   "faq": [
     {
       "q": "How much does the federal government spend on NAICS 541715?",
-      "a": "The federal government obligated $233M on NAICS 541715 in FY2027 to date. Total obligations by fiscal year were $35B in FY22, $42.6B in FY23, $43.2B in FY24, $46.4B in FY25, and $43.4B in FY26. Current-year totals are partial, fiscal year to date."
+      "a": "The federal government obligated $727M on NAICS 541715 in FY2027 to date. FY27 obligations are $727M, and the sector has an award count of 367 with an average award size of $2M. Fiscal-year history shows much larger totals in earlier years, including $43.8B in FY26 and $46.4B in FY25."
     },
     {
       "q": "Which agencies buy the most NAICS 541715 services?",
-      "a": "National Aeronautics and Space Administration is the largest buyer, obligating $199M in FY2027 to date. Department of Health and Human Services obligated $23.8M and General Services Administration obligated $8.5M in FY2027 to date. Department of Veterans Affairs obligated $2.2M and Environmental Protection Agency obligated $398K in FY2027 to date."
+      "a": "The Department of Energy and the National Aeronautics and Space Administration buy the most NAICS 541715 services in FY2027 to date. The Department of Energy obligated $398M and the National Aeronautics and Space Administration obligated $277M. The next largest buyers are the Department of Health and Human Services with $27.8M and the General Services Administration with $15.8M."
     },
     {
       "q": "Who are the largest NAICS 541715 government contractors?",
-      "a": "THE JOHNS HOPKINS UNIVERSITY APPLIED PHYSICS LABORATORY LLC is the largest contractor with $85.3M in FY2027 to date. CALIFORNIA INSTITUTE OF TECHNOLOGY follows with $78.4M, AMERICAN TYPE CULTURE COLLECTION with $23.5M, and AMENTUM TECHNOLOGY, INC. with $10.5M in FY2027 to date."
+      "a": "FLUOR MARINE PROPULSION, LLC, CALIFORNIA INSTITUTE OF TECHNOLOGY, and THE JOHNS HOPKINS UNIVERSITY APPLIED PHYSICS LABORATORY LLC are the largest NAICS 541715 contractors in FY2027 to date. FLUOR MARINE PROPULSION, LLC received $373M, CALIFORNIA INSTITUTE OF TECHNOLOGY received $128M, and THE JOHNS HOPKINS UNIVERSITY APPLIED PHYSICS LABORATORY LLC received $85.3M."
     }
   ],
   "related": [

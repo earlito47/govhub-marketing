@@ -1,20 +1,20 @@
 {
   "pageType": "vendor",
   "slug": "thundercat-technology",
-  "title": "Thundercat Technology Government Contracts: $143M (FY2027)",
+  "title": "Thundercat Technology Government Contracts: $154M (FY2027)",
   "h1": "Thundercat Technology: Federal Contracts, Agencies & Awards",
-  "metaDescription": "Thundercat Technology won $143M in federal contract obligations in FY2027 to date. See its top agencies, markets, largest awards, and expiring contracts.",
-  "updated": "2026-10-19",
+  "metaDescription": "Thundercat Technology won $154M in federal contract obligations in FY2027 to date. See its top agencies, markets, largest awards, and expiring contracts.",
+  "updated": "2026-10-26",
   "fyWindow": {
     "label": "FY2027 to date",
     "start": "2026-10-01",
-    "end": "2026-10-19"
+    "end": "2026-10-26"
   },
   "stats": {
-    "totalObligations": 143002044.9,
-    "awardCount": 29,
-    "yoyGrowthPct": -87.7,
-    "avgAwardSize": 4931105,
+    "totalObligations": 153516030.29,
+    "awardCount": 39,
+    "yoyGrowthPct": -86.8,
+    "avgAwardSize": 3936308,
     "smallBusinessSharePct": null
   },
   "charts": [
@@ -44,17 +44,17 @@
             ],
             [
               "FY26",
-              1162019277.04
+              1164449600.81
             ],
             [
               "FY27",
-              143002044.9
+              153516030.29
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Obligations fell 87.7% year over year, from $1.2B in FY2026 to $143M in FY2027 to date."
+      "takeaway": "Obligations fell 86.8% year over year, from $1.2B in FY2026 to $154M in FY2027 to date."
     },
     {
       "id": "thundercat-technology-top-agencies",
@@ -69,46 +69,68 @@
               142105745.29
             ],
             [
+              "Department of Agriculture",
+              4908625.98
+            ],
+            [
+              "National Aeronautics and Space Administration",
+              3942123.11
+            ],
+            [
+              "Department of Commerce",
+              1432420
+            ],
+            [
               "Department of Transportation",
               603045.49
             ],
             [
-              "National Aeronautics and Space Administration",
-              216227.27
+              "Department of the Treasury",
+              359504.71
             ],
             [
               "National Archives and Records Administration",
               80821.85
             ],
             [
+              "Department of Justice",
+              59315.61
+            ],
+            [
+              "Department of State",
+              24428.25
+            ],
+            [
               "Department of Health and Human Services",
-              0
-            ],
-            [
-              "Department of Agriculture",
-              0
-            ],
-            [
-              "Department of Commerce",
-              0
-            ],
-            [
-              "Department of Homeland Security",
-              0
-            ],
-            [
-              "Department of Energy",
-              0
-            ],
-            [
-              "Consumer Financial Protection Bureau",
               0
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Department of Veterans Affairs is Thundercat Technology's largest federal customer, with $142M obligated (99.4% of the company's federal obligations)."
+      "takeaway": "Department of Veterans Affairs is Thundercat Technology's largest federal customer, with $142M obligated (92.6% of the company's federal obligations)."
+    },
+    {
+      "id": "thundercat-technology-top-naics",
+      "type": "bar",
+      "title": "Top 10 markets (NAICS), FY2027 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "Other Computer Related Services",
+              153516030.29
+            ],
+            [
+              "Software Publishers",
+              0
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Other Computer Related Services is Thundercat Technology's largest federal market, with $154M in obligations."
     }
   ],
   "crossLinks": [
@@ -117,16 +139,20 @@
       "href": "/insights/agency/department-of-veterans-affairs/"
     },
     {
-      "label": "Department of Transportation contracts",
-      "href": "/insights/agency/department-of-transportation/"
+      "label": "Department of Agriculture contracts",
+      "href": "/insights/agency/department-of-agriculture/"
     },
     {
       "label": "National Aeronautics and Space Administration contracts",
       "href": "/insights/agency/national-aeronautics-and-space-administration/"
     },
     {
-      "label": "Department of Health and Human Services contracts",
-      "href": "/insights/agency/department-of-health-and-human-services/"
+      "label": "Department of Commerce contracts",
+      "href": "/insights/agency/department-of-commerce/"
+    },
+    {
+      "label": "NAICS 541519: Other Computer Related Services",
+      "href": "/insights/naics/541519/"
     }
   ],
   "tables": [
@@ -203,6 +229,36 @@
         [
           7,
           {
+            "text": "80TECH27FA012",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_80TECH27FA012_8000_NNG15SD26B_8000/"
+          },
+          3668895.72,
+          "National Aeronautics and Space Administration",
+          "2027-10-31"
+        ],
+        [
+          8,
+          {
+            "text": "12314427F0001",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_12314427F0001_1205_NNG15SD26B_8000/"
+          },
+          3652011.48,
+          "Department of Agriculture",
+          "2031-09-30"
+        ],
+        [
+          9,
+          {
+            "text": "1333BJ26F00282001",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_1333BJ26F00282001_1344_NNG15SD26B_8000/"
+          },
+          2805144,
+          "Department of Commerce",
+          "2027-11-15"
+        ],
+        [
+          10,
+          {
             "text": "1333BJ26F00280010",
             "href": "https://www.usaspending.gov/award/CONT_AWD_1333BJ26F00280010_1344_NNG15SD26B_8000/"
           },
@@ -211,7 +267,7 @@
           "2027-03-30"
         ],
         [
-          8,
+          11,
           {
             "text": "20341524F00044",
             "href": "https://www.usaspending.gov/award/CONT_AWD_20341524F00044_2036_NNG15SD26B_8000/"
@@ -221,7 +277,7 @@
           "2027-09-14"
         ],
         [
-          9,
+          12,
           {
             "text": "36C26225F0709",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C26225F0709_3600_NNG15SD26B_8000/"
@@ -231,7 +287,17 @@
           "2027-09-30"
         ],
         [
-          10,
+          13,
+          {
+            "text": "128PTA27F0001",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_128PTA27F0001_1205_NNG15SD26B_8000/"
+          },
+          1256614.5,
+          "Department of Agriculture",
+          "2027-10-31"
+        ],
+        [
+          14,
           {
             "text": "36C26126F0029",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C26126F0029_3600_NNG15SD26B_8000/"
@@ -241,7 +307,7 @@
           "2027-10-10"
         ],
         [
-          11,
+          15,
           {
             "text": "36C26222F0446",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C26222F0446_3600_NNG15SD26B_8000/"
@@ -251,7 +317,7 @@
           "2027-10-10"
         ],
         [
-          12,
+          16,
           {
             "text": "9531CB23F0014",
             "href": "https://www.usaspending.gov/award/CONT_AWD_9531CB23F0014_955F_NNG15SD26B_8000/"
@@ -261,7 +327,17 @@
           "2024-12-20"
         ],
         [
-          13,
+          17,
+          {
+            "text": "2033H626F00001",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_2033H626F00001_2036_NNG15SD26B_8000/"
+          },
+          653610.25,
+          "Department of the Treasury",
+          "2027-10-31"
+        ],
+        [
+          18,
           {
             "text": "70CMSD26FR0000157",
             "href": "https://www.usaspending.gov/award/CONT_AWD_70CMSD26FR0000157_7012_NNG15SD26B_8000/"
@@ -271,7 +347,7 @@
           "2027-01-16"
         ],
         [
-          14,
+          19,
           {
             "text": "36C10B26F0357",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C10B26F0357_3600_NNG15SD26B_8000/"
@@ -281,7 +357,7 @@
           "2027-09-20"
         ],
         [
-          15,
+          20,
           {
             "text": "693JJ127F00001N",
             "href": "https://www.usaspending.gov/award/CONT_AWD_693JJ127F00001N_6925_NNG15SC92B_8000/"
@@ -291,7 +367,7 @@
           "2027-10-03"
         ],
         [
-          16,
+          21,
           {
             "text": "36C24526F0334",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C24526F0334_3600_NNG15SD26B_8000/"
@@ -301,7 +377,7 @@
           "2026-12-31"
         ],
         [
-          17,
+          22,
           {
             "text": "20341423F00054",
             "href": "https://www.usaspending.gov/award/CONT_AWD_20341423F00054_2036_NNG15SD26B_8000/"
@@ -311,7 +387,7 @@
           "2024-09-29"
         ],
         [
-          18,
+          23,
           {
             "text": "20341524F00047",
             "href": "https://www.usaspending.gov/award/CONT_AWD_20341524F00047_2036_NNG15SD26B_8000/"
@@ -321,7 +397,7 @@
           "2027-09-13"
         ],
         [
-          19,
+          24,
           {
             "text": "7571TE26F80431",
             "href": "https://www.usaspending.gov/award/CONT_AWD_7571TE26F80431_7571_NNG15SD26B_8000/"
@@ -331,64 +407,14 @@
           "2027-09-29"
         ],
         [
-          20,
-          {
-            "text": "36C25926F0023",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C25926F0023_3600_NNG15SD26B_8000/"
-          },
-          101635.68,
-          "Department of Veterans Affairs",
-          "2027-11-06"
-        ],
-        [
-          21,
-          {
-            "text": "80NSSC27FA006",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_80NSSC27FA006_8000_NNG15SD26B_8000/"
-          },
-          99267.69,
-          "National Aeronautics and Space Administration",
-          "2026-11-04"
-        ],
-        [
-          22,
-          {
-            "text": "88310327F00006",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_88310327F00006_8800_NNG15SD26B_8000/"
-          },
-          80821.85,
-          "National Archives and Records Administration",
-          "2027-09-30"
-        ],
-        [
-          23,
-          {
-            "text": "80NSSC27FA019",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_80NSSC27FA019_8000_NNG15SC92B_8000/"
-          },
-          75230.18,
-          "National Aeronautics and Space Administration",
-          "2027-04-20"
-        ],
-        [
-          24,
-          {
-            "text": "7571TE26F80437",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_7571TE26F80437_7571_HHSN316201500010W_7529/"
-          },
-          48668.18,
-          "Department of Health and Human Services",
-          "2027-09-29"
-        ],
-        [
           25,
           {
-            "text": "36C26127F0030",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C26127F0030_3600_NNG15SD26B_8000/"
+            "text": "1331L526F0450",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_1331L526F0450_1301_1331L524A13ES0006_1301/"
           },
-          44712.87,
-          "Department of Veterans Affairs",
-          "2027-02-10"
+          150000,
+          "Department of Commerce",
+          "2027-05-21"
         ]
       ]
     },
@@ -516,34 +542,34 @@
     }
   ],
   "narrative": {
-    "intro": "Thundercat Technology has received $143M in federal contract obligations in FY2027 to date. Thundercat Technology won 29 awards this fiscal year, with an average award size of $4.9M. Thundercat Technology obligations fell 87.7% year over year. Thundercat Technology received $142M from the Department of Veterans Affairs in FY2027 to date. Thundercat Technology also received smaller obligations from the Department of Transportation, the National Aeronautics and Space Administration, and the National Archives and Records Administration, and received no obligations from several major agencies listed for this period. Looking at recent fiscal years, Thundercat Technology obligations were $680M in FY22, $854M in FY23, $804M in FY24, $913M in FY25, and $1.2B in FY26, before the current-year total of $143M. The current-year totals are partial and represent fiscal year to date obligations.",
+    "intro": "Thundercat Technology has $154M in contract obligations for FY2027 to date. Thundercat Technology won 39 awards so far in the fiscal year, with an average award size of $3.9M. Obligations fell 86.8% year over year. Historical obligations show larger prior-year totals: FY22 $680M, FY23 $854M, FY24 $804M, FY25 $913M, and FY26 $1.2B. The Department of Veterans Affairs is the dominant buyer in FY2027 to date with $142M in obligations. Other buying agencies recorded much smaller totals, including the Department of Agriculture with $4.9M and the National Aeronautics and Space Administration with $3.9M. Market detail for FY2027 to date is concentrated in Other Computer Related Services at $154M, while Software Publishers shows $0. The dataset notes that current-year totals are partial and that most figures are contract obligations except where award-value totals are specifically called out. This snapshot highlights a sharp year-over-year drop in obligations alongside continued concentration in a single industry and a single buying agency.",
     "sections": [
       {
-        "heading": "Who are the main buyers of Thundercat Technology this fiscal year?",
-        "body": "The Department of Veterans Affairs is the main buyer, obligating $142M in FY2027 to date. The Department of Transportation obligated $603K, the National Aeronautics and Space Administration obligated $216K, and the National Archives and Records Administration obligated $80.8K. Several major agencies recorded $0 in obligations for Thundercat Technology in this period."
+        "heading": "How big is Thundercat Technology's FY2027 federal business?",
+        "body": "Thundercat Technology has $154M in obligations for FY2027 to date. Thundercat Technology received 39 awards this fiscal year, and the average award size is $3.9M. Obligations fell 86.8% year over year, reflecting a much smaller current-year total than prior years such as FY26 $1.2B."
       },
       {
-        "heading": "How has Thundercat Technology's federal business trended over recent years?",
-        "body": "Thundercat Technology obligations rose from $680M in FY22 to $854M in FY23, then were $804M in FY24, $913M in FY25, and $1.2B in FY26. Thundercat Technology obligations are $143M in FY27 to date, a change described as down 87.7% year over year. Thundercat Technology received 29 awards in FY2027 to date with an average award size of $4.9M."
+        "heading": "Who are Thundercat Technology's main customers and markets?",
+        "body": "The Department of Veterans Affairs is the top buyer in FY2027 to date with $142M in obligations. Other named buyers include the Department of Agriculture $4.9M and the National Aeronautics and Space Administration $3.9M. The leading reported market is Other Computer Related Services with $154M, while Software Publishers shows $0."
       }
     ]
   },
   "faq": [
     {
       "q": "How much does Thundercat Technology make from federal contracts?",
-      "a": "Thundercat Technology has received $143M in federal contract obligations in FY2027 to date. Thundercat Technology won 29 awards this fiscal year and the average award size was $4.9M. Thundercat Technology obligations fell 87.7% year over year."
+      "a": "Thundercat Technology has $154M in contract obligations in FY2027 to date. Thundercat Technology has 39 awards this fiscal year and an average award size of $3.9M. Obligations fell 86.8% year over year, and prior fiscal-year obligations include FY26 $1.2B, FY25 $913M, FY24 $804M, FY23 $854M, and FY22 $680M."
     },
     {
       "q": "Which agencies buy from Thundercat Technology?",
-      "a": "The Department of Veterans Affairs is the primary buyer of Thundercat Technology in FY2027 to date, obligating $142M. The Department of Transportation obligated $603K, the National Aeronautics and Space Administration obligated $216K, and the National Archives and Records Administration obligated $80.8K. Several listed agencies recorded $0 in obligations for this period."
+      "a": "The Department of Veterans Affairs is the primary buyer of Thundercat Technology in FY2027 to date, with $142M in obligations. Other buying agencies include the Department of Agriculture $4.9M, the National Aeronautics and Space Administration $3.9M, the Department of Commerce $1.4M, and several smaller agency buyers listed with amounts down to $0."
     },
     {
       "q": "What does Thundercat Technology sell to the government?",
-      "a": "The provided data does not list product or service categories for Thundercat Technology. The available figures describe contract obligations, award counts, and agency buyers but do not specify what Thundercat Technology sold to the government."
+      "a": "Thundercat Technology sells services classified under Other Computer Related Services to the government, with $154M reported in that market for FY2027 to date. The Software Publishers market shows $0 in obligations for the same period."
     },
     {
       "q": "Which Thundercat Technology contracts are expiring soon?",
-      "a": "The dataset lists largest-award and expiring-contract tables as total contract values, but the provided FACTS do not include a table of specific expiring contracts. The available information does not identify which Thundercat Technology contracts are expiring soon."
+      "a": "No expiring-contracts figures are provided in the listed FY2027 to date figures. The available tables and totals do not include a separate expiring-contracts listing in the provided data."
     }
   ],
   "related": [
@@ -552,28 +578,28 @@
       "href": "/insights/expiring-federal-contracts/"
     },
     {
-      "label": "TriWest Healthcare Alliance federal contracts",
-      "href": "/insights/vendor/triwest-healthcare-alliance/"
+      "label": "Fluor Marine Propulsion federal contracts",
+      "href": "/insights/vendor/fluor-marine-propulsion/"
+    },
+    {
+      "label": "Accenture Federal Services federal contracts",
+      "href": "/insights/vendor/accenture-federal-services/"
     },
     {
       "label": "At and T Enterprises federal contracts",
       "href": "/insights/vendor/at-and-t-enterprises/"
     },
     {
-      "label": "Fedex Supply Chain Distribution System federal contracts",
-      "href": "/insights/vendor/fedex-supply-chain-distribution-system/"
-    },
-    {
-      "label": "Fisher Sand and Gravel federal contracts",
-      "href": "/insights/vendor/fisher-sand-and-gravel/"
-    },
-    {
       "label": "Stonex Financial federal contracts",
       "href": "/insights/vendor/stonex-financial/"
     },
     {
-      "label": "Electric Boat federal contracts",
-      "href": "/insights/vendor/electric-boat/"
+      "label": "California Institute of Technology federal contracts",
+      "href": "/insights/vendor/california-institute-of-technology/"
+    },
+    {
+      "label": "Metropolitan Security Services federal contracts",
+      "href": "/insights/vendor/metropolitan-security-services/"
     }
   ],
   "sources": [

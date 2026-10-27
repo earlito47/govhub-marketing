@@ -1,20 +1,20 @@
 {
   "pageType": "agency",
   "slug": "general-services-administration",
-  "title": "GSA Federal Contracts: $162M in FY2027",
+  "title": "GSA Federal Contracts: $263M in FY2027",
   "h1": "General Services Administration: Federal Contract Spending & Top Vendors",
-  "metaDescription": "General Services Administration obligated $162M in federal contracts in FY2027 to date. See what it buys, its top vendors, and multi-year trend.",
-  "updated": "2026-10-19",
+  "metaDescription": "General Services Administration obligated $263M in federal contracts in FY2027 to date. See what it buys, its top vendors, and multi-year trend.",
+  "updated": "2026-10-26",
   "fyWindow": {
     "label": "FY2027 to date",
     "start": "2026-10-01",
-    "end": "2026-10-19"
+    "end": "2026-10-26"
   },
   "stats": {
-    "totalObligations": 161762332.59,
-    "awardCount": 35900,
-    "yoyGrowthPct": -99.4,
-    "avgAwardSize": 4506,
+    "totalObligations": 263223895.42,
+    "awardCount": 50620,
+    "yoyGrowthPct": -99.1,
+    "avgAwardSize": 5200,
     "smallBusinessSharePct": null
   },
   "charts": [
@@ -44,17 +44,17 @@
             ],
             [
               "FY26",
-              28710047085.18
+              28721515741.07
             ],
             [
               "FY27",
-              161762332.59
+              263223895.42
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Obligations fell 99.4% year over year, from $28.7B in FY2026 to $162M in FY2027 to date."
+      "takeaway": "Obligations fell 99.1% year over year, from $28.7B in FY2026 to $263M in FY2027 to date."
     },
     {
       "id": "general-services-administration-top-naics",
@@ -66,49 +66,49 @@
           "points": [
             [
               "Commercial and Institutional Building Construction",
-              34346554.14
-            ],
-            [
-              "All Other Professional, Scientific, and Technical Services",
-              18890009.4
-            ],
-            [
-              "Other Computer Related Services",
-              17355011.51
-            ],
-            [
-              "Wholesale Trade Agents and Brokers",
-              12736445.98
+              57787727.65
             ],
             [
               "Computer Systems Design Services",
-              10375177.25
+              26028949.79
             ],
             [
-              "Administrative Management and General Management Consulting Services",
-              9247159.86
+              "Other Computer Related Services",
+              22551531.49
             ],
             [
-              "Custom Computer Programming Services",
-              8987533.43
+              "All Other Professional, Scientific, and Technical Services",
+              19691829.8
             ],
             [
               "Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology)",
-              8515029.21
+              15769885.97
             ],
             [
-              "Home Centers",
-              4148422.47
+              "Wholesale Trade Agents and Brokers",
+              13257644.61
             ],
             [
-              "Prefabricated Metal Building and Component Manufacturing",
-              3844372.49
+              "Administrative Management and General Management Consulting Services",
+              12911438.97
+            ],
+            [
+              "Engineering Services",
+              11975909.94
+            ],
+            [
+              "Custom Computer Programming Services",
+              9878919.32
+            ],
+            [
+              "Automobile Manufacturing",
+              9029963
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Commercial and Institutional Building Construction was General Services Administration's largest contract category, with $34.3M obligated (21.2% of contract spending)."
+      "takeaway": "Commercial and Institutional Building Construction was General Services Administration's largest contract category, with $57.8M obligated (22.0% of contract spending)."
     },
     {
       "id": "general-services-administration-top-vendors",
@@ -127,42 +127,42 @@
               21405048.73
             ],
             [
+              "SCIENCE APPLICATIONS INTERNATIONAL CORPORATION",
+              12064765.81
+            ],
+            [
               "INSURANCE AUTO AUCTIONS, INC.",
               10526412.5
+            ],
+            [
+              "VIVSOFT TECHNOLOGIES LLC",
+              10473394.73
             ],
             [
               "ECS FEDERAL, LLC",
               9959445.42
             ],
             [
+              "W.W. GRAINGER, INC.",
+              8947069.68
+            ],
+            [
               "ERNST & YOUNG LLP",
               8771468.27
             ],
             [
-              "CENSEO CONSULTING GROUP, INC.",
-              6999230.05
+              "CCI FACILITY CONTRACTORS, LLC",
+              8650312.4
             ],
             [
-              "BRUCKEDWARDS, INC.",
-              6227104.18
-            ],
-            [
-              "AMIVERO LLC",
-              5373669.2
-            ],
-            [
-              "MAINSAIL - OASIS JOINT VENTURE LLC",
-              4802458.05
-            ],
-            [
-              "W.W. GRAINGER, INC.",
-              4145742.22
+              "MANTECH ADVANCED SYSTEMS INTERNATIONAL, INC.",
+              7181256.11
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "BLUESTAQ LLC led all General Services Administration contractors with $24.3M, 15.0% of obligations."
+      "takeaway": "BLUESTAQ LLC led all General Services Administration contractors with $24.3M, 9.2% of obligations."
     }
   ],
   "crossLinks": [
@@ -171,16 +171,16 @@
       "href": "/insights/naics/236220/"
     },
     {
-      "label": "NAICS 541990: All Other Professional, Scientific, and Technical Services",
-      "href": "/insights/naics/541990/"
+      "label": "NAICS 541512: Computer Systems Design Services",
+      "href": "/insights/naics/541512/"
     },
     {
       "label": "NAICS 541519: Other Computer Related Services",
       "href": "/insights/naics/541519/"
     },
     {
-      "label": "NAICS 541512: Computer Systems Design Services",
-      "href": "/insights/naics/541512/"
+      "label": "NAICS 541990: All Other Professional, Scientific, and Technical Services",
+      "href": "/insights/naics/541990/"
     }
   ],
   "tables": [
@@ -211,13 +211,29 @@
         [
           3,
           {
+            "text": "SCIENCE APPLICATIONS INTERNATIONAL CORPORATION",
+            "href": "https://www.usaspending.gov/recipient/20af0683-f17d-1f8f-38ee-2f11bd124559-C/latest/"
+          },
+          12064765.81
+        ],
+        [
+          4,
+          {
             "text": "INSURANCE AUTO AUCTIONS, INC.",
             "href": "https://www.usaspending.gov/recipient/465cc2de-a02b-ad36-a851-ed8425e9c8d1-C/latest/"
           },
           10526412.5
         ],
         [
-          4,
+          5,
+          {
+            "text": "VIVSOFT TECHNOLOGIES LLC",
+            "href": "https://www.usaspending.gov/recipient/3411847e-507d-a36a-9219-e0610ba0c691-C/latest/"
+          },
+          10473394.73
+        ],
+        [
+          6,
           {
             "text": "ECS FEDERAL, LLC",
             "href": "https://www.usaspending.gov/recipient/ed304eb7-3464-d0e8-d3b2-66199b0e0fcb-C/latest/"
@@ -225,7 +241,15 @@
           9959445.42
         ],
         [
-          5,
+          7,
+          {
+            "text": "W.W. GRAINGER, INC.",
+            "href": "https://www.usaspending.gov/recipient/02d96557-827b-7983-b39e-007f84487932-C/latest/"
+          },
+          8947069.68
+        ],
+        [
+          8,
           {
             "text": "ERNST & YOUNG LLP",
             "href": "https://www.usaspending.gov/recipient/dd8305ba-1d9b-c594-9391-076ac5a963ad-C/latest/"
@@ -233,44 +257,20 @@
           8771468.27
         ],
         [
-          6,
-          {
-            "text": "CENSEO CONSULTING GROUP, INC.",
-            "href": "https://www.usaspending.gov/recipient/2db232ae-6179-b1ab-b59e-82f96747c5e5-C/latest/"
-          },
-          6999230.05
-        ],
-        [
-          7,
-          {
-            "text": "BRUCKEDWARDS, INC.",
-            "href": "https://www.usaspending.gov/recipient/fbe9bd81-5fb7-0dc3-4165-a4af7cc92f35-C/latest/"
-          },
-          6227104.18
-        ],
-        [
-          8,
-          {
-            "text": "AMIVERO LLC",
-            "href": "https://www.usaspending.gov/recipient/93b9cef9-cafe-6415-2552-4d956cb688b6-C/latest/"
-          },
-          5373669.2
-        ],
-        [
           9,
           {
-            "text": "MAINSAIL - OASIS JOINT VENTURE LLC",
-            "href": "https://www.usaspending.gov/recipient/ccb8d05f-0a9f-585b-19dc-57ef079a6318-C/latest/"
+            "text": "CCI FACILITY CONTRACTORS, LLC",
+            "href": "https://www.usaspending.gov/recipient/5a2aa224-dff5-85bd-a83a-bd4386a2a3e8-C/latest/"
           },
-          4802458.05
+          8650312.4
         ],
         [
           10,
           {
-            "text": "W.W. GRAINGER, INC.",
-            "href": "https://www.usaspending.gov/recipient/02d96557-827b-7983-b39e-007f84487932-C/latest/"
+            "text": "MANTECH ADVANCED SYSTEMS INTERNATIONAL, INC.",
+            "href": "https://www.usaspending.gov/recipient/ceac1920-9ceb-17a6-9bf7-026817a02917-C/latest/"
           },
-          4145742.22
+          7181256.11
         ]
       ]
     },
@@ -293,13 +293,37 @@
         [
           2,
           {
+            "text": "CACI, INC. - FEDERAL",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_47QFRA24F0005_4732_47QTCK18D0009_4732/"
+          },
+          977906126.78
+        ],
+        [
+          3,
+          {
             "text": "SCIENCE APPLICATIONS INTERNATIONAL CORPORATION",
             "href": "https://www.usaspending.gov/award/CONT_AWD_47QFCA25F0009_4732_47QFCA22D0337_4732/"
           },
           723493849.29
         ],
         [
-          3,
+          4,
+          {
+            "text": "BOOZ ALLEN HAMILTON INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_47QFRA24F0006_4732_47QTCK18D0004_4732/"
+          },
+          710558512.24
+        ],
+        [
+          5,
+          {
+            "text": "V2X AEROSPACE LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_47QFCA24F0033_4732_47QFCA22D0344_4732/"
+          },
+          625127438
+        ],
+        [
+          6,
           {
             "text": "CLARK CONSTRUCTION GROUP LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_47PM0024C0001_4740_-NONE-_-NONE-/"
@@ -307,7 +331,7 @@
           616333356.58
         ],
         [
-          4,
+          7,
           {
             "text": "BLUESTAQ LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_47QFCA19C0016_4732_-NONE-_-NONE-/"
@@ -315,7 +339,15 @@
           580415713.24
         ],
         [
-          5,
+          8,
+          {
+            "text": "GENERAL DYNAMICS INFORMATION TECHNOLOGY, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_47QFMA21F0003_4732_47QTCK18D0003_4732/"
+          },
+          575507884.38
+        ],
+        [
+          9,
           {
             "text": "BOOZ ALLEN HAMILTON INC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_47QFCA23F0058_4732_47QTCK18D0004_4732/"
@@ -323,7 +355,23 @@
           561184437.17
         ],
         [
-          6,
+          10,
+          {
+            "text": "BOOZ ALLEN HAMILTON INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_47QFCA23F0014_4732_47QFCA22D0357_4732/"
+          },
+          547729109.4
+        ],
+        [
+          11,
+          {
+            "text": "LEIDOS, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_GSQ0017AJ0079_4732_GS00Q09BGD0039_4735/"
+          },
+          540310875.81
+        ],
+        [
+          12,
           {
             "text": "PARSONS GOVERNMENT SERVICES INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_47QFCA23F0024_4732_47QFCA22D0383_4732/"
@@ -331,7 +379,7 @@
           536914131.16
         ],
         [
-          7,
+          13,
           {
             "text": "DAVIS CONSTRUCTORS & ENGINEERS, INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_47PB5326C0006_4740_-NONE-_-NONE-/"
@@ -339,7 +387,7 @@
           469907907.01
         ],
         [
-          8,
+          14,
           {
             "text": "KRATOS S2, INC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_47QFCA20C0019_4732_-NONE-_-NONE-/"
@@ -347,7 +395,7 @@
           371699225.6
         ],
         [
-          9,
+          15,
           {
             "text": "HENSEL PHELPS CONSTRUCTION CO.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_47PK0122C0005_4740_-NONE-_-NONE-/"
@@ -355,7 +403,23 @@
           343322925
         ],
         [
-          10,
+          16,
+          {
+            "text": "SCIENCE APPLICATIONS INTERNATIONAL CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_47QFCA25F0032_4732_47QFCA22D0337_4732/"
+          },
+          337000711.19
+        ],
+        [
+          17,
+          {
+            "text": "CGI FEDERAL INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_47QFRA20F0021_4732_47QTCK18D0022_4732/"
+          },
+          332611854.93
+        ],
+        [
+          18,
           {
             "text": "EMPOWER AI, INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_47QFCA21F0014_4732_47QTCK18D0055_4732/"
@@ -363,7 +427,15 @@
           328155100.64
         ],
         [
-          11,
+          19,
+          {
+            "text": "MIRACLE SYSTEMS LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_47QFRA21F0038_4732_47QRAD20DU109_4732/"
+          },
+          310786905.02
+        ],
+        [
+          20,
           {
             "text": "HENSEL PHELPS CONSTRUCTION CO.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_47PK0124C0011_4740_-NONE-_-NONE-/"
@@ -371,7 +443,23 @@
           298816427
         ],
         [
-          12,
+          21,
+          {
+            "text": "MANTECH ADVANCED SYSTEMS INTERNATIONAL, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_47QFCA24F0032_4732_47QTCK18D0031_4732/"
+          },
+          287527423.82
+        ],
+        [
+          22,
+          {
+            "text": "BRASFIELD & GORRIE LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_47PH0825F0006_4740_47PH0821D0004_4740/"
+          },
+          266795541
+        ],
+        [
+          23,
           {
             "text": "BOOZ ALLEN HAMILTON INC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_47QFCA23F0047_4732_GS00Q14OADU108_4732/"
@@ -379,7 +467,7 @@
           251207902.17
         ],
         [
-          13,
+          24,
           {
             "text": "ECS FEDERAL, LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_47QFRA24F0012_4732_47QTCK18D0047_4732/"
@@ -387,129 +475,41 @@
           238723749.96
         ],
         [
-          14,
+          25,
           {
             "text": "BOOZ ALLEN HAMILTON INC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_47QFPA22F0007_4732_GS00Q14OADU604_4732/"
           },
           223411757.42
-        ],
-        [
-          15,
-          {
-            "text": "CACI, INC. - FEDERAL",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_47QFCA24F0018_4732_47QFCA22D0408_4732/"
-          },
-          209269262.16
-        ],
-        [
-          16,
-          {
-            "text": "CGI FEDERAL INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_47QFRA24F0007_4732_47QTCK18D0022_4732/"
-          },
-          147933393.41
-        ],
-        [
-          17,
-          {
-            "text": "HII MISSION TECHNOLOGIES CORP",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_GSQ0017AJ0008_4732_GS00Q14OADS412_4732/"
-          },
-          140527239.94
-        ],
-        [
-          18,
-          {
-            "text": "MANTECH ADVANCED SYSTEMS INTERNATIONAL, INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_47QFRA24F0008_4732_47QTCK18D0031_4732/"
-          },
-          130258748.55
-        ],
-        [
-          19,
-          {
-            "text": "GENERAL DYNAMICS INFORMATION TECHNOLOGY, INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_47QFMA25F0016_4732_47QTCK18D0003_4732/"
-          },
-          120247097.4
-        ],
-        [
-          20,
-          {
-            "text": "G2 OPS, INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_47QFLA21C0011_4732_-NONE-_-NONE-/"
-          },
-          114662490
-        ],
-        [
-          21,
-          {
-            "text": "WHITING-TURNER CONTRACTING COMPANY, THE",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_47PF0021C0003_4740_-NONE-_-NONE-/"
-          },
-          99567390.74
-        ],
-        [
-          22,
-          {
-            "text": "BOOZ ALLEN HAMILTON INC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_47QFAA20F0023_4732_47QTCK18D0004_4732/"
-          },
-          97885486.86
-        ],
-        [
-          23,
-          {
-            "text": "PERATON TECHNOLOGY SERVICES INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_47QFMA23F0019_4732_GS00Q16AJD0002_4732/"
-          },
-          93432844.76
-        ],
-        [
-          24,
-          {
-            "text": "ERNST & YOUNG LLP",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_47QFDA22F0017_4732_47QTCA18D003W_4732/"
-          },
-          87856732.49
-        ],
-        [
-          25,
-          {
-            "text": "PLANNED SYSTEMS INTERNATIONAL INC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_47QFSA22F0101_4732_47QTCK18D0039_4732/"
-          },
-          83130895.15
         ]
       ]
     }
   ],
   "narrative": {
-    "intro": "The General Services Administration obligated $162M in FY2027 to date. The General Services Administration recorded 35,900 awards with an average award size of $4.5K, and obligations are down 99.4% year over year. The General Services Administration's recent fiscal history shows larger annual totals: FY22 $20.6B, FY23 $23.9B, FY24 $26.5B, FY25 $23.8B, and FY26 $28.7B. Commercial and Institutional Building Construction led NAICS categories in FY2027 to date with $34.3M, followed by All Other Professional, Scientific, and Technical Services at $18.9M and Other Computer Related Services at $17.4M. BLUESTAQ LLC is the largest vendor in FY2027 to date at $24.3M, and MATOS-GRUNLEY JOINT VENTURE follows at $21.4M. The General Services Administration awarded smaller amounts across a broad set of providers, including INSURANCE AUTO AUCTIONS, INC. $10.5M and ECS FEDERAL, LLC $10M. This snapshot covers partial current-year totals and shows a sharp drop in obligations compared with prior full fiscal years.",
+    "intro": "The General Services Administration has obligated $263M in contract dollars in FY2027 to date. The General Services Administration executed 50,620 awards with an average award size of $5.2K. Obligations fell 99.1% year over year. The General Services Administration's FY history shows a peak pattern in recent years, with obligations of $20.6B in FY22, $23.9B in FY23, $26.5B in FY24, $23.8B in FY25, and $28.7B in FY26 before the current-year total of $263M. The General Services Administration's FY2027 to date spending concentrates in construction and IT-related services, led by Commercial and Institutional Building Construction at $57.8M and Computer Systems Design Services at $26M. The General Services Administration's vendor payments in FY2027 to date are concentrated among a handful of firms, led by BLUESTAQ LLC at $24.3M and MATOS-GRUNLEY JOINT VENTURE at $21.4M. This snapshot reflects partial fiscal-year activity and a shift from multibillion-dollar annual totals in prior fiscal years to the current $263M fiscal year to date figure.",
     "sections": [
       {
-        "heading": "How have obligations changed year over year?",
-        "body": "The General Services Administration obligated $162M in FY2027 to date, and obligations are down 99.4% year over year. The General Services Administration recorded much larger full-year totals in prior years: FY26 $28.7B, FY25 $23.8B, FY24 $26.5B, FY23 $23.9B, and FY22 $20.6B. The General Services Administration's FY2027 total is a partial fiscal year figure and should be read as fiscal year to date."
+        "heading": "What is the GSA spending level in FY2027 to date?",
+        "body": "The General Services Administration has obligated $263M in FY2027 to date. The General Services Administration recorded 50,620 awards with an average award size of $5.2K. Obligations fell 99.1% year over year. The General Services Administration's recent annual obligations were $20.6B in FY22, $23.9B in FY23, $26.5B in FY24, $23.8B in FY25, and $28.7B in FY26."
       },
       {
-        "heading": "Which vendors and categories dominate FY2027 to date?",
-        "body": "The General Services Administration's top NAICS category in FY2027 to date is Commercial and Institutional Building Construction at $34.3M, followed by All Other Professional, Scientific, and Technical Services $18.9M and Other Computer Related Services $17.4M. The General Services Administration's top vendors in FY2027 to date are BLUESTAQ LLC $24.3M and MATOS-GRUNLEY JOINT VENTURE $21.4M, with INSURANCE AUTO AUCTIONS, INC. $10.5M and ECS FEDERAL, LLC $10M also in the top five."
+        "heading": "Which categories and vendors lead GSA's FY2027 to date obligations?",
+        "body": "Commercial and Institutional Building Construction leads GSA obligations in FY2027 to date at $57.8M, followed by Computer Systems Design Services at $26M and Other Computer Related Services at $22.6M. The General Services Administration's top vendors in FY2027 to date are BLUESTAQ LLC at $24.3M, MATOS-GRUNLEY JOINT VENTURE at $21.4M, and SCIENCE APPLICATIONS INTERNATIONAL CORPORATION at $12.1M. Several other vendors and NAICS categories each account for single-digit millions in obligations in the current fiscal year to date."
       }
     ]
   },
   "faq": [
     {
       "q": "How much does General Services Administration spend on contracts?",
-      "a": "The General Services Administration obligated $162M in FY2027 to date. The General Services Administration recorded 35,900 awards with an average award size of $4.5K. The General Services Administration's FY2027 figure is a partial, fiscal year to date total, and prior full fiscal years were larger: FY26 $28.7B, FY25 $23.8B, FY24 $26.5B, FY23 $23.9B, FY22 $20.6B."
+      "a": "The General Services Administration has obligated $263M on contracts in FY2027 to date. The General Services Administration executed 50,620 awards with an average award size of $5.2K. Obligations fell 99.1% year over year. Prior full fiscal years show $20.6B in FY22, $23.9B in FY23, $26.5B in FY24, $23.8B in FY25, and $28.7B in FY26."
     },
     {
       "q": "What does General Services Administration buy?",
-      "a": "The General Services Administration buys a mix of construction, professional services, and IT services. The General Services Administration's top NAICS categories in FY2027 to date include Commercial and Institutional Building Construction $34.3M, All Other Professional, Scientific, and Technical Services $18.9M, and Other Computer Related Services $17.4M."
+      "a": "The General Services Administration buys a mix of construction, IT services, professional services, and specialty work in FY2027 to date. Commercial and Institutional Building Construction accounts for $57.8M, Computer Systems Design Services accounts for $26M, Other Computer Related Services accounts for $22.6M, and All Other Professional, Scientific, and Technical Services accounts for $19.7M. The General Services Administration also shows R&D, wholesale trade brokers, consulting, engineering, custom programming, and automobile manufacturing among the top categories."
     },
     {
       "q": "Who are General Services Administration's largest contractors?",
-      "a": "The General Services Administration's largest contractors in FY2027 to date are BLUESTAQ LLC $24.3M and MATOS-GRUNLEY JOINT VENTURE $21.4M. The General Services Administration also awarded to INSURANCE AUTO AUCTIONS, INC. $10.5M, ECS FEDERAL, LLC $10M, and ERNST & YOUNG LLP $8.8M among its top vendors."
+      "a": "The General Services Administration's largest contractors in FY2027 to date are BLUESTAQ LLC, MATOS-GRUNLEY JOINT VENTURE, and SCIENCE APPLICATIONS INTERNATIONAL CORPORATION. BLUESTAQ LLC received $24.3M, MATOS-GRUNLEY JOINT VENTURE received $21.4M, and SCIENCE APPLICATIONS INTERNATIONAL CORPORATION received $12.1M. Other top vendors include INSURANCE AUTO AUCTIONS, INC. at $10.5M, VIVSOFT TECHNOLOGIES LLC at $10.5M, ECS FEDERAL, LLC at $10M, W.W. GRAINGER, INC. at $8.9M, ERNST & YOUNG LLP at $8.8M, CCI FACILITY CONTRACTORS, LLC at $8.7M, and MANTECH ADVANCED SYSTEMS INTERNATIONAL, INC. at $7.2M."
     }
   ],
   "related": [

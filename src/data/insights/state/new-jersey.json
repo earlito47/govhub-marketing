@@ -1,20 +1,20 @@
 {
   "pageType": "state",
   "slug": "new-jersey",
-  "title": "New Jersey: $54.9M in Federal Contracts, FY2027",
+  "title": "New Jersey: $68.5M in Federal Contracts, FY2027",
   "h1": "Federal Contracts in New Jersey: Spending, Agencies & Vendors",
-  "metaDescription": "Federal agencies obligated $54.9M to contractors in New Jersey in FY2027 to date. See top buying agencies, top vendors, and industries.",
-  "updated": "2026-10-19",
+  "metaDescription": "Federal agencies obligated $68.5M to contractors in New Jersey in FY2027 to date. See top buying agencies, top vendors, and industries.",
+  "updated": "2026-10-26",
   "fyWindow": {
     "label": "FY2027 to date",
     "start": "2026-10-01",
-    "end": "2026-10-19"
+    "end": "2026-10-26"
   },
   "stats": {
-    "totalObligations": 54851361.37,
-    "awardCount": 256,
-    "yoyGrowthPct": -99.4,
-    "avgAwardSize": 214263,
+    "totalObligations": 68522493.28,
+    "awardCount": 418,
+    "yoyGrowthPct": -99.3,
+    "avgAwardSize": 163929,
     "smallBusinessSharePct": null
   },
   "charts": [
@@ -40,21 +40,21 @@
             ],
             [
               "FY25",
-              9337063770.13
+              9335596998.63
             ],
             [
               "FY26",
-              9458604725.51
+              9516193157.2
             ],
             [
               "FY27",
-              54851361.37
+              68522493.28
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Obligations fell 99.4% year over year, from $9.5B in FY2026 to $54.9M in FY2027 to date."
+      "takeaway": "Obligations fell 99.3% year over year, from $9.5B in FY2026 to $68.5M in FY2027 to date."
     },
     {
       "id": "new-jersey-top-agencies",
@@ -66,49 +66,49 @@
           "points": [
             [
               "Department of Veterans Affairs",
-              52552708.4
+              53702876.02
             ],
             [
               "Department of Justice",
-              955544.56
+              8276438.35
+            ],
+            [
+              "Department of Agriculture",
+              3000000
             ],
             [
               "General Services Administration",
-              753196.14
+              1332764.28
+            ],
+            [
+              "Department of Defense",
+              926609
+            ],
+            [
+              "Department of Transportation",
+              772507.41
             ],
             [
               "National Aeronautics and Space Administration",
               364573.8
             ],
             [
-              "Department of Transportation",
-              165000
+              "Department of Health and Human Services",
+              106970.64
             ],
             [
               "Department of the Treasury",
               102996.6
             ],
             [
-              "Department of Agriculture",
-              0
-            ],
-            [
-              "Department of Health and Human Services",
-              0
-            ],
-            [
-              "Department of Defense",
-              0
-            ],
-            [
-              "Nuclear Regulatory Commission",
-              -2366.47
+              "Government Accountability Office",
+              87836
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Department of Veterans Affairs was the top federal buyer in New Jersey, obligating $52.6M (95.8% of the state total)."
+      "takeaway": "Department of Veterans Affairs was the top federal buyer in New Jersey, obligating $53.7M (78.4% of the state total)."
     },
     {
       "id": "new-jersey-top-vendors",
@@ -120,19 +120,31 @@
           "points": [
             [
               "CELLCO PARTNERSHIP",
-              28334701.15
+              31364313.66
             ],
             [
               "NOVARTIS PHARMACEUTICALS CORPORATION",
               8350733.42
             ],
             [
+              "UNITED SECURITY INC",
+              3799360
+            ],
+            [
               "DIAGNOSTICA STAGO INC",
-              2465699.28
+              2463715.39
+            ],
+            [
+              "METROPOLITAN SECURITY SERVICES, INC.",
+              2460527.92
             ],
             [
               "NRG BUSINESS MARKETING LLC",
-              2079210
+              2269210
+            ],
+            [
+              "BRACCO DIAGNOSTICS INC.",
+              1618898.45
             ],
             [
               "EVERAS COMMUNITY SERVICES, INC.",
@@ -143,26 +155,14 @@
               1396000
             ],
             [
-              "BRACCO DIAGNOSTICS INC.",
-              1163944.66
-            ],
-            [
-              "RUTGERS THE STATE UNIVERSITY OF NEW JERSEY",
-              919686.28
-            ],
-            [
-              "PATRIOT FIRST PROFESSIONAL SERVICES INC.",
-              835380
-            ],
-            [
-              "CEPHEID",
-              787230.13
+              "ARCADIS U.S., INC.",
+              926609
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "CELLCO PARTNERSHIP led all contractors in New Jersey with $28.3M, 51.7% of the state total."
+      "takeaway": "CELLCO PARTNERSHIP led all contractors in New Jersey with $31.4M, 45.8% of the state total."
     },
     {
       "id": "new-jersey-top-naics",
@@ -178,15 +178,27 @@
             ],
             [
               "Pharmaceutical Preparation Manufacturing",
-              10180867.57
+              10647790.54
+            ],
+            [
+              "Security Guards and Patrol Services",
+              6280407.12
             ],
             [
               "Analytical Laboratory Instrument Manufacturing",
-              3538158.6
+              3536174.71
+            ],
+            [
+              "Wireless Telecommunications Carriers (except Satellite)",
+              3080575.59
             ],
             [
               "Natural Gas Distribution",
-              2079210
+              2269210
+            ],
+            [
+              "Engineering Services",
+              2149533.7
             ],
             [
               "Telephone Answering Services",
@@ -199,18 +211,6 @@
             [
               "Colleges, Universities, and Professional Schools",
               919686.28
-            ],
-            [
-              "Temporary Shelters",
-              835380
-            ],
-            [
-              "Landscape Architectural Services",
-              704520
-            ],
-            [
-              "Instrument Manufacturing for Measuring and Testing Electricity and Electrical Signals",
-              699449.64
             ]
           ]
         }
@@ -229,16 +229,24 @@
       "href": "/insights/agency/department-of-justice/"
     },
     {
+      "label": "Department of Agriculture contracts",
+      "href": "/insights/agency/department-of-agriculture/"
+    },
+    {
       "label": "General Services Administration contracts",
       "href": "/insights/agency/general-services-administration/"
     },
     {
-      "label": "National Aeronautics and Space Administration contracts",
-      "href": "/insights/agency/national-aeronautics-and-space-administration/"
-    },
-    {
       "label": "NAICS 325412: Pharmaceutical Preparation Manufacturing",
       "href": "/insights/naics/325412/"
+    },
+    {
+      "label": "NAICS 561612: Security Guards and Patrol Services",
+      "href": "/insights/naics/561612/"
+    },
+    {
+      "label": "NAICS 541330: Engineering Services",
+      "href": "/insights/naics/541330/"
     }
   ],
   "tables": [
@@ -256,7 +264,7 @@
             "text": "CELLCO PARTNERSHIP",
             "href": "https://www.usaspending.gov/recipient/f02045e8-ef98-57c5-2968-cd9f60dbc24a-C/latest/"
           },
-          28334701.15
+          31364313.66
         ],
         [
           2,
@@ -269,34 +277,34 @@
         [
           3,
           {
-            "text": "DIAGNOSTICA STAGO INC",
-            "href": "https://www.usaspending.gov/recipient/d6d73cb9-3540-60bd-8d21-885b139452c7-C/latest/"
+            "text": "UNITED SECURITY INC",
+            "href": "https://www.usaspending.gov/recipient/9cc13066-2778-db15-1a65-ea61ff256996-C/latest/"
           },
-          2465699.28
+          3799360
         ],
         [
           4,
           {
-            "text": "NRG BUSINESS MARKETING LLC",
-            "href": "https://www.usaspending.gov/recipient/393afccd-128a-8d77-526a-eca9abb2e560-C/latest/"
+            "text": "DIAGNOSTICA STAGO INC",
+            "href": "https://www.usaspending.gov/recipient/d6d73cb9-3540-60bd-8d21-885b139452c7-C/latest/"
           },
-          2079210
+          2463715.39
         ],
         [
           5,
           {
-            "text": "EVERAS COMMUNITY SERVICES, INC.",
-            "href": "https://www.usaspending.gov/recipient/43b51124-794f-2bd1-4751-06536db95d34-C/latest/"
+            "text": "METROPOLITAN SECURITY SERVICES, INC.",
+            "href": "https://www.usaspending.gov/recipient/835e42fb-f461-4e30-e17e-3205a1805635-C/latest/"
           },
-          1510188.12
+          2460527.92
         ],
         [
           6,
           {
-            "text": "PDS CONSULTANTS, INC",
-            "href": "https://www.usaspending.gov/recipient/ce4a7714-d97d-ddd7-307e-6b02b759368b-C/latest/"
+            "text": "NRG BUSINESS MARKETING LLC",
+            "href": "https://www.usaspending.gov/recipient/393afccd-128a-8d77-526a-eca9abb2e560-C/latest/"
           },
-          1396000
+          2269210
         ],
         [
           7,
@@ -304,31 +312,31 @@
             "text": "BRACCO DIAGNOSTICS INC.",
             "href": "https://www.usaspending.gov/recipient/e103efa2-fe55-8048-1dd1-bf1518ef9c56-C/latest/"
           },
-          1163944.66
+          1618898.45
         ],
         [
           8,
           {
-            "text": "RUTGERS THE STATE UNIVERSITY OF NEW JERSEY",
-            "href": "https://www.usaspending.gov/recipient/f360f59f-4329-903a-affb-d7870b1503be-C/latest/"
+            "text": "EVERAS COMMUNITY SERVICES, INC.",
+            "href": "https://www.usaspending.gov/recipient/43b51124-794f-2bd1-4751-06536db95d34-C/latest/"
           },
-          919686.28
+          1510188.12
         ],
         [
           9,
           {
-            "text": "PATRIOT FIRST PROFESSIONAL SERVICES INC.",
-            "href": "https://www.usaspending.gov/recipient/808bf1e6-5f5c-ce3c-dd1e-fe89cd6ed30f-C/latest/"
+            "text": "PDS CONSULTANTS, INC",
+            "href": "https://www.usaspending.gov/recipient/ce4a7714-d97d-ddd7-307e-6b02b759368b-C/latest/"
           },
-          835380
+          1396000
         ],
         [
           10,
           {
-            "text": "CEPHEID",
-            "href": "https://www.usaspending.gov/recipient/f6397cdb-c833-3628-6fb3-a38803b567f6-C/latest/"
+            "text": "ARCADIS U.S., INC.",
+            "href": "https://www.usaspending.gov/recipient/1bad1781-4549-cd5a-26de-74dfba46a7a6-C/latest/"
           },
-          787230.13
+          926609
         ]
       ]
     },
@@ -344,6 +352,15 @@
         [
           1,
           {
+            "text": "THE TRUSTEES OF PRINCETON UNIVERSITY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_DEAC0209CH11466_8900_-NONE-_-NONE-/"
+          },
+          2226122975.23,
+          "Department of Energy"
+        ],
+        [
+          2,
+          {
             "text": "CELLCO PARTNERSHIP",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C10B23C0015_3600_-NONE-_-NONE-/"
           },
@@ -351,7 +368,25 @@
           "Department of Veterans Affairs"
         ],
         [
-          2,
+          3,
+          {
+            "text": "MANAGEMENT & TRAINING CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_1605JE22C0014_1605_-NONE-_-NONE-/"
+          },
+          76710524.87,
+          "Department of Labor"
+        ],
+        [
+          4,
+          {
+            "text": "CLEAR LINCS LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_47PA0026F0008_4740_47PJ0022D0006_4740/"
+          },
+          41104522.98,
+          "General Services Administration"
+        ],
+        [
+          5,
           {
             "text": "DISTRIBUTED SOLUTIONS, INC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C10B23F0009_3600_47QTCA18D0095_4732/"
@@ -360,7 +395,52 @@
           "Department of Veterans Affairs"
         ],
         [
-          3,
+          6,
+          {
+            "text": "HANA INDUSTRIES, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_692M1521C00006_6920_-NONE-_-NONE-/"
+          },
+          27650643.03,
+          "Department of Transportation"
+        ],
+        [
+          7,
+          {
+            "text": "DIAKON SOLUTIONS LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_692M1522F00150_6920_DTFAWA11A00046_6920/"
+          },
+          22585675.52,
+          "Department of Transportation"
+        ],
+        [
+          8,
+          {
+            "text": "CELLCO PARTNERSHIP",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_12314426F0005_1205_12314426A0003_1205/"
+          },
+          16742866.84,
+          "Department of Agriculture"
+        ],
+        [
+          9,
+          {
+            "text": "ARCADIS U.S., INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W912DQ21F3052_9700_W912DQ21D3001_9700/"
+          },
+          15727531,
+          "Department of Defense"
+        ],
+        [
+          10,
+          {
+            "text": "SHEELA, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_47PC0323F0010_4740_47PC0220D0009_4740/"
+          },
+          14236649.49,
+          "General Services Administration"
+        ],
+        [
+          11,
           {
             "text": "TABATCHNICK FINE FOODS INC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_123J1426F1748_12K2_123J1426D0022_12K2/"
@@ -369,7 +449,16 @@
           "Department of Agriculture"
         ],
         [
-          4,
+          12,
+          {
+            "text": "BCT PARTNERS LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75P00122F37007_7570_HHSP233201500135I_7555/"
+          },
+          11726516.04,
+          "Department of Health and Human Services"
+        ],
+        [
+          13,
           {
             "text": "TABATCHNICK FINE FOODS INC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_123J1426C1466_12K2_-NONE-_-NONE-/"
@@ -378,7 +467,25 @@
           "Department of Agriculture"
         ],
         [
-          5,
+          14,
+          {
+            "text": "ADVANCED SCIENCES AND TECHNOLOGIES, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_692M1523F00005_6920_DTFAWA10A00192_6920/"
+          },
+          10125441.13,
+          "Department of Transportation"
+        ],
+        [
+          15,
+          {
+            "text": "AMENTUM ENVIRONMENT & ENERGY, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_692M1525F00003_6920_692M1521D00005_6920/"
+          },
+          8859848.61,
+          "Department of Transportation"
+        ],
+        [
+          16,
           {
             "text": "VERACITY ENGINEERING LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_692M1526F00059_6920_693KA822D00020_6920/"
@@ -387,7 +494,7 @@
           "Department of Transportation"
         ],
         [
-          6,
+          17,
           {
             "text": "NOREAS APTIM ENVIRONMENTAL REMEDIATION JV",
             "href": "https://www.usaspending.gov/award/CONT_AWD_W912DQ23F3002_9700_W912DW19D1023_9700/"
@@ -396,7 +503,7 @@
           "Department of Defense"
         ],
         [
-          7,
+          18,
           {
             "text": "TRANSACTION NETWORK SERVICES, INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_47QTCB20C0002_4732_-NONE-_-NONE-/"
@@ -405,7 +512,16 @@
           "General Services Administration"
         ],
         [
-          8,
+          19,
+          {
+            "text": "JVN COMMUNICATIONS INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_692M1525F00119_6920_692M1520D00008_6920/"
+          },
+          6542469.29,
+          "Department of Transportation"
+        ],
+        [
+          20,
           {
             "text": "EVERAS COMMUNITY SERVICES, INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C24224C0005_3600_-NONE-_-NONE-/"
@@ -414,7 +530,16 @@
           "Department of Veterans Affairs"
         ],
         [
-          9,
+          21,
+          {
+            "text": "SIGNATURE SCIENCE LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70RSAT24FR0000045_7001_70RSAT23D00000003_7001/"
+          },
+          5555948.49,
+          "Department of Homeland Security"
+        ],
+        [
+          22,
           {
             "text": "ENGINEERING AND INFORMATION TECHNOLOGIES, INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_692M1521F00278_6920_692M1521D00008_6920/"
@@ -423,7 +548,16 @@
           "Department of Transportation"
         ],
         [
-          10,
+          23,
+          {
+            "text": "VERSAR SECURITY SYSTEMS, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_693KA820F00012_6920_693KA818D00017_6920/"
+          },
+          4372688.89,
+          "Department of Transportation"
+        ],
+        [
+          24,
           {
             "text": "MICROTECHNOLOGIES LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C10B26F0091_3600_NNG15SC42B_8000/"
@@ -432,168 +566,42 @@
           "Department of Veterans Affairs"
         ],
         [
-          11,
+          25,
           {
             "text": "NOVARTIS PHARMACEUTICALS CORPORATION",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C26226N0112_3600_36F79720D0180_3600/"
           },
           4299446.99,
           "Department of Veterans Affairs"
-        ],
-        [
-          12,
-          {
-            "text": "ENGINEERING AND INFORMATION TECHNOLOGIES, INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_692M1521F00279_6920_692M1521D00008_6920/"
-          },
-          4122080.46,
-          "Department of Transportation"
-        ],
-        [
-          13,
-          {
-            "text": "NOVARTIS PHARMACEUTICALS CORPORATION",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C26127N0063_3600_36F79720D0180_3600/"
-          },
-          4115311.2,
-          "Department of Veterans Affairs"
-        ],
-        [
-          14,
-          {
-            "text": "RUTGERS THE STATE UNIVERSITY OF NEW JERSEY",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C24222C0012_3600_-NONE-_-NONE-/"
-          },
-          3934892.78,
-          "Department of Veterans Affairs"
-        ],
-        [
-          15,
-          {
-            "text": "CORESIVITY INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C24222P0861_3600_-NONE-_-NONE-/"
-          },
-          3649310.87,
-          "Department of Veterans Affairs"
-        ],
-        [
-          16,
-          {
-            "text": "DISTRICT VETERANS CONTRACTING, INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_70Z08326FCMAY0004_7008_70Z08318DPCR07100_7008/"
-          },
-          3597280.92,
-          "Department of Homeland Security"
-        ],
-        [
-          17,
-          {
-            "text": "NORTHEAST TOMATO COMPANY",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_123J1426C1231_12K2_-NONE-_-NONE-/"
-          },
-          3230726.88,
-          "Department of Agriculture"
-        ],
-        [
-          18,
-          {
-            "text": "MATHEMATICA INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_75FCMC25FJ093_7530_75FCMC19D0091_7530/"
-          },
-          2741954,
-          "Department of Health and Human Services"
-        ],
-        [
-          19,
-          {
-            "text": "UNITED ENERGY TRADING, LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_80GRC024CA040_8000_-NONE-_-NONE-/"
-          },
-          2512870.26,
-          "National Aeronautics and Space Administration"
-        ],
-        [
-          20,
-          {
-            "text": "NORTHEAST TOMATO COMPANY",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_123J1426C1608_12K2_-NONE-_-NONE-/"
-          },
-          2364237.98,
-          "Department of Agriculture"
-        ],
-        [
-          21,
-          {
-            "text": "NRG BUSINESS MARKETING LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C24226F0009_3600_47PA0425D0005_4740/"
-          },
-          2247840,
-          "Department of Veterans Affairs"
-        ],
-        [
-          22,
-          {
-            "text": "PHILIPS NORTH AMERICA LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C24223F0075_3600_VA797H17D0022_3600/"
-          },
-          2154347.88,
-          "Department of Veterans Affairs"
-        ],
-        [
-          23,
-          {
-            "text": "REES SCIENTIFIC CORPORATION",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C24925F0073_3600_GS07F248AA_4732/"
-          },
-          2098348.92,
-          "Department of Veterans Affairs"
-        ],
-        [
-          24,
-          {
-            "text": "DYNATEST US INC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_692M1522C00014_6920_-NONE-_-NONE-/"
-          },
-          1946828.53,
-          "Department of Transportation"
-        ],
-        [
-          25,
-          {
-            "text": "NRG BUSINESS MARKETING LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C24226F0010_3600_47PA0425D0007_4740/"
-          },
-          1910580,
-          "Department of Veterans Affairs"
         ]
       ]
     }
   ],
   "narrative": {
-    "intro": "New Jersey received $54.9M in federal contract obligations in FY2027 to date. The state recorded 256 awards with an average award size of $214K and obligations fell 99.4% year over year. Historical annual obligations show much larger totals in prior years: FY22 $9.3B, FY23 $9.2B, FY24 $9.8B, FY25 $9.3B, and FY26 $9.5B. The Department of Veterans Affairs is the dominant buying agency in FY2027 to date with $52.6M. CELLCO PARTNERSHIP is the largest vendor in FY2027 to date with $28.3M, followed by NOVARTIS PHARMACEUTICALS CORPORATION with $8.4M and DIAGNOSTICA STAGO INC with $2.5M. Wireless Telecommunications Carriers (except Satellite) is the largest industry by obligations in FY2027 to date with $28.3M, followed by Pharmaceutical Preparation Manufacturing with $10.2M and Analytical Laboratory Instrument Manufacturing with $3.5M. The current fiscal year totals are partial because the period is FY2027 to date.",
+    "intro": "New Jersey federal contract obligations totaled $68.5M in FY2027 to date. The federal government issued 418 awards in the state and the average award size was $164K. New Jersey federal contract obligations fell 99.3% year over year. The Department of Veterans Affairs accounted for the largest share of FY2027 to date obligations at $53.7M. CELLCO PARTNERSHIP was the single largest vendor, receiving $31.4M, and Wireless Telecommunications Carriers (except Satellite) was the largest NAICS industry with $28.3M in obligations. The FY22 to FY26 historical series shows multi-year obligations near $9.2B to $9.8B, and FY27 to date stands apart at $68.5M. These figures are fiscal year to date totals and represent contract obligations only.",
     "sections": [
       {
-        "heading": "Why did obligations drop so sharply in FY2027 to date?",
-        "body": "Obligations fell 99.4% year over year in FY2027 to date. The Department of Veterans Affairs accounted for $52.6M of the $54.9M total in FY2027 to date, concentrating most buying activity. Prior fiscal years each showed multi-billion dollar totals, so the FY2027 to date figure represents a much smaller slice of typical annual obligations. The current-year totals are partial because the period is FY2027 to date."
+        "heading": "What changed in FY2027 to date versus prior years?",
+        "body": "New Jersey federal contract obligations fell 99.3% year over year. FY27 to date obligations are $68.5M compared with prior fiscal years that ranged from $9.2B to $9.8B. The award count in FY27 to date is 418 and the average award size is $164K. This fiscal year to date snapshot is a partial total."
       },
       {
-        "heading": "Which agencies, vendors, and industries dominated New Jersey in FY2027 to date?",
-        "body": "The Department of Veterans Affairs led buying agencies with $52.6M in FY2027 to date. CELLCO PARTNERSHIP led vendors with $28.3M, and Wireless Telecommunications Carriers (except Satellite) led industries with $28.3M. Other notable vendors and industries include NOVARTIS PHARMACEUTICALS CORPORATION with $8.4M and Pharmaceutical Preparation Manufacturing with $10.2M."
+        "heading": "Where are FY2027 to date obligations concentrated in New Jersey?",
+        "body": "The Department of Veterans Affairs obligated $53.7M, the largest buying agency in FY2027 to date. CELLCO PARTNERSHIP received $31.4M and Wireless Telecommunications Carriers (except Satellite) received $28.3M, which are the largest vendor and industry concentrations respectively. Other sizable agency obligations include the Department of Justice at $8.3M and the Department of Agriculture at $3M."
       }
     ]
   },
   "faq": [
     {
       "q": "How much federal contract money goes to New Jersey?",
-      "a": "New Jersey received $54.9M in federal contract obligations in FY2027 to date. The state recorded 256 awards with an average award size of $214K. Historical annual obligations were much larger: FY22 $9.3B, FY23 $9.2B, FY24 $9.8B, FY25 $9.3B, and FY26 $9.5B. The current-year totals are partial because the period is FY2027 to date."
+      "a": "New Jersey received $68.5M in federal contract obligations in FY2027 to date. The state saw 418 awards and the average award size was $164K. New Jersey federal contract obligations fell 99.3% year over year."
     },
     {
       "q": "Which agencies award the most contracts in New Jersey?",
-      "a": "The Department of Veterans Affairs awards the most contracts in New Jersey in FY2027 to date. The Department of Veterans Affairs obligated $52.6M. Other agencies with obligations in FY2027 to date include the Department of Justice with $956K and the General Services Administration with $753K."
+      "a": "The Department of Veterans Affairs awarded $53.7M, the most in FY2027 to date. The Department of Justice awarded $8.3M and the Department of Agriculture awarded $3M. Other top buying agencies include the General Services Administration at $1.3M and the Department of Defense at $927K."
     },
     {
       "q": "Who are the largest federal contractors in New Jersey?",
-      "a": "CELLCO PARTNERSHIP is the largest federal contractor in New Jersey in FY2027 to date. CELLCO PARTNERSHIP received $28.3M. Other large contractors in FY2027 to date include NOVARTIS PHARMACEUTICALS CORPORATION with $8.4M and DIAGNOSTICA STAGO INC with $2.5M."
+      "a": "CELLCO PARTNERSHIP was the largest federal contractor in New Jersey with $31.4M in FY2027 to date. NOVARTIS PHARMACEUTICALS CORPORATION received $8.4M and UNITED SECURITY INC received $3.8M. Additional top vendors include DIAGNOSTICA STAGO INC at $2.5M and METROPOLITAN SECURITY SERVICES, INC. at $2.5M."
     }
   ],
   "related": [

@@ -1,20 +1,20 @@
 {
   "pageType": "naics",
   "slug": "541512",
-  "title": "NAICS 541512 Government Contracts: $52.7M in FY2027",
+  "title": "NAICS 541512 Government Contracts: $254M in FY2027",
   "h1": "Computer Systems Design Services (NAICS 541512): Federal Contract Market",
-  "metaDescription": "Federal agencies obligated $52.7M on Computer Systems Design Services (NAICS 541512) in FY2027 to date. See top vendors, top agencies, and trends.",
-  "updated": "2026-10-19",
+  "metaDescription": "Federal agencies obligated $254M on Computer Systems Design Services (NAICS 541512) in FY2027 to date. See top vendors, top agencies, and trends.",
+  "updated": "2026-10-26",
   "fyWindow": {
     "label": "FY2027 to date",
     "start": "2026-10-01",
-    "end": "2026-10-19"
+    "end": "2026-10-26"
   },
   "stats": {
-    "totalObligations": 52700478.06,
-    "awardCount": 170,
-    "yoyGrowthPct": -99.8,
-    "avgAwardSize": 310003,
+    "totalObligations": 253603915.25,
+    "awardCount": 285,
+    "yoyGrowthPct": -99.2,
+    "avgAwardSize": 889838,
     "smallBusinessSharePct": null
   },
   "charts": [
@@ -28,33 +28,33 @@
           "points": [
             [
               "FY22",
-              29881163550.58
+              29910720888.44
             ],
             [
               "FY23",
-              30497590425.98
+              30528155574.38
             ],
             [
               "FY24",
-              33336710988.41
+              33365393638.39
             ],
             [
               "FY25",
-              31672203809.76
+              31695963350.49
             ],
             [
               "FY26",
-              31099134366.17
+              31296222430.53
             ],
             [
               "FY27",
-              52700478.06
+              253603915.25
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Obligations fell 99.8% year over year, from $31.1B in FY2026 to $52.7M in FY2027 to date."
+      "takeaway": "Obligations fell 99.2% year over year, from $31.3B in FY2026 to $254M in FY2027 to date."
     },
     {
       "id": "541512-top-agencies",
@@ -65,50 +65,50 @@
           "label": "Obligations",
           "points": [
             [
+              "Department of Veterans Affairs",
+              170253275.31
+            ],
+            [
               "Department of Commerce",
-              25865199.49
-            ],
-            [
-              "Department of Transportation",
-              19288028
-            ],
-            [
-              "Department of Homeland Security",
-              11217126.74
+              26049185.49
             ],
             [
               "General Services Administration",
-              10375177.25
+              26028949.79
             ],
             [
-              "Department of Veterans Affairs",
-              7207373.37
+              "Department of Homeland Security",
+              24179872.65
+            ],
+            [
+              "Department of Transportation",
+              21928949.53
+            ],
+            [
+              "Government Accountability Office",
+              20722679.2
+            ],
+            [
+              "Department of the Interior",
+              9321253.32
             ],
             [
               "Environmental Protection Agency",
-              5025209.16
-            ],
-            [
-              "National Aeronautics and Space Administration",
-              1664381.31
-            ],
-            [
-              "Department of Agriculture",
-              1515847.96
+              5629209.16
             ],
             [
               "Department of the Treasury",
-              1361067.7
+              4137378.17
             ],
             [
               "Consumer Financial Protection Bureau",
-              1181962.08
+              2365220.48
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Department of Commerce was the top buyer, obligating $25.9M (49.1% of all obligations)."
+      "takeaway": "Department of Veterans Affairs was the top buyer, obligating $170M (67.1% of all obligations)."
     },
     {
       "id": "541512-top-vendors",
@@ -119,8 +119,28 @@
           "label": "Obligations",
           "points": [
             [
+              "ACCENTURE FEDERAL SERVICES LLC",
+              166883989.17
+            ],
+            [
+              "SCIENCE APPLICATIONS INTERNATIONAL CORPORATION",
+              24190823.87
+            ],
+            [
               "GENERAL DYNAMICS INFORMATION TECHNOLOGY, INC.",
-              20456071.12
+              18771888.9
+            ],
+            [
+              "MANTECH ADVANCED SYSTEMS INTERNATIONAL, INC.",
+              15072204.99
+            ],
+            [
+              "DELOITTE CONSULTING LLP",
+              13415931.62
+            ],
+            [
+              "VIVSOFT TECHNOLOGIES LLC",
+              10473394.73
             ],
             [
               "ECS FEDERAL, LLC",
@@ -128,59 +148,39 @@
             ],
             [
               "HALVIK LLC",
-              9374262.71
-            ],
-            [
-              "ACCENTURE FEDERAL SERVICES LLC",
-              9275897.69
+              9558248.71
             ],
             [
               "BOOZ ALLEN HAMILTON INC",
-              9135905.53
+              9216642.23
             ],
             [
-              "SPATIAL FRONT INC",
-              6544719.65
-            ],
-            [
-              "STELLA JV, LLC",
-              5981676.48
-            ],
-            [
-              "DESIGN INTERACTIVE, LLC",
-              3376721.74
-            ],
-            [
-              "VALIANT SOLUTIONS, LLC",
-              3035091.14
-            ],
-            [
-              "IT CADRE LLC",
-              2338255.2
+              "INTUITIVE INFORMATION SYSTEMS TECHNOLOGIES LLC",
+              7154398.21
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "GENERAL DYNAMICS INFORMATION TECHNOLOGY, INC. led all vendors with $20.5M in obligations, 38.8% of the market."
+      "takeaway": "ACCENTURE FEDERAL SERVICES LLC led all vendors with $167M in obligations, 65.8% of the market."
     }
   ],
   "crossLinks": [
+    {
+      "label": "Department of Veterans Affairs contracts",
+      "href": "/insights/agency/department-of-veterans-affairs/"
+    },
     {
       "label": "Department of Commerce contracts",
       "href": "/insights/agency/department-of-commerce/"
     },
     {
-      "label": "Department of Transportation contracts",
-      "href": "/insights/agency/department-of-transportation/"
+      "label": "General Services Administration contracts",
+      "href": "/insights/agency/general-services-administration/"
     },
     {
       "label": "Department of Homeland Security contracts",
       "href": "/insights/agency/department-of-homeland-security/"
-    },
-    {
-      "label": "General Services Administration contracts",
-      "href": "/insights/agency/general-services-administration/"
     }
   ],
   "tables": [
@@ -195,13 +195,53 @@
         [
           1,
           {
-            "text": "GENERAL DYNAMICS INFORMATION TECHNOLOGY, INC.",
-            "href": "https://www.usaspending.gov/recipient/455555be-773d-eab1-1e6b-7b94400b757e-C/latest/"
+            "text": "ACCENTURE FEDERAL SERVICES LLC",
+            "href": "https://www.usaspending.gov/recipient/d41a6b8a-9d6a-0d28-7e24-989e31731aad-C/latest/"
           },
-          20456071.12
+          166883989.17
         ],
         [
           2,
+          {
+            "text": "SCIENCE APPLICATIONS INTERNATIONAL CORPORATION",
+            "href": "https://www.usaspending.gov/recipient/20af0683-f17d-1f8f-38ee-2f11bd124559-C/latest/"
+          },
+          24190823.87
+        ],
+        [
+          3,
+          {
+            "text": "GENERAL DYNAMICS INFORMATION TECHNOLOGY, INC.",
+            "href": "https://www.usaspending.gov/recipient/455555be-773d-eab1-1e6b-7b94400b757e-C/latest/"
+          },
+          18771888.9
+        ],
+        [
+          4,
+          {
+            "text": "MANTECH ADVANCED SYSTEMS INTERNATIONAL, INC.",
+            "href": "https://www.usaspending.gov/recipient/ceac1920-9ceb-17a6-9bf7-026817a02917-C/latest/"
+          },
+          15072204.99
+        ],
+        [
+          5,
+          {
+            "text": "DELOITTE CONSULTING LLP",
+            "href": "https://www.usaspending.gov/recipient/92663aec-4451-0476-502b-d8c6919e98e0-C/latest/"
+          },
+          13415931.62
+        ],
+        [
+          6,
+          {
+            "text": "VIVSOFT TECHNOLOGIES LLC",
+            "href": "https://www.usaspending.gov/recipient/3411847e-507d-a36a-9219-e0610ba0c691-C/latest/"
+          },
+          10473394.73
+        ],
+        [
+          7,
           {
             "text": "ECS FEDERAL, LLC",
             "href": "https://www.usaspending.gov/recipient/ed304eb7-3464-d0e8-d3b2-66199b0e0fcb-C/latest/"
@@ -209,68 +249,28 @@
           9959445.42
         ],
         [
-          3,
+          8,
           {
             "text": "HALVIK LLC",
             "href": "https://www.usaspending.gov/recipient/2ed31089-b7b4-7b1f-a182-2c09a533d721-C/latest/"
           },
-          9374262.71
-        ],
-        [
-          4,
-          {
-            "text": "ACCENTURE FEDERAL SERVICES LLC",
-            "href": "https://www.usaspending.gov/recipient/d41a6b8a-9d6a-0d28-7e24-989e31731aad-C/latest/"
-          },
-          9275897.69
-        ],
-        [
-          5,
-          {
-            "text": "BOOZ ALLEN HAMILTON INC",
-            "href": "https://www.usaspending.gov/recipient/ffca72e5-fba2-798a-6969-2a6c45e9f985-C/latest/"
-          },
-          9135905.53
-        ],
-        [
-          6,
-          {
-            "text": "SPATIAL FRONT INC",
-            "href": "https://www.usaspending.gov/recipient/f702b7a6-2200-5cd4-c840-cdab470fcb25-C/latest/"
-          },
-          6544719.65
-        ],
-        [
-          7,
-          {
-            "text": "STELLA JV, LLC",
-            "href": "https://www.usaspending.gov/recipient/c7dacd25-c9ff-299e-dfa1-bb2b6494cfb3-C/latest/"
-          },
-          5981676.48
-        ],
-        [
-          8,
-          {
-            "text": "DESIGN INTERACTIVE, LLC",
-            "href": "https://www.usaspending.gov/recipient/1f27c297-9656-b5f4-d8b7-152b0ebeb741-C/latest/"
-          },
-          3376721.74
+          9558248.71
         ],
         [
           9,
           {
-            "text": "VALIANT SOLUTIONS, LLC",
-            "href": "https://www.usaspending.gov/recipient/0eb731a1-05a5-3ded-505b-64c2af785b40-C/latest/"
+            "text": "BOOZ ALLEN HAMILTON INC",
+            "href": "https://www.usaspending.gov/recipient/ffca72e5-fba2-798a-6969-2a6c45e9f985-C/latest/"
           },
-          3035091.14
+          9216642.23
         ],
         [
           10,
           {
-            "text": "IT CADRE LLC",
-            "href": "https://www.usaspending.gov/recipient/06205aa1-7a48-5d67-e8b6-f7cce8328f9b-C/latest/"
+            "text": "INTUITIVE INFORMATION SYSTEMS TECHNOLOGIES LLC",
+            "href": "https://www.usaspending.gov/recipient/e6bca4a5-7d65-62f1-396f-87b6552974b2-C/latest/"
           },
-          2338255.2
+          7154398.21
         ]
       ]
     },
@@ -287,13 +287,67 @@
           1,
           {
             "text": "BOOZ ALLEN HAMILTON INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10B21N10150056_3600_VA11816D1015_3600/"
+          },
+          1138891386.64,
+          "Department of Veterans Affairs"
+        ],
+        [
+          2,
+          {
+            "text": "CACI, INC. - FEDERAL",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_47QFRA24F0005_4732_47QTCK18D0009_4732/"
+          },
+          977906126.78,
+          "General Services Administration"
+        ],
+        [
+          3,
+          {
+            "text": "BOOZ ALLEN HAMILTON INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_47QFRA24F0006_4732_47QTCK18D0004_4732/"
+          },
+          710558512.24,
+          "General Services Administration"
+        ],
+        [
+          4,
+          {
+            "text": "SCIENCE APPLICATIONS INTERNATIONAL CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70B04C20F00001359_7014_47QTCK18D0001_4732/"
+          },
+          615468205.02,
+          "Department of Homeland Security"
+        ],
+        [
+          5,
+          {
+            "text": "GENERAL DYNAMICS INFORMATION TECHNOLOGY, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_47QFMA21F0003_4732_47QTCK18D0003_4732/"
+          },
+          575507884.38,
+          "General Services Administration"
+        ],
+        [
+          6,
+          {
+            "text": "BOOZ ALLEN HAMILTON INC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_47QFCA23F0058_4732_47QTCK18D0004_4732/"
           },
           561184437.17,
           "General Services Administration"
         ],
         [
-          2,
+          7,
+          {
+            "text": "LEIDOS, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_GSQ0017AJ0079_4732_GS00Q09BGD0039_4735/"
+          },
+          540310875.81,
+          "General Services Administration"
+        ],
+        [
+          8,
           {
             "text": "WELLPOINT FEDERAL SOLUTIONS, INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_HHSM500201700002C_7530_-NONE-_-NONE-/"
@@ -302,7 +356,7 @@
           "Department of Health and Human Services"
         ],
         [
-          3,
+          9,
           {
             "text": "GUIDEHOUSE INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_140D0423F0882_1406_HHSN316201200040W_7529/"
@@ -311,16 +365,34 @@
           "Department of the Interior"
         ],
         [
-          4,
+          10,
+          {
+            "text": "DELOITTE CONSULTING LLP",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10B24F0237_3600_47QTCK18D0029_4732/"
+          },
+          416988484.17,
+          "Department of Veterans Affairs"
+        ],
+        [
+          11,
           {
             "text": "ACCENTURE FEDERAL SERVICES LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_12314418F0020_1205_HHSN316201200002W_7529/"
           },
-          369005149.99,
+          369247718.81,
           "Department of Agriculture"
         ],
         [
-          5,
+          12,
+          {
+            "text": "CGI FEDERAL INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_47QFRA20F0021_4732_47QTCK18D0022_4732/"
+          },
+          332611854.93,
+          "General Services Administration"
+        ],
+        [
+          13,
           {
             "text": "EMPOWER AI, INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_47QFCA21F0014_4732_47QTCK18D0055_4732/"
@@ -329,7 +401,7 @@
           "General Services Administration"
         ],
         [
-          6,
+          14,
           {
             "text": "MAXIMUS FEDERAL SERVICES, INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_91003125C0011_9100_-NONE-_-NONE-/"
@@ -338,7 +410,25 @@
           "Department of Education"
         ],
         [
-          7,
+          15,
+          {
+            "text": "MANTECH ADVANCED SYSTEMS INTERNATIONAL, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_47QFCA24F0032_4732_47QTCK18D0031_4732/"
+          },
+          287527423.82,
+          "General Services Administration"
+        ],
+        [
+          16,
+          {
+            "text": "ACCENTURE FEDERAL SERVICES LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70B04C23F00000074_7014_47QTCK18D0036_4732/"
+          },
+          277857783.13,
+          "Department of Homeland Security"
+        ],
+        [
+          17,
           {
             "text": "CACI, INC. - FEDERAL",
             "href": "https://www.usaspending.gov/award/CONT_AWD_80TECH24CA002_8000_-NONE-_-NONE-/"
@@ -347,7 +437,16 @@
           "National Aeronautics and Space Administration"
         ],
         [
-          8,
+          18,
+          {
+            "text": "ACCENTURE FEDERAL SERVICES LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10B26F0033_3600_47QTCK18D0036_4732/"
+          },
+          259955070.51,
+          "Department of Veterans Affairs"
+        ],
+        [
+          19,
           {
             "text": "MANTECH ADVANCED SYSTEMS INTERNATIONAL, INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_70B04C20F00001357_7014_47QTCK18D0031_4732/"
@@ -356,7 +455,7 @@
           "Department of Homeland Security"
         ],
         [
-          9,
+          20,
           {
             "text": "ECS FEDERAL, LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_47QFRA24F0012_4732_47QTCK18D0047_4732/"
@@ -365,7 +464,7 @@
           "General Services Administration"
         ],
         [
-          10,
+          21,
           {
             "text": "MAXIMUS FEDERAL TECHNOLOGY SOLUTIONS, LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_50310221F0112_5000_50310218D0027_5000/"
@@ -374,7 +473,7 @@
           "Securities and Exchange Commission"
         ],
         [
-          11,
+          22,
           {
             "text": "CGI FEDERAL INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_47QFRA24F0007_4732_47QTCK18D0022_4732/"
@@ -383,7 +482,16 @@
           "General Services Administration"
         ],
         [
-          12,
+          23,
+          {
+            "text": "ACCENTURE FEDERAL SERVICES LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_89603024F0002_8960_89303019AIM000005_8900/"
+          },
+          141917148.24,
+          "Department of Energy"
+        ],
+        [
+          24,
           {
             "text": "MANTECH ADVANCED SYSTEMS INTERNATIONAL, INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_47QFRA24F0008_4732_47QTCK18D0031_4732/"
@@ -392,121 +500,13 @@
           "General Services Administration"
         ],
         [
-          13,
+          25,
           {
             "text": "GENERAL DYNAMICS INFORMATION TECHNOLOGY, INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_47QFMA25F0016_4732_47QTCK18D0003_4732/"
           },
           120247097.4,
           "General Services Administration"
-        ],
-        [
-          14,
-          {
-            "text": "IT CONCEPTS, INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_28321321FA0010272_2800_28321320A00040024_2800/"
-          },
-          118377479.62,
-          "Social Security Administration"
-        ],
-        [
-          15,
-          {
-            "text": "ADG-REI TECHNOLOGY VENTURES, LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_70SBUR22F00000112_7003_75N98120D00031_7529/"
-          },
-          109512195.47,
-          "Department of Homeland Security"
-        ],
-        [
-          16,
-          {
-            "text": "BOOZ ALLEN HAMILTON INC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_47QFAA20F0023_4732_47QTCK18D0004_4732/"
-          },
-          97885486.86,
-          "General Services Administration"
-        ],
-        [
-          17,
-          {
-            "text": "GENERAL DYNAMICS INFORMATION TECHNOLOGY, INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_75FCMC22F0001_7530_HHSM500201600005I_7530/"
-          },
-          94699541.07,
-          "Department of Health and Human Services"
-        ],
-        [
-          18,
-          {
-            "text": "PLANNED SYSTEMS INTERNATIONAL INC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_47QFSA22F0101_4732_47QTCK18D0039_4732/"
-          },
-          83130895.15,
-          "General Services Administration"
-        ],
-        [
-          19,
-          {
-            "text": "GOVCIO, LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10B22N10030033_3600_VA11816D1003_3600/"
-          },
-          79659321.52,
-          "Department of Veterans Affairs"
-        ],
-        [
-          20,
-          {
-            "text": "BOOZ ALLEN HAMILTON INC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_47QFSA23F0008_4732_47QTCK18D0004_4732/"
-          },
-          53610416.86,
-          "General Services Administration"
-        ],
-        [
-          21,
-          {
-            "text": "ANDURIL INDUSTRIES, INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_70B02C25F00000422_7014_70B02C20D00000019_7014/"
-          },
-          42066939.56,
-          "Department of Homeland Security"
-        ],
-        [
-          22,
-          {
-            "text": "BOOZ ALLEN HAMILTON INC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_47QFWA26F0006_4732_47QTCK18D0004_4732/"
-          },
-          38452810.7,
-          "General Services Administration"
-        ],
-        [
-          23,
-          {
-            "text": "PYRAMID SYSTEMS, INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_47QFDA20F0097_4732_47QFDA20A0037_4732/"
-          },
-          37144357.52,
-          "General Services Administration"
-        ],
-        [
-          24,
-          {
-            "text": "SKYWARD IT SOLUTIONS, LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_75FCMC24F0059_7530_47QTCA19D00AB_4732/"
-          },
-          36035293.88,
-          "Department of Health and Human Services"
-        ],
-        [
-          25,
-          {
-            "text": "BOOZ ALLEN HAMILTON INC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_1333BJ24F00280006_1344_1333BJ21D00280001_1344/"
-          },
-          32800060.02,
-          "Department of Commerce"
         ]
       ]
     },
@@ -573,7 +573,7 @@
             "text": "CACI, INC. - FEDERAL",
             "href": "https://www.usaspending.gov/recipient/28eee911-76af-7147-f760-4ec5f90bec2d-C/latest/"
           },
-          977906504.33,
+          977906126.78,
           "General Services Administration",
           "2027-04-30"
         ],
@@ -735,30 +735,30 @@
     }
   ],
   "narrative": {
-    "intro": "Computer Systems Design Services (NAICS 541512) obligations in FY2027 to date stand at $52.7M. The federal government made 170 awards in this NAICS, with an average award size of $310K. Obligations fell 99.8% year over year. Fiscal-year history shows much larger prior totals: FY22 obligations were $29.9B, FY23 obligations were $30.5B, FY24 obligations were $33.3B, FY25 obligations were $31.7B, and FY26 obligations were $31.1B. The gap between FY27 to date and prior full fiscal years reflects the current partial-year total. Buying patterns in FY2027 to date concentrate with the Department of Commerce at $25.9M and the Department of Transportation at $19.3M. Vendor concentration in FY2027 to date centers on GENERAL DYNAMICS INFORMATION TECHNOLOGY, INC. at $20.5M and ECS FEDERAL, LLC at $10M. These FY2027 to date figures are contract obligations and represent partial fiscal-year activity.",
+    "intro": "Computer Systems Design Services (NAICS 541512) obligations are $254M for FY2027 to date. The market recorded 285 awards with an average award size of $890K. Obligations fell 99.2% year over year. Historical fiscal-year totals show much larger funding in prior years: FY22 was $29.9B, FY23 was $30.5B, FY24 was $33.4B, FY25 was $31.7B, and FY26 was $31.3B. Department-level concentration is strong in FY2027 to date: the Department of Veterans Affairs is the largest buyer at $170M, followed by the Department of Commerce and the General Services Administration at $26M each. Vendor concentration mirrors the buying: ACCENTURE FEDERAL SERVICES LLC received $167M in obligations, well ahead of other contractors. The dataset covers contract obligations and notes that current-year totals are partial (fiscal year to date). This summary highlights the shift in FY2027 year-to-date activity compared with prior full fiscal years and the agencies and vendors capturing the bulk of obligations so far.",
     "sections": [
       {
-        "heading": "Why are FY2027 obligations so low compared with prior years?",
-        "body": "Obligations fell 99.8% year over year. FY22 obligations were $29.9B, FY23 obligations were $30.5B, FY24 obligations were $33.3B, FY25 obligations were $31.7B, and FY26 obligations were $31.1B while FY27 obligations to date are $52.7M. The FY2027 total is a partial fiscal-year total and not a full-year figure."
+        "heading": "How do FY2027 obligations compare with prior fiscal years?",
+        "body": "Computer Systems Design Services (NAICS 541512) obligations are $254M for FY2027 to date, compared with $31.3B in FY26 and $29.9B through $33.4B in FY22 through FY24. Obligations fell 99.2% year over year. The FY2027 total is a partial fiscal-year figure and is much smaller than the full-year totals reported for FY22 through FY26."
       },
       {
-        "heading": "Which agencies and vendors dominate FY2027 to date?",
-        "body": "The Department of Commerce obligated $25.9M and the Department of Transportation obligated $19.3M in FY2027 to date. GENERAL DYNAMICS INFORMATION TECHNOLOGY, INC. obligated $20.5M and ECS FEDERAL, LLC obligated $10M in FY2027 to date. Additional notable buyers include the Department of Homeland Security at $11.2M and the General Services Administration at $10.4M."
+        "heading": "Which agencies and vendors account for most FY2027 buying?",
+        "body": "The Department of Veterans Affairs is the largest buyer at $170M in FY2027 to date. ACCENTURE FEDERAL SERVICES LLC is the largest vendor at $167M. Other significant buyers include the Department of Commerce and the General Services Administration at $26M each, and other top vendors include SCIENCE APPLICATIONS INTERNATIONAL CORPORATION at $24.2M and GENERAL DYNAMICS INFORMATION TECHNOLOGY, INC. at $18.8M."
       }
     ]
   },
   "faq": [
     {
       "q": "How much does the federal government spend on NAICS 541512?",
-      "a": "The federal government obligated $52.7M on NAICS 541512 in FY2027 to date. The government made 170 awards with an average award size of $310K, and obligations fell 99.8% year over year."
+      "a": "Computer Systems Design Services (NAICS 541512) federal obligations are $254M for FY2027 to date. The program recorded 285 awards with an average award size of $890K, and obligations fell 99.2% year over year. Historical full-year obligations were $29.9B in FY22, $30.5B in FY23, $33.4B in FY24, $31.7B in FY25, and $31.3B in FY26."
     },
     {
       "q": "Which agencies buy the most NAICS 541512 services?",
-      "a": "The top buyers in FY2027 to date are the Department of Commerce ($25.9M), the Department of Transportation ($19.3M), and the Department of Homeland Security ($11.2M). The General Services Administration obligated $10.4M and the Department of Veterans Affairs obligated $7.2M in FY2027 to date."
+      "a": "The Department of Veterans Affairs buys the most NAICS 541512 services in FY2027 to date at $170M. Other top buying agencies in FY2027 to date are the Department of Commerce at $26M, the General Services Administration at $26M, the Department of Homeland Security at $24.2M, and the Department of Transportation at $21.9M."
     },
     {
       "q": "Who are the largest NAICS 541512 government contractors?",
-      "a": "The largest contractors in FY2027 to date are GENERAL DYNAMICS INFORMATION TECHNOLOGY, INC. ($20.5M), ECS FEDERAL, LLC ($10M), and HALVIK LLC ($9.4M). ACCENTURE FEDERAL SERVICES LLC obligated $9.3M and BOOZ ALLEN HAMILTON INC obligated $9.1M in FY2027 to date."
+      "a": "ACCENTURE FEDERAL SERVICES LLC is the largest NAICS 541512 government contractor in FY2027 to date at $167M. Other leading contractors in FY2027 to date include SCIENCE APPLICATIONS INTERNATIONAL CORPORATION at $24.2M, GENERAL DYNAMICS INFORMATION TECHNOLOGY, INC. at $18.8M, and MANTECH ADVANCED SYSTEMS INTERNATIONAL, INC. at $15.1M."
     }
   ],
   "related": [
@@ -796,6 +796,5 @@
       "label": "USAspending.gov award data",
       "href": "https://www.usaspending.gov"
     }
-  ],
-  "noindex": true
+  ]
 }

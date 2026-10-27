@@ -1,20 +1,20 @@
 {
   "pageType": "agency",
   "slug": "department-of-veterans-affairs",
-  "title": "VA Contract Spending: $3.4B in FY2027",
+  "title": "VA Contract Spending: $3.9B in FY2027",
   "h1": "Department of Veterans Affairs: Federal Contract Spending & Top Vendors",
-  "metaDescription": "Department of Veterans Affairs obligated $3.4B in federal contracts in FY2027 to date. See what it buys, its top vendors, and multi-year trend.",
-  "updated": "2026-10-19",
+  "metaDescription": "Department of Veterans Affairs obligated $3.9B in federal contracts in FY2027 to date. See what it buys, its top vendors, and multi-year trend.",
+  "updated": "2026-10-26",
   "fyWindow": {
     "label": "FY2027 to date",
     "start": "2026-10-01",
-    "end": "2026-10-19"
+    "end": "2026-10-26"
   },
   "stats": {
-    "totalObligations": 3427270076.11,
-    "awardCount": 7003,
-    "yoyGrowthPct": -95.9,
-    "avgAwardSize": 489400,
+    "totalObligations": 3935454765.04,
+    "awardCount": 8291,
+    "yoyGrowthPct": -95.3,
+    "avgAwardSize": 474666,
     "smallBusinessSharePct": null
   },
   "charts": [
@@ -32,29 +32,29 @@
             ],
             [
               "FY23",
-              61678918984.65
+              61679918810.62
             ],
             [
               "FY24",
-              66875498094.69
+              66876256557.12
             ],
             [
               "FY25",
-              78323727808.89
+              78324232896.1
             ],
             [
               "FY26",
-              84254491540.28
+              84264577796.26
             ],
             [
               "FY27",
-              3427270076.11
+              3935454765.04
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Obligations fell 95.9% year over year, from $84.3B in FY2026 to $3.4B in FY2027 to date."
+      "takeaway": "Obligations fell 95.3% year over year, from $84.3B in FY2026 to $3.9B in FY2027 to date."
     },
     {
       "id": "department-of-veterans-affairs-top-naics",
@@ -66,7 +66,7 @@
           "points": [
             [
               "Direct Health and Medical Insurance Carriers",
-              900485186.84
+              900995186.84
             ],
             [
               "Wired Telecommunications Carriers",
@@ -74,41 +74,41 @@
             ],
             [
               "Other Computer Related Services",
-              207314427.66
-            ],
-            [
-              "Analytical Laboratory Instrument Manufacturing",
-              160204844.09
-            ],
-            [
-              "Couriers and Express Delivery Services",
-              117193812.94
-            ],
-            [
-              "All Other Business Support Services",
-              102859450.8
-            ],
-            [
-              "Colleges, Universities, and Professional Schools",
-              87554511.73
-            ],
-            [
-              "Temporary Help Services",
-              83978219.07
-            ],
-            [
-              "Medical Laboratories",
-              79062300.07
+              225196819.09
             ],
             [
               "Commercial and Institutional Building Construction",
-              77390819.99
+              207082936.75
+            ],
+            [
+              "Computer Systems Design Services",
+              170253275.31
+            ],
+            [
+              "Analytical Laboratory Instrument Manufacturing",
+              163655675.52
+            ],
+            [
+              "Couriers and Express Delivery Services",
+              119920300.4
+            ],
+            [
+              "All Other Business Support Services",
+              102613199.31
+            ],
+            [
+              "Surgical and Medical Instrument Manufacturing",
+              99059905.53
+            ],
+            [
+              "Colleges, Universities, and Professional Schools",
+              96086852.88
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Direct Health and Medical Insurance Carriers was Veterans Affairs's largest contract category, with $900M obligated (26.3% of contract spending)."
+      "takeaway": "Direct Health and Medical Insurance Carriers was Veterans Affairs's largest contract category, with $901M obligated (22.9% of contract spending)."
     },
     {
       "id": "department-of-veterans-affairs-top-vendors",
@@ -127,12 +127,16 @@
               164409632
             ],
             [
+              "ACCENTURE FEDERAL SERVICES LLC",
+              150807169.55
+            ],
+            [
               "THUNDERCAT TECHNOLOGY, LLC",
               142105745.29
             ],
             [
               "FEDEX SUPPLY CHAIN DISTRIBUTION SYSTEM, INC.",
-              102039790.78
+              101757227.29
             ],
             [
               "LUMEN TECHNOLOGIES GOVERNMENT SOLUTIONS, INC.",
@@ -140,7 +144,11 @@
             ],
             [
               "FEDERAL EXPRESS CORPORATION",
-              75243665.66
+              75419437.24
+            ],
+            [
+              "VETERANS DEVELOPMENT CORPORATION, INC.",
+              63117507.88
             ],
             [
               "AMERESCO INC",
@@ -148,21 +156,13 @@
             ],
             [
               "QUEST DIAGNOSTICS INCORPORATED",
-              44050089.68
-            ],
-            [
-              "ABBOTT LABORATORIES INC.",
-              37915950.59
-            ],
-            [
-              "CEPHEID",
-              31740709.21
+              48551272.33
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "TRIWEST HEALTHCARE ALLIANCE CORP led all Veterans Affairs contractors with $900M, 26.3% of obligations."
+      "takeaway": "TRIWEST HEALTHCARE ALLIANCE CORP led all Veterans Affairs contractors with $900M, 22.9% of obligations."
     }
   ],
   "crossLinks": [
@@ -171,12 +171,16 @@
       "href": "/insights/naics/541519/"
     },
     {
-      "label": "NAICS 621511: Medical Laboratories",
-      "href": "/insights/naics/621511/"
-    },
-    {
       "label": "NAICS 236220: Commercial and Institutional Building Construction",
       "href": "/insights/naics/236220/"
+    },
+    {
+      "label": "NAICS 541512: Computer Systems Design Services",
+      "href": "/insights/naics/541512/"
+    },
+    {
+      "label": "NAICS 339112: Surgical and Medical Instrument Manufacturing",
+      "href": "/insights/naics/339112/"
     }
   ],
   "tables": [
@@ -207,21 +211,29 @@
         [
           3,
           {
+            "text": "ACCENTURE FEDERAL SERVICES LLC",
+            "href": "https://www.usaspending.gov/recipient/d41a6b8a-9d6a-0d28-7e24-989e31731aad-C/latest/"
+          },
+          150807169.55
+        ],
+        [
+          4,
+          {
             "text": "THUNDERCAT TECHNOLOGY, LLC",
             "href": "https://www.usaspending.gov/recipient/dbceb126-f729-60e7-d55a-ba235f519653-C/latest/"
           },
           142105745.29
         ],
         [
-          4,
+          5,
           {
             "text": "FEDEX SUPPLY CHAIN DISTRIBUTION SYSTEM, INC.",
             "href": "https://www.usaspending.gov/recipient/5196bee3-3520-4d0f-a473-5763e5da1b05-C/latest/"
           },
-          102039790.78
+          101757227.29
         ],
         [
-          5,
+          6,
           {
             "text": "LUMEN TECHNOLOGIES GOVERNMENT SOLUTIONS, INC.",
             "href": "https://www.usaspending.gov/recipient/dcc7220d-7604-b0b5-8961-5a07865199ea-C/latest/"
@@ -229,15 +241,23 @@
           91274192.57
         ],
         [
-          6,
+          7,
           {
             "text": "FEDERAL EXPRESS CORPORATION",
             "href": "https://www.usaspending.gov/recipient/079718fe-322b-0b89-6522-302314b5d75f-C/latest/"
           },
-          75243665.66
+          75419437.24
         ],
         [
-          7,
+          8,
+          {
+            "text": "VETERANS DEVELOPMENT CORPORATION, INC.",
+            "href": "https://www.usaspending.gov/recipient/87798ff6-9a29-9efd-f1b2-b3e3bbf326a4-C/latest/"
+          },
+          63117507.88
+        ],
+        [
+          9,
           {
             "text": "AMERESCO INC",
             "href": "https://www.usaspending.gov/recipient/0451d0a6-e23c-a300-e312-b391f833cb4e-C/latest/"
@@ -245,28 +265,12 @@
           56404616.99
         ],
         [
-          8,
+          10,
           {
             "text": "QUEST DIAGNOSTICS INCORPORATED",
             "href": "https://www.usaspending.gov/recipient/a9415e64-b17c-f292-0379-5ac52f31d54a-C/latest/"
           },
-          44050089.68
-        ],
-        [
-          9,
-          {
-            "text": "ABBOTT LABORATORIES INC.",
-            "href": "https://www.usaspending.gov/recipient/f740eb86-a84e-ddf4-03cf-fe9834b257e5-C/latest/"
-          },
-          37915950.59
-        ],
-        [
-          10,
-          {
-            "text": "CEPHEID",
-            "href": "https://www.usaspending.gov/recipient/f6397cdb-c833-3628-6fb3-a38803b567f6-C/latest/"
-          },
-          31740709.21
+          48551272.33
         ]
       ]
     },
@@ -289,13 +293,29 @@
         [
           2,
           {
+            "text": "BOOZ ALLEN HAMILTON INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10B21N10150056_3600_VA11816D1015_3600/"
+          },
+          1138891386.64
+        ],
+        [
+          3,
+          {
             "text": "TRIWEST HEALTHCARE ALLIANCE CORP",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C10G27K0004_3600_36C10G19D0038_3600/"
           },
           900485186.84
         ],
         [
-          3,
+          4,
+          {
+            "text": "DELOITTE CONSULTING LLP",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10B24F0237_3600_47QTCK18D0029_4732/"
+          },
+          416988484.17
+        ],
+        [
+          5,
           {
             "text": "AMERESCO INC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36E77620F0003_3600_DEAM3609GO29029_8900/"
@@ -303,7 +323,7 @@
           364707235.32
         ],
         [
-          4,
+          6,
           {
             "text": "THUNDERCAT TECHNOLOGY, LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C10B26F0287_3600_NNG15SD26B_8000/"
@@ -311,7 +331,7 @@
           359034041.28
         ],
         [
-          5,
+          7,
           {
             "text": "LUMEN TECHNOLOGIES GOVERNMENT SOLUTIONS, INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C10A20F0326_3600_GS00Q17NSD3006_4732/"
@@ -319,7 +339,23 @@
           355731656.77
         ],
         [
-          6,
+          8,
+          {
+            "text": "GOVCIO, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10D22N0009_3600_36C10E19D0017_3600/"
+          },
+          353367480.99
+        ],
+        [
+          9,
+          {
+            "text": "ACCENTURE FEDERAL SERVICES LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10B26F0033_3600_47QTCK18D0036_4732/"
+          },
+          259955070.51
+        ],
+        [
+          10,
           {
             "text": "SIGNATURE CHOICE II, LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C10G25N0048_3600_36C10G24D0051_3600/"
@@ -327,7 +363,7 @@
           147602900.03
         ],
         [
-          7,
+          11,
           {
             "text": "H2 TECHNOLOGY GROUP, LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C10B24F0430_3600_47QTCA24D008Y_4732/"
@@ -335,7 +371,7 @@
           119358180.38
         ],
         [
-          8,
+          12,
           {
             "text": "VETERANS EVALUATION SERVICES, INC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C10X21N0193_3600_36C10X19D0009_3600/"
@@ -343,7 +379,7 @@
           111738034.16
         ],
         [
-          9,
+          13,
           {
             "text": "CELLCO PARTNERSHIP",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C10B23C0015_3600_-NONE-_-NONE-/"
@@ -351,7 +387,15 @@
           106140068.14
         ],
         [
-          10,
+          14,
+          {
+            "text": "LEO A. DALY LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_VA101F13C0058_3600_-NONE-_-NONE-/"
+          },
+          94812779.34
+        ],
+        [
+          15,
           {
             "text": "VETERANS EVALUATION SERVICES, INC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C10X21N0195_3600_36C10X19D0011_3600/"
@@ -359,7 +403,15 @@
           93168612.6
         ],
         [
-          11,
+          16,
+          {
+            "text": "SWISH DATA CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10B25F0284_3600_NNG15SC91B_8000/"
+          },
+          86780922.61
+        ],
+        [
+          17,
           {
             "text": "GOVCIO, LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C10B22N10030033_3600_VA11816D1003_3600/"
@@ -367,7 +419,7 @@
           79659321.52
         ],
         [
-          12,
+          18,
           {
             "text": "PALANTIR TECHNOLOGIES INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C10B25F0313_3600_GS35F0086U_4730/"
@@ -375,7 +427,23 @@
           73639150
         ],
         [
-          13,
+          19,
+          {
+            "text": "FEDEX SUPPLY CHAIN DISTRIBUTION SYSTEM, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C77026N0005_3600_36C77020A0009_3600/"
+          },
+          69431644.02
+        ],
+        [
+          20,
+          {
+            "text": "VETERANS DEVELOPMENT CORPORATION, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C24827C0008_3600_-NONE-_-NONE-/"
+          },
+          63117507.88
+        ],
+        [
+          21,
           {
             "text": "QTC MEDICAL SERVICES INC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C10X20N0023_3600_36C10X19D0002_3600/"
@@ -383,7 +451,7 @@
           60172884.3
         ],
         [
-          14,
+          22,
           {
             "text": "T-MOBILE USA, INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C10B23C0014_3600_-NONE-_-NONE-/"
@@ -391,7 +459,7 @@
           59949941.83
         ],
         [
-          15,
+          23,
           {
             "text": "ESA SOUTH, INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C24822C0110_3600_-NONE-_-NONE-/"
@@ -399,7 +467,7 @@
           58870322.54
         ],
         [
-          16,
+          24,
           {
             "text": "AT&T ENTERPRISES, LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C10A19F0321_3600_GS00Q17NSD3000_4732/"
@@ -407,105 +475,41 @@
           58249158.16
         ],
         [
-          17,
+          25,
           {
             "text": "BLUEWAY ONE JV LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C24224C0150_3600_-NONE-_-NONE-/"
           },
           48924250.74
-        ],
-        [
-          18,
-          {
-            "text": "LUMEN TECHNOLOGIES GOVERNMENT SOLUTIONS, INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10A19F0320_3600_GS00Q17NSD3006_4732/"
-          },
-          46545071.32
-        ],
-        [
-          19,
-          {
-            "text": "ESA SOUTH, INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C77626C0075_3600_-NONE-_-NONE-/"
-          },
-          45877000
-        ],
-        [
-          20,
-          {
-            "text": "AT&T MOBILITY NATIONAL ACCOUNTS LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10B23C0016_3600_-NONE-_-NONE-/"
-          },
-          42304879.19
-        ],
-        [
-          21,
-          {
-            "text": "SGJV2, LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C25522C0083_3600_-NONE-_-NONE-/"
-          },
-          39419018.24
-        ],
-        [
-          22,
-          {
-            "text": "THUNDERCAT TECHNOLOGY, LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10A22F0162_3600_NNG15SD26B_8000/"
-          },
-          38799806.98
-        ],
-        [
-          23,
-          {
-            "text": "CARIBE TECNO CRL",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10F21C0002_3600_-NONE-_-NONE-/"
-          },
-          35935733.88
-        ],
-        [
-          24,
-          {
-            "text": "DISTRIBUTED SOLUTIONS, INC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10B23F0009_3600_47QTCA18D0095_4732/"
-          },
-          35630595.06
-        ],
-        [
-          25,
-          {
-            "text": "BLUE PACIFIC JV LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C25223C0072_3600_-NONE-_-NONE-/"
-          },
-          34181111.06
         ]
       ]
     }
   ],
   "narrative": {
-    "intro": "The Department of Veterans Affairs obligated $3.4B in contract spending in FY2027 to date. The Department of Veterans Affairs recorded 7,003 awards with an average award size of $489K. Obligations are down 95.9% year over year compared with prior fiscal years. Fiscal history shows obligations of $56.4B in FY22, $61.7B in FY23, $66.9B in FY24, $78.3B in FY25, and $84.3B in FY26. The top spending category for FY2027 to date is Direct Health and Medical Insurance Carriers at $900M, followed by Wired Telecommunications Carriers at $256M and Other Computer Related Services at $207M. The top vendor by obligations is TRIWEST HEALTHCARE ALLIANCE CORP at $900M, followed by AT&T ENTERPRISES, LLC at $164M and THUNDERCAT TECHNOLOGY, LLC at $142M. Current-year totals are partial because figures are fiscal year to date. This snapshot shows a sharp reduction in obligations in FY2027 to date while category and vendor concentrations remain focused on health, telecommunications, and specialized services.",
+    "intro": "The Department of Veterans Affairs has obligated $3.9B in FY2027 to date on federal contracts. The Department executed 8,291 awards so far, with an average award size of $475K. Obligations are down 95.3% year over year. Annual context shows a multi-year rise through FY26: FY22 obligations were $56.4B, FY23 obligations were $61.7B, FY24 obligations were $66.9B, FY25 obligations were $78.3B, and FY26 obligations were $84.3B. FY27 to date obligations of $3.9B represent partial fiscal-year activity. Top spending categories in FY2027 to date include Direct Health and Medical Insurance Carriers at $901M, Wired Telecommunications Carriers at $256M, and Other Computer Related Services at $225M. Top vendors for FY2027 to date include TRIWEST HEALTHCARE ALLIANCE CORP at $900M, AT&T ENTERPRISES, LLC at $164M, and ACCENTURE FEDERAL SERVICES LLC at $151M. This snapshot shows where current-year contract dollars are concentrated and how current-year totals compare to full fiscal-year precedent.",
     "sections": [
       {
-        "heading": "How large is Veterans Affairs' FY2027 contract spending compared with prior years?",
-        "body": "The Department of Veterans Affairs obligated $3.4B in FY2027 to date. Obligations are down 95.9% year over year. Fiscal year obligations were $56.4B in FY22, $61.7B in FY23, $66.9B in FY24, $78.3B in FY25, and $84.3B in FY26. Current-year totals are partial because figures are fiscal year to date."
+        "heading": "How has FY2027 spending changed year over year?",
+        "body": "The Department of Veterans Affairs obligated $3.9B in FY2027 to date. Obligations are down 95.3% year over year. FY26 obligations were $84.3B, providing direct scale for the change. FY27 totals are partial fiscal-year activity and therefore smaller than prior full-year totals."
       },
       {
-        "heading": "What are the biggest contract categories and who receives the most obligations?",
-        "body": "Direct Health and Medical Insurance Carriers is the largest category at $900M, followed by Wired Telecommunications Carriers at $256M and Other Computer Related Services at $207M. TRIWEST HEALTHCARE ALLIANCE CORP is the largest vendor at $900M, followed by AT&T ENTERPRISES, LLC at $164M and THUNDERCAT TECHNOLOGY, LLC at $142M. The Department of Veterans Affairs also obligated funds to logistics, labs, and construction categories represented in the top 10."
+        "heading": "Where are FY2027 contract dollars concentrated?",
+        "body": "Direct Health and Medical Insurance Carriers is the largest category at $901M, followed by Wired Telecommunications Carriers at $256M and Other Computer Related Services at $225M. TRIWEST HEALTHCARE ALLIANCE CORP is the largest vendor at $900M, with AT&T ENTERPRISES, LLC at $164M and ACCENTURE FEDERAL SERVICES LLC at $151M. The top categories and vendors together account for a large share of the $3.9B obligated so far."
       }
     ]
   },
   "faq": [
     {
       "q": "How much does Department of Veterans Affairs spend on contracts?",
-      "a": "The Department of Veterans Affairs obligated $3.4B in FY2027 to date. The agency recorded 7,003 awards with an average award size of $489K, and obligations are down 95.9% year over year. Prior fiscal years show much larger totals: $56.4B in FY22 through $84.3B in FY26, so current-year figures are partial and reflect fiscal year to date data."
+      "a": "The Department of Veterans Affairs has obligated $3.9B in contracts in FY2027 to date. The Department executed 8,291 awards so far in FY2027 to date with an average award size of $475K. FY27 totals are partial fiscal-year activity and contrast with full-year obligations of $84.3B in FY26."
     },
     {
       "q": "What does Veterans Affairs buy?",
-      "a": "The Department of Veterans Affairs buys health and medical insurance services, telecommunications, computer services, laboratory instruments and services, couriers, business support services, education services, temporary help, medical laboratories, and building construction. The top categories for FY2027 to date are Direct Health and Medical Insurance Carriers at $900M, Wired Telecommunications Carriers at $256M, and Other Computer Related Services at $207M."
+      "a": "The Department of Veterans Affairs buys health and medical insurance services, telecommunications, IT services, construction, and laboratory and medical instruments. Top FY2027 to date categories are Direct Health and Medical Insurance Carriers at $901M, Wired Telecommunications Carriers at $256M, and Other Computer Related Services at $225M, followed by Commercial and Institutional Building Construction at $207M and Computer Systems Design Services at $170M."
     },
     {
       "q": "Who are Veterans Affairs's largest contractors?",
-      "a": "TRIWEST HEALTHCARE ALLIANCE CORP is the largest contractor at $900M. AT&T ENTERPRISES, LLC is next at $164M and THUNDERCAT TECHNOLOGY, LLC is next at $142M. Other top vendors for FY2027 to date include FEDEX SUPPLY CHAIN DISTRIBUTION SYSTEM, INC. at $102M and LUMEN TECHNOLOGIES GOVERNMENT SOLUTIONS, INC. at $91.3M."
+      "a": "TRIWEST HEALTHCARE ALLIANCE CORP is the largest contractor for FY2027 to date at $900M. Other large contractors include AT&T ENTERPRISES, LLC at $164M, ACCENTURE FEDERAL SERVICES LLC at $151M, THUNDERCAT TECHNOLOGY, LLC at $142M, and FEDEX SUPPLY CHAIN DISTRIBUTION SYSTEM, INC. at $102M."
     }
   ],
   "related": [

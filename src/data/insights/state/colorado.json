@@ -1,20 +1,20 @@
 {
   "pageType": "state",
   "slug": "colorado",
-  "title": "Federal Contracts in Colorado: $13.3B (FY2026)",
+  "title": "Federal Contracts in Colorado: $108M (FY2027)",
   "h1": "Federal Contracts in Colorado: Spending, Agencies & Vendors",
-  "metaDescription": "Federal agencies obligated $13.3B to contractors in Colorado in FY2026 to date. See top buying agencies, top vendors, and industries.",
-  "updated": "2026-09-28",
+  "metaDescription": "Federal agencies obligated $108M to contractors in Colorado in FY2027 to date. See top buying agencies, top vendors, and industries.",
+  "updated": "2026-10-26",
   "fyWindow": {
-    "label": "FY2026 to date",
-    "start": "2025-10-01",
-    "end": "2026-09-28"
+    "label": "FY2027 to date",
+    "start": "2026-10-01",
+    "end": "2026-10-26"
   },
   "stats": {
-    "totalObligations": 13317047656.23,
-    "awardCount": 21122,
-    "yoyGrowthPct": -17.3,
-    "avgAwardSize": 630482,
+    "totalObligations": 108140914.2,
+    "awardCount": 382,
+    "yoyGrowthPct": -99.2,
+    "avgAwardSize": 283091,
     "smallBusinessSharePct": null
   },
   "charts": [
@@ -27,230 +27,226 @@
           "label": "Obligations",
           "points": [
             [
-              "FY21",
-              12779346760.82
-            ],
-            [
               "FY22",
-              13985832714.2
+              13985841854.35
             ],
             [
               "FY23",
-              14891904564.81
+              14892070569.52
             ],
             [
               "FY24",
-              14997633701.27
+              14997638787.15
             ],
             [
               "FY25",
-              16104670589.81
+              16104670146.81
             ],
             [
               "FY26",
-              13317047656.23
+              14410982303.37
+            ],
+            [
+              "FY27",
+              108140914.2
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Obligations fell 17.3% year over year, from $16.1B in FY2025 to $13.3B in FY2026 to date."
+      "takeaway": "Obligations fell 99.2% year over year, from $14.4B in FY2026 to $108M in FY2027 to date."
     },
     {
       "id": "colorado-top-agencies",
       "type": "bar",
-      "title": "Top 10 buying agencies, FY2026 to date",
+      "title": "Top 10 buying agencies, FY2027 to date",
       "series": [
         {
           "label": "Obligations",
           "points": [
             [
-              "Department of Defense",
-              7216492651.9
-            ],
-            [
-              "Department of Veterans Affairs",
-              1571336858.74
-            ],
-            [
-              "National Aeronautics and Space Administration",
-              1010045930.9
-            ],
-            [
-              "Department of Energy",
-              845139595.9
-            ],
-            [
               "Department of Homeland Security",
-              531971356.75
+              44754753.22
             ],
             [
               "General Services Administration",
-              473517962.33
+              23355036.8
             ],
             [
-              "Department of Agriculture",
-              471460202.87
+              "Department of Veterans Affairs",
+              13851888.68
             ],
             [
               "Department of the Interior",
-              408933350.89
+              10545459.08
+            ],
+            [
+              "National Aeronautics and Space Administration",
+              5386441.54
+            ],
+            [
+              "Department of Health and Human Services",
+              3963775.79
+            ],
+            [
+              "Department of Agriculture",
+              3533444.14
+            ],
+            [
+              "Department of the Treasury",
+              3453318.24
             ],
             [
               "Department of Justice",
-              334721578.08
+              3116871.02
             ],
             [
-              "Department of Commerce",
-              107987419.24
+              "Environmental Protection Agency",
+              270166.75
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Department of Defense was the top federal buyer in Colorado, obligating $7.2B (54.2% of the state total)."
+      "takeaway": "Department of Homeland Security was the top federal buyer in Colorado, obligating $44.8M (41.4% of the state total)."
     },
     {
       "id": "colorado-top-vendors",
       "type": "bar",
-      "title": "Top 10 vendors, FY2026 to date",
+      "title": "Top 10 vendors, FY2027 to date",
       "series": [
         {
           "label": "Obligations",
           "points": [
             [
-              "LOCKHEED MARTIN CORP",
-              2262087710.37
+              "ARDENT GROUP, LLC",
+              44769832.26
             ],
             [
-              "SIERRA NEVADA COMPANY, LLC",
-              2050766125.12
+              "BLUESTAQ LLC",
+              24274076
             ],
             [
-              "ALLIANCE FOR ENERGY INNOVATION, LLC",
-              762772977.91
+              "HSG PARK JOINT VENTURE 3, LLC",
+              7529000
             ],
             [
-              "V3GATE, LLC",
-              615886332.76
+              "ARROW ARC LLC",
+              4949120
             ],
             [
-              "OPTUMRX ADMINISTRATIVE SERVICES, LLC",
-              508721851.81
+              "PUBLIC SERVICE COMPANY OF COLORADO",
+              2250000
             ],
             [
-              "V2X SYSTEMS LLC",
-              424912219.85
+              "PERGRAVIS LLC",
+              2032555.16
             ],
             [
-              "BAE SYSTEMS SPACE & MISSION SYSTEMS INC.",
-              276895343.71
+              "DENVER INDIAN HEALTH AND FAMILY SERVICES, INC.",
+              1997770
             ],
             [
-              "AMENTUM TECHNOLOGY, INC.",
-              267288189.21
+              "KAISER FOUNDATION HOSPITALS",
+              1973140
             ],
             [
-              "B.I. INCORPORATED",
-              254050575.43
+              "HELICOPTER TRANSPORT SERVICES, LLC",
+              1652400
             ],
             [
-              "UNITED LAUNCH SERVICES, LLC",
-              183297125.76
+              "METROPOLITAN SECURITY SERVICES, INC.",
+              1533661.2
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "LOCKHEED MARTIN CORP led all contractors in Colorado with $2.3B, 17.0% of the state total."
+      "takeaway": "ARDENT GROUP, LLC led all contractors in Colorado with $44.8M, 41.4% of the state total."
     },
     {
       "id": "colorado-top-naics",
       "type": "bar",
-      "title": "Top 10 industries (NAICS), FY2026 to date",
+      "title": "Top 10 industries (NAICS), FY2027 to date",
       "series": [
         {
           "label": "Obligations",
           "points": [
             [
-              "Aircraft Manufacturing",
-              1515571024.47
-            ],
-            [
-              "Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology)",
-              1470355835.33
-            ],
-            [
-              "Guided Missile and Space Vehicle Manufacturing",
-              1258279918.54
-            ],
-            [
-              "Engineering Services",
-              924741861.23
-            ],
-            [
-              "Other Computer Related Services",
-              899574850.28
-            ],
-            [
-              "Research and Development in Biotechnology",
-              762703428.99
-            ],
-            [
-              "Facilities Support Services",
-              729630991.01
+              "Pharmacy Benefit Management and Other Third Party Administration of Insurance and Pension Funds",
+              44769832.26
             ],
             [
               "All Other Professional, Scientific, and Technical Services",
-              684262476.94
+              21856792.45
             ],
             [
-              "Pharmacy Benefit Management and Other Third Party Administration of Insurance and Pension Funds",
-              555832658.11
+              "Other Heavy and Civil Engineering Construction",
+              7529000
             ],
             [
-              "Research and Development in the Physical, Engineering, and Life Sciences (except Biotechnology)",
-              495613925.38
+              "Temporary Help Services",
+              5024120
+            ],
+            [
+              "Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology)",
+              4806537.67
+            ],
+            [
+              "Nonscheduled Chartered Freight Air Transportation",
+              3359736.39
+            ],
+            [
+              "Hydroelectric Power Generation",
+              2250000
+            ],
+            [
+              "Computer Facilities Management Services",
+              2032555.16
+            ],
+            [
+              "All Other Outpatient Care Centers",
+              1997770
+            ],
+            [
+              "Security Guards and Patrol Services",
+              1533661.2
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Aircraft Manufacturing was the largest industry in Colorado, with $1.5B obligated."
+      "takeaway": "Pharmacy Benefit Management and Other Third Party Administration of Insurance and Pension Funds was the largest industry in Colorado, with $44.8M obligated."
     }
   ],
   "crossLinks": [
     {
-      "label": "Department of Defense contracts",
-      "href": "/insights/agency/department-of-defense/"
+      "label": "Department of Homeland Security contracts",
+      "href": "/insights/agency/department-of-homeland-security/"
+    },
+    {
+      "label": "General Services Administration contracts",
+      "href": "/insights/agency/general-services-administration/"
     },
     {
       "label": "Department of Veterans Affairs contracts",
       "href": "/insights/agency/department-of-veterans-affairs/"
     },
     {
-      "label": "National Aeronautics and Space Administration contracts",
-      "href": "/insights/agency/national-aeronautics-and-space-administration/"
+      "label": "Department of the Interior contracts",
+      "href": "/insights/agency/department-of-the-interior/"
     },
     {
-      "label": "Department of Energy contracts",
-      "href": "/insights/agency/department-of-energy/"
-    },
-    {
-      "label": "NAICS 336411: Aircraft Manufacturing",
-      "href": "/insights/naics/336411/"
+      "label": "NAICS 541990: All Other Professional, Scientific, and Technical Services",
+      "href": "/insights/naics/541990/"
     },
     {
       "label": "NAICS 541715: Research and Development in the Physical, Engineering, and Life Sciences",
       "href": "/insights/naics/541715/"
     },
     {
-      "label": "NAICS 541330: Engineering Services",
-      "href": "/insights/naics/541330/"
-    },
-    {
-      "label": "NAICS 541519: Other Computer Related Services",
-      "href": "/insights/naics/541519/"
+      "label": "NAICS 561612: Security Guards and Patrol Services",
+      "href": "/insights/naics/561612/"
     }
   ],
   "tables": [
@@ -265,87 +261,87 @@
         [
           1,
           {
-            "text": "LOCKHEED MARTIN CORP",
-            "href": "https://www.usaspending.gov/recipient/6e7a895c-aa57-8600-2a8a-4e237f6213f6-C/latest/"
+            "text": "ARDENT GROUP, LLC",
+            "href": "https://www.usaspending.gov/recipient/2cc52085-49b8-9c14-3657-54cf2012a27a-C/latest/"
           },
-          2262087710.37
+          44769832.26
         ],
         [
           2,
           {
-            "text": "SIERRA NEVADA COMPANY, LLC",
-            "href": "https://www.usaspending.gov/recipient/fbd9af5f-b33e-9331-9063-295f6910ddf1-C/latest/"
+            "text": "BLUESTAQ LLC",
+            "href": "https://www.usaspending.gov/recipient/2a158929-2aa4-64c0-bde6-f28f2102a1b3-C/latest/"
           },
-          2050766125.12
+          24274076
         ],
         [
           3,
           {
-            "text": "ALLIANCE FOR ENERGY INNOVATION, LLC",
-            "href": "https://www.usaspending.gov/recipient/b5d8d22f-d83a-3e58-af13-5381d3c31019-C/latest/"
+            "text": "HSG PARK JOINT VENTURE 3, LLC",
+            "href": "https://www.usaspending.gov/recipient/e2f07c1e-c0af-5ffe-8fdf-f0c87e4a343e-C/latest/"
           },
-          762772977.91
+          7529000
         ],
         [
           4,
           {
-            "text": "V3GATE, LLC",
-            "href": "https://www.usaspending.gov/recipient/d46ad2a7-ed19-9535-4f24-787705845610-C/latest/"
+            "text": "ARROW ARC LLC",
+            "href": "https://www.usaspending.gov/recipient/4330f4e2-e129-648a-843b-004a7547bd68-C/latest/"
           },
-          615886332.76
+          4949120
         ],
         [
           5,
           {
-            "text": "OPTUMRX ADMINISTRATIVE SERVICES, LLC",
-            "href": "https://www.usaspending.gov/recipient/363acf50-3b89-1daa-f2db-96d3a18ca559-C/latest/"
+            "text": "PUBLIC SERVICE COMPANY OF COLORADO",
+            "href": "https://www.usaspending.gov/recipient/a62fa63a-9b78-b4be-b33d-eb009a40a77c-C/latest/"
           },
-          508721851.81
+          2250000
         ],
         [
           6,
           {
-            "text": "V2X SYSTEMS LLC",
-            "href": "https://www.usaspending.gov/recipient/385c148c-559c-6218-53ff-80836c64dc4c-C/latest/"
+            "text": "PERGRAVIS LLC",
+            "href": "https://www.usaspending.gov/recipient/6064b076-0807-ef17-9a69-2b044bbe6134-C/latest/"
           },
-          424912219.85
+          2032555.16
         ],
         [
           7,
           {
-            "text": "BAE SYSTEMS SPACE & MISSION SYSTEMS INC.",
-            "href": "https://www.usaspending.gov/recipient/f414ac71-05ca-f93c-6efa-a79cbe0dcfcd-C/latest/"
+            "text": "DENVER INDIAN HEALTH AND FAMILY SERVICES, INC.",
+            "href": "https://www.usaspending.gov/recipient/c7fce91f-fd18-e098-fd76-7fce0aa62b19-C/latest/"
           },
-          276895343.71
+          1997770
         ],
         [
           8,
           {
-            "text": "AMENTUM TECHNOLOGY, INC.",
-            "href": "https://www.usaspending.gov/recipient/64d116c0-8e36-0200-3878-827560dca24a-C/latest/"
+            "text": "KAISER FOUNDATION HOSPITALS",
+            "href": "https://www.usaspending.gov/recipient/d192652e-3551-3991-1674-6885c846fff2-C/latest/"
           },
-          267288189.21
+          1973140
         ],
         [
           9,
           {
-            "text": "B.I. INCORPORATED",
-            "href": "https://www.usaspending.gov/recipient/4259d8cd-8b3e-8f56-bf03-eb1ab539d8aa-C/latest/"
+            "text": "HELICOPTER TRANSPORT SERVICES, LLC",
+            "href": "https://www.usaspending.gov/recipient/fdc7f8b9-3fcc-9602-e0b3-c331c283d5d2-C/latest/"
           },
-          254050575.43
+          1652400
         ],
         [
           10,
           {
-            "text": "UNITED LAUNCH SERVICES, LLC",
-            "href": "https://www.usaspending.gov/recipient/96b9d7ec-4f76-3e5d-ef47-355f7ce954df-C/latest/"
+            "text": "METROPOLITAN SECURITY SERVICES, INC.",
+            "href": "https://www.usaspending.gov/recipient/835e42fb-f461-4e30-e17e-3205a1805635-C/latest/"
           },
-          183297125.76
+          1533661.2
         ]
       ]
     },
     {
-      "title": "Largest awards, FY2026 to date",
+      "title": "Largest awards, FY2027 to date",
       "columns": [
         "Rank",
         "Recipient",
@@ -359,7 +355,7 @@
             "text": "LOCKHEED MARTIN CORP",
             "href": "https://www.usaspending.gov/award/CONT_AWD_NNJ06TA25C_8000_-NONE-_-NONE-/"
           },
-          15578433007.93,
+          15578682243.1,
           "National Aeronautics and Space Administration"
         ],
         [
@@ -368,74 +364,11 @@
             "text": "ALLIANCE FOR ENERGY INNOVATION, LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_DEAC3608GO28308_8900_-NONE-_-NONE-/"
           },
-          11062841994.16,
+          11309022482.57,
           "Department of Energy"
         ],
         [
           3,
-          {
-            "text": "LOCKHEED MARTIN CORP",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_FA880718C0009_9700_-NONE-_-NONE-/"
-          },
-          4617953767.07,
-          "Department of Defense"
-        ],
-        [
-          4,
-          {
-            "text": "LOCKHEED MARTIN CORP",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_FA880708C0010_9700_-NONE-_-NONE-/"
-          },
-          4535621596.39,
-          "Department of Defense"
-        ],
-        [
-          5,
-          {
-            "text": "BECHTEL NATIONAL, INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_W52P1J09C0012_9700_-NONE-_-NONE-/"
-          },
-          4511113211.09,
-          "Department of Defense"
-        ],
-        [
-          6,
-          {
-            "text": "RAYTHEON COMPANY",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_FA880710C0001_9700_-NONE-_-NONE-/"
-          },
-          4508053634.72,
-          "Department of Defense"
-        ],
-        [
-          7,
-          {
-            "text": "LOCKHEED MARTIN CORP",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_N0003019C0025_9700_-NONE-_-NONE-/"
-          },
-          4012631654.53,
-          "Department of Defense"
-        ],
-        [
-          8,
-          {
-            "text": "SIERRA NEVADA COMPANY, LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_FA283424CB002_9700_-NONE-_-NONE-/"
-          },
-          3419616376.72,
-          "Department of Defense"
-        ],
-        [
-          9,
-          {
-            "text": "LOCKHEED MARTIN CORP",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_N0003022C1025_9700_-NONE-_-NONE-/"
-          },
-          2640690384.63,
-          "Department of Defense"
-        ],
-        [
-          10,
           {
             "text": "LOCKHEED MARTIN CORP",
             "href": "https://www.usaspending.gov/award/CONT_AWD_NNG09HR00C_8000_-NONE-_-NONE-/"
@@ -444,115 +377,16 @@
           "National Aeronautics and Space Administration"
         ],
         [
-          11,
-          {
-            "text": "LOCKHEED MARTIN CORP",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_FA882321C0001_9700_-NONE-_-NONE-/"
-          },
-          1488705765,
-          "Department of Defense"
-        ],
-        [
-          12,
-          {
-            "text": "L3HARRIS TECHNOLOGIES, INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_FA882320C0004_9700_-NONE-_-NONE-/"
-          },
-          1332092234.74,
-          "Department of Defense"
-        ],
-        [
-          13,
-          {
-            "text": "L3HARRIS TECHNOLOGIES, INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_FA881919C0002_9700_-NONE-_-NONE-/"
-          },
-          677291333.54,
-          "Department of Defense"
-        ],
-        [
-          14,
-          {
-            "text": "LOCKHEED MARTIN CORP",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_FA882321F2006_9700_FA882320D0001_9700/"
-          },
-          656212168.8,
-          "Department of Defense"
-        ],
-        [
-          15,
-          {
-            "text": "RAYTHEON COMPANY",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_1332KP18CNEEJ0005_1330_-NONE-_-NONE-/"
-          },
-          606736584.28,
-          "Department of Commerce"
-        ],
-        [
-          16,
-          {
-            "text": "LOCKHEED MARTIN CORPORATION",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_HQ014719F0038_9700_HQ014712D0003_9700/"
-          },
-          604095673.66,
-          "Department of Defense"
-        ],
-        [
-          17,
-          {
-            "text": "CACI NSS, LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_FA882316C0004_9700_-NONE-_-NONE-/"
-          },
-          600764904.89,
-          "Department of Defense"
-        ],
-        [
-          18,
-          {
-            "text": "V3GATE, LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10B23F0172_3600_NNG15SD27B_8000/"
-          },
-          576889048.72,
-          "Department of Veterans Affairs"
-        ],
-        [
-          19,
+          4,
           {
             "text": "BLUESTAQ LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_47QFCA19C0016_4732_-NONE-_-NONE-/"
           },
-          546593131.88,
+          580415713.24,
           "General Services Administration"
         ],
         [
-          20,
-          {
-            "text": "SIERRA NEVADA COMPANY, LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_H9240820C0004_9700_-NONE-_-NONE-/"
-          },
-          546213013.79,
-          "Department of Defense"
-        ],
-        [
-          21,
-          {
-            "text": "BAE SYSTEMS SPACE & MISSION SYSTEMS INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_FA881018C0002_9700_-NONE-_-NONE-/"
-          },
-          536158262.28,
-          "Department of Defense"
-        ],
-        [
-          22,
-          {
-            "text": "AMENTUM TECHNOLOGY, INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_HQ085722F8003_9700_HQ079617D0001_9700/"
-          },
-          524055138.18,
-          "Department of Defense"
-        ],
-        [
-          23,
+          5,
           {
             "text": "BAE SYSTEMS SPACE & MISSION SYSTEMS INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_NNG10XA01C_8000_-NONE-_-NONE-/"
@@ -561,51 +395,213 @@
           "National Aeronautics and Space Administration"
         ],
         [
-          24,
+          6,
           {
             "text": "LOCKHEED MARTIN CORP",
             "href": "https://www.usaspending.gov/award/CONT_AWD_NNG12FD66C_8000_-NONE-_-NONE-/"
           },
-          443345131,
+          443567131,
           "National Aeronautics and Space Administration"
+        ],
+        [
+          7,
+          {
+            "text": "KRATOS S2, INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_47QFCA20C0019_4732_-NONE-_-NONE-/"
+          },
+          371699225.6,
+          "General Services Administration"
+        ],
+        [
+          8,
+          {
+            "text": "LOCKHEED MARTIN CORP",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_NNG17FD73C_8000_-NONE-_-NONE-/"
+          },
+          352834981.32,
+          "National Aeronautics and Space Administration"
+        ],
+        [
+          9,
+          {
+            "text": "LUMEN TECHNOLOGIES GOVERNMENT SOLUTIONS, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_12314422F0069_1205_GS00Q17NSD3006_4732/"
+          },
+          200714383.76,
+          "Department of Agriculture"
+        ],
+        [
+          10,
+          {
+            "text": "AT&T ENTERPRISES, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_12314423C0069_1205_-NONE-_-NONE-/"
+          },
+          168229367.15,
+          "Department of Agriculture"
+        ],
+        [
+          11,
+          {
+            "text": "MODERN TECHNOLOGY SOLUTIONS, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_47QFMA24F0023_4732_GS00Q14OADS610_4732/"
+          },
+          129947920.51,
+          "General Services Administration"
+        ],
+        [
+          12,
+          {
+            "text": "ARDENT GROUP, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70CDCR26C00000003_7012_-NONE-_-NONE-/"
+          },
+          90958141.74,
+          "Department of Homeland Security"
+        ],
+        [
+          13,
+          {
+            "text": "ADVANCED SPACE LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_80NSSC24CA188_8000_-NONE-_-NONE-/"
+          },
+          76985659,
+          "National Aeronautics and Space Administration"
+        ],
+        [
+          14,
+          {
+            "text": "CG SERVICES LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_47QFWA22C0005_4732_-NONE-_-NONE-/"
+          },
+          50445455.68,
+          "General Services Administration"
+        ],
+        [
+          15,
+          {
+            "text": "THE REGENTS OF THE UNIVERSITY OF COLORADO",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_80GSFC23CA035_8000_-NONE-_-NONE-/"
+          },
+          49430922,
+          "National Aeronautics and Space Administration"
+        ],
+        [
+          16,
+          {
+            "text": "HELICOPTER TRANSPORT SERVICES, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_1202SA25K9202_12C2_1202SA25T9217_12C2/"
+          },
+          22360917.96,
+          "Department of Agriculture"
+        ],
+        [
+          17,
+          {
+            "text": "HELICOPTER TRANSPORT SERVICES, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_1202SA25K9207_12C2_1202SA25T9217_12C2/"
+          },
+          20093494,
+          "Department of Agriculture"
+        ],
+        [
+          18,
+          {
+            "text": "LUMEN TECHNOLOGIES GOVERNMENT SOLUTIONS, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_16PBGC19F0050_1665_GS00Q17NSD3006_4732/"
+          },
+          19962860.79,
+          "Pension Benefit Guaranty Corporation"
+        ],
+        [
+          19,
+          {
+            "text": "ARROW ARC LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C25925N0329_3600_36C10X24D0003_3600/"
+          },
+          19571520,
+          "Department of Veterans Affairs"
+        ],
+        [
+          20,
+          {
+            "text": "OUTSIDE ANALYTICS INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_47QFCA24F0031_4732_47QFCA24D0002_4732/"
+          },
+          17677401.33,
+          "General Services Administration"
+        ],
+        [
+          21,
+          {
+            "text": "PERGRAVIS LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_47QFRA22F0007_4732_GS35F0437Y_4732/"
+          },
+          16314995.17,
+          "General Services Administration"
+        ],
+        [
+          22,
+          {
+            "text": "CLEAR LINCS LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_47PJ0022F0488_4740_47PJ0022D0006_4740/"
+          },
+          15457368.83,
+          "General Services Administration"
+        ],
+        [
+          23,
+          {
+            "text": "KILGORE COMPANIES, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_6982AF22C000018_6925_-NONE-_-NONE-/"
+          },
+          13431051.15,
+          "Department of Transportation"
+        ],
+        [
+          24,
+          {
+            "text": "KAISER FOUNDATION HOSPITALS",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75N91024F00001_7529_75N91018D00021_7529/"
+          },
+          12969654,
+          "Department of Health and Human Services"
         ],
         [
           25,
           {
-            "text": "SIERRA NEVADA COMPANY, LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_FA862019F4000_9700_FA862016G3013_9700/"
+            "text": "VETERAN INFORMATION TECHNOLOGIES, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10B26F0113_3600_NNG15SD41B_8000/"
           },
-          442309246.97,
-          "Department of Defense"
+          12527330.39,
+          "Department of Veterans Affairs"
         ]
       ]
     }
   ],
   "narrative": {
-    "intro": "The state of Colorado recorded $13.3B in federal contract obligations in FY2026 to date. Award activity included 21,122 awards with an average award size of $630K. Obligations fell 17.3% year over year. Fiscal-year history shows a peak at $16.1B in FY25 and a decline to $13.3B in FY26. The Department of Defense is the largest buyer, obligating $7.2B, followed by the Department of Veterans Affairs with $1.6B and the National Aeronautics and Space Administration with $1B. LOCKHEED MARTIN CORP and SIERRA NEVADA COMPANY, LLC are the top vendors with $2.3B and $2.1B respectively. Aircraft Manufacturing and Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology) lead industry sectors at $1.5B each, while Guided Missile and Space Vehicle Manufacturing accounts for $1.3B. This snapshot covers partial fiscal-year totals and shows where federal buying concentrated dollars, vendors, and industries in Colorado through the current fiscal period.",
+    "intro": "Colorado federal contract obligations total $108M for FY2027 to date. The federal government recorded 382 awards in the state, with an average award size of $283K. Obligations are down 99.2% year over year. Fiscal-year history shows year-to-year scale: FY22 was $14B, FY23 was $14.9B, FY24 was $15B, FY25 was $16.1B, FY26 was $14.4B, and FY27 is $108M to date. The Department of Homeland Security leads buying in FY2027 to date with $44.8M, followed by the General Services Administration with $23.4M and the Department of Veterans Affairs with $13.9M. ARDENT GROUP, LLC is the largest vendor in FY2027 to date at $44.8M, followed by BLUESTAQ LLC at $24.3M and HSG PARK JOINT VENTURE 3, LLC at $7.5M. Pharmacy Benefit Management and Other Third Party Administration of Insurance and Pension Funds is the largest listed industry at $44.8M, followed by All Other Professional, Scientific, and Technical Services at $21.9M. Current-year totals are partial because figures are fiscal year to date.",
     "sections": [
       {
-        "heading": "How did federal obligations change year over year?",
-        "body": "Obligations fell 17.3% year over year. Total obligations moved from $16.1B in FY25 to $13.3B in FY26. The FY26 total is a fiscal-year-to-date figure, so the current year remains partial."
+        "heading": "How concentrated is FY2027 federal buying in Colorado?",
+        "body": "The Department of Homeland Security accounts for the largest share of FY2027 to date obligations with $44.8M. The General Services Administration and the Department of Veterans Affairs follow with $23.4M and $13.9M respectively, showing a small set of agencies drive most current-year spending. Total obligations for FY2027 to date are $108M, so these top buyers represent a substantial portion of current-year activity."
       },
       {
-        "heading": "Which agencies and industries dominate Colorado federal contracting?",
-        "body": "The Department of Defense obligated $7.2B, making it the largest buying agency in FY2026 to date. Aircraft Manufacturing and Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology) each account for $1.5B, and Guided Missile and Space Vehicle Manufacturing accounts for $1.3B."
+        "heading": "Which vendors and industries dominate FY2027 to date in Colorado?",
+        "body": "ARDENT GROUP, LLC is the largest vendor in FY2027 to date with $44.8M, followed by BLUESTAQ LLC at $24.3M and HSG PARK JOINT VENTURE 3, LLC at $7.5M. Pharmacy Benefit Management and Other Third Party Administration of Insurance and Pension Funds is the top industry at $44.8M, and All Other Professional, Scientific, and Technical Services is second at $21.9M. These vendors and industries align with the largest buying agencies in the current fiscal year."
       }
     ]
   },
   "faq": [
     {
       "q": "How much federal contract money goes to Colorado?",
-      "a": "Colorado received $13.3B in federal contract obligations in FY2026 to date. The state recorded 21,122 awards with an average award size of $630K. Year-over-year obligations are down 17.3%, and fiscal history shows obligations of $12.8B in FY21, $14B in FY22, $14.9B in FY23, $15B in FY24, and $16.1B in FY25."
+      "a": "Colorado receives $108M in federal contract obligations in FY2027 to date."
     },
     {
       "q": "Which agencies award the most contracts in Colorado?",
-      "a": "The Department of Defense awards the most contracts in Colorado, obligating $7.2B in FY2026 to date. Other top buying agencies are the Department of Veterans Affairs with $1.6B and the National Aeronautics and Space Administration with $1B. The Department of Energy obligated $845M and the Department of Homeland Security obligated $532M."
+      "a": "The Department of Homeland Security is the top buyer in FY2027 to date with $44.8M, followed by the General Services Administration with $23.4M and the Department of Veterans Affairs with $13.9M."
     },
     {
       "q": "Who are the largest federal contractors in Colorado?",
-      "a": "LOCKHEED MARTIN CORP is the largest federal contractor in Colorado with $2.3B in obligations in FY2026 to date. SIERRA NEVADA COMPANY, LLC follows with $2.1B, and ALLIANCE FOR ENERGY INNOVATION, LLC is third with $763M. V3GATE, LLC has $616M and OPTUMRX ADMINISTRATIVE SERVICES, LLC has $509M."
+      "a": "ARDENT GROUP, LLC is the largest federal contractor in Colorado for FY2027 to date with $44.8M, followed by BLUESTAQ LLC with $24.3M and HSG PARK JOINT VENTURE 3, LLC with $7.5M."
     }
   ],
   "related": [
