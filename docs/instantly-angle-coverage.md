@@ -3038,3 +3038,130 @@ one — over-counting `used` makes a run stop early. `recordPush` now checks its
 writes and the summary carries `live_but_unrecorded`, so if it is a lost write
 the next occurrence will say so instead of having to be reconstructed from
 timestamps.
+
+## 2026-10-27 — the audience is the binding constraint now, and it is days away
+
+Yesterday's entry put A1+A2+A4 at roughly three and a half days. A day later the
+picture is worse than that extrapolation, because the refill is falling as fast
+as the inventory.
+
+| angle | ready | cap | days | assigned today |
+| --- | --- | --- | --- | --- |
+| A4 | 74 | 55 | **1.35** | 21 |
+| A2 | 235 | 125 | **1.88** | 87 |
+| A1 | 330 | 37 | 8.92 | **0** |
+| A5 | 3,871 | 75 | 51.6 | 98 (holdout) |
+
+Unassigned non-suppressed companies: **821**, down from 985 yesterday and
+falling ~164 a day against a 292/day burn. `left_unassigned_at_ceiling` is 0 for
+A1, A2 and A4 — `assign` is not holding anything back, it cannot find more.
+
+Two series matter more than the snapshot. **A1's daily assignment count** over
+the last eight days: 9, 3, 4, 8, 0, 0, 3, **0**. A1 burns 37 a day and is being
+fed about one. It is living entirely off a 330-row backlog, so it will keep
+hitting cap for about nine days and then stop in a single step rather than
+tapering. **`a2_left_close_date_full`**, the pool A2 draws from: 703, 465, 465,
+565, 467, 371, 283, **104**. The routine's standing note reads a rise in this
+number as "the pool growing, not a fault" — it has now fallen 85% in a week,
+which is the same number read the other way and it is the one that matters.
+
+At the last four days' average refill, A4 under-sends its cap in about two days,
+A2 in four or five, and A1 in about nine. A5 holds 1,128 generic rows, 15 days
+at cap, plus 2,818 holdout that are not for sending. Nothing is broken; the
+programme is simply reaching the end of this universe. Acquiring companies is a
+decision, so this is measured and not acted on.
+
+## 2026-10-27 — a null error is not a write, which is what yesterday's counter asked
+
+`live_but_unrecorded`, added yesterday to catch a push whose row never landed,
+read 0 on all three runs today while A1 counted 20 against 19 recorded rows. The
+counter was asking the one question that cannot fail: **an UPDATE that matches
+no row is a successful statement.** Verified straight against the project —
+
+    PATCH /assignments?id=eq.<nonexistent>   ->  204, Content-Range: */0
+    PATCH /assignments?id=eq.<real row>      ->  204, Content-Range: 0-0/1
+
+so PostgREST reports no error and supabase-js hands back `{error: null}`. The
+check was as blind as the dropped error objects it replaced, just louder about
+it. The row count is in the same response, costs a header to ask for, and is the
+only answer that means "the database now says this person was emailed". A record
+is now a match of exactly one, and error and no-match are logged apart because
+the causes differ: the database refusing a write, against the row not being
+there to write to.
+
+Worth naming the shape, because it is the second instance in two days from the
+same hand: **a check whose negative answer is unreachable proves nothing by
+staying silent.** The A2 arm classifier defaulted unrecognised copy to `base`,
+so the arms always summed and always looked plausible; this counter only ever
+saw an error object, so it always read zero. Both were written as guards and
+both were decorative. The test for the next one: what exact input makes it fire,
+and has that input ever occurred?
+
+The per_angle gap itself is still unexplained — 1 on A1 today, 4 on A4
+yesterday. It is not a lost write and not a failed one, every pushed row has a
+lead id and a `pushed_at`, the audit is 0/0/0 across 5,680 leads, and the day's
+totals land exactly on cap because the budget reads the database. The next
+occurrence will now distinguish a no-match from an error, which is the one thing
+it could not do before.
+
+## 2026-10-27 — the first reply to a pipeline-built proposal
+
+Of the 17 proposals delivered in-thread on 10-25 and 10-26, **one recipient has
+replied**: Dr. Bailey at Music Ministry International, on the Chaplin Priest
+Services draft (N0018927QW013, NAVSUP, closes 23 November) —
+
+> Thank you for this information. I am traveling this week for site visits but
+> will review it soon and send feedback and questions.
+
+Engaged, no decline, nothing to answer yet. The other 16 are silent after one to
+two days, with no bounce, complaint or decline among them. The desk has it as
+`needs_human`, which is right — it needs no automated reply.
+
+One methodological note, because it nearly went in this file as "nobody
+replied": the first pass of that check read 0 of 17. `sent_at` comes out of
+Postgres as `2026-10-25 18:25:37+00`, and appending `Z` to it produces an
+invalid date, so every comparison against it was false. A query that answers
+"none" deserves the same suspicion as one that answers "all".
+
+## 2026-10-27 — checked and not a fault
+
+Three things that looked like defects and are not, recorded so they are not
+re-investigated:
+
+**`Repair KIT, Mechanical Transmi`** went out to a real reader, truncated
+mid-word at exactly 30 characters, which looks like a hard cap of ours. It is
+not: sam.gov's own title for 70ZU0327Q50201B00 is `REPAIR KIT, MECHANICAL
+TRANSMI`, 30 characters, truncated at source. Title lengths across the sent A2
+rows are 13, 31, 39, 43, 47, 51, 70, 88 — no cap of ours exists. The 13-length
+group of 518 rows is the bare-solicitation-number case, not a truncation.
+
+**Concentration** was 18 of 125 on the top solicitation today, against 45
+yesterday. `sol_short` renders as the bare number on 13.6% (17 of 125), back at
+its ~14% baseline from 10.4% yesterday; it moves with the mix of solicitations
+that carry a usable short title.
+
+**Two non-200s in `job_health`**, both at 19:01–19:02 and both from another
+session working by hand: six concurrent `stage` fires, of which one returned a
+cold-start `BOOT_ERROR` 503 while five succeeded, and a `signals-boot` probe
+that returned its own validation error, `pass ?job=recompetes|opportunities|
+awards`. Every scheduled `:22` stage run since is 200. No guarded retry fired
+anywhere today.
+
+## 2026-10-27 — Tgha has no biddable notice, and no evidence to widen on
+
+`cam@tgha.co` is the one genuine accept of 10-26 and is in `proposal_accepts`,
+but `stage` has reported `no open biddable notice in NAICS` on every run since.
+That verdict is correct: NAICS **483212** (inland water passenger
+transportation) has **zero** open biddable notices in all of SAM.
+
+Widening to the 4-digit prefix 4832 finds exactly one open and otherwise usable
+notice, HTC71127RE117, "Scheduled Fuel Barge Transportation Service in Gulf",
+closing 9 November — comfortably past the 10-day floor. It was **not** taken.
+4832 freight is not 483212 passenger, and the `search_naics_codes` mechanism
+exists to widen on *evidence* from the company itself; Tgha has no domain and no
+`site_text`, so there is none. The same reasoning left Eyes On Earth unserved on
+10-26 rather than assuming 541620.
+
+What he actually asked for is a **video** ("Sure, please recored a quick
+video"), not a proposal, so the pipeline was never the right answer for him. He
+needs a human reply.

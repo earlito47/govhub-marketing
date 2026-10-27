@@ -109,3 +109,29 @@ and that includes its own classifications: the accept sync copies them into
 `outreach.proposal_accepts` and records that the judgement was the reply desk's
 MODEL classification, not a human read, because the provisioning gate exists
 precisely so a model flag cannot create an account on its own.
+
+## Suppressed people who still hold a live draft — do not send these
+
+Added 2026-10-27. These addresses are suppressed in `outreach.companies`
+(`suppressed = true`, with a reason and date on the row) and still appear as
+`drafted` in `data/reply-desk.json`. Sending their drafts would email somebody
+who asked us to stop, or who was suppressed for another reason. Suppression is
+always on **that person's row only** — never the company, and in each case here
+no colleague is affected.
+
+| address | campaign | why suppressed |
+| --- | --- | --- |
+| `chris.dcouto@agnisemi.ai` | A5 | Answered our "Want me to close this out?" with "Sure. Please close this out." Model scored it `accept` on the word "Sure". |
+| `luke.cawleythd@gmail.com` | A2 | Answered the same question with "Yes - close it please, we do not provide Boiler services." Scored `accept` on "Yes". |
+| `kparks@kpcinc.com` | C1 | Suppressed before this pipeline existed; a fresh `drafted` entry appeared 2026-10-27. Reason is on the company row. |
+
+The first two are the reason `sync-proposal-accepts.mjs` prints the quote and
+writes nothing without `--apply`: both were classified as accepts and would
+have had an account provisioned and a proposal emailed. The pattern to watch
+for is agreement with our own closing question — "sure", "yes", "please do" —
+which reads as interest to a classifier and is a refusal in the thread.
+
+The authoritative check before sending any draft is the `suppressed` column,
+not this list: it is a snapshot of one day. A suppressed company is also
+refused by the accept sync and by the push job's last gate, so this table is
+the only place the desk would not otherwise see it.
