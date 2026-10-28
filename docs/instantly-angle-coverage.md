@@ -3278,3 +3278,31 @@ purpose, because that is the record a human reads.
 Concentration was 20 of 125 on the top solicitation, and `sol_short` renders as
 the bare number on 8.8% (11 of 125), the lowest yet — 13.6% yesterday, 14% on
 10-09.
+
+### The number behind all of it: 20 companies of refill, and none for A4
+
+Measured after the entry above, and it reframes the inventory table. Of the 687
+unassigned non-suppressed companies, the number holding a **live, usable signal**
+is:
+
+| signal | angle | unassigned companies holding one |
+| --- | --- | --- |
+| `rfp_match` | A2 | **14** |
+| `recompete` | A1 | **6** |
+| `competitor_award` | A4 | **0** |
+
+A4 holds 1,397 `new` competitor_award signals and not one of them belongs to an
+unassigned company. Its scanner confirms there is nothing left to look at —
+`naics_state_pairs: 0`, `already_assigned: 10,327`, `written: 0` on every run
+today. **A4 has no refill mechanism at all: 20 more sends, then zero**, unless
+companies are added or it is pointed at a different signal.
+
+The other 667 unassigned companies hold no live signal. They are not lost — a
+signal appears for them when a matching solicitation posts, which is what
+`opportunities` does each morning, and today that produced 133. So the
+programme's real daily capacity is no longer the 292 of the caps; it is the
+`written` count, 133 and halving every three days or so. A5 can still use those
+667 directly, because A5 needs no signal.
+
+That is the honest statement of the constraint: the caps describe what the
+mailboxes could send, and have stopped describing what the audience can supply.
