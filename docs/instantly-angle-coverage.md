@@ -3165,3 +3165,116 @@ exists to widen on *evidence* from the company itself; Tgha has no domain and no
 What he actually asked for is a **video** ("Sure, please recored a quick
 video"), not a proposal, so the pipeline was never the right answer for him. He
 needs a human reply.
+
+## 2026-10-28 — A4 runs out tomorrow morning, and the A2 pool is empty
+
+The projection in the 10-27 entry said A4 would under-send its cap "in about two
+days". It happens tomorrow.
+
+| angle | 10-26 | 10-27 | **10-28** | cap | assigned today |
+| --- | --- | --- | --- | --- | --- |
+| A4 | 1.96 | 1.35 | **0.36** (20 ready) | 55 | **1** |
+| A2 | 2.19 | 1.88 | **1.38** (173 ready) | 125 | 63 |
+| A1 | 9.92 | 8.92 | 7.92 (293 ready) | 37 | **0** |
+| A5 | 51.3 | 51.6 | 51.6 | 75 | 71 (holdout) |
+
+**A4 sends 20 of 55 tomorrow** and misses by 35. **`a2_left_close_date_full` is
+0** — the pool A2 draws from is exhausted, so its 173 rows are 1.4 days with
+nothing behind them. A1 was assigned nothing for the fifth time in nine days and
+is coasting on a backlog that ends in about eight. Unassigned non-suppressed
+companies: 687, from 821 yesterday and 985 the day before.
+
+The cleanest measure is the `opportunities` job's own `written` count, which is
+A2's entire signal supply, one value a day:
+
+    803  780  756  545  645  592  497  382  287  133
+    10-19 ------------------------------------> 10-28
+
+Halving roughly every three days. Today's run also reports
+`skipped_already_assigned: 6737` of 6,870 companies matched to a live
+solicitation — the signals are being found, there is just almost nobody left who
+can use one. Every angle's `left_unassigned_at_ceiling` is 0 except A5's, so
+nothing is being held back by a ceiling.
+
+Today also brought the first `opportunities` failure in ten days:
+`replace_signals(rfp_match): canceling statement due to statement timeout` at
+03:00, on 6,870 incoming rows against a 9,755-row rfp_match table. **The guarded
+retry fired at 03:08 and succeeded**, which is what it is for, so nothing was
+changed. If it recurs the replace needs batching — noting it here so the second
+occurrence is recognised as a pattern rather than investigated fresh.
+
+## 2026-10-28 — the 409 was marking good rows terminal
+
+Yesterday's entry recorded Instantly's `409 There is a move-leads job in
+progress` as self-healing. That was wrong, and the reason is worth keeping.
+
+The 409 scales with the moves the run makes itself: **33 moves cost 1 create on
+10-26, 58 moves cost 6 today.** Each one was written `status = 'failed'`, and
+push only ever reads `ready`/`approved`, so a failed row comes back only if
+`job_assign` notices it is RETRYABLE *and finds the company a fresh signal*.
+That caveat is doing all the work. It rescued the single 10-26 case
+(`sorensoninstallations@gmail.com`, failed 10-26, pushed 10-27 06:51) because a
+fresh signal still existed then. With `a2_left_close_date_full` at 0 and 687
+companies unassigned, it will not rescue today's six.
+
+So a transient 409 now leaves the row `ready` and is counted as
+`deferred_still_ready`, separately from `failed` — six deferred contacts should
+not read as six broken rows. The six from this morning were restored to `ready`
+by hand: each had a null `pushed_at` and null `instantly_lead_id`, and none
+appeared in any campaign in the day's audit, so the create was genuinely blocked
+rather than half-completed.
+
+The general shape, which is the fourth variant of the recurring bug: **a
+recovery path that depends on a resource the system is running out of is not a
+recovery path.** It tested fine while signals were plentiful. Nothing about the
+409 handling changed between 10-26 and today; what changed was the supply that
+made it survivable.
+
+## 2026-10-28 — a clean day for the two counters added this week
+
+First day since the push counters were added where **`per_angle` matches the
+database exactly on every angle** — A1 37, A2 125, A4 55, A5 75, with the 07:15
+run's `already_pushed_today_before_this_run` agreeing on all four. The gaps were
+4 on A4 (10-26) and 1 on A1 (10-27); today, none.
+
+`live_but_unrecorded` read 0, and today that zero carries information, because
+since yesterday it requires a match of exactly one row rather than merely a null
+error. A zero from a check whose negative answer is reachable is worth something;
+the same zero on 10-27 was not.
+
+## 2026-10-28 — one new accept, and his solicitation closes Friday
+
+`mike@eighty2degrees.com` (Eighty2degrees LLC, A2) replied thirteen minutes
+after the email, answering "Want me to draft this one?" with
+
+> Yes, I would be interested. Open to exploring this possibility.
+
+An unambiguous accept, and checked against the question it answers rather than
+scored on the word "yes" — which is the lesson of 10-26, when two "sure, please
+close this out" refusals were classified as accepts. Recorded in
+`outreach.proposal_accepts`.
+
+`stage_candidates()` holds him against **the exact solicitation he said yes to**,
+140LL027Q0005, DOI, Signage Project for Garnet Hill Recreation Area — which
+**closes 30 October**. The 10-day floor applies to the backlog search, not to a
+notice the person has explicitly accepted, so the build will proceed. But the
+send is manual, so his proposal is worth two days and then nothing.
+
+Still waiting, unchanged: `john@truthintelligence.com` (10-21) is the only
+genuinely unanswered `needs_human`; Bill Bailey's 10-27 entry is his engaged "I
+will review it soon and send feedback" and needs no reply.
+`kparks@kpcinc.com` now carries **two** `drafted` entries and is suppressed —
+already on the do-not-send table in `proposal-handovers.md`.
+
+## 2026-10-28 — checked and not a fault
+
+`cdf5678@myctl.net` shows `John Beckett` as its company name on the assignment,
+which is the person-name shape that produced the 10-01 "what would get Brenda
+Unrein's recompete bid tossed" email. The guard is working: the lead Instantly
+actually holds carries `company_name: "your team"`, and the payload's
+`companyName` is `"your team"` too. The real name stays on the assignment on
+purpose, because that is the record a human reads.
+
+Concentration was 20 of 125 on the top solicitation, and `sol_short` renders as
+the bare number on 8.8% (11 of 125), the lowest yet — 13.6% yesterday, 14% on
+10-09.
