@@ -3381,3 +3381,150 @@ federal, state and local solicitation matched to the company's NAICS codes.
 Recorded here because Nick Athanassov at TechSystems answered a draft offer
 with one word, "Price?", and nothing in this repository or the pipeline had an
 answer to give him.
+
+## 2026-10-29 — "Hi Tonie, posted and . It closes . ." went out again
+
+One real person got the 10-08 blank-variable email today, at 13:34. The cause
+is the 10-08 cause and the fix for it was in place; the fix had a window in it.
+
+A move carries the lead and not the render. `/leads/move` changes which campaign
+a lead sits in and nothing else, so a wave 1 lead arrives in A2 still holding
+`segment`, `new_awards` and `total_obligated` and none of A2's nine variables.
+On 10-08 that was fixed by PATCHing the lead in the move-confirmation pass —
+which runs **after** the move. The move lands within seconds into a live
+campaign that sends on its own schedule, so the patch was racing Instantly, and
+the race was invisible for three weeks because every move got confirmed inside
+its own run.
+
+Today's 07:15 run reported:
+
+    "moves_queued_from_retired_campaign": 1,
+    "moves_left_for_next_run": 1
+
+Six hours later Instantly sent the email. The counter said it. I read that line
+this morning and wrote "mv_left: 1 — one move unconfirmed, will be picked up
+next run. Fine." It was not fine, and the code comment above the confirmation
+pass had already explained why in the 10-07 tense: "the move lands within
+seconds and the lead is then in a LIVE campaign, so Instantly emails it
+immediately."
+
+The assignment row held a complete, correct render the entire time —
+`sol_line`, `sol_close_date` "Nov 6", all nine keys. Nothing was wrong with what
+we built. It simply never reached the lead.
+
+**Fixed by reordering**: the PATCH now happens *before* the move, while the lead
+still sits in the paused source campaign where it is sending nothing. `apiCall`
+throws on failure, so a lead we cannot render is a lead we do not move. The
+confirmation pass still patches, idempotently, because this guarantee has now
+failed twice and the second belt is cheap.
+
+The live lead was repaired by hand: ten variables patched onto it from its
+assignment, the row marked pushed, an outcomes row written. The audit went
+1 unclaimed / 1 blank → **0/0/0 across 6,224 leads** after the repair.
+
+The lesson is about the counter, not the code. `moves_left_for_next_run` is the
+only field on that summary that reports a live lead in a wrong state, and it
+reads like bookkeeping. A field whose non-zero value means "a person is being
+emailed something broken right now" should not sit in a list of nine other
+counters that mean nothing of the kind.
+
+## 2026-10-29 — A4 is out, and the opportunities job is why today's zero is not only exhaustion
+
+A4 sent **20 of 55** this morning and has **0 ready**. A2 has 52, which is 0.42
+days. A1 has 256, about seven days. Today's `assign` run read
+`considered: 687, written: 0` — nothing on any angle — with
+`left_unassigned_at_ceiling: {A5: 687}`, so every remaining company is
+A5-eligible and A5 is correctly at its own queue ceiling.
+
+But today's zero is not purely audience. **`outreach-opportunities` failed all
+three times** — 03:00, the 03:08 retry and the 04:30 retry — every one
+`replace_signals(rfp_match): canceling statement due to statement timeout`. It
+failed once on 10-28 and the retry saved it; the 10-28 entry said "if it recurs
+the replace needs batching", and it recurred the next day. That job is the only
+source of rfp_match signals, so A2 got no supply at all today.
+
+The cause is in `outreach.replace_signals`. Its temp table carries no index and
+no statistics, and two statements join against it:
+
+    delete from _incoming using outreach.assignments ...      (6,870 x 10,327)
+    delete from outreach.signals where exists (select 1 from _incoming ...)
+
+The second is a correlated subquery evaluated against an unindexed,
+never-analysed temp table for every candidate row in a signals table holding
+9,755 rfp_match rows. With no stats the planner has no reason to hash it, so it
+degrades to nested loops that got slower every day as both sides grew. Nothing
+about the function changed; the data did, which is why it worked for weeks and
+then stopped.
+
+An index on `_incoming (company_id)` plus `analyze _incoming` is written as
+migration `20261029180000_replace_signals_index.sql` and is **not yet applied**
+— the migration tool put a confirmation prompt to the operator and timed out
+unanswered. Until it is applied A2 has no signal supply.
+
+What remains after that: of 687 unassigned companies, those holding a live
+usable signal are 14 `rfp_match` and 6 `recompete`, and the 14 have one and four
+days of validity left, under A2's eight-day floor. So A2 correctly refuses them.
+The exhaustion is real; today's total zero was this job on top of it.
+
+## 2026-10-29 — the 409 fix earned its keep on day one
+
+`deferred_still_ready` read 4 at 06:00 and 9 at 06:50, matching `failed`
+exactly, against 107 moves queued across the two runs. Thirteen contacts that
+would have been written `status = 'failed'` yesterday — effectively terminal,
+recoverable only if `job_assign` found the company a fresh signal, which is the
+resource that has run out — stayed `ready` and are still sendable.
+`outreach.assignments` holds **zero** rows in `failed` status.
+
+The 409 scales with moves exactly as predicted: 33 moves cost 1 create on 10-26,
+58 cost 6 on 10-28, 107 cost 13 today.
+
+## 2026-10-29 — the first substantive reply to a proposal is a no on the work and a yes on the product
+
+Mike Englert at Eighty2degrees, sent a first draft at 13:44 against the
+solicitation he had accepted, replied at 17:11:
+
+> Thanks for sharing this example of how your business works! Very
+> compelling... However, when we come across projects like this, we tend to stay
+> away from any that involve fabrication (as this one does)... I'm sorry I
+> didn't notice that component in this RFP earlier. We are primarily a design
+> studio... We don't do the printing or fabrication.
+
+The reply desk classified it `not_interested`. Read as written it is the
+opposite: the proposal is called compelling, he apologises for missing the
+fabrication component himself, and he never asks us to stop. **He is not
+suppressed**, and suppressing him on that label would have ended the warmest
+lead the pipeline has produced.
+
+This is the 10-26 error inverted. There, two "sure, please close this out"
+refusals were scored `accept` on the word "sure". Here an engaged, complimentary
+reply is scored `not_interested` because it declines the job. The label tracks
+the solicitation; the relationship is in the prose.
+
+It also found a real relevance miss. NAICS 541430 is graphic design, the notice
+was "Signage Project for Garnet Hill Recreation Area", and the title reads like
+design work while the scope is fabrication. The relevance signal added on 10-26
+scores title words against company vocabulary and had no way to see that, and
+neither did he until he opened it. A design studio in 541430 wants the design
+notices in that code and not the sign-making ones, which is a distinction no
+NAICS code carries.
+
+## 2026-10-29 — replies and suppressions
+
+Five replies today. `needs_human` unchanged at 3, `drafted` 33.
+
+| lead | text | action |
+| --- | --- | --- |
+| `joseperez6339.jp@gmail.com` | "Stop" | **suppressed**, person only |
+| `bill@srtechsys.com` | "Sure. Please share with me." to "Want me to send it?" | genuine accept, written to `proposal_accepts` |
+| `mike@eighty2degrees.com` | compelling, but declines fabrication work | **not** suppressed, see above |
+| `brejones@martinez.build`, `ivan.mills@blacksea.tech` | autoresponders | no action |
+
+Bill's company record is named **"Irsa Umar"** — a person's name, and not even
+his; he signs as Bill Ash, Federal Sales Manager. The person-name guard caught
+it, which is why his email opened "Hi Bill" and named no company.
+
+Clean elsewhere: bounce 0.652% overall (94/14,421), nothing near the gates; both
+A2 arms moved (base 57, speed 63) to 1,389 and 1,378 against a control of 1,485;
+concentration 20 of 120 on the top solicitation; `sol_short` bare on 8.3%.
+Still no recorded proposal opens — the tracking shipped at 15:00 today and the
+table is empty, which is the true state rather than a gap.
