@@ -135,3 +135,46 @@ The authoritative check before sending any draft is the `suppressed` column,
 not this list: it is a snapshot of one day. A suppressed company is also
 refused by the accept sync and by the push job's last gate, so this table is
 the only place the desk would not otherwise see it.
+
+## 2026-10-29 — sends and replies from the proposal pipeline
+
+Three messages went out via Instantly in-thread today, all with
+`POST /emails/reply` from the mailbox that received the lead's message. Logged
+here because the reply desk drafts to these same leads and must not answer them
+twice.
+
+| lead | mailbox | what went out | Instantly id |
+| --- | --- | --- | --- |
+| `mike@eighty2degrees.com` | earl.knight@trygovhub.com | First-draft proposal, 140LL027Q0005 (DOI, Garnet Hill signage, closes Oct 30) | `01a187e7-72f4-7cda-8ca7-d5a2039181c7` |
+| `office@techsystems.us` | earl@govhubbids.com | Pricing answer: $129/month, 14-day free trial, and a choice between drafting W912DY26RA012 today or taking the next 541512 notice | `01a187f7-6691-7b83-bb6e-619595fc5c48` |
+| `noel@gearjumptech.com` | earl@govhubproposal.com | Fresh six-hour passcode, a plain answer to "what is this about", and the Calendly link for next week | `01a187f8-7101-770a-be86-9e7e78110d9f` |
+
+Mike's send needed the `proposal_send_min_days` floor dropped from 5 to 1,
+because he had accepted that specific notice knowing its close date. The queue
+held only his row at the time, so nothing else could ride along, and the floor
+was restored to 5 immediately after.
+
+Nick's reply resolved to `nick@techsystems.us` rather than the `office@` lead
+address: Instantly replies to whoever actually wrote the inbound message.
+
+**Noel's thread has had three replies from this pipeline and one from the desk's
+side. It needs no further answer until Noel either books a slot or writes
+back.** The question asked twice there — "are you sure this is a good fit" and
+then "I still don't understand what this is about" — was answered in full on
+10-29, so a fourth explanation would read as not listening.
+
+## Suppressed on 2026-10-27 and 10-28 — do not send these either
+
+Added to the table above. Person's row only, reason and date on each, no
+colleague affected.
+
+| address | why |
+| --- | --- |
+| `walthogan@symbiosis1.net` | "I'm not interested. Thanks" |
+| `acartermomof4@gmail.com` | "Thanks but I'm in Oklahoma" to a Wisconsin priest-services notice; a parish and school administrator, not a federal bidder |
+| `ashurchin@lissol.com` | Autoresponder: the individual has left and the mailbox is unmonitored |
+
+`chauncy@snacontracting.com` replied in the same window and is deliberately
+**not** suppressed: it is an out-of-office saying he checks mail in the
+evenings, which is not a decline. `stop_on_auto_reply` is false for exactly
+this reason.

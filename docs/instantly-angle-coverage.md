@@ -3306,3 +3306,78 @@ programme's real daily capacity is no longer the 292 of the caps; it is the
 
 That is the honest statement of the constraint: the caps describe what the
 mailboxes could send, and have stopped describing what the audience can supply.
+
+## 2026-10-29 — the handover handed people a credential that died in an hour
+
+The `c=` parameter in every proposal email is a Supabase magiclink OTP, redeemed
+by `OpenProposal.tsx` through `verifyOtp`, and for a first-time lead it is the
+only way in. The project's `mailer_otp_exp` was **3600**. So every handover sent
+somebody a passcode that stopped working sixty minutes later, and the email said
+nothing about expiry at all.
+
+Noel Elman at GearJump is the confirmed case. Draft sent 10-28 13:56, reply
+10-28 21:53:
+
+> I still don't understand what this is about (**the link doesn't work
+> w/passcode**.) I am on a tight deadline right now. Can we discuss next week?
+
+Eight hours, so the code had been dead for seven of them. `OpenProposal.tsx`
+already anticipated this exact failure in its own copy — "It may have expired,
+reply to the email and we will send a new one" — but **nothing mints a new
+one**. The lead does as instructed, the reply lands in the desk queue as a
+question, and the lead stays locked out.
+
+Now 21600, six hours, and the body says so: *"It works for six hours. After
+that, reply here and I will send a new one."* Six rather than longer because
+the window is a real security property, and a stated six hours the reader can
+plan around beats a silent twenty four.
+
+**What this does not tell us is how many others hit it.** The obvious measure,
+`auth.users.last_sign_in_at`, is useless here: every value sits a few minutes
+*before* its own send, because the pipeline mints a JWT from `lead_user_id` to
+call the worker routes, so the column records our own service sign-ins and not
+the prospect's. It cannot distinguish a lead who got in from one who never
+tried. The 10-28 entry's "16 silent recipients, no declines" therefore stands as
+written — silence, cause unknown — and must not be upgraded into "16 people were
+locked out", which is what the expiry makes tempting to assume.
+
+### Three copies of one number
+
+`LOGIN_CODE_HOURS` in `proposal-reply.ts`, the prose in the body, and Supabase's
+`mailer_otp_exp`. The prose is keyed off the constant through `HOURS_IN_WORDS`,
+so the words cannot drift from the digit, and three guards cover the pair: the
+body states the declared lifetime, the lifetime is spelled out rather than left
+as digits, and the constant stays inside a plausible OTP window. Raising the
+constant past the word map fails on the digit leak; removing the sentence fails
+all three copy assertions. Both verified.
+
+The third copy is project config and a test cannot read it, so the constant's
+comment carries that obligation explicitly. This is the same shape as the A2 arm
+classifier and the `live_but_unrecorded` counter: a value that is right until a
+second place depends on it.
+
+## 2026-10-29 — the staged login code was stale on all 24 sends
+
+The send mints a fresh OTP, because `generate_link` is what produces the code,
+and wrote it only to `proposal_sends`. `staged_proposals.login_code` kept
+whatever staging minted hours or days earlier, and `login_sent_at` was never
+stamped at all.
+
+    lead                      emailed   staged row   agree
+    mike@eighty2degrees.com   133423    143233       no
+    noel@gearjumptech.com     512676    773274       no
+
+Every send since the first carried that mismatch. Nothing user-facing read the
+column — it is on no admin page — so the exposure was to anyone querying the
+database directly to help a lead in, who would have read out a code
+`generate_link` had already invalidated. The send now syncs the staged row, and
+all 24 existing rows were repaired from `proposal_sends`, which held the truth
+the whole time.
+
+## 2026-10-29 — pricing, stated
+
+`$129/month`, 14-day free trial, and the trial is the whole catalogue: every
+federal, state and local solicitation matched to the company's NAICS codes.
+Recorded here because Nick Athanassov at TechSystems answered a draft offer
+with one word, "Price?", and nothing in this repository or the pipeline had an
+answer to give him.
