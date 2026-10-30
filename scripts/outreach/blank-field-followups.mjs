@@ -73,6 +73,20 @@ const flagValue = (name) => rest.find((a) => a.startsWith(`--${name}=`))?.split(
 const flag = (name) => rest.includes(`--${name}`) || flagValue(name) !== null;
 const positional = rest.filter((a) => !a.startsWith('--'));
 
+// --reroute=usegovhub.com:buildwithgovhub.com. The three usegovhub.com
+// mailboxes went into an error state on 10-16 (autofix failed), which froze
+// every sequence threaded on them: Instantly sends a lead's later steps from
+// the mailbox that sent the first, so those leads sit "active" forever and the
+// correction, which uses the same mailbox, cannot go either. On 10-30 Earl
+// chose to send those corrections from the same local part on a working
+// domain, as a new email rather than wait. The stalled sequence is then not a
+// reason to wait; every other hold still applies.
+const REROUTE = Object.fromEntries((flagValue('reroute') || '').split(',').filter(Boolean).map((r) => r.split(':')));
+const rerouteOf = (box) => {
+  const [local, domain] = String(box || '').split('@');
+  return REROUTE[domain] ? `${local}@${REROUTE[domain]}` : null;
+};
+
 const ledger = existsSync(LEDGER) ? JSON.parse(readFileSync(LEDGER, 'utf8')) : { version: 1, leads: {} };
 const saveLedger = () => {
   const leads = Object.fromEntries(Object.keys(ledger.leads).sort().map((k) => [k, ledger.leads[k]]));
@@ -141,7 +155,10 @@ function holdReason({ lead, thread, ours }, entry) {
   if (!ours.length) return 'no campaign email found in the thread';
   const first = stamp(ours[0]);
   if (thread.some((e) => isInbound(e) && stamp(e) > first)) return 'they wrote back; the reply desk has it';
-  if (thread.some((e) => !isInbound(e) && Number(e.ue_type) !== 1 && stamp(e) > first)) return 'already answered by hand';
+  // Only an email that went TO them counts as an answer. A test forward of
+  // their thread to Earl's own inbox (10-30) is filed under the lead too.
+  const toThem = (e) => String(e.to_address_email_list || '').toLowerCase().split(/[,;\s]+/).includes(entry.lead);
+  if (thread.some((e) => !isInbound(e) && Number(e.ue_type) !== 1 && stamp(e) > first && toThem(e))) return 'already answered by hand';
   if (Number(lead.status) !== DONE) return 'wait';
   if (entry.sent_email_id) return 'already sent';
   return null;
@@ -268,10 +285,12 @@ async function openPick(entry, lead, overused = []) {
 async function build(ix, entry, { ignoreWait = false, mailboxFull = () => false, overused = [] } = {}) {
   const ctx = await readLead(ix, entry);
   const hold = holdReason(ctx, entry);
-  if (hold && !(ignoreWait && hold === 'wait')) return { hold, ctx };
+  const reroutedTo = ctx.ours.length ? rerouteOf(ctx.ours[ctx.ours.length - 1].eaccount) : null;
+  if (hold && !(hold === 'wait' && (ignoreWait || reroutedTo))) return { hold, ctx };
   const { lead, ours } = ctx;
+  const sendFrom = reroutedTo || ours[ours.length - 1].eaccount;
   // Checked before the lane search, which is the slow and paid part.
-  if (mailboxFull(ours[ours.length - 1].eaccount)) return { hold: 'mailbox_full', ctx };
+  if (mailboxFull(sendFrom)) return { hold: 'mailbox_full', ctx };
   let text, variant, pick = null;
   if (entry.campaign === 'A1') {
     const p = lead.payload || {};
@@ -286,12 +305,15 @@ async function build(ix, entry, { ignoreWait = false, mailboxFull = () => false,
   }
   const issues = lint(text, { allowLinks: [SIGNUP], maxWords: 520 });
   const firstSubject = String(ours[0].subject || '').replace(/^\s*(re|fwd?):\s*/i, '').trim();
-  const subject = `Re: ${firstSubject || FALLBACK_SUBJECT[entry.campaign]}`;
+  let subject = `Re: ${firstSubject || FALLBACK_SUBJECT[entry.campaign]}`;
+  if (reroutedTo && entry.campaign === 'A1' && /^question$/i.test(firstSubject) && lead.payload?.contract_end_month) {
+    subject = `Re: ${lead.payload.contract_end_month} question`;
+  }
   const last = ours[ours.length - 1];
   return {
     draft: {
       lead: entry.lead, campaign: entry.campaign, variant, text, issues, subject,
-      eaccount: last.eaccount, forward_of: last.id, to: entry.lead,
+      eaccount: sendFrom, forward_of: last.id, to: entry.lead, rerouted_from: reroutedTo ? last.eaccount : null,
       sol: pick?.sol || null, source: pick?.source || null, why: pick?.why || null, gaps: pick?.gaps || [],
       skipped_restricted: pick?.skipped_restricted || [],
       built_at: new Date().toISOString(),
@@ -367,7 +389,7 @@ async function send() {
     // Recorded straight after the call and never retried on a 5xx: a second
     // correction to the same person is worse than a missing one.
     const res = await ix.api('POST', '/emails/forward', body, { retry5xx: false });
-    record(k, { status: 'sent', variant: draft.variant, sol: draft.sol, from: draft.eaccount, sent_at: new Date().toISOString(), sent_email_id: res.id || null });
+    record(k, { status: 'sent', variant: draft.variant, sol: draft.sol, from: draft.eaccount, ...(draft.rerouted_from ? { rerouted_from: draft.rerouted_from } : {}), sent_at: new Date().toISOString(), sent_email_id: res.id || null });
     usedBox[draft.eaccount] = (usedBox[draft.eaccount] || 0) + 1;
     sent++;
     console.log(`  sent ${draft.variant.padEnd(13)} ${entry.lead}${draft.sol ? `  (${draft.sol})` : ''}`);
