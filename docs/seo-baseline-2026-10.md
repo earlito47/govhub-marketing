@@ -246,7 +246,10 @@ Without these, the next read can only repeat today's caveats.
 1. **Track demo clicks and bookings.** Send a `demo_click` event when the
    Calendly badge is clicked, and a `demo_scheduled` event on Calendly's
    `calendly.event_scheduled` message, through the existing `track()` in
-   `Analytics.astro`.
+   `Analytics.astro`. *Done 2026-10-30 (`src/layouts/BaseLayout.astro`).
+   Both events go to GA4 and PostHog with the page and the visitor's first
+   touch. Demo click counts start from the deploy date, so the first full
+   28-day read is the demo-click baseline.*
 2. **Write first touch onto signups.** PostHog's `landing_view` event already
    records `is_first_touch`, `referrer_host`, `page_path` and the UTMs on www.
    The data is captured; it just never reaches `user_profiles` at signup.
