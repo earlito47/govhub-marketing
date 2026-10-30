@@ -273,6 +273,47 @@ const ANALYTICS_ENABLED =
           });
         }
       });
+
+      /* Demo funnel: demo_click when the badge is pressed, demo_scheduled when
+         Calendly confirms a booking. Both go through window.gh.track
+         (Analytics.astro) so they share its kill switch and reach GA4 and
+         PostHog together. window.gh is read at event time, not captured here,
+         so a late or missing Analytics block drops the event loudly instead
+         of breaking the badge. */
+      function trackDemo(name) {
+        var gh = window.gh;
+        if (!gh || typeof gh.track !== 'function') {
+          console.warn('[gh] window.gh missing, dropped', name);
+          return;
+        }
+        /* First touch rides on the event so a booking can be tied to the page
+           and source that first brought the visitor in, without a person
+           profile (www is identified_only). */
+        var ft = (gh.firstTouch && gh.firstTouch()) || {};
+        gh.track(name, {
+          cta: 'calendly_badge',
+          page_path: location.pathname,
+          page_type: gh.pageType ? gh.pageType(location.pathname) : null,
+          first_touch_landing_path: ft.lp || null,
+          first_touch_referrer_host: ft.rf || null,
+          first_touch_utm_source: ft.utm_source || null,
+          first_touch_utm_medium: ft.utm_medium || null,
+          first_touch_utm_campaign: ft.utm_campaign || null,
+        });
+      }
+      /* Delegated, capture phase: widget.js injects the badge after load and
+         its own onclick opens the popup. Any click inside the badge opens it,
+         including the "powered by Calendly" span. */
+      document.addEventListener('click', function (e) {
+        var t = e.target;
+        if (t && t.closest && t.closest('.calendly-badge-widget')) trackDemo('demo_click');
+      }, true);
+      /* The booking iframe posts calendly.* events to its parent. Origin is
+         checked so another frame cannot fake a booking. */
+      window.addEventListener('message', function (e) {
+        if (e.origin !== 'https://calendly.com') return;
+        if (e.data && e.data.event === 'calendly.event_scheduled') trackDemo('demo_scheduled');
+      });
     </script>
   </head>
   <body>

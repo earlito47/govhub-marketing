@@ -1,0 +1,915 @@
+{
+  "version": 1,
+  "label": "seo-baseline-2026-10",
+  "captured_at": "2026-10-30",
+  "window": {
+    "from": "2026-10-01",
+    "to": "2026-10-28",
+    "note": "28 days ending on the latest final Search Console date"
+  },
+  "comparison_window": {
+    "from": "2026-09-03",
+    "to": "2026-09-30",
+    "note": "PostHog www data only exists from 2026-09-06, so web metrics cover Sep 6-30"
+  },
+  "definitions": {
+    "organic_clicks": "Google Search Console clicks, property sc-domain:govhub.online, all countries, web search, dataState=final",
+    "keywords_gsc": "distinct queries with at least one impression in the window; position buckets use each query's average position",
+    "keywords_semrush": "Semrush US database, keywords ranking in the top 100 (estimate, refreshed monthly)",
+    "unique_visitors_raw": "PostHog distinct person_id with a $pageview on www.govhub.online",
+    "unique_visitors_filtered": "raw minus visitors geolocated to Hungary or China, or to cloud data-center cities (Ashburn, Boardman, Council Bluffs, North Charleston, The Dalles, Moncks Corner, Des Moines, Santa Clara, Lenoir, Clarksville)",
+    "organic_search_visitors": "PostHog visitors whose session entry referrer is google., bing., duckduckgo, yahoo or ecosia",
+    "ai_assistant_visitors": "PostHog visitors whose utm_source or entry referrer is chatgpt, copilot, perplexity, claude.ai or gemini",
+    "trials_started": "Supabase GovProp accounts.trial_start in window (14-day trial created at signup)",
+    "external": "excludes founder aliases, @govhub.online, test/example addresses and the outreach_stage_harness account",
+    "self_serve_trial": "external signup whose signup_source is manual or google (not created by the outreach proposal handover)",
+    "demo_clicks": "clicks on the site-wide Calendly 'Book a Demo' badge (NOT INSTRUMENTED as of capture)",
+    "demos_scheduled": "Calendly 'New Event' notifications for the '30 Minute Demo: GovHub' event type, by booking date"
+  },
+  "search_console": {
+    "last7": {
+      "from": "2026-10-22",
+      "to": "2026-10-28",
+      "clicks": 52,
+      "impressions": 9895,
+      "ctr_pct": 0.53,
+      "avg_position": 8.8
+    },
+    "last28": {
+      "from": "2026-10-01",
+      "to": "2026-10-28",
+      "clicks": 199,
+      "impressions": 23973,
+      "ctr_pct": 0.83,
+      "avg_position": 9.7
+    },
+    "prev28": {
+      "from": "2026-09-03",
+      "to": "2026-09-30",
+      "clicks": 142,
+      "impressions": 19091,
+      "ctr_pct": 0.74,
+      "avg_position": 9.5
+    },
+    "last90": {
+      "from": "2026-07-31",
+      "to": "2026-10-28",
+      "clicks": 420,
+      "impressions": 58973,
+      "ctr_pct": 0.71,
+      "avg_position": 11.6
+    },
+    "us_last28": {
+      "clicks": 165,
+      "impressions": 16538
+    },
+    "monthly": {
+      "2026-06": {
+        "clicks": 1,
+        "impressions": 129
+      },
+      "2026-07": {
+        "clicks": 24,
+        "impressions": 4134
+      },
+      "2026-08": {
+        "clicks": 70,
+        "impressions": 13690
+      },
+      "2026-09": {
+        "clicks": 150,
+        "impressions": 20986
+      },
+      "2026-10 (1-28)": {
+        "clicks": 199,
+        "impressions": 23973
+      }
+    },
+    "queries": {
+      "last7": {
+        "queries": 371,
+        "with_clicks": 1,
+        "4-10": 92,
+        "top3": 36,
+        "21-50": 109,
+        "51+": 69,
+        "11-20": 65
+      },
+      "last28": {
+        "queries": 721,
+        "with_clicks": 9,
+        "4-10": 192,
+        "top3": 82,
+        "11-20": 117,
+        "51+": 131,
+        "21-50": 199
+      },
+      "prev28": {
+        "queries": 630,
+        "with_clicks": 11,
+        "4-10": 199,
+        "top3": 74,
+        "11-20": 86,
+        "21-50": 144,
+        "51+": 127
+      }
+    },
+    "anonymized_click_share_last28_pct": 93.0,
+    "folders_last28": {
+      "/insights/": {
+        "pages": 381,
+        "clicks": 137,
+        "impressions": 16568
+      },
+      "/blog/": {
+        "pages": 22,
+        "clicks": 25,
+        "impressions": 1822
+      },
+      "/": {
+        "pages": 2,
+        "clicks": 15,
+        "impressions": 2275
+      },
+      "/solutions/": {
+        "pages": 7,
+        "clicks": 9,
+        "impressions": 801
+      },
+      "/forms/": {
+        "pages": 1,
+        "clicks": 8,
+        "impressions": 199
+      },
+      "/vs/": {
+        "pages": 5,
+        "clicks": 2,
+        "impressions": 573
+      },
+      "/glossary/": {
+        "pages": 7,
+        "clicks": 2,
+        "impressions": 214
+      },
+      "/about/": {
+        "pages": 1,
+        "clicks": 1,
+        "impressions": 297
+      },
+      "/alternatives/": {
+        "pages": 4,
+        "clicks": 0,
+        "impressions": 934
+      },
+      "/faq/": {
+        "pages": 8,
+        "clicks": 0,
+        "impressions": 436
+      },
+      "/pricing/": {
+        "pages": 1,
+        "clicks": 0,
+        "impressions": 221
+      },
+      "/case-studies/": {
+        "pages": 1,
+        "clicks": 0,
+        "impressions": 45
+      },
+      "/contact/": {
+        "pages": 1,
+        "clicks": 0,
+        "impressions": 32
+      },
+      "/terms/": {
+        "pages": 1,
+        "clicks": 0,
+        "impressions": 24
+      },
+      "/compliance/": {
+        "pages": 1,
+        "clicks": 0,
+        "impressions": 21
+      },
+      "/for/": {
+        "pages": 2,
+        "clicks": 0,
+        "impressions": 19
+      },
+      "/security/": {
+        "pages": 1,
+        "clicks": 0,
+        "impressions": 19
+      },
+      "/privacy/": {
+        "pages": 1,
+        "clicks": 0,
+        "impressions": 18
+      },
+      "/templates/": {
+        "pages": 1,
+        "clicks": 0,
+        "impressions": 2
+      },
+      "/bids/": {
+        "pages": 0,
+        "clicks": 0,
+        "impressions": 0
+      },
+      "/portals/": {
+        "pages": 0,
+        "clicks": 0,
+        "impressions": 0
+      }
+    },
+    "top_pages_last28": [
+      {
+        "url": "https://www.govhub.online/insights/top-government-contractors/",
+        "clicks": 29,
+        "impressions": 2649,
+        "position": 14.7
+      },
+      {
+        "url": "https://www.govhub.online/",
+        "clicks": 15,
+        "impressions": 2274,
+        "position": 4.9
+      },
+      {
+        "url": "https://www.govhub.online/forms/sf330-rev-2021-07.pdf",
+        "clicks": 8,
+        "impressions": 199,
+        "position": 8.4
+      },
+      {
+        "url": "https://www.govhub.online/blog/govwin-iq-pricing-real-ranges-terms-roi/",
+        "clicks": 6,
+        "impressions": 678,
+        "position": 8.2
+      },
+      {
+        "url": "https://www.govhub.online/insights/expiring-federal-contracts/",
+        "clicks": 6,
+        "impressions": 244,
+        "position": 6.6
+      },
+      {
+        "url": "https://www.govhub.online/blog/how-to-fill-out-sf330/",
+        "clicks": 5,
+        "impressions": 201,
+        "position": 7.1
+      },
+      {
+        "url": "https://www.govhub.online/blog/biggest-government-contractors-top-10/",
+        "clicks": 5,
+        "impressions": 153,
+        "position": 9.0
+      },
+      {
+        "url": "https://www.govhub.online/solutions/ai-proposal-generator/",
+        "clicks": 3,
+        "impressions": 291,
+        "position": 24.2
+      },
+      {
+        "url": "https://www.govhub.online/blog/color-team-reviews-pink-red-gold/",
+        "clicks": 3,
+        "impressions": 130,
+        "position": 8.1
+      },
+      {
+        "url": "https://www.govhub.online/insights/vendor/govcio/",
+        "clicks": 3,
+        "impressions": 124,
+        "position": 6.2
+      },
+      {
+        "url": "https://www.govhub.online/insights/vendor/paragon-systems/",
+        "clicks": 3,
+        "impressions": 53,
+        "position": 5.4
+      },
+      {
+        "url": "https://www.govhub.online/insights/vendor/palantir-technologies/",
+        "clicks": 2,
+        "impressions": 1475,
+        "position": 8.1
+      },
+      {
+        "url": "https://www.govhub.online/vs/govwin-iq/",
+        "clicks": 2,
+        "impressions": 325,
+        "position": 18.8
+      },
+      {
+        "url": "https://www.govhub.online/solutions/compliance-matrix-generator/",
+        "clicks": 2,
+        "impressions": 242,
+        "position": 23.8
+      },
+      {
+        "url": "https://www.govhub.online/insights/vendor/general-atomics-aeronautical-systems/",
+        "clicks": 2,
+        "impressions": 184,
+        "position": 6.5
+      },
+      {
+        "url": "https://www.govhub.online/insights/vendor/amentum-technology/",
+        "clicks": 2,
+        "impressions": 152,
+        "position": 7.9
+      },
+      {
+        "url": "https://www.govhub.online/insights/vendor/axiom-space/",
+        "clicks": 2,
+        "impressions": 128,
+        "position": 5.0
+      },
+      {
+        "url": "https://www.govhub.online/insights/vendor/clark-construction-group/",
+        "clicks": 2,
+        "impressions": 124,
+        "position": 6.3
+      },
+      {
+        "url": "https://www.govhub.online/blog/largest-government-contractors-top-10-sources/",
+        "clicks": 2,
+        "impressions": 116,
+        "position": 24.8
+      },
+      {
+        "url": "https://www.govhub.online/solutions/sf330/",
+        "clicks": 2,
+        "impressions": 116,
+        "position": 7.3
+      }
+    ],
+    "top_queries_last28": [
+      {
+        "query": "govhub",
+        "clicks": 6,
+        "impressions": 1210,
+        "position": 4.1
+      },
+      {
+        "query": "gov hub",
+        "clicks": 1,
+        "impressions": 243,
+        "position": 4.5
+      },
+      {
+        "query": "top 10 government contractors",
+        "clicks": 1,
+        "impressions": 61,
+        "position": 10.7
+      },
+      {
+        "query": "govhub.com legit",
+        "clicks": 1,
+        "impressions": 47,
+        "position": 4.9
+      },
+      {
+        "query": "top us government contractors",
+        "clicks": 1,
+        "impressions": 16,
+        "position": 8.9
+      },
+      {
+        "query": "deltek govwin pricing",
+        "clicks": 1,
+        "impressions": 9,
+        "position": 9.9
+      },
+      {
+        "query": "fa8739-18-c-5030",
+        "clicks": 1,
+        "impressions": 2,
+        "position": 1
+      },
+      {
+        "query": "looking for free",
+        "clicks": 1,
+        "impressions": 1,
+        "position": 3
+      },
+      {
+        "query": "market share",
+        "clicks": 1,
+        "impressions": 1,
+        "position": 4
+      },
+      {
+        "query": "loopio alternatives",
+        "clicks": 0,
+        "impressions": 135,
+        "position": 11.0
+      },
+      {
+        "query": "government contractors",
+        "clicks": 0,
+        "impressions": 131,
+        "position": 44.1
+      },
+      {
+        "query": "responsive alternatives",
+        "clicks": 0,
+        "impressions": 107,
+        "position": 8.0
+      },
+      {
+        "query": "rhode island itsm contract awards",
+        "clicks": 0,
+        "impressions": 87,
+        "position": 2.9
+      },
+      {
+        "query": "loopio competitors",
+        "clicks": 0,
+        "impressions": 78,
+        "position": 10.4
+      },
+      {
+        "query": "loopio pricing",
+        "clicks": 0,
+        "impressions": 76,
+        "position": 15.4
+      },
+      {
+        "query": "biggest government contractors",
+        "clicks": 0,
+        "impressions": 73,
+        "position": 11.5
+      },
+      {
+        "query": "sf330",
+        "clicks": 0,
+        "impressions": 69,
+        "position": 12.0
+      },
+      {
+        "query": "gov.hub",
+        "clicks": 0,
+        "impressions": 63,
+        "position": 6.1
+      },
+      {
+        "query": "operations contract services market",
+        "clicks": 0,
+        "impressions": 62,
+        "position": 23.5
+      },
+      {
+        "query": "proposal generator",
+        "clicks": 0,
+        "impressions": 51,
+        "position": 23.3
+      },
+      {
+        "query": "is govhub.com legitimate",
+        "clicks": 0,
+        "impressions": 48,
+        "position": 5.0
+      },
+      {
+        "query": "largest government contractors",
+        "clicks": 0,
+        "impressions": 48,
+        "position": 16.5
+      },
+      {
+        "query": "top government contracting companies",
+        "clicks": 0,
+        "impressions": 48,
+        "position": 23.9
+      },
+      {
+        "query": "government contracting companies",
+        "clicks": 0,
+        "impressions": 45,
+        "position": 42.7
+      },
+      {
+        "query": "top government contractors",
+        "clicks": 0,
+        "impressions": 44,
+        "position": 17.5
+      },
+      {
+        "query": "responsive alternative",
+        "clicks": 0,
+        "impressions": 43,
+        "position": 11.4
+      },
+      {
+        "query": "top government contractors 2020",
+        "clicks": 0,
+        "impressions": 42,
+        "position": 18.1
+      },
+      {
+        "query": "govwin",
+        "clicks": 0,
+        "impressions": 40,
+        "position": 29.6
+      },
+      {
+        "query": "us contract management market",
+        "clicks": 0,
+        "impressions": 38,
+        "position": 76.6
+      },
+      {
+        "query": "govwin iq",
+        "clicks": 0,
+        "impressions": 36,
+        "position": 28.1
+      },
+      {
+        "query": "govwin iq pricing",
+        "clicks": 0,
+        "impressions": 36,
+        "position": 28.4
+      },
+      {
+        "query": "government defense contract proposal tools",
+        "clicks": 0,
+        "impressions": 34,
+        "position": 26.6
+      },
+      {
+        "query": "federal construction contractors",
+        "clicks": 0,
+        "impressions": 31,
+        "position": 47.2
+      },
+      {
+        "query": "government proposal software",
+        "clicks": 0,
+        "impressions": 31,
+        "position": 26.8
+      },
+      {
+        "query": "govhub.online",
+        "clicks": 0,
+        "impressions": 31,
+        "position": 37.7
+      },
+      {
+        "query": "\"12314426f0126\" palantir",
+        "clicks": 0,
+        "impressions": 30,
+        "position": 8.9
+      },
+      {
+        "query": "largest federal contractors",
+        "clicks": 0,
+        "impressions": 30,
+        "position": 10.9
+      },
+      {
+        "query": "list of government contracting companies",
+        "clicks": 0,
+        "impressions": 30,
+        "position": 25.8
+      },
+      {
+        "query": "proposal compliance matrix template",
+        "clicks": 0,
+        "impressions": 30,
+        "position": 46.9
+      },
+      {
+        "query": "rfpio pricing",
+        "clicks": 0,
+        "impressions": 30,
+        "position": 12.9
+      }
+    ],
+    "strategy_clusters_last28": {
+      "1 portals": {
+        "queries": 0,
+        "clicks": 0,
+        "impressions": 0,
+        "top10": 0,
+        "examples": []
+      },
+      "2 forms": {
+        "queries": 8,
+        "clicks": 0,
+        "impressions": 76,
+        "top10": 4,
+        "examples": [
+          [
+            "sf330",
+            69,
+            12.0
+          ],
+          [
+            "can i use chatgpt to write sf330 forms for federal a/e proposals, and what are the risks?",
+            1,
+            1
+          ],
+          [
+            "how to automate sf330 forms for aec?",
+            1,
+            9
+          ],
+          [
+            "sf 330",
+            1,
+            6
+          ]
+        ]
+      },
+      "3 bid categories": {
+        "queries": 12,
+        "clicks": 0,
+        "impressions": 37,
+        "top10": 6,
+        "examples": [
+          [
+            "ai proposal generator for government bids",
+            14,
+            16.6
+          ],
+          [
+            "find me an ai-powered tool for drafting federal contract bids under $500 monthly.",
+            10,
+            6.2
+          ],
+          [
+            "govwin vs modern bid platforms for small federal teams",
+            2,
+            35.5
+          ],
+          [
+            "request for bid vs request for proposal",
+            2,
+            73.5
+          ]
+        ]
+      },
+      "4 competitors": {
+        "queries": 88,
+        "clicks": 1,
+        "impressions": 1127,
+        "top10": 28,
+        "examples": [
+          [
+            "loopio alternatives",
+            135,
+            11.0
+          ],
+          [
+            "responsive alternatives",
+            107,
+            8.0
+          ],
+          [
+            "loopio competitors",
+            78,
+            10.4
+          ],
+          [
+            "loopio pricing",
+            76,
+            15.4
+          ]
+        ]
+      },
+      "5 persona": {
+        "queries": 4,
+        "clicks": 0,
+        "impressions": 9,
+        "top10": 2,
+        "examples": [
+          [
+            "top healthcare government contractors",
+            6,
+            13.5
+          ],
+          [
+            "ai-assisted proposal staffing",
+            1,
+            44
+          ],
+          [
+            "healthcare government contracts",
+            1,
+            9
+          ],
+          [
+            "what are the top firms for government contract compliance for healthcare contractors?",
+            1,
+            10
+          ]
+        ]
+      },
+      "6 how-to": {
+        "queries": 6,
+        "clicks": 0,
+        "impressions": 40,
+        "top10": 2,
+        "examples": [
+          [
+            "rfq vs rfp",
+            28,
+            64.4
+          ],
+          [
+            "rfq vs rfp difference",
+            4,
+            60
+          ],
+          [
+            "rfq vs rfp government",
+            3,
+            11.3
+          ],
+          [
+            "rfq vs rfp meaning",
+            3,
+            50.7
+          ]
+        ]
+      },
+      "7 head terms": {
+        "queries": 2,
+        "clicks": 0,
+        "impressions": 2,
+        "top10": 2,
+        "examples": [
+          [
+            "best government contracts for small business",
+            1,
+            5
+          ],
+          [
+            "government contracts",
+            1,
+            8
+          ]
+        ]
+      }
+    },
+    "strategy_keywords_last28": {
+      "rhode island itsm contract awards": {
+        "clicks": 0,
+        "impressions": 87,
+        "position": 2.9
+      },
+      "rfp matrix generator": {
+        "clicks": 0,
+        "impressions": 3,
+        "position": 5.7
+      },
+      "gov hub": {
+        "clicks": 1,
+        "impressions": 243,
+        "position": 4.5
+      },
+      "govhub": {
+        "clicks": 6,
+        "impressions": 1210,
+        "position": 4.1
+      },
+      "how much does govwin cost": {
+        "clicks": 0,
+        "impressions": 25,
+        "position": 4.3
+      },
+      "loopio competitors": {
+        "clicks": 0,
+        "impressions": 78,
+        "position": 10.4
+      },
+      "top government contractors": {
+        "clicks": 0,
+        "impressions": 44,
+        "position": 17.5
+      },
+      "govwin": {
+        "clicks": 0,
+        "impressions": 40,
+        "position": 29.6
+      },
+      "palantir government contracts": {
+        "clicks": 0,
+        "impressions": 4,
+        "position": 11.5
+      },
+      "sf330s": null,
+      "commbuys": null,
+      "cal eprocure": null,
+      "njstart": null,
+      "planetbids": null,
+      "bidnet direct": null,
+      "sf 1449": null,
+      "sf 30": null,
+      "sf 330": {
+        "clicks": 0,
+        "impressions": 1,
+        "position": 6
+      },
+      "dd 254": null,
+      "construction bids": null,
+      "government cleaning contracts": null,
+      "rfq vs rfp": {
+        "clicks": 0,
+        "impressions": 28,
+        "position": 64.4
+      },
+      "how to find government contracts": null,
+      "government bids": null,
+      "bidprime": null
+    }
+  },
+  "semrush_us": {
+    "2026-10": {
+      "organic_keywords": 197,
+      "top3": 4,
+      "pos4_10": 7,
+      "pos11_20": 28,
+      "pos21_30": 32,
+      "est_traffic": 125,
+      "keywords_with_ai_overview_serp": 181
+    },
+    "history": {
+      "2026-06": 1,
+      "2026-07": 90,
+      "2026-08": 167,
+      "2026-09": 182,
+      "2026-10": 197
+    }
+  },
+  "posthog_www": {
+    "last28": {
+      "unique_visitors_raw": 1403,
+      "unique_visitors_filtered": 920,
+      "us_visitors_raw": 679,
+      "us_visitors_filtered": 512,
+      "pageviews": 1598,
+      "sessions": 1448,
+      "organic_search_visitors": 259,
+      "ai_assistant_visitors": 14,
+      "multi_page_visitors": 95
+    },
+    "last7": {
+      "unique_visitors_raw": 313,
+      "unique_visitors_filtered": 205,
+      "organic_search_visitors": 84,
+      "ai_assistant_visitors": 3
+    },
+    "prev_sep6_30": {
+      "unique_visitors_raw": 707,
+      "unique_visitors_filtered": 524,
+      "organic_search_visitors": 180,
+      "ai_assistant_visitors": 15
+    },
+    "excluded_last28": {
+      "HU_budapest": 285,
+      "US_cloud_regions": 167,
+      "CN": 31
+    },
+    "entry_referrers_last28": {
+      "$direct": 1118,
+      "www.google.com": 191,
+      "www.bing.com": 54,
+      "app.govhub.online": 18,
+      "search.yahoo.com": 6,
+      "bing.com": 5,
+      "duckduckgo.com": 4,
+      "gemini.google.com": 3,
+      "chatgpt.com (referrer)": 1,
+      "utm_source=chatgpt.com": 10,
+      "copilot": 2
+    }
+  },
+  "funnel": {
+    "trials_started": {
+      "last28": 29,
+      "last28_external": 25,
+      "last28_self_serve": 3,
+      "last28_outreach_handover": 22,
+      "last7": 25,
+      "last7_external": 23,
+      "prev28": 3,
+      "prev28_external": 2,
+      "prev28_self_serve": 2
+    },
+    "trials_active_now": 27,
+    "trials_active_now_external": 23,
+    "trials_expired_all_time": 34,
+    "signups_all_time": 63,
+    "signups_with_first_touch_attribution": 0,
+    "paying_customers": 0,
+    "accounts_with_stripe_subscription": 0,
+    "demo_clicks": null,
+    "demos_scheduled": {
+      "last28": 1,
+      "prev28": 0,
+      "all_time": 1
+    }
+  }
+}
