@@ -3598,3 +3598,87 @@ diagnosis. All three were present, none was the cause, and the fix built on them
 was deployed to production before a single measurement was taken. Forty-six
 milliseconds of timing would have ruled it out in the first minute. The
 measurement was available the whole time; I preferred the explanation.
+
+## 2026-10-30 — the move fix held, and A4 sent two
+
+The audit is **0/0/0 across 6,385 campaign leads**, and `moves_left_for_next_run`
+read **0 on all three push runs**. That is the number that mattered: yesterday's
+single unconfirmed move is what put "Hi Tonie, posted and . It closes . ." in
+front of a reader, and with the render now patched **before** the move, an
+unconfirmed one can no longer expose a blank email at all. No new blank-variable
+lead appeared.
+
+The 409 deferral did more work than any day so far: 2 at 06:00 and 15 at 06:50,
+**17 contacts** kept `ready` instead of written terminal, against 94 moves
+queued. Zero rows sit in `failed`.
+
+Sending, against caps: A1 **37/37**, A5 **75/75**, A2 **47/125**, A4 **2/55**.
+A4's two came from the 05:00 assign finding two stragglers. Inventory for
+tomorrow is A1 219, A2 21, A4 **0**, A5 3,732.
+
+## 2026-10-30 — assign cannot fix A4, and the reason is worth writing down plainly
+
+Asked to run assign so A4 would have inventory. Previewed first with
+`?preview=1`, which reported `A4: 0` before anything was written, then ran it:
+`written 32, tally {A1: 0, A2: 17, A4: 0, A5: 15}`.
+
+**A4 runs on `competitor_award` signals, and zero unassigned companies hold
+one.** Not few — zero. The 39 signals the unblocked opportunities run produced
+are all `rfp_match` (A2's) plus 6 `recompete` (A1's). Assign deals what exists;
+for A4 there was nothing to deal. Its only supplier agrees:
+`naics_state_pairs: 0`, `already_assigned: 10,327`, `written: 0`. There are
+1,397 `competitor_award` signals in the table and every one belongs to a company
+that already carries an assignment.
+
+So A4 is not broken and nothing in the pipeline is failing. It has run out of
+people to talk to, and no job that exists can change that. The three things that
+could, in order of honesty:
+
+1. **New companies.** 687 unassigned remain and all 687 are A5-only.
+2. **Let the awards scanner re-walk** — moot on its own, since every candidate is
+   already assigned; only useful alongside (1).
+3. **Re-angle already-assigned companies**, which means relaxing one angle per
+   company. That risks contacting someone twice on different premises and the
+   unique constraint on `assignments.company_id` exists to prevent exactly that.
+   A deliberate policy change, not an inference to make on anyone's behalf.
+
+## 2026-10-30 — the chunked write has not had its scheduled proof yet
+
+`opportunities` ran five times today: 03:00, the 03:08 retry and the 04:30 retry
+all failed on the old one-call code; 14:10:51 failed on the index-only change;
+14:16:29 succeeded on the chunked code, `written 32, write_chunks 6`, 4,945 ms.
+
+**Tomorrow's 03:00 is the first scheduled run on the new code.** Today's success
+was a manual run, and one manual success is not the same evidence as the cron
+path working unattended. Worth checking rather than assuming.
+
+## 2026-10-30 — replies: two stops, and an address change read as a question
+
+Four replies. `needs_human` 3 → 5, `drafted` 33.
+
+| lead | text | action |
+| --- | --- | --- |
+| `qhvac@connectwireless.us` | "Please take us off the list." | **suppressed** |
+| `hfriedman@epicuredigital.com` | "Unsubscribe" | **suppressed** |
+| `chelsea@parananolabs.com` | changed address to `cluxen@paranano.com` | see below |
+| `dsm@danmueller.pro` | autoresponder | none |
+
+Neither stop request has a colleague on record, so the person-only rule and a
+company-level suppression are the same act here; the distinction did not have to
+be resolved. Both reasons carry the quoted words and the date.
+
+Chelsea Luxen's reply is neither a question nor a decline — it is an address
+change, warmly phrased, asking us to use `cluxen@paranano.com` going forward and
+noting the old address forwards. The desk has it as `needs_human` / `other`,
+which is defensible since no automated reply fits, but the useful action is a
+data fix rather than an answer. **The update was blocked** by this session's
+permission classifier as a shared-resource change and is not applied. Nothing is
+broken by that: she is A4, already pushed on 10-22, so no further push will
+render her address, and her mail forwards. It is correctness owed rather than a
+fault.
+
+Clean elsewhere: bounce **0.635%** (98/15,435), nothing near the gates; both A2
+arms moved (base 20, speed 27) to 1,409 and 1,405 against a 1,560 control;
+concentration 8 of 47 on the top solicitation; `sol_short` bare on **1 of 47**,
+the lowest recorded. Proposal opens still 0 — the first full day with tracking
+live, and nobody has opened one.
