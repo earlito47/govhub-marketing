@@ -3528,3 +3528,73 @@ A2 arms moved (base 57, speed 63) to 1,389 and 1,378 against a control of 1,485;
 concentration 20 of 120 on the top solicitation; `sol_short` bare on 8.3%.
 Still no recorded proposal opens — the tracking shipped at 15:00 today and the
 table is empty, which is the true state rather than a gap.
+
+## 2026-10-30 — the signal write was never slow; the argument was
+
+`replace_signals(rfp_match)` had been timing out since 10-28 and A2's only
+signal supply was blocked. It is fixed, and the route there is worth recording
+because I got the diagnosis wrong twice and shipped once on a wrong one.
+
+**First diagnosis, wrong.** The temp table carried no index and no statistics
+while two statements joined it against 10,327 assignments and 9,755 signals,
+one of them a correlated `exists`. That reads like nested loops degrading as
+both sides grow. I applied an index and an `ANALYZE`. The next run failed
+identically.
+
+**Then I measured.** Timed inside the database with a 6,870-row payload:
+
+    create temp table from jsonb      22 ms
+    index + analyze (my addition)      9 ms
+    delete already-assigned (6,355)   10 ms
+    the exists scan                    5 ms
+
+46 ms end to end. The signals table is 14,657 rows and 9.5 MB.
+`pg_stat_statements` has nothing in the function above 1.2 s. **There was no
+nested-loop problem. I invented one and then shipped a fix for it.** Lock
+contention was checked too — no lock waits in `postgres_logs` — and so was the
+42-second `opp_flag_duplicates`, which runs at 11:37 and overlaps none of the
+failures at 03:00, 03:08, 04:30 or 14:10.
+
+**The actual cause.** PostgREST connects as `authenticator`, which carries
+`statement_timeout = 8s`, and `SET ROLE` does not lift it. The slowest
+**surviving** call to this function in `pg_stat_statements` is **6,975 ms** —
+against an 8 s ceiling. The write had been finishing just inside the limit for
+weeks and then crossed it. What costs the seconds is PostgREST parsing and
+casting a ~2 MB `jsonb` argument, which no index on our side can reach. The
+10-28 note's one-line instinct, "the replace needs batching", was right, and my
+elaborate reasoning about planners was not.
+
+**The fix, and the objection it had to answer.** `writeSignals` chunks at 1,500
+rows. The comment there had *removed* chunking, because an earlier version
+"wrote all 3,972 rows and THEN died returning", leaving a half-committed job
+that reported nothing. That is an argument against silence, not against
+chunking: each chunk is its own transaction, `replace_signals` is idempotent per
+company, and the next daily run reprocesses everything, so a partial write is
+stale signals for some companies rather than corruption. What was unacceptable
+was not knowing how much landed. So the totals accumulate as they commit and a
+failure names the chunk count and the running totals.
+
+Verified on the run that had failed five times:
+
+    HTTP 200, ms_total 4945, write_chunks 6,
+    incoming 8292, skipped_already_assigned 8260, replaced 7, written 32
+
+**What it unblocked, honestly: 32 signals.** Unassigned companies holding a live
+`rfp_match` went from 14 to 39, plus the 6 `recompete`. The 05:00 assign will
+convert them before the 06:00 push, so no manual intervention is needed. The
+exhaustion remains the dominant constraint — 8,260 of 8,292 matched companies
+already carry an assignment — and this job failing was making a bad week look
+like a cliff.
+
+The migration that came from the wrong diagnosis is kept, with its comment
+rewritten to say so. The index costs 9 ms, gives the two joins a real access
+path, and will be right if the table ever does grow. It is not the fix, and the
+file now says that rather than taking credit.
+
+### The lesson, which is about method and not Postgres
+
+A plausible mechanism, a matching symptom and a growing table are not a
+diagnosis. All three were present, none was the cause, and the fix built on them
+was deployed to production before a single measurement was taken. Forty-six
+milliseconds of timing would have ruled it out in the first minute. The
+measurement was available the whole time; I preferred the explanation.
