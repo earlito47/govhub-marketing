@@ -122,8 +122,10 @@ a later improvement.
 
 1. Search Console: Sitemaps should show about 13,000 discovered URLs within a
    few days, then Pages → "Indexed" climbing for `/bids/`. If they sit at
-   "Discovered, currently not indexed", the fix is internal links (the footer
-   and hubs are the only paths in today), not more pages.
+   "Discovered, currently not indexed", the fix is more internal links, not
+   more pages. Paths in today: the header nav ("Bids") and footer on every page,
+   the 51 Insights state pages (to their state's bids) and the Insights NAICS
+   pages (to the matching category), plus the hubs themselves.
 2. GSC query report filtered to page contains `/bids/`: first impressions.
 3. PostHog: `landing_view` with `page_path` starting `/bids/`, and
    `signup_completed` with a first-touch landing page under `/bids/`.
