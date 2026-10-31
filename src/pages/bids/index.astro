@@ -1,0 +1,75 @@
+---
+// /bids/: every place and category hub, and the bids closing soonest.
+import BidsLayout from '../../components/bids/BidsLayout.astro';
+import BidList from '../../components/bids/BidList.astro';
+import Breadcrumbs from '../../components/seo/Breadcrumbs.astro';
+import CTABand from '../../components/CTABand.astro';
+import { FEDERAL_SEGMENT, formatShortDate, getBidIndex, placeName } from '../../lib/bids/load';
+import { CATEGORIES } from '../../lib/bids/categories';
+
+const index = await getBidIndex();
+const open = index.bids.filter((b) => !b.closed);
+const federal = open.filter((b) => b.federal).length;
+const checked = formatShortDate(index.builtAt.toISOString());
+const now = index.builtAt.getTime();
+const soon = open
+  .filter((b) => b.dueAt && Date.parse(b.dueAt) > now)
+  .sort((a, b) => Date.parse(a.dueAt!) - Date.parse(b.dueAt!))
+  .slice(0, 20);
+
+const places = [...index.stateHubs]
+  .filter(([k]) => k !== FEDERAL_SEGMENT)
+  .map(([k, h]) => ({ href: h.path, label: placeName(k), count: h.open.length }))
+  .sort((a, b) => a.label.localeCompare(b.label));
+const federalHub = index.stateHubs.get(FEDERAL_SEGMENT);
+const categories = CATEGORIES.filter((c) => index.categoryHubs.has(c.slug)).map((c) => ({
+  href: `/bids/${c.slug}/`,
+  label: c.name,
+  count: index.categoryHubs.get(c.slug)!.open.length,
+}));
+
+const lede =
+  `${open.length.toLocaleString('en-US')} open government bids: ${federal.toLocaleString('en-US')} federal and ` +
+  `${(open.length - federal).toLocaleString('en-US')} state and local, from ${index.sourceCount.toLocaleString('en-US')} official sources. Updated ${checked}.`;
+---
+
+<BidsLayout
+  title="Government Bids by State and Category | GovHub"
+  description={`Browse ${open.length.toLocaleString('en-US')} open federal, state and local government bids by state and category, each with a plain-English summary and its deadline. Updated ${checked}.`}
+>
+  <Breadcrumbs items={[{ name: 'Home', url: '/' }, { name: 'Bids', url: '/bids/' }]} />
+  <p class="eyebrow">Open government bids</p>
+  <h1>Government bids by state and category</h1>
+  <p class="lede">{lede}</p>
+
+  <h2>By state</h2>
+  <ul class="chip-list">
+    {places.map((p) => (
+      <li><a href={p.href}>{p.label}<span class="count">{p.count}</span></a></li>
+    ))}
+    {federalHub && (
+      <li><a href={federalHub.path}>Federal, no location listed<span class="count">{federalHub.open.length}</span></a></li>
+    )}
+  </ul>
+
+  <h2>By category</h2>
+  <ul class="chip-list">
+    {categories.map((c) => (
+      <li><a href={c.href}>{c.label}<span class="count">{c.count}</span></a></li>
+    ))}
+  </ul>
+
+  <h2>Closing soonest</h2>
+  <BidList bids={soon} caption="The next 20 deadlines" />
+
+  <CTABand
+    heading="Every bid that fits you, in one inbox"
+    sub="GovHub watches federal, state and local sources, puts the matches in your GovHub inbox with a plain-English summary, and drafts the proposal when you find one worth bidding."
+  />
+
+  <p class="updated-line">
+    Federal bids from SAM.gov; state and local bids from official procurement portals. City bids from sites whose terms
+    do not allow republishing are not listed here. Summaries are written by GovHub from each notice; confirm details on the
+    official notice before you bid.
+  </p>
+</BidsLayout>

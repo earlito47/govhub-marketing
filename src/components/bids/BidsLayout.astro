@@ -1,0 +1,80 @@
+---
+/**
+ * Wrapper for every /bids/ page: BaseLayout plus a .bids-scoped style block,
+ * the same way InsightsLayout scopes /insights/.
+ */
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  noindex?: boolean;
+}
+
+const { title, description, noindex = false } = Astro.props;
+---
+
+<BaseLayout title={title} description={description} noindex={noindex}>
+  <main class="container bids">
+    <slot />
+  </main>
+</BaseLayout>
+
+<style is:global>
+  .bids {
+    padding-bottom: 2.5rem;
+  }
+  .bids .eyebrow {
+    font-family: var(--gh-font-brand);
+    font-size: var(--gh-text-eyebrow);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--gh-gold-600);
+    font-weight: 700;
+    margin: 0 0 0.5rem;
+  }
+  .bids h1 {
+    max-width: 52rem;
+    overflow-wrap: anywhere;
+  }
+  .bids .lede {
+    font-size: 1.15rem;
+    color: var(--fg);
+    max-width: 46rem;
+    line-height: 1.55;
+  }
+  .bids .muted,
+  .bids .updated-line {
+    color: var(--fg-muted);
+    font-size: 0.9rem;
+  }
+  .bids h2 {
+    margin-top: 2.5rem;
+  }
+  .bids .chip-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    list-style: none;
+    padding: 0;
+    margin: 0.75rem 0 0;
+  }
+  .bids .chip-list a {
+    display: inline-block;
+    padding: 0.3rem 0.75rem;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: var(--bg-elevated);
+    color: var(--fg);
+    text-decoration: none;
+    font-size: 0.92rem;
+  }
+  .bids .chip-list a:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+  .bids .chip-list .count {
+    color: var(--fg-muted);
+    margin-left: 0.35rem;
+  }
+</style>

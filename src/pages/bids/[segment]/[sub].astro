@@ -1,0 +1,37 @@
+---
+// Two page types share this shape, told apart by the first segment:
+//   /bids/{state|federal}/{slug}/  one bid
+//   /bids/{category}/{state}/      a category in a state (5+ open bids)
+// Category slugs can never equal a state slug or "federal" (load.ts asserts
+// it), so the two sets of paths cannot collide.
+import type { GetStaticPaths } from 'astro';
+import BidPage from '../../../components/bids/BidPage.astro';
+import HubPage from '../../../components/bids/HubPage.astro';
+import { getBidIndex } from '../../../lib/bids/load';
+
+export const getStaticPaths = (async () => {
+  const index = await getBidIndex();
+  return [
+    ...index.bids.map((b) => ({ params: { segment: b.segment, sub: b.slug }, props: { kind: 'bid' as const, key: b.path } })),
+    ...[...index.categoryStateHubs.keys()].map((k) => {
+      const [segment, sub] = k.split('/');
+      return { params: { segment, sub }, props: { kind: 'hub' as const, key: k } };
+    }),
+  ];
+}) satisfies GetStaticPaths;
+
+interface Props {
+  kind: 'bid' | 'hub';
+  key: string;
+}
+
+const { kind, key } = Astro.props;
+const index = await getBidIndex();
+const [category, place] = key.split('/');
+---
+
+{kind === 'bid' ? (
+  <BidPage bid={index.byPath.get(key)!} index={index} />
+) : (
+  <HubPage index={index} hub={index.categoryStateHubs.get(key)!} category={category} place={place} />
+)}

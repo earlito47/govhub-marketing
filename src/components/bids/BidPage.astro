@@ -1,0 +1,245 @@
+---
+/**
+ * One bid. Answer first: GovHub's own summary, then the deadline, then the
+ * facts. The source's description text is never shown (see
+ * public_bid_listings() for why); the official notice is one click away.
+ *
+ * Closed bids keep their page for 90 days with a closed banner and similar
+ * open bids, so an indexed URL does not 404 the morning after the deadline.
+ * The page is static, so a small script also flips Open to Closed the moment
+ * the deadline passes between builds.
+ */
+import BidsLayout from './BidsLayout.astro';
+import BidList from './BidList.astro';
+import Breadcrumbs from '../seo/Breadcrumbs.astro';
+import CTABand from '../CTABand.astro';
+import type { Bid, BidIndex } from '../../lib/bids/load';
+import { categoryName, formatDue, formatShortDate, placeName, similarBids } from '../../lib/bids/load';
+import { formatUsdCompact } from '../../lib/insightsFormat';
+
+interface Props {
+  bid: Bid;
+  index: BidIndex;
+}
+
+const { bid, index } = Astro.props;
+const place = placeName(bid.segment);
+const similar = similarBids(index, bid);
+const hubs = bid.categories
+  .map((c) => ({ c, path: bid.stateSlug && index.categoryStateHubs.has(`${c}/${bid.stateSlug}`) ? `/bids/${c}/${bid.stateSlug}/` : index.categoryHubs.has(c) ? `/bids/${c}/` : null }))
+  .filter((h): h is { c: string; path: string } => !!h.path);
+const placeHub = index.stateHubs.has(bid.segment) ? `/bids/${bid.segment}/` : '/bids/';
+
+const dueLong = bid.dueAt ? formatDue(bid.dueAt, bid.timeZone) : null;
+const dueShort = bid.dueAt ? formatShortDate(bid.dueAt, bid.timeZone) : null;
+
+// <title>: the bid, then where. Kept to 60 characters (check-meta.mjs warns
+// past 60 and fails past 70).
+const suffix = ` | ${place} bid`;
+const room = 60 - suffix.length;
+const shortTitle = bid.title.length > room ? `${bid.title.slice(0, room - 1).replace(/\s+\S*$/, '')}…` : bid.title;
+const title = `${shortTitle}${suffix}`;
+
+// Meta description: the summary, then the date that matters.
+const tail = dueShort ? ` ${bid.closed ? 'Closed' : 'Due'} ${dueShort}.` : '';
+// 152, not 160: check-meta counts an escaped & as five characters.
+const budget = 152 - tail.length;
+const summaryShort = bid.summary.length > budget ? `${bid.summary.slice(0, budget - 1).replace(/\s+\S*$/, '')}…` : bid.summary;
+const description = `${summaryShort}${tail}`;
+
+const facts: { label: string; value: string | null }[] = [
+  { label: 'Agency', value: bid.agency },
+  { label: 'Level', value: bid.level },
+  { label: 'Location', value: bid.stateName ?? (bid.federal ? 'Federal (no place of performance listed)' : null) },
+  { label: 'Notice type', value: bid.noticeType },
+  { label: 'Solicitation number', value: bid.externalId },
+  // The source's own wording, when cleanup changed more than its case: people
+  // search a SAM.gov title exactly as it was posted.
+  { label: 'Title as posted', value: bid.rawTitle.toLowerCase().replace(/\W+/g, '') !== bid.title.toLowerCase().replace(/\W+/g, '') ? bid.rawTitle : null },
+  { label: 'Set-aside', value: bid.setAside },
+  { label: 'Estimated value', value: bid.estimatedValue ? formatUsdCompact(bid.estimatedValue) : null },
+  { label: 'Posted', value: bid.postedAt ? formatShortDate(bid.postedAt, bid.timeZone) : null },
+  { label: bid.closed ? 'Closed' : 'Due', value: dueLong },
+  { label: 'Listed on', value: bid.sourceName },
+];
+---
+
+<BidsLayout title={title} description={description}>
+  <Breadcrumbs
+    items={[
+      { name: 'Home', url: '/' },
+      { name: 'Bids', url: '/bids/' },
+      { name: place, url: placeHub },
+      { name: shortTitle, url: bid.path },
+    ]}
+  />
+
+  <p class="eyebrow">{bid.level} bid · {place}</p>
+  <h1>{bid.title}</h1>
+
+  <p class:list={['bid-status', { 'is-closed': bid.closed }]} data-bid-due={bid.dueAt ?? ''}>
+    <span class="badge"><span class="when-open">Open</span><span class="when-closed">Closed</span></span>
+    {dueLong ? (
+      <span>
+        <span class="when-open">Due {dueLong}</span>
+        <span class="when-closed">Closed {dueLong}</span>
+      </span>
+    ) : (
+      <span>No due date listed</span>
+    )}
+  </p>
+
+  <p class="lede">{bid.summary}</p>
+
+  <div class="closed-note when-closed-block">
+    This bid has closed. The open bids below are the closest matches, and a saved search in GovHub puts the next one
+    like it in your GovHub inbox.
+  </div>
+
+  {bid.url && (
+    <p>
+      <a class="official" href={bid.url} target="_blank" rel="noopener">View the official notice</a>
+      <span class="muted"> on {bid.sourceName}</span>
+    </p>
+  )}
+
+  <h2>Bid details</h2>
+  <dl class="facts">
+    {facts.filter((f) => f.value).map((f) => (
+      <div>
+        <dt>{f.label}</dt>
+        <dd>{f.value}</dd>
+      </div>
+    ))}
+    {bid.naics.length > 0 && (
+      <div>
+        <dt>NAICS</dt>
+        <dd>{bid.naics.slice(0, 3).map((n) => `${n.code}${n.title ? ` ${n.title}` : ''}`).join('; ')}</dd>
+      </div>
+    )}
+  </dl>
+
+  {hubs.length > 0 && (
+    <>
+      <h2>Browse similar bids</h2>
+      <ul class="chip-list">
+        {hubs.map((h) => (
+          <li><a href={h.path}>{categoryName(h.c)} bids{bid.stateName && h.path.endsWith(`/${bid.stateSlug}/`) ? ` in ${bid.stateName}` : ''}</a></li>
+        ))}
+        <li><a href={placeHub}>All {place === 'Federal' ? 'federal' : place} bids</a></li>
+      </ul>
+    </>
+  )}
+
+  {similar.length > 0 && (
+    <>
+      <h2>Similar open bids</h2>
+      <BidList bids={similar} caption={`Open bids like this one, soonest deadline first`} />
+    </>
+  )}
+
+  <CTABand
+    heading="Respond to bids like this with GovHub"
+    sub="GovHub reads the solicitation, builds the compliance matrix and drafts the proposal. Save a search and new matching bids land in your GovHub inbox."
+  />
+
+  <p class="updated-line">
+    Listing from {bid.sourceName}, checked {formatShortDate(index.builtAt.toISOString())}. The summary is written by GovHub from the
+    notice; confirm every detail on the official notice before you bid.
+  </p>
+</BidsLayout>
+
+<script is:inline>
+  (function () {
+    var el = document.querySelector('[data-bid-due]');
+    if (!el || el.classList.contains('is-closed')) return;
+    var due = Date.parse(el.getAttribute('data-bid-due') || '');
+    if (due && Date.now() > due) {
+      el.classList.add('is-closed');
+      document.documentElement.classList.add('bid-closed');
+    }
+  })();
+</script>
+
+<style>
+  .bid-status {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.6rem;
+    font-weight: 600;
+    margin: 0.5rem 0 1rem;
+  }
+  .badge {
+    display: inline-block;
+    padding: 0.15rem 0.6rem;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    background: color-mix(in srgb, var(--gh-teal-600) 14%, transparent);
+    color: var(--gh-teal-700);
+  }
+  .bid-status.is-closed .badge {
+    background: var(--accent-soft);
+    color: var(--accent);
+  }
+  .when-closed,
+  .bid-status.is-closed .when-open {
+    display: none;
+  }
+  .bid-status.is-closed .when-closed {
+    display: inline;
+  }
+  .when-closed-block {
+    display: none;
+  }
+  .closed-note {
+    border-left: 3px solid var(--accent);
+    padding: 0.75rem 1rem;
+    background: var(--accent-soft);
+    max-width: 46rem;
+    margin: 1rem 0;
+  }
+  .official {
+    display: inline-block;
+    padding: 0.55rem 1rem;
+    border-radius: 8px;
+    background: var(--accent);
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .official:hover {
+    background: var(--accent-hover);
+  }
+  .facts {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+    gap: 0.75rem 2rem;
+    margin: 1rem 0 0;
+  }
+  .facts div {
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 0.6rem;
+  }
+  .facts dt {
+    font-size: 0.8rem;
+    color: var(--fg-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+  .facts dd {
+    margin: 0.2rem 0 0;
+    overflow-wrap: anywhere;
+  }
+</style>
+
+<style is:global>
+  /* The closed note sits outside .bid-status, so it keys off a root class the
+     script sets, or off the server-rendered closed status. */
+  html.bid-closed .when-closed-block,
+  .bids:has(.bid-status.is-closed) .when-closed-block {
+    display: block;
+  }
+</style>
