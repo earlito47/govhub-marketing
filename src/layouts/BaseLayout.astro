@@ -262,6 +262,46 @@ const ANALYTICS_ENABLED =
     <link rel="stylesheet" href="https://assets.calendly.com/assets/external/widget.css" />
     <script is:inline async src="https://assets.calendly.com/assets/external/widget.js"></script>
     <script is:inline define:vars={{ calendlyUrl: CALENDLY_URL }}>
+      /* The gh_ft cookie in either shape: www writes { lp, rf }, and the app
+         (strata-parse src/lib/attribution.ts) rewrites it as
+         { landing_page, referrer } once a visitor has been there. */
+      function firstTouch() {
+        var gh = window.gh;
+        var ft = (gh && gh.firstTouch && gh.firstTouch()) || {};
+        return {
+          landing: ft.lp || (ft.landing_page ? String(ft.landing_page).split('?')[0] : '') || '',
+          referrer: ft.rf || ft.referrer || '',
+          utm_source: ft.utm_source || '',
+          utm_medium: ft.utm_medium || '',
+          utm_campaign: ft.utm_campaign || '',
+        };
+      }
+
+      /* UTMs for the booking itself, so Calendly's record of a demo says where
+         it came from. Calendly has five fields and uses `utm` over any on the
+         page URL. Source, medium and campaign are the visitor's FIRST touch:
+         its real UTMs when it had any, otherwise derived from the referrer, so
+         organic and AI visitors are not left blank. Content is the page the
+         badge was clicked on; term is the first-touch landing page. */
+      function demoUtm() {
+        var ft = firstTouch();
+        var ref = ft.referrer;
+        var medium = ft.utm_medium ||
+          (/chatgpt|openai|perplexity|claude\.ai|gemini|copilot/.test(ref) ? 'ai' :
+           /(^|\.)(google|bing|duckduckgo|yahoo|ecosia)\./.test(ref) ? 'organic' :
+           ref ? 'referral' : '(none)');
+        var utm = {
+          utmSource: ft.utm_source || ref || '(direct)',
+          utmMedium: medium,
+          utmCampaign: ft.utm_campaign,
+          utmContent: location.pathname,
+          utmTerm: ft.landing,
+        };
+        /* Calendly would send an empty key as `utm_campaign=`. */
+        for (var k in utm) if (!utm[k]) delete utm[k];
+        return utm;
+      }
+
       window.addEventListener('load', function () {
         if (window.Calendly) {
           window.Calendly.initBadgeWidget({
@@ -270,6 +310,7 @@ const ANALYTICS_ENABLED =
             color: '#A03A2C', /* --gh-maroon-600 */
             textColor: '#ffffff',
             branding: true,
+            utm: demoUtm(),
           });
         }
       });
@@ -289,13 +330,13 @@ const ANALYTICS_ENABLED =
         /* First touch rides on the event so a booking can be tied to the page
            and source that first brought the visitor in, without a person
            profile (www is identified_only). */
-        var ft = (gh.firstTouch && gh.firstTouch()) || {};
+        var ft = firstTouch();
         gh.track(name, {
           cta: 'calendly_badge',
           page_path: location.pathname,
           page_type: gh.pageType ? gh.pageType(location.pathname) : null,
-          first_touch_landing_path: ft.lp || null,
-          first_touch_referrer_host: ft.rf || null,
+          first_touch_landing_path: ft.landing || null,
+          first_touch_referrer_host: ft.referrer || null,
           first_touch_utm_source: ft.utm_source || null,
           first_touch_utm_medium: ft.utm_medium || null,
           first_touch_utm_campaign: ft.utm_campaign || null,
