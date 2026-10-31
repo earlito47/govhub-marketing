@@ -11,6 +11,7 @@ import CTABand from '../CTABand.astro';
 import type { BidIndex, Hub } from '../../lib/bids/load';
 import { FEDERAL_SEGMENT, INSIGHTS_STATE_SLUGS, categoryName, formatShortDate, placeName } from '../../lib/bids/load';
 import { CATEGORIES } from '../../lib/bids/categories';
+import { CALENDLY_URL, ctaHref } from '../../config';
 
 interface Props {
   index: BidIndex;
@@ -144,7 +145,10 @@ const crumbs = [
 
   <CTABand
     heading={`See new ${what}${where} in one inbox`}
-    sub="Save this search in GovHub and new matches land in your GovHub inbox, with a plain-English summary and the deadline. When one fits, GovHub drafts the proposal."
+    sub="Save this search in GovHub and new matches land in your GovHub inbox, with a plain-English summary and the deadline. When one fits, GovHub fills out the forms and drafts the proposal."
+    primaryHref={`${ctaHref('bids_hub')}&next=${encodeURIComponent('/v2/opportunities')}`}
+    secondaryHref={CALENDLY_URL}
+    secondaryLabel="Book a demo"
   />
 
   <p class="updated-line">

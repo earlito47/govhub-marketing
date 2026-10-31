@@ -43,6 +43,9 @@ export interface BidRow {
   naics: string[] | null;
   status: string;
   closed_at: string | null;
+  /** Whether a full description exists; the text itself never leaves the app. */
+  has_description: boolean;
+  attachment_count: number;
 }
 
 export interface Bid {
@@ -73,6 +76,9 @@ export interface Bid {
   naics: { code: string; title: string | null }[];
   categories: string[];
   closed: boolean;
+  /** What the free-trial gate can truthfully say the app has for this bid. */
+  hasDescription: boolean;
+  attachmentCount: number;
 }
 
 export interface Hub {
@@ -159,6 +165,8 @@ function toBid(row: BidRow, now: number): Omit<Bid, 'slug' | 'path'> {
     sourceName: noEmDash(row.source_name),
     naics,
     categories: categorize(title, row.naics ?? []),
+    hasDescription: !!row.has_description,
+    attachmentCount: row.attachment_count ?? 0,
     closed: row.status !== 'open' || (Number.isFinite(due) && due < now),
   };
 }

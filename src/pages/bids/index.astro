@@ -6,6 +6,7 @@ import Breadcrumbs from '../../components/seo/Breadcrumbs.astro';
 import CTABand from '../../components/CTABand.astro';
 import { FEDERAL_SEGMENT, formatShortDate, getBidIndex, placeName } from '../../lib/bids/load';
 import { CATEGORIES } from '../../lib/bids/categories';
+import { CALENDLY_URL, ctaHref } from '../../config';
 
 const index = await getBidIndex();
 const open = index.bids.filter((b) => !b.closed);
@@ -64,7 +65,10 @@ const lede =
 
   <CTABand
     heading="Every bid that fits you, in one inbox"
-    sub="GovHub watches federal, state and local sources, puts the matches in your GovHub inbox with a plain-English summary, and drafts the proposal when you find one worth bidding."
+    sub="GovHub watches federal, state and local sources, puts the matches in your GovHub inbox with a plain-English summary, and fills out the forms and drafts the proposal when you find one worth bidding."
+    primaryHref={`${ctaHref('bids_index')}&next=${encodeURIComponent('/v2/opportunities')}`}
+    secondaryHref={CALENDLY_URL}
+    secondaryLabel="Book a demo"
   />
 
   <p class="updated-line">
