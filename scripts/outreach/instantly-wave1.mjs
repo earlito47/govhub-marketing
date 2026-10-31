@@ -162,7 +162,9 @@ const EMAIL_3_BODY = [
   '2. It drafts the response sections against those requirements, so {{RANDOM|your team edits instead of staring at a blank page|you are editing, not writing from scratch}}.',
   '3. It flags {{RANDOM|the disqualifiers that get bids thrown out unread|the technicalities that kill otherwise strong bids}} before you submit.',
   '',
-  'There is a working compliance matrix builder on our site you can try without creating an account: https://govhub.online',
+  // Tagged so a click reads as this campaign, not direct traffic to the
+  // homepage. www, not the apex: the apex 301 would cost every click a hop.
+  'There is a working compliance matrix builder on our site you can try without creating an account: https://www.govhub.online/?utm_source=instantly&utm_medium=email&utm_campaign=wave1',
   '',
   '{{RANDOM|If the timing is off, that is fine.|If now is not the time, all good.}}',
   '',

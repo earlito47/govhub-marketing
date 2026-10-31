@@ -26,6 +26,7 @@ import re
 import sys
 from datetime import date
 from pathlib import Path
+from urllib.parse import urlencode, urlsplit, urlunsplit
 
 import requests
 
@@ -240,6 +241,18 @@ def strip_dashes(text: str) -> str:
     return re.sub(r" {2,}", " ", text)
 
 
+def linkedin_link(url: str, campaign: str) -> str:
+    """The URL as posted to LinkedIn, tagged so its clicks never read as direct
+    or organic in PostHog, GA4 or a signup's first touch.
+
+    The query goes before any #fragment: glossary links carry one, and a query
+    after it would never reach the server.
+    """
+    parts = urlsplit(url)
+    tags = urlencode({"utm_source": "linkedin", "utm_medium": "social", "utm_campaign": campaign})
+    return urlunsplit(parts._replace(query=f"{parts.query}&{tags}" if parts.query else tags))
+
+
 def clean_json(raw: str) -> dict:
     raw = raw.strip()
     raw = re.sub(r"^```(?:json)?\s*", "", raw)
@@ -422,7 +435,7 @@ def write_outputs(topic: dict, post: dict, assets: list) -> tuple:
     # trailingSlash is 'always' in astro.config.mjs, so the trailing slash is
     # load-bearing. Without it the LinkedIn link eats a redirect.
     url = f"{SITE_URL}/blog/{slug}/"
-    li = strip_dashes(post["linkedin_post"]).rstrip() + f"\n\n{url}"
+    li = strip_dashes(post["linkedin_post"]).rstrip() + f"\n\n{linkedin_link(url, 'weekly_post')}"
     (SOCIAL_DIR / f"{slug}.linkedin.txt").write_text(li + "\n")
 
     ledger = {"topics": []}
