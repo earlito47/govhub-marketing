@@ -10,9 +10,15 @@ export interface Competitor {
   name: string;
   /** Compact name for <title> tags (SERP budget is ~60 chars); falls back to name. */
   shortName?: string;
-  category: 'response-platform' | 'opportunity-intelligence'; // GovWin IQ is a different category — see note below
+  // 'response-platform': writes responses (Loopio, Responsive).
+  // 'opportunity-intelligence': forecasts and researches contracts before they
+  //   are posted (GovWin IQ).
+  // 'bid-search': finds open bids (BidPrime, BidNet Direct, PlanetBids). Since
+  //   2026-10 GovHub does this too, then writes the proposal, so these pages
+  //   compare like with like on finding and then show the rest.
+  category: 'response-platform' | 'opportunity-intelligence' | 'bid-search';
   tagline: string; // one-line description of what the competitor actually does
-  pricingEstimate: string; // always phrase as "estimated" — none publish list pricing
+  pricingEstimate: string; // phrase as "estimated" unless publishedPricing is set (some bid services publish)
   bestFor: string; // who the competitor genuinely serves well — stay honest here
   strengths: string[]; // real strengths, not strawmanned
   weaknesses: string[]; // sourced from actual reviews, not invented
@@ -80,9 +86,191 @@ export interface Competitor {
    * positions 18-21 behind descriptions that named no number.
    */
   priceHook: string;
+  /**
+   * For a competitor that DOES publish prices (several bid services do), the
+   * real figures from its own site, so PriceComparison shows them instead of
+   * "no public price". `source` is the page they came from and `checked` the
+   * date, both shown on the page.
+   */
+  publishedPricing?: { starting: string; plans: string; trial: string; source: string; checked: string };
 }
 
 export const competitors: Competitor[] = [
+  // ── Bid services (category 'bid-search'), added 2026-10-31 ──────────────
+  // Researched 2026-10-31 from each company's own pages: BidNet Direct via
+  // SOVRA (bidnetdirect.com refused automated reads), PlanetBids via
+  // vendor.planetbids.com. bidprime.com blocks automated readers, so BidPrime
+  // facts come from its April 2026 press release, its search-indexed pages and
+  // third-party listings, and every BidPrime price is labeled an estimate.
+  // Only claims with a source; competitor prices are dated where shown.
+  {
+    slug: 'bidnet-direct',
+    priceHook: 'charges $100 to $330 a month by state',
+    name: 'BidNet Direct',
+    category: 'bid-search',
+    tagline:
+      'A government bid network, now part of SOVRA, where suppliers search and get alerts for public sector bids, free for bids from its member agencies.',
+    publishedPricing: {
+      starting: 'Free for member agency bids; $100/month for one state',
+      plans: 'Basic free (member agencies only), Local $100/mo (1 state), Regional $200/mo (3 states), National $330/mo',
+      trial: 'Not stated; free Basic plan',
+      source: 'https://www.sovra.com/pricing-suppliers/',
+      checked: 'Oct 31, 2026',
+    },
+    pricingEstimate:
+      'Published by SOVRA: Basic is free for member agency bids; Local is $100/month for one state, Regional $200/month for three states, National $330/month (checked October 31, 2026).',
+    bestFor:
+      'Suppliers who mainly bid with BidNet Direct member agencies, or who want low-cost bid alerts in one state and already write their own responses.',
+    strengths: [
+      'A large supplier network: SOVRA cites 1 million suppliers and bids from over 90,000 government agencies',
+      'Free access to bids from its member agencies, with electronic bid submission',
+      'Plan holder lists and over 20 years of historical solicitation data',
+      'Clear published pricing by state',
+    ],
+    weaknesses: [
+      'Stops at the bid: no proposal writing, proposal scoring or form filling',
+      'Paid plans are priced by state, so national coverage is the $330/month tier',
+      'The free plan covers member agency bids only',
+      'No AI summaries of bids; its AI is a support chat assistant',
+    ],
+    comparisonPoints: [
+      { label: 'Finding bids', govhub: 'Federal, state and local bids read daily, with an AI summary of each', competitor: 'Search 25,000+ open bids from 90,000+ agencies, per SOVRA' },
+      { label: 'Matching', govhub: 'Ranked against your NAICS codes, states, set-asides and keywords, with the reason for each match', competitor: 'Saved searches and NIGP-code matching, with a daily match summary on paid plans' },
+      { label: 'Bid summaries', govhub: 'A plain-English AI summary of every bid', competitor: 'Not offered' },
+      { label: 'Proposal writing and scoring', govhub: 'A full draft, scored against the evaluation criteria', competitor: 'Not offered' },
+      { label: 'Form filling', govhub: 'SF-33, SF-1449, reps and certs from your company profile', competitor: 'Not offered' },
+      { label: 'Pricing', govhub: 'Published tiers, the same price nationwide, 14-day free trial', competitor: 'Free for member agencies; $100 to $330/month by state coverage' },
+    ],
+    faqs: [
+      {
+        question: 'Is BidNet Direct free?',
+        answer:
+          "Its Basic plan is free for bids from BidNet Direct member agencies. Seeing bids beyond member agencies costs $100 a month for one state, $200 for three states or $330 nationwide, per SOVRA's supplier pricing page (checked October 31, 2026).",
+      },
+      {
+        question: 'Does BidNet Direct write proposals?',
+        answer:
+          'No. BidNet Direct finds bids, sends alerts and handles electronic submission for its member agencies. GovHub finds and matches bids too, then drafts the proposal, scores it and fills out the forms.',
+      },
+    ],
+    alternativesRoster: [
+      { name: 'BidPrime', fit: 'Pick it for document retrieval across many small agencies', note: 'Broad local coverage and Docs on Demand; its AI drafts outlines and checklists, not full proposals; annual plans by quote.' },
+      { name: 'PlanetBids VendorLine', fit: 'Pick it if your agencies run on PlanetBids', note: 'Free to bid with PlanetBids agencies; VendorLine is $547 to $897 a year with AI bid briefs; no proposal writing.' },
+      { name: 'DemandStar (now Euna OpenBids)', fit: 'Pick it for cheap single-county alerts', note: 'Free for one agency, $60 a year per county, up to $2,699 a year nationwide; no AI and no proposal tools.' },
+      { name: 'Periscope S2G', fit: 'Pick it for state contract and catalog work', note: 'A free tier covering about 2% of bids; paid plans by state or region, billed upfront; no proposal tools.' },
+      { name: 'GovTribe', fit: 'Pick it for federal capture with AI drafting in Office files', note: 'Federal, state and local search with profile matching, and AI that fills Word, Excel and PowerPoint templates; $1,900 a seat a year, billed annually, 7-day trial.' },
+      { name: 'HigherGov', fit: 'Pick it for low-cost market research and award data', note: 'Search, alerts, award data and pipelines from $500 a year for one user, 2-week trial; proposal help is a pricing-page mention, not a product.' },
+    ],
+  },
+  {
+    slug: 'bidprime',
+    priceHook: 'sells annual plans by quote',
+    name: 'BidPrime',
+    category: 'bid-search',
+    tagline:
+      'A government bid-finding service that alerts you to federal, state and local bids and retrieves bid documents, with an AI assistant for qualifying them.',
+    pricingEstimate:
+      'BidPrime does not post a price list; plans are annual subscriptions quoted after a trial or sales call. Third-party listings put entry plans at roughly $99 to $250 a month, and a G2 reviewer reported paying $749 for a year. Treat every figure as an estimate. Directory listings describe a 30-day free trial with no credit card.',
+    bestFor:
+      'Contractors who want broad bid alerts across many local agencies, including documents that are not posted online, and who already have a way to write the response.',
+    strengths: [
+      'Broad coverage claim: bids from over 110,000 government agencies, federal through school districts',
+      'Docs on Demand: its team retrieves bid documents that are not posted online',
+      'An AI assistant that summarizes scope and deadlines, extracts requirements like bonding and insurance, and drafts outlines, compliance checklists and cover letters (BidPrime press release, April 2026)',
+      'A human configuration team that tunes your matching',
+    ],
+    weaknesses: [
+      'Stops short of the proposal: its AI produces outlines, checklists and cover letters, not a full draft scored against the evaluation criteria',
+      'No form filling for SF-33, SF-1449 or reps and certs',
+      'No published price list, so cost is a sales conversation',
+    ],
+    comparisonPoints: [
+      { label: 'Finding bids', govhub: 'Federal, state and local bids read daily, with an AI summary of each', competitor: 'Federal, state and local bids from 110,000+ agencies, with document retrieval' },
+      { label: 'Matching', govhub: 'Ranked against your NAICS codes, states, set-asides and keywords, with the reason for each match', competitor: 'Profile matching plus a configuration team' },
+      { label: 'Proposal writing', govhub: 'A full draft against the solicitation, in your firm’s voice', competitor: 'Outlines, compliance checklists and cover letters' },
+      { label: 'Proposal scoring', govhub: 'Scored against the evaluation criteria before you submit', competitor: 'Not offered' },
+      { label: 'Form filling', govhub: 'SF-33, SF-1449, reps and certs from your company profile', competitor: 'Not offered' },
+      { label: 'Pricing', govhub: 'Published tiers, 14-day free trial', competitor: 'Annual plans by quote; a free trial per directory listings' },
+    ],
+    faqs: [
+      {
+        question: 'Does BidPrime write proposals?',
+        answer:
+          "Not in full. BidPrime's AI assistant summarizes bids and drafts outlines, compliance checklists and cover letters. GovHub drafts the full proposal against the solicitation, scores it against the evaluation criteria and fills out the forms.",
+      },
+      {
+        question: 'How much does BidPrime cost?',
+        answer:
+          'BidPrime does not post a price list; it sells annual subscriptions by quote. Third-party listings suggest roughly $99 to $250 a month for entry plans, so treat any figure as an estimate. GovHub publishes its prices, and they include the proposal writing and form filling.',
+      },
+    ],
+    alternativesRoster: [
+      { name: 'BidNet Direct', fit: 'Pick it if your buyers are BidNet member agencies', note: 'Free for member agency bids; $100 to $330 a month by state for the rest; no proposal tools.' },
+      { name: 'PlanetBids VendorLine', fit: 'Pick it if your agencies run on PlanetBids', note: 'Free to bid with PlanetBids agencies; VendorLine is $547 to $897 a year with AI bid briefs; no proposal writing.' },
+      { name: 'DemandStar (now Euna OpenBids)', fit: 'Pick it for cheap single-county alerts', note: 'Free for one agency, $60 a year per county, up to $2,699 a year nationwide; no AI and no proposal tools.' },
+      { name: 'Periscope S2G', fit: 'Pick it for state contract and catalog work', note: 'A free tier covering about 2% of bids; paid plans by state or region, billed upfront; no proposal tools.' },
+      { name: 'GovTribe', fit: 'Pick it for federal capture with AI drafting in Office files', note: 'Federal, state and local search with profile matching, and AI that fills Word, Excel and PowerPoint templates; $1,900 a seat a year, billed annually, 7-day trial.' },
+      { name: 'HigherGov', fit: 'Pick it for low-cost market research and award data', note: 'Search, alerts, award data and pipelines from $500 a year for one user, 2-week trial; proposal help is a pricing-page mention, not a product.' },
+    ],
+  },
+  {
+    slug: 'planetbids',
+    priceHook: 'charges $547 to $897 a year for VendorLine',
+    name: 'PlanetBids',
+    category: 'bid-search',
+    tagline:
+      'A procurement platform that public agencies use to post and run their bids, with a paid vendor product, VendorLine, for finding bids across agencies.',
+    publishedPricing: {
+      starting: 'Free to bid on PlanetBids agency projects; VendorLine Pro $547/year',
+      plans: 'VendorLine Pro $547/yr; Pro Plus AI $897/yr (100 AI-analyzed bids a year)',
+      trial: 'Not stated',
+      source: 'https://vendor.planetbids.com/pricing',
+      checked: 'Oct 31, 2026',
+    },
+    pricingEstimate:
+      'Published: bidding on PlanetBids agency projects is free; VendorLine Pro is $547/year and Pro Plus AI $897/year (vendor.planetbids.com, checked October 31, 2026).',
+    bestFor:
+      'Vendors who mainly bid with agencies that run their procurement on PlanetBids, and who want low-cost bid matching with AI briefs.',
+    strengths: [
+      'Bidding on projects posted by PlanetBids agencies is free, and it says more than 500 public agencies use it',
+      'VendorLine adds AI bid briefs, matching, a bid/no-bid suggestion and chat about a bid’s requirements',
+      'Pipeline tracking, competitor views and sub-bid teaming tools',
+      'A low published annual price',
+    ],
+    weaknesses: [
+      'No proposal writing, proposal scoring or government form filling',
+      'AI analysis on Pro Plus AI is capped at 100 bids a year',
+      'Coverage is about 10,000 active bids, by its own count',
+    ],
+    comparisonPoints: [
+      { label: 'What it is', govhub: 'A contractor platform: find, match, write, score and fill out forms', competitor: 'An agency procurement portal, with VendorLine for vendors' },
+      { label: 'Finding bids', govhub: 'Federal, state and local bids read daily, with an AI summary of each', competitor: '10,000+ active bids across 50 states, with federal bids from SAM.gov (VendorLine)' },
+      { label: 'Matching and bid briefs', govhub: 'Ranked against your NAICS codes, states and set-asides, with a summary of each bid', competitor: 'AI matching, AI bid briefs and a bid/no-bid suggestion (100 AI-analyzed bids a year on Pro Plus AI)' },
+      { label: 'Proposal writing and scoring', govhub: 'A full draft, scored against the evaluation criteria', competitor: 'Not offered' },
+      { label: 'Form filling', govhub: 'SF-33, SF-1449, reps and certs from your company profile', competitor: 'Not offered' },
+      { label: 'Pricing', govhub: 'Published monthly tiers, 14-day free trial', competitor: '$547 or $897 a year; bidding on PlanetBids agency projects is free' },
+    ],
+    faqs: [
+      {
+        question: 'Do I need PlanetBids to bid with an agency that uses it?',
+        answer:
+          "You register on that agency's PlanetBids portal to download documents and submit, and PlanetBids says it never charges vendors to bid on a project. VendorLine, its paid vendor product, is for finding bids across agencies. GovHub reads bids from SAM.gov and state and local portals across the country, then writes the response.",
+      },
+      {
+        question: 'Does PlanetBids write proposals?',
+        answer:
+          'No. VendorLine summarizes bids and suggests whether to bid. GovHub also drafts the proposal, scores it and fills out the forms.',
+      },
+    ],
+    alternativesRoster: [
+      { name: 'BidNet Direct', fit: 'Pick it if your buyers are BidNet member agencies', note: 'Free for member agency bids; $100 to $330 a month by state for the rest; no proposal tools.' },
+      { name: 'BidPrime', fit: 'Pick it for document retrieval across many small agencies', note: 'Broad local coverage and Docs on Demand; its AI drafts outlines and checklists, not full proposals; annual plans by quote.' },
+      { name: 'DemandStar (now Euna OpenBids)', fit: 'Pick it for cheap single-county alerts', note: 'Free for one agency, $60 a year per county, up to $2,699 a year nationwide; no AI and no proposal tools.' },
+      { name: 'Periscope S2G', fit: 'Pick it for state contract and catalog work', note: 'A free tier covering about 2% of bids; paid plans by state or region, billed upfront; no proposal tools.' },
+      { name: 'GovTribe', fit: 'Pick it for federal capture with AI drafting in Office files', note: 'Federal, state and local search with profile matching, and AI that fills Word, Excel and PowerPoint templates; $1,900 a seat a year, billed annually, 7-day trial.' },
+      { name: 'HigherGov', fit: 'Pick it for low-cost market research and award data', note: 'Search, alerts, award data and pipelines from $500 a year for one user, 2-week trial; proposal help is a pricing-page mention, not a product.' },
+    ],
+  },
   {
     slug: 'loopio',
     priceHook: 'starts around $15,000/year',
@@ -325,8 +513,15 @@ export const competitors: Competitor[] = [
     comparisonPoints: [
       {
         label: 'What it actually does',
-        govhub: 'Writes and manages your proposal response',
-        competitor: 'Finds and tracks opportunities, does not write proposals',
+        govhub: 'Finds and matches open bids, then writes the proposal',
+        competitor: 'Researches and tracks opportunities, does not write proposals',
+      },
+      {
+        // Added 2026-10-31 when GovHub shipped bid search; the old rows said
+        // GovHub only worked on a solicitation you already had.
+        label: 'Finding open bids',
+        govhub: 'Federal, state and local bids, matched to your NAICS codes, states and set-asides',
+        competitor: 'Yes, plus analyst forecasts of contracts before they are posted',
       },
       {
         label: 'Proposal drafting / AI writing',
@@ -340,15 +535,15 @@ export const competitors: Competitor[] = [
       },
       {
         label: 'Use case',
-        govhub: 'Respond to an RFP you\'ve already found',
-        competitor: 'Find an RFP before it\'s publicly posted',
+        govhub: 'Find open bids that fit and respond to them',
+        competitor: 'Track an opportunity before it\'s publicly posted',
       },
     ],
     faqs: [
       {
         question: 'Is GovWin IQ the same kind of tool as GovHub?',
         answer:
-          'No. This is an important distinction. GovWin IQ is an opportunity intelligence platform that helps you find and track government contracts, often years before they are formally posted. It does not write or manage proposal responses. GovHub is a proposal writing and compliance platform used once you already have an RFP to respond to. Many govcon teams use a discovery tool and a response tool together rather than choosing one over the other.',
+          'Not quite. GovWin IQ is an opportunity intelligence platform: its analysts track government contracts, often years before they are formally posted, but it does not write or manage proposal responses. GovHub finds open federal, state and local bids, matches them to your company, and then writes, scores and formats the proposal. Teams pursuing large recompetes years out often use both.',
       },
       {
         question: 'Is GovWin IQ worth it for a small business?',

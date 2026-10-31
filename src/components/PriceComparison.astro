@@ -11,6 +11,10 @@
  * visitor wants, but drops the exact-match "<name>: pricing" heading and the
  * detailed estimate, and sends the pricing query to the canonical page. See
  * the pricingCanonical docs in data/competitors.ts.
+ *
+ * Some competitors, bid services mostly, DO publish prices. Pass `published`
+ * with the figures from their own site and the table shows those, sourced and
+ * dated, instead of claiming there is no public price.
  */
 import { PLANS, TRIAL_DAYS, formatUsd } from '../data/pricing';
 
@@ -18,8 +22,9 @@ interface Props {
   competitorName: string;
   competitorEstimate: string;
   pricingCanonical?: { href: string; label: string };
+  published?: { starting: string; plans: string; trial: string; source: string; checked: string };
 }
-const { competitorName, competitorEstimate, pricingCanonical } = Astro.props;
+const { competitorName, competitorEstimate, pricingCanonical, published } = Astro.props;
 const tiers = PLANS.map((p) => `${p.name} ${formatUsd(p.monthlyUsd)}/mo`).join(', ');
 ---
 
@@ -29,10 +34,17 @@ const tiers = PLANS.map((p) => `${p.name} ${formatUsd(p.monthlyUsd)}/mo`).join('
       ? `How GovHub and ${competitorName} are sold`
       : `GovHub vs ${competitorName}: pricing`}
   </h2>
-  <p>
-    GovHub publishes its pricing. {competitorName} does not, so any {competitorName} figure
-    is a third-party estimate from a sales-led quote process.
-  </p>
+  {published ? (
+    <p>
+      Both publish their pricing. {competitorName}'s figures below are from{' '}
+      <a href={published.source} rel="nofollow noopener" target="_blank">its own site</a>, checked {published.checked}.
+    </p>
+  ) : (
+    <p>
+      GovHub publishes its pricing. {competitorName} does not, so any {competitorName} figure
+      is a third-party estimate from a sales-led quote process.
+    </p>
+  )}
   <div class="table-wrap">
     <table>
       <thead>
@@ -42,27 +54,27 @@ const tiers = PLANS.map((p) => `${p.name} ${formatUsd(p.monthlyUsd)}/mo`).join('
         <tr>
           <th scope="row">Starting price</th>
           <td>{formatUsd(PLANS[0].monthlyUsd)}/month, billed monthly</td>
-          <td>{pricingCanonical ? 'No public price (see the full breakdown below)' : 'No public price (estimated below)'}</td>
+          <td>{published ? published.starting : pricingCanonical ? 'No public price (see the full breakdown below)' : 'No public price (estimated below)'}</td>
         </tr>
         <tr>
           <th scope="row">Published pricing</th>
           <td>Yes, on this page and the pricing page</td>
-          <td>No, custom sales quote only</td>
+          <td>{published ? 'Yes' : 'No, custom sales quote only'}</td>
         </tr>
         <tr>
           <th scope="row">Plans</th>
           <td>{tiers}</td>
-          <td>Annual contract, quoted per deal</td>
+          <td>{published ? published.plans : 'Annual contract, quoted per deal'}</td>
         </tr>
         <tr>
           <th scope="row">Free trial</th>
           <td>{TRIAL_DAYS}-day free trial, self-serve</td>
-          <td>Sales-led, varies</td>
+          <td>{published ? published.trial : 'Sales-led, varies'}</td>
         </tr>
       </tbody>
     </table>
   </div>
-  {pricingCanonical ? (
+  {published ? null : pricingCanonical ? (
     <p class="estimate">
       We keep the {competitorName} numbers in one place rather than repeating them across
       pages: <a href={pricingCanonical.href}>{pricingCanonical.label}</a> covers the seat

@@ -7,6 +7,8 @@ import CTABand from '../../components/CTABand.astro';
 import PriceComparison from '../../components/PriceComparison.astro';
 import CompareLinks from '../../components/CompareLinks.astro';
 import { competitors, type Competitor } from '../../data/competitors';
+import { ctaHref } from '../../config';
+import { asClause } from '../../lib/text';
 
 export function getStaticPaths() {
   return competitors.map((c) => ({
@@ -21,6 +23,8 @@ interface Props {
 
 const { competitor } = Astro.props;
 const isOpportunityIntel = competitor.category === 'opportunity-intelligence';
+// Bid services: GovHub replaces the finding and adds the response.
+const isBidSearch = competitor.category === 'bid-search';
 
 const title = isOpportunityIntel
   ? `Looking for a proposal writing tool, not just ${competitor.name}?`
@@ -45,8 +49,10 @@ const metaTitle = isOpportunityIntel
 // opened "Looking for a X alternative? See why government contractors choose
 // GovHub" — about us, not about what the searcher came to find out.
 const description = isOpportunityIntel
-  ? `${shortName} finds federal opportunities but will not write the proposal. See proposal-first alternatives, what ${shortName} costs, and when you need both.`
-  : `${shortName} ${competitor.priceHook} and is not built for Section L/M or FAR. See federal-first alternatives, real prices, and when to stay on ${shortName}.`;
+  ? `${shortName} tracks federal contracts but will not write the proposal. See alternatives that find bids and write the response, and what ${shortName} costs.`
+  : isBidSearch
+    ? `Looking for a ${shortName} alternative? GovHub finds federal, state and local bids, matches them to your company, then writes the proposal. See the field.`
+    : `${shortName} ${competitor.priceHook} and is not built for Section L/M or FAR. See federal-first alternatives, real prices, and when to stay on ${shortName}.`;
 
 // Alternatives-page-specific FAQs — reframe the existing set toward
 // alternative-seeking search intent.
@@ -54,18 +60,30 @@ const altFaqs = isOpportunityIntel
   ? [
       {
         question: `Is GovHub a replacement for ${competitor.name}?`,
-        answer: `No. They solve different problems. ${competitor.name} finds government contract opportunities; GovHub writes and manages the proposals themselves. If you need proposal writing capability, GovHub is what you're looking for. If you also need opportunity discovery, keep ${competitor.name} (or a similar tool) alongside it.`,
+        answer: `Partly. GovHub finds open federal, state and local bids and matches them to your company, then writes, scores and formats the proposal. It does not forecast contracts years before they are posted, which is ${competitor.name}'s analyst research. If you need that, keep ${competitor.name} alongside GovHub.`,
       },
       {
         question: `What should I use if I only need to write proposals, not find them?`,
-        answer: `GovHub is designed for exactly that workflow. It doesn't do opportunity discovery. It handles drafting, compliance checking, and formatting for RFPs you already know you're pursuing.`,
+        answer: `GovHub. It handles drafting, compliance checking, scoring and forms for any solicitation you bring, and its bid search is there when you want it.`,
       },
       ...competitor.faqs,
     ]
-  : [
+  : isBidSearch
+    ? [
+        {
+          question: `Why do government contractors look for ${competitor.name} alternatives?`,
+          answer: `Usually because finding the bid is only half the job. Common reasons include ${competitor.weaknesses[0] ? asClause(competitor.weaknesses[0]) : 'price'}, and wanting the proposal and the forms handled in the same tool as the bid search.`,
+        },
+        {
+          question: `Is GovHub a ${competitor.name} replacement?`,
+          answer: `For finding bids, yes: GovHub covers federal, state and local bids and matches them to your company profile. It also reads the solicitation, writes and scores the proposal and fills out the forms, which ${competitor.name} does not.`,
+        },
+        ...competitor.faqs,
+      ]
+    : [
       {
         question: `Why do government contractors look for ${competitor.name} alternatives?`,
-        answer: `Common reasons include ${competitor.weaknesses[0]?.toLowerCase().replace(/\.$/, '') ?? 'fit for government-specific workflows'} and the need for a tool designed around Section L/M structure, FAR/DFARS clauses, and government-specific compliance requirements.`,
+        answer: `Common reasons include ${competitor.weaknesses[0] ? asClause(competitor.weaknesses[0]) : 'fit for government-specific workflows'} and the need for a tool designed around Section L/M structure, FAR/DFARS clauses, and government-specific compliance requirements.`,
       },
       {
         question: `Is GovHub a direct ${competitor.name} replacement?`,
@@ -96,7 +114,7 @@ const altFaqs = isOpportunityIntel
       {isOpportunityIntel ? (
         <>
           <p class="lede">
-            {competitor.name} is {competitor.tagline.toLowerCase().replace(/\.$/, '')}.
+            {competitor.name} is {asClause(competitor.tagline)}.
             If you're searching for alternatives because you actually need a
             <strong> proposal writing tool</strong>, one that helps you draft
             and submit RFP responses, you're looking for a different category
@@ -107,11 +125,10 @@ const altFaqs = isOpportunityIntel
 
           <h2>The short answer</h2>
           <p>
-            GovHub is a proposal writing and compliance platform, not an
-            opportunity discovery tool. If your job is to
-            <strong> respond to RFPs you already know about</strong>, GovHub is
-            the tool. If your job is to
-            <strong> find opportunities before they're posted</strong>,
+            GovHub finds open, posted bids and writes the response. If your job
+            is to <strong>find bids that fit and respond to them</strong>, GovHub
+            is the tool. If your job is to
+            <strong> track opportunities years before they're posted</strong>,
             {competitor.name} does that and GovHub doesn't try to.
           </p>
 
@@ -130,10 +147,10 @@ const altFaqs = isOpportunityIntel
           <h2>When {competitor.name} is still the right tool</h2>
           <p>
             {competitor.name} remains a strong option for
-            {' '}{competitor.bestFor.toLowerCase().replace(/\.$/, '')}. Its
+            {' '}{asClause(competitor.bestFor)}. Its
             pre-solicitation intelligence is a genuinely unique capability that
-            proposal writing platforms don't replicate. Many teams use both, a
-            discovery tool for capture, a response tool for proposals.
+            GovHub does not replicate. Teams chasing large recompetes years out
+            often use both.
           </p>
 
           <p class="cta">
@@ -142,23 +159,41 @@ const altFaqs = isOpportunityIntel
         </>
       ) : (
         <>
-          <p class="lede">
-            {competitor.name} is a widely-used tool, but it is not designed around the
-            specific requirements of government proposal writing. GovHub is the leading
-            government-focused alternative, purpose-built for federal, state, and local
-            RFP responses.
-          </p>
+          {isBidSearch ? (
+            <p class="lede">
+              {competitor.name} is {asClause(competitor.tagline)}.
+              It finds the bid; what happens next is up to you. GovHub finds and
+              matches bids too, then reads the solicitation, writes the proposal,
+              scores it and fills out the forms.
+            </p>
+          ) : (
+            <p class="lede">
+              {competitor.name} is a widely-used tool, but it is not designed around the
+              specific requirements of government proposal writing. GovHub is the leading
+              government-focused alternative, purpose-built for federal, state, and local
+              RFP responses.
+            </p>
+          )}
 
           <PriceComparison competitorName={competitor.name} competitorEstimate={competitor.pricingEstimate} pricingCanonical={competitor.pricingCanonical} />
 
           <h2>The short answer</h2>
-          <p>
-            GovHub is the recommended {competitor.name} alternative for teams whose
-            primary workload is <strong>government solicitations</strong>. Where
-            {competitor.name} is general-purpose, GovHub is shaped end to end around
-            Section L/M structure, compliance matrices, FAR/DFARS clause awareness,
-            and Section 508 conformance.
-          </p>
+          {isBidSearch ? (
+            <p>
+              GovHub is the {competitor.name} alternative for contractors who
+              want the bid and the response in one place: federal, state and
+              local bids matched to your NAICS codes, states and set-asides, and
+              a drafted, scored proposal with the forms filled out.
+            </p>
+          ) : (
+            <p>
+              GovHub is the recommended {competitor.name} alternative for teams whose
+              primary workload is <strong>government solicitations</strong>. Where
+              {competitor.name} is general-purpose, GovHub is shaped end to end around
+              Section L/M structure, compliance matrices, FAR/DFARS clause awareness,
+              and Section 508 conformance.
+            </p>
+          )}
 
           <h2>Why teams evaluate alternatives to {competitor.name}</h2>
           <ul>
@@ -190,7 +225,7 @@ const altFaqs = isOpportunityIntel
                   </>
                 ))}
               </dl>
-              <p>
+              {!isBidSearch && <p>
                 A hard truth that applies to most of this list: these tools were
                 built for commercial security questionnaires and marketing RFIs.
                 Federal work needs Section L and M alignment, page-count control,
@@ -198,17 +233,22 @@ const altFaqs = isOpportunityIntel
                 vendor cannot show a real compliance matrix and a clean crosswalk
                 to a Word outline in the demo, that gap becomes your problem at
                 Red Team.
-              </p>
+              </p>}
             </>
           )}
 
           <h2>When {competitor.name} is still the right tool</h2>
           <p>
             {competitor.name} remains a strong option for
-            {' '}{competitor.bestFor.toLowerCase().replace(/\.$/, '')}. Its strengths,
-            {' '}{competitor.strengths.slice(0, 2).map((s) => s.toLowerCase().replace(/\.$/, '')).join(' and ')}
-            ,{' '}make it a solid choice when government-specific requirements are a
-            small share of your response mix.
+            {' '}{asClause(competitor.bestFor)}. What it does well:
+          </p>
+          <ul>
+            {competitor.strengths.slice(0, 2).map((s) => <li>{s.replace(/\.$/, '')}.</li>)}
+          </ul>
+          <p>
+            {isBidSearch
+              ? 'If bid notices are all you need, that may be enough.'
+              : 'That makes it a solid choice when government-specific requirements are a small share of your response mix.'}
           </p>
 
           <p class="cta">
@@ -223,8 +263,9 @@ const altFaqs = isOpportunityIntel
     <FAQSchema faqs={altFaqs} heading={`${competitor.name}: FAQ`} />
 
     <CTABand
-      heading="Try the government-specific alternative"
-      sub="Bring your next solicitation, the first draft is ready before the trial ends."
+      heading={isBidSearch ? 'Find the bid and write the proposal in one place' : 'Try the government-specific alternative'}
+      sub={isBidSearch ? '14 days free, no card. Matched bids land in your GovHub inbox as soon as your company profile is set up.' : 'Bring your next solicitation, the first draft is ready before the trial ends.'}
+      primaryHref={`${ctaHref(`alternatives_${competitor.slug}`)}${isBidSearch ? `&next=${encodeURIComponent('/v2/opportunities')}` : ''}`}
       secondaryHref="/pricing/"
       secondaryLabel="See pricing"
     />
