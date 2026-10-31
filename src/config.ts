@@ -80,6 +80,20 @@ export const POSTHOG_API_HOST = 'https://us.i.posthog.com';
 export const COOKIE_DOMAIN = '.govhub.online';
 
 /**
+ * The app's Supabase project, read at BUILD time by src/lib/bids/load.ts to
+ * generate the public /bids/ pages. Hardcoded for the same wrangler.jsonc
+ * reason as POSTHOG_TOKEN above: a dashboard variable never reaches the build.
+ *
+ * This is the PUBLISHABLE (anon) key, the one app.govhub.online already ships
+ * in its client bundle. All it can reach is what row-level security and grants
+ * allow anon; for bids that is public_bid_listings(), which returns only what a
+ * public page may show. Never put a service-role key here.
+ */
+export const SUPABASE_URL = 'https://iqekrwearenblsmhvdjn.supabase.co';
+export const SUPABASE_PUBLISHABLE_KEY =
+  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlxZWtyd2VhcmVuYmxzbWh2ZGpuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTczNTA0NDUsImV4cCI6MjA3MjkyNjQ0NX0.khodqjjwJNovP4cd2fRK3Mdi6VG-HNp0JzzDzWSY_2Q';
+
+/**
  * Build a CTA URL into the app that records WHICH on-site surface produced the
  * click without touching campaign attribution.
  *

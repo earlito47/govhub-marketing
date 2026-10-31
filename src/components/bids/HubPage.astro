@@ -1,0 +1,169 @@
+---
+/**
+ * A list of open bids for a place, a category, or a category in a place.
+ * Answer first: how many are open, from how many agencies, and the next
+ * deadline, then the list itself, then the links that tie hubs together.
+ */
+import BidsLayout from './BidsLayout.astro';
+import BidList from './BidList.astro';
+import Breadcrumbs from '../seo/Breadcrumbs.astro';
+import CTABand from '../CTABand.astro';
+import type { BidIndex, Hub } from '../../lib/bids/load';
+import { FEDERAL_SEGMENT, INSIGHTS_STATE_SLUGS, categoryName, formatShortDate, placeName } from '../../lib/bids/load';
+import { CATEGORIES } from '../../lib/bids/categories';
+import { CALENDLY_URL, ctaHref } from '../../config';
+
+interface Props {
+  index: BidIndex;
+  hub: Hub;
+  /** A state slug or "federal". */
+  place?: string;
+  category?: string;
+}
+
+const { index, hub, place, category } = Astro.props;
+const MAX_ROWS = 200;
+
+const placeLabel = place ? placeName(place) : null;
+const catLabel = category ? categoryName(category) : null;
+const what = catLabel ? `${catLabel.toLowerCase()} bids` : place === FEDERAL_SEGMENT ? 'federal bids' : 'government bids';
+const where = placeLabel && place !== FEDERAL_SEGMENT ? ` in ${placeLabel}` : '';
+
+const h1 = catLabel
+  ? `${catLabel} bids${where}`
+  : place === FEDERAL_SEGMENT
+    ? 'Federal government bids with no listed location'
+    : `Government bids in ${placeLabel}`;
+// <title>: the longest form that fits 60 characters (check-meta.mjs warns
+// past 60 and fails past 70).
+const titleCase = (s: string) => s.replace(/\b([a-z])([a-z]*)/g, (w, a, rest) => (/^(and|in|of|the)$/.test(w) ? w : a.toUpperCase() + rest));
+const titles = catLabel
+  ? [`${titleCase(catLabel)} Bids${where} | Open Government Contracts`, `${titleCase(catLabel)} Bids${where} | GovHub`, `${titleCase(catLabel)} Bids${where}`]
+  : place === FEDERAL_SEGMENT
+    ? ['Federal Government Bids | Open SAM.gov Opportunities']
+    : [`${placeLabel} Government Bids | Open State & Local RFPs`, `${placeLabel} Government Bids and RFPs`];
+const title = titles.find((t) => t.length <= 60) ?? titles[titles.length - 1];
+
+const open = hub.open;
+const agencies = new Map<string, number>();
+for (const b of open) {
+  const a = b.agency ?? b.sourceName;
+  agencies.set(a, (agencies.get(a) ?? 0) + 1);
+}
+const topAgencies = [...agencies].sort((a, b) => b[1] - a[1]).slice(0, 5);
+const next = open.find((b) => b.dueAt);
+const checked = formatShortDate(index.builtAt.toISOString());
+
+const lede =
+  `${open.length.toLocaleString('en-US')} open ${what}${where} from ${agencies.size.toLocaleString('en-US')} ` +
+  `${agencies.size === 1 ? 'agency' : 'agencies'}, checked ${checked}.` +
+  (next?.dueAt ? ` The next deadline is ${formatShortDate(next.dueAt, next.timeZone)}: ${next.title}.` : '');
+const description = lede.length > 158 ? `${lede.slice(0, 157).replace(/\s+\S*$/, '')}…` : lede;
+
+// Cross-links. A place hub lists its categories; a category hub lists its
+// places; a category-in-place hub lists both directions.
+const categoryLinks = place && place !== FEDERAL_SEGMENT
+  ? CATEGORIES.filter((c) => c.slug !== category && index.categoryStateHubs.has(`${c.slug}/${place}`)).map((c) => ({
+      href: `/bids/${c.slug}/${place}/`,
+      label: c.name,
+      count: index.categoryStateHubs.get(`${c.slug}/${place}`)!.open.length,
+    }))
+  : [];
+const placeLinks = category
+  ? [...index.categoryStateHubs]
+      .filter(([k]) => k.startsWith(`${category}/`) && k !== `${category}/${place}`)
+      .map(([k, h]) => ({ href: h.path, label: placeName(k.split('/')[1]), count: h.open.length }))
+      .sort((a, b) => b.count - a.count)
+  : [];
+
+const crumbs = [
+  { name: 'Home', url: '/' },
+  { name: 'Bids', url: '/bids/' },
+  ...(category && place ? [{ name: categoryName(category), url: `/bids/${category}/` }] : []),
+  { name: h1, url: hub.path },
+];
+---
+
+<BidsLayout title={title} description={description}>
+  <Breadcrumbs items={crumbs} />
+  <p class="eyebrow">Open government bids</p>
+  <h1>{h1}</h1>
+  <p class="lede">{lede}</p>
+
+  <BidList
+    bids={open.slice(0, MAX_ROWS)}
+    caption={open.length > MAX_ROWS ? `The ${MAX_ROWS} soonest deadlines of ${open.length.toLocaleString('en-US')} open bids` : `${open.length} open bids, soonest deadline first`}
+    showPlace={!place || place === FEDERAL_SEGMENT}
+  />
+
+  {topAgencies.length > 1 && (
+    <>
+      <h2>Agencies with the most open {what}{where}</h2>
+      <ul class="agency-list">
+        {topAgencies.map(([name, n]) => (
+          <li>{name} <span class="muted">({n})</span></li>
+        ))}
+      </ul>
+    </>
+  )}
+
+  {categoryLinks.length > 0 && (
+    <>
+      <h2>{category ? `Other bids in ${placeLabel}` : `Bids in ${placeLabel} by category`}</h2>
+      <ul class="chip-list">
+        {categoryLinks.map((l) => (
+          <li><a href={l.href}>{l.label}<span class="count">{l.count}</span></a></li>
+        ))}
+      </ul>
+    </>
+  )}
+
+  {placeLinks.length > 0 && (
+    <>
+      <h2>{catLabel} bids in other states</h2>
+      <ul class="chip-list">
+        {placeLinks.map((l) => (
+          <li><a href={l.href}>{l.label}<span class="count">{l.count}</span></a></li>
+        ))}
+      </ul>
+    </>
+  )}
+
+  {category && place && (
+    <p><a href={`/bids/${place}/`}>All government bids in {placeLabel}</a> · <a href={`/bids/${category}/`}>{catLabel} bids nationwide</a></p>
+  )}
+  {place && INSIGHTS_STATE_SLUGS.has(place) && (
+    <p class="muted">Looking for past awards? See <a href={`/insights/state/${place}/`}>federal contract spending in {placeLabel}</a>.</p>
+  )}
+
+  {hub.recentlyClosed.length > 0 && (
+    <>
+      <h2>Recently closed</h2>
+      <BidList bids={hub.recentlyClosed} caption="Closed in the last 90 days, most recent first" showPlace={!place || place === FEDERAL_SEGMENT} />
+    </>
+  )}
+
+  <CTABand
+    heading={`See new ${what}${where} in one inbox`}
+    sub="Save this search in GovHub and new matches land in your GovHub inbox, with a plain-English summary and the deadline. When one fits, GovHub fills out the forms and drafts the proposal."
+    primaryHref={`${ctaHref('bids_hub')}&next=${encodeURIComponent('/v2/opportunities')}`}
+    secondaryHref={CALENDLY_URL}
+    secondaryLabel="Book a demo"
+  />
+
+  <p class="updated-line">
+    Federal bids from SAM.gov; state and local bids from {index.sourceCount.toLocaleString('en-US')} official sources. Updated
+    {checked}. Summaries are written by GovHub from each notice; confirm details on the official notice.
+  </p>
+</BidsLayout>
+
+<style>
+  .agency-list {
+    columns: 2 18rem;
+    padding-left: 1.1rem;
+  }
+  .agency-list li {
+    margin-bottom: 0.3rem;
+    break-inside: avoid;
+  }
+</style>

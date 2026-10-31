@@ -1,0 +1,395 @@
+---
+/**
+ * One bid, public view. The visitor gets GovHub's summary, the deadline and the
+ * identifying facts; everything else fades into a free-trial gate, the way
+ * Reddit and Instagram treat signed-out visitors. The trial button signs them
+ * up and lands them on this bid in the app (/signup?next=, see strata-parse
+ * src/lib/return-to.ts), where the full description, documents and "Analyze
+ * this RFP" are.
+ *
+ * The gated values are NOT in the HTML: the blurred rows are placeholders.
+ * Shipping real values and hiding them with CSS would be content shown to
+ * Google but not to people, and anyone could read them in the page source.
+ * The gate is part of the page, not an overlay that covers it on load, which
+ * Google penalizes on mobile as an intrusive interstitial.
+ *
+ * The source is never a call to action: it is a plain link at the bottom.
+ *
+ * Closed bids keep their page for 90 days; the app only shows open bids, so
+ * their trial button lands on the feed instead of the bid. A small script
+ * flips Open to Closed the moment the deadline passes between builds.
+ */
+import BidsLayout from './BidsLayout.astro';
+import BidList from './BidList.astro';
+import Breadcrumbs from '../seo/Breadcrumbs.astro';
+import CTABand from '../CTABand.astro';
+import type { Bid, BidIndex } from '../../lib/bids/load';
+import { categoryName, formatDue, formatShortDate, placeName, similarBids } from '../../lib/bids/load';
+import { CALENDLY_URL, ctaHref } from '../../config';
+
+interface Props {
+  bid: Bid;
+  index: BidIndex;
+}
+
+const { bid, index } = Astro.props;
+const place = placeName(bid.segment);
+const similar = similarBids(index, bid);
+const hubs = bid.categories
+  .map((c) => ({ c, path: bid.stateSlug && index.categoryStateHubs.has(`${c}/${bid.stateSlug}`) ? `/bids/${c}/${bid.stateSlug}/` : index.categoryHubs.has(c) ? `/bids/${c}/` : null }))
+  .filter((h): h is { c: string; path: string } => !!h.path);
+const placeHub = index.stateHubs.has(bid.segment) ? `/bids/${bid.segment}/` : '/bids/';
+
+const dueLong = bid.dueAt ? formatDue(bid.dueAt, bid.timeZone) : null;
+const dueShort = bid.dueAt ? formatShortDate(bid.dueAt, bid.timeZone) : null;
+
+// Into the app: this bid while it is open (the app only shows open bids), the
+// feed once it has closed. gh_cta records which button; it is not a utm_*.
+const appPath = bid.closed ? '/v2/opportunities' : `/v2/opportunities?id=${bid.id}`;
+const toApp = (placement: string) => `${ctaHref(placement)}&next=${encodeURIComponent(appPath)}`;
+
+// <title>: the bid, then where. Kept to 60 characters (check-meta.mjs warns
+// past 60 and fails past 70).
+const suffix = ` | ${place} bid`;
+const room = 60 - suffix.length;
+const shortTitle = bid.title.length > room ? `${bid.title.slice(0, room - 1).replace(/\s+\S*$/, '')}…` : bid.title;
+const title = `${shortTitle}${suffix}`;
+
+// Meta description: the summary, then the date that matters.
+const tail = dueShort ? ` ${bid.closed ? 'Closed' : 'Due'} ${dueShort}.` : '';
+// 152, not 160: check-meta counts an escaped & as five characters.
+const budget = 152 - tail.length;
+const summaryShort = bid.summary.length > budget ? `${bid.summary.slice(0, budget - 1).replace(/\s+\S*$/, '')}…` : bid.summary;
+const description = `${summaryShort}${tail}`;
+
+// Public: what identifies the bid and when it is due.
+const facts: { label: string; value: string | null }[] = [
+  { label: 'Agency', value: bid.agency },
+  { label: 'Level', value: bid.level },
+  { label: 'Location', value: bid.stateName ?? (bid.federal ? 'Federal (no place of performance listed)' : null) },
+  { label: 'Notice type', value: bid.noticeType },
+  { label: 'Solicitation number', value: bid.externalId },
+  { label: bid.closed ? 'Closed' : 'Due', value: dueLong },
+];
+
+// Gated: only the rows this bid really has, so the gate never promises
+// something the app will not show.
+const titleChanged = bid.rawTitle.toLowerCase().replace(/\W+/g, '') !== bid.title.toLowerCase().replace(/\W+/g, '');
+const docs = bid.attachmentCount;
+const gated = [
+  bid.hasDescription && 'Full description from the agency',
+  docs > 0 && `${docs} ${docs === 1 ? 'document' : 'documents'}`,
+  bid.setAside && 'Set-aside',
+  bid.estimatedValue && 'Estimated value',
+  bid.naics.length > 0 && 'NAICS codes',
+  bid.postedAt && 'Posted date',
+  titleChanged && 'Title as posted',
+].filter((x): x is string => !!x);
+// Lower-case the label for mid-sentence use, except an acronym ("NAICS codes").
+const unlockList = gated.slice(0, 4).map((g) => (/^[A-Z]{2}/.test(g) ? g : g.charAt(0).toLowerCase() + g.slice(1)));
+const unlocks = unlockList.length > 1 ? `${unlockList.slice(0, -1).join(', ')} and ${unlockList[unlockList.length - 1]}` : unlockList[0];
+---
+
+<BidsLayout title={title} description={description}>
+  <Breadcrumbs
+    items={[
+      { name: 'Home', url: '/' },
+      { name: 'Bids', url: '/bids/' },
+      { name: place, url: placeHub },
+      { name: shortTitle, url: bid.path },
+    ]}
+  />
+
+  <p class="eyebrow">{bid.level} bid · {place}</p>
+  <h1>{bid.title}</h1>
+
+  <p class:list={['bid-status', { 'is-closed': bid.closed }]} data-bid-due={bid.dueAt ?? ''}>
+    <span class="badge"><span class="when-open">Open</span><span class="when-closed">Closed</span></span>
+    {dueLong ? (
+      <span>
+        <span class="when-open">Due {dueLong}</span>
+        <span class="when-closed">Closed {dueLong}</span>
+      </span>
+    ) : (
+      <span>No due date listed</span>
+    )}
+  </p>
+
+  <p class="lede">{bid.summary}</p>
+
+  <div class="closed-note when-closed-block">
+    This bid has closed. The open bids below are the closest matches, and a saved search in GovHub puts the next one
+    like it in your GovHub inbox.
+  </div>
+
+  <div class="cta-row">
+    <a class="btn primary" href={toApp('bid_top')}>
+      <span class="when-open-inline">Start free trial to see full details</span><span class="when-closed-inline">Start free trial to see open bids like this</span>
+    </a>
+    <a class="btn ghost" href={CALENDLY_URL} data-demo-cta="bid_top">Book a demo</a>
+  </div>
+
+  <h2>Bid details</h2>
+  <dl class="facts">
+    {facts.filter((f) => f.value).map((f) => (
+      <div>
+        <dt>{f.label}</dt>
+        <dd>{f.value}</dd>
+      </div>
+    ))}
+  </dl>
+
+  <section class="gate" aria-labelledby="gate-heading">
+    {gated.length > 0 && (
+      <dl class="facts gated" aria-hidden="true">
+        {gated.map((label) => (
+          <div>
+            <dt>{label}</dt>
+            <dd><span class="redacted"></span></dd>
+          </div>
+        ))}
+      </dl>
+    )}
+    <div class="gate-card">
+      <h2 id="gate-heading">
+        <span class="when-open-inline">See the full solicitation, free</span><span class="when-closed-inline">Find the next bid like this, free</span>
+      </h2>
+      <p>
+        <span class="when-open-inline">
+          {unlocks ? `Start a free GovHub trial to see the ${unlocks} for this bid. ` : 'Start a free GovHub trial to see everything GovHub has on this bid. '}
+          Then GovHub fills out its forms, builds the compliance matrix and drafts your response.
+        </span>
+        <span class="when-closed-inline">
+          Start a free GovHub trial and new bids like this one land in your GovHub inbox with a plain-English summary, every
+          detail and its documents. GovHub fills out the forms and drafts the response.
+        </span>
+      </p>
+      <div class="gate-actions">
+        <a class="btn primary" href={toApp('bid_gate')}>
+          <span class="when-open-inline">Start free trial to see full details</span><span class="when-closed-inline">Start free trial</span>
+        </a>
+        <a class="btn secondary" href={toApp('bid_forms')}>Fill out this bid's forms with GovHub</a>
+        <a class="btn ghost" href={CALENDLY_URL} data-demo-cta="bid_gate">Book a demo</a>
+      </div>
+      <p class="fine">14-day free trial. No credit card.</p>
+    </div>
+  </section>
+
+  {hubs.length > 0 && (
+    <>
+      <h2>Browse similar bids</h2>
+      <ul class="chip-list">
+        {hubs.map((h) => (
+          <li><a href={h.path}>{categoryName(h.c)} bids{bid.stateName && h.path.endsWith(`/${bid.stateSlug}/`) ? ` in ${bid.stateName}` : ''}</a></li>
+        ))}
+        <li><a href={placeHub}>All {place === 'Federal' ? 'federal' : place} bids</a></li>
+      </ul>
+    </>
+  )}
+
+  {similar.length > 0 && (
+    <>
+      <h2>Similar open bids</h2>
+      <BidList bids={similar} caption={`Open bids like this one, soonest deadline first`} />
+    </>
+  )}
+
+  <CTABand
+    heading="Respond to bids like this with GovHub"
+    sub="GovHub reads the solicitation, fills out the forms, builds the compliance matrix and drafts the proposal. Save a search and new matching bids land in your GovHub inbox."
+    primaryHref={toApp('bid_band')}
+    secondaryHref={CALENDLY_URL}
+    secondaryLabel="Book a demo"
+  />
+
+  <p class="updated-line">
+    Listing checked {formatShortDate(index.builtAt.toISOString())}. The summary is written by GovHub from the notice; confirm every
+    detail before you bid.
+    {bid.url && (
+      <>
+        {' '}Source: <a href={bid.url} target="_blank" rel="nofollow noopener">{bid.sourceName}</a>.
+      </>
+    )}
+  </p>
+</BidsLayout>
+
+<script is:inline>
+  (function () {
+    var el = document.querySelector('[data-bid-due]');
+    if (!el || el.classList.contains('is-closed')) return;
+    var due = Date.parse(el.getAttribute('data-bid-due') || '');
+    if (due && Date.now() > due) {
+      el.classList.add('is-closed');
+      document.documentElement.classList.add('bid-closed');
+    }
+  })();
+</script>
+
+<style>
+  .bid-status {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.6rem;
+    font-weight: 600;
+    margin: 0.5rem 0 1rem;
+  }
+  .badge {
+    display: inline-block;
+    padding: 0.15rem 0.6rem;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    background: color-mix(in srgb, var(--gh-teal-600) 14%, transparent);
+    color: var(--gh-teal-700);
+  }
+  .bid-status.is-closed .badge {
+    background: var(--accent-soft);
+    color: var(--accent);
+  }
+  .when-closed,
+  .bid-status.is-closed .when-open {
+    display: none;
+  }
+  .bid-status.is-closed .when-closed {
+    display: inline;
+  }
+  .closed-note {
+    border-left: 3px solid var(--accent);
+    padding: 0.75rem 1rem;
+    background: var(--accent-soft);
+    max-width: 46rem;
+    margin: 1rem 0;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.65rem 1.15rem;
+    border-radius: 999px;
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
+    border: 1px solid transparent;
+  }
+  .btn.primary {
+    background: var(--accent);
+    color: #fff;
+  }
+  .btn.primary:hover {
+    background: var(--accent-hover);
+  }
+  .btn.secondary {
+    background: var(--fg);
+    color: var(--bg);
+  }
+  .btn.ghost {
+    border-color: var(--border);
+    color: var(--fg);
+    background: var(--bg-elevated);
+  }
+  .btn.ghost:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+  .cta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin: 1.25rem 0 0.5rem;
+  }
+  .facts {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+    gap: 0.75rem 2rem;
+    margin: 1rem 0 0;
+  }
+  .facts div {
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 0.6rem;
+  }
+  .facts dt {
+    font-size: 0.8rem;
+    color: var(--fg-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+  .facts dd {
+    margin: 0.2rem 0 0;
+    overflow-wrap: anywhere;
+  }
+
+  /* The gate: placeholder rows fade out under the trial card. */
+  .gate {
+    position: relative;
+    margin-top: 0.75rem;
+  }
+  .gated {
+    margin-top: 0;
+    filter: blur(2px);
+    user-select: none;
+    -webkit-mask-image: linear-gradient(to bottom, #000 0%, transparent 85%);
+    mask-image: linear-gradient(to bottom, #000 0%, transparent 85%);
+  }
+  .redacted {
+    display: inline-block;
+    height: 0.85rem;
+    width: 70%;
+    border-radius: 4px;
+    background: var(--border);
+  }
+  .gate-card {
+    position: relative;
+    margin: -2.5rem auto 0;
+    max-width: 40rem;
+    padding: 1.5rem 1.5rem 1.25rem;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    background: var(--bg-elevated);
+    box-shadow: var(--shadow);
+    text-align: center;
+  }
+  .gate-card h2 {
+    margin: 0 0 0.5rem;
+  }
+  .gate-card p {
+    margin: 0 auto;
+    max-width: 34rem;
+  }
+  .gate-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin: 1.1rem auto 0;
+    max-width: 24rem;
+  }
+  .gate-card .fine {
+    margin-top: 0.75rem;
+    color: var(--fg-muted);
+    font-size: 0.85rem;
+  }
+  .when-closed-inline {
+    display: none;
+  }
+</style>
+
+<style is:global>
+  /* The closed note and the closed wording sit outside .bid-status, so they
+     key off a root class the script sets, or off the server-rendered status. */
+  html.bid-closed .when-closed-block,
+  .bids:has(.bid-status.is-closed) .when-closed-block {
+    display: block;
+  }
+  .when-closed-block {
+    display: none;
+  }
+  html.bid-closed .bids .when-open-inline,
+  .bids:has(.bid-status.is-closed) .when-open-inline {
+    display: none;
+  }
+  html.bid-closed .bids .when-closed-inline,
+  .bids:has(.bid-status.is-closed) .when-closed-inline {
+    display: inline;
+  }
+</style>

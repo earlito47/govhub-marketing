@@ -1,0 +1,80 @@
+---
+/**
+ * A table of bids: title (to its page), agency, place, due date. Used by every
+ * hub and by a bid page's "similar open bids".
+ */
+import type { Bid } from '../../lib/bids/load';
+import { formatShortDate } from '../../lib/bids/load';
+
+interface Props {
+  bids: Bid[];
+  caption: string;
+  /** Hide the place column on a page that is already about one place. */
+  showPlace?: boolean;
+}
+
+const { bids, caption, showPlace = true } = Astro.props;
+---
+
+<div class="bid-list">
+  <table>
+    <caption>{caption}</caption>
+    <thead>
+      <tr>
+        <th scope="col">Bid</th>
+        <th scope="col">Agency</th>
+        {showPlace && <th scope="col">Where</th>}
+        <th scope="col">{bids.some((b) => b.closed) ? 'Closed' : 'Due'}</th>
+      </tr>
+    </thead>
+    <tbody>
+      {bids.map((b) => (
+        <tr>
+          <td><a href={b.path}>{b.title}</a></td>
+          <td>{b.agency ?? b.sourceName}</td>
+          {showPlace && <td>{b.stateName ?? 'Federal'}</td>}
+          <td class="due">{b.dueAt ? formatShortDate(b.dueAt, b.timeZone) : 'Not listed'}</td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>
+
+<style>
+  .bid-list {
+    overflow-x: auto;
+    margin-top: 1rem;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+  }
+  caption {
+    text-align: left;
+    color: var(--fg-muted);
+    font-size: 0.85rem;
+    padding-bottom: 0.5rem;
+  }
+  th,
+  td {
+    text-align: left;
+    padding: 0.6rem 0.75rem 0.6rem 0;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  th {
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: var(--fg-muted);
+  }
+  td:first-child {
+    min-width: 16rem;
+  }
+  td:first-child a {
+    overflow-wrap: anywhere;
+  }
+  .due {
+    white-space: nowrap;
+  }
+</style>

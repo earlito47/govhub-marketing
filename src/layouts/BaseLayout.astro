@@ -321,7 +321,9 @@ const ANALYTICS_ENABLED =
          PostHog together. window.gh is read at event time, not captured here,
          so a late or missing Analytics block drops the event loudly instead
          of breaking the badge. */
-      function trackDemo(name) {
+      /* Which demo button the visitor pressed, carried onto demo_scheduled. */
+      var lastCta = 'calendly_badge';
+      function trackDemo(name, cta) {
         var gh = window.gh;
         if (!gh || typeof gh.track !== 'function') {
           console.warn('[gh] window.gh missing, dropped', name);
@@ -332,7 +334,7 @@ const ANALYTICS_ENABLED =
            profile (www is identified_only). */
         var ft = firstTouch();
         gh.track(name, {
-          cta: 'calendly_badge',
+          cta: cta,
           page_path: location.pathname,
           page_type: gh.pageType ? gh.pageType(location.pathname) : null,
           first_touch_landing_path: ft.landing || null,
@@ -344,16 +346,34 @@ const ANALYTICS_ENABLED =
       }
       /* Delegated, capture phase: widget.js injects the badge after load and
          its own onclick opens the popup. Any click inside the badge opens it,
-         including the "powered by Calendly" span. */
+         including the "powered by Calendly" span.
+
+         Any other link to Calendly on the page (a "Book a demo" button) opens
+         the same popup with the same UTMs instead of leaving the site, and is
+         tracked under its data-demo-cta. If widget.js was blocked the link
+         still works as a plain link. */
       document.addEventListener('click', function (e) {
         var t = e.target;
-        if (t && t.closest && t.closest('.calendly-badge-widget')) trackDemo('demo_click');
+        if (!t || !t.closest) return;
+        if (t.closest('.calendly-badge-widget')) {
+          lastCta = 'calendly_badge';
+          trackDemo('demo_click', lastCta);
+          return;
+        }
+        var a = t.closest('a[href^="https://calendly.com/"]');
+        if (!a) return;
+        lastCta = a.getAttribute('data-demo-cta') || 'demo_link';
+        trackDemo('demo_click', lastCta);
+        if (window.Calendly) {
+          e.preventDefault();
+          window.Calendly.initPopupWidget({ url: a.href, utm: demoUtm() });
+        }
       }, true);
       /* The booking iframe posts calendly.* events to its parent. Origin is
          checked so another frame cannot fake a booking. */
       window.addEventListener('message', function (e) {
         if (e.origin !== 'https://calendly.com') return;
-        if (e.data && e.data.event === 'calendly.event_scheduled') trackDemo('demo_scheduled');
+        if (e.data && e.data.event === 'calendly.event_scheduled') trackDemo('demo_scheduled', lastCta);
       });
     </script>
   </head>
