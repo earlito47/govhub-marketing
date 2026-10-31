@@ -9,7 +9,7 @@ import BidList from './BidList.astro';
 import Breadcrumbs from '../seo/Breadcrumbs.astro';
 import CTABand from '../CTABand.astro';
 import type { BidIndex, Hub } from '../../lib/bids/load';
-import { FEDERAL_SEGMENT, INSIGHTS_STATE_SLUGS, categoryName, formatShortDate, placeName } from '../../lib/bids/load';
+import { FEDERAL_SEGMENT, INSIGHTS_STATE_SLUGS, categoryName, categoryPhrase, formatShortDate, placeName } from '../../lib/bids/load';
 import { CATEGORIES } from '../../lib/bids/categories';
 import { CALENDLY_URL, ctaHref } from '../../config';
 
@@ -26,7 +26,7 @@ const MAX_ROWS = 200;
 
 const placeLabel = place ? placeName(place) : null;
 const catLabel = category ? categoryName(category) : null;
-const what = catLabel ? `${catLabel.toLowerCase()} bids` : place === FEDERAL_SEGMENT ? 'federal bids' : 'government bids';
+const what = category ? `${categoryPhrase(category)} bids` : place === FEDERAL_SEGMENT ? 'federal bids' : 'government bids';
 const where = placeLabel && place !== FEDERAL_SEGMENT ? ` in ${placeLabel}` : '';
 
 const h1 = catLabel

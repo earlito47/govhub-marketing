@@ -4,6 +4,7 @@ import type { GetStaticPaths } from 'astro';
 import type { InsightsPage } from '../../../lib/insightsTypes';
 import InsightsLayout from '../../../components/insights/InsightsLayout.astro';
 import EntityDashboard from '../../../components/insights/EntityDashboard.astro';
+import { getBidIndex } from '../../../lib/bids/load';
 
 export const getStaticPaths = (() => {
   const files = import.meta.glob<{ default: InsightsPage }>('../../../data/insights/state/*.json', { eager: true });
@@ -20,6 +21,12 @@ interface Props {
 const { page } = Astro.props;
 const canonical = new URL(`/insights/state/${page.slug}/`, Astro.site).toString();
 const stateLabel = page.h1.replace(/^Federal Contracts in /, '').split(':')[0];
+// Past awards here, open bids there: the Insights pages carry most of the
+// site's search traffic, so they are the strongest path into /bids/.
+const bidsHub = (await getBidIndex()).stateHubs.get(page.slug);
+const bidsLink = bidsHub
+  ? { href: bidsHub.path, label: `See ${bidsHub.open.length.toLocaleString('en-US')} open government bids in ${stateLabel}` }
+  : undefined;
 ---
 
 <InsightsLayout
@@ -46,5 +53,6 @@ const stateLabel = page.h1.replace(/^Federal Contracts in /, '').split(':')[0];
     campaign="state"
     dodLag={true}
     relatedHeading="Other states"
+    bidsLink={bidsLink}
   />
 </InsightsLayout>

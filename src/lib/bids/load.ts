@@ -313,6 +313,12 @@ export function categoryName(slug: string): string {
   return CATEGORY_BY_SLUG.get(slug)?.name ?? slug;
 }
 
+/** The category name mid-sentence: "janitorial and cleaning", but "IT and
+ *  software", "HVAC" and "E-Rate" keep their capitals. */
+export function categoryPhrase(slug: string): string {
+  return categoryName(slug).replace(/^([A-Z])(?=[a-z])/, (c) => c.toLowerCase());
+}
+
 export function placeName(segment: string): string {
   return segment === FEDERAL_SEGMENT ? 'Federal' : (PLACE_BY_SLUG.get(segment)?.name ?? segment);
 }
