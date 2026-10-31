@@ -102,6 +102,15 @@ export interface BidIndex {
 
 /** A hub page is generated only with at least this many open bids. */
 export const HUB_MIN_OPEN = 5;
+/**
+ * Cloudflare Pages takes 20,000 files per deploy on the free plan, and a deploy
+ * over the limit fails outright, blog posts and all. The rest of the site is
+ * about 2,000 files, and bids grow by the thousand when sources are added, so
+ * bid pages are capped: every open bid first (soonest deadline first, no date
+ * last), then closed ones, most recently closed first. A bid over the cap gets
+ * no page and is left out of the hubs.
+ */
+export const MAX_BID_PAGES = 14000;
 /** Below this many rows the live fetch is treated as broken, not as data. */
 const MIN_LIVE_ROWS = 1000;
 export const FEDERAL_SEGMENT = 'federal';
@@ -243,13 +252,17 @@ async function build(): Promise<BidIndex> {
 
   const rows = (await fetchRows()).sort((a, b) => a.id.localeCompare(b.id));
   const taken = new Set<string>();
-  const bids: Bid[] = rows.map((row) => {
+  const all: Bid[] = rows.map((row) => {
     const b = toBid(row, now);
     let slug = baseSlug(row, b.title);
     if (taken.has(`${b.segment}/${slug}`)) slug = `${slug}-${row.id.slice(0, 6)}`;
     taken.add(`${b.segment}/${slug}`);
     return { ...b, slug, path: `/bids/${b.segment}/${slug}/` };
   });
+  const open = all.filter((b) => !b.closed).sort(byDue);
+  const closed = all.filter((b) => b.closed).sort((a, b) => Date.parse(b.dueAt ?? '0') - Date.parse(a.dueAt ?? '0'));
+  const bids = [...open, ...closed].slice(0, MAX_BID_PAGES);
+  console.log(`[bids] ${all.length} listings (${open.length} open), ${bids.length} pages (cap ${MAX_BID_PAGES})`);
 
   const keep = (m: Map<string, Hub>) => new Map([...m].filter(([, h]) => h.open.length >= HUB_MIN_OPEN));
   const toHubs = (m: Map<string, Bid[]>, path: (k: string) => string) =>

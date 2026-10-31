@@ -104,10 +104,15 @@ govhub-marketing: src/lib/bids/load.ts  → pages under src/pages/bids/
   with "public_bid_listings HTTP 404"; until the app change is live, trial
   buttons still work but land on the dashboard instead of the bid.
 
-**Size:** the build goes from about 1,800 files to about 14,500, in about 80
-seconds. Cloudflare Pages allows 20,000 files per deploy on the free plan, so
-there is room, but growth in sources will reach it. The 90-day closed window is
-the lever (one constant in the migration).
+**Size and the page cap:** eligible bids grew from 12,313 to 15,102 overnight
+on 2026-10-31 as sources were added. Cloudflare Pages allows 20,000 files per
+deploy on the free plan, and a deploy over the limit fails outright, so
+`MAX_BID_PAGES` in `src/lib/bids/load.ts` caps bid pages at 14,000: every open
+bid first, then the most recently closed. On 2026-10-31 that is 12,900 open plus
+1,100 closed, 16,194 files in all (about 3,800 to spare), built in about 105
+seconds. When open bids alone approach the cap, the options are a paid
+Cloudflare plan with a higher file limit, or dropping bids with no due date
+first.
 
 **IndexNow** now submits in batches of 10,000 (its per-request limit). It still
 resubmits every sitemap URL on each push; submitting only new or changed URLs is
