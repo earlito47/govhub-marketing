@@ -103,10 +103,12 @@ export const faqPages: FaqPage[] = [
     body: [
       'SAM.gov is the official, free place to find active federal solicitations. Filter by the NAICS codes that match your business and by set-aside type to focus on work you can win. State and local governments run their own procurement portals, which are worth tracking if you sell locally.',
       'Do not wait for the RFP. Sources sought notices and Requests for Information appear earlier and signal what is coming, giving you time to position, team, and prepare. Tracking market data on where agencies are spending also helps you aim at the right buyers.',
+      'Checking SAM.gov and every state and local portal by hand does not scale. GovHub reads federal, state and local sources daily and puts the open bids that match your NAICS codes, states and set-asides in one inbox. You can also browse open government bids by state and category without an account.',
     ],
     glossary: ['sources-sought', 'naics-code', 'set-aside'],
     related: ['how-do-i-become-a-government-contractor', 'how-do-i-respond-to-a-sources-sought-notice'],
-    more: { label: 'See where federal money is going', href: '/insights/' },
+    solutions: [{ label: 'Government contract search and bid matching', href: '/solutions/government-contract-search/' }],
+    more: { label: 'Browse open government bids by state and category', href: '/bids/' },
   },
   {
     slug: 'how-do-i-become-a-government-contractor',

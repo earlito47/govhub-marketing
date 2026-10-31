@@ -34,15 +34,23 @@ export const CALENDLY_URL = 'https://calendly.com/earljknight/30min';
  * prohibitive (KD > ~40 with entrenched enterprise domains owning the SERP),
  * change `h1` and `primary` to the `fallback` value below. That is the only
  * edit required — no template or layout changes.
+ *
+ * SWAPPED 2026-10-31, on data. GovHub now finds and matches bids as well as
+ * writing the response, and the term that names that whole job is the bigger
+ * one. Semrush US: "government contracting software" 1,600/mo at KD 26 and
+ * "government contractor software" 210 at KD 26, against 110 at KD 10 for
+ * "government proposal software". GSC Aug–Oct 2026: the homepage ranked for
+ * brand terms only; "government proposal software" never appeared in its
+ * queries, so nothing ranking is given up.
  */
 export const PRIMARY_KEYWORD = {
   // h1 leads with the exact primary phrase but reads as a pitch, not a label.
   // title stays pure exact-match — the two are deliberately decoupled.
-  h1: 'Government proposal software that wins you more contracts',
+  h1: 'Government contracting software, from finding the bid to winning it',
   // 50–60 chars incl. spaces — the SERP-title sweet spot SEO tools check for.
-  title: 'AI-powered government proposal software & RFP tools | GovHub',
-  primary: 'government proposal software',
-  fallback: 'government proposal software for small business',
+  title: 'Government Contracting Software: Bids to Proposals | GovHub',
+  primary: 'government contracting software',
+  fallback: 'government contractor software',
 };
 
 export const TRIAL_DAYS = 14;
