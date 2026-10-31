@@ -21,8 +21,8 @@ check reads every route the site already ships.
 Env:
   GSC_SERVICE_ACCOUNT_JSON   Service account key, as a JSON string
   GSC_PROPERTY               default sc-domain:govhub.online
-  CONTENT_DIR                default src/content/blog
-  COVERED_LEDGER             default data/covered-topics.json
+  CONTENT_DIR                default src/content/blog (relative to the repo root)
+  COVERED_LEDGER             default data/covered-topics.json (relative to the repo root)
   MIN_IMPRESSIONS            default 25
   LOOKBACK_DAYS              default 28
 """
@@ -36,9 +36,16 @@ from pathlib import Path
 
 SCOPES = ["https://www.googleapis.com/auth/webmasters.readonly"]
 
+# The coverage check reads the site's own source tree, so anchor it to the
+# repo rather than the working directory. Resolved against the cwd, every
+# source below quietly fails its exists() check from anywhere but the repo
+# root, the catalog comes back empty, and every topic reads as uncovered.
+# A relative override still resolves against the repo; an absolute one wins.
+REPO_ROOT = Path(__file__).resolve().parents[2]
+
 PROPERTY = os.environ.get("GSC_PROPERTY", "sc-domain:govhub.online")
-CONTENT_DIR = Path(os.environ.get("CONTENT_DIR", "src/content/blog"))
-LEDGER_PATH = Path(os.environ.get("COVERED_LEDGER", "data/covered-topics.json"))
+CONTENT_DIR = REPO_ROOT / os.environ.get("CONTENT_DIR", "src/content/blog")
+LEDGER_PATH = REPO_ROOT / os.environ.get("COVERED_LEDGER", "data/covered-topics.json")
 MIN_IMPRESSIONS = int(os.environ.get("MIN_IMPRESSIONS", "25"))
 LOOKBACK_DAYS = int(os.environ.get("LOOKBACK_DAYS", "28"))
 EMERGING_MIN_IMPRESSIONS = int(os.environ.get("EMERGING_MIN_IMPRESSIONS", "3"))
@@ -72,8 +79,8 @@ TIERS = [
     ("gsc_emerging", EMERGING_MIN_IMPRESSIONS, 4.0, EMERGING_MAX_POSITION),
 ]
 
-PAGES_DIR = Path("src/pages")
-DATA_DIR = Path("src/data")
+PAGES_DIR = REPO_ROOT / "src/pages"
+DATA_DIR = REPO_ROOT / "src/data"
 
 # Position -> expected CTR. Rough industry curve. Once GSC has a few months of
 # our own history, refit this from actual clicks/impressions by position.
