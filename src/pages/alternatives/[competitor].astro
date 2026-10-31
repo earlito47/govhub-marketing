@@ -25,6 +25,8 @@ const { competitor } = Astro.props;
 const isOpportunityIntel = competitor.category === 'opportunity-intelligence';
 // Bid services: GovHub replaces the finding and adds the response.
 const isBidSearch = competitor.category === 'bid-search';
+// Research tools (GovWin IQ, GovSpend): see the intel docs in competitors.ts.
+const intel = competitor.intel;
 
 const title = isOpportunityIntel
   ? `Looking for a proposal writing tool, not just ${competitor.name}?`
@@ -49,7 +51,7 @@ const metaTitle = isOpportunityIntel
 // opened "Looking for a X alternative? See why government contractors choose
 // GovHub" — about us, not about what the searcher came to find out.
 const description = isOpportunityIntel
-  ? `${shortName} tracks federal contracts but will not write the proposal. See alternatives that find bids and write the response, and what ${shortName} costs.`
+  ? `${shortName} ${intel?.does}, but it will not write the proposal. See alternatives that do, and what ${shortName} costs.`
   : isBidSearch
     ? `Looking for a ${shortName} alternative? GovHub finds federal, state and local bids, matches them to your company, then writes the proposal. See the field.`
     : `${shortName} ${competitor.priceHook} and is not built for Section L/M or FAR. See federal-first alternatives, real prices, and when to stay on ${shortName}.`;
@@ -60,7 +62,7 @@ const altFaqs = isOpportunityIntel
   ? [
       {
         question: `Is GovHub a replacement for ${competitor.name}?`,
-        answer: `Partly. GovHub finds open federal, state and local bids and matches them to your company, then writes, scores and formats the proposal. It does not forecast contracts years before they are posted, which is ${competitor.name}'s analyst research. If you need that, keep ${competitor.name} alongside GovHub.`,
+        answer: `Partly. GovHub finds open federal, state and local bids and matches them to your company, then writes, scores and formats the proposal. ${intel?.gap} If you need ${intel?.edge}, keep ${competitor.name} alongside GovHub.`,
       },
       {
         question: `What should I use if I only need to write proposals, not find them?`,
@@ -121,15 +123,14 @@ const altFaqs = isOpportunityIntel
             of software.
           </p>
 
-          <PriceComparison competitorName={competitor.name} competitorEstimate={competitor.pricingEstimate} pricingCanonical={competitor.pricingCanonical} />
+          <PriceComparison competitorName={competitor.name} competitorEstimate={competitor.pricingEstimate} pricingCanonical={competitor.pricingCanonical} published={competitor.publishedPricing} />
 
           <h2>The short answer</h2>
           <p>
             GovHub finds open, posted bids and writes the response. If your job
             is to <strong>find bids that fit and respond to them</strong>, GovHub
-            is the tool. If your job is to
-            <strong> track opportunities years before they're posted</strong>,
-            {competitor.name} does that and GovHub doesn't try to.
+            is the tool. If your job is <strong>{intel?.need}</strong>,
+            {' '}{competitor.name} does that and GovHub doesn't try to.
           </p>
 
           <h2>When {competitor.name} isn't the tool you actually need</h2>
@@ -144,13 +145,32 @@ const altFaqs = isOpportunityIntel
             ))}
           </ul>
 
+          {competitor.alternativesRoster && (
+            <>
+              <h2>Other research tools to weigh</h2>
+              <p>
+                If you want what {competitor.name} does rather than a proposal
+                tool, these are the other names on the shortlist and who each
+                suits.
+              </p>
+              <dl class="roster">
+                {competitor.alternativesRoster.map((alt) => (
+                  <>
+                    <dt>{alt.name}</dt>
+                    <dd>
+                      <span class="roster-fit">{alt.fit}.</span> {alt.note}
+                    </dd>
+                  </>
+                ))}
+              </dl>
+            </>
+          )}
+
           <h2>When {competitor.name} is still the right tool</h2>
           <p>
             {competitor.name} remains a strong option for
-            {' '}{asClause(competitor.bestFor)}. Its
-            pre-solicitation intelligence is a genuinely unique capability that
-            GovHub does not replicate. Teams chasing large recompetes years out
-            often use both.
+            {' '}{asClause(competitor.bestFor)}. GovHub does not replicate its
+            {' '}{intel?.edge}. {intel?.together}
           </p>
 
           <p class="cta">
@@ -175,7 +195,7 @@ const altFaqs = isOpportunityIntel
             </p>
           )}
 
-          <PriceComparison competitorName={competitor.name} competitorEstimate={competitor.pricingEstimate} pricingCanonical={competitor.pricingCanonical} />
+          <PriceComparison competitorName={competitor.name} competitorEstimate={competitor.pricingEstimate} pricingCanonical={competitor.pricingCanonical} published={competitor.publishedPricing} />
 
           <h2>The short answer</h2>
           {isBidSearch ? (
