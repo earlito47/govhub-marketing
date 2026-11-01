@@ -28,6 +28,9 @@ const isOpportunityIntel = competitor.category === 'opportunity-intelligence';
 // Bid services (BidPrime, BidNet Direct, PlanetBids): GovHub now finds bids
 // too, so these compare like with like on finding and then show the rest.
 const isBidSearch = competitor.category === 'bid-search';
+// Research tools (GovWin IQ, GovSpend): each one's edge, in its own words.
+// competitors.ts guarantees the block is present for that category.
+const intel = competitor.intel;
 
 const title = isOpportunityIntel
   ? `GovHub and ${competitor.name}: how they compare`
@@ -53,7 +56,7 @@ const metaTitle = isOpportunityIntel
 // match, since every competitor here quotes by sales call only.
 const startingPrice = `${formatUsd(PLANS[0].monthlyUsd)}/mo`;
 const description = isOpportunityIntel
-  ? `${shortName} forecasts federal contracts years before the RFP. GovHub finds open bids and writes the response. See what each does, costs and when to run both.`
+  ? `${shortName} ${intel?.does}. GovHub finds open bids and writes the response. See what each does, costs and when to run both.`
   : isBidSearch
     ? `${shortName} ${competitor.priceHook}. GovHub finds and matches bids too, then writes the proposal and fills the forms, from ${startingPrice}.`
     : `${shortName} ${competitor.priceHook}, quoted by sales call only. GovHub publishes tiers from ${startingPrice}. Compare both on federal compliance and AI drafting.`;
@@ -90,9 +93,8 @@ const description = isOpportunityIntel
           {competitor.name} is {asClause(competitor.tagline)}.
           GovHub finds open federal, state and local bids, matches them to your
           company and writes the proposal. They overlap less than it looks:
-          {' '}{competitor.name}'s edge is <strong>research on contracts years
-          before they are posted</strong>; GovHub works from the posted bid to the
-          submitted response.
+          {' '}{competitor.name}'s edge is <strong>{intel?.edge}</strong>; GovHub
+          works from the posted bid to the submitted response.
         </p>
       ) : isBidSearch ? (
         <p class="lede">
@@ -119,10 +121,8 @@ const description = isOpportunityIntel
         <>
           <h2>Do you need both, or one or the other?</h2>
           <p>
-            If your problem is <strong>knowing which federal contracts are
-            coming</strong> 12–36 months ahead of the RFP, {competitor.name}'s
-            analyst research is designed for that. GovHub does not forecast
-            contracts before they are posted.
+            If your problem is <strong>{intel?.need}</strong>, that is what
+            {' '}{competitor.name} is built for. {intel?.gap}
           </p>
           <p>
             If your problem is <strong>finding open bids that fit and winning
@@ -132,11 +132,7 @@ const description = isOpportunityIntel
             {' '}{competitor.name} does not do proposal writing or content
             generation.
           </p>
-          <p>
-            Teams pursuing large federal recompetes years out often use both: a
-            capture manager tracks the pipeline in {competitor.name}, and GovHub
-            takes each bid from posting to submission.
-          </p>
+          <p>{intel?.together}</p>
         </>
       ) : isBidSearch ? (
         <>
@@ -202,10 +198,9 @@ const description = isOpportunityIntel
         <>
           <h2>Can GovHub and {competitor.name} work together?</h2>
           <p>
-            Yes. {competitor.name} handles the pre-solicitation research;
-            GovHub handles everything from the posted bid on, finding and
-            matching it, then the response. The handoff point is the day the
-            solicitation is posted.
+            Yes. {competitor.name} covers {intel?.edge}; GovHub handles
+            everything from the posted bid on, finding and matching it, then the
+            response. The handoff point is the day the solicitation is posted.
           </p>
         </>
       ) : isBidSearch ? (

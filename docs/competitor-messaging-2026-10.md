@@ -128,16 +128,20 @@ US monthly searches, Semrush, 2026-10-31.
 
 | Competitor | Brand searches | Built |
 |---|---|---|
-| BidNet Direct | 8,100 | Yes (this change) |
-| GovSpend | 3,600 | No |
-| PlanetBids | 3,600 | Yes (this change) |
-| DemandStar | 2,900 | No (on the alternatives rosters) |
-| BidPrime | 2,400 | Yes (this change) |
+| BidNet Direct | 8,100 | Yes |
+| GovSpend | 3,600 | Yes |
+| PlanetBids | 3,600 | Yes |
+| DemandStar | 2,900 | Yes |
+| BidPrime | 2,400 | Yes |
 | HigherGov | 1,900 | No (on the alternatives rosters) |
 | GovTribe | 1,900 | No (on the alternatives rosters) |
 
 GovTribe and Sweetspot are the closest products to GovHub and the ones to
 watch: both already match bids to a company profile and draft proposals.
+
+GovSpend's page uses Vendr's reported $3,000 to $6,000 per user per year
+(vendr.com/buyer-guides/gov-spend), labelled an estimate; GovSpend publishes no
+price. DemandStar's prices are from its own pricing page, checked 2026-10-31.
 
 ## Still to verify in a browser
 
