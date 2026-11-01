@@ -64,14 +64,21 @@ clusters and the segments signing up: the bid's primary NAICS code (published,
 or the model's top guess) plus keywords in the title. E-Rate requests are
 always telecom. `npm run bids:selftest` pins the rules.
 
-## The free-trial gate (owner's call, 2026-10-31)
+## The free-trial gate (owner's call, 2026-10-31; set-aside and NAICS made public 2026-11-01)
 
 Signed-out visitors get what a search result needs, and the rest fades into a
 trial card, the way Reddit and Instagram treat people without an account.
 
 | Public on the page | Behind the trial |
 |---|---|
-| GovHub's summary, agency, level, location, notice type, solicitation number, due date | Full description from the agency, the documents (with their count), set-aside, estimated value, NAICS codes, posted date, the title as posted |
+| GovHub's summary, agency, level, location, notice type, solicitation number, set-aside, NAICS code, due date | Full description from the agency, the documents (with their count), estimated value, posted date, the title as posted |
+
+Set-aside and NAICS moved out of the gate on 2026-11-01: they decide whether a
+contractor can bid at all, and they are what makes one bid page different from
+the next in search. Federal NAICS codes are the agency's (503 of 530 sampled);
+state and local codes are GovHub's match from the notice (0 of 470 sampled were
+published), so those pages label the code "GovHub's match" and show only the
+top one. Codes with an Insights page link to `/insights/naics/{code}/`.
 
 - **The gated values are not in the HTML.** The blurred rows are placeholders
   listing only what this bid really has ("4 documents"), so the gate never

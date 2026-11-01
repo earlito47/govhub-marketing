@@ -155,6 +155,9 @@ const PLACES: Record<string, { slug: string; name: string }> = {
 export const PLACE_BY_SLUG = new Map(Object.entries(PLACES).map(([code, p]) => [p.slug, { code, ...p }]));
 /** States with an /insights/state/ page (territories have none). */
 export const INSIGHTS_STATE_SLUGS = new Set(Object.keys(STATES as Record<string, unknown>));
+/** NAICS codes with an indexable /insights/naics/{code}/ page, for links from bid pages. */
+const NAICS_INSIGHTS = import.meta.glob<{ slug: string; noindex?: boolean }>('../../data/insights/naics/*.json', { eager: true, import: 'default' });
+export const INSIGHTS_NAICS_CODES = new Set(Object.values(NAICS_INSIGHTS).filter((p) => !p.noindex).map((p) => p.slug));
 
 const LEVELS: Record<string, string> = {
   federal: 'Federal',
