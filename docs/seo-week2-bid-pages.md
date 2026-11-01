@@ -39,6 +39,26 @@ with the count, agency count and next deadline, list up to 200 open bids
 soonest-first, then cross-link categories and states and list up to 10
 recently closed bids.
 
+## Which bid pages are indexed (2026-11-01)
+
+Every bid keeps its page, but weak ones carry `noindex,follow` and are left out
+of the sitemap (and so out of IndexNow), because Google's scaled-content policy
+targets many templated pages with little original text. The rule lives in
+`src/lib/bids/load.ts` (`NoindexReason`, `markIndexable`):
+
+| Held out of search | Why | Pages (2026-11-01) |
+|---|---|---|
+| `dla-parts` | Defense Logistics Agency parts buys: thousands of near-identical small purchases nobody searches for by name | 3,331 |
+| `shared-title` | Another bid has the same title, so the pages compete | 913 |
+| `short-summary` | GovHub's summary is under 15 words | 1,312 |
+
+That leaves 8,444 indexable bid pages plus the hubs. Every bid `<title>` is
+unique: when two would match, the tag adds the agency and solicitation number
+("Circuit Card Assemb, Navy (N0010426QYAJS) | Federal bid"). The sitemap filter
+in `astro.config.mjs` skips any built page whose HTML carries a noindex tag, so
+the sitemap cannot drift from the pages. To index more, loosen a rule once
+Search Console shows the indexed set holding up.
+
 **Categories** (`src/lib/bids/categories.ts`) come from the strategy's keyword
 clusters and the segments signing up: the bid's primary NAICS code (published,
 or the model's top guess) plus keywords in the title. E-Rate requests are
@@ -120,8 +140,8 @@ a later improvement.
 
 ## Checks after it ships
 
-1. Search Console: Sitemaps should show about 13,000 discovered URLs within a
-   few days, then Pages → "Indexed" climbing for `/bids/`. If they sit at
+1. Search Console: Sitemaps should show about 9,400 discovered URLs within a
+   few days (8,444 bid pages plus hubs and the rest of the site), then Pages → "Indexed" climbing for `/bids/`. If they sit at
    "Discovered, currently not indexed", the fix is more internal links, not
    more pages. Paths in today: the header nav ("Bids") and footer on every page,
    the 51 Insights state pages (to their state's bids) and the Insights NAICS

@@ -8,6 +8,7 @@ import PageHero from '../../components/PageHero.astro';
 import CTABand from '../../components/CTABand.astro';
 import PriceComparison from '../../components/PriceComparison.astro';
 import CompareLinks from '../../components/CompareLinks.astro';
+import ComparisonMethod from '../../components/ComparisonMethod.astro';
 import { PLANS, formatUsd } from '../../data/pricing';
 import { CALENDLY_URL, ctaHref } from '../../config';
 import { asClause } from '../../lib/text';
@@ -44,7 +45,9 @@ const trialHref = `${ctaHref(`vs_${competitor.slug}`)}${isBidSearch ? `&next=${e
 // impressions at position 26 while its title said neither "vs" nor a year).
 // The year comes from the build clock; weekly pipeline rebuilds keep it fresh.
 const shortName = competitor.shortName ?? competitor.name;
-const YEAR = new Date().getFullYear();
+// The year is the year the facts were last checked, not the build year, so
+// "(2027)" only appears once someone has actually reviewed the page in 2027.
+const YEAR = competitor.reviewed ? Number(competitor.reviewed.slice(0, 4)) : new Date().getFullYear();
 const metaTitle = isOpportunityIntel
   ? `GovHub vs ${shortName} (${YEAR}): do you need both?`
   : isBidSearch
@@ -114,6 +117,8 @@ const description = isOpportunityIntel
           government contractors.
         </p>
       )}
+
+      <ComparisonMethod competitor={competitor} variant="byline" />
 
       <PriceComparison competitorName={competitor.name} competitorEstimate={competitor.pricingEstimate} pricingCanonical={competitor.pricingCanonical} published={competitor.publishedPricing} />
 
@@ -227,6 +232,8 @@ const description = isOpportunityIntel
           </p>
         </>
       )}
+
+      <ComparisonMethod competitor={competitor} variant="method" />
 
       <p class="cta-pair">
         <a class="primary" href={trialHref}>Start free trial</a>

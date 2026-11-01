@@ -20,6 +20,13 @@ export const SIGNIN_URL = `${APP_URL}/auth`;
 /** Primary contact address. {{VERIFY: real inbound address}} */
 export const CONTACT_EMAIL = 'hello@govhub.online';
 
+/**
+ * Who signs the comparison pages (/vs/, /alternatives/). Google treats those as
+ * reviews and favors a named person who did the checking, so swap in a real
+ * name and role ("Earl Knight, founder") when someone owns these pages.
+ */
+export const COMPARISON_REVIEWER = 'the GovHub team';
+
 /** Calendly booking page — powers the site-wide "Book a Demo" badge widget. */
 export const CALENDLY_URL = 'https://calendly.com/earljknight/30min';
 

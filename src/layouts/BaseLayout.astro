@@ -18,7 +18,13 @@ interface Props {
   ogImageAlt?: string;
   /** og:type — pass 'article' from blog/case-study detail layouts. */
   ogType?: 'website' | 'article';
-  noindex?: boolean;
+  /**
+   * true: keep out of search and do not follow links (404, embeds).
+   * 'follow': keep the page out of search but let crawlers follow its links,
+   * for pages that are fine for visitors but weak in search results (some bid
+   * pages) and still pass links to the hubs that should rank.
+   */
+  noindex?: boolean | 'follow';
 }
 
 const {
@@ -94,7 +100,7 @@ const ANALYTICS_ENABLED =
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalUrl} />
-    {noindex && <meta name="robots" content="noindex,nofollow" />}
+    {noindex && <meta name="robots" content={noindex === 'follow' ? 'noindex,follow' : 'noindex,nofollow'} />}
 
     <meta property="og:type" content={ogType} />
     <meta property="og:site_name" content="GovHub" />

@@ -24,7 +24,7 @@ import BidList from './BidList.astro';
 import Breadcrumbs from '../seo/Breadcrumbs.astro';
 import CTABand from '../CTABand.astro';
 import type { Bid, BidIndex } from '../../lib/bids/load';
-import { categoryName, formatDue, formatShortDate, placeName, similarBids } from '../../lib/bids/load';
+import { bidTitleTag, categoryName, formatDue, formatShortDate, placeName, similarBids } from '../../lib/bids/load';
 import { CALENDLY_URL, ctaHref } from '../../config';
 
 interface Props {
@@ -50,10 +50,11 @@ const toApp = (placement: string) => `${ctaHref(placement)}&next=${encodeURIComp
 
 // <title>: the bid, then where. Kept to 60 characters (check-meta.mjs warns
 // past 60 and fails past 70).
-const suffix = ` | ${place} bid`;
-const room = 60 - suffix.length;
+// Unique across all bid pages; see bidTitleTag() and markIndexable().
+const title = bidTitleTag(bid);
+// The breadcrumb's last crumb: the bid title cut to the same room.
+const room = 60 - ` | ${place} bid`.length;
 const shortTitle = bid.title.length > room ? `${bid.title.slice(0, room - 1).replace(/\s+\S*$/, '')}…` : bid.title;
-const title = `${shortTitle}${suffix}`;
 
 // Meta description: the summary, then the date that matters.
 const tail = dueShort ? ` ${bid.closed ? 'Closed' : 'Due'} ${dueShort}.` : '';
@@ -90,7 +91,7 @@ const unlockList = gated.slice(0, 4).map((g) => (/^[A-Z]{2}/.test(g) ? g : g.cha
 const unlocks = unlockList.length > 1 ? `${unlockList.slice(0, -1).join(', ')} and ${unlockList[unlockList.length - 1]}` : unlockList[0];
 ---
 
-<BidsLayout title={title} description={description}>
+<BidsLayout title={title} description={description} noindex={bid.indexable ? false : 'follow'}>
   <Breadcrumbs
     items={[
       { name: 'Home', url: '/' },
