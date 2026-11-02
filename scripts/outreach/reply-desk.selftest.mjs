@@ -12,6 +12,7 @@ import { DEBRIEF_ONE_PAGER, PARTNER_TERMS, CREATOR_TERMS, promoCode } from './re
 import { inBusinessHours, sendAfter } from './reply-desk.mjs';
 import { deadlineMs, fmtDeadline, clipText } from './reply-desk/sources.mjs';
 import { renderReviewEmail, draftToHtml, trimQuote } from './reply-desk/review-email.mjs';
+import { stampLinks } from './reply-desk/links.mjs';
 
 let failed = 0;
 function test(name, fn) {
@@ -172,6 +173,36 @@ test('a weekday-morning yes waits 25 to 95 minutes', () => {
     const wait = (Date.parse(sendAfter(new Date(recv).toISOString(), recv, () => r)) - recv) / 60000;
     assert.ok(wait >= 25 && wait <= 95, `${wait} minutes`);
   }
+});
+
+console.log('per-recipient links');
+const LID = '01a03434-5f6e-4c1b-9d2a-1234567890ab';
+test('a bare site link gets reply_desk tags and the lead id', () => {
+  const out = stampLinks('See https://www.govhub.online/ for the rest.', { leadId: LID });
+  assert.equal(out, `See https://www.govhub.online/?utm_source=instantly&utm_medium=email&utm_campaign=reply_desk&gh_lid=${LID} for the rest.`);
+});
+test('an existing campaign is kept, the lead id added', () => {
+  const out = stampLinks('Try https://www.govhub.online/solutions/compliance-matrix-generator/?utm_source=instantly&utm_medium=email&utm_campaign=reply_desk', { leadId: LID });
+  assert.ok(out.endsWith(`utm_campaign=reply_desk&gh_lid=${LID}`), out);
+  assert.equal((out.match(/utm_source=/g) || []).length, 1);
+});
+test('a full stop after a link stays outside it', () => {
+  assert.ok(stampLinks('It is at https://govhub.online/pricing/.', { leadId: LID }).endsWith(`gh_lid=${LID}.`));
+});
+test('the apex is rewritten to www', () => {
+  assert.ok(stampLinks('https://govhub.online/', { leadId: LID }).startsWith('https://www.govhub.online/?'));
+});
+test('the fragment stays last', () => {
+  assert.ok(stampLinks('https://www.govhub.online/faq/#pricing', { leadId: LID }).endsWith(`gh_lid=${LID}#pricing`));
+});
+test('no lead id: tags only, never an email address', () => {
+  const out = stampLinks('https://www.govhub.online/', { leadId: 'jane@acme.com' });
+  assert.ok(!out.includes('gh_lid') && !out.includes('@'), out);
+  assert.ok(out.includes('utm_campaign=reply_desk'), out);
+});
+test('other sites are left alone', () => {
+  const t = 'The notice is https://sam.gov/opp/abc/view and the app is https://app.govhub.online/signup';
+  assert.equal(stampLinks(t, { leadId: LID }), t);
 });
 
 console.log(failed ? `\n${failed} failed` : '\nall passed');
