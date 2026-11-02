@@ -31,9 +31,11 @@ interface Props {
   /** Show the DoD reporting-lag disclosure (agency/state pages). */
   dodLag?: boolean;
   relatedHeading?: string;
+  /** Open bids in this market (/bids/), listed first among the next steps. */
+  bidsLink?: { href: string; label: string };
 }
 
-const { page, breadcrumbs, eyebrow, campaign, dodLag = false, relatedHeading } = Astro.props;
+const { page, breadcrumbs, eyebrow, campaign, dodLag = false, relatedHeading, bidsLink } = Astro.props;
 
 // Contextual "broad -> specific" links: every entity dashboard points at the
 // GovHub tools a reader in this market would actually reach for next. Before
@@ -148,7 +150,7 @@ const pairs = Array.from({ length: pairCount }, (_, i) => ({ section: sections[i
   <h2 id="tools-heading">{toolBlock.heading}</h2>
   <p>{toolBlock.intro}</p>
   <ul>
-    {toolBlock.links.map((l) => (
+    {[...(bidsLink ? [bidsLink] : []), ...toolBlock.links].map((l) => (
       <li><a href={l.href}>{l.label}</a></li>
     ))}
   </ul>

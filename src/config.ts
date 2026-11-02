@@ -20,6 +20,13 @@ export const SIGNIN_URL = `${APP_URL}/auth`;
 /** Primary contact address. {{VERIFY: real inbound address}} */
 export const CONTACT_EMAIL = 'hello@govhub.online';
 
+/**
+ * Who signs the comparison pages (/vs/, /alternatives/). Google treats those as
+ * reviews and favors a named person who did the checking, so swap in a real
+ * name and role ("Earl Knight, founder") when someone owns these pages.
+ */
+export const COMPARISON_REVIEWER = 'the GovHub team';
+
 /** Calendly booking page — powers the site-wide "Book a Demo" badge widget. */
 export const CALENDLY_URL = 'https://calendly.com/earljknight/30min';
 
@@ -34,15 +41,23 @@ export const CALENDLY_URL = 'https://calendly.com/earljknight/30min';
  * prohibitive (KD > ~40 with entrenched enterprise domains owning the SERP),
  * change `h1` and `primary` to the `fallback` value below. That is the only
  * edit required — no template or layout changes.
+ *
+ * SWAPPED 2026-10-31, on data. GovHub now finds and matches bids as well as
+ * writing the response, and the term that names that whole job is the bigger
+ * one. Semrush US: "government contracting software" 1,600/mo at KD 26 and
+ * "government contractor software" 210 at KD 26, against 110 at KD 10 for
+ * "government proposal software". GSC Aug–Oct 2026: the homepage ranked for
+ * brand terms only; "government proposal software" never appeared in its
+ * queries, so nothing ranking is given up.
  */
 export const PRIMARY_KEYWORD = {
   // h1 leads with the exact primary phrase but reads as a pitch, not a label.
   // title stays pure exact-match — the two are deliberately decoupled.
-  h1: 'Government proposal software that wins you more contracts',
+  h1: 'Government contracting software, from finding the bid to winning it',
   // 50–60 chars incl. spaces — the SERP-title sweet spot SEO tools check for.
-  title: 'AI-powered government proposal software & RFP tools | GovHub',
-  primary: 'government proposal software',
-  fallback: 'government proposal software for small business',
+  title: 'Government Contracting Software: Bids to Proposals | GovHub',
+  primary: 'government contracting software',
+  fallback: 'government contractor software',
 };
 
 export const TRIAL_DAYS = 14;
@@ -78,6 +93,20 @@ export const POSTHOG_API_HOST = 'https://us.i.posthog.com';
  * uses it, so the app can read the record without a URL round-trip.
  */
 export const COOKIE_DOMAIN = '.govhub.online';
+
+/**
+ * The app's Supabase project, read at BUILD time by src/lib/bids/load.ts to
+ * generate the public /bids/ pages. Hardcoded for the same wrangler.jsonc
+ * reason as POSTHOG_TOKEN above: a dashboard variable never reaches the build.
+ *
+ * This is the PUBLISHABLE (anon) key, the one app.govhub.online already ships
+ * in its client bundle. All it can reach is what row-level security and grants
+ * allow anon; for bids that is public_bid_listings(), which returns only what a
+ * public page may show. Never put a service-role key here.
+ */
+export const SUPABASE_URL = 'https://iqekrwearenblsmhvdjn.supabase.co';
+export const SUPABASE_PUBLISHABLE_KEY =
+  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlxZWtyd2VhcmVuYmxzbWh2ZGpuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTczNTA0NDUsImV4cCI6MjA3MjkyNjQ0NX0.khodqjjwJNovP4cd2fRK3Mdi6VG-HNp0JzzDzWSY_2Q';
 
 /**
  * Build a CTA URL into the app that records WHICH on-site surface produced the

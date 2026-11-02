@@ -1,0 +1,29 @@
+---
+// /bids/{state}/, /bids/federal/ and /bids/{category}/: one hub each, built
+// only when it has at least HUB_MIN_OPEN open bids.
+import type { GetStaticPaths } from 'astro';
+import HubPage from '../../../components/bids/HubPage.astro';
+import { getBidIndex } from '../../../lib/bids/load';
+
+export const getStaticPaths = (async () => {
+  const index = await getBidIndex();
+  return [
+    ...[...index.stateHubs.keys()].map((segment) => ({ params: { segment }, props: { kind: 'place' as const } })),
+    ...[...index.categoryHubs.keys()].map((segment) => ({ params: { segment }, props: { kind: 'category' as const } })),
+  ];
+}) satisfies GetStaticPaths;
+
+interface Props {
+  kind: 'place' | 'category';
+}
+
+const { kind } = Astro.props;
+const { segment } = Astro.params;
+const index = await getBidIndex();
+---
+
+{kind === 'place' ? (
+  <HubPage index={index} hub={index.stateHubs.get(segment!)!} place={segment} />
+) : (
+  <HubPage index={index} hub={index.categoryHubs.get(segment!)!} category={segment} />
+)}

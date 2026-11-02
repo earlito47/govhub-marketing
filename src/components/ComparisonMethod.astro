@@ -1,0 +1,69 @@
+---
+/**
+ * Who checked a comparison page, when, and how. Google evaluates /vs/ and
+ * /alternatives/ pages as reviews: its guidance asks who wrote them, how the
+ * claims were checked and whether the writer has a stake. GovHub does, so the
+ * page says so, names its sources and invites corrections.
+ *
+ * variant="byline": one line under the lede.
+ * variant="method": the "How we compared" note near the end.
+ */
+import type { Competitor } from '../data/competitors';
+import { COMPARISON_REVIEWER, CONTACT_EMAIL } from '../config';
+
+interface Props {
+  competitor: Competitor;
+  variant: 'byline' | 'method';
+}
+
+const { competitor, variant } = Astro.props;
+const checked = competitor.reviewed
+  ? new Intl.DateTimeFormat('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' }).format(new Date(`${competitor.reviewed}T00:00:00Z`))
+  : null;
+---
+
+{variant === 'byline' ? (
+  <p class="byline">
+    By {COMPARISON_REVIEWER}{checked && <>, facts checked <time datetime={competitor.reviewed}>{checked}</time></>}.
+    {' '}<a href="#how-we-compared">How we compared</a>
+  </p>
+) : (
+  <aside class="method" id="how-we-compared" aria-labelledby="how-we-compared-heading">
+    <h2 id="how-we-compared-heading">How we compared</h2>
+    <p>
+      GovHub makes GovHub, so read this as a vendor's comparison. What this page says about {competitor.name} comes
+      from public sources: its own website and pricing page where we could read them, its announcements, and
+      third-party price trackers, named where they are used. A price {competitor.name} does not publish is labelled an
+      estimate. We do not quote star ratings or award badges, which change too often to keep accurate.
+    </p>
+    <p class="who">
+      Reviewed by {COMPARISON_REVIEWER}{checked && <>, facts checked <time datetime={competitor.reviewed}>{checked}</time></>}.
+      Spot something out of date? Email <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a> and we will correct it.
+    </p>
+  </aside>
+)}
+
+<style>
+  .byline {
+    font-size: 0.9rem;
+    color: var(--fg-muted);
+    margin: -1rem 0 2rem;
+  }
+  .method {
+    margin: 2.5rem 0 0;
+    padding: 1.25rem 1.5rem;
+    border: 1px solid var(--border);
+    border-radius: 0.75rem;
+    background: var(--bg-elevated);
+    max-width: 48rem;
+  }
+  .method h2 {
+    font-size: 1.15rem;
+    margin: 0 0 0.5rem;
+  }
+  .method p {
+    font-size: 0.95rem;
+    color: var(--fg-muted);
+    margin: 0.5rem 0 0;
+  }
+</style>

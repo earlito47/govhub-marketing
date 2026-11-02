@@ -115,7 +115,7 @@ export const faqs: FAQ[] = [
     category: 'Comparison',
     question: 'Is GovWin IQ a proposal writing tool?',
     answer:
-      'No. Deltek GovWin IQ is a market-intelligence and opportunity-discovery platform, it helps you find and qualify opportunities but does not write proposals. GovHub handles drafting, review, and formatting after you decide to pursue an opportunity. Many contractors use both together.',
+      'No. Deltek GovWin IQ is a market-intelligence platform: its analysts track federal opportunities years before the RFP, but it does not write proposals. GovHub finds open federal, state and local bids that match your company, then drafts, scores and formats the proposal. Teams that need multi-year forecasts can use both.',
     pages: ['/vs/govwin-iq/'],
   },
   {

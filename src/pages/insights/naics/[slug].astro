@@ -4,6 +4,8 @@ import type { GetStaticPaths } from 'astro';
 import type { InsightsPage } from '../../../lib/insightsTypes';
 import InsightsLayout from '../../../components/insights/InsightsLayout.astro';
 import EntityDashboard from '../../../components/insights/EntityDashboard.astro';
+import { categoryPhrase, getBidIndex } from '../../../lib/bids/load';
+import { categorize } from '../../../lib/bids/categories';
 
 export const getStaticPaths = (() => {
   const files = import.meta.glob<{ default: InsightsPage }>('../../../data/insights/naics/*.json', { eager: true });
@@ -19,6 +21,12 @@ interface Props {
 
 const { page } = Astro.props;
 const canonical = new URL(`/insights/naics/${page.slug}/`, Astro.site).toString();
+// The bid category this NAICS code files under, when it has a hub.
+const bidsCategory = categorize('', [page.slug])[0];
+const bidsHub = bidsCategory ? (await getBidIndex()).categoryHubs.get(bidsCategory) : undefined;
+const bidsLink = bidsHub
+  ? { href: bidsHub.path, label: `See ${bidsHub.open.length.toLocaleString('en-US')} open ${categoryPhrase(bidsCategory)} bids` }
+  : undefined;
 ---
 
 <InsightsLayout
@@ -42,5 +50,6 @@ const canonical = new URL(`/insights/naics/${page.slug}/`, Astro.site).toString(
     ]}
     eyebrow={`Federal contract market · NAICS ${page.slug}`}
     campaign="naics"
+    bidsLink={bidsLink}
   />
 </InsightsLayout>

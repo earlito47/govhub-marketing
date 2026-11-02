@@ -20,7 +20,7 @@ import { faqsForPage } from '../data/faqs';
 // <title> keeps the exact-match phrase; the H1 carries it inside a real pitch.
 const title = PRIMARY_KEYWORD.title;
 // Rendered length must stay ≤160 chars (SERP truncation point).
-const description = `GovHub is ${PRIMARY_KEYWORD.primary} for federal, state, and local contractors, draft RFP responses, autofill forms, and check Section L/M compliance.`;
+const description = `GovHub is ${PRIMARY_KEYWORD.primary} for federal, state and local contractors: find and match bids, draft the proposal, score it and fill out the forms.`;
 
 const features = [
   {
@@ -49,25 +49,17 @@ const features = [
   },
 ];
 
+// The whole job in six steps, each one line and one link, so a first-time
+// visitor sees the full platform without reading six feature pages. Replaced
+// the three-step "upload, add company, draft" block (2026-10-31), which
+// started after the bid was already found.
 const steps = [
-  {
-    n: '1',
-    icon: 'map',
-    title: 'Upload the RFP',
-    body: 'Import the solicitation (PDF, SAM.gov URL, or agency export). GovHub “shreds” it to surface every requirement, instruction, and evaluation factor, including easy-to-miss compliance criteria.',
-  },
-  {
-    n: '2',
-    icon: 'shovel',
-    title: 'Add your company info',
-    body: 'Look your company up, GovHub pulls your UEI, CAGE, NAICS, and certifications straight from SAM.gov and your website, or extracts them from your capability statements. It maps your strengths to the RFP’s requirements automatically.',
-  },
-  {
-    n: '3',
-    icon: 'nugget',
-    title: 'Draft, review & export',
-    body: 'Review AI-generated content, apply compliant templates, and export a submission-ready proposal with forms and attachments.',
-  },
+  { n: '1', icon: 'lantern', title: 'Find', body: 'Federal, state and local bids in one inbox, read from official sources every day.', href: '/solutions/government-contract-search/' },
+  { n: '2', icon: 'map', title: 'Match', body: 'Ranked against your NAICS codes, states and set-asides, with the reason for each match.', href: '/solutions/government-contract-search/#matching' },
+  { n: '3', icon: 'pickaxe', title: 'Read', body: 'Every requirement, instruction and evaluation factor pulled into a compliance matrix.', href: '/solutions/rfp-shredding/' },
+  { n: '4', icon: 'pen', title: 'Write', body: 'A first draft of the proposal in your firm\u2019s voice, built from your company profile.', href: '/solutions/ai-proposal-generator/' },
+  { n: '5', icon: 'gauge', title: 'Score', body: 'Graded against the evaluation criteria, with what to fix before you submit.', href: '/solutions/technical-writer-review/' },
+  { n: '6', icon: 'checklist', title: 'Fill out forms', body: 'SF-33, SF-1449, reps and certs filled from your company profile.', href: '/solutions/form-autofiller/' },
 ];
 
 const stats = [
@@ -114,13 +106,13 @@ const homeFaqs = faqsForPage('/');
 
   <main class="container">
     <Hero
-      eyebrow="AI proposal software for government contractors"
+      eyebrow="New: federal, state and local bid search, built in"
       title={PRIMARY_KEYWORD.h1}
-      lede="Upload the RFP. GovHub finds every requirement, fills the forms, and drafts a compliant proposal that sounds like your firm, in minutes, not weekends."
+      lede="Find the bids that fit your company. Then GovHub reads the RFP, fills out the forms and drafts a compliant proposal that sounds like your firm, in minutes, not weekends."
       primaryHref={SIGNUP_URL}
       primaryLabel="Start free trial"
-      secondaryHref="/solutions/compliance-matrix-generator/"
-      secondaryLabel="Try the free compliance matrix tool →"
+      secondaryHref="/bids/"
+      secondaryLabel="Browse open bids, free →"
       art="/brand/page-graphics/home-hero-strike-gold.svg"
       artAlt="Illustration of a prospector striking gold in a mountain stream, GovHub's Gold Country brand scene"
     />
@@ -128,38 +120,44 @@ const homeFaqs = faqsForPage('/');
     <RfpChatSection />
 
     <SocialProofMarquee brands={proofBrands} />
+    <section class="block">
+      <h2>One platform, from finding the bid to submitting it</h2>
+      <p class="section-lede">
+        Most contractors stitch this together from a bid service, a proposal
+        writer and a folder of PDFs. GovHub does all six in one place.
+      </p>
+      <ol class="lifecycle">
+        {steps.map((s) => (
+          <li>
+            <a class="step" href={s.href}>
+              <span class="step-head">
+                <span class="num">{s.n}</span>
+                <span class="step-title">{s.title}</span>
+                <Icon name={s.icon} size={22} class="step-icon" />
+              </span>
+              <span class="step-body">{s.body}</span>
+            </a>
+          </li>
+        ))}
+      </ol>
+    </section>
 
     <section class="block">
       <h2>Everything a proposal shop does, without hiring one</h2>
       <p class="section-lede">
-        Shredding, drafting, compliance checks, forms, and formatting, the work
-        that used to take a proposal team, built into one tool.
+        Finding bids, shredding, drafting, scoring, forms and formatting: the
+        work that used to take a business developer and a proposal team, in one
+        tool.
       </p>
       <FeatureGrid features={features} />
     </section>
 
-    <section class="block">
-      <h2>From RFP to a winning proposal in three steps</h2>
-      <div class="gh-journey" aria-hidden="true"></div>
-      <div class="steps">
-        {steps.map((s) => (
-          <div class="step">
-            <div class="step-head">
-              <span class="num">{s.n}</span>
-              <Icon name={s.icon} size={26} />
-            </div>
-            <h3>{s.title}</h3>
-            <p>{s.body}</p>
-          </div>
-        ))}
-      </div>
-    </section>
 
     <section class="block">
       <h2>An end-to-end contract acquisition platform</h2>
       <p class="section-lede">
-        From shredding the solicitation to a submission-ready package, GovHub
-        covers the whole response.
+        From finding the bid to a submission-ready package, GovHub covers the
+        whole job.
       </p>
       <SolutionsGrid mode="featured" />
       <p class="more-link"><a href="/solutions/">See all solutions →</a></p>
@@ -181,7 +179,13 @@ const homeFaqs = faqsForPage('/');
 
     <section class="block audience">
       <h2>Built for your side of the table</h2>
+      <p class="section-lede">
+        New to government contracting? GovHub is a Swiss Army knife for the
+        small jobs: it finds the quotes and bids that fit, explains each one in
+        plain English, fills out the forms and writes the response.
+      </p>
       <ul>
+        <li><a href="/bids/">Open government bids near you →</a></li>
         <li><a href="/for/small-business-contractors/">Small business contractors →</a></li>
         <li><a href="/for/system-integrators/">System integrators →</a></li>
       </ul>
@@ -237,24 +241,40 @@ const homeFaqs = faqsForPage('/');
     margin: 0 0 1rem;
     font-size: 1.05rem;
   }
-  .steps {
+  /* Six compact linked cards: three across on desktop, two on a tablet, one
+     on a phone. One line each, so the whole platform reads in a glance. */
+  .lifecycle {
+    list-style: none;
+    padding: 0;
     display: grid;
-    gap: 1.25rem;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    margin-top: 1.5rem;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+    margin: 1.5rem 0 0;
   }
   .step {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
     background: var(--bg-elevated);
     border: 1.5px solid var(--border);
     border-radius: var(--gh-radius-md);
-    padding: 1.5rem;
+    padding: 1.1rem 1.25rem;
     box-shadow: var(--shadow);
+    color: var(--fg);
+    text-decoration: none;
+  }
+  .step:hover {
+    border-color: var(--accent);
+    text-decoration: none;
   }
   .step-head {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    margin-bottom: 0.75rem;
+    gap: 0.65rem;
+    margin-bottom: 0.45rem;
+  }
+  .step-head :global(.step-icon) {
+    margin-left: auto;
   }
   .num {
     display: inline-flex;
@@ -268,12 +288,12 @@ const homeFaqs = faqsForPage('/');
     font-family: var(--gh-font-brand);
     font-weight: 700;
   }
-  .step h3 {
-    margin: 0 0 0.4rem;
+  .step-title {
+    font-family: var(--gh-font-brand);
+    font-weight: 700;
     font-size: 1.05rem;
   }
-  .step p {
-    margin: 0;
+  .step-body {
     color: var(--fg-muted);
     font-size: 0.95rem;
   }

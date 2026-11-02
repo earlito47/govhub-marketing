@@ -54,7 +54,8 @@ const SOURCE = join(ROOT, 'data/blank-merge-fields-2026-10.json');
 // who already has a manual email from us after the campaign.
 const LEDGER = process.env.BFF_LEDGER || join(ROOT, 'data/blank-field-followups.json');
 const QUEUE = join(ROOT, '.cache/blank-field-followups');
-const SIGNUP = 'https://app.govhub.online/signup';
+// Tagged so a trial started from this email carries its first touch.
+const SIGNUP = 'https://app.govhub.online/signup?utm_source=instantly&utm_medium=email&utm_campaign=blank_field_followup';
 
 const CAMPAIGN_IDS = {
   A1: 'a4df9870-2d9d-49a1-8548-d1fa3b0599b7',

@@ -24,11 +24,18 @@ if (urlList.length === 0) {
   process.exit(1);
 }
 
-const res = await fetch('https://api.indexnow.org/indexnow', {
-  method: 'POST',
-  headers: { 'Content-Type': 'application/json; charset=utf-8' },
-  body: JSON.stringify({ host: HOST, key: KEY, keyLocation: KEY_LOCATION, urlList }),
-});
-
-console.log(`IndexNow: submitted ${urlList.length} URLs — ${res.status} ${res.statusText}`);
-if (!res.ok) process.exit(1);
+// IndexNow takes at most 10,000 URLs per request, and /bids/ alone puts the
+// site past that, so submit in batches.
+const BATCH = 10000;
+let failed = false;
+for (let i = 0; i < urlList.length; i += BATCH) {
+  const batch = urlList.slice(i, i + BATCH);
+  const res = await fetch('https://api.indexnow.org/indexnow', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json; charset=utf-8' },
+    body: JSON.stringify({ host: HOST, key: KEY, keyLocation: KEY_LOCATION, urlList: batch }),
+  });
+  console.log(`IndexNow: submitted URLs ${i + 1}-${i + batch.length} of ${urlList.length} — ${res.status} ${res.statusText}`);
+  if (!res.ok) failed = true;
+}
+if (failed) process.exit(1);

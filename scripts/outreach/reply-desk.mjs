@@ -58,6 +58,7 @@ import { compose, replySubject } from './reply-desk/compose.mjs';
 import { lint, assemble, toHtml, quoteText, attribution } from './reply-desk/voice.mjs';
 import { DEBRIEF_ONE_PAGER, PARTNER_TERMS, CREATOR_TERMS } from './reply-desk/content.mjs';
 import { renderReviewEmail } from './reply-desk/review-email.mjs';
+import { stampLinks } from './reply-desk/links.mjs';
 
 const ROOT = fileURLToPath(new URL('../..', import.meta.url));
 // The committed ledger is the scheduled workflow's. A hand run that is trying
@@ -315,6 +316,8 @@ async function handle(ix, leadEmail, inbound) {
     id: inbound.id,
     status,
     lead: leadEmail,
+    // Instantly's record id for this lead; stamped into links at send time.
+    lead_id: lead.id || null,
     company: lead.company_name || '',
     campaign: key,
     campaign_id: inbound.campaign_id,
@@ -451,7 +454,11 @@ async function send(ids, { auto = false } = {}) {
     if (newer.some(isInbound)) { refuse('they wrote again since the draft; re-run scan --redo --lead=' + m.lead); continue; }
 
     const quote = process.env.REPLY_DESK_QUOTE === '0' ? null : m.quote;
-    const full = assemble(text);
+    // Links leave tagged and carrying this lead's id (reply-desk/links.mjs).
+    // Drafts written before lead_id was recorded, follow-ups and hand-written
+    // replies look it up here.
+    const leadId = m.lead_id || (await ix.lead(m.lead, m.campaign_id).catch(() => null))?.id || null;
+    const full = stampLinks(assemble(text), { leadId });
     const payload = {
       eaccount: m.eaccount,
       replyToUuid: m.reply_to_uuid,

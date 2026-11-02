@@ -130,7 +130,8 @@ export function promoCode(name) {
 // The one promised asset that already exists. It is a link from a .com
 // mailbox to govhub.online, which instantly-wave1.md flags as a placement
 // risk; acceptable here only because the person asked for it by name.
-export const MATRIX_BUILDER_URL = 'https://www.govhub.online/solutions/compliance-matrix-generator/';
+// Tagged so a click from a reply reads as outreach, not direct or organic.
+export const MATRIX_BUILDER_URL = 'https://www.govhub.online/solutions/compliance-matrix-generator/?utm_source=instantly&utm_medium=email&utm_campaign=reply_desk';
 
 // ---- Plain facts the composer may state when asked ----------------------
 // From src/data/pricing.ts. The A2 draft offer is free, as the email said.

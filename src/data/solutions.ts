@@ -22,6 +22,25 @@ export interface Solution {
 
 export const solutions: Solution[] = [
   {
+    // First on purpose: finding the bid is step one of the lifecycle the
+    // homepage walks through, and it is the newest capability (2026-10).
+    // "government contract search" is 210/mo at KD 44 (Semrush US, 2026-10-31);
+    // "government bid search" is near zero.
+    slug: 'government-contract-search',
+    name: 'Government contract search',
+    title: 'Government Contract Search: Find & Match Bids | GovHub',
+    description:
+      'Find federal, state and local bids matched to your NAICS codes, states and set-asides, each with a plain-English summary. Then GovHub writes the response.',
+    primaryKeyword: 'government contract search',
+    summary:
+      'Federal, state and local bids in one inbox, matched to your NAICS codes, states and set-asides, each with a plain-English summary and its deadline.',
+    wave: 1,
+    featured: true,
+    relatedSlugs: ['rfp-shredding', 'ai-proposal-generator', 'form-autofiller'],
+    relatedPosts: [],
+    icon: 'lantern',
+  },
+  {
     slug: 'compliance-matrix-generator',
     name: 'Compliance matrix generator',
     title: 'Free RFP Compliance Matrix Generator',

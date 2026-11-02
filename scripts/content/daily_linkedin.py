@@ -44,7 +44,7 @@ from pathlib import Path
 import requests
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from generate_post import OPENAI_URL, clean_json, strip_dashes  # noqa: E402
+from generate_post import OPENAI_URL, clean_json, linkedin_link, strip_dashes  # noqa: E402
 from publish_social import post_postiz  # noqa: E402
 
 MODEL = os.environ.get("OPENAI_MODEL", "gpt-5-mini")
@@ -305,7 +305,7 @@ def main():
     else:
         sys.exit("Could not produce copy with verified numbers. Refusing to post.")
 
-    text = f"{post}\n\n{link}"
+    text = f"{post}\n\n{linkedin_link(link, 'daily_post')}"
     if DRY_RUN:
         print(f"--- dry run ---\n{text}\n---------------")
         return

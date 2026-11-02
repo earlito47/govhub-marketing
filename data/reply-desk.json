@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "cursor": "2026-10-28T17:52:15.000Z",
+  "cursor": "2026-10-31T20:07:59.000Z",
   "emails": {
     "01a07bf7-8d8a-7d1c-b87e-76208ed81963": {
       "lead": "amirl@seetrue.ai",
@@ -2161,6 +2161,106 @@
       "status": "answered",
       "answered_at": "2026-10-30T18:46:33.000Z",
       "updated_at": "2026-10-30T21:40:06.779Z"
+    },
+    "01a19cb9-ecd5-79a5-8a44-556fd0d158bc": {
+      "lead": "charlie.kindermann@altana.ai",
+      "campaign": "A4",
+      "received_at": "2026-11-02T14:46:26.000Z",
+      "category": "auto_reply",
+      "classified_by": "rule",
+      "status": "no_action",
+      "updated_at": "2026-11-02T21:09:07.090Z",
+      "redirect": "david@altana.ai"
+    },
+    "01a19cd1-6225-7b11-9c23-d824a035c23a": {
+      "lead": "pamela.azar@vitg.us",
+      "campaign": "A4",
+      "received_at": "2026-11-02T15:11:59.000Z",
+      "category": "auto_reply",
+      "classified_by": "rule",
+      "status": "no_action",
+      "updated_at": "2026-11-02T21:09:07.246Z"
+    },
+    "01a19cef-9e72-78b1-bf2d-e6261ffe2bf5": {
+      "lead": "admin@hcllc.biz",
+      "campaign": "A5",
+      "received_at": "2026-11-02T15:44:01.000Z",
+      "category": "auto_reply",
+      "classified_by": "model",
+      "status": "no_action",
+      "updated_at": "2026-11-02T21:09:09.271Z"
+    },
+    "01a19d1b-82bc-7112-b49f-3686f172e94f": {
+      "lead": "n5contracting.sc@gmail.com",
+      "campaign": "A2",
+      "received_at": "2026-11-02T16:32:50.000Z",
+      "category": "not_interested",
+      "classified_by": "model",
+      "status": "no_action",
+      "updated_at": "2026-11-02T21:09:12.304Z"
+    },
+    "01a19d58-027f-7d97-a29d-6089e4896921": {
+      "lead": "diedre@windsorgroupllc.net",
+      "campaign": "A5",
+      "received_at": "2026-11-02T17:39:00.000Z",
+      "category": "auto_reply",
+      "classified_by": "model",
+      "status": "no_action",
+      "updated_at": "2026-11-02T21:09:15.924Z",
+      "redirect": "diedre@windsorgroup-llc.com"
+    },
+    "01a19d86-b5b9-7752-bcba-b5c2869db12d": {
+      "lead": "tbarringhaus@allcomgs.com",
+      "campaign": "A2",
+      "received_at": "2026-11-02T18:30:06.000Z",
+      "category": "auto_reply",
+      "classified_by": "rule",
+      "status": "no_action",
+      "updated_at": "2026-11-02T21:09:16.034Z",
+      "redirect": "mhegarty@allcomgs.com"
+    },
+    "01a19da0-bb87-7e04-9d97-51a4a16ffd4d": {
+      "lead": "supplierinfo@dtn.com",
+      "campaign": "A4",
+      "received_at": "2026-11-02T18:58:26.000Z",
+      "category": "auto_reply",
+      "classified_by": "model",
+      "status": "no_action",
+      "updated_at": "2026-11-02T21:09:17.615Z"
+    },
+    "01a19da0-bca0-7f0d-8266-8eeacc7f2f8c": {
+      "lead": "supplierinfo@dtn.com",
+      "status": "superseded",
+      "by": "01a19da0-bb87-7e04-9d97-51a4a16ffd4d",
+      "updated_at": "2026-11-02T21:09:16.035Z"
+    },
+    "01a19de0-340e-7111-afa9-24c5ae6ed636": {
+      "lead": "info@firects.com",
+      "campaign": "A2",
+      "received_at": "2026-11-02T20:07:34.000Z",
+      "category": "accept",
+      "classified_by": "model",
+      "status": "drafted",
+      "playbook": "A2",
+      "deliverable": "next_open",
+      "updated_at": "2026-11-02T21:09:52.860Z",
+      "watch": {
+        "naics": "236210",
+        "keywords": [],
+        "companyName": "Kulani Inc.",
+        "context": "They were pitched 89233126NNA000150, \"Construction Contract Sources Sought\" (DOE, NAICS 236210), which closed Oct 29 before we answered. That item is the best evidence of what they make or do; nothing else is known about them.",
+        "count": 1,
+        "exclude": [
+          "89233126NNA000150",
+          "RFP-376508-CD"
+        ],
+        "until": "2026-12-17T21:09:52.487Z",
+        "eaccount": "earl.knight@govhubcontracts.com",
+        "subject": "Re: DOE",
+        "campaign_id": "c977a531-a8e5-47d3-b27b-5f8aacfab33b",
+        "firstName": "Angus"
+      },
+      "notified_at": "2026-11-02T21:09:52.860Z"
     },
     "430b01b5-be33-46b6-86ad-68e1dc0ee14d": {
       "lead": "admin@documentsecuritysolutions.net",

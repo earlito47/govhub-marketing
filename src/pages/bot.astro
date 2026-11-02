@@ -1,0 +1,94 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/seo/Breadcrumbs.astro';
+import { CONTACT_EMAIL } from '../config';
+
+// GovHubBot's public page. Its user agent links here, so this is what a
+// site owner, a webmaster or Cloudflare's verified-bot review reads to learn
+// what the crawler does. Keep it true to the code in strata-parse
+// (cloudflare-workers/src/opportunities): when the crawler's behavior changes,
+// change this page in the same week.
+const UA = 'Mozilla/5.0 (compatible; GovHubBot/1.0; +https://www.govhub.online/bot/)';
+const DIRECTORY = 'https://www.govhub.online/.well-known/http-message-signatures-directory';
+---
+
+<BaseLayout
+  title="GovHubBot: The Crawler Behind GovHub's Bid Inbox"
+  description="What GovHubBot reads, how often it visits, how it follows robots.txt and signs its requests, and how a site owner can limit or stop it."
+>
+  <main class="container">
+    <Breadcrumbs items={[{ name: 'Home', url: '/' }, { name: 'GovHubBot', url: '/bot/' }]} />
+
+    <article class="prose">
+      <h1>GovHubBot</h1>
+      <p class="lede">
+        GovHubBot is the crawler behind GovHub's bid inbox. It reads the public
+        bid and solicitation listings that government agencies post on their own
+        websites, so small businesses can find opportunities that fit them, and
+        it links each listing back to the agency's page.
+      </p>
+
+      <h2>How to recognize it</h2>
+      <p>Every request carries this user agent:</p>
+      <pre><code>{UA}</code></pre>
+      <p>
+        Its direct requests are also signed with
+        <a href="https://developers.cloudflare.com/bots/reference/bot-verification/web-bot-auth/">Web Bot Auth</a>
+        (HTTP Message Signatures). Each one carries <code>Signature-Agent</code>,
+        <code>Signature-Input</code> and <code>Signature</code> headers, and the
+        public key that verifies them is published at
+        <a href={DIRECTORY}>{DIRECTORY}</a>. A request that claims to be
+        GovHubBot without a valid signature is not ours.
+      </p>
+
+      <h2>What it reads</h2>
+      <ul>
+        <li>Public listing pages and feeds of open bids: state purchasing offices, cities, counties, school and special districts, transit and port authorities, and SAM.gov.</li>
+        <li>Only pages anyone can open without signing in. It never logs in, never creates accounts, and uses only the search or paging controls a listing page itself offers to the public.</li>
+        <li>The daily crawl records each listing's title, number, dates and a link to the agency's page, and links to bid documents rather than downloading them. When a GovHub user asks to analyze one listing, GovHub fetches that listing's documents once, with the same user agent.</li>
+      </ul>
+
+      <h2>How it behaves</h2>
+      <ul>
+        <li><strong>robots.txt first.</strong> It reads robots.txt before anything else on a site and follows the group for <code>GovHubBot</code>, or the <code>*</code> group if there is none, including <code>Crawl-delay</code>.</li>
+        <li><strong>Once a day.</strong> It visits each listing page about once a day, mostly early in the morning, US Eastern time. Most sites see two or three requests a day: robots.txt and the listing page, plus a few pages for a long list.</li>
+        <li><strong>A refusal is final.</strong> If a site answers with an error, a challenge page or a captcha, GovHubBot records that and stops. It does not retry through proxies, switch user agents, or use a browser to get past the check.</li>
+        <li><strong>Terms are read by a person.</strong> Before a site is added, someone at GovHub reviews its robots.txt and terms of use. Where a site's terms rule out AI processing, its listings are stored without any.</li>
+        <li><strong>No model training.</strong> GovHub does not train AI models on the pages GovHubBot reads.</li>
+      </ul>
+
+      <h2>How to limit or stop it</h2>
+      <p>To keep GovHubBot off your whole site, add this to your robots.txt:</p>
+      <pre><code>User-agent: GovHubBot
+Disallow: /</code></pre>
+      <p>
+        You can also disallow single paths, or set a <code>Crawl-delay</code> in
+        seconds. Changes take effect on its next daily visit. If you would rather
+        tell us directly, or want a listing corrected or removed, email
+        <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a> and we will
+        act on it promptly.
+      </p>
+
+      <h2>Allowing it through bot protection</h2>
+      <p>
+        If your site sits behind bot protection that blocks GovHubBot and you
+        would like your bids listed, you can allow requests whose signature
+        verifies against the key directory above, or match on the
+        <code>GovHubBot</code> user agent. Email
+        <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a> if you need
+        anything else from us to do that.
+      </p>
+    </article>
+  </main>
+</BaseLayout>
+
+<style>
+  main { padding: 1rem 1.5rem 2rem; }
+  .prose { max-width: 48rem; margin: 1rem 0; }
+  .lede { font-size: 1.15rem; color: var(--fg-muted); }
+  h2 { margin-top: 2.5rem; }
+  ul { padding-left: 1.25rem; color: var(--fg-muted); }
+  li { margin: 0.5rem 0; }
+  pre { overflow-x: auto; padding: 0.75rem 1rem; border-radius: 6px; background: var(--bg-muted, rgba(0, 0, 0, 0.05)); }
+  pre code { white-space: pre; }
+</style>

@@ -1,0 +1,195 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import FAQSchema from '../../components/seo/FAQSchema.astro';
+import Breadcrumbs from '../../components/seo/Breadcrumbs.astro';
+import PageHero from '../../components/PageHero.astro';
+import Tldr from '../../components/Tldr.astro';
+import CTABand from '../../components/CTABand.astro';
+import { getSolution } from '../../data/solutions';
+import { CALENDLY_URL, ctaHref } from '../../config';
+import { getBidIndex } from '../../lib/bids/load';
+
+const solution = getSolution('government-contract-search')!;
+
+// Counted from the same public listings /bids/ is built from, at build time,
+// so the number on this page is never older than the site. It understates the
+// app, which also carries city-site bids that are not republished on /bids/.
+const index = await getBidIndex();
+const openCount = index.bids.filter((b) => !b.closed).length;
+const openRounded = `${(Math.floor(openCount / 1000) * 1000).toLocaleString('en-US')}+`;
+
+// Signs up straight into the bid inbox (strata-parse src/lib/return-to.ts).
+const trialHref = `${ctaHref('solution_contract_search')}&next=${encodeURIComponent('/v2/opportunities')}`;
+
+const faqs = [
+  {
+    question: 'Where do the bids come from?',
+    answer:
+      'SAM.gov for federal opportunities, plus official state procurement portals and county, city, school district and special district bid pages, read every day. Each listing links back to the official notice.',
+  },
+  {
+    question: 'How does GovHub decide which bids match my company?',
+    answer:
+      'It ranks open bids against your company profile: your NAICS codes (an exact six-digit match ranks first, and a code in the same four-digit group also matches), the states you bid in, your set-aside and certification status, and any keywords you add. Every match shows why it matched.',
+  },
+  {
+    question: 'Can I search without matching?',
+    answer: `Yes. You can search and filter every open bid by level, state, NAICS, set-aside, notice type and due date, and save any search to come back to. Public listings are also browsable on the GovHub bids pages without an account.`,
+  },
+  {
+    question: 'What happens when I find a bid I want?',
+    answer:
+      'Open it and choose Analyze this RFP. GovHub reads the solicitation and its documents, builds the compliance matrix, drafts the proposal, scores it against the evaluation criteria and fills out the forms, in the same workspace.',
+  },
+  {
+    question: 'Is there a free trial?',
+    answer: 'Yes. 14 days, no credit card. Your inbox fills with matched bids as soon as your company profile is set up.',
+  },
+];
+---
+
+<BaseLayout title={solution.title} description={solution.description}>
+  <main class="container">
+    <Breadcrumbs
+      items={[
+        { name: 'Home', url: '/' },
+        { name: 'Solutions', url: '/solutions/' },
+        { name: solution.name, url: `/solutions/${solution.slug}/` },
+      ]}
+    />
+
+    <PageHero art="/brand/page-graphics/blog-trail-map.svg">
+      <header class="prose">
+        <p class="eyebrow">New in GovHub</p>
+        <h1>Government contract search that finds the bids that fit you</h1>
+        <p class="lede">
+          GovHub reads federal, state and local procurement sources every day and puts the bids that fit your company
+          in one inbox, matched to your NAICS codes, the states you work in and your set-asides, each with a
+          plain-English summary and its deadline. When one is worth bidding, GovHub reads the solicitation, writes the
+          proposal and fills out the forms.
+        </p>
+        <p class="hero-ctas">
+          <a class="btn primary" href={trialHref}>Start free trial</a>
+          <a class="btn ghost" href={CALENDLY_URL} data-demo-cta="solution_contract_search">Book a demo</a>
+        </p>
+      </header>
+    </PageHero>
+
+    <Tldr
+      what={`Search and matching across ${openRounded} open federal, state and local bids, with an AI summary of each.`}
+      who="Contractors who find bids by checking portals one at a time, and new contractors looking for work they can win."
+      answer="Set up your company profile once; matched bids land in your GovHub inbox, and any one of them can become a drafted proposal."
+    />
+
+    <article class="prose">
+      <h2>Every source in one inbox</h2>
+      <p>
+        Federal opportunities from SAM.gov sit next to bids from state procurement portals and from counties, cities,
+        school districts and special districts, so you stop checking a dozen sites. Each bid shows the agency, the
+        notice type, the set-aside, the deadline in the agency's own time zone and a short summary of what is being
+        bought, written by GovHub from the notice.
+      </p>
+
+      <h2 id="matching">Matched to your company, not just your keywords</h2>
+      <ul>
+        <li><strong>NAICS codes</strong> from your company profile: an exact match ranks first, and a code in the same four-digit group also counts.</li>
+        <li><strong>States</strong> you bid in, or every state.</li>
+        <li><strong>Set-asides and certifications</strong> such as small business, 8(a), WOSB, SDVOSB and HUBZone.</li>
+        <li><strong>Keywords</strong> for the work you do, for when a NAICS code is too broad.</li>
+      </ul>
+      <p>Every match says why it matched, and you can save a search, dismiss what does not fit and come back to the rest.</p>
+
+      <h2>From the bid to a submitted response</h2>
+      <p>Finding the bid is step one. The same workspace takes it the rest of the way:</p>
+      <ol>
+        <li><a href="/solutions/rfp-shredding/">Read the solicitation</a> and pull every requirement into a compliance matrix.</li>
+        <li><a href="/solutions/ai-proposal-generator/">Draft the proposal</a> in your firm's voice.</li>
+        <li><a href="/solutions/technical-writer-review/">Score it</a> against the evaluation criteria before you submit.</li>
+        <li><a href="/solutions/form-autofiller/">Fill out the forms</a> from your company profile.</li>
+      </ol>
+
+      <h2>New to government contracting? Start with the small jobs</h2>
+      <p>
+        Plenty of government work is small: a quote for supplies, a mowing contract, a cleaning service, a training
+        course. For a new contractor, GovHub is a Swiss Army knife for those jobs. It finds the ones that fit, explains
+        each in plain English, fills out the forms and writes a clean response, without a proposal team.
+      </p>
+
+      <h2>See it before you sign up</h2>
+      <p>
+        Public listings are open to browse: <a href="/bids/">open government bids by state and category</a>, for
+        example <a href="/bids/texas/">Texas</a>, <a href="/bids/construction/">construction</a> or
+        {' '}<a href="/bids/janitorial/">janitorial and cleaning</a>.
+      </p>
+    </article>
+
+    <FAQSchema faqs={faqs} heading="Government contract search: FAQ" />
+
+    <CTABand
+      heading="Find the bids that fit you."
+      sub="14 days free, no card. Your inbox fills with matched bids as soon as your company profile is set up."
+      primaryHref={trialHref}
+      secondaryHref={CALENDLY_URL}
+      secondaryLabel="Book a demo"
+    />
+  </main>
+</BaseLayout>
+
+<style>
+  main {
+    padding-bottom: 3rem;
+  }
+  .prose {
+    max-width: 48rem;
+    margin: 2rem 0 3rem;
+  }
+  .eyebrow {
+    font-family: var(--gh-font-brand);
+    font-size: var(--gh-text-eyebrow);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--gh-gold-600);
+    font-weight: 700;
+    margin: 0 0 0.5rem;
+  }
+  .lede {
+    font-size: 1.15rem;
+    color: var(--fg-muted);
+    margin-bottom: 1.5rem;
+  }
+  .hero-ctas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+  .btn {
+    display: inline-block;
+    padding: 0.7rem 1.4rem;
+    border-radius: var(--gh-radius-pill);
+    font-family: var(--gh-font-brand);
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .btn.primary {
+    background: var(--gh-maroon-600);
+    color: #fff;
+  }
+  .btn.primary:hover {
+    background: var(--gh-maroon-700);
+  }
+  .btn.ghost {
+    border: 2px solid var(--gh-navy-600);
+    color: var(--gh-navy-600);
+  }
+  h2 {
+    margin-top: 2.5rem;
+  }
+  ul,
+  ol {
+    padding-left: 1.25rem;
+    color: var(--fg-muted);
+  }
+  li {
+    margin: 0.5rem 0;
+  }
+</style>
