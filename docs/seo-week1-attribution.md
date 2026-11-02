@@ -60,6 +60,35 @@ them a click lands as direct traffic, which is where most of October's
 New campaigns: lowercase, `snake_case` campaign names, link to `www` (the apex
 301 costs a hop), and put the query before any `#fragment`.
 
+## Per-recipient links (`gh_lid`, 2026-11-02)
+
+UTMs say which campaign a visit came from, not which person. A link we email
+to one person can also carry `gh_lid=<Instantly lead id>`: an opaque record
+id, never the email address.
+
+- **Reply desk** (`scripts/outreach/reply-desk/links.mjs`): every
+  govhub.online link in a reply leaves tagged `instantly / email / reply_desk`
+  (unless it already names a campaign) and carrying the lead's id. Stamped at
+  `send`, after review, so drafts stay readable.
+- **The site** (`src/components/LeadLink.astro`, first script in `<head>`):
+  keeps the id in the first-party `gh_lid` cookie for 90 days and removes it
+  from the address bar before Cloudflare, GA4 or the Meta Pixel read the URL.
+  `Analytics.astro` attaches it to that browser's PostHog events as a super
+  property. GA4 and Meta never see it.
+- **Reading it back:** `node scripts/outreach/lead-visits.mjs [--days=90]`
+  lists each lead who clicked: name, company, campaign, visits (more than one
+  means they came back), pages and whether they reached the app. It prints
+  names, so it goes to the terminal only.
+- **Privacy:** not stored when the browser sends Global Privacy Control or the
+  visitor turned analytics off on `/privacy/` (the `gh_optout` cookie, which
+  also stops GA4, PostHog and the Meta Pixel on www). The policy's sections 7
+  and 8 describe both. The Meta Pixel also skips GPC browsers.
+- **Not yet in the campaign sequences.** The four live angle campaigns send no
+  links, on purpose (deliverability). Their leads carry `uei` (the company's
+  public SAM.gov id), so a later step could link with `gh_lid=u.{{uei}}`
+  without touching lead records; `lead-visits.mjs` would need to resolve that
+  form too.
+
 **Calendly bookings** carry the visitor's first touch, so the booking itself
 says where it came from:
 

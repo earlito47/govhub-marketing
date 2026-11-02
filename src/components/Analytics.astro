@@ -41,7 +41,9 @@ const { enabled } = Astro.props;
      * ---------------------------------------------------------------- */
     var DEV_HOST =
       /^localhost$|^127\.|^\[?::1\]?$|\.local$|\.pages\.dev$|\.workers\.dev$|\.lovable\.app$/;
-    var SEND = sendEnabled === true && !DEV_HOST.test(location.hostname);
+    /* window.__ghOptOut is set by LeadLink.astro (first in <head>) for a
+       visitor who opted out on /privacy/: nothing is sent to GA4 or PostHog. */
+    var SEND = sendEnabled === true && !DEV_HOST.test(location.hostname) && !window.__ghOptOut;
 
     /* ---------------- 1. Cookie helpers (.govhub.online) -------------- */
     function readCookie(name) {
@@ -261,7 +263,26 @@ const { enabled } = Astro.props;
       capture_pageview: true,
       capture_pageleave: true,
       disable_session_recording: true,
+      /* The /privacy/ button calls opt_out_capturing(), which PostHog keeps in
+         its own storage. Our gh_optout cookie is the record (this code only
+         runs without it), so a visitor who turned analytics back on gets
+         PostHog back too. */
+      loaded: function (ph) {
+        if (ph.has_opted_out_capturing && ph.has_opted_out_capturing()) ph.opt_in_capturing();
+      },
     });
+
+    /* ---------------- 10b. Per-recipient email link -------------------
+     * LeadLink.astro stored gh_lid (the lead id from a link we emailed to one
+     * person) and took it out of the URL. Attached here as a PostHog super
+     * property, so every later visit from this browser carries it and
+     * scripts/outreach/lead-visits.mjs can say which lead came back. PostHog
+     * only: it is never put on a GA4 event or the Meta Pixel.
+     * ---------------------------------------------------------------- */
+    var LID = readCookie('gh_lid');
+    if (LID && navigator.globalPrivacyControl !== true) {
+      window.posthog.register({ gh_lid: LID });
+    }
 
     /* ---------------- 11. landing_view -------------------------------
      * Once per session PER HOST. The guard cookie is named per host

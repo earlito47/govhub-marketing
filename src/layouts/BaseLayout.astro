@@ -4,6 +4,7 @@ import Footer from '../components/Footer.astro';
 import SchemaOrg from '../components/seo/SchemaOrg.astro';
 import { CALENDLY_URL } from '../config';
 import Analytics from '../components/Analytics.astro';
+import LeadLink from '../components/LeadLink.astro';
 // Self-hosted Gold Country type (no render-blocking Google Fonts request).
 // Fraunces needs full.css for the SOFT/WONK axes the brand guide pins.
 import '@fontsource-variable/fraunces/full.css';
@@ -95,6 +96,9 @@ const ANALYTICS_ENABLED =
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {/* First script on the page: takes gh_lid out of the URL before any
+        analytics tag reads it, and applies the /privacy/ opt-out. */}
+    <LeadLink gaId={GA_MEASUREMENT_ID} />
     <meta name="generator" content={Astro.generator} />
 
     <title>{title}</title>
@@ -173,7 +177,9 @@ const ANALYTICS_ENABLED =
         <script is:inline define:vars={{ metaPixelId: META_PIXEL_ID }}>
           var META_DEV_HOST =
             /^localhost$|^127\.|^\[?::1\]?$|\.local$|\.pages\.dev$|\.workers\.dev$|\.lovable\.app$/;
-          if (!META_DEV_HOST.test(location.hostname)) {
+          /* Not for a visitor who opted out on /privacy/, or whose browser sends
+             Global Privacy Control: an ad pixel is "sharing" under California law. */
+          if (!META_DEV_HOST.test(location.hostname) && !window.__ghOptOut && navigator.globalPrivacyControl !== true) {
             !function(f,b,e,v,n,t,s)
             {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
             n.callMethod.apply(n,arguments):n.queue.push(arguments)};

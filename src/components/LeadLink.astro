@@ -1,0 +1,54 @@
+---
+/**
+ * Per-recipient email links, read before any analytics tag sees the URL.
+ *
+ * A link we email to one person can carry gh_lid=<opaque lead id> (the reply
+ * desk stamps the Instantly lead id; see scripts/outreach/reply-desk/links.mjs).
+ * This script, first in <head>:
+ *   1. keeps the id in a first-party cookie (gh_lid, 90 days), which
+ *      Analytics.astro then attaches to this browser's PostHog events, so a
+ *      return visit shows up as that lead (scripts/outreach/lead-visits.mjs);
+ *   2. removes gh_lid from the address bar BEFORE Cloudflare, GA4 and the Meta
+ *      Pixel read the page URL. The id is ours alone: it never goes to Google
+ *      or Meta, and it does not survive a copy-pasted link.
+ *
+ * Not stored when the visitor has opted out on /privacy/ (gh_optout cookie) or
+ * their browser sends Global Privacy Control. Opt-out also switches off GA4
+ * here, before gtag's config runs (Google's documented ga-disable flag), and
+ * sets window.__ghOptOut for the Meta Pixel and Analytics.astro.
+ *
+ * Runs on every build, previews included: it sends nothing anywhere.
+ */
+import { COOKIE_DOMAIN } from '../config';
+
+interface Props {
+  gaId: string;
+}
+const { gaId } = Astro.props;
+---
+
+<script is:inline define:vars={{ cookieDomain: COOKIE_DOMAIN, gaId }}>
+  (function () {
+    window.__ghGaId = gaId; /* for the /privacy/ opt-out button */
+    var optedOut = /(?:^|; )gh_optout=1(?:;|$)/.test(document.cookie);
+    if (optedOut) {
+      window.__ghOptOut = true;
+      window['ga-disable-' + gaId] = true;
+    }
+    var url;
+    try { url = new URL(location.href); } catch (e) { return; }
+    var lid = url.searchParams.get('gh_lid');
+    if (lid === null) return;
+    var gpc = navigator.globalPrivacyControl === true;
+    if (!optedOut && !gpc && /^[A-Za-z0-9._-]{6,64}$/.test(lid)) {
+      document.cookie =
+        'gh_lid=' + encodeURIComponent(lid) +
+        '; Domain=' + cookieDomain +
+        '; Path=/; Max-Age=' + 90 * 24 * 60 * 60 +
+        '; SameSite=Lax' +
+        (location.protocol === 'https:' ? '; Secure' : '');
+    }
+    url.searchParams.delete('gh_lid');
+    try { history.replaceState(history.state, '', url.pathname + url.search + url.hash); } catch (e) { /* keep the page working */ }
+  })();
+</script>

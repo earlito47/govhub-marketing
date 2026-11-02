@@ -1,12 +1,12 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/seo/Breadcrumbs.astro';
-import { CONTACT_EMAIL } from '../config';
+import { CONTACT_EMAIL, COOKIE_DOMAIN } from '../config';
 
 // NOTE (internal, not rendered): this is a standard, conservative starting
 // policy. Confirm the legal entity name, governing jurisdiction, data-processor
 // list, and retention periods with counsel before relying on it.
-const lastUpdated = 'July 2026';
+const lastUpdated = 'November 2, 2026';
 ---
 
 <BaseLayout
@@ -32,7 +32,7 @@ const lastUpdated = 'July 2026';
       <ul>
         <li><strong>Account information</strong> you provide, such as name, work email, company, and role.</li>
         <li><strong>Content you upload,</strong> including solicitations, past-performance data, and proposal drafts.</li>
-        <li><strong>Usage data,</strong> such as log and device information collected automatically when you use the Services.</li>
+        <li><strong>Usage data,</strong> such as log and device information collected automatically when you use the Services, and the pages you visit on this site (see section 7).</li>
       </ul>
 
       <h2>2. How we use information</h2>
@@ -71,22 +71,63 @@ const lastUpdated = 'July 2026';
         <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.
       </p>
 
-      <h2>7. Cookies</h2>
+      <h2>7. Cookies and analytics</h2>
       <p>
-        We use cookies and similar technologies to operate the site and understand
-        usage. You can control cookies through your browser settings.
+        We use cookies and similar technologies to run the site and to understand
+        which pages and campaigns bring people to GovHub. Our own cookies:
+      </p>
+      <ul>
+        <li><strong>gh_s</strong>: identifies your current visit; expires after 30 minutes without activity.</li>
+        <li><strong>gh_ft</strong>: how you first found us (the referring site, campaign tags and first page); 90 days.</li>
+        <li><strong>gh_lt</strong>: the campaign tags of your current visit; 30 minutes.</li>
+        <li><strong>gh_lid</strong>: set only if you arrive through a personal link in an email from us (section 8); 90 days.</li>
+        <li><strong>gh_optout</strong>: remembers that you turned analytics off (below); one year.</li>
+      </ul>
+      <p>
+        We also use PostHog and Google Analytics to measure how the site is used,
+        and the Meta Pixel to measure our advertising. These providers set their
+        own cookies. If your browser sends a Global Privacy Control signal, we do
+        not load the Meta Pixel and do not link your visits to our emails. You can
+        also control cookies through your browser settings.
       </p>
 
-      <h2>8. Children's privacy</h2>
+      <h2>8. Links in our emails</h2>
+      <p>
+        When we email you directly, for example when we reply to a message you sent
+        us, a link to this site may include a reference number for your record in
+        our email system. It is not your email address. If you open such a link, we
+        keep the reference in the <strong>gh_lid</strong> cookie and attach it to
+        your visits in our own analytics (PostHog), so we can see whether what we
+        sent was useful and follow up sensibly. We remove the reference from the
+        page address before any other analytics provider loads, so it is not
+        shared with Google, Meta or anyone else.
+      </p>
+      <p>
+        To stop this, turn analytics off on this browser below, or email
+        {' '}<a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a> and we will
+        delete the link between your visits and your record.
+      </p>
+
+      <div class="optout" id="analytics-optout">
+        <p class="optout-status" data-optout-status>Analytics are on for this browser.</p>
+        <button type="button" class="optout-btn" data-optout-toggle>Turn off analytics on this browser</button>
+        <p class="optout-note">
+          This stops Google Analytics, PostHog and the Meta Pixel on this site,
+          and removes the gh_lid email link. It applies to this browser only and
+          lasts a year, or until you clear your cookies.
+        </p>
+      </div>
+
+      <h2>9. Children's privacy</h2>
       <p>The Services are not directed to children and we do not knowingly collect data from them.</p>
 
-      <h2>9. Changes to this policy</h2>
+      <h2>10. Changes to this policy</h2>
       <p>
         We may update this policy from time to time. Material changes will be
         reflected by the "Last updated" date above.
       </p>
 
-      <h2>10. Contact</h2>
+      <h2>11. Contact</h2>
       <p>
         Questions about this policy? Email
         <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.
@@ -94,6 +135,45 @@ const lastUpdated = 'July 2026';
     </article>
   </main>
 </BaseLayout>
+
+<script is:inline define:vars={{ cookieDomain: COOKIE_DOMAIN }}>
+  /* The opt-out button. The gh_optout cookie is the record: LeadLink.astro
+     reads it first in <head> on every page and switches off GA4, PostHog, the
+     Meta Pixel and the gh_lid email link. This only also stops the page that
+     is already open. */
+  (function () {
+    var box = document.getElementById('analytics-optout');
+    if (!box) return;
+    var status = box.querySelector('[data-optout-status]');
+    var btn = box.querySelector('[data-optout-toggle]');
+    function setCookie(name, value, maxAge) {
+      document.cookie = name + '=' + value + '; Domain=' + cookieDomain + '; Path=/; Max-Age=' + maxAge +
+        '; SameSite=Lax' + (location.protocol === 'https:' ? '; Secure' : '');
+    }
+    function isOut() { return /(?:^|; )gh_optout=1(?:;|$)/.test(document.cookie); }
+    function render() {
+      var out = isOut();
+      status.textContent = out ? 'Analytics are off for this browser.' : 'Analytics are on for this browser.';
+      btn.textContent = out ? 'Turn analytics back on' : 'Turn off analytics on this browser';
+    }
+    btn.addEventListener('click', function () {
+      if (isOut()) {
+        /* PostHog loads again on the next page and clears its own opt-out
+           (Analytics.astro, loaded callback). */
+        setCookie('gh_optout', '', 0);
+      } else {
+        setCookie('gh_optout', '1', 365 * 24 * 60 * 60);
+        setCookie('gh_lid', '', 0);
+        if (window.__ghGaId) window['ga-disable-' + window.__ghGaId] = true;
+        if (window.posthog) {
+          try { window.posthog.unregister('gh_lid'); window.posthog.opt_out_capturing(); } catch (e) { /* not loaded */ }
+        }
+      }
+      render();
+    });
+    render();
+  })();
+</script>
 
 <style>
   main { padding: 1rem 1.5rem 3rem; }
@@ -103,4 +183,24 @@ const lastUpdated = 'July 2026';
   ul { padding-left: 1.25rem; color: var(--fg-muted); }
   li { margin: 0.4rem 0; }
   p { color: var(--fg-muted); }
+  .optout {
+    margin: 1.25rem 0 0;
+    padding: 1rem 1.25rem;
+    border: 1px solid var(--border);
+    border-radius: 0.75rem;
+    background: var(--bg-elevated);
+  }
+  .optout-status { margin: 0 0 0.75rem; color: var(--fg); font-weight: 600; }
+  .optout-btn {
+    font: inherit;
+    font-weight: 600;
+    padding: 0.55rem 1.1rem;
+    border-radius: var(--gh-radius-pill);
+    border: 2px solid var(--gh-navy-600);
+    background: transparent;
+    color: var(--gh-navy-600);
+    cursor: pointer;
+  }
+  .optout-btn:hover { background: var(--gh-navy-600); color: #fff; }
+  .optout-note { font-size: 0.9rem; margin: 0.75rem 0 0; }
 </style>
