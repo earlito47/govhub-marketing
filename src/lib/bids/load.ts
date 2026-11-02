@@ -79,7 +79,34 @@ export interface Bid {
   /** What the free-trial gate can truthfully say the app has for this bid. */
   hasDescription: boolean;
   attachmentCount: number;
+  /**
+   * Whether search engines should index this page. Every bid keeps its page
+   * (visitors, hubs and the trial button all use it); a weak one carries
+   * noindex,follow and stays out of the sitemap. See `noindexReason`.
+   */
+  indexable: boolean;
+  noindexReason: NoindexReason | null;
+  /**
+   * Set when another bid's <title> would be the same (an identical title, or
+   * two long titles that read the same once cut to 60 characters), so the tag
+   * can tell them apart: "Circuit Card Assemb, Navy (N0010426QYAJS)" rather
+   * than 52 pages all titled "Circuit Card Assemb". See bidTitleTag().
+   */
+  titleQualifier: { agency: string | null; ref: string } | null;
 }
+
+/**
+ * Why a bid page is kept out of the index (Google's scaled-content policy,
+ * reviewed 2026-11-01). One summary of a few words on a templated page, many
+ * times over, is the pattern that policy describes; the hubs carry these
+ * searches instead.
+ *  - 'dla-parts': Defense Logistics Agency parts buys (gaskets, valves, cards):
+ *    thousands of near-identical small purchases nobody searches for by name.
+ *  - 'shared-title': another bid has the same title, so the pages compete.
+ *  - 'short-summary': GovHub's summary is under MIN_SUMMARY_WORDS words.
+ */
+export type NoindexReason = 'dla-parts' | 'shared-title' | 'short-summary';
+export const MIN_SUMMARY_WORDS = 15;
 
 export interface Hub {
   path: string;
@@ -128,6 +155,9 @@ const PLACES: Record<string, { slug: string; name: string }> = {
 export const PLACE_BY_SLUG = new Map(Object.entries(PLACES).map(([code, p]) => [p.slug, { code, ...p }]));
 /** States with an /insights/state/ page (territories have none). */
 export const INSIGHTS_STATE_SLUGS = new Set(Object.keys(STATES as Record<string, unknown>));
+/** NAICS codes with an indexable /insights/naics/{code}/ page, for links from bid pages. */
+const NAICS_INSIGHTS = import.meta.glob<{ slug: string; noindex?: boolean }>('../../data/insights/naics/*.json', { eager: true, import: 'default' });
+export const INSIGHTS_NAICS_CODES = new Set(Object.values(NAICS_INSIGHTS).filter((p) => !p.noindex).map((p) => p.slug));
 
 const LEVELS: Record<string, string> = {
   federal: 'Federal',
@@ -145,7 +175,8 @@ function baseSlug(row: BidRow, title: string): string {
   return `${words}-${ref || row.id.slice(0, 8)}`;
 }
 
-function toBid(row: BidRow, now: number): Omit<Bid, 'slug' | 'path'> {
+// slug/path need the whole set (collisions); the index fields are set by markIndexable().
+function toBid(row: BidRow, now: number): Omit<Bid, 'slug' | 'path' | 'indexable' | 'noindexReason' | 'titleQualifier'> {
   const place = row.state ? PLACES[row.state.toUpperCase()] : undefined;
   const federal = row.source_tier === 'federal';
   const title = noEmDash(cleanTitle(row.title));
@@ -217,6 +248,78 @@ async function fetchRows(): Promise<BidRow[]> {
   return rows;
 }
 
+const titleKey = (t: string) => t.toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
+const words = (t: string) => t.split(/\s+/).filter(Boolean).length;
+
+/** "Dept of Defense / Dept of the Navy / Navsup ..." -> "Navy". */
+function agencyShort(b: Bid): string | null {
+  if (!b.agency) return null;
+  const parts = b.agency.split(' / ');
+  const name = (parts[1] ?? parts[0]).replace(/^(dept|department) of (the )?/i, '').trim();
+  if (/^defense logistics agency$/i.test(name)) return 'DLA';
+  return name.length <= 28 ? name : null;
+}
+
+const clip = (s: string, n: number) => (s.length > n ? `${s.slice(0, n - 1).replace(/\s+\S*$/, '')}…` : s);
+
+/**
+ * The bid's <title>, at most 60 characters (check-meta.mjs warns past 60 and
+ * fails past 70): the title, then where. With a qualifier, the longest form
+ * that fits of "title, agency (solicitation no.) | place bid".
+ */
+export function bidTitleTag(b: Bid): string {
+  const suffix = ` | ${placeName(b.segment)} bid`;
+  const q = b.titleQualifier;
+  if (q) {
+    const found = [
+      q.agency && `${b.title}, ${q.agency} (${q.ref})${suffix}`,
+      `${b.title} (${q.ref})${suffix}`,
+      q.agency && `${b.title}, ${q.agency} (${q.ref})`,
+      `${b.title} (${q.ref})`,
+      `${clip(b.title, 60 - q.ref.length - 3)} (${q.ref})`,
+    ].find((t): t is string => !!t && t.length <= 60);
+    if (found) return found;
+  }
+  return `${clip(b.title, 60 - suffix.length)}${suffix}`;
+}
+
+function qualify(b: Bid, extra = ''): void {
+  const ref = b.externalId?.trim() || (b.dueAt ? `due ${formatShortDate(b.dueAt, b.timeZone)}` : b.id.slice(0, 8));
+  b.titleQualifier = { agency: agencyShort(b), ref: extra ? `${ref} ${extra}` : ref };
+}
+
+function collisions(bids: Bid[]): Bid[][] {
+  const byTag = new Map<string, Bid[]>();
+  for (const b of bids) {
+    const k = bidTitleTag(b).toLowerCase();
+    (byTag.get(k) ?? byTag.set(k, []).get(k)!).push(b);
+  }
+  return [...byTag.values()].filter((g) => g.length > 1);
+}
+
+/** Sets indexable, noindexReason and titleQualifier on the pages being built. */
+function markIndexable(bids: Bid[]): void {
+  const count = new Map<string, number>();
+  for (const b of bids) count.set(titleKey(b.title), (count.get(titleKey(b.title)) ?? 0) + 1);
+  for (const b of bids) {
+    const shared = count.get(titleKey(b.title))! > 1;
+    b.noindexReason = /defense logistics agency/i.test(b.agency ?? '')
+      ? 'dla-parts'
+      : shared
+        ? 'shared-title'
+        : words(b.summary) < MIN_SUMMARY_WORDS
+          ? 'short-summary'
+          : null;
+    b.indexable = b.noindexReason === null;
+    if (shared) qualify(b);
+  }
+  // Different titles that read the same once cut to fit: qualify those too
+  // (they stay indexable). Anything still tied after that, typically the same
+  // solicitation posted twice, gets the bid id as a last resort.
+  for (const group of collisions(bids)) for (const b of group) if (!b.titleQualifier) qualify(b);
+  for (const group of collisions(bids)) for (const b of group) qualify(b, b.id.slice(0, 6));
+}
+
 function byDue(a: Bid, b: Bid): number {
   const da = a.dueAt ? Date.parse(a.dueAt) : Infinity;
   const db = b.dueAt ? Date.parse(b.dueAt) : Infinity;
@@ -257,12 +360,17 @@ async function build(): Promise<BidIndex> {
     let slug = baseSlug(row, b.title);
     if (taken.has(`${b.segment}/${slug}`)) slug = `${slug}-${row.id.slice(0, 6)}`;
     taken.add(`${b.segment}/${slug}`);
-    return { ...b, slug, path: `/bids/${b.segment}/${slug}/` };
+    return { ...b, slug, path: `/bids/${b.segment}/${slug}/`, indexable: true, noindexReason: null, titleQualifier: null };
   });
   const open = all.filter((b) => !b.closed).sort(byDue);
   const closed = all.filter((b) => b.closed).sort((a, b) => Date.parse(b.dueAt ?? '0') - Date.parse(a.dueAt ?? '0'));
   const bids = [...open, ...closed].slice(0, MAX_BID_PAGES);
-  console.log(`[bids] ${all.length} listings (${open.length} open), ${bids.length} pages (cap ${MAX_BID_PAGES})`);
+  markIndexable(bids);
+  const held = bids.filter((b) => !b.indexable);
+  const byReason = new Map<string, number>();
+  for (const h of held) byReason.set(h.noindexReason!, (byReason.get(h.noindexReason!) ?? 0) + 1);
+  const reasons = [...byReason].map(([r, n]) => `${r} ${n}`);
+  console.log(`[bids] ${all.length} listings (${open.length} open), ${bids.length} pages (cap ${MAX_BID_PAGES}), ${bids.length - held.length} indexable; noindex: ${reasons.join(', ') || 'none'}`);
 
   const keep = (m: Map<string, Hub>) => new Map([...m].filter(([, h]) => h.open.length >= HUB_MIN_OPEN));
   const toHubs = (m: Map<string, Bid[]>, path: (k: string) => string) =>

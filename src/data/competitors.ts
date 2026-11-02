@@ -1,9 +1,14 @@
 // src/data/competitors.ts
 // Seed data driving /vs/[competitor].astro and /alternatives/[competitor].astro
-// Sourced from verified 2026 reviews (G2, Capterra, Vendr, ITQlick, SoftwareAdvice)
-// as of research date. Pricing figures are third-party estimates since none of
-// these vendors publish list pricing — flagged as "estimated" in copy, not stated
-// as fact, to stay accurate and defensible.
+//
+// Sourcing rule (tightened 2026-11-01): every claim about a competitor comes
+// from a page we could read: its own site, pricing page or announcements, or a
+// named third party (Vendr, ITQlick, review sites). Prices a vendor does not
+// publish are labelled estimates. No star ratings or "N quarters as a leader"
+// badges: they change weekly and the review sites block automated checks, so
+// they cannot be kept true. Review-site complaints are paraphrased and the site
+// named, not quoted. Each entry's `reviewed` date is when its facts were last
+// checked; the build warns when it is missing or over 120 days old.
 
 export interface Competitor {
   slug: string;
@@ -100,6 +105,13 @@ export interface Competitor {
    * sentences, so GovSpend's page talks about purchase orders and GovWin's
    * about forecasts instead of both reading as GovWin.
    */
+  /**
+   * ISO date the facts on this competitor's pages were last checked against
+   * their sources. Shown on the page ("Facts checked …"), and the year in the
+   * <title> comes from it, so "(2027)" appears only after a real 2027 review
+   * rather than on the first build of the year. Leave unset if unknown.
+   */
+  reviewed?: string;
   intel?: {
     /** Verb phrase after the name, short enough for a meta description: "forecasts federal contracts years before the RFP". */
     does: string;
@@ -124,6 +136,7 @@ export const competitors: Competitor[] = [
   // Only claims with a source; competitor prices are dated where shown.
   {
     slug: 'bidnet-direct',
+    reviewed: '2026-10-31',
     priceHook: 'charges $100 to $330 a month by state',
     name: 'BidNet Direct',
     category: 'bid-search',
@@ -183,13 +196,14 @@ export const competitors: Competitor[] = [
   },
   {
     slug: 'bidprime',
+    reviewed: '2026-10-31',
     priceHook: 'sells annual plans by quote',
     name: 'BidPrime',
     category: 'bid-search',
     tagline:
       'A government bid-finding service that alerts you to federal, state and local bids and retrieves bid documents, with an AI assistant for qualifying them.',
     pricingEstimate:
-      'BidPrime does not post a price list; plans are annual subscriptions quoted after a trial or sales call. Third-party listings put entry plans at roughly $99 to $250 a month, and a G2 reviewer reported paying $749 for a year. Treat every figure as an estimate. Directory listings describe a 30-day free trial with no credit card.',
+      'BidPrime does not post a price list; it sells annual subscriptions quoted by its sales team, and we found no published figure we could confirm, so ask for a written quote and its renewal terms.',
     bestFor:
       'Contractors who want broad bid alerts across many local agencies, including documents that are not posted online, and who already have a way to write the response.',
     strengths: [
@@ -209,7 +223,7 @@ export const competitors: Competitor[] = [
       { label: 'Proposal writing', govhub: 'A full draft against the solicitation, in your firm’s voice', competitor: 'Outlines, compliance checklists and cover letters' },
       { label: 'Proposal scoring', govhub: 'Scored against the evaluation criteria before you submit', competitor: 'Not offered' },
       { label: 'Form filling', govhub: 'SF-33, SF-1449, reps and certs from your company profile', competitor: 'Not offered' },
-      { label: 'Pricing', govhub: 'Published tiers, 14-day free trial', competitor: 'Annual plans by quote; a free trial per directory listings' },
+      { label: 'Pricing', govhub: 'Published tiers, 14-day free trial', competitor: 'Annual plans, quoted by sales' },
     ],
     faqs: [
       {
@@ -220,7 +234,7 @@ export const competitors: Competitor[] = [
       {
         question: 'How much does BidPrime cost?',
         answer:
-          'BidPrime does not post a price list; it sells annual subscriptions by quote. Third-party listings suggest roughly $99 to $250 a month for entry plans, so treat any figure as an estimate. GovHub publishes its prices, and they include the proposal writing and form filling.',
+          'BidPrime does not post a price list; it sells annual subscriptions quoted by its sales team, so ask for a written quote and the renewal terms. GovHub publishes its prices, and they include the proposal writing and form filling.',
       },
     ],
     alternativesRoster: [
@@ -234,6 +248,7 @@ export const competitors: Competitor[] = [
   },
   {
     slug: 'planetbids',
+    reviewed: '2026-10-31',
     priceHook: 'charges $547 to $897 a year for VendorLine',
     name: 'PlanetBids',
     category: 'bid-search',
@@ -296,6 +311,7 @@ export const competitors: Competitor[] = [
     // "demandstar" (2,900/mo), so the page keeps that name and explains the
     // rename to Euna OpenBids.
     slug: 'demandstar',
+    reviewed: '2026-10-31',
     priceHook: 'charges $60 a county to $2,699 a year nationwide',
     name: 'DemandStar',
     category: 'bid-search',
@@ -495,7 +511,6 @@ export const competitors: Competitor[] = [
     bestFor:
       'Mid-to-large enterprise proposal and presales teams with an established content library, dedicated proposal operations staff, and complex CRM integration needs.',
     strengths: [
-      '24 consecutive quarters as a G2 category leader, strong track record',
       'Sophisticated workflow orchestration: task assignment, approval gates, multi-stakeholder routing',
       'AI Writing Agent generates first-draft responses from prior successful answers',
       'Broad document format support across RFPs, RFIs, DDQs, and security questionnaires',
@@ -562,6 +577,7 @@ export const competitors: Competitor[] = [
     // GovSpend publishes no prices; the per-user range is Vendr's buyer guide
     // (vendr.com/buyer-guides/gov-spend), labeled an estimate everywhere.
     slug: 'govspend',
+    reviewed: '2026-10-31',
     priceHook: 'is quoted per deal, reported at $3,000 to $6,000 a user a year',
     name: 'GovSpend',
     category: 'opportunity-intelligence',
@@ -619,6 +635,7 @@ export const competitors: Competitor[] = [
   },
   {
     slug: 'govwin-iq',
+    reviewed: '2026-08-17',
     priceHook: 'starts around $6,000/year, most teams pay far more',
     name: 'Deltek GovWin IQ',
     shortName: 'GovWin IQ',
@@ -656,11 +673,10 @@ export const competitors: Competitor[] = [
       '150+ industry analysts producing pre-solicitation opportunity intelligence, a genuinely unique capability no proposal-writing tool replicates',
       'Deep integration with the Deltek ecosystem (Costpoint, Vantagepoint) for contractors already on that stack',
       'Comprehensive federal and SLED (state/local/education) procurement data',
-      '4.5/5 rating on G2 from verified reviews',
     ],
     weaknesses: [
       'Not a proposal-writing or content generation platform at all, it finds opportunities, it does not help you write the response',
-      'Pricing is high relative to team size, multiple small business reviewers describe it as "a financial strain" and "cost prohibitive"',
+      'Pricing is high relative to team size: small-business reviewers on Software Advice and Capterra say the cost is hard for a small company to carry',
       'Dated, click-heavy user interface is a consistent complaint across verified reviews',
       'Information overload, reviewers report too much unfiltered data without enough curation',
       'No mobile app, desktop/browser only',
@@ -704,7 +720,7 @@ export const competitors: Competitor[] = [
       {
         question: 'Is GovWin IQ worth it for a small business?',
         answer:
-          'Multiple verified small-business reviewers describe GovWin IQ\'s pricing as a financial strain, and Deltek\'s own entry-level tier typically excludes the analyst-access features that are the platform\'s main value. Entry-level packages are reported at $6,000–$15,000/year, but a setup with the modules that make the platform useful is reported at $20,000–$42,000, which is where the strain comes from. It tends to make the most sense for larger contractors pursuing $50M+ opportunities.',
+          'Small-business reviewers on Software Advice and Capterra say GovWin IQ\'s price is hard for a small company to carry, and Deltek\'s own entry-level tier typically excludes the analyst-access features that are the platform\'s main value. Entry-level packages are reported at $6,000–$15,000/year, but a setup with the modules that make the platform useful is reported at $20,000–$42,000, which is where the cost adds up. It tends to make the most sense for larger contractors pursuing $50M+ opportunities.',
       },
     ],
     deepDive: {
@@ -718,7 +734,13 @@ export const competitors: Competitor[] = [
   },
 ];
 
+const REVIEW_MAX_DAYS = 120;
 for (const c of competitors) {
+  if (!c.reviewed) {
+    console.warn(`[competitors] ${c.slug}: no reviewed date; check its facts and set one`);
+  } else if (Date.now() - Date.parse(c.reviewed) > REVIEW_MAX_DAYS * 86_400_000) {
+    console.warn(`[competitors] ${c.slug}: facts last checked ${c.reviewed}, over ${REVIEW_MAX_DAYS} days ago`);
+  }
   if (c.category === 'opportunity-intelligence' && !c.intel) {
     throw new Error(`competitors.ts: ${c.slug} is opportunity-intelligence but has no intel block`);
   }

@@ -6,6 +6,7 @@ import PageHero from '../../components/PageHero.astro';
 import CTABand from '../../components/CTABand.astro';
 import PriceComparison from '../../components/PriceComparison.astro';
 import CompareLinks from '../../components/CompareLinks.astro';
+import ComparisonMethod from '../../components/ComparisonMethod.astro';
 import { competitors, type Competitor } from '../../data/competitors';
 import { ctaHref } from '../../config';
 import { asClause } from '../../lib/text';
@@ -38,7 +39,9 @@ const title = isOpportunityIntel
 // the "<x> alternative" query pattern while /vs/ owns "<x> vs" — the
 // opportunity-intel title previously contained neither word (GSC 2026-08).
 const shortName = competitor.shortName ?? competitor.name;
-const YEAR = new Date().getFullYear();
+// The year is the year the facts were last checked, not the build year, so
+// "(2027)" only appears once someone has actually reviewed the page in 2027.
+const YEAR = competitor.reviewed ? Number(competitor.reviewed.slice(0, 4)) : new Date().getFullYear();
 const metaTitle = isOpportunityIntel
   ? `${shortName} alternatives: proposal-first options (${YEAR})`
   : `${shortName} alternatives for government contractors (${YEAR})`;
@@ -123,6 +126,8 @@ const altFaqs = isOpportunityIntel
             of software.
           </p>
 
+          <ComparisonMethod competitor={competitor} variant="byline" />
+
           <PriceComparison competitorName={competitor.name} competitorEstimate={competitor.pricingEstimate} pricingCanonical={competitor.pricingCanonical} published={competitor.publishedPricing} />
 
           <h2>The short answer</h2>
@@ -194,6 +199,8 @@ const altFaqs = isOpportunityIntel
               RFP responses.
             </p>
           )}
+
+          <ComparisonMethod competitor={competitor} variant="byline" />
 
           <PriceComparison competitorName={competitor.name} competitorEstimate={competitor.pricingEstimate} pricingCanonical={competitor.pricingCanonical} published={competitor.publishedPricing} />
 
@@ -276,6 +283,7 @@ const altFaqs = isOpportunityIntel
           </p>
         </>
       )}
+      <ComparisonMethod competitor={competitor} variant="method" />
     </article>
 
     <CompareLinks competitor={competitor} current="alternatives" />

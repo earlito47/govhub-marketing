@@ -152,3 +152,12 @@ price. DemandStar's prices are from its own pricing page, checked 2026-10-31.
 - Periscope S2G: whether "$779/month billed annually" is a monthly or yearly
   figure.
 - Every G2, Capterra and TrustRadius rating and quote above.
+
+Done 2026-11-01: the live comparison pages no longer carry star ratings, award
+badges or review quotes. Removed: BidPrime's "$99 to $250 a month" and "a G2
+reviewer paid $749" (no source we could read), Responsive's "24 consecutive
+quarters as a G2 leader" and GovWin IQ's "4.5/5 on G2". GovWin's cost complaint
+is now a paraphrase naming Software Advice and Capterra. Each page shows who
+checked it and when (`reviewed` in `src/data/competitors.ts`), and the build
+warns when that date is missing or over 120 days old. Loopio and Responsive have
+no date yet.
