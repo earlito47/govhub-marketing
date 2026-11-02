@@ -3682,3 +3682,86 @@ arms moved (base 20, speed 27) to 1,409 and 1,405 against a 1,560 control;
 concentration 8 of 47 on the top solicitation; `sol_short` bare on **1 of 47**,
 the lowest recorded. Proposal opens still 0 — the first full day with tracking
 live, and nobody has opened one.
+
+## 2026-11-02 — a deploy from main reverted four fixes, and two of them were load-bearing
+
+Six people were sent **"Hi John, your contract looks like it runs out in ."**
+today, between 15:22 and 19:59. That is the 10-08 blank-variable email, for the
+third time, and the fix for it was written, tested and deployed on 10-30.
+
+**It was not running.** At **2026-10-31 00:24 UTC** eight outreach functions
+were redeployed in sequence, two seconds apart — `admin-console-data`,
+`outreach-advance`, `-assign`, `-fit`, `-push`, `-send-proposal`, `-signals`,
+`-stage`. That is a bulk deploy from `main`, and **none of these commits is on
+main**:
+
+| commit | what it fixes | on main |
+| --- | --- | --- |
+| `e2a7e8b` | `count: "exact"`, `live_but_unrecorded` | **yes** |
+| `f675250` | transient 409 leaves the row ready | no |
+| `0177adc` | passcode expiry copy, `login_code` write-back | no |
+| `aa288e2` | **patch the render before the move** | no |
+| `c98fd5c` | chunked signal write | no |
+
+So main carries my work to 10-27 and nothing after. The 10-31 deploy shipped
+main faithfully and in doing so rolled production back three days. Everything
+since has been running without the four fixes, which is why:
+
+- **Six blank-variable emails today.** `moves_left_for_next_run` read **20** at
+  06:00: twenty leads moved into a live campaign with no render, exactly the
+  window `aa288e2` closes. Six got mailed before the 06:50 run caught up.
+- **Eight rows written terminal** by the 409 (A1 2, A5 6) — `deferred_still_ready`
+  is absent from the deployed summary, so `f675250` is gone too.
+- **`opportunities` failed nine times** across 10-31, 11-01 and 11-02, every one
+  `replace_signals(rfp_match): canceling statement due to statement timeout`,
+  with no `[committed N/M chunks]` suffix — the tell that `c98fd5c` is not
+  deployed. A2's signal supply has been blocked for three days.
+
+**Repaired by hand**: all six leads patched from their assignments (each held a
+complete render: `agency_short` DoD, `contract_end_month` February), and all
+eight terminal rows restored to `ready` after confirming none had a `pushed_at`,
+a lead id, or a campaign membership. The audit's Q1 and Q2 are 0; Q3 was 6 and
+is now 0.
+
+No proposal has been sent since 10-31, so the reverted expiry copy and
+`login_code` write-back harmed nobody. `mailer_otp_exp` is project config rather
+than code, so the six-hour window itself survived the deploy — only the sentence
+telling the reader about it was lost.
+
+### The actual lesson, which is not about any of these bugs
+
+**Deploying from a feature branch makes every fix provisional.** I deployed four
+times from `claude/instantly-campaign-results-af3kjm`, verified each live, and
+wrote each up as fixed. All four were true statements about production at the
+time and false ten hours later, because another workstream deployed main and
+main did not have them. Nothing was wrong with the code or the verification; the
+fix simply did not belong to the artifact that gets deployed.
+
+Two consequences worth holding on to. A live verification proves the present
+tense only, and on a project with more than one deployer it expires. And "it is
+deployed" is not a property of a commit — it is a property of a branch, and the
+branch that matters is the one the deploy pipeline reads. Checking
+`git merge-base --is-ancestor <commit> origin/main` would have shown this in one
+second on any of the last four days, and I never ran it.
+
+## 2026-11-02 — the rest of the check
+
+Sending, against caps: A1 **37/37**, A5 **75/75**, A2 **10/125**, A4 **2/55**.
+Inventory now: A1 189, A2 **1**, A4 **0**, A5 3,657. A2 is down to a single row
+because its supply has been blocked for three days by the reverted chunking fix,
+not because the pool moved.
+
+Replies since 10-31: eight, all today (no weekend sends, so nothing arrived on
+10-31 or 11-01). Six autoresponders. `n5contracting.sc@gmail.com` answered "Want
+me to close this out, Georgette?" with **"Yes please. We are not interested"** —
+**suppressed**, person only, no colleague on record. `info@firects.com` answered
+an offer of a 3-minute video with **"Please"** and is recorded as an accept;
+note what he agreed to is a **video**, and the solicitation named
+(89233126NNA000150) closed on 29 October, so the pipeline will have to pick him
+a different notice in NAICS 236210. Same shape as Cam at Tgha on 10-26.
+`needs_human` unchanged at 5, `drafted` 34.
+
+Clean: bounce **0.625%** (102/16,307), nothing near the gates; A2 arms 1,413 and
+1,411 against a 1,635 control. **Proposal opens still 0** — four days with
+tracking live and nobody has opened one, which is now worth treating as a
+finding rather than a gap.
