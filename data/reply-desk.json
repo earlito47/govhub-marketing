@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "cursor": "2026-11-01T18:05:07.000Z",
+  "cursor": "2026-11-01T22:00:22.000Z",
   "emails": {
     "01a07bf7-8d8a-7d1c-b87e-76208ed81963": {
       "lead": "amirl@seetrue.ai",
@@ -2320,6 +2320,55 @@
       "classified_by": "model",
       "status": "no_action",
       "updated_at": "2026-11-03T18:51:58.936Z"
+    },
+    "01a1a2f4-3ebd-7c0f-901f-6674e5a0905d": {
+      "lead": "kparks@kpcinc.com",
+      "campaign": "C1",
+      "received_at": "2026-11-03T19:47:39.000Z",
+      "category": "question",
+      "classified_by": "model",
+      "status": "drafted",
+      "playbook": "C1",
+      "deliverable": "creator_terms",
+      "updated_at": "2026-11-03T23:50:00.938Z",
+      "notified_at": "2026-11-03T23:50:00.938Z"
+    },
+    "01a1a307-3a3b-708e-bd51-475ebff2fec4": {
+      "lead": "chantal.satterwhite@gmail.com",
+      "status": "superseded",
+      "by": "01a1a361-ae2c-79db-889f-8074e941fa87",
+      "updated_at": "2026-11-03T23:49:31.968Z"
+    },
+    "01a1a32a-7c47-7bb7-9ea0-97a3fe754cbe": {
+      "lead": "maurence@glocoms.com",
+      "campaign": "A1",
+      "received_at": "2026-11-03T20:47:06.000Z",
+      "category": "unsubscribe",
+      "classified_by": "rule",
+      "status": "no_action",
+      "updated_at": "2026-11-03T23:49:52.820Z"
+    },
+    "01a1a361-ae2c-79db-889f-8074e941fa87": {
+      "lead": "chantal.satterwhite@gmail.com",
+      "campaign": "A4",
+      "received_at": "2026-11-03T21:47:08.000Z",
+      "category": "other",
+      "classified_by": "model",
+      "status": "needs_human",
+      "updated_at": "2026-11-03T23:50:00.940Z",
+      "notified_at": "2026-11-03T23:50:00.939Z"
+    },
+    "01a1a36d-725a-7d7a-a822-e9d6a8768f49": {
+      "lead": "jbao@gtwbio.com",
+      "campaign": "A5",
+      "received_at": "2026-11-03T21:59:36.000Z",
+      "category": "accept",
+      "classified_by": "model",
+      "status": "drafted",
+      "playbook": "A5",
+      "deliverable": "debrief_one_pager",
+      "updated_at": "2026-11-03T23:50:00.941Z",
+      "notified_at": "2026-11-03T23:50:00.941Z"
     },
     "430b01b5-be33-46b6-86ad-68e1dc0ee14d": {
       "lead": "admin@documentsecuritysolutions.net",
