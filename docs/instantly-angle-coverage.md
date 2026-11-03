@@ -3765,3 +3765,85 @@ Clean: bounce **0.625%** (102/16,307), nothing near the gates; A2 arms 1,413 and
 1,411 against a 1,635 control. **Proposal opens still 0** — four days with
 tracking live and nobody has opened one, which is now worth treating as a
 finding rather than a gap.
+
+## 2026-11-03 — the merge held, proven by the deploy that would have broken it
+
+Yesterday four fixes were running only because I had deployed them by hand, and
+a bulk deploy from `main` on 10-31 had already reverted them once. PR #351
+merged them to main at about 03:50 today. The test came the same evening:
+**another bulk deploy ran at 21:12–21:19**, redeploying every outreach function,
+exactly the event that caused the 10-31 regression.
+
+This time it carried them. Verified by reading the deployed source rather than
+trusting the merge:
+
+    outreach-push     THE RENDER GOES ON BEFORE THE MOVE   present
+                      deferred_still_ready                 present
+                      move-leads job in progress           present
+                      live_but_unrecorded                  present
+                      matched no row                       present
+    outreach-signals  CHUNKED AGAIN                        present
+
+The same class of deploy that rolled production back three days now ships the
+work. That is what merging to the branch the pipeline reads actually buys, and
+it is the only reason today's numbers can be trusted tomorrow.
+
+A smaller confirmation: the pipeline deployed `outreach-proposal-open` at
+03:47, minutes after the merge, which is the `config.toml` entry from `cae8a94`
+taking effect. Without it that deploy would have shipped `verify_jwt = true` and
+broken the browser call with an opaque CORS error.
+
+### The chunked write, proven on the cron at last
+
+`opportunities` today: 03:00 failed, the 03:08 retry failed — both on the old
+code, since the merge had not landed — and then **04:30 succeeded,
+`written 6, write_chunks 5`**, after the pipeline deployed main at 03:47. The
+guarded retry is what caught it, which is the second time this week that retry
+has been the difference between a failure and a day's supply.
+
+Five scheduled runs had failed before this. It is now working on the path that
+matters rather than only when I run it by hand.
+
+## 2026-11-03 — a first: someone asked for a call
+
+`chantal.satterwhite@gmail.com` was sent a detailed disqualifier list from the
+reply desk's side at 14:51 — SDVOSB certification timing, VAAR 852.228-71
+insurance minimums, the subcontracting certificate, the B.3 price schedule — and
+replied at 21:47:
+
+> Earl, Please let me know if you're available for a TEAMS call tomorrow.
+
+That is the strongest signal this programme has produced: not an accept, a
+**meeting request**, and it names tomorrow.
+
+**Deliberately not answered from this side.** The desk sent the 14:51 message,
+is live on that thread and holds a draft, so a second reply to a scheduling
+request would be the double-answer that `proposal-handovers.md` exists to
+prevent — and worse than usual, because two people offering times is a worse
+look than one answering late. It needs a human who can say yes to a time;
+`https://calendly.com/earljknight/30min` is the obvious instrument.
+
+## 2026-11-03 — the rest
+
+Push, with the restored fix: **`deferred_still_ready` 2 matching `failed` 2**,
+`moves_left_for_next_run` **0** on all three runs, and the audit **0/0/0 across
+6,625 campaign leads**. Zero rows in `failed`. The blank-variable window is shut
+and the 409 no longer discards anybody.
+
+Sending: A1 **37/37**, A5 **75/75**, A2 **4/125**, A4 **0/55**. Inventory is now
+A1 155, A2 **0**, A4 **0**, A5 3,583. A2 and A4 are both empty.
+
+One small turn: `competitor_award` now has **1** unassigned company holding a
+live signal, A4's first in days, alongside 9 `recompete` and 2 `rfp_match`. Not
+a recovery — 12 companies against a 292/day capacity — but the supply is no
+longer flat zero for A4.
+
+Replies: four. `paulrcohen@gmail.com` — "Please stop emailing me." —
+**suppressed**, person only, no colleague on record. `kparks@kpcinc.com` filed
+`needs_human` again and is already on the do-not-send table. One autoresponder.
+`needs_human` 6, `drafted` 35.
+
+Clean: bounce **0.615%** (105/17,085), the lowest it has been; A2 arms 1,415 and
+1,413 against a 1,710 control. **Proposal opens still 0** — five days with
+tracking live, 24 handovers delivered, and not one recorded open. At this point
+the handover is the thing to doubt, not the audience.
