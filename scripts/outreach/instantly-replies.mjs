@@ -1,10 +1,12 @@
 // Positive Instantly replies -> PostHog conversions.
 //
-// Polls every lead in all nine live campaigns, classifies on the lead-level
-// lt_interest_status enum, and captures one PostHog event per lead per band the
-// lead has newly entered. data/instantly-replies.json is the committed ledger and
-// IS the idempotency record: PostHog does not deduplicate, so without it every
-// scheduled run re-captures every interested lead and inflates the count.
+// Polls every lead in every campaign in instantly-campaigns.mjs (all 13 live
+// GovHub campaigns: angles A1-A5, influencer C1-C6, wave 1 W1A-W1C), classifies
+// on the lead-level lt_interest_status enum, and captures one PostHog event per
+// lead per band the lead has newly entered. data/instantly-replies.json is the
+// committed ledger and IS the idempotency record: PostHog does not deduplicate,
+// so without it every scheduled run re-captures every interested lead and
+// inflates the count.
 //
 // WHY NO SERVER-SIDE FILTER. The FILTER_LEAD_* enum strings are not verified
 // against this account. A wrong filter string does not error - it returns an
@@ -22,7 +24,16 @@
 // PII: ids, addresses, statuses and timestamps ONLY. Never reply bodies, never
 // content_preview - data/ is committed to git.
 //
-// Env:   INSTANTLY_API_KEY        read-scoped key (leads:read)
+// Read-only toward Instantly: every call goes through readOnlyApi, which
+// refuses anything but a GET or the leads/list read.
+//
+// A full scan is about 80 pages at 3.2 s (Instantly's 20-a-minute limit), so
+// it takes around five minutes. A campaign that cannot be listed fails the run
+// (exit 1) after the others are reported or captured, rather than quietly
+// shrinking the count.
+//
+// Env:   INSTANTLY_API_KEY        read-scoped key (leads:read; campaigns:read for
+//                                 the coverage checks, which are skipped without it)
 //        POSTHOG_PROJECT_TOKEN    public write key, safe in CI
 //        POSTHOG_HOST             optional, default https://us.i.posthog.com
 // Usage: node scripts/outreach/instantly-replies.mjs --report    read-only summary
@@ -33,9 +44,9 @@ import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { createHash } from 'node:crypto';
+import { CAMPAIGNS, PACE_MS, sleep, readOnlyApi, allLeads, untrackedCampaigns } from './instantly-campaigns.mjs';
 
 const ROOT = fileURLToPath(new URL('../..', import.meta.url));
-const API = 'https://api.instantly.ai/api/v2';
 const KEY = process.env.INSTANTLY_API_KEY;
 const PH_HOST = (process.env.POSTHOG_HOST || 'https://us.i.posthog.com').replace(/\/+$/, '');
 const PH_KEY = process.env.POSTHOG_PROJECT_TOKEN;
@@ -44,20 +55,6 @@ const LEDGER_PATH = join(ROOT, 'data/instantly-replies.json');
 const args = process.argv.slice(2);
 const reportOnly = args.includes('--report');
 const dryRun = args.includes('--dry-run');
-
-// Live campaign ids. Influencer programme: push-leads.mjs:38-45.
-// Wave 1: wave1-suppress.mjs:49-53.
-const CAMPAIGNS = {
-  C1: '6f360a2e-4dee-4d75-8bd5-325162795616',
-  C2: '1d2dc5a8-f7c1-4ac1-ac1a-3a382e185b4a',
-  C3: 'b2ee3665-fbee-4366-b2ee-d31cc0573e8e',
-  C4: 'b179df62-09f5-4045-a3e6-eb19afab4d20',
-  C5: 'aceddf26-388d-45f4-be83-89eda98816a9',
-  C6: '80a9659f-ba43-4411-969f-10ecfcd6b95d',
-  A: '31fc2282-4153-42f9-b8d7-94517162b47c',
-  B: '61c3b5df-22b6-4f98-ae56-290a750f1833',
-  C: '09189743-6310-46bd-b48f-e5ca931d7e7e',
-};
 
 // Lead-level interest enum. The email-level i_status and ai_interest_value are
 // effectively undocumented (i_status query param says 1|2|3, the response example
@@ -83,39 +80,6 @@ const BANDS = [
   { event: 'outreach_meeting_booked', min: 2 },
   { event: 'outreach_deal_won', min: 4 },
 ];
-
-const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
-
-// Content-Type only when there is a body. The API is Fastify, which rejects a
-// bodyless request that still declares application/json with a 400 - easy to
-// misread as rate limiting. Copied from wave1-suppress.mjs:66-81, NOT from
-// push-leads.mjs, which sets the header unconditionally.
-async function api(method, path, body) {
-  const headers = { Authorization: `Bearer ${KEY}` };
-  if (body) headers['Content-Type'] = 'application/json';
-  const res = await fetch(`${API}${path}`, {
-    method, headers, body: body ? JSON.stringify(body) : undefined,
-  });
-  const text = await res.text();
-  if (!res.ok) throw new Error(`${method} ${path} -> ${res.status}\n${text.slice(0, 300)}`);
-  return text ? JSON.parse(text) : {};
-}
-
-async function allLeads(campaignId) {
-  const out = [];
-  let cursor = null;
-  for (let i = 0; i < 40; i++) {
-    const body = { limit: 100, campaign: campaignId };
-    if (cursor) body.starting_after = cursor;
-    const d = await api('POST', '/leads/list', body);
-    const items = d.items || [];
-    out.push(...items);
-    cursor = d.next_starting_after;
-    if (!items.length || !cursor) break;
-    await sleep(600);
-  }
-  return out;
-}
 
 // Second dedupe layer at ingestion if the ledger is ever lost. Only works
 // because the timestamp below is derived from Instantly data, not from now().
@@ -178,19 +142,46 @@ const ledger = existsSync(LEDGER_PATH)
   ? JSON.parse(readFileSync(LEDGER_PATH, 'utf8'))
   : { version: 1, leads: {} };
 
+const api = readOnlyApi(KEY);
+
+// Coverage checks. Both need campaigns:read, which a leads-only key may not
+// have, so a failure here is reported and skipped rather than ending the run.
+let untracked = null;
+try { untracked = await untrackedCampaigns(api); } catch (e) { console.error(`  could not check for untracked campaigns: ${e.message.split('\n')[0]}`); }
+await sleep(PACE_MS);
+// Instantly's own lead count per campaign, so a short listing is visible on
+// the line it belongs to instead of hiding inside the total.
+const leadsCount = new Map();
+try {
+  for (const a of await api('GET', '/campaigns/analytics')) leadsCount.set(a.campaign_id, a.leads_count);
+} catch (e) { console.error(`  could not read campaign lead counts: ${e.message.split('\n')[0]}`); }
+await sleep(PACE_MS);
+
 const distribution = {};
 const pending = [];
+// One event per lead per band, even when the same address sits in two
+// campaigns. Without this a lead positive in both would be captured twice in
+// one run (the ledger is only written after a send), and PostHog does not
+// deduplicate two events whose timestamps differ. The first campaign in
+// CAMPAIGNS order gets the credit.
+const queued = new Set();
+let crossCampaign = 0;
+const perCampaign = [];
+const failedCampaigns = [];
 let scanned = 0;
 
 for (const [key, id] of Object.entries(CAMPAIGNS)) {
   let leads;
   try {
-    leads = await allLeads(id);
+    leads = await allLeads(api, id);
   } catch (e) {
     console.error(`  ${key}  FAILED to list leads: ${e.message}`);
+    failedCampaigns.push(key);
+    perCampaign.push({ key, listed: null, expected: leadsCount.get(id) ?? null, positive: null });
     continue;
   }
   scanned += leads.length;
+  let positive = 0;
   for (const lead of leads) {
     const status = Number(lead.lt_interest_status);
     const bucket = Number.isFinite(status) ? String(status) : 'null';
@@ -203,26 +194,54 @@ for (const [key, id] of Object.entries(CAMPAIGNS)) {
     }
     const email = (lead.email || '').toLowerCase();
     if (!email) continue;
+    positive++;
 
     const rec = ledger.leads[email] || { fired: {} };
     for (const band of BANDS) {
       if (status < band.min) continue;
       if (rec.fired[band.event]) continue;
+      if (queued.has(`${band.event}:${email}`)) { crossCampaign++; continue; }
+      queued.add(`${band.event}:${email}`);
       pending.push({ event: band.event, email, campaignKey: key, campaignId: id, lead, status });
     }
   }
-  await sleep(600);
+  perCampaign.push({ key, listed: leads.length, expected: leadsCount.get(id) ?? null, positive });
+  await sleep(PACE_MS);
 }
 
 console.log(`scanned ${scanned} leads across ${Object.keys(CAMPAIGNS).length} campaigns.`);
-console.log('lt_interest_status distribution (verify against the Unibox before trusting any count):');
+console.log('\ncampaign   listed  in Instantly  positive');
+for (const c of perCampaign) {
+  const short = c.listed !== null && c.expected !== null && c.listed !== c.expected ? '  <- listed != Instantly count' : '';
+  console.log(
+    `  ${c.key.padEnd(6)} ${String(c.listed ?? 'FAILED').padStart(7)} ${String(c.expected ?? '?').padStart(13)} ` +
+    `${String(c.positive ?? '-').padStart(9)}${short}`,
+  );
+}
+if (untracked?.length) {
+  console.log('\nWARNING live GovHub campaign(s) not in instantly-campaigns.mjs, so NOT read:');
+  for (const c of untracked) console.log(`  ${c.id}  status ${c.status}  ${c.name}`);
+}
+
+console.log('\nlt_interest_status distribution (verify against the Unibox before trusting any count):');
 for (const [k, n] of Object.entries(distribution).sort((a, b) => b[1] - a[1])) {
   console.log(`  ${(LABELS[k] ?? k).padEnd(18)} ${String(n).padStart(5)}`);
+}
+if (crossCampaign) console.log(`\n${crossCampaign} event(s) skipped: same lead already queued from an earlier campaign.`);
+
+// Runs after the report and after any capture, so one unreadable campaign
+// never blocks the others, but the run still ends red.
+function finish(code = 0) {
+  if (failedCampaigns.length) {
+    console.error(`\n${failedCampaigns.length} campaign(s) could not be listed: ${failedCampaigns.join(', ')}. Counts above exclude them.`);
+    process.exit(1);
+  }
+  process.exit(code);
 }
 
 if (!pending.length) {
   console.log('\nno new positive replies to capture.');
-  process.exit(0);
+  finish();
 }
 
 console.log(`\n${pending.length} event(s) to capture:`);
@@ -230,7 +249,7 @@ for (const p of pending) console.log(`  ${p.event.padEnd(26)} ${p.campaignKey}  
 
 if (reportOnly || dryRun) {
   console.log(`\n${reportOnly ? '--report' : '--dry-run'}: nothing sent, ledger unchanged.`);
-  process.exit(0);
+  finish();
 }
 
 let sent = 0, failed = 0;
@@ -269,4 +288,4 @@ function writeLedger() {
 
 writeLedger();
 console.log(`\ncaptured ${sent} event(s), ${failed} failed. wrote ${LEDGER_PATH}`);
-if (failed) process.exit(1);
+finish(failed ? 1 : 0);

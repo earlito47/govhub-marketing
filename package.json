@@ -34,6 +34,7 @@
     "influencers:signatures": "node scripts/outreach/set-signatures.mjs",
     "influencers:replies": "node scripts/outreach/instantly-replies.mjs --report",
     "influencers:replies:send": "node scripts/outreach/instantly-replies.mjs",
+    "campaigns:selftest": "node scripts/outreach/instantly-campaigns.selftest.mjs",
     "replies:scan": "node scripts/outreach/reply-desk.mjs scan",
     "replies:show": "node scripts/outreach/reply-desk.mjs show",
     "replies:status": "node scripts/outreach/reply-desk.mjs status",

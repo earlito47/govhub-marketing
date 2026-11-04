@@ -1,10 +1,10 @@
 // One playbook per live campaign: what its emails promised, how to build it,
 // and what Earl's few lines around it should do.
 //
-// Campaign ids are the ones in instantly-replies.mjs, instantly-angles.mjs and
-// strata-parse scripts/outreach-tests/verify-live-leads.mjs. A reply from a
-// campaign not listed here is drafted as a plain acknowledgement and held for
-// a human, never guessed at.
+// Campaign ids come from ../instantly-campaigns.mjs, the one map shared with
+// instantly-replies.mjs and instantly-baseline.mjs. A reply from a campaign
+// not listed there is drafted as a plain acknowledgement and held for a human,
+// never guessed at.
 //
 // autoSend is false everywhere on purpose. Turning one on is a reviewed commit
 // after Earl has approved enough of that playbook's drafts unchanged to trust
@@ -15,22 +15,10 @@ import {
   disqualifierList, nextOpen, recompeteRundown, debriefOnePager, partnerTerms, creatorTerms, matrixBuilder,
 } from './deliverables.mjs';
 import { FACTS, MATRIX_BUILDER_URL } from './content.mjs';
+import { CAMPAIGN_KEY_BY_ID } from '../instantly-campaigns.mjs';
 
-export const CAMPAIGNS = {
-  'a4df9870-2d9d-49a1-8548-d1fa3b0599b7': 'A1',
-  'c977a531-a8e5-47d3-b27b-5f8aacfab33b': 'A2',
-  '39bc9fab-a9a7-4ed6-b34c-ccabeb9e76ee': 'A4',
-  '9d7ca37a-cfba-4519-a9df-88d6ca0f448a': 'A5',
-  '6f360a2e-4dee-4d75-8bd5-325162795616': 'C1',
-  '1d2dc5a8-f7c1-4ac1-ac1a-3a382e185b4a': 'C2',
-  'b2ee3665-fbee-4366-b2ee-d31cc0573e8e': 'C3',
-  'b179df62-09f5-4045-a3e6-eb19afab4d20': 'C4',
-  'aceddf26-388d-45f4-be83-89eda98816a9': 'C5',
-  '80a9659f-ba43-4411-969f-10ecfcd6b95d': 'C6',
-  '31fc2282-4153-42f9-b8d7-94517162b47c': 'W1A',
-  '61c3b5df-22b6-4f98-ae56-290a750f1833': 'W1B',
-  '09189743-6310-46bd-b48f-e5ca931d7e7e': 'W1C',
-};
+/** Campaign id -> playbook key. */
+export const CAMPAIGNS = CAMPAIGN_KEY_BY_ID;
 
 const CALL = (cls) => (cls.wants_call
   ? ` They mentioned a call. Say a call is fine and give the booking link ${FACTS.booking} in a sentence, but the email must still deliver the thing on its own.`

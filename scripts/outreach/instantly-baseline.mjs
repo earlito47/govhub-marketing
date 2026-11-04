@@ -40,9 +40,9 @@ import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { createHash } from 'node:crypto';
+import { CAMPAIGNS, CAMPAIGN_KEY_BY_ID, PACE_MS, sleep, readOnlyApi, allLeads } from './instantly-campaigns.mjs';
 
 const ROOT = fileURLToPath(new URL('../..', import.meta.url));
-const API = 'https://api.instantly.ai/api/v2';
 const KEY = process.env.INSTANTLY_API_KEY;
 
 // Earliest day any campaign here could have sent. A lifetime rate needs a
@@ -50,17 +50,9 @@ const KEY = process.env.INSTANTLY_API_KEY;
 // the snapshot window.
 const EPOCH = '2026-08-01';
 
-const CAMPAIGNS = {
-  A: '31fc2282-4153-42f9-b8d7-94517162b47c',
-  B: '61c3b5df-22b6-4f98-ae56-290a750f1833',
-  C: '09189743-6310-46bd-b48f-e5ca931d7e7e',
-  C1: '6f360a2e-4dee-4d75-8bd5-325162795616',
-  C2: '1d2dc5a8-f7c1-4ac1-ac1a-3a382e185b4a',
-  C3: 'b2ee3665-fbee-4366-b2ee-d31cc0573e8e',
-  C4: 'b179df62-09f5-4045-a3e6-eb19afab4d20',
-  C5: 'aceddf26-388d-45f4-be83-89eda98816a9',
-  C6: '80a9659f-ba43-4411-969f-10ecfcd6b95d',
-};
+// Campaigns come from instantly-campaigns.mjs. Snapshots written before
+// 2026-11-04 key wave 1 as A/B/C and have no angle campaigns; --show and
+// --compare match on campaign id, so they still line up with newer ones.
 
 // Lead-level interest enum, same source of truth as instantly-replies.mjs.
 // Anything >= 1 is a positive outcome; 0 is an out-of-office; negatives are
@@ -71,51 +63,16 @@ const INTEREST = {
   '-3': 'lost', '-4': 'no_show',
 };
 
-const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
-
 // Instantly allows 20 requests a minute. This script used to pace at 300-400 ms
 // between calls, which is 150-200 a minute, and api() threw on any non-OK
 // status including 429 -- so a snapshot would die part-written on a rate limit
-// it was guaranteed to provoke. It had not happened yet only because nothing
-// ran it often enough to collide with another job. The edge functions already
-// use 3.2 s for this reason; the same figure belongs here.
-const PACE_MS = 3200;
+// it was guaranteed to provoke. PACE_MS (3.2 s) and the 429/5xx backoff now
+// live in instantly-campaigns.mjs. A snapshot is the comparison baseline for
+// every later week, so a partial one is worse than a slow one.
+const api = readOnlyApi(KEY);
 
-async function api(method, path, body) {
-  const headers = { Authorization: `Bearer ${KEY}` };
-  if (body) headers['Content-Type'] = 'application/json';
-  for (let attempt = 0; ; attempt++) {
-    const res = await fetch(`${API}${path}`, {
-      method, headers, body: body ? JSON.stringify(body) : undefined,
-    });
-    const text = await res.text();
-    if (res.ok) return text ? JSON.parse(text) : {};
-    // A snapshot is the comparison baseline for every later week, so a partial
-    // one is worse than a slow one. Back off on the limit and on 5xx; fail
-    // loudly on anything else, which is a real error and not a wait.
-    const retryable = res.status === 429 || res.status >= 500;
-    if (!retryable || attempt >= 4) {
-      throw new Error(`${method} ${path} -> ${res.status}\n${text.slice(0, 300)}`);
-    }
-    await sleep(Math.max(PACE_MS, 4000 * (attempt + 1)));
-  }
-}
-
-async function allLeads(campaignId) {
-  const out = [];
-  let cursor = null;
-  for (let i = 0; i < 40; i++) {
-    const body = { limit: 100, campaign: campaignId };
-    if (cursor) body.starting_after = cursor;
-    const d = await api('POST', '/leads/list', body);
-    const items = d.items || [];
-    out.push(...items);
-    cursor = d.next_starting_after;
-    if (!items.length || !cursor) break;
-    await sleep(PACE_MS);
-  }
-  return out;
-}
+/** The key a stored campaign is shown under: today's key for its id, else the key it was stored with. */
+const keyOf = (storedKey, c) => CAMPAIGN_KEY_BY_ID[c.id] ?? storedKey;
 
 const sha = (s) => createHash('sha256').update(s).digest('hex').slice(0, 16);
 
@@ -169,7 +126,8 @@ async function snapshot({ label, from, to }) {
   for (const [key, id] of Object.entries(CAMPAIGNS)) {
     const a = byId.get(id);
     const campaign = await api('GET', `/campaigns/${id}`);
-    const leads = await allLeads(id);
+    await sleep(PACE_MS);
+    const leads = await allLeads(api, id);
 
     const interest = {};
     let positive = 0;
@@ -282,7 +240,7 @@ function render(s) {
   for (const [k, c] of Object.entries(s.campaigns)) {
     const fp = (c.copy_fingerprint[0]?.variants[0]?.body_sha256 || '').slice(0, 8);
     console.log(
-      `${k.padEnd(5)} ${String(c.counts.contacted).padStart(9)} ${String(c.counts.sent).padStart(6)} ` +
+      `${keyOf(k, c).padEnd(5)} ${String(c.counts.contacted).padStart(9)} ${String(c.counts.sent).padStart(6)} ` +
       `${String(c.counts.bounced).padStart(7)} ${String(c.counts.replies_human).padStart(6)} ` +
       `${String(c.counts.positive).padStart(9)} ${String(c.rates.reply_rate_pct ?? '-').padStart(6)} ` +
       `${String(c.rates.positive_rate_pct ?? '-').padStart(5)}   ${fp}`
@@ -300,8 +258,15 @@ function compare(aLabel, bLabel) {
   const a = load(aLabel), b = load(bLabel);
   console.log(`\n=== ${aLabel} -> ${bLabel} ===`);
   console.log('camp  reply%           positive%        copy changed  caps changed');
-  for (const k of Object.keys(a.campaigns)) {
-    const ca = a.campaigns[k], cb = b.campaigns[k];
+  // Matched on campaign id, not key: wave 1 is A/B/C in snapshots from before
+  // 2026-11-04 and W1A/W1B/W1C after, and a key match would drop it silently.
+  const bById = new Map(Object.values(b.campaigns).map((c) => [c.id, c]));
+  const onlyIn = (s, other) => {
+    const ids = new Set(Object.values(other.campaigns).map((c) => c.id));
+    return Object.entries(s.campaigns).filter(([, c]) => !ids.has(c.id)).map(([k, c]) => keyOf(k, c));
+  };
+  for (const [k, ca] of Object.entries(a.campaigns)) {
+    const cb = bById.get(ca.id);
     if (!cb) continue;
     const fa = JSON.stringify(ca.copy_fingerprint.map((s) => s.variants.map((v) => v.body_sha256)));
     const fb = JSON.stringify(cb.copy_fingerprint.map((s) => s.variants.map((v) => v.body_sha256)));
@@ -309,11 +274,14 @@ function compare(aLabel, bLabel) {
     const capsB = JSON.stringify([cb.settings.daily_max_leads, cb.settings.daily_limit]);
     const d = (x, y) => `${String(x ?? '-').padStart(5)} -> ${String(y ?? '-').padStart(5)}`;
     console.log(
-      `${k.padEnd(5)} ${d(ca.rates.reply_rate_pct, cb.rates.reply_rate_pct)}   ` +
+      `${keyOf(k, ca).padEnd(5)} ${d(ca.rates.reply_rate_pct, cb.rates.reply_rate_pct)}   ` +
       `${d(ca.rates.positive_rate_pct, cb.rates.positive_rate_pct)}   ` +
       `${(fa === fb ? 'NO' : 'yes').padEnd(12)}  ${capsA === capsB ? 'no' : 'YES'}`
     );
   }
+  const newInB = onlyIn(b, a), goneInB = onlyIn(a, b);
+  if (newInB.length) console.log(`\nonly in ${bLabel}, nothing to compare against: ${newInB.join(' ')}`);
+  if (goneInB.length) console.log(`only in ${aLabel}, missing from ${bLabel}: ${goneInB.join(' ')}`);
   console.log('\nRead the "copy changed" column first. NO there means the delta is not a');
   console.log('copy result: same message, different week. YES under "caps changed" means');
   console.log('volume moved too, so the segments are not strictly comparable either.');
