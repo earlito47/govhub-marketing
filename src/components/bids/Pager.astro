@@ -1,0 +1,79 @@
+---
+/**
+ * Page links for a place hub that runs past one page: /bids/{place}/ is page
+ * 1, /bids/{place}/page/{n}/ the rest (hubOverflowPages in lib/bids/load.ts).
+ * Every page number is a plain link, so a crawler reaches any page of the list
+ * in one hop from the hub.
+ */
+interface Props {
+  /** The hub's path, e.g. /bids/texas/ */
+  base: string;
+  current: number;
+  total: number;
+  /** "Texas" or "Federal", for the label. */
+  label: string;
+}
+
+const { base, current, total, label } = Astro.props;
+const href = (n: number) => (n === 1 ? base : `${base}page/${n}/`);
+const pages = Array.from({ length: total }, (_, i) => i + 1);
+---
+
+{total > 1 && (
+  <nav class="pager" aria-label={`${label} bids, all pages`}>
+    <span class="pager-label">All {label} bids by page:</span>
+    <ul>
+      {pages.map((n) => (
+        <li>
+          {n === current ? (
+            <span aria-current="page">{n}</span>
+          ) : (
+            <a href={href(n)}>{n}</a>
+          )}
+        </li>
+      ))}
+    </ul>
+    {current < total && <a class="pager-next" href={href(current + 1)}>Next page</a>}
+  </nav>
+)}
+
+<style>
+  .pager {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem 0.75rem;
+    margin: 1.5rem 0;
+  }
+  .pager-label {
+    color: var(--fg-muted);
+    font-size: 0.95rem;
+  }
+  .pager ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .pager a,
+  .pager [aria-current] {
+    display: inline-block;
+    min-width: 2.2rem;
+    padding: 0.3rem 0.55rem;
+    border-radius: 0.4rem;
+    border: 1px solid var(--border);
+    text-align: center;
+    text-decoration: none;
+  }
+  .pager [aria-current] {
+    background: var(--gh-navy-600);
+    border-color: var(--gh-navy-600);
+    color: #fff;
+    font-weight: 600;
+  }
+  .pager-next {
+    font-weight: 600;
+  }
+</style>

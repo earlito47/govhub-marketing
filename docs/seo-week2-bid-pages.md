@@ -59,6 +59,30 @@ in `astro.config.mjs` skips any built page whose HTML carries a noindex tag, so
 the sitemap cannot drift from the pages. To index more, loosen a rule once
 Search Console shows the indexed set holding up.
 
+## Every bid page is linked (2026-11-04)
+
+Hubs list their first 200 open bids, so in a big place every later bid had no
+internal link at all: an Ahrefs site audit on 2026-11-03 flagged 313 orphans in
+the 10% of the site it crawled, and our own link graph found 2,099 indexable
+bid pages with no inbound link and 2,377 with one.
+
+- **Place hubs continue** on `/bids/{place}/page/{n}/` (52 pages on
+  2026-11-04; federal has 25). Each lists the next 200 of that place's bids:
+  open by deadline, then closed most recent first. Every page of a set links
+  every other, so any bid is two clicks from its hub. They are indexable and in
+  the sitemap.
+- **Neighbours.** Each bid page links the two bids before and after it in its
+  place's list ("Other Texas bids around this deadline").
+- **Places too small for a hub** (fewer than 5 open bids) have their bids
+  listed on `/bids/` under "Places with only a few bids".
+- **`npm run check:links`** (part of `npm run verify`) fails the build if any
+  sitemap page has no inbound link or cannot be reached from the homepage, or
+  if any page links to govhub.com, to a `_redirects` rule, to a page that is
+  not built, or to a `#fragment` that is not on the target page.
+
+Result on 2026-11-04: 0 orphans, 0 unreachable, 14 sitemap pages with exactly
+one inbound link (two-page sets' page 2, and one territory bid).
+
 **Categories** (`src/lib/bids/categories.ts`) come from the strategy's keyword
 clusters and the segments signing up: the bid's primary NAICS code (published,
 or the model's top guess) plus keywords in the title. E-Rate requests are

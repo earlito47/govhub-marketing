@@ -1,0 +1,89 @@
+---
+// /bids/{state}/page/{n}/ and /bids/federal/page/{n}/: the rest of a place's
+// bids, HUB_PAGE_SIZE to a page, after the ones its hub (page 1) lists. Without
+// these, a place with more than HUB_PAGE_SIZE open bids left every bid past the
+// first page with no link from anywhere on the site (2,099 indexable bid pages
+// on 2026-11-03). Each page is its own canonical URL, linked from every page of
+// the set, so a crawler reaches any bid in at most two hops from the hub.
+import type { GetStaticPaths } from 'astro';
+import BidsLayout from '../../../../components/bids/BidsLayout.astro';
+import BidList from '../../../../components/bids/BidList.astro';
+import Pager from '../../../../components/bids/Pager.astro';
+import Breadcrumbs from '../../../../components/seo/Breadcrumbs.astro';
+import CTABand from '../../../../components/CTABand.astro';
+import type { Bid } from '../../../../lib/bids/load';
+import { FEDERAL_SEGMENT, formatShortDate, getBidIndex, hubOverflowPages, placeName } from '../../../../lib/bids/load';
+import { CALENDLY_URL, ctaHref } from '../../../../config';
+
+export const getStaticPaths = (async () => {
+  const index = await getBidIndex();
+  return [...index.stateHubs].flatMap(([segment, hub]) => {
+    const pages = hubOverflowPages(hub);
+    return pages.map((bids, i) => ({
+      params: { segment, n: String(i + 2) },
+      props: { bids, page: i + 2, total: pages.length + 1, hubPath: hub.path, count: hub.all.length },
+    }));
+  });
+}) satisfies GetStaticPaths;
+
+interface Props {
+  bids: Bid[];
+  page: number;
+  total: number;
+  hubPath: string;
+  count: number;
+}
+
+const { bids, page, total, hubPath, count } = Astro.props;
+const { segment } = Astro.params;
+const index = await getBidIndex();
+const label = placeName(segment!);
+const isFederal = segment === FEDERAL_SEGMENT;
+const open = bids.filter((b) => !b.closed);
+const closed = bids.filter((b) => b.closed);
+const checked = formatShortDate(index.builtAt.toISOString());
+
+const h1 = isFederal ? `Federal government bids, page ${page}` : `Government bids in ${label}, page ${page}`;
+const title = isFederal ? `Federal Government Bids, Page ${page} | GovHub` : `${label} Government Bids, Page ${page} | GovHub`;
+const parts = [open.length && `${open.length} open by deadline`, closed.length && `${closed.length} recently closed`].filter(Boolean).join(', then ');
+const description = `${isFederal ? 'Federal government bids' : `Government bids in ${label}`}, page ${page} of ${total}: ${parts}, of ${count.toLocaleString('en-US')} in all. Checked ${checked}.`;
+---
+
+<BidsLayout title={title} description={description}>
+  <Breadcrumbs
+    items={[
+      { name: 'Home', url: '/' },
+      { name: 'Bids', url: '/bids/' },
+      { name: isFederal ? 'Federal' : label, url: hubPath },
+      { name: `Page ${page}`, url: `${hubPath}page/${page}/` },
+    ]}
+  />
+  <p class="eyebrow">Open government bids</p>
+  <h1>{h1}</h1>
+  <p class="lede">
+    {count.toLocaleString('en-US')} {isFederal ? 'federal bids with no listed location' : `bids in ${label}`} are on GovHub's
+    public pages. <a href={hubPath}>Page 1</a> has the soonest deadlines; this page continues the list. Checked {checked}.
+  </p>
+
+  <Pager base={hubPath} current={page} total={total} label={isFederal ? 'federal' : label} />
+
+  {open.length > 0 && (
+    <BidList bids={open} caption={`Open bids, soonest deadline first (page ${page} of ${total})`} showPlace={isFederal} />
+  )}
+  {closed.length > 0 && (
+    <>
+      <h2>Recently closed</h2>
+      <BidList bids={closed} caption="Closed in the last 90 days, most recent first" showPlace={isFederal} />
+    </>
+  )}
+
+  <Pager base={hubPath} current={page} total={total} label={isFederal ? 'federal' : label} />
+
+  <CTABand
+    heading={`See new ${isFederal ? 'federal' : label} bids in one inbox`}
+    sub="Save a search in GovHub and new matches land in your GovHub inbox, with a plain-English summary and the deadline. When one fits, GovHub fills out the forms and drafts the proposal."
+    primaryHref={`${ctaHref('bids_hub')}&next=${encodeURIComponent('/v2/opportunities')}`}
+    secondaryHref={CALENDLY_URL}
+    secondaryLabel="Book a demo"
+  />
+</BidsLayout>

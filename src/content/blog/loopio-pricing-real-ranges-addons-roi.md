@@ -92,7 +92,7 @@ You can group the common alternatives into three buckets.
 - Office-centric toolsets. Expedience Software for Word, custom SharePoint libraries, macros. Lower subscription cost. Higher process work to keep content clean.
 - Federal-specific tools. Tools that build compliance matrices, shred Section L and M, and support forms like SF330. Lower focus on sales RFPs. Higher focus on compliance and audit trails.
 
-If you want a quick survey of pros and cons by use case, see our writeups on [Loopio alternatives for federal proposals](/blog/loopio-alternatives-federal-proposals/) and [Loopio competitors for federal proposals](/blog/loopio-competitors-federal-proposals/). Both include notes on migration, pricing gotchas, and federal security posture.
+If you want a quick survey of pros and cons by use case, see our writeups on [Loopio alternatives for federal proposals](/alternatives/loopio/) and [Loopio competitors for federal proposals](/blog/loopio-competitors-federal-proposals/). Both include notes on migration, pricing gotchas, and federal security posture.
 
 ## Federal-specific gotchas that change your total cost
 

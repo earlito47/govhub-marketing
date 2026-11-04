@@ -59,7 +59,7 @@ For statewide MPAs, also capture.
 - List of all awarded vendors for those categories.
 - Ordering rules, for example minimum competition among three MPA holders for a task order, or dollar thresholds for quotes.
 
-You can turn the above into a basic compliance matrix for your next Rhode Island ITSM bid. List each mandatory requirement found in the RFP, add the response instruction, and assign an owner with a due date. If you have not built one before, see our plain guide on what to include in a matrix: [What Is a Compliance Matrix](https://govhub.com/blog/what-is-a-compliance-matrix/).
+You can turn the above into a basic compliance matrix for your next Rhode Island ITSM bid. List each mandatory requirement found in the RFP, add the response instruction, and assign an owner with a due date. If you have not built one before, see our plain guide on what to include in a matrix: [What Is a Compliance Matrix](/blog/what-is-a-compliance-matrix/).
 
 ## Worked example, step by step
 
@@ -71,7 +71,7 @@ Goal. You want to find who holds recent ITSM work with the state, what the term 
 - Step 4. From the MPA header, open the list of releases or purchase orders. Export the last 24 months. Sum by supplier and by agency to see where the spend is going.
 - Step 5. Create three holds on your calendar for each item. 180 days before the end of the base period, 120 days before the end of the base period, and 180 days before the end of the final option year. Those are your windows to engage the buyer, shape, or prepare to challenge.
 - Step 6. For the top two targets by spend, map the platform. Note if the state references ServiceNow, BMC Remedy, Cherwell, Ivanti, Jira Service Management, or another tool. Note integrations named, such as Active Directory, SCCM, Intune, JAMF, or discovery tools. Those clues will guide teaming and resumes.
-- Step 7. Build a light compliance outline using the last RFP’s structure. Even if the next RFP changes, you will not start from zero. If you need a refresher on turning instructions into an outline, read this walkthrough: [How to Respond to a Government RFP](https://govhub.com/blog/how-to-respond-to-a-government-rfp/).
+- Step 7. Build a light compliance outline using the last RFP’s structure. Even if the next RFP changes, you will not start from zero. If you need a refresher on turning instructions into an outline, read this walkthrough: [How to Respond to a Government RFP](/blog/how-to-respond-to-a-government-rfp/).
 
 In two hours you will have a list of incumbents, real spend, and a timeline to act. That beats cold guessing.
 
@@ -89,7 +89,7 @@ If you are not on a statewide MPA, you can still win work as a sub. Find the MPA
 
 If you are an MPA holder with no releases, act now. Agencies call who they know. Set short, direct capability calls with the program offices that issued the most ITSM related POs last year. Open with one slide that shows platform, modules, and three local references. Ask for their next quarter’s backlog.
 
-Be realistic about price. If the evaluation method says best value, buyers still expect clear rate cards and discounts off list. If the method says lowest price, you need a clean compliant volume and no missed forms. If you have trouble making a crisp bid or no bid call on thin data, this short piece will help you set gates and stop wasting cycles: [The Bid or No Bid Decision](https://govhub.com/blog/bid-no-bid-decision/).
+Be realistic about price. If the evaluation method says best value, buyers still expect clear rate cards and discounts off list. If the method says lowest price, you need a clean compliant volume and no missed forms. If you have trouble making a crisp bid or no bid call on thin data, this short piece will help you set gates and stop wasting cycles: [The Bid or No Bid Decision](/blog/bid-no-bid-decision/).
 
 ## Proposal mechanics when an RFP drops
 
@@ -97,7 +97,7 @@ Rhode Island RFPs in Ocean State Procures usually contain a cover section with i
 
 Do not skip the buyer forms. Expect a bidder certification, insurance requirements, and references. Check the submission format. Some events require responses to be entered in portal fields. Others require a single combined PDF with labeled sections. If the RFP calls for a technical and a cost volume separately, follow the file naming and upload instructions exactly or your bid can be rejected without review.
 
-Build a compliance matrix from the instructions, then shred the scope to extract every shall, must, and will. Assign owners. Set internal color team dates that fit the real deadline. If you need a template and a method, start here: [What Is RFP Shredding](https://govhub.com/blog/what-is-rfp-shredding/).
+Build a compliance matrix from the instructions, then shred the scope to extract every shall, must, and will. Assign owners. Set internal color team dates that fit the real deadline. If you need a template and a method, start here: [What Is RFP Shredding](/blog/what-is-rfp-shredding/).
 
 Run the same basic proposal discipline you use on federal work. A short Pink Team to confirm approach and outline. A Red Team to check compliance and story. A Gold Team to confirm price and risk. Keep it tight and on schedule.
 
