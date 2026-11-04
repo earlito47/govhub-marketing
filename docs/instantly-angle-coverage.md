@@ -2892,3 +2892,55 @@ All four angles land exactly ON cap; nothing is overshooting.
 
 The cap rise shortened A4's runway: 122 sendable queued is 2.2 days at 55,
 where it would be 2.4 at 50. A4 is now the angle nearest the ~2-day flag.
+
+## 2026-11-04 — four live fixes before the B-line, on the owner's go-ahead
+
+The 11-03 assessment (live Instantly audit, reply ledger, session history) found
+four things wrong in the running campaigns. All four were fixed this morning,
+before the 09:00 ET send window opened.
+
+**Step 4 asked a question where yes meant no.** "Want me to close this out,
+{{firstName}}?" drew "Yes" and "Please close this out" from four people who were
+declining, and Instantly's interest flag and the reply desk both filed them as
+interested. Three of them were emailed again, two with a first draft. Step 4 now
+asks something a yes answers truthfully, using only variables every in-flight
+lead already holds (`--sync` audited 873 / 623 / 432 live A2 / A1 / A4 leads, 0
+missing):
+
+- A1: "should I watch for the {{agency_short}} recompete and send you the
+  solicitation the day it posts? A yes is all I need."
+- A2: "want me to send you the next few open bids that fit your NAICS as they
+  post?" (solicitation-neutral, because by step 4 the named bid has often closed)
+- A4: "want me to send you the next few open bids in NAICS {{naics_code}} as they
+  post?"
+- A5: "want the debrief one pager after all?"
+
+Replies to the OLD step 4 still arrive for a while. A "yes" quoting "close this
+out" is a decline.
+
+**403 live A2 leads held a close date already past.** Steps 2 and 3 name the
+solicitation ("X closes Oct 29", "video on X?"), so 196 of them were about to be
+told about a bid that had closed. Those 196 were moved out of the campaign into
+the lead list `GH-A2-ClosedRFP-Parked` (`d0ea2745-…`); moving one back resumes
+it. The other 207 were left in place: their next email is the new
+solicitation-neutral step 4, which is true for them. Instantly allows one
+move job per campaign at a time (409 on a second), so moves are serial.
+
+This recurs: every day some in-flight A2 leads cross their close date.
+`outreach-push` has a floor at push time and nothing after it.
+
+**16 written opt-outs, 2 blocklist entries.** Every reply-desk row classified
+`unsubscribe` was read against the actual reply ("Stop", "Please put us on a do
+not email list", "Out of business. Please remove", one "no" to wave 1's old
+opt-out line). All 16 are real; 15 were added to the workspace blocklist (one
+was already there). Blocklist: 17.
+
+**A5 retired for new leads.** `outreach.config.daily_caps` A5 75 → 0
+(`push_cap: 0` in `instantly-angles.mjs` so `configSql` agrees). Real positive
+rate 0.18% against A4 0.66% and A2 0.61%. Leads already in the campaign finish;
+Instantly's own `daily_max_leads`/`daily_limit` are unchanged so their
+follow-ups still have room. The 3,583 queued, never-pushed A5 rows stay queued
+for the B-line. `outreach-assign` no longer flips A2 companies into a holdout
+when A5's cap is 0 (strata-parse branch; live only once merged to main and
+deployed). Until then the few A2 companies assigned per day can still land in
+A5 as holdouts and sit there.
