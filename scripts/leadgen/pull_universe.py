@@ -100,11 +100,13 @@ def _recip_page(sector, months, page):
     body = {"filters": _recip_filters(sector, months), "limit": 100, "page": page,
             "category": "recipient"}
     last = None
-    for delay in (0, 3, 10, 30, 60):
+    # Uncached deep pages take ~60s and the egress proxy drops some of them
+    # outright, so retries back off for up to ~8 minutes before giving up.
+    for delay in (0, 5, 15, 30, 60, 120, 240):
         if delay:
             time.sleep(delay)
         try:
-            r = requests.post(RECIP, json=body, timeout=180)
+            r = requests.post(RECIP, json=body, timeout=240)
         except requests.RequestException as e:
             last = str(e)
             continue
@@ -116,10 +118,20 @@ def _recip_page(sector, months, page):
     raise RuntimeError(f"USASpending sector {sector} page {page}: {last}")
 
 
+FAILED_SECTORS = []
+
+
 def _pull_sector(sector, months, lo, hi):
     rows_in_band, page = [], 1
     while True:
-        rows = _recip_page(sector, months, page)
+        try:
+            rows = _recip_page(sector, months, page)
+        except RuntimeError as e:
+            # One dropped sector must not sink the rest. Its finished pages are
+            # cached, so a rerun resumes it from the page that failed.
+            log(f"sector {sector}: FAILED at page {page}, kept {len(rows_in_band)} so far: {e}")
+            FAILED_SECTORS.append(sector)
+            break
         for r in rows:
             uei = (r.get("uei") or "").strip().upper()
             amt = float(r.get("amount") or 0)
@@ -270,8 +282,9 @@ def main():
     sectors = [s.strip() for s in a.sectors.split(",") if s.strip()]
     recips = pull_recipients(sectors, a.months, a.min_total, a.max_total)
     fresh = {u: r for u, r in recips.items() if u not in ex_uei}
-    log(f"recipients in band: {len(recips)}; not already in pool/outreach: {len(fresh)}")
-    json.dump({"in_band": len(recips), "fresh": len(fresh),
+    log(f"recipients in band: {len(recips)}; not already in pool/outreach: {len(fresh)}"
+        + (f"; INCOMPLETE sectors (rerun to finish): {','.join(FAILED_SECTORS)}" if FAILED_SECTORS else ""))
+    json.dump({"in_band": len(recips), "fresh": len(fresh), "incomplete_sectors": FAILED_SECTORS,
                "by_sector": {s: sum(1 for r in fresh.values() if r["sector"] == s) for s in sectors}},
               open(a.out + ".stage1.json", "w"), indent=1)
     if a.recipients_only:
