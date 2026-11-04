@@ -29,7 +29,7 @@ Set up the right accounts, then check the right hubs on a daily and weekly caden
 
 1) SAM.gov registration
 
-- Required by FAR 4.1102 and clause 52.204-7 before award. You need a [UEI](/glossary/uei/) and a [CAGE code](/glossary/cage-code/).
+- Required by FAR 4.1102 and clause 52.204-7 before award. You need a [UEI](/glossary/registration-and-ids/#uei) and a [CAGE code](/glossary/registration-and-ids/#cage-code).
 - Complete your SAM entity registration, reps and certs, bank info, and points of contact. Expect 1 to 3 weeks if everything is clean.
 - Micro purchase buys under FAR 13.2, generally at or below $10,000 per FAR 2.101, may go on card and not require SAM, but most competitive work still requires active SAM.
 
@@ -131,7 +131,7 @@ Friday
 
 Accounts to create, own, and maintain
 
-- SAM.gov entity, plus individual user roles. Tie to your [UEI](/glossary/uei/) and [CAGE code](/glossary/cage-code/).
+- SAM.gov entity, plus individual user roles. Tie to your [UEI](/glossary/registration-and-ids/#uei) and [CAGE code](/glossary/registration-and-ids/#cage-code).
 - Login.gov for each team member who touches bids, invoices, or reporting.
 - CPARS account for your organization and for each PM who will comment on ratings.
 - PIEE vendor account, with roles for WAWF and EDA. Get Supervisor and Contractor Administrator roles set now. Do not wait for first invoice.
