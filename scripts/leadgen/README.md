@@ -38,6 +38,27 @@ USASpending quirks handled in `usaspending.py`: `hasNext` lies past page 100
 ignored on subawards (all dollar gates re-applied client-side); the populated
 sub UEI field is `Sub-Recipient UEI` (`Sub-Awardee UEI` is always null).
 
+## Fresh cold-email audience (`pull_universe.py`)
+
+The recipe that built `public.prospect_pool` (the 24,000-company pool behind the
+A1–A5 angle audience), rebuilt as a committed script: USASpending small-business
+recipients per 2-digit NAICS sector over the last 12 months, the 12-month total
+banded client-side ($50K–$5M default), everything already in the pool,
+`outreach.companies` or Instantly excluded, then an SBA certification-search
+profile per UEI (email, contact person, primary NAICS, state, set-aside certs).
+Best-fit firms are looked up first (construction and facilities sectors, $100K–$2M,
+set-aside holders), so a stop at `--target-emails` keeps the best.
+
+```bash
+python pull_universe.py --exclude exclude.json -o out/universe.csv
+python pull_universe.py --exclude exclude.json --recipients-only     # size it only
+python pull_universe.py --as-of 2026-11-03 --exclude exclude.json   # resume a pull begun that day
+```
+
+`exclude.json` is `{"ueis": [...], "emails": [...], "domains": [...]}` built from
+`prospect_pool`, `outreach.companies` and every Instantly lead. MillionVerifier is
+deliberately not called: verification spends paid credits and is its own step.
+
 Output workbook: **Companies** (enriched, with `email_source`/`phone_source`),
 **Coverage** (per-field hit rates by source), **Tiers**, **Universe** (unenriched rest).
 
