@@ -229,7 +229,11 @@ const A1 = {
     },
     { delay: 4, lines: ['{{firstName}}, want the list of what would get your recompete bid disqualified? Two minutes to read, nothing to install, no call.'] },
     { delay: 5, lines: ['Should I just record a 3 minute video walking through what I\'d flag on the recompete instead? Zero prep on your end.'] },
-    { delay: 0, lines: ['Want me to close this out, {{firstName}}? If {{contract_end_month}} is already handled, say the word and I\'ll stop here.'] },
+    // Step 4 asked "Want me to close this out?" until 2026-11-04. "Yes" to that
+    // means stop, and four declines were filed as interested (Instantly's flag
+    // and the reply desk both read "Yes" as a yes). Every step 4 now asks a
+    // question where yes means yes, using only variables in-flight leads hold.
+    { delay: 0, lines: ['{{firstName}}, should I watch for the {{agency_short}} recompete and send you the solicitation the day it posts? A yes is all I need.'] },
   ],
 };
 
@@ -294,7 +298,8 @@ const A2 = {
     },
     { delay: 2, lines: ['{{firstName}}, {{sol_short}} closes {{sol_close_date}}. {{followup_line}}'] },
     { delay: 4, lines: ['Should I record a 3 minute video on {{sol_short}} instead?'] },
-    { delay: 0, lines: ['Want me to close this out, {{firstName}}?'] },
+    // Solicitation-neutral on purpose: by step 4 the named bid has often closed.
+    { delay: 0, lines: ['{{firstName}}, want me to send you the next few open bids that fit your NAICS as they post? A yes is all I need.'] },
   ],
 };
 
@@ -336,7 +341,7 @@ const A4 = {
     },
     { delay: 4, lines: ['{{firstName}}, want the next three in your lane before they close? One email, no login, no call.'] },
     { delay: 5, lines: ['Should I record a quick video showing how we spotted the {{competitor_name}} award early and what\'s coming in NAICS {{naics_code}}?'] },
-    { delay: 0, lines: ['Want me to close this out, {{firstName}}?'] },
+    { delay: 0, lines: ['{{firstName}}, want me to send you the next few open bids in NAICS {{naics_code}} as they post? A yes is all I need.'] },
   ],
 };
 
@@ -361,6 +366,14 @@ const A5 = {
   // day. A starved control does not make the experiment smaller, it makes it
   // unreadable. 60 is what 12 mailboxes at 20/day will carry.
   daily_max_leads: 75,
+  // RETIRED FOR NEW LEADS on 2026-11-04 (owner decision): 0.18% real positive
+  // rate against A4's 0.66% and A2's 0.61%. job_push's cap goes to 0, so no new
+  // company enters A5; leads already in the campaign finish their sequence,
+  // which is why daily_max_leads (and the 4x daily_limit the follow-ups ride
+  // on) stays where it was. The 3,583 queued, never-pushed A5 rows stay in the
+  // queue for re-assignment to the B-line. Ends the A2-vs-holdout experiment,
+  // which never reached significance (z = 1.70 on 10-21).
+  push_cap: 0,
   required: [],
   subjects: ['your last bid', 'question, {{firstName}}'],
   steps: [
@@ -377,7 +390,7 @@ const A5 = {
         'A contracting officer who spent 35 years awarding federal work told us the two killers are not reading the whole solicitation and never learning why you lost. The one pager fixes the second one. Should I send it?',
       ],
     },
-    { delay: 0, lines: ['Want me to close this out, {{firstName}}?'] },
+    { delay: 0, lines: ['{{firstName}}, want the debrief one pager after all? A yes is all I need.'] },
   ],
 };
 
@@ -799,7 +812,7 @@ if (arg === '--check') {
 }
 
 function configSql(ids) {
-  const caps = Object.fromEntries(ANGLES.map((a) => [a.key, a.daily_max_leads]));
+  const caps = Object.fromEntries(ANGLES.map((a) => [a.key, a.push_cap ?? a.daily_max_leads]));
   return [
     `insert into outreach.config (key, value) values`,
     `  ('campaign_ids', '${JSON.stringify(ids)}'::jsonb),`,
