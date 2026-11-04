@@ -116,27 +116,37 @@ def _recip_page(sector, months, page):
     raise RuntimeError(f"USASpending sector {sector} page {page}: {last}")
 
 
-def pull_recipients(sectors, months, lo, hi):
-    """{uei: {name, total_12mo, sector}} — sorted-by-amount pages, stop below the band."""
+def _pull_sector(sector, months, lo, hi):
+    rows_in_band, page = [], 1
+    while True:
+        rows = _recip_page(sector, months, page)
+        for r in rows:
+            uei = (r.get("uei") or "").strip().upper()
+            amt = float(r.get("amount") or 0)
+            if uei and lo <= amt <= hi:
+                rows_in_band.append((uei, r.get("name") or "", amt))
+        if len(rows) < 100 or float(rows[-1].get("amount") or 0) < lo:
+            break
+        page += 1
+    log(f"sector {sector}: {page} pages, {len(rows_in_band)} recipients in band")
+    return sector, rows_in_band
+
+
+def pull_recipients(sectors, months, lo, hi, workers=3):
+    """{uei: {name, total_12mo, sector}} — sorted-by-amount pages, stop below the band.
+
+    Sectors run in parallel: an uncached deep USASpending page takes ~60s, so
+    one sector at a time is hours. A sector can be any NAICS prefix (2-6
+    digits); splitting a big one (54 -> 5411..5419) keeps each query small.
+    """
     out = {}
-    for sector in sectors:
-        page, kept = 1, 0
-        while True:
-            rows = _recip_page(sector, months, page)
-            for r in rows:
-                uei = (r.get("uei") or "").strip().upper()
-                amt = float(r.get("amount") or 0)
-                if not uei or not (lo <= amt <= hi):
-                    continue
+    with ThreadPoolExecutor(max_workers=workers) as pool:
+        for sector, rows in pool.map(lambda s: _pull_sector(s, months, lo, hi), sectors):
+            for uei, name, amt in rows:
                 prev = out.get(uei)
                 # a firm in two sectors keeps its larger-dollar sector
                 if prev is None or amt > prev["total_12mo"]:
-                    out[uei] = {"name": r.get("name") or "", "total_12mo": amt, "sector": sector}
-                    kept += prev is None
-            if len(rows) < 100 or float(rows[-1].get("amount") or 0) < lo:
-                break
-            page += 1
-        log(f"sector {sector}: {page} pages, {kept} recipients in band")
+                    out[uei] = {"name": name, "total_12mo": amt, "sector": sector}
     return out
 
 
@@ -221,7 +231,7 @@ def _naics_list(v):
 
 
 def score(rec, prof):
-    s = SECTOR_WEIGHT.get(rec["sector"], 0)
+    s = SECTOR_WEIGHT.get(rec["sector"][:2], 0)
     if 100_000 <= rec["total_12mo"] <= 2_000_000:
         s += 1
     if set(prof.get("certs") or []) & SET_ASIDES:
@@ -233,7 +243,7 @@ def score(rec, prof):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--sectors", default="23,56,81,54,62,61")
+    ap.add_argument("--sectors", default="23,56,81,5411,5412,5413,5414,5415,5416,5417,5418,5419,62,61")
     ap.add_argument("--months", type=int, default=12)
     ap.add_argument("--min-total", type=float, default=50_000)
     ap.add_argument("--max-total", type=float, default=5_000_000)
@@ -268,7 +278,7 @@ def main():
         return
 
     # look up the likeliest-to-reply firms first so a stop at --target-emails keeps the best
-    order = sorted(fresh, key=lambda u: (-SECTOR_WEIGHT.get(fresh[u]["sector"], 0),
+    order = sorted(fresh, key=lambda u: (-SECTOR_WEIGHT.get(fresh[u]["sector"][:2], 0),
                                          not (100_000 <= fresh[u]["total_12mo"] <= 2_000_000),
                                          fresh[u]["total_12mo"]))
     seen_email, seen_dom = set(), set()
