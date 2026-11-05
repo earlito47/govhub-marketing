@@ -3980,3 +3980,121 @@ is now the thing to doubt rather than the audience. Today adds a data point on
 the other side of that: the two warmest replies this programme has had —
 Chantal's meeting request and Paul Kelly's "Yes, please!" — were both to an
 offer made **in the body of an email**, needing no login at all.
+
+## 2026-11-05 — "nothing wrong is still queued" was wrong
+
+Yesterday's entry said that, and said it was measured rather than hoped. The
+measurement was real and the conclusion was not. I had asked whether any A2
+lead's close date had **already** passed while a date-asserting step was still
+pending. The answer was 0. The question was the wrong tense: 226 leads were
+sitting one step short of "{{sol_short}} closes {{sol_close_date}}" with close
+dates a few days out, and this morning `jc@intek.co` was sent
+
+> Juan, Replace HVAC Rooftop Units at Building 2275 closes Nov 4. Want the
+> disqualifier list before then?
+
+on **Nov 5**. Nothing had changed overnight except the date. A check that only
+looks at today cannot see an email that is already scheduled.
+
+He replied "yes sure, thanks", which makes it worse rather than better.
+
+**The guard now asks in the future tense** (`6b6270e`): unsafe if the close
+date falls before `max(today, last send + 8 days)`. The horizon is the worst
+case measured on 2,369 step 1 sends rather than the median, because the two
+outcomes are not comparable — a lead flagged early is a line in a report, a
+lead missed is a false claim about a deadline in front of a stranger. And never
+earlier than today: an overdue step fires in the future whatever its due date
+says, which the first cut of this got wrong for every lead last contacted more
+than eight days ago. The audit line now reads **`queued to state a passed date
+226 (of 310 already past close)`** where it read 0 yesterday.
+
+### The runway is not shrinking, it has collapsed
+
+Yesterday's figure was a historical average: median 3 days between push and
+first send, 60.9% of first emails below the 8-day floor. This week:
+
+| A2 first emails sent 11-03 onward | 253 |
+| --- | --- |
+| landed with **1 day** of runway | 143 |
+| landed with 2 days | 52 |
+| **≤2 days** | **195 (77%)** |
+| waited 7 days behind the push | 184 |
+| waited 8 days | 66 |
+
+Every lead now waits the maximum. These are the 10-28 and 10-29 cohorts, pushed
+at 125/day with 8+ days of runway each, whose first emails are only landing
+now. Today's went out at 17:16 saying "It closes **Nov 7**" — two days. The
+floor promises eight; the delivered median this week is **one**.
+
+It should drain on its own, because A2 now pushes 2 to 9 leads a day rather
+than 125, so the queue has nothing new to fall behind on. The 226 step 1s are
+already locked in.
+
+**`eeb0871` is still not deployed.** `failed_terminal` is absent from today's
+push summaries, so production is still running the 8-day floor. It stops the
+next cohort; it does nothing for the 226. Stopping those needs either a change
+to the step 1 template, which asserts the date, or to `followup_line`, where
+the base arm's 1,324 leads carry "Want the disqualifier list **before then**?"
+— both of them live outreach copy, so both are yours to call, not mine.
+
+### A5's cap is 0 and `job_assign` is still assigning to A5
+
+`outreach.config.daily_caps` now reads `A5: 0`. Push used a cap of 75 on 11-04
+and 0 today, so it was set during 11-04 — and it was already in the config dump
+I read yesterday, which I printed and did not notice. A5 sent **0** today
+against 75 yesterday. Total sending is **41** (A1 37, A2 4) against a combined
+cap of 217.
+
+Switching A5 off is a reasonable move: it was taking the inventory while A2 and
+A4 starved. But `job_assign` does not know about send caps — it works to queue
+ceilings — so it wrote **17 more A5 rows today** on top of 3,528 already
+queued, and an A5 assignment is a **one-way door**: `assignments.company_id` is
+unique, so the company can never be given to A2 or A4, and `replace_signals`
+deletes incoming signals for any company that already has an assignment, so a
+future solicitation for that company is never even recorded. A5 is switched off
+and still consuming the pool.
+
+### The pool is down to 24 companies
+
+| unassigned, non-suppressed companies | 613 |
+| --- | --- |
+| …holding a **still-valid** `rfp_match` | 14 |
+| …holding a still-valid `recompete` | 7 |
+| …holding a still-valid `competitor_award` | 3 |
+
+Signals look plentiful and are mostly dead: of 3,617 `new` `rfp_match` rows
+**3,163 have a `valid_until` in the past**, and `competitor_award` is 708 of
+1,378, `recompete` 637 of 1,502. `status` stays `new` because the angle gates
+filter on the date and never write the row back. So the shortage is not "out of
+companies" and not even "out of signals" — it is 24 companies with something
+live to say to them. `a2_left_close_date_full` is 0, so the window is not the
+binding constraint either.
+
+That reframes the choice. Buying companies works. Relaxing one-angle-per-company
+only works if `replace_signals` also stops discarding signals for assigned
+companies — today both halves block it, and the second half is the one nobody
+has looked at.
+
+### The rest
+
+Bounce **114 / 6,772 = 1.68%** over people contacted, under the 2% gate. A2
+2.05%, A4 2.11%, A1 0.74%, A5 1.36% — nothing near the 5% per-angle line, no
+pause. Jobs all 2xx, no retried attempt. Audit: **196 / 0 / 0** over 6,585
+leads, and the 196 is byte-for-byte the same set Instantly moved to a list on
+11-04, not new drift. Inventory A1 85 ready (2.3 days, at the flag), A2 5, A4
+**0**, A5 3,528. `sol_short` renders as a bare solicitation number on 20.8% of
+A2 rows. Concentration fine: 4 sends across 4 distinct solicitations today.
+Renders clean on all four campaigns; the same two A5 ALL-CAPS false positives.
+A2 arms 1,314 speed / 1,324 base against a control that is now frozen at 1,905,
+since A5 sends nothing.
+
+**Replies, four.** `mayoelitesolutions@gmail.com` — "Nope not interested. You
+can use those 3 minutes for something that would give you a higher return on
+your time :)" — **suppressed**, person only, no colleague on record.
+`eliassqueakycleaning@gmail.com` said yes to the debrief one-pager and
+`jc@intek.co` yes to the disqualifier list; the desk drafted both at 19:16.
+`lindakellyak@gmail.com`, yesterday's "Yes, please!" to a 3-minute video, is
+`needs_human` on the desk as of 00:27 — correctly, since the promise is a video
+nobody has made. `needs_human` **8**, `drafted` **39**.
+
+**Proposal opens 0**, day seven, 25 handovers and no new sends since 10-30.
