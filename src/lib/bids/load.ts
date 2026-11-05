@@ -112,8 +112,16 @@ export interface Hub {
   path: string;
   /** Open bids, soonest due first; no-due-date bids last. */
   open: Bid[];
-  /** Up to 10 most recently closed, for internal links to closed pages. */
+  /** Up to RECENT_CLOSED most recently closed, for internal links to closed pages. */
   recentlyClosed: Bid[];
+  /**
+   * Every bid in the hub: open soonest first, then closed most recent first.
+   * A place hub lists the first HUB_PAGE_SIZE open and RECENT_CLOSED closed on
+   * its own page and the rest on /bids/{place}/page/{n}/ (hubOverflowPages), so
+   * every bid page has a link from a hub. Before that, 2,099 indexable bid
+   * pages had none (Ahrefs site audit and our own link graph, 2026-11-03).
+   */
+  all: Bid[];
 }
 
 export interface BidIndex {
@@ -124,11 +132,17 @@ export interface BidIndex {
   categoryHubs: Map<string, Hub>;
   /** Key: `${category}/${stateSlug}`. */
   categoryStateHubs: Map<string, Hub>;
+  /** Every place's bids in hub order (Hub.all), including places too small for a hub. */
+  segmentAll: Map<string, Bid[]>;
   sourceCount: number;
 }
 
 /** A hub page is generated only with at least this many open bids. */
 export const HUB_MIN_OPEN = 5;
+/** Open bids listed on a hub's first page, and bids per overflow page. */
+export const HUB_PAGE_SIZE = 200;
+/** Closed bids listed on a hub's first page. */
+export const RECENT_CLOSED = 10;
 /**
  * Cloudflare Pages takes 20,000 files per deploy on the free plan, and a deploy
  * over the limit fails outright, blog posts and all. The rest of the site is
@@ -327,14 +341,23 @@ function byDue(a: Bid, b: Bid): number {
 }
 
 function hubFrom(path: string, bids: Bid[]): Hub {
-  return {
-    path,
-    open: bids.filter((b) => !b.closed).sort(byDue),
-    recentlyClosed: bids
-      .filter((b) => b.closed)
-      .sort((a, b) => Date.parse(b.dueAt ?? '0') - Date.parse(a.dueAt ?? '0'))
-      .slice(0, 10),
-  };
+  const open = bids.filter((b) => !b.closed).sort(byDue);
+  const closed = bids
+    .filter((b) => b.closed)
+    .sort((a, b) => Date.parse(b.dueAt ?? '0') - Date.parse(a.dueAt ?? '0') || a.id.localeCompare(b.id));
+  return { path, open, recentlyClosed: closed.slice(0, RECENT_CLOSED), all: [...open, ...closed] };
+}
+
+/**
+ * The bids a place hub's first page does not list, in pages of HUB_PAGE_SIZE:
+ * page 2 is element 0. Open bids past the first HUB_PAGE_SIZE come first, then
+ * closed bids past the first RECENT_CLOSED.
+ */
+export function hubOverflowPages(hub: Hub): Bid[][] {
+  const rest = [...hub.open.slice(HUB_PAGE_SIZE), ...hub.all.filter((b) => b.closed).slice(RECENT_CLOSED)];
+  const pages: Bid[][] = [];
+  for (let i = 0; i < rest.length; i += HUB_PAGE_SIZE) pages.push(rest.slice(i, i + HUB_PAGE_SIZE));
+  return pages;
 }
 
 function group(bids: Bid[], key: (b: Bid) => string[]): Map<string, Bid[]> {
@@ -376,9 +399,12 @@ async function build(): Promise<BidIndex> {
   const toHubs = (m: Map<string, Bid[]>, path: (k: string) => string) =>
     keep(new Map([...m].map(([k, list]) => [k, hubFrom(path(k), list)])));
 
+  const segmentAll = new Map([...group(bids, (b) => [b.segment])].map(([k, list]) => [k, hubFrom(`/bids/${k}/`, list).all]));
+
   return {
     builtAt,
     bids,
+    segmentAll,
     byPath: new Map(bids.map((b) => [b.path, b])),
     stateHubs: toHubs(group(bids, (b) => [b.segment]), (s) => `/bids/${s}/`),
     categoryHubs: toHubs(group(bids, (b) => b.categories), (c) => `/bids/${c}/`),
@@ -415,6 +441,22 @@ export function similarBids(index: BidIndex, bid: Bid, n = 6): Bid[] {
   if (primary) add(index.categoryHubs.get(primary)?.open);
   add(index.stateHubs.get(bid.segment)?.open);
   return out;
+}
+
+/**
+ * The bids just before and after this one in its place's list (Hub.all order):
+ * up to `n` each side. Every bid page links its neighbours, so each bid gets
+ * links from the pages around it as well as from its hub page, and no bid is
+ * left with none.
+ */
+const positions = new WeakMap<Bid[], Map<string, number>>();
+export function neighbourBids(index: BidIndex, bid: Bid, n = 2): Bid[] {
+  const list = index.segmentAll.get(bid.segment) ?? [];
+  let pos = positions.get(list);
+  if (!pos) positions.set(list, (pos = new Map(list.map((b, i) => [b.id, i]))));
+  const i = pos.get(bid.id) ?? -1;
+  if (i < 0) return [];
+  return [...list.slice(Math.max(0, i - n), i), ...list.slice(i + 1, i + 1 + n)];
 }
 
 export function categoryName(slug: string): string {

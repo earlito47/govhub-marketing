@@ -8,8 +8,9 @@ import BidsLayout from './BidsLayout.astro';
 import BidList from './BidList.astro';
 import Breadcrumbs from '../seo/Breadcrumbs.astro';
 import CTABand from '../CTABand.astro';
+import Pager from './Pager.astro';
 import type { BidIndex, Hub } from '../../lib/bids/load';
-import { FEDERAL_SEGMENT, INSIGHTS_STATE_SLUGS, categoryName, categoryPhrase, formatShortDate, placeName } from '../../lib/bids/load';
+import { FEDERAL_SEGMENT, HUB_PAGE_SIZE, INSIGHTS_STATE_SLUGS, categoryName, categoryPhrase, formatShortDate, hubOverflowPages, placeName } from '../../lib/bids/load';
 import { CATEGORIES } from '../../lib/bids/categories';
 import { CALENDLY_URL, ctaHref } from '../../config';
 
@@ -22,7 +23,10 @@ interface Props {
 }
 
 const { index, hub, place, category } = Astro.props;
-const MAX_ROWS = 200;
+const MAX_ROWS = HUB_PAGE_SIZE;
+// A place hub (not a category or category-in-place hub) continues on
+// /bids/{place}/page/{n}/ so every bid in the place has a link from a hub.
+const overflow = place && !category ? hubOverflowPages(hub) : [];
 
 const placeLabel = place ? placeName(place) : null;
 const catLabel = category ? categoryName(category) : null;
@@ -95,6 +99,10 @@ const crumbs = [
     caption={open.length > MAX_ROWS ? `The ${MAX_ROWS} soonest deadlines of ${open.length.toLocaleString('en-US')} open bids` : `${open.length} open bids, soonest deadline first`}
     showPlace={!place || place === FEDERAL_SEGMENT}
   />
+
+  {overflow.length > 0 && (
+    <Pager base={hub.path} current={1} total={overflow.length + 1} label={placeLabel!} />
+  )}
 
   {topAgencies.length > 1 && (
     <>

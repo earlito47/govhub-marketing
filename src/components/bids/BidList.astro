@@ -24,7 +24,7 @@ const { bids, caption, showPlace = true } = Astro.props;
         <th scope="col">Bid</th>
         <th scope="col">Agency</th>
         {showPlace && <th scope="col">Where</th>}
-        <th scope="col">{bids.some((b) => b.closed) ? 'Closed' : 'Due'}</th>
+        <th scope="col">{bids.every((b) => b.closed) ? 'Closed' : bids.some((b) => b.closed) ? 'Due or closed' : 'Due'}</th>
       </tr>
     </thead>
     <tbody>

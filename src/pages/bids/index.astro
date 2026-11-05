@@ -23,6 +23,13 @@ const places = [...index.stateHubs]
   .map(([k, h]) => ({ href: h.path, label: placeName(k), count: h.open.length }))
   .sort((a, b) => a.label.localeCompare(b.label));
 const federalHub = index.stateHubs.get(FEDERAL_SEGMENT);
+// Places with too few open bids for a hub (HUB_MIN_OPEN) still have bid pages;
+// listing them here is their link from the rest of the site (a territory's
+// only bid was otherwise reachable from the sitemap alone).
+const hubless = [...index.segmentAll]
+  .filter(([k]) => !index.stateHubs.has(k))
+  .sort(([a], [b]) => placeName(a).localeCompare(placeName(b)))
+  .flatMap(([, list]) => list);
 const categories = CATEGORIES.filter((c) => index.categoryHubs.has(c.slug)).map((c) => ({
   href: `/bids/${c.slug}/`,
   label: c.name,
@@ -52,6 +59,13 @@ const lede =
       <li><a href={federalHub.path}>Federal, no location listed<span class="count">{federalHub.open.length}</span></a></li>
     )}
   </ul>
+
+  {hubless.length > 0 && (
+    <>
+      <h2>Places with only a few bids</h2>
+      <BidList bids={hubless} caption="Every bid in places with too few open bids for their own page" />
+    </>
+  )}
 
   <h2>By category</h2>
   <ul class="chip-list">

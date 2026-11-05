@@ -26,7 +26,7 @@ import BidList from './BidList.astro';
 import Breadcrumbs from '../seo/Breadcrumbs.astro';
 import CTABand from '../CTABand.astro';
 import type { Bid, BidIndex } from '../../lib/bids/load';
-import { INSIGHTS_NAICS_CODES, bidTitleTag, categoryName, formatDue, formatShortDate, placeName, similarBids } from '../../lib/bids/load';
+import { INSIGHTS_NAICS_CODES, bidTitleTag, categoryName, formatDue, formatShortDate, neighbourBids, placeName, similarBids } from '../../lib/bids/load';
 import { CALENDLY_URL, ctaHref } from '../../config';
 
 interface Props {
@@ -37,6 +37,9 @@ interface Props {
 const { bid, index } = Astro.props;
 const place = placeName(bid.segment);
 const similar = similarBids(index, bid);
+// The bids just before and after this one in its place's list, so every bid
+// page has links from the pages around it, not only from a hub page.
+const nearby = neighbourBids(index, bid).filter((b) => !similar.includes(b));
 const hubs = bid.categories
   .map((c) => ({ c, path: bid.stateSlug && index.categoryStateHubs.has(`${c}/${bid.stateSlug}`) ? `/bids/${c}/${bid.stateSlug}/` : index.categoryHubs.has(c) ? `/bids/${c}/` : null }))
   .filter((h): h is { c: string; path: string } => !!h.path);
@@ -229,6 +232,13 @@ const unlocks = unlockList.length > 1 ? `${unlockList.slice(0, -1).join(', ')} a
     <>
       <h2>Similar open bids</h2>
       <BidList bids={similar} caption={`Open bids like this one, soonest deadline first`} />
+    </>
+  )}
+
+  {nearby.length > 0 && (
+    <>
+      <h2>{place === 'Federal' ? 'Other federal bids around this deadline' : `Other ${place} bids around this deadline`}</h2>
+      <BidList bids={nearby} caption="The bids listed just before and after this one" showPlace={place === 'Federal'} />
     </>
   )}
 
