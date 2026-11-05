@@ -3847,3 +3847,136 @@ Clean: bounce **0.615%** (105/17,085), the lowest it has been; A2 arms 1,415 and
 1,413 against a 1,710 control. **Proposal opens still 0** — five days with
 tracking live, 24 handovers delivered, and not one recorded open. At this point
 the handover is the thing to doubt, not the audience.
+
+## 2026-11-04 — the floor was measured on the wrong day
+
+The A2 gate says a solicitation needs 8 days left before we push a lead at it.
+It is checked when `job_push` **creates** the lead in Instantly, and the number
+it compares against is the runway **the recipient will have**. Those are not
+the same day, and nothing in the system had ever asked how far apart they are.
+
+Measured over all 2,654 A2 first sends: push to first email is **p50 3 days,
+p90 7, max 8**. Only 695 went out the day they were pushed. So the eight days
+the gate promises arrive as eight minus the wait:
+
+| runway at the moment the first email landed | leads |
+| --- | --- |
+| under 3 days | 544 (20.5%) |
+| under the 8-day floor | **1,616 (60.9%)** |
+| 1 day | 201 |
+
+Six in ten A2 first emails have been going out with less runway than the gate
+allows, and no counter could see it, because by the gate's own measure every
+one of those rows was fine at the moment it passed.
+
+**What it cost.** Step 1 of the sequence reads `{{sol_short}} closes
+{{sol_close_date}}` and lands first send + 5 days (p90; max 7). Off a first
+send with 1 to 5 days left it arrives after the solicitation has closed.
+**187 of 2,369 step 1 sends did**, between 10-21 and 11-03 — a plain false
+statement about a date, in front of a reader, 187 times:
+
+> Angela, SPE7M827U0003 closes Oct 30. Still happy to draft it.
+
+sent 2026-11-03.
+
+**Nothing wrong is still queued, and that is measured rather than hoped.** 207
+A2 leads are active with a closed solicitation, and all 207 have finished step
+2, so the one email left for each is the generic step 3 — "want me to send you
+the next few open bids that fit your NAICS as they post?" — which names no
+solicitation and no date. It is arguably the best email in the sequence for
+somebody whose bid has closed. No lead needed pulling out of a campaign.
+
+**Shipped** (`eeb0871`, on the branch, **not deployed**):
+
+- `A2_close_min_days` 8 → **16** in `outreach-push`: 8 days of runway at the
+  moment step 1 lands, plus the 8-day worst-case queue wait.
+- `ASSIGN_BUFFERS.rfp_match` 8 → 16, so the job that admits a row and the job
+  that sends it still measure the same thing.
+- `close-floor.test.mjs` carried its own `const FLOOR = 8` — a third copy of
+  the number under test, which would have passed with push at 16 and assign at
+  8. It reads both sources now.
+- `verify-live-leads.mjs` reported **2,634 of 2,634 A2 leads perfect** all the
+  way through this. Every check in it reads a lead at one instant; the defect
+  lives in the days between. It now counts leads whose next email will state a
+  date that has passed, and it works out which steps assert a date by reading
+  the live campaign rather than hardcoding step numbers.
+- 19 guards live in `scripts/outreach-tests` and `package.json` named **five**.
+  The other fourteen ran only when somebody remembered them, which is how the
+  stale `FLOOR` copy survived. `npm run test:outreach` globs the directory, so
+  a new guard counts by existing. 20/20 pass.
+
+**The cost is 33 signals.** Of 3,591 unused `rfp_match` signals, **3,052 are
+for solicitations that have already closed** and 501 close inside 7 days, so 38
+are admissible under the old floor and 5 under the new one. A2 pushed 2 leads
+today. If that trade is the wrong way round, `A2_close_min_days` puts it back.
+
+### The number I reported yesterday was the flattering one
+
+Yesterday's entry led with bounce **0.615% (105/17,085)**. That denominator is
+emails sent, not people contacted, and this routine asks for the rate **over
+contacted**. Over people it is **110 / 6,731 = 1.63%** — still under the 2%
+gate, and no angle anywhere near the 5% per-angle line, so nothing to pause.
+But A2 is at **2.03%** of people and A4 at **2.11%**, both above the number the
+overall gate is set at. Per push cohort the rate is flat, not climbing: 1.50,
+1.62, 1.80, 1.81, 2.13, 1.22 by week since 09-21 (the last two weeks are still
+accruing). `outreach-metrics` reports both figures; the per-people one is the
+one that belongs at the top of a report.
+
+### 196 A2 leads left the campaign, and it was not us
+
+The audit's first question — leads the queue claims that the campaign lacks —
+read **196**, against 0 for weeks. All 196 are A2, all pushed 10-21 to 10-26,
+all now sitting in one Instantly list with no campaign, all with
+`timestamp_updated` inside the same hour. None of our jobs can do that: the only
+`/leads/move` we issue carries a `to_campaign_id`, and push ran at 06:00, 06:50
+and 07:15 with 22 moves, all confirmed. The giveaway is that **all four
+campaigns** carry `timestamp_updated: 2026-11-04T13:45:28`, to the second — a
+platform-side batch, not an edit to one campaign. The leads had finished the
+sequence and their solicitations had closed; their assignment rows, outcomes and
+suppression are all intact. Questions 2 and 3 of the audit read **0 and 0**
+across 6,544 campaign leads.
+
+### The rest
+
+**Jobs** all 2xx, no retried attempt: advance 284, stage 24, fit 9, recompetes
+6, awards 4, push 3, assign 1, metrics 1, opportunities 1. `replace_signals` has
+not timed out since the chunking went in.
+
+**Sending** A1 **37/37**, A5 **75/75**, A2 **2/125**, A4 **1/55**. Inventory A1
+121 (3.3 days), A2 **0**, A4 **0**, A5 3,511. Today's push reported `failed: 1,
+deferred_still_ready: 1` — which is one deferred 409 and zero real failures,
+because `failed` counts deferrals too. It now also reports `failed_terminal`.
+
+**`job_assign` wrote 9 rows out of 649 companies considered**, and left all 640
+of the rest `at_ceiling` on A5, whose queue is 48 days deep against a 15-day
+ceiling. Not a fault in assign: those 640 hold only generic signals. Combined
+with 3,052 dead `rfp_match` signals, the shape of the shortage is clearer than
+"we are out of companies" — we are out of companies that match a **live**
+solicitation.
+
+**Replies.** `lindakellyak@gmail.com` (Paul W Kelly, A1) said **"Yes, please!"**
+at 20:41 to the offer of a 3-minute video on his recompete. That arrived after
+the desk's last run and is unanswered; it also needs somebody who can make a
+video. Two replies from 11-03 were missed by yesterday's sweep and are
+**suppressed now**, person only, no colleague on record either domain:
+`maurence@glocoms.com` ("stop") and `jbao@gtwbio.com` ("Yes, Please." to "Want
+me to close this out?"). Neither received anything in the gap — both sequences
+had already completed. `needs_human` **7**, `drafted` **37**; the Chantal entry
+among the 7 is stale, answered from this side at 00:44 on 11-04.
+
+**A2 arms** 1,312 speed / 1,322 base, both long past the ~440 per arm the test
+needs, against an A5 control of 1,905. Still not calling it.
+
+**Renders** clean: 0 incomplete, 0 missing first name, 0 leaked `{{token}}`
+across all four campaigns. `sol_short` renders as a bare solicitation number on
+**20.9%** of A2 rows, up from 14% on 10-09. Concentration is fine — 43 to 60
+distinct solicitations per sending day, worst single one 20 of 125. Two A5 names
+still trip the ALL-CAPS check, "Brent BKM Construction" and "Ron Shashua RON";
+BKM is the firm's own initialism and the second has `RON` as its company name,
+so one is a false positive and the other is unfixable from a word list.
+
+**Proposal opens 0**, day six, 25 handovers. Yesterday's note said the handover
+is now the thing to doubt rather than the audience. Today adds a data point on
+the other side of that: the two warmest replies this programme has had —
+Chantal's meeting request and Paul Kelly's "Yes, please!" — were both to an
+offer made **in the body of an email**, needing no login at all.
