@@ -4098,3 +4098,124 @@ your time :)" — **suppressed**, person only, no colleague on record.
 nobody has made. `needs_human` **8**, `drafted` **39**.
 
 **Proposal opens 0**, day seven, 25 handovers and no new sends since 10-30.
+
+## 2026-11-06 — 167 false deadlines in two days, and A1 runs dry on Sunday
+
+Two things need a decision, and both have a clock on them.
+
+### The stale step 1 is accelerating, not draining
+
+I counted the step 1 sends off Instantly's own email log and compared each
+against its lead's close date:
+
+| day | step 1 sends | sent AFTER the solicitation closed |
+| --- | --- | --- |
+| 2026-11-05 | 92 | **81** |
+| 2026-11-06 | 123 | **86** |
+
+**167 emails in two days** telling someone a bid "closes" on a date that had
+already gone by. For comparison, the whole 10-21 → 11-03 period produced 187.
+The forward queue is **134** more, down from 226 yesterday — but it fell
+because they went out, not because they expired harmlessly.
+
+The cause is the one from 11-04 and it is now fully visible: the 10-28 and
+10-29 cohorts were pushed at 125/day with 8+ days of runway, Instantly took 7
+to 8 days to send their first email, so those first emails landed with 1 to 2
+days left, and step 1 lands 2 to 7 days after that. Essentially every step 1
+in that cohort is late by construction.
+
+**No variable can fix this.** The step reads
+`{{firstName}}, {{sol_short}} closes {{sol_close_date}}. {{followup_line}}`,
+and "closes" is in the template, not in anything we render. The three ways out:
+
+1. **Deploy `eeb0871`** (the 8 → 16 floor). Stops the next cohort. Does
+   nothing for the 134 queued, which will go out over about eight days.
+2. **Edit step 1's template** to drop `closes {{sol_close_date}}`. Stops all
+   134 within minutes. Note the base arm's 1,326 leads carry
+   `followup_line` = "Want the disqualifier list **before then**?", so "before
+   then" would be left pointing at nothing; that wants rewording in the same
+   pass, and `followup_line` is ours.
+3. **Pause the 134 leads** so step 1 never fires. `pause_until` is already a
+   registered custom variable on the campaign, which is the likely mechanism,
+   though I have not confirmed Instantly's semantics and would not test it on
+   a live recipient's mailbox to find out.
+
+1 and 2 are not alternatives — 1 is the permanent fix and 2 is what stops the
+bleeding this week. Both are yours to call: one is a production deploy, the
+other is live outreach copy.
+
+### A1 runs out on about 11-08, and 185 companies are sitting idle
+
+A1 inventory: **121 ready on 11-04, 85 on 11-05, 50 today** — 1.4 days at a cap
+of 37. It is draining 37 a day and `job_assign` is replacing 1 to 3. Of the 594
+unassigned companies left, **7** hold a live `recompete` signal. A1 is the
+angle actually sending at cap and it has the cleanest bounce rate of the four,
+0.81%.
+
+Meanwhile A5 holds **3,535 ready rows** that will never send, because its daily
+cap is 0. Those companies have never been emailed. Split by what they hold and
+whether they are part of the A2 control:
+
+| live signal held by an A5-queued company | holdout=false | holdout=true |
+| --- | --- | --- |
+| `recompete` (A1) | **185** | 245 |
+| `competitor_award` (A4) | **14** | 279 |
+| `rfp_match` (A2) | 0 | 299 |
+
+The `holdout=true` rows are the A2 experiment's control and must not be
+touched. The 185 and the 14 are plain generic-A5 rows with no experimental
+role, holding a live signal, unsent, behind a cap of 0. Re-pointing the 185 to
+A1 is **five days of A1 at cap**, emails nobody twice, buys no companies and
+costs the A2 test nothing. It does need `job_assign` to stop minting new A5
+rows at the same time, or it refills the same trap: 7 more today.
+
+I have not done it. It changes what 199 people receive, and whoever set
+`A5: 0` may have meant to wind sending down rather than redirect it. The SQL is
+one `update outreach.assignments set angle='A1' ... where` clause; say the word.
+
+### The bounce rate will cross 2% on its own
+
+**122 / 6,818 = 1.79%** over people contacted today, up from 1.63% on 11-04 and
+1.68% on 11-05. Still under the gate, and no angle near the 5% per-angle line,
+so nothing to pause. But the climb is mechanical rather than behavioural: each
+push week's rate settles around 2.0% to 2.1% once its bounces have registered
+(the 10-26 week read 1.22% on 11-04 and reads **2.04%** today), so the
+cumulative is converging on the number the mature cohorts already have. Expect
+2% within days from mail already sent.
+
+Where it concentrates, which is the only part that is actionable:
+
+| cut | n | bounce |
+| --- | --- | --- |
+| company domain | 5,547 | **2.00%** |
+| free provider (gmail, yahoo, …) | 1,085 | 0.92% |
+| role address (info@, office@, dispatch@ …) | 273 | **3.30%** |
+| person address | 6,359 | 1.76% |
+| A2 company domain | 2,168 | **2.44%** |
+| A4 company domain | 896 | 2.34% |
+| A1 company domain | 865 | 0.92% |
+
+A1 reaches firms with a contract running out, which are demonstrably operating.
+A2 and A4 match on NAICS and competitor awards, which reaches dormant SAM
+registrations. Dropping role addresses is free and worth about 0.07 points.
+Anything bigger means verifying addresses before the push, which is new work.
+
+### The rest
+
+Push A1 **37/37**, A2 7/125, A4 **3/55** (its first in days), A5 0/0 — 47 sent
+against a 217 cap. Jobs all 2xx, no retried attempt. Audit **196 / 0 / 0** over
+6,632 leads, the 196 still the same set Instantly listed on 11-04. Renders clean
+on all four campaigns; `sol_short` bare-number share 20.8%; 7 sends across 7
+distinct solicitations. A2 arms 1,319 speed / 1,326 base against a control
+frozen at 1,905. `eeb0871` still not deployed — no `failed_terminal` in today's
+push summaries.
+
+**Replies, two new.** `taylorforestry73@gmail.com` (Edward, A4): "Yes I'm
+interested in your service. We already have government BPA contracts but are
+always wanting to expand business." — the desk drafted at 18:44.
+`lhinesike@ibkgroup.com` (Louise, A1): "No thank you." — **suppressed**, person
+only, and she is the only row at that domain. `needs_human` **8**, `drafted`
+**40**. `lindakellyak@gmail.com` is still `needs_human` from 11-05; the promise
+there is a 3-minute video.
+
+**Proposal opens 0**, day eight, 25 handovers, no new sends since 10-30.
