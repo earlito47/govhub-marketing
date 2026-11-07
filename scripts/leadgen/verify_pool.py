@@ -14,6 +14,7 @@ false, so catch_all / unknown are held back by Instantly anyway.
   python verify_pool.py --csv universe_all.csv --out verified.csv            # all unverified
   python verify_pool.py --csv universe_all.csv --out verified.csv --limit 500  # a slice
   python verify_pool.py --csv universe_all.csv --out verified.csv --dry-run    # count only
+  python verify_pool.py --csv old_pool.csv --out old_verified.csv --recheck-since 2026-11-01
 
 Env: MV_API_KEY, SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY.
 """
@@ -43,16 +44,19 @@ def sb_headers(extra=None):
     return h
 
 
-def already_verified(ueis):
-    """UEIs whose prospect_pool row already carries an mv_result."""
+def already_verified(ueis, since=None):
+    """UEIs whose prospect_pool row already carries an mv_result (checked on or
+    after `since`, when given: a re-check counts an address as done only once
+    it has been re-verified, not because it carries an old verdict)."""
     url = os.environ["SUPABASE_URL"] + "/rest/v1/prospect_pool"
     done, ueis = set(), list(ueis)
     for i in range(0, len(ueis), 150):
         chunk = ",".join(ueis[i:i + 150])
         r = requests.get(url, headers=sb_headers(),
-                         params={"select": "uei,mv_result", "uei": f"in.({chunk})"}, timeout=60)
+                         params={"select": "uei,mv_result,updated_at", "uei": f"in.({chunk})"}, timeout=60)
         r.raise_for_status()
-        done |= {x["uei"] for x in r.json() if x.get("mv_result")}
+        done |= {x["uei"] for x in r.json()
+                 if x.get("mv_result") and (since is None or (x.get("updated_at") or "")[:10] >= since)}
     return done
 
 
@@ -92,12 +96,15 @@ def main():
     ap.add_argument("--limit", type=int, default=0)
     ap.add_argument("--workers", type=int, default=8)
     ap.add_argument("--dry-run", action="store_true")
+    ap.add_argument("--recheck-since", metavar="YYYY-MM-DD",
+                    help="re-verify addresses whose last verdict is older than this (verification goes stale: "
+                         "5.7%% of an ok list had gone bad 14 days later)")
     a = ap.parse_args()
 
     rows = list(csv.DictReader(open(a.csv)))
     rows.sort(key=lambda r: (-int(r.get("score") or 0), float(r.get("total_12mo") or 0)))
-    done = already_verified([r["uei"] for r in rows])
-    todo = [r for r in rows if r["uei"] not in done]
+    done = already_verified([r["uei"] for r in rows if r.get("uei")], a.recheck_since)
+    todo = [r for r in rows if r.get("uei") and r["uei"] not in done]
     if a.limit:
         todo = todo[:a.limit]
     log(f"{len(rows)} contacts, {len(done)} already verified, {len(todo)} to check")

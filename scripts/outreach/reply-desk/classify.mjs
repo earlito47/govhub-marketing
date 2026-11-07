@@ -43,6 +43,11 @@ const AUTO_SUBJECT = new RegExp([
 
 const BARE_NO = /^(no|nope|no thanks?( you)?|no,? thank you|not interested|not at this time|pass)[\s.!,]*$/i;
 const BARE_STOP = /^(stop|remove( me)?|unsubscribe|please remove( me)?|take me off( your list)?)[\s.!,]*$/i;
+// The B-line's only ask is 'reply "send"', so a bare send is a yes and is
+// decided here rather than left to a model. Only with no question in the
+// reply: "send, and what does it cost?" still goes to the model, which keeps
+// the question.
+const BARE_SEND = /^(yes[,!.]?\s*)?(please\s+)?send( it| them| me| those| that| the list| the next (3|three)( over)?)?( over| along)?( please)?[\s.!,]*$/i;
 
 /** The part of an inbound email the person typed: no quoted thread, no client footer. */
 export function freshText(email) {
@@ -68,6 +73,7 @@ export function ruleCategory(email, text = freshText(email)) {
   const first = text.split('\n').map((l) => l.trim()).find(Boolean) || '';
   if (BARE_STOP.test(first)) return 'unsubscribe';
   if (BARE_NO.test(first)) return 'not_interested';
+  if (BARE_SEND.test(first) && !text.includes('?')) return 'accept';
   return null;
 }
 
@@ -88,7 +94,7 @@ export async function classify({ email, offer }) {
   const rule = ruleCategory(email, text);
   if (rule) {
     return {
-      category: rule, accepted_offer: false, questions: [], wants_call: false,
+      category: rule, accepted_offer: rule === 'accept', questions: [], wants_call: false,
       referral_name: '', referral_email: '', tone: 'terse', summary: rule.replace('_', ' '), by: 'rule', text,
     };
   }

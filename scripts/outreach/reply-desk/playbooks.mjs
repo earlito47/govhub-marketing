@@ -21,6 +21,8 @@ export const CAMPAIGNS = {
   'c977a531-a8e5-47d3-b27b-5f8aacfab33b': 'A2',
   '39bc9fab-a9a7-4ed6-b34c-ccabeb9e76ee': 'A4',
   '9d7ca37a-cfba-4519-a9df-88d6ca0f448a': 'A5',
+  '52a9e8b7-57ee-4dab-94bd-6df8e7fe1cd6': 'B4',
+  '2785d257-92d3-47d9-8fb9-78e346c78db3': 'B2',
   '6f360a2e-4dee-4d75-8bd5-325162795616': 'C1',
   '1d2dc5a8-f7c1-4ac1-ac1a-3a382e185b4a': 'C2',
   'b2ee3665-fbee-4366-b2ee-d31cc0573e8e': 'C3',
@@ -105,6 +107,13 @@ export const PLAYBOOKS = {
       };
     },
   },
+
+  // B-line (GH-B4-CompetitorWon, GH-B2-MatchedRFP): the same promises as A4
+  // and A2's base arm, so the same builders. B4 leads carry competitor_name,
+  // competitor_city, award_amount_short and award_agency_short as extra
+  // variables (no template uses them) so A4's context line reads true.
+  get B4() { return { ...PLAYBOOKS.A4, name: 'Next three in your lane (B-line)' }; },
+  get B2() { return { ...PLAYBOOKS.A2, name: 'Matched solicitation (B-line)' }; },
 
   A5: {
     name: 'Debrief one-pager',

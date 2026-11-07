@@ -70,6 +70,12 @@ test('out of office subject -> auto_reply', () => assert.equal(ruleCategory(mail
 test('"Out of THE office" -> auto_reply', () => assert.equal(ruleCategory(mail('Out of the office Re: proposal workload', 'I am on vacation.')), 'auto_reply'));
 test('address change notice -> auto_reply', () => assert.equal(ruleCategory(mail('Re: Social Security Administration', 'Widescope is converting to a new Microsoft Platform and as a result my email account will now be Hayes.Fountain@widescope.com.')), 'auto_reply'));
 test('delegation notice -> auto_reply', () => assert.equal(ruleCategory(mail('Re: DoD', 'I am no longer involved in day-to-day operations at Lexset.')), 'auto_reply'));
+// B-line: 'reply "send"' is the only ask, so a bare send is a yes, decided by rule.
+test('bare "Send" -> accept', () => assert.equal(ruleCategory(mail('Re: next 3 in 238220', 'Send')), 'accept'));
+test('"Yes, send them over" -> accept', () => assert.equal(ruleCategory(mail('Re: VA bid', 'Yes, send them over.')), 'accept'));
+test('"Please send the list" -> accept', () => assert.equal(ruleCategory(mail('Re: VA bid', 'Please send the list')), 'accept'));
+test('"send" with a question goes to the model, keeping the question', () => assert.equal(ruleCategory(mail('Re: VA bid', 'Send. What does it cost?')), null));
+test('"Sending to my partner" is not an accept', () => assert.equal(ruleCategory(mail('Re: VA bid', 'Sending this to my partner')), null));
 test('challenge-response gate -> auto_reply', () => assert.equal(ruleCategory(mail('Please verify your email address to join my trusted email community', 'Click the link below.')), 'auto_reply'));
 test('bare "No" -> not_interested', () => assert.equal(ruleCategory(mail('Re: federal bids', 'No\nThanks,\nJohn')), 'not_interested'));
 test('"Stop" -> unsubscribe', () => assert.equal(ruleCategory(mail('Re: $408K', 'Stop')), 'unsubscribe'));
