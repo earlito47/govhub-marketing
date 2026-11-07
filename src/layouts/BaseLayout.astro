@@ -71,6 +71,13 @@ const META_PIXEL_ID = import.meta.env.PUBLIC_META_PIXEL_ID ?? '1782130059453495'
 // rolled back to its previous state and the tag ships here instead.
 const LINKEDIN_PARTNER_ID = import.meta.env.PUBLIC_LINKEDIN_PARTNER_ID ?? '9674602';
 
+// Google tag container issued by Google Ads (Google tag and Tag Manager are one
+// container now, so the ID is GTM- and the snippet carries no config line — the
+// Google Ads destination is configured inside the container). Same
+// hardcode-with-override rule as the IDs above. app.govhub.online loads the same
+// container from its index.html.
+const GOOGLE_TAG_ID = import.meta.env.PUBLIC_GOOGLE_TAG_ID ?? 'GTM-WZ4BBLKL';
+
 // Deliberately fails OPEN: analytics ships unless we positively identify a
 // non-production context. `astro dev` is excluded by PROD, and a Cloudflare
 // preview branch by name, which is what the old env-var gate achieved. If
@@ -158,6 +165,32 @@ const ANALYTICS_ENABLED =
           gtag('config', gaId);
         </script>
       </>
+    )}
+
+    {/* Google tag container (Google Ads). Google's install snippet is the
+        dataLayer/gtag stub + gtag('js') — both already run in the GA4 block
+        above, on the same dataLayer — plus gtm.js for the container, which is
+        all this adds. It is loaded from script rather than as a static tag so
+        it can carry the same gates as the Meta Pixel: the runtime dev-host
+        denylist (the build gate cannot see the main-branch *.pages.dev alias),
+        the /privacy/ opt-out and Global Privacy Control, because an ad tag is
+        "sharing" under California law.
+
+        It has to be on www, not only on the app: ads land here, and the Google
+        tag stores the ad click on .govhub.online, which is how a signup on
+        app.govhub.online gets credited to the click. */}
+    {ANALYTICS_ENABLED && (
+      <script is:inline define:vars={{ googleTagId: GOOGLE_TAG_ID }}>
+        var GTAG_DEV_HOST =
+          /^localhost$|^127\.|^\[?::1\]?$|\.local$|\.pages\.dev$|\.workers\.dev$|\.lovable\.app$/;
+        if (!GTAG_DEV_HOST.test(location.hostname) && !window.__ghOptOut && navigator.globalPrivacyControl !== true) {
+          window.dataLayer = window.dataLayer || [];
+          var gtmScript = document.createElement('script');
+          gtmScript.async = true;
+          gtmScript.src = 'https://www.googletagmanager.com/gtm.js?id=' + encodeURIComponent(googleTagId);
+          document.head.appendChild(gtmScript);
+        }
+      </script>
     )}
 
     {/* Meta Pixel. Same ANALYTICS_ENABLED gate as GA4, PLUS a runtime hostname
