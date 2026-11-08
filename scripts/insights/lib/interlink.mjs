@@ -61,6 +61,18 @@ const TITLE_VARIANTS = {
   ],
 };
 
+// Hand-picked titles for pages whose generated title ranked but drew no clicks.
+// Each still uses the live total and fiscal year, so a refresh keeps it
+// current. Chosen from the page's Search Console queries (2026-11-08):
+//   maximus-federal-services  7,248 impressions at 6.0, 1 click (Oct 10 to Nov 7)
+//     queries name the company plus "government contracts" / "federal services"
+//   palantir-technologies     2,272 impressions at 7.6, 3 clicks
+//     queries are "palantir contracts 2026" and award numbers ("12314426f0126")
+const TITLE_OVERRIDES = {
+  'vendor/maximus-federal-services': ({ t, fy }) => `Maximus Federal Services Contracts: ${t} by Agency (${fy})`,
+  'vendor/palantir-technologies': ({ t, fy }) => `Palantir Contracts ${String(fy).replace(/^FY/, '')}: ${t} in Federal Awards (${fy})`,
+};
+
 /**
  * De-templatized <title>. Same inputs the generator already has; the transform
  * derives `total$`/`fy` from the stored JSON so both produce identical output.
@@ -78,6 +90,8 @@ export function entityTitle({ pageType, slug, total$, fy, name = null }) {
     code: slug,
     abbr: AGENCY_ABBR[slug] ?? SET_ASIDES[slug]?.abbr ?? slug,
   };
+  const override = TITLE_OVERRIDES[`${pageType}/${slug}`];
+  if (override) return override(parts);
   return variants[hashIndex(slug, variants.length)](parts);
 }
 

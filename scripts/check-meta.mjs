@@ -10,6 +10,10 @@ const DIST = new URL('../dist', import.meta.url).pathname;
 
 const TITLE_FAIL = 70; // > this fails; 61–70 warns
 const TITLE_WARN = 60;
+// Bid pages (src/components/bids/BidPage.astro) put the solicitation number and
+// due date at the end of the title, after the name; Google matches the whole
+// title even where it shows about 60 characters. They are allowed the full 70.
+const BID_PAGE = /class="bid-status/;
 const DESC_FAIL = 170; // > this fails; 161–170 warns
 const DESC_WARN = 160;
 
@@ -44,7 +48,7 @@ for (const file of htmlFiles) {
   const problems = [];
   if (!title) problems.push(['FAIL', 'missing <title>']);
   else if (title.length > TITLE_FAIL) problems.push(['FAIL', `title ${title.length} chars (max ${TITLE_FAIL}): ${title}`]);
-  else if (title.length > TITLE_WARN) problems.push(['warn', `title ${title.length} chars (ideal ≤${TITLE_WARN}): ${title}`]);
+  else if (title.length > TITLE_WARN && !BID_PAGE.test(html)) problems.push(['warn', `title ${title.length} chars (ideal ≤${TITLE_WARN}): ${title}`]);
 
   if (!desc) problems.push(['FAIL', 'missing meta description']);
   else if (desc.length > DESC_FAIL) problems.push(['FAIL', `description ${desc.length} chars (max ${DESC_FAIL})`]);

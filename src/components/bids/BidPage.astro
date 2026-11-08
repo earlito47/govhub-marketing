@@ -36,7 +36,7 @@ interface Props {
 
 const { bid, index } = Astro.props;
 const place = placeName(bid.segment);
-const similar = similarBids(index, bid);
+const similar = similarBids(index, bid, 8);
 // The bids just before and after this one in its place's list, so every bid
 // page has links from the pages around it, not only from a hub page.
 const nearby = neighbourBids(index, bid).filter((b) => !similar.includes(b));
@@ -44,6 +44,11 @@ const hubs = bid.categories
   .map((c) => ({ c, path: bid.stateSlug && index.categoryStateHubs.has(`${c}/${bid.stateSlug}`) ? `/bids/${c}/${bid.stateSlug}/` : index.categoryHubs.has(c) ? `/bids/${c}/` : null }))
   .filter((h): h is { c: string; path: string } => !!h.path);
 const placeHub = index.stateHubs.has(bid.segment) ? `/bids/${bid.segment}/` : '/bids/';
+// The breadcrumb runs through the bid's main category in its state when that
+// hub exists: Home > Bids > Texas > Construction in Texas > this bid.
+const categoryCrumb = bid.categories[0] && bid.stateSlug && index.categoryStateHubs.has(`${bid.categories[0]}/${bid.stateSlug}`)
+  ? { name: `${categoryName(bid.categories[0])} in ${place}`, url: `/bids/${bid.categories[0]}/${bid.stateSlug}/` }
+  : null;
 
 const dueLong = bid.dueAt ? formatDue(bid.dueAt, bid.timeZone) : null;
 const dueShort = bid.dueAt ? formatShortDate(bid.dueAt, bid.timeZone) : null;
@@ -53,13 +58,10 @@ const dueShort = bid.dueAt ? formatShortDate(bid.dueAt, bid.timeZone) : null;
 const appPath = bid.closed ? '/v2/opportunities' : `/v2/opportunities?id=${bid.id}`;
 const toApp = (placement: string) => `${ctaHref(placement)}&next=${encodeURIComponent(appPath)}`;
 
-// <title>: the bid, then where. Kept to 60 characters (check-meta.mjs warns
-// past 60 and fails past 70).
-// Unique across all bid pages; see bidTitleTag() and markIndexable().
+// <title>: name, solicitation number, agency, due date; unique across all bid
+// pages. See titleTagFor() and markIndexable() in lib/bids/load.ts.
 const title = bidTitleTag(bid);
-// The breadcrumb's last crumb: the bid title cut to the same room.
-const room = 60 - ` | ${place} bid`.length;
-const shortTitle = bid.title.length > room ? `${bid.title.slice(0, room - 1).replace(/\s+\S*$/, '')}…` : bid.title;
+const shortTitle = bid.title.length > 48 ? `${bid.title.slice(0, 47).replace(/\s+\S*$/, '')}…` : bid.title;
 
 // Meta description: the summary, then the date that matters.
 const tail = dueShort ? ` ${bid.closed ? 'Closed' : 'Due'} ${dueShort}.` : '';
@@ -117,12 +119,20 @@ const unlocks = unlockList.length > 1 ? `${unlockList.slice(0, -1).join(', ')} a
       { name: 'Home', url: '/' },
       { name: 'Bids', url: '/bids/' },
       { name: place, url: placeHub },
+      ...(categoryCrumb ? [categoryCrumb] : []),
       { name: shortTitle, url: bid.path },
     ]}
   />
 
   <p class="eyebrow">{bid.level} bid · {place}</p>
   <h1>{bid.title}</h1>
+  {(bid.externalId || bid.agency) && (
+    <p class="ids">
+      {bid.externalId && <span>Solicitation <strong>{bid.externalId}</strong></span>}
+      {bid.externalId && bid.agency && <span aria-hidden="true"> · </span>}
+      {bid.agency && <span>{bid.agency}</span>}
+    </p>
+  )}
 
   <p class:list={['bid-status', { 'is-closed': bid.closed }]} data-bid-due={bid.dueAt ?? ''}>
     <span class="badge"><span class="when-open">Open</span><span class="when-closed">Closed</span></span>
@@ -144,11 +154,14 @@ const unlocks = unlockList.length > 1 ? `${unlockList.slice(0, -1).join(', ')} a
   </div>
 
   <div class="cta-row">
-    <a class="btn primary" href={toApp('bid_top')}>
-      <span class="when-open-inline">Start free trial to see full details</span><span class="when-closed-inline">Start free trial to see open bids like this</span>
+    <a class="btn primary" href={toApp(bid.closed ? 'bid_top' : 'bid_proposal')}>
+      <span class="when-open-inline">Start a proposal for this bid</span><span class="when-closed-inline">Start free trial to see open bids like this</span>
     </a>
     <a class="btn ghost" href={CALENDLY_URL} data-demo-cta="bid_top">Book a demo</a>
   </div>
+  <p class="cta-fine when-open-block">
+    14 days free, no card. After signup this bid opens in GovHub, one click from Analyze this RFP.
+  </p>
 
   <h2>Bid details</h2>
   <dl class="facts">
@@ -204,6 +217,11 @@ const unlocks = unlockList.length > 1 ? `${unlockList.slice(0, -1).join(', ')} a
           Start a free GovHub trial and new bids like this one land in your GovHub inbox with a plain-English summary, every
           detail and its documents. GovHub fills out the forms and drafts the response.
         </span>
+      </p>
+      <p class="free-vs-trial when-open-block">
+        <strong>Free on this page:</strong> GovHub's summary, the deadline, the set-aside and the NAICS code.
+        <strong> In GovHub:</strong> the full solicitation and its documents, Analyze this RFP, the forms filled out
+        from your company profile, and a drafted, scored proposal.
       </p>
       <div class="gate-actions">
         <a class="btn primary" href={toApp('bid_gate')}>
@@ -428,6 +446,26 @@ const unlocks = unlockList.length > 1 ? `${unlockList.slice(0, -1).join(', ')} a
   .when-closed-inline {
     display: none;
   }
+  /* Identifiers in plain text under the title: the solicitation number and
+     agency people search a bid by. */
+  .ids {
+    margin: -0.25rem 0 0.75rem;
+    color: var(--fg-muted);
+    font-size: 0.98rem;
+    overflow-wrap: anywhere;
+  }
+  .ids strong {
+    color: var(--fg);
+    font-weight: 600;
+  }
+  .cta-fine {
+    margin: 0.5rem 0 0;
+    font-size: 0.9rem;
+    color: var(--fg-muted);
+  }
+  .free-vs-trial {
+    font-size: 0.95rem;
+  }
 </style>
 
 <style is:global>
@@ -438,6 +476,10 @@ const unlocks = unlockList.length > 1 ? `${unlockList.slice(0, -1).join(', ')} a
     display: block;
   }
   .when-closed-block {
+    display: none;
+  }
+  html.bid-closed .bids .when-open-block,
+  .bids:has(.bid-status.is-closed) .when-open-block {
     display: none;
   }
   html.bid-closed .bids .when-open-inline,

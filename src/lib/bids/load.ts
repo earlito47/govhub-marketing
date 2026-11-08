@@ -87,12 +87,12 @@ export interface Bid {
   indexable: boolean;
   noindexReason: NoindexReason | null;
   /**
-   * Set when another bid's <title> would be the same (an identical title, or
-   * two long titles that read the same once cut to 60 characters), so the tag
-   * can tell them apart: "Circuit Card Assemb, Navy (N0010426QYAJS)" rather
-   * than 52 pages all titled "Circuit Card Assemb". See bidTitleTag().
+   * The page's <title>, unique across all bid pages (markIndexable). Carries
+   * what people search a bid by: its name, solicitation number, agency and due
+   * date (Search Console, 2026-11: queries like "darpa-ps-26-115" and names with
+   * a due date). See titleTagFor().
    */
-  titleQualifier: { agency: string | null; ref: string } | null;
+  titleTag: string;
 }
 
 /**
@@ -190,7 +190,7 @@ function baseSlug(row: BidRow, title: string): string {
 }
 
 // slug/path need the whole set (collisions); the index fields are set by markIndexable().
-function toBid(row: BidRow, now: number): Omit<Bid, 'slug' | 'path' | 'indexable' | 'noindexReason' | 'titleQualifier'> {
+function toBid(row: BidRow, now: number): Omit<Bid, 'slug' | 'path' | 'indexable' | 'noindexReason' | 'titleTag'> {
   const place = row.state ? PLACES[row.state.toUpperCase()] : undefined;
   const federal = row.source_tier === 'federal';
   const title = noEmDash(cleanTitle(row.title));
@@ -275,43 +275,47 @@ function agencyShort(b: Bid): string | null {
 }
 
 const clip = (s: string, n: number) => (s.length > n ? `${s.slice(0, n - 1).replace(/\s+\S*$/, '')}…` : s);
+const alnum = (s: string) => s.toLowerCase().replace(/[^a-z0-9]/g, '');
+
+/** The solicitation number, when it is short enough to title and not already in the name. */
+function titleRef(b: Bid): string | null {
+  const ref = b.externalId?.trim();
+  if (!ref || ref.length > 24 || alnum(b.title).includes(alnum(ref))) return null;
+  return ref;
+}
+
+// 70, not the site's usual 60: Google shows about 60 characters but matches the
+// whole title, and the solicitation number and due date at the end are what
+// people search a bid by. check-meta.mjs allows bid pages up to 70 without a
+// warning, and fails anything past 70.
+const TITLE_MAX = 70;
 
 /**
- * The bid's <title>, at most 60 characters (check-meta.mjs warns past 60 and
- * fails past 70): the title, then where. With a qualifier, the longest form
- * that fits of "title, agency (solicitation no.) | place bid".
+ * "Freedom 250 Reception and Fireworks (19JA7027Q0002), Army, Due Jan 12":
+ * name, solicitation number, agency, due date. The agency is dropped first
+ * when it does not fit, then the name is shortened; the number and the date
+ * are what people search a bid by, so they stay. `extra` breaks the rare tie
+ * between two bids that would otherwise share a title.
  */
+function titleTagFor(b: Bid, extra = ''): string {
+  const ref = titleRef(b);
+  const agency = agencyShort(b);
+  const date = b.dueAt ? `${b.closed ? 'Closed' : 'Due'} ${formatMonthDay(b.dueAt, b.timeZone)}` : null;
+  const tail = extra ? ` #${extra}` : '';
+  const fmt = (name: string, withAgency: boolean, withDate = true) =>
+    `${name}${ref ? ` (${ref})` : ''}${withAgency && agency ? `, ${agency}` : ''}${withDate && date ? `, ${date}` : ''}${tail}`;
+  for (const t of [fmt(b.title, true), fmt(b.title, false)]) if (t.length <= TITLE_MAX) return t;
+  const room = TITLE_MAX - fmt('', false).length;
+  if (room >= 18) return fmt(clip(b.title, room), false);
+  return fmt(clip(b.title, Math.max(12, TITLE_MAX - fmt('', false, false).length)), false, false);
+}
+
+/** The page's <title>; see titleTagFor() and markIndexable(). */
 export function bidTitleTag(b: Bid): string {
-  const suffix = ` | ${placeName(b.segment)} bid`;
-  const q = b.titleQualifier;
-  if (q) {
-    const found = [
-      q.agency && `${b.title}, ${q.agency} (${q.ref})${suffix}`,
-      `${b.title} (${q.ref})${suffix}`,
-      q.agency && `${b.title}, ${q.agency} (${q.ref})`,
-      `${b.title} (${q.ref})`,
-      `${clip(b.title, 60 - q.ref.length - 3)} (${q.ref})`,
-    ].find((t): t is string => !!t && t.length <= 60);
-    if (found) return found;
-  }
-  return `${clip(b.title, 60 - suffix.length)}${suffix}`;
+  return b.titleTag;
 }
 
-function qualify(b: Bid, extra = ''): void {
-  const ref = b.externalId?.trim() || (b.dueAt ? `due ${formatShortDate(b.dueAt, b.timeZone)}` : b.id.slice(0, 8));
-  b.titleQualifier = { agency: agencyShort(b), ref: extra ? `${ref} ${extra}` : ref };
-}
-
-function collisions(bids: Bid[]): Bid[][] {
-  const byTag = new Map<string, Bid[]>();
-  for (const b of bids) {
-    const k = bidTitleTag(b).toLowerCase();
-    (byTag.get(k) ?? byTag.set(k, []).get(k)!).push(b);
-  }
-  return [...byTag.values()].filter((g) => g.length > 1);
-}
-
-/** Sets indexable, noindexReason and titleQualifier on the pages being built. */
+/** Sets indexable, noindexReason and titleTag on the pages being built. */
 function markIndexable(bids: Bid[]): void {
   const count = new Map<string, number>();
   for (const b of bids) count.set(titleKey(b.title), (count.get(titleKey(b.title)) ?? 0) + 1);
@@ -325,13 +329,12 @@ function markIndexable(bids: Bid[]): void {
           ? 'short-summary'
           : null;
     b.indexable = b.noindexReason === null;
-    if (shared) qualify(b);
+    b.titleTag = titleTagFor(b);
   }
-  // Different titles that read the same once cut to fit: qualify those too
-  // (they stay indexable). Anything still tied after that, typically the same
-  // solicitation posted twice, gets the bid id as a last resort.
-  for (const group of collisions(bids)) for (const b of group) if (!b.titleQualifier) qualify(b);
-  for (const group of collisions(bids)) for (const b of group) qualify(b, b.id.slice(0, 6));
+  // Same name, number and date (a notice posted twice): the bid id breaks the tie.
+  const byTag = new Map<string, Bid[]>();
+  for (const b of bids) (byTag.get(b.titleTag.toLowerCase()) ?? byTag.set(b.titleTag.toLowerCase(), []).get(b.titleTag.toLowerCase())!).push(b);
+  for (const group of byTag.values()) if (group.length > 1) for (const b of group) b.titleTag = titleTagFor(b, b.id.slice(0, 6));
 }
 
 function byDue(a: Bid, b: Bid): number {
@@ -383,7 +386,7 @@ async function build(): Promise<BidIndex> {
     let slug = baseSlug(row, b.title);
     if (taken.has(`${b.segment}/${slug}`)) slug = `${slug}-${row.id.slice(0, 6)}`;
     taken.add(`${b.segment}/${slug}`);
-    return { ...b, slug, path: `/bids/${b.segment}/${slug}/`, indexable: true, noindexReason: null, titleQualifier: null };
+    return { ...b, slug, path: `/bids/${b.segment}/${slug}/`, indexable: true, noindexReason: null, titleTag: '' };
   });
   const open = all.filter((b) => !b.closed).sort(byDue);
   const closed = all.filter((b) => b.closed).sort((a, b) => Date.parse(b.dueAt ?? '0') - Date.parse(a.dueAt ?? '0'));
@@ -491,4 +494,14 @@ export function formatDue(iso: string, tz: string): string {
 /** "Nov 17, 2026". */
 export function formatShortDate(iso: string, tz = 'America/New_York'): string {
   return dateFmt(tz, false).format(new Date(iso));
+}
+
+/** "Nov 17", in the bid's own time zone. */
+export function formatMonthDay(iso: string, tz = 'America/New_York'): string {
+  return new Intl.DateTimeFormat('en-US', { timeZone: tz, month: 'short', day: 'numeric' }).format(new Date(iso));
+}
+
+/** "Nov 2026", for hub titles. */
+export function formatMonthYear(d: Date): string {
+  return new Intl.DateTimeFormat('en-US', { timeZone: 'America/New_York', month: 'short', year: 'numeric' }).format(d);
 }
