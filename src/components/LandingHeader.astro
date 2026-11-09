@@ -1,0 +1,41 @@
+---
+/**
+ * Header for paid-search landing pages (BaseLayout `landing`). The logo and one
+ * Pricing link, which jumps to the page's own #pricing section: the page has
+ * one job, so there is no site navigation to wander off into.
+ */
+---
+
+<header class="landing-header">
+  <div class="container bar">
+    <a href="/" class="brand" aria-label="GovHub home">
+      <img src="/brand/logos/govhub-logo-horizontal.svg" alt="GovHub" width="91" height="28" />
+    </a>
+    <a class="pricing-link" href="#pricing">Pricing</a>
+  </div>
+</header>
+
+<style>
+  .landing-header {
+    background: var(--bg-elevated);
+    border-bottom: 1px solid var(--border);
+  }
+  .bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 3.5rem;
+  }
+  .brand {
+    display: inline-flex;
+  }
+  .pricing-link {
+    font-weight: 600;
+    color: var(--fg);
+    text-decoration: none;
+    padding: 0.5rem 0.25rem;
+  }
+  .pricing-link:hover {
+    color: var(--accent);
+  }
+</style>

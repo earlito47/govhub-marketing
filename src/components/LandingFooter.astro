@@ -1,0 +1,43 @@
+---
+/**
+ * Footer for paid-search landing pages (BaseLayout `landing`): the legal and
+ * security links a visitor handing over an email should be able to reach, and
+ * nothing else.
+ */
+const year = new Date().getFullYear();
+---
+
+<footer class="landing-footer">
+  <div class="container row">
+    <span>&copy; {year} GovHub</span>
+    <nav aria-label="Legal">
+      <a href="/privacy/">Privacy</a>
+      <a href="/terms/">Terms</a>
+      <a href="/security/">Security</a>
+    </nav>
+  </div>
+</footer>
+
+<style>
+  .landing-footer {
+    border-top: 1px solid var(--border);
+    color: var(--fg-muted);
+    font-size: 0.9rem;
+  }
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 1.5rem;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+  }
+  nav {
+    display: flex;
+    gap: 1.25rem;
+  }
+  a {
+    color: var(--fg-muted);
+  }
+</style>

@@ -1,0 +1,447 @@
+---
+/**
+ * Paid-search landing page for the "GovHub Search Non-brand" campaign, ad
+ * groups A (core) and B (AI). Built to the GovHub Google Ads Playbook spec:
+ * one message, the trial form above the fold, plain language under 600 words,
+ * pricing on the page, no navigation beyond the logo and Pricing.
+ *
+ * noindex: this page exists for ad traffic. Its search phrase already has an
+ * organic home (the solutions pages), so it stays out of the index and the
+ * sitemap rather than competing with them.
+ *
+ * The form hands the email to app.govhub.online/signup in a 10-minute cookie
+ * on .govhub.online, never in the URL: GA4, the Meta Pixel and PostHog record
+ * page URLs, and an email there would be personal data sent to all three. The
+ * app's Signup page reads and deletes it. Without JavaScript the form still
+ * goes to the signup page, just without the email (the input has no name, so
+ * nothing lands in the query string).
+ */
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Icon from '../../components/Icon.astro';
+import { PLANS, TRIAL_DAYS, formatUsd } from '../../data/pricing';
+import { SIGNUP_URL, COOKIE_DOMAIN } from '../../config';
+
+// The Intelligence Brief's real sections, in the app's order
+// (strata-parse src/components/v2/IntelligenceBrief.tsx).
+const briefSections = [
+  { title: 'Summary', body: 'What the buyer wants, in plain English.' },
+  { title: 'Issuer, contact and key dates', body: 'Who to ask, and when everything is due.' },
+  { title: 'Disqualifiers and evaluation', body: 'What gets a bid thrown out, and how it is scored.' },
+  { title: 'Mandatory requirements', body: 'Every must-have in one list.' },
+  { title: 'Win themes', body: 'What to stress to stand out.' },
+  { title: 'Risks', body: 'What could go wrong, before you commit.' },
+  { title: 'Competitor assumptions', body: 'What to expect from other bidders.' },
+  { title: 'Strategy recommendation', body: 'A suggested approach for your bid.' },
+  { title: 'Questions to ask the issuer', body: 'Clarifications to send before the deadline.' },
+];
+
+const steps = [
+  { icon: 'doc-search', title: 'Upload the RFP', body: 'Add the solicitation files. Federal, state or local.' },
+  { icon: 'pickaxe', title: 'Get the brief', body: 'The Intelligence Brief, plus every requirement in a compliance matrix.' },
+  { icon: 'pen', title: 'Get a first draft', body: 'Written in your firm’s voice from your company profile and past work.' },
+  { icon: 'checklist', title: 'Check and submit', body: 'Scored against the evaluation criteria, forms filled, PDF exported.' },
+];
+---
+
+<BaseLayout
+  title="Government Proposal Software, 14-Day Free Trial | GovHub"
+  description="Government proposal software for small federal contractors. Upload the RFP, get the brief and a first draft. 14-day free trial, no credit card."
+  noindex="follow"
+  landing
+>
+  <main class="container">
+    <section class="hero">
+      <div class="copy">
+        <h1>Government proposal software for small federal contractors</h1>
+        <p class="lede">
+          Upload the RFP. Get the brief, the requirements and a first draft.
+          {TRIAL_DAYS}-day free trial, no credit card.
+        </p>
+      </div>
+
+      <div class="trial-card" id="trial">
+        <h2>Start your free trial</h2>
+        <form class="trial-form" action={SIGNUP_URL} method="get" novalidate>
+          <label for="trial-email">Work email</label>
+          <input
+            id="trial-email"
+            type="email"
+            required
+            autocomplete="email"
+            inputmode="email"
+            placeholder="you@company.com"
+          />
+          <button type="submit">Start free trial</button>
+          <p class="form-error" role="alert" hidden>Enter a valid email address.</p>
+        </form>
+        <p class="fine">{TRIAL_DAYS} days free. No credit card. No demo call.</p>
+        <p class="fine">Prefer Google? <a href={SIGNUP_URL}>Sign up with Google</a></p>
+      </div>
+
+      <ul class="checks">
+        <li><Icon name="shield-check" size={20} />Sign up and start today. No sales call.</li>
+        <li><Icon name="shield-check" size={20} />From {formatUsd(PLANS[0].monthlyUsd)} a month. Cancel anytime.</li>
+        <li><Icon name="shield-check" size={20} />Built for government bids, not sales RFPs.</li>
+      </ul>
+    </section>
+
+    <section class="block">
+      <h2>What you get from every RFP</h2>
+      <p class="section-lede">
+        Each solicitation you upload becomes an Intelligence Brief. It covers:
+      </p>
+      <div class="brief">
+        <p class="brief-title"><Icon name="doc-search" size={20} />Intelligence Brief</p>
+        <ol class="brief-sections">
+          {briefSections.map((s) => (
+            <li>
+              <span class="brief-name">{s.title}</span>
+              <span class="brief-body">{s.body}</span>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </section>
+
+    <section class="block">
+      <h2>How it works</h2>
+      <ol class="steps">
+        {steps.map((s, i) => (
+          <li class="step">
+            <span class="step-head">
+              <span class="num">{i + 1}</span>
+              <span class="step-title">{s.title}</span>
+              <Icon name={s.icon} size={22} class="step-icon" />
+            </span>
+            <span class="step-body">{s.body}</span>
+          </li>
+        ))}
+      </ol>
+    </section>
+
+    <section class="block" id="pricing">
+      <h2>Simple monthly pricing</h2>
+      <p class="section-lede">
+        Start with a {TRIAL_DAYS}-day free trial. Pick a plan when you are ready.
+      </p>
+      <div class="plans">
+        {PLANS.map((p) => (
+          <div class:list={['plan', { featured: p.id === 'solo' }]}>
+            {p.id === 'solo' && <span class="tag">Start here</span>}
+            <h3>{p.name}</h3>
+            <p class="price"><strong>{formatUsd(p.monthlyUsd)}</strong> / month</p>
+            <p class="plan-desc">{p.description}</p>
+            <ul>
+              {p.features.map((f) => <li>{f}</li>)}
+            </ul>
+            <a class="plan-cta" href="#trial">Start free trial</a>
+          </div>
+        ))}
+      </div>
+      <p class="fine center">Pay yearly and get two months free.</p>
+    </section>
+
+    <section class="block closing">
+      <h2>Try it on your next RFP</h2>
+      <p>{TRIAL_DAYS} days free. No credit card.</p>
+      <a class="button" href="#trial">Start free trial</a>
+    </section>
+  </main>
+
+  <script is:inline define:vars={{ signupUrl: SIGNUP_URL, cookieDomain: COOKIE_DOMAIN }}>
+    (function () {
+      var form = document.querySelector('.trial-form');
+      if (!form) return;
+      var input = form.querySelector('#trial-email');
+      var error = form.querySelector('.form-error');
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var email = (input.value || '').trim();
+        if (!email || !input.checkValidity()) {
+          error.hidden = false;
+          input.setAttribute('aria-invalid', 'true');
+          input.focus();
+          return;
+        }
+        error.hidden = true;
+        input.removeAttribute('aria-invalid');
+        /* Read and deleted by app.govhub.online/signup. Off govhub.online (a
+           preview host) the browser refuses the Domain and nothing is set,
+           which only means no prefill there. */
+        document.cookie =
+          'gh_signup_email=' + encodeURIComponent(email) +
+          '; Domain=' + cookieDomain + '; Path=/; Max-Age=600; SameSite=Lax' +
+          (location.protocol === 'https:' ? '; Secure' : '');
+        var gh = window.gh;
+        var url = gh && typeof gh.decorate === 'function' ? gh.decorate(signupUrl) : signupUrl;
+        if (gh && typeof gh.track === 'function') {
+          gh.track('trial_cta_click', { cta: 'ads_landing_form', page_path: location.pathname });
+        }
+        location.href = url;
+      });
+    })();
+  </script>
+</BaseLayout>
+
+<style>
+  main {
+    padding: 0 1.5rem 2rem;
+  }
+  .hero {
+    display: grid;
+    gap: 1.5rem 3rem;
+    grid-template-columns: 1fr;
+    grid-template-areas: 'copy' 'form' 'checks';
+    padding: 2rem 0 1rem;
+  }
+  @media (min-width: 56rem) {
+    .hero {
+      grid-template-columns: 1.25fr 1fr;
+      grid-template-areas: 'copy form' 'checks form';
+      align-items: start;
+      padding-top: 3.5rem;
+    }
+  }
+  .copy {
+    grid-area: copy;
+  }
+  .copy h1 {
+    margin: 0 0 0.75rem;
+    font-size: clamp(1.9rem, 4.5vw, 2.9rem);
+    line-height: 1.1;
+  }
+  .lede {
+    font-size: 1.15rem;
+    color: var(--fg-muted);
+    margin: 0;
+    max-width: 34rem;
+  }
+  .trial-card {
+    grid-area: form;
+    background: var(--bg-elevated);
+    border: 1.5px solid var(--border);
+    border-radius: var(--gh-radius-md);
+    box-shadow: var(--shadow);
+    padding: 1.5rem;
+    scroll-margin-top: 1rem;
+  }
+  .trial-card h2 {
+    margin: 0 0 1rem;
+    font-size: 1.35rem;
+  }
+  .trial-form {
+    display: grid;
+    gap: 0.6rem;
+  }
+  .trial-form label {
+    font-weight: 600;
+  }
+  .trial-form input {
+    font: inherit;
+    font-size: 1rem;
+    padding: 0.8rem 0.9rem;
+    border: 1.5px solid var(--border);
+    border-radius: var(--gh-radius-sm, 8px);
+    background: var(--bg);
+    color: var(--fg);
+  }
+  .trial-form input[aria-invalid='true'] {
+    border-color: var(--accent);
+  }
+  .trial-form button,
+  .button,
+  .plan-cta {
+    display: inline-block;
+    font: inherit;
+    font-weight: 700;
+    font-size: 1.05rem;
+    text-align: center;
+    padding: 0.85rem 1.25rem;
+    border: 0;
+    border-radius: var(--gh-radius-sm, 8px);
+    background: var(--accent);
+    color: #fff;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .trial-form button:hover,
+  .button:hover,
+  .plan-cta:hover {
+    background: var(--accent-hover);
+    text-decoration: none;
+  }
+  .form-error {
+    margin: 0;
+    color: var(--accent);
+    font-size: 0.9rem;
+  }
+  .fine {
+    margin: 0.75rem 0 0;
+    font-size: 0.9rem;
+    color: var(--fg-muted);
+  }
+  .center {
+    text-align: center;
+  }
+  .checks {
+    grid-area: checks;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 0.6rem;
+  }
+  .checks li {
+    display: flex;
+    gap: 0.6rem;
+    align-items: center;
+  }
+  .checks :global(.gh-icon) {
+    color: var(--gh-navy-600);
+  }
+  .block {
+    margin: 3.5rem 0;
+    scroll-margin-top: 1rem;
+  }
+  .block > h2 {
+    margin: 0 0 0.5rem;
+  }
+  .section-lede {
+    color: var(--fg-muted);
+    max-width: 40rem;
+    margin: 0 0 1rem;
+    font-size: 1.05rem;
+  }
+  .brief {
+    background: var(--bg-elevated);
+    border: 1.5px solid var(--border);
+    border-radius: var(--gh-radius-md);
+    box-shadow: var(--shadow);
+    padding: 1.25rem 1.5rem;
+    max-width: 46rem;
+  }
+  .brief-title {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    margin: 0 0 0.75rem;
+    font-weight: 700;
+    font-size: 1.1rem;
+  }
+  .brief-sections {
+    margin: 0;
+    padding-left: 1.4rem;
+    display: grid;
+    gap: 0.55rem;
+  }
+  .brief-name {
+    font-weight: 600;
+  }
+  .brief-name::after {
+    content: ': ';
+  }
+  .brief-body {
+    color: var(--fg-muted);
+  }
+  .steps {
+    list-style: none;
+    padding: 0;
+    margin: 1.25rem 0 0;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+  }
+  .step {
+    display: flex;
+    flex-direction: column;
+    background: var(--bg-elevated);
+    border: 1.5px solid var(--border);
+    border-radius: var(--gh-radius-md);
+    padding: 1.1rem 1.25rem;
+    box-shadow: var(--shadow);
+  }
+  .step-head {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    margin-bottom: 0.45rem;
+  }
+  .step-head :global(.step-icon) {
+    margin-left: auto;
+  }
+  .num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background: var(--gh-navy-600);
+    color: #fff;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  .step-title {
+    font-weight: 700;
+  }
+  .step-body {
+    color: var(--fg-muted);
+  }
+  .plans {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+    margin-top: 1.25rem;
+  }
+  .plan {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background: var(--bg-elevated);
+    border: 1.5px solid var(--border);
+    border-radius: var(--gh-radius-md);
+    padding: 1.25rem 1.25rem 1.5rem;
+    box-shadow: var(--shadow);
+  }
+  .plan.featured {
+    border: 2px solid var(--accent);
+  }
+  .tag {
+    position: absolute;
+    top: -0.75rem;
+    left: 1.25rem;
+    background: var(--accent);
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 0.15rem 0.6rem;
+    border-radius: 999px;
+  }
+  .plan h3 {
+    margin: 0 0 0.25rem;
+  }
+  .price {
+    margin: 0 0 0.5rem;
+  }
+  .price strong {
+    font-size: 1.9rem;
+  }
+  .plan-desc {
+    color: var(--fg-muted);
+    margin: 0 0 0.75rem;
+  }
+  .plan ul {
+    margin: 0 0 1.25rem;
+    padding-left: 1.2rem;
+    display: grid;
+    gap: 0.3rem;
+    flex: 1;
+  }
+  .closing {
+    text-align: center;
+  }
+  .closing p {
+    color: var(--fg-muted);
+    margin: 0 0 1rem;
+  }
+</style>
