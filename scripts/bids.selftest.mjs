@@ -8,6 +8,7 @@
 import { cleanTitle, noEmDash, slugify } from '../src/lib/bids/text.ts';
 import { CATEGORIES, categorize } from '../src/lib/bids/categories.ts';
 import { bidDocuments, classifyDocument, cleanDocumentName } from '../src/lib/bids/documents.ts';
+import { dlaOffice, nsnOf, setAsideShort } from '../src/lib/bids/dla.ts';
 
 let pass = 0;
 const fails = [];
@@ -69,6 +70,19 @@ eq(tagOf('1.06 QASP_Microchip IDIQ.pdf'), { tag: null, form: false }, 'a quality
 eq(tagOf('RPP_Scanner Ultrasonic Ocular_17Oct26 Ammendment 1.pdf'), { tag: 'Amendment', form: false }, 'misspelt amendment');
 eq(tagOf('22794379-USAC_FCC_FORM_470_APPLICATION_270000738_CERTIFIED.pdf'), { tag: null, form: false }, 'an E-Rate FCC Form 470 is the applicant\'s, not a vendor form');
 eq(bidDocuments(['A.pdf%', 'Wage%20Determination.pdf', 'wage determination.pdf', '']).map((d) => d.name), ['A.pdf%', 'Wage Determination.pdf'], 'decoded duplicates and empty names go');
+
+// ── DLA parts page ───────────────────────────────────────────────────────
+eq(nsnOf('The Defense Logistics Agency seeks three cowling units, NSN 1560004897584, for delivery.'), '1560-00-489-7584', 'a 13-digit NSN in the summary is formatted 4-2-3-4');
+eq(nsnOf('1630-01-087-0430 (27-R-A942)', 'no NSN here'), '1630-01-087-0430', 'an NSN as the title');
+eq(nsnOf('Solicitation SPE7M127Q0182, phone 804-279-3765.'), null, 'a solicitation or phone number is not an NSN');
+eq(dlaOffice('Dept of Defense / Defense Logistics Agency / DLA Aviation at Philadelphia, PA / DLA Aviation'), 'DLA Aviation', 'aviation sites group under DLA Aviation');
+eq(dlaOffice('Dept of Defense / Defense Logistics Agency / Troop Support Construction & Equipment / DLA Troop Support'), 'DLA Troop Support', 'troop support divisions group');
+eq(dlaOffice('Dept of Defense / Defense Logistics Agency / DLA Land and Maritime / x'), 'DLA Land and Maritime', 'land and maritime is not land or maritime');
+eq(dlaOffice('Dept of Defense / Defense Logistics Agency / SPRMM1 DLA Mechanicsburg / x'), 'Other DLA offices', 'unknown offices are grouped');
+eq(setAsideShort('Small Business Set Aside - Total'), 'Small business', 'total small business');
+eq(setAsideShort('Service-Disabled Veteran-Owned Small Business (SDVOSB) Set-Aside (FAR 19.14)'), 'SDVOSB', 'SDVOSB before small business');
+eq(setAsideShort('May be set aside for small businesses'), '', '"may be" is not a set-aside');
+eq(setAsideShort('No Set aside used'), '', 'none');
 
 if (fails.length) {
   console.error(`bids selftest: ${fails.length} failed, ${pass} passed\n  - ${fails.join('\n  - ')}`);

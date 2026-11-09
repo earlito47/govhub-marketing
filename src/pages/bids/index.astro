@@ -4,13 +4,15 @@ import BidsLayout from '../../components/bids/BidsLayout.astro';
 import BidList from '../../components/bids/BidList.astro';
 import Breadcrumbs from '../../components/seo/Breadcrumbs.astro';
 import CTABand from '../../components/CTABand.astro';
-import { FEDERAL_SEGMENT, formatShortDate, getBidIndex, placeName } from '../../lib/bids/load';
+import { DLA_SEGMENT, FEDERAL_SEGMENT, formatShortDate, getBidIndex, placeName } from '../../lib/bids/load';
 import { CATEGORIES } from '../../lib/bids/categories';
 import { CALENDLY_URL, ctaHref } from '../../config';
 
 const index = await getBidIndex();
 const open = index.bids.filter((b) => !b.closed);
-const federal = open.filter((b) => b.federal).length;
+// Counts are every open listing GovHub tracks, including the DLA parts buys
+// (one page for all of them) and any held-back bid over the page cap.
+const { all: openAll, federal } = index.openTotals;
 const checked = formatShortDate(index.builtAt.toISOString());
 const now = index.builtAt.getTime();
 const soon = open
@@ -37,13 +39,13 @@ const categories = CATEGORIES.filter((c) => index.categoryHubs.has(c.slug)).map(
 }));
 
 const lede =
-  `${open.length.toLocaleString('en-US')} open government bids: ${federal.toLocaleString('en-US')} federal and ` +
-  `${(open.length - federal).toLocaleString('en-US')} state and local, from ${index.sourceCount.toLocaleString('en-US')} official sources. Updated ${checked}.`;
+  `${openAll.toLocaleString('en-US')} open government bids: ${federal.toLocaleString('en-US')} federal and ` +
+  `${(openAll - federal).toLocaleString('en-US')} state and local, from ${index.sourceCount.toLocaleString('en-US')} official sources. Updated ${checked}.`;
 ---
 
 <BidsLayout
   title="Government Bids by State and Category | GovHub"
-  description={`Browse ${open.length.toLocaleString('en-US')} open federal, state and local government bids by state and category, each with a plain-English summary and its deadline. Updated ${checked}.`}
+  description={`Browse ${openAll.toLocaleString('en-US')} open federal, state and local government bids by state and category, each with a plain-English summary and its deadline. Updated ${checked}.`}
 >
   <Breadcrumbs items={[{ name: 'Home', url: '/' }, { name: 'Bids', url: '/bids/' }]} />
   <p class="eyebrow">Open government bids</p>
@@ -57,6 +59,9 @@ const lede =
     ))}
     {federalHub && (
       <li><a href={federalHub.path}>Federal, no location listed<span class="count">{federalHub.open.length}</span></a></li>
+    )}
+    {index.dlaParts.length > 0 && (
+      <li><a href={`/bids/${DLA_SEGMENT}/`}>DLA parts buys<span class="count">{index.dlaParts.length}</span></a></li>
     )}
   </ul>
 

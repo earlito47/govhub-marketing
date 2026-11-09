@@ -1,0 +1,260 @@
+---
+// /bids/dla-parts/: every open Defense Logistics Agency parts buy on one page.
+//
+// DLA posts thousands of small spare-parts buys ("Cowling", "Filter, Fluid"),
+// near-identical one-line notices that get no page each (NoindexReason
+// 'dla-parts' in lib/bids/load.ts: as single pages they are the scaled content
+// Google's policy describes, and they took 4,280 of the 14,000 page slots on
+// 2026-11-09). Together they are a useful, indexable list for parts suppliers
+// who search by NSN or solicitation number: part, NSN, solicitation (linked to
+// the official notice), DLA office, set-aside and due date, soonest first.
+//
+// One page, by request. About 4,300 rows: the markup is kept lean (global
+// styles, so no per-element scoping attributes) and the filter box is a few
+// lines of inline script.
+import BidsLayout from '../../components/bids/BidsLayout.astro';
+import Breadcrumbs from '../../components/seo/Breadcrumbs.astro';
+import CTABand from '../../components/CTABand.astro';
+import { DLA_SEGMENT, formatMonthYear, formatShortDate, getBidIndex } from '../../lib/bids/load';
+import { dlaOffice, nsnOf, setAsideShort } from '../../lib/bids/dla';
+import { CALENDLY_URL, ctaHref } from '../../config';
+
+const index = await getBidIndex();
+const parts = index.dlaParts.map((b) => ({
+  part: b.title,
+  nsn: nsnOf(b.rawTitle, b.summary),
+  // A few "solicitation numbers" are file-like strings
+  // ("Annual_Review_SPE4A1_21G0011_21G0021_..."); shortened for the table, the
+  // link still opens the notice.
+  ref: b.externalId && b.externalId.length > 22 ? `${b.externalId.slice(0, 21)}…` : b.externalId,
+  url: b.url,
+  office: dlaOffice(b.agency),
+  aside: setAsideShort(b.setAside),
+  due: b.dueAt ? formatShortDate(b.dueAt, b.timeZone) : 'Not listed',
+}));
+const n = parts.length;
+const nText = n.toLocaleString('en-US');
+const checked = formatShortDate(index.builtAt.toISOString());
+const month = formatMonthYear(index.builtAt);
+const withNsn = parts.filter((p) => p.nsn).length;
+const setAside = parts.filter((p) => p.aside).length;
+
+const offices = [...parts.reduce((m, p) => m.set(p.office, (m.get(p.office) ?? 0) + 1), new Map<string, number>())]
+  .sort((a, b) => b[1] - a[1]);
+
+const title = `DLA Parts Solicitations: ${nText} Open Buys (${month})`;
+const description = `${nText} open Defense Logistics Agency parts solicitations, soonest deadline first, with NSN, solicitation number, set-aside and DLA office. Updated ${checked}.`;
+---
+
+<BidsLayout title={title} description={description}>
+  <div class="dla-page">
+    <Breadcrumbs
+      items={[
+        { name: 'Home', url: '/' },
+        { name: 'Bids', url: '/bids/' },
+        { name: 'DLA parts solicitations', url: `/bids/${DLA_SEGMENT}/` },
+      ]}
+    />
+    <p class="eyebrow">Open federal bids</p>
+    <h1>Open DLA parts solicitations</h1>
+    <p class="lede">
+      {nText} open spare-parts solicitations from the Defense Logistics Agency, soonest deadline first. DLA buys most of
+      these through its Internet Bid Board System (DIBBS), where suppliers submit quotes. {withNsn.toLocaleString('en-US')}
+      name the part's National Stock Number (NSN), and {setAside.toLocaleString('en-US')} are set aside for small
+      businesses. Checked {checked}.
+    </p>
+
+    <ul class="chip-list">
+      {offices.map(([office, count]) => (
+        <li><span class="chip">{office}<span class="count">{count.toLocaleString('en-US')}</span></span></li>
+      ))}
+    </ul>
+
+    <div class="dla-filter">
+      <label for="dla-q">Find a part, NSN or solicitation number</label>
+      <input id="dla-q" type="search" autocomplete="off" placeholder="e.g. filter, 5330, SPE7M1" />
+      <p id="dla-shown" aria-live="polite">Showing all {nText}.</p>
+    </div>
+
+    <div class="dla-table">
+      <table>
+        <caption>Open DLA parts solicitations, soonest deadline first. Solicitation numbers link to the notice on SAM.gov.</caption>
+        <thead>
+          <tr><th scope="col">Part</th><th scope="col">NSN</th><th scope="col">Solicitation</th><th scope="col">Office</th><th scope="col">Set-aside</th><th scope="col">Due</th></tr>
+        </thead>
+        <tbody id="dla-rows">
+          {parts.map((p) => (
+            <tr><td class="p">{p.part}</td><td class="n">{p.nsn ?? ''}</td><td class="s">{p.url ? <a href={p.url} rel="nofollow">{p.ref ?? 'Notice'}</a> : (p.ref ?? '')}</td><td class="o">{p.office}</td><td class="a">{p.aside}</td><td class="d">{p.due}</td></tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+
+    <CTABand
+      heading="Get new DLA buys for your parts in one inbox"
+      sub="Save a search in GovHub by keyword, NAICS code or set-aside, and new matching federal, state and local bids land in your GovHub inbox every morning with a plain-English summary and the deadline."
+      primaryHref={`${ctaHref('bids_dla')}&next=${encodeURIComponent('/v2/opportunities')}`}
+      secondaryHref={CALENDLY_URL}
+      secondaryLabel="Book a demo"
+    />
+
+    <p class="updated-line">
+      Listings from SAM.gov, checked {checked}. Part names are DLA's own short nomenclature. Confirm every detail on the
+      official notice before you quote.
+    </p>
+  </div>
+</BidsLayout>
+
+<script is:inline>
+  (function () {
+    var q = document.getElementById('dla-q');
+    var rows = document.getElementById('dla-rows');
+    var shown = document.getElementById('dla-shown');
+    if (!q || !rows || !shown) return;
+    var all = rows.children;
+    var total = all.length;
+    var t;
+    q.addEventListener('input', function () {
+      clearTimeout(t);
+      t = setTimeout(function () {
+        var s = q.value.trim().toLowerCase().replace(/-/g, '');
+        var n = 0;
+        for (var i = 0; i < total; i++) {
+          var hit = !s || all[i].textContent.toLowerCase().replace(/-/g, '').indexOf(s) !== -1;
+          all[i].hidden = !hit;
+          if (hit) n++;
+        }
+        shown.textContent = s ? 'Showing ' + n.toLocaleString('en-US') + ' of ' + total.toLocaleString('en-US') + '.' : 'Showing all ' + total.toLocaleString('en-US') + '.';
+      }, 120);
+    });
+  })();
+</script>
+
+<style is:global>
+  .dla-page .chip {
+    display: inline-block;
+    padding: 0.3rem 0.75rem;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: var(--bg-elevated);
+    font-size: 0.92rem;
+  }
+  .dla-filter {
+    margin: 1.25rem 0 0.5rem;
+    max-width: 30rem;
+  }
+  .dla-filter label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.35rem;
+  }
+  .dla-filter input {
+    width: 100%;
+    padding: 0.55rem 0.75rem;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: var(--bg-elevated);
+    color: var(--fg);
+    font: inherit;
+  }
+  #dla-shown {
+    margin: 0.35rem 0 0;
+    font-size: 0.85rem;
+    color: var(--fg-muted);
+  }
+  .dla-table {
+    margin-top: 0.75rem;
+    overflow-x: auto;
+  }
+  .dla-table .p {
+    overflow-wrap: anywhere;
+    min-width: 12rem;
+  }
+  .dla-table table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.92rem;
+  }
+  .dla-table caption {
+    text-align: left;
+    color: var(--fg-muted);
+    font-size: 0.85rem;
+    padding-bottom: 0.5rem;
+  }
+  .dla-table th,
+  .dla-table td {
+    text-align: left;
+    padding: 0.45rem 0.75rem 0.45rem 0;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  .dla-table th {
+    font-weight: 600;
+    font-size: 0.82rem;
+    color: var(--fg-muted);
+  }
+  .dla-table .n,
+  .dla-table .d,
+  .dla-table .o,
+  .dla-table .a {
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+  }
+  .dla-table .s {
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+  }
+  /* Phones: each buy becomes a card: the part on its own line, the rest below. */
+  @media (max-width: 720px) {
+    .dla-table table,
+    .dla-table tbody,
+    .dla-table caption {
+      display: block;
+      width: 100%;
+    }
+    .dla-table thead {
+      display: none;
+    }
+    .dla-table tr {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 0.15rem 0.75rem;
+      padding: 0.55rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .dla-table tr[hidden] {
+      display: none;
+    }
+    .dla-table td {
+      border: 0;
+      padding: 0;
+    }
+    .dla-table .p {
+      flex-basis: 100%;
+      min-width: 0;
+      font-weight: 600;
+    }
+    .dla-table .d {
+      margin-left: auto;
+    }
+    .dla-table .s {
+      white-space: normal;
+      overflow-wrap: anywhere;
+      min-width: 0;
+    }
+    .dla-table .n,
+    .dla-table .o,
+    .dla-table .a {
+      font-size: 0.85rem;
+      color: var(--fg-muted);
+    }
+    .dla-table .n:empty,
+    .dla-table .a:empty {
+      display: none;
+    }
+    .dla-table .n::before {
+      content: 'NSN ';
+    }
+  }
+</style>

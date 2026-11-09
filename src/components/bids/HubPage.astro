@@ -10,7 +10,7 @@ import Breadcrumbs from '../seo/Breadcrumbs.astro';
 import CTABand from '../CTABand.astro';
 import Pager from './Pager.astro';
 import type { BidIndex, Hub } from '../../lib/bids/load';
-import { FEDERAL_SEGMENT, HUB_PAGE_SIZE, INSIGHTS_STATE_SLUGS, PLACE_BY_SLUG, categoryName, categoryPhrase, formatMonthDay, formatMonthYear, formatShortDate, hubOverflowPages, placeName } from '../../lib/bids/load';
+import { DLA_SEGMENT, FEDERAL_SEGMENT, HUB_PAGE_SIZE, INSIGHTS_STATE_SLUGS, PLACE_BY_SLUG, categoryName, categoryPhrase, formatMonthDay, formatMonthYear, formatShortDate, hubOverflowPages, placeName } from '../../lib/bids/load';
 import { CATEGORIES } from '../../lib/bids/categories';
 import { CALENDLY_URL, ctaHref } from '../../config';
 
@@ -119,6 +119,12 @@ const placeLinks = category
       .sort((a, b) => b.count - a.count)
   : [];
 
+// DLA parts buys have no page each; they are all on /bids/dla-parts/. Point to
+// it from the federal hub and from any category those buys fall in.
+const dlaHere = !place || place === FEDERAL_SEGMENT
+  ? index.dlaParts.filter((b) => (category ? b.categories.includes(category) : true)).length
+  : 0;
+
 const crumbs = [
   { name: 'Home', url: '/' },
   { name: 'Bids', url: '/bids/' },
@@ -132,6 +138,13 @@ const crumbs = [
   <p class="eyebrow">Open government bids</p>
   <h1>{h1}</h1>
   <p class="lede">{lede}</p>
+  {dlaHere > 0 && (
+    <p class="dla-note">
+      Defense Logistics Agency spare-parts buys are listed together on one page:{' '}
+      <a href={`/bids/${DLA_SEGMENT}/`}>{dlaHere.toLocaleString('en-US')} open DLA parts solicitations</a>, with NSNs and
+      solicitation numbers.
+    </p>
+  )}
 
   <BidList
     bids={open.slice(0, MAX_ROWS)}
@@ -205,6 +218,13 @@ const crumbs = [
 </BidsLayout>
 
 <style>
+  .dla-note {
+    border-left: 3px solid var(--border);
+    padding: 0.5rem 0.9rem;
+    margin: 0.75rem 0 0;
+    max-width: 46rem;
+    color: var(--fg-muted);
+  }
   .agency-list {
     columns: 2 18rem;
     padding-left: 1.1rem;

@@ -5,18 +5,43 @@ pages launched ([seo-traffic-check-2026-11-07.md](seo-traffic-check-2026-11-07.m
 This records what was built, what is the owner's to do (saved for later, as asked),
 and what needs app work first. Judge results over 3 to 4 weeks, not days.
 
-## Owner's items, saved for later
+## Owner's items (done 2026-11-09)
 
-- [ ] **GA4: mark trial signup as a key event.** Admin, then Events, then mark the
-  signup event as key. GA4 recorded zero key events Oct 24 to Nov 7; until this is
-  on, `user_profiles` in Supabase is the only record of which pages produce trials.
-- [ ] **Search Console: submit `sitemap-index.xml`** and confirm it reads without
-  errors. It now holds the 52 overflow bid pages (`/bids/{place}/page/{n}/`).
-- [ ] **Cloudflare Crawler Hints** (optional): Caching, then Configuration, then
-  Crawler Hints. The site already submits every sitemap URL to IndexNow on each
-  deploy, and the daily rebuild brings in new bids, so this only adds speed.
-- [ ] **Weekly check:** add "Crawled, currently not indexed" from Search Console's
-  Pages report to the weekly pull.
+- [x] **GA4: mark trial signup as a key event.** `signup_completed` (fires for email
+  and Google signups) is a key event since 2026-11-09. `sign_up` is email-only and
+  stays unmarked, so email trials are not counted twice. Do not import it into
+  Google Ads: the app sends Ads its own "Trial started" conversion.
+- [x] **Search Console: resubmit `sitemap-index.xml`.** Read 2026-11-09 05:47 UTC,
+  0 errors.
+- [x] **Cloudflare Crawler Hints** turned on.
+- [x] **Weekly check:** Indexing, Pages, filter "All submitted pages"; note Indexed,
+  "Crawled - currently not indexed" and "Discovered - currently not indexed".
+
+## Indexing check, 2026-11-09
+
+Search Console's Pages report showed 7,052 "Discovered - currently not indexed",
+58 "Crawled - currently not indexed", 43 "Not found (404)" and 9 "noindex".
+
+- **"Discovered" is the crawl queue, not a rejection.** URL Inspection on 270 pages:
+  bid pages 17% indexed, 36% discovered, 46% not yet known to Google; state and
+  category hubs 25 of 25 indexed; Insights 21 of 25; blog and core pages all
+  indexed; the six comparison pages sampled (`/vs/`, `/alternatives/`) all
+  discovered, none crawled yet (request indexing for them by hand). Google crawled
+  daily Nov 3 to 9. The quality signal, "Crawled - currently not indexed", is 58.
+- **The 404s were ours.** 520 of the 2,119 URLs Google had shown since August were
+  404, 514 of them bid pages: 361 had closed and 126 were open past the cap. Open
+  bids had filled the 14,000 page slots, so closed bids got no page and the open
+  bids with the latest deadlines lost theirs as the cut-off moved daily.
+- **Fixed:** DLA parts buys (4,280 open) moved off single pages onto one indexable
+  list, `/bids/dla-parts/`; the slots now go indexable open, held-back open,
+  indexable closed (most recent first), held-back closed. On the 2026-11-09 data:
+  9,525 + 1,596 open and 2,879 closed bids have pages; of the URLs the change
+  removes, two had any Google impressions (one each). The `shared-title` noindex
+  rule became `repeat-notice`: 857 of 891 open "shared title" bids were different
+  bids with a generic name ("Custodial Services").
+- **Still open:** closed bids keep their pages only while slots last, and the
+  daily churn of category hubs at the 5-open-bid line. A paid Cloudflare plan
+  (100,000 files per site) would remove the cap.
 
 ## Built (2026-11-08)
 
@@ -101,10 +126,8 @@ pipeline keeps them)
 ## Next up (unchanged from the list)
 
 - Agency and city hubs where there are enough open bids.
-- Closed and awarded bid pages. Note: open bids now exceed the 14,000-page cap
-  (15,217 open on 2026-11-08), so closed bids currently get no page at all. Keeping
-  closed pages means raising the cap, which is limited by Cloudflare Pages' 20,000
-  files per deploy, or dropping weaker open pages first.
+- Awarded bid pages. Closed bids have pages again since 2026-11-09 (see the
+  indexing check above), as far as the 14,000 slots allow.
 - Log Opportunities inbox searches and filters, and turn repeated queries into hubs.
 - Weekly Monday Search Console pull, flagging new zero-click pages and
   identifier-style queries.
