@@ -4279,3 +4279,140 @@ for the B-line. `outreach-assign` no longer flips A2 companies into a holdout
 when A5's cap is 0 (strata-parse branch; live only once merged to main and
 deployed). Until then the few A2 companies assigned per day can still land in
 A5 as holdouts and sit there.
+
+## 2026-11-09 — the opens were never zero, the POST was never sent
+
+First weekday push on the new build, and the fix it was meant to prove worked
+on exactly the case that was wrong before.
+
+### per_angle, settled
+
+| | 11-07 | 11-09 |
+| --- | --- | --- |
+| moves queued | 6 | **26** |
+| `per_angle` | A1 37 | A1 37 |
+| rows in `assignments` | A1 34 | A1 **37** |
+| `reconciled` | (did not exist) | **true** |
+
+Twenty-six moves is four times the load that produced a three-lead gap two days
+ago, and `per_angle`, `budget_spent_per_angle` and `rows_in_database` all read
+37. `failed: 2, deferred_still_ready: 2, failed_terminal: 0` — two transient
+409s from Instantly's own move job and no burned rows, which is the
+disambiguation reading correctly too.
+
+### proposal_opens was 0 for a reason, and the reason was mine
+
+Eight days, 28 delivered links, zero rows, and three daily reports in a row
+saying the audience would not open the link. On 11-06 I wrote that the handover
+was the thing to doubt. The handover was fine.
+
+`outreach-proposal-open` answered a browser preflight with
+
+    Access-Control-Allow-Headers: authorization, content-type
+
+and `supabase.functions.invoke` sends four headers: `authorization`, `apikey`,
+`content-type`, `x-client-info`. A reply allowing a subset fails the browser's
+check, so **the POST was never sent**. Confirmed against production before
+touching anything, with a preflight shaped like the real one.
+
+What makes this worth writing down is how completely it hid. The OPTIONS
+returned 200. The edge log held exactly one request in 24 hours, a tidy
+preflight, and no invocation. The function body never ran, so it logged
+nothing. And `OpenProposal.tsx` had `.catch(() => {})` around the call, so the
+TypeError the browser threw went into an empty catch. Every observable signal
+said "healthy, and nobody clicks".
+
+Both halves are mine. The allow-list now covers what the client sends and the
+reply is built from the list so they cannot drift; a preflight asking for a
+header we refuse is logged, because the browser's half leaves no other trace;
+`Access-Control-Max-Age` is 60 so nobody is stuck with a cached copy of the
+broken answer. The caller still does not await, because the reader must never
+wait on a metric, but it no longer discards the result.
+
+Merged as `#369`. **Not deployed** — the deploy was refused twice by the
+permission classifier. The page has called `recordOpen` since 10-29 and has
+been live since 11-04, so opens begin recording the moment the function ships;
+no frontend build is needed for that.
+
+One lap of the same lesson as the decorative set-aside filter on 11-07: a check
+that cannot report its own failure reports success.
+
+The corroborating reply arrived the same day. `bill.bailey@musicministryintl.com`
+at 15:01: "I was unable to open the proposal link as the code has expired.
+Could you please send a new link?" He was sent that link on 10-25 and came back
+**fifteen days later**. So the 1-hour-to-6-hour expiry change on 10-29 was
+aimed at the wrong failure: the problem is not a reader who is slow by an
+evening, it is one who comes back a fortnight later, and six hours cannot serve
+that. His notice (N0018927QW013) closes 11-23, so it is still worth having. The
+desk drafted a reply 22 minutes after his, so this side stayed out of it.
+
+### The A-line is finished and the B-line is switched off
+
+| | 11-07 | 11-09 |
+| --- | --- | --- |
+| companies, total | 11,168 | **23,950** |
+| …on the B line | 0 | **16,093** |
+| A1 queued | 203 | **3** |
+| sent today | 43 | **37** against a 217 cap |
+
+A1 met its cap for the last time: 37 sent, 7 dropped stale, 3 left. `job_assign`
+has written **nothing** for two days against 1,200 companies considered, and the
+breakdown says why: `left_unassigned_at_ceiling {B4: 688, B2: 1}` and
+`bline.no_signal: 510`. Essentially every unassigned company is now B-line, the
+B-line never falls back to an A angle by design, and `daily_caps` holds
+`B2: 0, B4: 0` — deliberately, per the comment in `outreach-assign`
+("B-LINE CAPS DEFAULT TO ZERO ... a B cap that is"). So 688 companies a day
+with live `competitor_award` signals are routed into a switched-off angle and
+refused at a ceiling of `40 × 0`.
+
+Nothing is broken here. It is a new line waiting for someone to turn it on, and
+until that happens sending goes to 3 tomorrow and 0 after. That is the decision
+worth putting in front of a person today, and not one to make from here: the
+caps are the on switch for a cold campaign to 688 strangers with copy this side
+has not read.
+
+### `outreach-opportunities` has been out of memory for two days
+
+Three attempts on 11-08 and three on 11-09, every one `546
+WORKER_RESOURCE_LIMIT`, including both guarded retries. It last failed this way
+on 11-02 and recovered 11-03 to 11-07.
+
+`opp_mem_trace` puts the death at roughly 49,000 of about 81,500 records, heap
+11 MB at boot, 25 after the NAICS index, 42 to 45 while streaming. The cause is
+in the function's own comment from the previous occurrence: "affordable when the
+index held 1,000 companies ... not affordable at 7,326 companies, where three
+times as many records reach this point and the run died on
+WORKER_RESOURCE_LIMIT". There are now **23,752 live companies**, three times
+the count that fix was sized for. `byNaics` holds every one of them before the
+stream starts and `best` accumulates per matched company during it.
+
+This is the harvester that writes `rfp_match`, which is what A2 and B2 are made
+of. Two days down means two days of no new solicitation supply. Left alone
+rather than guessed at: the same function is being extended by the B-line work
+right now, and every obvious remedy changes which solicitations get harvested.
+
+### The rest
+
+Bounce **123 / 6,895 = 1.78%** over people contacted, flat against 1.79% on
+11-06 and under the gate; A2 2.18%, A4 2.11%, A1 0.76%, nothing near the 5%
+per-angle line. Jobs otherwise all 2xx. Audit **196 / 0 / 0** over 6,709 leads,
+the 196 still the set Instantly moved to a list on 11-04. Renders clean on all
+four live campaigns; `sol_short` bare-number share 20.7%; A2 arms 1,322 speed /
+1,329 base against a control frozen at 1,905.
+
+The audit now reads **both** required-variable contracts, `REQUIRED` in
+`_shared/outreach.ts` and `REQUIRED_BLINE` in `_shared/bline.ts`. Reading only
+the first made every B lead look like an angle with no contract, so question 3
+would have passed them whatever their payload held. There are no B leads yet.
+I checked whether `outreach-push` had the same gap and it does not: it reads
+`REQUIRED[angle] ?? REQUIRED_BLINE[angle] ?? []`, `renderBlineVars` refuses a
+blank or a leftover `{{token}}`, and `outreach-assign` throws if the B angles
+and the contract disagree. That one was already covered.
+
+**Replies.** `kparks@kpcinc.com` answered the access-for-a-review counter with
+**"I'll take access"** on 11-08, and has been asking product questions since,
+which the desk has handled. `supplierinfo@dtn.com` is an autoresponder with a
+ticket number, recorded as `human_reply = true` — the eighth of that shape.
+`sara@regrid.com` is a redirect, not a decline: "I work in the finance
+department ... I'm happy to forward you to our SDR", so no suppression, since a
+wrong contact is not a no. `needs_human` **8**, `drafted` **43**.
