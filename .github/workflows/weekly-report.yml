@@ -1,0 +1,64 @@
+# GovHub weekly report: the Monday email on search, indexing, trials and AI cost.
+#
+# Last week (Monday to Sunday, UTC) against the week before: Google clicks and
+# impressions by site section, organic sessions, new trials with their source,
+# first page and AI cost, AI spend by account kind, the app's GA4 events, a URL
+# Inspection sample, and every page Google showed in the last four weeks
+# checked for 404. See scripts/report/weekly-report.mjs.
+#
+# Each section degrades on its own: a missing secret or a failed API turns
+# that section into one line saying so, and the email still goes.
+#
+# Setup:
+#   Secrets:   GSC_SERVICE_ACCOUNT_JSON  (already present: Search Console and GA4)
+#              RESEND_API_KEY            (already present: sends from hello@govhub.online)
+#              SUPABASE_SERVICE_ROLE_KEY trials and AI cost. Used only to call
+#                                        report_trials() (strata-parse migration
+#                                        20261109200000), which returns counts and
+#                                        anonymous per-trial rows, no emails.
+#   Variables: WEEKLY_REPORT_TO (optional, comma-separated); else DIGEST_TO;
+#              else earljknight@gmail.com,earl@govhub.online.
+#
+# Run it any time from the Actions tab (Run workflow); "dry_run" prints the
+# report to the log instead of sending.
+
+name: weekly-report
+
+on:
+  schedule:
+    - cron: "17 13 * * 1" # Mondays 13:17 UTC (8:17 or 9:17 am Eastern)
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Print the report to the log instead of sending it"
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: weekly-report
+  cancel-in-progress: false
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 20
+
+      # No npm ci: the report uses only Node's standard library.
+
+      - name: Build and send the report
+        run: node scripts/report/weekly-report.mjs ${{ inputs.dry_run && '--dry-run' || '' }}
+        env:
+          GSC_SERVICE_ACCOUNT_JSON: ${{ secrets.GSC_SERVICE_ACCOUNT_JSON }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          WEEKLY_REPORT_TO: ${{ vars.WEEKLY_REPORT_TO }}
+          DIGEST_TO: ${{ vars.DIGEST_TO }}

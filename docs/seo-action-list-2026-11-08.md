@@ -16,6 +16,9 @@ and what needs app work first. Judge results over 3 to 4 weeks, not days.
 - [x] **Cloudflare Crawler Hints** turned on.
 - [x] **Weekly check:** Indexing, Pages, filter "All submitted pages"; note Indexed,
   "Crawled - currently not indexed" and "Discovered - currently not indexed".
+  The Monday email (`.github/workflows/weekly-report.yml`) covers everything else:
+  clicks by section, trials and AI cost, a URL Inspection sample and a 404 check.
+  The Pages report counts have no API, so those three numbers stay a manual look.
 
 ## Indexing check, 2026-11-09
 
