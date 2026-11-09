@@ -106,11 +106,18 @@ export interface Bid {
  * times over, is the pattern that policy describes; the hubs carry these
  * searches instead.
  *  - 'dla-parts': Defense Logistics Agency parts buys (gaskets, valves, cards):
- *    thousands of near-identical small purchases nobody searches for by name.
- *  - 'shared-title': another bid has the same title, so the pages compete.
+ *    thousands of near-identical small purchases, quoted by price in DIBBS.
+ *    Since 2026-11-09 they get no page of their own: all of them are listed on
+ *    /bids/dla-parts/, which is indexed.
+ *  - 'repeat-notice': the same notice listed again (same title, and the same
+ *    summary or solicitation number). The first listing, by id, stays indexed.
+ *    Until 2026-11-09 this was 'shared-title', any two bids with one title;
+ *    857 of the 891 open ones then were different bids with a generic name
+ *    ("Custodial Services"), and titles are unique since titleTagFor() added
+ *    the solicitation number, agency and date.
  *  - 'short-summary': GovHub's summary is under MIN_SUMMARY_WORDS words.
  */
-export type NoindexReason = 'dla-parts' | 'shared-title' | 'short-summary';
+export type NoindexReason = 'dla-parts' | 'repeat-notice' | 'short-summary';
 export const MIN_SUMMARY_WORDS = 15;
 
 export interface Hub {
@@ -131,7 +138,12 @@ export interface Hub {
 
 export interface BidIndex {
   builtAt: Date;
+  /** Bids with a page: at most MAX_BID_PAGES, in slot order (see build()). */
   bids: Bid[];
+  /** Open Defense Logistics Agency parts buys, soonest due first: no page each, all on /bids/dla-parts/. */
+  dlaParts: Bid[];
+  /** Every open listing, with or without a page: what GovHub tracks. */
+  openTotals: { all: number; federal: number };
   byPath: Map<string, Bid>;
   stateHubs: Map<string, Hub>;
   categoryHubs: Map<string, Hub>;
@@ -160,6 +172,8 @@ export const MAX_BID_PAGES = 14000;
 /** Below this many rows the live fetch is treated as broken, not as data. */
 const MIN_LIVE_ROWS = 1000;
 export const FEDERAL_SEGMENT = 'federal';
+/** /bids/dla-parts/: every open Defense Logistics Agency parts buy on one page (src/pages/bids/dla-parts.astro). */
+export const DLA_SEGMENT = 'dla-parts';
 
 // Territories the database carries that the Insights state list does not.
 // AA/AE (military mail) stay unmapped: those bids file under federal.
@@ -322,15 +336,25 @@ export function bidTitleTag(b: Bid): string {
 }
 
 /** Sets indexable, noindexReason and titleTag on the pages being built. */
+export const isDlaParts = (b: Pick<Bid, 'agency'>) => /defense logistics agency/i.test(b.agency ?? '');
+
 function markIndexable(bids: Bid[]): void {
-  const count = new Map<string, number>();
-  for (const b of bids) count.set(titleKey(b.title), (count.get(titleKey(b.title)) ?? 0) + 1);
+  // A repeat is a later listing (by id) of the same notice: same title, and the
+  // same summary or the same solicitation number. Bids arrive sorted by id.
+  const byTitle = new Map<string, Bid[]>();
+  for (const b of bids) (byTitle.get(titleKey(b.title)) ?? byTitle.set(titleKey(b.title), []).get(titleKey(b.title))!).push(b);
+  const repeat = new Set<Bid>();
+  for (const group of byTitle.values()) {
+    if (group.length < 2) continue;
+    group.forEach((b, i) => {
+      if (group.slice(0, i).some((o) => titleKey(o.summary) === titleKey(b.summary) || (!!o.externalId && o.externalId === b.externalId))) repeat.add(b);
+    });
+  }
   for (const b of bids) {
-    const shared = count.get(titleKey(b.title))! > 1;
-    b.noindexReason = /defense logistics agency/i.test(b.agency ?? '')
+    b.noindexReason = isDlaParts(b)
       ? 'dla-parts'
-      : shared
-        ? 'shared-title'
+      : repeat.has(b)
+        ? 'repeat-notice'
         : words(b.summary) < MIN_SUMMARY_WORDS
           ? 'short-summary'
           : null;
@@ -382,7 +406,7 @@ async function build(): Promise<BidIndex> {
   // Category, state and the federal segment share /bids/{segment}/.
   const segments = new Set([FEDERAL_SEGMENT, ...[...PLACE_BY_SLUG.keys()]]);
   for (const c of CATEGORIES) {
-    if (segments.has(c.slug)) throw new Error(`bid category slug "${c.slug}" collides with a state or the federal segment`);
+    if (segments.has(c.slug) || c.slug === DLA_SEGMENT) throw new Error(`bid category slug "${c.slug}" collides with a state, the federal segment or /bids/${DLA_SEGMENT}/`);
   }
 
   const rows = (await fetchRows()).sort((a, b) => a.id.localeCompare(b.id));
@@ -394,15 +418,43 @@ async function build(): Promise<BidIndex> {
     taken.add(`${b.segment}/${slug}`);
     return { ...b, slug, path: `/bids/${b.segment}/${slug}/`, indexable: true, noindexReason: null, titleTag: '' };
   });
+  // Decided over every listing, so the page slots below can go to the bids
+  // search can use first.
+  markIndexable(all);
   const open = all.filter((b) => !b.closed).sort(byDue);
   const closed = all.filter((b) => b.closed).sort((a, b) => Date.parse(b.dueAt ?? '0') - Date.parse(a.dueAt ?? '0'));
-  const bids = [...open, ...closed].slice(0, MAX_BID_PAGES);
-  markIndexable(bids);
-  const held = bids.filter((b) => !b.indexable);
+  // The MAX_BID_PAGES slots, in order: indexable open bids, held-back open bids
+  // (they fill the hubs and keep small category hubs above HUB_MIN_OPEN), then
+  // indexable bids that closed in the last 90 days, most recent first
+  // (public_bid_listings keeps them that long), then held-back closed ones. DLA
+  // parts buys get no page; they are listed on /bids/dla-parts/.
+  //
+  // Until 2026-11-09 open bids came first whatever they were, so once open bids
+  // passed the cap (15,217 on 2026-11-08) every bid lost its page the day it
+  // closed, and so did the open bids with the latest deadlines: 487 of 514 bid
+  // URLs Google had shown were 404 on 2026-11-09. Moving the 4,280 DLA pages out
+  // gave the closed bids their room back. Held-back open bids go before closed
+  // ones because putting them after (tried first) dropped 1,079 of them and,
+  // with them, category hubs Google had shown (/bids/janitorial/ohio/).
+  const held = (b: Bid) => !b.indexable && b.noindexReason !== 'dla-parts';
+  const bids = [
+    ...open.filter((b) => b.indexable),
+    ...open.filter(held),
+    ...closed.filter((b) => b.indexable),
+    ...closed.filter(held),
+  ].slice(0, MAX_BID_PAGES);
+  const dlaParts = open.filter((b) => b.noindexReason === 'dla-parts');
   const byReason = new Map<string, number>();
-  for (const h of held) byReason.set(h.noindexReason!, (byReason.get(h.noindexReason!) ?? 0) + 1);
+  for (const h of bids.filter((b) => !b.indexable)) byReason.set(h.noindexReason!, (byReason.get(h.noindexReason!) ?? 0) + 1);
   const reasons = [...byReason].map(([r, n]) => `${r} ${n}`);
-  console.log(`[bids] ${all.length} listings (${open.length} open), ${bids.length} pages (cap ${MAX_BID_PAGES}), ${bids.length - held.length} indexable; noindex: ${reasons.join(', ') || 'none'}`);
+  const paged = new Set(bids);
+  const count = (list: Bid[]) => list.filter((b) => paged.has(b)).length;
+  console.log(
+    `[bids] ${all.length} listings (${open.length} open), ${bids.length} pages (cap ${MAX_BID_PAGES}): ` +
+      `${count(open.filter((b) => b.indexable))} indexable open, ${count(closed.filter((b) => b.indexable))} indexable closed, ` +
+      `${bids.filter((b) => !b.indexable).length} held back (${reasons.join(', ') || 'none'}); ` +
+      `${open.filter(held).length - count(open.filter(held))} held-back open bids over the cap; ${dlaParts.length} open DLA parts buys on /bids/dla-parts/`,
+  );
 
   const keep = (m: Map<string, Hub>) => new Map([...m].filter(([, h]) => h.open.length >= HUB_MIN_OPEN));
   const toHubs = (m: Map<string, Bid[]>, path: (k: string) => string) =>
@@ -413,6 +465,8 @@ async function build(): Promise<BidIndex> {
   return {
     builtAt,
     bids,
+    dlaParts,
+    openTotals: { all: open.length, federal: open.filter((b) => b.federal).length },
     segmentAll,
     byPath: new Map(bids.map((b) => [b.path, b])),
     stateHubs: toHubs(group(bids, (b) => [b.segment]), (s) => `/bids/${s}/`),
