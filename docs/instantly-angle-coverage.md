@@ -4280,6 +4280,175 @@ when A5's cap is 0 (strata-parse branch; live only once merged to main and
 deployed). Until then the few A2 companies assigned per day can still land in
 A5 as holdouts and sit there.
 
+## 2026-11-07 — merged, deployed, released, and A1's buffer was double counted
+
+Earl asked for three things: merge to main, deploy, and release the 185 to A1.
+Doing the third turned up the reason A1 was starving in the first place.
+
+### A1's recompete buffer was applied twice
+
+`outreach-signals` writes `valid_until = end_date - 45`, because "past that
+point the premise, recompetes post 60 to 90 days ahead, stops being true". The
+45 days are **already inside** `valid_until`, and `job_push` agrees: it checks
+only that the date is in the future, `futureOk(validUntil, 0)`.
+
+`job_assign`'s `ASSIGN_BUFFERS` held `recompete: 45`. Its gate therefore
+demanded `valid_until >= today + 45`, which is `end_date >= today + 90`. The 45
+to 90 day band, the part of the window the copy's own premise is about, was
+collected by the scanner, sendable by push, and **never assigned**.
+
+The release made it visible. Of the 188 generic-A5 rows I was about to hand to
+A1, **0 passed job_assign's gate and all of them passed job_push's**. Releasing
+them without this fix would have handed every one straight back to A5.
+
+| | before | after |
+| --- | --- | --- |
+| A1 queued | 19 (half a day at cap 37) | **203 (5.5 days)** |
+| rows `job_assign` wrote on the run | 1 to 3 a day | **195, of which 184 to A1** |
+
+Same shape as the A2 close floor two days ago, and the fifth instance overall:
+a rule asserted on one code path and asserted again on another, with no third
+place agreeing. The comment sitting next to the number, "A1: end date still 45+
+days out", described the rule correctly. The number asked for something else.
+`close-floor.test.mjs` now reads all three sources, the definition in
+`outreach-signals`, `job_assign`'s buffer and `job_push`'s A1 gate, and fails if
+they stop agreeing.
+
+### The release itself
+
+Not a delete. `job_assign` treats `dropped_stale` and `failed` as RETRYABLE and
+rewrites the **same row** in place via `retryRowByCompany`, so marking 188 rows
+was enough and every row, its id and its history survived. Every id was checked
+before the write: angle A5, status ready, `holdout = false`, no
+`instantly_lead_id`, no `pushed_at`, no outcomes row. Nobody in the set had been
+emailed, and A5's cap is 0, so none of them was going to be. The A2
+experiment's 2,409 holdout rows were not touched.
+
+Afterwards: 0 of the 188 were left in `dropped_stale`, 184 went to A1 and 11
+fell to A5 as gate fallbacks. All 203 A1 rows carry `agency_short`,
+`contract_end_month`, a first name and an email.
+
+### A dry run that was not one
+
+Verifying the deployed build, I ran `outreach-push` with `?dry_run=1`. **The
+parameter is `?dry`**, on line 88 of the file I had open, so the override was
+ignored, `outreach.config.dry_run` is false, and it was a live push: 43 counted,
+40 recorded, A1 34 and A2 6, at 16:34 on a **Saturday**, when push is scheduled
+`0 6 * * 1-5` and does not normally run.
+
+What it cost: A1's queue went down a day early, which is the one scarce thing.
+What it did not cost: nothing was emailed early, because the campaign schedule
+is weekdays 09:00 to 16:00 Detroit, so the leads simply sit until Monday. Caps
+are unaffected, because `already_pushed_today_before_this_run` reads the day out
+of the database. All 40 rows render correctly, checked variable by variable.
+
+It did prove the deploy, by the one key only the new build emits:
+`failed_terminal: 0`.
+
+### `per_angle` over-reported by 3, and the DB did not
+
+That same run reported `pushed: 43` and `per_angle {A1: 37, A2: 6}` against 34
+A1 and 6 A2 in `outreach.assignments`, with `outreach.outcomes` agreeing exactly
+and Instantly's own lead counts agreeing too (A1 989 to 1023, A2 2645 to 2651).
+Looking each of the 40 leads up by `instantly_lead_id`: 28 A1 created that day,
+6 A1 moved in from a retired campaign (created 08-24), 6 A2 created.
+
+So nothing is lost or orphaned and only the counter is wrong. Ruled out by
+inspection: the stale branch `continue`s without touching `used`, and the move
+branch increments it once. `live_but_unrecorded` was 0, `blocked_duplicate_elsewhere`
+0, and the function's own logs show exactly 6 "lead belongs to another campaign"
+lines, all A1, all `source_active: false`, matching `moves_queued: 6`. The
+arithmetic still does not close: if moves do not touch `pushed`, 43 claims 43
+creates against 34; if they do, the total would be 40. Left open, because
+`per_angle` is the number the daily check compares against the caps.
+
+### The stager picks notices nobody can bid, and the data for the check was never collected
+
+Five leads were owed a reply. Three wanted a proposal in a workspace, so three
+went through `outreach-stage?company=...`, which searches sam.gov by NAICS and
+picks by fit. **Two of the three picks were not biddable by the company**, and
+in both cases the pipeline's own analysis said so in a field marked `blocking`:
+
+- **Louisiana Forestry Solutions** got the Seven Cabins EDRR call order,
+  12363N27Q4006, NAICS 115310 exactly, closing 11-30. Restricted to current
+  LMIR BPA holders. Also New Mexico, also needs New Mexico pesticide applicator
+  licences, and the company is in Louisiana.
+- **Paul W Kelly** got DNA Warehousing Support at NSWC Dahlgren, N0017826R2500,
+  NAICS 493110 exactly, closing 12-01. A **100 percent SDVOSB set-aside**
+  requiring active VetCert. The company is in Alaska and has no certification on
+  record.
+
+Both were flagged `relevance_weak: true` with scores of 3 and 1. The weak flag
+was right twice and nothing acts on it.
+
+The root cause is thinner than a ranking bug. `outreach.companies.socio_flags`
+is **empty for all 11,168 companies**. The column exists, the stager could
+check a notice's set-aside against it, and there is nothing in it to check. So
+every certification-gated set-aside, SDVOSB, 8(a), WOSB, HUBZone, is a coin
+flip. Two cheap moves, in order: refuse certification-gated set-asides while
+`socio_flags` is empty, since eligibility cannot be established; and backfill
+the column from SAM's entity API, which `_shared/outreach.ts` already has a URL
+for. Geography is the second gap: nothing weighs place of performance against
+the company's state.
+
+Paul's row is on `send_hold_at` with the reason recorded rather than deleted.
+
+### Three proposals are built and have never been sent
+
+Separate from tonight, and perishable:
+
+| lead | notice | closes | built |
+| --- | --- | --- | --- |
+| `bill@srtechsys.com` | SP4701-26-Q-0014 KnowItAll IR Spectral Library | **11-14, 7 days** | 10-30 |
+| `chantal.satterwhite@gmail.com` | 36C24726R0123 Charleston VAMC wheelchair transport | **11-16, 9 days** | 11-03 |
+| `smk@parallelflight.com` | W58RGZ-26-S-C001-0008 Drone Marketplace onboarding | 2031 | 10-30 |
+
+No error, no hold, fully assembled. `outreach-send-proposal` is not on a
+schedule, so sending is a manual act and these were built and left. Chantal is
+the one who asked for a Teams call.
+
+### The five replies
+
+| lead | asked for | sent |
+| --- | --- | --- |
+| `eliassqueakycleaning@gmail.com` (Jorge) | the debrief one pager | the one pager, written against FAR 15.506(d) and (e) and FAR 13.106-3(d) |
+| `kparks@kpcinc.com` (Kizzy) | a counter to her contingency offer | one month full access for her team against an honest channel review, 24 hour support, feedback on the new search |
+| `lindakellyak@gmail.com` (Paul W Kelly) | a video on his own recompete | the recompete answer in writing, the market check, a workspace link |
+| `jc@intek.co` (Juan) | the disqualifier list | seven disqualifiers off the live notice, a workspace, and a closer alternative |
+| `taylorforestry73@gmail.com` (Edward) | the three in his lane | all four live in 115310, the LMIR gate, a drafted quote in a workspace |
+
+Three of them needed a correction to the premise rather than the thing asked
+for, and saying so was the deliverable:
+
+- **Edward was never sent the three solicitations.** They were offered twice,
+  on 10-28 and 11-02, and never sent. So the "best match of the three" did not
+  exist and the four live ones were pulled fresh. The one that fits him best is
+  the one he probably cannot bid, and the useful answer is the gate behind it:
+  the LMIR National BPA, 12363N23Q4023, is open until January 2028 and is what
+  makes a firm eligible for these Forest Service call orders at all. He said he
+  holds government BPAs. Whether LMIR is one of them decides everything, so the
+  email asks.
+- **Juan's disqualifier list was for a solicitation that had already closed.**
+  27-P-0000-042463 closed 11-04 and our own follow-up offering the list went
+  out on 11-05. He got the list for a live notice instead, with the closed one
+  acknowledged as our fault.
+- **Paul asked for a video about an $8,000 contract.** His USDA storage lease
+  runs to January 31 and is worth $8K, which does not justify a proposal and
+  almost certainly will not be formally competed. Both live requirements in his
+  lane are unbiddable by him, so he was told that rather than sent one.
+
+Juan's package lost one deliverable of seven: the SF 36 bid schedule failed with
+`v2_deliverables update: unsupported Unicode escape sequence`, leaving
+`status = error`, empty `content_blocks` and `recovery_attempts = 0`. Generated
+content carried an escape Postgres refuses and nothing retried it. His email
+says so plainly rather than listing a pricing sheet that is not there.
+
+### A1 inventory, honestly
+
+203 queued, but 13 of them go stale by Monday and 32 within the week, because
+the release took every company whose recompete signal was merely still valid
+rather than comfortably so. Call it 171 solid, about 4.6 days at a cap of 37,
+which is the first time A1 has had more than two days of runway since 11-03.
 ## 2026-11-09 — the opens were never zero, the POST was never sent
 
 First weekday push on the new build, and the fix it was meant to prove worked
