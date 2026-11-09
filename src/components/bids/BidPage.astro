@@ -56,7 +56,22 @@ const dueShort = bid.dueAt ? formatShortDate(bid.dueAt, bid.timeZone) : null;
 // Into the app: this bid while it is open (the app only shows open bids), the
 // feed once it has closed. gh_cta records which button; it is not a utm_*.
 const appPath = bid.closed ? '/v2/opportunities' : `/v2/opportunities?id=${bid.id}`;
-const toApp = (placement: string) => `${ctaHref(placement)}&next=${encodeURIComponent(appPath)}`;
+// analyze: the buttons that say "work on this bid" (start a proposal, fill out
+// its forms, open its documents) also ask the app to start Analyze this RFP on
+// arrival. The app does that once, for a new account with no project yet, on an
+// open bid (strata-parse src/pages/Opportunities.tsx); anyone else gets the button.
+const toApp = (placement: string, analyze = false) =>
+  `${ctaHref(placement)}&next=${encodeURIComponent(analyze && !bid.closed ? `${appPath}&analyze=1` : appPath)}`;
+
+// "Documents posted": the names of the files the agency posted, public; the
+// files themselves open in GovHub. Forms GovHub fills out come first, then the
+// rest in posted order. See lib/bids/documents.ts.
+const DOCS_SHOWN = 12;
+const docsOrdered = [...bid.documents.filter((d) => d.form), ...bid.documents.filter((d) => !d.form)];
+const docsShown = docsOrdered.slice(0, DOCS_SHOWN);
+const docTotal = Math.max(bid.attachmentCount, bid.documents.length);
+const docsMore = docTotal - docsShown.length;
+const formCount = bid.documents.filter((d) => d.form).length;
 
 // <title>: name, solicitation number, agency, due date; unique across all bid
 // pages. See titleTagFor() and markIndexable() in lib/bids/load.ts.
@@ -154,13 +169,13 @@ const unlocks = unlockList.length > 1 ? `${unlockList.slice(0, -1).join(', ')} a
   </div>
 
   <div class="cta-row">
-    <a class="btn primary" href={toApp(bid.closed ? 'bid_top' : 'bid_proposal')}>
+    <a class="btn primary" href={toApp(bid.closed ? 'bid_top' : 'bid_proposal', true)}>
       <span class="when-open-inline">Start a proposal for this bid</span><span class="when-closed-inline">Start free trial to see open bids like this</span>
     </a>
     <a class="btn ghost" href={CALENDLY_URL} data-demo-cta="bid_top">Book a demo</a>
   </div>
   <p class="cta-fine when-open-block">
-    14 days free, no card. After signup this bid opens in GovHub, one click from Analyze this RFP.
+    14 days free, no card. After signup this bid opens in GovHub and GovHub starts analyzing it.
   </p>
 
   <h2>Bid details</h2>
@@ -193,6 +208,30 @@ const unlocks = unlockList.length > 1 ? `${unlockList.slice(0, -1).join(', ')} a
     </p>
   )}
 
+  {docsShown.length > 0 && (
+    <section class="docs" aria-labelledby="docs-heading">
+      <h2 id="docs-heading">Documents posted</h2>
+      <p class="docs-lede">
+        {docTotal === 1 ? 'The agency posted 1 file' : `The agency posted ${docTotal} files`} with this solicitation.
+        {formCount > 0 && (formCount === 1 ? ' GovHub fills out the form marked below from your company profile.' : ` GovHub fills out the ${formCount} forms marked below from your company profile.`)}
+        {' '}The files open in GovHub.
+      </p>
+      <ul class="doc-list">
+        {docsShown.map((d) => (
+          <li>
+            <span class="doc-name">{d.name}</span>
+            {d.tag && <span class:list={['doc-tag', { 'is-form': d.form }]}>{d.form ? `Form: ${d.tag}` : d.tag}</span>}
+          </li>
+        ))}
+      </ul>
+      {docsMore > 0 && <p class="docs-more">And {docsMore} more {docsMore === 1 ? 'file' : 'files'}.</p>}
+      <p class="docs-cta when-open-block">
+        <a href={toApp('bid_documents', true)}>Open these documents in GovHub</a>. GovHub reads them when it analyzes
+        the bid, then fills out the forms and drafts the response.
+      </p>
+    </section>
+  )}
+
   <section class="gate" aria-labelledby="gate-heading">
     {gated.length > 0 && (
       <dl class="facts gated" aria-hidden="true">
@@ -219,7 +258,7 @@ const unlocks = unlockList.length > 1 ? `${unlockList.slice(0, -1).join(', ')} a
         </span>
       </p>
       <p class="free-vs-trial when-open-block">
-        <strong>Free on this page:</strong> GovHub's summary, the deadline, the set-aside and the NAICS code.
+        <strong>Free on this page:</strong> GovHub's summary, the deadline, the set-aside, the NAICS code{docsShown.length > 0 ? ' and the names of the posted files' : ''}.
         <strong> In GovHub:</strong> the full solicitation and its documents, Analyze this RFP, the forms filled out
         from your company profile, and a drafted, scored proposal.
       </p>
@@ -227,7 +266,7 @@ const unlocks = unlockList.length > 1 ? `${unlockList.slice(0, -1).join(', ')} a
         <a class="btn primary" href={toApp('bid_gate')}>
           <span class="when-open-inline">Start free trial to see full details</span><span class="when-closed-inline">Start free trial</span>
         </a>
-        <a class="btn secondary" href={toApp('bid_forms')}>Fill out this bid's forms with GovHub</a>
+        <a class="btn secondary" href={toApp('bid_forms', true)}>Fill out this bid's forms with GovHub</a>
         <a class="btn ghost" href={CALENDLY_URL} data-demo-cta="bid_gate">Book a demo</a>
       </div>
       <p class="fine">14-day free trial. No credit card.</p>
@@ -393,6 +432,54 @@ const unlocks = unlockList.length > 1 ? `${unlockList.slice(0, -1).join(', ')} a
     font-size: 0.85rem;
     color: var(--fg-muted);
     margin: 0.5rem 0 0;
+  }
+  /* Documents posted: names only, forms GovHub fills out marked. */
+  .docs {
+    margin-top: 1.5rem;
+  }
+  .docs-lede {
+    margin: 0.25rem 0 0.75rem;
+    max-width: 46rem;
+  }
+  .doc-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-top: 1px solid var(--border);
+  }
+  .doc-list li {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.25rem 0.75rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .doc-name {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+  .doc-tag {
+    flex: none;
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 0.1rem 0.55rem;
+    border-radius: 999px;
+    color: var(--fg-muted);
+    background: color-mix(in srgb, var(--fg-muted) 12%, transparent);
+  }
+  .doc-tag.is-form {
+    color: var(--gh-teal-700);
+    background: color-mix(in srgb, var(--gh-teal-600) 14%, transparent);
+  }
+  .docs-more {
+    margin: 0.5rem 0 0;
+    color: var(--fg-muted);
+    font-size: 0.9rem;
+  }
+  .docs-cta {
+    margin: 0.75rem 0 0;
   }
   /* The gate: placeholder rows fade out under the trial card. */
   .gate {

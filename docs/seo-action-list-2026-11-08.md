@@ -70,16 +70,33 @@ pipeline keeps them)
 
 ## Needs app or data work first
 
-- **Line items and part numbers on bid pages.** `public_bid_listings()` does not
-  return them. The function would need to expose them, for example the Air Force
-  research page's line-item numbers.
-- **"Required forms" free on the page.** No required-forms field reaches the public
-  data. It would come from the app's analysis of the solicitation.
-- **Start the analysis automatically after signup.** The app opens a bid from
-  `/v2/opportunities?id=` and does not read an "analyze now" parameter. Starting
-  the analysis on landing is an app change.
+- **Line items and part numbers on bid pages.** Deferred (2026-11-09). Only about
+  340 open bids carry NSNs and about 1,000 mention part numbers, mostly Defense
+  Logistics Agency parts buys the site already noindexes; parsing them from free
+  text would be unreliable.
 - **Saved-search email alerts.** The app has saved filters but sends no email. This
   is a new app feature.
+
+**Done 2026-11-09**
+
+- **"Required forms", as "Documents posted".** The real list of required forms
+  exists only after the app analyzes a solicitation, which costs about $1.43 a bid
+  (Nov 2026 cost log), so it is not run for 18,700 open bids. Instead
+  `public_bid_listings()` now returns the posted files' names (strata-parse
+  `20261109121000`, names only, never links), and bid pages list them, tagging
+  statements of work, wage determinations and amendments and flagging the forms
+  GovHub fills out (SF 30, SF 1449, SF 330, pricing sheets, reps and certs, past
+  performance questionnaires). On the 2026-11-09 build: 4,741 of 14,000 bid pages
+  have the list, 478 flag a form. Rules: `src/lib/bids/documents.ts`.
+- **Start the analysis after signup.** "Start a proposal for this bid", "Fill out
+  this bid's forms" and "Open these documents in GovHub" add `analyze=1`. The app
+  presses Analyze this RFP once, for that bid, only when the bid is open and the
+  account has no project yet; anyone else gets the button. Tracked in PostHog as
+  `opportunity_auto_analyze`.
+- **Found on the way: the linked bid did not open.** The app opened a listing only
+  if it was in the first 50 rows of the feed it loaded, so most bid-page signups
+  landed on their inbox, not their bid. The app now fetches the linked listing on
+  its own (`opp_row`, strata-parse `20261109120000`).
 
 ## Next up (unchanged from the list)
 
