@@ -21,6 +21,7 @@ import { STATES } from '../../../scripts/insights/lib/slugs.mjs';
 import NAICS_TITLES from '../../data/bids/naics-2022.json';
 import { CATEGORIES, CATEGORY_BY_SLUG, categorize } from './categories';
 import { cleanTitle, noEmDash, slugify } from './text';
+import { bidDocuments, type BidDocument } from './documents';
 
 /** One row of public_bid_listings(). */
 export interface BidRow {
@@ -46,6 +47,8 @@ export interface BidRow {
   /** Whether a full description exists; the text itself never leaves the app. */
   has_description: boolean;
   attachment_count: number;
+  /** The posted files' names, percent-encoded as stored; never their links. Older snapshots lack it. */
+  attachment_names?: string[] | null;
 }
 
 export interface Bid {
@@ -79,6 +82,8 @@ export interface Bid {
   /** What the free-trial gate can truthfully say the app has for this bid. */
   hasDescription: boolean;
   attachmentCount: number;
+  /** The posted files by name, tagged when the name says what they are (lib/bids/documents.ts). */
+  documents: BidDocument[];
   /**
    * Whether search engines should index this page. Every bid keeps its page
    * (visitors, hubs and the trial button all use it); a weak one carries
@@ -221,6 +226,7 @@ function toBid(row: BidRow, now: number): Omit<Bid, 'slug' | 'path' | 'indexable
     categories: categorize(title, row.naics ?? []),
     hasDescription: !!row.has_description,
     attachmentCount: row.attachment_count ?? 0,
+    documents: bidDocuments(row.attachment_names),
     closed: row.status !== 'open' || (Number.isFinite(due) && due < now),
   };
 }
