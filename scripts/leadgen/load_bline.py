@@ -40,6 +40,10 @@ def h(extra=None):
     return x
 
 
+NOTE = ("SBA-registered NAICS beyond the primary, kept off naics_codes so the "
+        "opportunities job's index stays one entry per company.")
+
+
 def deployed():
     r = requests.get(U + "config?select=value&key=eq.daily_caps", headers=h(), timeout=30)
     r.raise_for_status()
@@ -80,6 +84,7 @@ def main():
                 old_ids.append(r["company_id"])
                 continue
             total = r.get("total_12mo") or ""
+            codes = naics_list(r)
             fresh.append({
                 "email": e,
                 "first_name": r.get("first_name") or None,
@@ -88,7 +93,15 @@ def main():
                 "domain": r.get("domain") or None,
                 "state": (r.get("state") or "")[:2] or None,
                 "uei": r.get("uei") or None,
-                "naics_codes": naics_list(r),
+                # ONE CODE, THE PRIMARY, like every A-line company. The
+                # opportunities job indexes each company under every code it
+                # carries; loading SBA's full lists (avg 4.9, max 669) took the
+                # index from 7,659 entries to 85,859 and the job died on
+                # WORKER_RESOURCE_LIMIT every run from 11-08. The rest are kept
+                # in search_naics_codes, which nothing indexes.
+                "naics_codes": codes[:1],
+                "search_naics_codes": codes[1:] or None,
+                "search_naics_note": NOTE if codes[1:] else None,
                 "socio_flags": [c for c in (r.get("certs") or "").split() if c],
                 "total_obligated": int(float(total)) if total else None,
                 "source": r.get("source") or "bline",
