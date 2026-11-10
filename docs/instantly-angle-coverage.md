@@ -4585,3 +4585,127 @@ ticket number, recorded as `human_reply = true` — the eighth of that shape.
 `sara@regrid.com` is a redirect, not a decline: "I work in the finance
 department ... I'm happy to forward you to our SDR", so no suppression, since a
 wrong contact is not a no. `needs_human` **8**, `drafted` **43**.
+
+## 2026-11-10 — daily check
+
+**Sending reaches zero tomorrow.** A1 pushed its last 3 rows today (total sending
+today: 3, against a 217 cap). A1, A2 and A4 all hold **0 ready**. A5 holds 727
+ready against a cap of 0. `daily_caps` is
+`{"A1":37,"A2":125,"A4":55,"A5":0,"B2":0,"B4":0}`, and `outreach-assign` wrote 0
+rows again: `left_unassigned_at_ceiling {B4: 691, B2: 0}`, `bline.no_signal: 508`,
+`signals_loaded` 9,702. So 691 B4 candidates a day with live signals are refused
+at a ceiling of `40 × 0`, which is deliberate — the function's own comment reads
+"B-LINE CAPS DEFAULT TO ZERO". Turning those caps on starts a cold campaign to
+~691 strangers with copy this side has not reviewed, so it is a decision for a
+person, not something to switch on from a daily check.
+
+### The A2 experiment, read out
+
+Both A2 comparisons are directional and neither is conclusive, and both stopped
+collecting on 11-04.
+
+Treatment against control — the dated, signal-specific copy against the generic
+copy sent to the *same eligible population* (A5 rows with `holdout = true`):
+
+| arm | sent | human replies | rate |
+|---|---|---|---|
+| A2 treatment (dated signal copy) | 2,847 | 44 | **1.55%** |
+| A2 control (A5 generic copy, same population) | 1,785 | 17 | **0.95%** |
+| A5 true generic (never A2-eligible) | 120 | 1 | 0.83% |
+
++0.60 points, a 63% relative lift, z = 1.72, two-sided p ≈ 0.085. Directional,
+not significant. At these rates 80% power needs roughly **5,500 per arm**; we
+have 2,847 and 1,785.
+
+Within A2, the copy arms (`body_variant`, recorded on the assignment and
+stripped from the Instantly payload by `outreach-push`):
+
+| arm | sent | human replies | rate | positive |
+|---|---|---|---|---|
+| base | 1,424 | 19 | 1.33% | 1 |
+| speed | 1,423 | 25 | **1.76%** | 3 |
+
++0.42 points, z = 0.91, p = 0.36 — noise. The coin is fair: 1,427 / 1,423
+assigned, against 1,425 ± 27 expected.
+
+**The control arm is frozen, and that is a code gate, not a coincidence.** The
+holdout flip reads
+`if (angle === "A2" && (caps.A5 ?? 0) > 0 && Math.random() < 0.5)`, so when
+`daily_caps.A5` went to 0 on 11-04 the flip stopped firing and every A2-eligible
+company now gets A2. The reasoning is sound — a holdout would park a company in
+a queue that does not drain — but the consequence is that the control stopped
+growing at 1,785 and the treatment/control comparison cannot reach significance
+while A5's cap is 0. Whatever that comparison is going to say, it has to be said
+from the pre-11-04 cohort, or A5's cap has to come back on.
+
+### `outcomes.substantive` has never been written
+
+NULL on all **6,908** rows. There is no writer anywhere in `supabase/functions`
+or `scripts` — the only references read it. One of those reads is a decision:
+
+```
+else if (r.first_touches >= 80 && ((r.human_reply_rate ?? 0) >= 6 || r.substantive >= 2 || r.positive > 0)) action = "SCALE: raise caps";
+```
+
+`r.substantive >= 2` can never be true, so one of the three SCALE conditions in
+`outreach-metrics` is dead. It changes no current verdict — A2 already fires
+SCALE through `positive > 0` with 2,847 first touches — so it is inert rather
+than wrong today. Left alone on purpose: populating it means defining what
+counts as substantive, and reply classification belongs to the desk. Recorded
+here so nobody reads `filter (where substantive)` returning 0 as "no
+substantive replies". It is a column that looks like a filter and is one in
+name only.
+
+### `sol_short` bare numbers: 20.7% was a legacy average, not a live rate
+
+Yesterday's entry recorded a 20.7% bare-number share without saying over what
+window. Over all pushed A2 it is 562 / 2,847 = 19.7%, but by week it is:
+
+| week of | A2 sent | bare number | share |
+|---|---|---|---|
+| 09-21 | 80 | 30 | 37.5% |
+| 09-28 | 267 | 28 | 10.5% |
+| 10-05 | 676 | 162 | 24.0% |
+| 10-12 | 625 | 218 | 34.9% |
+| 10-19 | 624 | 71 | 11.4% |
+| 10-26 | 542 | 52 | 9.6% |
+| 11-02 | 33 | 1 | 3.0% |
+
+The step down between 10-12 and 10-19 is the `solHeadline` fix that title-cases
+an all-caps title instead of refusing it. Before it, real titles like
+`OK-DEEP FORK NWR-QUARTERS HVAC REPLACEM` and
+`Y--BLM-CO GAOA UFO MPLC WAREHOUSE IMPROVEMENT` fell through to the bare
+solicitation number; after it they render. The fallbacks left are the ones the
+fallback is for — `78--SPORTS EQUIPMENT & APPAREL` and other DLA catalogue
+stubs. The lifetime figure is dominated by sends that went out before the fix,
+so quote the recent weeks, not the average.
+
+### The rest
+
+Bounce **123 / 6,898 = 1.78%** over people contacted, flat against 11-09 and
+under the 2% gate; A1 0.75%, A2 2.18%, A4 2.11%, A5 1.57%, B2/B4 zero. No pause.
+All three push runs reconciled: `per_angle {A1:3}` equals
+`budget_spent_per_angle` equals `rows_in_database`, `reconciled: true`. All three
+sends rendered with no blank required variable. Concentration is healthy — 535
+distinct solicitations over 2,847 A2 sends, the largest a single notice at 3.97%.
+Audit **196 / 0 / 0** over 6,712 leads, the 196 still the set Instantly moved to
+a list on 11-04.
+
+The **CORS fix is confirmed live**: a real preflight now returns
+`access-control-allow-headers: authorization, apikey, content-type, x-client-info`
+and `access-control-max-age: 60`. `proposal_opens` is still 0, but `links_sent`
+is unchanged at 28, so nothing has been clickable since the fix shipped — the
+number means "no new links", not "the fix did not work".
+
+`opportunities` failed 4× again this morning, all `546 WORKER_RESOURCE_LIMIT`,
+the third day. **Sharding landed today** after those runs: the crons now fire
+`shard=0..3&shards=4` as `opportunities` / `opportunities_1` / `_2` / `_3`, and
+`opportunities_test` succeeded at 21:17 writing 2,115 signals. Tomorrow's
+03:00–03:45 window is the first real test. Jobs otherwise all 2xx, including the
+new `fit_test` and `opportunities_test`.
+
+**Replies.** One new: `dana@windbornesystems.com`, an out-of-office, correctly
+classified `human = False`. Yesterday's three stand as recorded. Desk ledger 239
+emails, `needs_human` **8**, `drafted` **43** — unchanged, which means Bill
+Bailey's reply has sat `drafted` since 11-09 15:23. His notice closes 11-23, so
+there is room, but it is aging; the desk is another session's to send.
