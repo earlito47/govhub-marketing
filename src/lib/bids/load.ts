@@ -72,6 +72,8 @@ export interface Bid {
   estimatedValue: number | null;
   postedAt: string | null;
   dueAt: string | null;
+  /** When the source archived it (public_bid_listings closed_at), for closed bids. */
+  closedAt: string | null;
   timeZone: string;
   summary: string;
   url: string | null;
@@ -232,6 +234,7 @@ function toBid(row: BidRow, now: number): Omit<Bid, 'slug' | 'path' | 'indexable
     estimatedValue: row.estimated_value,
     postedAt: row.posted_at,
     dueAt: row.due_at,
+    closedAt: row.closed_at,
     timeZone: row.time_zone || 'America/New_York',
     summary: noEmDash(row.summary.trim()),
     url: row.url,
@@ -564,4 +567,69 @@ export function formatMonthDay(iso: string, tz = 'America/New_York'): string {
 /** "Nov 2026", for hub titles. */
 export function formatMonthYear(d: Date): string {
   return new Intl.DateTimeFormat('en-US', { timeZone: 'America/New_York', month: 'short', year: 'numeric' }).format(d);
+}
+
+// ---- Freshness: sitemap dates, the new-bids sitemap and feed, "Newly posted" ----
+//
+// Google has no push for ordinary pages (the sitemap ping was retired in 2023,
+// IndexNow is Bing and others, the Indexing API is for job postings and
+// livestreams only). It finds new pages by re-reading sitemaps and following
+// links from pages it crawls often. So each page says when its content really
+// changed (the sitemap's <lastmod>), newly posted bids get their own small
+// sitemap and an RSS feed, and the busiest bid pages link to them.
+//
+// Measured 2026-11-09: of the bids posted Nov 1 to 5, 7% had appeared in Google
+// by Nov 9; the median click on a bid page comes 12 days after posting, with
+// about 10 days left to its deadline. Being found in days rather than weeks
+// leaves more of a bid's open window in search.
+
+/** A bid counts as newly posted for this many days after its posted date. */
+export const FRESH_DAYS = 3;
+
+const validPast = (iso: string | null, now: number): number | null => {
+  const t = iso ? Date.parse(iso) : NaN;
+  return Number.isFinite(t) && t <= now ? t : null;
+};
+
+/**
+ * When a bid page's content last really changed: the day it closed for a
+ * closed bid (its status, notice and similar-bids list change), else the
+ * date the agency posted it. Null when neither is known; never the build time.
+ */
+export function bidLastmod(b: Bid, builtAt: Date): string | null {
+  const now = builtAt.getTime();
+  if (b.closed) {
+    const t = validPast(b.closedAt, now) ?? validPast(b.dueAt, now);
+    if (t !== null) return new Date(t).toISOString();
+  }
+  const posted = validPast(b.postedAt, now);
+  return posted === null ? null : new Date(posted).toISOString();
+}
+
+/** Posted within FRESH_DAYS of the build, still open, and indexable. */
+export function isFresh(b: Bid, builtAt: Date): boolean {
+  const posted = validPast(b.postedAt, builtAt.getTime());
+  return !b.closed && b.indexable && posted !== null && builtAt.getTime() - posted <= FRESH_DAYS * 86_400_000;
+}
+
+/** The newest open, indexable bids by posted date, at most `n`, posted within `days`. */
+export function newlyPosted(bids: Bid[], builtAt: Date, n: number, days = 7): Bid[] {
+  const now = builtAt.getTime();
+  return bids
+    .filter((b) => !b.closed && b.indexable)
+    .map((b) => ({ b, t: validPast(b.postedAt, now) }))
+    .filter((x): x is { b: Bid; t: number } => x.t !== null && now - x.t <= days * 86_400_000)
+    .sort((x, y) => y.t - x.t || x.b.title.localeCompare(y.b.title))
+    .slice(0, n)
+    .map((x) => x.b);
+}
+
+/** A list page changes when a bid is posted to it or one of its bids closes. */
+export function listLastmod(bids: Bid[], builtAt: Date): string | null {
+  let latest: string | null = null;
+  for (const b of bids) {
+    const m = bidLastmod(b, builtAt);
+    if (m && (!latest || m > latest)) latest = m;
+  }
+  return latest;
 }

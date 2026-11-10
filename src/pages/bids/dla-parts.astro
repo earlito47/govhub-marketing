@@ -15,7 +15,7 @@
 import BidsLayout from '../../components/bids/BidsLayout.astro';
 import Breadcrumbs from '../../components/seo/Breadcrumbs.astro';
 import CTABand from '../../components/CTABand.astro';
-import { DLA_SEGMENT, formatMonthYear, formatShortDate, getBidIndex } from '../../lib/bids/load';
+import { DLA_SEGMENT, formatMonthYear, formatShortDate, getBidIndex, listLastmod } from '../../lib/bids/load';
 import { dlaOffice, nsnOf, setAsideShort } from '../../lib/bids/dla';
 import { CALENDLY_URL, ctaHref } from '../../config';
 
@@ -46,7 +46,7 @@ const title = `DLA Parts Solicitations: ${nText} Open Buys (${month})`;
 const description = `${nText} open Defense Logistics Agency parts solicitations, soonest deadline first, with NSN, solicitation number, set-aside and DLA office. Updated ${checked}.`;
 ---
 
-<BidsLayout title={title} description={description}>
+<BidsLayout title={title} description={description} lastmod={listLastmod(index.dlaParts, index.builtAt)}>
   <div class="dla-page">
     <Breadcrumbs
       items={[

@@ -113,7 +113,15 @@ for (const [src, page] of pages) {
 }
 
 // Sitemap URLs: the indexable pages.
-const sitemap = [...readFileSync(join(DIST, 'sitemap-0.xml'), 'utf8').matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1].replace(SITE, '') || '/');
+// The sitemap is in parts (astro.config.mjs chunks): read every part the index
+// lists that was built here. A URL can be in two parts (bids-new and bids).
+const locs = (file) => [...readFileSync(file, 'utf8').matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]);
+const parts = locs(join(DIST, 'sitemap-index.xml'))
+  .filter((u) => u.startsWith(SITE))
+  .map((u) => join(DIST, u.slice(SITE.length)))
+  .filter((f) => f.endsWith('.xml') && existsSync(f) && /\/sitemap-[^/]+\.xml$/.test(f));
+if (!parts.length) throw new Error('link guard: no sitemap parts found from dist/sitemap-index.xml');
+const sitemap = [...new Set(parts.flatMap(locs))].map((u) => u.replace(SITE, '') || '/');
 for (const p of sitemap) if (p !== '/' && !inbound.get(p)?.size) add('orphan', p, '(sitemap)');
 
 const seen = new Set(['/']);
