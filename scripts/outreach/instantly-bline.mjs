@@ -41,9 +41,8 @@
 //   node scripts/outreach/instantly-bline.mjs --sync      create as DRAFT, or update while still draft
 //   node scripts/outreach/instantly-bline.mjs --verify    read back and compare
 //
-// --sync never touches a campaign that has left draft. Activation, mailboxes
-// and the per-day caps are a separate, deliberate step once the pipeline
-// renders the B-line variables.
+// --sync never touches a campaign that has left draft. Activation and the
+// per-day caps are a separate, deliberate step (docs/bline-launch.md).
 
 const API = 'https://api.instantly.ai/api/v2';
 const KEY = process.env.INSTANTLY_API_KEY;
@@ -68,6 +67,24 @@ const SCHEDULE = {
 };
 
 const TAIL = ['', '{{accountSignature}}'];
+
+// ---- Mailboxes ------------------------------------------------------------
+// B4 launches on A5's twelve (owner decision 2026-11-10, "option A"): A5 was
+// retired for new leads on 11-04 and its ~700 in-flight leads finish around
+// 11-20, so its follow-ups use a fraction of 12 x 25 = 300/day. Instantly's
+// 25/day limit is per mailbox, so the two campaigns cannot overdraw a box;
+// the cost is that a burned govhubnow/hq/submittals/rfp domain hits both.
+// Same list as MAILBOXES.A5 in instantly-angles.mjs, which keeps them too:
+// a box is never pulled from a campaign mid-sequence.
+const MAILBOXES = {
+  B4: [
+    'earl.knight@govhubnow.com', 'earl@govhubnow.com', 'e.knight@govhubnow.com',
+    'earl.knight@govhubhq.com', 'earl@govhubhq.com', 'e.knight@govhubhq.com',
+    'earl.knight@govhubsubmittals.com', 'e.knight@govhubsubmittals.com', 'earl@govhubsubmittals.com',
+    'e.knight@govhubrfp.com', 'earl@govhubrfp.com', 'earl.knight@govhubrfp.com',
+  ],
+  B2: [], // held: 5 companies ready on 11-10, pending the opportunities-selection fix
+};
 
 // ===========================================================================
 // B4  Competitor just won  (from A4)
@@ -184,7 +201,7 @@ function payload(a) {
           : s.variants.map((v) => ({ subject: '', body: bodyHtml(withTail(v)) })),
       })),
     }],
-    email_list: [], // assigned at activation, never by this script's --sync
+    email_list: MAILBOXES[a.key],
     daily_limit: a.daily_max_leads * 3,
     daily_max_leads: a.daily_max_leads,
     email_gap: 12,
@@ -311,6 +328,7 @@ function compare(stored, sent) {
       if (i === 0 && (gv[j]?.subject || '') !== wv.subject) problems.push(`step 1 subject ${j + 1} differs`);
     });
   });
+  if ((stored.email_list || []).length !== sent.email_list.length) problems.push(`mailboxes ${(stored.email_list || []).length} != ${sent.email_list.length}`);
   if (stored.link_tracking || stored.open_tracking) problems.push('tracking is on');
   if (stored.auto_variant_select) problems.push('auto_variant_select is on');
   return problems;
