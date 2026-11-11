@@ -4786,3 +4786,131 @@ item 7's numbers will be read from the reply text and the desk ledger, not the
 column, and will not be comparable to those two benchmarks until the benchmarks
 are recomputed the same way. Flagged to the owner rather than edited: the text
 stored is the text they approved.
+
+## 2026-11-11 — daily check (Veterans Day; B4 launched)
+
+**The 21:15 UTC step ran correctly.** A1, A2 and A4 are back to `status = 1`;
+GH-B4-CompetitorWon is ACTIVE with `daily_max_leads` 75 on its 12 mailboxes;
+`daily_caps` reads `{"A1":37,"A2":125,"A4":55,"A5":0,"B2":0,"B4":75}`, written
+21:17:32 UTC. B2 is still draft at cap 0, for Monday. Push did the right thing
+all three runs: `{"pushed":0,"note":"holiday (no_push_dates)"}`.
+
+### Sharding's first real test, and a collision it introduced
+
+Three of four shards passed first time. `opportunities_3` did not:
+
+| time | job | status |
+|---|---|---|
+| 03:00 | opportunities | 200 |
+| 03:15 | opportunities_1 | 200 |
+| 03:30 | opportunities_2 | 200 |
+| 03:45 | opportunities_3 | **546** |
+| 03:45 | **awards** | **546** |
+| 03:53 | opportunities_3 (retry) | 500 |
+| 04:48 | opportunities_3 (retry) | 200 |
+| 09:45 / 15:45 / 21:45 | awards | 200 |
+
+`awards` has fired at 03:45 every day since 11-08 and returned 200 every time.
+Today is the first day `opportunities_3` existed at that minute, and both jobs
+at that minute died on WORKER_RESOURCE_LIMIT while awards passed at its other
+three slots. Sharding put the fourth shard on an already-occupied minute.
+
+It is self-healing — the 04:48 guarded retry carried shard 3 to 200, so the
+harvest completed — and `opp_mem_trace` shows the shards are otherwise
+comfortable: heap peaks at **27 MB** over 71,364 streamed records, against the
+42-45 MB and death at ~49,000 records that preceded sharding. So shard 3's 546
+is the collision, not its own weight, and the one-line fix is to move it off
+03:45 (03:37 and 03:40 are clear; 04:00 holds `recompetes`). **Not changed from
+here**: the opportunities job is the B-line session's live work as of today, the
+retry already covers the failure, and a wrong cron edit starves A2/B2 supply.
+Handing it over with the evidence instead.
+
+Two smaller notes on the same reading. `job_health.attempt` starts at **1**, so
+`attempt = 1` is a first attempt and not a retry — counting those as retries
+reports 338 of them on a clean day. And `outreach.config.opp_mem_trace` carries
+`updated_at` of 2026-09-29 while holding today's runs, so that row's timestamp
+is not written on update and must not be used to judge freshness.
+
+`metrics` at 23:00 returned **504** — the run this check is meant to follow.
+A gateway timeout, so it may have done its work before the connection dropped;
+worth watching tomorrow rather than acting on one occurrence.
+
+### The bounce denominator is not one number
+
+Measured as yesterday was, against our own pushed first touches, bounce is
+**123 / 6,908 = 1.78%**, identical to 11-10: A1 0.75%, A2 2.18%, A4 2.10%,
+A5 1.57%. Zero new bounces, which is what a paused A-line and a holiday push
+should produce.
+
+I first reported this as 1.90% because I took the denominator from Instantly's
+`new_leads_contacted_count` instead. Instantly offers three "contacted" numbers
+and for A1 they read **1,063 / 2,166 / 723** (`leads_count`,
+`contacted_count`, `new_leads_contacted_count`) — a 3x spread, and
+`new_leads_contacted_count` fell for A1 and A5 overnight while the campaigns
+still held all 6,712 leads. A 2% gate read against a denominator that can vary
+3x and move down is not a gate. **The denominator for this check is our own
+`assignments.pushed_at` count**, which only rises and is auditable. Recorded so
+tomorrow's figure is comparable to today's.
+
+### B4's copy, read before it sends rather than after
+
+No B4 lead exists yet — assign queues them at 05:00 tomorrow — so the openers
+were rendered from the 400 candidate companies instead. Over those 400: rung 1
+(competitor, city, amount, agency, NAICS) **81.2%**, rung 2 4.5%, rung 3 1.5%,
+rung 5 ("a firm in your state") **11.0%**, and **1.8% held** because no rung
+fits, which is `gateBline` refusing to send a blank. Samples at 182-198
+characters, inside the 200 limit:
+
+> Barry, Diamond Road Maintenance, Inc. out of Sutherlin just won $470K from
+> USDA in NAICS 115310. Most firms in your lane only hear about these after
+> award. Want the next 3 that are still open?
+
+Rungs 5 and 6 assert "a firm in your state", so that claim was checked rather
+than assumed: across **1,756 distinct awards**, not one is attached to
+companies in more than one state. The harvest is state-scoped and the sentence
+holds. (The first version of this test grouped by signal id and was worthless —
+`outreach.signals` holds one row per company, so states-per-signal is 1 by
+construction. A check whose negative answer is unreachable proves nothing.)
+
+**The acronym-casing bug reaches B4 competitor names.** Two of six sampled
+openers name "Ttec Government Solutions LLC" (TTEC) and "Asrc Federal Field
+Services, LLC" (ASRC); a third reads "Aerovironment, Inc" for AeroVironment.
+**1,740 of 6,217** payloads (28%) have the shape that produces this — a short
+title-cased leading token — though an unknown share of those are genuine words
+("Bell", "Wood", "Cole"), so 28% is an upper bound, not the rate. What is
+decisive is where the casing goes: only **4 of 6,217** payloads still hold an
+ALL-CAPS name, so the original is destroyed at harvest, not at render. That
+makes it the same unfixable-from-a-word-list class as A5's two names today, and
+fixable later only if the harvester starts storing the source name alongside
+the title-cased one. Worth doing before B4 scales past 75/day.
+
+### The rest
+
+Audit: **2 problems over 6,712 leads**, both the known A5 ALL-CAPS names. PR
+#373 is merged, so B4 and B2 are covered (both 0 leads, 0 bad openers). A2 arms
+read speed 1,322 / base 1,329 in-campaign, and "queued to state a passed date
+**0**, of 336 already past close" — the stale-sequence guard holding exactly
+where it was built to.
+
+Inventory: A1 **0** ready, A2 1, A4 **0**, A5 727 against a cap of 0. B4 supply
+is **3,629** unassigned B companies with a live `competitor_award` signal =
+**48 days** at cap 75, well clear of the 5-day flag and above the ~3,000 the
+pre-flight expected.
+
+**One capacity item nobody has looked at.** B4 sends from A5's 12 mailboxes, and
+A5 still has **351 leads in flight** (1,820 contacted, 1,469 completed). Twelve
+boxes at 25/day is 300 emails/day. B4 at 75 new leads/day reaches roughly
+225/day once its 3-step sequence fills, and A5's tail runs until about 11-20, so
+the shared boxes are tight for the next week. Instantly throttles rather than
+drops, so the symptom would be follow-ups drifting later, not lost mail. No
+action; it resolves itself as A5 drains.
+
+**Replies.** One: `diedre@windsorgroupllc.net` (A5), "Thank you for contacting
+Windsor Group LLC. Please be advise" — an autoresponder, flagged
+`human_reply = true`, which is the eighth shape to be miscounted that way. Not a
+decline and not an accept, so no suppression. The stored text is 60 characters
+and cut mid-word, which looked like a truncation bug worth chasing; it is not —
+across 160 rows with reply text the maximum is **2,000** and the average **853**,
+and this is the only row at 60. The message really was that short. Desk ledger
+241 emails, `needs_human` **8** (all dated 10-08 to 11-04, none new), `drafted`
+**44**.
