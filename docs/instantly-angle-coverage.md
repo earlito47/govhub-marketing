@@ -4565,7 +4565,8 @@ right now, and every obvious remedy changes which solicitations get harvested.
 Bounce **123 / 6,895 = 1.78%** over people contacted, flat against 1.79% on
 11-06 and under the gate; A2 2.18%, A4 2.11%, A1 0.76%, nothing near the 5%
 per-angle line. Jobs otherwise all 2xx. Audit **196 / 0 / 0** over 6,709 leads,
-the 196 still the set Instantly moved to a list on 11-04. Renders clean on all
+the 196 still the set deliberately parked on 11-04 (see the correction above:
+it was us, not Instantly). Renders clean on all
 four live campaigns; `sol_short` bare-number share 20.7%; A2 arms 1,322 speed /
 1,329 base against a control frozen at 1,905.
 
@@ -4688,8 +4689,9 @@ All three push runs reconciled: `per_angle {A1:3}` equals
 `budget_spent_per_angle` equals `rows_in_database`, `reconciled: true`. All three
 sends rendered with no blank required variable. Concentration is healthy — 535
 distinct solicitations over 2,847 A2 sends, the largest a single notice at 3.97%.
-Audit **196 / 0 / 0** over 6,712 leads, the 196 still the set Instantly moved to
-a list on 11-04.
+Audit **196 / 0 / 0** over 6,712 leads, the 196 still the set deliberately
+parked in GH-A2-ClosedRFP-Parked on 11-04 — closed solicitations, moved on
+purpose from the assessment session. Not a fault, and not Instantly's doing.
 
 The **CORS fix is confirmed live**: a real preflight now returns
 `access-control-allow-headers: authorization, apikey, content-type, x-client-info`
@@ -4709,3 +4711,43 @@ classified `human = False`. Yesterday's three stand as recorded. Desk ledger 239
 emails, `needs_human` **8**, `drafted` **43** — unchanged, which means Bill
 Bailey's reply has sat `drafted` since 11-09 15:23. His notice closes 11-23, so
 there is room, but it is aging; the desk is another session's to send.
+
+### 2026-11-11 01:54 UTC — what the B-line session passed over, verified
+
+The B-line build session (`session_01MZJTSs56CMunCSah9YGMn7`) sent across the
+week's scheduled steps. Everything below was checked against a primary source
+before being written here, because a message from another session is not itself
+evidence.
+
+| claim | verified against | result |
+|---|---|---|
+| A1/A2/A4 paused on purpose for Veterans Day | Instantly `/campaigns/{id}` | A1, A2, A4 all `status = 2` (paused); A5 `status = 1` |
+| 11-11 21:15 UTC resumes them and launches B4 at cap 75 | scheduled task `trig_01V5qnQF8UkLHkhQ4nmFVXhD` | exists, enabled, fires 2026-11-11T21:15:00Z |
+| 11-16 21:15 UTC launches B2 at cap 100 after pre-flight | scheduled task `trig_01Aq734We12umFdUDLJrM2ts` | exists, enabled, fires 2026-11-16T21:15:00Z |
+| B4/B2 caps are 0 until launch | `outreach.config.daily_caps` | `{"A1":37,"A2":125,"A4":55,"A5":0,"B2":0,"B4":0}` |
+| close window 16–30 days, 5 leads per award per day | `outreach-push` `DEFAULT_BUFFERS` on origin/main | `A2_close_min_days: 16`, `A2_close_max_days: 30`, `award_daily_max: 5` |
+| push skips federal holidays | `outreach.config.no_push_dates` | contains `2026-11-11` |
+| B2/B4 campaigns exist | Instantly | both `status = 0` (draft), as expected pre-launch |
+
+**This corrects last night's headline.** The 11-10 entry above says sending
+reaches zero and that turning the B-line caps on "is a decision for a person".
+The decision had already been made — the owner approved the Veterans Day pause
+and "Option A" (B4 Thursday 11-12 on A5's 12 mailboxes) in the B-line session on
+11-10, which this side could not see. B4 goes live today at 21:15 UTC and first
+emails land Thursday. The inventory finding stands on its own terms: A1/A2/A4
+resume today with 0 ready rows, so the A-line sends only Instantly's own
+follow-ups until supply returns, and B4's 75/day is what replaces first-touch
+volume, not an A-line recovery.
+
+**Correction to my own 11-09 and 11-10 entries.** Both repeated "the 196 still
+the set Instantly moved to a list on 11-04" — *after* the correction at the
+11-04 entry above had already established it was us, deliberately, from the
+assessment session. Two entries written past a correction already in the same
+file. Both sentences are now fixed in place and say who moved them and why.
+Nothing in the audit numbers changes; the attribution was the error.
+
+A pause is one of the few states that looks identical whether it was chosen or
+whether something broke, and nothing in the database says which. `no_push_dates`
+carrying 2026-11-11 is the closest thing to a local record, and it only covers
+push, not the campaigns. Worth knowing for tonight's check: a paused A1/A2/A4
+before 21:15 UTC today is correct, not a fault.
