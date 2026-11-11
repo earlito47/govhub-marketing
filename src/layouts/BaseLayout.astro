@@ -26,6 +26,15 @@ interface Props {
    * pages) and still pass links to the hubs that should rank.
    */
   noindex?: boolean | 'follow';
+  /**
+   * When the page's content last really changed (ISO date-time). Not shown;
+   * read back from the built HTML by the sitemap (astro.config.mjs) for
+   * <lastmod>. Pages without a real date leave it out rather than stamp the
+   * build time, which search engines learn to ignore.
+   */
+  lastmod?: string | null;
+  /** A newly posted bid: also listed in the new-bids sitemap (astro.config.mjs). */
+  fresh?: boolean;
 }
 
 const {
@@ -36,6 +45,8 @@ const {
   ogImageAlt = 'GovHub: AI proposal software for government contractors',
   ogType = 'website',
   noindex = false,
+  lastmod = null,
+  fresh = false,
 } = Astro.props;
 
 const canonicalUrl = canonical ?? new URL(Astro.url.pathname, Astro.site).toString();
@@ -112,6 +123,11 @@ const ANALYTICS_ENABLED =
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalUrl} />
     {noindex && <meta name="robots" content={noindex === 'follow' ? 'noindex,follow' : 'noindex,nofollow'} />}
+    {lastmod && <meta name="gh:lastmod" content={lastmod} />}
+    {fresh && <meta name="gh:fresh" content="1" />}
+    {Astro.url.pathname.startsWith('/bids/') && (
+      <link rel="alternate" type="application/rss+xml" title="New government bids | GovHub" href="/bids/new.xml" />
+    )}
 
     <meta property="og:type" content={ogType} />
     <meta property="og:site_name" content="GovHub" />

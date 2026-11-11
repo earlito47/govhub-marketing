@@ -10,7 +10,7 @@ import Breadcrumbs from '../seo/Breadcrumbs.astro';
 import CTABand from '../CTABand.astro';
 import Pager from './Pager.astro';
 import type { BidIndex, Hub } from '../../lib/bids/load';
-import { DLA_SEGMENT, FEDERAL_SEGMENT, HUB_PAGE_SIZE, INSIGHTS_STATE_SLUGS, PLACE_BY_SLUG, categoryName, categoryPhrase, formatMonthDay, formatMonthYear, formatShortDate, hubOverflowPages, placeName } from '../../lib/bids/load';
+import { DLA_SEGMENT, FEDERAL_SEGMENT, HUB_PAGE_SIZE, INSIGHTS_STATE_SLUGS, PLACE_BY_SLUG, categoryName, categoryPhrase, formatMonthDay, formatMonthYear, formatShortDate, hubOverflowPages, listLastmod, newlyPosted, placeName } from '../../lib/bids/load';
 import { CATEGORIES } from '../../lib/bids/categories';
 import { CALENDLY_URL, ctaHref } from '../../config';
 
@@ -41,6 +41,44 @@ const h1 = catLabel
 const open = hub.open;
 const n = open.length.toLocaleString('en-US');
 const month = formatMonthYear(index.builtAt);
+
+// The sitemap's <lastmod>: the newest posting or closing among the bids listed.
+const lastmod = listLastmod([...open, ...hub.recentlyClosed], index.builtAt);
+// "Newly posted" (place hubs): the list is soonest-deadline first, so a bid
+// posted today with a deadline next month sat at the bottom or on page 2.
+// Listing the newest here gives it a link from a page Google crawls often.
+const freshList = place && !category ? newlyPosted(open, index.builtAt, 10) : [];
+
+// "At a glance": facts computed from this hub's own bids, so every hub says
+// something no other page does. List pages ranked on page 1 for rare searches
+// but on page 2 or lower for the broad ones ("snow removal bids" 12 to 24,
+// "government it bids" 70; Search Console, Oct 31 to Nov 9).
+const DAY = 86_400_000;
+const nowT = index.builtAt.getTime();
+const dueSoon = open.filter((b) => b.dueAt && Date.parse(b.dueAt) - nowT <= 14 * DAY).length;
+const postedWeek = open.filter((b) => {
+  const t = b.postedAt ? Date.parse(b.postedAt) : NaN;
+  return Number.isFinite(t) && t <= nowT && nowT - t <= 7 * DAY;
+}).length;
+const setAsideOpen = open.filter((b) => b.setAside && !/^(no set.?aside|not set aside|none)/i.test(b.setAside)).length;
+const leads = open
+  .map((b) => (b.postedAt && b.dueAt ? (Date.parse(b.dueAt) - Date.parse(b.postedAt)) / DAY : NaN))
+  .filter((x) => Number.isFinite(x) && x >= 0)
+  .sort((a, b) => a - b);
+const medianLead = leads.length >= 5 ? Math.round(leads[Math.floor(leads.length / 2)]) : null;
+const topPlaces = category && !place
+  ? [...open.reduce((m, b) => m.set(b.stateName ?? 'Federal', (m.get(b.stateName ?? 'Federal') ?? 0) + 1), new Map<string, number>())]
+      .sort((a, b) => b[1] - a[1]).slice(0, 3)
+  : [];
+const glance = [
+  `${dueSoon.toLocaleString('en-US')} due in the next 14 days`,
+  `${postedWeek.toLocaleString('en-US')} posted in the last 7 days`,
+  // A count, not a share: state and local notices rarely record a set-aside at
+  // all, so "1% set aside" (Massachusetts) would read as fact when it is a gap.
+  setAsideOpen > 0 ? `${setAsideOpen.toLocaleString('en-US')} set aside for small or disadvantaged businesses` : null,
+  medianLead !== null ? `Typically ${medianLead} days from posting to the deadline` : null,
+  topPlaces.length > 1 ? `Most from ${topPlaces.map(([p, c]) => `${p} (${c})`).join(', ')}` : null,
+].filter((x): x is string => !!x);
 
 // <title>: the live count and the month, the longest form that fits 60
 // characters (check-meta.mjs warns past 60, fails past 70). Hubs ranked on
@@ -133,11 +171,16 @@ const crumbs = [
 ];
 ---
 
-<BidsLayout title={title} description={description}>
+<BidsLayout title={title} description={description} lastmod={lastmod}>
   <Breadcrumbs items={crumbs} />
   <p class="eyebrow">Open government bids</p>
   <h1>{h1}</h1>
   <p class="lede">{lede}</p>
+  {glance.length > 0 && (
+    <ul class="glance" aria-label="At a glance">
+      {glance.map((g) => <li>{g}</li>)}
+    </ul>
+  )}
   {dlaHere > 0 && (
     <p class="dla-note">
       Defense Logistics Agency spare-parts buys are listed together on one page:{' '}
@@ -154,6 +197,13 @@ const crumbs = [
 
   {overflow.length > 0 && (
     <Pager base={hub.path} current={1} total={overflow.length + 1} label={placeLabel!} />
+  )}
+
+  {freshList.length > 0 && (
+    <>
+      <h2>Newly posted</h2>
+      <BidList bids={freshList} caption="The newest open bids by the date the agency posted them, newest first" showPlace={!place || place === FEDERAL_SEGMENT} />
+    </>
   )}
 
   {topAgencies.length > 1 && (
@@ -218,6 +268,22 @@ const crumbs = [
 </BidsLayout>
 
 <style>
+  .glance {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 1.25rem;
+    list-style: none;
+    padding: 0;
+    margin: 0.5rem 0 0;
+    max-width: 52rem;
+    color: var(--fg-muted);
+    font-size: 0.95rem;
+  }
+  .glance li::before {
+    content: '•';
+    margin-right: 0.4rem;
+    color: var(--gh-teal-600);
+  }
   .dla-note {
     border-left: 3px solid var(--border);
     padding: 0.5rem 0.9rem;

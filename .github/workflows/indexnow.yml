@@ -38,7 +38,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build (produces dist/sitemap-0.xml)
+      - name: Build (produces dist/sitemap-index.xml and its parts)
         run: npm run build
 
       - name: Submit sitemap URLs to IndexNow

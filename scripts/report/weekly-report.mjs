@@ -14,7 +14,8 @@
 //      time.
 //   5. Indexing: a URL Inspection sample by section (the Pages report has no
 //      API), every page Google showed in the last four weeks checked for 404,
-//      and the sitemap size.
+//      the share of new bids Google showed within 7 days of posting, and the
+//      sitemap size.
 //
 // Every section degrades on its own: one that cannot be gathered says so and
 // the email still goes, like scripts/digest/marketing-digest.mjs.
@@ -182,14 +183,56 @@ const spendOutside = (t) => Object.entries(t?.ai_spend ?? {}).filter(([k]) => k 
 const KIND = { trial_self_serve: 'Self-serve', trial_outreach: 'Outreach handover', paying: 'Paying', internal: 'Internal', 'no user (system)': 'No user (system jobs)' };
 
 // ---- 4. Indexing ----------------------------------------------------------------
+// The sitemap is in parts (astro.config.mjs): read every part the index lists.
 async function gatherSitemap() {
-  const res = await fetch(`${SITE}/sitemap-0.xml`);
-  if (!res.ok) throw new Error(`sitemap: HTTP ${res.status}`);
-  const urls = [...(await res.text()).matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]);
+  const get = async (u) => {
+    const res = await fetch(u);
+    if (!res.ok) throw new Error(`${pathOf(u)}: HTTP ${res.status}`);
+    return [...(await res.text()).matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]);
+  };
+  const parts = (await get(`${SITE}/sitemap-index.xml`)).filter((u) => /\/sitemap-[^/]+\.xml$/.test(u));
+  const urls = [...new Set((await Promise.all(parts.map(get))).flat())];
   const bySection = {};
   for (const u of urls) bySection[sectionOf(u)] = (bySection[sectionOf(u)] ?? 0) + 1;
   return { urls, bySection };
 }
+
+// New bids shown in Google within 7 days of posting. The cohort is the bids
+// posted in the week ending 7 days before this report's week ends, so every
+// one has had 7 full days; the week before that is the comparison. Bid paths
+// and posted dates come from /bids/posted.json (src/pages/bids/posted.json.ts),
+// impressions from Search Console by date and page. Measured 2026-11-09 before
+// the freshness work (sitemap dates, the new-bids sitemap and feed, twice-daily
+// rebuilds): 7% of bids posted Nov 1 to 5 had appeared in Google by Nov 9.
+async function gatherNewBidVisibility() {
+  const res = await fetch(`${SITE}/bids/posted.json`);
+  if (!res.ok) throw new Error(`/bids/posted.json: HTTP ${res.status}`);
+  const { bids } = await res.json();
+  const plus = (d, n) => isoDay(Date.parse(`${d}T00:00:00Z`) + n * DAY);
+  const cohort = (end) => ({ start: plus(end, -6), end });
+  const now = cohort(plus(W.end, -7));
+  const prev = cohort(plus(W.end, -14));
+  const rows = await gscQuery({
+    start: prev.start,
+    end: W.end,
+    dims: ['date', 'page'],
+    filters: [{ dimension: 'page', operator: 'contains', expression: '/bids/' }],
+  });
+  const firstShown = new Map();
+  for (const r of rows) {
+    if (!r.impressions) continue;
+    const [date, page] = r.keys;
+    const p = pathOf(page);
+    if (!firstShown.has(p) || date < firstShown.get(p)) firstShown.set(p, date);
+  }
+  const measure = (c) => {
+    const list = bids.filter((b) => b.d >= c.start && b.d <= c.end);
+    const shown = list.filter((b) => { const f = firstShown.get(b.p); return f && f >= b.d && f <= plus(b.d, 7); }).length;
+    return { ...c, n: list.length, shown };
+  };
+  return { now: measure(now), prev: measure(prev) };
+}
+const sharePct = (x) => (x?.n ? `${Math.round((x.shown / x.n) * 100)}%` : 'n/a');
 
 // Per section: how many to inspect. Comparisons and Solutions are small and
 // commercial, so all of them every week; the rest is a sample.
@@ -263,7 +306,7 @@ function render(d) {
   const link = (u, n = 70) => ({ text: clip(pathOf(u), n), href: u });
   const fail = (label, e) => note(`${label} unavailable this week: ${e}`);
 
-  const { search, ga4, trials, sitemap, inspection, nf, errors } = d;
+  const { search, ga4, trials, sitemap, inspection, nf, fresh, errors } = d;
   text.push(`GovHub weekly report, ${RANGE} (UTC), against ${short(P.start)} to ${short(P.end)}`);
   html.push(`<h2 style="margin:0 0 4px;font-size:20px">GovHub weekly report</h2><div style="color:#6b665c">${esc(RANGE)} (UTC), against ${esc(short(P.start))} to ${esc(short(P.end))}</div>`);
 
@@ -288,6 +331,7 @@ function render(d) {
     rows.push(['New trials, outreach handover', n0(k(a, 'trial_outreach')), n0(k(b, 'trial_outreach')), '']);
     rows.push(['AI spend, excluding internal', usd(spendOutside(a)), usd(spendOutside(b)), pct(spendOutside(a), spendOutside(b))]);
   }
+  if (fresh.ok) rows.push(['New bids shown in Google within 7 days', sharePct(fresh.v.now), sharePct(fresh.v.prev), '']);
   if (nf.ok) rows.push(['Pages Google showed that now 404', n0(nf.v.notFound), '', '']);
   if (sitemap.ok) rows.push(['Pages in the sitemap', n0(sitemap.v.urls.length), '', '']);
   table(['', 'This week', 'Last week', 'Change'], rows);
@@ -355,6 +399,11 @@ function render(d) {
       note(`Not indexed yet, worth "Request indexing" in Search Console: ${inspection.v.notIndexedCommercial.map((x) => pathOf(x.u)).join(', ')}`);
     }
   }
+  if (!fresh.ok) fail('New-bid visibility', fresh.e);
+  else {
+    const f = (x) => `${n0(x.shown)} of ${n0(x.n)} (${sharePct(x)}) posted ${short(x.start)} to ${short(x.end)}`;
+    p(`New bids shown in Google within 7 days of posting: ${f(fresh.v.now)}; the week before, ${f(fresh.v.prev)}. Indexable bid pages only.`);
+  }
   if (!nf.ok) fail('404 check', nf.e);
   else {
     p(`Checked every page Google showed in the last four weeks (${n0(nf.v.checked)}): ${n0(nf.v.notFound)} return 404${nf.v.errors ? `, ${n0(nf.v.errors)} did not answer` : ''}.`);
@@ -384,13 +433,13 @@ function render(d) {
 const errors = [];
 const settle = async (fn) => { try { return { ok: true, v: await fn() }; } catch (e) { return { ok: false, e: e.message }; } };
 
-const [search, ga4, trials, sitemap] = await Promise.all([settle(gatherSearch), settle(gatherGa4), settle(gatherTrials), settle(gatherSitemap)]);
+const [search, ga4, trials, sitemap, fresh] = await Promise.all([settle(gatherSearch), settle(gatherGa4), settle(gatherTrials), settle(gatherSitemap), settle(gatherNewBidVisibility)]);
 const inspection = args.includes('--no-inspect') ? { ok: false, e: 'skipped (--no-inspect)' }
   : sitemap.ok ? await settle(() => gatherInspection(sitemap.v)) : { ok: false, e: 'no sitemap' };
 const nf = args.includes('--no-404') ? { ok: false, e: 'skipped (--no-404)' }
   : search.ok ? await settle(() => gather404(search.v)) : { ok: false, e: 'needs Search Console' };
 
-const email = render({ search, ga4, trials, sitemap, inspection, nf, errors });
+const email = render({ search, ga4, trials, sitemap, inspection, nf, fresh, errors });
 if (arg('--html')) writeFileSync(arg('--html'), email.html);
 
 if (DRY) {

@@ -4,7 +4,7 @@ import BidsLayout from '../../components/bids/BidsLayout.astro';
 import BidList from '../../components/bids/BidList.astro';
 import Breadcrumbs from '../../components/seo/Breadcrumbs.astro';
 import CTABand from '../../components/CTABand.astro';
-import { DLA_SEGMENT, FEDERAL_SEGMENT, formatShortDate, getBidIndex, placeName } from '../../lib/bids/load';
+import { DLA_SEGMENT, FEDERAL_SEGMENT, formatShortDate, getBidIndex, listLastmod, newlyPosted, placeName } from '../../lib/bids/load';
 import { CATEGORIES } from '../../lib/bids/categories';
 import { CALENDLY_URL, ctaHref } from '../../config';
 
@@ -15,6 +15,10 @@ const open = index.bids.filter((b) => !b.closed);
 const { all: openAll, federal } = index.openTotals;
 const checked = formatShortDate(index.builtAt.toISOString());
 const now = index.builtAt.getTime();
+// The 20 newest bids by posted date: a link from the page Google crawls most
+// on /bids/ for each day's new bids (see "Freshness" in lib/bids/load.ts).
+const fresh = newlyPosted(index.bids, index.builtAt, 20);
+const lastmod = listLastmod(open, index.builtAt);
 const soon = open
   .filter((b) => b.dueAt && Date.parse(b.dueAt) > now)
   .sort((a, b) => Date.parse(a.dueAt!) - Date.parse(b.dueAt!))
@@ -46,6 +50,7 @@ const lede =
 <BidsLayout
   title="Government Bids by State and Category | GovHub"
   description={`Browse ${openAll.toLocaleString('en-US')} open federal, state and local government bids by state and category, each with a plain-English summary and its deadline. Updated ${checked}.`}
+  lastmod={lastmod}
 >
   <Breadcrumbs items={[{ name: 'Home', url: '/' }, { name: 'Bids', url: '/bids/' }]} />
   <p class="eyebrow">Open government bids</p>
@@ -78,6 +83,14 @@ const lede =
       <li><a href={c.href}>{c.label}<span class="count">{c.count}</span></a></li>
     ))}
   </ul>
+
+  {fresh.length > 0 && (
+    <>
+      <h2>Newly posted</h2>
+      <BidList bids={fresh} caption="The 20 newest open bids by the date the agency posted them, newest first. Also as an RSS feed: /bids/new.xml" />
+      <p class="muted"><a href="/bids/new.xml">RSS feed of bids posted in the last 3 days</a></p>
+    </>
+  )}
 
   <h2>Closing soonest</h2>
   <BidList bids={soon} caption="The next 20 deadlines" />
