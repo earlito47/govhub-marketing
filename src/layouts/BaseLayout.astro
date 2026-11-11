@@ -5,6 +5,7 @@ import SchemaOrg from '../components/seo/SchemaOrg.astro';
 import { CALENDLY_URL } from '../config';
 import Analytics from '../components/Analytics.astro';
 import LeadLink from '../components/LeadLink.astro';
+import AutomatedBrowserGuard from '../components/AutomatedBrowserGuard.astro';
 // Self-hosted Gold Country type (no render-blocking Google Fonts request).
 // Fraunces needs full.css for the SOFT/WONK axes the brand guide pins.
 import '@fontsource-variable/fraunces/full.css';
@@ -26,6 +27,15 @@ interface Props {
    * pages) and still pass links to the hubs that should rank.
    */
   noindex?: boolean | 'follow';
+  /**
+   * When the page's content last really changed (ISO date-time). Not shown;
+   * read back from the built HTML by the sitemap (astro.config.mjs) for
+   * <lastmod>. Pages without a real date leave it out rather than stamp the
+   * build time, which search engines learn to ignore.
+   */
+  lastmod?: string | null;
+  /** A newly posted bid: also listed in the new-bids sitemap (astro.config.mjs). */
+  fresh?: boolean;
 }
 
 const {
@@ -36,6 +46,8 @@ const {
   ogImageAlt = 'GovHub: AI proposal software for government contractors',
   ogType = 'website',
   noindex = false,
+  lastmod = null,
+  fresh = false,
 } = Astro.props;
 
 const canonicalUrl = canonical ?? new URL(Astro.url.pathname, Astro.site).toString();
@@ -103,8 +115,12 @@ const ANALYTICS_ENABLED =
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    {/* First script on the page: takes gh_lid out of the URL before any
-        analytics tag reads it, and applies the /privacy/ opt-out. */}
+    {/* First script on the page: decides whether this is an automated browser
+        (sets window.__ghBot and GA4's ga-disable flag) before any tag below
+        can read either. Sends nothing; runs on previews too. */}
+    <AutomatedBrowserGuard gaId={GA_MEASUREMENT_ID} />
+    {/* Second: takes gh_lid out of the URL before any analytics tag reads it,
+        and applies the /privacy/ opt-out. */}
     <LeadLink gaId={GA_MEASUREMENT_ID} />
     <meta name="generator" content={Astro.generator} />
 
@@ -112,6 +128,11 @@ const ANALYTICS_ENABLED =
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalUrl} />
     {noindex && <meta name="robots" content={noindex === 'follow' ? 'noindex,follow' : 'noindex,nofollow'} />}
+    {lastmod && <meta name="gh:lastmod" content={lastmod} />}
+    {fresh && <meta name="gh:fresh" content="1" />}
+    {Astro.url.pathname.startsWith('/bids/') && (
+      <link rel="alternate" type="application/rss+xml" title="New government bids | GovHub" href="/bids/new.xml" />
+    )}
 
     <meta property="og:type" content={ogType} />
     <meta property="og:site_name" content="GovHub" />
@@ -162,6 +183,15 @@ const ANALYTICS_ENABLED =
           window.dataLayer = window.dataLayer || [];
           function gtag() { dataLayer.push(arguments); }
           gtag('js', new Date());
+          /* Runtime dev-host gate, the one the Meta, LinkedIn and Google Ads
+             blocks below already had and GA4 did not: the build gate cannot
+             see the main-branch *.pages.dev alias, which serves byte-identical
+             HTML, so that alias was reporting into the live GA4 property.
+             Google's ga-disable flag, so gtag() stays defined for callers. */
+          var GA_DEV_HOST =
+            /^localhost$|^127\.|^\[?::1\]?$|\.local$|\.pages\.dev$|\.workers\.dev$|\.lovable\.app$/;
+          if (GA_DEV_HOST.test(location.hostname)) window['ga-disable-' + gaId] = true;
+          /* Automated browsers were already disabled by AutomatedBrowserGuard. */
           gtag('config', gaId);
         </script>
       </>
@@ -183,7 +213,7 @@ const ANALYTICS_ENABLED =
       <script is:inline define:vars={{ googleTagId: GOOGLE_TAG_ID }}>
         var GTAG_DEV_HOST =
           /^localhost$|^127\.|^\[?::1\]?$|\.local$|\.pages\.dev$|\.workers\.dev$|\.lovable\.app$/;
-        if (!GTAG_DEV_HOST.test(location.hostname) && !window.__ghOptOut && navigator.globalPrivacyControl !== true) {
+        if (!GTAG_DEV_HOST.test(location.hostname) && !window.__ghOptOut && !window.__ghBot && navigator.globalPrivacyControl !== true) {
           window.dataLayer = window.dataLayer || [];
           var gtmScript = document.createElement('script');
           gtmScript.async = true;
@@ -212,7 +242,7 @@ const ANALYTICS_ENABLED =
             /^localhost$|^127\.|^\[?::1\]?$|\.local$|\.pages\.dev$|\.workers\.dev$|\.lovable\.app$/;
           /* Not for a visitor who opted out on /privacy/, or whose browser sends
              Global Privacy Control: an ad pixel is "sharing" under California law. */
-          if (!META_DEV_HOST.test(location.hostname) && !window.__ghOptOut && navigator.globalPrivacyControl !== true) {
+          if (!META_DEV_HOST.test(location.hostname) && !window.__ghOptOut && !window.__ghBot && navigator.globalPrivacyControl !== true) {
             !function(f,b,e,v,n,t,s)
             {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
             n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -259,7 +289,8 @@ const ANALYTICS_ENABLED =
         <script is:inline define:vars={{ liPartnerId: LINKEDIN_PARTNER_ID }}>
           var LI_DEV_HOST =
             /^localhost$|^127\.|^\[?::1\]?$|\.local$|\.pages\.dev$|\.workers\.dev$|\.lovable\.app$/;
-          if (!LI_DEV_HOST.test(location.hostname)) {
+          /* No crawler in a LinkedIn website audience (AutomatedBrowserGuard). */
+          if (!LI_DEV_HOST.test(location.hostname) && !window.__ghBot) {
             window._linkedin_partner_id = liPartnerId;
             window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
             window._linkedin_data_partner_ids.push(liPartnerId);

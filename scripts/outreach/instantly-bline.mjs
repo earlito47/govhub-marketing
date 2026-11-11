@@ -83,7 +83,18 @@ const MAILBOXES = {
     'earl.knight@govhubsubmittals.com', 'e.knight@govhubsubmittals.com', 'earl@govhubsubmittals.com',
     'e.knight@govhubrfp.com', 'earl@govhubrfp.com', 'earl.knight@govhubrfp.com',
   ],
-  B2: [], // held: 5 companies ready on 11-10, pending the opportunities-selection fix
+  // B2 on A2's twenty-one (owner decision 2026-11-10): A2 has no new leads
+  // left and ~460 in flight that finish within a week. Same list as
+  // MAILBOXES.A2 in instantly-angles.mjs, which keeps them too.
+  B2: [
+    'earl.knight@govhubcontracts.com', 'e.knight@govhubcontracts.com', 'earl@govhubcontracts.com',
+    'earl.knight@govhubprocurement.com', 'e.knight@govhubprocurement.com', 'earl@govhubprocurement.com',
+    'earl.knight@govhubcapture.com', 'earl@govhubcapture.com', 'e.knight@govhubcapture.com',
+    'earl.knight@trygovhub.com', 'e.knight@trygovhub.com', 'earl@trygovhub.com',
+    'e.knight@govhubbids.com', 'earl.knight@govhubbids.com', 'earl@govhubbids.com',
+    'e.knight@govhubproposal.com', 'earl.knight@govhubproposal.com', 'earl@govhubproposal.com',
+    'j.knight@bidwithgovhub.com', 'j.k@bidwithgovhub.com', 'e.knight@bidwithgovhub.com',
+  ],
 };
 
 // ===========================================================================

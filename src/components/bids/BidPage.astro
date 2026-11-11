@@ -26,7 +26,7 @@ import BidList from './BidList.astro';
 import Breadcrumbs from '../seo/Breadcrumbs.astro';
 import CTABand from '../CTABand.astro';
 import type { Bid, BidIndex } from '../../lib/bids/load';
-import { INSIGHTS_NAICS_CODES, bidTitleTag, categoryName, formatDue, formatShortDate, neighbourBids, placeName, similarBids } from '../../lib/bids/load';
+import { INSIGHTS_NAICS_CODES, bidLastmod, bidTitleTag, categoryName, formatDue, formatShortDate, isFresh, neighbourBids, placeName, similarBids } from '../../lib/bids/load';
 import { CALENDLY_URL, ctaHref } from '../../config';
 
 interface Props {
@@ -128,7 +128,13 @@ const unlockList = (worthNaming ? gated : []).slice(0, 4).map((g) => (/^[A-Z]{2}
 const unlocks = unlockList.length > 1 ? `${unlockList.slice(0, -1).join(', ')} and ${unlockList[unlockList.length - 1]}` : unlockList[0];
 ---
 
-<BidsLayout title={title} description={description} noindex={bid.indexable ? false : 'follow'}>
+<BidsLayout
+  title={title}
+  description={description}
+  noindex={bid.indexable ? false : 'follow'}
+  lastmod={bidLastmod(bid, index.builtAt)}
+  fresh={isFresh(bid, index.builtAt)}
+>
   <Breadcrumbs
     items={[
       { name: 'Home', url: '/' },

@@ -96,6 +96,47 @@ pipeline keeps them)
 - Palantir: "Palantir Contracts 2026: $370M in Federal Awards (FY2026)". Its queries
   include award numbers and "palantir contracts 2026".
 
+## Freshness and the no-click pages, 2026-11-10
+
+Google has no push for pages like bids: the sitemap ping was retired in 2023,
+it ignores IndexNow, and its Indexing API is for job postings and livestreams
+only. It finds new pages by re-reading sitemaps and following links. Measured
+from Search Console: the median click on a bid page comes 12 days after posting
+(10 days left to the deadline), and of the bids posted Oct 27 to Nov 2 only 10%
+appeared in Google within 7 days of posting. Built:
+
+- **Real `<lastmod>`** on bid pages (posted date, or the closing date once
+  closed) and bid lists (their newest posting or closing). Other pages have no
+  real date and carry none. Never the build date.
+- **The sitemap in parts:** `sitemap-bids-new-0.xml` (bids posted in the last 3
+  days), `sitemap-bids-0.xml`, `sitemap-bid-lists-0.xml`, `sitemap-pages-0.xml`,
+  all in `sitemap-index.xml`. Search Console's Pages report can be filtered by
+  part.
+- **`/bids/new.xml`,** an RSS feed of the same new bids, also listed in
+  robots.txt. Submit it once in Search Console (Sitemaps).
+- **"Newly posted"** lists: the 20 newest on `/bids/`, the 10 newest on each state
+  page. The lists are soonest-deadline first, so a new bid with a later deadline
+  used to sit at the bottom or on page 2.
+- **Twice-daily rebuild** (`.github/workflows/rebuild-bids.yml`, 02:41 and 15:41
+  UTC, after GovHub's summary batches), then IndexNow for the new bids. Needs the
+  `CF_PAGES_DEPLOY_HOOK` secret (added 2026-11-11). Started by pg_cron in the app
+  database (job `rebuild-bids-dispatch`), because GitHub's own schedule ran the
+  first 02:41 slot seven hours late.
+- **Weekly report line:** new bids shown in Google within 7 days of posting
+  (from `/bids/posted.json`). Baseline 10%.
+
+No-click pages: most of the "page 1, no clicks" impressions were one-day spikes
+(Nov 7), and for the broad searches the list pages rank on page 2 or lower
+("snow removal bids" 12 to 24, "government it bids" 70), so the work is substance
+to rank on rather than titles (changed Nov 8, too new to judge):
+
+- **"At a glance"** on every list page, computed from its own bids: due in the
+  next 14 days, posted in the last 7, set aside (count), typical days from
+  posting to deadline, and for category pages the top places.
+- **Overflow pages** (`/bids/{place}/page/{n}/`) are `noindex,follow` and out of the
+  sitemap: `/bids/massachusetts/page/2/` was competing with page 1 (149
+  impressions, no clicks). Crawlers still follow their links.
+
 ## Needs app or data work first
 
 - **Line items and part numbers on bid pages.** Deferred (2026-11-09). Only about

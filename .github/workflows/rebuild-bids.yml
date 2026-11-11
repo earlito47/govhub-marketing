@@ -1,0 +1,83 @@
+# Rebuilds www.govhub.online twice a day so new bids get pages the same day.
+#
+# Bid pages are built from the app database at build time, and the site only
+# rebuilt when something was pushed to main: most days, but not every day, and
+# not at a time tied to the data. The app's sweep adds new listings around
+# 10:00 to 11:00 UTC; a bid goes public once GovHub has written its summary,
+# which lands in batches, mostly 13:00 to 14:00 and 00:00 to 01:00 UTC
+# (Nov 2 to 9). So: 15:41 and 02:41 UTC, after each batch.
+#
+# Started by pg_cron in the app database, not by GitHub's schedule
+# (strata-parse 20261111184500_rebuild_bids_dispatch_cron.sql, job
+# "rebuild-bids-dispatch"). On its first day GitHub ran the 02:41 slot at 09:50
+# and had not run 15:41 by 18:23; workflow_dispatch is not subject to that queue,
+# as the reply desk found. A late duplicate would also cost one of the 500
+# monthly builds, so there is no GitHub schedule here. Run it by hand from the
+# Actions tab any time.
+#
+# Each run: trigger the Cloudflare Pages build through its deploy hook, wait
+# until the new build is live (the /bids/new.xml feed's lastBuildDate moves
+# past the trigger time), then send the newly posted bids to IndexNow (Bing and
+# others; Google reads the sitemap's new-bids part and the feed on its own).
+#
+# Setup (one-time):
+#   Secret CF_PAGES_DEPLOY_HOOK: in Cloudflare, Workers & Pages > govhub-marketing
+#   > Settings > Builds > Deploy hooks > Add deploy hook (branch: main). Paste the
+#   URL as a repository secret. Without it this workflow fails loudly.
+# Cloudflare Pages' free plan allows 500 builds a month; this adds about 60.
+
+name: rebuild-bids
+
+on:
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+concurrency:
+  group: rebuild-bids
+  cancel-in-progress: false
+
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 20
+
+      - name: Trigger the Cloudflare Pages build
+        env:
+          HOOK: ${{ secrets.CF_PAGES_DEPLOY_HOOK }}
+        run: |
+          if [ -z "$HOOK" ]; then
+            echo "::error::CF_PAGES_DEPLOY_HOOK is not set. Create a deploy hook in Cloudflare (Workers & Pages > govhub-marketing > Settings > Builds > Deploy hooks) and add its URL as a repository secret."
+            exit 1
+          fi
+          echo "SINCE=$(date -u +%s)" >> "$GITHUB_ENV"
+          curl -fsS -X POST "$HOOK" > /dev/null
+          echo "Build triggered at $(date -u)"
+
+      - name: Wait for the new build to go live
+        run: |
+          node --input-type=module -e '
+            const since = Number(process.env.SINCE) * 1000;
+            for (let i = 0; i < 40; i++) {
+              const res = await fetch(`https://www.govhub.online/bids/new.xml?cb=${Date.now()}`).catch(() => null);
+              const m = res && res.ok ? (await res.text()).match(/<lastBuildDate>([^<]+)</) : null;
+              const built = m ? Date.parse(m[1]) : 0;
+              if (built > since) {
+                console.log(`Live: built ${new Date(built).toISOString()}`);
+                process.exit(0);
+              }
+              await new Promise((r) => setTimeout(r, 60000));
+            }
+            console.error("::error::The rebuild did not go live within 40 minutes. Check the build in Cloudflare Pages.");
+            process.exit(1);
+          '
+
+      - name: Send newly posted bids to IndexNow
+        run: node scripts/submit-indexnow.mjs --live https://www.govhub.online/sitemap-bids-new-0.xml

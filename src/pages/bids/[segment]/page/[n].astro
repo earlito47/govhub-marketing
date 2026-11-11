@@ -47,9 +47,14 @@ const h1 = isFederal ? `Federal government bids, page ${page}` : `Government bid
 const title = isFederal ? `Federal Government Bids, Page ${page} | GovHub` : `${label} Government Bids, Page ${page} | GovHub`;
 const parts = [open.length && `${open.length} open by deadline`, closed.length && `${closed.length} recently closed`].filter(Boolean).join(', then ');
 const description = `${isFederal ? 'Federal government bids' : `Government bids in ${label}`}, page ${page} of ${total}: ${parts}, of ${count.toLocaleString('en-US')} in all. Checked ${checked}.`;
+// noindex,follow since 2026-11-10: page 2 of a place was competing with page 1
+// in search (/bids/massachusetts/page/2/: 149 impressions, no clicks, Oct 31 to
+// Nov 9). These pages exist so every bid has a link from a hub; crawlers still
+// follow them, searchers land on page 1. Out of the sitemap with every other
+// noindex page (astro.config.mjs).
 ---
 
-<BidsLayout title={title} description={description}>
+<BidsLayout title={title} description={description} noindex="follow">
   <Breadcrumbs
     items={[
       { name: 'Home', url: '/' },

@@ -1,27 +1,37 @@
 # GovHub marketing site
+# /bids/posted.json is a data file for our weekly report, not a page.
 
 User-agent: Googlebot
 Allow: /
+Disallow: /bids/posted.json
 
 User-agent: Bingbot
 Allow: /
+Disallow: /bids/posted.json
 
 User-agent: GPTBot
 Allow: /
+Disallow: /bids/posted.json
 
 User-agent: ClaudeBot
 Allow: /
+Disallow: /bids/posted.json
 
 User-agent: PerplexityBot
 Allow: /
+Disallow: /bids/posted.json
 
 User-agent: Applebot-Extended
 Allow: /
+Disallow: /bids/posted.json
 
 User-agent: Google-Extended
 Allow: /
+Disallow: /bids/posted.json
 
 User-agent: *
 Allow: /
+Disallow: /bids/posted.json
 
 Sitemap: https://www.govhub.online/sitemap-index.xml
+Sitemap: https://www.govhub.online/bids/new.xml

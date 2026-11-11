@@ -1,0 +1,77 @@
+---
+/**
+ * Automated-browser guard. Rendered FIRST in <head>, before LeadLink and every
+ * analytics or ad tag, so the decision exists before any of them reads it.
+ *
+ * Why it exists: PostHog's SDK already refuses to send for automated browsers
+ * (posthog-js isLikelyBot: a user-agent denylist, the UA-CH brand list, and
+ * navigator.webdriver). GA4, the Google Ads container, the Meta Pixel and the
+ * LinkedIn tag have no such check, so a crawler that runs JavaScript lands in
+ * every one of them and in none of PostHog. That is exactly what happened in
+ * November 2026: a Singapore datacenter crawler put 11-112 "users" a day into
+ * GA4 (Unassigned / Direct, zero engaged sessions, sweeping /insights/vendor/*)
+ * while PostHog recorded zero visitors from Singapore on the same days. The two
+ * tools could not be reconciled, and GA4 realtime looked like a traffic spike.
+ *
+ * What it does when the browser is automated:
+ *   - window.__ghBot = true, read by the Google tag, Meta, LinkedIn and
+ *     Analytics.astro gates (the same way they read window.__ghOptOut);
+ *   - window['ga-disable-<id>'] = true, Google's documented per-property
+ *     switch, so gtag('config') sends nothing — the same mechanism the
+ *     /privacy/ opt-out in LeadLink.astro uses.
+ * Page behaviour (cookies, CTA decoration) is untouched: nothing here hides
+ * content or changes what a crawler is served, which matters for SEO.
+ *
+ * KEEP IN SYNC with strata-parse/index.html (the app runs the same check) and
+ * with posthog-js's DEFAULT_BLOCKED_UA_STRS. strata-parse has a test that fails
+ * when its copy drifts from the posthog-js it ships
+ * (scripts/analytics-tests/bot-filter.test.mjs); copy that list here when it
+ * changes. Matching PostHog exactly is the point — a "better" list here would
+ * re-create the disagreement this guard removes.
+ */
+interface Props {
+  gaId: string;
+}
+const { gaId } = Astro.props;
+---
+<script is:inline define:vars={{ gaId }}>
+  (function () {
+    /* posthog-js 1.391.x DEFAULT_BLOCKED_UA_STRS, verbatim, lower-case. */
+    var UA_DENY = [
+      'amazonbot', 'amazonproductbot', 'app.hypefactors.com', 'applebot', 'archive.org_bot',
+      'awariobot', 'backlinksextendedbot', 'baiduspider', 'bingbot', 'bingpreview',
+      'chrome-lighthouse', 'dataforseobot', 'deepscan', 'duckduckbot', 'facebookexternal',
+      'facebookcatalog', 'http://yandex.com/bots', 'hubspot', 'ia_archiver', 'leikibot',
+      'linkedinbot', 'meta-externalagent', 'mj12bot', 'msnbot', 'nessus', 'petalbot',
+      'pinterest', 'prerender', 'rogerbot', 'screaming frog', 'sebot-wa', 'sitebulb',
+      'slackbot', 'slurp', 'trendictionbot', 'turnitin', 'twitterbot', 'vercel-screenshot',
+      'vercelbot', 'yahoo! slurp', 'yandexbot', 'zoombot', 'bot.htm', 'bot.php', '(bot;',
+      'bot/', 'crawler', 'ahrefsbot', 'ahrefssiteaudit', 'semrushbot', 'siteauditbot',
+      'splitsignalbot', 'gptbot', 'oai-searchbot', 'chatgpt-user', 'perplexitybot',
+      'better uptime bot', 'sentryuptimebot', 'uptimerobot', 'headlesschrome', 'cypress',
+      'google-hoteladsverifier', 'adsbot-google', 'apis-google', 'duplexweb-google',
+      'feedfetcher-google', 'google favicon', 'google web preview', 'google-read-aloud',
+      'googlebot', 'googleother', 'google-cloudvertexbot', 'googleweblight',
+      'mediapartners-google', 'storebot-google', 'google-inspectiontool', 'bytespider',
+    ];
+    function denied(s) {
+      if (!s) return false;
+      var v = String(s).toLowerCase();
+      for (var i = 0; i < UA_DENY.length; i++) if (v.indexOf(UA_DENY[i]) !== -1) return true;
+      return false;
+    }
+    var automated = false;
+    try {
+      if (denied(navigator.userAgent)) automated = true;
+      var brands = navigator.userAgentData && navigator.userAgentData.brands;
+      if (!automated && brands) {
+        for (var j = 0; j < brands.length; j++) if (denied(brands[j] && brands[j].brand)) automated = true;
+      }
+      if (navigator.webdriver) automated = true;
+    } catch (e) { /* fail open: a real visitor is never dropped by an exception here */ }
+    if (automated) {
+      window.__ghBot = true;
+      window['ga-disable-' + gaId] = true;
+    }
+  })();
+</script>
