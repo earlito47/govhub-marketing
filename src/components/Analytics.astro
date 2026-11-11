@@ -41,9 +41,12 @@ const { enabled } = Astro.props;
      * ---------------------------------------------------------------- */
     var DEV_HOST =
       /^localhost$|^127\.|^\[?::1\]?$|\.local$|\.pages\.dev$|\.workers\.dev$|\.lovable\.app$/;
-    /* window.__ghOptOut is set by LeadLink.astro (first in <head>) for a
-       visitor who opted out on /privacy/: nothing is sent to GA4 or PostHog. */
-    var SEND = sendEnabled === true && !DEV_HOST.test(location.hostname) && !window.__ghOptOut;
+    /* window.__ghOptOut is set by LeadLink.astro for a visitor who opted out on
+       /privacy/: nothing is sent to GA4 or PostHog. window.__ghBot is set by
+       AutomatedBrowserGuard.astro (first in <head>) using posthog-js's own bot
+       rule, so PostHog would have dropped these anyway; gating here keeps the
+       custom events (landing_view, CTA clicks) out of GA4 for the same set. */
+    var SEND = sendEnabled === true && !DEV_HOST.test(location.hostname) && !window.__ghOptOut && !window.__ghBot;
 
     /* ---------------- 1. Cookie helpers (.govhub.online) -------------- */
     function readCookie(name) {
