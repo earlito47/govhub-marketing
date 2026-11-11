@@ -4751,3 +4751,38 @@ whether something broke, and nothing in the database says which. `no_push_dates`
 carrying 2026-11-11 is the closest thing to a local record, and it only covers
 push, not the campaigns. Worth knowing for tonight's check: a paused A1/A2/A4
 before 21:15 UTC today is correct, not a fault.
+
+### 2026-11-11 02:32 UTC — the daily check's instructions were replaced
+
+The owner approved the B-line session's replacement text, so
+`trig_01Chf4pyMvETaTgLVCJWNcLp` ("Daily outreach check") now carries it. Stored
+verbatim as sent. Nothing else on the task was touched: still `30 23 * * 1-5`,
+still enabled, still bound to this session, next run 2026-11-11T23:31Z.
+
+The prompt it replaced was written **2026-10-10** and had drifted far enough to
+make a check wrong rather than merely dated: A4 cap 50 against 55, A5 75 against
+0, the A2 close window 8-30 against 16-30, the universe 11,008 against 23,752,
+46 mailboxes against 48, a 0.94%/2,966 bounce baseline against 1.78%/6,898, an
+audit baseline of 2,212 leads against 6,712, and an item 7 still instructing the
+A2-vs-holdout experiment that froze on 11-04. B4 and B2 appeared nowhere in it —
+no bounce check, no audit, no queue ceiling, no note that they share sending
+domains with A5 and A2.
+
+Two mechanical notes for whoever reads the stored text next.
+
+The relay escapes HTML. The message arrived with `&gt;=`, `&lt; 2%` and
+`&lt;state&gt;` in three places, and storing those verbatim would have put
+escaping artifacts into a live instruction — `www.govhub.online/bids/&lt;state&gt;/`
+instead of the real path. All three were restored before storing, and the
+stored prompt was read back to confirm it. Worth remembering the next time a
+prompt arrives through a session message rather than being typed.
+
+Items 6 and 7 disagree, and item 6 wins. Item 6 says not to count
+`outcomes.positive` because it mirrors Instantly's lead-interest flag, which a
+person or Instantly's model can change. Item 7 then asks for "positive replies
+per person contacted" against 0.66% (A4) and 0.61% (A2) benchmarks — which is
+that same flag, and which is also how those two benchmarks were computed. So
+item 7's numbers will be read from the reply text and the desk ledger, not the
+column, and will not be comparable to those two benchmarks until the benchmarks
+are recomputed the same way. Flagged to the owner rather than edited: the text
+stored is the text they approved.
