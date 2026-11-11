@@ -7,6 +7,14 @@
 # which lands in batches, mostly 13:00 to 14:00 and 00:00 to 01:00 UTC
 # (Nov 2 to 9). So: 15:41 and 02:41 UTC, after each batch.
 #
+# Started by pg_cron in the app database, not by GitHub's schedule
+# (strata-parse 20261111184500_rebuild_bids_dispatch_cron.sql, job
+# "rebuild-bids-dispatch"). On its first day GitHub ran the 02:41 slot at 09:50
+# and had not run 15:41 by 18:23; workflow_dispatch is not subject to that queue,
+# as the reply desk found. A late duplicate would also cost one of the 500
+# monthly builds, so there is no GitHub schedule here. Run it by hand from the
+# Actions tab any time.
+#
 # Each run: trigger the Cloudflare Pages build through its deploy hook, wait
 # until the new build is live (the /bids/new.xml feed's lastBuildDate moves
 # past the trigger time), then send the newly posted bids to IndexNow (Bing and
@@ -21,8 +29,6 @@
 name: rebuild-bids
 
 on:
-  schedule:
-    - cron: "41 2,15 * * *"
   workflow_dispatch: {}
 
 permissions:

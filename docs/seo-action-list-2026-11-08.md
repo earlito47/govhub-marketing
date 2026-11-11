@@ -119,7 +119,9 @@ appeared in Google within 7 days of posting. Built:
   used to sit at the bottom or on page 2.
 - **Twice-daily rebuild** (`.github/workflows/rebuild-bids.yml`, 02:41 and 15:41
   UTC, after GovHub's summary batches), then IndexNow for the new bids. Needs the
-  `CF_PAGES_DEPLOY_HOOK` secret.
+  `CF_PAGES_DEPLOY_HOOK` secret (added 2026-11-11). Started by pg_cron in the app
+  database (job `rebuild-bids-dispatch`), because GitHub's own schedule ran the
+  first 02:41 slot seven hours late.
 - **Weekly report line:** new bids shown in Google within 7 days of posting
   (from `/bids/posted.json`). Baseline 10%.
 
