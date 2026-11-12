@@ -57,11 +57,17 @@ const dueShort = bid.dueAt ? formatShortDate(bid.dueAt, bid.timeZone) : null;
 // feed once it has closed. gh_cta records which button; it is not a utm_*.
 const appPath = bid.closed ? '/v2/opportunities' : `/v2/opportunities?id=${bid.id}`;
 // analyze: the buttons that say "work on this bid" (start a proposal, fill out
-// its forms, open its documents) also ask the app to start Analyze this RFP on
+// its forms, open its documents) also ask the app to start Build proposal on
 // arrival. The app does that once, for a new account with no project yet, on an
 // open bid (strata-parse src/pages/Opportunities.tsx); anyone else gets the button.
+//
+// bid_title: the app's /signup names the bid the visitor is one step from
+// ("One step from your proposal for …"), instead of a generic signup wall.
+// Open bids only — a closed one sends them to the feed, not to this bid.
+// Public text from this page; the app renders it escaped and caps its length.
+const bidTitleParam = bid.closed ? '' : `&bid_title=${encodeURIComponent(bid.title.slice(0, 140))}`;
 const toApp = (placement: string, analyze = false) =>
-  `${ctaHref(placement)}&next=${encodeURIComponent(analyze && !bid.closed ? `${appPath}&analyze=1` : appPath)}`;
+  `${ctaHref(placement)}&next=${encodeURIComponent(analyze && !bid.closed ? `${appPath}&analyze=1` : appPath)}${bidTitleParam}`;
 
 // "Documents posted": the names of the files the agency posted, public; the
 // files themselves open in GovHub. Forms GovHub fills out come first, then the
