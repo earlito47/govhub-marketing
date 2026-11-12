@@ -6,6 +6,7 @@ import { CALENDLY_URL } from '../config';
 import Analytics from '../components/Analytics.astro';
 import LeadLink from '../components/LeadLink.astro';
 import AutomatedBrowserGuard from '../components/AutomatedBrowserGuard.astro';
+import { contentGroupFor } from '../lib/contentGroup';
 // Self-hosted Gold Country type (no render-blocking Google Fonts request).
 // Fraunces needs full.css for the SOFT/WONK axes the brand guide pins.
 import '@fontsource-variable/fraunces/full.css';
@@ -108,6 +109,10 @@ const GA_BRANCH = process.env.CF_PAGES_BRANCH;
 // alias, so Analytics.astro adds a runtime hostname denylist too.
 const ANALYTICS_ENABLED =
   import.meta.env.PROD && (GA_BRANCH === undefined || GA_BRANCH === 'main');
+
+// GA4 content group for this page (src/lib/contentGroup.ts). Build-time, so it
+// costs nothing at runtime and cannot drift from the route.
+const CONTENT_GROUP = contentGroupFor(Astro.url.pathname);
 ---
 
 <!doctype html>
@@ -179,9 +184,16 @@ const ANALYTICS_ENABLED =
           async
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
         />
-        <script is:inline define:vars={{ gaId: GA_MEASUREMENT_ID }}>
+        <script is:inline define:vars={{ gaId: GA_MEASUREMENT_ID, contentGroup: CONTENT_GROUP }}>
           window.dataLayer = window.dataLayer || [];
           function gtag() { dataLayer.push(arguments); }
+          /* Global on purpose. define:vars makes Astro wrap this script in an
+             IIFE, so `gtag` above is LOCAL — window.gtag was undefined, and
+             every custom event Analytics.astro's track() sent (landing_view,
+             demo_click, demo_scheduled, CTA clicks) hit its "gtag missing, GA4
+             dropped" branch. GA4 received www's automatic page_views and
+             nothing else. */
+          window.gtag = gtag;
           gtag('js', new Date());
           /* Runtime dev-host gate, the one the Meta, LinkedIn and Google Ads
              blocks below already had and GA4 did not: the build gate cannot
@@ -191,8 +203,11 @@ const ANALYTICS_ENABLED =
           var GA_DEV_HOST =
             /^localhost$|^127\.|^\[?::1\]?$|\.local$|\.pages\.dev$|\.workers\.dev$|\.lovable\.app$/;
           if (GA_DEV_HOST.test(location.hostname)) window['ga-disable-' + gaId] = true;
-          /* Automated browsers were already disabled by AutomatedBrowserGuard. */
-          gtag('config', gaId);
+          /* Automated browsers were already disabled by AutomatedBrowserGuard.
+             content_group fills GA4's "Content group" dimension (was (not set)
+             on every session); on config it rides the page_view and every
+             later event on the page. */
+          gtag('config', gaId, { content_group: contentGroup });
         </script>
       </>
     )}

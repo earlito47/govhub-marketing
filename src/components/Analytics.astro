@@ -202,11 +202,30 @@ const { enabled } = Astro.props;
     }
 
     /* ---------------- 8. track(): both destinations, loudly ----------- */
+    /* gtag reads event parameters with these names as TRAFFIC-SOURCE fields,
+       so an event carrying one can re-attribute the whole session (GA4 then
+       reports "<value> / (not set)", channel Unassigned). GA4 gets them as
+       event_<name>; PostHog keeps the original names. Same list as
+       strata-parse/src/lib/ga4.ts. */
+    var GA4_ATTRIBUTION_PARAMS = {
+      source: 1, medium: 1, campaign: 1, term: 1, content: 1,
+      campaign_id: 1, campaign_source: 1, campaign_medium: 1, campaign_name: 1, campaign_term: 1, campaign_content: 1,
+      utm_source: 1, utm_medium: 1, utm_campaign: 1, utm_term: 1, utm_content: 1, utm_id: 1,
+      gclid: 1, dclid: 1, gbraid: 1, wbraid: 1, srsltid: 1,
+    };
+    function ga4Params(p) {
+      var out = {};
+      for (var k in p) {
+        if (!Object.prototype.hasOwnProperty.call(p, k)) continue;
+        out[GA4_ATTRIBUTION_PARAMS[k] ? 'event_' + k : k] = p[k];
+      }
+      return out;
+    }
     function track(name, props) {
       var payload = props || {};
       if (!SEND) return;
       if (typeof window.gtag === 'function') {
-        try { window.gtag('event', name, payload); }
+        try { window.gtag('event', name, ga4Params(payload)); }
         catch (e) { console.warn('[gh] gtag failed for', name, e); }
       } else {
         console.warn('[gh] gtag missing, GA4 dropped', name);

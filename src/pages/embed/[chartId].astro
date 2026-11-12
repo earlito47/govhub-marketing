@@ -42,7 +42,10 @@ interface Props {
 }
 
 const { chart, parentPath } = Astro.props;
-const parentUrl = `${SITE_URL}${parentPath}?utm_source=embed`;
+// utm_medium is required: a utm_source with no medium is unclassifiable, so
+// these clicks landed in GA4 as "embed / (not set)", channel Unassigned.
+// medium=referral puts them in the Referral channel, which is what they are.
+const parentUrl = `${SITE_URL}${parentPath}?utm_source=embed&utm_medium=referral&utm_campaign=chart_embed`;
 // noindex page, but keep <title> within the site's meta-guard budget (≤70).
 const pageTitle = chart.title.length > 66 ? `${chart.title.slice(0, 65)}…` : chart.title;
 ---
