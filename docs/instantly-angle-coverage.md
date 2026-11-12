@@ -4914,3 +4914,124 @@ across 160 rows with reply text the maximum is **2,000** and the average **853**
 and this is the only row at 60. The message really was that short. Desk ledger
 241 emails, `needs_human` **8** (all dated 10-08 to 11-04, none new), `drafted`
 **44**.
+
+## 2026-11-12 — daily check (B4's first send)
+
+**B4 sent its first 75 and they went out clean.** Push loaded 42 at 06:00 and 33
+at 06:50, then 0 at 07:15 — exactly the cap of 75, with `reconciled: true` on all
+three runs and `rows_in_database` matching `per_angle` each time. The 06:50 run
+read `already_pushed_today_before_this_run {A2: 1, B4: 42}` out of the database
+rather than assuming zero, which is the rule the recurring bug produced.
+
+The lines that actually went out, read from the live leads: 169-189 characters
+against the 200 limit, **zero** over length, **zero** containing a link, **zero**
+blank, and only 4 of 75 falling to the generic "a firm in your state" rung.
+
+> Ronnie, S.I.T.E. Enterprise out of Miami Gardens just won $33K from USDA in
+> NAICS 115310. Most firms in your lane only hear about these after award. Want
+> the next 3 that are still open?
+
+First-day bounce **1 of 75 = 1.33%** — one address, far under the 5% per-campaign
+gate. Overall, against the pinned denominator (our own `pushed_at` count),
+**126 / 6,984 = 1.80%** versus 1.78% on 11-11: three new bounces all day, one
+each on A1, A5 and B4. No pause.
+
+### The audit reports 66 problems and 64 of them are benign
+
+B4 shows `ALL-CAPS name 64` of 75 leads. These are real ALL-CAPS strings, not a
+false positive on entity suffixes — the `line='B'` load stored company names in
+raw source caps:
+
+```
+George    RBF PROPERTIES LLC
+Rita      PROPRIETARY ACCESS CONTROL ENTERPRISES, INC
+Ronnie    ADIRONDACK WILDFIRE DEFENSE LLC
+Alyssa    BALDWIN ALYSSA LAUREN
+```
+
+First names are correctly cased; it is only `company_name`. **Nobody was shouted
+at**, because no B-line campaign interpolates it. Checked across all six live
+sequences rather than assumed:
+
+| campaign | `{{companyName}}` in copy |
+|---|---|
+| B4, B2, A2, A4, A5 | no |
+| **A1** | **yes** |
+
+A1 is the only campaign that mails a reader their own company name, and A1 only
+ever receives A-line companies, whose names are clean (0 shouty across 1,063
+leads). So the exposure is zero today and sits one copy change away: the day a B
+campaign adds `{{companyName}}`, or a B company reaches A1, 16,093 shouting names
+become visible. This is the "guarantee asserted on one code path must be asserted
+on every path" shape — A1's copy depends on `company_name` being display-ready,
+and the A-line load provides that while the B-line load does not.
+
+**Not fixed from here, and deliberately not silenced.** The check is honest: the
+data really is shouting. The tempting change — teach the audit to ignore a name
+field the copy does not interpolate — would make the warning go away rather than
+the problem, on the morning a campaign launched. The real fix is the B-line load
+title-casing `company_name`, and it must not be a plain `initcap`, which would
+turn "RBF" into "Rbf" and reproduce the harvest-casing bug recorded on 11-11.
+Until then the audit will report ~64 benign failures a night, which is its own
+cost: a check that cries FAIL every morning teaches everyone to scroll past it.
+
+### The 03:45 collision repeated, with the casualty swapped
+
+| date | 03:45 | result |
+|---|---|---|
+| 11-08 to 11-10 | awards alone | 200 every day |
+| 11-11 | opportunities_3 + awards | **both 546** |
+| 11-12 | opportunities_3 + awards | shards all 200, **awards 546** |
+
+Yesterday both jobs at that minute died; today all four shards passed and
+`awards` took the 546 instead. The casualty swapping is what rules out "shard 3
+is simply heavy" — it is contention at 03:45, and whichever job loses the race
+dies. `awards` recovered at its 09:45, 15:45 and 21:45 slots (200, 200, 200), so
+nothing was lost today, but note `awards` has no attempt-2 retry of its own the
+way `opportunities_3` does; it survives only because it runs four times a day.
+
+Second day of the same failure, same one-line fix: move one of the two off 03:45
+(03:37 and 03:40 are clear, 04:00 holds `recompetes`). Still not changed from
+here — the opportunities job is the B-line session's live work — but a known
+daily failure that is tolerated for a third day stops being a handover and
+becomes a habit. Worth clearing explicitly either way.
+
+### Two guards that are unproven rather than working
+
+**The 5-per-award cap has never fired.** Today's 75 B4 leads spread over 52
+distinct awards with a maximum of 4 naming any one award, and
+`held_for_award_pace` read 0. That is consistent — nothing reached 5, so nothing
+was held — but it is not evidence the cap works, because the pool contains
+**166 awards with more than 5 candidate companies waiting and the biggest at
+349**. The spread kept every award under the limit on day one; as the easy
+matches are consumed, concentration rises and the cap will eventually bind. Its
+positive branch is still untested in production.
+
+**B4's queue reads 3.7 days, which is under the 5-day flag and is not
+starvation.** Assign `considered 1200, written 409` (all B4) with
+`left_unassigned_at_ceiling.B4 = 0`, so the per-run batch of 1,200 is the limit,
+not the 3,000-row ceiling. 409 written − 75 pushed − 55 dropped stale = the 279
+ready, and at +334/day net the queue climbs toward its ceiling over about a week.
+The arithmetic is the reason it is not a flag; the condition that would make it
+one is assign's B4 yield (409/1200 = 34% today) falling under 75 a run.
+
+### The rest
+
+Audit otherwise clean: 0 incomplete, 0 missing first name, 0 leaked `{{token}}`,
+0 bad openers on B4 and B2, and "queued to state a passed date **0**, of 336
+already past close". A5's two known names are the other 2 of the 66. A2 arms
+speed 1,323 / base 1,329.
+
+Inventory: A1, A2 and A4 all **0 ready** — the A-line is sending follow-ups only.
+A5 727 ready against cap 0. B4 is the whole first-touch volume now.
+
+"Assi Security out of Irvine" went out in a real opener today; the company is
+ASSI Security. That is the 11-11 harvest-casing finding confirmed in delivered
+copy rather than in a pre-render — only 4 of 6,217 payloads retain their source
+casing, so it cannot be repaired downstream.
+
+**Replies.** None in 26 hours, and B4 has none on day one, so item 7 (B-line
+against A-line) is not callable: 0 positives a side against a bar of about 10.
+Desk ledger unchanged at 241 emails, `needs_human` **8**, `drafted` **44** —
+identical to 11-11, so Bill Bailey's reply has now been drafted and unsent for
+three days, with his notice closing 11-23.
