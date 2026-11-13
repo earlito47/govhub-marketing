@@ -14,8 +14,10 @@
       "received_at": "2026-09-07T13:19:18.000Z",
       "category": "not_interested",
       "classified_by": "rule",
-      "status": "no_action",
-      "updated_at": "2026-10-04T01:35:10.950Z"
+      "status": "suppressed",
+      "updated_at": "2026-11-13T12:22:36.329Z",
+      "suppressed_at": "2026-11-13T12:22:36.328Z",
+      "error": null
     },
     "01a07c11-4c30-7c33-a644-d72e0dbeaf2c": {
       "lead": "carold@cnsbuilding.com",
@@ -30,8 +32,10 @@
       "received_at": "2026-09-07T13:52:19.000Z",
       "category": "not_interested",
       "classified_by": "rule",
-      "status": "no_action",
-      "updated_at": "2026-10-04T01:35:10.397Z"
+      "status": "suppressed",
+      "updated_at": "2026-11-13T12:22:36.418Z",
+      "suppressed_at": "2026-11-13T12:22:36.418Z",
+      "error": null
     },
     "01a08156-8e14-7bce-91fe-3df8f4b442a3": {
       "lead": "dcole@breakpoint-labs.com",
@@ -52,8 +56,10 @@
       "received_at": "2026-09-09T16:16:58.000Z",
       "category": "not_interested",
       "classified_by": "rule",
-      "status": "no_action",
-      "updated_at": "2026-10-04T01:35:16.126Z"
+      "status": "suppressed",
+      "updated_at": "2026-11-13T12:22:36.496Z",
+      "suppressed_at": "2026-11-13T12:22:36.496Z",
+      "error": null
     },
     "01a086fe-f2f5-79bf-b325-4d71cedf37d9": {
       "lead": "alan.kopelove@questthermal.com",
@@ -61,8 +67,10 @@
       "received_at": "2026-09-09T16:27:15.000Z",
       "category": "not_interested",
       "classified_by": "model",
-      "status": "no_action",
-      "updated_at": "2026-10-04T01:35:17.792Z"
+      "status": "suppressed",
+      "updated_at": "2026-11-13T12:22:36.579Z",
+      "suppressed_at": "2026-11-13T12:22:36.579Z",
+      "error": null
     },
     "01a08b8b-9cfd-7c45-a594-b1aee6030e85": {
       "lead": "finance@boretideconstruction.com",
@@ -70,18 +78,21 @@
       "received_at": "2026-09-10T13:38:58.000Z",
       "category": "not_interested",
       "classified_by": "rule",
-      "status": "no_action",
-      "updated_at": "2026-10-04T01:35:18.354Z"
+      "status": "suppressed",
+      "updated_at": "2026-11-13T12:22:36.700Z",
+      "suppressed_at": "2026-11-13T12:22:36.700Z",
+      "error": null
     },
     "01a08b95-a4ae-7c4a-95b1-06b06bf6b1d5": {
       "lead": "cindy@tliconstruction.net",
-      "status": "no_action",
-      "error": "GET /emails?limit=100&lead=cindy%40tliconstruction.net&starting_after=01a07c11-1038-7723-b5d8-e97c5ad9a379 -> gave up after retries",
-      "updated_at": "2026-10-04T01:46:24.857Z",
+      "status": "suppressed",
+      "error": null,
+      "updated_at": "2026-11-13T12:22:36.787Z",
       "campaign": "W1A",
       "received_at": "2026-09-10T13:49:49.000Z",
       "category": "not_interested",
-      "classified_by": "model"
+      "classified_by": "model",
+      "suppressed_at": "2026-11-13T12:22:36.787Z"
     },
     "01a08bb1-ad56-741b-8db2-e9d7160121f6": {
       "lead": "jdscheiber@gmail.com",
@@ -89,8 +100,10 @@
       "received_at": "2026-09-10T14:20:47.000Z",
       "category": "not_interested",
       "classified_by": "rule",
-      "status": "no_action",
-      "updated_at": "2026-10-04T01:36:11.381Z"
+      "status": "suppressed",
+      "updated_at": "2026-11-13T12:22:36.865Z",
+      "suppressed_at": "2026-11-13T12:22:36.865Z",
+      "error": null
     },
     "01a08beb-7880-7937-a3b8-aa0cb8078201": {
       "lead": "sflaugher@veteranselectricllc.com",
@@ -98,8 +111,10 @@
       "received_at": "2026-09-10T15:24:13.000Z",
       "category": "not_interested",
       "classified_by": "rule",
-      "status": "no_action",
-      "updated_at": "2026-10-04T01:36:11.940Z"
+      "status": "suppressed",
+      "updated_at": "2026-11-13T12:22:36.959Z",
+      "suppressed_at": "2026-11-13T12:22:36.959Z",
+      "error": null
     },
     "01a08c79-c140-735f-b825-4c06549192e2": {
       "lead": "laurence.r.keefe@gmail.com",
@@ -107,8 +122,10 @@
       "received_at": "2026-09-10T17:59:29.000Z",
       "category": "not_interested",
       "classified_by": "rule",
-      "status": "no_action",
-      "updated_at": "2026-10-04T01:36:12.496Z"
+      "status": "suppressed",
+      "updated_at": "2026-11-13T12:22:37.350Z",
+      "suppressed_at": "2026-11-13T12:22:37.350Z",
+      "error": null
     },
     "01a090f9-cac1-7285-b946-43aa00ef2d8b": {
       "lead": "malisa.fearing@koboutility.com",
@@ -123,8 +140,10 @@
       "received_at": "2026-09-11T19:44:26.000Z",
       "category": "not_interested",
       "classified_by": "model",
-      "status": "no_action",
-      "updated_at": "2026-10-04T01:36:17.218Z"
+      "status": "suppressed",
+      "updated_at": "2026-11-13T12:22:37.436Z",
+      "suppressed_at": "2026-11-13T12:22:37.436Z",
+      "error": null
     },
     "01a09ffe-b52b-7d9f-b234-e1635c2c5b69": {
       "lead": "cwells1@uwf.edu",
@@ -132,8 +151,10 @@
       "received_at": "2026-09-14T12:57:31.000Z",
       "category": "not_interested",
       "classified_by": "rule",
-      "status": "no_action",
-      "updated_at": "2026-10-04T01:36:17.789Z"
+      "status": "suppressed",
+      "updated_at": "2026-11-13T12:22:37.521Z",
+      "suppressed_at": "2026-11-13T12:22:37.521Z",
+      "error": null
     },
     "01a0a012-de72-7904-a960-cec53495017d": {
       "lead": "shauna.weatherly@fedsubk.com",
@@ -147,8 +168,10 @@
       "received_at": "2026-09-14T13:25:04.000Z",
       "category": "not_interested",
       "classified_by": "model",
-      "status": "no_action",
-      "updated_at": "2026-10-04T01:36:19.878Z"
+      "status": "suppressed",
+      "updated_at": "2026-11-13T12:22:37.630Z",
+      "suppressed_at": "2026-11-13T12:22:37.630Z",
+      "error": null
     },
     "01a0a035-4b0c-787b-b7dd-a5b26cc055b6": {
       "lead": "wjmims@gmail.com",
@@ -156,8 +179,10 @@
       "received_at": "2026-09-14T13:57:03.000Z",
       "category": "not_interested",
       "classified_by": "model",
-      "status": "no_action",
-      "updated_at": "2026-10-04T01:36:21.568Z"
+      "status": "suppressed",
+      "updated_at": "2026-11-13T12:22:37.705Z",
+      "suppressed_at": "2026-11-13T12:22:37.705Z",
+      "error": null
     },
     "01a0a0f9-6eaf-7947-a7c6-14d6852d5b0b": {
       "lead": "shauna.weatherly@fedsubk.com",
@@ -165,8 +190,10 @@
       "received_at": "2026-09-14T17:31:12.000Z",
       "category": "not_interested",
       "classified_by": "model",
-      "status": "no_action",
-      "updated_at": "2026-10-04T01:35:15.059Z"
+      "status": "suppressed",
+      "updated_at": "2026-11-13T12:22:37.784Z",
+      "suppressed_at": "2026-11-13T12:22:37.784Z",
+      "error": null
     },
     "01a0a10b-255f-7fc8-95c4-72fa0a1fd70e": {
       "lead": "boydcollc@gmail.com",
@@ -174,8 +201,10 @@
       "received_at": "2026-09-14T17:50:41.000Z",
       "category": "not_interested",
       "classified_by": "rule",
-      "status": "no_action",
-      "updated_at": "2026-10-04T01:36:22.136Z"
+      "status": "suppressed",
+      "updated_at": "2026-11-13T12:22:37.853Z",
+      "suppressed_at": "2026-11-13T12:22:37.853Z",
+      "error": null
     },
     "01a0a524-1dbc-7a53-ab81-4bfe03b81fd1": {
       "lead": "info@cavalryconsulting.com",
@@ -200,8 +229,10 @@
       "received_at": "2026-09-15T13:52:01.000Z",
       "category": "not_interested",
       "classified_by": "rule",
-      "status": "no_action",
-      "updated_at": "2026-10-04T01:37:12.669Z"
+      "status": "suppressed",
+      "updated_at": "2026-11-13T12:22:37.930Z",
+      "suppressed_at": "2026-11-13T12:22:37.930Z",
+      "error": null
     },
     "01a0a592-0de9-711d-8365-080460c46754": {
       "lead": "bcox@coxdesignassociates.com",
@@ -209,8 +240,10 @@
       "received_at": "2026-09-15T14:56:12.000Z",
       "category": "not_interested",
       "classified_by": "rule",
-      "status": "no_action",
-      "updated_at": "2026-10-04T01:37:13.264Z"
+      "status": "suppressed",
+      "updated_at": "2026-11-13T12:22:38.010Z",
+      "suppressed_at": "2026-11-13T12:22:38.010Z",
+      "error": null
     },
     "01a0a750-0715-71cf-9358-e82a9b9605de": {
       "lead": "chrisobryan@lacreekdevelopment.com",
@@ -218,8 +251,10 @@
       "received_at": "2026-09-15T23:03:30.000Z",
       "category": "not_interested",
       "classified_by": "rule",
-      "status": "no_action",
-      "updated_at": "2026-10-04T01:37:13.838Z"
+      "status": "suppressed",
+      "updated_at": "2026-11-13T12:22:38.098Z",
+      "suppressed_at": "2026-11-13T12:22:38.098Z",
+      "error": null
     },
     "01a0aa5f-a1e1-7637-ae9a-5a1c611b1dc4": {
       "lead": "jocelyn@boldreuse.com",
@@ -248,8 +283,10 @@
       "received_at": "2026-09-18T18:21:12.000Z",
       "category": "not_interested",
       "classified_by": "rule",
-      "status": "no_action",
-      "updated_at": "2026-10-04T01:37:16.197Z"
+      "status": "suppressed",
+      "updated_at": "2026-11-13T12:22:38.171Z",
+      "suppressed_at": "2026-11-13T12:22:38.171Z",
+      "error": null
     },
     "01a0c44b-134a-73c1-9dc5-c112e4ba2531": {
       "lead": "shawn.silliman@frs247.com",
@@ -257,18 +294,21 @@
       "received_at": "2026-09-21T14:06:55.000Z",
       "category": "unsubscribe",
       "classified_by": "model",
-      "status": "no_action",
-      "updated_at": "2026-10-04T01:37:18.134Z"
+      "status": "suppressed",
+      "updated_at": "2026-11-13T12:22:38.397Z",
+      "suppressed_at": "2026-11-13T12:22:38.397Z",
+      "error": null
     },
     "01a0c50b-ef45-7097-87ef-5c526eaaafc3": {
       "lead": "steve@strhoadesinc.com",
-      "status": "no_action",
-      "error": "GET /emails?limit=100&lead=steve%40strhoadesinc.com&starting_after=01a0aa8a-6d69-730d-b9d5-60e1338f075e -> gave up after retries",
-      "updated_at": "2026-10-04T01:46:25.025Z",
+      "status": "suppressed",
+      "error": null,
+      "updated_at": "2026-11-13T12:22:38.482Z",
       "campaign": "W1B",
       "received_at": "2026-09-21T17:37:46.000Z",
       "category": "not_interested",
-      "classified_by": "rule"
+      "classified_by": "rule",
+      "suppressed_at": "2026-11-13T12:22:38.482Z"
     },
     "01a0c950-d2ec-71fa-b808-6045f5558455": {
       "lead": "success@govtribe.com",
@@ -276,8 +316,10 @@
       "received_at": "2026-09-22T13:31:41.000Z",
       "category": "not_interested",
       "classified_by": "rule",
-      "status": "no_action",
-      "updated_at": "2026-10-04T01:38:17.387Z"
+      "status": "suppressed",
+      "updated_at": "2026-11-13T12:22:38.558Z",
+      "suppressed_at": "2026-11-13T12:22:38.557Z",
+      "error": null
     },
     "01a0ca52-d5d8-75b4-b700-a6609d4b929d": {
       "lead": "info@nsbgca.org",
@@ -285,8 +327,10 @@
       "received_at": "2026-09-22T17:54:21.000Z",
       "category": "not_interested",
       "classified_by": "model",
-      "status": "no_action",
-      "updated_at": "2026-10-04T01:38:19.238Z"
+      "status": "suppressed",
+      "updated_at": "2026-11-13T12:22:38.635Z",
+      "suppressed_at": "2026-11-13T12:22:38.635Z",
+      "error": null
     },
     "01a0cec2-2e90-7df2-be39-527f78db1703": {
       "lead": "aderinokun01@gmail.com",
@@ -294,8 +338,10 @@
       "received_at": "2026-09-23T13:26:53.000Z",
       "category": "not_interested",
       "classified_by": "rule",
-      "status": "no_action",
-      "updated_at": "2026-10-04T01:38:20.389Z"
+      "status": "suppressed",
+      "updated_at": "2026-11-13T12:22:38.711Z",
+      "suppressed_at": "2026-11-13T12:22:38.711Z",
+      "error": null
     },
     "01a0cfd7-c315-7d17-8712-a6693b89c9e7": {
       "lead": "info@aadviksolutions.com",
@@ -333,8 +379,10 @@
       "received_at": "2026-09-24T20:12:18.000Z",
       "category": "not_interested",
       "classified_by": "rule",
-      "status": "no_action",
-      "updated_at": "2026-10-04T01:38:37.162Z"
+      "status": "suppressed",
+      "updated_at": "2026-11-13T12:22:38.797Z",
+      "suppressed_at": "2026-11-13T12:22:38.797Z",
+      "error": null
     },
     "01a0d8bf-8298-7b8f-a75c-a3e2d01f5df5": {
       "lead": "a.schilffarth@usnc-tech.com",
@@ -438,8 +486,10 @@
       "received_at": "2026-09-28T16:19:05.000Z",
       "category": "not_interested",
       "classified_by": "rule",
-      "status": "no_action",
-      "updated_at": "2026-10-04T01:39:34.574Z"
+      "status": "suppressed",
+      "updated_at": "2026-11-13T12:22:38.897Z",
+      "suppressed_at": "2026-11-13T12:22:38.897Z",
+      "error": null
     },
     "01a0e8f1-e9d3-7a6f-a07d-7164b70a09f4": {
       "lead": "aquawildliferesearch@gmail.com",
@@ -453,8 +503,10 @@
       "received_at": "2026-09-28T21:06:41.000Z",
       "category": "not_interested",
       "classified_by": "rule",
-      "status": "no_action",
-      "updated_at": "2026-10-04T01:39:35.172Z"
+      "status": "suppressed",
+      "updated_at": "2026-11-13T12:22:38.961Z",
+      "suppressed_at": "2026-11-13T12:22:38.961Z",
+      "error": null
     },
     "01a0ed44-14ba-732e-9428-61117fd79539": {
       "lead": "contracts@sdvinternational.com",
@@ -481,18 +533,21 @@
       "received_at": "2026-09-30T19:00:07.000Z",
       "category": "not_interested",
       "classified_by": "model",
-      "status": "no_action",
-      "updated_at": "2026-10-04T01:39:37.922Z"
+      "status": "suppressed",
+      "updated_at": "2026-11-13T12:22:39.064Z",
+      "suppressed_at": "2026-11-13T12:22:39.064Z",
+      "error": null
     },
     "01a0f793-eb52-7a09-8eac-98a29654d34b": {
       "lead": "breezye@yahoo.com",
-      "status": "no_action",
-      "error": "GET /emails?limit=100&lead=breezye%40yahoo.com&starting_after=01a0e8b4-ff5f-76e0-bb08-0f10d8fc1972 -> gave up after retries",
-      "updated_at": "2026-10-04T01:46:25.106Z",
+      "status": "suppressed",
+      "error": null,
+      "updated_at": "2026-11-13T12:22:39.154Z",
       "campaign": "A1",
       "received_at": "2026-10-01T13:07:28.000Z",
       "category": "not_interested",
-      "classified_by": "rule"
+      "classified_by": "rule",
+      "suppressed_at": "2026-11-13T12:22:39.154Z"
     },
     "01a0f7be-1f4e-7fde-95b8-64e1e718f519": {
       "lead": "dave@strongholdcare.com",
@@ -547,8 +602,10 @@
       "received_at": "2026-10-01T14:49:47.000Z",
       "category": "unsubscribe",
       "classified_by": "rule",
-      "status": "no_action",
-      "updated_at": "2026-10-04T01:41:10.352Z"
+      "status": "suppressed",
+      "updated_at": "2026-11-13T12:22:39.231Z",
+      "suppressed_at": "2026-11-13T12:22:39.231Z",
+      "error": null
     },
     "01a0fcb3-a72f-786a-9260-e4d1e860d8c9": {
       "lead": "denita.conway@provenmgmt.com",
@@ -594,8 +651,10 @@
       "received_at": "2026-10-02T14:06:10.000Z",
       "category": "not_interested",
       "classified_by": "model",
-      "status": "no_action",
-      "updated_at": "2026-10-04T01:41:15.004Z"
+      "status": "suppressed",
+      "updated_at": "2026-11-13T12:22:39.337Z",
+      "suppressed_at": "2026-11-13T12:22:39.337Z",
+      "error": null
     },
     "01a0fcf6-fe7e-765a-a4b1-ebcd2022b128": {
       "lead": "awade@gatewayrecycle.com",
@@ -701,8 +760,10 @@
       "received_at": "2026-10-05T16:56:54.000Z",
       "category": "not_interested",
       "classified_by": "model",
-      "status": "no_action",
-      "updated_at": "2026-10-05T19:07:21.621Z"
+      "status": "suppressed",
+      "updated_at": "2026-11-13T12:22:39.435Z",
+      "suppressed_at": "2026-11-13T12:22:39.435Z",
+      "error": null
     },
     "01a10d6e-5838-7996-b587-0c45de619132": {
       "lead": "acsfencing@gmail.com",
@@ -724,8 +785,10 @@
       "received_at": "2026-10-05T22:15:26.000Z",
       "category": "not_interested",
       "classified_by": "model",
-      "status": "no_action",
-      "updated_at": "2026-10-05T23:14:53.149Z"
+      "status": "suppressed",
+      "updated_at": "2026-11-13T12:22:39.511Z",
+      "suppressed_at": "2026-11-13T12:22:39.511Z",
+      "error": null
     },
     "01a10eeb-2f6b-7484-99a1-0827cb8875ec": {
       "lead": "kparks@kpcinc.com",
@@ -745,8 +808,10 @@
       "received_at": "2026-10-06T01:54:30.000Z",
       "category": "not_interested",
       "classified_by": "model",
-      "status": "no_action",
-      "updated_at": "2026-10-06T17:39:30.691Z"
+      "status": "suppressed",
+      "updated_at": "2026-11-13T12:22:39.591Z",
+      "suppressed_at": "2026-11-13T12:22:39.591Z",
+      "error": null
     },
     "01a1118e-b0c0-7619-86d5-0d1cc2e405ad": {
       "lead": "josborne@perikin.com",
@@ -796,8 +861,10 @@
       "received_at": "2026-10-06T15:45:34.000Z",
       "category": "not_interested",
       "classified_by": "model",
-      "status": "no_action",
-      "updated_at": "2026-10-06T17:40:11.465Z"
+      "status": "suppressed",
+      "updated_at": "2026-11-13T12:22:39.656Z",
+      "suppressed_at": "2026-11-13T12:22:39.656Z",
+      "error": null
     },
     "01a1167b-6e70-70fc-bcbe-a8f55d799e6a": {
       "lead": "mvaca@ocsconstruction.com",
@@ -835,8 +902,10 @@
       "received_at": "2026-10-07T14:26:36.000Z",
       "category": "unsubscribe",
       "classified_by": "model",
-      "status": "no_action",
-      "updated_at": "2026-10-07T23:13:40.044Z"
+      "status": "suppressed",
+      "updated_at": "2026-11-13T12:22:39.727Z",
+      "suppressed_at": "2026-11-13T12:22:39.727Z",
+      "error": null
     },
     "01a116d6-52d0-7a5d-b5a5-40f08f7702cc": {
       "lead": "kay.grundy@gtownpaper.com",
@@ -884,8 +953,10 @@
       "received_at": "2026-10-07T15:58:06.000Z",
       "category": "not_interested",
       "classified_by": "model",
-      "status": "no_action",
-      "updated_at": "2026-10-07T23:13:46.611Z"
+      "status": "suppressed",
+      "updated_at": "2026-11-13T12:22:39.795Z",
+      "suppressed_at": "2026-11-13T12:22:39.795Z",
+      "error": null
     },
     "01a1174e-a94c-7fb1-a231-8a603cf32ad3": {
       "lead": "advancedturfservices@gmail.com",
@@ -893,8 +964,10 @@
       "received_at": "2026-10-07T16:59:25.000Z",
       "category": "not_interested",
       "classified_by": "rule",
-      "status": "no_action",
-      "updated_at": "2026-10-07T23:13:46.687Z"
+      "status": "suppressed",
+      "updated_at": "2026-11-13T12:22:39.898Z",
+      "suppressed_at": "2026-11-13T12:22:39.898Z",
+      "error": null
     },
     "01a11758-077c-7502-9368-d6eae301ab8d": {
       "lead": "batesbrenda56@gmail.com",
@@ -902,8 +975,10 @@
       "received_at": "2026-10-07T17:09:52.000Z",
       "category": "unsubscribe",
       "classified_by": "rule",
-      "status": "no_action",
-      "updated_at": "2026-10-07T23:13:46.764Z"
+      "status": "suppressed",
+      "updated_at": "2026-11-13T12:22:39.992Z",
+      "suppressed_at": "2026-11-13T12:22:39.992Z",
+      "error": null
     },
     "01a117e9-fe0f-7546-99f7-a721d362bd80": {
       "lead": "maryrogan@fpamfg.com",
@@ -911,8 +986,10 @@
       "received_at": "2026-10-07T19:49:16.000Z",
       "category": "not_interested",
       "classified_by": "model",
-      "status": "no_action",
-      "updated_at": "2026-10-07T23:13:48.620Z"
+      "status": "suppressed",
+      "updated_at": "2026-11-13T12:22:40.071Z",
+      "suppressed_at": "2026-11-13T12:22:40.071Z",
+      "error": null
     },
     "01a11b9e-ad34-7765-88de-3d0ba0f10123": {
       "lead": "gidcleveland@gmail.com",
@@ -1091,8 +1168,10 @@
       "received_at": "2026-10-12T13:24:47.000Z",
       "category": "not_interested",
       "classified_by": "rule",
-      "status": "no_action",
-      "updated_at": "2026-10-12T20:38:26.621Z"
+      "status": "suppressed",
+      "updated_at": "2026-11-13T12:22:40.148Z",
+      "suppressed_at": "2026-11-13T12:22:40.148Z",
+      "error": null
     },
     "01a130f5-e098-7276-801a-015a2ef6dc6d": {
       "lead": "beni@monacomech.com",
@@ -1112,8 +1191,10 @@
       "received_at": "2026-10-12T16:37:39.000Z",
       "category": "not_interested",
       "classified_by": "model",
-      "status": "no_action",
-      "updated_at": "2026-10-12T20:39:11.834Z"
+      "status": "suppressed",
+      "updated_at": "2026-11-13T12:22:40.227Z",
+      "suppressed_at": "2026-11-13T12:22:40.227Z",
+      "error": null
     },
     "01a13113-99ea-7208-8247-a98ebf880f17": {
       "lead": "emilyj@cascadiamountaininstitute.com",
@@ -1121,8 +1202,10 @@
       "received_at": "2026-10-12T17:05:00.000Z",
       "category": "unsubscribe",
       "classified_by": "model",
-      "status": "no_action",
-      "updated_at": "2026-10-12T20:39:13.257Z"
+      "status": "suppressed",
+      "updated_at": "2026-11-13T12:22:40.306Z",
+      "suppressed_at": "2026-11-13T12:22:40.306Z",
+      "error": null
     },
     "01a13131-f2ef-7d2a-b1b9-22c4edc80ea5": {
       "lead": "bj@kuboske.com",
@@ -1202,8 +1285,10 @@
       "received_at": "2026-10-13T13:04:10.000Z",
       "category": "not_interested",
       "classified_by": "rule",
-      "status": "no_action",
-      "updated_at": "2026-10-13T18:41:25.456Z"
+      "status": "suppressed",
+      "updated_at": "2026-11-13T12:22:40.382Z",
+      "suppressed_at": "2026-11-13T12:22:40.382Z",
+      "error": null
     },
     "01a1356d-686e-7c1d-bd2d-774083f90784": {
       "lead": "bamajackllc@gmail.com",
@@ -1211,8 +1296,10 @@
       "received_at": "2026-10-13T13:21:43.000Z",
       "category": "not_interested",
       "classified_by": "model",
-      "status": "no_action",
-      "updated_at": "2026-10-13T18:41:27.985Z"
+      "status": "suppressed",
+      "updated_at": "2026-11-13T12:22:40.469Z",
+      "suppressed_at": "2026-11-13T12:22:40.469Z",
+      "error": null
     },
     "01a13574-b30b-75bd-9843-f358b1027ccd": {
       "lead": "matthew.yoo@ilcreations.com",
@@ -1262,8 +1349,10 @@
       "received_at": "2026-10-13T14:38:36.000Z",
       "category": "not_interested",
       "classified_by": "model",
-      "status": "no_action",
-      "updated_at": "2026-10-13T18:41:38.275Z"
+      "status": "suppressed",
+      "updated_at": "2026-11-13T12:22:40.540Z",
+      "suppressed_at": "2026-11-13T12:22:40.540Z",
+      "error": null
     },
     "01a135f6-43a2-7393-9f42-9fd4ee284393": {
       "lead": "smorris@mpulsesoftware.com",
@@ -1303,8 +1392,10 @@
       "received_at": "2026-10-14T16:25:14.000Z",
       "category": "not_interested",
       "classified_by": "model",
-      "status": "no_action",
-      "updated_at": "2026-10-14T20:16:23.302Z"
+      "status": "suppressed",
+      "updated_at": "2026-11-13T12:22:40.644Z",
+      "suppressed_at": "2026-11-13T12:22:40.644Z",
+      "error": null
     },
     "01a13d17-003c-7b8d-8e74-d63f1fa8d421": {
       "lead": "jackie@bronzestarmedical.com",
@@ -1312,8 +1403,10 @@
       "received_at": "2026-10-15T01:04:23.000Z",
       "category": "not_interested",
       "classified_by": "model",
-      "status": "no_action",
-      "updated_at": "2026-10-15T16:00:54.421Z"
+      "status": "suppressed",
+      "updated_at": "2026-11-13T12:22:40.706Z",
+      "suppressed_at": "2026-11-13T12:22:40.706Z",
+      "error": null
     },
     "01a13fda-4aae-7add-af62-d1a0fe9e233f": {
       "lead": "agbusiness895@gmail.com",
@@ -1321,8 +1414,10 @@
       "received_at": "2026-10-15T05:35:56.000Z",
       "category": "unsubscribe",
       "classified_by": "model",
-      "status": "no_action",
-      "updated_at": "2026-10-15T16:00:57.130Z"
+      "status": "suppressed",
+      "updated_at": "2026-11-13T12:22:40.810Z",
+      "suppressed_at": "2026-11-13T12:22:40.810Z",
+      "error": null
     },
     "01a144dc-d6be-71af-818d-178e24a8204e": {
       "lead": "agillespie@howelllabs.com",
@@ -1401,8 +1496,10 @@
       "received_at": "2026-10-16T17:06:00.000Z",
       "category": "not_interested",
       "classified_by": "rule",
-      "status": "no_action",
-      "updated_at": "2026-10-16T19:09:30.257Z"
+      "status": "suppressed",
+      "updated_at": "2026-11-13T12:22:40.905Z",
+      "suppressed_at": "2026-11-13T12:22:40.905Z",
+      "error": null
     },
     "01a145b1-2c43-76d2-a83b-63b480a8da11": {
       "lead": "mjarrard@biocircuit.com",
@@ -1420,8 +1517,10 @@
       "received_at": "2026-10-16T17:28:52.000Z",
       "category": "not_interested",
       "classified_by": "model",
-      "status": "no_action",
-      "updated_at": "2026-10-16T19:09:33.370Z"
+      "status": "suppressed",
+      "updated_at": "2026-11-13T12:22:40.999Z",
+      "suppressed_at": "2026-11-13T12:22:40.999Z",
+      "error": null
     },
     "01a145c5-4f39-7c06-b81b-83d5a8a66b7a": {
       "lead": "alicia.washington@hrpassociates.com",
@@ -1528,8 +1627,10 @@
       "received_at": "2026-10-19T15:19:11.000Z",
       "category": "unsubscribe",
       "classified_by": "model",
-      "status": "no_action",
-      "updated_at": "2026-10-19T18:01:20.832Z"
+      "status": "suppressed",
+      "updated_at": "2026-11-13T12:22:41.094Z",
+      "suppressed_at": "2026-11-13T12:22:41.094Z",
+      "error": null
     },
     "01a154e2-279e-7325-b7d8-ecfdf6a921d6": {
       "lead": "kevin.m.oconnell@northstar-data.com",
@@ -1537,8 +1638,10 @@
       "received_at": "2026-10-19T15:39:51.000Z",
       "category": "unsubscribe",
       "classified_by": "model",
-      "status": "no_action",
-      "updated_at": "2026-10-19T18:01:23.379Z"
+      "status": "suppressed",
+      "updated_at": "2026-11-13T12:22:41.167Z",
+      "suppressed_at": "2026-11-13T12:22:41.167Z",
+      "error": null
     },
     "01a154f8-17c0-753b-b857-e7aa9e121738": {
       "lead": "debbie.jaloma@fluidity-design.com",
@@ -1546,8 +1649,10 @@
       "received_at": "2026-10-19T16:00:41.000Z",
       "category": "not_interested",
       "classified_by": "model",
-      "status": "no_action",
-      "updated_at": "2026-10-19T18:01:33.783Z"
+      "status": "suppressed",
+      "updated_at": "2026-11-13T12:22:41.242Z",
+      "suppressed_at": "2026-11-13T12:22:41.242Z",
+      "error": null
     },
     "01a1555c-06fc-75c7-a5cd-96c00cdac6c6": {
       "lead": "janine@eiieq.com",
@@ -1555,8 +1660,10 @@
       "received_at": "2026-10-19T17:42:51.000Z",
       "category": "not_interested",
       "classified_by": "model",
-      "status": "no_action",
-      "updated_at": "2026-10-19T22:31:50.675Z"
+      "status": "suppressed",
+      "updated_at": "2026-11-13T12:22:41.320Z",
+      "suppressed_at": "2026-11-13T12:22:41.320Z",
+      "error": null
     },
     "01a15579-55c5-792e-91cd-2ea7f02f2069": {
       "lead": "jrsmyth@popbiotech.com",
@@ -1564,8 +1671,10 @@
       "received_at": "2026-10-19T17:55:45.000Z",
       "category": "not_interested",
       "classified_by": "model",
-      "status": "no_action",
-      "updated_at": "2026-10-19T22:31:53.242Z"
+      "status": "suppressed",
+      "updated_at": "2026-11-13T12:22:41.406Z",
+      "suppressed_at": "2026-11-13T12:22:41.406Z",
+      "error": null
     },
     "01a1557c-da7d-756a-90df-95e2d0e3acf4": {
       "lead": "kent@skadigroup.com",
@@ -1573,8 +1682,10 @@
       "received_at": "2026-10-19T18:17:32.000Z",
       "category": "not_interested",
       "classified_by": "model",
-      "status": "no_action",
-      "updated_at": "2026-10-19T22:31:57.643Z"
+      "status": "suppressed",
+      "updated_at": "2026-11-13T12:22:41.465Z",
+      "suppressed_at": "2026-11-13T12:22:41.465Z",
+      "error": null
     },
     "01a15598-3485-7495-8254-36bf13d6474a": {
       "lead": "jonathanmgosnell@gmail.com",
@@ -1582,8 +1693,10 @@
       "received_at": "2026-10-19T19:10:14.000Z",
       "category": "unsubscribe",
       "classified_by": "model",
-      "status": "no_action",
-      "updated_at": "2026-10-19T22:32:00.365Z"
+      "status": "suppressed",
+      "updated_at": "2026-11-13T12:22:41.557Z",
+      "suppressed_at": "2026-11-13T12:22:41.557Z",
+      "error": null
     },
     "01a159f5-3f1a-7df3-947d-3bf2cf27e448": {
       "lead": "mparish@ceranova.com",
@@ -1610,8 +1723,10 @@
       "received_at": "2026-10-20T16:48:20.000Z",
       "category": "not_interested",
       "classified_by": "rule",
-      "status": "no_action",
-      "updated_at": "2026-10-20T20:03:26.413Z"
+      "status": "suppressed",
+      "updated_at": "2026-11-13T12:22:41.630Z",
+      "suppressed_at": "2026-11-13T12:22:41.629Z",
+      "error": null
     },
     "01a15a8a-8c19-7be4-91e1-b42da022e0d7": {
       "lead": "bill.bailey@musicministryintl.com",
@@ -1631,8 +1746,10 @@
       "received_at": "2026-10-20T21:45:46.000Z",
       "category": "unsubscribe",
       "classified_by": "model",
-      "status": "no_action",
-      "updated_at": "2026-10-20T23:16:07.710Z"
+      "status": "suppressed",
+      "updated_at": "2026-11-13T12:22:41.699Z",
+      "suppressed_at": "2026-11-13T12:22:41.699Z",
+      "error": null
     },
     "01a15ecb-0b37-7dfd-9a20-fccfd172b50e": {
       "lead": "john@sim-vivo.com",
@@ -1640,8 +1757,10 @@
       "received_at": "2026-10-21T14:08:24.000Z",
       "category": "not_interested",
       "classified_by": "rule",
-      "status": "no_action",
-      "updated_at": "2026-10-21T16:22:17.891Z"
+      "status": "suppressed",
+      "updated_at": "2026-11-13T12:22:41.783Z",
+      "suppressed_at": "2026-11-13T12:22:41.783Z",
+      "error": null
     },
     "01a15edd-40cf-7ee5-a47d-4c0b5916f938": {
       "lead": "jjaqkcon@gmail.com",
@@ -1767,8 +1886,10 @@
       "received_at": "2026-10-21T21:37:04.000Z",
       "category": "unsubscribe",
       "classified_by": "model",
-      "status": "no_action",
-      "updated_at": "2026-10-21T23:29:33.094Z"
+      "status": "suppressed",
+      "updated_at": "2026-11-13T12:22:41.879Z",
+      "suppressed_at": "2026-11-13T12:22:41.879Z",
+      "error": null
     },
     "01a16174-275d-799b-a135-f6dc3c42c3e2": {
       "lead": "mhyde@phoenixenergycorp.net",
@@ -1776,8 +1897,10 @@
       "received_at": "2026-10-22T02:32:28.000Z",
       "category": "unsubscribe",
       "classified_by": "rule",
-      "status": "no_action",
-      "updated_at": "2026-10-22T16:22:26.696Z"
+      "status": "suppressed",
+      "updated_at": "2026-11-13T12:22:41.953Z",
+      "suppressed_at": "2026-11-13T12:22:41.953Z",
+      "error": null
     },
     "01a1621e-1be3-7dec-bcf5-8df677cb43fe": {
       "lead": "stengesdal@baosystems.com",
@@ -1819,8 +1942,10 @@
       "received_at": "2026-10-22T18:41:06.000Z",
       "category": "not_interested",
       "classified_by": "model",
-      "status": "no_action",
-      "updated_at": "2026-10-22T20:15:02.460Z"
+      "status": "suppressed",
+      "updated_at": "2026-11-13T12:22:42.038Z",
+      "suppressed_at": "2026-11-13T12:22:42.038Z",
+      "error": null
     },
     "01a16912-4391-73b1-9dc2-e2ea66349175": {
       "lead": "melvinhudson7@gmail.com",
@@ -1849,8 +1974,10 @@
       "received_at": "2026-10-23T20:36:21.000Z",
       "category": "not_interested",
       "classified_by": "model",
-      "status": "no_action",
-      "updated_at": "2026-10-23T22:58:40.342Z"
+      "status": "suppressed",
+      "updated_at": "2026-11-13T12:22:42.117Z",
+      "suppressed_at": "2026-11-13T12:22:42.117Z",
+      "error": null
     },
     "01a16ac6-c9be-7832-b6db-5160909d255c": {
       "lead": "clmartinez100@gmail.com",
@@ -1858,8 +1985,10 @@
       "received_at": "2026-10-23T21:59:18.000Z",
       "category": "not_interested",
       "classified_by": "rule",
-      "status": "no_action",
-      "updated_at": "2026-10-23T22:58:40.472Z"
+      "status": "suppressed",
+      "updated_at": "2026-11-13T12:22:42.186Z",
+      "suppressed_at": "2026-11-13T12:22:42.186Z",
+      "error": null
     },
     "01a17884-23c0-7cdc-95b1-4735e9fb61e8": {
       "lead": "chris.dcouto@agnisemi.ai",
@@ -1989,8 +2118,10 @@
       "received_at": "2026-10-27T19:56:02.000Z",
       "category": "not_interested",
       "classified_by": "model",
-      "status": "no_action",
-      "updated_at": "2026-10-27T21:25:16.467Z"
+      "status": "suppressed",
+      "updated_at": "2026-11-13T12:22:42.264Z",
+      "suppressed_at": "2026-11-13T12:22:42.264Z",
+      "error": null
     },
     "01a17f56-72d1-7e49-941d-2a3b4d361e7d": {
       "lead": "acartermomof4@gmail.com",
@@ -1998,8 +2129,10 @@
       "received_at": "2026-10-27T21:48:36.000Z",
       "category": "not_interested",
       "classified_by": "model",
-      "status": "no_action",
-      "updated_at": "2026-10-28T00:37:15.576Z"
+      "status": "suppressed",
+      "updated_at": "2026-11-13T12:22:42.344Z",
+      "suppressed_at": "2026-11-13T12:22:42.344Z",
+      "error": null
     },
     "01a182c3-0d80-7aea-995b-8e1838bc1682": {
       "lead": "ashurchin@lissol.com",
@@ -2065,8 +2198,10 @@
       "received_at": "2026-10-29T14:06:44.000Z",
       "category": "unsubscribe",
       "classified_by": "rule",
-      "status": "no_action",
-      "updated_at": "2026-10-29T17:49:38.515Z"
+      "status": "suppressed",
+      "updated_at": "2026-11-13T12:22:42.417Z",
+      "suppressed_at": "2026-11-13T12:22:42.417Z",
+      "error": null
     },
     "01a1880a-fe61-767e-bb1b-07112ea7ad97": {
       "lead": "bill@srtechsys.com",
@@ -2095,8 +2230,10 @@
       "received_at": "2026-10-29T17:10:16.000Z",
       "category": "not_interested",
       "classified_by": "model",
-      "status": "no_action",
-      "updated_at": "2026-10-29T17:49:38.414Z"
+      "status": "suppressed",
+      "updated_at": "2026-11-13T12:22:42.479Z",
+      "suppressed_at": "2026-11-13T12:22:42.479Z",
+      "error": null
     },
     "01a188de-2dbb-7ebf-8aee-234fa091807b": {
       "lead": "ivan.mills@blacksea.tech",
@@ -2133,8 +2270,10 @@
       "received_at": "2026-10-30T15:29:41.000Z",
       "category": "unsubscribe",
       "classified_by": "model",
-      "status": "no_action",
-      "updated_at": "2026-10-30T17:30:19.324Z"
+      "status": "suppressed",
+      "updated_at": "2026-11-13T12:22:42.553Z",
+      "suppressed_at": "2026-11-13T12:22:42.553Z",
+      "error": null
     },
     "01a18d73-2625-7c54-8245-406313db6146": {
       "lead": "chelsea@parananolabs.com",
@@ -2152,8 +2291,10 @@
       "received_at": "2026-10-30T16:38:02.000Z",
       "category": "unsubscribe",
       "classified_by": "rule",
-      "status": "no_action",
-      "updated_at": "2026-10-30T17:30:22.875Z"
+      "status": "suppressed",
+      "updated_at": "2026-11-13T12:22:42.633Z",
+      "suppressed_at": "2026-11-13T12:22:42.633Z",
+      "error": null
     },
     "01a18df0-dc47-7c94-bacb-a60ebc486c7e": {
       "lead": "smk@parallelflight.com",
@@ -2196,8 +2337,10 @@
       "received_at": "2026-11-02T16:32:50.000Z",
       "category": "not_interested",
       "classified_by": "model",
-      "status": "no_action",
-      "updated_at": "2026-11-02T21:09:12.304Z"
+      "status": "suppressed",
+      "updated_at": "2026-11-13T12:22:42.700Z",
+      "suppressed_at": "2026-11-13T12:22:42.700Z",
+      "error": null
     },
     "01a19d58-027f-7d97-a29d-6089e4896921": {
       "lead": "diedre@windsorgroupllc.net",
@@ -2318,8 +2461,10 @@
       "received_at": "2026-11-03T18:04:48.000Z",
       "category": "unsubscribe",
       "classified_by": "model",
-      "status": "no_action",
-      "updated_at": "2026-11-03T18:51:58.936Z"
+      "status": "suppressed",
+      "updated_at": "2026-11-13T12:22:42.769Z",
+      "suppressed_at": "2026-11-13T12:22:42.769Z",
+      "error": null
     },
     "01a1a2f4-3ebd-7c0f-901f-6674e5a0905d": {
       "lead": "kparks@kpcinc.com",
@@ -2345,8 +2490,10 @@
       "received_at": "2026-11-03T20:47:06.000Z",
       "category": "unsubscribe",
       "classified_by": "rule",
-      "status": "no_action",
-      "updated_at": "2026-11-03T23:49:52.820Z"
+      "status": "suppressed",
+      "updated_at": "2026-11-13T12:22:42.891Z",
+      "suppressed_at": "2026-11-13T12:22:42.891Z",
+      "error": null
     },
     "01a1a361-ae2c-79db-889f-8074e941fa87": {
       "lead": "chantal.satterwhite@gmail.com",
@@ -2388,8 +2535,10 @@
       "received_at": "2026-11-05T16:06:09.000Z",
       "category": "not_interested",
       "classified_by": "model",
-      "status": "no_action",
-      "updated_at": "2026-11-05T19:16:10.777Z"
+      "status": "suppressed",
+      "updated_at": "2026-11-13T12:22:42.981Z",
+      "suppressed_at": "2026-11-13T12:22:42.981Z",
+      "error": null
     },
     "01a1ac90-db58-701b-91a4-6125f816e8c3": {
       "lead": "eliassqueakycleaning@gmail.com",
@@ -2433,8 +2582,10 @@
       "received_at": "2026-11-06T21:05:38.000Z",
       "category": "not_interested",
       "classified_by": "rule",
-      "status": "no_action",
-      "updated_at": "2026-11-06T23:36:09.401Z"
+      "status": "suppressed",
+      "updated_at": "2026-11-13T12:22:43.088Z",
+      "suppressed_at": "2026-11-13T12:22:43.088Z",
+      "error": null
     },
     "01a1b93d-8155-7d43-b72f-1a25192bde85": {
       "lead": "kparks@kpcinc.com",
