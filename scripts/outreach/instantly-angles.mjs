@@ -54,6 +54,8 @@
 //                                                         signature (read-only)
 //   node scripts/outreach/instantly-angles.mjs --config   print SQL to store campaign ids
 
+import { DISCLOSURE, hasDisclosure } from './disclosure.mjs';
+
 const API = 'https://api.instantly.ai/api/v2';
 const KEY = process.env.INSTANTLY_API_KEY;
 
@@ -198,15 +200,13 @@ const MAILBOXES = {
 // ---- Shared tail ----------------------------------------------------------
 // Appended to every step. See deviation 2 above.
 //
-// THE OPT-OUT LINE WAS REMOVED ON 2026-09-29 AT THE OWNER'S INSTRUCTION, along
-// with the two guardrails that asserted it (one in check(), one in
-// assertStored()). It read: Reply "no" and I will not reach out again.
-// It is recorded here rather than argued about: 15 USC 7704(a)(5)(A) requires a
-// commercial email to carry an opt-out notice and a postal address. The postal
-// address stays, in {{accountSignature}}. The opt-out notice does not. That is
-// the owner's decision to make and it has been made twice; this comment exists
-// so nobody later reads its absence as an oversight and quietly adds it back.
-const TAIL = ['', '{{accountSignature}}'];
+// The opt-out line was removed on 2026-09-29 at the owner's instruction and
+// restored on the legal-drafting branch on 2026-11-13, together with an
+// advertisement label and the Linkshub Ltd. name (disclosure.mjs explains
+// both). 15 USC 7704(a)(5)(A) requires all three elements in EVERY commercial
+// message. The postal address stays in {{accountSignature}}; the disclosure
+// sits below it so it does not compete with the CTA.
+const TAIL = ['', '{{accountSignature}}', '', DISCLOSURE];
 
 // ===========================================================================
 // A1  Recompete clock
@@ -501,11 +501,10 @@ function check() {
       const links = (raw.match(/https?:\/\//g) || []).length;
       note(i === 0 ? links === 0 : true, `${label} no link in email 1`, `${links} link(s)`);
 
-      // The opt-out assertion that stood here was removed with the line itself
-      // on 2026-09-29. See the TAIL comment.
+      // CAN-SPAM 7704(a)(5)(A): postal address (in the signature), plus the
+      // advertisement label and opt-out notice (the disclosure). See TAIL.
       note(raw.includes('{{accountSignature}}'), `${label} carries the postal address`);
-      note(!/unsubscribe|opt out|opt-out|remove me|reply "no"/i.test(raw),
-        `${label} carries no unsubscribe language`);
+      note(hasDisclosure(raw), `${label} carries the ad label and opt-out notice once`);
 
       const assembled = bodyHtml(lines);
       note(
@@ -628,10 +627,9 @@ function assertStored(c, sent, expectStatus) {
       const text = (v.body || '').replace(/<[^>]*>/g, '').trim();
       if (text.length < 60) problems.push(`step ${i + 1} variant ${j} body stripped (${text.length} chars)`);
       if (!v.body.includes('{{accountSignature}}')) problems.push(`step ${i + 1} variant ${j} lost the signature`);
-      // Inverted on 2026-09-29: the check used to require the opt-out notice.
-      // Now it fails if one reappears, because Instantly can be configured to
-      // append one and that would put it back without anyone editing this file.
-      if (/unsubscribe|reply "no"/i.test(v.body)) problems.push(`step ${i + 1} variant ${j} gained unsubscribe language`);
+      // Required again from 2026-11-13 (see TAIL): a stored step without the
+      // disclosure means Instantly's copy has drifted from this file.
+      if (!hasDisclosure(v.body.replace(/<[^>]*>/g, '').replace(/&quot;/g, '"'))) problems.push(`step ${i + 1} variant ${j} lost the ad label or opt-out notice`);
     });
   });
   if ((c.email_list || []).length !== sent.email_list.length) {

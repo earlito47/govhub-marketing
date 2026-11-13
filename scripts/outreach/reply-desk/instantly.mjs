@@ -83,6 +83,25 @@ export function instantly(key = process.env.INSTANTLY_API_KEY) {
       return items.find((l) => !campaignId || l.campaign === campaignId) || items[0] || null;
     },
 
+    /**
+     * Add one address to the workspace blocklist, which stops every campaign
+     * on every mailbox from emailing it (reply-desk/suppress.mjs). Needs the
+     * API key's block list write scope. An address already on the list is not
+     * an error: the request is idempotent from our side.
+     * Endpoint and body checked against Instantly's API v2 reference on
+     * 2026-11-13: POST /block-lists-entries { bl_value }. The key needs one of
+     * the scopes block_list_entries:create, block_list_entries:all,
+     * all:create or all:all.
+     */
+    async block(email) {
+      try {
+        return await api('POST', '/block-lists-entries', { bl_value: email });
+      } catch (err) {
+        if (/-> 409\b/.test(err.message) || /already/i.test(err.message)) return { already: true };
+        throw err;
+      }
+    },
+
     /** Reply in-thread from the mailbox that received the lead's message. Never retried on 5xx. */
     async reply({ eaccount, replyToUuid, subject, text, html, bcc }) {
       const body = { eaccount, reply_to_uuid: replyToUuid, subject, body: { text, html } };
