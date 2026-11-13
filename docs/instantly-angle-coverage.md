@@ -5035,3 +5035,174 @@ against A-line) is not callable: 0 positives a side against a bar of about 10.
 Desk ledger unchanged at 241 emails, `needs_human` **8**, `drafted` **44** —
 identical to 11-11, so Bill Bailey's reply has now been drafted and unsent for
 three days, with his notice closing 11-23.
+
+## 2026-11-13 — daily check
+
+### 17 people who declined were still mailable, and now are not
+
+The reply desk ran a suppression batch at **12:22 UTC today** and marked 78
+emails `suppressed` — 60 `not_interested`, 18 `unsubscribe` — each with a
+`suppressed_at` stamp and a null `error`. Cross-checking those 78 addresses
+against `outreach.companies`:
+
+| | |
+|---|---|
+| desk-suppressed addresses found in `outreach.companies` | 78 |
+| actually `suppressed = true` | 61 |
+| **still mailable** | **17** |
+
+The desk's ledger records the decision; `outreach.companies.suppressed` is what
+the pipeline enforces. Two paths, one guarantee, and only one of them asserted
+it — the same shape as every other bug in this file.
+
+Checked and ruled out: duplicate company rows (all 17 have exactly one row), and
+a recorded failure (the `error` field is null on all of them). I cannot see
+inside the desk's write path and must not change it, so the cause is still open.
+What I could do is honour the stops, which the standing constraint directs:
+**all 17 are now suppressed by exact email**, each with the desk's own category
+and today's date in `suppressed_reason`, that person only, company untouched.
+`outreach.companies.suppressed` went 198 → 216 (the 17 plus `tommie.horton@`
+below).
+
+Worth re-running this cross-check daily: a decline that is recorded but not
+enforced is worse than one that was never recorded, because the ledger says it
+was handled.
+
+### B4's bounce rate, measured the only way that means anything
+
+B4 reads **5 / 150 = 3.33%** cumulative, against 1 / 75 = 1.33% yesterday. The
+cumulative figure is misleading, and the reason is worth keeping:
+
+**All five bounces are from the 11-12 cohort.** None is from today's send. So
+the cohort that has had time to report is at **5 / 75 = 6.7%**, and today's 75
+are at 0-so-far, which means nothing yet. The lag is measured, not assumed:
+yesterday at 23:32 that same cohort showed **1** bounce; tonight it shows **5**.
+Four fifths of its bounces arrived after the send day's evening check.
+
+So a campaign-level cumulative rate systematically understates a ramping
+campaign: the newest cohort joins the denominator immediately and the numerator
+days later. **Read the gate per cohort, on cohorts at least about 48 hours old.**
+On that basis B4's real rate is near 6-7%, over the 5% per-campaign line.
+
+Not a domain problem, which was the thing to rule out first because B4 shares
+govhubnow / govhubhq / govhubsubmittals / govhubrfp with A5:
+
+| sending domain | B4 sends | bounces |
+|---|---|---|
+| govhubnow.com | 36 | 2 |
+| govhubhq.com | 37 | 1 |
+| govhubsubmittals.com | 40 | 1 |
+| govhubrfp.com | 37 | 1 |
+
+An even spread across all four rules out one bad domain, and A5 on those same
+domains moved 31 → 32 on 1,905 contacts. The five addresses are patterned
+(`bboyer@`, `ablankenship@`, `abrown@`, `audrey.jones@`, `autumn.trevino@`) at
+real company domains, which points at list quality in the 11-07 B-line load
+rather than reputation.
+
+**B4 was not paused, and the reason is the calendar.** All four push crons are
+`* * 1-5`, weekdays only, so B4 sends nothing on Saturday or Sunday; the next
+first touch is Monday 06:00 UTC. Pausing tonight would stop nothing that is
+about to happen, and the weekend lets the 11-13 cohort report, so Monday's
+decision rests on two mature cohorts instead of one. Overall is still
+**131 / 7,059 = 1.86%** against the 2% gate, rising 1.78 → 1.80 → 1.86.
+
+### Monday's B2 pre-flight will hold, on two of its four conditions
+
+The scheduled step at 11-16 21:15 checks four things. Two already fail:
+
+| condition | required | actual |
+|---|---|---|
+| B2 supply, fit/plausible, >= 16 days out | >= 500 | **198** |
+| B4 bounce | < 2% | **3.33%** |
+
+So B2 will not launch Monday unless supply roughly triples and B4's rate falls,
+and the step holding it is the designed behaviour, not a fault. Flagging three
+days early because the fit judge is what moves the supply number (9 runs a day,
+40 per run), and because B4's bounce rate is the other half and is going the
+wrong way.
+
+### The 03:45 collision, third consecutive day — fix identified, blocked
+
+Both jobs returned 546 again this morning; `opportunities_3` recovered on its
+03:53 retry, `awards` has no retry at that slot and relied on 09:45. Three days:
+11-11 both failed, 11-12 awards failed, 11-13 both failed.
+
+`cron.job` shows exactly two entries at minute `45 3`, fired simultaneously by
+pg_cron while both are at their heaviest (boot), and the shard bodies only run
+about 7 seconds, so the overlap is the whole problem:
+
+```
+[24] outreach-awards             45 3 * * *
+[69] outreach-opportunities-s3   45 3 * * *
+```
+
+The clean fix touches none of the B-line session's work. `outreach-awards`
+jobid 24 is a separate entry from its 09:45 / 15:45 / 21:45 siblings (jobids 37,
+38, 39), so moving it moves only the colliding slot, and 03:58 is free — the
+only minute-58 job is `outreach-opportunities-warm` at 02:58, and 03:58 sits
+five minutes clear of the 03:53 retry and well before 04:30:
+
+```sql
+select cron.alter_job(24, schedule := '58 3 * * *');
+```
+
+**I ran that and the permission classifier refused it** (`Modify Shared
+Resources`), which is a fair call on a shared schedule. Handing the statement
+over rather than working around it. It is reversible with
+`select cron.alter_job(24, schedule := '45 3 * * *');`.
+
+### The award-pace cap fired
+
+Yesterday this file recorded the 5-per-award limit as unproven because its
+positive branch had never executed. Today's 06:00 push reported
+**`held_for_award_pace: 1`**. First time. One lead held, so the guard works as
+written; "unproven" can come off it.
+
+### Replies
+
+Five, and two are accepts.
+
+- **`bdpartnership18@gmail.com` (B4) — "Yes please"**, B4's first reply and an
+  accept against "Want the next 3 that are still open?". Desk has it `drafted`.
+- **`got2construction@gmail.com` (A2) — "Yes"**, against "want me to send you
+  the next few open bids that fit your NAICS as they post? A yes is all I need."
+  Checked for the trap in item 6 — a "Yes" quoting the retired step 4 is a
+  decline — and it does not apply: the quoted ask is the current one. Desk has
+  it `needs_human`.
+- `tommie.horton@hibtechis.com` (A2) — "No thank you please remove me from your
+  notifications". Suppressed, that person only, with reason and date. The desk
+  had it as `suppressed` in the ledger while the row was still mailable; this is
+  one of the 17 above.
+- `ronnie5026@gmail.com` (A1) — out of office, correctly `human = false`. Its
+  stated return date, "Thursday, November 12, 2026", is already past, so the
+  autoresponder itself is stale. No action.
+- `mjarrard@biocircuit.com` (A1) — "I am no longer using this email account",
+  with a named successor (Todd Goede, `tgoede@biocircuit.com`) and a personal
+  address. Correctly `human = false`. **Not suppressed from here**: the desk
+  classified it `no_action` twice and reply classification is the desk's, not
+  mine. Flagging it instead, because a confirmed-dead mailbox that stays
+  mailable is a guaranteed future bounce in a week when bounce is the number
+  under watch, and the successor is sitting in the text.
+
+Desk ledger **246** emails (241 yesterday): `needs_human` **9**, `drafted`
+**45**, and the new `suppressed` **78**. `no_action` fell 154 → 79 in the same
+reclassification.
+
+### The rest
+
+Push put B4's full **75** in one 06:00 run with `reconciled: true` and nothing
+left for 06:50 or 07:15. Audit **134** problems: 132 are the B4 ALL-CAPS company
+names recorded on 11-12 (still benign — no B-line campaign interpolates
+`companyName`) and 2 are A5's known names. 0 incomplete, 0 missing first name,
+0 leaked tokens, 0 bad openers. That benign count grows about 66 a night as B4
+scales, which is the cost of leaving it.
+
+Inventory: A1, A2, A4 all **0 ready**. B4 293 ready = 3.9 days at cap, still
+ramping (+334/day gross from assign).
+
+One copy note from the delivered subjects: B4 step 1 reads **"next 3 in
+236220"** — the bare NAICS code, unlabelled. `b2Subject` already refuses a bare
+solicitation number on the grounds that it "reads like a part number in a
+sentence"; the same objection applies here, and "next 3 in NAICS 236220" would
+cost nothing. The opener itself labels it correctly.
