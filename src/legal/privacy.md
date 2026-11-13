@@ -59,7 +59,7 @@ We do not sell personal data for money.
 
 ## 4. AI processing
 
-To provide GovHub's features, we send Customer Content and your company profile to AI model providers through their APIs: Anthropic (Claude) and OpenAI. Scanned documents are read by a text-recognition (OCR) service [CONFIRM: who runs the OCR service and where it is hosted].
+To provide GovHub's features, we send Customer Content and your company profile to AI model providers through their APIs: Anthropic (Claude) and OpenAI. Scanned documents are read by our own text-recognition (OCR) service, which runs on Render in the United States.
 
 - **Training.** Anthropic and OpenAI do not use data sent through their APIs to train their models unless the customer opts in. We have not opted in.
 - **Retention.** Anthropic deletes API inputs and outputs within 30 days, and OpenAI keeps API abuse-monitoring logs for up to 30 days, except where content is flagged for a policy violation or the law requires longer.

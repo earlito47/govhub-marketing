@@ -8,7 +8,7 @@ These are the service providers Linkshub Ltd. uses to run GovHub. The first tabl
 | Cloudflare | Hosts the website and app; runs application servers, queues and a browser that reads public bid pages | All data passing through the app | Global network |
 | Anthropic | AI analysis of solicitations, drafting, review, document rendering and web search | Customer Content, company profile | United States |
 | OpenAI | AI drafting, form detection, the built-in assistant, images and market research | Customer Content, company profile, assistant messages | United States |
-| [CONFIRM: OCR service operator and host] | Reading text from scanned documents | Documents added to your library | [CONFIRM] |
+| Render | Hosts GovHub's own text-recognition (OCR) service, which reads scanned documents | Documents added to your library | United States |
 | Stripe | Payments and subscriptions | Name, email, billing address, payment details | United States |
 | Resend | Sending account and service emails | Name, email address, email content, delivery events | United States |
 | PostHog | Product analytics | Usage events, user ID, email, company name | United States |
