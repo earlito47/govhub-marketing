@@ -20,7 +20,7 @@ const faqs = [
   {
     question: 'Is GovHub FedRAMP authorized?',
     answer:
-      'No. [CONFIRM: GovHub holds no FedRAMP authorization or FedRAMP Ready designation.] GovHub is a commercial cloud service for businesses preparing bids. It is not designed for Controlled Unclassified Information or classified data. If your program requires a FedRAMP-authorized system, talk to us before you upload anything.',
+      'No. GovHub does not have FedRAMP authorization or a FedRAMP Ready designation. It is a commercial cloud service for businesses preparing bids. It is not designed for Controlled Unclassified Information or classified data. If your program requires a FedRAMP-authorized system, talk to us before you upload anything.',
   },
   {
     question: 'Does GovHub support single sign-on (SSO)?',
@@ -55,7 +55,7 @@ const faqs = [
         <li><strong>Account isolation:</strong> database row-level security limits each account to its own data.</li>
         <li><strong>Restricted staff access:</strong> administrative access is limited to named GovHub staff, and their administrative actions are recorded in an append-only audit log.</li>
         <li><strong>Verified sign-in:</strong> new accounts confirm their email address with a one-time code.</li>
-        <li><strong>Established cloud providers:</strong> GovHub runs on Supabase and Cloudflare [CONFIRM: state the data region only once it is confirmed with Supabase].</li>
+        <li><strong>Established cloud providers:</strong> GovHub runs on Supabase and Cloudflare, and your data is stored in the United States.</li>
       </ul>
 
       <h2>Your data stays yours</h2>
@@ -69,8 +69,8 @@ const faqs = [
       <h2>Certifications and attestations</h2>
       <p>
         GovHub is a commercial cloud service for businesses preparing bids. It
-        does not hold a SOC 2 report, FedRAMP authorization or CMMC certification
-        [CONFIRM: true as of publication], and it is not designed for Controlled
+        does not hold a SOC 2 report, FedRAMP authorization or CMMC certification,
+        and it is not designed for Controlled
         Unclassified Information or classified data. For security documentation
         or to discuss your specific requirements, email
         <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.

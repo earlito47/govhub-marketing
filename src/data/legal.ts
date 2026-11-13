@@ -22,8 +22,9 @@ export const COMPANY = {
   jurisdiction: 'Georgia, USA (domestic profit corporation, incorporated 2025-08-05)',
   registrationNumber: 'Georgia Secretary of State control number 25162414',
   postalAddress: '3060 Mercer University Dr, Suite 110, Atlanta, GA 30341',
-  legalEmail: '[CONFIRM: monitored legal notices address]',
-  privacyEmail: '[CONFIRM: monitored privacy address]',
+  legalEmail: 'support@govhub.online',
+  privacyEmail: 'support@govhub.online',
+  generalEmail: 'contact@govhub.online',
 } as const;
 
 /** One line used by the footer and email footers. */
@@ -54,8 +55,8 @@ export const LEGAL_DOCS = {
     metaTitle: 'Terms of Service | GovHub by Linkshub Ltd.',
     description:
       'The agreement between you and Linkshub Ltd. for GovHub: accounts, subscriptions, AI output, agent access, liability and how disputes are handled.',
-    version: '2026-11-13',
-    effective: '[CONFIRM: effective date]',
+    version: '2026-11-16',
+    effective: 'November 16, 2026',
   },
   acceptableUse: {
     name: 'AI and Acceptable Use Policy',
@@ -63,8 +64,8 @@ export const LEGAL_DOCS = {
     metaTitle: 'AI and Acceptable Use Policy | GovHub',
     description:
       'How to use GovHub output responsibly, what the service may not be used for, and the rules for AI agents and other automated access.',
-    version: '2026-11-13',
-    effective: '[CONFIRM: effective date]',
+    version: '2026-11-16',
+    effective: 'November 16, 2026',
   },
   privacy: {
     name: 'Privacy Notice',
@@ -72,8 +73,8 @@ export const LEGAL_DOCS = {
     metaTitle: 'Privacy Notice | GovHub by Linkshub Ltd.',
     description:
       'How Linkshub Ltd. collects, uses, shares and protects personal data across the GovHub website, the GovHub app, support and our outreach.',
-    version: '2026-11-13',
-    effective: '[CONFIRM: effective date]',
+    version: '2026-11-16',
+    effective: 'November 16, 2026',
   },
   cookies: {
     name: 'Cookie Notice',
@@ -81,8 +82,8 @@ export const LEGAL_DOCS = {
     metaTitle: 'Cookie Notice and Analytics Settings | GovHub',
     description:
       'The cookies and tracking GovHub uses on www.govhub.online and app.govhub.online, what each one does, and how to turn analytics off.',
-    version: '2026-11-13',
-    effective: '[CONFIRM: effective date]',
+    version: '2026-11-16',
+    effective: 'November 16, 2026',
   },
   subprocessors: {
     name: 'Subprocessors',
@@ -90,8 +91,8 @@ export const LEGAL_DOCS = {
     metaTitle: 'Subprocessors and Service Providers | GovHub',
     description:
       'The service providers that process data for GovHub, what each one does, the data involved and where it is processed.',
-    version: '2026-11-13',
-    effective: '[CONFIRM: effective date]',
+    version: '2026-11-16',
+    effective: 'November 16, 2026',
   },
   company: {
     name: 'Company and Domains',
@@ -99,8 +100,8 @@ export const LEGAL_DOCS = {
     metaTitle: 'Company Information and Official Domains | GovHub',
     description:
       'Who owns and operates GovHub, how to reach us, the official GovHub domains, and the domains we send email from.',
-    version: '2026-11-13',
-    effective: '[CONFIRM: effective date]',
+    version: '2026-11-16',
+    effective: 'November 16, 2026',
   },
 } as const satisfies Record<string, LegalDoc>;
 

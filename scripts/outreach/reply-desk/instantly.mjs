@@ -88,9 +88,10 @@ export function instantly(key = process.env.INSTANTLY_API_KEY) {
      * on every mailbox from emailing it (reply-desk/suppress.mjs). Needs the
      * API key's block list write scope. An address already on the list is not
      * an error: the request is idempotent from our side.
-     * [CONFIRM: endpoint and body against the current Instantly API v2
-     * reference before this runs live. It follows the documented
-     * POST /block-lists-entries { bl_value } shape.]
+     * Endpoint and body checked against Instantly's API v2 reference on
+     * 2026-11-13: POST /block-lists-entries { bl_value }. The key needs one of
+     * the scopes block_list_entries:create, block_list_entries:all,
+     * all:create or all:all.
      */
     async block(email) {
       try {

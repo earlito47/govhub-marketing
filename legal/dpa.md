@@ -41,7 +41,7 @@ Linkshub will implement the technical and organizational measures in Annex II. L
 
 6.2 Linkshub will impose data protection obligations on each Subprocessor that are no less protective than this DPA, and remains responsible for its Subprocessors' performance.
 
-6.3 Linkshub will give notice of a new Subprocessor at least [CONFIRM: notice period] before it begins processing Customer Personal Data. Customer may object on reasonable data protection grounds within that period. If the parties cannot resolve the objection, Customer may terminate the affected Services and receive a refund of prepaid fees for the unused period.
+6.3 Linkshub will give notice of a new Subprocessor at least 30 days before it begins processing Customer Personal Data. Customer may object on reasonable data protection grounds within that period. If the parties cannot resolve the objection, Customer may terminate the affected Services and receive a refund of prepaid fees for the unused period.
 
 ## 7. Assistance with rights requests
 
@@ -49,7 +49,7 @@ Linkshub will, taking into account the nature of the processing, assist Customer
 
 ## 8. Security Incidents
 
-8.1 Linkshub will notify Customer without undue delay, and in any event within [CONFIRM: number of hours], after becoming aware of a Security Incident.
+8.1 Linkshub will notify Customer without undue delay, and in any event within 72 hours, after becoming aware of a Security Incident.
 
 8.2 The notice will describe, as far as then known, the nature of the incident, the categories and approximate number of individuals and records concerned, the likely consequences, and the measures taken or proposed. Linkshub will provide further information as it becomes available and will take reasonable steps to contain and remediate the incident.
 
@@ -63,7 +63,7 @@ Linkshub will provide reasonable information Customer needs to carry out data pr
 
 10.1 Customer can delete Customer Content in the Services at any time.
 
-10.2 Within [CONFIRM: number] days after the Agreement ends, Linkshub will delete Customer Personal Data, unless the law requires Linkshub to keep it. Copies in backups are deleted on Linkshub's backup cycle and remain protected under this DPA until then. [CONFIRM: implement the account purge job first. As of 2026-11-13 deleted accounts are only deactivated, and files sent to Anthropic's Files API are not deleted.]
+10.2 Within 45 days after the Agreement ends, Linkshub will delete Customer Personal Data, unless the law requires Linkshub to keep it. Copies in backups are deleted on Linkshub's backup cycle and remain protected under this DPA until then. Linkshub deletes it with the account purge, which also deletes files held in Anthropic's Files API.
 
 ## 11. Audits
 
@@ -73,7 +73,7 @@ Linkshub will provide reasonable information Customer needs to carry out data pr
 
 ## 12. International transfers
 
-12.1 Linkshub processes Customer Personal Data in the United States [CONFIRM: regions], and its Subprocessors may process it in the locations listed on the subprocessors page.
+12.1 Linkshub processes Customer Personal Data in the United States (Supabase, Ohio region), and its Subprocessors may process it in the locations listed on the subprocessors page.
 
 12.2 Where Customer Personal Data is transferred from the EEA, the UK or Switzerland to a country without an adequacy decision, the transfer mechanism in Annex IV applies.
 
@@ -94,7 +94,7 @@ Where Linkshub is Customer's service provider under the CCPA, Linkshub will not:
 | | |
 |---|---|
 | Data exporter | Customer |
-| Data importer | Linkshub Ltd., 3060 Mercer University Dr, Suite 110, Atlanta, GA 30341 [CONFIRM] |
+| Data importer | Linkshub Ltd., a Georgia corporation, 3060 Mercer University Dr, Suite 110, Atlanta, GA 30341; support@govhub.online |
 | Categories of individuals | Customer's employees, contractors, key personnel, teaming partners, references and other people named in documents Customer uploads |
 | Categories of personal data | Names, contact details, job titles, employment and education history (resumes), qualifications, past performance references, signatures (if Customer chooses), and any other personal data in Customer Content |
 | Sensitive data | None intended. Customer should not upload special category data or government identification numbers. |
@@ -115,7 +115,7 @@ Only measures confirmed in code as of 2026-11-13 are listed as facts. The others
 | Staff access | Administrative access limited to an allowlist of named staff; administrative actions written to an append-only audit log | Confirmed |
 | Staff authentication | [CONFIRM: MFA on Supabase, Cloudflare, GitHub, Stripe and AI provider accounts] | Unverified |
 | User authentication | Email verification by one-time code; hashed passwords | Confirmed |
-| Backups | [CONFIRM: backup frequency, retention and restore testing] | Unverified |
+| Backups | Daily database backups kept 7 days (Supabase Pro plan) | Confirmed plan; [CONFIRM: restore tested] |
 | Logging and monitoring | [CONFIRM] | Unverified |
 | Vulnerability management | [CONFIRM: dependency updates, testing] | Unverified |
 | Incident response | Documented procedure (legal/internal-procedures.md section 3) | Draft |

@@ -15,17 +15,17 @@ Prompt 5 of the legal drafting pack: each promise in the draft documents checked
 | Plan usage limits (AUP 4) | **GAP** | Proposal limits are display-only (`UsageMeter.tsx`) |
 | We may rate-limit and suspend (AUP 3, Terms 14) | **GAP** | Only the assistant is rate-limited; admin "suspend" is not enforced |
 | No customer API (AUP 3) | PASS | No API exists; "API access" removed from pricing |
-| No training on Customer Content (Terms 6, Privacy 2) | UNVERIFIED | No training in the code; provider terms not checked |
+| No training on Customer Content (Terms 6, Privacy 2) | PASS for Anthropic and OpenAI; UNVERIFIED for Lovable | Both providers' own pages (2026-11-13): API data not used for training by default. Lovable needs its workspace training setting checked |
 | AI providers listed (Privacy 4, subprocessors) | PASS | List built from code. OCR vendor unnamed |
-| Account deletion removes data within 30 days (Privacy 8, Terms 15, DPA 10) | **GAP** | No purge job. The app's own UI already promises this |
-| Export of account data (Privacy 10) | **GAP** | Export misses files, library, assistant chats |
+| Account data deleted within 45 days, after a 30-day grace period (Privacy 8, Terms 15, DPA 10) | PASS on branch, manual | Admin console purge (`account.purge`, migration 20261113130000) and a pending-deletion queue. Not yet run against a database |
+| Export of account data, with security redactions (Privacy 10) | PASS on branch | `export-account-data` adds files (7-day links), library, assistant chats, support tickets and acceptances; `_shared/export-redact.ts` drops tokens and masks ID and account numbers; `npm run test:export` |
 | Opt-out stops analytics and ad tags on www and app (Cookie Notice) | PASS | M `BaseLayout.astro` (LinkedIn fixed); A `index.html`, `main.tsx`; A `bot-filter.test.mjs` |
 | GPC stops ad tags (Cookie Notice, Privacy 5) | PASS | Same files and test |
-| No proposal content in analytics (Cookie Notice) | PASS in code; UNVERIFIED in PostHog settings | A `main.tsx` masks text and inputs; check that recording is off in the project |
+| No proposal content in analytics (Cookie Notice) | PASS on branch; **live gap** | PostHog session recording is ON for the app project (30-day retention, no masking set). The branch masks all text and inputs; until it ships, recordings can show proposal text |
 | Cookie list complete (Cookie Notice) | PASS for first-party cookies; UNVERIFIED for tags inside the GTM container | |
 | Consent before non-essential cookies in UK/EU | **GAP** if UK/EU visitors are targeted | No banner |
 | Outreach carries ad label, opt-out and postal address (Privacy 7, company page) | PASS for angles and B-line; **GAP** for influencer and wave 1 (no ad label) | M `disclosure.mjs`; live campaigns change only after `--sync` |
-| Opt-outs honored within 10 business days across all domains (Privacy 7) | PASS for Instantly programmes, once merged; **GAP** for vendor outreach and Prospector | M `reply-desk/suppress.mjs`. Instantly endpoint and key scope need checking |
+| Opt-outs honored within 10 business days across all domains (Privacy 7) | PASS for Instantly programmes, once merged; **GAP** for vendor outreach and Prospector | M `reply-desk/suppress.mjs`. Endpoint verified against Instantly's API reference; the key needs block list scope |
 | Every outreach domain listed (company page) | PASS | 16 domains from the code. Registrant unconfirmed |
 | Security page claims match the product | PASS on branch | SAML SSO, audit trail, RBAC and SOC 2/FedRAMP wording corrected; app prerender no longer ships the old claims |
 | No fabricated SOC 2, FedRAMP, CMMC or accessibility certifications | PASS on branch for live pages | Dead files in A `src/pages/*.tsx` still contain them; delete |
@@ -44,8 +44,8 @@ Prompt 5 of the legal drafting pack: each promise in the draft documents checked
 | A `tsc` | 8 errors, all pre-existing and unchanged |
 | A eslint on changed files | Clean |
 | A `npm run build` with prerender | Pass; `dist/index.html` no longer contains the old claims; signup prerender shows the checkbox |
-| A `test:analytics` (with new consent tests), `test:proposal-reply`, `test:outreach` | Pass |
-| Migration against a database | **Not run.** No database here. Apply to a Supabase branch and sign up once before merging |
+| A `test:analytics` (with new consent tests), `test:proposal-reply`, `test:outreach`, `test:export` | Pass |
+| Migrations against a database | **Not run.** The legal_acceptances and purge migrations have not been applied anywhere. A rolled-back test of the purge function on production needed your approval in the Supabase connector and timed out. Apply both to a Supabase branch, sign up once, and purge a test account before merging |
 | Instantly blocklist write | **Not run.** No API calls were made |
 
 ## Owner decisions

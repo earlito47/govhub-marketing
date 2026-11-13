@@ -121,7 +121,7 @@ export const audiences: Audience[] = [
       {
         question: 'Does GovHub support SSO and SOC 2 requirements?',
         answer:
-          'Not yet. GovHub does not offer SAML single sign-on today and does not hold a SOC 2 report [CONFIRM: true as of publication]. The security page lists exactly how GovHub protects your data, and we can walk your security team through it.',
+          'Not yet. GovHub does not offer SAML single sign-on today and does not hold a SOC 2 report. The security page lists exactly how GovHub protects your data, and we can walk your security team through it.',
       },
     ],
   },

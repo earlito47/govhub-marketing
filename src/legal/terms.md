@@ -6,7 +6,7 @@ These Terms cover [www.govhub.online](/), the GovHub application at app.govhub.o
 
 ## 1. Who may use GovHub
 
-The Services are for businesses and other organizations, and the people who work for them. They are not offered to consumers [CONFIRM: GovHub is sold only to businesses]. You must be at least 18 years old to use them.
+The Services are for businesses and other organizations, including sole proprietors, and the people who work for them. They are not offered to consumers for personal, family or household use. You must be at least 18 years old to use them.
 
 If you accept these Terms for a company or other organization, you confirm that you have authority to bind it, and "you" means that organization. You accept these Terms when you create an account and confirm that you agree, when you confirm that you agree the first time you use an account we set up at your request, or when you sign an order that refers to them.
 
@@ -14,7 +14,7 @@ If you accept these Terms for a company or other organization, you confirm that 
 
 You must give accurate account information and keep it current. You are responsible for keeping your login credentials secure and for all activity under your account, including activity by people and Customer-Directed Agents you allow to use it.
 
-Each seat is for one named person. Seats may not be shared, but an organization may reassign a seat when someone leaves. Tell us promptly at [CONFIRM: monitored security address] if you believe your account has been accessed without permission.
+Each seat is for one named person. Seats may not be shared, but an organization may reassign a seat when someone leaves. Tell us promptly at support@govhub.online if you believe your account has been accessed without permission.
 
 ## 3. Free trials
 
@@ -32,13 +32,21 @@ Paid plans, prices, included features and usage limits are shown on our [pricing
 - fees exclude taxes, which you are responsible for, other than taxes on our income; and
 - payments are processed by our payment provider, Stripe, under its own terms.
 
-If a payment fails, we will tell you. If it is not resolved within [CONFIRM: number] days, we may suspend paid features until it is.
+If a payment fails, we will tell you. If it is not resolved within 14 days, we may suspend paid features until it is.
 
 ## 5. Cancellation and refunds
 
-You can cancel at any time in your account billing settings or by emailing us. Cancellation takes effect at the end of your current billing period, and you keep access until then. Deleting your account cancels your subscription immediately. Fees already paid are not refundable, including for partial periods or unused proposals, except where the law requires a refund or these Terms say otherwise. [CONFIRM: refund policy. The text above matches the live Terms; the app's retired 2025 Terms offered a 30-day money-back guarantee. Pick one and honour any promise already made to existing customers.] Nothing in this section limits any refund right you have under applicable law.
+You can cancel at any time in your account billing settings or by emailing support@govhub.online. Cancellation takes effect at the end of your current billing period, and you keep access until then. Deleting your account cancels your subscription immediately.
 
-[CONFIRM: how upgrades and downgrades are charged, for example prorated immediately by Stripe or applied at renewal.]
+Our refund policy is simple:
+
+- **30-day money-back guarantee.** If GovHub is not right for you, email support@govhub.online within 30 days of your first payment and we will refund that payment in full, whether you chose monthly or annual billing. This applies once per customer.
+- **Forgot to cancel an annual plan?** Email us within 14 days of an annual renewal charge and we will refund it in full and cancel the plan.
+- **Everything else.** Other payments are not refundable, including for partial billing periods or unused proposals. Cancelling stops future charges.
+
+You can ask for a refund from the billing page in the app or by email; no form is needed. Refunds go back to the original payment method, and your bank usually shows them within 5 to 10 business days. We may also refund in other cases at our discretion. Nothing in this section limits any refund right you have under applicable law.
+
+If you change plans, the price difference for the rest of your billing period is shown before you confirm the change.
 
 ## 6. Your content
 
@@ -46,7 +54,7 @@ You can cancel at any time in your account billing settings or by emailing us. C
 
 You give Linkshub a worldwide, non-exclusive, royalty-free license to host, copy, process, transmit and display Customer Content only as needed to provide, secure and support the Services for you, to prevent abuse, and to comply with law. This includes sending Customer Content to the service providers listed on our [subprocessors page](/subprocessors/), including AI model providers, so they can perform the features you use.
 
-**We do not use Customer Content to train AI models**, and the AI providers we use are not permitted to train their models on it under the terms that apply to our use of their services [CONFIRM: verified for Anthropic, OpenAI, Google Gemini through the Lovable AI gateway, and the OCR service, against each one's current terms and account settings].
+**We do not use Customer Content to train AI models.** Our AI model providers, Anthropic and OpenAI, do not use data sent through their APIs to train their models unless a customer opts in, and we have not opted in. Some features also use Google's Gemini models through Lovable's AI gateway; Lovable states that its contracts with AI providers restrict their training on and retention of customer data [CONFIRM: AI training is turned off in GovHub's Lovable workspace settings, or these features have moved to Anthropic or OpenAI].
 
 You confirm that you have the rights and permissions needed to upload Customer Content and to let us process it, including any personal data about your employees, teaming partners or key personnel.
 
@@ -98,7 +106,7 @@ We may suspend all or part of your access, with notice where practical, if: your
 
 You may stop using the Services and cancel at any time (section 5). We may end these Terms or your account for a material breach that is not fixed within 15 days of our notice, immediately for a serious breach of the AI and Acceptable Use Policy, or for any reason with at least 30 days' notice, in which case we will refund prepaid fees for the unused period.
 
-After your account ends, you can export your Customer Content for [CONFIRM: number] days by contacting us or using the export features in the app. After that we will delete it, except where we must keep it by law, and except for copies in backups, which are deleted on our normal backup cycle of [CONFIRM: backup retention period]. Sections that by their nature should continue, including sections 6 to 8, 12, 13 and 15 to 23, continue after these Terms end.
+After your account ends, you can export your Customer Content for 30 days using the export feature in the app or by emailing support@govhub.online. We then permanently delete it, within 45 days of the account ending, except where we must keep something by law. Copies in our database backups are overwritten within a further 7 days. Sections that by their nature should continue, including sections 6 to 8, 12, 13 and 15 to 23, continue after these Terms end.
 
 ## 16. Disclaimers
 
@@ -108,13 +116,13 @@ Some jurisdictions do not allow certain warranties to be excluded. In those plac
 
 ## 17. Limits on liability
 
-**17.1 What is never limited.** Nothing in these Terms excludes or limits any liability that cannot be excluded or limited under applicable law [CONFIRM with counsel for the chosen governing law, for example liability for fraud, or for death or personal injury caused by negligence].
+**17.1 What is never limited.** Nothing in these Terms excludes or limits any liability that cannot be excluded or limited under applicable law, including liability for fraud, gross negligence or willful misconduct.
 
 **17.2 Losses neither party is liable for.** To the fullest extent permitted by law, neither party is liable to the other for any indirect, incidental, special, consequential, exemplary or punitive damages, or for any loss of profits, revenue, business, goodwill, anticipated savings or data, or loss of any contract, award, task order or other opportunity, however caused and whether in contract, tort (including negligence) or otherwise, even if it was told such losses were possible.
 
 **17.3 Our total liability.** To the fullest extent permitted by law, Linkshub's total liability for all claims arising out of or relating to these Terms or the Services, taken together, will not exceed the greater of (a) the fees you paid us for the Services in the 12 months before the event that gave rise to the first claim and (b) US$100. [CONFIRM: the cap amount, the 12-month lookback, and the US$100 amount for free and trial accounts.]
 
-**17.4 Exceptions.** Sections 17.2 and 17.3 do not limit your obligation to pay fees, your obligations under section 18, or your liability for breach of section 2 of the AI and Acceptable Use Policy. [CONFIRM with counsel: any further exceptions, such as breach of confidentiality, and how this section works alongside the Data Processing Addendum.]
+**17.4 Exceptions.** Sections 17.2 and 17.3 do not limit your obligation to pay fees, your obligations under section 18, or your liability for breach of section 2 of the AI and Acceptable Use Policy. Any Data Processing Addendum between us is subject to this section 17.
 
 **17.5** These limits apply even if a limited remedy fails of its essential purpose. They reflect a fair allocation of risk, and our prices depend on them.
 
@@ -138,7 +146,7 @@ Before starting proceedings, the party with a complaint will send a written desc
 
 ## 21. Notices
 
-We will send notices to the email address on your account or show them in the app. Send legal notices to Linkshub Ltd. at [CONFIRM: monitored legal email; the retired Terms used legal@govhub.ai, a domain not otherwise confirmed as ours] and 3060 Mercer University Dr, Suite 110, Atlanta, GA 30341. You agree that we may communicate with you electronically.
+We will send notices to the email address on your account or show them in the app. Send legal notices to Linkshub Ltd. at support@govhub.online and 3060 Mercer University Dr, Suite 110, Atlanta, GA 30341. You agree that we may communicate with you electronically.
 
 ## 22. General
 
@@ -155,4 +163,4 @@ We will send notices to the email address on your account or show them in the ap
 
 ## 23. Contact
 
-Questions about these Terms? Email [CONFIRM: monitored legal email] or write to Linkshub Ltd., 3060 Mercer University Dr, Suite 110, Atlanta, GA 30341.
+Questions about these Terms? Email support@govhub.online or write to Linkshub Ltd., 3060 Mercer University Dr, Suite 110, Atlanta, GA 30341.

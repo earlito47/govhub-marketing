@@ -93,4 +93,4 @@ Plans include limits, such as a number of proposals per month, that are describe
 
 ## 5. Reporting and enforcement
 
-If you see misuse of GovHub, a security issue or content that breaks this Policy, email [CONFIRM: monitored security and abuse address]. If you breach this Policy, we may remove content, limit features, or suspend or end access as described in the Terms. We may update this Policy as described in the Terms.
+If you see misuse of GovHub, a security issue or content that breaks this Policy, email support@govhub.online. If you breach this Policy, we may remove content, limit features, or suspend or end access as described in the Terms. We may update this Policy as described in the Terms.

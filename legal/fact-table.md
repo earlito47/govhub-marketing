@@ -82,21 +82,28 @@ Evidence paths are relative to each repository: **M** = govhub-marketing, **A** 
 
 ## Consolidated blocker list
 
-Publication of the new documents is blocked until each item below is resolved. Every one also appears as a `[CONFIRM: ...]` in the page text, and `npm run guard` fails until they are gone.
+Status on 2026-11-13, after the owner's answers. Everything not listed here is resolved in the text.
 
-1. ~~Entity details~~ Resolved 2026-11-13 from the formation documents (A2).
-2. Monitored legal, privacy and security email addresses. (legal@govhub.ai appears only in the retired Terms; govhub.ai ownership is unknown.)
-3. Venue county (Georgia law is drafted; Fulton County is on file for the registered agent, but the ZIP code suggests DeKalb).
-4. The liability cap, its exceptions and the free/trial amount.
-5. Refund policy (A7).
-6. Effective date for each document.
-7. AI provider terms: training, retention, region and DPA for Anthropic, OpenAI, Lovable/Gemini and the OCR vendor (B1, B2), plus the OCR vendor's name.
-8. **The 30-day account purge job (C5).** The Privacy Notice states it; it does not exist.
-9. Export completeness (C6), or a sentence saying what export leaves out.
-10. Supabase region and the transfer mechanism (C9).
-11. Backup retention, billing record, analytics, prospect and support retention periods.
-12. Whether each of the 16 outreach domains is registered to Linkshub Ltd. (E1).
-13. SOC 2, FedRAMP and CMMC status statements on the security pages (D4), and Google Signals and session recording settings (C2).
-14. Cookie consent banner decision for UK and EU visitors (C3).
-15. Subprocessor change-notice period.
-16. Calendly widget cookie behaviour.
+**Still open (these four keep `npm run guard` failing):**
+
+1. **OCR service.** Who runs it and where it is hosted (`OCR_SERVICE_URL` is a secret, so the code does not say). Privacy section 4 and the subprocessors page.
+2. **Lovable.** Turn AI training off in GovHub's Lovable workspace settings, or finish moving company lookup and section drafting to Anthropic or OpenAI (docs/lovable-ai-gateway-migration.md in strata-parse). Then fill in Lovable's location from its DPA. Terms 6, Privacy 4, subprocessors.
+3. **Liability cap.** Terms 17.3, drafted as the greater of 12 months' fees and US$100.
+4. **Venue county.** Terms 20. Fulton County is on file for the registered agent, but 30341 addresses are generally in DeKalb County.
+
+**Resolved 2026-11-13:**
+
+- Entity: Linkshub Ltd., Georgia corporation, control number 25162414 (formation documents).
+- Contacts: support@govhub.online for support, legal notices, privacy and security; contact@govhub.online for general contact.
+- Effective date: November 16, 2026 (version 2026-11-16 in both repositories).
+- Refund policy: 30-day money-back on the first payment; annual renewals refundable within 14 days; email-based request from billing.
+- AI providers: Anthropic and OpenAI API terms checked against their own pages (no training by default; 30-day retention; files kept until deleted).
+- Account purge: built (admin console), with a 30-day grace period and a 45-day deadline.
+- Export: expanded and redacted per CCPA 7024(d).
+- Region: Supabase us-east-2 (Ohio); backups 7 days on the Pro plan.
+- Session recording: on in the app's PostHog project (30-day retention); now disclosed, and masked on the branch.
+- Domains: all 16 registered to the company (registrar shows "LinksHub ltd"; consider matching the registered spelling).
+- SOC 2, FedRAMP, CMMC: stated plainly as not held.
+- Cookie banner: none for now (US-focused; opt-out and GPC honoured).
+- Subprocessor notice: 30 days, by page update and email to DPA customers.
+- Retention periods: billing 7 years; support 3 years; prospects 24 months; GA4 up to 14 months.

@@ -2,7 +2,7 @@ This Privacy Notice explains how **Linkshub Ltd.** ("Linkshub," "we," "us") hand
 
 Linkshub is responsible for the personal data described here (the "controller," in the language of European data protection law), except for personal data inside Customer Content, which we process on our customers' behalf (see section 9).
 
-Linkshub Ltd. is a Georgia corporation. Our postal address is 3060 Mercer University Dr, Suite 110, Atlanta, GA 30341. For privacy questions, email [CONFIRM: monitored privacy address].
+Linkshub Ltd. is a Georgia corporation. Our postal address is 3060 Mercer University Dr, Suite 110, Atlanta, GA 30341. For privacy questions, email support@govhub.online.
 
 ## 1. What we collect
 
@@ -59,15 +59,17 @@ We do not sell personal data for money.
 
 ## 4. AI processing
 
-To provide GovHub's features, we send Customer Content and your company profile to AI model providers: Anthropic (Claude), OpenAI, and Google's Gemini models through the Lovable AI gateway, plus a document text-recognition (OCR) service [CONFIRM: name the OCR provider]. They process it to return results to us.
+To provide GovHub's features, we send Customer Content and your company profile to AI model providers through their APIs: Anthropic (Claude) and OpenAI, and for some company-lookup and drafting features, Google's Gemini models through Lovable's AI gateway. Scanned documents are read by a text-recognition (OCR) service [CONFIRM: who runs the OCR service and where it is hosted].
 
-Under the terms that apply to our use of these services, they do not use it to train their models [CONFIRM: verified for each provider, including the Lovable gateway]. Providers may keep inputs and outputs for a limited time for abuse monitoring and legal compliance, under their own terms. Files we upload to Anthropic's file storage remain there until deleted [CONFIRM: retention and deletion of files uploaded to Anthropic's Files API, which GovHub does not currently delete].
+- **Training.** Anthropic and OpenAI do not use data sent through their APIs to train their models unless the customer opts in. We have not opted in. Lovable states that its contracts with AI providers restrict their training on and retention of customer data [CONFIRM: AI training is turned off in GovHub's Lovable workspace, or these features have moved to Anthropic or OpenAI].
+- **Retention.** Anthropic deletes API inputs and outputs within 30 days, and OpenAI keeps API abuse-monitoring logs for up to 30 days, except where content is flagged for a policy violation or the law requires longer.
+- **Files.** Documents we upload to Anthropic's file storage stay there until we delete them. We delete them when your account data is deleted (section 8).
 
 We also use AI to assess whether a business that has not yet signed up is likely to be a good fit for GovHub, based on its public records and website. This is used to decide whom to contact. It does not produce legal or similarly significant effects for anyone.
 
 ## 5. Cookies, analytics and advertising
 
-We use our own cookies to keep you signed in, remember how you found us and measure our campaigns. We also use PostHog and Google Analytics for analytics, and the Google tag (Google Ads), the Meta Pixel and the LinkedIn Insight Tag to measure our advertising. When you sign up, Google Ads may receive a hashed (scrambled) copy of your email address to match the signup to an ad click.
+We use our own cookies to keep you signed in, remember how you found us and measure our campaigns. We also use PostHog and Google Analytics for analytics, and the Google tag (Google Ads), the Meta Pixel and the LinkedIn Insight Tag to measure our advertising. When you sign up, Google Ads may receive a hashed (scrambled) copy of your email address to match the signup to an ad click. In the app, PostHog also records sessions (clicks, scrolling and the layout of the page) so we can find and fix problems. Recordings mask all page text and anything typed into forms, and are deleted after 30 days.
 
 Under California law, letting ad platforms collect data on our site for cross-context behavioral advertising can count as "sharing" personal information, even though no money changes hands. You can opt out: we honor the **Global Privacy Control** signal, and you can turn analytics and advertising tags off with the control on our [Cookie Notice](/cookies/), which lists every cookie and tag.
 
@@ -83,7 +85,7 @@ We email people at businesses that bid on government contracts, and people in th
 
 - **Where we got your details:** public business records (USAspending.gov, the SBA's certification search, SAM.gov), the business's own website, or public professional profiles and directories. We check that addresses are deliverable with an email verification provider.
 - **What we keep:** your name, business email, job title, company, the public business information that led us to contact you, the emails we exchanged, and whether you replied.
-- **How to stop it:** reply "no" or "unsubscribe" to any of our emails, or email [CONFIRM: monitored privacy address]. We add your address to a suppression list that applies to every GovHub sending address and campaign, and we act on your request within 10 business days.
+- **How to stop it:** reply "no" or "unsubscribe" to any of our emails, or email support@govhub.online. We add your address to a suppression list that applies to every GovHub sending address and campaign, and we act on your request within 10 business days.
 - **Our legal basis**, where GDPR or UK GDPR applies, is our legitimate interest in telling businesses about a product relevant to their work. You can object at any time and we will stop.
 
 GovHub sends outreach from govhub.online and from a set of related GovHub domains, all listed on our [company and domains page](/legal/). An email that claims to be from GovHub but comes from a domain not on that list is not from us.
@@ -92,16 +94,17 @@ GovHub sends outreach from govhub.online and from a set of related GovHub domain
 
 | Data | How long |
 |---|---|
-| Account and Customer Content | While your account is open. When you delete your account, we deactivate it at once and permanently delete your personal data and Customer Content within 30 days, except where we must keep something by law [CONFIRM: the 30-day deletion job does not exist yet; this sentence is not true until it does] |
-| Copies in backups | Deleted on our backup provider's rotation, within [CONFIRM: backup retention period] |
-| Billing records | As long as tax and accounting law requires [CONFIRM: period] |
-| Analytics and advertising data | Under each provider's retention settings [CONFIRM: GA4 and PostHog retention settings] |
-| Outreach and prospect records | [CONFIRM: retention period for prospects who never replied], and indefinitely on the suppression list for anyone who opts out, so we can keep honoring the request |
-| Support messages | [CONFIRM: period] |
+| Account and Customer Content | While your account is open. When you delete your account, we deactivate it at once and keep your data for 30 days in case the deletion was a mistake. We then permanently delete your personal data and Customer Content, including files sent to AI providers, within 45 days of your request, except where we must keep something by law |
+| Copies in backups | Overwritten within 7 days of deletion |
+| Billing records | 7 years, for tax and accounting. Stripe keeps its own payment records under its terms |
+| Session recordings in the app | 30 days |
+| Other analytics and advertising data | Google Analytics: up to 14 months. PostHog and the advertising platforms: under each provider's retention for our account |
+| Outreach and prospect records | 24 months after our last email to someone who never replied. Anyone who opts out stays on our suppression list, which holds only their email address, so we can keep honoring the request |
+| Support messages | 3 years after the request is closed |
 
 ## 9. Personal data in Customer Content
 
-When you upload resumes, key personnel details or other personal data about third parties, we process it on your behalf and on your instructions, as your service provider (a "processor"). You are responsible for having the right to share it. If someone asks us about their data in your Customer Content, we will refer them to you and help you respond. Business customers can ask for our Data Processing Addendum at [CONFIRM: monitored privacy address].
+When you upload resumes, key personnel details or other personal data about third parties, we process it on your behalf and on your instructions, as your service provider (a "processor"). You are responsible for having the right to share it. If someone asks us about their data in your Customer Content, we will refer them to you and help you respond. Business customers can ask for our Data Processing Addendum at support@govhub.online.
 
 ## 10. Your choices and rights
 
@@ -115,11 +118,11 @@ Depending on where you live, you may have the right to:
 - opt out of "sale" or "sharing" for cross-context behavioral advertising, and not be treated differently for using your rights; and
 - complain to a data protection authority.
 
-You can delete your account and download a copy of your account data in the app's settings [CONFIRM: the app's export does not yet include uploaded files, your library or assistant conversations; expand it, or say so here]. For anything else, email [CONFIRM: monitored privacy address]. We will verify your identity before acting, and we respond within the time the law that applies to you allows. You can use an authorized agent where the law permits; we may ask for proof of their authority.
+You can delete your account and download a copy of your data in the app's settings. The download includes your profile, company profile, proposals, library, assistant conversations, support requests and links to your files. For security, it leaves out passwords, login codes and other access tokens, and it masks Social Security, ID, bank and card numbers to their last four characters. For anything else, email support@govhub.online. We will verify your identity before acting, and we respond within the time the law that applies to you allows. You can use an authorized agent where the law permits; we may ask for proof of their authority.
 
 ## 11. International transfers
 
-GovHub is operated from the United States and our service providers process data mainly in the United States [CONFIRM: confirm hosting regions with Supabase and Cloudflare]. If you are in the UK, the European Economic Area or Switzerland, we transfer your personal data to the United States using the safeguards the law requires, such as the European Commission's Standard Contractual Clauses [CONFIRM: transfer mechanism in place with each provider].
+GovHub is operated from the United States. Our database and files are stored in the United States (Supabase, Ohio region), our website and app are served through Cloudflare's global network, and our other service providers process data mainly in the United States. If you are in the UK, the European Economic Area or Switzerland, your personal data is transferred to the United States, relying on the safeguards in our providers' data processing terms, such as the European Commission's Standard Contractual Clauses.
 
 ## 12. Security
 
@@ -135,4 +138,4 @@ We will post changes here and update the version and effective date above. If a 
 
 ## 15. Contact
 
-Email [CONFIRM: monitored privacy address], or write to Linkshub Ltd., 3060 Mercer University Dr, Suite 110, Atlanta, GA 30341.
+Email support@govhub.online, or write to Linkshub Ltd., 3060 Mercer University Dr, Suite 110, Atlanta, GA 30341.
