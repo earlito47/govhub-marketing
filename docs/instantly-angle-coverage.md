@@ -5061,8 +5061,7 @@ inside the desk's write path and must not change it, so the cause is still open.
 What I could do is honour the stops, which the standing constraint directs:
 **all 17 are now suppressed by exact email**, each with the desk's own category
 and today's date in `suppressed_reason`, that person only, company untouched.
-`outreach.companies.suppressed` went 198 → 216 (the 17 plus `tommie.horton@`
-below).
+`outreach.companies.suppressed` went 198 → 216 (the 17 plus the explicit opt-out below).
 
 Worth re-running this cross-check daily: a decline that is recorded but not
 enforced is worse than one that was never recorded, because the ledger says it
@@ -5096,8 +5095,8 @@ govhubnow / govhubhq / govhubsubmittals / govhubrfp with A5:
 
 An even spread across all four rules out one bad domain, and A5 on those same
 domains moved 31 → 32 on 1,905 contacts. The five addresses are patterned
-(`bboyer@`, `ablankenship@`, `abrown@`, `audrey.jones@`, `autumn.trevino@`) at
-real company domains, which points at list quality in the 11-07 B-line load
+first-initial-plus-surname and first.surname at real company
+domains, which points at list quality in the 11-07 B-line load
 rather than reputation.
 
 **B4 was not paused, and the reason is the calendar.** All four push crons are
@@ -5163,22 +5162,22 @@ written; "unproven" can come off it.
 
 Five, and two are accepts.
 
-- **`bdpartnership18@gmail.com` (B4) — "Yes please"**, B4's first reply and an
+- **a B4 lead on a gmail address — "Yes please"**, B4's first reply and an
   accept against "Want the next 3 that are still open?". Desk has it `drafted`.
-- **`got2construction@gmail.com` (A2) — "Yes"**, against "want me to send you
+- **an A2 lead on a gmail address — "Yes"**, against "want me to send you
   the next few open bids that fit your NAICS as they post? A yes is all I need."
   Checked for the trap in item 6 — a "Yes" quoting the retired step 4 is a
   decline — and it does not apply: the quoted ask is the current one. Desk has
   it `needs_human`.
-- `tommie.horton@hibtechis.com` (A2) — "No thank you please remove me from your
+- an A2 lead at a technology firm — "No thank you please remove me from your
   notifications". Suppressed, that person only, with reason and date. The desk
   had it as `suppressed` in the ledger while the row was still mailable; this is
   one of the 17 above.
-- `ronnie5026@gmail.com` (A1) — out of office, correctly `human = false`. Its
+- an A1 lead on a gmail address — out of office, correctly `human = false`. Its
   stated return date, "Thursday, November 12, 2026", is already past, so the
   autoresponder itself is stale. No action.
-- `mjarrard@biocircuit.com` (A1) — "I am no longer using this email account",
-  with a named successor (Todd Goede, `tgoede@biocircuit.com`) and a personal
+- an A1 lead at a medical-device firm — "I am no longer using this email account",
+  with a named successor (named in the reply) and a personal
   address. Correctly `human = false`. **Not suppressed from here**: the desk
   classified it `no_action` twice and reply classification is the desk's, not
   mine. Flagging it instead, because a confirmed-dead mailbox that stays
