@@ -4,15 +4,16 @@ Prepared 2026-11-13 for review by a SaaS and privacy lawyer. This memo collects 
 
 ## 1. The question that decides most of the others: where is LinksHub LTD?
 
-"LTD" suggests a company registered in the UK, Ireland or another common law jurisdiction, but nothing in either repository records it. The answer changes several documents at once:
+"LTD" alone does not settle it. The evidence in the repositories points to the United States: the app's retired 2025 Terms name "Linkshub Ltd." at 3060 Mercer University Dr, Suite 110, Atlanta, GA 30341, choose Georgia law, and print an EIN, and every outreach signature carries the same address. Georgia permits "Ltd." as a corporate designator. None of this is confirmation. The answer changes several documents at once:
 
 | If LinksHub LTD is... | What changes |
 |---|---|
+| A Georgia (or other US) entity, with no UK or EU establishment (most likely on the evidence) | The drafts' Georgia governing law and Fulton County venue fit. UK and EU GDPR apply only to the extent GovHub targets or monitors people there (Art. 3(2)); no UK or EU recipients were found in the outreach data. US federal and state law govern the rest. |
 | Registered in England and Wales (or elsewhere in the UK) | UK GDPR and the Data Protection Act 2018 apply to **all** of LinksHub's processing carried out in the context of that UK establishment, including data about US prospects and US customers (UK GDPR Art. 3(1)). The company must state its registered name, number, place of registration and registered office on its websites and in business emails (Companies Act 2006 and the Company, Limited Liability Partnership and Business (Names and Trading Disclosures) Regulations 2015). An ICO data protection fee is likely due unless an exemption applies. Liability exclusions in standard business terms are tested for reasonableness under the Unfair Contract Terms Act 1977, and liability for death or personal injury from negligence cannot be excluded at all. PECR applies to electronic marketing to UK recipients. |
 | Registered outside the UK and EU, with no establishment there | UK and EU GDPR apply only to the extent GovHub offers services to, or monitors the behaviour of, people in the UK or EU (Art. 3(2)). Representative obligations under Art. 27 may arise if that targeting happens. |
 | Registered in the EU | EU GDPR applies to all processing in the context of the establishment, and the ePrivacy rules of that member state govern cookies and email marketing. |
 
-**Decision needed:** registration details, registered office, and where the people running GovHub are based. Then choose governing law and venue for the Terms (section 20), which are currently blank. The pack did not pick arbitration and this draft does not either.
+**Decision needed:** registration details, registered office, and where the people running GovHub are based. Then confirm governing law and venue for the Terms (section 20), drafted as Georgia and Fulton County from the retired Terms. The pack did not pick arbitration and this draft does not either.
 
 ## 2. Liability allocation (Terms sections 16 to 18)
 
@@ -25,7 +26,7 @@ Prepared 2026-11-13 for review by a SaaS and privacy lawyer. This memo collects 
 
 ## 3. Formation and changes
 
-- The current live Terms rely on "by using the Services, you agree." The app signup screen, as audited, [see legal/fact-table.md row A1]. The implementation branch adds an affirmative acceptance step with a stored version and timestamp. Confirm that the wording and placement satisfy clickwrap enforceability standards in the chosen jurisdiction (clear notice, conspicuous link, unambiguous assent).
+- The current live Terms rely on "by using the Services, you agree." The app signup screen, as audited, had no notice, checkbox or record of acceptance (fact table A1), and accounts created for outreach leads never showed a form. The implementation branch adds an affirmative acceptance step with a stored version and timestamp. Confirm that the wording and placement satisfy clickwrap enforceability standards in the chosen jurisdiction (clear notice, conspicuous link, unambiguous assent).
 - Section 19 gives 30 days' notice of material changes and lets prepaid customers leave with a pro-rated refund. The previous "continued use is acceptance" clause has been removed.
 - Automatic renewal is disclosed in bold. Several US state automatic renewal laws are framed around consumers; the Terms state GovHub is for businesses only. Confirm that sign-up actually prevents consumer purchases, or keep consumer-grade disclosures and cancellation in place anyway (the FTC Act and ROSCA still apply to negative option features online).
 
@@ -43,6 +44,7 @@ Prepared 2026-11-13 for review by a SaaS and privacy lawyer. This memo collects 
 - **Other US state laws.** Most comprehensive state privacy laws (Virginia, Colorado, Connecticut, Texas and others) exclude people acting in a commercial or employment context, so B2B contact data is often out of scope. Thresholds and exemptions vary; confirm against current text.
 - **GDPR / UK GDPR roles.** LinksHub is controller for accounts, billing, website analytics, support and outreach. It is processor for personal data inside Customer Content (resumes, key personnel, references) processed on the customer's instructions. The DPA (legal/dpa.md) covers the processor role only.
 - **Cold outreach.** Under GDPR or UK GDPR (if they apply), outreach to named business contacts needs a lawful basis (legitimate interests with a documented assessment) and an Art. 14 notice to people whose data was collected from other sources, no later than the first communication. PECR allows unsolicited marketing email to corporate subscribers in the UK but not to sole traders and some partnerships without consent (ICO B2B marketing guidance). US outreach is governed by CAN-SPAM: accurate headers and subject lines, identification as an advertisement, a valid postal address, a working opt-out honoured within 10 business days and usable for at least 30 days after sending (FTC CAN-SPAM Act: A Compliance Guide for Business).
+- **Outreach as found.** Angle and B-line campaigns sent roughly 14,000 emails with no opt-out notice, no campaign carried an advertisement label, about 4,500 went out with no postal address, and opt-out replies were not suppressed across campaigns (fact table E2 to E5). The branch fixes the copy and suppression going forward. Counsel should advise on exposure for what was already sent.
 - **AI providers.** Confirm, for each provider in the subprocessor list, the data retention period for API inputs and outputs, whether abuse monitoring retains content, the processing region, and whether a DPA and transfer mechanism are in place. The Terms promise that providers do not train on Customer Content; that must match the provider contracts.
 
 ## 6. Public claims that need substantiation or correction

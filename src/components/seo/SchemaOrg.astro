@@ -22,6 +22,7 @@ type SchemaType =
   | 'BreadcrumbList';
 
 import { SOCIAL_LINKS } from '../../config';
+import { COMPANY } from '../../data/legal';
 
 interface Props {
   type: SchemaType;
@@ -60,6 +61,9 @@ const defaultsByType: Record<SchemaType, Record<string, unknown>> = {
       url: `${siteUrl}/contact/`,
     },
     sameAs: SOCIAL_LINKS.map((s) => s.href),
+    // GovHub is a product of LinksHub LTD (src/data/legal.ts). The brand stays
+    // the entity search resolves to; the company is its parent.
+    parentOrganization: { '@type': 'Organization', name: COMPANY.legalName },
   },
   // Binds the domain to the organization so GovHub owns its own brand/domain
   // SERP. No SearchAction: the site has no on-site search endpoint to point at.

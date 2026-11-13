@@ -1,5 +1,6 @@
 ---
 import { SOCIAL_LINKS } from '../config';
+import { COMPANY, OWNERSHIP_LINE } from '../data/legal';
 const year = new Date().getFullYear();
 ---
 
@@ -55,7 +56,7 @@ const year = new Date().getFullYear();
       </div>
     </div>
     <div class="bottom">
-      <p class="copyright">© {year} GovHub. All rights reserved.</p>
+      <p class="copyright">© {year} {COMPANY.legalName}. {OWNERSHIP_LINE}</p>
       {SOCIAL_LINKS.length > 0 && (
         <p class="social">
           {SOCIAL_LINKS.map((s) => (
@@ -66,6 +67,9 @@ const year = new Date().getFullYear();
       <p class="legal">
         <a href="/privacy/">Privacy</a>
         <a href="/terms/">Terms</a>
+        <a href="/acceptable-use/">AI and acceptable use</a>
+        <a href="/cookies/">Cookies</a>
+        <a href="/legal/">Company and domains</a>
         <a href="/bot/">Our crawler</a>
         {/* Link to /contact/ rather than a raw mailto: Cloudflare Email
             Obfuscation rewrites any plaintext address (href AND visible text)
@@ -155,7 +159,8 @@ const year = new Date().getFullYear();
   }
   .legal {
     display: flex;
-    gap: 1.25rem;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.25rem;
   }
   .legal a {
     color: rgba(250, 245, 236, 0.7);

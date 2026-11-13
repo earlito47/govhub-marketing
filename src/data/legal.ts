@@ -10,16 +10,18 @@
 // in the value, or delete the clause, and the guard clears.
 //
 // The owner states that GovHub is owned and operated by LinksHub LTD. The
-// rest of the entity details are not in this repo and have not been verified.
-// See legal/README.md for the full blocker list.
+// other details are not verified. Evidence found so far: strata-parse's
+// retired 2025 Terms (src/pages/Terms.tsx) name "Linkshub Ltd." at the Atlanta
+// address below and choose Georgia law, and every outreach signature carries
+// the same address. See legal/README.md for the full blocker list.
 
 export const COMPANY = {
-  /** Contracting entity. Owner-confirmed 2026-11-12. */
+  /** Contracting entity. Owner-confirmed 2026-11-12; spelling unconfirmed. */
   legalName: 'LinksHub LTD',
   product: 'GovHub',
   jurisdiction: '[CONFIRM: country or state of incorporation]',
   registrationNumber: '[CONFIRM: company registration number, or remove]',
-  postalAddress: '[CONFIRM: business postal address]',
+  postalAddress: '3060 Mercer University Dr, Suite 110, Atlanta, GA 30341',
   legalEmail: '[CONFIRM: monitored legal notices address]',
   privacyEmail: '[CONFIRM: monitored privacy address]',
 } as const;

@@ -1,6 +1,6 @@
-These Terms of Service (the "Terms") are an agreement between you and **LinksHub LTD**, a company [CONFIRM: incorporated in country or state, registration number] with its business address at [CONFIRM: business address] ("LinksHub," "we," "us"). GovHub is a software product owned and operated by LinksHub. References to "GovHub" mean our product, not a separate company.
+These Terms of Service (the "Terms") are an agreement between you and **LinksHub LTD**, a company [CONFIRM: state or country of incorporation and registration number, and the registered spelling: the app's retired 2025 Terms say "Linkshub Ltd."] with its business address at 3060 Mercer University Dr, Suite 110, Atlanta, GA 30341 [CONFIRM: still current] ("LinksHub," "we," "us"). GovHub is a software product owned and operated by LinksHub. References to "GovHub" mean our product, not a separate company.
 
-These Terms cover www.govhub.online, the GovHub application at app.govhub.online, and any other GovHub service that links to these Terms (together, the "Services"). Our [AI and Acceptable Use Policy](/acceptable-use/) is part of these Terms. Our [Privacy Notice](/privacy/) explains how we handle personal data.
+These Terms cover [www.govhub.online](/), the GovHub application at app.govhub.online, and any other GovHub service that links to these Terms (together, the "Services"). Our [AI and Acceptable Use Policy](/acceptable-use/) is part of these Terms. Our [Privacy Notice](/privacy/) explains how we handle personal data.
 
 **Please read section 8 (AI features and Output), section 16 (Disclaimers) and section 17 (Limits on liability) carefully. They limit what we are responsible for.**
 
@@ -8,7 +8,7 @@ These Terms cover www.govhub.online, the GovHub application at app.govhub.online
 
 The Services are for businesses and other organizations, and the people who work for them. They are not offered to consumers [CONFIRM: GovHub is sold only to businesses]. You must be at least 18 years old to use them.
 
-If you accept these Terms for a company or other organization, you confirm that you have authority to bind it, and "you" means that organization. You accept these Terms when you create an account and confirm that you agree, or when you sign an order that refers to them.
+If you accept these Terms for a company or other organization, you confirm that you have authority to bind it, and "you" means that organization. You accept these Terms when you create an account and confirm that you agree, when you confirm that you agree the first time you use an account we set up at your request, or when you sign an order that refers to them.
 
 ## 2. Accounts and seats
 
@@ -18,7 +18,7 @@ Each seat is for one named person. Seats may not be shared, but an organization 
 
 ## 3. Free trials
 
-We may offer a free trial, currently for 14 days. A trial gives you access to the features we choose to include in it, and it does not include agent access (see section 9). [CONFIRM: whether a payment card is needed to start a trial, and whether a trial turns into a paid subscription automatically.] If a trial will turn into a paid subscription automatically, we will tell you the price and the date the first charge will be taken before you start the trial, and you can cancel before then at no cost.
+We may offer a free trial, currently for 14 days. A trial gives you access to the features we choose to include in it, and it does not include agent access (see section 9). You do not need a payment card to start a trial, and a trial does not turn into a paid subscription unless you choose a plan and pay for it. If we ever offer a trial that converts automatically, we will tell you the price and the date of the first charge before you start, and you will be able to cancel before then at no cost.
 
 When a trial ends without a paid subscription, access to paid features stops. We may delete content from expired trial accounts as described in section 15.
 
@@ -36,7 +36,7 @@ If a payment fails, we will tell you. If it is not resolved within [CONFIRM: num
 
 ## 5. Cancellation and refunds
 
-You can cancel at any time in your account billing settings or by emailing us. Cancellation takes effect at the end of your current billing period, and you keep access until then. [CONFIRM: refund policy. Proposed: fees already paid are not refundable, including for partial periods or unused proposals, except where the law requires a refund or these Terms say otherwise.] Nothing in this section limits any refund right you have under applicable law.
+You can cancel at any time in your account billing settings or by emailing us. Cancellation takes effect at the end of your current billing period, and you keep access until then. Deleting your account cancels your subscription immediately. Fees already paid are not refundable, including for partial periods or unused proposals, except where the law requires a refund or these Terms say otherwise. [CONFIRM: refund policy. The text above matches the live Terms; the app's retired 2025 Terms offered a 30-day money-back guarantee. Pick one and honour any promise already made to existing customers.] Nothing in this section limits any refund right you have under applicable law.
 
 [CONFIRM: how upgrades and downgrades are charged, for example prorated immediately by Stripe or applied at renewal.]
 
@@ -46,7 +46,7 @@ You can cancel at any time in your account billing settings or by emailing us. C
 
 You give LinksHub a worldwide, non-exclusive, royalty-free license to host, copy, process, transmit and display Customer Content only as needed to provide, secure and support the Services for you, to prevent abuse, and to comply with law. This includes sending Customer Content to the service providers listed on our [subprocessors page](/subprocessors/), including AI model providers, so they can perform the features you use.
 
-**We do not use Customer Content to train AI models**, and the AI providers we use are not permitted to train their models on it under the terms that apply to our use of their services [CONFIRM: verified against each provider's current terms and account settings].
+**We do not use Customer Content to train AI models**, and the AI providers we use are not permitted to train their models on it under the terms that apply to our use of their services [CONFIRM: verified for Anthropic, OpenAI, Google Gemini through the Lovable AI gateway, and the OCR service, against each one's current terms and account settings].
 
 You confirm that you have the rights and permissions needed to upload Customer Content and to let us process it, including any personal data about your employees, teaming partners or key personnel.
 
@@ -78,7 +78,7 @@ You must follow the [AI and Acceptable Use Policy](/acceptable-use/). If you or 
 
 ## 11. Government and controlled information
 
-The Services are a commercial cloud service. They are not authorized for classified information, and they are not designed or offered for Controlled Unclassified Information, export-controlled technical data or other information with special handling rules, unless we have agreed in writing to a specific environment for it [CONFIRM: no such environment exists today]. You are responsible for deciding what information you upload.
+The Services are a commercial cloud service. They are not authorized for classified information, and they are not designed or offered for Controlled Unclassified Information, export-controlled technical data or other information with special handling rules, unless we have agreed in writing to a specific environment for it. We do not offer such an environment today. You are responsible for deciding what information you upload.
 
 ## 12. Our intellectual property
 
@@ -132,13 +132,13 @@ LinksHub will notify you promptly of the claim (a delay only reduces your obliga
 
 ## 20. Governing law and disputes
 
-These Terms are governed by the laws of [CONFIRM: governing law], without regard to conflict of laws rules. The courts of [CONFIRM: venue] have exclusive jurisdiction over any dispute arising out of or relating to these Terms or the Services, and each party agrees to that jurisdiction. Either party may seek urgent injunctive relief in any court with jurisdiction to protect its intellectual property or confidential information. The UN Convention on Contracts for the International Sale of Goods does not apply.
+These Terms are governed by the laws of the State of Georgia, USA [CONFIRM: governing law; the app's retired 2025 Terms chose Georgia], without regard to conflict of laws rules. The state and federal courts located in Fulton County, Georgia [CONFIRM: venue] have exclusive jurisdiction over any dispute arising out of or relating to these Terms or the Services, and each party agrees to that jurisdiction. Either party may seek urgent injunctive relief in any court with jurisdiction to protect its intellectual property or confidential information. The UN Convention on Contracts for the International Sale of Goods does not apply.
 
 Before starting proceedings, the party with a complaint will send a written description of it to the other, and the parties will try in good faith to resolve it for 30 days.
 
 ## 21. Notices
 
-We will send notices to the email address on your account or show them in the app. Send legal notices to LinksHub LTD at [CONFIRM: monitored legal email] and [CONFIRM: postal address for notices]. You agree that we may communicate with you electronically.
+We will send notices to the email address on your account or show them in the app. Send legal notices to LinksHub LTD at [CONFIRM: monitored legal email; the retired Terms used legal@govhub.ai, a domain not otherwise confirmed as ours] and 3060 Mercer University Dr, Suite 110, Atlanta, GA 30341. You agree that we may communicate with you electronically.
 
 ## 22. General
 
@@ -155,4 +155,4 @@ We will send notices to the email address on your account or show them in the ap
 
 ## 23. Contact
 
-Questions about these Terms? Email [CONFIRM: monitored legal email] or write to LinksHub LTD, [CONFIRM: postal address].
+Questions about these Terms? Email [CONFIRM: monitored legal email] or write to LinksHub LTD, 3060 Mercer University Dr, Suite 110, Atlanta, GA 30341.

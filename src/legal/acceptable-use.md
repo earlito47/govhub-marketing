@@ -32,7 +32,7 @@ You may not use GovHub, or help anyone else use it, to:
 2. prepare or submit a statement, certification or representation to a government body that you know or should know is false or misleading, including about size, ownership, set-aside eligibility, past performance or key personnel;
 3. engage in bid rigging, collusion or any other unlawful coordination between competitors;
 4. upload or process another company's bid or proposal information, or source selection information, that you are not authorized to have;
-5. upload classified information, or Controlled Unclassified Information, export-controlled technical data (including data controlled under ITAR or EAR) or other information whose handling rules GovHub does not meet, unless we have agreed in writing to a specific environment for it [CONFIRM: no such environment is offered today; delete this exception if none will be];
+5. upload classified information, or Controlled Unclassified Information, export-controlled technical data (including data controlled under ITAR or EAR) or other information whose handling rules GovHub does not meet, unless we have agreed in writing to a specific environment for it (we do not offer one today);
 6. upload personal data you have no right to share, including special category or sensitive personal data that the Services do not need;
 7. impersonate any person, company or government official, or misrepresent your affiliation with anyone;
 8. send spam or other unlawful messages, including by using contact details you obtained through GovHub;
@@ -58,7 +58,7 @@ You may use a Customer-Directed Agent to access GovHub product functionality onl
 - on behalf of an identified user who is an active paid subscriber, or who holds an authorized seat under an active paid organizational subscription;
 - using that user's own access, not shared or pooled credentials;
 - within the features, quotas and usage limits of that subscription; and
-- through the GovHub web application, or through an integration method we document for agent use [CONFIRM: GovHub publishes no customer API or agent integration today; delete "or through an integration method we document" if none will exist at launch].
+- through the GovHub web application, signed in as that user. GovHub does not offer a customer API or agent integration today. If we publish one, agents must use it in the way we document.
 
 Free and trial accounts do not include agent access. A paid subscription is necessary for agent access, but it does not lift any other rule in the Terms or this Policy.
 
@@ -81,7 +81,7 @@ The account holder is responsible for every agent they authorize and for everyth
 
 - **Assistive technology.** Screen readers, voice control, magnifiers and other accessibility tools are welcome within your own authorized access.
 - **Your own security tools.** Password managers, endpoint security and similar tools your organization runs are permitted within your own authorized access.
-- **Public pages.** Public pages on www.govhub.online may be read by automated tools in line with our [robots.txt](/robots.txt). That does not give access to the application or to any paid functionality.
+- **Public pages.** Public pages on [www.govhub.online](/) may be read by automated tools in line with our [robots.txt](/robots.txt). That does not give access to the application or to any paid functionality.
 
 ### What we may do
 
