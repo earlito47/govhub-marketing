@@ -10,7 +10,7 @@
 // their opt-out line on 2026-09-29, and the signature's "This is a sales
 // email." was removed on 2026-09-03, both at the owner's instruction. The
 // 2026-11-12 legal drafting pack asks for the opposite: advertising
-// identification, a simple opt-out and the LinksHub LTD name in every
+// identification, a simple opt-out and the Linkshub Ltd. name in every
 // commercial email. This module restores both on the legal-drafting branch.
 // Nothing changes in Instantly until someone runs each script's --sync.
 //
@@ -18,10 +18,10 @@
 // wave 1 campaigns already say, and the reply desk's classifier treats a bare
 // "No" as an opt-out and blocklists the address (reply-desk/suppress.mjs).
 //
-// [CONFIRM: "LinksHub LTD" is the owner's spelling. The app's retired legal
-// pages say "Linkshub Ltd." Use the registered spelling.]
+// "Linkshub Ltd." is the registered name (Georgia Secretary of State, control
+// number 25162414). Keep the spelling exact.
 
-export const COMPANY_LINE = 'GovHub is a product of LinksHub LTD.';
+export const COMPANY_LINE = 'GovHub is a product of Linkshub Ltd.';
 export const OPT_OUT_LINE = 'This is a marketing email. Reply "no" and I will not email you again.';
 export const DISCLOSURE = `${COMPANY_LINE} ${OPT_OUT_LINE}`;
 

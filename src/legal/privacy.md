@@ -1,8 +1,8 @@
-This Privacy Notice explains how **LinksHub LTD** ("LinksHub," "we," "us") handles personal data in connection with GovHub, the software product it owns and operates. It covers our website at [www.govhub.online](/), the GovHub app at app.govhub.online, our support, our emails, and our marketing outreach to businesses.
+This Privacy Notice explains how **Linkshub Ltd.** ("Linkshub," "we," "us") handles personal data in connection with GovHub, the software product it owns and operates. It covers our website at [www.govhub.online](/), the GovHub app at app.govhub.online, our support, our emails, and our marketing outreach to businesses.
 
-LinksHub is responsible for the personal data described here (the "controller," in the language of European data protection law), except for personal data inside Customer Content, which we process on our customers' behalf (see section 9).
+Linkshub is responsible for the personal data described here (the "controller," in the language of European data protection law), except for personal data inside Customer Content, which we process on our customers' behalf (see section 9).
 
-Our postal address is 3060 Mercer University Dr, Suite 110, Atlanta, GA 30341 [CONFIRM: still current]. For privacy questions, email [CONFIRM: monitored privacy address].
+Linkshub Ltd. is a Georgia corporation. Our postal address is 3060 Mercer University Dr, Suite 110, Atlanta, GA 30341. For privacy questions, email [CONFIRM: monitored privacy address].
 
 ## 1. What we collect
 
@@ -135,4 +135,4 @@ We will post changes here and update the version and effective date above. If a 
 
 ## 15. Contact
 
-Email [CONFIRM: monitored privacy address], or write to LinksHub LTD, 3060 Mercer University Dr, Suite 110, Atlanta, GA 30341.
+Email [CONFIRM: monitored privacy address], or write to Linkshub Ltd., 3060 Mercer University Dr, Suite 110, Atlanta, GA 30341.

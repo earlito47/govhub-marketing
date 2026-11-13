@@ -61,7 +61,7 @@ const defaultsByType: Record<SchemaType, Record<string, unknown>> = {
       url: `${siteUrl}/contact/`,
     },
     sameAs: SOCIAL_LINKS.map((s) => s.href),
-    // GovHub is a product of LinksHub LTD (src/data/legal.ts). The brand stays
+    // GovHub is a product of Linkshub Ltd. (src/data/legal.ts). The brand stays
     // the entity search resolves to; the company is its parent.
     parentOrganization: { '@type': 'Organization', name: COMPANY.legalName },
   },

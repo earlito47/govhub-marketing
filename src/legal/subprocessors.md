@@ -1,4 +1,4 @@
-These are the service providers LinksHub LTD uses to run GovHub. The first table lists **subprocessors**: providers that may process Customer Content or customer account data on our behalf. The second lists other providers we use for our own operations, such as analytics, advertising and outreach. Our [Privacy Notice](/privacy/) explains how we use personal data.
+These are the service providers Linkshub Ltd. uses to run GovHub. The first table lists **subprocessors**: providers that may process Customer Content or customer account data on our behalf. The second lists other providers we use for our own operations, such as analytics, advertising and outreach. Our [Privacy Notice](/privacy/) explains how we use personal data.
 
 [CONFIRM: for each provider, that a data processing agreement is in place, the processing location, and the transfer mechanism where data leaves the UK or EEA.]
 

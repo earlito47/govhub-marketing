@@ -11,7 +11,7 @@ Evidence paths are relative to each repository: **M** = govhub-marketing, **A** 
 | # | Issue | Evidence | Observed fact | Uncertainty | Documents affected | Product action |
 |---|---|---|---|---|---|---|
 | A1 | Terms acceptance | A `src/pages/Signup.tsx`, `handle_new_user()` in A `supabase/migrations/20260906120000_*` | No checkbox, no "by signing up you agree" text, and no record of acceptance. Outreach leads get accounts with `email_confirm: true` and a magic link, never seeing a form (A `supabase/functions/outreach-stage/index.ts`). | None | Terms 1, 19 | **Done on branch:** checkbox, `legal_acceptances` table, in-app prompt (off until `NEW_LEGAL_DOCS_LIVE`) |
-| A2 | Contracting entity | Owner statement; A `src/pages/Terms.tsx:20,425,449` (retired, 301s to www) | Owner says LinksHub LTD. The retired 2025 app Terms say "Linkshub Ltd.", 3060 Mercer University Dr, Suite 110, Atlanta, GA 30341, Georgia governing law, legal@govhub.ai, and print an EIN. | Spelling, jurisdiction, registration number, whether the address is current | All | Fill in `M src/data/legal.ts` |
+| A2 | Contracting entity | Georgia certificate of incorporation and articles; IRS CP 575 A (supplied 2026-11-13) | **Confirmed:** Linkshub Ltd., Georgia domestic profit corporation, incorporated 2025-08-05, control number 25162414, principal office 3060 Mercer University Dr, Ste 110, Atlanta, GA 30341. The retired 2025 app Terms used the same name and address and chose Georgia law. | Venue county (Fulton on file; ZIP suggests DeKalb) | All | **Done:** `M src/data/legal.ts` and all documents use the registered name |
 | A3 | Public identity | M `Footer.astro`, `about.astro`, `seo/SchemaOrg.astro` | Footer said "© GovHub"; About said "an independent private company"; no legal name anywhere on www. | None | Company page | **Done on branch:** footer, About, schema `parentOrganization` |
 | A4 | Who can sign up | A `Signup.tsx:446-465` | "Work email" label, but personal email only warns. Company name required. No age gate or business check. | Whether individuals actually buy | Terms 1 | Decide B2B-only, then enforce or adjust Terms |
 | A5 | Trial | A `handle_new_user`, `create-checkout-session` | 14 days, no card, database-only; never converts automatically. `check-trial-expiration` exists but nothing schedules it, and nothing enforces `expired`. | Dashboard schedules | Terms 3 | Schedule or remove the job |
@@ -70,7 +70,7 @@ Evidence paths are relative to each repository: **M** = govhub-marketing, **A** 
 | E1 | Sending domains | M `set-signatures.mjs`, `instantly-*.mjs` | 48 Instantly mailboxes on 16 .com domains (list on `/legal/`), From "Earl Knight"; Resend from hello@govhub.online for vendor outreach and app mail; Prospector From is an env var. About page said www and app are "the only domains we publish". | Domains listed on `/legal/` and About corrected; registrant unconfirmed |
 | E2 | Opt-out notice | M `instantly-angles.mjs:201-209`, `instantly-bline.mjs`, A `outreach-send-proposal:55-60` | **Angle (A1/A2/A4/A5) and B-line (B2/B4) emails carry no opt-out notice, and their checks fail if one is added** (removed 2026-09-29 at the owner's instruction). About 14,421 angle emails sent by 2026-10-29. Influencer and wave 1 say 'Reply "no" and I will not reach out again'. Proposal handovers have no opt-out by design. | **Restored on branch** for angles and B-line (separate commit) |
 | E3 | Ad identification | M `set-signatures.mjs:68-87` | No campaign identifies itself as an advertisement; the signature checker forbids it (2026-09-03/04, owner's instruction). | **Added on branch** for angles and B-line; influencer and wave 1 still lack it |
-| E4 | Postal address | M `set-signatures.mjs`; incident doc | Present in the signature. 4,514 angle sends (09-25 to 10-16) went out with an empty signature and no address. | Unchanged; address now prefixed with LinksHub LTD |
+| E4 | Postal address | M `set-signatures.mjs`; incident doc | Present in the signature. 4,514 angle sends (09-25 to 10-16) went out with an empty signature and no address. | Unchanged; address now prefixed with Linkshub Ltd. |
 | E5 | Opt-out handling | M `reply-desk.mjs:279-283`, `docs/instantly-angle-coverage.md:4267` | "Stop/unsubscribe" and bare "no" replies recorded as `no_action`; only Instantly's per-campaign stop_on_reply applied. Blocklist had 2 entries against 16 written opt-outs until a manual back-fill on 11-04. | **Automated on branch:** blocklist write, retries, back-fill of 77 ledger rows |
 | E6 | Global suppression | Both repos | Four unlinked stores: Instantly blocklist, `outreach.companies.suppressed` (never set by code), `data/vendor-outreach.json`, `prospect_suppression`. App unsubscribes are separate again. | Instantly blocklist now covers all 16 domains; the other stores are still separate |
 | E7 | Tracking | M Instantly scripts | Open and click tracking off; text only. `gh_lid` added to links in reply desk sends. | Disclosed in Privacy 6 |
@@ -84,9 +84,9 @@ Evidence paths are relative to each repository: **M** = govhub-marketing, **A** 
 
 Publication of the new documents is blocked until each item below is resolved. Every one also appears as a `[CONFIRM: ...]` in the page text, and `npm run guard` fails until they are gone.
 
-1. LinksHub LTD's registered spelling, jurisdiction, registration number, and whether the Atlanta address is current (A2).
+1. ~~Entity details~~ Resolved 2026-11-13 from the formation documents (A2).
 2. Monitored legal, privacy and security email addresses. (legal@govhub.ai appears only in the retired Terms; govhub.ai ownership is unknown.)
-3. Governing law and venue (Georgia and Fulton County proposed from the retired Terms).
+3. Venue county (Georgia law is drafted; Fulton County is on file for the registered agent, but the ZIP code suggests DeKalb).
 4. The liability cap, its exceptions and the free/trial amount.
 5. Refund policy (A7).
 6. Effective date for each document.
@@ -95,7 +95,7 @@ Publication of the new documents is blocked until each item below is resolved. E
 9. Export completeness (C6), or a sentence saying what export leaves out.
 10. Supabase region and the transfer mechanism (C9).
 11. Backup retention, billing record, analytics, prospect and support retention periods.
-12. Whether each of the 16 outreach domains is registered to LinksHub LTD (E1).
+12. Whether each of the 16 outreach domains is registered to Linkshub Ltd. (E1).
 13. SOC 2, FedRAMP and CMMC status statements on the security pages (D4), and Google Signals and session recording settings (C2).
 14. Cookie consent banner decision for UK and EU visitors (C3).
 15. Subprocessor change-notice period.

@@ -9,25 +9,25 @@
 // That is deliberate: these pages must not ship with unresolved facts. Fill
 // in the value, or delete the clause, and the guard clears.
 //
-// The owner states that GovHub is owned and operated by LinksHub LTD. The
-// other details are not verified. Evidence found so far: strata-parse's
-// retired 2025 Terms (src/pages/Terms.tsx) name "Linkshub Ltd." at the Atlanta
-// address below and choose Georgia law, and every outreach signature carries
-// the same address. See legal/README.md for the full blocker list.
+// GovHub is owned and operated by Linkshub Ltd. The name, jurisdiction,
+// control number and address below are from the Georgia Secretary of State
+// certificate of incorporation and articles (filed 2025-08-05), supplied by
+// the owner on 2026-11-13. "Linkshub Ltd." is the registered spelling: use it
+// exactly in anything legal. See legal/README.md for what is still open.
 
 export const COMPANY = {
-  /** Contracting entity. Owner-confirmed 2026-11-12; spelling unconfirmed. */
-  legalName: 'LinksHub LTD',
+  /** Contracting entity, exactly as registered. Ends in a period. */
+  legalName: 'Linkshub Ltd.',
   product: 'GovHub',
-  jurisdiction: '[CONFIRM: country or state of incorporation]',
-  registrationNumber: '[CONFIRM: company registration number, or remove]',
+  jurisdiction: 'Georgia, USA (domestic profit corporation, incorporated 2025-08-05)',
+  registrationNumber: 'Georgia Secretary of State control number 25162414',
   postalAddress: '3060 Mercer University Dr, Suite 110, Atlanta, GA 30341',
   legalEmail: '[CONFIRM: monitored legal notices address]',
   privacyEmail: '[CONFIRM: monitored privacy address]',
 } as const;
 
 /** One line used by the footer and email footers. */
-export const OWNERSHIP_LINE = `GovHub is a product of ${COMPANY.legalName}.`;
+export const OWNERSHIP_LINE = `GovHub is a product of ${COMPANY.legalName}`;
 
 export interface LegalDoc {
   /** H1 on the page. */
@@ -51,9 +51,9 @@ export const LEGAL_DOCS = {
   terms: {
     name: 'Terms of Service',
     path: '/terms/',
-    metaTitle: 'Terms of Service | GovHub by LinksHub LTD',
+    metaTitle: 'Terms of Service | GovHub by Linkshub Ltd.',
     description:
-      'The agreement between you and LinksHub LTD for GovHub: accounts, subscriptions, AI output, agent access, liability and how disputes are handled.',
+      'The agreement between you and Linkshub Ltd. for GovHub: accounts, subscriptions, AI output, agent access, liability and how disputes are handled.',
     version: '2026-11-13',
     effective: '[CONFIRM: effective date]',
   },
@@ -69,9 +69,9 @@ export const LEGAL_DOCS = {
   privacy: {
     name: 'Privacy Notice',
     path: '/privacy/',
-    metaTitle: 'Privacy Notice | GovHub by LinksHub LTD',
+    metaTitle: 'Privacy Notice | GovHub by Linkshub Ltd.',
     description:
-      'How LinksHub LTD collects, uses, shares and protects personal data across the GovHub website, the GovHub app, support and our outreach.',
+      'How Linkshub Ltd. collects, uses, shares and protects personal data across the GovHub website, the GovHub app, support and our outreach.',
     version: '2026-11-13',
     effective: '[CONFIRM: effective date]',
   },

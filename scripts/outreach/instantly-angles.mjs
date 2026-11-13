@@ -202,7 +202,7 @@ const MAILBOXES = {
 //
 // The opt-out line was removed on 2026-09-29 at the owner's instruction and
 // restored on the legal-drafting branch on 2026-11-13, together with an
-// advertisement label and the LinksHub LTD name (disclosure.mjs explains
+// advertisement label and the Linkshub Ltd. name (disclosure.mjs explains
 // both). 15 USC 7704(a)(5)(A) requires all three elements in EVERY commercial
 // message. The postal address stays in {{accountSignature}}; the disclosure
 // sits below it so it does not compete with the CTA.

@@ -1,4 +1,4 @@
-These Terms of Service (the "Terms") are an agreement between you and **LinksHub LTD**, a company [CONFIRM: state or country of incorporation and registration number, and the registered spelling: the app's retired 2025 Terms say "Linkshub Ltd."] with its business address at 3060 Mercer University Dr, Suite 110, Atlanta, GA 30341 [CONFIRM: still current] ("LinksHub," "we," "us"). GovHub is a software product owned and operated by LinksHub. References to "GovHub" mean our product, not a separate company.
+These Terms of Service (the "Terms") are an agreement between you and **Linkshub Ltd.**, a Georgia corporation with its principal office at 3060 Mercer University Dr, Suite 110, Atlanta, GA 30341 ("Linkshub," "we," "us"). GovHub is a software product owned and operated by Linkshub. References to "GovHub" mean our product, not a separate company.
 
 These Terms cover [www.govhub.online](/), the GovHub application at app.govhub.online, and any other GovHub service that links to these Terms (together, the "Services"). Our [AI and Acceptable Use Policy](/acceptable-use/) is part of these Terms. Our [Privacy Notice](/privacy/) explains how we handle personal data.
 
@@ -44,7 +44,7 @@ You can cancel at any time in your account billing settings or by emailing us. C
 
 "Customer Content" means the material you or your users upload or enter, such as solicitations, company profiles, past performance, resumes, pricing and drafts. You keep all rights you have in it.
 
-You give LinksHub a worldwide, non-exclusive, royalty-free license to host, copy, process, transmit and display Customer Content only as needed to provide, secure and support the Services for you, to prevent abuse, and to comply with law. This includes sending Customer Content to the service providers listed on our [subprocessors page](/subprocessors/), including AI model providers, so they can perform the features you use.
+You give Linkshub a worldwide, non-exclusive, royalty-free license to host, copy, process, transmit and display Customer Content only as needed to provide, secure and support the Services for you, to prevent abuse, and to comply with law. This includes sending Customer Content to the service providers listed on our [subprocessors page](/subprocessors/), including AI model providers, so they can perform the features you use.
 
 **We do not use Customer Content to train AI models**, and the AI providers we use are not permitted to train their models on it under the terms that apply to our use of their services [CONFIRM: verified for Anthropic, OpenAI, Google Gemini through the Lovable AI gateway, and the OCR service, against each one's current terms and account settings].
 
@@ -64,7 +64,7 @@ You must have a qualified person review and verify all Output before you rely on
 
 GovHub is not a government agency, a law firm or a professional adviser, and Output is not legal, financial or other professional advice. **We do not guarantee that using GovHub will lead to a contract award, that a proposal will be found responsive or compliant, that you are eligible for any opportunity, or that any agency will accept or approve anything.**
 
-As between you and LinksHub, you own the Output produced for you, and we assign to you whatever rights we have in it. This does not cover our templates, forms, prompts, software or other materials that appear in or produce Output, which remain ours or our licensors'. Other users may receive similar Output. We do not promise that Output can be protected by copyright or that it does not use material others have rights in.
+As between you and Linkshub, you own the Output produced for you, and we assign to you whatever rights we have in it. This does not cover our templates, forms, prompts, software or other materials that appear in or produce Output, which remain ours or our licensors'. Other users may receive similar Output. We do not promise that Output can be protected by copyright or that it does not use material others have rights in.
 
 ## 9. Automated access and agents
 
@@ -82,7 +82,7 @@ The Services are a commercial cloud service. They are not authorized for classif
 
 ## 12. Our intellectual property
 
-The Services, including the software, design, templates, data compilations and other content we provide, belong to LinksHub or its licensors. Subject to these Terms and payment of applicable fees, we give you a limited, non-exclusive, non-transferable right during your subscription to use the Services for your internal business purposes. We keep all rights not expressly granted.
+The Services, including the software, design, templates, data compilations and other content we provide, belong to Linkshub or its licensors. Subject to these Terms and payment of applicable fees, we give you a limited, non-exclusive, non-transferable right during your subscription to use the Services for your internal business purposes. We keep all rights not expressly granted.
 
 If you send us feedback or suggestions, we may use them without any obligation to you.
 
@@ -102,7 +102,7 @@ After your account ends, you can export your Customer Content for [CONFIRM: numb
 
 ## 16. Disclaimers
 
-**To the fullest extent permitted by law, the Services and all Output are provided "as is" and "as available." LinksHub disclaims all warranties and conditions, express, implied or statutory, including warranties of merchantability, fitness for a particular purpose, title, non-infringement, accuracy and completeness, and any warranty that the Services will be uninterrupted, error-free or secure. We do not warrant that Output is accurate, complete, current or suitable for any procurement or other purpose.**
+**To the fullest extent permitted by law, the Services and all Output are provided "as is" and "as available." Linkshub disclaims all warranties and conditions, express, implied or statutory, including warranties of merchantability, fitness for a particular purpose, title, non-infringement, accuracy and completeness, and any warranty that the Services will be uninterrupted, error-free or secure. We do not warrant that Output is accurate, complete, current or suitable for any procurement or other purpose.**
 
 Some jurisdictions do not allow certain warranties to be excluded. In those places, the exclusions above apply to the extent allowed.
 
@@ -112,7 +112,7 @@ Some jurisdictions do not allow certain warranties to be excluded. In those plac
 
 **17.2 Losses neither party is liable for.** To the fullest extent permitted by law, neither party is liable to the other for any indirect, incidental, special, consequential, exemplary or punitive damages, or for any loss of profits, revenue, business, goodwill, anticipated savings or data, or loss of any contract, award, task order or other opportunity, however caused and whether in contract, tort (including negligence) or otherwise, even if it was told such losses were possible.
 
-**17.3 Our total liability.** To the fullest extent permitted by law, LinksHub's total liability for all claims arising out of or relating to these Terms or the Services, taken together, will not exceed the greater of (a) the fees you paid us for the Services in the 12 months before the event that gave rise to the first claim and (b) US$100. [CONFIRM: the cap amount, the 12-month lookback, and the US$100 amount for free and trial accounts.]
+**17.3 Our total liability.** To the fullest extent permitted by law, Linkshub's total liability for all claims arising out of or relating to these Terms or the Services, taken together, will not exceed the greater of (a) the fees you paid us for the Services in the 12 months before the event that gave rise to the first claim and (b) US$100. [CONFIRM: the cap amount, the 12-month lookback, and the US$100 amount for free and trial accounts.]
 
 **17.4 Exceptions.** Sections 17.2 and 17.3 do not limit your obligation to pay fees, your obligations under section 18, or your liability for breach of section 2 of the AI and Acceptable Use Policy. [CONFIRM with counsel: any further exceptions, such as breach of confidentiality, and how this section works alongside the Data Processing Addendum.]
 
@@ -120,9 +120,9 @@ Some jurisdictions do not allow certain warranties to be excluded. In those plac
 
 ## 18. Your indemnity
 
-You will defend LinksHub and its officers, employees and contractors against any claim brought by a third party, including a government body, to the extent it arises from (a) Customer Content that infringes someone's rights or breaks the law, (b) your or your users' use of the Services in breach of these Terms or the law, or (c) a false or unlawful statement, certification or representation in a submission you make. You will pay the damages, costs and reasonable attorneys' fees finally awarded, or agreed in a settlement you approve.
+You will defend Linkshub and its officers, employees and contractors against any claim brought by a third party, including a government body, to the extent it arises from (a) Customer Content that infringes someone's rights or breaks the law, (b) your or your users' use of the Services in breach of these Terms or the law, or (c) a false or unlawful statement, certification or representation in a submission you make. You will pay the damages, costs and reasonable attorneys' fees finally awarded, or agreed in a settlement you approve.
 
-LinksHub will notify you promptly of the claim (a delay only reduces your obligations to the extent it prejudices you), let you control the defense and settlement, and cooperate reasonably at your expense. You may not settle a claim in a way that admits fault for LinksHub or places an obligation on us without our written consent.
+Linkshub will notify you promptly of the claim (a delay only reduces your obligations to the extent it prejudices you), let you control the defense and settlement, and cooperate reasonably at your expense. You may not settle a claim in a way that admits fault for Linkshub or places an obligation on us without our written consent.
 
 ## 19. Changes
 
@@ -132,18 +132,18 @@ LinksHub will notify you promptly of the claim (a delay only reduces your obliga
 
 ## 20. Governing law and disputes
 
-These Terms are governed by the laws of the State of Georgia, USA [CONFIRM: governing law; the app's retired 2025 Terms chose Georgia], without regard to conflict of laws rules. The state and federal courts located in Fulton County, Georgia [CONFIRM: venue] have exclusive jurisdiction over any dispute arising out of or relating to these Terms or the Services, and each party agrees to that jurisdiction. Either party may seek urgent injunctive relief in any court with jurisdiction to protect its intellectual property or confidential information. The UN Convention on Contracts for the International Sale of Goods does not apply.
+These Terms are governed by the laws of the State of Georgia, USA, without regard to conflict of laws rules. The state and federal courts located in Fulton County, Georgia [CONFIRM: venue county. The registered agent's county on file is Fulton, but 30341 addresses are generally in DeKalb County] have exclusive jurisdiction over any dispute arising out of or relating to these Terms or the Services, and each party agrees to that jurisdiction. Either party may seek urgent injunctive relief in any court with jurisdiction to protect its intellectual property or confidential information. The UN Convention on Contracts for the International Sale of Goods does not apply.
 
 Before starting proceedings, the party with a complaint will send a written description of it to the other, and the parties will try in good faith to resolve it for 30 days.
 
 ## 21. Notices
 
-We will send notices to the email address on your account or show them in the app. Send legal notices to LinksHub LTD at [CONFIRM: monitored legal email; the retired Terms used legal@govhub.ai, a domain not otherwise confirmed as ours] and 3060 Mercer University Dr, Suite 110, Atlanta, GA 30341. You agree that we may communicate with you electronically.
+We will send notices to the email address on your account or show them in the app. Send legal notices to Linkshub Ltd. at [CONFIRM: monitored legal email; the retired Terms used legal@govhub.ai, a domain not otherwise confirmed as ours] and 3060 Mercer University Dr, Suite 110, Atlanta, GA 30341. You agree that we may communicate with you electronically.
 
 ## 22. General
 
 - **Order of precedence.** If documents conflict, this order applies: an order you sign with us; the Data Processing Addendum, for personal data; these Terms; the AI and Acceptable Use Policy; then other GovHub documentation.
-- **Entire agreement.** These Terms and the documents they refer to are the whole agreement between you and LinksHub about the Services and replace earlier agreements about the same subject. Terms in your purchase orders do not apply.
+- **Entire agreement.** These Terms and the documents they refer to are the whole agreement between you and Linkshub about the Services and replace earlier agreements about the same subject. Terms in your purchase orders do not apply.
 - **Assignment.** You may not transfer these Terms without our written consent. We may transfer them to an affiliate, or to a successor in a merger, acquisition or sale of the GovHub business, with notice to you.
 - **Events beyond control.** Neither party is liable for a delay or failure caused by events beyond its reasonable control, other than your obligation to pay.
 - **Export and sanctions.** You will comply with export control and sanctions laws that apply to your use of the Services, and you confirm that you are not on any restricted party list and will not use the Services in an embargoed country or region.
@@ -155,4 +155,4 @@ We will send notices to the email address on your account or show them in the ap
 
 ## 23. Contact
 
-Questions about these Terms? Email [CONFIRM: monitored legal email] or write to LinksHub LTD, 3060 Mercer University Dr, Suite 110, Atlanta, GA 30341.
+Questions about these Terms? Email [CONFIRM: monitored legal email] or write to Linkshub Ltd., 3060 Mercer University Dr, Suite 110, Atlanta, GA 30341.

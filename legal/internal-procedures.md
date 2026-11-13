@@ -1,6 +1,6 @@
 # Internal data procedures (draft)
 
-For LinksHub staff running GovHub. Not published. Where a period or tool is not decided it is marked [CONFIRM].
+For Linkshub staff running GovHub. Not published. Where a period or tool is not decided it is marked [CONFIRM].
 
 ## 1. Retention schedule (proposed)
 
@@ -21,7 +21,7 @@ For LinksHub staff running GovHub. Not published. Where a period or tool is not 
 ## 2. Rights requests
 
 1. **Log it** the day it arrives: date, requester, channel, request type. [CONFIRM: where the log lives.]
-2. **Route it.** If it concerns data inside a customer's Customer Content (a resume uploaded by a customer, for example), reply that LinksHub processes it for that customer, name the customer if permitted, and tell the customer. Stop there.
+2. **Route it.** If it concerns data inside a customer's Customer Content (a resume uploaded by a customer, for example), reply that Linkshub processes it for that customer, name the customer if permitted, and tell the customer. Stop there.
 3. **Verify identity** proportionately: a request from the account's own email address is usually enough; otherwise ask for information that matches what we hold. For an authorized agent, ask for signed permission.
 4. **Find the data** in every system: Supabase (user_profiles, v2_profiles, subscriptions, v2_* tables, agent_messages, support_*, email_events, outreach.*, prospect_*), storage buckets, Stripe, Zoho CRM, PostHog (person by email), Instantly (lead and blocklist), Resend, GitHub-committed data files (`data/*.json` in govhub-marketing), and Anthropic files.
 5. **Act:**
@@ -35,7 +35,7 @@ For LinksHub staff running GovHub. Not published. Where a period or tool is not 
 
 1. **Detect and record.** Anyone who suspects an incident tells [CONFIRM: owner] at once. Start a timeline.
 2. **Contain.** Rotate affected keys (Supabase service role, AI provider keys, Instantly, Resend, Stripe), revoke sessions, disable the affected function or worker.
-3. **Assess.** What data, whose, how many, whether it is Customer Personal Data (DPA section 8 clock starts) or LinksHub's own (controller duties).
+3. **Assess.** What data, whose, how many, whether it is Customer Personal Data (DPA section 8 clock starts) or Linkshub's own (controller duties).
 4. **Notify** as required: customers under the DPA; regulators where a law applies (for example 72 hours under GDPR Art. 33 where it applies); individuals under state breach notification laws where personal information as those laws define it is involved. Counsel decides.
 5. **Remediate and review.** Write up root cause and fixes in `docs/incident-*.md`, as the repository already does for operational incidents.
 
@@ -65,7 +65,7 @@ Every commercial email, from every domain and tool:
 1. Accurate From, To, Reply-To and routing information; the sending domain is on the public list at www.govhub.online/legal/.
 2. A subject line that matches the content.
 3. Identification as an advertisement (disclosure.mjs carries it for angles and B-line; add it to influencer and wave 1).
-4. LinksHub LTD's valid postal address.
+4. Linkshub Ltd.'s valid postal address.
 5. A clear opt-out notice that works for at least 30 days after sending.
 6. Opt-outs honored within 10 business days, across every campaign, domain and tool. The reply desk now blocklists "unsubscribe" and "no" replies in Instantly automatically; vendor outreach replies to hello@ and Prospector unsubscribes still need to reach the same list.
 7. No selling or transferring of addresses of people who opted out.

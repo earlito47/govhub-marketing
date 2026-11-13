@@ -43,7 +43,7 @@ Every fact that is not yet confirmed is written as `[CONFIRM: ...]` in the text.
 
 - LinkedIn Insight Tag honours the analytics opt-out and Global Privacy Control.
 - The security page and enterprise audience copy no longer claim SAML SSO, a full audit trail, role-based access, or SOC 2 or FedRAMP alignment. "API access" is removed from the Team plan.
-- Outreach (its own commit, reviewable separately): opt-out notice and advertisement label restored for the angle and B-line campaigns, LinksHub LTD in the shared signature, and the reply desk adds opt-outs to the Instantly blocklist. Live campaigns change only after each script's `--sync`.
+- Outreach (its own commit, reviewable separately): opt-out notice and advertisement label restored for the angle and B-line campaigns, Linkshub Ltd. in the shared signature, and the reply desk adds opt-outs to the Instantly blocklist. Live campaigns change only after each script's `--sync`.
 
 **strata-parse**
 

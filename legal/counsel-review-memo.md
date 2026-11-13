@@ -2,26 +2,34 @@
 
 Prepared 2026-11-13 for review by a SaaS and privacy lawyer. This memo collects the legal questions and citations so the customer-facing documents can stay plain. It is a list of issues to decide, not a legal opinion. Every statute and threshold below should be checked against the current primary source before anything is published.
 
-## 1. The question that decides most of the others: where is LinksHub LTD?
+## 1. The contracting entity (confirmed)
 
-"LTD" alone does not settle it. The evidence in the repositories points to the United States: the app's retired 2025 Terms name "Linkshub Ltd." at 3060 Mercer University Dr, Suite 110, Atlanta, GA 30341, choose Georgia law, and print an EIN, and every outreach signature carries the same address. Georgia permits "Ltd." as a corporate designator. None of this is confirmation. The answer changes several documents at once:
+From the Georgia Secretary of State certificate of incorporation and articles, and the IRS EIN notice, supplied by the owner on 2026-11-13:
 
-| If LinksHub LTD is... | What changes |
+| | |
 |---|---|
-| A Georgia (or other US) entity, with no UK or EU establishment (most likely on the evidence) | The drafts' Georgia governing law and Fulton County venue fit. UK and EU GDPR apply only to the extent GovHub targets or monitors people there (Art. 3(2)); no UK or EU recipients were found in the outreach data. US federal and state law govern the rest. |
-| Registered in England and Wales (or elsewhere in the UK) | UK GDPR and the Data Protection Act 2018 apply to **all** of LinksHub's processing carried out in the context of that UK establishment, including data about US prospects and US customers (UK GDPR Art. 3(1)). The company must state its registered name, number, place of registration and registered office on its websites and in business emails (Companies Act 2006 and the Company, Limited Liability Partnership and Business (Names and Trading Disclosures) Regulations 2015). An ICO data protection fee is likely due unless an exemption applies. Liability exclusions in standard business terms are tested for reasonableness under the Unfair Contract Terms Act 1977, and liability for death or personal injury from negligence cannot be excluded at all. PECR applies to electronic marketing to UK recipients. |
-| Registered outside the UK and EU, with no establishment there | UK and EU GDPR apply only to the extent GovHub offers services to, or monitors the behaviour of, people in the UK or EU (Art. 3(2)). Representative obligations under Art. 27 may arise if that targeting happens. |
-| Registered in the EU | EU GDPR applies to all processing in the context of the establishment, and the ePrivacy rules of that member state govern cookies and email marketing. |
+| Registered name | **Linkshub Ltd.** (the drafts now use this spelling everywhere; earlier drafts said "LinksHub LTD") |
+| Type | Georgia domestic profit corporation, incorporated 2025-08-05 |
+| Control number | 25162414 |
+| Principal office | 3060 Mercer University Dr, Ste 110, Atlanta, GA 30341 |
+| Registered agent | The incorporator, at the principal office; county on file: Fulton |
+| Federal tax | EIN issued 2025-08-20; Form 1120 filer (C corporation). The EIN is not published in the drafts. |
 
-**Decision needed:** registration details, registered office, and where the people running GovHub are based. Then confirm governing law and venue for the Terms (section 20), drafted as Georgia and Fulton County from the retired Terms. The pack did not pick arbitration and this draft does not either.
+What follows from this:
+
+- **Governing law.** Georgia law, as drafted, fits a Georgia corporation operating from Georgia. Confirm the choice.
+- **Venue.** Drafted as the state and federal courts in Fulton County because that is the registered agent's county on file. 30341 addresses are generally in DeKalb County, so check which county the registered office is actually in and choose the venue to match (corporate venue in Georgia follows the registered office, O.C.G.A. section 14-2-510). The pack did not pick arbitration and this draft does not either.
+- **UK and EU law.** With no UK or EU establishment, UK and EU GDPR apply only to the extent GovHub offers services to, or monitors, people there (Art. 3(2)), and an Art. 27 representative may then be needed. No UK or EU recipients were found in the outreach data.
+- **"Use at your own risk" under Georgia law.** Check how Georgia courts treat exculpatory clauses and liability caps in standard-form business contracts (they are generally enforced between businesses if explicit, prominent, clear and unambiguous) and whether the cap needs an express carve-out for gross negligence or wilful misconduct.
+- **Name use.** Contracts, email footers and notices should use "Linkshub Ltd." exactly. "GovHub" is a trade name of the corporation; check whether a trade name registration with the county is required or advisable.
 
 ## 2. Liability allocation (Terms sections 16 to 18)
 
-- **Cap.** Drafted as the greater of fees paid in the prior 12 months and US$100, covering free and trial users. Needs a commercial decision and a check that it is enforceable under the chosen law. Under English law the cap must pass the UCTA reasonableness test; a cap tied to fees paid is commonly upheld between businesses but is not guaranteed. Under US state law, check rules that void exculpatory clauses for gross negligence or wilful misconduct (for example California Civil Code section 1668) and decide whether to carve those out expressly.
+- **Cap.** Drafted as the greater of fees paid in the prior 12 months and US$100, covering free and trial users. Needs a commercial decision and a check that it is enforceable under the chosen law. Under US state law, including Georgia's, check rules that void exculpatory clauses for gross negligence or wilful misconduct (for example California Civil Code section 1668) and decide whether to carve those out expressly.
 - **Mutual exclusion of indirect losses.** Drafted mutually, with the customer's payment obligations, indemnity and breach of the prohibited-use list carved out. Confirm that the carve-outs are commercially acceptable for larger customers.
 - **Loss of contract or award.** Section 17.2 names loss of "any contract, award, task order or other opportunity" as excluded. This is the main exposure for a proposal tool. Confirm it is clear enough under the chosen law.
 - **Customer indemnity.** Limited to third-party claims from unlawful or infringing Customer Content, use in breach, and false or unlawful statements in submissions. No provider IP indemnity is offered. Enterprise customers will ask for one; decide the position.
-- **Privacy liability.** Data protection laws give individuals rights against controllers and processors that a contract between LinksHub and its customer cannot remove (for example GDPR Art. 82). Decide how the Terms cap interacts with the DPA and whether data protection breaches sit inside, above or outside the cap.
+- **Privacy liability.** Data protection laws give individuals rights against controllers and processors that a contract between Linkshub and its customer cannot remove (for example GDPR Art. 82). Decide how the Terms cap interacts with the DPA and whether data protection breaches sit inside, above or outside the cap.
 - **Marketing claims vs. disclaimers.** Fine print does not cure a misleading headline claim (FTC, ".com Disclosures" and Policy Statement on Deception). See section 6 below: several public claims about security features are not supported by the code, and the disclaimers do not fix that.
 
 ## 3. Formation and changes
@@ -42,7 +50,7 @@ Prepared 2026-11-13 for review by a SaaS and privacy lawyer. This memo collects 
 - **CCPA as amended by CPRA.** Applies to for-profit businesses doing business in California that meet a threshold: annual gross revenue above the inflation-adjusted figure (verify the current CPPA figure), buying, selling or sharing personal information of 100,000 or more consumers or households, or deriving 50% or more of revenue from selling or sharing. The B2B and employee exemptions expired on 1 January 2023, so business contact data counts. If GovHub is below the thresholds, it is not a "business," but it may still have service provider or contractor obligations through customer contracts. Decide whether to give California-specific disclosures voluntarily.
 - **"Sale" and "sharing."** The marketing site loads the Meta Pixel and Google Analytics. Under the CCPA, disclosing personal information to an ad platform for cross-context behavioural advertising is "sharing" whether or not money changes hands. The draft Privacy Notice does not say "we do not sell or share"; it describes the pixel and the opt-out, and honours Global Privacy Control. Confirm the position once thresholds are known.
 - **Other US state laws.** Most comprehensive state privacy laws (Virginia, Colorado, Connecticut, Texas and others) exclude people acting in a commercial or employment context, so B2B contact data is often out of scope. Thresholds and exemptions vary; confirm against current text.
-- **GDPR / UK GDPR roles.** LinksHub is controller for accounts, billing, website analytics, support and outreach. It is processor for personal data inside Customer Content (resumes, key personnel, references) processed on the customer's instructions. The DPA (legal/dpa.md) covers the processor role only.
+- **GDPR / UK GDPR roles.** Linkshub is controller for accounts, billing, website analytics, support and outreach. It is processor for personal data inside Customer Content (resumes, key personnel, references) processed on the customer's instructions. The DPA (legal/dpa.md) covers the processor role only.
 - **Cold outreach.** Under GDPR or UK GDPR (if they apply), outreach to named business contacts needs a lawful basis (legitimate interests with a documented assessment) and an Art. 14 notice to people whose data was collected from other sources, no later than the first communication. PECR allows unsolicited marketing email to corporate subscribers in the UK but not to sole traders and some partnerships without consent (ICO B2B marketing guidance). US outreach is governed by CAN-SPAM: accurate headers and subject lines, identification as an advertisement, a valid postal address, a working opt-out honoured within 10 business days and usable for at least 30 days after sending (FTC CAN-SPAM Act: A Compliance Guide for Business).
 - **Outreach as found.** Angle and B-line campaigns sent roughly 14,000 emails with no opt-out notice, no campaign carried an advertisement label, about 4,500 went out with no postal address, and opt-out replies were not suppressed across campaigns (fact table E2 to E5). The branch fixes the copy and suppression going forward. Counsel should advise on exposure for what was already sent.
 - **AI providers.** Confirm, for each provider in the subprocessor list, the data retention period for API inputs and outputs, whether abuse monitoring retains content, the processing region, and whether a DPA and transfer mechanism are in place. The Terms promise that providers do not train on Customer Content; that must match the provider contracts.
@@ -59,8 +67,7 @@ The fact table lists each claim with evidence. In short, any claim on /security/
 
 ## 8. Items for the lawyer to sign off
 
-1. Entity details and the trading-disclosure requirements that follow from them.
-2. Governing law, venue, and any dispute-resolution step.
+1. Governing law, venue county, and any dispute-resolution step.
 3. The liability cap, its exceptions, and the treatment of free and trial users.
 4. Whether to offer a provider IP indemnity, and an enterprise addendum.
 5. The DPA, including the transfer mechanism (EU SCCs 2021/914 Module 2 and 3 as relevant, UK International Data Transfer Addendum), without rewriting mandatory clause text.

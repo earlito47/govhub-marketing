@@ -6,7 +6,7 @@ Prompt 5 of the legal drafting pack: each promise in the draft documents checked
 
 | Promise (document, section) | Status | Evidence or what is missing |
 |---|---|---|
-| LinksHub LTD named as the company behind GovHub (all; footer; About; schema) | PASS | M `src/data/legal.ts`, `Footer.astro`, `about.astro`, `SchemaOrg.astro`; A email footer, sidebar |
+| Linkshub Ltd. named as the company behind GovHub (all; footer; About; schema) | PASS | M `src/data/legal.ts`, `Footer.astro`, `about.astro`, `SchemaOrg.astro`; A email footer, sidebar |
 | Affirmative acceptance at signup with version and timestamp (Terms 1) | PASS | A `Signup.tsx` checkbox, `legal_acceptances` migration and trigger. Not run against a database: test once on a Supabase branch |
 | Acceptance for accounts created without a form, and re-acceptance on change (Terms 1, 19) | PASS, off by default | A `LegalAcceptanceGate.tsx`; enable with `NEW_LEGAL_DOCS_LIVE` after www publishes |
 | Review AI output before relying or submitting (AUP 1, Terms 8) | PASS | A `ai-notice.ts`: once-per-session notice on every download, and in the finalize dialog |

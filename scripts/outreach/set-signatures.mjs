@@ -65,9 +65,9 @@ const NAME = 'Earl Knight';
 const TITLE = 'Founder, GovHub';
 // The company line names the legal entity behind GovHub in every programme at
 // once, since all 48 mailboxes share this signature (legal-drafting branch,
-// 2026-11-13). [CONFIRM: registered spelling of LinksHub LTD, and that this is
-// still the company's valid postal address.]
-const POSTAL = 'LinksHub LTD, 3060 Mercer University Dr Ste 110, Atlanta, GA 30341';
+// 2026-11-13). Registered name and principal office per the Georgia
+// certificate of incorporation.
+const POSTAL = 'Linkshub Ltd., 3060 Mercer University Dr Ste 110, Atlanta, GA 30341';
 
 // The signature previously carried "This is a sales email." That line was the
 // CAN-SPAM 7704(a)(5)(A)(i) element, identification of the message as an

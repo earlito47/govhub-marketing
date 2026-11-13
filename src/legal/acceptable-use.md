@@ -1,4 +1,4 @@
-This AI and Acceptable Use Policy (the "Policy") is part of the [Terms of Service](/terms/) between you and LinksHub LTD ("LinksHub," "we," "us"), the company that owns and operates GovHub. Words with a defined meaning in the Terms have the same meaning here. If this Policy and the Terms conflict, the Terms control.
+This AI and Acceptable Use Policy (the "Policy") is part of the [Terms of Service](/terms/) between you and Linkshub Ltd. ("Linkshub," "we," "us"), the company that owns and operates GovHub. Words with a defined meaning in the Terms have the same meaning here. If this Policy and the Terms conflict, the Terms control.
 
 ## 1. Using AI output responsibly
 

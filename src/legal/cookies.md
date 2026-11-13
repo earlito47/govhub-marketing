@@ -1,4 +1,4 @@
-This Cookie Notice explains the cookies and similar technologies LinksHub LTD uses on GovHub's website ([www.govhub.online](/)) and app (app.govhub.online), and how to control them. It is part of our [Privacy Notice](/privacy/).
+This Cookie Notice explains the cookies and similar technologies Linkshub Ltd. uses on GovHub's website ([www.govhub.online](/)) and app (app.govhub.online), and how to control them. It is part of our [Privacy Notice](/privacy/).
 
 ## Your controls
 
