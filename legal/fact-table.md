@@ -84,12 +84,9 @@ Evidence paths are relative to each repository: **M** = govhub-marketing, **A** 
 
 Status on 2026-11-13, after the owner's answers. Everything not listed here is resolved in the text.
 
-**Still open (these four keep `npm run guard` failing):**
+**Still open (keeps `npm run guard` failing on /privacy/ and /subprocessors/):**
 
-1. **OCR service.** Who runs it and where it is hosted (`OCR_SERVICE_URL` is a secret, so the code does not say). Privacy section 4 and the subprocessors page.
-2. **Lovable.** Turn AI training off in GovHub's Lovable workspace settings, or finish moving company lookup and section drafting to Anthropic or OpenAI (docs/lovable-ai-gateway-migration.md in strata-parse). Then fill in Lovable's location from its DPA. Terms 6, Privacy 4, subprocessors.
-3. **Liability cap.** Terms 17.3, drafted as the greater of 12 months' fees and US$100.
-4. **Venue county.** Terms 20. Fulton County is on file for the registered agent, but 30341 addresses are generally in DeKalb County.
+1. **OCR service.** Who runs it and where it is hosted (`OCR_SERVICE_URL` is a secret, so the code does not say). Privacy section 4 and the subprocessors page. Library document processing calls it.
 
 **Resolved 2026-11-13:**
 
@@ -103,7 +100,10 @@ Status on 2026-11-13, after the owner's answers. Everything not listed here is r
 - Region: Supabase us-east-2 (Ohio); backups 7 days on the Pro plan.
 - Session recording: on in the app's PostHog project (30-day retention); now disclosed, and masked on the branch.
 - Domains: all 16 registered to the company (registrar shows "LinksHub ltd"; consider matching the registered spelling).
-- SOC 2, FedRAMP, CMMC: stated plainly as not held.
 - Cookie banner: none for now (US-focused; opt-out and GPC honoured).
 - Subprocessor notice: 30 days, by page update and email to DPA customers.
 - Retention periods: billing 7 years; support 3 years; prospects 24 months; GA4 up to 14 months.
+- Lovable: no longer used (owner). The one live path, company lookup's text extraction (`_shared/autofill.ts`), now calls OpenAI directly; Lovable is gone from Terms, Privacy and the subprocessors page. Dead edge functions still contain gateway code: delete the `LOVABLE_API_KEY` secret so none of them can send data there.
+- Liability cap: kept as drafted (greater of 12 months' fees and US$100).
+- Venue: DeKalb County, Georgia.
+- SOC 2 and FedRAMP: all wording removed from the site (security page, enterprise page, four blog buying guides). The security page still says GovHub is not designed for CUI or classified data.

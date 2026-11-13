@@ -59,9 +59,9 @@ We do not sell personal data for money.
 
 ## 4. AI processing
 
-To provide GovHub's features, we send Customer Content and your company profile to AI model providers through their APIs: Anthropic (Claude) and OpenAI, and for some company-lookup and drafting features, Google's Gemini models through Lovable's AI gateway. Scanned documents are read by a text-recognition (OCR) service [CONFIRM: who runs the OCR service and where it is hosted].
+To provide GovHub's features, we send Customer Content and your company profile to AI model providers through their APIs: Anthropic (Claude) and OpenAI. Scanned documents are read by a text-recognition (OCR) service [CONFIRM: who runs the OCR service and where it is hosted].
 
-- **Training.** Anthropic and OpenAI do not use data sent through their APIs to train their models unless the customer opts in. We have not opted in. Lovable states that its contracts with AI providers restrict their training on and retention of customer data [CONFIRM: AI training is turned off in GovHub's Lovable workspace, or these features have moved to Anthropic or OpenAI].
+- **Training.** Anthropic and OpenAI do not use data sent through their APIs to train their models unless the customer opts in. We have not opted in.
 - **Retention.** Anthropic deletes API inputs and outputs within 30 days, and OpenAI keeps API abuse-monitoring logs for up to 30 days, except where content is flagged for a policy violation or the law requires longer.
 - **Files.** Documents we upload to Anthropic's file storage stay there until we delete them. We delete them when your account data is deleted (section 8).
 

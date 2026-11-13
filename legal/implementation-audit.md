@@ -15,7 +15,7 @@ Prompt 5 of the legal drafting pack: each promise in the draft documents checked
 | Plan usage limits (AUP 4) | **GAP** | Proposal limits are display-only (`UsageMeter.tsx`) |
 | We may rate-limit and suspend (AUP 3, Terms 14) | **GAP** | Only the assistant is rate-limited; admin "suspend" is not enforced |
 | No customer API (AUP 3) | PASS | No API exists; "API access" removed from pricing |
-| No training on Customer Content (Terms 6, Privacy 2) | PASS for Anthropic and OpenAI; UNVERIFIED for Lovable | Both providers' own pages (2026-11-13): API data not used for training by default. Lovable needs its workspace training setting checked |
+| No training on Customer Content (Terms 6, Privacy 2) | PASS | Anthropic and OpenAI pages (2026-11-13): API data not used for training by default. Company lookup moved off Lovable to OpenAI with `store: false` |
 | AI providers listed (Privacy 4, subprocessors) | PASS | List built from code. OCR vendor unnamed |
 | Account data deleted within 45 days, after a 30-day grace period (Privacy 8, Terms 15, DPA 10) | PASS on branch, manual | Admin console purge (`account.purge`, migration 20261113130000) and a pending-deletion queue. Not yet run against a database |
 | Export of account data, with security redactions (Privacy 10) | PASS on branch | `export-account-data` adds files (7-day links), library, assistant chats, support tickets and acceptances; `_shared/export-redact.ts` drops tokens and masks ID and account numbers; `npm run test:export` |
@@ -27,7 +27,7 @@ Prompt 5 of the legal drafting pack: each promise in the draft documents checked
 | Outreach carries ad label, opt-out and postal address (Privacy 7, company page) | PASS for angles and B-line; **GAP** for influencer and wave 1 (no ad label) | M `disclosure.mjs`; live campaigns change only after `--sync` |
 | Opt-outs honored within 10 business days across all domains (Privacy 7) | PASS for Instantly programmes, once merged; **GAP** for vendor outreach and Prospector | M `reply-desk/suppress.mjs`. Endpoint verified against Instantly's API reference; the key needs block list scope |
 | Every outreach domain listed (company page) | PASS | 16 domains from the code. Registrant unconfirmed |
-| Security page claims match the product | PASS on branch | SAML SSO, audit trail, RBAC and SOC 2/FedRAMP wording corrected; app prerender no longer ships the old claims |
+| Security page claims match the product | PASS on branch | SAML SSO, audit trail and RBAC corrected; SOC 2 and FedRAMP wording removed site-wide; app prerender no longer ships the old claims |
 | No fabricated SOC 2, FedRAMP, CMMC or accessibility certifications | PASS on branch for live pages | Dead files in A `src/pages/*.tsx` still contain them; delete |
 | Prospect emails always carry a postal address | PASS | A `prospector-action` refuses to send without one |
 

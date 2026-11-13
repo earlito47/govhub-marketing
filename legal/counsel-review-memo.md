@@ -18,7 +18,7 @@ From the Georgia Secretary of State certificate of incorporation and articles, a
 What follows from this:
 
 - **Governing law.** Georgia law, as drafted, fits a Georgia corporation operating from Georgia. Confirm the choice.
-- **Venue.** Drafted as the state and federal courts in Fulton County because that is the registered agent's county on file. 30341 addresses are generally in DeKalb County, so check which county the registered office is actually in and choose the venue to match (corporate venue in Georgia follows the registered office, O.C.G.A. section 14-2-510). The pack did not pick arbitration and this draft does not either.
+- **Venue.** DeKalb County, Georgia (owner, 2026-11-13). The articles list the registered agent's county as Fulton; the registered office address (30341) is in DeKalb. Consider correcting the county on the Secretary of State record so the two match (corporate venue in Georgia follows the registered office, O.C.G.A. section 14-2-510). The pack did not pick arbitration and this draft does not either.
 - **UK and EU law.** With no UK or EU establishment, UK and EU GDPR apply only to the extent GovHub offers services to, or monitors, people there (Art. 3(2)), and an Art. 27 representative may then be needed. No UK or EU recipients were found in the outreach data.
 - **"Use at your own risk" under Georgia law.** Check how Georgia courts treat exculpatory clauses and liability caps in standard-form business contracts (they are generally enforced between businesses if explicit, prominent, clear and unambiguous) and whether the cap needs an express carve-out for gross negligence or wilful misconduct.
 - **Name use.** Contracts, email footers and notices should use "Linkshub Ltd." exactly. "GovHub" is a trade name of the corporation; check whether a trade name registration with the county is required or advisable.
@@ -57,7 +57,7 @@ What follows from this:
 
 ## 6. Public claims that need substantiation or correction
 
-The fact table lists each claim with evidence. In short, any claim on /security/ or /compliance/ that is not supported by the code or a third-party report should be removed or reworded before the new Terms go live, because the Terms' disclaimers do not cure an inaccurate claim. Pay particular attention to SAML single sign-on, audit logging, "built to align with SOC 2," and "architected for FedRAMP-ready deployment." Do not describe GovHub as SOC 2 compliant, FedRAMP authorized, CMMC certified or GDPR certified without the report or authorization to back it.
+The fact table lists each claim with evidence. On the branch, SAML single sign-on, the "full audit trail" and role-based access claims are corrected, and all SOC 2 and FedRAMP wording is removed from the site at the owner's direction (security page, enterprise page, blog buying guides). Disclaimers in the Terms do not cure an inaccurate marketing claim, so keep sales copy to what the product does.
 
 ## 7. AI-specific rules to keep an eye on
 

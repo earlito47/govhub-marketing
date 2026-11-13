@@ -119,9 +119,9 @@ export const audiences: Audience[] = [
           'GovHub can pull past-performance, resume, and technical content from SharePoint and comparable document stores.',
       },
       {
-        question: 'Does GovHub support SSO and SOC 2 requirements?',
+        question: 'Does GovHub support single sign-on?',
         answer:
-          'Not yet. GovHub does not offer SAML single sign-on today and does not hold a SOC 2 report. The security page lists exactly how GovHub protects your data, and we can walk your security team through it.',
+          'Not yet. GovHub does not offer SAML single sign-on today. The security page lists exactly how GovHub protects your data, and we can walk your security team through it.',
       },
     ],
   },

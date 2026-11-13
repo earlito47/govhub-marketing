@@ -52,7 +52,7 @@ None of the above replace reading the RFP. To refresh how Section L and M drive 
 
 - Color team workflow that matches how you work. Pink, Red, and Gold Teams are not optional on larger bids. You need page level commenting, change tracking, and role based assignments. If your reviewers refuse to leave Word, make sure the tool supports Word based reviews. If they can work in a browser, require granular section locks.
 
-- Security for CUI. If you store Controlled Unclassified Information, DFARS 252.204-7012 requires you to safeguard it and to meet NIST SP 800-171 controls. You likely do not need FedRAMP for a vendor tool used by your company, but you do need SSO, audit logs, data residency clarity, and a path to a signed BAA if you ever store ITAR or HIPAA content. Ask for a current SOC 2 Type II report.
+- Security for CUI. If you store Controlled Unclassified Information, DFARS 252.204-7012 requires you to safeguard it and to meet NIST SP 800-171 controls. The simplest approach for most small contractors is to keep CUI out of proposal tools entirely and confirm how the vendor protects everything else.
 
 - Forms and attachments support. You will encounter SF 33, SF 1449, SF 1442, and numerous agency templates. The tool should manage attachments with correct file names and allow easy inclusion in volumes or appendices. For A E work, check SF 330 support and resume templating.
 
@@ -126,7 +126,7 @@ Use this during vendor calls and trials.
 - Can reviewers comment inline during Pink and Red Teams without creating parallel copies?
 - Does the answer library support fields we need for Past Performance, including contract number, POP, dollar value, and CPARS quote length limits?
 - Can I restrict library access by contract or customer to avoid cross use where it is not allowed?
-- Does the vendor have SOC 2 Type II and support SSO and MFA? Will they sign DFARS 252.204-7012 flow down language on request?
+- How does the vendor protect your data, and will it put that in writing? Will it sign DFARS 252.204-7012 flow down language on request?
 - Can I build a template that matches the RFP volumes, not just a single binder document?
 - Does AI cite requirement IDs and point back to source text in L and M so my editors can verify?
 - Can I bulk rename and package attachments, including SF forms and appendices, to match the RFP file naming scheme?

@@ -54,7 +54,7 @@ If you change plans, the price difference for the rest of your billing period is
 
 You give Linkshub a worldwide, non-exclusive, royalty-free license to host, copy, process, transmit and display Customer Content only as needed to provide, secure and support the Services for you, to prevent abuse, and to comply with law. This includes sending Customer Content to the service providers listed on our [subprocessors page](/subprocessors/), including AI model providers, so they can perform the features you use.
 
-**We do not use Customer Content to train AI models.** Our AI model providers, Anthropic and OpenAI, do not use data sent through their APIs to train their models unless a customer opts in, and we have not opted in. Some features also use Google's Gemini models through Lovable's AI gateway; Lovable states that its contracts with AI providers restrict their training on and retention of customer data [CONFIRM: AI training is turned off in GovHub's Lovable workspace settings, or these features have moved to Anthropic or OpenAI].
+**We do not use Customer Content to train AI models.** Our AI model providers, Anthropic and OpenAI, do not use data sent through their APIs to train their models unless a customer opts in, and we have not opted in.
 
 You confirm that you have the rights and permissions needed to upload Customer Content and to let us process it, including any personal data about your employees, teaming partners or key personnel.
 
@@ -120,7 +120,7 @@ Some jurisdictions do not allow certain warranties to be excluded. In those plac
 
 **17.2 Losses neither party is liable for.** To the fullest extent permitted by law, neither party is liable to the other for any indirect, incidental, special, consequential, exemplary or punitive damages, or for any loss of profits, revenue, business, goodwill, anticipated savings or data, or loss of any contract, award, task order or other opportunity, however caused and whether in contract, tort (including negligence) or otherwise, even if it was told such losses were possible.
 
-**17.3 Our total liability.** To the fullest extent permitted by law, Linkshub's total liability for all claims arising out of or relating to these Terms or the Services, taken together, will not exceed the greater of (a) the fees you paid us for the Services in the 12 months before the event that gave rise to the first claim and (b) US$100. [CONFIRM: the cap amount, the 12-month lookback, and the US$100 amount for free and trial accounts.]
+**17.3 Our total liability.** To the fullest extent permitted by law, Linkshub's total liability for all claims arising out of or relating to these Terms or the Services, taken together, will not exceed the greater of (a) the fees you paid us for the Services in the 12 months before the event that gave rise to the first claim and (b) US$100.
 
 **17.4 Exceptions.** Sections 17.2 and 17.3 do not limit your obligation to pay fees, your obligations under section 18, or your liability for breach of section 2 of the AI and Acceptable Use Policy. Any Data Processing Addendum between us is subject to this section 17.
 
@@ -140,7 +140,7 @@ Linkshub will notify you promptly of the claim (a delay only reduces your obliga
 
 ## 20. Governing law and disputes
 
-These Terms are governed by the laws of the State of Georgia, USA, without regard to conflict of laws rules. The state and federal courts located in Fulton County, Georgia [CONFIRM: venue county. The registered agent's county on file is Fulton, but 30341 addresses are generally in DeKalb County] have exclusive jurisdiction over any dispute arising out of or relating to these Terms or the Services, and each party agrees to that jurisdiction. Either party may seek urgent injunctive relief in any court with jurisdiction to protect its intellectual property or confidential information. The UN Convention on Contracts for the International Sale of Goods does not apply.
+These Terms are governed by the laws of the State of Georgia, USA, without regard to conflict of laws rules. The state and federal courts located in DeKalb County, Georgia have exclusive jurisdiction over any dispute arising out of or relating to these Terms or the Services, and each party agrees to that jurisdiction. Either party may seek urgent injunctive relief in any court with jurisdiction to protect its intellectual property or confidential information. The UN Convention on Contracts for the International Sale of Goods does not apply.
 
 Before starting proceedings, the party with a complaint will send a written description of it to the other, and the parties will try in good faith to resolve it for 30 days.
 
