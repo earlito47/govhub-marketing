@@ -44,6 +44,8 @@
 // --sync never touches a campaign that has left draft. Activation and the
 // per-day caps are a separate, deliberate step (docs/bline-launch.md).
 
+import { DISCLOSURE, hasDisclosure } from './disclosure.mjs';
+
 const API = 'https://api.instantly.ai/api/v2';
 const KEY = process.env.INSTANTLY_API_KEY;
 
@@ -66,7 +68,10 @@ const SCHEDULE = {
   ],
 };
 
-const TAIL = ['', '{{accountSignature}}'];
+// Postal address in {{accountSignature}}, then the advertisement label and
+// opt-out notice CAN-SPAM 7704(a)(5)(A) requires in every commercial message.
+// Added on the legal-drafting branch on 2026-11-13; see disclosure.mjs.
+const TAIL = ['', '{{accountSignature}}', '', DISCLOSURE];
 
 // ---- Mailboxes ------------------------------------------------------------
 // B4 launches on A5's twelve (owner decision 2026-11-10, "option A"): A5 was
@@ -269,7 +274,7 @@ function check() {
         const hits = BANNED.filter((b) => flat.includes(b));
         note(!hits.length, `${label} banned words`, hits.length ? `HITS: ${hits}` : '');
         note(raw.includes('{{accountSignature}}'), `${label} carries the postal address`);
-        note(!/unsubscribe|opt out|opt-out|remove me|reply "no"/i.test(raw), `${label} no unsubscribe language`);
+        note(hasDisclosure(raw), `${label} carries the ad label and opt-out notice once`);
         const links = raw.match(/https?:\/\/\S+/g) || [];
         const isLong = s.variants.length > 1 && j === s.variants.length - 1;
         const maxLinks = i === 0 ? 0 : i === 2 ? 0 : isLong ? 2 : 1;
