@@ -8,7 +8,7 @@ These Terms cover [www.govhub.online](/), the GovHub application at app.govhub.o
 
 The Services are for businesses and other organizations, including sole proprietors, and the people who work for them. They are not offered to consumers for personal, family or household use. You must be at least 18 years old to use them.
 
-If you accept these Terms for a company or other organization, you confirm that you have authority to bind it, and "you" means that organization. You accept these Terms when you create an account and confirm that you agree, when you confirm that you agree the first time you use an account we set up at your request, or when you sign an order that refers to them.
+If you accept these Terms for a company or other organization, you confirm that you have authority to bind it, and "you" means that organization. You accept these Terms when you create an account on a page that tells you that doing so means you agree, when you confirm that you agree the first time you use an account we set up at your request, or when you sign an order that refers to them.
 
 ## 2. Accounts and seats
 
