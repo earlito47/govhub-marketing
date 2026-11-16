@@ -49,6 +49,8 @@ export interface BidRow {
   attachment_count: number;
   /** The posted files' names, percent-encoded as stored; never their links. Older snapshots lack it. */
   attachment_names?: string[] | null;
+  /** When GovHub first listed the bid. Older snapshots lack it. */
+  first_seen_at?: string | null;
 }
 
 export interface Bid {
@@ -71,6 +73,8 @@ export interface Bid {
   setAside: string | null;
   estimatedValue: number | null;
   postedAt: string | null;
+  /** When GovHub first listed it: the bid's date when the agency gives no posted date (appearedAt). */
+  firstSeenAt: string | null;
   dueAt: string | null;
   /** When the source archived it (public_bid_listings closed_at), for closed bids. */
   closedAt: string | null;
@@ -233,6 +237,7 @@ function toBid(row: BidRow, now: number): Omit<Bid, 'slug' | 'path' | 'indexable
     setAside: noEmDash(row.set_aside),
     estimatedValue: row.estimated_value,
     postedAt: row.posted_at,
+    firstSeenAt: row.first_seen_at ?? null,
     dueAt: row.due_at,
     closedAt: row.closed_at,
     timeZone: row.time_zone || 'America/New_York',
@@ -592,9 +597,22 @@ const validPast = (iso: string | null, now: number): number | null => {
 };
 
 /**
+ * When a bid appeared: the date the agency posted it, or, when the agency
+ * gives none, the day GovHub first listed it, which is when the page's
+ * content came to exist. About a quarter of new state and local bids have no
+ * posted date; before this fallback their pages had no <lastmod> and never
+ * reached the new-bids sitemap or feed (1,570 of 12,044 bid pages,
+ * 2026-11-16). Null when neither is known; never the build time.
+ */
+export function appearedAt(b: Bid, now: number): number | null {
+  return validPast(b.postedAt, now) ?? validPast(b.firstSeenAt, now);
+}
+
+/**
  * When a bid page's content last really changed: the day it closed for a
  * closed bid (its status, notice and similar-bids list change), else the
- * date the agency posted it. Null when neither is known; never the build time.
+ * day it appeared (appearedAt). Null when neither is known; never the build
+ * time.
  */
 export function bidLastmod(b: Bid, builtAt: Date): string | null {
   const now = builtAt.getTime();
@@ -602,14 +620,14 @@ export function bidLastmod(b: Bid, builtAt: Date): string | null {
     const t = validPast(b.closedAt, now) ?? validPast(b.dueAt, now);
     if (t !== null) return new Date(t).toISOString();
   }
-  const posted = validPast(b.postedAt, now);
-  return posted === null ? null : new Date(posted).toISOString();
+  const appeared = appearedAt(b, now);
+  return appeared === null ? null : new Date(appeared).toISOString();
 }
 
-/** Posted within FRESH_DAYS of the build, still open, and indexable. */
+/** Appeared (appearedAt) within FRESH_DAYS of the build, still open, and indexable. */
 export function isFresh(b: Bid, builtAt: Date): boolean {
-  const posted = validPast(b.postedAt, builtAt.getTime());
-  return !b.closed && b.indexable && posted !== null && builtAt.getTime() - posted <= FRESH_DAYS * 86_400_000;
+  const appeared = appearedAt(b, builtAt.getTime());
+  return !b.closed && b.indexable && appeared !== null && builtAt.getTime() - appeared <= FRESH_DAYS * 86_400_000;
 }
 
 /** The newest open, indexable bids by posted date, at most `n`, posted within `days`. */
