@@ -58,7 +58,11 @@ jobs:
             exit 1
           fi
           echo "SINCE=$(date -u +%s)" >> "$GITHUB_ENV"
-          curl -fsS -X POST "$HOOK" > /dev/null
+          # Retry a brief outage: on 11/13 the hook answered 503 once and that
+          # afternoon's bids waited for the 02:41 build. curl retries only
+          # transient answers (timeouts, 408, 429, 500, 502, 503, 504), so a
+          # bad hook URL still fails at once.
+          curl -fsS --retry 4 --retry-delay 30 -X POST "$HOOK" > /dev/null
           echo "Build triggered at $(date -u)"
 
       - name: Wait for the new build to go live
