@@ -5205,3 +5205,162 @@ One copy note from the delivered subjects: B4 step 1 reads **"next 3 in
 solicitation number on the grounds that it "reads like a part number in a
 sentence"; the same objection applies here, and "next 3 in NAICS 236220" would
 cost nothing. The opener itself labels it correctly.
+
+## 2026-11-16 — B2 launch day, and why it cannot launch
+
+### The fit judge was filtering on a floor the senders abandoned six days ago
+
+B2's pre-flight needs 500 fit-or-plausible signals at least 16 days from close.
+It reads **0**, down from 198 on Friday. The cause is one constant:
+
+```
+outreach-fit     A2_FLOOR_DAYS = 8      <-- "Assign's A2 floor"
+outreach-push    A2_close_min_days = 16
+outreach-assign  ASSIGN_BUFFERS.rfp_match = 16
+outreach-signals RFP_WINDOW_MIN_DAYS = 16
+```
+
+Assign and push moved to 16 on 11-10; the judge's copy stayed at 8. The judge
+filters on its own floor and takes the **soonest close first**, so a floor below
+the senders' does not merely admit dead signals — it admits them in preference
+to live ones. Every run spent its whole budget on the 8-to-15 day band that both
+senders refuse.
+
+Measured before the fix, on B-line `rfp_match` signals:
+
+| | |
+|---|---|
+| signals | 11,899 |
+| judged by the fit judge | 689 (5.8%) |
+| came back fit or plausible | 492 |
+| of those, at least 16 days out | **3** |
+| of those 492, sitting at exactly 14 days | **455** |
+| unjudged signals already above the 16-day floor | **7,159** |
+
+So the judge was working, its verdicts were sound (71% fit or plausible, close
+to the documented ~80%), and essentially none of its output could ever be sent.
+No amount of throughput would have fixed it: 7,159 usable signals sat unjudged
+while the budget went to the expiring tail.
+
+`A2_FLOOR_DAYS` is now 16. **The deploy is blocked** by the permission
+classifier, so the fix is committed and pushed but not live:
+
+```
+npx -y supabase@2.118.0 functions deploy outreach-fit \
+  --project-ref iqekrwearenblsmhvdjn --use-api --no-verify-jwt
+```
+
+Until it ships, B2 supply cannot build and tonight's pre-flight will hold —
+correctly.
+
+**The guard read three of the four sources.** `close-floor.test.mjs` checks
+push, assign and the opportunities window against each other and passed every
+day for six days while the fourth enforcer sat at half the value. It now reads
+the judge's floor too. The check was added against the unfixed constant first
+and watched to fail (`fit 8, push 16`) before the value was changed.
+
+One residual, left deliberately rather than given a fourth distinct value: the
+judge runs up to a day before assign, so a signal admitted at exactly the floor
+can be a day under it by the time assign looks. That wastes the leading edge of
+each run — roughly the 16-day bucket. Raising the judge alone to 17 fixes it and
+also means four numbers instead of one.
+
+### B4's first three days
+
+225 first touches, exactly 75 on each of 11-12, 11-13 and 11-16, `reconciled:
+true` on every run, `blocked_incomplete` 0 and `blocked_blank_on_lead` 0
+throughout. The award-pace cap, recorded as unproven on 11-12 and exercised once
+on 11-13, held **11** leads today: concentration is rising as predicted.
+
+**Bounce by cohort, which is the only reading that means anything here:**
+
+| cohort | sent | bounced | rate |
+|---|---|---|---|
+| 11-12 | 75 | 5 | 6.7% |
+| 11-13 | 75 | **0** | 0.0% |
+| 11-16 | 75 | not sent yet | — |
+
+**This corrects Friday's entry.** It read the 11-12 cohort's 6.7% as the
+forward-looking rate and said B4's "real rate is near 6-7%, over the 5%
+per-campaign line". The 11-13 cohort came in at zero. Five bounces was too small
+a sample to carry that conclusion, and the cohort method — right in itself — was
+used to over-read n=5. Cumulative is 5/150 = 3.33%.
+
+### B4 is throttled behind A5 on all twelve shared mailboxes
+
+Today's 75 leads were created at 06:00:19 UTC with `status: 1` and
+`status_summary: {}`. B4's window is Mon-Fri 09:00-16:00 America/Detroit, which
+opened and closed in full today. **Nothing sent.** Both earlier cohorts sent on
+their creation day.
+
+Worse, `emails_sent_count` is **150** against 150 contacted leads — exactly one
+email each. **No follow-up has ever gone out on B4**, and with step delays of
+3 and 5 days the 11-12 cohort's step 2 fell due today (Sunday slid to Monday).
+
+B4's twelve mailboxes are the *same twelve* A5 uses — all 12 of 12 shared — and
+A5 has **435 leads in flight** with 6,696 emails sent. Twelve boxes at 25/day is
+300 emails/day for both campaigns together. Today those boxes had to carry A5's
+follow-ups, B4's step 2 for the 11-12 cohort and B4's step 1 for 75 new leads.
+B4 got none of it.
+
+Flagged on 11-11 as "tight for the next week" with the expected symptom being
+"follow-ups drifting later". The actual symptom is harsher: an entire day of
+B4 sending did not happen, and no reader has yet seen email 2 — the one that
+carries the `www.govhub.online/bids/<state>/` link. A5's tail is said to finish
+around 11-20.
+
+### Saying yes still does not reach the proposal pipeline
+
+`outreach.proposal_accepts` is the gate `stage_candidates` requires, and it is
+fed by a script someone runs — `scripts/outreach/sync-proposal-accepts.mjs`,
+which prints a review table and writes nothing without `--apply`. That gate is
+deliberate and right: an accept row authorises creating an account at a real
+person's address off a model classification.
+
+Three accepts are queued behind it:
+
+| address | angle | reply | accepted |
+|---|---|---|---|
+| Elias Squeaky Cleaning | A5 | "Yes that would be great" | 2026-11-05 |
+| B&D Partnership | B4 | "Yes please" | 2026-11-13 |
+| Got To Have It Construction | A2 | "Yes" | 2026-11-13 |
+
+The oldest has waited **eleven days**. The B4 one is that campaign's first
+accept. None has a staged proposal, so none has been handed anything.
+
+### `suppressed` means two different things, and the accept gate cannot tell
+
+The sync refuses any suppressed company with "may not be mailed, so may not be
+provisioned". That is right for an opt-out and wrong for bookkeeping, and of
+216 suppressed companies:
+
+| reason | count | consent? |
+|---|---|---|
+| "present in Instantly (any wave, any status)" | 119 | no — de-dupe |
+| "pushed to Instantly in a prior wave" | 35 | no — de-dupe |
+| declined / asked to stop / dead mailbox | ~62 | yes |
+
+So **154 of 216 suppressions are mailing bookkeeping**, not a refusal. Two
+desk accepts are blocked by one: `info@aadviksolutions.com`, and
+**`kparks@kpcinc.com` — Kizzy Parks, who accepted the access-for-a-review
+counter on 11-08 and has been asking product questions since.** She is treated
+by the gate exactly as if she had asked us to stop.
+
+The other four accepts the sync skips as suppressed are genuine declines, so
+the refusal is doing real work; it just cannot distinguish the two populations.
+A reason-aware check would need to be written against the consent reasons rather
+than the boolean. Not changed from here: it is a consent gate, and widening it
+on my own reading is the one kind of mistake that cannot be undone by a revert.
+
+### Content quality is sound
+
+Over 225 B4 leads and 5,913 A-line leads: **0 incomplete, 0 missing first name,
+0 leaked `{{token}}`, 0 bad openers.** The audit's 198 "problems" are 196 B4
+ALL-CAPS company names — still benign, since no B-line campaign interpolates
+`companyName` — plus A5's two known names.
+
+Matching holds where it can be checked: B4 names a real competitor award in the
+reader's NAICS, and the harvest is state-scoped (1,756 distinct awards, not one
+attached to companies in more than one state), so "a firm in your state" is
+true. B2 only renders for a solicitation the fit judge rated fit or plausible,
+which is precisely why its supply is gated on the judge working correctly.
