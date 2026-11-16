@@ -13,6 +13,7 @@ import { inBusinessHours, sendAfter } from './reply-desk.mjs';
 import { deadlineMs, fmtDeadline, clipText } from './reply-desk/sources.mjs';
 import { renderReviewEmail, draftToHtml, trimQuote } from './reply-desk/review-email.mjs';
 import { stampLinks } from './reply-desk/links.mjs';
+import { isOptOut, blockValue, pendingSuppressions } from './reply-desk/suppress.mjs';
 
 let failed = 0;
 function test(name, fn) {
@@ -209,6 +210,30 @@ test('no lead id: tags only, never an email address', () => {
 test('other sites are left alone', () => {
   const t = 'The notice is https://sam.gov/opp/abc/view and the app is https://app.govhub.online/signup';
   assert.equal(stampLinks(t, { leadId: LID }), t);
+});
+
+console.log('opt-out suppression');
+test('"Stop" and a bare "No" both suppress', () => {
+  assert.ok(isOptOut(ruleCategory(mail('Re: $408K', 'Stop'))));
+  assert.ok(isOptOut(ruleCategory(mail('Re: quick question', 'No thanks'))));
+});
+test('a yes, a question and an autoresponder do not suppress', () => {
+  for (const c of ['accept', 'question', 'auto_reply', 'referral', 'other']) assert.ok(!isOptOut(c), c);
+});
+test('block value is one address, lowercased, never a domain', () => {
+  assert.equal(blockValue('  Jane.Doe@Acme.COM '), 'jane.doe@acme.com');
+  assert.equal(blockValue('acme.com'), null);
+  assert.equal(blockValue(''), null);
+});
+test('failed writes and pre-existing opt-outs are retried; done rows are not', () => {
+  const rows = {
+    a: { lead: 'a@x.com', status: 'suppress_failed', category: 'unsubscribe' },
+    b: { lead: 'b@x.com', status: 'no_action', category: 'not_interested' },
+    c: { lead: 'c@x.com', status: 'no_action', category: 'auto_reply' },
+    d: { lead: 'd@x.com', status: 'suppressed', category: 'unsubscribe' },
+    e: { lead: 'e@x.com', status: 'sent', category: 'accept' },
+  };
+  assert.deepEqual(pendingSuppressions(rows).map((p) => p.id).sort(), ['a', 'b']);
 });
 
 console.log(failed ? `\n${failed} failed` : '\nall passed');

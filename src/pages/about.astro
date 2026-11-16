@@ -5,6 +5,7 @@ import CTABand from '../components/CTABand.astro';
 import PageHero from '../components/PageHero.astro';
 import FAQSchema from '../components/seo/FAQSchema.astro';
 import { APP_URL, CONTACT_EMAIL, SITE_URL } from '../config';
+import { COMPANY } from '../data/legal';
 
 // "GovHub" is a contested name. Over the 90 days to 2026-09-14 the property
 // ranked 6.9 for "govhub" and 7.9 for "gov.hub", and the searches underneath
@@ -25,7 +26,7 @@ const identityFaqs = [
   {
     question: 'Is GovHub a government agency or affiliated with one?',
     answer:
-      'No. GovHub is an independent private company that sells software to businesses bidding on government contracts. It is not a government agency, is not endorsed by one, and is not connected to any state or federal portal that uses a similar name. Nothing submitted through GovHub goes to an agency on your behalf; you file through SAM.gov or the agency portal as usual.',
+      `No. GovHub is a software product of ${COMPANY.legalName}, an independent private company that sells software to businesses bidding on government contracts. It is not a government agency, is not endorsed by one, and is not connected to any state or federal portal that uses a similar name. Nothing submitted through GovHub goes to an agency on your behalf; you file through SAM.gov or the agency portal as usual.`,
   },
   {
     question: 'Is GovHub legitimate?',
@@ -35,7 +36,7 @@ const identityFaqs = [
   {
     question: 'Which domain is the real GovHub?',
     answer:
-      'GovHub the proposal software runs on two addresses and no others: www.govhub.online for this site, and app.govhub.online for the product. Those are the only domains we publish, and every link and login on this site stays inside them. "GovHub" is a common enough name that other organisations use it for unrelated services, so check the address bar rather than the name.',
+      'GovHub the proposal software runs on two addresses and no others: www.govhub.online for this site, and app.govhub.online for the product. Every link and login on this site stays inside them. We also send email to businesses from a set of related domains, all listed on our company and domains page at www.govhub.online/legal/. "GovHub" is a common enough name that other organisations use it for unrelated services, so check the address bar rather than the name.',
   },
 ];
 ---
@@ -99,7 +100,8 @@ const identityFaqs = [
 
       <h2 id="who-we-are">Who GovHub is, plainly</h2>
       <p>
-        GovHub is an independent private company, not a government agency and
+        GovHub is a software product owned and operated by {COMPANY.legalName},
+        an independent private company. It is not a government agency and is
         not affiliated with one. We sell software to businesses that bid on
         government contracts. Filing still happens where it always did, through
         SAM.gov or the agency's own portal; nothing you write in GovHub is
@@ -113,7 +115,9 @@ const identityFaqs = [
         {' '}<a href="/compliance/">compliance posture</a>, and our
         {' '}<a href="/pricing/">pricing</a>, which is published rather than
         quote-on-request. You can reach a person at
-        {' '}<a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.
+        {' '}<a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>. Company
+        details, our address and every domain we send email from are on the
+        {' '}<a href="/legal/">company and domains page</a>.
       </p>
 
       <p>

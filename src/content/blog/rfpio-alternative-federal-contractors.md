@@ -108,7 +108,7 @@ You will see different pricing games. Ask for these in writing.
 
 - Data handling. Where your data is stored, who can access it, and how long after termination. Ask for a data retention and deletion policy.
 
-- Security attestations. SOC 2 Type II, ISO 27001, and any federal relevant posture. If a tool is not FedRAMP authorized, confirm whether your agency customer requires it for their systems. Many proposal tools are out of scope for ATO, but your buyer may ask.
+- Security. Ask how the vendor protects your data and keep CUI out of the tool unless your contract allows it. Many proposal tools are out of scope for ATO, but your buyer may ask.
 
 ROI math is simple. If a tool saves 20 hours of shredding and matrix work per RFP, at a loaded rate of 120 dollars per hour, that is 2,400 dollars saved. At 25 bids a year, that is 60,000 dollars. If win rate moves from 20 percent to 25 percent because you stopped missing L and M musts, and your average award is 1.2 million dollars, that delta is material.
 

@@ -29,7 +29,8 @@
 // and timestamps only, the same rule as instantly-replies.mjs. Reply text,
 // drafts and deliverables live in .cache/ (gitignored) and in Instantly.
 //
-// Env:   INSTANTLY_API_KEY     read + send (emails:read, emails:write, leads:read)
+// Env:   INSTANTLY_API_KEY     read + send + suppress (emails:read, emails:write, leads:read,
+//                              plus block list write for opt-outs: reply-desk/suppress.mjs)
 //        OPENAI_API_KEY        classification, deliverables, composition
 //        REPLY_DESK_MODEL      optional, default gpt-5.5
 //        REPLY_DESK_BCC        optional, BCC every send (recommended for the first ones)
@@ -59,6 +60,7 @@ import { lint, assemble, toHtml, quoteText, attribution } from './reply-desk/voi
 import { DEBRIEF_ONE_PAGER, PARTNER_TERMS, CREATOR_TERMS } from './reply-desk/content.mjs';
 import { renderReviewEmail } from './reply-desk/review-email.mjs';
 import { stampLinks } from './reply-desk/links.mjs';
+import { isOptOut, blockValue, pendingSuppressions } from './reply-desk/suppress.mjs';
 
 const ROOT = fileURLToPath(new URL('../..', import.meta.url));
 // The committed ledger is the scheduled workflow's. A hand run that is trying
@@ -82,6 +84,8 @@ const positional = rest.filter((a) => !a.startsWith('--'));
 //   needs_content  a fixed deliverable is not approved yet (content.mjs)
 //   needs_human    no playbook, or the deliverable could not be built
 //   sent | answered | no_action | referral | superseded | failed | dismissed
+//   suppressed       an opt-out, added to the Instantly workspace blocklist
+//   suppress_failed  the blocklist write failed; every later scan retries it
 const SENDABLE = new Set(['drafted', 'needs_input']);
 
 // ---------------------------------------------------------------------------
@@ -169,6 +173,21 @@ async function scan() {
       console.error(`  FAIL ${leadEmail}: ${err.message.split('\n')[0]}`);
       record(latest.id, { lead: leadEmail, status: 'failed', error: err.message.slice(0, 300) });
       if (!oldestFailure || stamp(latest) < oldestFailure) oldestFailure = stamp(latest);
+    }
+  }
+
+  // Opt-outs whose blocklist write failed on an earlier run. Retried here,
+  // not through the cursor, so they are never dropped once the inbox moves on.
+  if (!onlyLead) {
+    for (const p of pendingSuppressions(ledger.emails)) {
+      try {
+        await ix.block(blockValue(p.lead));
+        record(p.id, { status: 'suppressed', suppressed_at: new Date().toISOString(), error: null });
+        console.log(`  suppressed  (retry)  ${p.lead}`);
+      } catch (err) {
+        record(p.id, { error: err.message.slice(0, 300) });
+        console.error(`  SUPPRESS FAILED (retry) ${p.lead}: ${err.message.split('\n')[0]}`);
+      }
     }
   }
 
@@ -276,11 +295,27 @@ async function handle(ix, leadEmail, inbound) {
     console.log(`  referral    ${key || '?'}  ${leadEmail} -> ${cls.referral_email || cls.referral_name}`);
     return;
   }
+  if (isOptOut(cls.category)) {
+    // unsubscribe and not_interested: put the address on the workspace
+    // blocklist so no other campaign or sending domain mails them again
+    // (reply-desk/suppress.mjs explains why a bare "no" counts). A failed
+    // write is recorded as suppress_failed and retried by every later scan.
+    const value = blockValue(leadEmail);
+    try {
+      if (!value) throw new Error(`not a blockable address: ${leadEmail}`);
+      await ix.block(value);
+      record(inbound.id, { ...base, status: 'suppressed', suppressed_at: new Date().toISOString() });
+      console.log(`  suppressed  ${key || '?'}  ${leadEmail}  (${cls.category})`);
+    } catch (err) {
+      record(inbound.id, { ...base, status: 'suppress_failed', error: err.message.slice(0, 300) });
+      console.error(`  SUPPRESS FAILED ${leadEmail}: ${err.message.split('\n')[0]}`);
+    }
+    return;
+  }
   if (!['accept', 'question'].includes(cls.category)) {
-    // auto_reply, not_interested, unsubscribe: Instantly already stopped the
-    // sequence on reply, and the programme rule is that a bare "no" is read by
-    // a human, never auto-suppressed (instantly-wave1.md). Record and move on.
-    // "other" is a person saying something we cannot route; show it to Earl.
+    // auto_reply: Instantly already stopped the sequence on reply. Record and
+    // move on. "other" is a person saying something we cannot route; show it
+    // to Earl.
     const status = cls.category === 'other' ? 'needs_human' : 'no_action';
     record(inbound.id, { ...base, status });
     if (status === 'needs_human') saveMeta({ id: inbound.id, status, lead: leadEmail, campaign: key, cls, inbound: slim(inbound) });

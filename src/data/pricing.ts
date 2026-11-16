@@ -60,7 +60,6 @@ export const PLANS: Plan[] = [
       '50 proposals per month',
       'Everything in Pro',
       'Team collaboration',
-      'API access',
       'Dedicated success manager',
     ],
   },

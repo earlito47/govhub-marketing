@@ -304,8 +304,12 @@ const CONTENT_GROUP = contentGroupFor(Astro.url.pathname);
         <script is:inline define:vars={{ liPartnerId: LINKEDIN_PARTNER_ID }}>
           var LI_DEV_HOST =
             /^localhost$|^127\.|^\[?::1\]?$|\.local$|\.pages\.dev$|\.workers\.dev$|\.lovable\.app$/;
-          /* No crawler in a LinkedIn website audience (AutomatedBrowserGuard). */
-          if (!LI_DEV_HOST.test(location.hostname) && !window.__ghBot) {
+          /* No crawler in a LinkedIn website audience (AutomatedBrowserGuard).
+             Same opt-out and Global Privacy Control gates as the Meta Pixel and
+             the Google tag: a LinkedIn website audience is ad-tech "sharing"
+             under California law, and the /cookies/ opt-out promises to stop
+             every ad tag on the site. It used to run regardless of both. */
+          if (!LI_DEV_HOST.test(location.hostname) && !window.__ghBot && !window.__ghOptOut && navigator.globalPrivacyControl !== true) {
             window._linkedin_partner_id = liPartnerId;
             window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
             window._linkedin_data_partner_ids.push(liPartnerId);

@@ -285,7 +285,7 @@ const { enabled } = Astro.props;
       capture_pageview: true,
       capture_pageleave: true,
       disable_session_recording: true,
-      /* The /privacy/ button calls opt_out_capturing(), which PostHog keeps in
+      /* The /cookies/ button calls opt_out_capturing(), which PostHog keeps in
          its own storage. Our gh_optout cookie is the record (this code only
          runs without it), so a visitor who turned analytics back on gets
          PostHog back too. */

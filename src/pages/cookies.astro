@@ -1,0 +1,86 @@
+---
+// Text: src/legal/cookies.md. The analytics control lives here (it used to be
+// on /privacy/); /privacy/#analytics-optout links still land on the Privacy
+// Notice, which links here.
+import LegalLayout from '../layouts/LegalLayout.astro';
+import { Content } from '../legal/cookies.md';
+import { COOKIE_DOMAIN } from '../config';
+---
+
+<LegalLayout doc="cookies">
+  <div class="optout" id="analytics-optout">
+    <p class="optout-status" data-optout-status>Analytics are on for this browser.</p>
+    <button type="button" class="optout-btn" data-optout-toggle>Turn off analytics on this browser</button>
+    <p class="optout-note">
+      This stops Google Analytics, PostHog, the Google tag, the Meta Pixel and
+      the LinkedIn Insight Tag on www.govhub.online and app.govhub.online, and
+      removes the gh_lid email link. It applies to this browser only and lasts
+      a year, or until you clear your cookies.
+    </p>
+  </div>
+  <Content />
+</LegalLayout>
+
+<script is:inline define:vars={{ cookieDomain: COOKIE_DOMAIN }}>
+  /* The opt-out button. The gh_optout cookie is the record: LeadLink.astro
+     reads it first in <head> on every page and switches off GA4, PostHog, the
+     Google tag, the Meta Pixel, the LinkedIn Insight Tag and the gh_lid email
+     link, here and on app.govhub.online (strata-parse index.html). This only also stops the page that
+     is already open. */
+  (function () {
+    var box = document.getElementById('analytics-optout');
+    if (!box) return;
+    var status = box.querySelector('[data-optout-status]');
+    var btn = box.querySelector('[data-optout-toggle]');
+    function setCookie(name, value, maxAge) {
+      document.cookie = name + '=' + value + '; Domain=' + cookieDomain + '; Path=/; Max-Age=' + maxAge +
+        '; SameSite=Lax' + (location.protocol === 'https:' ? '; Secure' : '');
+    }
+    function isOut() { return /(?:^|; )gh_optout=1(?:;|$)/.test(document.cookie); }
+    function render() {
+      var out = isOut();
+      status.textContent = out ? 'Analytics are off for this browser.' : 'Analytics are on for this browser.';
+      btn.textContent = out ? 'Turn analytics back on' : 'Turn off analytics on this browser';
+    }
+    btn.addEventListener('click', function () {
+      if (isOut()) {
+        /* PostHog loads again on the next page and clears its own opt-out
+           (Analytics.astro, loaded callback). */
+        setCookie('gh_optout', '', 0);
+      } else {
+        setCookie('gh_optout', '1', 365 * 24 * 60 * 60);
+        setCookie('gh_lid', '', 0);
+        if (window.__ghGaId) window['ga-disable-' + window.__ghGaId] = true;
+        if (window.posthog) {
+          try { window.posthog.unregister('gh_lid'); window.posthog.opt_out_capturing(); } catch (e) { /* not loaded */ }
+        }
+      }
+      render();
+    });
+    render();
+  })();
+</script>
+
+<style>
+  .optout {
+    margin: 1.25rem 0 0;
+    padding: 1rem 1.25rem;
+    border: 1px solid var(--border);
+    border-radius: 0.75rem;
+    background: var(--bg-elevated);
+  }
+  .optout-status { margin: 0 0 0.75rem; color: var(--fg); font-weight: 600; }
+  .optout-btn {
+    font: inherit;
+    font-weight: 600;
+    padding: 0.55rem 1.1rem;
+    border-radius: var(--gh-radius-pill);
+    border: 2px solid var(--gh-navy-600);
+    background: transparent;
+    color: var(--gh-navy-600);
+    cursor: pointer;
+  }
+  .optout-btn:hover { background: var(--gh-navy-600); color: #fff; }
+  .optout-note { font-size: 0.9rem; margin: 0.75rem 0 0; }
+  .optout { margin: 1.5rem 0 1rem; }
+</style>

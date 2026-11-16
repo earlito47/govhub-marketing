@@ -97,7 +97,7 @@ Read the order form and the appendix. These items bite later.
 
 ## Federal data and security, do not skip this
 
-Most proposal content is FCI, not CUI. If you store only FCI, make sure the vendor meets FAR 52.204-21 basic safeguarding controls. Ask for a current security summary and SOC 2 report.
+Most proposal content is FCI, not CUI. If you store only FCI, make sure the vendor meets FAR 52.204-21 basic safeguarding controls. Ask for a current security summary.
 
 If any CUI could land in the tool, especially for DoD or intelligence work, stop. DFARS 252.204-7012 requires NIST SP 800-171 controls and specific incident reporting. Many commercial SaaS tools do not meet that bar. Keep CUI out of the platform, or use a compliant environment.
 

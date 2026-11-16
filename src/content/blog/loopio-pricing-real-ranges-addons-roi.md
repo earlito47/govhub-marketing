@@ -53,7 +53,7 @@ If an add-on is critical on day one, push to bundle it into the base with a sing
 - Auto renewal. 30 to 90 day notice windows are common. Miss it, and you are in for another year. Put a reminder on award anniversary minus 120 days.
 - Price uplifts. 3 to 7 percent per year is normal. Cap it in the order form, not just in an email.
 - Data handling. Ask for data export on demand in a non-proprietary format. Tie offboarding support to a named number of hours. Federal records rules under FAR Subpart 4.7 mean you will retain proposal records. Do not get stuck in a closed system.
-- Security. If you support DoD, review DFARS 252.204-7012 and NIST SP 800-171 obligations before you upload sensitive info. Many teams keep CUI off any non-FedRAMP tool. For civilian work, basic safeguarding under FAR 52.204-21 still applies, including access control and encryption at rest. Confirm these in the vendor security brief.
+- Security. If you support DoD, review DFARS 252.204-7012 and NIST SP 800-171 obligations before you upload sensitive info. Many teams keep CUI out of proposal tools entirely. For civilian work, basic safeguarding under FAR 52.204-21 still applies, including access control and encryption at rest. Confirm these in the vendor security brief.
 
 The hard part. Your library will get sticky. Switching later is not free. Plan your exit path on day one.
 
@@ -96,8 +96,8 @@ If you want a quick survey of pros and cons by use case, see our writeups on [Lo
 
 ## Federal-specific gotchas that change your total cost
 
-- CUI handling. If you touch Covered Defense Information, review DFARS 252.204-7012, -7019, -7020, and -7021. Loopio is a commercial SaaS, not FedRAMP Moderate. Many DoD subs keep CUI in GCC High or on-prem. Keeping CUI out of the RFP tool can limit value, since you will split work across systems.
-- Basic safeguarding. FAR 52.204-21 requires 15 security controls. Confirm encryption at rest, MFA, audit logs, and vulnerability management. Ask for a SOC 2 Type II report, and review exception items.
+- CUI handling. If you touch Covered Defense Information, review DFARS 252.204-7012, -7019, -7020, and -7021. Loopio is a commercial SaaS. Many DoD subs keep CUI in GCC High or on-prem. Keeping CUI out of the RFP tool can limit value, since you will split work across systems.
+- Basic safeguarding. FAR 52.204-21 requires 15 security controls. Confirm encryption at rest, MFA, audit logs, and vulnerability management. Ask for the vendor's security summary in writing.
 - Records and export. FAR Subpart 4.7 and agency clauses require you to retain proposal records. Test exports of your content library and responses early. Budget time for periodic backups to your own repository.
 - Team segregation. If you support both commercial and federal, you may need workspace separation and stricter content tagging. This adds governance overhead.
 - Contractor personnel turnover. Reviewer-only seats might not be named. Ask for pooled or floating seats if you have surge needs during Pink and Red Team cycles.

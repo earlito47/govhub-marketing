@@ -101,9 +101,9 @@ export const audiences: Audience[] = [
           "Resumes, past-performance write-ups, and reference contacts live in a single searchable library and get pulled into the right sections automatically.",
       },
       {
-        title: 'Enterprise SSO and audit trail',
+        title: 'Security your reviewers can check',
         description:
-          "SAML SSO, role-based access, and a full audit trail on every edit, built for larger organizations' compliance requirements.",
+          'Encryption in transit and at rest, account-level data isolation, and no training of AI models on your content. SAML single sign-on is not available yet; see the security page for exactly what GovHub does today.',
       },
     ],
     caseStudySlugs: ['sba-it-service-desk', 'dha-financial-program-management', 'commerce-it-modernization'],
@@ -119,9 +119,9 @@ export const audiences: Audience[] = [
           'GovHub can pull past-performance, resume, and technical content from SharePoint and comparable document stores.',
       },
       {
-        question: 'Does GovHub support SSO and SOC 2 requirements?',
+        question: 'Does GovHub support single sign-on?',
         answer:
-          'Yes. GovHub supports SAML single sign-on, role-based access, and a full audit trail on every edit. See the security page for details on data protection and our compliance posture.',
+          'Not yet. GovHub does not offer SAML single sign-on today. The security page lists exactly how GovHub protects your data, and we can walk your security team through it.',
       },
     ],
   },

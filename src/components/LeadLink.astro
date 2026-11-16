@@ -12,7 +12,7 @@
  *      Pixel read the page URL. The id is ours alone: it never goes to Google
  *      or Meta, and it does not survive a copy-pasted link.
  *
- * Not stored when the visitor has opted out on /privacy/ (gh_optout cookie) or
+ * Not stored when the visitor has opted out on /cookies/ (gh_optout cookie) or
  * their browser sends Global Privacy Control. Opt-out also switches off GA4
  * here, before gtag's config runs (Google's documented ga-disable flag), and
  * sets window.__ghOptOut for the Meta Pixel and Analytics.astro.
@@ -29,7 +29,7 @@ const { gaId } = Astro.props;
 
 <script is:inline define:vars={{ cookieDomain: COOKIE_DOMAIN, gaId }}>
   (function () {
-    window.__ghGaId = gaId; /* for the /privacy/ opt-out button */
+    window.__ghGaId = gaId; /* for the /cookies/ opt-out button */
     var optedOut = /(?:^|; )gh_optout=1(?:;|$)/.test(document.cookie);
     if (optedOut) {
       window.__ghOptOut = true;
