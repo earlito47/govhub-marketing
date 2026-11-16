@@ -1,20 +1,20 @@
 {
   "pageType": "vendor",
   "slug": "cgi-federal",
-  "title": "Cgi Federal Government Contracts: $1.3B (FY2026)",
+  "title": "Cgi Federal Government Contracts: $103M (FY2027)",
   "h1": "Cgi Federal: Federal Contracts, Agencies & Awards",
-  "metaDescription": "Cgi Federal won $1.3B in federal contract obligations in FY2026 to date. See its top agencies, markets, largest awards, and expiring contracts.",
-  "updated": "2026-09-28",
+  "metaDescription": "Cgi Federal won $103M in federal contract obligations in FY2027 to date. See its top agencies, markets, largest awards, and expiring contracts.",
+  "updated": "2026-11-16",
   "fyWindow": {
-    "label": "FY2026 to date",
-    "start": "2025-10-01",
-    "end": "2026-09-28"
+    "label": "FY2027 to date",
+    "start": "2026-10-01",
+    "end": "2026-11-16"
   },
   "stats": {
-    "totalObligations": 1326338028.3,
-    "awardCount": 300,
-    "yoyGrowthPct": 11.1,
-    "avgAwardSize": 4421127,
+    "totalObligations": 102792930.78,
+    "awardCount": 32,
+    "yoyGrowthPct": -92.9,
+    "avgAwardSize": 3212279,
     "smallBusinessSharePct": null
   },
   "charts": [
@@ -26,10 +26,6 @@
         {
           "label": "Obligations",
           "points": [
-            [
-              "FY21",
-              1021489076.52
-            ],
             [
               "FY22",
               1121768899.38
@@ -48,121 +44,121 @@
             ],
             [
               "FY26",
-              1326338028.3
+              1453987505.81
+            ],
+            [
+              "FY27",
+              102792930.78
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Obligations grew 11.1% year over year, from $1.2B in FY2025 to $1.3B in FY2026 to date."
+      "takeaway": "Obligations fell 92.9% year over year, from $1.5B in FY2026 to $103M in FY2027 to date."
     },
     {
       "id": "cgi-federal-top-agencies",
       "type": "bar",
-      "title": "Top 10 buying agencies, FY2026 to date",
+      "title": "Top 10 buying agencies, FY2027 to date",
       "series": [
         {
           "label": "Obligations",
           "points": [
             [
               "General Services Administration",
-              267964271.58
-            ],
-            [
-              "Department of State",
-              266882288.03
-            ],
-            [
-              "Department of Justice",
-              153546541.83
-            ],
-            [
-              "Department of Veterans Affairs",
-              136294077.2
-            ],
-            [
-              "Social Security Administration",
-              129296028.1
-            ],
-            [
-              "Department of Homeland Security",
-              77975661.5
+              33826483.28
             ],
             [
               "Department of Health and Human Services",
-              77320831.54
+              31867628
+            ],
+            [
+              "Department of Justice",
+              21683144.72
+            ],
+            [
+              "Department of Veterans Affairs",
+              7544076.43
             ],
             [
               "Department of Transportation",
-              68571453.85
+              6200000
             ],
             [
-              "National Aeronautics and Space Administration",
-              28120309.28
+              "Department of Commerce",
+              1608441.96
             ],
             [
-              "Department of Defense",
-              27240534.76
+              "Government Accountability Office",
+              1041662.58
+            ],
+            [
+              "Department of Homeland Security",
+              20768.64
+            ],
+            [
+              "Department of the Interior",
+              11748.1
+            ],
+            [
+              "Department of State",
+              1545
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "General Services Administration is Cgi Federal's largest federal customer, with $268M obligated (20.2% of the company's federal obligations)."
+      "takeaway": "General Services Administration is Cgi Federal's largest federal customer, with $33.8M obligated (32.9% of the company's federal obligations)."
     },
     {
       "id": "cgi-federal-top-naics",
       "type": "bar",
-      "title": "Top 10 markets (NAICS), FY2026 to date",
+      "title": "Top 10 markets (NAICS), FY2027 to date",
       "series": [
         {
           "label": "Obligations",
           "points": [
             [
-              "Other Computer Related Services",
-              569097792.09
-            ],
-            [
               "Computer Systems Design Services",
-              287371408.33
-            ],
-            [
-              "Computer Facilities Management Services",
-              217561509.84
-            ],
-            [
-              "Computing Infrastructure Providers, Data Processing, Web Hosting, and Related Services",
-              69101753.95
+              65370885.83
             ],
             [
               "Facilities Support Services",
-              66003890.59
+              15022480.42
             ],
             [
-              "Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology)",
-              53674969.03
+              "Other Computer Related Services",
+              14822928.4
             ],
             [
-              "Custom Computer Programming Services",
-              50187007.23
-            ],
-            [
-              "Administrative Management and General Management Consulting Services",
-              5474372.43
-            ],
-            [
-              "Professional and Management Development Training",
-              4223208.74
+              "Computing Infrastructure Providers, Data Processing, Web Hosting, and Related Services",
+              6177263.1
             ],
             [
               "All Other Information Services",
-              2083325.16
+              1041662.58
+            ],
+            [
+              "Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology)",
+              323225.45
+            ],
+            [
+              "Custom Computer Programming Services",
+              34485
+            ],
+            [
+              "Engineering Services",
+              0
+            ],
+            [
+              "Administrative Management and General Management Consulting Services",
+              0
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Other Computer Related Services is Cgi Federal's largest federal market, with $569M in obligations."
+      "takeaway": "Computer Systems Design Services is Cgi Federal's largest federal market, with $65.4M in obligations."
     }
   ],
   "crossLinks": [
@@ -171,8 +167,8 @@
       "href": "/insights/agency/general-services-administration/"
     },
     {
-      "label": "Department of State contracts",
-      "href": "/insights/agency/department-of-state/"
+      "label": "Department of Health and Human Services contracts",
+      "href": "/insights/agency/department-of-health-and-human-services/"
     },
     {
       "label": "Department of Justice contracts",
@@ -183,10 +179,6 @@
       "href": "/insights/agency/department-of-veterans-affairs/"
     },
     {
-      "label": "NAICS 541519: Other Computer Related Services",
-      "href": "/insights/naics/541519/"
-    },
-    {
       "label": "NAICS 541512: Computer Systems Design Services",
       "href": "/insights/naics/541512/"
     },
@@ -195,13 +187,17 @@
       "href": "/insights/naics/561210/"
     },
     {
+      "label": "NAICS 541519: Other Computer Related Services",
+      "href": "/insights/naics/541519/"
+    },
+    {
       "label": "NAICS 541715: Research and Development in the Physical, Engineering, and Life Sciences",
       "href": "/insights/naics/541715/"
     }
   ],
   "tables": [
     {
-      "title": "Largest awards, FY2026 to date",
+      "title": "Largest awards, FY2027 to date",
       "columns": [
         "Rank",
         "Award",
@@ -213,55 +209,15 @@
         [
           1,
           {
-            "text": "36C10B18F0278",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10B18F0278_3600_HHSN316201200011W_7529/"
-          },
-          783318157.08,
-          "Department of Veterans Affairs",
-          "2026-07-01"
-        ],
-        [
-          2,
-          {
-            "text": "SAQMMA17F3765",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_SAQMMA17F3765_1900_SAQMMA17D0109_1900/"
-          },
-          619973279.58,
-          "Department of State",
-          "2024-05-09"
-        ],
-        [
-          3,
-          {
-            "text": "19AQMM18C0013",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_19AQMM18C0013_1900_-NONE-_-NONE-/"
-          },
-          403314667.8,
-          "Department of State",
-          "2027-04-26"
-        ],
-        [
-          4,
-          {
-            "text": "19AQMM24C0062",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_19AQMM24C0062_1900_-NONE-_-NONE-/"
-          },
-          396674888.73,
-          "Department of State",
-          "2026-09-29"
-        ],
-        [
-          5,
-          {
             "text": "47QFRA19F0014",
             "href": "https://www.usaspending.gov/award/CONT_AWD_47QFRA19F0014_4732_GS00Q09BGD0022_4735/"
           },
-          336215940.8,
+          334021572.04,
           "General Services Administration",
           "2024-06-19"
         ],
         [
-          6,
+          2,
           {
             "text": "47QFRA20F0021",
             "href": "https://www.usaspending.gov/award/CONT_AWD_47QFRA20F0021_4732_47QTCK18D0022_4732/"
@@ -271,57 +227,27 @@
           "2027-09-04"
         ],
         [
-          7,
+          3,
           {
             "text": "HHSM500201600006U",
             "href": "https://www.usaspending.gov/award/CONT_AWD_HHSM500201600006U_7530_HHSN316201200011W_7529/"
           },
-          261858878.77,
+          293726506.77,
           "Department of Health and Human Services",
-          "2026-11-30"
+          "2027-11-30"
         ],
         [
-          8,
-          {
-            "text": "140D0419F0357",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_140D0419F0357_1406_IND13PC00021_1406/"
-          },
-          162705698.39,
-          "Department of the Interior",
-          "2025-02-28"
-        ],
-        [
-          9,
-          {
-            "text": "80MSFC21FA009",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_80MSFC21FA009_8000_80MSFC21DA007_8000/"
-          },
-          158904952.71,
-          "National Aeronautics and Space Administration",
-          "2026-08-31"
-        ],
-        [
-          10,
-          {
-            "text": "19AQMM18F0003",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_19AQMM18F0003_1900_SAQMMA10D0018_1900/"
-          },
-          155114308.93,
-          "Department of State",
-          "2024-12-31"
-        ],
-        [
-          11,
+          4,
           {
             "text": "47QFRA24F0007",
             "href": "https://www.usaspending.gov/award/CONT_AWD_47QFRA24F0007_4732_47QTCK18D0022_4732/"
           },
-          147892818.33,
+          148886170.92,
           "General Services Administration",
           "2027-04-30"
         ],
         [
-          12,
+          5,
           {
             "text": "47QFCA23F0030",
             "href": "https://www.usaspending.gov/award/CONT_AWD_47QFCA23F0030_4732_47QTCK18D0022_4732/"
@@ -331,134 +257,204 @@
           "2027-07-09"
         ],
         [
-          13,
+          6,
           {
             "text": "15JPSS22F00000171",
             "href": "https://www.usaspending.gov/award/CONT_AWD_15JPSS22F00000171_1501_15JPSS22A00000026_1501/"
           },
-          122079770.1,
+          128228914.42,
           "Department of Justice",
-          "2026-09-30"
+          "2027-09-30"
         ],
         [
-          14,
-          {
-            "text": "28321326FDS030046",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_28321326FDS030046_2800_SS001760018_2800/"
-          },
-          110542852.84,
-          "Social Security Administration",
-          "2027-09-28"
-        ],
-        [
-          15,
-          {
-            "text": "70SBUR23F00000104",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_70SBUR23F00000104_7003_47QTCK18D0022_4732/"
-          },
-          105380943.34,
-          "Department of Homeland Security",
-          "2027-07-14"
-        ],
-        [
-          16,
-          {
-            "text": "36C10B26F0063",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10B26F0063_3600_GS35F281DA_4732/"
-          },
-          98458893.5,
-          "Department of Veterans Affairs",
-          "2027-03-03"
-        ],
-        [
-          17,
-          {
-            "text": "19AQMM25C0286",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_19AQMM25C0286_1900_-NONE-_-NONE-/"
-          },
-          92022904.02,
-          "Department of State",
-          "2027-09-29"
-        ],
-        [
-          18,
-          {
-            "text": "47HAA023F0039",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_47HAA023F0039_4773_HHSN316201200011W_7529/"
-          },
-          76462889.24,
-          "General Services Administration",
-          "2026-07-31"
-        ],
-        [
-          19,
+          7,
           {
             "text": "693KA725F00017",
             "href": "https://www.usaspending.gov/award/CONT_AWD_693KA725F00017_6920_693KA725D00001_6920/"
           },
-          76312736.5,
+          82512736.5,
           "Department of Transportation",
-          "2026-09-30"
+          "2026-12-31"
+        ],
+        [
+          8,
+          {
+            "text": "47QFEA26F0009",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_47QFEA26F0009_4732_47QTCK18D0022_4732/"
+          },
+          42756539.48,
+          "General Services Administration",
+          "2027-08-25"
+        ],
+        [
+          9,
+          {
+            "text": "19AQMM24F7235",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_19AQMM24F7235_1900_19AQMM24A0165_1900/"
+          },
+          26732386.95,
+          "Department of State",
+          "2027-01-31"
+        ],
+        [
+          10,
+          {
+            "text": "47QFLA23F0196",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_47QFLA23F0196_4732_47QFLA21D0004_4732/"
+          },
+          23113716.87,
+          "General Services Administration",
+          "2027-09-17"
+        ],
+        [
+          11,
+          {
+            "text": "68HERD25F0113",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_68HERD25F0113_6800_GS35F281DA_4732/"
+          },
+          16665476.23,
+          "Environmental Protection Agency",
+          "2029-06-30"
+        ],
+        [
+          12,
+          {
+            "text": "36C10B26F0001",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10B26F0001_3600_GS35F281DA_4732/"
+          },
+          14705744.03,
+          "Department of Veterans Affairs",
+          "2027-09-30"
+        ],
+        [
+          13,
+          {
+            "text": "47QFLA24F0088",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_47QFLA24F0088_4732_47QFLA23D0012_4732/"
+          },
+          13760747.07,
+          "General Services Administration",
+          "2027-01-31"
+        ],
+        [
+          14,
+          {
+            "text": "15JPSS26F00001681",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_15JPSS26F00001681_1501_15JPSS20D00000453_1501/"
+          },
+          13734904.15,
+          "Department of Justice",
+          "2027-09-30"
+        ],
+        [
+          15,
+          {
+            "text": "05GA0A22C0001",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_05GA0A22C0001_0559_-NONE-_-NONE-/"
+          },
+          10721879.72,
+          "Government Accountability Office",
+          "2027-04-30"
+        ],
+        [
+          16,
+          {
+            "text": "70B02C24C00000158",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70B02C24C00000158_7014_-NONE-_-NONE-/"
+          },
+          9491573.47,
+          "Department of Homeland Security",
+          "2027-09-29"
+        ],
+        [
+          17,
+          {
+            "text": "47QFLA26F0010",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_47QFLA26F0010_4732_47QFLA21D0004_4732/"
+          },
+          6827200.25,
+          "General Services Administration",
+          "2027-01-29"
+        ],
+        [
+          18,
+          {
+            "text": "1333BJ25F00184001",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_1333BJ25F00184001_1344_1333BJ24A00180001_1344/"
+          },
+          4728719.21,
+          "Department of Commerce",
+          "2027-09-30"
+        ],
+        [
+          19,
+          {
+            "text": "15JPSS21F00000296",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_15JPSS21F00000296_1501_15JPSS21A00000053_1501/"
+          },
+          4027617.82,
+          "Department of Justice",
+          "2025-10-31"
         ],
         [
           20,
           {
-            "text": "75FCMC21F0047",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_75FCMC21F0047_7530_GS35F281DA_4732/"
+            "text": "15JPSS22F00000247",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_15JPSS22F00000247_1501_15JPSS21A00000065_1501/"
           },
-          72205672.01,
-          "Department of Health and Human Services",
-          "2026-03-31"
+          3757800.87,
+          "Department of Justice",
+          "2027-02-28"
         ],
         [
           21,
           {
-            "text": "15JPSS24F00000894",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_15JPSS24F00000894_1501_15JPSS20D00000453_1501/"
+            "text": "15JPSS25F00000868",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_15JPSS25F00000868_1501_15JPSS22A00000026_1501/"
           },
-          65466561.53,
+          2969946.6,
           "Department of Justice",
-          "2025-09-30"
+          "2027-09-30"
         ],
         [
           22,
           {
-            "text": "15JPSS25F00000741",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_15JPSS25F00000741_1501_15JPSS20D00000453_1501/"
+            "text": "28321326FDX030064",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_28321326FDX030064_2800_GS35F281DA_4732/"
           },
-          64978402.75,
-          "Department of Justice",
-          "2026-09-30"
+          2188730.24,
+          "Social Security Administration",
+          "2027-05-03"
         ],
         [
           23,
           {
-            "text": "SAQMMA17F1163",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_SAQMMA17F1163_1900_SAQMMA10D0018_1900/"
+            "text": "140D0424F1304",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_140D0424F1304_1406_140D0424D0087_1406/"
           },
-          61476986.75,
-          "Department of State",
-          "2024-06-30"
+          1456110.46,
+          "Department of the Interior",
+          "2027-09-22"
         ],
         [
           24,
           {
-            "text": "70RDAD23FC0000120",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_70RDAD23FC0000120_7001_70RDAD21A00000005_7001/"
+            "text": "15JPSS26F00001674",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_15JPSS26F00001674_1501_15JPSS20D00000453_1501/"
           },
-          56388948.35,
-          "Department of Homeland Security",
-          "2027-02-26"
+          1111516.96,
+          "Department of Justice",
+          "2027-09-30"
         ],
         [
           25,
           {
-            "text": "28321325FDS030155",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_28321325FDS030155_2800_SS001760018_2800/"
+            "text": "68HERD24F0104",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_68HERD24F0104_6800_68HERD24A0002_6800/"
           },
-          55007995.46,
-          "Social Security Administration",
-          "2027-09-28"
+          1014549.28,
+          "Environmental Protection Agency",
+          "2027-07-23"
         ]
       ]
     },
@@ -473,21 +469,21 @@
       "rows": [
         [
           {
+            "text": "19AQMM24C0062",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_19AQMM24C0062_1900_-NONE-_-NONE-/"
+          },
+          "Department of State",
+          495029373.33,
+          "2027-03-29"
+        ],
+        [
+          {
             "text": "19AQMM18C0013",
             "href": "https://www.usaspending.gov/award/CONT_AWD_19AQMM18C0013_1900_-NONE-_-NONE-/"
           },
           "Department of State",
           403314667.8,
           "2027-04-26"
-        ],
-        [
-          {
-            "text": "19AQMM24C0062",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_19AQMM24C0062_1900_-NONE-_-NONE-/"
-          },
-          "Department of State",
-          396674888.73,
-          "2026-09-29"
         ],
         [
           {
@@ -500,20 +496,11 @@
         ],
         [
           {
-            "text": "HHSM500201600006U",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_HHSM500201600006U_7530_HHSN316201200011W_7529/"
-          },
-          "Department of Health and Human Services",
-          261858878.77,
-          "2026-11-30"
-        ],
-        [
-          {
             "text": "47QFRA24F0007",
             "href": "https://www.usaspending.gov/award/CONT_AWD_47QFRA24F0007_4732_47QTCK18D0022_4732/"
           },
           "General Services Administration",
-          147892818.33,
+          148886170.92,
           "2027-04-30"
         ],
         [
@@ -531,8 +518,8 @@
             "href": "https://www.usaspending.gov/award/CONT_AWD_15JPSS22F00000171_1501_15JPSS22A00000026_1501/"
           },
           "Department of Justice",
-          122079770.1,
-          "2026-09-30"
+          128228914.42,
+          "2027-09-30"
         ],
         [
           {
@@ -549,7 +536,7 @@
             "href": "https://www.usaspending.gov/award/CONT_AWD_70SBUR23F00000104_7003_47QTCK18D0022_4732/"
           },
           "Department of Homeland Security",
-          105380943.34,
+          104213718.3,
           "2027-07-14"
         ],
         [
@@ -560,6 +547,15 @@
           "Department of Veterans Affairs",
           98458893.5,
           "2027-03-03"
+        ],
+        [
+          {
+            "text": "19AQMM25C0286",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_19AQMM25C0286_1900_-NONE-_-NONE-/"
+          },
+          "Department of State",
+          92022904.02,
+          "2027-09-29"
         ]
       ]
     },
@@ -584,40 +580,40 @@
         ],
         [
           "Business types",
-          "Category business; Corporate entity not tax exempt; Foreign owned; Other than small business; Special designations; Us owned business"
+          "Category business; Corporate entity not tax exempt; Foreign owned; Foreign owned and us located business; Other than small business; Special designations"
         ]
       ]
     }
   ],
   "narrative": {
-    "intro": "Cgi Federal obligated $1.3B in FY2026 to date across 300 awards, with an average award size of $4.4M and obligations up 11.1% year over year. Cgi Federal’s obligations have risen from $1B in FY21 to $1.3B in FY26, showing steady growth each fiscal year. Cgi Federal’s largest buying agencies so far are the General Services Administration with $268M and the Department of State with $267M, followed by the Department of Justice with $154M and the Department of Veterans Affairs with $136M. Cgi Federal’s work concentrates in information technology and related services, led by Other Computer Related Services at $569M, Computer Systems Design Services at $287M, and Computer Facilities Management Services at $218M. Cgi Federal also has focused work in Computing Infrastructure Providers at $69.1M and Facilities Support Services at $66M. This profile reflects a vendor whose federal revenue is concentrated in IT services sales to a mix of civilian agencies and some defense and research customers.",
+    "intro": "Cgi Federal obligated $103M in federal contracts in FY2027 to date, across 32 awards with an average award size of $3.2M. Obligations fell 92.9% year over year compared with the prior full fiscal year. Fiscal history shows obligations of $1.1B in FY22, $1.1B in FY23, $1.2B in FY24, $1.2B in FY25, and $1.5B in FY26. The General Services Administration, the Department of Health and Human Services, and the Department of Justice are the top buyers so far, receiving $33.8M, $31.9M, and $21.7M respectively. Computer Systems Design Services is the largest NAICS market for Cgi Federal this year at $65.4M, followed by Facilities Support Services at $15M and Other Computer Related Services at $14.8M. Smaller markets include Computing Infrastructure Providers at $6.2M and Research and Development in the Physical, Engineering, and Life Sciences at $323K. Current-year totals are partial because the fiscal year is ongoing, and the figures above are contract obligations except where noted as total contract values in award tables.",
     "sections": [
       {
-        "heading": "How big is Cgi Federal's federal contracting footprint?",
-        "body": "Cgi Federal obligated $1.3B in FY2026 to date through 300 awards, with an average award size of $4.4M. Cgi Federal’s obligations are up 11.1% year over year and have climbed from $1B in FY21 to $1.3B in FY26. Cgi Federal’s recent annual totals show steady increases each fiscal year."
+        "heading": "How has Cgi Federal’s obligation level changed this fiscal year?",
+        "body": "Cgi Federal obligated $103M in FY2027 to date. Obligations fell 92.9% year over year compared with the prior period. Fiscal-year history shows a peak of $1.5B in FY26 and then the current $103M partial-year total."
       },
       {
-        "heading": "Who are Cgi Federal’s top buyers and what markets do they serve?",
-        "body": "General Services Administration and the Department of State are the top buyers, with $268M and $267M respectively, followed by the Department of Justice at $154M and the Department of Veterans Affairs at $136M. Other major markets for Cgi Federal are Other Computer Related Services at $569M, Computer Systems Design Services at $287M, and Computer Facilities Management Services at $218M. Cgi Federal’s mix includes computing infrastructure, facilities support, and R&D services across civilian and defense agencies."
+        "heading": "Which agencies and markets are driving Cgi Federal’s FY2027 work?",
+        "body": "The General Services Administration, the Department of Health and Human Services, and the Department of Justice account for the largest shares of FY2027 obligations at $33.8M, $31.9M, and $21.7M respectively. Computer Systems Design Services is the largest market at $65.4M, with Facilities Support Services at $15M and Other Computer Related Services at $14.8M supporting the total."
       }
     ]
   },
   "faq": [
     {
       "q": "How much does Cgi Federal make from federal contracts?",
-      "a": "Cgi Federal makes $1.3B from federal contracts in FY2026 to date. Cgi Federal earned that total across 300 awards, with an average award size of $4.4M and obligations up 11.1% year over year."
+      "a": "Cgi Federal made $103M in federal contract obligations in FY2027 to date. Fiscal history shows prior-year obligations of $1.1B in FY22, $1.1B in FY23, $1.2B in FY24, $1.2B in FY25, and $1.5B in FY26. The company received 32 awards so far this fiscal year with an average award size of $3.2M."
     },
     {
       "q": "Which agencies buy from Cgi Federal?",
-      "a": "The top agencies buying from Cgi Federal are the General Services Administration and the Department of State. The General Services Administration obligated $268M and the Department of State obligated $267M in FY2026 to date, followed by the Department of Justice at $154M, the Department of Veterans Affairs at $136M, and the Social Security Administration at $129M."
+      "a": "The General Services Administration, the Department of Health and Human Services, and the Department of Justice are the top buyers of Cgi Federal work in FY2027 to date. Those agencies obligated $33.8M, $31.9M, and $21.7M respectively. Other buyers this year include the Department of Veterans Affairs at $7.5M and the Department of Transportation at $6.2M."
     },
     {
       "q": "What does Cgi Federal sell to the government?",
-      "a": "Cgi Federal sells information technology and related services to the government. Cgi Federal’s largest markets are Other Computer Related Services at $569M, Computer Systems Design Services at $287M, and Computer Facilities Management Services at $218M, with additional work in computing infrastructure, facilities support, and R&D."
+      "a": "Cgi Federal sells primarily Computer Systems Design Services to the government, totaling $65.4M in FY2027 to date. Cgi Federal also provides Facilities Support Services at $15M and Other Computer Related Services at $14.8M, with additional work in Computing Infrastructure Providers at $6.2M and R&D in the physical and engineering sciences at $323K."
     },
     {
       "q": "Which Cgi Federal contracts are expiring soon?",
-      "a": "No expiring-contracts table is listed in the provided facts. The available information lists obligations, top buying agencies, and top NAICS markets but does not include a list of contracts that are expiring soon."
+      "a": "No expiring-contracts data is provided in the available figures. The dataset lists current obligations, top buyers, and top markets for FY2027 to date but does not include an expiring-contracts table in the supplied figures."
     }
   ],
   "related": [
@@ -626,28 +622,28 @@
       "href": "/insights/expiring-federal-contracts/"
     },
     {
-      "label": "Battelle Memorial Institute federal contracts",
-      "href": "/insights/vendor/battelle-memorial-institute/"
+      "label": "Uchicago Argonne federal contracts",
+      "href": "/insights/vendor/uchicago-argonne/"
     },
     {
-      "label": "General Electric federal contracts",
-      "href": "/insights/vendor/general-electric/"
+      "label": "Gilbane Federal federal contracts",
+      "href": "/insights/vendor/gilbane-federal/"
     },
     {
-      "label": "Bell Boeing Joint Project Office federal contracts",
-      "href": "/insights/vendor/bell-boeing-joint-project-office/"
+      "label": "United Cleanup Oak Ridge federal contracts",
+      "href": "/insights/vendor/united-cleanup-oak-ridge/"
     },
     {
-      "label": "Stonex Financial federal contracts",
-      "href": "/insights/vendor/stonex-financial/"
+      "label": "Fedex Supply Chain Distribution System federal contracts",
+      "href": "/insights/vendor/fedex-supply-chain-distribution-system/"
     },
     {
-      "label": "Palantir Usg federal contracts",
-      "href": "/insights/vendor/palantir-usg/"
+      "label": "Peachtree Lumber federal contracts",
+      "href": "/insights/vendor/peachtree-lumber/"
     },
     {
-      "label": "Csi Aviation federal contracts",
-      "href": "/insights/vendor/csi-aviation/"
+      "label": "Lumen Technologies Government Solutions federal contracts",
+      "href": "/insights/vendor/lumen-technologies-government-solutions/"
     }
   ],
   "sources": [

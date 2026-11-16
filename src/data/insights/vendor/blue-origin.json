@@ -1,20 +1,20 @@
 {
   "pageType": "vendor",
   "slug": "blue-origin",
-  "title": "Blue Origin Federal Contracts: $1B in FY2026",
+  "title": "Blue Origin Federal Contracts: $99.2M in FY2027",
   "h1": "Blue Origin: Federal Contracts, Agencies & Awards",
-  "metaDescription": "Blue Origin won $1B in federal contract obligations in FY2026 to date. See its top agencies, markets, largest awards, and expiring contracts.",
-  "updated": "2026-09-07",
+  "metaDescription": "Blue Origin won $99.2M in federal contract obligations in FY2027 to date. See its top agencies, markets, largest awards, and expiring contracts.",
+  "updated": "2026-11-16",
   "fyWindow": {
-    "label": "FY2026 to date",
-    "start": "2025-10-01",
-    "end": "2026-09-07"
+    "label": "FY2027 to date",
+    "start": "2026-10-01",
+    "end": "2026-11-16"
   },
   "stats": {
-    "totalObligations": 1021993172,
-    "awardCount": 13,
-    "yoyGrowthPct": 863.6,
-    "avgAwardSize": 78614859,
+    "totalObligations": 99215772.29,
+    "awardCount": 2,
+    "yoyGrowthPct": -90.9,
+    "avgAwardSize": 49607886,
     "smallBusinessSharePct": null
   },
   "charts": [
@@ -26,10 +26,6 @@
         {
           "label": "Obligations",
           "points": [
-            [
-              "FY21",
-              20000
-            ],
             [
               "FY22",
               357498
@@ -48,80 +44,23 @@
             ],
             [
               "FY26",
-              1021993172
+              1095336306.71
+            ],
+            [
+              "FY27",
+              99215772.29
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Obligations grew 863.6% year over year, from $106M in FY2025 to $1B in FY2026 to date."
-    },
-    {
-      "id": "blue-origin-top-agencies",
-      "type": "bar",
-      "title": "Top 10 buying agencies, FY2026 to date",
-      "series": [
-        {
-          "label": "Obligations",
-          "points": [
-            [
-              "National Aeronautics and Space Administration",
-              734910642
-            ],
-            [
-              "Department of Defense",
-              287082530
-            ]
-          ]
-        }
-      ],
-      "unit": "usd",
-      "takeaway": "National Aeronautics and Space Administration is Blue Origin's largest federal customer, with $735M obligated (71.9% of the company's federal obligations)."
-    },
-    {
-      "id": "blue-origin-top-naics",
-      "type": "bar",
-      "title": "Top 10 markets (NAICS), FY2026 to date",
-      "series": [
-        {
-          "label": "Obligations",
-          "points": [
-            [
-              "Guided Missile and Space Vehicle Manufacturing",
-              743625963
-            ],
-            [
-              "Nonscheduled Chartered Freight Air Transportation",
-              277968250
-            ],
-            [
-              "Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology)",
-              398959
-            ]
-          ]
-        }
-      ],
-      "unit": "usd",
-      "takeaway": "Guided Missile and Space Vehicle Manufacturing is Blue Origin's largest federal market, with $744M in obligations."
+      "takeaway": "Obligations fell 90.9% year over year, from $1.1B in FY2026 to $99.2M in FY2027 to date."
     }
   ],
-  "crossLinks": [
-    {
-      "label": "National Aeronautics and Space Administration contracts",
-      "href": "/insights/agency/national-aeronautics-and-space-administration/"
-    },
-    {
-      "label": "Department of Defense contracts",
-      "href": "/insights/agency/department-of-defense/"
-    },
-    {
-      "label": "NAICS 541715: Research and Development in the Physical, Engineering, and Life Sciences",
-      "href": "/insights/naics/541715/"
-    }
-  ],
+  "crossLinks": [],
   "tables": [
     {
-      "title": "Largest awards, FY2026 to date",
+      "title": "Largest awards, FY2027 to date",
       "columns": [
         "Rank",
         "Award",
@@ -133,132 +72,22 @@
         [
           1,
           {
-            "text": "80GSFC26C0032",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_80GSFC26C0032_8000_-NONE-_-NONE-/"
+            "text": "80KSC023FA102",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_80KSC023FA102_8000_80KSC022DA102_8000/"
           },
-          660000017,
+          127335002,
           "National Aeronautics and Space Administration",
-          "2030-12-31"
+          "2032-01-27"
         ],
         [
           2,
           {
-            "text": "FA881125FB011",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_FA881125FB011_9700_FA881125DB005_9700/"
+            "text": "80JSC027F7004",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_80JSC027F7004_8000_80JSC020D0010_8000/"
           },
-          181650000,
-          "Department of Defense",
-          "2027-04-13"
-        ],
-        [
-          3,
-          {
-            "text": "FA881126FB016",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_FA881126FB016_9700_FA881124DB002_9700/"
-          },
-          125201055,
-          "Department of Defense",
-          "2028-03-15"
-        ],
-        [
-          4,
-          {
-            "text": "FA880226C0002",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_FA880226C0002_9700_-NONE-_-NONE-/"
-          },
-          78256000,
-          "Department of Defense",
-          "2028-01-30"
-        ],
-        [
-          5,
-          {
-            "text": "80JSC025F7071",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_80JSC025F7071_8000_80JSC020D0010_8000/"
-          },
-          55100000,
-          "National Aeronautics and Space Administration",
-          "2026-12-31"
-        ],
-        [
-          6,
-          {
-            "text": "80JSC026F7015",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_80JSC026F7015_8000_80JSC020D0010_8000/"
-          },
-          31960000,
+          25380000,
           "National Aeronautics and Space Administration",
           "2027-08-30"
-        ],
-        [
-          7,
-          {
-            "text": "80JSC026F7013",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_80JSC026F7013_8000_80JSC020D0010_8000/"
-          },
-          31960000,
-          "National Aeronautics and Space Administration",
-          "2027-08-30"
-        ],
-        [
-          8,
-          {
-            "text": "80JSC024F0068",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_80JSC024F0068_8000_80JSC020D0010_8000/"
-          },
-          18720211,
-          "National Aeronautics and Space Administration",
-          "2027-07-31"
-        ],
-        [
-          9,
-          {
-            "text": "80KSC021C0009",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_80KSC021C0009_8000_-NONE-_-NONE-/"
-          },
-          7034713,
-          "National Aeronautics and Space Administration",
-          "2030-09-30"
-        ],
-        [
-          10,
-          {
-            "text": "80HQTR25CA003",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_80HQTR25CA003_8000_-NONE-_-NONE-/"
-          },
-          4387006,
-          "National Aeronautics and Space Administration",
-          "2026-09-30"
-        ],
-        [
-          11,
-          {
-            "text": "FA881126FB012",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_FA881126FB012_9700_FA881125DB005_9700/"
-          },
-          1974975,
-          "Department of Defense",
-          "2027-04-30"
-        ],
-        [
-          12,
-          {
-            "text": "80AFRC25FA034",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_80AFRC25FA034_8000_80AFRC25DA001_8000/"
-          },
-          500000,
-          "National Aeronautics and Space Administration",
-          "2027-06-30"
-        ],
-        [
-          13,
-          {
-            "text": "HQ085926FG319",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_HQ085926FG319_9700_HQ085926DG443_9700/"
-          },
-          500,
-          "Department of Defense",
-          "2035-12-28"
         ]
       ]
     },
@@ -282,6 +111,15 @@
         ],
         [
           {
+            "text": "80JSC026F7013",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_80JSC026F7013_8000_80JSC020D0010_8000/"
+          },
+          "National Aeronautics and Space Administration",
+          64860000,
+          "2027-08-30"
+        ],
+        [
+          {
             "text": "80JSC025F7071",
             "href": "https://www.usaspending.gov/award/CONT_AWD_80JSC025F7071_8000_80JSC020D0010_8000/"
           },
@@ -295,16 +133,16 @@
             "href": "https://www.usaspending.gov/award/CONT_AWD_80JSC026F7015_8000_80JSC020D0010_8000/"
           },
           "National Aeronautics and Space Administration",
-          31960000,
+          36660000,
           "2027-08-30"
         ],
         [
           {
-            "text": "80JSC026F7013",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_80JSC026F7013_8000_80JSC020D0010_8000/"
+            "text": "80JSC027F7004",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_80JSC027F7004_8000_80JSC020D0010_8000/"
           },
           "National Aeronautics and Space Administration",
-          31960000,
+          25380000,
           "2027-08-30"
         ],
         [
@@ -318,39 +156,12 @@
         ],
         [
           {
-            "text": "80KSC023FA102",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_80KSC023FA102_8000_80KSC022DA102_8000/"
-          },
-          "National Aeronautics and Space Administration",
-          18475002,
-          "2027-02-03"
-        ],
-        [
-          {
-            "text": "80HQTR25CA003",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_80HQTR25CA003_8000_-NONE-_-NONE-/"
-          },
-          "National Aeronautics and Space Administration",
-          4387006,
-          "2026-09-30"
-        ],
-        [
-          {
             "text": "FA881126FB012",
             "href": "https://www.usaspending.gov/award/CONT_AWD_FA881126FB012_9700_FA881125DB005_9700/"
           },
           "Department of Defense",
           1974975,
           "2027-04-30"
-        ],
-        [
-          {
-            "text": "FA238525CB023",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_FA238525CB023_9700_-NONE-_-NONE-/"
-          },
-          "Department of Defense",
-          1366691,
-          "2026-10-28"
         ],
         [
           {
@@ -390,34 +201,34 @@
     }
   ],
   "narrative": {
-    "intro": "Blue Origin obligated $1B in federal contract money in FY2026 to date. Blue Origin has 13 awards so far and an average award size of $78.6M. Obligations are up 863.6% year over year. Blue Origin obligated $20K in FY21, $357K in FY22, $15.8M in FY23, $10.6M in FY24, and $106M in FY25 before jumping to $1B in FY26. The National Aeronautics and Space Administration bought $735M and the Department of Defense bought $287M in FY2026 to date. Guided Missile and Space Vehicle Manufacturing is Blue Origin's largest market at $744M, followed by Nonscheduled Chartered Freight Air Transportation at $278M and Research and Development in the Physical, Engineering, and Life Sciences at $399K. All figures are contract obligations except award-value figures noted elsewhere. Current-year totals are partial and represent fiscal year to date activity.",
+    "intro": "Blue Origin has $99.2M in federal contract obligations in FY2027 to date, spread across 2 awards with an average award size of $49.6M. Obligations are down 90.9% year over year. Obligations by fiscal year show early activity in FY22 at $357K, growth through FY23 and FY24 at $15.8M and $10.6M, a jump to $106M in FY25, a peak at $1.1B in FY26, and the current FY27 total of $99.2M. The award count and average award size indicate a concentrated set of large awards rather than many small contracts. The year-over-year decline quantifies a steep reduction in obligations compared with the prior fiscal period. Contractors and contracting officers looking at Blue Origin should note the uneven multi-year profile: small activity in FY22 through FY24, one large step-up in FY25 and FY26, and a return to a smaller set of obligations in FY27. This pattern matters for capture planning, teaming decisions, and capacity assumptions when evaluating Blue Origin as a potential prime or subcontractor.",
     "sections": [
       {
-        "heading": "How has Blue Origin's federal business changed in FY2026 to date?",
-        "body": "Blue Origin obligated $1B in FY2026 to date, a large increase from prior years. Obligations are up 863.6% year over year. Blue Origin's FY25 obligations were $106M and FY24 obligations were $10.6M, showing the recent jump is the largest single-year change in the period shown."
+        "heading": "How concentrated are Blue Origin's FY2027 federal awards?",
+        "body": "Blue Origin holds 2 awards in FY2027 to date. The awards average $49.6M each, which shows concentration in a small number of relatively large awards. The total FY2027 obligations are $99.2M, so most of the current-year activity comes from these two awards."
       },
       {
-        "heading": "Who are Blue Origin's main government customers and what markets do they buy?",
-        "body": "The National Aeronautics and Space Administration bought $735M and the Department of Defense bought $287M in FY2026 to date. Guided Missile and Space Vehicle Manufacturing is the largest market at $744M, followed by Nonscheduled Chartered Freight Air Transportation at $278M and Research and Development in the Physical, Engineering, and Life Sciences at $399K."
+        "heading": "How has Blue Origin's federal obligations trended over recent fiscal years?",
+        "body": "Blue Origin's obligations rose from $357K in FY22 to $15.8M in FY23 and $10.6M in FY24, then increased to $106M in FY25 and peaked at $1.1B in FY26. Obligations for FY27 to date are $99.2M, which represents a change of down 90.9% year over year. The series shows a sharp rise into FY26 and a pronounced decline into FY27."
       }
     ]
   },
   "faq": [
     {
       "q": "How much does Blue Origin make from federal contracts?",
-      "a": "Blue Origin has $1B in federal contract obligations in FY2026 to date. Blue Origin has 13 awards so far and an average award size of $78.6M. Obligations are up 863.6% year over year and FY26 obligations of $1B follow FY25 obligations of $106M."
+      "a": "Blue Origin has $99.2M in federal contract obligations in FY2027 to date. The FY2027 total comes from 2 awards with an average award size of $49.6M, and obligations are down 90.9% year over year."
     },
     {
       "q": "Which agencies buy from Blue Origin?",
-      "a": "The National Aeronautics and Space Administration and the Department of Defense are Blue Origin's top buyers in FY2026 to date. The National Aeronautics and Space Administration bought $735M and the Department of Defense bought $287M."
+      "a": "Agencies are not specified for Blue Origin's federal contracts. The available fiscal-year obligation lines show totals by year but do not name buying agencies."
     },
     {
       "q": "What does Blue Origin sell to the government?",
-      "a": "Blue Origin sells primarily in space and transport-related markets. Guided Missile and Space Vehicle Manufacturing accounts for $744M, Nonscheduled Chartered Freight Air Transportation accounts for $278M, and Research and Development in the Physical, Engineering, and Life Sciences accounts for $399K."
+      "a": "Contract purposes are not specified for Blue Origin's federal awards. The published figures list obligations and award counts without product or service descriptions."
     },
     {
       "q": "Which Blue Origin contracts are expiring soon?",
-      "a": "No expiring-contract information is listed in the provided facts. The dataset includes obligations by fiscal year, top buying agencies, and top markets but does not list expiring contracts."
+      "a": "No expiring contracts are listed for Blue Origin in the provided tables. The records include fiscal-year obligations and award counts but do not identify expiring contract entries."
     }
   ],
   "related": [
@@ -426,28 +237,28 @@
       "href": "/insights/expiring-federal-contracts/"
     },
     {
-      "label": "Bae Systems Land and Armaments L P federal contracts",
-      "href": "/insights/vendor/bae-systems-land-and-armaments-l-p/"
+      "label": "Veterans Evaluation Services federal contracts",
+      "href": "/insights/vendor/veterans-evaluation-services/"
     },
     {
-      "label": "Harris federal contracts",
-      "href": "/insights/vendor/harris/"
+      "label": "Fedex Supply Chain Distribution System federal contracts",
+      "href": "/insights/vendor/fedex-supply-chain-distribution-system/"
     },
     {
-      "label": "Dynetics federal contracts",
-      "href": "/insights/vendor/dynetics/"
+      "label": "Peachtree Lumber federal contracts",
+      "href": "/insights/vendor/peachtree-lumber/"
     },
     {
-      "label": "Mission Support and Test Services federal contracts",
-      "href": "/insights/vendor/mission-support-and-test-services/"
+      "label": "Lumen Technologies Government Solutions federal contracts",
+      "href": "/insights/vendor/lumen-technologies-government-solutions/"
     },
     {
-      "label": "Mitre federal contracts",
-      "href": "/insights/vendor/mitre/"
+      "label": "Medline Industries federal contracts",
+      "href": "/insights/vendor/medline-industries/"
     },
     {
-      "label": "BL Harbert International federal contracts",
-      "href": "/insights/vendor/bl-harbert-international/"
+      "label": "Elevated Technologies Services federal contracts",
+      "href": "/insights/vendor/elevated-technologies-services/"
     }
   ],
   "sources": [
@@ -455,5 +266,6 @@
       "label": "USAspending.gov award data",
       "href": "https://www.usaspending.gov"
     }
-  ]
+  ],
+  "noindex": true
 }

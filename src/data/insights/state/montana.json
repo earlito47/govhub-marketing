@@ -1,20 +1,20 @@
 {
   "pageType": "state",
   "slug": "montana",
-  "title": "Montana: $1.3B in Federal Contracts, FY2026",
+  "title": "Montana: $52.4M in Federal Contracts, FY2027",
   "h1": "Federal Contracts in Montana: Spending, Agencies & Vendors",
-  "metaDescription": "Federal agencies obligated $1.3B to contractors in Montana in FY2026 to date. See top buying agencies, top vendors, and industries.",
-  "updated": "2026-09-28",
+  "metaDescription": "Federal agencies obligated $52.4M to contractors in Montana in FY2027 to date. See top buying agencies, top vendors, and industries.",
+  "updated": "2026-11-16",
   "fyWindow": {
-    "label": "FY2026 to date",
-    "start": "2025-10-01",
-    "end": "2026-09-28"
+    "label": "FY2027 to date",
+    "start": "2026-10-01",
+    "end": "2026-11-16"
   },
   "stats": {
-    "totalObligations": 1328221464.05,
-    "awardCount": 8264,
-    "yoyGrowthPct": 15.9,
-    "avgAwardSize": 160724,
+    "totalObligations": 52434989.26,
+    "awardCount": 360,
+    "yoyGrowthPct": -96.2,
+    "avgAwardSize": 145653,
     "smallBusinessSharePct": null
   },
   "charts": [
@@ -27,222 +27,222 @@
           "label": "Obligations",
           "points": [
             [
-              "FY21",
-              690662757.99
-            ],
-            [
               "FY22",
               925388757.28
             ],
             [
               "FY23",
-              1000908470.9
+              1001287308.19
             ],
             [
               "FY24",
-              1106736232.61
+              1106950849.09
             ],
             [
               "FY25",
-              1146384888.3
+              1148342886.37
             ],
             [
               "FY26",
-              1328221464.05
+              1369458881.16
+            ],
+            [
+              "FY27",
+              52434989.26
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Obligations grew 15.9% year over year, from $1.1B in FY2025 to $1.3B in FY2026 to date."
+      "takeaway": "Obligations fell 96.2% year over year, from $1.4B in FY2026 to $52.4M in FY2027 to date."
     },
     {
       "id": "montana-top-agencies",
       "type": "bar",
-      "title": "Top 10 buying agencies, FY2026 to date",
+      "title": "Top 10 buying agencies, FY2027 to date",
       "series": [
         {
           "label": "Obligations",
           "points": [
             [
-              "Department of Defense",
-              419059566.68
+              "Department of the Interior",
+              28420478.55
             ],
             [
               "Department of Agriculture",
-              356034156.19
-            ],
-            [
-              "Department of Homeland Security",
-              189716675.24
-            ],
-            [
-              "Department of the Interior",
-              112341818.1
+              11323625.9
             ],
             [
               "Department of Health and Human Services",
-              87628852.54
-            ],
-            [
-              "Department of Transportation",
-              84000671.88
+              6134977.88
             ],
             [
               "Department of Veterans Affairs",
-              32172320.78
+              3523246.28
+            ],
+            [
+              "Department of Justice",
+              1397277.58
+            ],
+            [
+              "National Aeronautics and Space Administration",
+              375000
             ],
             [
               "Environmental Protection Agency",
-              16097753.19
+              343882.31
             ],
             [
-              "Department of Energy",
-              9347165.49
+              "Department of Transportation",
+              330335.29
             ],
             [
               "General Services Administration",
-              7402928.09
+              279432.34
+            ],
+            [
+              "Department of Homeland Security",
+              233055.12
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Department of Defense was the top federal buyer in Montana, obligating $419M (31.6% of the state total)."
+      "takeaway": "Department of the Interior was the top federal buyer in Montana, obligating $28.4M (54.2% of the state total)."
     },
     {
       "id": "montana-top-vendors",
       "type": "bar",
-      "title": "Top 10 vendors, FY2026 to date",
+      "title": "Top 10 vendors, FY2027 to date",
       "series": [
         {
           "label": "Obligations",
           "points": [
             [
-              "S & K SECURITY GROUP LLC",
-              135116102.45
+              "PAULSEN CONSTRUCTION LLC",
+              21611664
+            ],
+            [
+              "BRIDGER AEROSPACE GROUP, LLC",
+              5344200
             ],
             [
               "BRIDGER AIR TANKER LLC",
-              80572504.76
+              3049851.94
             ],
             [
-              "ARCHER WESTERN FEDERAL JV",
-              58925966.27
+              "NORTH AMERICAN UNITED HEALTHCARE SERVICES JV LLC",
+              2788739.2
             ],
             [
-              "PAF ELECTRICAL, INC.",
-              56977893.5
+              "INDIAN FAMILY HEALTH CLINIC OF GREAT FALLS INC",
+              1796004
             ],
             [
-              "UNITED STATES ANTIMONY CORPORATION",
-              47362034.02
+              "ALL NATIONS HEALTH CENTER INC",
+              1732449
             ],
             [
-              "S & K AEROSPACE, LLC",
-              44951479.59
+              "BUTTE NATIVE WELLNESS CENTER, INC.",
+              1577527
             ],
             [
-              "NEPTUNE AVIATION SERVICES, INC.",
-              41106994.9
+              "HELENA INDIAN ALLIANCE",
+              1571764
             ],
             [
-              "BILLINGS FLYING SERVICE LLC",
-              34380010.45
+              "METROPOLITAN SECURITY SERVICES, INC.",
+              1296994.06
             ],
             [
-              "TETRA TECH, INC.",
-              30402764.66
-            ],
-            [
-              "ALEUT CONSTRUCTION LLC",
-              26370000
+              "SILLER HELICOPTERS, LLC",
+              1260499.64
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "S & K SECURITY GROUP LLC led all contractors in Montana with $135M, 10.2% of the state total."
+      "takeaway": "PAULSEN CONSTRUCTION LLC led all contractors in Montana with $21.6M, 41.2% of the state total."
     },
     {
       "id": "montana-top-naics",
       "type": "bar",
-      "title": "Top 10 industries (NAICS), FY2026 to date",
+      "title": "Top 10 industries (NAICS), FY2027 to date",
       "series": [
         {
           "label": "Obligations",
           "points": [
             [
-              "Nonscheduled Chartered Freight Air Transportation",
-              197561578.13
-            ],
-            [
               "Commercial and Institutional Building Construction",
-              155464393.19
+              21892413.43
             ],
             [
-              "Electronic and Precision Equipment Repair and Maintenance",
-              137351875.21
+              "Nonscheduled Chartered Freight Air Transportation",
+              6814791.54
             ],
             [
-              "Highway, Street, and Bridge Construction",
-              96924080.27
+              "All Other Outpatient Care Centers",
+              6728350.43
             ],
             [
-              "Engineering Services",
-              85406983.37
+              "Nonscheduled Chartered Passenger Air Transportation",
+              5406440.5
+            ],
+            [
+              "Food Service Contractors",
+              1923391.35
+            ],
+            [
+              "Temporary Help Services",
+              1827145.5
+            ],
+            [
+              "Security Guards and Patrol Services",
+              1478444.06
             ],
             [
               "Support Activities for Forestry",
-              63100229.88
+              1135216.34
             ],
             [
-              "Power, Distribution, and Specialty Transformer Manufacturing",
-              57044301.89
+              "Engineering Services",
+              812014.67
             ],
             [
-              "Secondary Smelting, Refining, and Alloying of Nonferrous Metal (except Copper and Aluminum)",
-              47362034.02
-            ],
-            [
-              "Remediation Services",
-              40921078.76
-            ],
-            [
-              "Other Heavy and Civil Engineering Construction",
-              37220029.96
+              "All Other Miscellaneous Food Manufacturing",
+              675199
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Nonscheduled Chartered Freight Air Transportation was the largest industry in Montana, with $198M obligated."
+      "takeaway": "Commercial and Institutional Building Construction was the largest industry in Montana, with $21.9M obligated."
     }
   ],
   "crossLinks": [
     {
-      "label": "Department of Defense contracts",
-      "href": "/insights/agency/department-of-defense/"
+      "label": "Department of the Interior contracts",
+      "href": "/insights/agency/department-of-the-interior/"
     },
     {
       "label": "Department of Agriculture contracts",
       "href": "/insights/agency/department-of-agriculture/"
     },
     {
-      "label": "Department of Homeland Security contracts",
-      "href": "/insights/agency/department-of-homeland-security/"
+      "label": "Department of Health and Human Services contracts",
+      "href": "/insights/agency/department-of-health-and-human-services/"
     },
     {
-      "label": "Department of the Interior contracts",
-      "href": "/insights/agency/department-of-the-interior/"
+      "label": "Department of Veterans Affairs contracts",
+      "href": "/insights/agency/department-of-veterans-affairs/"
     },
     {
       "label": "NAICS 236220: Commercial and Institutional Building Construction",
       "href": "/insights/naics/236220/"
     },
     {
-      "label": "NAICS 237310: Highway, Street, and Bridge Construction",
-      "href": "/insights/naics/237310/"
+      "label": "NAICS 561612: Security Guards and Patrol Services",
+      "href": "/insights/naics/561612/"
     },
     {
       "label": "NAICS 541330: Engineering Services",
@@ -261,87 +261,87 @@
         [
           1,
           {
-            "text": "S & K SECURITY GROUP LLC",
-            "href": "https://www.usaspending.gov/recipient/3cfd6a56-1e83-70bf-0425-5893e1578922-C/latest/"
+            "text": "PAULSEN CONSTRUCTION LLC",
+            "href": "https://www.usaspending.gov/recipient/8d71da2e-5e9b-a287-1631-df9cabe3e933-C/latest/"
           },
-          135116102.45
+          21611664
         ],
         [
           2,
           {
-            "text": "BRIDGER AIR TANKER LLC",
-            "href": "https://www.usaspending.gov/recipient/a919cf56-57ca-749e-5e1b-944573121f7f-C/latest/"
+            "text": "BRIDGER AEROSPACE GROUP, LLC",
+            "href": "https://www.usaspending.gov/recipient/0c31743a-4641-a928-db69-8bc9f57b2c5c-C/latest/"
           },
-          80572504.76
+          5344200
         ],
         [
           3,
           {
-            "text": "ARCHER WESTERN FEDERAL JV",
-            "href": "https://www.usaspending.gov/recipient/4082fa5f-6dce-c865-5cca-b76bcfc2535b-C/latest/"
+            "text": "BRIDGER AIR TANKER LLC",
+            "href": "https://www.usaspending.gov/recipient/a919cf56-57ca-749e-5e1b-944573121f7f-C/latest/"
           },
-          58925966.27
+          3049851.94
         ],
         [
           4,
           {
-            "text": "PAF ELECTRICAL, INC.",
-            "href": "https://www.usaspending.gov/recipient/d3c2d1da-a83e-9792-23b3-e226c5ffbf1c-C/latest/"
+            "text": "NORTH AMERICAN UNITED HEALTHCARE SERVICES JV LLC",
+            "href": "https://www.usaspending.gov/recipient/8792f7b7-c497-2ea8-4a0b-5e6f1c1fe39a-C/latest/"
           },
-          56977893.5
+          2788739.2
         ],
         [
           5,
           {
-            "text": "UNITED STATES ANTIMONY CORPORATION",
-            "href": "https://www.usaspending.gov/recipient/a7fdb8ea-5bda-87ac-e934-a922ae129550-C/latest/"
+            "text": "INDIAN FAMILY HEALTH CLINIC OF GREAT FALLS INC",
+            "href": "https://www.usaspending.gov/recipient/abb1f6fc-f94b-7411-15ec-3d675f9025cb-C/latest/"
           },
-          47362034.02
+          1796004
         ],
         [
           6,
           {
-            "text": "S & K AEROSPACE, LLC",
-            "href": "https://www.usaspending.gov/recipient/f88bc8b4-fcf2-5d04-0c7b-e00deeb972d4-C/latest/"
+            "text": "ALL NATIONS HEALTH CENTER INC",
+            "href": "https://www.usaspending.gov/recipient/6b2aae4a-eac4-6e49-b2e7-c332aac27529-C/latest/"
           },
-          44951479.59
+          1732449
         ],
         [
           7,
           {
-            "text": "NEPTUNE AVIATION SERVICES, INC.",
-            "href": "https://www.usaspending.gov/recipient/eed91939-9a90-0fdb-cc0a-0f38fdbcfc76-C/latest/"
+            "text": "BUTTE NATIVE WELLNESS CENTER, INC.",
+            "href": "https://www.usaspending.gov/recipient/b3a04143-d0bf-ad7f-92ce-5ac49fbcf7b6-C/latest/"
           },
-          41106994.9
+          1577527
         ],
         [
           8,
           {
-            "text": "BILLINGS FLYING SERVICE LLC",
-            "href": "https://www.usaspending.gov/recipient/9bec7153-669d-a50f-32e7-75ae8dcb9e97-C/latest/"
+            "text": "HELENA INDIAN ALLIANCE",
+            "href": "https://www.usaspending.gov/recipient/db7de222-56b4-dc96-11a2-16f334a607ec-C/latest/"
           },
-          34380010.45
+          1571764
         ],
         [
           9,
           {
-            "text": "TETRA TECH, INC.",
-            "href": "https://www.usaspending.gov/recipient/06a74ebd-0c6c-9ef5-72e9-6be994c3ad6c-C/latest/"
+            "text": "METROPOLITAN SECURITY SERVICES, INC.",
+            "href": "https://www.usaspending.gov/recipient/835e42fb-f461-4e30-e17e-3205a1805635-C/latest/"
           },
-          30402764.66
+          1296994.06
         ],
         [
           10,
           {
-            "text": "ALEUT CONSTRUCTION LLC",
-            "href": "https://www.usaspending.gov/recipient/66801463-02dd-9b36-accc-6ce4e891f0c1-C/latest/"
+            "text": "SILLER HELICOPTERS, LLC",
+            "href": "https://www.usaspending.gov/recipient/28512ef4-9134-f140-4074-671e50515d39-C/latest/"
           },
-          26370000
+          1260499.64
         ]
       ]
     },
     {
-      "title": "Largest awards, FY2026 to date",
+      "title": "Largest awards, FY2027 to date",
       "columns": [
         "Rank",
         "Recipient",
@@ -352,256 +352,256 @@
         [
           1,
           {
-            "text": "ARCHER WESTERN FEDERAL JV",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_W912DW23C0012_9700_-NONE-_-NONE-/"
+            "text": "SWANK ENTERPRISES, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_47PJ0025C0017_4740_-NONE-_-NONE-/"
           },
-          380524084,
-          "Department of Defense"
+          43107850.94,
+          "General Services Administration"
         ],
         [
           2,
           {
-            "text": "HENSEL PHELPS CONSTRUCTION CO",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_75N99024F00002_7529_75N99019D00016_7529/"
+            "text": "PAULSEN CONSTRUCTION LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_140P2025C0017_1443_-NONE-_-NONE-/"
           },
-          138488720.25,
-          "Department of Health and Human Services"
+          27201807,
+          "Department of the Interior"
         ],
         [
           3,
           {
-            "text": "S & K SECURITY GROUP LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_70B02C26C00000007_7014_-NONE-_-NONE-/"
+            "text": "PAULSEN CONSTRUCTION LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_140PP027C0008_1406_-NONE-_-NONE-/"
           },
-          134787330.92,
-          "Department of Homeland Security"
+          21340920,
+          "Department of the Interior"
         ],
         [
           4,
           {
-            "text": "HENSEL PHELPS CONSTRUCTION CO",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_75N99022F00001_7529_75N99019D00016_7529/"
+            "text": "HELICOPTER TRANSPORT SERVICES, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_1202SA25K9204_12C2_1202SA25T9217_12C2/"
           },
-          115090053.01,
-          "Department of Health and Human Services"
+          19583932.33,
+          "Department of Agriculture"
         ],
         [
           5,
           {
-            "text": "NW CONSTRUCTION, INC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_140R6024C0008_1425_-NONE-_-NONE-/"
+            "text": "SILLER HELICOPTERS, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_1202SA25K9231_12C2_1202SA25T9234_12C2/"
           },
-          92177121.57,
-          "Department of the Interior"
+          16670778.26,
+          "Department of Agriculture"
         ],
         [
           6,
           {
-            "text": "PAF ELECTRICAL, INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_W9128F26CA013_9700_-NONE-_-NONE-/"
+            "text": "HELICOPTER EXPRESS LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_1202SA24K9238_12C2_1202SA23T9267_12C2/"
           },
-          56977893.5,
-          "Department of Defense"
+          13852815.88,
+          "Department of Agriculture"
         ],
         [
           7,
           {
-            "text": "NW CONSTRUCTION, INC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_140R6023C0002_1425_-NONE-_-NONE-/"
+            "text": "HELI-1 CORP",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_1202SA24K9208_12C2_1202SA23T9264_12C2/"
           },
-          45009758.19,
-          "Department of the Interior"
+          12602349.22,
+          "Department of Agriculture"
         ],
         [
           8,
           {
-            "text": "SWANK ENTERPRISES, INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_47PJ0025C0017_4740_-NONE-_-NONE-/"
+            "text": "BAIRCO CONSTRUCTION INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_140P2025C0065_1443_-NONE-_-NONE-/"
           },
-          42901088.6,
-          "General Services Administration"
+          11661135,
+          "Department of the Interior"
         ],
         [
           9,
           {
-            "text": "JOHNSON SECURITY BUREAU, INC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_70T05024F5900N005_7013_70T05021D5900N006_7013/"
+            "text": "NEW FRONTIER AVIATION, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_140D0426F0447_1406_140D0424D0066_1406/"
           },
-          37886179.3,
-          "Department of Homeland Security"
+          7919884.18,
+          "Department of the Interior"
         ],
         [
           10,
           {
-            "text": "TORRENT TECHNOLOGIES, INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_70FA6021F00000014_7022_HSFE6016D0201_7022/"
+            "text": "SILVER MOUNTAIN CONSTRUCTION LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_140R4022C0007_1425_-NONE-_-NONE-/"
           },
-          37794763.26,
-          "Department of Homeland Security"
+          6974434.05,
+          "Department of the Interior"
         ],
         [
           11,
           {
-            "text": "S2 CORPORATION",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_FA865016C1954_9700_-NONE-_-NONE-/"
+            "text": "CAPITOL HELICOPTERS, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_1202SA25K9220_12C2_1202SA25T9206_12C2/"
           },
-          34381399,
-          "Department of Defense"
+          6819178.78,
+          "Department of Agriculture"
         ],
         [
           12,
           {
-            "text": "MEB GENERAL CONTRACTORS INC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_W912DW24C0019_9700_-NONE-_-NONE-/"
+            "text": "NORTH AMERICAN UNITED HEALTHCARE SERVICES JV LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C25926N0137_3600_36C10X24D0006_3600/"
           },
-          33066803,
-          "Department of Defense"
+          5545280,
+          "Department of Veterans Affairs"
         ],
         [
           13,
           {
-            "text": "TETRA TECH, INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_W9128F26FA080_9700_W9128F24D0018_9700/"
+            "text": "MINUTEMAN AVIATION INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_1202SA24K9212_12C2_1202SA23T9279_12C2/"
           },
-          30402764.66,
-          "Department of Defense"
+          5382802.77,
+          "Department of Agriculture"
         ],
         [
           14,
           {
-            "text": "UNITED STATES ANTIMONY CORPORATION",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_SP800026F0030_9700_SP800025D0007_9700/"
+            "text": "BRIDGER AEROSPACE GROUP, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_140D0427F1138_1406_140D0423D0085_1406/"
           },
-          29978736,
-          "Department of Defense"
+          5344200,
+          "Department of the Interior"
         ],
         [
           15,
           {
-            "text": "OLSSON INDUSTRIAL ELECTRIC, INC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_W912DW24C0010_9700_-NONE-_-NONE-/"
+            "text": "KERMAX, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70RFPW26FRW800001_7001_70RFPW23DW8000002_7001/"
           },
-          28744468.18,
-          "Department of Defense"
+          5043807.49,
+          "Department of Homeland Security"
         ],
         [
           16,
           {
-            "text": "PAULSEN CONSTRUCTION, LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_140P2025C0017_1443_-NONE-_-NONE-/"
+            "text": "INDIAN FAMILY HEALTH CLINIC OF GREAT FALLS INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75H70925C00004_7527_-NONE-_-NONE-/"
           },
-          26931063,
-          "Department of the Interior"
+          4871657,
+          "Department of Health and Human Services"
         ],
         [
           17,
           {
-            "text": "ALEUT CONSTRUCTION LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_W912DW26CA006_9700_-NONE-_-NONE-/"
+            "text": "ALL NATIONS HEALTH CENTER INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75H70925C00001_7527_-NONE-_-NONE-/"
           },
-          26370000,
-          "Department of Defense"
+          4697185,
+          "Department of Health and Human Services"
         ],
         [
           18,
           {
-            "text": "S&K ENGINEERING AND RESEARCH, LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_80JSC023FA010_8000_47QRAD20D8123_4732/"
+            "text": "BIGHORN AIRWAYS INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_1202SA25K9120_12C2_1202SA25T9100_12C2/"
           },
-          26229510.73,
-          "National Aeronautics and Space Administration"
+          4640692,
+          "Department of Agriculture"
         ],
         [
           19,
           {
-            "text": "UNIVERSITY OF MONTANA",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_75N93020C00039_7529_-NONE-_-NONE-/"
+            "text": "BUTTE NATIVE WELLNESS CENTER, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75H70925C00003_7527_-NONE-_-NONE-/"
           },
-          25915968,
+          4271893,
           "Department of Health and Human Services"
         ],
         [
           20,
           {
-            "text": "GRANITE CONSTRUCTION COMPANY",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_69056726C000017_6925_-NONE-_-NONE-/"
+            "text": "HELENA INDIAN ALLIANCE",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75H70925C00002_7527_-NONE-_-NONE-/"
           },
-          24540755.56,
-          "Department of Transportation"
+          4256072,
+          "Department of Health and Human Services"
         ],
         [
           21,
           {
-            "text": "HYDROGEOLOGIC, INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_W9128F20F0144_9700_W9128F19D0016_9700/"
+            "text": "M.A. DEATLEY CONSTRUCTION, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_69056725F00047N_6925_69056724D000011_6925/"
           },
-          24090904.07,
-          "Department of Defense"
+          4220003.81,
+          "Department of Transportation"
         ],
         [
           22,
           {
-            "text": "S&K MISSION SUPPORT, LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_FA877022CB005_9700_-NONE-_-NONE-/"
+            "text": "VISTA STAFFING SOLUTIONS, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75H70925F80024_7527_36F79720D0128_3600/"
           },
-          24059016.13,
-          "Department of Defense"
+          3740684,
+          "Department of Health and Human Services"
         ],
         [
           23,
           {
-            "text": "PCI SUPPORT SERVICES LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_FA462624C0004_9700_-NONE-_-NONE-/"
+            "text": "NOMAD GLOBAL COMMUNICATION SOLUTIONS, INCORPORATED",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70FBR724F00000029_7022_70FBR724A00000002_7022/"
           },
-          23819524.48,
-          "Department of Defense"
+          3608403.68,
+          "Department of Homeland Security"
         ],
         [
           24,
           {
-            "text": "MOUNTAIN PACIFIC QUALITY HEALTH",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_75FCMC20F0001_7530_75FCMC19D0036_7530/"
+            "text": "VISTA STAFFING SOLUTIONS, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75H70922F80021_7527_36F79720D0128_3600/"
           },
-          23700059.43,
+          3599652.45,
           "Department of Health and Human Services"
         ],
         [
           25,
           {
-            "text": "S & K AEROSPACE, LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_FA857522C0002_9700_-NONE-_-NONE-/"
+            "text": "SIEMENS HEALTHCARE DIAGNOSTICS INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75H70921C00007_7527_-NONE-_-NONE-/"
           },
-          22942267.52,
-          "Department of Defense"
+          3245396.46,
+          "Department of Health and Human Services"
         ]
       ]
     }
   ],
   "narrative": {
-    "intro": "Montana has received $1.3B in federal contract obligations in FY2026 to date. Obligations are up 15.9% year over year while agencies issued 8,264 awards with an average award size of $161K. Montana’s federal contracting has risen steadily since FY21, moving from $691M in FY21 to $1.3B in FY26. Nonscheduled Chartered Freight Air Transportation, Commercial and Institutional Building Construction, and Electronic and Precision Equipment Repair and Maintenance are the largest industries by obligations in the current year. The Department of Defense and the Department of Agriculture are the top buyers for the state. Large local and regional vendors include S & K SECURITY GROUP LLC and BRIDGER AIR TANKER LLC, which rank at the top of the vendor list. These figures are fiscal year to date and reflect contract obligations only; current-year totals are partial for the fiscal year to date.",
+    "intro": "Montana received $52.4M in federal contract obligations in FY2027 to date. The federal government made 360 awards in the state, with an average award size of $146K. Obligations fell 96.2% year over year. The Department of the Interior accounted for the largest share, obligating $28.4M, followed by the Department of Agriculture with $11.3M and the Department of Health and Human Services with $6.1M. Commercial and Institutional Building Construction is the largest industry by obligation, receiving $21.9M, and PAULSEN CONSTRUCTION LLC is the single largest contractor with $21.6M in obligations. FY2027 to date totals are partial because the fiscal year is still in progress. Historical context shows much larger full-year obligations in prior years, with FY26 at $1.4B and FY25 at $1.1B, so current-year totals represent a small slice of typical annual spending. Use the FY2027 to date figures for current activity and the fiscal-year listings for trend context.",
     "sections": [
       {
-        "heading": "How has federal contracting in Montana trended recently?",
-        "body": "Federal contract obligations have increased each reported year from FY21 through FY26. Obligations rose from $691M in FY21 to $1.3B in FY26, and obligations are up 15.9% year over year in FY2026 to date. Award activity shows 8,264 awards in FY2026 to date with an average award size of $161K. These totals are contract obligations and the FY2026 figure is fiscal year to date."
+        "heading": "How does FY2027 to date compare with recent fiscal years?",
+        "body": "FY2027 to date obligations are $52.4M compared with $1.4B in FY26 and $1.1B in FY25. Fiscal-year obligations were $1.1B in FY24, $1B in FY23, and $925M in FY22. Obligations fell 96.2% year over year."
       },
       {
-        "heading": "Which agencies and industries dominate Montana contracting?",
-        "body": "The Department of Defense is the largest buying agency with $419M in obligations in FY2026 to date followed by the Department of Agriculture with $356M and the Department of Homeland Security with $190M. Nonscheduled Chartered Freight Air Transportation leads industries with $198M, followed by Commercial and Institutional Building Construction with $155M and Electronic and Precision Equipment Repair and Maintenance with $137M. These industry totals and agency totals reflect FY2026 to date obligations."
+        "heading": "Which agencies and vendors drive federal spending in Montana this year?",
+        "body": "The Department of the Interior leads buying with $28.4M, followed by the Department of Agriculture with $11.3M and the Department of Health and Human Services with $6.1M. PAULSEN CONSTRUCTION LLC is the largest vendor with $21.6M, BRIDGER AEROSPACE GROUP, LLC follows with $5.3M, and BRIDGER AIR TANKER LLC has $3M."
       }
     ]
   },
   "faq": [
     {
       "q": "How much federal contract money goes to Montana?",
-      "a": "Montana received $1.3B in federal contract obligations in FY2026 to date. Obligations increased year over year by up 15.9% and the state recorded 8,264 awards with an average award size of $161K. These numbers are fiscal year to date and represent contract obligations only."
+      "a": "Montana received $52.4M in federal contract obligations in FY2027 to date. The federal government made 360 awards in the state with an average award size of $146K. Obligations fell 96.2% year over year and FY2027 to date totals are partial because the fiscal year is ongoing."
     },
     {
       "q": "Which agencies award the most contracts in Montana?",
-      "a": "The Department of Defense awards the most contracts in Montana with $419M in obligations in FY2026 to date. The Department of Agriculture follows with $356M and the Department of Homeland Security follows with $190M. Those agency totals reflect FY2026 to date obligations."
+      "a": "The Department of the Interior awards the most contracts in Montana, obligating $28.4M. The Department of Agriculture follows with $11.3M and the Department of Health and Human Services follows with $6.1M. Other notable buyers include the Department of Veterans Affairs with $3.5M and the Department of Justice with $1.4M."
     },
     {
       "q": "Who are the largest federal contractors in Montana?",
-      "a": "S & K SECURITY GROUP LLC is the largest federal contractor in Montana with $135M in obligations in FY2026 to date. BRIDGER AIR TANKER LLC is the second largest with $80.6M and ARCHER WESTERN FEDERAL JV is third with $58.9M. These vendor totals reflect FY2026 to date obligations."
+      "a": "PAULSEN CONSTRUCTION LLC is the largest federal contractor in Montana with $21.6M in obligations. BRIDGER AEROSPACE GROUP, LLC is next with $5.3M and BRIDGER AIR TANKER LLC follows with $3M. Several health providers and service contractors also appear among the top vendors."
     }
   ],
   "related": [
@@ -635,5 +635,6 @@
       "label": "USAspending.gov award data",
       "href": "https://www.usaspending.gov"
     }
-  ]
+  ],
+  "noindex": true
 }

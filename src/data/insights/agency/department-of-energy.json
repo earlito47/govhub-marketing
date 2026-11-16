@@ -1,20 +1,20 @@
 {
   "pageType": "agency",
   "slug": "department-of-energy",
-  "title": "DOE Contract Spending: $593M in FY2027",
+  "title": "DOE Contract Spending: $6.1B in FY2027",
   "h1": "Department of Energy: Federal Contract Spending & Top Vendors",
-  "metaDescription": "Department of Energy obligated $593M in federal contracts in FY2027 to date. See what it buys, its top vendors, and multi-year trend.",
-  "updated": "2026-10-26",
+  "metaDescription": "Department of Energy obligated $6.1B in federal contracts in FY2027 to date. See what it buys, its top vendors, and multi-year trend.",
+  "updated": "2026-11-16",
   "fyWindow": {
     "label": "FY2027 to date",
     "start": "2026-10-01",
-    "end": "2026-10-26"
+    "end": "2026-11-16"
   },
   "stats": {
-    "totalObligations": 592756581.66,
-    "awardCount": 157,
-    "yoyGrowthPct": -98.9,
-    "avgAwardSize": 3775520,
+    "totalObligations": 6105130257.92,
+    "awardCount": 441,
+    "yoyGrowthPct": -88.9,
+    "avgAwardSize": 13843833,
     "smallBusinessSharePct": null
   },
   "charts": [
@@ -36,7 +36,7 @@
             ],
             [
               "FY24",
-              46043810204.91
+              46043910204.91
             ],
             [
               "FY25",
@@ -48,13 +48,13 @@
             ],
             [
               "FY27",
-              592756581.66
+              6105130257.92
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Obligations fell 98.9% year over year, from $55.1B in FY2026 to $593M in FY2027 to date."
+      "takeaway": "Obligations fell 88.9% year over year, from $55.1B in FY2026 to $6.1B in FY2027 to date."
     },
     {
       "id": "department-of-energy-top-naics",
@@ -65,50 +65,50 @@
           "label": "Obligations",
           "points": [
             [
-              "Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology)",
-              397996141.1
-            ],
-            [
-              "Hazardous Waste Treatment and Disposal",
-              100000000
+              "Facilities Support Services",
+              3540471822.34
             ],
             [
               "Research and Development in the Physical, Engineering, and Life Sciences",
-              81138891
+              1101982745.62
+            ],
+            [
+              "Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology)",
+              627682455.1
             ],
             [
               "Remediation Services",
-              6251021.76
+              290395566.23
             ],
             [
-              "Engineering Services",
-              3356233.88
+              "Research and Development in the Physical, Engineering, and Life Sciences (except Biotechnology)",
+              153862598.43
+            ],
+            [
+              "Hazardous Waste Treatment and Disposal",
+              117258000
+            ],
+            [
+              "All Other Professional, Scientific, and Technical Services",
+              93654531.83
+            ],
+            [
+              "Unknown",
+              73017403.87
+            ],
+            [
+              "Other Basic Inorganic Chemical Manufacturing",
+              68000000
             ],
             [
               "Computer Systems Design Services",
-              1742758.52
-            ],
-            [
-              "Administrative Management and General Management Consulting Services",
-              895413.96
-            ],
-            [
-              "All Other Miscellaneous Ambulatory Health Care Services",
-              663000
-            ],
-            [
-              "Offices of Lawyers",
-              499999.99
-            ],
-            [
-              "Environmental Consulting Services",
-              269172
+              21861863.18
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology) was Energy's largest contract category, with $398M obligated (67.1% of contract spending)."
+      "takeaway": "Facilities Support Services was Energy's largest contract category, with $3.5B obligated (58.0% of contract spending)."
     },
     {
       "id": "department-of-energy-top-vendors",
@@ -119,68 +119,68 @@
           "label": "Obligations",
           "points": [
             [
+              "TRIAD NATIONAL SECURITY, LLC",
+              875497713.49
+            ],
+            [
+              "NATIONAL TECHNOLOGY & ENGINEERING SOLUTIONS OF SANDIA, LLC",
+              633232080.37
+            ],
+            [
+              "LAWRENCE LIVERMORE NATIONAL SECURITY, LLC",
+              550394716.32
+            ],
+            [
+              "CONSOLIDATED NUCLEAR SECURITY, LLC",
+              489421124.59
+            ],
+            [
+              "SAVANNAH RIVER NUCLEAR SOLUTIONS LLC",
+              378824045
+            ],
+            [
               "FLUOR MARINE PROPULSION, LLC",
               372532961.92
             ],
             [
-              "HANFORD TANK WASTE OPERATIONS & CLOSURE, LLC",
-              100000000
+              "HONEYWELL FEDERAL MANUFACTURING & TECHNOLOGIES, LLC",
+              323305085.59
             ],
             [
-              "UCHICAGO ARGONNE, LLC",
-              81138891
+              "UT-BATTELLE LLC",
+              302169565.46
             ],
             [
-              "BATTELLE SAVANNAH RIVER ALLIANCE, LLC",
-              25463179.18
+              "PANTEXAS DETERRENCE, LLC",
+              281332739.25
             ],
             [
-              "HANFORD LABORATORY MANAGEMENT AND INTEGRATION LLC",
-              7450000
-            ],
-            [
-              "SOUTHWEST RESEARCH INSTITUTE",
-              3000000
-            ],
-            [
-              "ACCENTURE FEDERAL SERVICES LLC",
-              1666118.56
-            ],
-            [
-              "S&K MISSION SUPPORT, LLC",
-              1116916.51
-            ],
-            [
-              "VECTOR RESOURCE INC",
-              1100000
-            ],
-            [
-              "CHENEGA HEALTHCARE SERVICES LLC",
-              663000
+              "MISSION SUPPORT & TEST SERVICES LLC",
+              224905675.42
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "FLUOR MARINE PROPULSION, LLC led all Energy contractors with $373M, 62.8% of obligations."
+      "takeaway": "TRIAD NATIONAL SECURITY, LLC led all Energy contractors with $875M, 14.3% of obligations."
     }
   ],
   "crossLinks": [
+    {
+      "label": "NAICS 561210: Facilities Support Services",
+      "href": "/insights/naics/561210/"
+    },
     {
       "label": "NAICS 541715: Research and Development in the Physical, Engineering, and Life Sciences",
       "href": "/insights/naics/541715/"
     },
     {
-      "label": "NAICS 541330: Engineering Services",
-      "href": "/insights/naics/541330/"
+      "label": "NAICS 541990: All Other Professional, Scientific, and Technical Services",
+      "href": "/insights/naics/541990/"
     },
     {
       "label": "NAICS 541512: Computer Systems Design Services",
       "href": "/insights/naics/541512/"
-    },
-    {
-      "label": "NAICS 541611: Administrative Management and General Management Consulting Services",
-      "href": "/insights/naics/541611/"
     }
   ],
   "tables": [
@@ -195,82 +195,82 @@
         [
           1,
           {
+            "text": "TRIAD NATIONAL SECURITY, LLC",
+            "href": "https://www.usaspending.gov/recipient/59ab4d30-abec-ded6-33c4-5d9f37fd2da0-C/latest/"
+          },
+          875497713.49
+        ],
+        [
+          2,
+          {
+            "text": "NATIONAL TECHNOLOGY & ENGINEERING SOLUTIONS OF SANDIA, LLC",
+            "href": "https://www.usaspending.gov/recipient/b52d549e-73f7-a818-8c63-4a75904c9df5-C/latest/"
+          },
+          633232080.37
+        ],
+        [
+          3,
+          {
+            "text": "LAWRENCE LIVERMORE NATIONAL SECURITY, LLC",
+            "href": "https://www.usaspending.gov/recipient/6d990129-9566-ff86-e9ae-7c6eeef1df7c-C/latest/"
+          },
+          550394716.32
+        ],
+        [
+          4,
+          {
+            "text": "CONSOLIDATED NUCLEAR SECURITY, LLC",
+            "href": "https://www.usaspending.gov/recipient/3c1a340d-2613-1609-93ce-eb1aba0559b5-C/latest/"
+          },
+          489421124.59
+        ],
+        [
+          5,
+          {
+            "text": "SAVANNAH RIVER NUCLEAR SOLUTIONS LLC",
+            "href": "https://www.usaspending.gov/recipient/f59302ac-85a9-ee1a-4813-9b07f3377a40-C/latest/"
+          },
+          378824045
+        ],
+        [
+          6,
+          {
             "text": "FLUOR MARINE PROPULSION, LLC",
             "href": "https://www.usaspending.gov/recipient/27de0316-220e-8297-411f-f99b6f60443a-C/latest/"
           },
           372532961.92
         ],
         [
-          2,
-          {
-            "text": "HANFORD TANK WASTE OPERATIONS & CLOSURE, LLC",
-            "href": "https://www.usaspending.gov/recipient/b8db5aa0-8953-edc9-33e9-0ba2f6d5563f-C/latest/"
-          },
-          100000000
-        ],
-        [
-          3,
-          {
-            "text": "UCHICAGO ARGONNE, LLC",
-            "href": "https://www.usaspending.gov/recipient/41abc24e-d794-7e40-35af-944b40645d57-C/latest/"
-          },
-          81138891
-        ],
-        [
-          4,
-          {
-            "text": "BATTELLE SAVANNAH RIVER ALLIANCE, LLC",
-            "href": "https://www.usaspending.gov/recipient/9a7b543a-2b81-001e-d309-3a0f027dff01-C/latest/"
-          },
-          25463179.18
-        ],
-        [
-          5,
-          {
-            "text": "HANFORD LABORATORY MANAGEMENT AND INTEGRATION LLC",
-            "href": "https://www.usaspending.gov/recipient/1ea82ab3-d0c0-1805-c9ac-915ffda2137c-C/latest/"
-          },
-          7450000
-        ],
-        [
-          6,
-          {
-            "text": "SOUTHWEST RESEARCH INSTITUTE",
-            "href": "https://www.usaspending.gov/recipient/445af2f9-543d-9e63-c6fd-0feebf238d59-C/latest/"
-          },
-          3000000
-        ],
-        [
           7,
           {
-            "text": "ACCENTURE FEDERAL SERVICES LLC",
-            "href": "https://www.usaspending.gov/recipient/d41a6b8a-9d6a-0d28-7e24-989e31731aad-C/latest/"
+            "text": "HONEYWELL FEDERAL MANUFACTURING & TECHNOLOGIES, LLC",
+            "href": "https://www.usaspending.gov/recipient/9e9725ba-e023-684e-6d7f-f9de4201578f-C/latest/"
           },
-          1666118.56
+          323305085.59
         ],
         [
           8,
           {
-            "text": "S&K MISSION SUPPORT, LLC",
-            "href": "https://www.usaspending.gov/recipient/7ca6dfad-079f-7856-09f7-0f660d59a060-C/latest/"
+            "text": "UT-BATTELLE LLC",
+            "href": "https://www.usaspending.gov/recipient/c236f280-8198-3109-89dd-96eca764ec43-C/latest/"
           },
-          1116916.51
+          302169565.46
         ],
         [
           9,
           {
-            "text": "VECTOR RESOURCE INC",
-            "href": "https://www.usaspending.gov/recipient/d781f8b2-fc6b-9811-725a-d2fc1784e427-C/latest/"
+            "text": "PANTEXAS DETERRENCE, LLC",
+            "href": "https://www.usaspending.gov/recipient/eb9633b3-ae3d-e77a-dcb7-80d93fab5b0e-C/latest/"
           },
-          1100000
+          281332739.25
         ],
         [
           10,
           {
-            "text": "CHENEGA HEALTHCARE SERVICES LLC",
-            "href": "https://www.usaspending.gov/recipient/868dfbc7-a5b7-633e-8f00-a1e278e7828b-C/latest/"
+            "text": "MISSION SUPPORT & TEST SERVICES LLC",
+            "href": "https://www.usaspending.gov/recipient/f624bb0c-c85e-d8e7-ce74-b8080a10bce6-C/latest/"
           },
-          663000
+          224905675.42
         ]
       ]
     },
@@ -288,42 +288,98 @@
             "text": "NATIONAL TECHNOLOGY & ENGINEERING SOLUTIONS OF SANDIA, LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_DENA0003525_8900_-NONE-_-NONE-/"
           },
-          43460682794.89
+          44093914875.26
         ],
         [
           2,
           {
-            "text": "LAWRENCE LIVERMORE NATIONAL SECURITY, LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_DEAC5207NA27344_8900_-NONE-_-NONE-/"
+            "text": "UT-BATTELLE LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_DEAC0500OR22725_8900_-NONE-_-NONE-/"
           },
-          41607031193.88
+          42970738616.89
         ],
         [
           3,
           {
-            "text": "CONSOLIDATED NUCLEAR SECURITY, LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_DENA0001942_8900_-NONE-_-NONE-/"
+            "text": "LAWRENCE LIVERMORE NATIONAL SECURITY, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_DEAC5207NA27344_8900_-NONE-_-NONE-/"
           },
-          34661763245.24
+          42157425910.2
         ],
         [
           4,
           {
-            "text": "HONEYWELL FEDERAL MANUFACTURING & TECHNOLOGIES, LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_DENA0002839_8900_-NONE-_-NONE-/"
+            "text": "TRIAD NATIONAL SECURITY, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_89233218CNA000001_8900_-NONE-_-NONE-/"
           },
-          17732163524.12
+          36289094015.26
         ],
         [
           5,
           {
-            "text": "UCHICAGO ARGONNE, LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_DEAC0206CH11357_8900_-NONE-_-NONE-/"
+            "text": "CONSOLIDATED NUCLEAR SECURITY, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_DENA0001942_8900_-NONE-_-NONE-/"
           },
-          17695775611.67
+          35151184369.83
         ],
         [
           6,
+          {
+            "text": "BATTELLE MEMORIAL INSTITUTE",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_DEAC0576RL01830_8900_-NONE-_-NONE-/"
+          },
+          31223517818.95
+        ],
+        [
+          7,
+          {
+            "text": "SAVANNAH RIVER NUCLEAR SOLUTIONS LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_DEAC0908SR22470_8900_-NONE-_-NONE-/"
+          },
+          27995864149.1
+        ],
+        [
+          8,
+          {
+            "text": "BATTELLE ENERGY ALLIANCE, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_DEAC0705ID14517_8900_-NONE-_-NONE-/"
+          },
+          26808905230.95
+        ],
+        [
+          9,
+          {
+            "text": "THE REGENTS OF THE UNIVERSITY OF CALIFORNIA",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_DEAC0205CH11231_8900_-NONE-_-NONE-/"
+          },
+          20172696402.58
+        ],
+        [
+          10,
+          {
+            "text": "HONEYWELL FEDERAL MANUFACTURING & TECHNOLOGIES, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_DENA0002839_8900_-NONE-_-NONE-/"
+          },
+          18055468609.71
+        ],
+        [
+          11,
+          {
+            "text": "BECHTEL NATIONAL, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_DEAC2701RV14136_8900_-NONE-_-NONE-/"
+          },
+          17956041439.14
+        ],
+        [
+          12,
+          {
+            "text": "UCHICAGO ARGONNE, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_DEAC0206CH11357_8900_-NONE-_-NONE-/"
+          },
+          17730321030.51
+        ],
+        [
+          13,
           {
             "text": "FLUOR MARINE PROPULSION, LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_89233018CNR000004_8900_-NONE-_-NONE-/"
@@ -331,185 +387,129 @@
           15126647249.13
         ],
         [
-          7,
+          14,
+          {
+            "text": "THE LELAND STANFORD JUNIOR UNIVERSITY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_DEAC0276SF00515_8900_-NONE-_-NONE-/"
+          },
+          15120780108.84
+        ],
+        [
+          15,
           {
             "text": "ALLIANCE FOR ENERGY INNOVATION, LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_DEAC3608GO28308_8900_-NONE-_-NONE-/"
           },
-          11309022482.57
+          11311227063.57
         ],
         [
-          8,
+          16,
+          {
+            "text": "BROOKHAVEN SCIENCE ASSOCIATES LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_DESC0012704_8900_-NONE-_-NONE-/"
+          },
+          8803419756.39
+        ],
+        [
+          17,
           {
             "text": "MISSION SUPPORT & TEST SERVICES LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_DENA0003624_8900_-NONE-_-NONE-/"
           },
-          7708654017.32
+          7933559692.74
         ],
         [
-          9,
+          18,
           {
             "text": "PANTEXAS DETERRENCE, LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_89233224CNA000004_8900_-NONE-_-NONE-/"
           },
-          3584176461.13
+          3865509200.38
         ],
         [
-          10,
+          19,
+          {
+            "text": "OAK RIDGE ASSOCIATED UNIVERSITIES, INCORPORATED",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_DESC0014664_8900_-NONE-_-NONE-/"
+          },
+          3251068889.53
+        ],
+        [
+          20,
+          {
+            "text": "FERMI FORWARD DISCOVERY GROUP, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_89243024CSC000002_8900_-NONE-_-NONE-/"
+          },
+          2681061033.12
+        ],
+        [
+          21,
+          {
+            "text": "UNITED CLEANUP OAK RIDGE LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_89303523FEM400032_8900_89303322DEM000067_8900/"
+          },
+          2657948950.78
+        ],
+        [
+          22,
           {
             "text": "THE TRUSTEES OF PRINCETON UNIVERSITY",
             "href": "https://www.usaspending.gov/award/CONT_AWD_DEAC0209CH11466_8900_-NONE-_-NONE-/"
           },
-          2226122975.23
+          2235635687.23
         ],
         [
-          11,
+          23,
           {
             "text": "HANFORD TANK WASTE OPERATIONS & CLOSURE, LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_89303925FEM400064_8900_89303324DEM000096_8900/"
           },
-          1869227775.41
+          1886485775.41
         ],
         [
-          12,
+          24,
+          {
+            "text": "IDAHO ENVIRONMENTAL COALITION LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_89304223FEM400000_8900_89303321DEM000061_8900/"
+          },
+          1740524376.37
+        ],
+        [
+          25,
           {
             "text": "BATTELLE SAVANNAH RIVER ALLIANCE, LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_89303321CEM000080_8900_-NONE-_-NONE-/"
           },
           1668948147.93
-        ],
-        [
-          13,
-          {
-            "text": "IDAHO ENVIRONMENTAL COALITION LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_89304223FEM400000_8900_89303321DEM000061_8900/"
-          },
-          1657305176.37
-        ],
-        [
-          14,
-          {
-            "text": "IOWA STATE UNIVERSITY OF SCIENCE AND TECHNOLOGY",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_DEAC0207CH11358_8900_-NONE-_-NONE-/"
-          },
-          1151375067.62
-        ],
-        [
-          15,
-          {
-            "text": "CENTRAL PLATEAU CLEANUP COMPANY, LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_89303924FEM400054_8900_89303320DEM000030_8900/"
-          },
-          1115135671.74
-        ],
-        [
-          16,
-          {
-            "text": "HANFORD LABORATORY MANAGEMENT AND INTEGRATION LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_89303320CEM000075_8900_-NONE-_-NONE-/"
-          },
-          559230977.14
-        ],
-        [
-          17,
-          {
-            "text": "SOUTHERN OHIO CLEANUP COMPANY LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_89303125FEM400428_8900_89303323DEM000089_8900/"
-          },
-          399660463.32
-        ],
-        [
-          18,
-          {
-            "text": "SAVANNAH RIVER MISSION COMPLETION, LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_89303723FEM400293_8900_89303322DEM000068_8900/"
-          },
-          315662560
-        ],
-        [
-          19,
-          {
-            "text": "SURATECH LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_89243126CSC000213_8900_-NONE-_-NONE-/"
-          },
-          310263827.95
-        ],
-        [
-          20,
-          {
-            "text": "WESTINGHOUSE GOVERNMENT SERVICES LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_DEAC0200DP00229_8900_-NONE-_-NONE-/"
-          },
-          221381740.32
-        ],
-        [
-          21,
-          {
-            "text": "KEYLOGIC, LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_89243323CFE000075_8900_-NONE-_-NONE-/"
-          },
-          179281059
-        ],
-        [
-          22,
-          {
-            "text": "APTIM FEDERAL SERVICES, LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_89303324FEM400420_8900_89303320DEM000038_8900/"
-          },
-          143444534.5
-        ],
-        [
-          23,
-          {
-            "text": "ACCENTURE FEDERAL SERVICES LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_89603024F0002_8960_89303019AIM000005_8900/"
-          },
-          141917148.24
-        ],
-        [
-          24,
-          {
-            "text": "ACCENTURE FEDERAL SERVICES LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_89303026FIM000188_8900_89303025AIM000023_8900/"
-          },
-          89942183.21
-        ],
-        [
-          25,
-          {
-            "text": "KPMG LLP",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_89303021FIG400014_8900_GS00F275CA_4732/"
-          },
-          85251474.2
         ]
       ]
     }
   ],
   "narrative": {
-    "intro": "The Department of Energy obligated $593M in FY2027 to date. The agency recorded 157 awards with an average award size of $3.8M. Obligations fell 98.9% year over year, and current-year totals are partial (fiscal year to date). Historical context shows much larger full-year totals in recent years: FY22 obligations were $41.2B, FY23 obligations were $44.6B, FY24 obligations were $46B, FY25 obligations were $48.5B, and FY26 obligations were $55.1B. This snapshot reflects the early, partial nature of FY2027 contracting activity compared with prior full fiscal years.",
+    "intro": "The Department of Energy obligated $6.1B in FY2027 to date across 441 awards, with an average award size of $13.8M and obligations down 88.9% year over year. The FY2027 total is a partial, fiscal year to date figure. Year-to-year context shows prior fiscal obligations of $41.2B in FY22, $44.6B in FY23, $46B in FY24, $48.5B in FY25, and $55.1B in FY26. Facilities Support Services is the single largest NAICS category so far in FY2027 to date at $3.5B. Research and Development in the Physical, Engineering, and Life Sciences follows at $1.1B, supported by narrower R&D categories that together add hundreds of millions more. The top vendors are primarily national laboratory contractors and nuclear site operators, led by TRIAD NATIONAL SECURITY, LLC at $875M. The FY2027 to date picture reflects concentrated spending in facilities support and national security research functions, with a small number of large awards driving the department total.",
     "sections": [
       {
-        "heading": "How much has the Department of Energy obligated so far this fiscal year?",
-        "body": "The Department of Energy obligated $593M in FY2027 to date. The Department of Energy recorded 157 awards with an average award size of $3.8M. Obligations fell 98.9% year over year. Current-year totals are partial (fiscal year to date)."
+        "heading": "What did the Department of Energy obligate in FY2027 to date?",
+        "body": "The Department of Energy obligated $6.1B in FY2027 to date across 441 awards, with an average award size of $13.8M. Obligations are down 88.9% year over year. Prior fiscal years were $41.2B in FY22, $44.6B in FY23, $46B in FY24, $48.5B in FY25, and $55.1B in FY26."
       },
       {
-        "heading": "What are Energy's top contract categories and largest vendors in FY2027 to date?",
-        "body": "Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology) is the largest category at $398M. Hazardous Waste Treatment and Disposal is $100M, and Research and Development in the Physical, Engineering, and Life Sciences is $81.1M. FLUOR MARINE PROPULSION, LLC is the largest vendor at $373M, followed by HANFORD TANK WASTE OPERATIONS & CLOSURE, LLC at $100M, and UCHICAGO ARGONNE, LLC at $81.1M."
+        "heading": "Which categories and vendors received the most funding so far in FY2027 to date?",
+        "body": "Facilities Support Services received $3.5B, the largest single category. Research and Development in the Physical, Engineering, and Life Sciences received $1.1B, and related R&D NAICS entries add $628M and $154M. TRIAD NATIONAL SECURITY, LLC received $875M, followed by NATIONAL TECHNOLOGY & ENGINEERING SOLUTIONS OF SANDIA, LLC at $633M and LAWRENCE LIVERMORE NATIONAL SECURITY, LLC at $550M."
       }
     ]
   },
   "faq": [
     {
       "q": "How much does Department of Energy spend on contracts?",
-      "a": "The Department of Energy obligated $593M in FY2027 to date. The Department of Energy recorded 157 awards with an average award size of $3.8M. Obligations fell 98.9% year over year. Current-year totals are partial (fiscal year to date)."
+      "a": "The Department of Energy obligated $6.1B in FY2027 to date. The department recorded 441 awards with an average award size of $13.8M, and obligations are down 88.9% year over year compared with prior fiscal totals such as $55.1B in FY26."
     },
     {
       "q": "What does Energy buy?",
-      "a": "Energy buys research and cleanup services, led by Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology) at $398M. Hazardous Waste Treatment and Disposal accounts for $100M, and Research and Development in the Physical, Engineering, and Life Sciences accounts for $81.1M. Other top categories include Remediation Services ($6.3M) and Engineering Services ($3.4M)."
+      "a": "Energy buys a mix led by Facilities Support Services and R&D. Facilities Support Services received $3.5B, Research and Development in the Physical, Engineering, and Life Sciences received $1.1B, Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology) received $628M, and Remediation Services received $290M, with other categories including Hazardous Waste Treatment and Disposal at $117M and Computer Systems Design Services at $21.9M."
     },
     {
       "q": "Who are Energy's largest contractors?",
-      "a": "FLUOR MARINE PROPULSION, LLC is Energy's largest contractor at $373M. HANFORD TANK WASTE OPERATIONS & CLOSURE, LLC is $100M and UCHICAGO ARGONNE, LLC is $81.1M. Other top vendors include BATTELLE SAVANNAH RIVER ALLIANCE, LLC ($25.5M) and HANFORD LABORATORY MANAGEMENT AND INTEGRATION LLC ($7.5M)."
+      "a": "TRIAD NATIONAL SECURITY, LLC; NATIONAL TECHNOLOGY & ENGINEERING SOLUTIONS OF SANDIA, LLC; and LAWRENCE LIVERMORE NATIONAL SECURITY, LLC are the largest contractors by obligations. TRIAD NATIONAL SECURITY, LLC received $875M, NATIONAL TECHNOLOGY & ENGINEERING SOLUTIONS OF SANDIA, LLC received $633M, and LAWRENCE LIVERMORE NATIONAL SECURITY, LLC received $550M."
     }
   ],
   "related": [

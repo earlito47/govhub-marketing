@@ -4,14 +4,14 @@
   "title": "Expiring Federal Contracts: The Next 12 Months of Recompetes",
   "h1": "Federal contracts expiring in the next 12 months: recompete watch",
   "metaDescription": "The largest federal contracts ending in the next 12 months, from USAspending.gov data. Track upcoming recompetes by incumbent, agency, and market.",
-  "updated": "2026-10-26",
+  "updated": "2026-11-16",
   "fyWindow": {
     "label": "FY2027 to date",
     "start": "2026-10-01",
-    "end": "2026-10-26"
+    "end": "2026-11-16"
   },
   "stats": {
-    "totalObligations": 293101112247.4799,
+    "totalObligations": 287703940463.1799,
     "awardCount": null,
     "yoyGrowthPct": null,
     "avgAwardSize": null,
@@ -21,18 +21,18 @@
     {
       "id": "expiring-federal-contracts-largest-bar",
       "type": "bar",
-      "title": "Largest contracts expiring by October 2027",
+      "title": "Largest contracts expiring by November 2027",
       "series": [
         {
           "label": "Award value",
           "points": [
             [
               "NATIONAL TECHNOLOGY & ENGINEERING SOLUTIONS OF SANDIA, LLC",
-              43460682794.89
+              44093914875.26
             ],
             [
               "CONSOLIDATED NUCLEAR SECURITY, LLC",
-              34661763245.24
+              35151184369.83
             ],
             [
               "THE BOEING COMPANY",
@@ -40,7 +40,7 @@
             ],
             [
               "SAVANNAH RIVER NUCLEAR SOLUTIONS LLC",
-              27617040104.1
+              27995864149.1
             ],
             [
               "LOCKHEED MARTIN SERVICES, LLC",
@@ -49,10 +49,6 @@
             [
               "THE BOEING COMPANY",
               18111838529.78
-            ],
-            [
-              "THE BOEING COMPANY",
-              7473242017.31
             ],
             [
               "BELL BOEING JOINT PROJECT OFFICE",
@@ -65,12 +61,16 @@
             [
               "NORTHROP GRUMMAN SYSTEMS CORPORATION",
               5375141527.12
+            ],
+            [
+              "BATH IRON WORKS CORPORATION",
+              5025968516.81
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "NATIONAL TECHNOLOGY & ENGINEERING SOLUTIONS OF SANDIA, LLC holds the largest federal contract coming up for recompete, a $43.5B Department of Energy award with a period of performance ending in April 2027."
+      "takeaway": "NATIONAL TECHNOLOGY & ENGINEERING SOLUTIONS OF SANDIA, LLC holds the largest federal contract coming up for recompete, a $44.1B Department of Energy award with a period of performance ending in April 2027."
     },
     {
       "id": "expiring-federal-contracts-by-quarter-bar",
@@ -82,7 +82,7 @@
           "points": [
             [
               "Oct-Dec 2026",
-              38764723601.840004
+              36297493987.18
             ],
             [
               "Jan-Mar 2027",
@@ -90,21 +90,21 @@
             ],
             [
               "Apr-Jun 2027",
-              82507713460.28
+              83140945540.65001
             ],
             [
               "Jul-Sep 2027",
-              126300012351.00002
+              119703525649.54001
             ],
             [
               "Oct-Dec 2027",
-              0
+              3033312451.45
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Jul-Sep 2027 is the heaviest stretch, with $126B in contract value reaching its end date."
+      "takeaway": "Jul-Sep 2027 is the heaviest stretch, with $120B in contract value reaching its end date."
     }
   ],
   "tables": [
@@ -123,6 +123,24 @@
         [
           1,
           {
+            "text": "DENA0003525",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_DENA0003525_8900_-NONE-_-NONE-/"
+          },
+          {
+            "text": "NATIONAL TECHNOLOGY & ENGINEERING SOLUTIONS OF SANDIA, LLC",
+            "href": "/insights/vendor/national-technology-and-engineering-solutions-of-sandia/"
+          },
+          "Department of Energy",
+          {
+            "text": "Facilities Support Services (561210)",
+            "href": "/insights/naics/561210/"
+          },
+          44093914875.26,
+          "2027-04-30"
+        ],
+        [
+          2,
+          {
             "text": "DEAC0584OR21400",
             "href": "https://www.usaspending.gov/award/CONT_AWD_DEAC0584OR21400_8900_-NONE-_-NONE-/"
           },
@@ -139,7 +157,43 @@
           "2027-02-28"
         ],
         [
-          2,
+          3,
+          {
+            "text": "N0001914C0067",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0001914C0067_9700_-NONE-_-NONE-/"
+          },
+          {
+            "text": "THE BOEING COMPANY",
+            "href": "https://www.usaspending.gov/recipient/22d282c6-4508-7d30-97f1-7401ea73b12a-C/latest/"
+          },
+          "Department of Defense",
+          {
+            "text": "Aircraft Manufacturing (336411)",
+            "href": "/insights/naics/336411/"
+          },
+          18111838529.78,
+          "2027-04-30"
+        ],
+        [
+          4,
+          {
+            "text": "N0001917C0015",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0001917C0015_9700_-NONE-_-NONE-/"
+          },
+          {
+            "text": "BELL BOEING JOINT PROJECT OFFICE",
+            "href": "https://www.usaspending.gov/recipient/846d3ff4-b2cb-3924-018c-2dee1e0259b7-C/latest/"
+          },
+          "Department of Defense",
+          {
+            "text": "Aircraft Manufacturing (336411)",
+            "href": "/insights/naics/336411/"
+          },
+          7039922460.87,
+          "2027-04-30"
+        ],
+        [
+          5,
           {
             "text": "AIDOAATO1500007",
             "href": "https://www.usaspending.gov/award/CONT_AWD_AIDOAATO1500007_7200_AIDOAAI1500004_7200/"
@@ -157,7 +211,7 @@
           "2026-11-28"
         ],
         [
-          3,
+          6,
           {
             "text": "N0001913C9999",
             "href": "https://www.usaspending.gov/award/CONT_AWD_N0001913C9999_9700_-NONE-_-NONE-/"
@@ -175,7 +229,7 @@
           "2026-12-31"
         ],
         [
-          4,
+          7,
           {
             "text": "N0002413C2305",
             "href": "https://www.usaspending.gov/award/CONT_AWD_N0002413C2305_9700_-NONE-_-NONE-/"
@@ -193,7 +247,7 @@
           "2027-01-31"
         ],
         [
-          5,
+          8,
           {
             "text": "N0002411C2300",
             "href": "https://www.usaspending.gov/award/CONT_AWD_N0002411C2300_9700_-NONE-_-NONE-/"
@@ -211,7 +265,7 @@
           "2026-12-31"
         ],
         [
-          6,
+          9,
           {
             "text": "N0001919C0010",
             "href": "https://www.usaspending.gov/award/CONT_AWD_N0001919C0010_9700_-NONE-_-NONE-/"
@@ -229,7 +283,7 @@
           "2027-04-01"
         ],
         [
-          7,
+          10,
           {
             "text": "N0002416C2427",
             "href": "https://www.usaspending.gov/award/CONT_AWD_N0002416C2427_9700_-NONE-_-NONE-/"
@@ -247,7 +301,7 @@
           "2026-12-31"
         ],
         [
-          8,
+          11,
           {
             "text": "N0002413C2307",
             "href": "https://www.usaspending.gov/award/CONT_AWD_N0002413C2307_9700_-NONE-_-NONE-/"
@@ -265,7 +319,7 @@
           "2027-03-31"
         ],
         [
-          9,
+          12,
           {
             "text": "N0001914C0050",
             "href": "https://www.usaspending.gov/award/CONT_AWD_N0001914C0050_9700_-NONE-_-NONE-/"
@@ -283,25 +337,7 @@
           "2026-12-31"
         ],
         [
-          10,
-          {
-            "text": "AIDOAATO1500009",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_AIDOAATO1500009_7200_AIDOAAI1500004_7200/"
-          },
-          {
-            "text": "CHEMONICS INTERNATIONAL, INC.",
-            "href": "https://www.usaspending.gov/recipient/71710641-1c0a-d4c7-a593-1c039ee88fa2-C/latest/"
-          },
-          "Agency for International Development",
-          {
-            "text": "Administrative Management and General Management Consulting Services (541611)",
-            "href": "/insights/naics/541611/"
-          },
-          2925878093.79,
-          "2026-11-28"
-        ],
-        [
-          11,
+          13,
           {
             "text": "FA861512C6016",
             "href": "https://www.usaspending.gov/award/CONT_AWD_FA861512C6016_9700_-NONE-_-NONE-/"
@@ -319,7 +355,7 @@
           "2026-12-31"
         ],
         [
-          12,
+          14,
           {
             "text": "N0001916C0048",
             "href": "https://www.usaspending.gov/award/CONT_AWD_N0001916C0048_9700_-NONE-_-NONE-/"
@@ -337,7 +373,7 @@
           "2027-01-31"
         ],
         [
-          13,
+          15,
           {
             "text": "FA821413C0001",
             "href": "https://www.usaspending.gov/award/CONT_AWD_FA821413C0001_9700_-NONE-_-NONE-/"
@@ -355,7 +391,7 @@
           "2027-01-31"
         ],
         [
-          14,
+          16,
           {
             "text": "W52P1J19F0394",
             "href": "https://www.usaspending.gov/award/CONT_AWD_W52P1J19F0394_9700_W52P1J19D0044_9700/"
@@ -373,7 +409,7 @@
           "2027-03-29"
         ],
         [
-          15,
+          17,
           {
             "text": "DAAA0998E0006",
             "href": "https://www.usaspending.gov/award/CONT_AWD_DAAA0998E0006_9700_-NONE-_-NONE-/"
@@ -391,7 +427,7 @@
           "2027-03-31"
         ],
         [
-          16,
+          18,
           {
             "text": "W52P1J19F0400",
             "href": "https://www.usaspending.gov/award/CONT_AWD_W52P1J19F0400_9700_W52P1J19D0045_9700/"
@@ -405,11 +441,11 @@
             "text": "Facilities Support Services (561210)",
             "href": "/insights/naics/561210/"
           },
-          2271103267.7,
+          2265448772.76,
           "2026-12-31"
         ],
         [
-          17,
+          19,
           {
             "text": "36C10B22N0051EHRM",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C10B22N0051EHRM_3600_36C10B18D5000_3600/"
@@ -427,7 +463,7 @@
           "2027-03-31"
         ],
         [
-          18,
+          20,
           {
             "text": "W58RGZ19C0027",
             "href": "https://www.usaspending.gov/award/CONT_AWD_W58RGZ19C0027_9700_-NONE-_-NONE-/"
@@ -445,7 +481,7 @@
           "2027-04-23"
         ],
         [
-          19,
+          21,
           {
             "text": "N0001922C0041",
             "href": "https://www.usaspending.gov/award/CONT_AWD_N0001922C0041_9700_-NONE-_-NONE-/"
@@ -463,7 +499,61 @@
           "2027-03-31"
         ],
         [
-          20,
+          22,
+          {
+            "text": "FA862522F3027",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA862522F3027_9700_FA862520D3000_9700/"
+          },
+          {
+            "text": "LOCKHEED MARTIN CORP",
+            "href": "https://www.usaspending.gov/recipient/4051d253-67f0-30bd-2c7f-5eb539533924-C/latest/"
+          },
+          "Department of Defense",
+          {
+            "text": "Aircraft Manufacturing (336411)",
+            "href": "/insights/naics/336411/"
+          },
+          1865607013,
+          "2027-04-30"
+        ],
+        [
+          23,
+          {
+            "text": "70B01C26F00000345",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70B01C26F00000345_7014_70B01C26D00000007_7014/"
+          },
+          {
+            "text": "SOUTHWEST VALLEY CONSTRUCTORS CO",
+            "href": "https://www.usaspending.gov/recipient/50730e17-bc78-a2a6-9220-91b71f88258c-C/latest/"
+          },
+          "Department of Homeland Security",
+          {
+            "text": "Commercial and Institutional Building Construction (236220)",
+            "href": "/insights/naics/236220/"
+          },
+          1720040000,
+          "2027-05-11"
+        ],
+        [
+          24,
+          {
+            "text": "N0002414C5315",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002414C5315_9700_-NONE-_-NONE-/"
+          },
+          {
+            "text": "RAYTHEON COMPANY",
+            "href": "https://www.usaspending.gov/recipient/7df8886e-3a6d-4f37-1333-530fa05227ae-C/latest/"
+          },
+          "Department of Defense",
+          {
+            "text": "Search, Detection, Navigation, Guidance, Aeronautical, and Nautical System and Instrument Manufacturing (334511)",
+            "href": "/insights/naics/334511/"
+          },
+          1671263971.83,
+          "2026-12-31"
+        ],
+        [
+          25,
           {
             "text": "N0001915C0114",
             "href": "https://www.usaspending.gov/award/CONT_AWD_N0001915C0114_9700_-NONE-_-NONE-/"
@@ -481,7 +571,7 @@
           "2026-12-31"
         ],
         [
-          21,
+          26,
           {
             "text": "N0002415C4301",
             "href": "https://www.usaspending.gov/award/CONT_AWD_N0002415C4301_9700_-NONE-_-NONE-/"
@@ -499,7 +589,7 @@
           "2027-04-01"
         ],
         [
-          22,
+          27,
           {
             "text": "W52P1J19F0402",
             "href": "https://www.usaspending.gov/award/CONT_AWD_W52P1J19F0402_9700_W52P1J19D0045_9700/"
@@ -513,11 +603,11 @@
             "text": "Facilities Support Services (561210)",
             "href": "/insights/naics/561210/"
           },
-          1534019426.45,
+          1532996426.45,
           "2026-12-21"
         ],
         [
-          23,
+          28,
           {
             "text": "N0002416C2111",
             "href": "https://www.usaspending.gov/award/CONT_AWD_N0002416C2111_9700_-NONE-_-NONE-/"
@@ -535,7 +625,7 @@
           "2026-11-30"
         ],
         [
-          24,
+          29,
           {
             "text": "FA863416C2653",
             "href": "https://www.usaspending.gov/award/CONT_AWD_FA863416C2653_9700_-NONE-_-NONE-/"
@@ -553,7 +643,7 @@
           "2027-01-31"
         ],
         [
-          25,
+          30,
           {
             "text": "FA873918C5030",
             "href": "https://www.usaspending.gov/award/CONT_AWD_FA873918C5030_9700_-NONE-_-NONE-/"
@@ -571,7 +661,7 @@
           "2026-12-14"
         ],
         [
-          26,
+          31,
           {
             "text": "HQ014716C0011",
             "href": "https://www.usaspending.gov/award/CONT_AWD_HQ014716C0011_9700_-NONE-_-NONE-/"
@@ -587,24 +677,6 @@
           },
           1383662717.35,
           "2027-03-31"
-        ],
-        [
-          27,
-          {
-            "text": "47QFCA21F0001",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_47QFCA21F0001_4732_47QTCK18D0001_4732/"
-          },
-          {
-            "text": "SCIENCE APPLICATIONS INTERNATIONAL CORPORATION",
-            "href": "https://www.usaspending.gov/recipient/20af0683-f17d-1f8f-38ee-2f11bd124559-C/latest/"
-          },
-          "General Services Administration",
-          {
-            "text": "Computer Systems Design Services (541512)",
-            "href": "/insights/naics/541512/"
-          },
-          1205937997.76,
-          "2026-11-27"
         ]
       ]
     },
@@ -623,41 +695,23 @@
         [
           1,
           {
-            "text": "DENA0003525",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_DENA0003525_8900_-NONE-_-NONE-/"
-          },
-          {
-            "text": "NATIONAL TECHNOLOGY & ENGINEERING SOLUTIONS OF SANDIA, LLC",
-            "href": "https://www.usaspending.gov/recipient/b52d549e-73f7-a818-8c63-4a75904c9df5-C/latest/"
-          },
-          "Department of Energy",
-          {
-            "text": "Facilities Support Services (561210)",
-            "href": "/insights/naics/561210/"
-          },
-          43460682794.89,
-          "2027-04-30"
-        ],
-        [
-          2,
-          {
             "text": "DENA0001942",
             "href": "https://www.usaspending.gov/award/CONT_AWD_DENA0001942_8900_-NONE-_-NONE-/"
           },
           {
             "text": "CONSOLIDATED NUCLEAR SECURITY, LLC",
-            "href": "https://www.usaspending.gov/recipient/3c1a340d-2613-1609-93ce-eb1aba0559b5-C/latest/"
+            "href": "/insights/vendor/consolidated-nuclear-security/"
           },
           "Department of Energy",
           {
             "text": "Facilities Support Services (561210)",
             "href": "/insights/naics/561210/"
           },
-          34661763245.24,
+          35151184369.83,
           "2027-09-30"
         ],
         [
-          3,
+          2,
           {
             "text": "FA862511C6600",
             "href": "https://www.usaspending.gov/award/CONT_AWD_FA862511C6600_9700_-NONE-_-NONE-/"
@@ -675,79 +729,25 @@
           "2027-07-31"
         ],
         [
-          4,
+          3,
           {
             "text": "DEAC0908SR22470",
             "href": "https://www.usaspending.gov/award/CONT_AWD_DEAC0908SR22470_8900_-NONE-_-NONE-/"
           },
           {
             "text": "SAVANNAH RIVER NUCLEAR SOLUTIONS LLC",
-            "href": "https://www.usaspending.gov/recipient/f59302ac-85a9-ee1a-4813-9b07f3377a40-C/latest/"
+            "href": "/insights/vendor/savannah-river-nuclear-solutions/"
           },
           "Department of Energy",
           {
             "text": "Facilities Support Services (561210)",
             "href": "/insights/naics/561210/"
           },
-          27617040104.1,
+          27995864149.1,
           "2027-09-30"
         ],
         [
-          5,
-          {
-            "text": "N0001914C0067",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_N0001914C0067_9700_-NONE-_-NONE-/"
-          },
-          {
-            "text": "THE BOEING COMPANY",
-            "href": "https://www.usaspending.gov/recipient/22d282c6-4508-7d30-97f1-7401ea73b12a-C/latest/"
-          },
-          "Department of Defense",
-          {
-            "text": "Aircraft Manufacturing (336411)",
-            "href": "/insights/naics/336411/"
-          },
-          18111838529.78,
-          "2027-04-30"
-        ],
-        [
-          6,
-          {
-            "text": "W58RGZ16C0023",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_W58RGZ16C0023_9700_-NONE-_-NONE-/"
-          },
-          {
-            "text": "THE BOEING COMPANY",
-            "href": "https://www.usaspending.gov/recipient/27b04395-cee8-a47d-2a5c-3e2b78dc7b0a-C/latest/"
-          },
-          "Department of Defense",
-          {
-            "text": "Aircraft Manufacturing (336411)",
-            "href": "/insights/naics/336411/"
-          },
-          7473242017.31,
-          "2027-08-31"
-        ],
-        [
-          7,
-          {
-            "text": "N0001917C0015",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_N0001917C0015_9700_-NONE-_-NONE-/"
-          },
-          {
-            "text": "BELL BOEING JOINT PROJECT OFFICE",
-            "href": "https://www.usaspending.gov/recipient/846d3ff4-b2cb-3924-018c-2dee1e0259b7-C/latest/"
-          },
-          "Department of Defense",
-          {
-            "text": "Aircraft Manufacturing (336411)",
-            "href": "/insights/naics/336411/"
-          },
-          7039922460.87,
-          "2027-04-30"
-        ],
-        [
-          8,
+          4,
           {
             "text": "NSFDACS1219442",
             "href": "https://www.usaspending.gov/award/CONT_AWD_NSFDACS1219442_4900_-NONE-_-NONE-/"
@@ -761,11 +761,11 @@
             "text": "Facilities Support Services (561210)",
             "href": "/insights/naics/561210/"
           },
-          3278904845.58,
+          3279484506.76,
           "2027-09-30"
         ],
         [
-          9,
+          5,
           {
             "text": "DESC0014664",
             "href": "https://www.usaspending.gov/award/CONT_AWD_DESC0014664_8900_-NONE-_-NONE-/"
@@ -779,11 +779,11 @@
             "text": "All Other Professional, Scientific, and Technical Services (541990)",
             "href": "/insights/naics/541990/"
           },
-          3248090889.53,
+          3251068889.53,
           "2027-09-30"
         ],
         [
-          10,
+          6,
           {
             "text": "70B01C26F00000405",
             "href": "https://www.usaspending.gov/award/CONT_AWD_70B01C26F00000405_7014_70B01C26D00000012_7014/"
@@ -801,7 +801,7 @@
           "2027-07-27"
         ],
         [
-          11,
+          7,
           {
             "text": "N0001920C0047",
             "href": "https://www.usaspending.gov/award/CONT_AWD_N0001920C0047_9700_-NONE-_-NONE-/"
@@ -819,7 +819,7 @@
           "2027-08-31"
         ],
         [
-          12,
+          8,
           {
             "text": "HSCG2316CAFR625",
             "href": "https://www.usaspending.gov/award/CONT_AWD_HSCG2316CAFR625_7008_-NONE-_-NONE-/"
@@ -837,7 +837,7 @@
           "2027-09-24"
         ],
         [
-          13,
+          9,
           {
             "text": "80MSFC18C0011",
             "href": "https://www.usaspending.gov/award/CONT_AWD_80MSFC18C0011_8000_-NONE-_-NONE-/"
@@ -855,7 +855,7 @@
           "2027-05-31"
         ],
         [
-          14,
+          10,
           {
             "text": "N0002419C2235",
             "href": "https://www.usaspending.gov/award/CONT_AWD_N0002419C2235_9700_-NONE-_-NONE-/"
@@ -873,43 +873,25 @@
           "2027-08-23"
         ],
         [
-          15,
+          11,
           {
-            "text": "FA862522F3027",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_FA862522F3027_9700_FA862520D3000_9700/"
+            "text": "N0002418C2300",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002418C2300_9700_-NONE-_-NONE-/"
           },
           {
-            "text": "LOCKHEED MARTIN CORP",
-            "href": "https://www.usaspending.gov/recipient/4051d253-67f0-30bd-2c7f-5eb539533924-C/latest/"
+            "text": "LOCKHEED MARTIN CORPORATION",
+            "href": "https://www.usaspending.gov/recipient/49ba01f3-56b6-92fd-1814-1a521f21fe7e-C/latest/"
           },
           "Department of Defense",
           {
-            "text": "Aircraft Manufacturing (336411)",
-            "href": "/insights/naics/336411/"
+            "text": "Ship Building and Repairing (336611)",
+            "href": "/insights/naics/336611/"
           },
-          1865607013,
-          "2027-04-30"
+          1640054125.45,
+          "2027-10-31"
         ],
         [
-          16,
-          {
-            "text": "70B01C26F00000345",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_70B01C26F00000345_7014_70B01C26D00000007_7014/"
-          },
-          {
-            "text": "SOUTHWEST VALLEY CONSTRUCTORS CO",
-            "href": "https://www.usaspending.gov/recipient/50730e17-bc78-a2a6-9220-91b71f88258c-C/latest/"
-          },
-          "Department of Homeland Security",
-          {
-            "text": "Commercial and Institutional Building Construction (236220)",
-            "href": "/insights/naics/236220/"
-          },
-          1720040000,
-          "2027-05-11"
-        ],
-        [
-          17,
+          12,
           {
             "text": "36C10B18N0003",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C10B18N0003_3600_36C10B18D5000_3600/"
@@ -927,7 +909,25 @@
           "2027-08-16"
         ],
         [
-          18,
+          13,
+          {
+            "text": "N0002420C4312",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002420C4312_9700_-NONE-_-NONE-/"
+          },
+          {
+            "text": "ELECTRIC BOAT CORPORATION",
+            "href": "https://www.usaspending.gov/recipient/d5ab5f51-db3a-a26f-96a1-1b24c3e2802c-C/latest/"
+          },
+          "Department of Defense",
+          {
+            "text": "Ship Building and Repairing (336611)",
+            "href": "/insights/naics/336611/"
+          },
+          1393258326,
+          "2027-11-01"
+        ],
+        [
+          14,
           {
             "text": "70B01C26F00000385",
             "href": "https://www.usaspending.gov/award/CONT_AWD_70B01C26F00000385_7014_70B01C26D00000003_7014/"
@@ -945,7 +945,7 @@
           "2027-09-14"
         ],
         [
-          19,
+          15,
           {
             "text": "28321322FDS030130",
             "href": "https://www.usaspending.gov/award/CONT_AWD_28321322FDS030130_2800_SS001760016_2800/"
@@ -963,25 +963,25 @@
           "2027-09-28"
         ],
         [
-          20,
+          16,
           {
             "text": "47QFCA22F0047",
             "href": "https://www.usaspending.gov/award/CONT_AWD_47QFCA22F0047_4732_GS00Q14OADU108_4732/"
           },
           {
             "text": "BOOZ ALLEN HAMILTON INC",
-            "href": "https://www.usaspending.gov/recipient/ffca72e5-fba2-798a-6969-2a6c45e9f985-C/latest/"
+            "href": "/insights/vendor/booz-allen-hamilton/"
           },
           "General Services Administration",
           {
             "text": "Engineering Services (541330)",
             "href": "/insights/naics/541330/"
           },
-          1291222928.24,
+          1296175413.32,
           "2027-09-05"
         ],
         [
-          21,
+          17,
           {
             "text": "HHSO100201700019C",
             "href": "https://www.usaspending.gov/award/CONT_AWD_HHSO100201700019C_7505_-NONE-_-NONE-/"
@@ -999,7 +999,7 @@
           "2027-09-26"
         ],
         [
-          22,
+          18,
           {
             "text": "N0002407C2100",
             "href": "https://www.usaspending.gov/award/CONT_AWD_N0002407C2100_9700_-NONE-_-NONE-/"
@@ -1017,7 +1017,7 @@
           "2027-09-30"
         ],
         [
-          23,
+          19,
           {
             "text": "70B01C26F00000169",
             "href": "https://www.usaspending.gov/award/CONT_AWD_70B01C26F00000169_7014_70B01C26D00000012_7014/"
@@ -1038,30 +1038,30 @@
     }
   ],
   "narrative": {
-    "intro": "Federal contracts worth $293B combined reach the end of their current period of performance within the next 12 months, which puts each one on the recompete radar. NATIONAL TECHNOLOGY & ENGINEERING SOLUTIONS OF SANDIA, LLC holds the largest, a $43.5B contract awarded by Department of Energy that runs through April 2027. The list below ranks the 50 largest expiring contracts across the 25 industry markets GovHub tracks, split into a six-month and a twelve-month horizon.",
+    "intro": "Federal contracts with periods of performance ending within the next 12 months account for $288B in total contract value. NATIONAL TECHNOLOGY & ENGINEERING SOLUTIONS OF SANDIA, LLC has $44.1B expiring, CONSOLIDATED NUCLEAR SECURITY, LLC has $35.2B expiring, and THE BOEING COMPANY appears twice with $32B and $18.1B in expiring value. SAVANNAH RIVER NUCLEAR SOLUTIONS LLC has $28B expiring, LOCKHEED MARTIN SERVICES, LLC has $20.6B expiring, and other large expirations include BELL BOEING JOINT PROJECT OFFICE with $7B, CHEMONICS INTERNATIONAL, INC. with $6.7B, NORTHROP GRUMMAN SYSTEMS CORPORATION with $5.4B, and BATH IRON WORKS CORPORATION with $5B. Expiring contract value concentrates in mid-2027: Oct-Dec 2026 shows $36.3B, Jan-Mar 2027 shows $45.5B, Apr-Jun 2027 shows $83.1B, Jul-Sep 2027 shows $120B, and Oct-Dec 2027 shows $3B. Award value figures are total contract values for contracts whose period of performance ends within the next 12 months. End dates can be extended by options and modifications.",
     "sections": [
       {
-        "heading": "What is a contract recompete?",
-        "body": "When a federal contract reaches the end of its period of performance, the agency must decide whether to exercise remaining options, extend the work, or compete the requirement again. That fresh competition is the recompete, and the incumbent has to defend the work. Expiring contracts are the clearest early signal of upcoming bid opportunities: the requirement is proven, funded, and has a track record a challenger can study."
+        "heading": "Which contractors have the largest expirations by November 2027?",
+        "body": "NATIONAL TECHNOLOGY & ENGINEERING SOLUTIONS OF SANDIA, LLC has $44.1B in contracts expiring. CONSOLIDATED NUCLEAR SECURITY, LLC has $35.2B and THE BOEING COMPANY has $32B and an additional $18.1B expiring. SAVANNAH RIVER NUCLEAR SOLUTIONS LLC and LOCKHEED MARTIN SERVICES, LLC have $28B and $20.6B expiring respectively."
       },
       {
-        "heading": "How this list is built",
-        "body": "The list ranks definitive federal contracts (award types A through D) by total award value where the currently reported period-of-performance end date falls within the next 12 months, drawn from the 25 industry markets GovHub tracks. End dates move: agencies exercise options and issue modifications that extend performance, and the Department of Defense reports awards on a delay of roughly 90 days. Treat an end date as the signal to start positioning, not as a guaranteed solicitation date."
+        "heading": "When do the bulk of these expiring contracts end?",
+        "body": "Jul-Sep 2027 contains the largest share of expiring value with $120B. Apr-Jun 2027 follows with $83.1B, Jan-Mar 2027 has $45.5B, and Oct-Dec 2026 has $36.3B. A small amount of value, $3B, has end dates in Oct-Dec 2027."
       }
     ]
   },
   "faq": [
     {
       "q": "Which large federal contracts are expiring soon?",
-      "a": "NATIONAL TECHNOLOGY & ENGINEERING SOLUTIONS OF SANDIA, LLC's $43.5B contract with Department of Energy is the largest tracked federal contract ending in the next 12 months, with a period of performance that runs through April 2027."
+      "a": "The largest expiring contracts include NATIONAL TECHNOLOGY & ENGINEERING SOLUTIONS OF SANDIA, LLC with $44.1B, CONSOLIDATED NUCLEAR SECURITY, LLC with $35.2B, THE BOEING COMPANY with $32B and $18.1B, SAVANNAH RIVER NUCLEAR SOLUTIONS LLC with $28B, and LOCKHEED MARTIN SERVICES, LLC with $20.6B. Additional large expirations listed are BELL BOEING JOINT PROJECT OFFICE with $7B, CHEMONICS INTERNATIONAL, INC. with $6.7B, NORTHROP GRUMMAN SYSTEMS CORPORATION with $5.4B, and BATH IRON WORKS CORPORATION with $5B."
     },
     {
       "q": "What is a contract recompete?",
-      "a": "A recompete is the new competition that happens when an existing federal contract reaches the end of its period of performance and the agency competes the requirement again. Incumbents must re-win the work, which makes expiring contracts a strong early signal of upcoming opportunities."
+      "a": "A contract recompete is a new competition for work when an existing contract's period of performance ends. Award value figures in this listing are total contract values for contracts whose period of performance ends within the next 12 months, and end dates can be extended by options and modifications."
     },
     {
       "q": "How current is this recompete data?",
-      "a": "The list refreshes weekly from USAspending.gov award data and reflects currently reported period-of-performance end dates. End dates change when agencies exercise options or extend contracts, and Department of Defense awards are reported on a delay of roughly 90 days."
+      "a": "The data covers FY2027 to date. The listing reports total contract values for contracts with end dates in the next 12 months and notes that end dates can be extended by options and modifications."
     }
   ],
   "related": [
@@ -1094,6 +1094,25 @@
       "href": "/insights/fastest-growing-federal-markets/"
     }
   ],
+  "crossLinks": [
+    {
+      "label": "National Technology and Engineering Solutions of Sandia federal contracts",
+      "href": "/insights/vendor/national-technology-and-engineering-solutions-of-sandia/"
+    },
+    {
+      "label": "Consolidated Nuclear Security federal contracts",
+      "href": "/insights/vendor/consolidated-nuclear-security/"
+    },
+    {
+      "label": "Savannah River Nuclear Solutions federal contracts",
+      "href": "/insights/vendor/savannah-river-nuclear-solutions/"
+    },
+    {
+      "label": "Booz Allen Hamilton federal contracts",
+      "href": "/insights/vendor/booz-allen-hamilton/"
+    }
+  ],
+  "crossLinksHeading": "Incumbent vendor profiles",
   "sources": [
     {
       "label": "USAspending.gov award data",

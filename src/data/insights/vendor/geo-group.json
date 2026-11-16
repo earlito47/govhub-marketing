@@ -1,20 +1,20 @@
 {
   "pageType": "vendor",
   "slug": "geo-group",
-  "title": "Who Buys From Geo Group: $894M in FY2026",
+  "title": "Who Buys From Geo Group: $54.6M in FY2027",
   "h1": "Geo Group: Federal Contracts, Agencies & Awards",
-  "metaDescription": "Geo Group won $894M in federal contract obligations in FY2026 to date. See its top agencies, markets, largest awards, and expiring contracts.",
-  "updated": "2026-08-24",
+  "metaDescription": "Geo Group won $54.6M in federal contract obligations in FY2027 to date. See its top agencies, markets, largest awards, and expiring contracts.",
+  "updated": "2026-11-16",
   "fyWindow": {
-    "label": "FY2026 to date",
-    "start": "2025-10-01",
-    "end": "2026-08-24"
+    "label": "FY2027 to date",
+    "start": "2026-10-01",
+    "end": "2026-11-16"
   },
   "stats": {
-    "totalObligations": 894052945.51,
-    "awardCount": 113,
-    "yoyGrowthPct": 13,
-    "avgAwardSize": 7911973,
+    "totalObligations": 54626769.45,
+    "awardCount": 28,
+    "yoyGrowthPct": -94.6,
+    "avgAwardSize": 1950956,
     "smallBusinessSharePct": null
   },
   "charts": [
@@ -26,10 +26,6 @@
         {
           "label": "Obligations",
           "points": [
-            [
-              "FY21",
-              646631147.3
-            ],
             [
               "FY22",
               608650539.65
@@ -48,65 +44,69 @@
             ],
             [
               "FY26",
-              894052945.51
+              1006358861.91
+            ],
+            [
+              "FY27",
+              54626769.45
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Obligations grew 13.0% year over year, from $791M in FY2025 to $894M in FY2026 to date."
+      "takeaway": "Obligations fell 94.6% year over year, from $1B in FY2026 to $54.6M in FY2027 to date."
     },
     {
       "id": "geo-group-top-agencies",
       "type": "bar",
-      "title": "Top 10 buying agencies, FY2026 to date",
+      "title": "Top 10 buying agencies, FY2027 to date",
       "series": [
         {
           "label": "Obligations",
           "points": [
             [
               "Department of Homeland Security",
-              748795272.34
+              42561243.6
             ],
             [
               "Department of Justice",
-              145257673.17
+              12065525.85
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Department of Homeland Security is Geo Group's largest federal customer, with $749M obligated (83.8% of the company's federal obligations)."
+      "takeaway": "Department of Homeland Security is Geo Group's largest federal customer, with $42.6M obligated (77.9% of the company's federal obligations)."
     },
     {
       "id": "geo-group-top-naics",
       "type": "bar",
-      "title": "Top 10 markets (NAICS), FY2026 to date",
+      "title": "Top 10 markets (NAICS), FY2027 to date",
       "series": [
         {
           "label": "Obligations",
           "points": [
             [
               "Security Guards and Patrol Services",
-              578180265.54
+              28423856
             ],
             [
               "Facilities Support Services",
-              188571994.69
+              17831083.63
             ],
             [
               "Other Justice, Public Order, and Safety Activities",
-              80957654.26
+              5675442.22
             ],
             [
               "Correctional Institutions",
-              46343031.02
+              2696387.6
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Security Guards and Patrol Services is Geo Group's largest federal market, with $578M in obligations."
+      "takeaway": "Security Guards and Patrol Services is Geo Group's largest federal market, with $28.4M in obligations."
     }
   ],
   "crossLinks": [
@@ -129,7 +129,7 @@
   ],
   "tables": [
     {
-      "title": "Largest awards, FY2026 to date",
+      "title": "Largest awards, FY2027 to date",
       "columns": [
         "Rank",
         "Award",
@@ -144,7 +144,7 @@
             "text": "DJJODT7C0003",
             "href": "https://www.usaspending.gov/award/CONT_AWD_DJJODT7C0003_1501_-NONE-_-NONE-/"
           },
-          801618104.72,
+          811355480.94,
           "Department of Justice",
           "2030-09-30"
         ],
@@ -154,239 +154,239 @@
             "text": "DJJODT8C0005",
             "href": "https://www.usaspending.gov/award/CONT_AWD_DJJODT8C0005_1501_-NONE-_-NONE-/"
           },
-          566357994.73,
-          "Department of Justice",
-          "2028-02-19"
-        ],
-        [
-          3,
-          {
-            "text": "70CDCR24FR0000049",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_70CDCR24FR0000049_7012_70CDCR20D00000011_7012/"
-          },
-          270442488.54,
-          "Department of Homeland Security",
-          "2025-09-30"
-        ],
-        [
-          4,
-          {
-            "text": "70CDCR25FR0000127",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_70CDCR25FR0000127_7012_70CDCR25D00000062_7012/"
-          },
-          228516114.69,
-          "Department of Homeland Security",
-          "2026-09-29"
-        ],
-        [
-          5,
-          {
-            "text": "70CDCR25FR0000009",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_70CDCR25FR0000009_7012_70CDCR20D00000009_7012/"
-          },
-          120393306.26,
-          "Department of Homeland Security",
-          "2025-12-19"
-        ],
-        [
-          6,
-          {
-            "text": "70CDCR25FR0000004",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_70CDCR25FR0000004_7012_HSCEDM15D00015_7012/"
-          },
-          117431349.5,
-          "Department of Homeland Security",
-          "2026-03-27"
-        ],
-        [
-          7,
-          {
-            "text": "70CDCR26FR0000028",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_70CDCR26FR0000028_7012_70CDCR20D00000009_7012/"
-          },
-          107738200,
-          "Department of Homeland Security",
-          "2026-12-19"
-        ],
-        [
-          8,
-          {
-            "text": "70CDCR25FR0000096",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_70CDCR25FR0000096_7012_70CDCR25D00000009_7012/"
-          },
-          91860421,
-          "Department of Homeland Security",
-          "2026-07-20"
-        ],
-        [
-          9,
-          {
-            "text": "70CDCR26FR0000042",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_70CDCR26FR0000042_7012_70CDCR20D00000008_7012/"
-          },
-          76850838.39,
-          "Department of Homeland Security",
-          "2026-12-19"
-        ],
-        [
-          10,
-          {
-            "text": "70CDCR25FR0000111",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_70CDCR25FR0000111_7012_70CDCR22D00000001_7012/"
-          },
-          66893395,
-          "Department of Homeland Security",
-          "2026-08-15"
-        ],
-        [
-          11,
-          {
-            "text": "15M40023FA3500005",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_15M40023FA3500005_1544_70CDCR20D00000008_7012/"
-          },
-          66228383.55,
-          "Department of Justice",
-          "2026-03-31"
-        ],
-        [
-          12,
-          {
-            "text": "70CDCR26FR0000055",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_70CDCR26FR0000055_7012_70CDCR26D00000026_7012/"
-          },
-          63236838.99,
-          "Department of Homeland Security",
-          "2026-10-27"
-        ],
-        [
-          13,
-          {
-            "text": "15M40024FA3500002",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_15M40024FA3500002_1544_15M40020DA3500004_1544/"
-          },
-          63207556.03,
-          "Department of Justice",
-          "2025-10-31"
-        ],
-        [
-          14,
-          {
-            "text": "70CDCR25FR0000013",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_70CDCR25FR0000013_7012_70CDCR20D00000008_7012/"
-          },
-          61491466,
-          "Department of Homeland Security",
-          "2025-12-19"
-        ],
-        [
-          15,
-          {
-            "text": "70CDCR24FR0000038",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_70CDCR24FR0000038_7012_70CDCR20D00000012_7012/"
-          },
-          60523845.63,
-          "Department of Homeland Security",
-          "2025-08-05"
-        ],
-        [
-          16,
-          {
-            "text": "70CDCR25FR0000097",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_70CDCR25FR0000097_7012_HSCEDM17D00009_7012/"
-          },
-          60035628,
-          "Department of Homeland Security",
-          "2026-08-17"
-        ],
-        [
-          17,
-          {
-            "text": "70CDCR25FR0000005",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_70CDCR25FR0000005_7012_70CDCR22D00000001_7012/"
-          },
-          59993453.2,
-          "Department of Homeland Security",
-          "2025-10-15"
-        ],
-        [
-          18,
-          {
-            "text": "70CDCR25FR0000029",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_70CDCR25FR0000029_7012_70CDCR25D00000007_7012/"
-          },
-          58637673.24,
-          "Department of Homeland Security",
-          "2026-02-28"
-        ],
-        [
-          19,
-          {
-            "text": "70CDCR25FR0000091",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_70CDCR25FR0000091_7012_70CDCR20D00000012_7012/"
-          },
-          57517165.28,
-          "Department of Homeland Security",
-          "2026-08-05"
-        ],
-        [
-          20,
-          {
-            "text": "15M40025FA3500009",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_15M40025FA3500009_1544_15M40018DA3500001_1544/"
-          },
-          56866471.02,
-          "Department of Justice",
-          "2025-10-31"
-        ],
-        [
-          21,
-          {
-            "text": "70CDCR23FR0000050",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_70CDCR23FR0000050_7012_HSCEDM17D00009_7012/"
-          },
-          55018504.16,
-          "Department of Homeland Security",
-          "2024-06-30"
-        ],
-        [
-          22,
-          {
-            "text": "15M40026FA3500002",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_15M40026FA3500002_1544_15M40018DA3500001_1544/"
-          },
-          52796501.43,
+          568055447.37,
           "Department of Justice",
           "2026-10-31"
         ],
         [
+          3,
+          {
+            "text": "70CDCR25FR0000111",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70CDCR25FR0000111_7012_70CDCR22D00000001_7012/"
+          },
+          85103576.3,
+          "Department of Homeland Security",
+          "2026-12-15"
+        ],
+        [
+          4,
+          {
+            "text": "70CDCR25FR0000091",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70CDCR25FR0000091_7012_70CDCR20D00000012_7012/"
+          },
+          63007446.93,
+          "Department of Homeland Security",
+          "2026-08-05"
+        ],
+        [
+          5,
+          {
+            "text": "70CDCR26FR0000101",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70CDCR26FR0000101_7012_70CDCR26D00000049_7012/"
+          },
+          58653711.99,
+          "Department of Homeland Security",
+          "2027-01-09"
+        ],
+        [
+          6,
+          {
+            "text": "15M40025FA3500029",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_15M40025FA3500029_1544_15M40025AA3500024_1544/"
+          },
+          28498050.73,
+          "Department of Justice",
+          "2027-04-30"
+        ],
+        [
+          7,
+          {
+            "text": "70CDCR26FR0000107",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70CDCR26FR0000107_7012_70CDCR20D00000012_7012/"
+          },
+          9803626.1,
+          "Department of Homeland Security",
+          "2026-09-30"
+        ],
+        [
+          8,
+          {
+            "text": "70CDCR26FC0000002",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70CDCR26FC0000002_7012_HSCEDM14A00001_7012/"
+          },
+          6652047,
+          "Department of Homeland Security",
+          "2027-03-31"
+        ],
+        [
+          9,
+          {
+            "text": "15M40027FA3500007",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_15M40027FA3500007_1544_15M40018DA3500001_1544/"
+          },
+          6390083.63,
+          "Department of Justice",
+          "2027-09-30"
+        ],
+        [
+          10,
+          {
+            "text": "15BRRC26F00000098",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_15BRRC26F00000098_1540_15BRRC21D00000260_1540/"
+          },
+          6005419.72,
+          "Department of Justice",
+          "2026-08-31"
+        ],
+        [
+          11,
+          {
+            "text": "15BRRC26F00000200",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_15BRRC26F00000200_1540_15BRRC21D00000242_1540/"
+          },
+          4768945.52,
+          "Department of Justice",
+          "2026-06-30"
+        ],
+        [
+          12,
+          {
+            "text": "15BRRC26F00000194",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_15BRRC26F00000194_1540_15BRRC26D00000002_1540/"
+          },
+          3759673,
+          "Department of Justice",
+          "2027-03-31"
+        ],
+        [
+          13,
+          {
+            "text": "15BRRC26F00000038",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_15BRRC26F00000038_1540_15BRRC21D00000271_1540/"
+          },
+          3675586.11,
+          "Department of Justice",
+          "2026-03-31"
+        ],
+        [
+          14,
+          {
+            "text": "15BRRC26F00000175",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_15BRRC26F00000175_1540_15BRRC20D00000109_1540/"
+          },
+          3639235.25,
+          "Department of Justice",
+          "2026-11-30"
+        ],
+        [
+          15,
+          {
+            "text": "15BRRC25F00000268",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_15BRRC25F00000268_1540_15BRRC21D00000271_1540/"
+          },
+          3609740.39,
+          "Department of Justice",
+          "2026-03-31"
+        ],
+        [
+          16,
+          {
+            "text": "15BRRC26F00000187",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_15BRRC26F00000187_1540_15BRRC23D00000033_1540/"
+          },
+          3565819.82,
+          "Department of Justice",
+          "2026-12-01"
+        ],
+        [
+          17,
+          {
+            "text": "15BRRC26F00000031",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_15BRRC26F00000031_1540_15BRRC19D00000230_1540/"
+          },
+          2835814.2,
+          "Department of Justice",
+          "2026-09-30"
+        ],
+        [
+          18,
+          {
+            "text": "15BRRC25F00000233",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_15BRRC25F00000233_1540_15BRRC20D00000245_1540/"
+          },
+          2820767.82,
+          "Department of Justice",
+          "2025-09-30"
+        ],
+        [
+          19,
+          {
+            "text": "15BRRC26F00000216",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_15BRRC26F00000216_1540_15BRRC20D00000245_1540/"
+          },
+          2708214.7,
+          "Department of Justice",
+          "2026-07-31"
+        ],
+        [
+          20,
+          {
+            "text": "15BRRC26F00000325",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_15BRRC26F00000325_1540_15BRRC20D00000110_1540/"
+          },
+          2671092,
+          "Department of Justice",
+          "2026-09-30"
+        ],
+        [
+          21,
+          {
+            "text": "15BRRC26F00000174",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_15BRRC26F00000174_1540_15BRRC24D00000013_1540/"
+          },
+          2621061.65,
+          "Department of Justice",
+          "2026-06-30"
+        ],
+        [
+          22,
+          {
+            "text": "70CDCR25FC0000007",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70CDCR25FC0000007_7012_70CDCR18A00000007_7012/"
+          },
+          2416287.6,
+          "Department of Homeland Security",
+          "2026-07-22"
+        ],
+        [
           23,
           {
-            "text": "70CDCR25FR0000100",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_70CDCR25FR0000100_7012_70CDCR21D00000004_7012/"
+            "text": "15BRRC26F00000322",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_15BRRC26F00000322_1540_15BRRC26D00000014_1540/"
           },
-          52194076,
-          "Department of Homeland Security",
-          "2026-08-31"
+          2181607.5,
+          "Department of Justice",
+          "2026-09-30"
         ],
         [
           24,
           {
-            "text": "70CDCR24FR0000053",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_70CDCR24FR0000053_7012_70CDCR21D00000004_7012/"
+            "text": "15BRRC26F00000310",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_15BRRC26F00000310_1540_15BRRC19D00000149_1540/"
           },
-          42926174.75,
-          "Department of Homeland Security",
-          "2025-09-30"
+          1587365.59,
+          "Department of Justice",
+          "2027-06-30"
         ],
         [
           25,
           {
-            "text": "70CDCR23FR0000048",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_70CDCR23FR0000048_7012_70CDCR21D00000004_7012/"
+            "text": "15BRRC26F00000308",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_15BRRC26F00000308_1540_15BRRC24D00000013_1540/"
           },
-          38861166.19,
-          "Department of Homeland Security",
-          "2025-09-15"
+          1071663.01,
+          "Department of Justice",
+          "2027-06-30"
         ]
       ]
     },
@@ -401,15 +401,6 @@
       "rows": [
         [
           {
-            "text": "70CDCR25FR0000127",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_70CDCR25FR0000127_7012_70CDCR25D00000062_7012/"
-          },
-          "Department of Homeland Security",
-          228516114.69,
-          "2026-09-29"
-        ],
-        [
-          {
             "text": "70CDCR26FR0000028",
             "href": "https://www.usaspending.gov/award/CONT_AWD_70CDCR26FR0000028_7012_70CDCR20D00000009_7012/"
           },
@@ -419,48 +410,57 @@
         ],
         [
           {
+            "text": "70CDCR25FR0000111",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70CDCR25FR0000111_7012_70CDCR22D00000001_7012/"
+          },
+          "Department of Homeland Security",
+          85103576.3,
+          "2026-12-15"
+        ],
+        [
+          {
             "text": "70CDCR26FR0000042",
             "href": "https://www.usaspending.gov/award/CONT_AWD_70CDCR26FR0000042_7012_70CDCR20D00000008_7012/"
           },
           "Department of Homeland Security",
-          76850838.39,
+          77625819.39,
           "2026-12-19"
         ],
         [
           {
-            "text": "70CDCR26FR0000055",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_70CDCR26FR0000055_7012_70CDCR26D00000026_7012/"
+            "text": "70CDCR26FR0000101",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70CDCR26FR0000101_7012_70CDCR26D00000049_7012/"
           },
           "Department of Homeland Security",
-          63236838.99,
-          "2026-10-27"
+          58653711.99,
+          "2027-01-09"
         ],
         [
           {
-            "text": "15M40026FA3500002",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_15M40026FA3500002_1544_15M40018DA3500001_1544/"
+            "text": "70CDCR26FR0000131",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70CDCR26FR0000131_7012_70CDCR20D00000009_7012/"
+          },
+          "Department of Homeland Security",
+          53590841.12,
+          "2027-09-19"
+        ],
+        [
+          {
+            "text": "70CDCR26FR0000125",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70CDCR26FR0000125_7012_70CDCR25D00000062_7012/"
+          },
+          "Department of Homeland Security",
+          41018888.74,
+          "2027-09-29"
+        ],
+        [
+          {
+            "text": "15M40026FA3500006",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_15M40026FA3500006_1544_15M40020DA3500004_1544/"
           },
           "Department of Justice",
-          52796501.43,
-          "2026-10-31"
-        ],
-        [
-          {
-            "text": "70CDCR25FR0000100",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_70CDCR25FR0000100_7012_70CDCR21D00000004_7012/"
-          },
-          "Department of Homeland Security",
-          52194076,
-          "2026-08-31"
-        ],
-        [
-          {
-            "text": "70CDCR26FR0000050",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_70CDCR26FR0000050_7012_70CDCR25D00000007_7012/"
-          },
-          "Department of Homeland Security",
-          38610726,
-          "2026-09-30"
+          37178620.76,
+          "2027-10-31"
         ]
       ]
     },
@@ -487,34 +487,34 @@
     }
   ],
   "narrative": {
-    "intro": "Geo Group obligated $894M in federal contract obligations in FY2026 to date. Geo Group received 113 awards, with an average award size of $7.9M, and obligations are up 13.0% year over year. The Department of Homeland Security is the largest buyer, obligating $749M, followed by the Department of Justice with $145M. Security Guards and Patrol Services is the largest market for Geo Group at $578M, followed by Facilities Support Services at $189M, Other Justice, Public Order, and Safety Activities at $81M, and Correctional Institutions at $46.3M. Looking back across recent fiscal years, obligations were $647M in FY21, $609M in FY22, $604M in FY23, $642M in FY24, and $791M in FY25. This snapshot covers partial current-year totals through FY2026 to date. The figures include contract obligations unless noted otherwise for largest-awards and expiring-contracts, which represent total contract values. Use these figures to compare Geo Group’s recent federal activity, buyer concentration, and market mix without inferring performance beyond the provided fiscal-year-to-date numbers.",
+    "intro": "Geo Group has obligated $54.6M in federal contracts so far in FY2027 to date. Geo Group won 28 awards this fiscal year to date, with an average award size of $2M, and obligations fell 94.6% year over year. Geo Group received most of FY2027 to date obligations from the Department of Homeland Security, which obligated $42.6M. The Department of Justice obligated $12.1M. Geo Group’s FY2027 to date work is concentrated in a few NAICS markets: Security Guards and Patrol Services obligated $28.4M, Facilities Support Services obligated $17.8M, Other Justice, Public Order, and Safety Activities obligated $5.7M, and Correctional Institutions obligated $2.7M. Historical annual obligations show larger totals in recent fiscal years: FY22 obligations were $609M, FY23 obligations were $604M, FY24 obligations were $642M, FY25 obligations were $791M, and FY26 obligations were $1B. Current-year totals are partial because FY2027 is fiscal year to date.",
     "sections": [
       {
-        "heading": "How concentrated are Geo Group’s federal buyers?",
-        "body": "The Department of Homeland Security is the top buyer, obligating $749M. The Department of Justice is the second buyer at $145M. Together these two agencies make up the majority of FY2026 to date obligations for Geo Group."
+        "heading": "Who are Geo Group's top federal buyers?",
+        "body": "The Department of Homeland Security is Geo Group’s top buyer in FY2027 to date, with obligations of $42.6M. The Department of Justice is the second-largest buyer, with obligations of $12.1M. Those two agencies account for the entire listed top-buyers total for FY2027 to date."
       },
       {
-        "heading": "What markets drive Geo Group’s federal revenue?",
-        "body": "Security Guards and Patrol Services is the largest market at $578M. Facilities Support Services accounts for $189M, Other Justice, Public Order, and Safety Activities accounts for $81M, and Correctional Institutions accounts for $46.3M. These markets show where most FY2026 to date obligations are concentrated."
+        "heading": "What federal markets does Geo Group serve?",
+        "body": "Security Guards and Patrol Services is the largest NAICS market for Geo Group in FY2027 to date, with obligations of $28.4M. Facilities Support Services follows with obligations of $17.8M, then Other Justice, Public Order, and Safety Activities with obligations of $5.7M, and Correctional Institutions with obligations of $2.7M."
       }
     ]
   },
   "faq": [
     {
       "q": "How much does Geo Group make from federal contracts?",
-      "a": "Geo Group obligated $894M in federal contracts in FY2026 to date. Geo Group received 113 awards this period, with an average award size of $7.9M, and obligations are up 13.0% year over year. Historical obligations were $647M in FY21, $609M in FY22, $604M in FY23, $642M in FY24, and $791M in FY25."
+      "a": "Geo Group has obligated $54.6M in federal contracts in FY2027 to date. Geo Group won 28 awards this fiscal year to date, with an average award size of $2M, and obligations fell 94.6% year over year."
     },
     {
       "q": "Which agencies buy from Geo Group?",
-      "a": "The Department of Homeland Security and the Department of Justice are Geo Group’s top federal buyers. The Department of Homeland Security obligated $749M and the Department of Justice obligated $145M in FY2026 to date."
+      "a": "The Department of Homeland Security and the Department of Justice buy from Geo Group. The Department of Homeland Security obligated $42.6M in FY2027 to date, and the Department of Justice obligated $12.1M."
     },
     {
       "q": "What does Geo Group sell to the government?",
-      "a": "Geo Group sells services in security and facilities markets. Security Guards and Patrol Services accounts for $578M, Facilities Support Services accounts for $189M, Other Justice, Public Order, and Safety Activities accounts for $81M, and Correctional Institutions accounts for $46.3M in FY2026 to date."
+      "a": "Geo Group sells security, facilities, and correctional services to the government. Security Guards and Patrol Services accounted for $28.4M in FY2027 to date, Facilities Support Services accounted for $17.8M, Other Justice, Public Order, and Safety Activities accounted for $5.7M, and Correctional Institutions accounted for $2.7M."
     },
     {
       "q": "Which Geo Group contracts are expiring soon?",
-      "a": "The dataset does not list specific expiring-contract entries in the provided figures. The note states that largest-awards and expiring-contracts tables use total contract values rather than obligations, but no expiring-contract values are provided in the facts."
+      "a": "Geo Group has no specific expiring-contract values listed in the FACTS provided. The FACTS show current obligations and markets for FY2027 to date but do not list expiring-contract entries or award-value figures for expiring contracts."
     }
   ],
   "related": [
@@ -523,28 +523,28 @@
       "href": "/insights/expiring-federal-contracts/"
     },
     {
-      "label": "General Matter federal contracts",
-      "href": "/insights/vendor/general-matter/"
+      "label": "Ameresco federal contracts",
+      "href": "/insights/vendor/ameresco/"
     },
     {
-      "label": "Orano Federal Services federal contracts",
-      "href": "/insights/vendor/orano-federal-services/"
+      "label": "Suratech federal contracts",
+      "href": "/insights/vendor/suratech/"
     },
     {
-      "label": "Medline Industries federal contracts",
-      "href": "/insights/vendor/medline-industries/"
+      "label": "United Parcel Service federal contracts",
+      "href": "/insights/vendor/united-parcel-service/"
     },
     {
-      "label": "Dell Marketing L P federal contracts",
-      "href": "/insights/vendor/dell-marketing-l-p/"
+      "label": "Crowley Government Services federal contracts",
+      "href": "/insights/vendor/crowley-government-services/"
     },
     {
-      "label": "V2X Systems federal contracts",
-      "href": "/insights/vendor/v2x-systems/"
+      "label": "Strategic Storage Partners federal contracts",
+      "href": "/insights/vendor/strategic-storage-partners/"
     },
     {
-      "label": "Serco federal contracts",
-      "href": "/insights/vendor/serco/"
+      "label": "Ferrovial Construccion PR federal contracts",
+      "href": "/insights/vendor/ferrovial-construccion-pr/"
     }
   ],
   "sources": [
@@ -552,5 +552,6 @@
       "label": "USAspending.gov award data",
       "href": "https://www.usaspending.gov"
     }
-  ]
+  ],
+  "noindex": true
 }

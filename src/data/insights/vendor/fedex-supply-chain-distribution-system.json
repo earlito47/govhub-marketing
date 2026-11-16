@@ -3,18 +3,18 @@
   "slug": "fedex-supply-chain-distribution-system",
   "title": "Fedex Supply Chain Distribution System: Federal Contracts FY2027",
   "h1": "Fedex Supply Chain Distribution System: Federal Contracts, Agencies & Awards",
-  "metaDescription": "Fedex Supply Chain Distribution System won $102M in federal contract obligations in FY2027 to date. See its top agencies, markets, largest awards, and expirin",
-  "updated": "2026-10-26",
+  "metaDescription": "Fedex Supply Chain Distribution System won $100M in federal contract obligations in FY2027 to date. See its top agencies, markets, largest awards, and expirin",
+  "updated": "2026-11-16",
   "fyWindow": {
     "label": "FY2027 to date",
     "start": "2026-10-01",
-    "end": "2026-10-26"
+    "end": "2026-11-16"
   },
   "stats": {
-    "totalObligations": 101757227.29,
-    "awardCount": 10,
-    "yoyGrowthPct": -75.1,
-    "avgAwardSize": 10175723,
+    "totalObligations": 100320661.63,
+    "awardCount": 13,
+    "yoyGrowthPct": -75.5,
+    "avgAwardSize": 7716974,
     "smallBusinessSharePct": null
   },
   "charts": [
@@ -48,16 +48,47 @@
             ],
             [
               "FY27",
-              101757227.29
+              100320661.63
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Obligations fell 75.1% year over year, from $409M in FY2026 to $102M in FY2027 to date."
+      "takeaway": "Obligations fell 75.5% year over year, from $409M in FY2026 to $100M in FY2027 to date."
+    },
+    {
+      "id": "fedex-supply-chain-distribution-system-top-agencies",
+      "type": "bar",
+      "title": "Top 10 buying agencies, FY2027 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "Department of Veterans Affairs",
+              100305661.63
+            ],
+            [
+              "Department of Justice",
+              15000
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Department of Veterans Affairs is Fedex Supply Chain Distribution System's largest federal customer, with $100M obligated (100.0% of the company's federal obligations)."
     }
   ],
-  "crossLinks": [],
+  "crossLinks": [
+    {
+      "label": "Department of Veterans Affairs contracts",
+      "href": "/insights/agency/department-of-veterans-affairs/"
+    },
+    {
+      "label": "Department of Justice contracts",
+      "href": "/insights/agency/department-of-justice/"
+    }
+  ],
   "tables": [
     {
       "title": "Largest awards, FY2027 to date",
@@ -72,6 +103,16 @@
         [
           1,
           {
+            "text": "36C77026N0007",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C77026N0007_3600_36C77020A0009_3600/"
+          },
+          70431174.17,
+          "Department of Veterans Affairs",
+          "2026-09-30"
+        ],
+        [
+          2,
+          {
             "text": "36C77026N0005",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C77026N0005_3600_36C77020A0009_3600/"
           },
@@ -80,7 +121,17 @@
           "2026-09-30"
         ],
         [
-          2,
+          3,
+          {
+            "text": "36C77026N0004",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C77026N0004_3600_36C77020A0009_3600/"
+          },
+          56029967.83,
+          "Department of Veterans Affairs",
+          "2026-09-30"
+        ],
+        [
+          4,
           {
             "text": "36C77026N0002",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C77026N0002_3600_36C77020A0009_3600/"
@@ -90,7 +141,7 @@
           "2026-09-30"
         ],
         [
-          3,
+          5,
           {
             "text": "36C77026N0003",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C77026N0003_3600_36C77020A0009_3600/"
@@ -100,7 +151,7 @@
           "2026-09-30"
         ],
         [
-          4,
+          6,
           {
             "text": "36C77027N0010",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C77027N0010_3600_36C77027A0001_3600/"
@@ -110,7 +161,7 @@
           "2027-09-30"
         ],
         [
-          5,
+          7,
           {
             "text": "36C77027N0007",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C77027N0007_3600_36C77027A0001_3600/"
@@ -120,7 +171,7 @@
           "2027-09-30"
         ],
         [
-          6,
+          8,
           {
             "text": "36C77027N0009",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C77027N0009_3600_36C77027A0001_3600/"
@@ -130,7 +181,7 @@
           "2027-09-30"
         ],
         [
-          7,
+          9,
           {
             "text": "36C77027N0006",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C77027N0006_3600_36C77027A0001_3600/"
@@ -140,7 +191,7 @@
           "2027-09-30"
         ],
         [
-          8,
+          10,
           {
             "text": "36C77027N0005",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C77027N0005_3600_36C77027A0001_3600/"
@@ -150,7 +201,7 @@
           "2027-09-30"
         ],
         [
-          9,
+          11,
           {
             "text": "36C77027N0008",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C77027N0008_3600_36C77027A0001_3600/"
@@ -160,13 +211,23 @@
           "2027-09-30"
         ],
         [
-          10,
+          12,
           {
             "text": "36C77027N0004",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C77027N0004_3600_36C77027A0001_3600/"
           },
           8730005.06,
           "Department of Veterans Affairs",
+          "2027-09-30"
+        ],
+        [
+          13,
+          {
+            "text": "15UW1L27F00000042",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_15UW1L27F00000042_1542_GS03F0169X_4732/"
+          },
+          15000,
+          "Department of Justice",
           "2027-09-30"
         ]
       ]
@@ -242,6 +303,15 @@
           "Department of Veterans Affairs",
           8730005.06,
           "2027-09-30"
+        ],
+        [
+          {
+            "text": "15UW1L27F00000042",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_15UW1L27F00000042_1542_GS03F0169X_4732/"
+          },
+          "Department of Justice",
+          15000,
+          "2027-09-30"
         ]
       ]
     },
@@ -272,34 +342,34 @@
     }
   ],
   "narrative": {
-    "intro": "Fedex Supply Chain Distribution System obligated $102M in FY2027 to date. Fedex Supply Chain Distribution System won 10 awards so far this fiscal year, with an average award size of $10.2M. Obligations are down 75.1% year over year. Historical obligations show a build to $409M in FY26 before the drop to $102M in FY27. Fedex Supply Chain Distribution System received $253M in FY22, $293M in FY23, $342M in FY24, $381M in FY25, and $409M in FY26. Current-year totals are partial, covering fiscal year to date, and the figures reported are contract obligations except where tables show award values. This snapshot shows the scale and recent contraction of federal spending for Fedex Supply Chain Distribution System. Contractors and program managers should note the change in pace and the small number of awards driving current obligations when assessing near-term opportunities and capacity match for Fedex Supply Chain Distribution System.",
+    "intro": "Fedex Supply Chain Distribution System has $100M in federal contract obligations for FY2027 to date. Fedex Supply Chain Distribution System received 13 awards so far this fiscal year, with an average award size of $7.7M. Obligations fell 75.5% year over year. Historical obligations show a multi-year rise from $253M in FY22 to $409M in FY26, followed by the current-year total of $100M for FY27. The Department of Veterans Affairs accounted for $100M of obligations in FY2027 to date. The Department of Justice recorded $15K in obligations during the same period. Current-year totals are partial and represent fiscal year to date activity, while award-value figures in largest-awards and expiring-contracts tables are total contract values rather than obligations.",
     "sections": [
       {
-        "heading": "How has Fedex Supply Chain Distribution System's federal business trended?",
-        "body": "Fedex Supply Chain Distribution System's obligations rose from $253M in FY22 to $409M in FY26 before falling to $102M in FY27. Fedex Supply Chain Distribution System's obligations fell 75.1% year over year. Fedex Supply Chain Distribution System's FY27 totals are fiscal year to date and therefore partial."
+        "heading": "How has Fedex Supply Chain Distribution System's federal business changed over time?",
+        "body": "Fedex Supply Chain Distribution System's obligations rose from $253M in FY22 to $409M in FY26, then moved to $100M in FY27 to date. Fedex Supply Chain Distribution System's obligations fell 75.5% year over year. Fedex Supply Chain Distribution System recorded 13 awards for FY27 to date with an average award size of $7.7M."
       },
       {
-        "heading": "What do the current awards tell procurement and competitors?",
-        "body": "Fedex Supply Chain Distribution System won 10 awards in FY27 to date, with an average award size of $10.2M. Federal buyers obligated $102M to Fedex Supply Chain Distribution System so far this fiscal year, indicating fewer or smaller obligations compared with prior years. Fedex Supply Chain Distribution System's recent award count and average size should guide assessments of opportunity scale and competitor positioning."
+        "heading": "Who are the main federal buyers for Fedex Supply Chain Distribution System?",
+        "body": "The Department of Veterans Affairs is the top buyer, with $100M in obligations for FY27 to date. The Department of Justice is a smaller buyer, with $15K in obligations for FY27 to date."
       }
     ]
   },
   "faq": [
     {
       "q": "How much does Fedex Supply Chain Distribution System make from federal contracts?",
-      "a": "Fedex Supply Chain Distribution System has received $102M in contract obligations in FY2027 to date. Fedex Supply Chain Distribution System won 10 awards this fiscal year with an average award size of $10.2M. Obligations are down 75.1% year over year."
+      "a": "Fedex Supply Chain Distribution System has $100M in federal contract obligations for FY2027 to date. Fedex Supply Chain Distribution System received 13 awards so far this fiscal year, with an average award size of $7.7M. Obligations fell 75.5% year over year."
     },
     {
       "q": "Which agencies buy from Fedex Supply Chain Distribution System?",
-      "a": "The data does not list specific agencies by name. The reporting covers federal obligations to Fedex Supply Chain Distribution System but does not itemize agency buyers in the provided figures."
+      "a": "The Department of Veterans Affairs buys most from Fedex Supply Chain Distribution System, accounting for $100M in FY2027 to date. The Department of Justice also buys from Fedex Supply Chain Distribution System, with $15K in FY2027 to date."
     },
     {
       "q": "What does Fedex Supply Chain Distribution System sell to the government?",
-      "a": "The dataset does not specify product or service categories sold. The provided figures show contract obligations, award count, and average award size for Fedex Supply Chain Distribution System without a breakdown of what was sold."
+      "a": "Fedex Supply Chain Distribution System sells services and goods reflected in federal contract obligations totaling $100M for FY2027 to date. Award-value tables list total contract values separately from obligations."
     },
     {
       "q": "Which Fedex Supply Chain Distribution System contracts are expiring soon?",
-      "a": "The provided figures do not include a table of expiring contracts or expiration dates. The available information lists award counts and obligations but does not identify which Fedex Supply Chain Distribution System contracts are expiring soon."
+      "a": "Fedex Supply Chain Distribution System has expiring-contract details in the largest-awards and expiring-contracts tables, where award-value figures are total contract values rather than obligations. Current-year totals are partial and represent fiscal year to date activity."
     }
   ],
   "related": [
@@ -308,20 +378,16 @@
       "href": "/insights/expiring-federal-contracts/"
     },
     {
-      "label": "Stonex Financial federal contracts",
-      "href": "/insights/vendor/stonex-financial/"
+      "label": "United Cleanup Oak Ridge federal contracts",
+      "href": "/insights/vendor/united-cleanup-oak-ridge/"
     },
     {
-      "label": "California Institute of Technology federal contracts",
-      "href": "/insights/vendor/california-institute-of-technology/"
+      "label": "Cgi Federal federal contracts",
+      "href": "/insights/vendor/cgi-federal/"
     },
     {
-      "label": "Metropolitan Security Services federal contracts",
-      "href": "/insights/vendor/metropolitan-security-services/"
-    },
-    {
-      "label": "Hanford Tank Waste Operations and Closure federal contracts",
-      "href": "/insights/vendor/hanford-tank-waste-operations-and-closure/"
+      "label": "Veterans Evaluation Services federal contracts",
+      "href": "/insights/vendor/veterans-evaluation-services/"
     },
     {
       "label": "Peachtree Lumber federal contracts",
@@ -330,6 +396,10 @@
     {
       "label": "Lumen Technologies Government Solutions federal contracts",
       "href": "/insights/vendor/lumen-technologies-government-solutions/"
+    },
+    {
+      "label": "Medline Industries federal contracts",
+      "href": "/insights/vendor/medline-industries/"
     }
   ],
   "sources": [

@@ -188,6 +188,7 @@ const { enabled } = Astro.props;
     /* ---------------- 7. Page type (www routes) ----------------------- */
     function pageType(p) {
       if (p === '/') return 'home';
+      if (p.indexOf('/bids/') === 0) return 'bids';
       if (p.indexOf('/insights/') === 0) return 'insights';
       if (p.indexOf('/solutions/') === 0) return 'solutions';
       if (p.indexOf('/blog/') === 0) return 'blog';
@@ -346,5 +347,54 @@ const { enabled } = Astro.props;
       };
       track('landing_view', props);
     }
+
+    /* ---------------- 12. signup_cta_click -----------------------------
+     * A click on any link into the app's signup. Buttons made with
+     * config.ts ctaHref say which one they are (gh_cta), but until now the
+     * only record of the click was the app's own page view, made only if the
+     * app page loaded and was tracked (98 bid-page visitors clicked into the
+     * app in the 90 days to 2026-11-16; 26 started a trial). This records it
+     * on www, with the button, its words, the page and, on a bid page, the
+     * bid, so a page or an A/B test can be measured on clicks as well as
+     * trials. PostHog adds the visitor's feature flag variants to the event,
+     * so an experiment's buttons need nothing extra.
+     *
+     * Capture phase, so a handler that stops propagation cannot hide it.
+     * PostHog sends with sendBeacon when the page unloads, so the navigation
+     * that follows does not drop it.
+     * ---------------------------------------------------------------- */
+    function ctaClickProps(href, pagePath, text) {
+      var u;
+      try { u = new URL(href, location.href); } catch (err) { return null; }
+      /* A tagged button anywhere, or a plain link into signup (the home
+         page's nav and hero links carry no gh_cta). Sign-in is not a trial. */
+      var cta = u.searchParams.get('gh_cta');
+      if (u.origin !== appOrigin || !(cta || u.pathname === '/signup' || u.pathname === '/start')) return null;
+      var next = u.searchParams.get('next') || '';
+      var bidId = null;
+      if (next) {
+        try { bidId = new URL(next, appOrigin).searchParams.get('id'); } catch (err) { bidId = null; }
+      }
+      return {
+        cta: cta || null,
+        /* The words on the button as shown, so a copy test reads in the
+           report without a lookup. innerText leaves out the hidden
+           open/closed-bid alternative. */
+        cta_text: (text || '').replace(/\s+/g, ' ').trim().slice(0, 80) || null,
+        destination: u.pathname,
+        page_path: pagePath,
+        page_type: pageType(pagePath),
+        bid_id: bidId,
+        /* The button asks the app to start Build proposal on arrival. */
+        starts_proposal: next.indexOf('analyze=1') !== -1,
+      };
+    }
+    window.gh.ctaClickProps = ctaClickProps;
+    document.addEventListener('click', function (e) {
+      var a = e.target && e.target.closest ? e.target.closest('a[href]') : null;
+      if (!a) return;
+      var props = ctaClickProps(a.href, location.pathname, a.innerText || a.textContent);
+      if (props) track('signup_cta_click', props);
+    }, true);
   })();
 </script>

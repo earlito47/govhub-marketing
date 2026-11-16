@@ -1,0 +1,207 @@
+{
+  "pageType": "report",
+  "slug": "most-active-naics",
+  "week": "2026-w47",
+  "publishedDate": "2026-11-16",
+  "title": "Most Active Federal Markets This Week, Nov 10–16, 2026",
+  "h1": "Most active federal contract markets, week of Nov 10–16, 2026",
+  "metaDescription": "The most active federal contract industries (by newly reported obligations) the week of Nov 10–16, 2026, led by Computer Systems Design Services.",
+  "updated": "2026-11-16",
+  "fyWindow": {
+    "label": "Week of Nov 10–16, 2026",
+    "start": "2026-11-10",
+    "end": "2026-11-16"
+  },
+  "stats": {
+    "totalObligations": 483720314.5400001,
+    "awardCount": null,
+    "yoyGrowthPct": null,
+    "avgAwardSize": null,
+    "smallBusinessSharePct": null
+  },
+  "charts": [
+    {
+      "id": "2026-w47-most-active-naics",
+      "type": "bar",
+      "title": "Most active industries (NAICS) by obligations, week of Nov 10–16, 2026",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "Computer Systems Design Services",
+              109173142.17
+            ],
+            [
+              "Unknown",
+              73017403.87
+            ],
+            [
+              "Commercial and Institutional Building Construction",
+              53855864.28
+            ],
+            [
+              "Security Guards and Patrol Services",
+              44864291.44
+            ],
+            [
+              "Ship Building and Repairing",
+              38199579.73
+            ],
+            [
+              "Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology)",
+              37332455.85
+            ],
+            [
+              "Nonferrous Metal (except Aluminum) Smelting and Refining",
+              34161784.22
+            ],
+            [
+              "Administrative Management and General Management Consulting Services",
+              32427389.99
+            ],
+            [
+              "Engineering Services",
+              30738853.83
+            ],
+            [
+              "Other Computer Related Services",
+              29949549.16
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Computer Systems Design Services was the most active market, with $109M in newly reported obligations."
+    }
+  ],
+  "tables": [
+    {
+      "title": "Most active industries, week of Nov 10–16, 2026",
+      "columns": [
+        "Rank",
+        "Industry (NAICS)",
+        "Obligations"
+      ],
+      "rows": [
+        [
+          1,
+          {
+            "text": "Computer Systems Design Services (541512)",
+            "href": "/insights/naics/541512/"
+          },
+          109173142.17
+        ],
+        [
+          2,
+          {
+            "text": "Unknown",
+            "href": null
+          },
+          73017403.87
+        ],
+        [
+          3,
+          {
+            "text": "Commercial and Institutional Building Construction (236220)",
+            "href": "/insights/naics/236220/"
+          },
+          53855864.28
+        ],
+        [
+          4,
+          {
+            "text": "Security Guards and Patrol Services (561612)",
+            "href": "/insights/naics/561612/"
+          },
+          44864291.44
+        ],
+        [
+          5,
+          {
+            "text": "Ship Building and Repairing (336611)",
+            "href": "/insights/naics/336611/"
+          },
+          38199579.73
+        ],
+        [
+          6,
+          {
+            "text": "Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology) (541715)",
+            "href": "/insights/naics/541715/"
+          },
+          37332455.85
+        ],
+        [
+          7,
+          {
+            "text": "Nonferrous Metal (except Aluminum) Smelting and Refining (331410)",
+            "href": null
+          },
+          34161784.22
+        ],
+        [
+          8,
+          {
+            "text": "Administrative Management and General Management Consulting Services (541611)",
+            "href": "/insights/naics/541611/"
+          },
+          32427389.99
+        ],
+        [
+          9,
+          {
+            "text": "Engineering Services (541330)",
+            "href": "/insights/naics/541330/"
+          },
+          30738853.83
+        ],
+        [
+          10,
+          {
+            "text": "Other Computer Related Services (541519)",
+            "href": "/insights/naics/541519/"
+          },
+          29949549.16
+        ]
+      ]
+    }
+  ],
+  "narrative": {
+    "intro": "Computer Systems Design Services was the most active federal contract market the week of Nov 10–16, 2026, with $109M in newly reported obligations. The ten most active industries obligated $484M combined.",
+    "sections": []
+  },
+  "faq": [],
+  "related": [
+    {
+      "label": "NAICS 541512: Computer Systems Design Services",
+      "href": "/insights/naics/541512/"
+    },
+    {
+      "label": "NAICS 236220: Commercial and Institutional Building Construction",
+      "href": "/insights/naics/236220/"
+    },
+    {
+      "label": "NAICS 561612: Security Guards and Patrol Services",
+      "href": "/insights/naics/561612/"
+    },
+    {
+      "label": "NAICS 336611: Ship Building and Repairing",
+      "href": "/insights/naics/336611/"
+    },
+    {
+      "label": "NAICS 541715: Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology)",
+      "href": "/insights/naics/541715/"
+    },
+    {
+      "label": "NAICS 541611: Administrative Management and General Management Consulting Services",
+      "href": "/insights/naics/541611/"
+    }
+  ],
+  "sources": [
+    {
+      "label": "USAspending.gov award data",
+      "href": "https://www.usaspending.gov"
+    }
+  ]
+}

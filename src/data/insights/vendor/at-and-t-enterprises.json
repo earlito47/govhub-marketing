@@ -1,20 +1,20 @@
 {
   "pageType": "vendor",
   "slug": "at-and-t-enterprises",
-  "title": "Who Buys From At and T Enterprises: $166M in FY2027",
+  "title": "Who Buys From At and T Enterprises: $229M in FY2027",
   "h1": "At and T Enterprises: Federal Contracts, Agencies & Awards",
-  "metaDescription": "At and T Enterprises won $166M in federal contract obligations in FY2027 to date. See its top agencies, markets, largest awards, and expiring contracts.",
-  "updated": "2026-10-26",
+  "metaDescription": "At and T Enterprises won $229M in federal contract obligations in FY2027 to date. See its top agencies, markets, largest awards, and expiring contracts.",
+  "updated": "2026-11-16",
   "fyWindow": {
     "label": "FY2027 to date",
     "start": "2026-10-01",
-    "end": "2026-10-26"
+    "end": "2026-11-16"
   },
   "stats": {
-    "totalObligations": 166129264.97,
-    "awardCount": 10,
-    "yoyGrowthPct": -84,
-    "avgAwardSize": 16612926,
+    "totalObligations": 228773682.56,
+    "awardCount": 24,
+    "yoyGrowthPct": -77.9,
+    "avgAwardSize": 9532237,
     "smallBusinessSharePct": null
   },
   "charts": [
@@ -48,13 +48,13 @@
             ],
             [
               "FY27",
-              166129264.97
+              228773682.56
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Obligations fell 84.0% year over year, from $1B in FY2026 to $166M in FY2027 to date."
+      "takeaway": "Obligations fell 77.9% year over year, from $1B in FY2026 to $229M in FY2027 to date."
     },
     {
       "id": "at-and-t-enterprises-top-agencies",
@@ -66,18 +66,34 @@
           "points": [
             [
               "Department of Veterans Affairs",
-              164409632
+              226134918
             ],
             [
               "Department of Justice",
               1614811.77
             ],
             [
+              "Department of Defense",
+              920603.37
+            ],
+            [
               "United States Trade and Development Agency",
               104821.2
             ],
             [
+              "Department of Homeland Security",
+              27469.38
+            ],
+            [
+              "Railroad Retirement Board",
+              31.87
+            ],
+            [
               "General Services Administration",
+              0
+            ],
+            [
+              "Department of the Treasury",
               0
             ],
             [
@@ -85,22 +101,36 @@
               0
             ],
             [
-              "National Aeronautics and Space Administration",
-              0
-            ],
-            [
-              "Department of Defense",
-              0
-            ],
-            [
-              "Executive Office of the President",
+              "Department of Transportation",
               0
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Department of Veterans Affairs is At and T Enterprises's largest federal customer, with $164M obligated (99.0% of the company's federal obligations)."
+      "takeaway": "Department of Veterans Affairs is At and T Enterprises's largest federal customer, with $226M obligated (98.8% of the company's federal obligations)."
+    },
+    {
+      "id": "at-and-t-enterprises-top-naics",
+      "type": "bar",
+      "title": "Top 10 markets (NAICS), FY2027 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "Wired Telecommunications Carriers",
+              228773682.56
+            ],
+            [
+              "Other Computer Related Services",
+              0
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Wired Telecommunications Carriers is At and T Enterprises's largest federal market, with $229M in obligations."
     }
   ],
   "crossLinks": [
@@ -113,12 +143,16 @@
       "href": "/insights/agency/department-of-justice/"
     },
     {
-      "label": "General Services Administration contracts",
-      "href": "/insights/agency/general-services-administration/"
+      "label": "Department of Defense contracts",
+      "href": "/insights/agency/department-of-defense/"
     },
     {
-      "label": "National Aeronautics and Space Administration contracts",
-      "href": "/insights/agency/national-aeronautics-and-space-administration/"
+      "label": "Department of Homeland Security contracts",
+      "href": "/insights/agency/department-of-homeland-security/"
+    },
+    {
+      "label": "NAICS 541519: Other Computer Related Services",
+      "href": "/insights/naics/541519/"
     }
   ],
   "tables": [
@@ -138,32 +172,102 @@
             "text": "36C10A20F0309",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C10A20F0309_3600_GS00Q17NSD3000_4732/"
           },
-          1570962675.79,
+          1632320470.79,
           "Department of Veterans Affairs",
           "2027-09-30"
         ],
         [
           2,
           {
-            "text": "HC101321F0196",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_HC101321F0196_9700_GS00Q17NSD3000_4732/"
+            "text": "2032H521F00050",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_2032H521F00050_2050_GS00Q17NSD3000_4732/"
           },
-          69203569.21,
-          "Department of Defense",
-          "2027-08-25"
+          371656558.28,
+          "Department of the Treasury",
+          "2027-09-30"
         ],
         [
           3,
           {
+            "text": "70SBUR22F00000084",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70SBUR22F00000084_7003_GS00Q17NSD3000_4732/"
+          },
+          117540688.5,
+          "Department of Homeland Security",
+          "2027-05-31"
+        ],
+        [
+          4,
+          {
+            "text": "70FA3021F00000470",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70FA3021F00000470_7022_GS00Q17NSD3000_4732/"
+          },
+          103346106.41,
+          "Department of Homeland Security",
+          "2027-03-26"
+        ],
+        [
+          5,
+          {
+            "text": "70T03022F7667N027",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70T03022F7667N027_7013_GS00Q17NSD3000_4732/"
+          },
+          93355833.04,
+          "Department of Homeland Security",
+          "2027-05-31"
+        ],
+        [
+          6,
+          {
+            "text": "70RTAC21FR0000015",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70RTAC21FR0000015_7001_GS00Q17NSD3000_4732/"
+          },
+          87208566.23,
+          "Department of Homeland Security",
+          "2027-09-27"
+        ],
+        [
+          7,
+          {
+            "text": "HC101321F0196",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_HC101321F0196_9700_GS00Q17NSD3000_4732/"
+          },
+          70124172.58,
+          "Department of Defense",
+          "2027-08-25"
+        ],
+        [
+          8,
+          {
+            "text": "693KA820F00178",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_693KA820F00178_6920_GS00Q17NSD3000_4732/"
+          },
+          64964969.15,
+          "Department of Transportation",
+          "2027-06-30"
+        ],
+        [
+          9,
+          {
             "text": "36C10A19F0321",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C10A19F0321_3600_GS00Q17NSD3000_4732/"
           },
-          58249158.16,
+          58616649.16,
           "Department of Veterans Affairs",
           "2027-09-30"
         ],
         [
-          4,
+          10,
+          {
+            "text": "70SBUR22F00000252",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70SBUR22F00000252_7003_GS00Q17NSD3000_4732/"
+          },
+          58135606.89,
+          "Department of Homeland Security",
+          "2027-07-02"
+        ],
+        [
+          11,
           {
             "text": "68HERD22F0007",
             "href": "https://www.usaspending.gov/award/CONT_AWD_68HERD22F0007_6800_GS00Q17NSD3000_4732/"
@@ -173,7 +277,7 @@
           "2027-10-17"
         ],
         [
-          5,
+          12,
           {
             "text": "80NSSC21F0625",
             "href": "https://www.usaspending.gov/award/CONT_AWD_80NSSC21F0625_8000_GS00Q17NSD3000_4732/"
@@ -183,7 +287,37 @@
           "2028-09-30"
         ],
         [
-          6,
+          13,
+          {
+            "text": "70US0924F2GSA2251",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70US0924F2GSA2251_7009_GS00Q17NSD3000_4732/"
+          },
+          35535230.86,
+          "Department of Homeland Security",
+          "2027-09-29"
+        ],
+        [
+          14,
+          {
+            "text": "70US0922C70092720",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70US0922C70092720_7009_-NONE-_-NONE-/"
+          },
+          27225741.6,
+          "Department of Homeland Security",
+          "2027-09-29"
+        ],
+        [
+          15,
+          {
+            "text": "47QACA25F0223",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_47QACA25F0223_4732_GS00Q17NSD3000_4732/"
+          },
+          20000000,
+          "General Services Administration",
+          "2027-09-26"
+        ],
+        [
+          16,
           {
             "text": "15F06722F0001994",
             "href": "https://www.usaspending.gov/award/CONT_AWD_15F06722F0001994_1549_GS00Q17NSD3000_4732/"
@@ -193,7 +327,37 @@
           "2027-09-26"
         ],
         [
-          7,
+          17,
+          {
+            "text": "60RRBH19F0002",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_60RRBH19F0002_6000_GS00Q17NSD3000_4732/"
+          },
+          6729150.63,
+          "Railroad Retirement Board",
+          "2027-07-31"
+        ],
+        [
+          18,
+          {
+            "text": "89303021FIM400048",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_89303021FIM400048_8900_GS00Q17NSD3000_4732/"
+          },
+          5618244.34,
+          "Department of Energy",
+          "2026-04-30"
+        ],
+        [
+          19,
+          {
+            "text": "70US0922C70092722",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70US0922C70092722_7009_-NONE-_-NONE-/"
+          },
+          3292045.27,
+          "Department of Homeland Security",
+          "2027-09-29"
+        ],
+        [
+          20,
           {
             "text": "47QTCB20F0008",
             "href": "https://www.usaspending.gov/award/CONT_AWD_47QTCB20F0008_4732_GS00Q17NSD3000_4732/"
@@ -203,7 +367,7 @@
           "2026-12-31"
         ],
         [
-          8,
+          21,
           {
             "text": "15ULEX27F00000001",
             "href": "https://www.usaspending.gov/award/CONT_AWD_15ULEX27F00000001_1542_GS00Q17NSD3000_4732/"
@@ -213,7 +377,7 @@
           "2031-10-22"
         ],
         [
-          9,
+          22,
           {
             "text": "1131PL20FSA41182",
             "href": "https://www.usaspending.gov/award/CONT_AWD_1131PL20FSA41182_1153_GS00Q17NSD3000_4732/"
@@ -223,7 +387,7 @@
           "2027-09-30"
         ],
         [
-          10,
+          23,
           {
             "text": "11316026F0001OAS",
             "href": "https://www.usaspending.gov/award/CONT_AWD_11316026F0001OAS_1100_GS00Q17NSD3000_4732/"
@@ -231,6 +395,16 @@
           250000,
           "Executive Office of the President",
           "2026-11-30"
+        ],
+        [
+          24,
+          {
+            "text": "7571TE26F80409",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_7571TE26F80409_7571_GS00Q17NSD3000_4732/"
+          },
+          146149.34,
+          "Department of Health and Human Services",
+          "2027-09-29"
         ]
       ]
     },
@@ -249,7 +423,7 @@
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C10A20F0309_3600_GS00Q17NSD3000_4732/"
           },
           "Department of Veterans Affairs",
-          1570962675.79,
+          1632320470.79,
           "2027-09-30"
         ],
         [
@@ -303,7 +477,7 @@
             "href": "https://www.usaspending.gov/award/CONT_AWD_70FA3021F00000470_7022_GS00Q17NSD3000_4732/"
           },
           "Department of Homeland Security",
-          103318637.03,
+          103346106.41,
           "2027-03-26"
         ],
         [
@@ -362,34 +536,34 @@
     }
   ],
   "narrative": {
-    "intro": "At and T Enterprises obligated $166M in FY2027 to date across 10 awards, with an average award size of $16.6M and year-over-year obligations down 84.0%. At and T Enterprises' FY27 obligations sit far below prior fiscal years: FY22 obligations were $349M, FY23 obligations were $778M, FY24 obligations were $941M, FY25 obligations were $1B, and FY26 obligations were $1B. At and T Enterprises received the bulk of FY2027 to date funding from the Department of Veterans Affairs, which obligated $164M. At and T Enterprises also had smaller obligations from the Department of Justice, which obligated $1.6M, and the United States Trade and Development Agency, which obligated $105K. At and T Enterprises had zero obligations in FY2027 to date from the General Services Administration, Environmental Protection Agency, National Aeronautics and Space Administration, Department of Defense, and Executive Office of the President. These figures are fiscal year to date and represent contract obligations unless otherwise noted.",
+    "intro": "At and T Enterprises obligated $229M in FY2027 to date across 24 awards, with an average award size of $9.5M. Obligations are down 77.9% year over year. FY obligations peaked in FY25 and FY26 at $1B each before falling to $229M in FY27. The Department of Veterans Affairs provided the bulk of FY2027 work, obligating $226M. Wired Telecommunications Carriers is the primary market for FY2027 work, with $229M in obligations. Smaller FY2027 buyers include the Department of Justice at $1.6M and the Department of Defense at $921K. Several agencies show little or no FY2027 spend with At and T Enterprises, including the General Services Administration, the Department of the Treasury, the Environmental Protection Agency, and the Department of Transportation, each at $0. The historical record shows growth from $349M in FY22 to $778M in FY23, $941M in FY24, and $1B in each of FY25 and FY26 before the FY27 decline. This profile reflects a VA-heavy, wired-telecom-focused federal portfolio in the current fiscal year.",
     "sections": [
       {
-        "heading": "What changed in FY2027 to date compared with prior years?",
-        "body": "At and T Enterprises' obligations in FY2027 to date fell 84.0% year over year. At and T Enterprises' FY27 obligations are $166M, compared with FY26 obligations of $1B and FY25 obligations of $1B. The Department of Veterans Affairs drove most of the FY27 total by obligating $164M."
+        "heading": "Who are the main buyers of At and T Enterprises in FY2027 to date?",
+        "body": "The Department of Veterans Affairs is the main buyer, obligating $226M. The Department of Justice and the Department of Defense follow with $1.6M and $921K respectively. Other agencies buying in FY2027 include the United States Trade and Development Agency at $105K and the Department of Homeland Security at $27.5K; several agencies recorded $0."
       },
       {
-        "heading": "Who are the top buyers of At and T Enterprises in FY2027 to date?",
-        "body": "The Department of Veterans Affairs is the top buyer, obligating $164M to At and T Enterprises. The Department of Justice and the United States Trade and Development Agency are the only other agencies with recorded FY27 obligations at $1.6M and $105K respectively; several major agencies reported $0 obligations to At and T Enterprises in FY27 to date."
+        "heading": "How has At and T Enterprises’ federal business trended over recent fiscal years?",
+        "body": "Obligations rose from $349M in FY22 to $778M in FY23 and $941M in FY24, reached $1B in both FY25 and FY26, then declined to $229M in FY27. Year over year obligations fell 77.9% into the current fiscal year. The Wired Telecommunications Carriers market accounted for $229M of FY2027 obligations."
       }
     ]
   },
   "faq": [
     {
       "q": "How much does At and T Enterprises make from federal contracts?",
-      "a": "At and T Enterprises has $166M in federal contract obligations in FY2027 to date. At and T Enterprises has 10 awards so far this fiscal year and an average award size of $16.6M."
+      "a": "At and T Enterprises made $229M from federal contracts in FY2027 to date. The company received 24 awards so far in the fiscal year, with an average award size of $9.5M."
     },
     {
       "q": "Which agencies buy from At and T Enterprises?",
-      "a": "The Department of Veterans Affairs is the primary buyer, obligating $164M to At and T Enterprises in FY2027 to date. The Department of Justice obligated $1.6M and the United States Trade and Development Agency obligated $105K. The General Services Administration, Environmental Protection Agency, National Aeronautics and Space Administration, Department of Defense, and Executive Office of the President each obligated $0."
+      "a": "The Department of Veterans Affairs is the primary buyer, obligating $226M. Other FY2027 buyers include the Department of Justice at $1.6M, the Department of Defense at $921K, the United States Trade and Development Agency at $105K, and the Department of Homeland Security at $27.5K; several agencies recorded $0."
     },
     {
       "q": "What does At and T Enterprises sell to the government?",
-      "a": "At and T Enterprises' product and service details are not provided in the available figures. The published FY2027 to date data lists obligations by agency and award counts, but does not include descriptions of what At and T Enterprises sold."
+      "a": "At and T Enterprises sells services in the Wired Telecommunications Carriers market, which accounted for $229M in FY2027 obligations. Other listed markets show $0 for FY2027."
     },
     {
       "q": "Which At and T Enterprises contracts are expiring soon?",
-      "a": "No expiring-contract details are provided in the available figures. The FY2027 to date summary lists obligations, award counts, and top buying agencies but does not list expiring contracts."
+      "a": "No expiring-contract dollar figures are provided for At and T Enterprises in the available FY2027 to date data."
     }
   ],
   "related": [
@@ -398,28 +572,28 @@
       "href": "/insights/expiring-federal-contracts/"
     },
     {
-      "label": "TriWest Healthcare Alliance federal contracts",
-      "href": "/insights/vendor/triwest-healthcare-alliance/"
-    },
-    {
-      "label": "Fluor Marine Propulsion federal contracts",
-      "href": "/insights/vendor/fluor-marine-propulsion/"
-    },
-    {
       "label": "Accenture Federal Services federal contracts",
       "href": "/insights/vendor/accenture-federal-services/"
     },
     {
-      "label": "Thundercat Technology federal contracts",
-      "href": "/insights/vendor/thundercat-technology/"
+      "label": "QTC Medical Services federal contracts",
+      "href": "/insights/vendor/qtc-medical-services/"
     },
     {
       "label": "Stonex Financial federal contracts",
       "href": "/insights/vendor/stonex-financial/"
     },
     {
+      "label": "General Dynamics Information Technology federal contracts",
+      "href": "/insights/vendor/general-dynamics-information-technology/"
+    },
+    {
       "label": "California Institute of Technology federal contracts",
       "href": "/insights/vendor/california-institute-of-technology/"
+    },
+    {
+      "label": "Thundercat Technology federal contracts",
+      "href": "/insights/vendor/thundercat-technology/"
     }
   ],
   "sources": [

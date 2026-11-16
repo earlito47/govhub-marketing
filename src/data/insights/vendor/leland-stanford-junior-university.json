@@ -1,20 +1,20 @@
 {
   "pageType": "vendor",
   "slug": "leland-stanford-junior-university",
-  "title": "Leland Stanford Junior University Federal Contracts: $697M in FY2026",
+  "title": "Leland Stanford Junior University Federal Contracts: $132M in FY2027",
   "h1": "Leland Stanford Junior University: Federal Contracts, Agencies & Awards",
-  "metaDescription": "Leland Stanford Junior University won $697M in federal contract obligations in FY2026 to date. See its top agencies, markets, largest awards, and expiring con",
-  "updated": "2026-08-24",
+  "metaDescription": "Leland Stanford Junior University won $132M in federal contract obligations in FY2027 to date. See its top agencies, markets, largest awards, and expiring con",
+  "updated": "2026-11-16",
   "fyWindow": {
-    "label": "FY2026 to date",
-    "start": "2025-10-01",
-    "end": "2026-08-24"
+    "label": "FY2027 to date",
+    "start": "2026-10-01",
+    "end": "2026-11-16"
   },
   "stats": {
-    "totalObligations": 697265700.53,
-    "awardCount": 34,
-    "yoyGrowthPct": -5.9,
-    "avgAwardSize": 20507815,
+    "totalObligations": 131753909.7,
+    "awardCount": 8,
+    "yoyGrowthPct": -82.7,
+    "avgAwardSize": 16469239,
     "smallBusinessSharePct": null
   },
   "charts": [
@@ -26,10 +26,6 @@
         {
           "label": "Obligations",
           "points": [
-            [
-              "FY21",
-              548450189.8
-            ],
             [
               "FY22",
               678009527.46
@@ -48,105 +44,77 @@
             ],
             [
               "FY26",
-              697265700.53
+              760053254.3
+            ],
+            [
+              "FY27",
+              131753909.7
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Obligations fell 5.9% year over year, from $741M in FY2025 to $697M in FY2026 to date."
+      "takeaway": "Obligations fell 82.7% year over year, from $760M in FY2026 to $132M in FY2027 to date."
     },
     {
       "id": "leland-stanford-junior-university-top-agencies",
       "type": "bar",
-      "title": "Top 10 buying agencies, FY2026 to date",
+      "title": "Top 10 buying agencies, FY2027 to date",
       "series": [
         {
           "label": "Obligations",
           "points": [
             [
               "Department of Energy",
-              676567143.49
+              129706581
             ],
             [
               "Department of Veterans Affairs",
-              11031818.97
-            ],
-            [
-              "National Aeronautics and Space Administration",
-              5202293.54
+              2047526.42
             ],
             [
               "Department of Health and Human Services",
-              4347819.93
-            ],
-            [
-              "Department of Defense",
-              110624.6
-            ],
-            [
-              "Department of the Interior",
-              6000
+              -197.72
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Department of Energy is Leland Stanford Junior University's largest federal customer, with $677M obligated (97.0% of the company's federal obligations)."
+      "takeaway": "Department of Energy is Leland Stanford Junior University's largest federal customer, with $130M obligated (98.4% of the company's federal obligations)."
     },
     {
       "id": "leland-stanford-junior-university-top-naics",
       "type": "bar",
-      "title": "Top 10 markets (NAICS), FY2026 to date",
+      "title": "Top 10 markets (NAICS), FY2027 to date",
       "series": [
         {
           "label": "Obligations",
           "points": [
             [
               "Research and Development in the Physical, Engineering, and Life Sciences",
-              681879691.49
-            ],
-            [
-              "Research and Development in Biotechnology (except Nanobiotechnology)",
-              9448167
-            ],
-            [
-              "Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology)",
-              2925398.47
-            ],
-            [
-              "Colleges, Universities, and Professional Schools",
-              1493815.91
+              129676581
             ],
             [
               "Blood and Organ Banks",
-              1298721.31
+              1220304
+            ],
+            [
+              "Colleges, Universities, and Professional Schools",
+              567614.42
             ],
             [
               "Testing Laboratories and Services",
-              269280
+              289608
             ],
             [
-              "Research and Development in the Physical, Engineering, and Life Sciences (except Biotechnology)",
-              -200.4
-            ],
-            [
-              "Electromedical and Electrotherapeutic Apparatus Manufacturing",
-              -1175.68
-            ],
-            [
-              "Diagnostic Imaging Centers",
-              -13290.4
-            ],
-            [
-              "Other Scientific and Technical Consulting Services",
-              -34707.17
+              "Research and Development in Biotechnology",
+              -197.72
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Research and Development in the Physical, Engineering, and Life Sciences is Leland Stanford Junior University's largest federal market, with $682M in obligations."
+      "takeaway": "Research and Development in the Physical, Engineering, and Life Sciences is Leland Stanford Junior University's largest federal market, with $130M in obligations."
     }
   ],
   "crossLinks": [
@@ -159,25 +127,17 @@
       "href": "/insights/agency/department-of-veterans-affairs/"
     },
     {
-      "label": "National Aeronautics and Space Administration contracts",
-      "href": "/insights/agency/national-aeronautics-and-space-administration/"
-    },
-    {
       "label": "Department of Health and Human Services contracts",
       "href": "/insights/agency/department-of-health-and-human-services/"
     },
     {
       "label": "NAICS 541715: Research and Development in the Physical, Engineering, and Life Sciences",
       "href": "/insights/naics/541715/"
-    },
-    {
-      "label": "NAICS 541690: Other Scientific and Technical Consulting Services",
-      "href": "/insights/naics/541690/"
     }
   ],
   "tables": [
     {
-      "title": "Largest awards, FY2026 to date",
+      "title": "Largest awards, FY2027 to date",
       "columns": [
         "Rank",
         "Award",
@@ -192,249 +152,79 @@
             "text": "DEAC0276SF00515",
             "href": "https://www.usaspending.gov/award/CONT_AWD_DEAC0276SF00515_8900_-NONE-_-NONE-/"
           },
-          14933400228.39,
+          15120780108.84,
           "Department of Energy",
           "2027-09-30"
         ],
         [
           2,
           {
-            "text": "GSFC0200210DNAS502139",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_GSFC0200210DNAS502139_8000_-NONE-_-NONE-/"
+            "text": "HHSO100201000006C",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_HHSO100201000006C_7505_-NONE-_-NONE-/"
           },
-          182819613,
-          "National Aeronautics and Space Administration",
-          "2027-09-30"
+          4616378.28,
+          "Department of Health and Human Services",
+          "2011-02-15"
         ],
         [
           3,
           {
-            "text": "GSFC0200005DNAS500147",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_GSFC0200005DNAS500147_8000_-NONE-_-NONE-/"
+            "text": "36C26127N0019",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C26127N0019_3600_36C26126D0025_3600/"
           },
-          132265636,
-          "National Aeronautics and Space Administration",
-          "2027-03-01"
+          1220304,
+          "Department of Veterans Affairs",
+          "2027-09-30"
         ],
         [
           4,
           {
-            "text": "75N93020C00054",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_75N93020C00054_7529_-NONE-_-NONE-/"
+            "text": "36C26126C0001",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C26126C0001_3600_-NONE-_-NONE-/"
           },
-          27534218.95,
-          "Department of Health and Human Services",
-          "2030-05-31"
+          552888,
+          "Department of Veterans Affairs",
+          "2027-11-30"
         ],
         [
           5,
           {
-            "text": "75N93022C00052",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_75N93022C00052_7529_-NONE-_-NONE-/"
+            "text": "36C26127C0004",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C26127C0004_3600_-NONE-_-NONE-/"
           },
-          19155153,
-          "Department of Health and Human Services",
-          "2027-08-31"
+          539791.6,
+          "Department of Veterans Affairs",
+          "2027-09-30"
         ],
         [
           6,
           {
-            "text": "36C24E26N0092",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C24E26N0092_3600_36C24E22D0010_3600/"
+            "text": "36C26124C0014",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C26124C0014_3600_-NONE-_-NONE-/"
           },
-          8136000,
-          "Department of Veterans Affairs",
-          "2027-03-31"
-        ],
-        [
-          7,
-          {
-            "text": "75N92021F00001",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_75N92021F00001_7529_75N92021D00004_7529/"
-          },
-          5410275.93,
-          "Department of Health and Human Services",
-          "2025-09-28"
-        ],
-        [
-          8,
-          {
-            "text": "75N93024C00075",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_75N93024C00075_7529_-NONE-_-NONE-/"
-          },
-          3743597,
-          "Department of Health and Human Services",
-          "2027-09-29"
-        ],
-        [
-          9,
-          {
-            "text": "75N92025F00001",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_75N92025F00001_7529_75N92023D00015_7529/"
-          },
-          3136008,
-          "Department of Health and Human Services",
-          "2027-09-22"
-        ],
-        [
-          10,
-          {
-            "text": "80GSFC21C0005",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_80GSFC21C0005_8000_-NONE-_-NONE-/"
-          },
-          2646143.04,
-          "National Aeronautics and Space Administration",
-          "2026-04-14"
-        ],
-        [
-          11,
-          {
-            "text": "75N92025F00001",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_75N92025F00001_7529_75N92021D00004_7529/"
-          },
-          2266410,
-          "Department of Health and Human Services",
-          "2027-09-28"
-        ],
-        [
-          12,
-          {
-            "text": "80ARC022CA003",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_80ARC022CA003_8000_-NONE-_-NONE-/"
-          },
-          1999706,
-          "National Aeronautics and Space Administration",
-          "2026-09-26"
-        ],
-        [
-          13,
-          {
-            "text": "75N92024F00001",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_75N92024F00001_7529_75N92023D00015_7529/"
-          },
-          1558454.49,
-          "Department of Health and Human Services",
-          "2027-09-22"
-        ],
-        [
-          14,
-          {
-            "text": "36C26125C0001",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C26125C0001_3600_-NONE-_-NONE-/"
-          },
-          1517526.02,
-          "Department of Veterans Affairs",
-          "2027-03-31"
-        ],
-        [
-          15,
-          {
-            "text": "36C26123C0011",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C26123C0011_3600_-NONE-_-NONE-/"
-          },
-          977977.57,
-          "Department of Veterans Affairs",
-          "2026-12-31"
-        ],
-        [
-          16,
-          {
-            "text": "36C26126N0048",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C26126N0048_3600_36C26121D0040_3600/"
-          },
-          898721.31,
-          "Department of Veterans Affairs",
-          "2026-05-31"
-        ],
-        [
-          17,
-          {
-            "text": "36C26123N0665",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C26123N0665_3600_36C26119D0059_3600/"
-          },
-          579444.02,
+          448156.52,
           "Department of Veterans Affairs",
           "2024-03-31"
         ],
         [
-          18,
+          7,
           {
-            "text": "36C24E24N0038",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C24E24N0038_3600_36C24E23D0002_3600/"
-          },
-          499507.45,
-          "Department of Veterans Affairs",
-          "2025-02-01"
-        ],
-        [
-          19,
-          {
-            "text": "36C24E25N0227",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C24E25N0227_3600_36C24E23D0002_3600/"
-          },
-          492470.03,
-          "Department of Veterans Affairs",
-          "2026-09-22"
-        ],
-        [
-          20,
-          {
-            "text": "36C26126C0003",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C26126C0003_3600_-NONE-_-NONE-/"
-          },
-          411668.14,
-          "Department of Veterans Affairs",
-          "2026-09-30"
-        ],
-        [
-          21,
-          {
-            "text": "36C26126N0339",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C26126N0339_3600_36C26126D0025_3600/"
-          },
-          400000,
-          "Department of Veterans Affairs",
-          "2026-09-30"
-        ],
-        [
-          22,
-          {
-            "text": "36C26126C0001",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C26126C0001_3600_-NONE-_-NONE-/"
-          },
-          263280,
-          "Department of Veterans Affairs",
-          "2026-11-30"
-        ],
-        [
-          23,
-          {
-            "text": "36C26120C0052",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C26120C0052_3600_-NONE-_-NONE-/"
-          },
-          139500.36,
-          "Department of Veterans Affairs",
-          "2025-08-31"
-        ],
-        [
-          24,
-          {
-            "text": "89603019P0001",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_89603019P0001_8960_-NONE-_-NONE-/"
+            "text": "89603024P0001",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_89603024P0001_8960_-NONE-_-NONE-/"
           },
           120000,
           "Department of Energy",
-          "2022-11-29"
+          "2027-11-30"
         ],
         [
-          25,
+          8,
           {
-            "text": "36C26126C0005",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C26126C0005_3600_-NONE-_-NONE-/"
+            "text": "36C26127C0003",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C26127C0003_3600_-NONE-_-NONE-/"
           },
-          112416.16,
+          75994.68,
           "Department of Veterans Affairs",
-          "2026-09-30"
+          "2027-04-04"
         ]
       ]
     },
@@ -449,12 +239,39 @@
       "rows": [
         [
           {
+            "text": "DEAC0276SF00515",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_DEAC0276SF00515_8900_-NONE-_-NONE-/"
+          },
+          "Department of Energy",
+          15120780108.84,
+          "2027-09-30"
+        ],
+        [
+          {
+            "text": "GSFC0200210DNAS502139",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_GSFC0200210DNAS502139_8000_-NONE-_-NONE-/"
+          },
+          "National Aeronautics and Space Administration",
+          182819613,
+          "2027-09-30"
+        ],
+        [
+          {
             "text": "GSFC0200005DNAS500147",
             "href": "https://www.usaspending.gov/award/CONT_AWD_GSFC0200005DNAS500147_8000_-NONE-_-NONE-/"
           },
           "National Aeronautics and Space Administration",
           132265636,
           "2027-03-01"
+        ],
+        [
+          {
+            "text": "75N93022C00052",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75N93022C00052_7529_-NONE-_-NONE-/"
+          },
+          "Department of Health and Human Services",
+          19155153,
+          "2027-08-31"
         ],
         [
           {
@@ -467,12 +284,39 @@
         ],
         [
           {
+            "text": "75N93024C00075",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75N93024C00075_7529_-NONE-_-NONE-/"
+          },
+          "Department of Health and Human Services",
+          3743597,
+          "2027-09-29"
+        ],
+        [
+          {
+            "text": "75N92025F00001",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75N92025F00001_7529_75N92023D00015_7529/"
+          },
+          "Department of Health and Human Services",
+          3136008,
+          "2027-09-22"
+        ],
+        [
+          {
+            "text": "75N92025F00001",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75N92025F00001_7529_75N92021D00004_7529/"
+          },
+          "Department of Health and Human Services",
+          2266410,
+          "2027-09-28"
+        ],
+        [
+          {
             "text": "80ARC022CA003",
             "href": "https://www.usaspending.gov/award/CONT_AWD_80ARC022CA003_8000_-NONE-_-NONE-/"
           },
           "National Aeronautics and Space Administration",
           1999706,
-          "2026-09-26"
+          "2027-09-26"
         ],
         [
           {
@@ -482,51 +326,6 @@
           "Department of Health and Human Services",
           1675147,
           "2027-01-30"
-        ],
-        [
-          {
-            "text": "36C26125C0001",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C26125C0001_3600_-NONE-_-NONE-/"
-          },
-          "Department of Veterans Affairs",
-          1517526.02,
-          "2027-03-31"
-        ],
-        [
-          {
-            "text": "36C26123C0011",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C26123C0011_3600_-NONE-_-NONE-/"
-          },
-          "Department of Veterans Affairs",
-          977977.57,
-          "2026-12-31"
-        ],
-        [
-          {
-            "text": "36C24E25N0227",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C24E25N0227_3600_36C24E23D0002_3600/"
-          },
-          "Department of Veterans Affairs",
-          492470.03,
-          "2026-09-22"
-        ],
-        [
-          {
-            "text": "36C26126C0003",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C26126C0003_3600_-NONE-_-NONE-/"
-          },
-          "Department of Veterans Affairs",
-          411668.14,
-          "2026-09-30"
-        ],
-        [
-          {
-            "text": "36C26126N0339",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C26126N0339_3600_36C26126D0025_3600/"
-          },
-          "Department of Veterans Affairs",
-          400000,
-          "2026-09-30"
         ]
       ]
     },
@@ -553,34 +352,34 @@
     }
   ],
   "narrative": {
-    "intro": "Leland Stanford Junior University obligated $697M in federal contracts in FY2026 to date. Leland Stanford Junior University won 34 awards so far in the fiscal year, with an average award size of $20.5M, and obligations are down 5.9% year over year. The Department of Energy is the dominant buyer, accounting for $677M of obligations. Research and Development in the Physical, Engineering, and Life Sciences is the largest market for the university, accounting for $682M of obligations. Other notable markets include Research and Development in Biotechnology (except Nanobiotechnology) at $9.4M and Colleges, Universities, and Professional Schools at $1.5M. Fiscal-year history shows variation: FY21 was $548M, FY22 was $678M, FY23 was $659M, FY24 was $732M, FY25 was $741M, and FY26 is $697M so far. The profile shows strong concentration in a single agency and a single NAICS market, with other agencies and markets representing comparatively small shares of the current-year obligations.",
+    "intro": "In FY2027 to date, Leland Stanford Junior University won $132M across 8 contract awards. That is down 82.7% year over year. The average award size was $16.5M.",
     "sections": [
       {
         "heading": "Which agencies buy from Leland Stanford Junior University?",
-        "body": "The Department of Energy obligated $677M in FY2026 to date. The Department of Veterans Affairs obligated $11M and the National Aeronautics and Space Administration obligated $5.2M. The Department of Health and Human Services obligated $4.3M, the Department of Defense obligated $111K, and the Department of the Interior obligated $6K."
+        "body": "Department of Energy accounted for $130M of Leland Stanford Junior University's federal contract obligations in FY2027 to date, or 98.4% of the company's federal work."
       },
       {
         "heading": "What does Leland Stanford Junior University sell to the government?",
-        "body": "Research and Development in the Physical, Engineering, and Life Sciences is the primary market at $682M in FY2026 to date. Secondary markets include Research and Development in Biotechnology (except Nanobiotechnology) at $9.4M, Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology) at $2.9M, and Colleges, Universities, and Professional Schools at $1.5M."
+        "body": "Research and Development in the Physical, Engineering, and Life Sciences is Leland Stanford Junior University's largest federal market by obligations, at $130M in FY2027 to date, a 98.4% share of its federal business."
       }
     ]
   },
   "faq": [
     {
       "q": "How much does Leland Stanford Junior University make from federal contracts?",
-      "a": "Leland Stanford Junior University obligated $697M in federal contracts in FY2026 to date. Leland Stanford Junior University recorded 34 awards this fiscal year with an average award size of $20.5M, and obligations are down 5.9% year over year. Historical obligations were $548M in FY21, $678M in FY22, $659M in FY23, $732M in FY24, and $741M in FY25."
+      "a": "Leland Stanford Junior University won $132M in federal contract obligations in FY2027 to date, across 8 awards."
     },
     {
       "q": "Which agencies buy from Leland Stanford Junior University?",
-      "a": "The Department of Energy is the main buyer, obligating $677M in FY2026 to date. Other buying agencies include the Department of Veterans Affairs at $11M, the National Aeronautics and Space Administration at $5.2M, the Department of Health and Human Services at $4.3M, the Department of Defense at $111K, and the Department of the Interior at $6K."
+      "a": "Department of Energy is Leland Stanford Junior University's largest federal customer, with $130M obligated in FY2027 to date."
     },
     {
       "q": "What does Leland Stanford Junior University sell to the government?",
-      "a": "Leland Stanford Junior University primarily sells research and development services in the physical, engineering, and life sciences, with obligations of $682M in FY2026 to date. Other sales include Research and Development in Biotechnology (except Nanobiotechnology) at $9.4M, Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology) at $2.9M, and Colleges, Universities, and Professional Schools at $1.5M."
+      "a": "Leland Stanford Junior University's largest federal market is Research and Development in the Physical, Engineering, and Life Sciences, with $130M in obligations in FY2027 to date."
     },
     {
       "q": "Which Leland Stanford Junior University contracts are expiring soon?",
-      "a": "No expiring-contract figures are listed for Leland Stanford Junior University in the provided data. The provided tables include current-year obligations, top agencies, and top markets but do not include an expiring-contracts table with award-value figures."
+      "a": "Leland Stanford Junior University's largest contract expiring in the next 12 months is a $15.1B award from Department of Energy, with a period of performance ending in September 2027."
     }
   ],
   "related": [
@@ -589,28 +388,28 @@
       "href": "/insights/expiring-federal-contracts/"
     },
     {
-      "label": "Canadian Commercial federal contracts",
-      "href": "/insights/vendor/canadian-commercial/"
+      "label": "Regents of the University of California federal contracts",
+      "href": "/insights/vendor/regents-of-the-university-of-california/"
     },
     {
-      "label": "Motor Oil Hellas Corinth Refineries S A federal contracts",
-      "href": "/insights/vendor/motor-oil-hellas-corinth-refineries-s-a/"
+      "label": "Brookhaven Science Associates federal contracts",
+      "href": "/insights/vendor/brookhaven-science-associates/"
     },
     {
-      "label": "Bae Systems Information and Electronic Systems Integration federal contracts",
-      "href": "/insights/vendor/bae-systems-information-and-electronic-systems-integration/"
+      "label": "Battelle Memorial Institute federal contracts",
+      "href": "/insights/vendor/battelle-memorial-institute/"
     },
     {
-      "label": "Bae Systems Technology Solutions and Services federal contracts",
-      "href": "/insights/vendor/bae-systems-technology-solutions-and-services/"
+      "label": "Johns Hopkins University Applied Physics Laboratory federal contracts",
+      "href": "/insights/vendor/johns-hopkins-university-applied-physics-laboratory/"
     },
     {
-      "label": "Vigor Marine federal contracts",
-      "href": "/insights/vendor/vigor-marine/"
+      "label": "Metropolitan Security Services federal contracts",
+      "href": "/insights/vendor/metropolitan-security-services/"
     },
     {
-      "label": "Evernorth Federal Services federal contracts",
-      "href": "/insights/vendor/evernorth-federal-services/"
+      "label": "Hanford Tank Waste Operations and Closure federal contracts",
+      "href": "/insights/vendor/hanford-tank-waste-operations-and-closure/"
     }
   ],
   "sources": [

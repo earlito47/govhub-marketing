@@ -1,20 +1,20 @@
 {
   "pageType": "vendor",
   "slug": "science-applications-international",
-  "title": "Science Applications International: Federal Contracts FY2026",
+  "title": "Science Applications International: Federal Contracts FY2027",
   "h1": "Science Applications International: Federal Contracts, Agencies & Awards",
-  "metaDescription": "Science Applications International won $3.6B in federal contract obligations in FY2026 to date. See its top agencies, markets, largest awards, and expiring co",
-  "updated": "2026-09-28",
+  "metaDescription": "Science Applications International won $91.5M in federal contract obligations in FY2027 to date. See its top agencies, markets, largest awards, and expiring c",
+  "updated": "2026-11-16",
   "fyWindow": {
-    "label": "FY2026 to date",
-    "start": "2025-10-01",
-    "end": "2026-09-28"
+    "label": "FY2027 to date",
+    "start": "2026-10-01",
+    "end": "2026-11-16"
   },
   "stats": {
-    "totalObligations": 3586568134.57,
-    "awardCount": 938,
-    "yoyGrowthPct": -18.9,
-    "avgAwardSize": 3823633,
+    "totalObligations": 91533424.41,
+    "awardCount": 69,
+    "yoyGrowthPct": -97.7,
+    "avgAwardSize": 1326571,
     "smallBusinessSharePct": null
   },
   "charts": [
@@ -27,160 +27,160 @@
           "label": "Obligations",
           "points": [
             [
-              "FY21",
-              3303269463.3
-            ],
-            [
               "FY22",
-              3853597856.88
+              3899813008.44
             ],
             [
               "FY23",
-              4364869482.91
+              4397555501.52
             ],
             [
               "FY24",
-              4450548616.9
+              4479719278.74
             ],
             [
               "FY25",
-              4420838920.52
+              4453162349.81
             ],
             [
               "FY26",
-              3586568134.57
+              4061010677.57
+            ],
+            [
+              "FY27",
+              91533424.41
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Obligations fell 18.9% year over year, from $4.4B in FY2025 to $3.6B in FY2026 to date."
+      "takeaway": "Obligations fell 97.7% year over year, from $4.1B in FY2026 to $91.5M in FY2027 to date."
     },
     {
       "id": "science-applications-international-top-agencies",
       "type": "bar",
-      "title": "Top 10 buying agencies, FY2026 to date",
+      "title": "Top 10 buying agencies, FY2027 to date",
       "series": [
         {
           "label": "Obligations",
           "points": [
             [
-              "Department of Defense",
-              1408138971.2
+              "Department of Justice",
+              33092430.05
+            ],
+            [
+              "Government Accountability Office",
+              19819223.2
             ],
             [
               "General Services Administration",
-              1177072579.17
-            ],
-            [
-              "Department of Homeland Security",
-              259090249.7
-            ],
-            [
-              "Department of the Treasury",
-              187661963.49
-            ],
-            [
-              "Department of State",
-              126884335.34
+              17630446.72
             ],
             [
               "Department of Transportation",
-              125669049.61
+              14460116.53
             ],
             [
               "Department of Commerce",
-              109162341.9
-            ],
-            [
-              "Department of Health and Human Services",
-              51089114.12
-            ],
-            [
-              "Department of Veterans Affairs",
-              43321288.71
+              7814558.4
             ],
             [
               "National Aeronautics and Space Administration",
-              33236177.98
+              946822.76
+            ],
+            [
+              "Department of Health and Human Services",
+              0
+            ],
+            [
+              "Department of the Interior",
+              0
+            ],
+            [
+              "Department of Veterans Affairs",
+              -252979.17
+            ],
+            [
+              "Department of Homeland Security",
+              -602792.85
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Department of Defense is Science Applications International's largest federal customer, with $1.4B obligated (39.3% of the company's federal obligations)."
+      "takeaway": "Department of Justice is Science Applications International's largest federal customer, with $33.1M obligated (36.2% of the company's federal obligations)."
     },
     {
       "id": "science-applications-international-top-naics",
       "type": "bar",
-      "title": "Top 10 markets (NAICS), FY2026 to date",
+      "title": "Top 10 markets (NAICS), FY2027 to date",
       "series": [
         {
           "label": "Obligations",
           "points": [
             [
+              "Other Computer Related Services",
+              33092430.05
+            ],
+            [
               "Engineering Services",
-              1340418082.18
+              29153536.56
             ],
             [
               "Computer Systems Design Services",
-              1190747048.47
-            ],
-            [
-              "Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology)",
-              266555739.83
-            ],
-            [
-              "Research and Development in the Physical, Engineering, and Life Sciences (except Biotechnology)",
-              208993005.89
-            ],
-            [
-              "Search, Detection, Navigation, Guidance, Aeronautical, and Nautical System and Instrument Manufacturing",
-              118282188.16
+              29060699.99
             ],
             [
               "Administrative Management and General Management Consulting Services",
-              98171004.75
-            ],
-            [
-              "Other Computer Related Services",
-              75738469.23
-            ],
-            [
-              "All Other Miscellaneous Electrical Equipment and Component Manufacturing",
-              64859931.08
-            ],
-            [
-              "Custom Computer Programming Services",
-              62007221.68
+              247017.88
             ],
             [
               "Computer Facilities Management Services",
-              52844198.56
+              24992.65
+            ],
+            [
+              "Computing Infrastructure Providers, Data Processing, Web Hosting, and Related Services",
+              0
+            ],
+            [
+              "Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology)",
+              0
+            ],
+            [
+              "Custom Computer Programming Services",
+              -4038.09
+            ],
+            [
+              "Research and Development in the Physical, Engineering, and Life Sciences (except Biotechnology)",
+              -41214.62
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Engineering Services is Science Applications International's largest federal market, with $1.3B in obligations."
+      "takeaway": "Other Computer Related Services is Science Applications International's largest federal market, with $33.1M in obligations."
     }
   ],
   "crossLinks": [
     {
-      "label": "Department of Defense contracts",
-      "href": "/insights/agency/department-of-defense/"
+      "label": "Department of Justice contracts",
+      "href": "/insights/agency/department-of-justice/"
     },
     {
       "label": "General Services Administration contracts",
       "href": "/insights/agency/general-services-administration/"
     },
     {
-      "label": "Department of Homeland Security contracts",
-      "href": "/insights/agency/department-of-homeland-security/"
+      "label": "Department of Transportation contracts",
+      "href": "/insights/agency/department-of-transportation/"
     },
     {
-      "label": "Department of the Treasury contracts",
-      "href": "/insights/agency/department-of-the-treasury/"
+      "label": "Department of Commerce contracts",
+      "href": "/insights/agency/department-of-commerce/"
+    },
+    {
+      "label": "NAICS 541519: Other Computer Related Services",
+      "href": "/insights/naics/541519/"
     },
     {
       "label": "NAICS 541330: Engineering Services",
@@ -191,17 +191,13 @@
       "href": "/insights/naics/541512/"
     },
     {
-      "label": "NAICS 541715: Research and Development in the Physical, Engineering, and Life Sciences",
-      "href": "/insights/naics/541715/"
-    },
-    {
-      "label": "NAICS 334511: Search, Detection, Navigation, Guidance, Aeronautical, and Nautical System and Instrument Manufacturing",
-      "href": "/insights/naics/334511/"
+      "label": "NAICS 541611: Administrative Management and General Management Consulting Services",
+      "href": "/insights/naics/541611/"
     }
   ],
   "tables": [
     {
-      "title": "Largest awards, FY2026 to date",
+      "title": "Largest awards, FY2027 to date",
       "columns": [
         "Rank",
         "Award",
@@ -216,249 +212,249 @@
             "text": "47QFSA20F0057",
             "href": "https://www.usaspending.gov/award/CONT_AWD_47QFSA20F0057_4732_GS00Q14OADU428_4732/"
           },
-          1426735811.83,
+          1426694597.2,
           "General Services Administration",
           "2025-11-04"
         ],
         [
           2,
           {
-            "text": "47QFCA21F0001",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_47QFCA21F0001_4732_47QTCK18D0001_4732/"
-          },
-          1205937997.76,
-          "General Services Administration",
-          "2026-11-27"
-        ],
-        [
-          3,
-          {
-            "text": "W31P4Q21F0095",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_W31P4Q21F0095_9700_GS00Q14OADU428_4732/"
-          },
-          838624260.06,
-          "Department of Defense",
-          "2028-09-23"
-        ],
-        [
-          4,
-          {
-            "text": "19AQMM21F2945",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_19AQMM21F2945_1900_47QTCK18D0001_4732/"
-          },
-          805559930.65,
-          "Department of State",
-          "2025-05-08"
-        ],
-        [
-          5,
-          {
             "text": "47QFCA25F0009",
             "href": "https://www.usaspending.gov/award/CONT_AWD_47QFCA25F0009_4732_47QFCA22D0337_4732/"
           },
-          722434469.16,
+          728733822.29,
           "General Services Administration",
           "2027-09-14"
         ],
         [
-          6,
-          {
-            "text": "N0002422C6419",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002422C6419_9700_-NONE-_-NONE-/"
-          },
-          619986599.41,
-          "Department of Defense",
-          "2032-12-31"
-        ],
-        [
-          7,
+          3,
           {
             "text": "70B04C20F00001359",
             "href": "https://www.usaspending.gov/award/CONT_AWD_70B04C20F00001359_7014_47QTCK18D0001_4732/"
           },
-          591969099.27,
+          615526452.02,
           "Department of Homeland Security",
           "2027-03-16"
         ],
         [
-          8,
-          {
-            "text": "47QFCA20F0004",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_47QFCA20F0004_4732_GS00Q14OADU130_4732/"
-          },
-          529876499.93,
-          "General Services Administration",
-          "2025-12-11"
-        ],
-        [
-          9,
-          {
-            "text": "W31P4Q21F0033",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_W31P4Q21F0033_9700_GS00Q14OADU516_4732/"
-          },
-          511110188.11,
-          "Department of Defense",
-          "2026-07-05"
-        ],
-        [
-          10,
-          {
-            "text": "47QFCA20F0019",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_47QFCA20F0019_4732_GS00Q14OADU130_4732/"
-          },
-          473960668.82,
-          "General Services Administration",
-          "2026-03-17"
-        ],
-        [
-          11,
-          {
-            "text": "47QFSA18F0085",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_47QFSA18F0085_4732_GS00Q14OADU329_4732/"
-          },
-          389221323.02,
-          "General Services Administration",
-          "2021-09-30"
-        ],
-        [
-          12,
-          {
-            "text": "47QFCA23F0017",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_47QFCA23F0017_4732_47QTCK18D0001_4732/"
-          },
-          388673246.26,
-          "General Services Administration",
-          "2027-03-01"
-        ],
-        [
-          13,
-          {
-            "text": "FA873022F0071",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_FA873022F0071_9700_47QTCK18D0001_4732/"
-          },
-          339210893.52,
-          "Department of Defense",
-          "2026-08-08"
-        ],
-        [
-          14,
-          {
-            "text": "GSQ0017AJ0036",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_GSQ0017AJ0036_4732_GS00Q09BGD0048_4735/"
-          },
-          290837026.9,
-          "General Services Administration",
-          "2022-09-28"
-        ],
-        [
-          15,
-          {
-            "text": "FA872323F9010",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_FA872323F9010_9700_47QTCK18D0001_4732/"
-          },
-          285475608.42,
-          "Department of Defense",
-          "2027-03-24"
-        ],
-        [
-          16,
+          4,
           {
             "text": "47QFCA25F0032",
             "href": "https://www.usaspending.gov/award/CONT_AWD_47QFCA25F0032_4732_47QFCA22D0337_4732/"
           },
-          278925903.68,
+          337000711.19,
           "General Services Administration",
           "2030-09-16"
         ],
         [
-          17,
-          {
-            "text": "N0002416C6425",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002416C6425_9700_-NONE-_-NONE-/"
-          },
-          266594084.51,
-          "Department of Defense",
-          "2026-09-30"
-        ],
-        [
-          18,
-          {
-            "text": "19AQMM25F0271",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_19AQMM25F0271_1900_47QTCK18D0001_4732/"
-          },
-          257208894.79,
-          "Department of State",
-          "2027-02-08"
-        ],
-        [
-          19,
-          {
-            "text": "HC102819F0687",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_HC102819F0687_9700_HHSN316201200051W_7529/"
-          },
-          250734390.95,
-          "Department of Defense",
-          "2026-07-12"
-        ],
-        [
-          20,
-          {
-            "text": "FA872624F0001",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_FA872624F0001_9700_47QTCK18D0001_4732/"
-          },
-          249970227.19,
-          "Department of Defense",
-          "2025-09-07"
-        ],
-        [
-          21,
-          {
-            "text": "47QFPA22F0028",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_47QFPA22F0028_4732_GS00Q14OADU616_4732/"
-          },
-          241444933.27,
-          "General Services Administration",
-          "2027-03-15"
-        ],
-        [
-          22,
-          {
-            "text": "47QFSA19F0070",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_47QFSA19F0070_4732_GS00Q14OADU329_4732/"
-          },
-          217639592.13,
-          "General Services Administration",
-          "2021-09-30"
-        ],
-        [
-          23,
-          {
-            "text": "W9126022FD508",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_W9126022FD508_9700_W9113M17D0007_9700/"
-          },
-          208211524.89,
-          "Department of Defense",
-          "2027-09-03"
-        ],
-        [
-          24,
+          5,
           {
             "text": "36C10B20N10020015",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C10B20N10020015_3600_VA11816D1002_3600/"
           },
-          197194582.36,
+          196941603.19,
           "Department of Veterans Affairs",
           "2026-01-22"
         ],
         [
-          25,
+          6,
           {
             "text": "2032H525F00053",
             "href": "https://www.usaspending.gov/award/CONT_AWD_2032H525F00053_2050_2032H523A00010_2050/"
           },
-          189363774.27,
+          187382939.26,
           "Department of the Treasury",
           "2027-06-19"
+        ],
+        [
+          7,
+          {
+            "text": "36C10B24F0201",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10B24F0201_3600_47QTCK18D0001_4732/"
+          },
+          118367916.07,
+          "Department of Veterans Affairs",
+          "2027-07-31"
+        ],
+        [
+          8,
+          {
+            "text": "70B04C24F00000184",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70B04C24F00000184_7014_47QTCK18D0001_4732/"
+          },
+          110881128.98,
+          "Department of Homeland Security",
+          "2026-04-30"
+        ],
+        [
+          9,
+          {
+            "text": "80GSFC22CA049",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_80GSFC22CA049_8000_-NONE-_-NONE-/"
+          },
+          108941707.1,
+          "National Aeronautics and Space Administration",
+          "2027-09-30"
+        ],
+        [
+          10,
+          {
+            "text": "80NSSC19C0050",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_80NSSC19C0050_8000_-NONE-_-NONE-/"
+          },
+          103107806.17,
+          "National Aeronautics and Space Administration",
+          "2027-09-30"
+        ],
+        [
+          11,
+          {
+            "text": "693JJ324F00481N",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_693JJ324F00481N_6925_693JK420D500002_6901/"
+          },
+          77723882.64,
+          "Department of Transportation",
+          "2027-06-30"
+        ],
+        [
+          12,
+          {
+            "text": "47QFHA22F0010",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_47QFHA22F0010_4732_47QTCK18D0001_4732/"
+          },
+          66618385.37,
+          "General Services Administration",
+          "2026-12-31"
+        ],
+        [
+          13,
+          {
+            "text": "15JPSS26F00000020",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_15JPSS26F00000020_1501_15JPSS25A00000046_1501/"
+          },
+          65044188.7,
+          "Department of Justice",
+          "2027-11-05"
+        ],
+        [
+          14,
+          {
+            "text": "70RSAT23CB0000003",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70RSAT23CB0000003_7001_-NONE-_-NONE-/"
+          },
+          50002730.55,
+          "Department of Homeland Security",
+          "2028-08-24"
+        ],
+        [
+          15,
+          {
+            "text": "05GA0A25F0029",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_05GA0A25F0029_0559_HHSN316201200012W_7529/"
+          },
+          34586787.78,
+          "Government Accountability Office",
+          "2027-12-09"
+        ],
+        [
+          16,
+          {
+            "text": "693JJ321F000193",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_693JJ321F000193_6925_693JK420D500002_6901/"
+          },
+          32163343.65,
+          "Department of Transportation",
+          "2023-08-31"
+        ],
+        [
+          17,
+          {
+            "text": "80JSC022CA003",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_80JSC022CA003_8000_-NONE-_-NONE-/"
+          },
+          24389343.12,
+          "National Aeronautics and Space Administration",
+          "2027-09-30"
+        ],
+        [
+          18,
+          {
+            "text": "6913G622F50047N",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_6913G622F50047N_6901_693JK420D500002_6901/"
+          },
+          22157963.46,
+          "Department of Transportation",
+          "2027-01-07"
+        ],
+        [
+          19,
+          {
+            "text": "47QFHA26F0002",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_47QFHA26F0002_4732_47QFHA24D0001_4732/"
+          },
+          16766755.78,
+          "General Services Administration",
+          "2027-01-06"
+        ],
+        [
+          20,
+          {
+            "text": "693KA926F00078",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_693KA926F00078_6920_693KA921D00003_6920/"
+          },
+          11969000,
+          "Department of Transportation",
+          "2027-09-30"
+        ],
+        [
+          21,
+          {
+            "text": "1333BJ26F00280007",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_1333BJ26F00280007_1344_1333BJ21D00280004_1344/"
+          },
+          11423927.4,
+          "Department of Commerce",
+          "2027-11-12"
+        ],
+        [
+          22,
+          {
+            "text": "2033H624F00070",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_2033H624F00070_2036_GS35F486BA_4732/"
+          },
+          10189364.55,
+          "Department of the Treasury",
+          "2027-09-30"
+        ],
+        [
+          23,
+          {
+            "text": "6973GH26F00369",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_6973GH26F00369_6920_6973GH25D00014_6920/"
+          },
+          8769707.7,
+          "Department of Transportation",
+          "2027-01-31"
+        ],
+        [
+          24,
+          {
+            "text": "6913G622F50046N",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_6913G622F50046N_6901_693JK420D500002_6901/"
+          },
+          8379737.33,
+          "Department of Transportation",
+          "2027-01-07"
+        ],
+        [
+          25,
+          {
+            "text": "47QFPA25F0008",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_47QFPA25F0008_4732_47QTCK18D0001_4732/"
+          },
+          8086515.86,
+          "General Services Administration",
+          "2027-05-13"
         ]
       ]
     },
@@ -486,7 +482,7 @@
             "href": "https://www.usaspending.gov/award/CONT_AWD_47QFCA25F0009_4732_47QFCA22D0337_4732/"
           },
           "General Services Administration",
-          722434469.16,
+          728733822.29,
           "2027-09-14"
         ],
         [
@@ -495,7 +491,7 @@
             "href": "https://www.usaspending.gov/award/CONT_AWD_70B04C20F00001359_7014_47QTCK18D0001_4732/"
           },
           "Department of Homeland Security",
-          591969099.27,
+          615526452.02,
           "2027-03-16"
         ],
         [
@@ -509,6 +505,24 @@
         ],
         [
           {
+            "text": "FA873022F0071",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_FA873022F0071_9700_47QTCK18D0001_4732/"
+          },
+          "Department of Defense",
+          372131250.79,
+          "2027-08-08"
+        ],
+        [
+          {
+            "text": "19AQMM25F0271",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_19AQMM25F0271_1900_47QTCK18D0001_4732/"
+          },
+          "Department of State",
+          312210767.13,
+          "2027-02-08"
+        ],
+        [
+          {
             "text": "FA872323F9010",
             "href": "https://www.usaspending.gov/award/CONT_AWD_FA872323F9010_9700_47QTCK18D0001_4732/"
           },
@@ -518,29 +532,11 @@
         ],
         [
           {
-            "text": "N0002416C6425",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002416C6425_9700_-NONE-_-NONE-/"
-          },
-          "Department of Defense",
-          266594084.51,
-          "2026-09-30"
-        ],
-        [
-          {
-            "text": "19AQMM25F0271",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_19AQMM25F0271_1900_47QTCK18D0001_4732/"
-          },
-          "Department of State",
-          257208894.79,
-          "2027-02-08"
-        ],
-        [
-          {
             "text": "47QFPA22F0028",
             "href": "https://www.usaspending.gov/award/CONT_AWD_47QFPA22F0028_4732_GS00Q14OADU616_4732/"
           },
           "General Services Administration",
-          241444933.27,
+          241566616.45,
           "2027-03-15"
         ],
         [
@@ -549,7 +545,7 @@
             "href": "https://www.usaspending.gov/award/CONT_AWD_W9126022FD508_9700_W9113M17D0007_9700/"
           },
           "Department of Defense",
-          208211524.89,
+          210522924.33,
           "2027-09-03"
         ],
         [
@@ -558,7 +554,7 @@
             "href": "https://www.usaspending.gov/award/CONT_AWD_2032H525F00053_2050_2032H523A00010_2050/"
           },
           "Department of the Treasury",
-          189363774.27,
+          187382939.26,
           "2027-06-19"
         ]
       ]
@@ -586,34 +582,34 @@
     }
   ],
   "narrative": {
-    "intro": "Science Applications International recorded $3.6B in federal contract obligations for FY2026 to date. Science Applications International won 938 awards so far this fiscal year, with an average award size of $3.8M, and obligations are down 18.9% year over year. Science Applications International continues to do most work for the Department of Defense and the General Services Administration, which together account for $1.4B and $1.2B in obligations respectively. Science Applications International’s top markets are Engineering Services and Computer Systems Design Services, which account for $1.3B and $1.2B respectively. Science Applications International’s FY2026 to date totals are partial and comparable to prior full fiscal years that ranged from $3.3B in FY21 to $4.5B in FY24. Science Applications International’s mix of engineering, computer systems, and research and development work shapes where obligations are concentrated and which agencies are the largest buyers.",
+    "intro": "Science Applications International obligated $91.5M in federal contracts in FY2027 to date, across 69 awards with an average award size of $1.3M. Obligations fell 97.7% year over year compared with prior fiscal years. FY22 obligations were $3.9B. FY23 obligations were $4.4B. FY24 obligations were $4.5B. FY25 obligations were $4.5B. FY26 obligations were $4.1B. Top buying agencies so far in FY2027 include the Department of Justice at $33.1M and the Government Accountability Office at $19.8M, with the General Services Administration at $17.6M and the Department of Transportation at $14.5M. Top markets by NAICS for FY2027 include Other Computer Related Services at $33.1M, Engineering Services at $29.2M, and Computer Systems Design Services at $29.1M. The figures for FY2027 are partial, fiscal year to date, and some tables in the report use total contract values rather than obligations.",
     "sections": [
       {
-        "heading": "Who are Science Applications International’s biggest federal customers?",
-        "body": "The Department of Defense is Science Applications International’s largest buyer with $1.4B in obligations. The General Services Administration follows with $1.2B. The Department of Homeland Security, the Department of the Treasury, and the Department of State are also significant customers with $259M, $188M, and $127M respectively."
+        "heading": "Who are the largest federal buyers of Science Applications International so far in FY2027?",
+        "body": "The Department of Justice obligated $33.1M, the largest buyer in FY2027 to date. The Government Accountability Office obligated $19.8M and the General Services Administration obligated $17.6M. The Department of Transportation obligated $14.5M and the Department of Commerce obligated $7.8M."
       },
       {
-        "heading": "What services and industries drive Science Applications International’s federal revenue?",
-        "body": "Engineering Services and Computer Systems Design Services are the largest markets for Science Applications International with $1.3B and $1.2B in obligations. Science Applications International also has material obligations in research and development categories totaling $267M and $209M, and in systems and component manufacturing categories such as Search, Detection, Navigation, Guidance, Aeronautical, and Nautical System and Instrument Manufacturing at $118M."
+        "heading": "Which markets and services account for Science Applications International's FY2027 obligations?",
+        "body": "Other Computer Related Services is the largest market at $33.1M and Engineering Services follows at $29.2M. Computer Systems Design Services accounts for $29.1M and Administrative Management and General Management Consulting Services accounts for $247K. Computer Facilities Management Services accounts for $25K."
       }
     ]
   },
   "faq": [
     {
       "q": "How much does Science Applications International make from federal contracts?",
-      "a": "Science Applications International has $3.6B in federal contract obligations for FY2026 to date. Science Applications International won 938 federal awards so far this fiscal year, with an average award size of $3.8M, and obligations are down 18.9% year over year."
+      "a": "Science Applications International has $91.5M in federal contract obligations in FY2027 to date. Science Applications International received those obligations across 69 awards with an average award size of $1.3M, and obligations are down 97.7% year over year compared with prior fiscal years."
     },
     {
       "q": "Which agencies buy from Science Applications International?",
-      "a": "The Department of Defense is Science Applications International’s largest federal buyer with $1.4B in obligations, followed by the General Services Administration with $1.2B. Other agencies that buy from Science Applications International include the Department of Homeland Security ($259M), the Department of the Treasury ($188M), and the Department of State ($127M)."
+      "a": "Science Applications International's largest buyers in FY2027 to date are the Department of Justice at $33.1M, the Government Accountability Office at $19.8M, and the General Services Administration at $17.6M. Science Applications International also has obligations from the Department of Transportation at $14.5M and the Department of Commerce at $7.8M."
     },
     {
       "q": "What does Science Applications International sell to the government?",
-      "a": "Science Applications International primarily sells Engineering Services and Computer Systems Design Services, with $1.3B and $1.2B in obligations respectively. Science Applications International also sells Research and Development services totaling $267M and $209M in two R&D categories, along with manufacturing and consulting services in smaller amounts."
+      "a": "Science Applications International primarily sold Other Computer Related Services and Engineering Services in FY2027, with obligations of $33.1M and $29.2M respectively. Science Applications International also recorded $29.1M in Computer Systems Design Services and smaller amounts in consulting and facilities management markets."
     },
     {
       "q": "Which Science Applications International contracts are expiring soon?",
-      "a": "No expiring-contracts data is provided in the facts. The available figures list obligations by agency and by market for FY2026 to date but do not include a table of expiring contracts."
+      "a": "Science Applications International's expiring-contract information is not listed in the provided figures, so a list of expiring contracts and their award values is not available in this summary."
     }
   ],
   "related": [
@@ -622,28 +618,28 @@
       "href": "/insights/expiring-federal-contracts/"
     },
     {
-      "label": "RTX federal contracts",
-      "href": "/insights/vendor/rtx/"
+      "label": "Blue Origin federal contracts",
+      "href": "/insights/vendor/blue-origin/"
     },
     {
-      "label": "Huntington Ingalls federal contracts",
-      "href": "/insights/vendor/huntington-ingalls/"
+      "label": "Lumen Technologies Government Solutions federal contracts",
+      "href": "/insights/vendor/lumen-technologies-government-solutions/"
     },
     {
-      "label": "Lawrence Livermore National Security federal contracts",
-      "href": "/insights/vendor/lawrence-livermore-national-security/"
+      "label": "Booz Allen Hamilton federal contracts",
+      "href": "/insights/vendor/booz-allen-hamilton/"
     },
     {
-      "label": "Davie Defense federal contracts",
-      "href": "/insights/vendor/davie-defense/"
+      "label": "Medline Industries federal contracts",
+      "href": "/insights/vendor/medline-industries/"
     },
     {
-      "label": "Savannah River Nuclear Solutions federal contracts",
-      "href": "/insights/vendor/savannah-river-nuclear-solutions/"
+      "label": "Elevated Technologies Services federal contracts",
+      "href": "/insights/vendor/elevated-technologies-services/"
     },
     {
-      "label": "Consolidated Nuclear Security federal contracts",
-      "href": "/insights/vendor/consolidated-nuclear-security/"
+      "label": "Federal Express federal contracts",
+      "href": "/insights/vendor/federal-express/"
     }
   ],
   "sources": [
@@ -651,5 +647,6 @@
       "label": "USAspending.gov award data",
       "href": "https://www.usaspending.gov"
     }
-  ]
+  ],
+  "noindex": true
 }
