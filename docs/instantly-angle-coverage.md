@@ -5364,3 +5364,69 @@ reader's NAICS, and the harvest is state-scoped (1,756 distinct awards, not one
 attached to companies in more than one state), so "a firm in your state" is
 true. B2 only renders for a solicitation the fit judge rated fit or plausible,
 which is precisely why its supply is gated on the judge working correctly.
+
+### 2026-11-16, after the 21:15 step — the pre-flight held, as predicted
+
+Confirmed rather than inferred: GH-B2-MatchedRFP is still `status = 0` (draft)
+and `daily_caps` still reads `"B2": 0`, **last written 2026-11-11 21:17:32** —
+so tonight's step touched nothing. It declined to launch, which is its decision
+and the right one on 0 usable signals against a bar of 500.
+
+**The 03:45 collision is on its fourth consecutive day** (11-11, 11-12, 11-13,
+11-16), both jobs returning 546 again. `opportunities_3` then failed its 03:53
+retry with a 500 and recovered at 04:48; `awards` recovered at 09:45, 15:45 and
+21:45. `opportunities_2` also took a 500 at 03:30 today and recovered at 03:38.
+Nothing was lost, and the one-line fix recorded above is still waiting on the
+permission to run it. Four days of a diagnosed, reproducible failure is no
+longer a handover.
+
+`metrics` returned 200 at 23:00, recovering from Friday's 504. `fit` ran its
+full nine times, `assign` once, all 2xx.
+
+### The pinned bounce denominator needs one more condition
+
+Friday's entry pinned the denominator to our own `assignments.pushed_at` count
+because Instantly's three contacted fields disagree and can move down. That was
+right for the reason given and it is **wrong today**, because pushing a lead and
+contacting a person stopped being the same event:
+
+| | |
+|---|---|
+| B4 pushed (our database) | 225 |
+| B4 contacted (Instantly) | 150 |
+| bounce over pushed | 5/225 = 2.22% |
+| bounce over contacted | **5/150 = 3.33%** |
+
+Seventy-five leads were created and never emailed, so the pushed count flatters
+the rate by a third. A bounce rate is bounces over *people who were mailed*, and
+push only approximates that while Instantly keeps up. The rule becomes: use
+`new_leads_contacted_count`, cross-check it against our pushed count, and when
+they diverge treat the **lower** as the denominator and the gap as a throttling
+signal worth its own look. Today's gap of 75 is exactly the throttling recorded
+above.
+
+Overall, measured that way, bounce is unchanged and under the gate: A1 0.85%,
+A2 2.18%, A4 2.10%, A5 1.68%, B4 3.33%, nothing near the 5% per-campaign line.
+
+### B4 did send today, and it chose follow-ups
+
+An earlier reading of `emails_sent_count` as 150 against 150 contacted was taken
+mid-check and read as "no follow-up has ever gone out". By the end of the same
+check it was 198. Reading the leads directly settles it:
+
+| furthest step delivered | leads |
+|---|---|
+| step 1 only | 102 |
+| **step 2** | **48** |
+| never sent | 75 |
+
+So the twelve shared boxes gave B4 about 48 emails today and Instantly spent
+them advancing the 11-12 cohort to step 2 — the first email carrying the
+`bids/<state>/` link — rather than starting any of the 75 new leads. Twenty-seven
+of that cohort are still waiting on a step 2 that fell due today, and they will
+compete with tomorrow's 75. B4 is not stalled; it is running at a fraction of
+its 75/day intent, and the backlog is now 102 emails behind.
+
+One reply across the whole campaign so far: the 11-13 accept. Over the 150
+people actually contacted that is 0.67%, which happens to land on A4's 0.66%
+benchmark and means nothing at n=1.
