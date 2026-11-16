@@ -5319,11 +5319,11 @@ person's address off a model classification.
 
 Three accepts are queued behind it:
 
-| address | angle | reply | accepted |
-|---|---|---|---|
-| Elias Squeaky Cleaning | A5 | "Yes that would be great" | 2026-11-05 |
-| B&D Partnership | B4 | "Yes please" | 2026-11-13 |
-| Got To Have It Construction | A2 | "Yes" | 2026-11-13 |
+| angle | reply | accepted |
+|---|---|---|
+| A5 | "Yes that would be great" | 2026-11-05 |
+| B4 | "Yes please" | 2026-11-13 |
+| A2 | "Yes" | 2026-11-13 |
 
 The oldest has waited **eleven days**. The B4 one is that campaign's first
 accept. None has a staged proposal, so none has been handed anything.
@@ -5341,10 +5341,10 @@ provisioned". That is right for an opt-out and wrong for bookkeeping, and of
 | declined / asked to stop / dead mailbox | ~62 | yes |
 
 So **154 of 216 suppressions are mailing bookkeeping**, not a refusal. Two
-desk accepts are blocked by one: `info@aadviksolutions.com`, and
-**`kparks@kpcinc.com` — Kizzy Parks, who accepted the access-for-a-review
-counter on 11-08 and has been asking product questions since.** She is treated
-by the gate exactly as if she had asked us to stop.
+desk accepts are blocked by one, and one of them is **the prospect who accepted
+the access-for-a-review counter on 11-08 and has been asking product questions
+since** — the most engaged lead in the pipeline, treated by the gate exactly as
+if she had asked us to stop.
 
 The other four accepts the sync skips as suppressed are genuine declines, so
 the refusal is doing real work; it just cannot distinguish the two populations.
