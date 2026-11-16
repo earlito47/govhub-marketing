@@ -1,20 +1,20 @@
 {
   "pageType": "state",
   "slug": "tennessee",
-  "title": "Federal Contracts in Tennessee: $158M (FY2027)",
+  "title": "Federal Contracts in Tennessee: $1.2B (FY2027)",
   "h1": "Federal Contracts in Tennessee: Spending, Agencies & Vendors",
-  "metaDescription": "Federal agencies obligated $158M to contractors in Tennessee in FY2027 to date. See top buying agencies, top vendors, and industries.",
-  "updated": "2026-10-26",
+  "metaDescription": "Federal agencies obligated $1.2B to contractors in Tennessee in FY2027 to date. See top buying agencies, top vendors, and industries.",
+  "updated": "2026-11-16",
   "fyWindow": {
     "label": "FY2027 to date",
     "start": "2026-10-01",
-    "end": "2026-10-26"
+    "end": "2026-11-16"
   },
   "stats": {
-    "totalObligations": 157810346.72,
-    "awardCount": 432,
-    "yoyGrowthPct": -98.7,
-    "avgAwardSize": 365302,
+    "totalObligations": 1172847132.31,
+    "awardCount": 754,
+    "yoyGrowthPct": -90.6,
+    "avgAwardSize": 1555500,
     "smallBusinessSharePct": null
   },
   "charts": [
@@ -28,33 +28,33 @@
           "points": [
             [
               "FY22",
-              11425335843.51
+              11478901200.05
             ],
             [
               "FY23",
-              11242144778.81
+              11293319911.81
             ],
             [
               "FY24",
-              10771313326.21
+              10827060616.07
             ],
             [
               "FY25",
-              10952678091.68
+              11115861486.69
             ],
             [
               "FY26",
-              12285047021.89
+              12525319169.07
             ],
             [
               "FY27",
-              157810346.72
+              1172847132.31
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Obligations fell 98.7% year over year, from $12.3B in FY2026 to $158M in FY2027 to date."
+      "takeaway": "Obligations fell 90.6% year over year, from $12.5B in FY2026 to $1.2B in FY2027 to date."
     },
     {
       "id": "tennessee-top-agencies",
@@ -65,20 +65,36 @@
           "label": "Obligations",
           "points": [
             [
+              "Department of Energy",
+              968070312.72
+            ],
+            [
               "Department of Veterans Affairs",
-              144152239.45
+              148364971.43
             ],
             [
               "Department of Justice",
-              14786934.71
+              41031636.06
+            ],
+            [
+              "Department of Defense",
+              7250602.95
+            ],
+            [
+              "Department of Agriculture",
+              5052121.8
             ],
             [
               "General Services Administration",
-              1268915.08
+              3103399.45
+            ],
+            [
+              "Department of Homeland Security",
+              2559313.88
             ],
             [
               "National Aeronautics and Space Administration",
-              1190974
+              1236474
             ],
             [
               "Department of Labor",
@@ -86,29 +102,13 @@
             ],
             [
               "Department of Transportation",
-              65736
-            ],
-            [
-              "Department of Energy",
-              33782
-            ],
-            [
-              "Department of the Treasury",
-              2827.5
-            ],
-            [
-              "Department of Education",
-              0
-            ],
-            [
-              "Environmental Protection Agency",
-              0
+              330796.07
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Department of Veterans Affairs was the top federal buyer in Tennessee, obligating $144M (91.3% of the state total)."
+      "takeaway": "Department of Energy was the top federal buyer in Tennessee, obligating $968M (82.5% of the state total)."
     },
     {
       "id": "tennessee-top-vendors",
@@ -119,50 +119,50 @@
           "label": "Obligations",
           "points": [
             [
+              "CONSOLIDATED NUCLEAR SECURITY, LLC",
+              489421124.59
+            ],
+            [
+              "UT-BATTELLE LLC",
+              302169565.46
+            ],
+            [
+              "UNITED CLEANUP OAK RIDGE LLC",
+              113181680.81
+            ],
+            [
+              "BWXT ORDNANCE TENNESSEE, INC.",
+              68000000
+            ],
+            [
+              "METROPOLITAN SECURITY SERVICES, INC.",
+              28581011.65
+            ],
+            [
               "VALIANT CONSTRUCTION LLC",
               22288546
             ],
             [
               "VANDERBILT UNIVERSITY MEDICAL CENTER",
-              15366627.08
+              15409870.68
+            ],
+            [
+              "CLARK SEMPER TEK JV LLC",
+              10520790
             ],
             [
               "FEDEX SUPPLY CHAIN DISTRIBUTION SYSTEM, INC.",
               9000000
             ],
             [
-              "METROPOLITAN SECURITY SERVICES, INC.",
-              8388470.75
-            ],
-            [
-              "VALOR HEALTHCARE INC",
-              5778671.41
-            ],
-            [
-              "LABORATORY CORPORATION OF AMERICA",
-              5732606.09
-            ],
-            [
-              "FEDERAL EXPRESS CORPORATION",
-              5618747.25
-            ],
-            [
-              "FIVE STONES INTELLIGENCE, INC.",
-              4797902
-            ],
-            [
-              "STERLING MEDICAL ASSOCIATES, INC",
-              4785165.74
-            ],
-            [
-              "WIREGRASS REHABILITATION CENTER INC",
-              4453185.62
+              "DRC EMERGENCY SERVICES, LLC",
+              7250602.95
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "VALIANT CONSTRUCTION LLC led all contractors in Tennessee with $22.3M, 14.1% of the state total."
+      "takeaway": "CONSOLIDATED NUCLEAR SECURITY, LLC led all contractors in Tennessee with $489M, 41.7% of the state total."
     },
     {
       "id": "tennessee-top-naics",
@@ -173,53 +173,57 @@
           "label": "Obligations",
           "points": [
             [
-              "Commercial and Institutional Building Construction",
-              23772537.16
+              "Facilities Support Services",
+              797763987.18
+            ],
+            [
+              "Remediation Services",
+              113009053.9
+            ],
+            [
+              "Other Basic Inorganic Chemical Manufacturing",
+              68000000
+            ],
+            [
+              "Security Guards and Patrol Services",
+              33771197.51
             ],
             [
               "Colleges, Universities, and Professional Schools",
-              21946921.83
+              23395137.91
+            ],
+            [
+              "Commercial and Institutional Building Construction",
+              13638730.52
             ],
             [
               "All Other Outpatient Care Centers",
               11686846.77
             ],
             [
-              "Security Guards and Patrol Services",
-              10136468.27
+              "Plumbing, Heating, and Air-Conditioning Contractors",
+              10893831.77
             ],
             [
               "Couriers and Express Delivery Services",
-              9478771.87
+              9383227.5
             ],
             [
               "All Other Business Support Services",
               9000000
-            ],
-            [
-              "Offices of Physicians (except Mental Health Specialists)",
-              8556826.01
-            ],
-            [
-              "Medical Laboratories",
-              6829349.68
-            ],
-            [
-              "Ambulance Services",
-              6405879.66
-            ],
-            [
-              "Pharmaceutical Preparation Manufacturing",
-              5186608.49
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Commercial and Institutional Building Construction was the largest industry in Tennessee, with $23.8M obligated."
+      "takeaway": "Facilities Support Services was the largest industry in Tennessee, with $798M obligated."
     }
   ],
   "crossLinks": [
+    {
+      "label": "Department of Energy contracts",
+      "href": "/insights/agency/department-of-energy/"
+    },
     {
       "label": "Department of Veterans Affairs contracts",
       "href": "/insights/agency/department-of-veterans-affairs/"
@@ -229,28 +233,20 @@
       "href": "/insights/agency/department-of-justice/"
     },
     {
-      "label": "General Services Administration contracts",
-      "href": "/insights/agency/general-services-administration/"
+      "label": "Department of Defense contracts",
+      "href": "/insights/agency/department-of-defense/"
     },
     {
-      "label": "National Aeronautics and Space Administration contracts",
-      "href": "/insights/agency/national-aeronautics-and-space-administration/"
-    },
-    {
-      "label": "NAICS 236220: Commercial and Institutional Building Construction",
-      "href": "/insights/naics/236220/"
+      "label": "NAICS 561210: Facilities Support Services",
+      "href": "/insights/naics/561210/"
     },
     {
       "label": "NAICS 561612: Security Guards and Patrol Services",
       "href": "/insights/naics/561612/"
     },
     {
-      "label": "NAICS 621511: Medical Laboratories",
-      "href": "/insights/naics/621511/"
-    },
-    {
-      "label": "NAICS 325412: Pharmaceutical Preparation Manufacturing",
-      "href": "/insights/naics/325412/"
+      "label": "NAICS 236220: Commercial and Institutional Building Construction",
+      "href": "/insights/naics/236220/"
     }
   ],
   "tables": [
@@ -265,21 +261,69 @@
         [
           1,
           {
+            "text": "CONSOLIDATED NUCLEAR SECURITY, LLC",
+            "href": "https://www.usaspending.gov/recipient/3c1a340d-2613-1609-93ce-eb1aba0559b5-C/latest/"
+          },
+          489421124.59
+        ],
+        [
+          2,
+          {
+            "text": "UT-BATTELLE LLC",
+            "href": "https://www.usaspending.gov/recipient/c236f280-8198-3109-89dd-96eca764ec43-C/latest/"
+          },
+          302169565.46
+        ],
+        [
+          3,
+          {
+            "text": "UNITED CLEANUP OAK RIDGE LLC",
+            "href": "https://www.usaspending.gov/recipient/04c9710e-1037-d496-7f24-6fd362c80c8c-C/latest/"
+          },
+          113181680.81
+        ],
+        [
+          4,
+          {
+            "text": "BWXT ORDNANCE TENNESSEE, INC.",
+            "href": "https://www.usaspending.gov/recipient/9e75a491-749d-eb83-09c9-bc203ef77c1e-C/latest/"
+          },
+          68000000
+        ],
+        [
+          5,
+          {
+            "text": "METROPOLITAN SECURITY SERVICES, INC.",
+            "href": "https://www.usaspending.gov/recipient/835e42fb-f461-4e30-e17e-3205a1805635-C/latest/"
+          },
+          28581011.65
+        ],
+        [
+          6,
+          {
             "text": "VALIANT CONSTRUCTION LLC",
             "href": "https://www.usaspending.gov/recipient/eeb4e9e0-f8b4-2c39-8b74-3bba1f767b3e-C/latest/"
           },
           22288546
         ],
         [
-          2,
+          7,
           {
             "text": "VANDERBILT UNIVERSITY MEDICAL CENTER",
             "href": "https://www.usaspending.gov/recipient/af8e08af-9f61-5dc4-b13f-32b17f32dc92-C/latest/"
           },
-          15366627.08
+          15409870.68
         ],
         [
-          3,
+          8,
+          {
+            "text": "CLARK SEMPER TEK JV LLC",
+            "href": "https://www.usaspending.gov/recipient/cb12b25e-780f-4e24-ab7b-3f885647650f-C/latest/"
+          },
+          10520790
+        ],
+        [
+          9,
           {
             "text": "FEDEX SUPPLY CHAIN DISTRIBUTION SYSTEM, INC.",
             "href": "https://www.usaspending.gov/recipient/5196bee3-3520-4d0f-a473-5763e5da1b05-C/latest/"
@@ -287,60 +331,12 @@
           9000000
         ],
         [
-          4,
-          {
-            "text": "METROPOLITAN SECURITY SERVICES, INC.",
-            "href": "https://www.usaspending.gov/recipient/835e42fb-f461-4e30-e17e-3205a1805635-C/latest/"
-          },
-          8388470.75
-        ],
-        [
-          5,
-          {
-            "text": "VALOR HEALTHCARE INC",
-            "href": "https://www.usaspending.gov/recipient/df822c86-4385-9615-7abf-ce7dec0f7b3c-C/latest/"
-          },
-          5778671.41
-        ],
-        [
-          6,
-          {
-            "text": "LABORATORY CORPORATION OF AMERICA",
-            "href": "https://www.usaspending.gov/recipient/43c3801f-7847-15fb-337a-8c20cb2a5e11-C/latest/"
-          },
-          5732606.09
-        ],
-        [
-          7,
-          {
-            "text": "FEDERAL EXPRESS CORPORATION",
-            "href": "https://www.usaspending.gov/recipient/079718fe-322b-0b89-6522-302314b5d75f-C/latest/"
-          },
-          5618747.25
-        ],
-        [
-          8,
-          {
-            "text": "FIVE STONES INTELLIGENCE, INC.",
-            "href": "https://www.usaspending.gov/recipient/75674102-42db-b06f-c410-e71fc168aae6-C/latest/"
-          },
-          4797902
-        ],
-        [
-          9,
-          {
-            "text": "STERLING MEDICAL ASSOCIATES, INC",
-            "href": "https://www.usaspending.gov/recipient/6889fbc4-f053-31aa-b881-fd1813cd6d8c-C/latest/"
-          },
-          4785165.74
-        ],
-        [
           10,
           {
-            "text": "WIREGRASS REHABILITATION CENTER INC",
-            "href": "https://www.usaspending.gov/recipient/fd2c2aa3-46c7-2bec-80bd-14e19d5aec5e-C/latest/"
+            "text": "DRC EMERGENCY SERVICES, LLC",
+            "href": "https://www.usaspending.gov/recipient/22688fa1-752f-65ea-f25c-36a7e07a61b7-C/latest/"
           },
-          4453185.62
+          7250602.95
         ]
       ]
     },
@@ -356,14 +352,50 @@
         [
           1,
           {
-            "text": "CONSOLIDATED NUCLEAR SECURITY, LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_DENA0001942_8900_-NONE-_-NONE-/"
+            "text": "UT-BATTELLE LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_DEAC0500OR22725_8900_-NONE-_-NONE-/"
           },
-          34661763245.24,
+          42970738616.89,
           "Department of Energy"
         ],
         [
           2,
+          {
+            "text": "CONSOLIDATED NUCLEAR SECURITY, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_DENA0001942_8900_-NONE-_-NONE-/"
+          },
+          35151184369.83,
+          "Department of Energy"
+        ],
+        [
+          3,
+          {
+            "text": "OAK RIDGE ASSOCIATED UNIVERSITIES, INCORPORATED",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_DESC0014664_8900_-NONE-_-NONE-/"
+          },
+          3251068889.53,
+          "Department of Energy"
+        ],
+        [
+          4,
+          {
+            "text": "UNITED CLEANUP OAK RIDGE LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_89303523FEM400032_8900_89303322DEM000067_8900/"
+          },
+          2657948950.78,
+          "Department of Energy"
+        ],
+        [
+          5,
+          {
+            "text": "CGS ADMINISTRATORS, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75FCMC20C0025_7530_-NONE-_-NONE-/"
+          },
+          263798373,
+          "Department of Health and Human Services"
+        ],
+        [
+          6,
           {
             "text": "EDFINANCIAL SERVICES LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_91003124F0319_9100_91003123D0003_9100/"
@@ -372,7 +404,16 @@
           "Department of Education"
         ],
         [
-          3,
+          7,
+          {
+            "text": "BWXT ORDNANCE TENNESSEE, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_89233125CNA000429_8900_-NONE-_-NONE-/"
+          },
+          199300000,
+          "Department of Energy"
+        ],
+        [
+          8,
           {
             "text": "EDFINANCIAL SERVICES LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_91003126F0020_9100_91003123D0003_9100/"
@@ -381,16 +422,16 @@
           "Department of Education"
         ],
         [
-          4,
+          9,
           {
             "text": "CGS ADMINISTRATORS, LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_75FCMC23C0013_7530_-NONE-_-NONE-/"
           },
-          95919241,
+          93921107,
           "Department of Health and Human Services"
         ],
         [
-          5,
+          10,
           {
             "text": "EDFINANCIAL SERVICES LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_91003125F0302_9100_91003120D0001_9100/"
@@ -399,7 +440,7 @@
           "Department of Education"
         ],
         [
-          6,
+          11,
           {
             "text": "EDFINANCIAL SERVICES LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_91003125F0042_9100_91003123D0003_9100/"
@@ -408,7 +449,16 @@
           "Department of Education"
         ],
         [
-          7,
+          12,
+          {
+            "text": "DRC EMERGENCY SERVICES, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W912P526FA088_9700_W912EK22D0006_9700/"
+          },
+          41008715.22,
+          "Department of Defense"
+        ],
+        [
+          13,
           {
             "text": "FIVE STONES INTELLIGENCE, INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_15A00023FAQA00214_1560_15JPSS23D00000067_1501/"
@@ -417,16 +467,34 @@
           "Department of Justice"
         ],
         [
-          8,
+          14,
           {
-            "text": "DRC EMERGENCY SERVICES, LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_W912P526FA088_9700_W912EK22D0006_9700/"
+            "text": "PROFESSIONAL PROJECT SERVICES, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_89303323FEM400324_8900_GS00F112CA_4732/"
           },
-          30093702.77,
-          "Department of Defense"
+          36910925.28,
+          "Department of Energy"
         ],
         [
-          9,
+          15,
+          {
+            "text": "ATHERTON CONSTRUCTION LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_140P2024C0046_1443_-NONE-_-NONE-/"
+          },
+          28333109.05,
+          "Department of the Interior"
+        ],
+        [
+          16,
+          {
+            "text": "SIMMONS & GOLDEN SECURITY LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_89243124CSC000170_8900_-NONE-_-NONE-/"
+          },
+          25591925.29,
+          "Department of Energy"
+        ],
+        [
+          17,
           {
             "text": "VALIANT CONSTRUCTION LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C24927C0003_3600_-NONE-_-NONE-/"
@@ -435,7 +503,7 @@
           "Department of Veterans Affairs"
         ],
         [
-          10,
+          18,
           {
             "text": "EXCELSIOR DEFENSE, INC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C24922F0160_3600_47QSWA21D006G_4732/"
@@ -444,7 +512,16 @@
           "Department of Veterans Affairs"
         ],
         [
-          11,
+          19,
+          {
+            "text": "CORECIVIC, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_15BRRC26F00000039_1540_15BRRC21D00000282_1540/"
+          },
+          13992532.03,
+          "Department of Justice"
+        ],
+        [
+          20,
           {
             "text": "MP&F, LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_1605C224F00023_1605_47QRAA18D00DV_4732/"
@@ -453,7 +530,16 @@
           "Department of Labor"
         ],
         [
-          12,
+          21,
+          {
+            "text": "ALEUT REMEDIATION LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_89233123CNA000326_8900_-NONE-_-NONE-/"
+          },
+          12687555.35,
+          "Department of Energy"
+        ],
+        [
+          22,
           {
             "text": "QUALITY MANUFACTURING SYSTEMS, INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C77022C0006_3600_-NONE-_-NONE-/"
@@ -462,150 +548,60 @@
           "Department of Veterans Affairs"
         ],
         [
-          13,
+          23,
+          {
+            "text": "WILLIAMS CONSTRUCTION & CABINETRY, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_12363N26F4078_12C2_140FGA23D0142_1448/"
+          },
+          11652148.5,
+          "Department of Agriculture"
+        ],
+        [
+          24,
+          {
+            "text": "ANDURIL INDUSTRIES, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_89233126FNA400749_8900_89233126DNA000072_8900/"
+          },
+          11340702,
+          "Department of Energy"
+        ],
+        [
+          25,
           {
             "text": "KEMRON ENVIRONMENTAL SERVICES, INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_68HE0424F0007_6800_68HE0421D0016_6800/"
           },
           11000000,
           "Environmental Protection Agency"
-        ],
-        [
-          14,
-          {
-            "text": "QUALITY MANUFACTURING SYSTEMS, INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C77025P0253_3600_-NONE-_-NONE-/"
-          },
-          10145500,
-          "Department of Veterans Affairs"
-        ],
-        [
-          15,
-          {
-            "text": "VANDERBILT UNIVERSITY MEDICAL CENTER",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C24927N0039_3600_36C24923D0002_3600/"
-          },
-          9471094.85,
-          "Department of Veterans Affairs"
-        ],
-        [
-          16,
-          {
-            "text": "MCKENZIE CONSTRUCTION & SITE DEVELOPMENT LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_1605AE24C0009_1605_-NONE-_-NONE-/"
-          },
-          9458341.51,
-          "Department of Labor"
-        ],
-        [
-          17,
-          {
-            "text": "EDFINANCIAL SERVICES LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_91003123F0319_9100_91003123D0003_9100/"
-          },
-          9406103.19,
-          "Department of Education"
-        ],
-        [
-          18,
-          {
-            "text": "FEDEX SUPPLY CHAIN DISTRIBUTION SYSTEM, INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C77027N0008_3600_36C77027A0001_3600/"
-          },
-          9000000,
-          "Department of Veterans Affairs"
-        ],
-        [
-          19,
-          {
-            "text": "CORECIVIC, INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_15M40026FA3500014_1544_70CDCR25D00000010_7012/"
-          },
-          8545912,
-          "Department of Justice"
-        ],
-        [
-          20,
-          {
-            "text": "SEMMES-MURPHEY CLINIC, P.C.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C24924C0059_3600_-NONE-_-NONE-/"
-          },
-          8376316.07,
-          "Department of Veterans Affairs"
-        ],
-        [
-          21,
-          {
-            "text": "METROPOLITAN SECURITY SERVICES, INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_15M10524FD6725CSO_1544_15M10522DA4700004_1544/"
-          },
-          6050788.51,
-          "Department of Justice"
-        ],
-        [
-          22,
-          {
-            "text": "GE PRECISION HEALTHCARE LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C24925N0124_3600_VA797H17D0024_3600/"
-          },
-          5160503.95,
-          "Department of Veterans Affairs"
-        ],
-        [
-          23,
-          {
-            "text": "VANDERBILT UNIVERSITY MEDICAL CENTER",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C24927N0027_3600_36C24923D0003_3600/"
-          },
-          4888828.64,
-          "Department of Veterans Affairs"
-        ],
-        [
-          24,
-          {
-            "text": "OAK RIDGE ASSOCIATED UNIVERSITIES, INCORPORATED",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_75FCMC26F0050_7530_GS00F195CA_4732/"
-          },
-          4786467.62,
-          "Department of Health and Human Services"
-        ],
-        [
-          25,
-          {
-            "text": "ANSIBLE GOVERNMENT SOLUTIONS LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C77027N0012_3600_36C77026D0005_3600/"
-          },
-          4318678.02,
-          "Department of Veterans Affairs"
         ]
       ]
     }
   ],
   "narrative": {
-    "intro": "Tennessee federal contract obligations in FY2027 to date total $158M. The state recorded 432 awards with an average award size of $365K. Obligations fell 98.7% year over year. Fiscal-year comparisons show prior-year totals of $11.4B in FY22, $11.2B in FY23, $10.8B in FY24, $11B in FY25, and $12.3B in FY26, placing the current fiscal-year-to-date total well below recent full-year results. The Department of Veterans Affairs is the largest buyer in FY2027 to date with $144M. The Department of Justice follows with $14.8M, and the General Services Administration follows with $1.3M. VALIANT CONSTRUCTION LLC is the top vendor with $22.3M, followed by VANDERBILT UNIVERSITY MEDICAL CENTER with $15.4M and FEDEX SUPPLY CHAIN DISTRIBUTION SYSTEM, INC. with $9M. Commercial and Institutional Building Construction leads industry spending with $23.8M, and Colleges, Universities, and Professional Schools follow with $21.9M. The current-year totals are partial. Contracting activity is concentrated in a few large buyers, a handful of top vendors, and specific industries, which together account for most FY2027 to date obligations.",
+    "intro": "Tennessee recorded $1.2B in federal contract obligations in FY2027 to date. The state received 754 awards with an average award size of $1.6M, and obligations fell 90.6% year over year. Fiscal-year history shows much larger annual totals in recent years: FY22 $11.5B, FY23 $11.3B, FY24 $10.8B, FY25 $11.1B, and FY26 $12.5B. The Department of Energy accounted for the largest share of FY2027 to date obligations at $968M, followed by the Department of Veterans Affairs at $148M and the Department of Justice at $41M. CONSOLIDATED NUCLEAR SECURITY, LLC led vendors with $489M, followed by UT-BATTELLE LLC with $302M and UNITED CLEANUP OAK RIDGE LLC with $113M. Facilities Support Services dominated industry spending in FY2027 to date at $798M, with Remediation Services at $113M and Other Basic Inorganic Chemical Manufacturing at $68M. These figures reflect partial fiscal-year totals and should be read as fiscal year to date obligations, not full-year results.",
     "sections": [
       {
-        "heading": "How concentrated is FY2027 federal contracting in Tennessee?",
-        "body": "The Department of Veterans Affairs obligated $144M, concentrating most FY2027 to date dollars in one agency. The top three agencies together account for a large share of the $158M total, with the Department of Justice at $14.8M and the General Services Administration at $1.3M. VALIANT CONSTRUCTION LLC and a few other vendors received the largest shares of those obligations."
+        "heading": "Why are FY2027 to date obligations much lower than prior fiscal years?",
+        "body": "The comparison shows a steep year-over-year decline: obligations fell 90.6% year over year. Fiscal-year totals before FY27 were in the $10.8B to $12.5B range, while FY27 to date is $1.2B. The Department of Energy concentrated much of the FY27 to date spending with $968M, which shapes the current distribution of obligations."
       },
       {
-        "heading": "What industries and vendors dominate FY2027 spending in Tennessee?",
-        "body": "Commercial and Institutional Building Construction received $23.8M, the largest industry share, followed by Colleges, Universities, and Professional Schools at $21.9M. VALIANT CONSTRUCTION LLC received $22.3M and VANDERBILT UNIVERSITY MEDICAL CENTER received $15.4M, placing construction and higher-education-related vendors among the biggest recipients. Several healthcare and logistics firms also appear in the top vendor list."
+        "heading": "Which agencies, vendors, and industries are driving FY2027 to date spending?",
+        "body": "The Department of Energy is the top buyer with $968M, followed by the Department of Veterans Affairs at $148M and the Department of Justice at $41M. CONSOLIDATED NUCLEAR SECURITY, LLC received $489M, UT-BATTELLE LLC received $302M, and UNITED CLEANUP OAK RIDGE LLC received $113M. Facilities Support Services is the largest industry by obligations at $798M, with Remediation Services at $113M and Other Basic Inorganic Chemical Manufacturing at $68M."
       }
     ]
   },
   "faq": [
     {
       "q": "How much federal contract money goes to Tennessee?",
-      "a": "Tennessee received $158M in federal contract obligations in FY2027 to date. The state recorded 432 awards with an average award size of $365K, and obligations fell 98.7% year over year. Prior full-year totals were $11.4B in FY22, $11.2B in FY23, $10.8B in FY24, $11B in FY25, and $12.3B in FY26."
+      "a": "Tennessee received $1.2B in federal contract obligations in FY2027 to date. The state had 754 awards with an average award size of $1.6M, and obligations fell 90.6% year over year compared with prior fiscal years where totals ranged from $10.8B to $12.5B."
     },
     {
       "q": "Which agencies award the most contracts in Tennessee?",
-      "a": "The Department of Veterans Affairs awards the most contracts in Tennessee in FY2027 to date with $144M. The Department of Justice follows with $14.8M, and the General Services Administration follows with $1.3M. Other agencies on the top-10 list include NASA at $1.2M and the Department of Labor at $961K."
+      "a": "The Department of Energy awarded the most contracts in Tennessee, obligating $968M in FY2027 to date. The Department of Veterans Affairs followed with $148M, and the Department of Justice followed with $41M."
     },
     {
       "q": "Who are the largest federal contractors in Tennessee?",
-      "a": "VALIANT CONSTRUCTION LLC is the largest federal contractor in Tennessee in FY2027 to date with $22.3M. VANDERBILT UNIVERSITY MEDICAL CENTER is second with $15.4M, and FEDEX SUPPLY CHAIN DISTRIBUTION SYSTEM, INC. is third with $9M. The top vendors also include METROPOLITAN SECURITY SERVICES, INC. at $8.4M and VALOR HEALTHCARE INC at $5.8M."
+      "a": "CONSOLIDATED NUCLEAR SECURITY, LLC is the largest federal contractor in Tennessee in FY2027 to date, receiving $489M. UT-BATTELLE LLC received $302M and UNITED CLEANUP OAK RIDGE LLC received $113M."
     }
   ],
   "related": [

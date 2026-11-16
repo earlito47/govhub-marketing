@@ -1,20 +1,20 @@
 {
   "pageType": "state",
   "slug": "wisconsin",
-  "title": "Federal Contracts in Wisconsin: $3.9B (FY2026)",
+  "title": "Federal Contracts in Wisconsin: $191M (FY2027)",
   "h1": "Federal Contracts in Wisconsin: Spending, Agencies & Vendors",
-  "metaDescription": "Federal agencies obligated $3.9B to contractors in Wisconsin in FY2026 to date. See top buying agencies, top vendors, and industries.",
-  "updated": "2026-09-28",
+  "metaDescription": "Federal agencies obligated $191M to contractors in Wisconsin in FY2027 to date. See top buying agencies, top vendors, and industries.",
+  "updated": "2026-11-16",
   "fyWindow": {
-    "label": "FY2026 to date",
-    "start": "2025-10-01",
-    "end": "2026-09-28"
+    "label": "FY2027 to date",
+    "start": "2026-10-01",
+    "end": "2026-11-16"
   },
   "stats": {
-    "totalObligations": 3864928409.11,
-    "awardCount": 59453,
-    "yoyGrowthPct": -38.3,
-    "avgAwardSize": 65008,
+    "totalObligations": 190623998.29,
+    "awardCount": 1253,
+    "yoyGrowthPct": -96.1,
+    "avgAwardSize": 152134,
     "smallBusinessSharePct": null
   },
   "charts": [
@@ -27,196 +27,196 @@
           "label": "Obligations",
           "points": [
             [
-              "FY21",
-              5776762441.06
-            ],
-            [
               "FY22",
-              5210025233.12
+              5560145782.05
             ],
             [
               "FY23",
-              5314895353.52
+              5746431486.21
             ],
             [
               "FY24",
-              8858559118.8
+              9912585548.82
             ],
             [
               "FY25",
-              6264165735.54
+              7434512689.63
             ],
             [
               "FY26",
-              3864928409.11
+              4945136913.42
+            ],
+            [
+              "FY27",
+              190623998.29
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Obligations fell 38.3% year over year, from $6.3B in FY2025 to $3.9B in FY2026 to date."
+      "takeaway": "Obligations fell 96.1% year over year, from $4.9B in FY2026 to $191M in FY2027 to date."
     },
     {
       "id": "wisconsin-top-agencies",
       "type": "bar",
-      "title": "Top 10 buying agencies, FY2026 to date",
+      "title": "Top 10 buying agencies, FY2027 to date",
       "series": [
         {
           "label": "Obligations",
           "points": [
             [
               "Department of Veterans Affairs",
-              2279087817.47
-            ],
-            [
-              "Department of Defense",
-              986014096.35
-            ],
-            [
-              "Department of Agriculture",
-              206683071.01
+              120010726.7
             ],
             [
               "Department of Health and Human Services",
-              101831208.39
-            ],
-            [
-              "Department of Justice",
-              65165617.64
+              45174288.3
             ],
             [
               "General Services Administration",
-              57276290.27
+              9875864.03
+            ],
+            [
+              "Department of Agriculture",
+              7223956.72
+            ],
+            [
+              "Department of Justice",
+              4769355.16
             ],
             [
               "Department of Homeland Security",
-              48381641.75
-            ],
-            [
-              "Department of the Interior",
-              41549205.63
+              2388905.74
             ],
             [
               "Department of Transportation",
-              29205392.57
+              1154345.32
             ],
             [
-              "Environmental Protection Agency",
-              17878209.56
+              "Department of the Interior",
+              140948.6
+            ],
+            [
+              "Social Security Administration",
+              85781.77
+            ],
+            [
+              "Department of State",
+              64772.58
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Department of Veterans Affairs was the top federal buyer in Wisconsin, obligating $2.3B (59.0% of the state total)."
+      "takeaway": "Department of Veterans Affairs was the top federal buyer in Wisconsin, obligating $120M (63.0% of the state total)."
     },
     {
       "id": "wisconsin-top-vendors",
       "type": "bar",
-      "title": "Top 10 vendors, FY2026 to date",
+      "title": "Top 10 vendors, FY2027 to date",
       "series": [
         {
           "label": "Obligations",
           "points": [
             [
               "OPTUMSERVE HEALTH SERVICES, INC.",
-              1914478550.51
-            ],
-            [
-              "OSHKOSH DEFENSE LLC",
-              804543320.65
-            ],
-            [
-              "AMTEC CORPORATION",
-              283068693.68
+              85635353.33
             ],
             [
               "WISCONSIN PHYSICIANS SERVICE INSURANCE CORP.",
-              156980962.96
+              41836062
             ],
             [
               "GE PRECISION HEALTHCARE LLC",
-              149752140.45
+              7790691.31
             ],
             [
-              "KONECRANES NUCLEAR EQUIPMENT & SERVICES, LLC",
-              108582494.07
+              "FLEXION INC",
+              7757199.11
             ],
             [
-              "PIERCE MANUFACTURING INC",
-              79116060.05
+              "U.S. VET GENERAL CONTRACTING, LLC",
+              5791100.19
             ],
             [
-              "ENERGY SYSTEMS GROUP, LLC",
-              68995469
+              "KRUEGER INTERNATIONAL, INC.",
+              3081068.22
             ],
             [
-              "SAWTOOTH CONSTRUCTION JV II LLC",
-              64489808
+              "VERSITI BLOOD HEALTH, INC.",
+              2891960.24
             ],
             [
-              "FAIRBANKS MORSE, LLC",
-              36538970.3
+              "DIDION, INC.",
+              2091307.02
+            ],
+            [
+              "CORPS MEDICAL SUPPLY, LLC",
+              1745520.34
+            ],
+            [
+              "UNIVERSITY OF WISCONSIN HOSPITALS AND CLINICS AUTHORITY",
+              1720281.53
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "OPTUMSERVE HEALTH SERVICES, INC. led all contractors in Wisconsin with $1.9B, 49.5% of the state total."
+      "takeaway": "OPTUMSERVE HEALTH SERVICES, INC. led all contractors in Wisconsin with $85.6M, 44.9% of the state total."
     },
     {
       "id": "wisconsin-top-naics",
       "type": "bar",
-      "title": "Top 10 industries (NAICS), FY2026 to date",
+      "title": "Top 10 industries (NAICS), FY2027 to date",
       "series": [
         {
           "label": "Obligations",
           "points": [
             [
               "Offices of Physicians (except Mental Health Specialists)",
-              1892098208.38
-            ],
-            [
-              "Truck Trailer Manufacturing",
-              566134135.35
-            ],
-            [
-              "Ammunition (except Small Arms) Manufacturing",
-              306919325.68
-            ],
-            [
-              "Commercial and Institutional Building Construction",
-              187428627.65
-            ],
-            [
-              "Irradiation Apparatus Manufacturing",
-              149622330.79
-            ],
-            [
-              "Heavy Duty Truck Manufacturing",
-              132853323.32
-            ],
-            [
-              "Overhead Traveling Crane, Hoist, and Monorail System Manufacturing",
-              121516500.84
+              83406416.48
             ],
             [
               "Direct Health and Medical Insurance Carriers",
-              105955905.78
+              41836062
             ],
             [
-              "Construction Machinery Manufacturing",
-              63474535.4
+              "Irradiation Apparatus Manufacturing",
+              7829576.32
             ],
             [
-              "Cheese Manufacturing",
-              55636427.62
+              "Other Computer Related Services",
+              7332258.16
+            ],
+            [
+              "Commercial and Institutional Building Construction",
+              7294159.35
+            ],
+            [
+              "Office Furniture (except Wood) Manufacturing",
+              2838041.61
+            ],
+            [
+              "Biological Product (except Diagnostic) Manufacturing",
+              2668500
+            ],
+            [
+              "Security Guards and Patrol Services",
+              2287445.89
+            ],
+            [
+              "Custom Computer Programming Services",
+              2260040.43
+            ],
+            [
+              "All Other Outpatient Care Centers",
+              2228936.85
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Offices of Physicians (except Mental Health Specialists) was the largest industry in Wisconsin, with $1.9B obligated."
+      "takeaway": "Offices of Physicians (except Mental Health Specialists) was the largest industry in Wisconsin, with $83.4M obligated."
     }
   ],
   "crossLinks": [
@@ -225,20 +225,32 @@
       "href": "/insights/agency/department-of-veterans-affairs/"
     },
     {
-      "label": "Department of Defense contracts",
-      "href": "/insights/agency/department-of-defense/"
+      "label": "Department of Health and Human Services contracts",
+      "href": "/insights/agency/department-of-health-and-human-services/"
+    },
+    {
+      "label": "General Services Administration contracts",
+      "href": "/insights/agency/general-services-administration/"
     },
     {
       "label": "Department of Agriculture contracts",
       "href": "/insights/agency/department-of-agriculture/"
     },
     {
-      "label": "Department of Health and Human Services contracts",
-      "href": "/insights/agency/department-of-health-and-human-services/"
+      "label": "NAICS 541519: Other Computer Related Services",
+      "href": "/insights/naics/541519/"
     },
     {
       "label": "NAICS 236220: Commercial and Institutional Building Construction",
       "href": "/insights/naics/236220/"
+    },
+    {
+      "label": "NAICS 561612: Security Guards and Patrol Services",
+      "href": "/insights/naics/561612/"
+    },
+    {
+      "label": "NAICS 541511: Custom Computer Programming Services",
+      "href": "/insights/naics/541511/"
     }
   ],
   "tables": [
@@ -256,84 +268,84 @@
             "text": "OPTUMSERVE HEALTH SERVICES, INC.",
             "href": "https://www.usaspending.gov/recipient/f14c78b7-70f6-df32-45ed-a5f56e1b9f70-C/latest/"
           },
-          1914478550.51
+          85635353.33
         ],
         [
           2,
           {
-            "text": "OSHKOSH DEFENSE LLC",
-            "href": "https://www.usaspending.gov/recipient/5c99e12d-99a6-52a3-d019-34a3855a6ed7-C/latest/"
+            "text": "WISCONSIN PHYSICIANS SERVICE INSURANCE CORP.",
+            "href": "https://www.usaspending.gov/recipient/54204e8f-2291-76fb-a803-7f5a2ca609f2-C/latest/"
           },
-          804543320.65
+          41836062
         ],
         [
           3,
           {
-            "text": "AMTEC CORPORATION",
-            "href": "https://www.usaspending.gov/recipient/8a541d97-e66b-f473-d8e3-cd59b5384bb8-C/latest/"
+            "text": "GE PRECISION HEALTHCARE LLC",
+            "href": "https://www.usaspending.gov/recipient/df31c503-bd81-c7e7-3f7a-659eb76e1b08-C/latest/"
           },
-          283068693.68
+          7790691.31
         ],
         [
           4,
           {
-            "text": "WISCONSIN PHYSICIANS SERVICE INSURANCE CORP.",
-            "href": "https://www.usaspending.gov/recipient/54204e8f-2291-76fb-a803-7f5a2ca609f2-C/latest/"
+            "text": "FLEXION INC",
+            "href": "https://www.usaspending.gov/recipient/c3cb8678-8150-6272-25c5-e83c469bee8f-C/latest/"
           },
-          156980962.96
+          7757199.11
         ],
         [
           5,
           {
-            "text": "GE PRECISION HEALTHCARE LLC",
-            "href": "https://www.usaspending.gov/recipient/df31c503-bd81-c7e7-3f7a-659eb76e1b08-C/latest/"
+            "text": "U.S. VET GENERAL CONTRACTING, LLC",
+            "href": "https://www.usaspending.gov/recipient/e9120087-d3a1-2571-640a-5292cab1202f-C/latest/"
           },
-          149752140.45
+          5791100.19
         ],
         [
           6,
           {
-            "text": "KONECRANES NUCLEAR EQUIPMENT & SERVICES, LLC",
-            "href": "https://www.usaspending.gov/recipient/4b9afe89-77ca-4a0b-466a-a06c891a8e71-C/latest/"
+            "text": "KRUEGER INTERNATIONAL, INC.",
+            "href": "https://www.usaspending.gov/recipient/524c47dd-5fec-792f-7542-bf5ef9d61224-C/latest/"
           },
-          108582494.07
+          3081068.22
         ],
         [
           7,
           {
-            "text": "PIERCE MANUFACTURING INC",
-            "href": "https://www.usaspending.gov/recipient/1fb63441-7aa1-e4ba-b68b-368a44b966eb-C/latest/"
+            "text": "VERSITI BLOOD HEALTH, INC.",
+            "href": "https://www.usaspending.gov/recipient/c3b44559-c484-d6ca-f0ba-0a3f42e931ae-C/latest/"
           },
-          79116060.05
+          2891960.24
         ],
         [
           8,
           {
-            "text": "ENERGY SYSTEMS GROUP, LLC",
-            "href": "https://www.usaspending.gov/recipient/d222ccec-56d8-2236-8f7d-e3328231fb23-C/latest/"
+            "text": "DIDION, INC.",
+            "href": "https://www.usaspending.gov/recipient/2a9940cb-3aba-23d8-7db2-cac35d462572-C/latest/"
           },
-          68995469
+          2091307.02
         ],
         [
           9,
           {
-            "text": "SAWTOOTH CONSTRUCTION JV II LLC",
-            "href": "https://www.usaspending.gov/recipient/66af999b-a96b-ae2f-6c8f-f84be60108c4-C/latest/"
+            "text": "CORPS MEDICAL SUPPLY, LLC",
+            "href": "https://www.usaspending.gov/recipient/928cdbed-f42b-3a36-e621-506e6150733f-C/latest/"
           },
-          64489808
+          1745520.34
         ],
         [
           10,
           {
-            "text": "FAIRBANKS MORSE, LLC",
-            "href": "https://www.usaspending.gov/recipient/329c3e85-e066-e89c-6c44-0daa085a7834-C/latest/"
+            "text": "UNIVERSITY OF WISCONSIN HOSPITALS AND CLINICS AUTHORITY",
+            "href": "https://www.usaspending.gov/recipient/6d650196-7dc6-03b5-9a1a-fb6d7f1013da-C/latest/"
           },
-          36538970.3
+          1720281.53
         ]
       ]
     },
     {
-      "title": "Largest awards, FY2026 to date",
+      "title": "Largest awards, FY2027 to date",
       "columns": [
         "Rank",
         "Recipient",
@@ -344,69 +356,6 @@
         [
           1,
           {
-            "text": "OSHKOSH DEFENSE LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_W56HZV15C0095_9700_-NONE-_-NONE-/"
-          },
-          6104208870.9,
-          "Department of Defense"
-        ],
-        [
-          2,
-          {
-            "text": "MARINETTE MARINE CORPORATION",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_N0002420C2300_9700_-NONE-_-NONE-/"
-          },
-          2952523292,
-          "Department of Defense"
-        ],
-        [
-          3,
-          {
-            "text": "OSHKOSH DEFENSE LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_W56HZV20C0050_9700_-NONE-_-NONE-/"
-          },
-          2065705348.31,
-          "Department of Defense"
-        ],
-        [
-          4,
-          {
-            "text": "AMTEC CORPORATION",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_W52P1J22C0049_9700_-NONE-_-NONE-/"
-          },
-          988000064.26,
-          "Department of Defense"
-        ],
-        [
-          5,
-          {
-            "text": "OPTUMSERVE HEALTH SERVICES, INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10X26N0044_3600_36C10X25D0002_3600/"
-          },
-          714081758.33,
-          "Department of Veterans Affairs"
-        ],
-        [
-          6,
-          {
-            "text": "OSHKOSH DEFENSE LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_W56HZV23C0081_9700_-NONE-_-NONE-/"
-          },
-          560036608.81,
-          "Department of Defense"
-        ],
-        [
-          7,
-          {
-            "text": "AMTEC CORPORATION",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_W52P1J17C0051_9700_-NONE-_-NONE-/"
-          },
-          539587646.86,
-          "Department of Defense"
-        ],
-        [
-          8,
-          {
             "text": "WISCONSIN PHYSICIANS SERVICE INSURANCE CORP.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_75FCMC19C0043_7530_-NONE-_-NONE-/"
           },
@@ -414,186 +363,249 @@
           "Department of Health and Human Services"
         ],
         [
-          9,
+          2,
+          {
+            "text": "WISCONSIN PHYSICIANS SERVICE INSURANCE CORP.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75FCMC19C0002_7530_-NONE-_-NONE-/"
+          },
+          381215520.37,
+          "Department of Health and Human Services"
+        ],
+        [
+          3,
           {
             "text": "OPTUMSERVE HEALTH SERVICES, INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10X26N0043_3600_36C10X25D0002_3600/"
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10X27N0006_3600_36C10X22D0006_3600/"
           },
-          362240798.52,
+          83406416.48,
+          "Department of Veterans Affairs"
+        ],
+        [
+          4,
+          {
+            "text": "OPTUMSERVE HEALTH SERVICES, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75D30122C15521_7523_-NONE-_-NONE-/"
+          },
+          50462556.8,
+          "Department of Health and Human Services"
+        ],
+        [
+          5,
+          {
+            "text": "SUPERIOR HEALTH QUALITY ALLIANCE INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75FCMC25FJ051_7530_75FCMC19D0057_7530/"
+          },
+          45819632.2,
+          "Department of Health and Human Services"
+        ],
+        [
+          6,
+          {
+            "text": "HORIZONS YOUTH SERVICES, L.C.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_1605JW24C0003_1605_-NONE-_-NONE-/"
+          },
+          29259914.08,
+          "Department of Labor"
+        ],
+        [
+          7,
+          {
+            "text": "FLEXION INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_140D0423F0130_1406_GS35F523BA_4732/"
+          },
+          23679687.99,
+          "Department of the Interior"
+        ],
+        [
+          8,
+          {
+            "text": "RHI LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C77624C0060_3600_-NONE-_-NONE-/"
+          },
+          19892991,
+          "Department of Veterans Affairs"
+        ],
+        [
+          9,
+          {
+            "text": "U.S. VET GENERAL CONTRACTING, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C25225C0015_3600_-NONE-_-NONE-/"
+          },
+          13562896.64,
           "Department of Veterans Affairs"
         ],
         [
           10,
           {
-            "text": "OPTUMSERVE HEALTH SERVICES, INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10X26N0045_3600_36C10X25D0002_3600/"
+            "text": "JACOBS ENGINEERING GROUP INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_68HE0525F0027_6800_68HE0523D0003_6800/"
           },
-          356623261.54,
-          "Department of Veterans Affairs"
+          12897971.87,
+          "Environmental Protection Agency"
         ],
         [
           11,
           {
-            "text": "KONECRANES NUCLEAR EQUIPMENT & SERVICES, LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_N6247020C0002_9700_-NONE-_-NONE-/"
+            "text": "FLEXION INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_47QPCA25F0017_4732_47QPCA22A0002_4732/"
           },
-          348501960,
-          "Department of Defense"
+          12442867.11,
+          "General Services Administration"
         ],
         [
           12,
           {
-            "text": "WISCONSIN PHYSICIANS SERVICE INSURANCE CORP.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_75FCMC19C0002_7530_-NONE-_-NONE-/"
+            "text": "FLEXION INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_47QPCA26F0012_4732_47QPCA22A0002_4732/"
           },
-          339379458.37,
-          "Department of Health and Human Services"
+          9018394.4,
+          "General Services Administration"
         ],
         [
           13,
           {
-            "text": "OPTUMSERVE HEALTH SERVICES, INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10X26N0046_3600_36C10X25D0002_3600/"
+            "text": "ARMSTRONG ELEVATOR COMPANY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C25225C0013_3600_-NONE-_-NONE-/"
           },
-          272174836.86,
+          8078420.37,
           "Department of Veterans Affairs"
         ],
         [
           14,
           {
-            "text": "OSHKOSH DEFENSE LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_W912CH25F0168_9700_W56HZV18D0010_9700/"
+            "text": "FLEXION INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_47QMCG26F0001_4732_47QTCA25D00CR_4732/"
           },
-          235287687.98,
-          "Department of Defense"
+          6259917.64,
+          "General Services Administration"
         ],
         [
           15,
           {
-            "text": "WISCONSIN PHYSICIANS SERVICE INSURANCE CORP.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_HT940221C0005_9700_-NONE-_-NONE-/"
+            "text": "GE PRECISION HEALTHCARE LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C24925N0032_3600_VA797H17D0024_3600/"
           },
-          223184065.11,
-          "Department of Defense"
+          6164369.29,
+          "Department of Veterans Affairs"
         ],
         [
           16,
           {
-            "text": "OSHKOSH DEFENSE LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_W56HZV23F0182_9700_W56HZV18D0010_9700/"
+            "text": "FINCANTIERI MARINE GROUP LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70Z08525CIBCT0011_7008_-NONE-_-NONE-/"
           },
-          206513991.38,
-          "Department of Defense"
+          4727359.29,
+          "Department of Homeland Security"
         ],
         [
           17,
           {
-            "text": "OPTUMSERVE HEALTH SERVICES, INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10X26N0007_3600_36C10X22D0006_3600/"
+            "text": "AMERICAN FOODS GROUP, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_123J1426C2018_12K2_-NONE-_-NONE-/"
           },
-          192311368.68,
-          "Department of Veterans Affairs"
+          4567500,
+          "Department of Agriculture"
         ],
         [
           18,
           {
-            "text": "OPTUMSERVE HEALTH SERVICES, INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10X21N0017_3600_36C10X19D0004_3600/"
+            "text": "FLEXION INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_47QPCA25F0006_4732_47QPCA22A0002_4732/"
           },
-          190010157.12,
-          "Department of Veterans Affairs"
+          4381324.42,
+          "General Services Administration"
         ],
         [
           19,
           {
-            "text": "OSHKOSH DEFENSE LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_W912CH25F0007_9700_W56HZV20D0009_9700/"
+            "text": "SCHROEDER MOVING SYSTEMS OF MILWAUKEE, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_15A00020CAQA00470_1560_-NONE-_-NONE-/"
           },
-          176561027.19,
-          "Department of Defense"
+          4375166.53,
+          "Department of Justice"
         ],
         [
           20,
           {
-            "text": "OSHKOSH DEFENSE LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_W56HZV21F0329_9700_W56HZV18D0010_9700/"
+            "text": "ADJ LOGISTICS & SUPPLY SERVICES LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C25223P0066_3600_-NONE-_-NONE-/"
           },
-          174134508.69,
-          "Department of Defense"
+          4008668.22,
+          "Department of Veterans Affairs"
         ],
         [
           21,
           {
-            "text": "OSHKOSH DEFENSE LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_W912CH24F0082_9700_W56HZV18D0010_9700/"
+            "text": "BUSHMANS' INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_123J1426C2035_12K2_-NONE-_-NONE-/"
           },
-          170272963.14,
-          "Department of Defense"
+          3941256,
+          "Department of Agriculture"
         ],
         [
           22,
           {
-            "text": "OSHKOSH DEFENSE LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_W56HZV23F0111_9700_W56HZV18D0010_9700/"
+            "text": "BUSHMANS' INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_123J1426C2033_12K2_-NONE-_-NONE-/"
           },
-          159021617.29,
-          "Department of Defense"
+          3615300,
+          "Department of Agriculture"
         ],
         [
           23,
           {
-            "text": "OSHKOSH DEFENSE LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_W912CH24F0085_9700_W56HZV15D0031_9700/"
+            "text": "THE POVOLNY GROUP INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C78626C0016_3600_-NONE-_-NONE-/"
           },
-          145615569,
-          "Department of Defense"
+          3416991.38,
+          "Department of Veterans Affairs"
         ],
         [
           24,
           {
-            "text": "AMTEC CORPORATION",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_W15QKN26F0041_9700_W15QKN24D0022_9700/"
+            "text": "GE PRECISION HEALTHCARE LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C24223N0111_3600_VA797H17D0024_3600/"
           },
-          139288352.28,
-          "Department of Defense"
+          3414012.26,
+          "Department of Veterans Affairs"
         ],
         [
           25,
           {
-            "text": "OSHKOSH DEFENSE LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_W912CH25F0360_9700_W56HZV18D0010_9700/"
+            "text": "ROCK VALLEY COMMUNITY PROGRAMS INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_15BRRC26F00000008_1540_15BRRC22D00000322_1540/"
           },
-          136545576.23,
-          "Department of Defense"
+          3241546.02,
+          "Department of Justice"
         ]
       ]
     }
   ],
   "narrative": {
-    "intro": "Federal contract obligations to Wisconsin totaled $3.9B for FY2026 to date. Obligations fell 38.3% year over year. Award activity includes 59,453 awards with an average award size of $65K. The Department of Veterans Affairs is the largest buying agency, obligating $2.3B, followed by the Department of Defense at $986M and the Department of Agriculture at $207M. OPTUMSERVE HEALTH SERVICES, INC. is the largest contractor, receiving $1.9B in obligations, and OSHKOSH DEFENSE LLC is second at $805M. Offices of Physicians (except Mental Health Specialists) is the top industry by obligations at $1.9B, with Truck Trailer Manufacturing next at $566M and Ammunition (except Small Arms) Manufacturing at $307M. Year-by-year totals show obligations of $5.8B in FY21, $5.2B in FY22, $5.3B in FY23, $8.9B in FY24, $6.3B in FY25, and $3.9B in FY26. All figures are contract obligations and current-year totals are partial because the fiscal year is ongoing.",
+    "intro": "Wisconsin received $191M in federal contract obligations in FY2027 to date. The state recorded 1,253 awards with an average award size of $152K. Obligations fell 96.1% year over year. Historical context shows larger prior-year totals: FY22 was $5.6B, FY23 was $5.7B, FY24 was $9.9B, FY25 was $7.4B, and FY26 was $4.9B. The FY2027 to date total is a partial fiscal-year figure. Health-related spending dominates the current-year mix, and the largest single buying agency is the Department of Veterans Affairs with $120M. The composition of top vendors and industries underscores a concentration in medical services and insurance-related work, with OPTUMSERVE HEALTH SERVICES, INC. and WISCONSIN PHYSICIANS SERVICE INSURANCE CORP. together accounting for a large share of obligations.",
     "sections": [
       {
-        "heading": "How did FY2026 federal contracting in Wisconsin compare to prior years?",
-        "body": "Obligations fell 38.3% year over year for FY2026 to date. FY2026 obligations are $3.9B compared with $6.3B in FY25 and $8.9B in FY24. Historical totals include $5.8B in FY21, $5.2B in FY22, and $5.3B in FY23. Current-year totals are partial because the fiscal year is ongoing."
+        "heading": "How big is the current-year drop and what does that mean?",
+        "body": "Obligations fell 96.1% year over year. FY2027 to date obligations are $191M compared with multi-billion totals in FY22 through FY26. The partial fiscal-year nature of the FY2027 figure matters because prior years show sustained, much larger spending levels. Watch buying-agency and vendor activity for the remainder of the fiscal year to see whether totals climb toward prior-year ranges."
       },
       {
-        "heading": "Which agencies, vendors, and industries dominate Wisconsin federal contracting?",
-        "body": "The Department of Veterans Affairs obligated $2.3B in FY2026 to date and the Department of Defense obligated $986M. OPTUMSERVE HEALTH SERVICES, INC. received $1.9B and OSHKOSH DEFENSE LLC received $805M. Offices of Physicians (except Mental Health Specialists) is the largest industry at $1.9B, followed by Truck Trailer Manufacturing at $566M and Ammunition (except Small Arms) Manufacturing at $307M."
+        "heading": "Who are the top agencies and vendors in Wisconsin right now?",
+        "body": "The Department of Veterans Affairs is the top buying agency with $120M. The Department of Health and Human Services follows with $45.2M, and the General Services Administration follows with $9.9M. OPTUMSERVE HEALTH SERVICES, INC. leads vendors with $85.6M and WISCONSIN PHYSICIANS SERVICE INSURANCE CORP. follows with $41.8M."
       }
     ]
   },
   "faq": [
     {
       "q": "How much federal contract money goes to Wisconsin?",
-      "a": "Total federal contract obligations to Wisconsin are $3.9B for FY2026 to date. Award activity for FY2026 to date includes 59,453 awards at an average award size of $65K. Year-to-date obligations fell 38.3% compared with the prior year. All figures are contract obligations and current-year totals are partial because the fiscal year is ongoing."
+      "a": "Wisconsin received $191M in federal contract obligations in FY2027 to date. The state recorded 1,253 awards and an average award size of $152K. Prior fiscal years were much larger: FY22 $5.6B, FY23 $5.7B, FY24 $9.9B, FY25 $7.4B, and FY26 $4.9B. Note that the FY2027 total is a partial fiscal-year figure and obligations fell 96.1% year over year."
     },
     {
       "q": "Which agencies award the most contracts in Wisconsin?",
-      "a": "The Department of Veterans Affairs and the Department of Defense award the most contracts in Wisconsin. The Department of Veterans Affairs obligated $2.3B and the Department of Defense obligated $986M in FY2026 to date. Other significant buyers include the Department of Agriculture at $207M and the Department of Health and Human Services at $102M. Top ten buying agencies also include the Department of Justice, General Services Administration, Department of Homeland Security, Department of the Interior, Department of Transportation, and EPA."
+      "a": "The Department of Veterans Affairs awarded $120M in FY2027 to date. The Department of Health and Human Services awarded $45.2M and the General Services Administration awarded $9.9M. Other top buying agencies include the Department of Agriculture at $7.2M and the Department of Justice at $4.8M. The remaining top-10 buying agencies each accounted for $2.4M or less."
     },
     {
       "q": "Who are the largest federal contractors in Wisconsin?",
-      "a": "OPTUMSERVE HEALTH SERVICES, INC. and OSHKOSH DEFENSE LLC are the largest federal contractors in Wisconsin for FY2026 to date. OPTUMSERVE HEALTH SERVICES, INC. received $1.9B and OSHKOSH DEFENSE LLC received $805M. Other top vendors include AMTEC CORPORATION at $283M, WISCONSIN PHYSICIANS SERVICE INSURANCE CORP. at $157M, and GE PRECISION HEALTHCARE LLC at $150M. The top industries by obligations include Offices of Physicians at $1.9B and Truck Trailer Manufacturing at $566M."
+      "a": "OPTUMSERVE HEALTH SERVICES, INC. is the largest federal contractor in Wisconsin with $85.6M in obligations. WISCONSIN PHYSICIANS SERVICE INSURANCE CORP. is the second-largest with $41.8M. Other top vendors include GE PRECISION HEALTHCARE LLC and FLEXION INC at $7.8M each, and U.S. VET GENERAL CONTRACTING, LLC at $5.8M."
     }
   ],
   "related": [

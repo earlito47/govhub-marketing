@@ -1,20 +1,20 @@
 {
   "pageType": "state",
   "slug": "missouri",
-  "title": "Missouri Federal Contracts: $11.9B in FY2026",
+  "title": "Missouri Federal Contracts: $392M in FY2027",
   "h1": "Federal Contracts in Missouri: Spending, Agencies & Vendors",
-  "metaDescription": "Federal agencies obligated $11.9B to contractors in Missouri in FY2026 to date. See top buying agencies, top vendors, and industries.",
-  "updated": "2026-09-28",
+  "metaDescription": "Federal agencies obligated $392M to contractors in Missouri in FY2027 to date. See top buying agencies, top vendors, and industries.",
+  "updated": "2026-11-16",
   "fyWindow": {
-    "label": "FY2026 to date",
-    "start": "2025-10-01",
-    "end": "2026-09-28"
+    "label": "FY2027 to date",
+    "start": "2026-10-01",
+    "end": "2026-11-16"
   },
   "stats": {
-    "totalObligations": 11852670093.19,
-    "awardCount": 120586,
-    "yoyGrowthPct": -15.2,
-    "avgAwardSize": 98292,
+    "totalObligations": 392079363.55,
+    "awardCount": 9230,
+    "yoyGrowthPct": -97,
+    "avgAwardSize": 42479,
     "smallBusinessSharePct": null
   },
   "charts": [
@@ -27,226 +27,226 @@
           "label": "Obligations",
           "points": [
             [
-              "FY21",
-              13278864659.83
-            ],
-            [
               "FY22",
-              11153198850.63
+              11351218872.47
             ],
             [
               "FY23",
-              15555991621.64
+              16008502230.38
             ],
             [
               "FY24",
-              16184240671.99
+              16997532585.07
             ],
             [
               "FY25",
-              13971351708.74
+              14454734556.81
             ],
             [
               "FY26",
-              11852670093.19
+              13107941991.1
+            ],
+            [
+              "FY27",
+              392079363.55
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Obligations fell 15.2% year over year, from $14B in FY2025 to $11.9B in FY2026 to date."
+      "takeaway": "Obligations fell 97.0% year over year, from $13.1B in FY2026 to $392M in FY2027 to date."
     },
     {
       "id": "missouri-top-agencies",
       "type": "bar",
-      "title": "Top 10 buying agencies, FY2026 to date",
+      "title": "Top 10 buying agencies, FY2027 to date",
       "series": [
         {
           "label": "Obligations",
           "points": [
             [
-              "Department of Defense",
-              8251039984.84
-            ],
-            [
               "Department of Energy",
-              2211122402.17
-            ],
-            [
-              "Department of Homeland Security",
-              412759199.54
+              323323205.59
             ],
             [
               "Department of Veterans Affairs",
-              315982286.44
+              22141880.75
+            ],
+            [
+              "Department of Homeland Security",
+              12579823.96
             ],
             [
               "Department of Agriculture",
-              257753289.92
+              10607381.94
             ],
             [
               "Department of Justice",
-              103026597.14
+              9211200.9
+            ],
+            [
+              "Environmental Protection Agency",
+              6471496.48
             ],
             [
               "General Services Administration",
-              83626799.59
+              4404549.04
             ],
             [
               "Department of Health and Human Services",
-              58183595.01
+              1220700.87
             ],
             [
               "Department of Transportation",
-              52208318.68
+              1212194.12
             ],
             [
-              "Department of Labor",
-              35220865.4
+              "Department of the Interior",
+              648698.08
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Department of Defense was the top federal buyer in Missouri, obligating $8.3B (69.6% of the state total)."
+      "takeaway": "Department of Energy was the top federal buyer in Missouri, obligating $323M (82.5% of the state total)."
     },
     {
       "id": "missouri-top-vendors",
       "type": "bar",
-      "title": "Top 10 vendors, FY2026 to date",
+      "title": "Top 10 vendors, FY2027 to date",
       "series": [
         {
           "label": "Obligations",
           "points": [
             [
-              "THE BOEING COMPANY",
-              5342216839.71
-            ],
-            [
               "HONEYWELL FEDERAL MANUFACTURING & TECHNOLOGIES, LLC",
-              2202033343.31
+              323305085.59
             ],
             [
-              "THE BOEING COMPANY",
-              907117288.63
+              "KONIAG BRILLIENT, LLC",
+              11400591.18
             ],
             [
-              "EVERNORTH FEDERAL SERVICES INC",
-              686514331.93
+              "ENVIRONMENTAL QUALITY MANAGEMENT, INC",
+              8788264.42
+            ],
+            [
+              "EAST BAKING COMPANY, INC.",
+              6772349.37
+            ],
+            [
+              "PROAIM AMERICAS, LLC.",
+              5598671.81
+            ],
+            [
+              "NATIONAL INDUSTRIES FOR THE BLIND",
+              2974799.15
+            ],
+            [
+              "BIOMERIEUX INC",
+              2695637
+            ],
+            [
+              "MERCY HOSPITAL SPRINGFIELD",
+              2560000
+            ],
+            [
+              "METROPOLITAN SECURITY SERVICES, INC.",
+              2104043.76
             ],
             [
               "WORLD WIDE TECHNOLOGY LLC",
-              323772251.85
-            ],
-            [
-              "EASTERN AIR EXPRESS LLC",
-              215524664
-            ],
-            [
-              "OLIN WINCHESTER LLC",
-              167613039.07
-            ],
-            [
-              "BL HARBERT INTERNATIONAL LLC",
-              129385276
-            ],
-            [
-              "VENDTECH-SGI LLC",
-              74313762.58
-            ],
-            [
-              "GC & V CONSTRUCTION LLC",
-              59890000
+              1887539.99
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "THE BOEING COMPANY led all contractors in Missouri with $5.3B, 45.1% of the state total."
+      "takeaway": "HONEYWELL FEDERAL MANUFACTURING & TECHNOLOGIES, LLC led all contractors in Missouri with $323M, 82.5% of the state total."
     },
     {
       "id": "missouri-top-naics",
       "type": "bar",
-      "title": "Top 10 industries (NAICS), FY2026 to date",
+      "title": "Top 10 industries (NAICS), FY2027 to date",
       "series": [
         {
           "label": "Obligations",
           "points": [
             [
-              "Aircraft Manufacturing",
-              3505393226.45
-            ],
-            [
               "Facilities Support Services",
-              2317530560.81
+              323567456.05
             ],
             [
-              "Ammunition (except Small Arms) Manufacturing",
-              1322013638.41
+              "Office Administrative Services",
+              11400591.18
             ],
             [
-              "Other Aircraft Parts and Auxiliary Equipment Manufacturing",
-              750671990.01
+              "Breakfast Cereal Manufacturing",
+              6772349.37
             ],
             [
-              "Direct Health and Medical Insurance Carriers",
-              686514331.93
+              "Remediation Services",
+              6471496.48
             ],
             [
-              "Engineering Services",
-              361703229.68
+              "Surgical and Medical Instrument Manufacturing",
+              4186555
+            ],
+            [
+              "General Medical and Surgical Hospitals",
+              3987387.24
             ],
             [
               "Other Computer Related Services",
-              259010186.32
+              3524537.95
             ],
             [
-              "Nonscheduled Chartered Passenger Air Transportation",
-              220872973.81
+              "Office Supplies and Stationery Stores",
+              2974799.15
             ],
             [
-              "Commercial and Institutional Building Construction",
-              212217822.08
+              "Analytical Laboratory Instrument Manufacturing",
+              2695566.44
             ],
             [
-              "Aircraft Engine and Engine Parts Manufacturing",
-              203960159.25
+              "Security Guards and Patrol Services",
+              2614512.46
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Aircraft Manufacturing was the largest industry in Missouri, with $3.5B obligated."
+      "takeaway": "Facilities Support Services was the largest industry in Missouri, with $324M obligated."
     }
   ],
   "crossLinks": [
     {
-      "label": "Department of Defense contracts",
-      "href": "/insights/agency/department-of-defense/"
-    },
-    {
       "label": "Department of Energy contracts",
       "href": "/insights/agency/department-of-energy/"
-    },
-    {
-      "label": "Department of Homeland Security contracts",
-      "href": "/insights/agency/department-of-homeland-security/"
     },
     {
       "label": "Department of Veterans Affairs contracts",
       "href": "/insights/agency/department-of-veterans-affairs/"
     },
     {
-      "label": "NAICS 336411: Aircraft Manufacturing",
-      "href": "/insights/naics/336411/"
+      "label": "Department of Homeland Security contracts",
+      "href": "/insights/agency/department-of-homeland-security/"
+    },
+    {
+      "label": "Department of Agriculture contracts",
+      "href": "/insights/agency/department-of-agriculture/"
     },
     {
       "label": "NAICS 561210: Facilities Support Services",
       "href": "/insights/naics/561210/"
     },
     {
-      "label": "NAICS 541330: Engineering Services",
-      "href": "/insights/naics/541330/"
+      "label": "NAICS 561110: Office Administrative Services",
+      "href": "/insights/naics/561110/"
+    },
+    {
+      "label": "NAICS 339112: Surgical and Medical Instrument Manufacturing",
+      "href": "/insights/naics/339112/"
     },
     {
       "label": "NAICS 541519: Other Computer Related Services",
@@ -265,87 +265,87 @@
         [
           1,
           {
-            "text": "THE BOEING COMPANY",
-            "href": "https://www.usaspending.gov/recipient/9ab85632-42cc-5fa4-2a9c-d734034ddd33-C/latest/"
+            "text": "HONEYWELL FEDERAL MANUFACTURING & TECHNOLOGIES, LLC",
+            "href": "https://www.usaspending.gov/recipient/9e9725ba-e023-684e-6d7f-f9de4201578f-C/latest/"
           },
-          5342216839.71
+          323305085.59
         ],
         [
           2,
           {
-            "text": "HONEYWELL FEDERAL MANUFACTURING & TECHNOLOGIES, LLC",
-            "href": "https://www.usaspending.gov/recipient/9e9725ba-e023-684e-6d7f-f9de4201578f-C/latest/"
+            "text": "KONIAG BRILLIENT, LLC",
+            "href": "https://www.usaspending.gov/recipient/32487f57-d90d-4a93-11f1-dbead074308c-C/latest/"
           },
-          2202033343.31
+          11400591.18
         ],
         [
           3,
           {
-            "text": "THE BOEING COMPANY",
-            "href": "https://www.usaspending.gov/recipient/241d908a-e5e9-f275-b625-6b1f76859002-C/latest/"
+            "text": "ENVIRONMENTAL QUALITY MANAGEMENT, INC",
+            "href": "https://www.usaspending.gov/recipient/1c8b0097-7be5-c28a-b664-960f96ebe896-C/latest/"
           },
-          907117288.63
+          8788264.42
         ],
         [
           4,
           {
-            "text": "EVERNORTH FEDERAL SERVICES INC",
-            "href": "https://www.usaspending.gov/recipient/5648a09f-c8b7-40e5-0768-a87d491a0e21-C/latest/"
+            "text": "EAST BAKING COMPANY, INC.",
+            "href": "https://www.usaspending.gov/recipient/b3e01ef9-eb90-c642-8fd6-b064b3499921-C/latest/"
           },
-          686514331.93
+          6772349.37
         ],
         [
           5,
           {
-            "text": "WORLD WIDE TECHNOLOGY LLC",
-            "href": "https://www.usaspending.gov/recipient/d96a4bfd-2da7-00c1-948d-44005efba1a1-C/latest/"
+            "text": "PROAIM AMERICAS, LLC.",
+            "href": "https://www.usaspending.gov/recipient/6736db21-17ec-5d96-a4e3-cf97eba86c10-C/latest/"
           },
-          323772251.85
+          5598671.81
         ],
         [
           6,
           {
-            "text": "EASTERN AIR EXPRESS LLC",
-            "href": "https://www.usaspending.gov/recipient/d02b1d9f-b23d-2d71-8bf8-9fe7ed6c831b-C/latest/"
+            "text": "NATIONAL INDUSTRIES FOR THE BLIND",
+            "href": "https://www.usaspending.gov/recipient/a0104c10-6c8d-a143-ccc4-de83813d60c7-C/latest/"
           },
-          215524664
+          2974799.15
         ],
         [
           7,
           {
-            "text": "OLIN WINCHESTER LLC",
-            "href": "https://www.usaspending.gov/recipient/616bca4f-e2ec-546a-f5a9-246df427d803-C/latest/"
+            "text": "BIOMERIEUX INC",
+            "href": "https://www.usaspending.gov/recipient/d91909b1-ebd8-1290-63e1-383f4ec40193-C/latest/"
           },
-          167613039.07
+          2695637
         ],
         [
           8,
           {
-            "text": "BL HARBERT INTERNATIONAL LLC",
-            "href": "https://www.usaspending.gov/recipient/f9896eaa-17af-6d01-f48f-cda50097f023-C/latest/"
+            "text": "MERCY HOSPITAL SPRINGFIELD",
+            "href": "https://www.usaspending.gov/recipient/ea77856e-0802-aa93-e348-0b9e3f9d89ce-C/latest/"
           },
-          129385276
+          2560000
         ],
         [
           9,
           {
-            "text": "VENDTECH-SGI LLC",
-            "href": "https://www.usaspending.gov/recipient/3a920b33-b31c-84ef-f06d-bd73ad931a06-C/latest/"
+            "text": "METROPOLITAN SECURITY SERVICES, INC.",
+            "href": "https://www.usaspending.gov/recipient/835e42fb-f461-4e30-e17e-3205a1805635-C/latest/"
           },
-          74313762.58
+          2104043.76
         ],
         [
           10,
           {
-            "text": "GC & V CONSTRUCTION LLC",
-            "href": "https://www.usaspending.gov/recipient/9590d8ec-fca2-bc85-d5b9-a57f376f1ee2-C/latest/"
+            "text": "WORLD WIDE TECHNOLOGY LLC",
+            "href": "https://www.usaspending.gov/recipient/d96a4bfd-2da7-00c1-948d-44005efba1a1-C/latest/"
           },
-          59890000
+          1887539.99
         ]
       ]
     },
     {
-      "title": "Largest awards, FY2026 to date",
+      "title": "Largest awards, FY2027 to date",
       "columns": [
         "Rank",
         "Recipient",
@@ -359,253 +359,253 @@
             "text": "HONEYWELL FEDERAL MANUFACTURING & TECHNOLOGIES, LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_DENA0002839_8900_-NONE-_-NONE-/"
           },
-          17654763333.19,
+          18055468609.71,
           "Department of Energy"
         ],
         [
           2,
           {
-            "text": "THE BOEING COMPANY",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_FA863412C2651_9700_-NONE-_-NONE-/"
+            "text": "EASTERN AIR EXPRESS LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70CDCR26C00000021_7012_-NONE-_-NONE-/"
           },
-          11204226412.65,
-          "Department of Defense"
+          249385561.5,
+          "Department of Homeland Security"
         ],
         [
           3,
           {
-            "text": "THE BOEING COMPANY",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_FA863418C2701_9700_-NONE-_-NONE-/"
+            "text": "KONIAG BRILLIENT, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70SBUR21C00000015_7003_-NONE-_-NONE-/"
           },
-          7014009581.76,
-          "Department of Defense"
+          114368513.74,
+          "Department of Homeland Security"
         ],
         [
           4,
           {
-            "text": "THE BOEING COMPANY",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_N0001918C1046_9700_-NONE-_-NONE-/"
+            "text": "EPSILON INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_12314422F0642_1205_47QTCH18D0014_4732/"
           },
-          5496533530.53,
-          "Department of Defense"
+          94259870.4,
+          "Department of Agriculture"
         ],
         [
           5,
           {
-            "text": "THE BOEING COMPANY",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_FA863423F0048_9700_FA863420D2704_9700/"
+            "text": "EDUCATION & TRAINING RESOURCES LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_1605JW22C0008_1605_-NONE-_-NONE-/"
           },
-          3930670910.97,
-          "Department of Defense"
+          67093345.32,
+          "Department of Labor"
         ],
         [
           6,
           {
-            "text": "THE BOEING COMPANY",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_N0001917C0003_9700_-NONE-_-NONE-/"
+            "text": "MYERS AND STAUFFER LC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75FCMC23F0011_7530_GS23F0058V_4730/"
           },
-          2444992704.44,
-          "Department of Defense"
+          54234758.54,
+          "Department of Health and Human Services"
         ],
         [
           7,
           {
-            "text": "EVERNORTH FEDERAL SERVICES INC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_HT940221C0007_9700_-NONE-_-NONE-/"
+            "text": "MRIGLOBAL",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_HHSN273201400020C_7529_-NONE-_-NONE-/"
           },
-          2373610509.92,
-          "Department of Defense"
+          52417032.84,
+          "Department of Health and Human Services"
         ],
         [
           8,
           {
-            "text": "THE BOEING COMPANY",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_N0001920C0003_9700_-NONE-_-NONE-/"
+            "text": "DISTINCTION LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_1605JW25C0005_1605_-NONE-_-NONE-/"
           },
-          2058655011.17,
-          "Department of Defense"
+          32877384.8,
+          "Department of Labor"
         ],
         [
           9,
           {
-            "text": "THE BOEING COMPANY",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_FA863422F0035_9700_FA863420D2704_9700/"
+            "text": "GUIDEHOUSE INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_12C0BZ26F0008_12E3_12C0BZ26A0001_12E3/"
           },
-          2040776433.36,
-          "Department of Defense"
+          25706592.55,
+          "Department of Agriculture"
         ],
         [
           10,
           {
-            "text": "THE BOEING COMPANY",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_N0001918C1012_9700_-NONE-_-NONE-/"
+            "text": "AC JV ONE LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C77623C0087_3600_-NONE-_-NONE-/"
           },
-          1843827977.96,
-          "Department of Defense"
+          24545626,
+          "Department of Veterans Affairs"
         ],
         [
           11,
           {
-            "text": "THE BOEING COMPANY",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_N0001922F0030_9700_N0001921G0006_9700/"
+            "text": "ALLIED MATERIALS & EQUIPMENT CO INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10G23C0003_3600_-NONE-_-NONE-/"
           },
-          1553797869.15,
-          "Department of Defense"
+          22033607.04,
+          "Department of Veterans Affairs"
         ],
         [
           12,
           {
-            "text": "THE BOEING COMPANY",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_N0001918C1060_9700_-NONE-_-NONE-/"
+            "text": "INTELLECT SOLUTIONS, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70Z07921FPNZ02000_7008_GS35F144AA_4732/"
           },
-          1518660771,
-          "Department of Defense"
+          20332319.99,
+          "Department of Homeland Security"
         ],
         [
           13,
           {
-            "text": "THE BOEING COMPANY",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_FA863416C2653_9700_-NONE-_-NONE-/"
+            "text": "JETT'S SPECIALTY CONTRACTING, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C25526C0013_3600_-NONE-_-NONE-/"
           },
-          1399773518.14,
-          "Department of Defense"
+          20194437.95,
+          "Department of Veterans Affairs"
         ],
         [
           14,
           {
-            "text": "THE BOEING COMPANY",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_FA863422C2705_9700_-NONE-_-NONE-/"
+            "text": "R.E.D. CONSTRUCTION SERVICES, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C77624C0129_3600_-NONE-_-NONE-/"
           },
-          1340601122.71,
-          "Department of Defense"
+          19859021.74,
+          "Department of Veterans Affairs"
         ],
         [
           15,
           {
-            "text": "THE BOEING COMPANY",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_FA863426CB001_9700_-NONE-_-NONE-/"
+            "text": "HELLMUTH, OBATA & KASSABAUM, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_47PJ0020C0079_4740_-NONE-_-NONE-/"
           },
-          1167300000,
-          "Department of Defense"
+          15542550.96,
+          "General Services Administration"
         ],
         [
           16,
           {
-            "text": "THE BOEING COMPANY",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_N0001918C1025_9700_-NONE-_-NONE-/"
+            "text": "GUARANTEE INTERIORS, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C77624C0075_3600_-NONE-_-NONE-/"
           },
-          1129466003.92,
-          "Department of Defense"
+          13481549,
+          "Department of Veterans Affairs"
         ],
         [
           17,
           {
-            "text": "THE BOEING COMPANY",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_FA863421F0023_9700_FA863420D2704_9700/"
+            "text": "FLATTER, INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_12C0BZ25F0008_12E3_12SAD225A0003_12E3/"
           },
-          1117198123.88,
-          "Department of Defense"
+          13068488.14,
+          "Department of Agriculture"
         ],
         [
           18,
           {
-            "text": "THE BOEING COMPANY",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_FA863420F0022_9700_FA863420D2704_9700/"
+            "text": "EA ENGINEERING, SCIENCE, AND TECHNOLOGY, INC., PBC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_68HE0724F0147_6800_68HERH19D0008_6800/"
           },
-          1070631280.41,
-          "Department of Defense"
+          12578620.73,
+          "Environmental Protection Agency"
         ],
         [
           19,
           {
-            "text": "THE BOEING COMPANY",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_FA863421F0026_9700_FA863420D2704_9700/"
+            "text": "FIRST COAST SECURITY SOLUTIONS, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70RFP426FRE600007_7001_70RFP224DEC000005_7001/"
           },
-          1061341626.5,
-          "Department of Defense"
+          11990228.69,
+          "Department of Homeland Security"
         ],
         [
           20,
           {
-            "text": "THE BOEING COMPANY",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_FA821318F1001_9700_FA821315D0002_9700/"
+            "text": "11TH HOUR SERVICE LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_12C0BA26F0004_12E3_12SAD225A0005_12E3/"
           },
-          1001652302.71,
-          "Department of Defense"
+          11442682.4,
+          "Department of Agriculture"
         ],
         [
           21,
           {
-            "text": "THE BOEING COMPANY",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_N0001919C0016_9700_-NONE-_-NONE-/"
+            "text": "JACOBS ENGINEERING GROUP INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_697DCK23F00006_6920_697DCK19D00002_6920/"
           },
-          990630605.22,
-          "Department of Defense"
+          8879372.16,
+          "Department of Transportation"
         ],
         [
           22,
           {
-            "text": "THE BOEING COMPANY",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_FA863421C2702_9700_-NONE-_-NONE-/"
+            "text": "GUARANTEE INTERIORS, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C25523N0229_3600_36C25518D0072_3600/"
           },
-          937594913.61,
-          "Department of Defense"
+          8828302,
+          "Department of Veterans Affairs"
         ],
         [
           23,
           {
-            "text": "THE BOEING COMPANY",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_FA861718F8001_9700_FA861718D6219_9700/"
+            "text": "ENVIRONMENTAL QUALITY MANAGEMENT, INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_68HE0727F0007_6800_68HE0725D0012_6800/"
           },
-          930084290.62,
-          "Department of Defense"
+          8788264.42,
+          "Environmental Protection Agency"
         ],
         [
           24,
           {
-            "text": "THE BOEING COMPANY",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_FA821319F1002_9700_FA821315D0002_9700/"
+            "text": "ROCK JV, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C25523C0119_3600_-NONE-_-NONE-/"
           },
-          878270765.2,
-          "Department of Defense"
+          7352529.22,
+          "Department of Veterans Affairs"
         ],
         [
           25,
           {
-            "text": "THE BOEING COMPANY",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_FA863426CB002_9700_-NONE-_-NONE-/"
+            "text": "EAST BAKING COMPANY, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_123J1426F1485_12K2_123J1426D0039_12K2/"
           },
-          853619369,
-          "Department of Defense"
+          7036386.29,
+          "Department of Agriculture"
         ]
       ]
     }
   ],
   "narrative": {
-    "intro": "Missouri federal contracting reached $11.9B in obligations in FY2026 to date. The Department of Defense obligated $8.3B, making DoD the largest buyer in the state for the period. Award activity produced 120,586 awards with an average award size of $98.3K. Obligations fell 15.2% year over year. Historical context shows fluctuations: FY24 recorded $16.2B and FY25 recorded $14B, while FY23 recorded $15.6B and FY22 recorded $11.2B. Aircraft Manufacturing accounted for $3.5B in obligations and Facilities Support Services accounted for $2.3B, reflecting dominant industry pockets. THE BOEING COMPANY received $5.3B of obligations and HONEYWELL FEDERAL MANUFACTURING & TECHNOLOGIES, LLC received $2.2B. The Department of Energy awarded $2.2B in FY2026 to date. All figures are contract obligations and current-year totals are partial, fiscal year to date.",
+    "intro": "Missouri has received $392M in federal contract obligations in FY2027 to date. The Department of Energy leads buying with $323M in obligations. Award activity shows 9,230 awards so far, and the average award size is $42.5K. Obligations are down 97.0% year over year. Fiscal-year history shows a peak and fall: FY22 obligations were $11.4B, FY23 obligations were $16B, FY24 obligations were $17B, FY25 obligations were $14.5B, and FY26 obligations were $13.1B. Facilities Support Services is the largest industry by obligation in FY2027 to date at $324M. HONEYWELL FEDERAL MANUFACTURING & TECHNOLOGIES, LLC is the largest vendor by obligation at $323M. Other notable buyers include the Department of Veterans Affairs at $22.1M and the Department of Homeland Security at $12.6M. Office Administrative Services recorded $11.4M in obligations. The dataset reflects contract obligations only and the current-year totals are partial because these are fiscal year to date figures.",
     "sections": [
       {
-        "heading": "How concentrated is federal buying in Missouri?",
-        "body": "The Department of Defense is highly concentrated, obligating $8.3B of the $11.9B total. The Department of Energy is the next-largest buyer with $2.2B, and combined DoD and DOE obligations dominate the state. Top industries are concentrated as well, with Aircraft Manufacturing at $3.5B and Facilities Support Services at $2.3B."
+        "heading": "Which agencies dominate federal buying in Missouri?",
+        "body": "The Department of Energy is the dominant buyer, obligating $323M in FY2027 to date. The Department of Veterans Affairs obligated $22.1M and the Department of Homeland Security obligated $12.6M. The Department of Agriculture and the Department of Justice follow with $10.6M and $9.2M respectively."
       },
       {
-        "heading": "Who captures the largest shares of Missouri contract dollars?",
-        "body": "THE BOEING COMPANY leads vendors with $5.3B in obligations, followed by HONEYWELL FEDERAL MANUFACTURING & TECHNOLOGIES, LLC at $2.2B. Ammunition (except Small Arms) Manufacturing accounts for $1.3B in industry obligations. Several mid-tier vendors and industries together account for the remainder of the $11.9B total."
+        "heading": "Which industries and vendors capture the largest shares of obligations?",
+        "body": "Facilities Support Services is the largest industry by obligations at $324M in FY2027 to date. HONEYWELL FEDERAL MANUFACTURING & TECHNOLOGIES, LLC is the largest vendor at $323M. Other vendors with notable obligations include KONIAG BRILLIENT, LLC at $11.4M and ENVIRONMENTAL QUALITY MANAGEMENT, INC at $8.8M."
       }
     ]
   },
   "faq": [
     {
       "q": "How much federal contract money goes to Missouri?",
-      "a": "Missouri receives $11.9B in federal contract obligations in FY2026 to date. The Department of Defense obligated $8.3B and the Department of Energy obligated $2.2B. Total award activity includes 120,586 awards with an average award size of $98.3K, and obligations fell 15.2% year over year."
+      "a": "About $392M in federal contract obligations have gone to Missouri in FY2027 to date. Fiscal-year history shows FY22 obligations were $11.4B, FY23 obligations were $16B, FY24 obligations were $17B, FY25 obligations were $14.5B, and FY26 obligations were $13.1B."
     },
     {
       "q": "Which agencies award the most contracts in Missouri?",
-      "a": "The Department of Defense awards the most contracts in Missouri, obligating $8.3B in FY2026 to date. The Department of Energy is the second-largest buyer with $2.2B. Other agencies in the top ten include the Department of Homeland Security with $413M and the Department of Veterans Affairs with $316M."
+      "a": "The Department of Energy awards the most contracts in Missouri, with $323M obligated in FY2027 to date. The Department of Veterans Affairs follows with $22.1M and the Department of Homeland Security follows with $12.6M."
     },
     {
       "q": "Who are the largest federal contractors in Missouri?",
-      "a": "THE BOEING COMPANY is the largest federal contractor in Missouri, receiving $5.3B in obligations in FY2026 to date. HONEYWELL FEDERAL MANUFACTURING & TECHNOLOGIES, LLC is the next-largest with $2.2B. EVERNORTH FEDERAL SERVICES INC received $687M and WORLD WIDE TECHNOLOGY LLC received $324M."
+      "a": "HONEYWELL FEDERAL MANUFACTURING & TECHNOLOGIES, LLC is the largest federal contractor in Missouri, receiving $323M in FY2027 to date. Other top contractors include KONIAG BRILLIENT, LLC at $11.4M and ENVIRONMENTAL QUALITY MANAGEMENT, INC at $8.8M."
     }
   ],
   "related": [

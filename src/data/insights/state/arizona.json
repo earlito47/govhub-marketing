@@ -1,20 +1,20 @@
 {
   "pageType": "state",
   "slug": "arizona",
-  "title": "Arizona: $98.4M in Federal Contracts, FY2027",
+  "title": "Arizona: $143M in Federal Contracts, FY2027",
   "h1": "Federal Contracts in Arizona: Spending, Agencies & Vendors",
-  "metaDescription": "Federal agencies obligated $98.4M to contractors in Arizona in FY2027 to date. See top buying agencies, top vendors, and industries.",
-  "updated": "2026-10-26",
+  "metaDescription": "Federal agencies obligated $143M to contractors in Arizona in FY2027 to date. See top buying agencies, top vendors, and industries.",
+  "updated": "2026-11-16",
   "fyWindow": {
     "label": "FY2027 to date",
     "start": "2026-10-01",
-    "end": "2026-10-26"
+    "end": "2026-11-16"
   },
   "stats": {
-    "totalObligations": 98355251.78,
-    "awardCount": 481,
-    "yoyGrowthPct": -99.7,
-    "avgAwardSize": 204481,
+    "totalObligations": 142871291.43,
+    "awardCount": 921,
+    "yoyGrowthPct": -99.6,
+    "avgAwardSize": 155126,
     "smallBusinessSharePct": null
   },
   "charts": [
@@ -28,33 +28,33 @@
           "points": [
             [
               "FY22",
-              15339213441.82
+              16442178659.97
             ],
             [
               "FY23",
-              19762435258.04
+              20882552027.12
             ],
             [
               "FY24",
-              18046899829.98
+              19330146002.53
             ],
             [
               "FY25",
-              23714890485.4
+              25640108297.29
             ],
             [
               "FY26",
-              31000538624.58
+              34722420931.2
             ],
             [
               "FY27",
-              98355251.78
+              142871291.43
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Obligations fell 99.7% year over year, from $31B in FY2026 to $98.4M in FY2027 to date."
+      "takeaway": "Obligations fell 99.6% year over year, from $34.7B in FY2026 to $143M in FY2027 to date."
     },
     {
       "id": "arizona-top-agencies",
@@ -66,49 +66,49 @@
           "points": [
             [
               "Department of Veterans Affairs",
-              86225555.44
+              94619431.25
             ],
             [
-              "Department of Justice",
-              3634801.56
+              "Department of Homeland Security",
+              13907337.52
             ],
             [
               "Department of Health and Human Services",
-              3135873.14
+              12031369.11
             ],
             [
-              "General Services Administration",
-              1353377.76
-            ],
-            [
-              "Department of Agriculture",
-              987117.53
-            ],
-            [
-              "Department of Transportation",
-              986087.82
-            ],
-            [
-              "Department of the Interior",
-              860432.93
+              "Department of Justice",
+              8239361.39
             ],
             [
               "National Aeronautics and Space Administration",
-              690105.52
+              3247948.52
             ],
             [
-              "Smithsonian Institution",
-              318595
+              "Department of the Interior",
+              2828027.84
             ],
             [
-              "Department of Labor",
-              79095
+              "Department of Agriculture",
+              2619047.98
+            ],
+            [
+              "General Services Administration",
+              2078793.27
+            ],
+            [
+              "Department of Transportation",
+              1000778.52
+            ],
+            [
+              "Environmental Protection Agency",
+              929896.5
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Department of Veterans Affairs was the top federal buyer in Arizona, obligating $86.2M (87.7% of the state total)."
+      "takeaway": "Department of Veterans Affairs was the top federal buyer in Arizona, obligating $94.6M (66.2% of the state total)."
     },
     {
       "id": "arizona-top-vendors",
@@ -119,12 +119,16 @@
           "label": "Obligations",
           "points": [
             [
-              "FEDEX SUPPLY CHAIN DISTRIBUTION SYSTEM, INC.",
-              13755868.69
+              "JACOBS ENGINEERING GROUP INC.",
+              13698478.87
             ],
             [
-              "AMERICAN VETERAN CONTRACTING SOLUTIONS LLC",
-              7253694.68
+              "FEDEX SUPPLY CHAIN DISTRIBUTION SYSTEM, INC.",
+              13506562.39
+            ],
+            [
+              "DIAMOND WEST CONSTRUCTION LLC",
+              10924282
             ],
             [
               "FEDERAL EXPRESS CORPORATION",
@@ -132,37 +136,33 @@
             ],
             [
               "VITALANT",
-              4820411.32
+              4749717.59
+            ],
+            [
+              "SERGENTS MECHANICAL SYSTEMS INC",
+              3637951.57
             ],
             [
               "UNIVERSITY OF ARIZONA",
-              3439200
+              3444200
             ],
             [
               "SIEMENS MEDICAL SOLUTIONS USA, INC.",
               3053372.95
             ],
             [
+              "J ALLEN AND ASSOCIATES OF TEXAS, LLC",
+              3020715.82
+            ],
+            [
               "METROPOLITAN SECURITY SERVICES, INC.",
               2860154.48
-            ],
-            [
-              "OPTUM INFUSION SERVICES 308, LLC",
-              2834002.95
-            ],
-            [
-              "LIFE LINE AMBULANCE SERVICE, INC.",
-              2599980.37
-            ],
-            [
-              "AXON ENTERPRISE, INC.",
-              2507055.36
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "FEDEX SUPPLY CHAIN DISTRIBUTION SYSTEM, INC. led all contractors in Arizona with $13.8M, 14.0% of the state total."
+      "takeaway": "JACOBS ENGINEERING GROUP INC. led all contractors in Arizona with $13.7M, 9.6% of the state total."
     },
     {
       "id": "arizona-top-naics",
@@ -173,28 +173,36 @@
           "label": "Obligations",
           "points": [
             [
+              "Engineering Services",
+              14028295.89
+            ],
+            [
               "All Other Business Support Services",
-              13919151.71
+              13669845.41
+            ],
+            [
+              "Water and Sewer Line and Related Structures Construction",
+              12273634.07
             ],
             [
               "Couriers and Express Delivery Services",
-              8392801.46
+              8378322.09
             ],
             [
               "Ambulance Services",
-              7713377.76
+              7743377.76
             ],
             [
-              "Cut Stone and Stone Product Manufacturing",
-              7276029.68
+              "Commercial and Institutional Building Construction",
+              6093642.16
             ],
             [
               "Blood and Organ Banks",
-              5860009.95
+              5789316.22
             ],
             [
               "Janitorial Services",
-              4816559.48
+              5377349.12
             ],
             [
               "Research and Development in the Physical, Engineering, and Life Sciences (except Biotechnology)",
@@ -202,21 +210,13 @@
             ],
             [
               "Irradiation Apparatus Manufacturing",
-              3977710.27
-            ],
-            [
-              "Medical Laboratories",
-              3804031.7
-            ],
-            [
-              "Security Guards and Patrol Services",
-              3095500.04
+              4053647.65
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "All Other Business Support Services was the largest industry in Arizona, with $13.9M obligated."
+      "takeaway": "Engineering Services was the largest industry in Arizona, with $14M obligated."
     }
   ],
   "crossLinks": [
@@ -225,16 +225,24 @@
       "href": "/insights/agency/department-of-veterans-affairs/"
     },
     {
-      "label": "Department of Justice contracts",
-      "href": "/insights/agency/department-of-justice/"
+      "label": "Department of Homeland Security contracts",
+      "href": "/insights/agency/department-of-homeland-security/"
     },
     {
       "label": "Department of Health and Human Services contracts",
       "href": "/insights/agency/department-of-health-and-human-services/"
     },
     {
-      "label": "General Services Administration contracts",
-      "href": "/insights/agency/general-services-administration/"
+      "label": "Department of Justice contracts",
+      "href": "/insights/agency/department-of-justice/"
+    },
+    {
+      "label": "NAICS 541330: Engineering Services",
+      "href": "/insights/naics/541330/"
+    },
+    {
+      "label": "NAICS 236220: Commercial and Institutional Building Construction",
+      "href": "/insights/naics/236220/"
     },
     {
       "label": "NAICS 561720: Janitorial Services",
@@ -243,14 +251,6 @@
     {
       "label": "NAICS 541715: Research and Development in the Physical, Engineering, and Life Sciences",
       "href": "/insights/naics/541715/"
-    },
-    {
-      "label": "NAICS 621511: Medical Laboratories",
-      "href": "/insights/naics/621511/"
-    },
-    {
-      "label": "NAICS 561612: Security Guards and Patrol Services",
-      "href": "/insights/naics/561612/"
     }
   ],
   "tables": [
@@ -265,21 +265,29 @@
         [
           1,
           {
-            "text": "FEDEX SUPPLY CHAIN DISTRIBUTION SYSTEM, INC.",
-            "href": "https://www.usaspending.gov/recipient/5196bee3-3520-4d0f-a473-5763e5da1b05-C/latest/"
+            "text": "JACOBS ENGINEERING GROUP INC.",
+            "href": "https://www.usaspending.gov/recipient/7eef1309-dbd8-4f2e-ef41-466e2954300d-C/latest/"
           },
-          13755868.69
+          13698478.87
         ],
         [
           2,
           {
-            "text": "AMERICAN VETERAN CONTRACTING SOLUTIONS LLC",
-            "href": "https://www.usaspending.gov/recipient/79e68f5a-6917-188a-66e2-39414020e2fd-C/latest/"
+            "text": "FEDEX SUPPLY CHAIN DISTRIBUTION SYSTEM, INC.",
+            "href": "https://www.usaspending.gov/recipient/5196bee3-3520-4d0f-a473-5763e5da1b05-C/latest/"
           },
-          7253694.68
+          13506562.39
         ],
         [
           3,
+          {
+            "text": "DIAMOND WEST CONSTRUCTION LLC",
+            "href": "https://www.usaspending.gov/recipient/d509eb72-6560-1a39-0299-46bdf4c7b41f-C/latest/"
+          },
+          10924282
+        ],
+        [
+          4,
           {
             "text": "FEDERAL EXPRESS CORPORATION",
             "href": "https://www.usaspending.gov/recipient/079718fe-322b-0b89-6522-302314b5d75f-C/latest/"
@@ -287,23 +295,31 @@
           7068333.88
         ],
         [
-          4,
+          5,
           {
             "text": "VITALANT",
             "href": "https://www.usaspending.gov/recipient/aac0d53c-fc30-bb05-192d-4bb66ca0eae1-C/latest/"
           },
-          4820411.32
+          4749717.59
         ],
         [
-          5,
+          6,
+          {
+            "text": "SERGENTS MECHANICAL SYSTEMS INC",
+            "href": "https://www.usaspending.gov/recipient/3e74d519-a210-a2dd-b56c-f1cf5ea83ba1-C/latest/"
+          },
+          3637951.57
+        ],
+        [
+          7,
           {
             "text": "UNIVERSITY OF ARIZONA",
             "href": "https://www.usaspending.gov/recipient/4f121097-1173-861e-ba01-a877858acd3d-C/latest/"
           },
-          3439200
+          3444200
         ],
         [
-          6,
+          8,
           {
             "text": "SIEMENS MEDICAL SOLUTIONS USA, INC.",
             "href": "https://www.usaspending.gov/recipient/fd8478b1-626d-1d4a-edc9-c5fd5914996f-C/latest/"
@@ -311,36 +327,20 @@
           3053372.95
         ],
         [
-          7,
+          9,
+          {
+            "text": "J ALLEN AND ASSOCIATES OF TEXAS, LLC",
+            "href": "https://www.usaspending.gov/recipient/1adbbf3b-79c7-3719-c3de-257db9d19d77-C/latest/"
+          },
+          3020715.82
+        ],
+        [
+          10,
           {
             "text": "METROPOLITAN SECURITY SERVICES, INC.",
             "href": "https://www.usaspending.gov/recipient/835e42fb-f461-4e30-e17e-3205a1805635-C/latest/"
           },
           2860154.48
-        ],
-        [
-          8,
-          {
-            "text": "OPTUM INFUSION SERVICES 308, LLC",
-            "href": "https://www.usaspending.gov/recipient/136e47c1-2fd0-02b1-44eb-264cbc9d4bf9-C/latest/"
-          },
-          2834002.95
-        ],
-        [
-          9,
-          {
-            "text": "LIFE LINE AMBULANCE SERVICE, INC.",
-            "href": "https://www.usaspending.gov/recipient/d706a097-4cc6-1d6c-5e49-49b696ca22e8-C/latest/"
-          },
-          2599980.37
-        ],
-        [
-          10,
-          {
-            "text": "AXON ENTERPRISE, INC.",
-            "href": "https://www.usaspending.gov/recipient/25ad37ff-89d4-1dd3-1291-f2d104af07aa-C/latest/"
-          },
-          2507055.36
         ]
       ]
     },
@@ -392,6 +392,42 @@
         [
           5,
           {
+            "text": "JACOBS ENGINEERING GROUP INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70B01C26F00000581_7014_70B01C26A00000011_7014/"
+          },
+          119124286.45,
+          "Department of Homeland Security"
+        ],
+        [
+          6,
+          {
+            "text": "HEALTH SERVICES ADVISORY GROUP, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75FCMC25FJ046_7530_75FCMC19D0026_7530/"
+          },
+          80595263,
+          "Department of Health and Human Services"
+        ],
+        [
+          7,
+          {
+            "text": "ADAMS AND ASSOCIATES INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_1605JW21C0004_1605_-NONE-_-NONE-/"
+          },
+          66246918.23,
+          "Department of Labor"
+        ],
+        [
+          8,
+          {
+            "text": "FEDEX SUPPLY CHAIN DISTRIBUTION SYSTEM, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C77026N0004_3600_36C77020A0009_3600/"
+          },
+          56029967.83,
+          "Department of Veterans Affairs"
+        ],
+        [
+          9,
+          {
             "text": "HUMAN LEARNING SYSTEMS LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_1605JW22C0005_1605_-NONE-_-NONE-/"
           },
@@ -399,7 +435,16 @@
           "Department of Labor"
         ],
         [
-          6,
+          10,
+          {
+            "text": "PERINI MANAGEMENT SERVICES, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_140P2025C0058_1443_-NONE-_-NONE-/"
+          },
+          43398719.18,
+          "Department of the Interior"
+        ],
+        [
+          11,
           {
             "text": "NIMBIS SERVICES INC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_47QFLA22F0175_4732_47QFLA20D0013_4732/"
@@ -408,7 +453,7 @@
           "General Services Administration"
         ],
         [
-          7,
+          12,
           {
             "text": "KATALYST SPACE TECHNOLOGIES, LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_80NSSC25C0510_8000_-NONE-_-NONE-/"
@@ -417,7 +462,7 @@
           "National Aeronautics and Space Administration"
         ],
         [
-          8,
+          13,
           {
             "text": "CAPEX & D SQUARE, A JOINT VENTURE LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C77624C0145_3600_-NONE-_-NONE-/"
@@ -426,7 +471,16 @@
           "Department of Veterans Affairs"
         ],
         [
-          9,
+          14,
+          {
+            "text": "TACTICAL INFRASTRUCTURE MAINTENANCE SOLUTIONS LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70B01C24F00000659_7014_70B01C21D00000023_7014/"
+          },
+          20955401.2,
+          "Department of Homeland Security"
+        ],
+        [
+          15,
           {
             "text": "HILLSBORO AVIATION, INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_1202SA24K9213_12C2_1202SA23T9272_12C2/"
@@ -435,7 +489,16 @@
           "Department of Agriculture"
         ],
         [
-          10,
+          16,
+          {
+            "text": "NATIVE HEALTH",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75H71222C00045_7527_-NONE-_-NONE-/"
+          },
+          13936952.75,
+          "Department of Health and Human Services"
+        ],
+        [
+          17,
           {
             "text": "FEDEX SUPPLY CHAIN DISTRIBUTION SYSTEM, INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C77027N0006_3600_36C77027A0001_3600/"
@@ -444,7 +507,7 @@
           "Department of Veterans Affairs"
         ],
         [
-          11,
+          18,
           {
             "text": "GENERAL DYNAMICS MISSION SYSTEMS, INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_70Z04421F21000700_7008_70Z04421D21000600_7008/"
@@ -453,7 +516,16 @@
           "Department of Homeland Security"
         ],
         [
-          12,
+          19,
+          {
+            "text": "ITC - ISS, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_15F06722P0000693_1549_-NONE-_-NONE-/"
+          },
+          11760990.46,
+          "Department of Justice"
+        ],
+        [
+          20,
           {
             "text": "HEALTH SERVICES ADVISORY GROUP, INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_75FCMC21F0040_7530_GS10F0166R_4730/"
@@ -462,7 +534,7 @@
           "Department of Health and Human Services"
         ],
         [
-          13,
+          21,
           {
             "text": "GUARDIAN CONSTRUCTION, INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_697DCK26C00036_6920_-NONE-_-NONE-/"
@@ -471,7 +543,7 @@
           "Department of Transportation"
         ],
         [
-          14,
+          22,
           {
             "text": "ARIZONA STATE UNIVERSITY",
             "href": "https://www.usaspending.gov/award/CONT_AWD_80MSFC26C0002_8000_-NONE-_-NONE-/"
@@ -480,7 +552,7 @@
           "National Aeronautics and Space Administration"
         ],
         [
-          15,
+          23,
           {
             "text": "JACOBS ENGINEERING GROUP INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_47PB5426F0002_4740_47PD0224A0003_4740/"
@@ -489,123 +561,51 @@
           "General Services Administration"
         ],
         [
-          16,
-          {
-            "text": "WATERFLEET, LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_140PS126P0049_1443_-NONE-_-NONE-/"
-          },
-          8000000,
-          "Department of the Interior"
-        ],
-        [
-          17,
-          {
-            "text": "WESTERN PILOT SERVICE INC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_140D0424F0618_1406_140D0424D0068_1406/"
-          },
-          7913433.59,
-          "Department of the Interior"
-        ],
-        [
-          18,
-          {
-            "text": "FRONT LINE EMS LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_75H71222C00021_7527_-NONE-_-NONE-/"
-          },
-          7543200,
-          "Department of Health and Human Services"
-        ],
-        [
-          19,
-          {
-            "text": "MINBURN TECHNOLOGY GROUP, LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C26224F0014_3600_NNG15SD34B_8000/"
-          },
-          7152079.93,
-          "Department of Veterans Affairs"
-        ],
-        [
-          20,
-          {
-            "text": "FEDERAL EXPRESS CORPORATION",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C77027F0004_3600_HTC71123DC023_9700/"
-          },
-          7066533.88,
-          "Department of Veterans Affairs"
-        ],
-        [
-          21,
-          {
-            "text": "GLORY TO THE LORD INVESTMENTS INC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C26223N0634_3600_36C26220D0009_3600/"
-          },
-          6727838.48,
-          "Department of Veterans Affairs"
-        ],
-        [
-          22,
-          {
-            "text": "BLISS PHARMACY SERVICES LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C24722P0008_3600_-NONE-_-NONE-/"
-          },
-          6264076.01,
-          "Department of Veterans Affairs"
-        ],
-        [
-          23,
-          {
-            "text": "MISSION LINEN SUPPLY",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C25822C0011_3600_-NONE-_-NONE-/"
-          },
-          6195945.31,
-          "Department of Veterans Affairs"
-        ],
-        [
           24,
           {
-            "text": "CAPEX CONSTRUCTION LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C77026C0005_3600_-NONE-_-NONE-/"
+            "text": "URBAN INDIAN CENTER OF SALT LAKE",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75H71222C00048_7527_-NONE-_-NONE-/"
           },
-          6170241,
-          "Department of Veterans Affairs"
+          8163863.75,
+          "Department of Health and Human Services"
         ],
         [
           25,
           {
-            "text": "AXON ENTERPRISE, INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C24724N0067_3600_36C10X22D0024_3600/"
+            "text": "AMERICAN VETERAN CONTRACTING SOLUTIONS LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C78624N0038_3600_36C78621D0003_3600/"
           },
-          6101734.88,
+          8006576.94,
           "Department of Veterans Affairs"
         ]
       ]
     }
   ],
   "narrative": {
-    "intro": "The state of Arizona recorded $98.4M in federal contract obligations for FY2027 to date. The state recorded 481 awards with an average award size of $204K. Obligations fell 99.7% year over year. The Department of Veterans Affairs obligated $86.2M, making the Department of Veterans Affairs the dominant buyer so far this fiscal year. FEDEX SUPPLY CHAIN DISTRIBUTION SYSTEM, INC. is the top vendor with $13.8M in obligations, followed by AMERICAN VETERAN CONTRACTING SOLUTIONS LLC at $7.3M and FEDERAL EXPRESS CORPORATION at $7.1M. All Other Business Support Services is the largest industry by obligations at $13.9M, with Couriers and Express Delivery Services at $8.4M and Ambulance Services at $7.7M. Fiscal-year history shows obligations of $15.3B in FY22, $19.8B in FY23, $18B in FY24, $23.7B in FY25, and $31B in FY26. All figures are contract obligations; current-year totals are partial (fiscal year to date).",
+    "intro": "Arizona recorded $143M in federal contract obligations in FY2027 to date. Arizona awarded 921 contracts in the period, with an average award size of $155K. Arizona obligations are down 99.6% year over year. Arizona fiscal history shows much larger totals in recent completed years: FY22 totaled $16.4B, FY23 totaled $20.9B, FY24 totaled $19.3B, FY25 totaled $25.6B, and FY26 totaled $34.7B. Arizona top buyers for FY2027 to date are led by the Department of Veterans Affairs with $94.6M, followed by the Department of Homeland Security with $13.9M and the Department of Health and Human Services with $12M. Arizona top vendors for FY2027 to date include JACOBS ENGINEERING GROUP INC. with $13.7M and FEDEX SUPPLY CHAIN DISTRIBUTION SYSTEM, INC. with $13.5M. Arizona largest industries by obligation in FY2027 to date include Engineering Services at $14M and All Other Business Support Services at $13.7M. All figures are contract obligations; current-year totals are partial (fiscal year to date).",
     "sections": [
       {
-        "heading": "How concentrated is federal buying in Arizona this fiscal year?",
-        "body": "The Department of Veterans Affairs is the largest buyer with $86.2M in obligations. The next largest buyers are the Department of Justice with $3.6M and the Department of Health and Human Services with $3.1M. The top three agencies account for most of the $98.4M total obligations."
+        "heading": "How does FY2027 to date compare with prior fiscal years?",
+        "body": "Arizona FY2027 to date obligations totaled $143M, compared with past-year totals of $16.4B in FY22, $20.9B in FY23, $19.3B in FY24, $25.6B in FY25, and $34.7B in FY26. Arizona obligations are down 99.6% year over year. Arizona award count in FY2027 to date was 921 with an average award size of $155K. Arizona current-year totals are partial because the fiscal year is still in progress."
       },
       {
-        "heading": "Which contractors and industries lead federal spending in Arizona?",
-        "body": "FEDEX SUPPLY CHAIN DISTRIBUTION SYSTEM, INC. leads vendors with $13.8M in obligations, followed by AMERICAN VETERAN CONTRACTING SOLUTIONS LLC at $7.3M and FEDERAL EXPRESS CORPORATION at $7.1M. All Other Business Support Services leads industries with $13.9M, followed by Couriers and Express Delivery Services at $8.4M and Ambulance Services at $7.7M."
+        "heading": "Which agencies and vendors drove FY2027 to date spending in Arizona?",
+        "body": "The Department of Veterans Affairs obligated $94.6M in Arizona, making it the largest buyer for FY2027 to date. The Department of Homeland Security and the Department of Health and Human Services obligated $13.9M and $12M respectively. JACOBS ENGINEERING GROUP INC. and FEDEX SUPPLY CHAIN DISTRIBUTION SYSTEM, INC. are the top vendors, with obligations of $13.7M and $13.5M respectively."
       }
     ]
   },
   "faq": [
     {
       "q": "How much federal contract money goes to Arizona?",
-      "a": "Arizona received $98.4M in federal contract obligations for FY2027 to date. The state recorded 481 awards with an average award size of $204K, and obligations fell 99.7% year over year. Historical annual obligations include $15.3B in FY22, $19.8B in FY23, $18B in FY24, $23.7B in FY25, and $31B in FY26."
+      "a": "Arizona received $143M in federal contract obligations in FY2027 to date. Arizona awarded 921 contracts in the period, with an average award size of $155K. Arizona current-year totals are partial because the fiscal year is still in progress."
     },
     {
       "q": "Which agencies award the most contracts in Arizona?",
-      "a": "The Department of Veterans Affairs awards the most contracts in Arizona with $86.2M in obligations for FY2027 to date. The Department of Justice and the Department of Health and Human Services follow with $3.6M and $3.1M respectively."
+      "a": "The Department of Veterans Affairs awarded the most contracts in Arizona, obligating $94.6M in FY2027 to date. The Department of Homeland Security and the Department of Health and Human Services follow with $13.9M and $12M respectively."
     },
     {
       "q": "Who are the largest federal contractors in Arizona?",
-      "a": "FEDEX SUPPLY CHAIN DISTRIBUTION SYSTEM, INC. is the largest federal contractor in Arizona with $13.8M in obligations for FY2027 to date. AMERICAN VETERAN CONTRACTING SOLUTIONS LLC and FEDERAL EXPRESS CORPORATION follow with $7.3M and $7.1M respectively."
+      "a": "JACOBS ENGINEERING GROUP INC. and FEDEX SUPPLY CHAIN DISTRIBUTION SYSTEM, INC. are the largest federal contractors in Arizona for FY2027 to date. JACOBS ENGINEERING GROUP INC. received $13.7M and FEDEX SUPPLY CHAIN DISTRIBUTION SYSTEM, INC. received $13.5M."
     }
   ],
   "related": [
@@ -639,6 +639,5 @@
       "label": "USAspending.gov award data",
       "href": "https://www.usaspending.gov"
     }
-  ],
-  "noindex": true
+  ]
 }

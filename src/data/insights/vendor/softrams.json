@@ -1,20 +1,20 @@
 {
   "pageType": "vendor",
   "slug": "softrams",
-  "title": "Who Buys From Softrams: $217M in FY2026",
+  "title": "Who Buys From Softrams: $59.3M in FY2027",
   "h1": "Softrams: Federal Contracts, Agencies & Awards",
-  "metaDescription": "Softrams won $217M in federal contract obligations in FY2026 to date. See its top agencies, markets, largest awards, and expiring contracts.",
-  "updated": "2026-09-30",
+  "metaDescription": "Softrams won $59.3M in federal contract obligations in FY2027 to date. See its top agencies, markets, largest awards, and expiring contracts.",
+  "updated": "2026-11-16",
   "fyWindow": {
-    "label": "FY2026 to date",
-    "start": "2025-10-01",
-    "end": "2026-09-30"
+    "label": "FY2027 to date",
+    "start": "2026-10-01",
+    "end": "2026-11-16"
   },
   "stats": {
-    "totalObligations": 216670588.96,
-    "awardCount": 18,
-    "yoyGrowthPct": 4.8,
-    "avgAwardSize": 12037255,
+    "totalObligations": 59322585.05,
+    "awardCount": 3,
+    "yoyGrowthPct": -72.6,
+    "avgAwardSize": 19774195,
     "smallBusinessSharePct": null
   },
   "charts": [
@@ -26,10 +26,6 @@
         {
           "label": "Obligations",
           "points": [
-            [
-              "FY21",
-              70184243.39
-            ],
             [
               "FY22",
               77699034.26
@@ -49,90 +45,66 @@
             [
               "FY26",
               216670588.96
+            ],
+            [
+              "FY27",
+              59322585.05
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Obligations grew 4.8% year over year, from $207M in FY2025 to $217M in FY2026 to date."
+      "takeaway": "Obligations fell 72.6% year over year, from $217M in FY2026 to $59.3M in FY2027 to date."
     },
     {
       "id": "softrams-top-agencies",
       "type": "bar",
-      "title": "Top 10 buying agencies, FY2026 to date",
+      "title": "Top 10 buying agencies, FY2027 to date",
       "series": [
         {
           "label": "Obligations",
           "points": [
             [
               "Department of Health and Human Services",
-              177060746.43
-            ],
-            [
-              "Department of Veterans Affairs",
-              25910028.36
-            ],
-            [
-              "Department of Homeland Security",
-              13428216.83
+              61868101.85
             ],
             [
               "General Services Administration",
-              279456
-            ],
-            [
-              "Department of Defense",
-              500
-            ],
-            [
-              "Department of Labor",
-              -8358.66
+              -2545516.8
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Department of Health and Human Services is Softrams's largest federal customer, with $177M obligated (81.7% of the company's federal obligations)."
+      "takeaway": "Department of Health and Human Services is Softrams's largest federal customer, with $61.9M obligated (104.3% of the company's federal obligations)."
     },
     {
       "id": "softrams-top-naics",
       "type": "bar",
-      "title": "Top 10 markets (NAICS), FY2026 to date",
+      "title": "Top 10 markets (NAICS), FY2027 to date",
       "series": [
         {
           "label": "Obligations",
           "points": [
             [
               "Custom Computer Programming Services",
-              181832265.38
+              35623521.06
             ],
             [
               "Computer Systems Design Services",
-              34837823.58
-            ],
-            [
-              "Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology)",
-              500
+              23699063.98
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Custom Computer Programming Services is Softrams's largest federal market, with $182M in obligations."
+      "takeaway": "Custom Computer Programming Services is Softrams's largest federal market, with $35.6M in obligations."
     }
   ],
   "crossLinks": [
     {
       "label": "Department of Health and Human Services contracts",
       "href": "/insights/agency/department-of-health-and-human-services/"
-    },
-    {
-      "label": "Department of Veterans Affairs contracts",
-      "href": "/insights/agency/department-of-veterans-affairs/"
-    },
-    {
-      "label": "Department of Homeland Security contracts",
-      "href": "/insights/agency/department-of-homeland-security/"
     },
     {
       "label": "General Services Administration contracts",
@@ -145,15 +117,11 @@
     {
       "label": "NAICS 541512: Computer Systems Design Services",
       "href": "/insights/naics/541512/"
-    },
-    {
-      "label": "NAICS 541715: Research and Development in the Physical, Engineering, and Life Sciences",
-      "href": "/insights/naics/541715/"
     }
   ],
   "tables": [
     {
-      "title": "Largest awards, FY2026 to date",
+      "title": "Largest awards, FY2027 to date",
       "columns": [
         "Rank",
         "Award",
@@ -168,9 +136,9 @@
             "text": "75FCMC23F0029",
             "href": "https://www.usaspending.gov/award/CONT_AWD_75FCMC23F0029_7530_47QTCB21D0259_4732/"
           },
-          108808251.64,
+          132507315.62,
           "Department of Health and Human Services",
-          "2026-10-31"
+          "2027-10-31"
         ],
         [
           2,
@@ -178,169 +146,19 @@
             "text": "75FCMC24F0025",
             "href": "https://www.usaspending.gov/award/CONT_AWD_75FCMC24F0025_7530_GS35F372DA_4732/"
           },
-          90054956.09,
+          128223993.96,
           "Department of Health and Human Services",
-          "2027-09-17"
+          "2027-11-10"
         ],
         [
           3,
           {
-            "text": "75FCMC23F0016",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_75FCMC23F0016_7530_GS35F372DA_4732/"
-          },
-          82497262,
-          "Department of Health and Human Services",
-          "2027-02-13"
-        ],
-        [
-          4,
-          {
-            "text": "75FCMC19C0032",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_75FCMC19C0032_7530_-NONE-_-NONE-/"
-          },
-          80678406.66,
-          "Department of Health and Human Services",
-          "2024-08-03"
-        ],
-        [
-          5,
-          {
-            "text": "75FCMC23F0013",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_75FCMC23F0013_7530_GS35F372DA_4732/"
-          },
-          71563857.34,
-          "Department of Health and Human Services",
-          "2029-04-19"
-        ],
-        [
-          6,
-          {
-            "text": "75FCMC24F0108",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_75FCMC24F0108_7530_GS35F372DA_4732/"
-          },
-          57778099.83,
-          "Department of Health and Human Services",
-          "2027-06-04"
-        ],
-        [
-          7,
-          {
-            "text": "75FCMC23F0055",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_75FCMC23F0055_7530_GS35F372DA_4732/"
-          },
-          56880559.75,
-          "Department of Health and Human Services",
-          "2027-05-16"
-        ],
-        [
-          8,
-          {
-            "text": "75FCMC24F0048",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_75FCMC24F0048_7530_GS35F372DA_4732/"
-          },
-          53058838.66,
-          "Department of Health and Human Services",
-          "2029-02-27"
-        ],
-        [
-          9,
-          {
-            "text": "36C10B25F0171",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10B25F0171_3600_GS35F372DA_4732/"
-          },
-          45874127.88,
-          "Department of Veterans Affairs",
-          "2027-07-09"
-        ],
-        [
-          10,
-          {
-            "text": "70SBUR22F00000114",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_70SBUR22F00000114_7003_75N98122D00001_7529/"
-          },
-          27193162.87,
-          "Department of Homeland Security",
-          "2026-12-24"
-        ],
-        [
-          11,
-          {
-            "text": "75FCMC24F0119",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_75FCMC24F0119_7530_GS35F372DA_4732/"
-          },
-          24022516.6,
-          "Department of Health and Human Services",
-          "2027-06-20"
-        ],
-        [
-          12,
-          {
-            "text": "70SBUR26F00000205",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_70SBUR26F00000205_7003_GS35F372DA_4732/"
-          },
-          7674774.17,
-          "Department of Homeland Security",
-          "2027-05-24"
-        ],
-        [
-          13,
-          {
-            "text": "75FCMC21F0022",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_75FCMC21F0022_7530_GS35F372DA_4732/"
-          },
-          7008355.78,
-          "Department of Health and Human Services",
-          "2026-02-24"
-        ],
-        [
-          14,
-          {
-            "text": "1605TA22F00095",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_1605TA22F00095_1605_GS35F372DA_4732/"
-          },
-          5326017.5,
-          "Department of Labor",
-          "2025-06-30"
-        ],
-        [
-          15,
-          {
-            "text": "75FCMC21F0028",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_75FCMC21F0028_7530_GS35F372DA_4732/"
-          },
-          3478599.73,
-          "Department of Health and Human Services",
-          "2026-05-15"
-        ],
-        [
-          16,
-          {
             "text": "47QDCB22F0002",
             "href": "https://www.usaspending.gov/award/CONT_AWD_47QDCB22F0002_4732_47QDCB22A0005_4732/"
           },
-          2545516.8,
+          0,
           "General Services Administration",
           "2026-04-30"
-        ],
-        [
-          17,
-          {
-            "text": "47QACA26F0197",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_47QACA26F0197_4732_GS35F372DA_4732/"
-          },
-          279456,
-          "General Services Administration",
-          "2027-04-30"
-        ],
-        [
-          18,
-          {
-            "text": "HQ085926FF315",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_HQ085926FF315_9700_HQ085926DE667_9700/"
-          },
-          500,
-          "Department of Defense",
-          "2035-12-28"
         ]
       ]
     },
@@ -359,8 +177,8 @@
             "href": "https://www.usaspending.gov/award/CONT_AWD_75FCMC23F0029_7530_47QTCB21D0259_4732/"
           },
           "Department of Health and Human Services",
-          108808251.64,
-          "2026-10-31"
+          132507315.62,
+          "2027-10-31"
         ],
         [
           {
@@ -368,8 +186,8 @@
             "href": "https://www.usaspending.gov/award/CONT_AWD_75FCMC24F0025_7530_GS35F372DA_4732/"
           },
           "Department of Health and Human Services",
-          90054956.09,
-          "2027-09-17"
+          128223993.96,
+          "2027-11-10"
         ],
         [
           {
@@ -462,40 +280,40 @@
         ],
         [
           "Business types",
-          "8a program participant; Category business; Historically underutilized business firm; Limited liability corporation; Minority owned business; Partnership or limited liability partnership"
+          "Category business; Historically underutilized business firm; Limited liability corporation; Minority owned business; Partnership or limited liability partnership; Small business"
         ]
       ]
     }
   ],
   "narrative": {
-    "intro": "Softrams has $217M in contract obligations in FY2026 to date. Softrams has 18 awards and an average award size of $12M. Softrams obligations are up 4.8% year over year. Softrams obligations increased from $70.2M in FY21 to $217M in FY26, with interim totals of $77.7M in FY22, $125M in FY23, $158M in FY24, and $207M in FY25. The Department of Health and Human Services is the largest buying agency for Softrams in FY2026 to date with $177M obligated. The Department of Veterans Affairs has obligated $25.9M, and the Department of Homeland Security has obligated $13.4M. Softrams sells work in Custom Computer Programming Services and Computer Systems Design Services, which have obligations of $182M and $34.8M respectively. The current-year totals are partial (fiscal year to date).",
+    "intro": "In FY2027 to date, Softrams won $59.3M across 3 contract awards. That is down 72.6% year over year. The average award size was $19.8M.",
     "sections": [
       {
-        "heading": "Who are Softrams's top buying agencies?",
-        "body": "The Department of Health and Human Services has obligated $177M to Softrams in FY2026 to date. The Department of Veterans Affairs has obligated $25.9M to Softrams and the Department of Homeland Security has obligated $13.4M to Softrams. The General Services Administration has obligated $279K to Softrams."
+        "heading": "Which agencies buy from Softrams?",
+        "body": "Department of Health and Human Services accounted for $61.9M of Softrams's federal contract obligations in FY2027 to date, or 104.3% of the company's federal work."
       },
       {
-        "heading": "How has Softrams's federal business trended over recent fiscal years?",
-        "body": "Softrams obligations rose from $70.2M in FY21 to $217M in FY26. Softrams had $77.7M in FY22, $125M in FY23, $158M in FY24, and $207M in FY25. Softrams obligations are up 4.8% year over year."
+        "heading": "What does Softrams sell to the government?",
+        "body": "Custom Computer Programming Services is Softrams's largest federal market by obligations, at $35.6M in FY2027 to date, a 60.1% share of its federal business."
       }
     ]
   },
   "faq": [
     {
       "q": "How much does Softrams make from federal contracts?",
-      "a": "Softrams has $217M in federal contract obligations in FY2026 to date. Softrams has 18 awards and an average award size of $12M, and Softrams obligations are up 4.8% year over year."
+      "a": "Softrams won $59.3M in federal contract obligations in FY2027 to date, across 3 awards."
     },
     {
       "q": "Which agencies buy from Softrams?",
-      "a": "The Department of Health and Human Services, the Department of Veterans Affairs, and the Department of Homeland Security are the top buyers of Softrams in FY2026 to date. The Department of Health and Human Services has obligated $177M, the Department of Veterans Affairs has obligated $25.9M, and the Department of Homeland Security has obligated $13.4M. The General Services Administration has obligated $279K."
+      "a": "Department of Health and Human Services is Softrams's largest federal customer, with $61.9M obligated in FY2027 to date."
     },
     {
       "q": "What does Softrams sell to the government?",
-      "a": "Softrams sells Custom Computer Programming Services and Computer Systems Design Services to the government. Custom Computer Programming Services has $182M in obligations and Computer Systems Design Services has $34.8M in obligations."
+      "a": "Softrams's largest federal market is Custom Computer Programming Services, with $35.6M in obligations in FY2027 to date."
     },
     {
       "q": "Which Softrams contracts are expiring soon?",
-      "a": "Softrams has 18 awards in FY2026 to date and an average award size of $12M. The facts do not list a separate expiring-contracts table in the provided figures."
+      "a": "Softrams's largest contract expiring in the next 12 months is a $133M award from Department of Health and Human Services, with a period of performance ending in October 2027."
     }
   ],
   "related": [
@@ -504,28 +322,28 @@
       "href": "/insights/expiring-federal-contracts/"
     },
     {
-      "label": "Eastern Air Express federal contracts",
-      "href": "/insights/vendor/eastern-air-express/"
+      "label": "Veterans Development federal contracts",
+      "href": "/insights/vendor/veterans-development/"
     },
     {
-      "label": "Govcio federal contracts",
-      "href": "/insights/vendor/govcio/"
+      "label": "Richard Group federal contracts",
+      "href": "/insights/vendor/richard-group/"
     },
     {
-      "label": "Reed Technology and Information Services federal contracts",
-      "href": "/insights/vendor/reed-technology-and-information-services/"
+      "label": "Southern Ohio Cleanup federal contracts",
+      "href": "/insights/vendor/southern-ohio-cleanup/"
     },
     {
-      "label": "Us Foods federal contracts",
-      "href": "/insights/vendor/us-foods/"
+      "label": "Ameresco federal contracts",
+      "href": "/insights/vendor/ameresco/"
     },
     {
-      "label": "C J Mahan Construction federal contracts",
-      "href": "/insights/vendor/c-j-mahan-construction/"
+      "label": "Crowley Government Services federal contracts",
+      "href": "/insights/vendor/crowley-government-services/"
     },
     {
-      "label": "Mistral federal contracts",
-      "href": "/insights/vendor/mistral/"
+      "label": "Strategic Storage Partners federal contracts",
+      "href": "/insights/vendor/strategic-storage-partners/"
     }
   ],
   "sources": [
@@ -533,5 +351,6 @@
       "label": "USAspending.gov award data",
       "href": "https://www.usaspending.gov"
     }
-  ]
+  ],
+  "noindex": true
 }

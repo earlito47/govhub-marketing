@@ -1,20 +1,20 @@
 {
   "pageType": "state",
   "slug": "idaho",
-  "title": "Idaho: $4B in Federal Contracts, FY2026",
+  "title": "Idaho: $126M in Federal Contracts, FY2027",
   "h1": "Federal Contracts in Idaho: Spending, Agencies & Vendors",
-  "metaDescription": "Federal agencies obligated $4B to contractors in Idaho in FY2026 to date. See top buying agencies, top vendors, and industries.",
-  "updated": "2026-09-28",
+  "metaDescription": "Federal agencies obligated $126M to contractors in Idaho in FY2027 to date. See top buying agencies, top vendors, and industries.",
+  "updated": "2026-11-16",
   "fyWindow": {
-    "label": "FY2026 to date",
-    "start": "2025-10-01",
-    "end": "2026-09-28"
+    "label": "FY2027 to date",
+    "start": "2026-10-01",
+    "end": "2026-11-16"
   },
   "stats": {
-    "totalObligations": 3968556287.56,
-    "awardCount": 10685,
-    "yoyGrowthPct": 0.5,
-    "avgAwardSize": 371414,
+    "totalObligations": 126135469.83,
+    "awardCount": 225,
+    "yoyGrowthPct": -97,
+    "avgAwardSize": 560602,
     "smallBusinessSharePct": null
   },
   "charts": [
@@ -27,196 +27,196 @@
           "label": "Obligations",
           "points": [
             [
-              "FY21",
-              2835135703.8
-            ],
-            [
               "FY22",
-              2456525116.48
+              2458197058.52
             ],
             [
               "FY23",
-              3209472518.58
+              3209968690.31
             ],
             [
               "FY24",
-              3766556983.86
+              3767126656.5
             ],
             [
               "FY25",
-              3948643185.78
+              3953832229.55
             ],
             [
               "FY26",
-              3968556287.56
+              4264113629.42
+            ],
+            [
+              "FY27",
+              126135469.83
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Obligations grew 0.5% year over year, from $3.9B in FY2025 to $4B in FY2026 to date."
+      "takeaway": "Obligations fell 97.0% year over year, from $4.3B in FY2026 to $126M in FY2027 to date."
     },
     {
       "id": "idaho-top-agencies",
       "type": "bar",
-      "title": "Top 10 buying agencies, FY2026 to date",
+      "title": "Top 10 buying agencies, FY2027 to date",
       "series": [
         {
           "label": "Obligations",
           "points": [
             [
               "Department of Energy",
-              2706799494.13
-            ],
-            [
-              "Department of Agriculture",
-              651542977.27
-            ],
-            [
-              "Department of the Interior",
-              242194872.86
-            ],
-            [
-              "Department of Defense",
-              193916071.3
-            ],
-            [
-              "General Services Administration",
-              57486261.55
-            ],
-            [
-              "Department of Justice",
-              35833912.46
-            ],
-            [
-              "Department of Transportation",
-              30522142.95
+              176893965.72
             ],
             [
               "Department of Veterans Affairs",
-              21178768.38
+              1811160.95
             ],
             [
-              "Department of Homeland Security",
-              13502117.23
+              "Department of the Interior",
+              1349861.85
+            ],
+            [
+              "Department of Justice",
+              799056.8
+            ],
+            [
+              "Department of Transportation",
+              197644.92
+            ],
+            [
+              "General Services Administration",
+              93018.51
             ],
             [
               "Department of Labor",
-              11453566.97
+              60000
+            ],
+            [
+              "Equal Employment Opportunity Commission",
+              0
+            ],
+            [
+              "Department of the Treasury",
+              -2.52
+            ],
+            [
+              "Department of Homeland Security",
+              -31150
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Department of Energy was the top federal buyer in Idaho, obligating $2.7B (68.2% of the state total)."
+      "takeaway": "Department of Energy was the top federal buyer in Idaho, obligating $177M (140.2% of the state total)."
     },
     {
       "id": "idaho-top-vendors",
       "type": "bar",
-      "title": "Top 10 vendors, FY2026 to date",
+      "title": "Top 10 vendors, FY2027 to date",
       "series": [
         {
           "label": "Obligations",
           "points": [
             [
               "BATTELLE ENERGY ALLIANCE, LLC",
-              2132975212.84
+              90496361.83
             ],
             [
               "IDAHO ENVIRONMENTAL COALITION LLC",
-              554780950.88
+              83219200
             ],
             [
-              "PERIMETER SOLUTIONS LP",
-              342065691.72
+              "ALLEGHENY SCIENCE & TECHNOLOGY CORPORATION",
+              3178403.89
             ],
             [
-              "COULSON AVIATION (USA), INC.",
-              65350535.8
-            ],
-            [
-              "LYDIG CONSTRUCTION, INC.",
-              54253859.37
-            ],
-            [
-              "HCPA-GARCO JV1",
-              48149000
-            ],
-            [
-              "AERO AIR, LLC",
-              45983650.65
+              "BILLINGS FLYING SERVICE LLC",
+              2321811.9
             ],
             [
               "AERO-FLITE, INC.",
-              44294799.59
+              1700094.5
             ],
             [
-              "NEPTUNE AVIATION SERVICES, INC.",
-              34142603.97
+              "AERO AIR, LLC",
+              913000
             ],
             [
-              "10 TANKER AIR CARRIER, LLC",
-              31493603.85
+              "VERYON",
+              903239.85
+            ],
+            [
+              "METROPOLITAN SECURITY SERVICES, INC.",
+              799056.8
+            ],
+            [
+              "COULSON AVIATION (USA), INC.",
+              690640
+            ],
+            [
+              "OPTICAL SYSTEMS GROUP, INC.",
+              500840.29
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "BATTELLE ENERGY ALLIANCE, LLC led all contractors in Idaho with $2.1B, 53.7% of the state total."
+      "takeaway": "BATTELLE ENERGY ALLIANCE, LLC led all contractors in Idaho with $90.5M, 71.7% of the state total."
     },
     {
       "id": "idaho-top-naics",
       "type": "bar",
-      "title": "Top 10 industries (NAICS), FY2026 to date",
+      "title": "Top 10 industries (NAICS), FY2027 to date",
       "series": [
         {
           "label": "Obligations",
           "points": [
             [
               "All Other Professional, Scientific, and Technical Services",
-              2143011821.13
+              90496361.83
             ],
             [
               "Remediation Services",
-              561621456.94
-            ],
-            [
-              "All Other Miscellaneous Chemical Product and Preparation Manufacturing",
-              342054462.69
+              83229200
             ],
             [
               "Nonscheduled Chartered Freight Air Transportation",
-              289536752.8
-            ],
-            [
-              "Commercial and Institutional Building Construction",
-              159934286.93
+              5723513.53
             ],
             [
               "Engineering Services",
-              51976929.77
+              3369815.78
             ],
             [
-              "Support Activities for Forestry",
-              45045154.37
+              "Software Publishers",
+              903239.85
             ],
             [
-              "Highway, Street, and Bridge Construction",
-              42739718.14
-            ],
-            [
-              "Nonscheduled Chartered Passenger Air Transportation",
-              37271583.1
+              "Security Guards and Patrol Services",
+              799056.8
             ],
             [
               "Other Computer Related Services",
-              30163910.09
+              715274.36
+            ],
+            [
+              "Electronic and Precision Equipment Repair and Maintenance",
+              456554.98
+            ],
+            [
+              "Food Service Contractors",
+              321300.85
+            ],
+            [
+              "Commercial and Institutional Building Construction",
+              294248.91
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "All Other Professional, Scientific, and Technical Services was the largest industry in Idaho, with $2.1B obligated."
+      "takeaway": "All Other Professional, Scientific, and Technical Services was the largest industry in Idaho, with $90.5M obligated."
     }
   ],
   "crossLinks": [
@@ -225,32 +225,32 @@
       "href": "/insights/agency/department-of-energy/"
     },
     {
-      "label": "Department of Agriculture contracts",
-      "href": "/insights/agency/department-of-agriculture/"
+      "label": "Department of Veterans Affairs contracts",
+      "href": "/insights/agency/department-of-veterans-affairs/"
     },
     {
       "label": "Department of the Interior contracts",
       "href": "/insights/agency/department-of-the-interior/"
     },
     {
-      "label": "Department of Defense contracts",
-      "href": "/insights/agency/department-of-defense/"
+      "label": "Department of Justice contracts",
+      "href": "/insights/agency/department-of-justice/"
     },
     {
       "label": "NAICS 541990: All Other Professional, Scientific, and Technical Services",
       "href": "/insights/naics/541990/"
     },
     {
-      "label": "NAICS 236220: Commercial and Institutional Building Construction",
-      "href": "/insights/naics/236220/"
-    },
-    {
       "label": "NAICS 541330: Engineering Services",
       "href": "/insights/naics/541330/"
     },
     {
-      "label": "NAICS 237310: Highway, Street, and Bridge Construction",
-      "href": "/insights/naics/237310/"
+      "label": "NAICS 561612: Security Guards and Patrol Services",
+      "href": "/insights/naics/561612/"
+    },
+    {
+      "label": "NAICS 541519: Other Computer Related Services",
+      "href": "/insights/naics/541519/"
     }
   ],
   "tables": [
@@ -268,7 +268,7 @@
             "text": "BATTELLE ENERGY ALLIANCE, LLC",
             "href": "https://www.usaspending.gov/recipient/094b64c8-bbe6-5af3-2b26-c52e97d87eba-C/latest/"
           },
-          2132975212.84
+          90496361.83
         ],
         [
           2,
@@ -276,76 +276,76 @@
             "text": "IDAHO ENVIRONMENTAL COALITION LLC",
             "href": "https://www.usaspending.gov/recipient/9728cac1-d53a-87c1-e11e-797e35325b34-C/latest/"
           },
-          554780950.88
+          83219200
         ],
         [
           3,
           {
-            "text": "PERIMETER SOLUTIONS LP",
-            "href": "https://www.usaspending.gov/recipient/d7665c4a-faef-2a5a-e1c1-ac4f097e6df0-C/latest/"
+            "text": "ALLEGHENY SCIENCE & TECHNOLOGY CORPORATION",
+            "href": "https://www.usaspending.gov/recipient/9b5dca84-d2a4-d99f-c734-c26ea0e65fce-C/latest/"
           },
-          342065691.72
+          3178403.89
         ],
         [
           4,
           {
-            "text": "COULSON AVIATION (USA), INC.",
-            "href": "https://www.usaspending.gov/recipient/2a8159a8-cf2c-46d0-cdb9-a0ebea5caa01-C/latest/"
+            "text": "BILLINGS FLYING SERVICE LLC",
+            "href": "https://www.usaspending.gov/recipient/9bec7153-669d-a50f-32e7-75ae8dcb9e97-C/latest/"
           },
-          65350535.8
+          2321811.9
         ],
         [
           5,
           {
-            "text": "LYDIG CONSTRUCTION, INC.",
-            "href": "https://www.usaspending.gov/recipient/95b6844a-f641-a51c-12f0-acc356fa9ef6-C/latest/"
+            "text": "AERO-FLITE, INC.",
+            "href": "https://www.usaspending.gov/recipient/ec5d53c4-2721-05e4-205e-d7bdf5d8cc60-C/latest/"
           },
-          54253859.37
+          1700094.5
         ],
         [
           6,
           {
-            "text": "HCPA-GARCO JV1",
-            "href": "https://www.usaspending.gov/recipient/15e43f6c-fb52-f353-c355-9b8a1eb02b31-C/latest/"
+            "text": "AERO AIR, LLC",
+            "href": "https://www.usaspending.gov/recipient/336c1de6-921c-d078-49e9-53369024e88f-C/latest/"
           },
-          48149000
+          913000
         ],
         [
           7,
           {
-            "text": "AERO AIR, LLC",
-            "href": "https://www.usaspending.gov/recipient/336c1de6-921c-d078-49e9-53369024e88f-C/latest/"
+            "text": "VERYON",
+            "href": "https://www.usaspending.gov/recipient/8ca19df7-1765-599d-243c-322296fdeaad-C/latest/"
           },
-          45983650.65
+          903239.85
         ],
         [
           8,
           {
-            "text": "AERO-FLITE, INC.",
-            "href": "https://www.usaspending.gov/recipient/ec5d53c4-2721-05e4-205e-d7bdf5d8cc60-C/latest/"
+            "text": "METROPOLITAN SECURITY SERVICES, INC.",
+            "href": "https://www.usaspending.gov/recipient/835e42fb-f461-4e30-e17e-3205a1805635-C/latest/"
           },
-          44294799.59
+          799056.8
         ],
         [
           9,
           {
-            "text": "NEPTUNE AVIATION SERVICES, INC.",
-            "href": "https://www.usaspending.gov/recipient/eed91939-9a90-0fdb-cc0a-0f38fdbcfc76-C/latest/"
+            "text": "COULSON AVIATION (USA), INC.",
+            "href": "https://www.usaspending.gov/recipient/2a8159a8-cf2c-46d0-cdb9-a0ebea5caa01-C/latest/"
           },
-          34142603.97
+          690640
         ],
         [
           10,
           {
-            "text": "10 TANKER AIR CARRIER, LLC",
-            "href": "https://www.usaspending.gov/recipient/526ee7db-17ea-d56b-e13f-f201ade91862-C/latest/"
+            "text": "OPTICAL SYSTEMS GROUP, INC.",
+            "href": "https://www.usaspending.gov/recipient/c9a4e264-dee1-28b7-0df9-f5e5fb8c0fa8-C/latest/"
           },
-          31493603.85
+          500840.29
         ]
       ]
     },
     {
-      "title": "Largest awards, FY2026 to date",
+      "title": "Largest awards, FY2027 to date",
       "columns": [
         "Rank",
         "Recipient",
@@ -359,7 +359,7 @@
             "text": "BATTELLE ENERGY ALLIANCE, LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_DEAC0705ID14517_8900_-NONE-_-NONE-/"
           },
-          26444741719.86,
+          26808905230.95,
           "Department of Energy"
         ],
         [
@@ -368,155 +368,29 @@
             "text": "IDAHO ENVIRONMENTAL COALITION LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_89304223FEM400000_8900_89303321DEM000061_8900/"
           },
-          1657305176.37,
+          1740524376.37,
           "Department of Energy"
         ],
         [
           3,
           {
-            "text": "PERIMETER SOLUTIONS LP",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_1202SC26K2503_12C2_1202SC26T2500_12C2/"
+            "text": "WALSH FEDERAL LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_697DCK25F00858_6920_697DCK23G00011_6920/"
           },
-          150000000,
-          "Department of Agriculture"
+          78401653,
+          "Department of Transportation"
         ],
         [
           4,
           {
-            "text": "PERIMETER SOLUTIONS LP",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_140L3726F0073_1422_1202SC26T2500_12C2/"
-          },
-          108000000,
-          "Department of the Interior"
-        ],
-        [
-          5,
-          {
-            "text": "RECORD STEEL AND CONSTRUCTION, INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_W912DW24C0005_9700_-NONE-_-NONE-/"
-          },
-          93590870,
-          "Department of Defense"
-        ],
-        [
-          6,
-          {
-            "text": "PKL SERVICES, INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_FA489722C0015_9700_-NONE-_-NONE-/"
-          },
-          89172532.83,
-          "Department of Defense"
-        ],
-        [
-          7,
-          {
-            "text": "WALSH FEDERAL LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_697DCK25F00858_6920_697DCK23G00011_6920/"
-          },
-          78362474,
-          "Department of Transportation"
-        ],
-        [
-          8,
-          {
-            "text": "PERIMETER SOLUTIONS LP",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_140L3725F0101_1422_1202SC24T2500_12C2/"
-          },
-          69500000,
-          "Department of the Interior"
-        ],
-        [
-          9,
-          {
-            "text": "PERIMETER SOLUTIONS LP",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_140L3724F0148_1422_1202SC24T2500_12C2/"
-          },
-          63752462.09,
-          "Department of the Interior"
-        ],
-        [
-          10,
-          {
-            "text": "LYDIG CONSTRUCTION, INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_47PB5326C0009_4740_-NONE-_-NONE-/"
-          },
-          54253859.37,
-          "General Services Administration"
-        ],
-        [
-          11,
-          {
-            "text": "BSET, LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_FA489023C0013_9700_-NONE-_-NONE-/"
-          },
-          52045852.41,
-          "Department of Defense"
-        ],
-        [
-          12,
-          {
-            "text": "PERIMETER SOLUTIONS LP",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_1202SC26K2501_12C2_1202SC26T2500_12C2/"
-          },
-          49838115.1,
-          "Department of Agriculture"
-        ],
-        [
-          13,
-          {
-            "text": "HCPA-GARCO JV1",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_W912DW26CA024_9700_-NONE-_-NONE-/"
-          },
-          48149000,
-          "Department of Defense"
-        ],
-        [
-          14,
-          {
             "text": "ALLEGHENY SCIENCE & TECHNOLOGY CORPORATION",
             "href": "https://www.usaspending.gov/award/CONT_AWD_89243223FNE400097_8900_GS10F053AA_4732/"
           },
-          47410109.41,
+          51463513.3,
           "Department of Energy"
         ],
         [
-          15,
-          {
-            "text": "PERIMETER SOLUTIONS LP",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_1202SC24K2509_12C2_1202SC24T2500_12C2/"
-          },
-          47324644.59,
-          "Department of Agriculture"
-        ],
-        [
-          16,
-          {
-            "text": "PERIMETER SOLUTIONS LP",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_1202SC25K2504_12C2_1202SC24T2500_12C2/"
-          },
-          46542266.89,
-          "Department of Agriculture"
-        ],
-        [
-          17,
-          {
-            "text": "GENERAL DYNAMICS INFORMATION TECHNOLOGY, INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_N0016721F3000_9700_N0017819D7693_9700/"
-          },
-          41754737.64,
-          "Department of Defense"
-        ],
-        [
-          18,
-          {
-            "text": "PERIMETER SOLUTIONS LP",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_1202SC25K2500_12C2_1202SC24T2500_12C2/"
-          },
-          37810801.02,
-          "Department of Agriculture"
-        ],
-        [
-          19,
+          5,
           {
             "text": "COULSON AVIATION (USA), INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_1202SA24K9116_12C2_1202SA23T9103_12C2/"
@@ -525,7 +399,7 @@
           "Department of Agriculture"
         ],
         [
-          20,
+          6,
           {
             "text": "10 TANKER AIR CARRIER, LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_1202SA24K9112_12C2_1202SA23T9100_12C2/"
@@ -534,16 +408,7 @@
           "Department of Agriculture"
         ],
         [
-          21,
-          {
-            "text": "PERIMETER SOLUTIONS LP",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_1202SC26K2502_12C2_1202SC26T2500_12C2/"
-          },
-          36000000,
-          "Department of Agriculture"
-        ],
-        [
-          22,
+          7,
           {
             "text": "10 TANKER AIR CARRIER, LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_1202SA24K9128_12C2_1202SA23T9100_12C2/"
@@ -552,7 +417,7 @@
           "Department of Agriculture"
         ],
         [
-          23,
+          8,
           {
             "text": "10 TANKER AIR CARRIER, LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_1202SA24K9124_12C2_1202SA23T9100_12C2/"
@@ -561,7 +426,7 @@
           "Department of Agriculture"
         ],
         [
-          24,
+          9,
           {
             "text": "AERO AIR, LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_1202SA24K9115_12C2_1202SA23T9101_12C2/"
@@ -570,42 +435,177 @@
           "Department of Agriculture"
         ],
         [
-          25,
+          10,
+          {
+            "text": "AERO-FLITE, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_1202SA24K9117_12C2_1202SA23T9102_12C2/"
+          },
+          31757884,
+          "Department of Agriculture"
+        ],
+        [
+          11,
+          {
+            "text": "NEPTUNE AVIATION SERVICES, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_1202SA24K9120_12C2_1202SA23T9104_12C2/"
+          },
+          29576174.62,
+          "Department of Agriculture"
+        ],
+        [
+          12,
+          {
+            "text": "AERO-FLITE, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_1202SA24K9122_12C2_1202SA23T9102_12C2/"
+          },
+          29432912.44,
+          "Department of Agriculture"
+        ],
+        [
+          13,
+          {
+            "text": "AERO-FLITE, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_1202SA24K9119_12C2_1202SA23T9102_12C2/"
+          },
+          29284763.97,
+          "Department of Agriculture"
+        ],
+        [
+          14,
+          {
+            "text": "NEPTUNE AVIATION SERVICES, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_1202SA24K9121_12C2_1202SA23T9104_12C2/"
+          },
+          29237493.97,
+          "Department of Agriculture"
+        ],
+        [
+          15,
+          {
+            "text": "NEPTUNE AVIATION SERVICES, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_1202SA24K9118_12C2_1202SA23T9104_12C2/"
+          },
+          28943344.91,
+          "Department of Agriculture"
+        ],
+        [
+          16,
           {
             "text": "COULSON AVIATION (USA), INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_1202SA24K9113_12C2_1202SA23T9103_12C2/"
+            "href": "https://www.usaspending.gov/award/CONT_AWD_1202SA24K9125_12C2_1202SA23T9103_12C2/"
           },
-          31516922.98,
+          28865331.93,
+          "Department of Agriculture"
+        ],
+        [
+          17,
+          {
+            "text": "AERO AIR, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_1202SA24K9114_12C2_1202SA23T9101_12C2/"
+          },
+          28675732.6,
+          "Department of Agriculture"
+        ],
+        [
+          18,
+          {
+            "text": "AERO AIR, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_1202SA24K9129_12C2_1202SA23T9101_12C2/"
+          },
+          28245578.06,
+          "Department of Agriculture"
+        ],
+        [
+          19,
+          {
+            "text": "PERIMETER SOLUTIONS LP",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_1202SC26K2601_12C2_1202SC22T2602_12C2/"
+          },
+          26328521.21,
+          "Department of Agriculture"
+        ],
+        [
+          20,
+          {
+            "text": "AERO AIR, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_1202SA24K9123_12C2_1202SA23T9101_12C2/"
+          },
+          24457497.18,
+          "Department of Agriculture"
+        ],
+        [
+          21,
+          {
+            "text": "PERIMETER SOLUTIONS LP",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_1202SC26K2506_12C2_1202SC26T2500_12C2/"
+          },
+          20623991.59,
+          "Department of Agriculture"
+        ],
+        [
+          22,
+          {
+            "text": "MANAGEMENT & TRAINING CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_1605JW25C0004_1605_-NONE-_-NONE-/"
+          },
+          19987336.89,
+          "Department of Labor"
+        ],
+        [
+          23,
+          {
+            "text": "PRECISION, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_1202SA24K9221_12C2_1202SA23T9285_12C2/"
+          },
+          19042850.87,
+          "Department of Agriculture"
+        ],
+        [
+          24,
+          {
+            "text": "BILLINGS FLYING SERVICE LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_1202SA25K9221_12C2_1202SA25T9203_12C2/"
+          },
+          18891543.93,
+          "Department of Agriculture"
+        ],
+        [
+          25,
+          {
+            "text": "ROTAK LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_1202SA25K9217_12C2_1202SA25T9231_12C2/"
+          },
+          17609880.6,
           "Department of Agriculture"
         ]
       ]
     }
   ],
   "narrative": {
-    "intro": "The State of Idaho recorded $4B in federal contract obligations in FY2026 to date. The Department of Energy obligated $2.7B, making one agency the dominant funding source in the state for the current fiscal year to date. The list of top vendors is led by BATTELLE ENERGY ALLIANCE, LLC with $2.1B in obligations and IDAHO ENVIRONMENTAL COALITION LLC with $555M. The largest industry by NAICS is All Other Professional, Scientific, and Technical Services with $2.1B in obligations, followed by Remediation Services with $562M. The FY2026 total continued a multi-year pattern of growth after FY22, with FY21 at $2.8B, FY22 at $2.5B, FY23 at $3.2B, FY24 at $3.8B, and FY25 at $3.9B. The FY2026 year-over-year change is up 0.5%. The statewide award count reached 10,685 and the average award size was $371K, offering a snapshot of transaction volume and scale for contractors tracking opportunities in Idaho.",
+    "intro": "Federal obligations to Idaho totaled $126M in FY2027 to date. Obligations fell 97.0% year over year. The state received 225 awards with an average award size of $561K. The largest single buyer listed for FY2027 to date is the Department of Energy, which obligated $177M. Top vendors in the current fiscal year include BATTELLE ENERGY ALLIANCE, LLC with $90.5M and IDAHO ENVIRONMENTAL COALITION LLC with $83.2M. All Other Professional, Scientific, and Technical Services is the largest industry by obligations at $90.5M, followed by Remediation Services at $83.2M. Annual context shows obligations by fiscal year of $2.5B in FY22, $3.2B in FY23, $3.8B in FY24, $4B in FY25, $4.3B in FY26, and $126M in FY27. Note that all figures are contract obligations and current-year totals are partial, fiscal year to date.",
     "sections": [
       {
-        "heading": "How concentrated are federal obligations in Idaho this year?",
-        "body": "The Department of Energy obligated $2.7B, concentrating the majority of FY2026 to date spending in a single agency. The top vendor, BATTELLE ENERGY ALLIANCE, LLC, received $2.1B, showing vendor-level concentration as well. The top industries combine to represent large shares, with All Other Professional, Scientific, and Technical Services at $2.1B and Remediation Services at $562M."
+        "heading": "How did FY2027 to date compare with prior years?",
+        "body": "Obligations to Idaho for FY2027 to date were $126M. Obligations fell 97.0% year over year. Fiscal-year context shows prior-year totals of $2.5B in FY22, $3.2B in FY23, $3.8B in FY24, $4B in FY25, and $4.3B in FY26. The FY2027 total is a partial, fiscal year to date number."
       },
       {
-        "heading": "What does recent fiscal-year history show for Idaho contract obligations?",
-        "body": "FY21 obligations were $2.8B and FY22 obligations were $2.5B. FY23 obligations were $3.2B, FY24 obligations were $3.8B, FY25 obligations were $3.9B, and FY26 obligations are $4B. The reported year-over-year change for FY2026 to date is up 0.5%."
+        "heading": "Who are the biggest agencies, vendors, and industries in FY2027 to date?",
+        "body": "The Department of Energy is the largest buying agency with $177M obligated. Top vendors are BATTELLE ENERGY ALLIANCE, LLC with $90.5M and IDAHO ENVIRONMENTAL COALITION LLC with $83.2M. Leading industries are All Other Professional, Scientific, and Technical Services at $90.5M and Remediation Services at $83.2M."
       }
     ]
   },
   "faq": [
     {
       "q": "How much federal contract money goes to Idaho?",
-      "a": "The State of Idaho received $4B in federal contract obligations in FY2026 to date. The State of Idaho had 10,685 awards with an average award size of $371K. The State of Idaho shows FY21 obligations at $2.8B, FY22 at $2.5B, FY23 at $3.2B, FY24 at $3.8B, and FY25 at $3.9B."
+      "a": "Federal obligations to Idaho totaled $126M in FY2027 to date. The state received 225 awards and the average award size was $561K. Note that current-year totals are partial, fiscal year to date."
     },
     {
       "q": "Which agencies award the most contracts in Idaho?",
-      "a": "The Department of Energy awards the most contracts in Idaho, with $2.7B in obligations in FY2026 to date. The Department of Agriculture is second with $652M, followed by the Department of the Interior with $242M and the Department of Defense with $194M."
+      "a": "The Department of Energy awards the most contracts in Idaho in FY2027 to date, with $177M obligated. Other agencies with obligations in FY2027 to date include the Department of Veterans Affairs at $1.8M and the Department of the Interior at $1.3M."
     },
     {
       "q": "Who are the largest federal contractors in Idaho?",
-      "a": "BATTELLE ENERGY ALLIANCE, LLC is the largest federal contractor in Idaho with $2.1B in obligations. IDAHO ENVIRONMENTAL COALITION LLC is the second largest with $555M, and PERIMETER SOLUTIONS LP is third with $342M."
+      "a": "BATTELLE ENERGY ALLIANCE, LLC and IDAHO ENVIRONMENTAL COALITION LLC are the largest federal contractors in Idaho for FY2027 to date, with $90.5M and $83.2M respectively. Other top vendors include ALLEGHENY SCIENCE & TECHNOLOGY CORPORATION at $3.2M and BILLINGS FLYING SERVICE LLC at $2.3M."
     }
   ],
   "related": [

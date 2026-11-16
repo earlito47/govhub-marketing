@@ -3,18 +3,18 @@
   "slug": "general-dynamics-information-technology",
   "title": "General Dynamics Information Technology: Federal Contracts FY2027",
   "h1": "General Dynamics Information Technology: Federal Contracts, Agencies & Awards",
-  "metaDescription": "General Dynamics Information Technology won $79.4M in federal contract obligations in FY2027 to date. See its top agencies, markets, largest awards, and expir",
-  "updated": "2026-10-26",
+  "metaDescription": "General Dynamics Information Technology won $206M in federal contract obligations in FY2027 to date. See its top agencies, markets, largest awards, and expiri",
+  "updated": "2026-11-16",
   "fyWindow": {
     "label": "FY2027 to date",
     "start": "2026-10-01",
-    "end": "2026-10-26"
+    "end": "2026-11-16"
   },
   "stats": {
-    "totalObligations": 79425520.8,
-    "awardCount": 25,
-    "yoyGrowthPct": -98.4,
-    "avgAwardSize": 3177021,
+    "totalObligations": 206410282.53,
+    "awardCount": 62,
+    "yoyGrowthPct": -95.8,
+    "avgAwardSize": 3329198,
     "smallBusinessSharePct": null
   },
   "charts": [
@@ -28,33 +28,33 @@
           "points": [
             [
               "FY22",
-              4094863174.87
+              4100785012.97
             ],
             [
               "FY23",
-              4275174851.42
+              4281615154.65
             ],
             [
               "FY24",
-              4825314471.3
+              4835304632.21
             ],
             [
               "FY25",
-              4621791220.5
+              4626425108.8
             ],
             [
               "FY26",
-              4904833269.16
+              4913092523.52
             ],
             [
               "FY27",
-              79425520.8
+              206410282.53
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Obligations fell 98.4% year over year, from $4.9B in FY2026 to $79.4M in FY2027 to date."
+      "takeaway": "Obligations fell 95.8% year over year, from $4.9B in FY2026 to $206M in FY2027 to date."
     },
     {
       "id": "general-dynamics-information-technology-top-agencies",
@@ -66,37 +66,45 @@
           "points": [
             [
               "Department of Commerce",
-              60488251.95
-            ],
-            [
-              "Department of Transportation",
-              19288028
-            ],
-            [
-              "Environmental Protection Agency",
-              183058.2
-            ],
-            [
-              "Department of Homeland Security",
-              0
+              60968182.5
             ],
             [
               "Department of Health and Human Services",
-              0
+              52603926.54
             ],
             [
               "Department of the Interior",
-              0
+              38744822.52
+            ],
+            [
+              "Department of Transportation",
+              30835230.71
+            ],
+            [
+              "Department of Homeland Security",
+              13962246.7
             ],
             [
               "General Services Administration",
-              -533817.35
+              8873090.36
+            ],
+            [
+              "Environmental Protection Agency",
+              422783.2
+            ],
+            [
+              "Department of Education",
+              0
+            ],
+            [
+              "Department of Labor",
+              0
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Department of Commerce is General Dynamics Information Technology's largest federal customer, with $60.5M obligated (76.2% of the company's federal obligations)."
+      "takeaway": "Department of Commerce is General Dynamics Information Technology's largest federal customer, with $61M obligated (29.5% of the company's federal obligations)."
     },
     {
       "id": "general-dynamics-information-technology-top-naics",
@@ -107,20 +115,36 @@
           "label": "Obligations",
           "points": [
             [
-              "Other Computer Related Services",
-              60488251.95
+              "Computer Systems Design Services",
+              87695789.95
             ],
             [
-              "Computer Systems Design Services",
-              18771888.9
+              "Other Computer Related Services",
+              60500309.95
+            ],
+            [
+              "Pharmacy Benefit Management and Other Third Party Administration of Insurance and Pension Funds",
+              38327205.85
+            ],
+            [
+              "Custom Computer Programming Services",
+              9862782.59
+            ],
+            [
+              "Communication Equipment Repair and Maintenance",
+              6448999.25
+            ],
+            [
+              "Engineering Services",
+              3138580.29
             ],
             [
               "Environmental Consulting Services",
-              198686.19
+              438411.19
             ],
             [
               "Computing Infrastructure Providers, Data Processing, Web Hosting, and Related Services",
-              0
+              225.51
             ],
             [
               "Administrative Management and General Management Consulting Services",
@@ -129,16 +153,12 @@
             [
               "Commercial and Industrial Machinery and Equipment (except Automotive and Electronic) Repair and Maintenance",
               0
-            ],
-            [
-              "Custom Computer Programming Services",
-              -33306.24
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Other Computer Related Services is General Dynamics Information Technology's largest federal market, with $60.5M in obligations."
+      "takeaway": "Computer Systems Design Services is General Dynamics Information Technology's largest federal market, with $87.7M in obligations."
     }
   ],
   "crossLinks": [
@@ -147,32 +167,32 @@
       "href": "/insights/agency/department-of-commerce/"
     },
     {
-      "label": "Department of Transportation contracts",
-      "href": "/insights/agency/department-of-transportation/"
-    },
-    {
-      "label": "Department of Homeland Security contracts",
-      "href": "/insights/agency/department-of-homeland-security/"
-    },
-    {
       "label": "Department of Health and Human Services contracts",
       "href": "/insights/agency/department-of-health-and-human-services/"
     },
     {
-      "label": "NAICS 541519: Other Computer Related Services",
-      "href": "/insights/naics/541519/"
+      "label": "Department of the Interior contracts",
+      "href": "/insights/agency/department-of-the-interior/"
+    },
+    {
+      "label": "Department of Transportation contracts",
+      "href": "/insights/agency/department-of-transportation/"
     },
     {
       "label": "NAICS 541512: Computer Systems Design Services",
       "href": "/insights/naics/541512/"
     },
     {
-      "label": "NAICS 541611: Administrative Management and General Management Consulting Services",
-      "href": "/insights/naics/541611/"
+      "label": "NAICS 541519: Other Computer Related Services",
+      "href": "/insights/naics/541519/"
     },
     {
       "label": "NAICS 541511: Custom Computer Programming Services",
       "href": "/insights/naics/541511/"
+    },
+    {
+      "label": "NAICS 541330: Engineering Services",
+      "href": "/insights/naics/541330/"
     }
   ],
   "tables": [
@@ -189,6 +209,16 @@
         [
           1,
           {
+            "text": "75FCMC25FJ022",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75FCMC25FJ022_7530_47QTCK18D0003_4732/"
+          },
+          583194637,
+          "Department of Health and Human Services",
+          "2027-06-30"
+        ],
+        [
+          2,
+          {
             "text": "47QFMA21F0003",
             "href": "https://www.usaspending.gov/award/CONT_AWD_47QFMA21F0003_4732_47QTCK18D0003_4732/"
           },
@@ -197,17 +227,77 @@
           "2026-01-31"
         ],
         [
-          2,
+          3,
+          {
+            "text": "70RDA124FR0000005",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70RDA124FR0000005_7001_47QTCK18D0003_4732/"
+          },
+          342820034.14,
+          "Department of Homeland Security",
+          "2026-12-30"
+        ],
+        [
+          4,
+          {
+            "text": "DTFAWA10D00003CALL0004",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_DTFAWA10D00003CALL0004_6920_DTFAWA10D00003_6920/"
+          },
+          285606059.04,
+          "Department of Transportation",
+          "2027-10-31"
+        ],
+        [
+          5,
+          {
+            "text": "47QFCA22F0038",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_47QFCA22F0038_4732_47QTCK18D0003_4732/"
+          },
+          226252670.07,
+          "General Services Administration",
+          "2027-01-28"
+        ],
+        [
+          6,
+          {
+            "text": "47QFCA24F0007",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_47QFCA24F0007_4732_GS00Q14OADU116_4732/"
+          },
+          218210605,
+          "General Services Administration",
+          "2027-06-17"
+        ],
+        [
+          7,
+          {
+            "text": "DTFAWA10D00003CALL0005",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_DTFAWA10D00003CALL0005_6920_DTFAWA10D00003_6920/"
+          },
+          125873463.36,
+          "Department of Transportation",
+          "2027-10-31"
+        ],
+        [
+          8,
           {
             "text": "47QFMA25F0016",
             "href": "https://www.usaspending.gov/award/CONT_AWD_47QFMA25F0016_4732_47QTCK18D0003_4732/"
           },
-          120247097.4,
+          123580430.73,
           "General Services Administration",
           "2027-01-31"
         ],
         [
-          3,
+          9,
+          {
+            "text": "140D0425F0725",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_140D0425F0725_1406_140D0424D0001_1406/"
+          },
+          122817425.33,
+          "Department of the Interior",
+          "2027-08-26"
+        ],
+        [
+          10,
           {
             "text": "75FCMC22F0001",
             "href": "https://www.usaspending.gov/award/CONT_AWD_75FCMC22F0001_7530_HHSM500201600005I_7530/"
@@ -217,7 +307,27 @@
           "2027-01-14"
         ],
         [
-          4,
+          11,
+          {
+            "text": "75D30126C20710",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75D30126C20710_7523_-NONE-_-NONE-/"
+          },
+          66233964.35,
+          "Department of Health and Human Services",
+          "2027-10-29"
+        ],
+        [
+          12,
+          {
+            "text": "140D0426F0370",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_140D0426F0370_1406_140D0424D0001_1406/"
+          },
+          63045885.86,
+          "Department of the Interior",
+          "2028-11-08"
+        ],
+        [
+          13,
           {
             "text": "1333BJ27C00280001",
             "href": "https://www.usaspending.gov/award/CONT_AWD_1333BJ27C00280001_1344_-NONE-_-NONE-/"
@@ -227,7 +337,77 @@
           "2027-09-30"
         ],
         [
-          5,
+          14,
+          {
+            "text": "DTFAWA10D00003CALL0002",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_DTFAWA10D00003CALL0002_6920_DTFAWA10D00003_6920/"
+          },
+          59579150.77,
+          "Department of Transportation",
+          "2027-10-31"
+        ],
+        [
+          15,
+          {
+            "text": "91990026F0033",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_91990026F0033_9100_HHSN316201200023W_7529/"
+          },
+          33242038.92,
+          "Department of Education",
+          "2027-04-30"
+        ],
+        [
+          16,
+          {
+            "text": "70FBTX26F00000003",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70FBTX26F00000003_7022_70FBTX21A00000001_7022/"
+          },
+          30905280,
+          "Department of Homeland Security",
+          "2026-12-07"
+        ],
+        [
+          17,
+          {
+            "text": "47QFSA23F0020",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_47QFSA23F0020_4732_47QTCA21A0001_4732/"
+          },
+          28831063.33,
+          "General Services Administration",
+          "2027-03-09"
+        ],
+        [
+          18,
+          {
+            "text": "70RDA126FR0000001",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70RDA126FR0000001_7001_47QTCK18D0003_4732/"
+          },
+          28736317.13,
+          "Department of Homeland Security",
+          "2027-05-04"
+        ],
+        [
+          19,
+          {
+            "text": "75N97019F00065",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75N97019F00065_7529_HHSN316201200013W_7529/"
+          },
+          26509467,
+          "Department of Health and Human Services",
+          "2024-08-31"
+        ],
+        [
+          20,
+          {
+            "text": "47QFSA21F0112",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_47QFSA21F0112_4732_47QTCK18D0003_4732/"
+          },
+          22668858.8,
+          "General Services Administration",
+          "2027-09-18"
+        ],
+        [
+          21,
           {
             "text": "693KA726F00021",
             "href": "https://www.usaspending.gov/award/CONT_AWD_693KA726F00021_6920_693KA718D00001_6920/"
@@ -237,7 +417,7 @@
           "2027-09-22"
         ],
         [
-          6,
+          22,
           {
             "text": "GSQ0317DS0036",
             "href": "https://www.usaspending.gov/award/CONT_AWD_GSQ0317DS0036_4732_GS00Q09BGD0025_4735/"
@@ -247,7 +427,7 @@
           "2022-12-04"
         ],
         [
-          7,
+          23,
           {
             "text": "75N94025F00103",
             "href": "https://www.usaspending.gov/award/CONT_AWD_75N94025F00103_7529_GS35F393CA_4732/"
@@ -257,7 +437,7 @@
           "2027-09-29"
         ],
         [
-          8,
+          24,
           {
             "text": "47QFSA24F0054",
             "href": "https://www.usaspending.gov/award/CONT_AWD_47QFSA24F0054_4732_47QTCK18D0003_4732/"
@@ -267,174 +447,14 @@
           "2027-06-30"
         ],
         [
-          9,
-          {
-            "text": "47QFSA24F0091",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_47QFSA24F0091_4732_47QTCA21A0001_4732/"
-          },
-          14115496.53,
-          "General Services Administration",
-          "2026-12-12"
-        ],
-        [
-          10,
-          {
-            "text": "75FCMC26F0089",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_75FCMC26F0089_7530_GS35F393CA_4732/"
-          },
-          8490348.27,
-          "Department of Health and Human Services",
-          "2027-02-08"
-        ],
-        [
-          11,
-          {
-            "text": "70SBUR26F00000153",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_70SBUR26F00000153_7003_GS35F393CA_4732/"
-          },
-          8439840,
-          "Department of Homeland Security",
-          "2027-04-30"
-        ],
-        [
-          12,
-          {
-            "text": "68HERH25F0078",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_68HERH25F0078_6800_47QTCK18D0003_4732/"
-          },
-          6275257.6,
-          "Environmental Protection Agency",
-          "2027-01-31"
-        ],
-        [
-          13,
-          {
-            "text": "70SBUR25F00000086",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_70SBUR25F00000086_7003_70SBUR24D00000002_7003/"
-          },
-          5810580.38,
-          "Department of Homeland Security",
-          "2026-11-15"
-        ],
-        [
-          14,
-          {
-            "text": "140D0426F0754",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_140D0426F0754_1406_140D0424A0016_1406/"
-          },
-          4735074.64,
-          "Department of the Interior",
-          "2027-08-02"
-        ],
-        [
-          15,
-          {
-            "text": "47QFSA25F0052",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_47QFSA25F0052_4732_47QTCA21A0001_4732/"
-          },
-          3090755.72,
-          "General Services Administration",
-          "2027-09-14"
-        ],
-        [
-          16,
-          {
-            "text": "140D0426F0160",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_140D0426F0160_1406_47QTCK18D0003_4732/"
-          },
-          2911932.42,
-          "Department of the Interior",
-          "2027-03-02"
-        ],
-        [
-          17,
-          {
-            "text": "68HERD24F0087",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_68HERD24F0087_6800_68HERD24A0001_6800/"
-          },
-          1714534.02,
-          "Environmental Protection Agency",
-          "2027-07-02"
-        ],
-        [
-          18,
-          {
-            "text": "70B06C26F00000882",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_70B06C26F00000882_7014_70B06C23D00000013_7014/"
-          },
-          1598603.78,
-          "Department of Homeland Security",
-          "2027-09-14"
-        ],
-        [
-          19,
-          {
-            "text": "68HERW26F0001",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_68HERW26F0001_6800_68HERC23D0008_6800/"
-          },
-          1414316.74,
-          "Environmental Protection Agency",
-          "2027-01-08"
-        ],
-        [
-          20,
-          {
-            "text": "68HERC25F0151",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_68HERC25F0151_6800_68HERC23D0002_6800/"
-          },
-          1152151.94,
-          "Environmental Protection Agency",
-          "2027-04-30"
-        ],
-        [
-          21,
-          {
-            "text": "68HERC23F0073",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_68HERC23F0073_6800_68HERC23D0002_6800/"
-          },
-          597726.05,
-          "Environmental Protection Agency",
-          "2027-01-31"
-        ],
-        [
-          22,
-          {
-            "text": "68HERC26F0025",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_68HERC26F0025_6800_68HERC23D0002_6800/"
-          },
-          410000,
-          "Environmental Protection Agency",
-          "2026-11-16"
-        ],
-        [
-          23,
-          {
-            "text": "692M1523F00118",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_692M1523F00118_6920_DTFACT15D00003_6920/"
-          },
-          402892.39,
-          "Department of Transportation",
-          "2026-10-19"
-        ],
-        [
-          24,
-          {
-            "text": "68HERC23F0071",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_68HERC23F0071_6800_68HERC23D0002_6800/"
-          },
-          376751.46,
-          "Environmental Protection Agency",
-          "2027-01-31"
-        ],
-        [
           25,
           {
-            "text": "68HERC25F0013",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_68HERC25F0013_6800_68HERC23D0002_6800/"
+            "text": "1331L524F13ES0024",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_1331L524F13ES0024_1301_1331L523A13ES0071_1301/"
           },
-          127432.4,
-          "Environmental Protection Agency",
-          "2026-10-14"
+          16394575.34,
+          "Department of Commerce",
+          "2027-02-28"
         ]
       ]
     },
@@ -453,7 +473,7 @@
             "href": "https://www.usaspending.gov/award/CONT_AWD_75FCMC25FJ022_7530_47QTCK18D0003_4732/"
           },
           "Department of Health and Human Services",
-          568916959,
+          583194637,
           "2027-06-30"
         ],
         [
@@ -498,8 +518,8 @@
             "href": "https://www.usaspending.gov/award/CONT_AWD_DTFAWA10D00003CALL0004_6920_DTFAWA10D00003_6920/"
           },
           "Department of Transportation",
-          280524036.64,
-          "2026-10-31"
+          285606059.04,
+          "2027-10-31"
         ],
         [
           {
@@ -566,34 +586,34 @@
     }
   ],
   "narrative": {
-    "intro": "General Dynamics Information Technology obligated $79.4M in FY2027 to date across 25 awards, with an average award size of $3.2M. Obligations fell 98.4% year over year compared with recent full years. Fiscal-year obligations in prior full years were much larger: FY22 was $4.1B, FY23 was $4.3B, FY24 was $4.8B, FY25 was $4.6B, and FY26 was $4.9B. The Department of Commerce accounted for most FY2027 to date obligations at $60.5M, followed by the Department of Transportation at $19.3M and the Environmental Protection Agency at $183K. Other Computer Related Services was the largest market by obligations at $60.5M, followed by Computer Systems Design Services at $18.8M and Environmental Consulting Services at $199K. Current-year totals are partial and represent fiscal year to date activity rather than a full year.",
+    "intro": "General Dynamics Information Technology obligated $206M in federal contract obligations in FY2027 to date, spread across 62 awards with an average award size of $3.3M. Obligations fell 95.8% year over year. Annual context shows much larger prior years: FY22 obligations were $4.1B, FY23 were $4.3B, FY24 were $4.8B, FY25 were $4.6B, and FY26 were $4.9B. The FY2027 total is a partial, fiscal year to date figure and represents a sharp reduction from the prior fiscal year totals. Top buying agencies in FY2027 to date are the Department of Commerce with $61M and the Department of Health and Human Services with $52.6M, followed by the Department of the Interior with $38.7M and the Department of Transportation with $30.8M. Top markets by NAICS in FY2027 to date are Computer Systems Design Services with $87.7M and Other Computer Related Services with $60.5M. This snapshot highlights where current-year federal spending for General Dynamics Information Technology is concentrated and how it compares to recent full fiscal-year levels.",
     "sections": [
       {
-        "heading": "Why did obligations drop so much in FY2027 to date?",
-        "body": "Obligations fell 98.4% year over year. Recent full-year totals were FY22 $4.1B, FY23 $4.3B, FY24 $4.8B, FY25 $4.6B, and FY26 $4.9B, compared with FY27 at $79.4M. Concentration of FY2027 to date obligations in a few agencies and markets helps explain the low total: the Department of Commerce obligated $60.5M and Other Computer Related Services accounted for $60.5M. The FY2027 totals are partial and represent fiscal year to date activity."
+        "heading": "Why are FY2027 obligations much lower than prior years?",
+        "body": "General Dynamics Information Technology obligated $206M in FY2027 to date, down 95.8% year over year. Prior full fiscal years show obligations between $4.1B and $4.9B, so the current-year total is a partial figure and not comparable to full-year totals. The drop indicates fewer or smaller awards to date rather than a guaranteed annual trend. Watch award flow and timing for the rest of the fiscal year to see whether obligations pick up."
       },
       {
-        "heading": "Which agencies and markets are driving FY2027 to date obligations?",
-        "body": "The Department of Commerce is the top buying agency at $60.5M, followed by the Department of Transportation at $19.3M and the Environmental Protection Agency at $183K. Other Computer Related Services is the top NAICS market at $60.5M, followed by Computer Systems Design Services at $18.8M and Environmental Consulting Services at $199K."
+        "heading": "Where is FY2027 spending concentrated?",
+        "body": "Department of Commerce is the largest buyer in FY2027 to date with $61M, followed by the Department of Health and Human Services with $52.6M and the Department of the Interior with $38.7M. Computer Systems Design Services is the largest NAICS market with $87.7M, and Other Computer Related Services follows with $60.5M. These agencies and markets account for most of the FY2027 to date obligations."
       }
     ]
   },
   "faq": [
     {
       "q": "How much does General Dynamics Information Technology make from federal contracts?",
-      "a": "General Dynamics Information Technology obligated $79.4M in federal contracts in FY2027 to date. General Dynamics Information Technology won 25 awards so far this fiscal year with an average award size of $3.2M. The company’s FY2027 to date obligations are down 98.4% year over year compared with recent full-year levels."
+      "a": "Answer: General Dynamics Information Technology obligated $206M in federal contract obligations in FY2027 to date. The company received 62 awards so far, with an average award size of $3.3M, and obligations are down 95.8% year over year compared with prior fiscal years."
     },
     {
       "q": "Which agencies buy from General Dynamics Information Technology?",
-      "a": "The Department of Commerce is the top buyer of General Dynamics Information Technology in FY2027 to date, obligating $60.5M. The Department of Transportation obligated $19.3M and the Environmental Protection Agency obligated $183K."
+      "a": "Answer: Department of Commerce is the top buyer in FY2027 to date with $61M. Other major buyers in FY2027 to date are the Department of Health and Human Services with $52.6M, the Department of the Interior with $38.7M, and the Department of Transportation with $30.8M."
     },
     {
       "q": "What does General Dynamics Information Technology sell to the government?",
-      "a": "General Dynamics Information Technology is selling primarily computer and IT services to the government in FY2027 to date. Other Computer Related Services accounted for $60.5M and Computer Systems Design Services accounted for $18.8M, with Environmental Consulting Services at $199K."
+      "a": "Answer: Computer Systems Design Services and Other Computer Related Services are the largest markets in FY2027 to date with $87.7M and $60.5M respectively. Pharmacy Benefit Management and Other Third Party Administration of Insurance and Pension Funds is also a notable market with $38.3M, and the profile includes Custom Computer Programming Services at $9.9M."
     },
     {
       "q": "Which General Dynamics Information Technology contracts are expiring soon?",
-      "a": "The provided FACTS do not list specific expiring contracts or award values for expiring work. The page documents FY2027 to date obligations, buying agencies, and markets, but does not include an expiring-contracts table in the summarized figures."
+      "a": "Answer: The provided data does not list expiring-contract details or award-value expiration dates. The dataset shows FY2027 to date obligations and top agencies and markets, but no expiring-contract table or expiration dates are included."
     }
   ],
   "related": [
@@ -602,28 +622,28 @@
       "href": "/insights/expiring-federal-contracts/"
     },
     {
-      "label": "Lumen Technologies Government Solutions federal contracts",
-      "href": "/insights/vendor/lumen-technologies-government-solutions/"
+      "label": "At and T Enterprises federal contracts",
+      "href": "/insights/vendor/at-and-t-enterprises/"
+    },
+    {
+      "label": "Signature Choice Iii federal contracts",
+      "href": "/insights/vendor/signature-choice-iii/"
+    },
+    {
+      "label": "Mission Support and Test Services federal contracts",
+      "href": "/insights/vendor/mission-support-and-test-services/"
+    },
+    {
+      "label": "California Institute of Technology federal contracts",
+      "href": "/insights/vendor/california-institute-of-technology/"
+    },
+    {
+      "label": "Thundercat Technology federal contracts",
+      "href": "/insights/vendor/thundercat-technology/"
     },
     {
       "label": "Johns Hopkins University Applied Physics Laboratory federal contracts",
       "href": "/insights/vendor/johns-hopkins-university-applied-physics-laboratory/"
-    },
-    {
-      "label": "Uchicago Argonne federal contracts",
-      "href": "/insights/vendor/uchicago-argonne/"
-    },
-    {
-      "label": "Federal Express federal contracts",
-      "href": "/insights/vendor/federal-express/"
-    },
-    {
-      "label": "Ameresco federal contracts",
-      "href": "/insights/vendor/ameresco/"
-    },
-    {
-      "label": "Science Applications International federal contracts",
-      "href": "/insights/vendor/science-applications-international/"
     }
   ],
   "sources": [
@@ -631,6 +651,5 @@
       "label": "USAspending.gov award data",
       "href": "https://www.usaspending.gov"
     }
-  ],
-  "noindex": true
+  ]
 }

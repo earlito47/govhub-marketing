@@ -1,20 +1,20 @@
 {
   "pageType": "state",
   "slug": "california",
-  "title": "California: $524M in Federal Contracts, FY2027",
+  "title": "California: $1.8B in Federal Contracts, FY2027",
   "h1": "Federal Contracts in California: Spending, Agencies & Vendors",
-  "metaDescription": "Federal agencies obligated $524M to contractors in California in FY2027 to date. See top buying agencies, top vendors, and industries.",
-  "updated": "2026-10-26",
+  "metaDescription": "Federal agencies obligated $1.8B to contractors in California in FY2027 to date. See top buying agencies, top vendors, and industries.",
+  "updated": "2026-11-16",
   "fyWindow": {
     "label": "FY2027 to date",
     "start": "2026-10-01",
-    "end": "2026-10-26"
+    "end": "2026-11-16"
   },
   "stats": {
-    "totalObligations": 523722760.47,
-    "awardCount": 4436,
-    "yoyGrowthPct": -99.1,
-    "avgAwardSize": 118062,
+    "totalObligations": 1822710071.28,
+    "awardCount": 8351,
+    "yoyGrowthPct": -96.9,
+    "avgAwardSize": 218262,
     "smallBusinessSharePct": null
   },
   "charts": [
@@ -28,33 +28,33 @@
           "points": [
             [
               "FY22",
-              57535406201.48
+              58447801566.2
             ],
             [
               "FY23",
-              61450337706.67
+              63095873637.08
             ],
             [
               "FY24",
-              61720329253.92
+              63244883659.62
             ],
             [
               "FY25",
-              62041841036.76
+              63153054829.47
             ],
             [
               "FY26",
-              57527786441.54
+              59061650053.97
             ],
             [
               "FY27",
-              523722760.47
+              1822710071.28
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Obligations fell 99.1% year over year, from $57.5B in FY2026 to $524M in FY2027 to date."
+      "takeaway": "Obligations fell 96.9% year over year, from $59.1B in FY2026 to $1.8B in FY2027 to date."
     },
     {
       "id": "california-top-agencies",
@@ -65,50 +65,50 @@
           "label": "Obligations",
           "points": [
             [
-              "Department of Veterans Affairs",
-              251216986.2
+              "Department of Energy",
+              835547392.68
             ],
             [
               "National Aeronautics and Space Administration",
-              204875161.57
+              418975205
             ],
             [
-              "Department of Justice",
-              17787461.09
+              "Department of Veterans Affairs",
+              361550635.04
             ],
             [
               "General Services Administration",
-              16996111.35
+              53702439.32
             ],
             [
-              "Department of the Interior",
-              13212042.57
-            ],
-            [
-              "Department of the Treasury",
-              6013397.63
-            ],
-            [
-              "Environmental Protection Agency",
-              5725164.95
-            ],
-            [
-              "Department of Agriculture",
-              4662025.01
+              "Department of Justice",
+              47044755.56
             ],
             [
               "Department of Health and Human Services",
-              2739884.11
+              28034790.02
             ],
             [
-              "National Labor Relations Board",
-              307494.61
+              "Department of Homeland Security",
+              22587561.72
+            ],
+            [
+              "Department of Agriculture",
+              20570240.75
+            ],
+            [
+              "Department of the Interior",
+              14208099.1
+            ],
+            [
+              "Department of the Treasury",
+              5985932.24
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Department of Veterans Affairs was the top federal buyer in California, obligating $251M (48.0% of the state total)."
+      "takeaway": "Department of Energy was the top federal buyer in California, obligating $836M (45.8% of the state total)."
     },
     {
       "id": "california-top-vendors",
@@ -119,50 +119,50 @@
           "label": "Obligations",
           "points": [
             [
+              "LAWRENCE LIVERMORE NATIONAL SECURITY, LLC",
+              550394716.32
+            ],
+            [
               "CALIFORNIA INSTITUTE OF TECHNOLOGY",
-              128484666
+              206322983.53
+            ],
+            [
+              "THE REGENTS OF THE UNIVERSITY OF CALIFORNIA",
+              161620600.78
+            ],
+            [
+              "THE LELAND STANFORD JUNIOR UNIVERSITY",
+              131723909.7
+            ],
+            [
+              "ELEVATED TECHNOLOGIES SERVICES, LLC",
+              56991150
+            ],
+            [
+              "AEROJET ROCKETDYNE OF DE, INC",
+              53422103
             ],
             [
               "IMPULSE SPACE, INC.",
               37130000
             ],
             [
-              "BECKMAN COULTER, INC",
-              27434991.26
+              "ROCKET LAB USA INC",
+              28901223
             ],
             [
               "CEPHEID",
-              24652211.03
+              27841694.63
             ],
             [
-              "NW CONSTRUCTION, INC",
-              11685361.99
-            ],
-            [
-              "SERVEXO",
-              10304209.14
-            ],
-            [
-              "SEA PAC ENGINEERING INC",
-              8243000
-            ],
-            [
-              "QUEST DIAGNOSTICS INCORPORATED",
-              7980993.73
-            ],
-            [
-              "ONE LIFE TRANSPORTATION LLC",
-              7739607.55
-            ],
-            [
-              "VARIAN MEDICAL SYSTEMS, INC",
-              6638491.96
+              "BECKMAN COULTER, INC",
+              27713223.59
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "CALIFORNIA INSTITUTE OF TECHNOLOGY led all contractors in California with $128M, 24.5% of the state total."
+      "takeaway": "LAWRENCE LIVERMORE NATIONAL SECURITY, LLC led all contractors in California with $550M, 30.2% of the state total."
     },
     {
       "id": "california-top-naics",
@@ -173,64 +173,64 @@
           "label": "Obligations",
           "points": [
             [
-              "Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology)",
-              146573327.64
+              "Research and Development in the Physical, Engineering, and Life Sciences",
+              841691898.1
             ],
             [
-              "Analytical Laboratory Instrument Manufacturing",
-              45997522.53
+              "Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology)",
+              253725416.11
             ],
             [
               "Nonscheduled Chartered Freight Air Transportation",
-              43622581.76
+              74505235.76
             ],
             [
-              "In-Vitro Diagnostic Substance Manufacturing",
-              18568017.39
+              "Research and Development in the Physical, Engineering, and Life Sciences (except Biotechnology)",
+              64402735.64
             ],
             [
-              "Security Guards and Patrol Services",
-              17660089.57
+              "Other Building Equipment Contractors",
+              54908385.4
+            ],
+            [
+              "Analytical Laboratory Instrument Manufacturing",
+              48150484.71
             ],
             [
               "Other Computer Related Services",
-              15941366.41
+              36314069.86
             ],
             [
               "Commercial and Institutional Building Construction",
-              14720133.22
+              35087929.13
             ],
             [
-              "Temporary Help Services",
-              13812395.49
+              "Security Guards and Patrol Services",
+              31863688.22
             ],
             [
-              "Facilities Support Services",
-              13177835.53
-            ],
-            [
-              "Medical Laboratories",
-              12779826.15
+              "Engineering Services",
+              28728691.75
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology) was the largest industry in California, with $147M obligated."
+      "takeaway": "Research and Development in the Physical, Engineering, and Life Sciences was the largest industry in California, with $842M obligated."
     }
   ],
   "crossLinks": [
     {
-      "label": "Department of Veterans Affairs contracts",
-      "href": "/insights/agency/department-of-veterans-affairs/"
+      "label": "Department of Energy contracts",
+      "href": "/insights/agency/department-of-energy/"
     },
     {
       "label": "National Aeronautics and Space Administration contracts",
       "href": "/insights/agency/national-aeronautics-and-space-administration/"
     },
     {
-      "label": "Department of Justice contracts",
-      "href": "/insights/agency/department-of-justice/"
+      "label": "Department of Veterans Affairs contracts",
+      "href": "/insights/agency/department-of-veterans-affairs/"
     },
     {
       "label": "General Services Administration contracts",
@@ -241,16 +241,16 @@
       "href": "/insights/naics/541715/"
     },
     {
-      "label": "NAICS 561612: Security Guards and Patrol Services",
-      "href": "/insights/naics/561612/"
-    },
-    {
       "label": "NAICS 541519: Other Computer Related Services",
       "href": "/insights/naics/541519/"
     },
     {
       "label": "NAICS 236220: Commercial and Institutional Building Construction",
       "href": "/insights/naics/236220/"
+    },
+    {
+      "label": "NAICS 561612: Security Guards and Patrol Services",
+      "href": "/insights/naics/561612/"
     }
   ],
   "tables": [
@@ -265,13 +265,53 @@
         [
           1,
           {
-            "text": "CALIFORNIA INSTITUTE OF TECHNOLOGY",
-            "href": "https://www.usaspending.gov/recipient/6e76fa33-2d96-c636-941c-bca1997db076-C/latest/"
+            "text": "LAWRENCE LIVERMORE NATIONAL SECURITY, LLC",
+            "href": "https://www.usaspending.gov/recipient/6d990129-9566-ff86-e9ae-7c6eeef1df7c-C/latest/"
           },
-          128484666
+          550394716.32
         ],
         [
           2,
+          {
+            "text": "CALIFORNIA INSTITUTE OF TECHNOLOGY",
+            "href": "https://www.usaspending.gov/recipient/6e76fa33-2d96-c636-941c-bca1997db076-C/latest/"
+          },
+          206322983.53
+        ],
+        [
+          3,
+          {
+            "text": "THE REGENTS OF THE UNIVERSITY OF CALIFORNIA",
+            "href": "https://www.usaspending.gov/recipient/9df6f273-648d-cf72-c4ef-346f414c585c-C/latest/"
+          },
+          161620600.78
+        ],
+        [
+          4,
+          {
+            "text": "THE LELAND STANFORD JUNIOR UNIVERSITY",
+            "href": "https://www.usaspending.gov/recipient/0c13d643-4334-38ed-1952-0db7e2ac5e56-C/latest/"
+          },
+          131723909.7
+        ],
+        [
+          5,
+          {
+            "text": "ELEVATED TECHNOLOGIES SERVICES, LLC",
+            "href": "https://www.usaspending.gov/recipient/b92ede72-d0f6-0409-281a-6ffa28b39760-C/latest/"
+          },
+          56991150
+        ],
+        [
+          6,
+          {
+            "text": "AEROJET ROCKETDYNE OF DE, INC",
+            "href": "https://www.usaspending.gov/recipient/f87ea7aa-b645-2932-36c2-e89cb4e9a016-C/latest/"
+          },
+          53422103
+        ],
+        [
+          7,
           {
             "text": "IMPULSE SPACE, INC.",
             "href": "https://www.usaspending.gov/recipient/e65ac258-fc58-864a-a7bd-2fc374a50731-C/latest/"
@@ -279,68 +319,28 @@
           37130000
         ],
         [
-          3,
-          {
-            "text": "BECKMAN COULTER, INC",
-            "href": "https://www.usaspending.gov/recipient/790cc276-b1e8-5d50-e48e-4b2a8304b4b5-C/latest/"
-          },
-          27434991.26
-        ],
-        [
-          4,
-          {
-            "text": "CEPHEID",
-            "href": "https://www.usaspending.gov/recipient/f6397cdb-c833-3628-6fb3-a38803b567f6-C/latest/"
-          },
-          24652211.03
-        ],
-        [
-          5,
-          {
-            "text": "NW CONSTRUCTION, INC",
-            "href": "https://www.usaspending.gov/recipient/e130b27b-e353-3fa4-e8d1-31e07705bef6-C/latest/"
-          },
-          11685361.99
-        ],
-        [
-          6,
-          {
-            "text": "SERVEXO",
-            "href": "https://www.usaspending.gov/recipient/a64c42ab-cf81-e5f0-0879-cadf24c71a77-C/latest/"
-          },
-          10304209.14
-        ],
-        [
-          7,
-          {
-            "text": "SEA PAC ENGINEERING INC",
-            "href": "https://www.usaspending.gov/recipient/43dd0b52-6616-37b6-b9a7-8da65fdbff34-C/latest/"
-          },
-          8243000
-        ],
-        [
           8,
           {
-            "text": "QUEST DIAGNOSTICS INCORPORATED",
-            "href": "https://www.usaspending.gov/recipient/a9415e64-b17c-f292-0379-5ac52f31d54a-C/latest/"
+            "text": "ROCKET LAB USA INC",
+            "href": "https://www.usaspending.gov/recipient/9669604f-4d27-3568-c3df-ff74486a93ea-C/latest/"
           },
-          7980993.73
+          28901223
         ],
         [
           9,
           {
-            "text": "ONE LIFE TRANSPORTATION LLC",
-            "href": "https://www.usaspending.gov/recipient/d848ebc1-19e1-1126-bbab-b98671cced47-C/latest/"
+            "text": "CEPHEID",
+            "href": "https://www.usaspending.gov/recipient/f6397cdb-c833-3628-6fb3-a38803b567f6-C/latest/"
           },
-          7739607.55
+          27841694.63
         ],
         [
           10,
           {
-            "text": "VARIAN MEDICAL SYSTEMS, INC",
-            "href": "https://www.usaspending.gov/recipient/4d08c983-54ee-c957-54b2-65e0bb397aba-C/latest/"
+            "text": "BECKMAN COULTER, INC",
+            "href": "https://www.usaspending.gov/recipient/790cc276-b1e8-5d50-e48e-4b2a8304b4b5-C/latest/"
           },
-          6638491.96
+          27713223.59
         ]
       ]
     },
@@ -359,11 +359,38 @@
             "text": "LAWRENCE LIVERMORE NATIONAL SECURITY, LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_DEAC5207NA27344_8900_-NONE-_-NONE-/"
           },
-          41607031193.88,
+          42157425910.2,
           "Department of Energy"
         ],
         [
           2,
+          {
+            "text": "THE REGENTS OF THE UNIVERSITY OF CALIFORNIA",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_DEAC0205CH11231_8900_-NONE-_-NONE-/"
+          },
+          20172696402.58,
+          "Department of Energy"
+        ],
+        [
+          3,
+          {
+            "text": "THE LELAND STANFORD JUNIOR UNIVERSITY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_DEAC0276SF00515_8900_-NONE-_-NONE-/"
+          },
+          15120780108.84,
+          "Department of Energy"
+        ],
+        [
+          4,
+          {
+            "text": "AEROJET ROCKETDYNE OF DE, INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_NNM16AA02C_8000_-NONE-_-NONE-/"
+          },
+          3438289825.36,
+          "National Aeronautics and Space Administration"
+        ],
+        [
+          5,
           {
             "text": "CALIFORNIA INSTITUTE OF TECHNOLOGY",
             "href": "https://www.usaspending.gov/award/CONT_AWD_80NM0018F0615_8000_80NM0018D0004_8000/"
@@ -372,16 +399,25 @@
           "National Aeronautics and Space Administration"
         ],
         [
-          3,
+          6,
+          {
+            "text": "CALIFORNIA INSTITUTE OF TECHNOLOGY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_80NM0021F0008_8000_80NM0018D0004_8000/"
+          },
+          1603374527,
+          "National Aeronautics and Space Administration"
+        ],
+        [
+          7,
           {
             "text": "CALIFORNIA INSTITUTE OF TECHNOLOGY",
             "href": "https://www.usaspending.gov/award/CONT_AWD_80NM0018F0850_8000_80NM0018D0004_8000/"
           },
-          1580872192.58,
+          1581664549.58,
           "National Aeronautics and Space Administration"
         ],
         [
-          4,
+          8,
           {
             "text": "CALIFORNIA INSTITUTE OF TECHNOLOGY",
             "href": "https://www.usaspending.gov/award/CONT_AWD_80NM0018F0616_8000_80NM0018D0004_8000/"
@@ -390,7 +426,7 @@
           "National Aeronautics and Space Administration"
         ],
         [
-          5,
+          9,
           {
             "text": "CALIFORNIA INSTITUTE OF TECHNOLOGY",
             "href": "https://www.usaspending.gov/award/CONT_AWD_80NM0018F0645_8000_80NM0018D0004_8000/"
@@ -399,7 +435,7 @@
           "National Aeronautics and Space Administration"
         ],
         [
-          6,
+          10,
           {
             "text": "INTER-CON SECURITY SYSTEMS, INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_19AQMM21C0066_1900_-NONE-_-NONE-/"
@@ -408,7 +444,7 @@
           "Department of State"
         ],
         [
-          7,
+          11,
           {
             "text": "LOCKHEED MARTIN CORPORATION",
             "href": "https://www.usaspending.gov/award/CONT_AWD_80AFRC18C0018_8000_-NONE-_-NONE-/"
@@ -417,7 +453,16 @@
           "National Aeronautics and Space Administration"
         ],
         [
-          8,
+          12,
+          {
+            "text": "DELOITTE CONSULTING LLP",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_47QFMA24F0013_4732_47QTCK18D0029_4732/"
+          },
+          494220245.54,
+          "General Services Administration"
+        ],
+        [
+          13,
           {
             "text": "SPACE EXPLORATION TECHNOLOGIES CORP.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_80JSC024CA002_8000_-NONE-_-NONE-/"
@@ -426,7 +471,7 @@
           "National Aeronautics and Space Administration"
         ],
         [
-          9,
+          14,
           {
             "text": "CALIFORNIA INSTITUTE OF TECHNOLOGY",
             "href": "https://www.usaspending.gov/award/CONT_AWD_80NM0018F0652_8000_80NM0018D0004_8000/"
@@ -435,7 +480,16 @@
           "National Aeronautics and Space Administration"
         ],
         [
-          10,
+          15,
+          {
+            "text": "VETERANS EZ INFO INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10B22N10280026_3600_VA11816D1028_3600/"
+          },
+          369237876.01,
+          "Department of Veterans Affairs"
+        ],
+        [
+          16,
           {
             "text": "CALIFORNIA INSTITUTE OF TECHNOLOGY",
             "href": "https://www.usaspending.gov/award/CONT_AWD_80NM0018F0607_8000_80NM0018D0004_8000/"
@@ -444,7 +498,16 @@
           "National Aeronautics and Space Administration"
         ],
         [
-          11,
+          17,
+          {
+            "text": "BOOZ ALLEN HAMILTON INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_47QFCA24F0003_4732_GS00Q14OADU108_4732/"
+          },
+          290286141,
+          "General Services Administration"
+        ],
+        [
+          18,
           {
             "text": "NW CONSTRUCTION, INC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_140R2025C0004_1425_-NONE-_-NONE-/"
@@ -453,16 +516,34 @@
           "Department of the Interior"
         ],
         [
-          12,
+          19,
+          {
+            "text": "LOCKHEED MARTIN CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_80GSFC21C0011_8000_-NONE-_-NONE-/"
+          },
+          230845548.28,
+          "National Aeronautics and Space Administration"
+        ],
+        [
+          20,
           {
             "text": "BOOZ ALLEN HAMILTON INC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_47QFPA22F0007_4732_GS00Q14OADU604_4732/"
           },
-          223411757.42,
+          228508008.42,
           "General Services Administration"
         ],
         [
-          13,
+          21,
+          {
+            "text": "MAPP BIOPHARMACEUTICAL, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75A50122C00061_7505_-NONE-_-NONE-/"
+          },
+          220916161.58,
+          "Department of Health and Human Services"
+        ],
+        [
+          22,
           {
             "text": "KIEWIT INFRASTRUCTURE WEST CO.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_140P2025C0038_1443_-NONE-_-NONE-/"
@@ -471,7 +552,16 @@
           "Department of the Interior"
         ],
         [
-          14,
+          23,
+          {
+            "text": "HENSEL PHELPS CONSTRUCTION CO.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_47PK0124C0007_4740_-NONE-_-NONE-/"
+          },
+          214090269,
+          "General Services Administration"
+        ],
+        [
+          24,
           {
             "text": "CALIFORNIA INSTITUTE OF TECHNOLOGY",
             "href": "https://www.usaspending.gov/award/CONT_AWD_80NM0018F0629_8000_80NM0018D0004_8000/"
@@ -480,132 +570,42 @@
           "National Aeronautics and Space Administration"
         ],
         [
-          15,
+          25,
           {
             "text": "REGENTS OF THE UNIVERSITY OF CALIFORNIA, THE",
             "href": "https://www.usaspending.gov/award/CONT_AWD_GSFC0200207DNAS502099_8000_-NONE-_-NONE-/"
           },
           202037576.69,
           "National Aeronautics and Space Administration"
-        ],
-        [
-          16,
-          {
-            "text": "CALIFORNIA INSTITUTE OF TECHNOLOGY",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_80NM0018F0603_8000_80NM0018D0004_8000/"
-          },
-          198170686.46,
-          "National Aeronautics and Space Administration"
-        ],
-        [
-          17,
-          {
-            "text": "LOCKHEED MARTIN CORPORATION",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_NNG09FA40C_8000_-NONE-_-NONE-/"
-          },
-          194065277.27,
-          "National Aeronautics and Space Administration"
-        ],
-        [
-          18,
-          {
-            "text": "CALIFORNIA INSTITUTE OF TECHNOLOGY",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_80NM0019F0044_8000_80NM0018D0004_8000/"
-          },
-          169308588,
-          "National Aeronautics and Space Administration"
-        ],
-        [
-          19,
-          {
-            "text": "REGENTS OF THE UNIVERSITY OF CALIFORNIA, THE",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_80GSFC21C0059_8000_-NONE-_-NONE-/"
-          },
-          137572953,
-          "National Aeronautics and Space Administration"
-        ],
-        [
-          20,
-          {
-            "text": "SPACE EXPLORATION TECHNOLOGIES CORP.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_80KSC020C0012_8000_-NONE-_-NONE-/"
-          },
-          127924073.02,
-          "National Aeronautics and Space Administration"
-        ],
-        [
-          21,
-          {
-            "text": "CALIFORNIA INSTITUTE OF TECHNOLOGY",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_80NM0018F0560_8000_80NM0018D0004_8000/"
-          },
-          118294064.54,
-          "National Aeronautics and Space Administration"
-        ],
-        [
-          22,
-          {
-            "text": "CALIFORNIA INSTITUTE OF TECHNOLOGY",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_80NM0026F7029_8000_80NM0018D0004_8000/"
-          },
-          112298234,
-          "National Aeronautics and Space Administration"
-        ],
-        [
-          23,
-          {
-            "text": "SABEL SYSTEMS TECHNOLOGY SOLUTIONS, LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_47QFLA21F0245_4732_47QFLA19D0007_4732/"
-          },
-          102692739.32,
-          "General Services Administration"
-        ],
-        [
-          24,
-          {
-            "text": "CALIFORNIA INSTITUTE OF TECHNOLOGY",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_80NM0020F0035_8000_80NM0018D0004_8000/"
-          },
-          102622625,
-          "National Aeronautics and Space Administration"
-        ],
-        [
-          25,
-          {
-            "text": "CALIFORNIA INSTITUTE OF TECHNOLOGY",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_80NM0024F0002_8000_80NM0018D0004_8000/"
-          },
-          95126171,
-          "National Aeronautics and Space Administration"
         ]
       ]
     }
   ],
   "narrative": {
-    "intro": "California's total federal contract obligations for FY2027 to date are $524M. The Department of Veterans Affairs obligated $251M and the National Aeronautics and Space Administration obligated $205M in the same period. The state recorded 4,436 awards with an average award size of $118K. Obligations are down 99.1% year over year. Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology) is the largest industry by obligations at $147M. CALIFORNIA INSTITUTE OF TECHNOLOGY is the largest vendor by obligations at $128M, followed by IMPULSE SPACE, INC. at $37.1M and BECKMAN COULTER, INC at $27.4M. FY22 through FY26 annual obligations were $57.5B, $61.5B, $61.7B, $62B, and $57.5B respectively, highlighting a much larger historical scale compared with the FY2027 to date figure. All figures are contract obligations; current-year totals are partial (fiscal year to date).",
+    "intro": "California federal contracting through FY2027 to date shows a concentrated set of awards and a sharp year-over-year decline. Total obligations in FY2027 to date are $1.8B. Award activity in FY2027 to date includes 8,351 awards with an average award size of $218K. Obligations are down 96.9% year over year. Historical annual obligations provide context: FY22 totaled $58.4B, FY23 totaled $63.1B, FY24 totaled $63.2B, FY25 totaled $63.2B, and FY26 totaled $59.1B. Research and development categories lead industry spending in FY2027 to date with multiple R&D NAICS entries totaling $842M and $254M in the top two R&D lines. The Department of Energy and the National Aeronautics and Space Administration lead agency buying with $836M and $419M respectively. LAWRENCE LIVERMORE NATIONAL SECURITY, LLC and CALIFORNIA INSTITUTE OF TECHNOLOGY lead vendor obligations with $550M and $206M respectively. Readers should treat FY2027 totals as partial because FY2027 to date is a fiscal year to date figure.",
     "sections": [
       {
-        "heading": "Which agencies are the biggest buyers in California in FY2027 to date?",
-        "body": "The Department of Veterans Affairs is the largest buyer at $251M. The National Aeronautics and Space Administration is the second-largest buyer at $205M. The Department of Justice, General Services Administration, and Department of the Interior follow with $17.8M, $17M, and $13.2M respectively."
+        "heading": "What is the spending picture in California for FY2027 to date?",
+        "body": "Total obligations in FY2027 to date are $1.8B and award activity counts 8,351 awards with an average award size of $218K. Obligations are down 96.9% year over year, reflecting that FY2027 to date totals are partial fiscal year numbers. Historical annual obligations show multiyear scale: FY22 was $58.4B, FY23 was $63.1B, FY24 was $63.2B, FY25 was $63.2B, and FY26 was $59.1B. Research and development industries account for a large share of FY2027 to date obligations, led by R&D entries totaling $842M and $254M."
       },
       {
-        "heading": "Which vendors and industries dominate California federal contracting in FY2027 to date?",
-        "body": "CALIFORNIA INSTITUTE OF TECHNOLOGY is the top vendor at $128M. IMPULSE SPACE, INC., and BECKMAN COULTER, INC are the next largest vendors at $37.1M and $27.4M. Research and Development in the Physical, Engineering, and Life Sciences is the top industry at $147M, followed by Analytical Laboratory Instrument Manufacturing at $46M and Nonscheduled Chartered Freight Air Transportation at $43.6M."
+        "heading": "Which agencies and vendors dominate FY2027 to date?",
+        "body": "The Department of Energy is the top buying agency with $836M, followed by the National Aeronautics and Space Administration with $419M and the Department of Veterans Affairs with $362M. LAWRENCE LIVERMORE NATIONAL SECURITY, LLC leads vendors with $550M, followed by CALIFORNIA INSTITUTE OF TECHNOLOGY with $206M and THE REGENTS OF THE UNIVERSITY OF CALIFORNIA with $162M. Additional notable agencies include the General Services Administration with $53.7M and the Department of Justice with $47M. Additional notable vendors include THE LELAND STANFORD JUNIOR UNIVERSITY with $132M and ELEVATED TECHNOLOGIES SERVICES, LLC with $57M."
       }
     ]
   },
   "faq": [
     {
       "q": "How much federal contract money goes to California?",
-      "a": "California receives $524M in federal contract obligations in FY2027 to date. The state recorded 4,436 awards with an average award size of $118K. Obligations are down 99.1% year over year and FY22 through FY26 obligations were $57.5B, $61.5B, $61.7B, $62B, and $57.5B respectively."
+      "a": "California received $1.8B in federal contract obligations in FY2027 to date. Total award activity in FY2027 to date counts 8,351 awards with an average award size of $218K. Historical annual obligations were much larger: FY22 was $58.4B, FY23 was $63.1B, FY24 was $63.2B, FY25 was $63.2B, and FY26 was $59.1B. Obligations are down 96.9% year over year."
     },
     {
       "q": "Which agencies award the most contracts in California?",
-      "a": "The Department of Veterans Affairs and the National Aeronautics and Space Administration award the most contracts in California in FY2027 to date. The Department of Veterans Affairs obligated $251M and the National Aeronautics and Space Administration obligated $205M. The Department of Justice, General Services Administration, and Department of the Interior are next with $17.8M, $17M, and $13.2M respectively."
+      "a": "The Department of Energy awarded $836M, the largest share in FY2027 to date. The National Aeronautics and Space Administration follows with $419M, and the Department of Veterans Affairs follows with $362M. Other top buying agencies include the General Services Administration with $53.7M, the Department of Justice with $47M, and the Department of Health and Human Services with $28M."
     },
     {
       "q": "Who are the largest federal contractors in California?",
-      "a": "CALIFORNIA INSTITUTE OF TECHNOLOGY is the largest federal contractor in California in FY2027 to date at $128M. IMPULSE SPACE, INC. and BECKMAN COULTER, INC are the next largest contractors at $37.1M and $27.4M. Other top vendors include CEPHEID at $24.7M and NW CONSTRUCTION, INC at $11.7M."
+      "a": "LAWRENCE LIVERMORE NATIONAL SECURITY, LLC is the largest federal contractor in California with $550M in obligations in FY2027 to date. CALIFORNIA INSTITUTE OF TECHNOLOGY is next with $206M, followed by THE REGENTS OF THE UNIVERSITY OF CALIFORNIA with $162M and THE LELAND STANFORD JUNIOR UNIVERSITY with $132M. Additional top vendors include ELEVATED TECHNOLOGIES SERVICES, LLC with $57M and AEROJET ROCKETDYNE OF DE, INC with $53.4M."
     }
   ],
   "related": [

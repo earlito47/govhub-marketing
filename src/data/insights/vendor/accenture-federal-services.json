@@ -1,20 +1,20 @@
 {
   "pageType": "vendor",
   "slug": "accenture-federal-services",
-  "title": "Accenture Federal Services Government Contracts: $167M (FY2027)",
+  "title": "Accenture Federal Services Government Contracts: $257M (FY2027)",
   "h1": "Accenture Federal Services: Federal Contracts, Agencies & Awards",
-  "metaDescription": "Accenture Federal Services won $167M in federal contract obligations in FY2027 to date. See its top agencies, markets, largest awards, and expiring contracts.",
-  "updated": "2026-10-26",
+  "metaDescription": "Accenture Federal Services won $257M in federal contract obligations in FY2027 to date. See its top agencies, markets, largest awards, and expiring contracts.",
+  "updated": "2026-11-16",
   "fyWindow": {
     "label": "FY2027 to date",
     "start": "2026-10-01",
-    "end": "2026-10-26"
+    "end": "2026-11-16"
   },
   "stats": {
-    "totalObligations": 166883989.17000002,
-    "awardCount": 22,
-    "yoyGrowthPct": -95.2,
-    "avgAwardSize": 7585636,
+    "totalObligations": 257399012.27,
+    "awardCount": 57,
+    "yoyGrowthPct": -92.9,
+    "avgAwardSize": 4515772,
     "smallBusinessSharePct": null
   },
   "charts": [
@@ -28,33 +28,33 @@
           "points": [
             [
               "FY22",
-              2706417045.53
+              2955598845.98
             ],
             [
               "FY23",
-              2946875981.86
+              3176610616.57
             ],
             [
               "FY24",
-              3371908368.25
+              3667945723.13
             ],
             [
               "FY25",
-              3234021028.21
+              3499325346.53
             ],
             [
               "FY26",
-              3485727375.83
+              3640727818.34
             ],
             [
               "FY27",
-              166883989.17000002
+              257399012.27
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Obligations fell 95.2% year over year, from $3.5B in FY2026 to $167M in FY2027 to date."
+      "takeaway": "Obligations fell 92.9% year over year, from $3.6B in FY2026 to $257M in FY2027 to date."
     },
     {
       "id": "accenture-federal-services-top-agencies",
@@ -69,34 +69,46 @@
               150807169.55
             ],
             [
-              "Department of Commerce",
-              7744046.58
-            ],
-            [
-              "Department of Homeland Security",
-              4738677.33
-            ],
-            [
-              "Department of Agriculture",
-              1937883.32
+              "General Services Administration",
+              27984553
             ],
             [
               "Department of Energy",
-              1666118.56
+              20327220.37
             ],
             [
-              "Department of the Interior",
-              0
+              "Department of Homeland Security",
+              14638677.33
             ],
             [
-              "Department of Transportation",
-              -9906.17
+              "Department of Commerce",
+              12335142.58
+            ],
+            [
+              "Department of Justice",
+              11087530.05
+            ],
+            [
+              "Social Security Administration",
+              10487624.52
+            ],
+            [
+              "Department of the Treasury",
+              8271162.16
+            ],
+            [
+              "Department of Agriculture",
+              1335477.55
+            ],
+            [
+              "Department of State",
+              458460.53
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Department of Veterans Affairs is Accenture Federal Services's largest federal customer, with $151M obligated (90.4% of the company's federal obligations)."
+      "takeaway": "Department of Veterans Affairs is Accenture Federal Services's largest federal customer, with $151M obligated (58.6% of the company's federal obligations)."
     },
     {
       "id": "accenture-federal-services-top-naics",
@@ -108,17 +120,25 @@
           "points": [
             [
               "Computer Systems Design Services",
-              166883989.17
+              246922572.29
+            ],
+            [
+              "Administrative Management and General Management Consulting Services",
+              10487624.52
             ],
             [
               "Computing Infrastructure Providers, Data Processing, Web Hosting, and Related Services",
               0
+            ],
+            [
+              "Other Computer Related Services",
+              -11184.54
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Computer Systems Design Services is Accenture Federal Services's largest federal market, with $167M in obligations."
+      "takeaway": "Computer Systems Design Services is Accenture Federal Services's largest federal market, with $247M in obligations."
     }
   ],
   "crossLinks": [
@@ -127,20 +147,28 @@
       "href": "/insights/agency/department-of-veterans-affairs/"
     },
     {
-      "label": "Department of Commerce contracts",
-      "href": "/insights/agency/department-of-commerce/"
+      "label": "General Services Administration contracts",
+      "href": "/insights/agency/general-services-administration/"
+    },
+    {
+      "label": "Department of Energy contracts",
+      "href": "/insights/agency/department-of-energy/"
     },
     {
       "label": "Department of Homeland Security contracts",
       "href": "/insights/agency/department-of-homeland-security/"
     },
     {
-      "label": "Department of Agriculture contracts",
-      "href": "/insights/agency/department-of-agriculture/"
-    },
-    {
       "label": "NAICS 541512: Computer Systems Design Services",
       "href": "/insights/naics/541512/"
+    },
+    {
+      "label": "NAICS 541611: Administrative Management and General Management Consulting Services",
+      "href": "/insights/naics/541611/"
+    },
+    {
+      "label": "NAICS 541519: Other Computer Related Services",
+      "href": "/insights/naics/541519/"
     }
   ],
   "tables": [
@@ -157,6 +185,26 @@
         [
           1,
           {
+            "text": "75FCMC21F0002",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75FCMC21F0002_7530_HHSM500201600003I_7530/"
+          },
+          796233862.71,
+          "Department of Health and Human Services",
+          "2027-01-10"
+        ],
+        [
+          2,
+          {
+            "text": "91003125C0013",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_91003125C0013_9100_-NONE-_-NONE-/"
+          },
+          382920203.11,
+          "Department of Education",
+          "2031-07-31"
+        ],
+        [
+          3,
+          {
             "text": "12314418F0020",
             "href": "https://www.usaspending.gov/award/CONT_AWD_12314418F0020_1205_HHSN316201200002W_7529/"
           },
@@ -165,17 +213,17 @@
           "2027-05-31"
         ],
         [
-          2,
+          4,
           {
             "text": "70B04C23F00000074",
             "href": "https://www.usaspending.gov/award/CONT_AWD_70B04C23F00000074_7014_47QTCK18D0036_4732/"
           },
-          277857783.13,
+          287757783.13,
           "Department of Homeland Security",
-          "2027-10-24"
+          "2026-12-29"
         ],
         [
-          3,
+          5,
           {
             "text": "36C10B26F0033",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C10B26F0033_3600_47QTCK18D0036_4732/"
@@ -185,17 +233,47 @@
           "2027-05-16"
         ],
         [
-          4,
+          6,
+          {
+            "text": "1331L520C13OS0005",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_1331L520C13OS0005_1301_-NONE-_-NONE-/"
+          },
+          246917273.06,
+          "Department of Commerce",
+          "2027-04-23"
+        ],
+        [
+          7,
+          {
+            "text": "47QFCA26F0004",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_47QFCA26F0004_4732_47QTCK18D0036_4732/"
+          },
+          184680116,
+          "General Services Administration",
+          "2027-06-07"
+        ],
+        [
+          8,
+          {
+            "text": "47QFCA21F0065",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_47QFCA21F0065_4732_47QTCK18D0036_4732/"
+          },
+          166609096,
+          "General Services Administration",
+          "2027-08-05"
+        ],
+        [
+          9,
           {
             "text": "89603024F0002",
             "href": "https://www.usaspending.gov/award/CONT_AWD_89603024F0002_8960_89303019AIM000005_8900/"
           },
-          141917148.24,
+          142017148.24,
           "Department of Energy",
           "2026-11-29"
         ],
         [
-          5,
+          10,
           {
             "text": "70T02022F7500N001",
             "href": "https://www.usaspending.gov/award/CONT_AWD_70T02022F7500N001_7013_47QTCK18D0036_4732/"
@@ -205,27 +283,107 @@
           "2031-02-05"
         ],
         [
-          6,
+          11,
           {
             "text": "89303026FIM000188",
             "href": "https://www.usaspending.gov/award/CONT_AWD_89303026FIM000188_8900_89303025AIM000023_8900/"
           },
-          89942183.21,
+          92285189.72,
           "Department of Energy",
           "2027-12-17"
         ],
         [
-          7,
+          12,
+          {
+            "text": "89303024FIM000144",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_89303024FIM000144_8900_89303019AIM000005_8900/"
+          },
+          92257091.25,
+          "Department of Energy",
+          "2026-12-28"
+        ],
+        [
+          13,
+          {
+            "text": "28321321C00060001",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_28321321C00060001_2800_-NONE-_-NONE-/"
+          },
+          76807140.98,
+          "Social Security Administration",
+          "2026-11-01"
+        ],
+        [
+          14,
+          {
+            "text": "2032H524F00180",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_2032H524F00180_2050_2032H523A00001_2050/"
+          },
+          72404783.44,
+          "Department of the Treasury",
+          "2027-03-20"
+        ],
+        [
+          15,
+          {
+            "text": "15JPSS23F00000125",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_15JPSS23F00000125_1501_GS35F540GA_4732/"
+          },
+          63753690.95,
+          "Department of Justice",
+          "2026-09-30"
+        ],
+        [
+          16,
+          {
+            "text": "47QFCA26F0023",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_47QFCA26F0023_4732_47QTCK18D0036_4732/"
+          },
+          59694523,
+          "General Services Administration",
+          "2027-07-27"
+        ],
+        [
+          17,
+          {
+            "text": "15F06724F0000128",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_15F06724F0000128_1549_GS35F540GA_4732/"
+          },
+          55267102.4,
+          "Department of Justice",
+          "2027-03-03"
+        ],
+        [
+          18,
           {
             "text": "89303026FIM000213",
             "href": "https://www.usaspending.gov/award/CONT_AWD_89303026FIM000213_8900_89303025AIM000023_8900/"
           },
-          45668737.6,
+          50594390.02,
           "Department of Energy",
           "2032-07-27"
         ],
         [
-          8,
+          19,
+          {
+            "text": "AG3144D170052",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_AG3144D170052_1205_HHSN316201200002W_7529/"
+          },
+          48422284.7,
+          "Department of Agriculture",
+          "2026-12-31"
+        ],
+        [
+          20,
+          {
+            "text": "89303026FIM000198",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_89303026FIM000198_8900_89303025AIM000023_8900/"
+          },
+          21119722.39,
+          "Department of Energy",
+          "2029-10-28"
+        ],
+        [
+          21,
           {
             "text": "1333BJ25F00280001",
             "href": "https://www.usaspending.gov/award/CONT_AWD_1333BJ25F00280001_1344_47QTCK18D0036_4732/"
@@ -235,7 +393,27 @@
           "2027-10-17"
         ],
         [
-          9,
+          22,
+          {
+            "text": "12760422F0374",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_12760422F0374_12C2_12760420A0003_12C2/"
+          },
+          16793055.23,
+          "Department of Agriculture",
+          "2025-09-30"
+        ],
+        [
+          23,
+          {
+            "text": "19AQMM26F7062",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_19AQMM26F7062_1900_19AQMM23A0218_1900/"
+          },
+          15701224.6,
+          "Department of State",
+          "2027-03-31"
+        ],
+        [
+          24,
           {
             "text": "70B04C26F00000527",
             "href": "https://www.usaspending.gov/award/CONT_AWD_70B04C26F00000527_7014_47QTCK18D0036_4732/"
@@ -245,134 +423,14 @@
           "2027-03-23"
         ],
         [
-          10,
+          25,
           {
-            "text": "89303024FIM000152",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_89303024FIM000152_8900_89303019AIM000005_8900/"
+            "text": "15F06726F0001081",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_15F06726F0001081_1549_15F06724A0000296_1549/"
           },
-          10248649.94,
-          "Department of Energy",
-          "2027-05-28"
-        ],
-        [
-          11,
-          {
-            "text": "89243126FSC000021",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_89243126FSC000021_8900_89303025AIM000023_8900/"
-          },
-          8604253.24,
-          "Department of Energy",
-          "2029-07-07"
-        ],
-        [
-          12,
-          {
-            "text": "89303026FIM000195",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_89303026FIM000195_8900_89303025AIM000023_8900/"
-          },
-          6957938.28,
-          "Department of Energy",
-          "2027-03-12"
-        ],
-        [
-          13,
-          {
-            "text": "140D0424F1317",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_140D0424F1317_1406_140D0424D0085_1406/"
-          },
-          2956852.65,
-          "Department of the Interior",
-          "2026-12-31"
-        ],
-        [
-          14,
-          {
-            "text": "13CHFN26F0007",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_13CHFN26F0007_1323_GS35F540GA_4732/"
-          },
-          2487855.39,
-          "Department of Commerce",
-          "2027-09-13"
-        ],
-        [
-          15,
-          {
-            "text": "140D0426F0048",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_140D0426F0048_1406_140D0424D0085_1406/"
-          },
-          1936728.77,
-          "Department of the Interior",
-          "2027-04-29"
-        ],
-        [
-          16,
-          {
-            "text": "140D0426F0021",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_140D0426F0021_1406_140D0424D0085_1406/"
-          },
-          1166234.75,
-          "Department of the Interior",
-          "2027-10-29"
-        ],
-        [
-          17,
-          {
-            "text": "89303026FLP000028",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_89303026FLP000028_8900_89303025AIM000023_8900/"
-          },
-          723992,
-          "Department of Energy",
-          "2028-09-19"
-        ],
-        [
-          18,
-          {
-            "text": "89243423FEE000255",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_89243423FEE000255_8900_89303019AIM000005_8900/"
-          },
-          353305.94,
-          "Department of Energy",
-          "2026-03-06"
-        ],
-        [
-          19,
-          {
-            "text": "693JJ324F00442N",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_693JJ324F00442N_6925_693JK418A600002_6901/"
-          },
-          205260.04,
-          "Department of Transportation",
-          "2025-09-25"
-        ],
-        [
-          20,
-          {
-            "text": "89303023FFP000002",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_89303023FFP000002_8900_89303019AIM000005_8900/"
-          },
-          199843.24,
-          "Department of Energy",
-          "2026-03-06"
-        ],
-        [
-          21,
-          {
-            "text": "693JJ324F00337N",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_693JJ324F00337N_6925_693JK418A600002_6901/"
-          },
-          198907.25,
-          "Department of Transportation",
-          "2025-09-05"
-        ],
-        [
-          22,
-          {
-            "text": "89243423FEE000257",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_89243423FEE000257_8900_89303019AIM000005_8900/"
-          },
-          52905.6,
-          "Department of Energy",
-          "2026-03-06"
+          13399112.97,
+          "Department of Justice",
+          "2027-09-29"
         ]
       ]
     },
@@ -400,7 +458,7 @@
             "href": "https://www.usaspending.gov/award/CONT_AWD_W52P1J20C0005_9700_-NONE-_-NONE-/"
           },
           "Department of Defense",
-          896468884.44,
+          919756073.83,
           "2027-04-30"
         ],
         [
@@ -445,8 +503,8 @@
             "href": "https://www.usaspending.gov/award/CONT_AWD_70B04C23F00000074_7014_47QTCK18D0036_4732/"
           },
           "Department of Homeland Security",
-          277857783.13,
-          "2027-10-24"
+          287757783.13,
+          "2026-12-29"
         ],
         [
           {
@@ -463,8 +521,8 @@
             "href": "https://www.usaspending.gov/award/CONT_AWD_1331L520C13OS0005_1301_-NONE-_-NONE-/"
           },
           "Department of Commerce",
-          242326177.06,
-          "2026-10-31"
+          246917273.06,
+          "2027-04-23"
         ],
         [
           {
@@ -472,7 +530,7 @@
             "href": "https://www.usaspending.gov/award/CONT_AWD_47QFCA26F0004_4732_47QTCK18D0036_4732/"
           },
           "General Services Administration",
-          179680116,
+          184680116,
           "2027-06-07"
         ]
       ]
@@ -498,40 +556,40 @@
         ],
         [
           "Business types",
-          "Category business; Corporate entity not tax exempt; Foreign owned; Foreign owned and us located business; Other than small business; Special designations"
+          "Category business; Corporate entity not tax exempt; Foreign owned; Other than small business; Special designations"
         ]
       ]
     }
   ],
   "narrative": {
-    "intro": "Accenture Federal Services obligated $167M in federal contract obligations in FY2027 to date. Accenture Federal Services won 22 awards in the fiscal year so far, with an average award size of $7.6M. Accenture Federal Services obligations are down 95.2% year over year compared with prior full fiscal year totals. Accenture Federal Services shows a strong buyer concentration in FY2027 to date, with the Department of Veterans Affairs accounting for $151M of the current-year obligations. Accenture Federal Services also has smaller FY2027 to date obligations with the Department of Commerce at $7.7M and the Department of Homeland Security at $4.7M, alongside listed obligations of $1.9M and $1.7M with other agencies. Computer Systems Design Services is the top NAICS market for Accenture Federal Services, showing $167M in FY2027 to date. Historical context shows larger full-year obligations in prior periods: $2.7B in FY22, $2.9B in FY23, $3.4B in FY24, $3.2B in FY25, and $3.5B in FY26.",
+    "intro": "Accenture Federal Services obligated $257M in FY2027 to date on 57 awards, with an average award size of $4.5M. Obligations fell 92.9% year over year. Fiscal-year obligations before FY2027 ranged from $3B to $3.7B, with FY22 at $3B, FY23 at $3.2B, FY24 at $3.7B, FY25 at $3.5B, and FY26 at $3.6B. The Department of Veterans Affairs accounted for the largest share of FY2027 obligations at $151M, followed by the General Services Administration at $28M and the Department of Energy at $20.3M. Computer Systems Design Services was the dominant market with $247M in obligations, and Administrative Management and General Management Consulting Services accounted for $10.5M. These figures are contract obligations unless otherwise noted. Current-year totals are partial because FY2027 is fiscal year to date.",
     "sections": [
       {
-        "heading": "How concentrated are Accenture Federal Services obligations by buyer?",
-        "body": "The Department of Veterans Affairs obligated $151M to Accenture Federal Services in FY2027 to date. The Department of Commerce obligated $7.7M and the Department of Homeland Security obligated $4.7M in the same period. Additional listed buyers show obligations of $1.9M and $1.7M."
+        "heading": "Who are the biggest agency customers for FY2027 to date?",
+        "body": "The Department of Veterans Affairs is the largest buyer at $151M. The General Services Administration follows at $28M and the Department of Energy at $20.3M. Other notable buyers include the Department of Homeland Security at $14.6M and the Department of Commerce at $12.3M."
       },
       {
-        "heading": "What markets and historical context define Accenture Federal Services activity?",
-        "body": "Computer Systems Design Services is the leading market for Accenture Federal Services with $167M in FY2027 to date. Prior fiscal years show higher full-year obligations for Accenture Federal Services, including $2.7B in FY22, $2.9B in FY23, $3.4B in FY24, $3.2B in FY25, and $3.5B in FY26."
+        "heading": "How does FY2027 to date performance compare with recent fiscal years?",
+        "body": "Obligations fell 92.9% year over year to $257M in FY2027 to date. Prior fiscal years showed substantially higher totals: FY22 $3B, FY23 $3.2B, FY24 $3.7B, FY25 $3.5B, and FY26 $3.6B."
       }
     ]
   },
   "faq": [
     {
       "q": "How much does Accenture Federal Services make from federal contracts?",
-      "a": "Accenture Federal Services obligated $167M in federal contracts in FY2027 to date. Accenture Federal Services received 22 awards so far this fiscal year, with an average award size of $7.6M, and obligations are down 95.2% year over year."
+      "a": "Accenture Federal Services obligated $257M in FY2027 to date. Accenture Federal Services recorded 57 awards so far in FY2027, with an average award size of $4.5M."
     },
     {
       "q": "Which agencies buy from Accenture Federal Services?",
-      "a": "The Department of Veterans Affairs is the largest buyer, obligating $151M to Accenture Federal Services in FY2027 to date. Other buying agencies with FY2027 to date obligations include the Department of Commerce at $7.7M and the Department of Homeland Security at $4.7M, with additional listed obligations of $1.9M and $1.7M."
+      "a": "The Department of Veterans Affairs is the largest buyer at $151M. The General Services Administration bought $28M, the Department of Energy bought $20.3M, the Department of Homeland Security bought $14.6M, and the Department of Commerce bought $12.3M. Other buying agencies in FY2027 to date include the Department of Justice at $11.1M, the Social Security Administration at $10.5M, the Department of the Treasury at $8.3M, the Department of Agriculture at $1.3M, and the Department of State at $458K."
     },
     {
       "q": "What does Accenture Federal Services sell to the government?",
-      "a": "Accenture Federal Services sells work classified under Computer Systems Design Services to the government, with $167M in that NAICS market in FY2027 to date. The facts list that as the top NAICS category for the current fiscal-year obligations."
+      "a": "Accenture Federal Services sells Computer Systems Design Services, which accounted for $247M in FY2027 to date. Accenture Federal Services also recorded $10.5M in Administrative Management and General Management Consulting Services."
     },
     {
       "q": "Which Accenture Federal Services contracts are expiring soon?",
-      "a": "The provided facts do not list specific expiring contract records for FY2027 to date, so no expiring-contract dollar figures are available in the supplied summary."
+      "a": "No expiring-contracts information is provided in the available figures. The provided data includes obligations, award counts, agency breakdowns, and market NAICS totals, but it does not include a table or list of expiring contracts."
     }
   ],
   "related": [
@@ -540,28 +598,28 @@
       "href": "/insights/expiring-federal-contracts/"
     },
     {
-      "label": "TriWest Healthcare Alliance federal contracts",
-      "href": "/insights/vendor/triwest-healthcare-alliance/"
+      "label": "UT-Battelle federal contracts",
+      "href": "/insights/vendor/ut-battelle/"
     },
     {
-      "label": "Fluor Marine Propulsion federal contracts",
-      "href": "/insights/vendor/fluor-marine-propulsion/"
+      "label": "PanTeXas Deterrence federal contracts",
+      "href": "/insights/vendor/pantexas-deterrence/"
     },
     {
-      "label": "At and T Enterprises federal contracts",
-      "href": "/insights/vendor/at-and-t-enterprises/"
-    },
-    {
-      "label": "Thundercat Technology federal contracts",
-      "href": "/insights/vendor/thundercat-technology/"
+      "label": "Csi Aviation federal contracts",
+      "href": "/insights/vendor/csi-aviation/"
     },
     {
       "label": "Stonex Financial federal contracts",
       "href": "/insights/vendor/stonex-financial/"
     },
     {
-      "label": "California Institute of Technology federal contracts",
-      "href": "/insights/vendor/california-institute-of-technology/"
+      "label": "At and T Enterprises federal contracts",
+      "href": "/insights/vendor/at-and-t-enterprises/"
+    },
+    {
+      "label": "General Dynamics Information Technology federal contracts",
+      "href": "/insights/vendor/general-dynamics-information-technology/"
     }
   ],
   "sources": [

@@ -3,18 +3,18 @@
   "slug": "johns-hopkins-university-applied-physics-laboratory",
   "title": "Johns Hopkins University Applied Physics: Federal Contracts",
   "h1": "Johns Hopkins University Applied Physics Laboratory: Federal Contracts, Agencies & Awards",
-  "metaDescription": "Johns Hopkins University Applied Physics Laboratory won $85.3M in federal contract obligations in FY2027 to date. See its top agencies, markets, largest award",
-  "updated": "2026-10-26",
+  "metaDescription": "Johns Hopkins University Applied Physics Laboratory won $132M in federal contract obligations in FY2027 to date. See its top agencies, markets, largest awards",
+  "updated": "2026-11-16",
   "fyWindow": {
     "label": "FY2027 to date",
     "start": "2026-10-01",
-    "end": "2026-10-26"
+    "end": "2026-11-16"
   },
   "stats": {
-    "totalObligations": 85272128,
-    "awardCount": 6,
-    "yoyGrowthPct": -96.1,
-    "avgAwardSize": 14212021,
+    "totalObligations": 131559478.27,
+    "awardCount": 20,
+    "yoyGrowthPct": -94,
+    "avgAwardSize": 6577974,
     "smallBusinessSharePct": null
   },
   "charts": [
@@ -28,33 +28,33 @@
           "points": [
             [
               "FY22",
-              1602688278.75
+              1606672545.04
             ],
             [
               "FY23",
-              1989369479.16
+              1999154158.54
             ],
             [
               "FY24",
-              2005236293.85
+              2011547345.32
             ],
             [
               "FY25",
-              2363755170.13
+              2366831356.34
             ],
             [
               "FY26",
-              2179523080.03
+              2197263556.45
             ],
             [
               "FY27",
-              85272128
+              131559478.27
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Obligations fell 96.1% year over year, from $2.2B in FY2026 to $85.3M in FY2027 to date."
+      "takeaway": "Obligations fell 94.0% year over year, from $2.2B in FY2026 to $132M in FY2027 to date."
     },
     {
       "id": "johns-hopkins-university-applied-physics-laboratory-top-agencies",
@@ -66,17 +66,51 @@
           "points": [
             [
               "National Aeronautics and Space Administration",
-              85272128
+              131560119.92
             ],
             [
               "Department of Homeland Security",
               0
+            ],
+            [
+              "Executive Office of the President",
+              -641.65
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "National Aeronautics and Space Administration is Johns Hopkins University Applied Physics Laboratory's largest federal customer, with $85.3M obligated (100.0% of the company's federal obligations)."
+      "takeaway": "National Aeronautics and Space Administration is Johns Hopkins University Applied Physics Laboratory's largest federal customer, with $132M obligated (100.0% of the company's federal obligations)."
+    },
+    {
+      "id": "johns-hopkins-university-applied-physics-laboratory-top-naics",
+      "type": "bar",
+      "title": "Top 10 markets (NAICS), FY2027 to date",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology)",
+              131325119.92
+            ],
+            [
+              "Research and Development in the Physical, Engineering, and Life Sciences",
+              235000
+            ],
+            [
+              "Engineering Services",
+              0
+            ],
+            [
+              "Administrative Management and General Management Consulting Services",
+              -641.65
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology) is Johns Hopkins University Applied Physics Laboratory's largest federal market, with $131M in obligations."
     }
   ],
   "crossLinks": [
@@ -87,6 +121,18 @@
     {
       "label": "Department of Homeland Security contracts",
       "href": "/insights/agency/department-of-homeland-security/"
+    },
+    {
+      "label": "NAICS 541715: Research and Development in the Physical, Engineering, and Life Sciences",
+      "href": "/insights/naics/541715/"
+    },
+    {
+      "label": "NAICS 541330: Engineering Services",
+      "href": "/insights/naics/541330/"
+    },
+    {
+      "label": "NAICS 541611: Administrative Management and General Management Consulting Services",
+      "href": "/insights/naics/541611/"
     }
   ],
   "tables": [
@@ -113,15 +159,95 @@
         [
           2,
           {
+            "text": "70B02C23C00000035",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70B02C23C00000035_7014_-NONE-_-NONE-/"
+          },
+          61684761.05,
+          "Department of Homeland Security",
+          "2027-05-17"
+        ],
+        [
+          3,
+          {
+            "text": "80MSFC27F7003",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_80MSFC27F7003_8000_80MSFC20D0004_8000/"
+          },
+          39254898.92,
+          "National Aeronautics and Space Administration",
+          "2027-12-31"
+        ],
+        [
+          4,
+          {
+            "text": "80MSFC20F0155",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_80MSFC20F0155_8000_80MSFC20D0004_8000/"
+          },
+          35008876,
+          "National Aeronautics and Space Administration",
+          "2030-11-30"
+        ],
+        [
+          5,
+          {
             "text": "80MSFC24F0017",
             "href": "https://www.usaspending.gov/award/CONT_AWD_80MSFC24F0017_8000_80MSFC20D0004_8000/"
           },
-          27907916,
+          31907916,
           "National Aeronautics and Space Administration",
           "2027-03-31"
         ],
         [
-          3,
+          6,
+          {
+            "text": "80MSFC25F7006",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_80MSFC25F7006_8000_80MSFC20D0004_8000/"
+          },
+          17637112,
+          "National Aeronautics and Space Administration",
+          "2027-12-31"
+        ],
+        [
+          7,
+          {
+            "text": "80MSFC25F7001",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_80MSFC25F7001_8000_80MSFC20D0004_8000/"
+          },
+          12915688,
+          "National Aeronautics and Space Administration",
+          "2029-09-30"
+        ],
+        [
+          8,
+          {
+            "text": "80MSFC20F0178",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_80MSFC20F0178_8000_80MSFC20D0004_8000/"
+          },
+          9297119,
+          "National Aeronautics and Space Administration",
+          "2028-09-30"
+        ],
+        [
+          9,
+          {
+            "text": "80MSFC19F0002",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_80MSFC19F0002_8000_NNN06AA01C_8000/"
+          },
+          7096869,
+          "National Aeronautics and Space Administration",
+          "2028-04-30"
+        ],
+        [
+          10,
+          {
+            "text": "80MSFC23F0045",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_80MSFC23F0045_8000_80MSFC20D0004_8000/"
+          },
+          7074343,
+          "National Aeronautics and Space Administration",
+          "2027-05-31"
+        ],
+        [
+          11,
           {
             "text": "80MSFC23F0077",
             "href": "https://www.usaspending.gov/award/CONT_AWD_80MSFC23F0077_8000_80MSFC20D0004_8000/"
@@ -131,7 +257,17 @@
           "2036-03-21"
         ],
         [
-          4,
+          12,
+          {
+            "text": "80MSFC21F0287",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_80MSFC21F0287_8000_80MSFC20D0004_8000/"
+          },
+          3419615,
+          "National Aeronautics and Space Administration",
+          "2026-09-30"
+        ],
+        [
+          13,
           {
             "text": "70RSAT25CB0000002",
             "href": "https://www.usaspending.gov/award/CONT_AWD_70RSAT25CB0000002_7001_-NONE-_-NONE-/"
@@ -141,7 +277,47 @@
           "2027-09-29"
         ],
         [
-          5,
+          14,
+          {
+            "text": "80MSFC25F7007",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_80MSFC25F7007_8000_80MSFC20D0004_8000/"
+          },
+          1535531,
+          "National Aeronautics and Space Administration",
+          "2027-09-30"
+        ],
+        [
+          15,
+          {
+            "text": "80MSFC25F7004",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_80MSFC25F7004_8000_80MSFC20D0004_8000/"
+          },
+          1499554.92,
+          "National Aeronautics and Space Administration",
+          "2027-09-30"
+        ],
+        [
+          16,
+          {
+            "text": "11316021F0007OAS",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_11316021F0007OAS_1100_11316020D1003EOP_1100/"
+          },
+          154036.35,
+          "Executive Office of the President",
+          "2021-01-14"
+        ],
+        [
+          17,
+          {
+            "text": "80MSFC27F7002",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_80MSFC27F7002_8000_80MSFC20D0004_8000/"
+          },
+          97958,
+          "National Aeronautics and Space Administration",
+          "2027-02-15"
+        ],
+        [
+          18,
           {
             "text": "80MSFC24F0050",
             "href": "https://www.usaspending.gov/award/CONT_AWD_80MSFC24F0050_8000_80MSFC20D0004_8000/"
@@ -151,7 +327,17 @@
           "2026-10-02"
         ],
         [
-          6,
+          19,
+          {
+            "text": "80MSFC26F7031",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_80MSFC26F7031_8000_80MSFC20D0004_8000/"
+          },
+          62227,
+          "National Aeronautics and Space Administration",
+          "2026-11-30"
+        ],
+        [
+          20,
           {
             "text": "80MSFC26F7020",
             "href": "https://www.usaspending.gov/award/CONT_AWD_80MSFC26F7020_8000_80MSFC20D0004_8000/"
@@ -290,34 +476,34 @@
     }
   ],
   "narrative": {
-    "intro": "Johns Hopkins University Applied Physics Laboratory obligated $85.3M in federal contract funds in FY2027 to date. Johns Hopkins University Applied Physics Laboratory received 6 awards this fiscal year, with an average award size of $14.2M. Johns Hopkins University Applied Physics Laboratory obligations are down 96.1% year over year. Johns Hopkins University Applied Physics Laboratory obligations for prior fiscal years show much larger totals: FY22 was $1.6B, FY23 was $2B, FY24 was $2B, FY25 was $2.4B, and FY26 was $2.2B. Johns Hopkins University Applied Physics Laboratory had one buying agency reporting obligations in FY2027 to date: the National Aeronautics and Space Administration obligated $85.3M. Johns Hopkins University Applied Physics Laboratory had the Department of Homeland Security listed with $0 obligations this fiscal year. This snapshot covers contract obligations and notes that award-value figures in other tables are total contract values, while the current-year totals are partial and fiscal year to date.",
+    "intro": "Johns Hopkins University Applied Physics Laboratory obligated $132M in FY2027 to date across 20 awards, producing an average award size of $6.6M. Obligations fell 94.0% year over year. Historical context shows larger full-year totals: FY22 obligations were $1.6B, FY23 obligations were $2B, FY24 obligations were $2B, FY25 obligations were $2.4B, and FY26 obligations were $2.2B. The FY2027 figure is a partial, fiscal year to date total. The agency-level breakdown for FY2027 to date lists National Aeronautics and Space Administration at $132M. The market-level breakdown for FY2027 to date shows Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology) at $131M and Research and Development in the Physical, Engineering, and Life Sciences at $235K. The note clarifies that all figures are contract obligations except that largest-awards and expiring-contracts tables report total contract values. This summary focuses on obligations and the FY2027 to date snapshot without implying future performance or using figures not provided here.",
     "sections": [
       {
-        "heading": "How concentrated are FY2027 obligations?",
-        "body": "The National Aeronautics and Space Administration obligated $85.3M for Johns Hopkins University Applied Physics Laboratory in FY2027 to date. The Department of Homeland Security obligated $0 for Johns Hopkins University Applied Physics Laboratory this fiscal year. Johns Hopkins University Applied Physics Laboratory received 6 awards, and the average award size was $14.2M."
+        "heading": "How big is Johns Hopkins University Applied Physics Laboratory's FY2027 to date federal business?",
+        "body": "Johns Hopkins University Applied Physics Laboratory obligated $132M in FY2027 to date across 20 awards, with an average award size of $6.6M. Obligations fell 94.0% year over year versus prior fiscal years. Prior full-year obligations were $1.6B in FY22 and ranged from $2B to $2.4B in FY23 through FY26. The FY2027 total is a partial, fiscal year to date figure."
       },
       {
-        "heading": "How do FY2027 obligations compare to recent years?",
-        "body": "Johns Hopkins University Applied Physics Laboratory obligated $85.3M in FY2027 to date, compared with $2.2B in FY26, $2.4B in FY25, $2B in FY24, $2B in FY23, and $1.6B in FY22. Johns Hopkins University Applied Physics Laboratory obligations are down 96.1% year over year. The current-year total is partial and fiscal year to date."
+        "heading": "Who are the main buyers and what markets show activity for FY2027 to date?",
+        "body": "National Aeronautics and Space Administration is listed at $132M for FY2027 to date. The principal markets showing activity are Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology) at $131M and Research and Development in the Physical, Engineering, and Life Sciences at $235K. Other agency and market entries are present in the detailed tables but are not summarized here with additional dollar figures."
       }
     ]
   },
   "faq": [
     {
       "q": "How much does Johns Hopkins University Applied Physics Laboratory make from federal contracts?",
-      "a": "Johns Hopkins University Applied Physics Laboratory obligated $85.3M in federal contract funds in FY2027 to date. Johns Hopkins University Applied Physics Laboratory received 6 awards this fiscal year, with an average award size of $14.2M, and obligations are down 96.1% year over year."
+      "a": "Johns Hopkins University Applied Physics Laboratory obligated $132M in federal contract obligations in FY2027 to date. The organization recorded 20 awards for FY2027 to date, with an average award size of $6.6M, and obligations fell 94.0% year over year. Prior fiscal years show larger totals: FY22 $1.6B, FY23 $2B, FY24 $2B, FY25 $2.4B, FY26 $2.2B."
     },
     {
       "q": "Which agencies buy from Johns Hopkins University Applied Physics Laboratory?",
-      "a": "National Aeronautics and Space Administration obligated $85.3M for Johns Hopkins University Applied Physics Laboratory in FY2027 to date. The Department of Homeland Security is listed with $0 obligations for Johns Hopkins University Applied Physics Laboratory in FY2027 to date."
+      "a": "National Aeronautics and Space Administration is the top buyer of Johns Hopkins University Applied Physics Laboratory in FY2027 to date at $132M. Other agencies appear in the detailed tables but are not summarized here with additional dollar figures."
     },
     {
       "q": "What does Johns Hopkins University Applied Physics Laboratory sell to the government?",
-      "a": "No product categories are listed for Johns Hopkins University Applied Physics Laboratory in FY2027 to date. The available figures report contract obligations, award counts, and award-size information but do not list specific items sold for this period."
+      "a": "Johns Hopkins University Applied Physics Laboratory sells research and development services to the government in FY2027 to date. Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology) accounts for $131M and Research and Development in the Physical, Engineering, and Life Sciences accounts for $235K."
     },
     {
       "q": "Which Johns Hopkins University Applied Physics Laboratory contracts are expiring soon?",
-      "a": "No expiring contracts are listed for Johns Hopkins University Applied Physics Laboratory in the FY2027 to date figures. The available tables provided total obligations and award figures but do not include expiring-contract entries for this period."
+      "a": "No expiring-contract dollar figures are summarized in the provided overview tables for FY2027 to date. The note states that largest-awards and expiring-contracts tables report total contract values rather than contract obligations, and those detailed tables would need to be consulted for explicit expiring-contract amounts."
     }
   ],
   "related": [
@@ -326,28 +512,28 @@
       "href": "/insights/expiring-federal-contracts/"
     },
     {
+      "label": "Brookhaven Science Associates federal contracts",
+      "href": "/insights/vendor/brookhaven-science-associates/"
+    },
+    {
+      "label": "Battelle Memorial Institute federal contracts",
+      "href": "/insights/vendor/battelle-memorial-institute/"
+    },
+    {
+      "label": "Leland Stanford Junior University federal contracts",
+      "href": "/insights/vendor/leland-stanford-junior-university/"
+    },
+    {
+      "label": "Metropolitan Security Services federal contracts",
+      "href": "/insights/vendor/metropolitan-security-services/"
+    },
+    {
       "label": "Hanford Tank Waste Operations and Closure federal contracts",
       "href": "/insights/vendor/hanford-tank-waste-operations-and-closure/"
     },
     {
-      "label": "Peachtree Lumber federal contracts",
-      "href": "/insights/vendor/peachtree-lumber/"
-    },
-    {
-      "label": "Lumen Technologies Government Solutions federal contracts",
-      "href": "/insights/vendor/lumen-technologies-government-solutions/"
-    },
-    {
       "label": "Uchicago Argonne federal contracts",
       "href": "/insights/vendor/uchicago-argonne/"
-    },
-    {
-      "label": "General Dynamics Information Technology federal contracts",
-      "href": "/insights/vendor/general-dynamics-information-technology/"
-    },
-    {
-      "label": "Federal Express federal contracts",
-      "href": "/insights/vendor/federal-express/"
     }
   ],
   "sources": [
@@ -355,6 +541,5 @@
       "label": "USAspending.gov award data",
       "href": "https://www.usaspending.gov"
     }
-  ],
-  "noindex": true
+  ]
 }
