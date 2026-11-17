@@ -54,8 +54,6 @@
 //                                                         signature (read-only)
 //   node scripts/outreach/instantly-angles.mjs --config   print SQL to store campaign ids
 
-import { DISCLOSURE, hasDisclosure } from './disclosure.mjs';
-
 const API = 'https://api.instantly.ai/api/v2';
 const KEY = process.env.INSTANTLY_API_KEY;
 
@@ -200,13 +198,21 @@ const MAILBOXES = {
 // ---- Shared tail ----------------------------------------------------------
 // Appended to every step. See deviation 2 above.
 //
-// The opt-out line was removed on 2026-09-29 at the owner's instruction and
-// restored on the legal-drafting branch on 2026-11-13, together with an
-// advertisement label and the Linkshub Ltd. name (disclosure.mjs explains
-// both). 15 USC 7704(a)(5)(A) requires all three elements in EVERY commercial
-// message. The postal address stays in {{accountSignature}}; the disclosure
-// sits below it so it does not compete with the CTA.
-const TAIL = ['', '{{accountSignature}}', '', DISCLOSURE];
+// THE OPT-OUT LINE WAS REMOVED ON 2026-09-29 AT THE OWNER'S INSTRUCTION, along
+// with the two guardrails that asserted it (one in check(), one in
+// assertStored()). It read: Reply "no" and I will not reach out again.
+// It is recorded here rather than argued about: 15 USC 7704(a)(5)(A) requires a
+// commercial email to carry an opt-out notice and a postal address. The postal
+// address stays, in {{accountSignature}}. The opt-out notice does not.
+//
+// NO OPT-OUT LINE AND NO COMPANY LINE, OWNER'S DECISION 2026-11-16: "don't
+// have opt-out or LinksHub language on any campaigns." This reverses the
+// 2026-11-13 legal-drafting change (73f415f), which had restored both through
+// disclosure.mjs; that module is gone.
+// That is the owner's decision to make and it has now been made three times;
+// this comment exists so nobody later reads the absence as an oversight and
+// quietly adds it back. Both guardrails below fail if it reappears.
+const TAIL = ['', '{{accountSignature}}'];
 
 // ===========================================================================
 // A1  Recompete clock
@@ -501,10 +507,10 @@ function check() {
       const links = (raw.match(/https?:\/\//g) || []).length;
       note(i === 0 ? links === 0 : true, `${label} no link in email 1`, `${links} link(s)`);
 
-      // CAN-SPAM 7704(a)(5)(A): postal address (in the signature), plus the
-      // advertisement label and opt-out notice (the disclosure). See TAIL.
+      // No opt-out or company line (owner, 2026-11-16). See TAIL.
       note(raw.includes('{{accountSignature}}'), `${label} carries the postal address`);
-      note(hasDisclosure(raw), `${label} carries the ad label and opt-out notice once`);
+      note(!/unsubscribe|opt out|opt-out|remove me|reply "no"|linkshub|marketing email/i.test(raw),
+        `${label} carries no unsubscribe, opt-out or company-line language`);
 
       const assembled = bodyHtml(lines);
       note(
@@ -627,9 +633,10 @@ function assertStored(c, sent, expectStatus) {
       const text = (v.body || '').replace(/<[^>]*>/g, '').trim();
       if (text.length < 60) problems.push(`step ${i + 1} variant ${j} body stripped (${text.length} chars)`);
       if (!v.body.includes('{{accountSignature}}')) problems.push(`step ${i + 1} variant ${j} lost the signature`);
-      // Required again from 2026-11-13 (see TAIL): a stored step without the
-      // disclosure means Instantly's copy has drifted from this file.
-      if (!hasDisclosure(v.body.replace(/<[^>]*>/g, '').replace(/&quot;/g, '"'))) problems.push(`step ${i + 1} variant ${j} lost the ad label or opt-out notice`);
+      // Fails if an opt-out or company line appears in the stored copy, because
+      // Instantly can be configured to append one and that would put it back
+      // without anyone editing this file (owner, 2026-09-29 and 2026-11-16).
+      if (/unsubscribe|reply (&quot;|")no|linkshub|marketing email/i.test(v.body)) problems.push(`step ${i + 1} variant ${j} gained opt-out or company-line language`);
     });
   });
   if ((c.email_list || []).length !== sent.email_list.length) {

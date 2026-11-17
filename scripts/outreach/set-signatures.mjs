@@ -8,10 +8,10 @@
 //                                            barred since 2026-09-04;
 //                                            see the note on SIGNATURE below
 //   2. a valid physical postal address    -> this signature
-//   3. an opt-out notice                  -> already in every email body,
-//                                            deliberately, so it cannot depend
-//                                            on a per-mailbox setting being
-//                                            configured correctly
+//   3. an opt-out notice                  -> NONE, owner's decision
+//                                            2026-11-16: no opt-out or
+//                                            LinksHub language on any
+//                                            campaign
 //
 // It is a per-mailbox setting, so one mailbox missing it sends with no
 // signature at all while the campaign preview still looks fine. Every mailbox
@@ -63,11 +63,11 @@ const KEY = process.env.INSTANTLY_API_KEY;
 // address and the signature all name the same person.
 const NAME = 'Earl Knight';
 const TITLE = 'Founder, GovHub';
-// The company line names the legal entity behind GovHub in every programme at
-// once, since all 48 mailboxes share this signature (legal-drafting branch,
-// 2026-11-13). Registered name and principal office per the Georgia
-// certificate of incorporation.
-const POSTAL = 'Linkshub Ltd., 3060 Mercer University Dr Ste 110, Atlanta, GA 30341';
+// Address only. The legal-drafting branch put "Linkshub Ltd." in front of it on
+// 2026-11-13; the owner took it out on 2026-11-16 ("don't have opt-out or
+// LinksHub language on any campaigns"), and the guardrail below now fails if
+// the company name comes back. The live signatures never carried it.
+const POSTAL = '3060 Mercer University Dr Ste 110, Atlanta, GA 30341';
 
 // The signature previously carried "This is a sales email." That line was the
 // CAN-SPAM 7704(a)(5)(A)(i) element, identification of the message as an
@@ -75,12 +75,9 @@ const POSTAL = 'Linkshub Ltd., 3060 Mercer University Dr Ste 110, Atlanta, GA 30
 // guardrail below, on request 2026-09-04. A deliberate decision rather than an
 // oversight, so the reasoning is recorded here rather than lost:
 //
-//   - (a)(5)(A)(ii), the opt-out notice, is unaffected. It sits in every email
-//     body, not here, precisely so it cannot depend on this setting.
-//     (The angle and B-line bodies lost it on 2026-09-29; the legal-drafting
-//     branch restores it there through disclosure.mjs, which also carries an
-//     advertisement label. The influencer and wave 1 bodies still have their
-//     own opt-out line but no advertisement label.)
+//   - (a)(5)(A)(ii), the opt-out notice, is not carried anywhere since
+//     2026-11-16, on the owner's instruction: the angle and B-line bodies lost
+//     it on 2026-09-29, and the influencer and wave 1 bodies on 2026-11-16.
 //   - (a)(5)(A)(iii), the postal address, is unaffected and still below.
 //   - (a)(5)(A)(i) is now carried, if at all, by the messages themselves
 //     being self-evidently solicitations: the bodies say "I built GovHub, an
@@ -180,12 +177,14 @@ function check() {
   note(!/^\s*(best|thanks|regards|cheers|sincerely)\b/im.test(plain), 'no valediction to double up with the body');
   note(!SIGNATURE.includes('—'), 'no em dash');
   note(plain.split('\n').filter(Boolean).length <= 4, 'four lines or fewer', `${plain.split('\n').filter(Boolean).length} lines`);
-  // The bodies already carry the opt-out; repeating it here is clutter, and
+  // No email carries an opt-out (owner, 2026-11-16), and
   // as of 2026-09-03 keeping the signature clear of opt-out and unsubscribe
   // wording is an explicit requirement rather than a style preference. Match
   // the whole family of phrasings, not just the two the bodies happen to use.
   note(!/\b(unsubscribe|opt[- ]?out|opt me out|remove me|take me off|reply "remove"|stop receiving|no longer wish|do not wish to receive)\b/i.test(plain),
     'no opt-out or unsubscribe language');
+  // And no company line (owner, 2026-11-16).
+  note(!/links\s*hub/i.test(plain), 'no LinksHub company line');
 
   console.log(`\n${fail === 0 ? 'Signature passes.' : fail + ' FAILURES.'}\n`);
   return fail;
