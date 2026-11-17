@@ -5511,3 +5511,99 @@ explained by anything else — and it is now corrected. But while the judge cann
 reach the API, no floor setting produces a usable verdict, and every run makes
 the pool smaller. B2 cannot launch until the API credit is restored, the crons
 are resumed, and the 240 burned signals are returned to the queue.
+
+## 2026-11-17 — daily check: the floor fix paid off, and I overstated this morning's damage
+
+### Correction: the burned signals were not lost
+
+This morning's entry said a signal written `fit: "unknown"` is "never offered to
+the judge again" and that each failed run "permanently removes forty signals —
+not delayed, removed". **That was wrong**, and the alarm I raised on it was
+overstated.
+
+| | 04:16 | 23:32 |
+|---|---|---|
+| signals carrying the credit error | 240 | **64** |
+| of those, above the 16-day floor | 40 | **0** |
+
+The selection filter does exclude a signal whose `fit` key is set, so that half
+was right. What I missed is that the opportunities harvester rewrites payloads
+for companies with no final assignment, which clears the bogus key on its next
+run. All **64** survivors sit on companies with a `pushed` assignment — exactly
+the set `replace_signals` skips and the judge would never serve anyway, since
+`pushed` is in its `FINAL` set.
+
+So the permanent loss is **zero**, and the real cost was about one harvester
+cycle of delay. I had the mechanism half-read and reported the alarming half.
+
+### The API credit came back, and the floor fix worked
+
+The judge recovered during the 04:52 run and has been healthy since:
+
+| run | 03:12 | 03:32 | 03:52 | 04:12 | 04:32 | 04:52 | 09:12 | 13:12 | 17:12 |
+|---|---|---|---|---|---|---|---|---|---|
+| unknown of 40 | 5 | 37 | 35 | 40 | 40 | 23 | **3** | **9** | **1** |
+
+And the payoff test on yesterday's `A2_FLOOR_DAYS` change, which could not be
+run while every verdict was an API error:
+
+| | last night | 04:16 | now |
+|---|---|---|---|
+| fit/plausible with >= 16 days runway | 3 | 2 | **61** |
+| B2 pre-flight supply (companies) | 0 | 0 | **61** |
+
+Supply is building for the first time. Three healthy runs produced about 59 of
+those 61, so roughly 20 usable-and-in-window verdicts per run and ~180 a day
+across nine runs. On that rate B2's 500 bar is about two to three days out —
+around 11-20 — provided the judge stays funded and the 7,000-odd unjudged
+signals above the floor hold up. That is a projection from three runs, not a
+promise.
+
+### The cron move is confirmed
+
+`outreach-awards` ran at its new **03:58 slot and returned 200**. Today's 03:45
+failure happened before the change landed, so tomorrow is the first morning
+`opportunities_3` has that minute to itself. Shard 3 still failed at 03:45 and
+again on its 03:53 retry today, recovering at 04:48.
+
+### Bounce is creeping toward the gate
+
+| | A1 | A2 | A4 | A5 | B4 | overall |
+|---|---|---|---|---|---|---|
+| rate | 1.20% | 2.18% | 2.11% | 1.68% | **2.61%** | **1.94%** |
+
+Measured against the lower of contacted and pushed, per yesterday's rule. The
+trend across five readings is 1.78 → 1.80 → 1.86 → 1.84 → **1.94**. Nothing
+triggers the rules — the overall is under 2% and no campaign is near 5% on 50+
+contacts — but the overall is now one ordinary day from the gate, and B4 is the
+campaign pulling it up. Worth a decision before it forces one.
+
+### The suppression gap recurs daily
+
+The desk's suppressed list grew 78 → 79, and the new one was **not enforced** in
+`outreach.companies`: category `not_interested`, `suppressed_at` 2026-11-16
+15:10, still mailable tonight. Suppressed, that person only, with reason and
+date; the count went 216 → 217. The 17 fixed on 11-13 all held, so this is not a
+one-off backlog but a leak that reopens whenever the desk classifies a decline.
+**The cross-check belongs in the daily run** until the desk's write path is
+fixed: pull the desk's `suppressed` addresses, compare against
+`outreach.companies.suppressed`, and enforce the difference.
+
+### The rest
+
+Push put B4's full **75** in (18 + 42 + 15), `reconciled: true` on all three
+runs. B4 delivery is improving but still behind: **80 emails sent today**, 144
+leads now at step 2, and **70 still never sent**. Audit 262 problems — 260 are
+the benign B4 ALL-CAPS company names and 2 are A5's known pair; 0 incomplete,
+0 missing first name, 0 leaked tokens, 0 bad openers. A2's "already past close"
+count is now 0.
+
+Two replies, both autoresponders. One (A1) is flagged `human_reply = true` while
+reading "employees want to thank you for e-mailing us and will try to respond to
+you in a timely manner" — the ninth autoresponder shape to be miscounted that
+way. Neither is a decline or an accept, so no suppression. Desk ledger **249**
+emails, `needs_human` **9**, `drafted` **45**.
+
+The three accepts recorded on 11-16 are still queued behind the manual
+provisioning gate, and the two blocked by a de-dupe suppression are still
+blocked.
