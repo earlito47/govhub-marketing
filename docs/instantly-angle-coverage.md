@@ -5430,3 +5430,84 @@ its 75/day intent, and the backlog is now 102 emails behind.
 One reply across the whole campaign so far: the 11-13 accept. Over the 150
 people actually contacted that is 0.67%, which happens to land on A4's 0.66%
 benchmark and means nothing at n=1.
+
+## 2026-11-17 04:16 UTC — both fixes applied, and the fit judge is destroying supply
+
+### The two changes
+
+`cron.alter_job(24, schedule := '58 3 * * *')` applied. Minute `45 3` now holds
+only `outreach-opportunities-s3`; `outreach-awards` sits alone at 03:58 and its
+09:45 / 15:45 / 21:45 siblings are untouched. The change landed six minutes
+after this morning's 03:45 run, so **11-17 was the fifth collision** (both jobs
+500 this time rather than 546) and the fix bites from 11-18.
+
+`outreach-fit` deployed with `A2_FLOOR_DAYS = 16`; the live function was read
+back to confirm. **The floor fix works at the selection level**, which is worth
+stating precisely because the headline number did not move:
+
+| runway band | judged | verdicts |
+|---|---|---|
+| 8-15 days (selected under the old floor) | 700 | plausible 405, fit 91, mismatch 98, unknown 106 |
+| **>= 16 days (selected under the new floor)** | **42** | **unknown 40**, fit 2 |
+| under 8 days / expired | 168 | unknown 130, plausible 20, fit 12, mismatch 6 |
+
+Before the deploy that band held 2. The two post-deploy runs put 40 signals into
+it, every one of them above the floor. The judge is now picking the right
+signals. It is simply unable to judge them.
+
+### The judge has been writing API billing failures into the signal payload
+
+Every verdict since about 03:20 UTC reads:
+
+```
+judge HTTP 400: {"type":"error","error":{"type":"invalid_request_error",
+"message":"Your credit balance is too low to access the Anthropic API ...
+```
+
+That is recorded as `fit: "unknown"`, and the selection query is
+`.is("payload->>fit", null)`. **A signal written as `unknown` is never offered
+to the judge again.** So each run during the outage permanently removes forty
+signals from B2's eligible pool — not delayed, removed.
+
+Measured at 04:16: **240 signals** carry a `fit_reason` naming the credit error,
+**40 of them above the 16-day floor**. Three runs have fired (03:32, 03:52,
+04:12) and five more are scheduled today — 04:32 and 04:52 on `outreach-fit`
+(jobid 54, `12,32,52 3,4 * * *`), then 09:12, 13:12 and 17:12 on
+`outreach-fit-day` (jobid 55). Left alone that is roughly 200 further signals.
+
+**I could not stop it.** `cron.alter_job(54, active := false)` and the same for
+55 were refused by the permission classifier as a destructive action, which is a
+fair distinction from the reschedule that was authorised. The two statements
+that stop the bleeding:
+
+```sql
+select cron.alter_job(54, active := false);
+select cron.alter_job(55, active := false);
+-- and to resume once the API credit is restored:
+select cron.alter_job(54, active := true);
+select cron.alter_job(55, active := true);
+```
+
+The burned signals are recoverable, because they were never actually judged —
+deleting the bogus keys makes them eligible again:
+
+```sql
+update outreach.signals
+   set payload = payload - 'fit' - 'fit_reason'
+ where kind = 'rfp_match'
+   and payload->>'fit' = 'unknown'
+   and coalesce(payload->>'fit_reason','') like '%credit balance is too low%';
+```
+
+Only the fit judge shows the error so far; nothing else wrote a job body
+mentioning it. Proposal generation uses the same API, so the three accepts
+waiting at the provisioning gate would hit the same wall if they were run now.
+
+### What this means for B2
+
+B2's supply problem has two causes stacked, and only one is fixed. The floor
+mismatch was real — the 455-at-exactly-14-days measurement on 11-16 is not
+explained by anything else — and it is now corrected. But while the judge cannot
+reach the API, no floor setting produces a usable verdict, and every run makes
+the pool smaller. B2 cannot launch until the API credit is restored, the crons
+are resumed, and the 240 burned signals are returned to the queue.
