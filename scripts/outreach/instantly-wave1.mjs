@@ -18,7 +18,12 @@
 //     inbox preview is the only thing a same-thread bump shows.
 //   - No em dashes. The content voice standard bans them (scripts/check-emdash.mjs);
 //     readers read the em dash as an AI-writing tell.
-//   - Every step carries a plain-text opt-out line. CAN-SPAM 15 USC 7704(a)(5)(A)
+//   - NO STEP CARRIES AN OPT-OUT LINE, owner's decision 2026-11-16: "don't
+//     have opt-out or LinksHub language on any campaigns." check() fails if
+//     one comes back. What follows is the reasoning that put it there in
+//     September, kept so the decision is made knowingly, not by accident:
+//
+//     Every step carried a plain-text opt-out line. CAN-SPAM 15 USC 7704(a)(5)(A)
 //     wants three disclosures in EVERY commercial message: identification as
 //     solicitation, opt-out notice, and a postal address. The postal address
 //     ships in the per-mailbox {{accountSignature}}; the solicitation line was
@@ -147,8 +152,6 @@ const EMAIL_2_BODY = [
   '{{RANDOM|Want me to point you at it?|Worth a look?}}',
   '',
   '{{accountSignature}}',
-  '',
-  '{{RANDOM|If I am barking up the wrong tree, reply "no" and I will not reach out again.|If this is not relevant, reply "no" and you will not hear from me again.}}',
 ];
 
 // Email 3, day 4 after email 2 (so day 7), same thread. The info dump.
@@ -169,8 +172,6 @@ const EMAIL_3_BODY = [
   '{{RANDOM|If the timing is off, that is fine.|If now is not the time, all good.}}',
   '',
   '{{accountSignature}}',
-  '',
-  '{{RANDOM|Reply "no" and I will not reach out again.|Reply "no" and you will not hear from me again.}}',
 ];
 
 // ---- Campaign A: serial_bidder -------------------------------------------
@@ -191,8 +192,6 @@ const A_EMAIL_1_BODY = [
   '{{RANDOM|How many do you pass on in a month for capacity?|Who carries the proposal load for you now, in-house or outside?}}',
   '',
   '{{accountSignature}}',
-  '',
-  'Reply "no" and I will not reach out again.',
 ];
 
 // ---- Campaign B: new_prime ----------------------------------------------
@@ -221,8 +220,6 @@ const B_EMAIL_1_BODY = [
   '{{RANDOM|Who writes your proposals today, in-house or a consultant?|Is the proposal work in-house for you, or outsourced?}}',
   '',
   '{{accountSignature}}',
-  '',
-  'Reply "no" and I will not reach out again.',
 ];
 
 // ---- Campaign C: registered_no_awards -----------------------------------
@@ -255,8 +252,6 @@ const C_EMAIL_1_BODY = [
   '{{RANDOM|Still bidding, or is federal on hold for now?|Are you still chasing federal, or has that gone quiet?}}',
   '',
   '{{accountSignature}}',
-  '',
-  'Reply "no" and I will not reach out again.',
 ];
 
 // Subject variants are real A/B variants, not spintax, so Instantly reports
@@ -521,15 +516,12 @@ function check() {
       renders.every((r) => !/^\s*[,.?!]/.test(r)),
       `${s.label} no render opens with punctuation`
     );
-    // The opt-out has to be present AND has to not sound like a mailing list.
-    // Changed 2026-09-04: "remove" and "off my list" tell the reader they were
-    // on a list, which is the one thing a cold email cannot afford to admit on
-    // the way out. Both halves are checked, so neither the instruction nor the
-    // voice can regress silently.
-    note(/reply "no"/i.test(raw), `${s.label} carries an opt-out line`);
+    // NO OPT-OUT LINE (owner, 2026-11-16: "don't have opt-out or LinksHub
+    // language on any campaigns"). This guard required 'reply "no"' from
+    // 2026-09-04; it now fails if that line, or any list language, comes back.
     note(
-      !/\b(remove|unsubscribe|opt[- ]?out|off my list|off this list|mailing list|your list)\b/i.test(raw),
-      `${s.label} opt-out reads personal, not list-managed`
+      !/reply "no"|linkshub|\b(remove me|unsubscribe|opt[- ]?out|off my list|off this list|mailing list|your list)\b/i.test(raw),
+      `${s.label} carries no opt-out, list or company-line language`
     );
 
     // The sanitizer discards bare text nodes, so every line must be inside a div.

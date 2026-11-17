@@ -259,7 +259,7 @@ export function renderEmail({ company, contactName }) {
     `Hi ${hi},`,
     `I run GovHub, a small site that publishes federal contracting market data. We recently put together a profile of ${possessive(company)} federal work from public USAspending data: contract totals, top agencies, largest awards, that kind of thing.`,
     "Since it's your company, I wanted to offer you the chance to review the page and take control of it. If anything is off, or you want it to say more (or less), just reply and I'll make the edits myself. Happy to send a link over if you'd like to look first.",
-    `If you'd rather not hear from me again, reply "no thanks" and that's the end of it.`,
+    // No opt-out line (owner, 2026-11-16: no opt-out language on any campaign).
   ];
   const body = `${paragraphs.map((p) => wrapBody(p)).join('\n\n')}\n\n${signature}\n`;
   return { subject, body };
