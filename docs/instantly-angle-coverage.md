@@ -5607,3 +5607,147 @@ emails, `needs_human` **9**, `drafted` **45**.
 The three accepts recorded on 11-16 are still queued behind the manual
 provisioning gate, and the two blocked by a de-dupe suppression are still
 blocked.
+
+## 2026-11-18 — assign stalled B4 to zero, and the reason is on page one of this file
+
+### What happened
+
+`outreach-assign` wrote **0 rows** this morning: `considered 1200, written 0,
+bline.no_signal 1178`. Push then sent 66 instead of 75 and left B4's queue at
+**1 ready**. Tomorrow would have been zero.
+
+The cause is not supply. **1,130 B-line companies hold a live
+`competitor_award` and no assignment** — fifteen days of B4 at cap 75. Assign
+simply never reaches them, and the proof is one query. Of the first 1,200
+signal-bearing unassigned companies in email order:
+
+| | |
+|---|---|
+| hold a live `competitor_award` (B4-eligible) | **1** |
+| hold only `rfp_match` (routes to B2, whose cap is **0**) | **1,100** |
+| on the B line | 1,200 |
+
+`withSignal` is built as `byCompany.has(c.id)` — *any* signal earns priority.
+An `rfp_match`-only company therefore outranks an award-holder even though B2's
+cap of 0 gives it a ceiling of 0 and it cannot be assigned at all. The email
+order is deterministic and none of those 1,100 ever leave the pool, so **the
+same 1,200 come up every morning**. It is a permanent stall, not a slow day.
+
+**This file already describes the bug, one level shallower.** The comment above
+that line records the first version: slots went to companies with no signal
+while "A4's queue was EMPTY and it could not fill its own cap, with 341
+companies carrying a live competitor_award signal sitting unassigned further
+down the list, unreached because assign never got that far." Sorting
+signal-bearing companies to the front fixed that. The same sentence now applies
+with "signal-bearing but capped at zero" in place of "no signal". The rule was
+right when every signal led to a sendable angle and wrong the moment one
+angle's cap went to 0.
+
+**Mitigated, not fixed.** One run at a larger walk, which also proves the
+diagnosis on the same code and the same data:
+
+| run | considered | written |
+|---|---|---|
+| 05:00 cron (default limit) | 1,200 | **0** |
+| manual, `?limit=4000` | 4,000 | **286** (all B4) |
+
+B4's queue is now **287 ready**, 3.8 days at cap, so tomorrow's 75 is safe. The
+cron still passes 1200 and will write 0 again on Friday.
+
+The fix belongs in the split: a signal should earn priority only if the angle it
+routes to can actually send. Sketch, not applied — this is the B-line session's
+function and the mapping from kind to angle differs by line:
+
+```ts
+// A signal only earns a slot if its angle has somewhere to put the lead.
+const useful = (c: Company) => (byCompany.get(c.id) ?? []).some((s) => {
+  const b = String(c.line ?? "A") === "B";
+  if (s.kind === "competitor_award") return (ceiling[b ? "B4" : "A4"] ?? 0) > 0;
+  if (s.kind === "rfp_match")        return (ceiling[b ? "B2" : "A2"] ?? 0) > 0;
+  return !b && (ceiling.A1 ?? 0) > 0;
+});
+```
+
+Raising the cron's `limit` would also work and is a worse answer: it spends four
+times the attention to step over the same 1,100 companies every morning.
+
+### A second, independent truncation
+
+`signals_loaded: 20000` is a cap, not a count:
+
+```js
+for (let page = 0; page < 20; page++) { ... .range(page*1000, page*1000+999) }
+```
+
+There are **21,483** signals at status new/approved, so **1,483 are invisible to
+assign**, among them 82 of B4's eligible award signals. The comment states the
+assumption that made it safe — "Signals are bounded by the universe ... both
+simpler and safe **at this size**" — and the 11-07 load of 16,093 companies
+ended that size. Smaller in effect than the stall above, and the same family:
+a constant that was ample until the universe grew past it.
+
+### The 03:45 fix is confirmed
+
+First clean morning in five days:
+
+| 03:00 | 03:15 | 03:30 | **03:45** | **03:58** |
+|---|---|---|---|---|
+| 500, retry 200 at 03:08 | 200 | 200 | **200** | **awards 200** |
+
+`opportunities_3` passed at 03:45 on its first attempt and `awards` passed at
+its new 03:58 slot. Shard 0's 500 at 03:00 is unrelated — nothing else runs at
+that minute — and its guarded retry caught it.
+
+### Correcting last night's bounce warning
+
+I wrote that bounce was "one ordinary day from the gate". It eased instead:
+
+| 11-13 | 11-16 | 11-17 | 11-18 |
+|---|---|---|---|
+| 1.86% | 1.84% | 1.94% | **1.90%** |
+
+The numerator has not moved in three days — **132 bounces** on 11-16, 11-17 and
+11-18 alike. The rise to 1.94% was the denominator catching up, not
+deliverability degrading, and B4 fell from 2.61% to 1.97% purely because its
+contacted count grew while its six bounces stayed six. A rate that moves only
+because its denominator moved is not a trend, and I should have said so rather
+than flagging a creep.
+
+### B2: supply is building, but nothing will launch it
+
+| | 11-17 | 11-18 |
+|---|---|---|
+| fit/plausible with >= 16 days runway | 61 | **197** |
+| B2 pre-flight supply (companies) | 61 | **197** |
+
++136 in a day against a bar of 500, so roughly two more days. The judge is
+healthy: today's elevated `unknown` counts (17, 18, 21, 19 in the early runs)
+are **genuine verdicts**, not the API failure — "No solicitation description
+given; NAICS 541614 matches but the code alone isn't evidence" is the judge
+working. The only rows still carrying the credit error are the same 64 frozen on
+already-pushed companies.
+
+**But the launch step is spent.** `trig_01Aq734We12umFdUDLJrM2ts` reads
+`enabled: false`, `ended_reason: run_once_fired`, last fired 2026-11-16
+21:16:05. It was a one-shot, it held correctly on 0 supply, and it disabled
+itself. Nothing now re-checks the pre-flight, so when supply passes 500 in a
+couple of days **no automation will act on it**. Re-arming that is the owner's
+call, not something to create from here.
+
+### The rest
+
+Audit 320 problems: 318 are the benign B4 ALL-CAPS company names and 2 are A5's
+known pair; **0 incomplete, 0 missing first name, 0 leaked tokens, 0 bad
+openers** across 366 B4 and 5,913 A-line leads. Inventory: A1, A2, A4 all 0
+ready; A5 727 against cap 0; B4 287 after the mitigation.
+
+The suppression cross-check ran clean for the first time: **79 desk-suppressed
+addresses, 79 enforced, 0 still mailable.** Yesterday's leak was the last one
+outstanding.
+
+One reply, and it is the dead BioCircuit mailbox **for the second time** — "I am
+no longer using this email account", with the same named successor. The desk
+still has it `no_action`, and classification is the desk's, so it stays flagged
+rather than overridden. But the address has now been mailed at least twice since
+11-13 and answered identically both times, which is as clear as a dead mailbox
+gets. Desk ledger **250** emails, `needs_human` **9**, `drafted` **45**.
