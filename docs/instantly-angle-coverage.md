@@ -5751,3 +5751,111 @@ still has it `no_action`, and classification is the desk's, so it stays flagged
 rather than overridden. But the address has now been mailed at least twice since
 11-13 and answered identically both times, which is as clear as a dead mailbox
 gets. Desk ledger **250** emails, `needs_human` **9**, `drafted` **45**.
+
+## 2026-11-19 — B2 launched, and B4 has under three days left
+
+### B2 is live
+
+Someone set `daily_caps.B2 = 50` at **03:39:39 UTC** today and activated the
+campaign: status 1, `daily_max_leads` 50, 21 mailboxes, and **9 emails sent** —
+B2's first. Not the 100 the spent pre-flight specified, so this was a fresh
+decision rather than that step running late.
+
+Worth recording how this nearly got misreported here. Push's summary showed
+`per_angle {B2: 9, B4: 43}` and yesterday's cap for B2 was 0, which reads as a
+cap violation — nine leads pushed against a budget of nothing, into a campaign
+that had been in draft. Reading `daily_caps` before writing that down is what
+turned a fabricated alarm into a launch notice. The lesson is narrow and worth
+keeping: a counter that looks impossible against yesterday's configuration is
+first evidence that the configuration changed.
+
+Push sent 9 of the 50 because **`held_for_solicitation_pace` held 24** of the 33
+rows assign wrote. That is the per-solicitation pace limiter doing its job on a
+cohort concentrated across few notices, not a fault.
+
+### B2's first nine read well
+
+180-182 characters against the 200 limit, **0 over length, 0 containing a link,
+0 blank**, close dates Dec 8-16 (19 to 27 days out, inside the 16-30 window),
+and **8 distinct solicitations across 9 leads, at most 2 per notice**.
+
+> Gordon, this DoD bid fits your NAICS and closes Dec 8. One missed form or page
+> limit is enough to get a bid like this tossed. Want the list of what would
+> disqualify you on this one?
+
+### B2's most specific opener cannot fire
+
+Every one of those nine says "this DoD bid" rather than naming the
+solicitation. That is the ladder falling back, and the arithmetic says it will
+fall back essentially always:
+
+| | |
+|---|---|
+| `B2_TAIL` length | **126** chars |
+| rung 1 skeleton, 2-char name, "DoD", empty title | **181** chars |
+| characters left for the title inside the 200 cap | **19** |
+| title length `b2Opener` actually admits | **48** |
+
+So the rung that names the solicitation needs a title of about 19 characters or
+fewer, while the gate above it accepts 48 — which reads, on the page, as though
+titles up to 48 will be used. Measured over the nine live leads: rung 1 **0**,
+rung 2 (agency only) **8**, rung 3 (neither agency nor title) **1**.
+
+B4 does not have this problem: its tail is 94 characters and its rung 1 fires on
+81% of leads. The difference between the two campaigns is entirely the 32
+characters of extra tail.
+
+Not changed from here — this is live copy on a campaign launched twelve hours
+ago, and the fix is a judgement about which sentence to shorten, not a
+correctness repair. The solicitation does still reach the reader in the subject
+line, which `b2Subject` builds separately.
+
+### B4 runs dry on Monday
+
+`assign` wrote **33 rows today, every one of them B2, and zero B4**:
+
+```
+tally: {"A1":0,"A2":0,"A4":0,"A5":0,"B4":0,"B2":33}
+```
+
+This is the 11-18 stall, unchanged, and B2's launch has made it worse rather
+than better: the 1,100 `rfp_match`-only companies at the front of the email sort
+are now *legitimately* assignable, so they consume the whole 1,200-company walk
+on merit, and B4's award-holders are still further down the list where assign
+never reaches them.
+
+B4's queue is **208 ready** after pushing its full 75 today. At 75 out and 0 in,
+that is **2.8 days** — Friday, Monday, and part of Tuesday. The 1,130 eligible
+award-holders are still waiting.
+
+Yesterday's mitigation (one manual run at `?limit=4000`) would work again and is
+still the wrong answer twice over: it spends four times the attention to step
+over the same companies, and it has to be remembered by hand every day. The fix
+in the `withSignal` split is sketched in yesterday's entry.
+
+### The 03:45 fix is holding
+
+Second clean morning, every job first-attempt 200:
+
+| 03:00 | 03:15 | 03:30 | 03:45 | 03:58 | 09:45 | 15:45 | 21:45 |
+|---|---|---|---|---|---|---|---|
+| 200 | 200 | 200 | **200** | **200** | 200 | 200 | 200 |
+
+### The rest
+
+Bounce **134 / 7,052 = 1.90%**, flat against yesterday: A1 1.09%, A2 2.18%,
+A4 2.11%, A5 1.68%, **B4 2.11%** (two new today), **B2 0 of 9**. Nothing near
+the gates.
+
+Audit: **0 incomplete, 0 missing first name, 0 leaked `{{token}}`, 0 bad
+openers** across 441 B4, 9 B2 and 5,913 A-line leads. The 385 flagged are 375 B4
+and now **8 B2** ALL-CAPS company names, plus A5's known pair. The B-line load's
+raw-caps company names therefore reach B2 as well as B4 — still benign, because
+neither campaign interpolates `companyName`, as checked across all six sequences
+on 11-12.
+
+One reply: a B4 out-of-office, correctly `human = false`. Desk ledger **251**
+emails, `needs_human` **9**, `drafted` **45**.
+
+The suppression cross-check ran clean for the second day: **79 desk-suppressed,
+79 enforced, 0 still mailable.**
