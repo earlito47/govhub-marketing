@@ -158,7 +158,10 @@ const B4 = {
 const B2 = {
   key: 'B2',
   name: 'GH-B2-MatchedRFP',
-  daily_max_leads: 100,
+  // 50, not 100: launched 2026-11-19 at half rate on the owner's 11-17 call
+  // ("launch at 50/day" while B4's bounce rate sat at the 2% gate). Matches
+  // outreach.config daily_caps.B2. Raise both together.
+  daily_max_leads: 50,
   required: ['opener', 'sol_subject', 'sol_agency_short', 'sol_close_date', 'naics_code', 'state_name', 'state_slug'],
   // A timeline hook in the subject ("VA bid, closes Nov 24") against the title.
   subjects: ['{{sol_agency_short}} bid, closes {{sol_close_date}}', '{{sol_subject}}'],
