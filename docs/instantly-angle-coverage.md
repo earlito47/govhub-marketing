@@ -5859,3 +5859,100 @@ emails, `needs_human` **9**, `drafted` **45**.
 
 The suppression cross-check ran clean for the second day: **79 desk-suppressed,
 79 enforced, 0 still mailable.**
+
+## 2026-11-20 — the stall reached B2, and four people are still waiting for a yes to be answered
+
+### assign wrote three rows today
+
+Third day of the 11-18 stall, and it has stopped being a B4-only problem:
+
+| | 11-18 | 11-19 | 11-20 |
+|---|---|---|---|
+| assign `written` | 0 | 33 (all B2) | **3** (all B2) |
+| B4 ready at check time | 1 | 208 | **133** |
+| B2 ready at check time | — | 24 | **19** |
+
+B2's drop from 33 to 3 is the same mechanism finishing its work. The 1,200-company
+walk is deterministic, so it meets the same companies every morning; yesterday it
+assigned the 33 of them that were assignable, and today only 3 more had become
+so. The walk is now exhausted of assignable companies inside its window and will
+stay that way. B4 at 1.8 days and B2 at 0.4 both ran out early next week, with
+the next push on Monday 06:00 because the crons are weekday-only.
+
+**Refilled by hand, again.** One run at `?limit=6000`:
+
+```
+considered 6000, written 294, tally {B4: 231, B2: 62, A2: 1}
+bline.no_signal 5699
+```
+
+B4 **133 → 364 ready** (4.9 days at cap 75), B2 **19 → 81**. B2's cap is 50 but
+the solicitation pace limiter lets roughly 8 or 9 through a day, so 81 rows is
+nearer nine days of real sending than the 1.6 the cap arithmetic suggests.
+Monday is covered for both.
+
+That `no_signal 5699` of 6,000 is the shape of the problem in one number: 95% of
+the walk is companies with nothing to send them, and the prioritisation that was
+meant to fix exactly that cannot see past signals whose angle is full or capped.
+This is the second hand-run in three days. The weekend buys to roughly Wednesday;
+after that it needs doing again, or the `withSignal` fix from the 11-18 entry
+needs to land.
+
+### B4 has a second accept, and it is the by-rule case
+
+Today's one reply, `human_reply = true` and correctly so, is the word **"Send"**
+followed by the sender's own signature block — name, title, phone, website. The
+routine's item 6 names this exactly: "A bare 'send' with no question is an
+accept by rule; treat it as the yes it is." Against B4's ask, "Want the next 3
+that are still open?", it is unambiguous.
+
+It is **not in the desk ledger yet** (252 entries tonight, and this reply is not
+among them), which is ordinary ingest lag on a reply that arrived today, not a
+fault.
+
+### The accept backlog is now the worst thing in the pipeline
+
+The provisioning gate still holds the same three accepts it has held since 11-16,
+and the oldest has now waited **fifteen days**:
+
+| angle | reply | accepted | waiting |
+|---|---|---|---|
+| A5 | "Yes that would be great" | 2026-11-05 | **15 days** |
+| B4 | "Yes please" | 2026-11-13 | 7 days |
+| A2 | "Yes" | 2026-11-13 | 7 days |
+
+None has a staged proposal. Add today's "Send" and that is **four people who
+said yes and have been answered with nothing.** Every one of them replied to a
+promise — the next three open solicitations, or the list of what would
+disqualify them — and the pipeline's whole purpose is to deliver that.
+
+The gate itself is right: an accept row authorises creating an account at a real
+person's address off a model classification, and `--apply` asks a human to read
+the quotes first. The three quotes above are about as unambiguous as replies get.
+Running it is one command and is not mine to run unasked, because it provisions
+for real people:
+
+```
+node scripts/outreach/sync-proposal-accepts.mjs --apply
+```
+
+Measured against the rest of this file, this is worth more than any queue number
+in it. A missed day of sending costs 75 strangers an email they did not ask for.
+Fifteen days of silence costs someone who said yes.
+
+### The rest
+
+Bounce **137 / 7,172 = 1.91%**, flat on 1.90%: A1 1.16%, A2 2.18%, A4 2.11%,
+A5 1.68%, **B4 2.20%**, **B2 0 of 17**. Nothing near either gate.
+
+Push: B4 **75** exactly, B2 8. Jobs: `opportunities_2` took a 500 at 03:30 and
+its guarded retry recovered at 03:38; everything else first-attempt 2xx. The
+03:45 slot is clean for a **third** morning since awards moved to 03:58.
+
+Audit: **0 incomplete, 0 missing first name, 0 leaked `{{token}}`, 0 bad
+openers** across 516 B4, 17 B2 and 5,913 A-line leads. The 453 flagged are the
+B-line raw-caps company names (435 B4, 16 B2) plus A5's known pair, still
+unexposed because neither B campaign interpolates `companyName`.
+
+Suppression cross-check clean for a third day: **79 of 79 enforced, 0 still
+mailable.** Desk ledger **252** emails, `needs_human` **9**, `drafted` **45**.
