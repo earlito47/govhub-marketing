@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "cursor": "2026-11-18T14:54:01.000Z",
+  "cursor": "2026-11-18T23:35:29.000Z",
   "emails": {
     "01a07bf7-8d8a-7d1c-b87e-76208ed81963": {
       "lead": "amirl@seetrue.ai",
@@ -2799,6 +2799,48 @@
       "classified_by": "model",
       "status": "no_action",
       "updated_at": "2026-11-20T15:22:30.174Z"
+    },
+    "01a1fb2c-8fe2-7eb6-8007-340f1289d7b9": {
+      "lead": "aaron@catalystdiving.com",
+      "campaign": "B4",
+      "received_at": "2026-11-20T22:55:42.000Z",
+      "category": "accept",
+      "classified_by": "rule",
+      "status": "drafted",
+      "playbook": "B4",
+      "deliverable": "next_open",
+      "updated_at": "2026-11-21T01:22:25.259Z",
+      "watch": {
+        "naics": "541990",
+        "keywords": [
+          "zozude",
+          "catalyst"
+        ],
+        "companyName": "CATALYST DIVING, INC.",
+        "context": "Zozude LLC (San Francisco) won a $600K NASA award in NAICS 541990, which is how we found them. Company name: CATALYST DIVING, INC..",
+        "count": 2,
+        "exclude": [
+          "N6274227R1801"
+        ],
+        "until": "2027-01-05T01:21:24.461Z",
+        "eaccount": "earl@govhubrfp.com",
+        "subject": "Re: next 3 in 541990",
+        "campaign_id": "52a9e8b7-57ee-4dab-94bd-6df8e7fe1cd6",
+        "firstName": "Aaron"
+      },
+      "notified_at": "2026-11-21T01:22:25.258Z"
+    },
+    "01a1fb50-a668-710a-8a7f-d075d87bd521": {
+      "lead": "email@tobyfeldman.com",
+      "campaign": "B4",
+      "received_at": "2026-11-20T23:35:55.000Z",
+      "category": "accept",
+      "classified_by": "model",
+      "status": "drafted",
+      "playbook": "B4",
+      "deliverable": "next_open",
+      "updated_at": "2026-11-21T01:22:25.260Z",
+      "notified_at": "2026-11-21T01:22:25.260Z"
     },
     "430b01b5-be33-46b6-86ad-68e1dc0ee14d": {
       "lead": "admin@documentsecuritysolutions.net",
