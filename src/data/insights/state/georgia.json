@@ -1,20 +1,20 @@
 {
   "pageType": "state",
   "slug": "georgia",
-  "title": "Federal Contracts in Georgia: $190M (FY2027)",
+  "title": "Federal Contracts in Georgia: $263M (FY2027)",
   "h1": "Federal Contracts in Georgia: Spending, Agencies & Vendors",
-  "metaDescription": "Federal agencies obligated $190M to contractors in Georgia in FY2027 to date. See top buying agencies, top vendors, and industries.",
-  "updated": "2026-11-16",
+  "metaDescription": "Federal agencies obligated $263M to contractors in Georgia in FY2027 to date. See top buying agencies, top vendors, and industries.",
+  "updated": "2026-11-23",
   "fyWindow": {
     "label": "FY2027 to date",
     "start": "2026-10-01",
-    "end": "2026-11-16"
+    "end": "2026-11-23"
   },
   "stats": {
-    "totalObligations": 190347739.15,
-    "awardCount": 3297,
-    "yoyGrowthPct": -98.1,
-    "avgAwardSize": 57734,
+    "totalObligations": 262529916.18,
+    "awardCount": 3795,
+    "yoyGrowthPct": -97.4,
+    "avgAwardSize": 69178,
     "smallBusinessSharePct": null
   },
   "charts": [
@@ -36,25 +36,25 @@
             ],
             [
               "FY24",
-              10656011131.71
+              10656010544.61
             ],
             [
               "FY25",
-              12002536973.62
+              12003009313.62
             ],
             [
               "FY26",
-              10281393779.44
+              10285052566.64
             ],
             [
               "FY27",
-              190347739.15
+              262529916.18
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Obligations fell 98.1% year over year, from $10.3B in FY2026 to $190M in FY2027 to date."
+      "takeaway": "Obligations fell 97.4% year over year, from $10.3B in FY2026 to $263M in FY2027 to date."
     },
     {
       "id": "georgia-top-agencies",
@@ -66,31 +66,35 @@
           "points": [
             [
               "Department of Health and Human Services",
-              68851878.62
+              115545531.46
             ],
             [
               "Department of Veterans Affairs",
-              66598459.73
+              67746359.78
             ],
             [
               "Department of Homeland Security",
-              18730505.03
+              29636401.37
             ],
             [
               "Department of Justice",
-              12877201.32
+              13318031.54
+            ],
+            [
+              "Department of Labor",
+              11406603.82
             ],
             [
               "Department of Agriculture",
-              10802204.22
+              9884498.29
             ],
             [
               "General Services Administration",
-              7798011.49
+              9768229.32
             ],
             [
               "Department of Transportation",
-              3354797.1
+              4093479.34
             ],
             [
               "National Aeronautics and Space Administration",
@@ -98,17 +102,13 @@
             ],
             [
               "Environmental Protection Agency",
-              455470.79
-            ],
-            [
-              "National Archives and Records Administration",
-              268961.37
+              623734.86
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Department of Health and Human Services was the top federal buyer in Georgia, obligating $68.9M (36.2% of the state total)."
+      "takeaway": "Department of Health and Human Services was the top federal buyer in Georgia, obligating $116M (44.0% of the state total)."
     },
     {
       "id": "georgia-top-vendors",
@@ -120,7 +120,7 @@
           "points": [
             [
               "FOUR SEASONS ENVIRONMENTAL INC",
-              49279467
+              51892030
             ],
             [
               "T47 INTERNATIONAL, INC.",
@@ -131,8 +131,24 @@
               16720916
             ],
             [
+              "CHENEGA NASWIK INTERNATIONAL LLC",
+              16578076.69
+            ],
+            [
               "TECHANAX LLC",
               7588520.55
+            ],
+            [
+              "THE GEO GROUP, INC.",
+              7584887.6
+            ],
+            [
+              "ODLE MANAGEMENT GROUP, L.L.C.",
+              6035839.77
+            ],
+            [
+              "ADAMS AND ASSOCIATES INC",
+              5128199.67
             ],
             [
               "FLIGHTWORKS INC",
@@ -141,28 +157,12 @@
             [
               "EXCELSIOR AMBULANCE SERVICE INC",
               4730620
-            ],
-            [
-              "VETMED GROUP LLC",
-              4720189
-            ],
-            [
-              "ARROW ARC LLC",
-              3940529
-            ],
-            [
-              "APPOINTED WORLDWIDE HOLDINGS LLC",
-              3925891.7
-            ],
-            [
-              "JMG VETERAN CONTRACTING LLC",
-              3765653
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "FOUR SEASONS ENVIRONMENTAL INC led all contractors in Georgia with $49.3M, 25.9% of the state total."
+      "takeaway": "FOUR SEASONS ENVIRONMENTAL INC led all contractors in Georgia with $51.9M, 19.8% of the state total."
     },
     {
       "id": "georgia-top-naics",
@@ -174,19 +174,31 @@
           "points": [
             [
               "Facilities Support Services",
-              51816881.03
+              54510336.4
+            ],
+            [
+              "Security Guards and Patrol Services",
+              25743941.41
             ],
             [
               "Janitorial Services",
-              18660408.05
+              18688460.85
             ],
             [
               "Other Scientific and Technical Consulting Services",
-              13802652.24
+              15020755.23
             ],
             [
               "Temporary Help Services",
-              13656636.95
+              13713681.27
+            ],
+            [
+              "Computer Systems Design Services",
+              12946511.25
+            ],
+            [
+              "Other Technical and Trade Schools",
+              11164039.44
             ],
             [
               "Ambulance Services",
@@ -194,29 +206,17 @@
             ],
             [
               "Other Computer Related Services",
-              8525627.27
+              8595484.21
             ],
             [
-              "Nonscheduled Chartered Passenger Air Transportation",
-              7056364.77
-            ],
-            [
-              "Cut Stone and Stone Product Manufacturing",
-              6883818
-            ],
-            [
-              "Security Guards and Patrol Services",
-              6293961.26
-            ],
-            [
-              "Commercial and Institutional Building Construction",
-              3944164.45
+              "Administrative Management and General Management Consulting Services",
+              8361904.32
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Facilities Support Services was the largest industry in Georgia, with $51.8M obligated."
+      "takeaway": "Facilities Support Services was the largest industry in Georgia, with $54.5M obligated."
     }
   ],
   "crossLinks": [
@@ -241,16 +241,16 @@
       "href": "/insights/naics/561210/"
     },
     {
+      "label": "NAICS 561612: Security Guards and Patrol Services",
+      "href": "/insights/naics/561612/"
+    },
+    {
       "label": "NAICS 561720: Janitorial Services",
       "href": "/insights/naics/561720/"
     },
     {
       "label": "NAICS 541690: Other Scientific and Technical Consulting Services",
       "href": "/insights/naics/541690/"
-    },
-    {
-      "label": "NAICS 541519: Other Computer Related Services",
-      "href": "/insights/naics/541519/"
     }
   ],
   "tables": [
@@ -268,7 +268,7 @@
             "text": "FOUR SEASONS ENVIRONMENTAL INC",
             "href": "https://www.usaspending.gov/recipient/7936145a-09f2-03b7-78c4-0aaaefa2fe6b-C/latest/"
           },
-          49279467
+          51892030
         ],
         [
           2,
@@ -289,13 +289,45 @@
         [
           4,
           {
+            "text": "CHENEGA NASWIK INTERNATIONAL LLC",
+            "href": "https://www.usaspending.gov/recipient/05f4c3b8-fb13-5c77-c51d-13487de0d5df-C/latest/"
+          },
+          16578076.69
+        ],
+        [
+          5,
+          {
             "text": "TECHANAX LLC",
             "href": "https://www.usaspending.gov/recipient/dc71f583-e564-6e6d-a603-2d58233fa078-C/latest/"
           },
           7588520.55
         ],
         [
-          5,
+          6,
+          {
+            "text": "THE GEO GROUP, INC.",
+            "href": "https://www.usaspending.gov/recipient/9b308edb-a62c-659b-704b-ef4e5cf3f795-C/latest/"
+          },
+          7584887.6
+        ],
+        [
+          7,
+          {
+            "text": "ODLE MANAGEMENT GROUP, L.L.C.",
+            "href": "https://www.usaspending.gov/recipient/bc08d37c-0737-456b-b971-efed7a9c8a99-C/latest/"
+          },
+          6035839.77
+        ],
+        [
+          8,
+          {
+            "text": "ADAMS AND ASSOCIATES INC",
+            "href": "https://www.usaspending.gov/recipient/ffae81b7-8d4e-c9dc-555a-f0aa0d9adf7e-C/latest/"
+          },
+          5128199.67
+        ],
+        [
+          9,
           {
             "text": "FLIGHTWORKS INC",
             "href": "https://www.usaspending.gov/recipient/cce15e52-9876-12d2-3cfd-2b166ddf2d35-C/latest/"
@@ -303,44 +335,12 @@
           4735180
         ],
         [
-          6,
+          10,
           {
             "text": "EXCELSIOR AMBULANCE SERVICE INC",
             "href": "https://www.usaspending.gov/recipient/c7852b30-9d2c-91e3-dfd6-193b3410e4a3-C/latest/"
           },
           4730620
-        ],
-        [
-          7,
-          {
-            "text": "VETMED GROUP LLC",
-            "href": "https://www.usaspending.gov/recipient/30c5b432-5fe0-d11a-1e80-20f5879a52cd-C/latest/"
-          },
-          4720189
-        ],
-        [
-          8,
-          {
-            "text": "ARROW ARC LLC",
-            "href": "https://www.usaspending.gov/recipient/4330f4e2-e129-648a-843b-004a7547bd68-C/latest/"
-          },
-          3940529
-        ],
-        [
-          9,
-          {
-            "text": "APPOINTED WORLDWIDE HOLDINGS LLC",
-            "href": "https://www.usaspending.gov/recipient/4d9a77e5-4c29-1b8b-048d-2cbcfb513d70-C/latest/"
-          },
-          3925891.7
-        ],
-        [
-          10,
-          {
-            "text": "JMG VETERAN CONTRACTING LLC",
-            "href": "https://www.usaspending.gov/recipient/cd12f733-8982-8529-fd0f-0f4077e59542-C/latest/"
-          },
-          3765653
         ]
       ]
     },
@@ -386,7 +386,7 @@
             "text": "FOUR SEASONS ENVIRONMENTAL INC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_75D30126F20733_7523_47QSHA19D001K_4732/"
           },
-          100263528,
+          102876091,
           "Department of Health and Human Services"
         ],
         [
@@ -404,11 +404,20 @@
             "text": "ODLE MANAGEMENT GROUP, L.L.C.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_1605JE24C0013_1605_-NONE-_-NONE-/"
           },
-          57370135.74,
+          63427601.07,
           "Department of Labor"
         ],
         [
           7,
+          {
+            "text": "ADAMS AND ASSOCIATES INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_1605JE22C0008_1605_-NONE-_-NONE-/"
+          },
+          56295373.56,
+          "Department of Labor"
+        ],
+        [
+          8,
           {
             "text": "T47 INTERNATIONAL, INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_70LGLY25CGLB00004_7015_-NONE-_-NONE-/"
@@ -417,16 +426,25 @@
           "Department of Homeland Security"
         ],
         [
-          8,
+          9,
           {
-            "text": "ADAMS AND ASSOCIATES INC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_1605JE22C0008_1605_-NONE-_-NONE-/"
+            "text": "CHENEGA GLOBAL PROTECTION, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75D30125C20468_7523_-NONE-_-NONE-/"
           },
-          51190405.39,
-          "Department of Labor"
+          52498147.44,
+          "Department of Health and Human Services"
         ],
         [
-          9,
+          10,
+          {
+            "text": "PERATON INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75D30121F12101_7523_HHSN316201200036W_7529/"
+          },
+          39256057.8,
+          "Department of Health and Human Services"
+        ],
+        [
+          11,
           {
             "text": "CHENEGA ENTERPRISE SYSTEMS & SOLUTIONS, LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_75D30126C21564_7523_-NONE-_-NONE-/"
@@ -435,7 +453,7 @@
           "Department of Health and Human Services"
         ],
         [
-          10,
+          12,
           {
             "text": "XPRESTEST INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_75D30126C21193_7523_-NONE-_-NONE-/"
@@ -444,7 +462,7 @@
           "Department of Health and Human Services"
         ],
         [
-          11,
+          13,
           {
             "text": "NORESCO, LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_HSFLGL12F00020_7015_DEAM3609GO29039_8900/"
@@ -453,7 +471,16 @@
           "Department of Homeland Security"
         ],
         [
-          12,
+          14,
+          {
+            "text": "BERING STRAITS PROFESSIONAL SERVICES, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_47QACA26C0044_4732_-NONE-_-NONE-/"
+          },
+          34313406.37,
+          "General Services Administration"
+        ],
+        [
+          15,
           {
             "text": "WHITING-TURNER CONTRACTING COMPANY, THE",
             "href": "https://www.usaspending.gov/award/CONT_AWD_70LGLY24FSSB00134_7015_70Z04723DPCNI0006_7008/"
@@ -462,7 +489,16 @@
           "Department of Homeland Security"
         ],
         [
-          13,
+          16,
+          {
+            "text": "BRYMAK & ASSOCIATES, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70LGLY23CGLB00001_7015_-NONE-_-NONE-/"
+          },
+          24613457.39,
+          "Department of Homeland Security"
+        ],
+        [
+          17,
           {
             "text": "UNIVERSITY OF GEORGIA RESEARCH FOUNDATION, INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_75N93021C00018_7529_-NONE-_-NONE-/"
@@ -471,7 +507,7 @@
           "Department of Health and Human Services"
         ],
         [
-          14,
+          18,
           {
             "text": "DIGITAL MANAGEMENT LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_75D30123F17456_7523_47QTCK18D0019_4732/"
@@ -480,7 +516,7 @@
           "Department of Health and Human Services"
         ],
         [
-          15,
+          19,
           {
             "text": "NTT DATA SERVICES FEDERAL GOVERNMENT, LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_75D30126F20861_7523_47QTCK18D0028_4732/"
@@ -489,7 +525,7 @@
           "Department of Health and Human Services"
         ],
         [
-          16,
+          20,
           {
             "text": "CHENEGA ENTERPRISE SYSTEMS & SOLUTIONS, LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_75D30120C09340_7523_-NONE-_-NONE-/"
@@ -498,7 +534,7 @@
           "Department of Health and Human Services"
         ],
         [
-          17,
+          21,
           {
             "text": "NTT DATA SERVICES FEDERAL GOVERNMENT, LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_75D30122F13294_7523_HHSN316201200017W_7529/"
@@ -507,7 +543,25 @@
           "Department of Health and Human Services"
         ],
         [
-          18,
+          22,
+          {
+            "text": "GENERAL DYNAMICS INFORMATION TECHNOLOGY, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75D30124F19979_7523_HHSN316201200023W_7529/"
+          },
+          16841980.77,
+          "Department of Health and Human Services"
+        ],
+        [
+          23,
+          {
+            "text": "CHENEGA NASWIK INTERNATIONAL LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75D30127F21775_7523_47QSMS25D0079_4732/"
+          },
+          16578076.69,
+          "Department of Health and Human Services"
+        ],
+        [
+          24,
           {
             "text": "EAP CONSULTANTS, LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_70B06C24F00001049_7014_70B06C20D00000041_7014/"
@@ -516,96 +570,42 @@
           "Department of Homeland Security"
         ],
         [
-          19,
-          {
-            "text": "BOOZ ALLEN HAMILTON INC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_75D30121F10510_7523_75D30119A06642_7523/"
-          },
-          14182428.02,
-          "Department of Health and Human Services"
-        ],
-        [
-          20,
-          {
-            "text": "BIOMERIEUX INC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C24723C0005_3600_-NONE-_-NONE-/"
-          },
-          12888256.73,
-          "Department of Veterans Affairs"
-        ],
-        [
-          21,
-          {
-            "text": "GOVERNMENT SOLUTIONS GROUP, LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_75D30123C15863_7523_-NONE-_-NONE-/"
-          },
-          11347856.22,
-          "Department of Health and Human Services"
-        ],
-        [
-          22,
-          {
-            "text": "FLIGHTWORKS INC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_15M30024FA3700031_1544_GS33F0008U_4730/"
-          },
-          10850420.31,
-          "Department of Justice"
-        ],
-        [
-          23,
-          {
-            "text": "EAGLE GLOBAL SCIENTIFIC, LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_75D30119F00001_7523_75D30119D04815_7523/"
-          },
-          10647757.01,
-          "Department of Health and Human Services"
-        ],
-        [
-          24,
-          {
-            "text": "GREAT HILL SOLUTIONS, LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_47QFDA26F0001_4732_47QRCA25DSB29_4732/"
-          },
-          10090436.37,
-          "General Services Administration"
-        ],
-        [
           25,
           {
-            "text": "METROPOLITAN SECURITY SERVICES, INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_15M10525FD1926CSO_1544_15M10523DA4700070_1544/"
+            "text": "ICF INCORPORATED, L.L.C.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75D30121F12734_7523_47QTCK18D0043_4732/"
           },
-          9602462.03,
-          "Department of Justice"
+          14325252.86,
+          "Department of Health and Human Services"
         ]
       ]
     }
   ],
   "narrative": {
-    "intro": "The state of Georgia received $190M in federal contract obligations in FY2027 to date. The federal government made 3,297 awards in Georgia this fiscal year to date, and the average award size was $57.7K. Obligations fell 98.1% year over year. Historical context shows much larger annual totals in recent years: FY22 obligations were $8.9B, FY23 obligations were $11.5B, FY24 obligations were $10.7B, FY25 obligations were $12B, and FY26 obligations were $10.3B. The Department of Health and Human Services led buying in FY2027 to date with $68.9M, followed by the Department of Veterans Affairs with $66.6M and the Department of Homeland Security with $18.7M. FOUR SEASONS ENVIRONMENTAL INC was the largest vendor in FY2027 to date with $49.3M. Facilities Support Services was the largest industry by obligations in FY2027 to date with $51.8M. All figures are contract obligations, and current-year totals are partial because the fiscal year is ongoing.",
+    "intro": "Georgia received $263M in federal contract obligations in FY2027 to date. AwardCount reached 3,795 and averageAwardSize was $69.2K. Obligations fell 97.4% year over year compared with prior full fiscal years, reflecting that current-year totals are partial (fiscal year to date). Previous fiscal years show materially larger totals, including FY26 at $10.3B, FY25 at $12B, FY24 at $10.7B, FY23 at $11.5B, and FY22 at $8.9B. The Department of Health and Human Services led buying in FY2027 to date, obligating $116M, followed by the Department of Veterans Affairs at $67.7M and the Department of Homeland Security at $29.6M. FOUR SEASONS ENVIRONMENTAL INC received the largest vendor total, with $51.9M in obligations. Facilities Support Services was the largest industry by obligations at $54.5M, with Security Guards and Patrol Services at $25.7M and Janitorial Services at $18.7M also prominent. These figures are contract obligations and reflect fiscal year to date activity for FY2027.",
     "sections": [
       {
-        "heading": "What happened to federal contracting in Georgia this fiscal year?",
-        "body": "The state of Georgia received $190M in obligations in FY2027 to date, down 98.1% year over year. The federal government issued 3,297 awards with an average award size of $57.7K. Recent fiscal years show much larger totals, including FY26 obligations of $10.3B and FY25 obligations of $12B. Current-year totals are partial because the fiscal year is ongoing."
+        "heading": "Which agencies are the largest buyers in Georgia?",
+        "body": "The Department of Health and Human Services obligated $116M in FY2027 to date. The Department of Veterans Affairs obligated $67.7M, and the Department of Homeland Security obligated $29.6M. The Department of Justice, Department of Labor, and Department of Agriculture followed with $13.3M, $11.4M, and $9.9M respectively."
       },
       {
-        "heading": "Who bought and who won the most federal dollars in Georgia?",
-        "body": "The Department of Health and Human Services obligated $68.9M and the Department of Veterans Affairs obligated $66.6M in FY2027 to date, followed by the Department of Homeland Security with $18.7M. FOUR SEASONS ENVIRONMENTAL INC received $49.3M and T47 INTERNATIONAL, INC. received $18.7M in FY2027 to date. Facilities Support Services led industries with $51.8M, and Janitorial Services totaled $18.7M."
+        "heading": "Who are the largest contractors and which industries draw the most spending?",
+        "body": "FOUR SEASONS ENVIRONMENTAL INC received $51.9M in obligations, the largest vendor total in FY2027 to date. T47 INTERNATIONAL, INC. and XPRESTEST INC. received $18.7M and $16.7M respectively. Facilities Support Services led industries with $54.5M, followed by Security Guards and Patrol Services at $25.7M and Janitorial Services at $18.7M."
       }
     ]
   },
   "faq": [
     {
       "q": "How much federal contract money goes to Georgia?",
-      "a": "Georgia received $190M in federal contract obligations in FY2027 to date. The federal government made 3,297 awards in Georgia this fiscal year to date, with an average award size of $57.7K. Historical annual totals were larger: FY26 obligations were $10.3B and FY25 obligations were $12B."
+      "a": "Georgia has received $263M in federal contract obligations in FY2027 to date. AwardCount was 3,795 and averageAwardSize was $69.2K. Obligations fell 97.4% year over year and prior full fiscal years ranged from $8.9B to $12B, with FY26 at $10.3B and FY25 at $12B."
     },
     {
       "q": "Which agencies award the most contracts in Georgia?",
-      "a": "The Department of Health and Human Services awarded the most in FY2027 to date, with $68.9M in obligations. The Department of Veterans Affairs awarded $66.6M and the Department of Homeland Security awarded $18.7M in FY2027 to date."
+      "a": "The Department of Health and Human Services awarded the most contracts in Georgia, obligating $116M in FY2027 to date. The Department of Veterans Affairs obligated $67.7M and the Department of Homeland Security obligated $29.6M. Other top buyers included the Department of Justice at $13.3M and the Department of Labor at $11.4M."
     },
     {
       "q": "Who are the largest federal contractors in Georgia?",
-      "a": "FOUR SEASONS ENVIRONMENTAL INC was the largest federal contractor in Georgia in FY2027 to date, receiving $49.3M. T47 INTERNATIONAL, INC. received $18.7M and XPRESTEST INC. received $16.7M in FY2027 to date."
+      "a": "FOUR SEASONS ENVIRONMENTAL INC is the largest federal contractor in Georgia with $51.9M in obligations in FY2027 to date. T47 INTERNATIONAL, INC. followed with $18.7M and XPRESTEST INC. followed with $16.7M. Industries with the largest obligations included Facilities Support Services at $54.5M and Security Guards and Patrol Services at $25.7M."
     }
   ],
   "related": [

@@ -1,20 +1,20 @@
 {
   "pageType": "agency",
   "slug": "department-of-the-interior",
-  "title": "What Interior Dept. Buys: $204M in Contracts, FY2027",
+  "title": "What Interior Dept. Buys: $378M in Contracts, FY2027",
   "h1": "Department of the Interior: Federal Contract Spending & Top Vendors",
-  "metaDescription": "Department of the Interior obligated $204M in federal contracts in FY2027 to date. See what it buys, its top vendors, and multi-year trend.",
-  "updated": "2026-11-16",
+  "metaDescription": "Department of the Interior obligated $378M in federal contracts in FY2027 to date. See what it buys, its top vendors, and multi-year trend.",
+  "updated": "2026-11-23",
   "fyWindow": {
     "label": "FY2027 to date",
     "start": "2026-10-01",
-    "end": "2026-11-16"
+    "end": "2026-11-23"
   },
   "stats": {
-    "totalObligations": 204136539.28,
-    "awardCount": 1977,
-    "yoyGrowthPct": -97,
-    "avgAwardSize": 103256,
+    "totalObligations": 377778306.06,
+    "awardCount": 2490,
+    "yoyGrowthPct": -94.5,
+    "avgAwardSize": 151718,
     "smallBusinessSharePct": null
   },
   "charts": [
@@ -48,13 +48,13 @@
             ],
             [
               "FY27",
-              204136539.28
+              377778306.06
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Obligations fell 97.0% year over year, from $6.8B in FY2026 to $204M in FY2027 to date."
+      "takeaway": "Obligations fell 94.5% year over year, from $6.8B in FY2026 to $378M in FY2027 to date."
     },
     {
       "id": "department-of-the-interior-top-naics",
@@ -66,49 +66,49 @@
           "points": [
             [
               "Computer Systems Design Services",
-              49522979.04
+              194894277.56
             ],
             [
               "Other Heavy and Civil Engineering Construction",
-              27575847.61
+              29785749.52
             ],
             [
               "Commercial and Institutional Building Construction",
-              24044112.92
+              25073569.84
             ],
             [
               "Water and Sewer Line and Related Structures Construction",
-              21313521
+              21354555.15
             ],
             [
               "Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology)",
-              13170316.27
-            ],
-            [
-              "Support Activities for Forestry",
-              7750710.02
+              16807008.27
             ],
             [
               "Other Computer Related Services",
-              7743085.3
+              10336789.04
+            ],
+            [
+              "Support Activities for Forestry",
+              9064603.84
             ],
             [
               "Forest Nurseries and Gathering of Forest Products",
-              6896231.76
+              6876653.76
             ],
             [
               "Engineering Services",
-              6044414.51
+              6388961.54
             ],
             [
-              "Environmental Consulting Services",
-              3716573.21
+              "Computing Infrastructure Providers, Data Processing, Web Hosting, and Related Services",
+              5116964.96
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Computer Systems Design Services was Interior's largest contract category, with $49.5M obligated (24.3% of contract spending)."
+      "takeaway": "Computer Systems Design Services was Interior's largest contract category, with $195M obligated (51.6% of contract spending)."
     },
     {
       "id": "department-of-the-interior-top-vendors",
@@ -119,8 +119,12 @@
           "label": "Obligations",
           "points": [
             [
+              "GUIDEHOUSE INC.",
+              150732645
+            ],
+            [
               "GENERAL DYNAMICS INFORMATION TECHNOLOGY, INC.",
-              38744822.52
+              33744822.52
             ],
             [
               "PAULSEN CONSTRUCTION LLC",
@@ -128,7 +132,7 @@
             ],
             [
               "RIDGWAY VALLEY ENTERPRISES INC",
-              10647796
+              10650620.87
             ],
             [
               "NORTH WIND GENERAL CONTRACTORS LLC",
@@ -152,17 +156,13 @@
             ],
             [
               "BRIDGER AEROSPACE GROUP, LLC",
-              5231233.93
-            ],
-            [
-              "VANTOR SERVICES INC.",
-              4398854.96
+              5340934.64
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "GENERAL DYNAMICS INFORMATION TECHNOLOGY, INC. led all Interior contractors with $38.7M, 19.0% of obligations."
+      "takeaway": "GUIDEHOUSE INC. led all Interior contractors with $151M, 39.9% of obligations."
     }
   ],
   "crossLinks": [
@@ -195,13 +195,21 @@
         [
           1,
           {
-            "text": "GENERAL DYNAMICS INFORMATION TECHNOLOGY, INC.",
-            "href": "https://www.usaspending.gov/recipient/455555be-773d-eab1-1e6b-7b94400b757e-C/latest/"
+            "text": "GUIDEHOUSE INC.",
+            "href": "https://www.usaspending.gov/recipient/a0cb5664-8703-c7dc-a188-4a96f90a16c9-C/latest/"
           },
-          38744822.52
+          150732645
         ],
         [
           2,
+          {
+            "text": "GENERAL DYNAMICS INFORMATION TECHNOLOGY, INC.",
+            "href": "https://www.usaspending.gov/recipient/455555be-773d-eab1-1e6b-7b94400b757e-C/latest/"
+          },
+          33744822.52
+        ],
+        [
+          3,
           {
             "text": "PAULSEN CONSTRUCTION LLC",
             "href": "https://www.usaspending.gov/recipient/8d71da2e-5e9b-a287-1631-df9cabe3e933-C/latest/"
@@ -209,15 +217,15 @@
           21611664
         ],
         [
-          3,
+          4,
           {
             "text": "RIDGWAY VALLEY ENTERPRISES INC",
             "href": "https://www.usaspending.gov/recipient/5d650e16-5a1d-3ac5-0571-cc7c4eca621b-C/latest/"
           },
-          10647796
+          10650620.87
         ],
         [
-          4,
+          5,
           {
             "text": "NORTH WIND GENERAL CONTRACTORS LLC",
             "href": "https://www.usaspending.gov/recipient/20098a38-586b-6536-98d7-072d4147c07e-C/latest/"
@@ -225,7 +233,7 @@
           9282639.29
         ],
         [
-          5,
+          6,
           {
             "text": "NW CONSTRUCTION, INC",
             "href": "https://www.usaspending.gov/recipient/e130b27b-e353-3fa4-e8d1-31e07705bef6-C/latest/"
@@ -233,7 +241,7 @@
           9065882.99
         ],
         [
-          6,
+          7,
           {
             "text": "GIDEON CONTRACTING, LIMITED LIABILITY COMPANY",
             "href": "https://www.usaspending.gov/recipient/f0a032e8-b592-9a60-5131-ad02fc6d190e-C/latest/"
@@ -241,7 +249,7 @@
           8988898
         ],
         [
-          7,
+          8,
           {
             "text": "MANTECH ADVANCED SYSTEMS INTERNATIONAL, INC.",
             "href": "https://www.usaspending.gov/recipient/ceac1920-9ceb-17a6-9bf7-026817a02917-C/latest/"
@@ -249,7 +257,7 @@
           7890948.88
         ],
         [
-          8,
+          9,
           {
             "text": "HSG PARK JOINT VENTURE 3, LLC",
             "href": "https://www.usaspending.gov/recipient/e2f07c1e-c0af-5ffe-8fdf-f0c87e4a343e-C/latest/"
@@ -257,20 +265,12 @@
           7529000
         ],
         [
-          9,
+          10,
           {
             "text": "BRIDGER AEROSPACE GROUP, LLC",
             "href": "https://www.usaspending.gov/recipient/0c31743a-4641-a928-db69-8bc9f57b2c5c-C/latest/"
           },
-          5231233.93
-        ],
-        [
-          10,
-          {
-            "text": "VANTOR SERVICES INC.",
-            "href": "https://www.usaspending.gov/recipient/cf81c5b4-ac6b-9f54-4647-7906f1b1ccd0-C/latest/"
-          },
-          4398854.96
+          5340934.64
         ]
       ]
     },
@@ -288,7 +288,7 @@
             "text": "GUIDEHOUSE INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_140D0423F0882_1406_HHSN316201200040W_7529/"
           },
-          449635911.7
+          600306644.7
         ],
         [
           2,
@@ -381,13 +381,29 @@
         [
           13,
           {
+            "text": "ARCHER WESTERN CONSTRUCTION, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_140R4022C0012_1425_-NONE-_-NONE-/"
+          },
+          73620308.91
+        ],
+        [
+          14,
+          {
+            "text": "NUAXIS LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_140E0121F0002_1436_GS35F0361T_4730/"
+          },
+          72939566.51
+        ],
+        [
+          15,
+          {
             "text": "PERINI MANAGEMENT SERVICES, INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_140P2026C0037_1443_-NONE-_-NONE-/"
           },
           69535671
         ],
         [
-          14,
+          16,
           {
             "text": "GENERAL DYNAMICS INFORMATION TECHNOLOGY, INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_140D0426F0370_1406_140D0424D0001_1406/"
@@ -395,7 +411,7 @@
           63045885.86
         ],
         [
-          15,
+          17,
           {
             "text": "AMERESCO INC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_IND15PD00353_1406_DEAM3609GO29029_8900/"
@@ -403,7 +419,7 @@
           61301323.5
         ],
         [
-          16,
+          18,
           {
             "text": "GARCO CONSTRUCTION, INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_140R1023C0008_1425_-NONE-_-NONE-/"
@@ -411,7 +427,7 @@
           61188127.44
         ],
         [
-          17,
+          19,
           {
             "text": "CONSIGLI CONSTRUCTION CO., INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_140P2023C0028_1443_-NONE-_-NONE-/"
@@ -419,7 +435,7 @@
           57386340.28
         ],
         [
-          18,
+          20,
           {
             "text": "VERIZON BUSINESS NETWORK SERVICES LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_140A1620F0013_1450_GS00Q17NSD3009_4732/"
@@ -427,7 +443,7 @@
           54727241.21
         ],
         [
-          19,
+          21,
           {
             "text": "PERINI MANAGEMENT SERVICES, INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_140P2025C0058_1443_-NONE-_-NONE-/"
@@ -435,7 +451,15 @@
           43398719.18
         ],
         [
-          20,
+          22,
+          {
+            "text": "STRONGHOLD ENGINEERING INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_140P2025C0030_1443_-NONE-_-NONE-/"
+          },
+          40654410.89
+        ],
+        [
+          23,
           {
             "text": "HARTMAN-WALSH PAINTING COMPANY",
             "href": "https://www.usaspending.gov/award/CONT_AWD_140R1020C0012_1425_-NONE-_-NONE-/"
@@ -443,7 +467,7 @@
           37726650.97
         ],
         [
-          21,
+          24,
           {
             "text": "CENTERRA GROUP, LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_140D0421F0293_1406_GS07F5548P_4730/"
@@ -451,65 +475,41 @@
           35716046.08
         ],
         [
-          22,
+          25,
           {
             "text": "MEDVOLT - ROUNDHOUSE JV",
             "href": "https://www.usaspending.gov/award/CONT_AWD_140P2025C0054_1443_-NONE-_-NONE-/"
           },
-          34458697.33
-        ],
-        [
-          23,
-          {
-            "text": "LEIDOS, INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_140D0423F0622_1406_HHSN316201200044W_7529/"
-          },
-          32391218
-        ],
-        [
-          24,
-          {
-            "text": "ADVANCED AMERICAN CONSTRUCTION, INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_140R1024C0001_1425_-NONE-_-NONE-/"
-          },
-          29469416.29
-        ],
-        [
-          25,
-          {
-            "text": "ATHERTON CONSTRUCTION LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_140P2024C0046_1443_-NONE-_-NONE-/"
-          },
-          28333109.05
+          34546037.76
         ]
       ]
     }
   ],
   "narrative": {
-    "intro": "The Department of the Interior obligated $204M in FY2027 to date for federal contracts. The Department of the Interior recorded 1,977 awards at an average award size of $103K. The Department of the Interior's obligations are down 97.0% year over year. The Department of the Interior's recent fiscal totals contrast sharply with prior years: FY22 obligations were $6.5B, FY23 obligations were $7.6B, FY24 obligations were $8.1B, FY25 obligations were $6.6B, and FY26 obligations were $6.8B. The Department of the Interior concentrated FY2027 to date spending in Computer Systems Design Services with $49.5M, in Other Heavy and Civil Engineering Construction with $27.6M, in Commercial and Institutional Building Construction with $24M, and in Water and Sewer Line and Related Structures Construction with $21.3M. The Department of the Interior's top vendors in FY2027 to date include GENERAL DYNAMICS INFORMATION TECHNOLOGY, INC. with $38.7M and PAULSEN CONSTRUCTION LLC with $21.6M. The Department of the Interior's current-year totals are partial, as fiscal year to date reporting is incomplete.",
+    "intro": "The Department of the Interior obligated $378M in FY2027 to date. The Department of the Interior recorded 2,490 awards with an average award size of $152K, and obligations fell 94.5% year over year. Fiscal trends show a sharp drop in current-year obligations compared with recent full fiscal years: FY22 through FY26 obligations ranged from $6.5B to $8.1B, while FY27 to date stands at $378M. Computer Systems Design Services is the largest buying category in FY2027 to date at $195M, followed by construction and infrastructure-related categories such as Other Heavy and Civil Engineering Construction at $29.8M and Commercial and Institutional Building Construction at $25.1M. GUIDEHOUSE INC. is the largest vendor for FY2027 to date with $151M in obligations, and GENERAL DYNAMICS INFORMATION TECHNOLOGY, INC. is the second-largest with $33.7M. The fiscal snapshot shows concentrated spending in IT services and a set of construction and environmental services vendors receiving the majority of current-year obligations.",
     "sections": [
       {
-        "heading": "What changed compared with prior fiscal years?",
-        "body": "The Department of the Interior obligated $204M in FY2027 to date, down 97.0% year over year. The Department of the Interior's FY22 through FY26 obligations ranged from $6.5B to $8.1B, then fell to $204M in FY27 to date. The Department of the Interior's award count is 1,977 with an average award size of $103K, reflecting current-year, partial totals."
+        "heading": "How does FY2027 to date compare with prior fiscal years?",
+        "body": "The Department of the Interior obligated $378M in FY2027 to date, down 94.5% year over year. FY22 through FY26 obligations were $6.5B, $7.6B, $8.1B, $6.6B, and $6.8B respectively. The FY2027 total is a partial, fiscal year to date figure and is much smaller than any single prior full fiscal year listed."
       },
       {
-        "heading": "Which industries and vendors received the most FY2027 to date funding?",
-        "body": "Computer Systems Design Services received $49.5M, the largest NAICS category for FY2027 to date. The Department of the Interior's next largest categories include Other Heavy and Civil Engineering Construction with $27.6M, Commercial and Institutional Building Construction with $24M, and Water and Sewer Line and Related Structures Construction with $21.3M. GENERAL DYNAMICS INFORMATION TECHNOLOGY, INC. received $38.7M and PAULSEN CONSTRUCTION LLC received $21.6M, the top two vendors for FY2027 to date."
+        "heading": "Which vendors and contract categories dominate FY2027 to date?",
+        "body": "GUIDEHOUSE INC. leads vendors with $151M in obligations, followed by GENERAL DYNAMICS INFORMATION TECHNOLOGY, INC. at $33.7M and PAULSEN CONSTRUCTION LLC at $21.6M. Computer Systems Design Services is the top NAICS category at $195M, with Other Heavy and Civil Engineering Construction at $29.8M and Commercial and Institutional Building Construction at $25.1M rounding out the next-largest categories."
       }
     ]
   },
   "faq": [
     {
       "q": "How much does Department of the Interior spend on contracts?",
-      "a": "The Department of the Interior obligated $204M in FY2027 to date. The Department of the Interior recorded 1,977 awards at an average award size of $103K, and obligations are down 97.0% year over year. FY22 obligations were $6.5B, FY23 obligations were $7.6B, FY24 obligations were $8.1B, FY25 obligations were $6.6B, and FY26 obligations were $6.8B."
+      "a": "The Department of the Interior obligated $378M in FY2027 to date. The Department of the Interior recorded 2,490 awards with an average award size of $152K, and obligations fell 94.5% year over year. Full prior-year obligations were $6.5B in FY22, $7.6B in FY23, $8.1B in FY24, $6.6B in FY25, and $6.8B in FY26."
     },
     {
       "q": "What does Interior buy?",
-      "a": "The Department of the Interior buys IT, construction, engineering, forestry support, and environmental services. Computer Systems Design Services received $49.5M, Other Heavy and Civil Engineering Construction received $27.6M, Commercial and Institutional Building Construction received $24M, and Water and Sewer Line and Related Structures Construction received $21.3M. The Department of the Interior also obligates funds in research and development, forestry support, and environmental consulting services."
+      "a": "Interior buys a mix of IT services, construction, research, forestry support, and related services, led by Computer Systems Design Services at $195M. Other sizable FY2027 to date categories include Other Heavy and Civil Engineering Construction at $29.8M, Commercial and Institutional Building Construction at $25.1M, and Water and Sewer Line and Related Structures Construction at $21.4M."
     },
     {
       "q": "Who are Interior's largest contractors?",
-      "a": "GENERAL DYNAMICS INFORMATION TECHNOLOGY, INC. is the largest contractor in FY2027 to date with $38.7M. PAULSEN CONSTRUCTION LLC is the second largest with $21.6M. Other top vendors include RIDGWAY VALLEY ENTERPRISES INC with $10.6M, NORTH WIND GENERAL CONTRACTORS LLC with $9.3M, and NW CONSTRUCTION, INC with $9.1M."
+      "a": "GUIDEHOUSE INC. is Interior's largest contractor with $151M in FY2027 to date obligations. The next-largest contractors are GENERAL DYNAMICS INFORMATION TECHNOLOGY, INC. at $33.7M and PAULSEN CONSTRUCTION LLC at $21.6M, followed by RIDGWAY VALLEY ENTERPRISES INC at $10.7M and NORTH WIND GENERAL CONTRACTORS LLC at $9.3M."
     }
   ],
   "related": [

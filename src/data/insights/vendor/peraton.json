@@ -1,20 +1,20 @@
 {
   "pageType": "vendor",
   "slug": "peraton",
-  "title": "Peraton Federal Contracts: $2.2B in FY2026",
+  "title": "Peraton Federal Contracts: $77.3M in FY2027",
   "h1": "Peraton: Federal Contracts, Agencies & Awards",
-  "metaDescription": "Peraton won $2.2B in federal contract obligations in FY2026 to date. See its top agencies, markets, largest awards, and expiring contracts.",
-  "updated": "2026-09-28",
+  "metaDescription": "Peraton won $77.3M in federal contract obligations in FY2027 to date. See its top agencies, markets, largest awards, and expiring contracts.",
+  "updated": "2026-11-23",
   "fyWindow": {
-    "label": "FY2026 to date",
-    "start": "2025-10-01",
-    "end": "2026-09-28"
+    "label": "FY2027 to date",
+    "start": "2026-10-01",
+    "end": "2026-11-23"
   },
   "stats": {
-    "totalObligations": 2153154963.52,
-    "awardCount": 313,
-    "yoyGrowthPct": 2.9,
-    "avgAwardSize": 6879089,
+    "totalObligations": 77308777.28,
+    "awardCount": 37,
+    "yoyGrowthPct": -96.7,
+    "avgAwardSize": 2089426,
     "smallBusinessSharePct": null
   },
   "charts": [
@@ -27,142 +27,130 @@
           "label": "Obligations",
           "points": [
             [
-              "FY21",
-              466472565.89
-            ],
-            [
               "FY22",
-              1069220145.07
+              1111605544.69
             ],
             [
               "FY23",
-              1725548315.88
+              1788220076.04
             ],
             [
               "FY24",
-              1984279202.31
+              2068160788.44
             ],
             [
               "FY25",
-              2091883629.55
+              2162122261.04
             ],
             [
               "FY26",
-              2153154963.52
+              2364429783.41
+            ],
+            [
+              "FY27",
+              77308777.28
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Obligations grew 2.9% year over year, from $2.1B in FY2025 to $2.2B in FY2026 to date."
+      "takeaway": "Obligations fell 96.7% year over year, from $2.4B in FY2026 to $77.3M in FY2027 to date."
     },
     {
       "id": "peraton-top-agencies",
       "type": "bar",
-      "title": "Top 10 buying agencies, FY2026 to date",
+      "title": "Top 10 buying agencies, FY2027 to date",
       "series": [
         {
           "label": "Obligations",
           "points": [
             [
               "General Services Administration",
-              701005441.04
-            ],
-            [
-              "Department of Defense",
-              403555100.96
-            ],
-            [
-              "Department of Transportation",
-              275343673.63
-            ],
-            [
-              "National Aeronautics and Space Administration",
-              215863248.46
-            ],
-            [
-              "Department of Commerce",
-              163208903.13
+              45375526.13
             ],
             [
               "Department of Health and Human Services",
-              157700112.32
+              25490649.06
             ],
             [
-              "Department of State",
-              120485435.97
+              "National Aeronautics and Space Administration",
+              8151855.05
             ],
             [
               "Department of the Interior",
-              31479314.83
+              3186946.71
+            ],
+            [
+              "Department of Housing and Urban Development",
+              896893
             ],
             [
               "Social Security Administration",
-              27198961.87
+              345000
             ],
             [
               "Department of the Treasury",
-              17974937.25
+              0
+            ],
+            [
+              "Department of State",
+              0
+            ],
+            [
+              "Department of Transportation",
+              -955325.79
+            ],
+            [
+              "Department of Justice",
+              -5182766.88
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "General Services Administration is Peraton's largest federal customer, with $701M obligated (32.6% of the company's federal obligations)."
+      "takeaway": "General Services Administration is Peraton's largest federal customer, with $45.4M obligated (58.7% of the company's federal obligations)."
     },
     {
       "id": "peraton-top-naics",
       "type": "bar",
-      "title": "Top 10 markets (NAICS), FY2026 to date",
+      "title": "Top 10 markets (NAICS), FY2027 to date",
       "series": [
         {
           "label": "Obligations",
           "points": [
             [
               "Computer Systems Design Services",
-              981736744.46
-            ],
-            [
-              "Engineering Services",
-              459846217.63
+              49963516.29
             ],
             [
               "Custom Computer Programming Services",
-              227841196.97
+              19028831.1
             ],
             [
               "All Other Telecommunications",
-              144489460.45
+              6235997.85
             ],
             [
-              "Other Computer Related Services",
-              130249083.51
-            ],
-            [
-              "All Other Telecommunications",
-              115705744.56
+              "Engineering Services",
+              3483407.66
             ],
             [
               "Computing Infrastructure Providers, Data Processing, Web Hosting, and Related Services",
-              49922715.35
+              3434791.25
             ],
             [
-              "Electronic and Precision Equipment Repair and Maintenance",
-              11667623.04
+              "Research and Development in the Social Sciences and Humanities",
+              0
             ],
             [
-              "Research and Development in Nanotechnology",
-              10544510.96
-            ],
-            [
-              "Landscape Architectural Services",
-              8531446.03
+              "Other Computer Related Services",
+              -4837766.88
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Computer Systems Design Services is Peraton's largest federal market, with $982M in obligations."
+      "takeaway": "Computer Systems Design Services is Peraton's largest federal market, with $50M in obligations."
     }
   ],
   "crossLinks": [
@@ -171,28 +159,28 @@
       "href": "/insights/agency/general-services-administration/"
     },
     {
-      "label": "Department of Defense contracts",
-      "href": "/insights/agency/department-of-defense/"
-    },
-    {
-      "label": "Department of Transportation contracts",
-      "href": "/insights/agency/department-of-transportation/"
+      "label": "Department of Health and Human Services contracts",
+      "href": "/insights/agency/department-of-health-and-human-services/"
     },
     {
       "label": "National Aeronautics and Space Administration contracts",
       "href": "/insights/agency/national-aeronautics-and-space-administration/"
     },
     {
+      "label": "Department of the Interior contracts",
+      "href": "/insights/agency/department-of-the-interior/"
+    },
+    {
       "label": "NAICS 541512: Computer Systems Design Services",
       "href": "/insights/naics/541512/"
     },
     {
-      "label": "NAICS 541330: Engineering Services",
-      "href": "/insights/naics/541330/"
-    },
-    {
       "label": "NAICS 541511: Custom Computer Programming Services",
       "href": "/insights/naics/541511/"
+    },
+    {
+      "label": "NAICS 541330: Engineering Services",
+      "href": "/insights/naics/541330/"
     },
     {
       "label": "NAICS 541519: Other Computer Related Services",
@@ -201,7 +189,7 @@
   ],
   "tables": [
     {
-      "title": "Largest awards, FY2026 to date",
+      "title": "Largest awards, FY2027 to date",
       "columns": [
         "Rank",
         "Award",
@@ -216,7 +204,7 @@
             "text": "80GSFC19C0063",
             "href": "https://www.usaspending.gov/award/CONT_AWD_80GSFC19C0063_8000_-NONE-_-NONE-/"
           },
-          1499831638.62,
+          1533288042.82,
           "National Aeronautics and Space Administration",
           "2027-09-30"
         ],
@@ -226,7 +214,7 @@
             "text": "47QFCA21F0058",
             "href": "https://www.usaspending.gov/award/CONT_AWD_47QFCA21F0058_4732_GS00Q14OADU117_4732/"
           },
-          887646731.6,
+          890000662.6,
           "General Services Administration",
           "2027-01-05"
         ],
@@ -236,22 +224,12 @@
             "text": "47QFCA24F0002",
             "href": "https://www.usaspending.gov/award/CONT_AWD_47QFCA24F0002_4732_47QTCK18D0011_4732/"
           },
-          818589723,
+          870792495,
           "General Services Administration",
           "2027-05-16"
         ],
         [
           4,
-          {
-            "text": "47QFCA24F0006",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_47QFCA24F0006_4732_GS00Q14OADU117_4732/"
-          },
-          414916328.79,
-          "General Services Administration",
-          "2027-01-04"
-        ],
-        [
-          5,
           {
             "text": "19AQMM20F1777",
             "href": "https://www.usaspending.gov/award/CONT_AWD_19AQMM20F1777_1900_HHSN316201200036W_7529/"
@@ -261,204 +239,214 @@
           "2027-06-03"
         ],
         [
-          6,
-          {
-            "text": "1332KP23CNEEJ0001",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_1332KP23CNEEJ0001_1330_-NONE-_-NONE-/"
-          },
-          353255040.72,
-          "Department of Commerce",
-          "2028-02-16"
-        ],
-        [
-          7,
-          {
-            "text": "W31P4Q22F0120",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_W31P4Q22F0120_9700_47QTCK18D0011_4732/"
-          },
-          344407757.71,
-          "Department of Defense",
-          "2026-04-14"
-        ],
-        [
-          8,
-          {
-            "text": "80GSFC19C0060",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_80GSFC19C0060_8000_-NONE-_-NONE-/"
-          },
-          341723840.93,
-          "National Aeronautics and Space Administration",
-          "2026-09-30"
-        ],
-        [
-          9,
-          {
-            "text": "NNG16WA70C",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_NNG16WA70C_8000_-NONE-_-NONE-/"
-          },
-          327012925.5,
-          "National Aeronautics and Space Administration",
-          "2024-03-31"
-        ],
-        [
-          10,
-          {
-            "text": "NNG15WA53C",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_NNG15WA53C_8000_-NONE-_-NONE-/"
-          },
-          220422511.82,
-          "National Aeronautics and Space Administration",
-          "2025-04-30"
-        ],
-        [
-          11,
+          5,
           {
             "text": "80GSFC23CA077",
             "href": "https://www.usaspending.gov/award/CONT_AWD_80GSFC23CA077_8000_-NONE-_-NONE-/"
           },
-          190245795.32,
+          191193899.52,
           "National Aeronautics and Space Administration",
           "2028-09-30"
         ],
         [
-          12,
+          6,
           {
             "text": "80GSFC22CA019",
             "href": "https://www.usaspending.gov/award/CONT_AWD_80GSFC22CA019_8000_-NONE-_-NONE-/"
           },
-          183425364.27,
+          184393117.27,
           "National Aeronautics and Space Administration",
           "2027-09-30"
         ],
         [
-          13,
+          7,
           {
-            "text": "HC104719F0002",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_HC104719F0002_9700_HHSN316201200036W_7529/"
+            "text": "47QFMA19F0011",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_47QFMA19F0011_4732_GS00Q09BGD0056_4735/"
           },
-          151603364.87,
-          "Department of Defense",
-          "2024-02-06"
-        ],
-        [
-          14,
-          {
-            "text": "75FCMC22F0065",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_75FCMC22F0065_7530_GS35F694GA_4732/"
-          },
-          133840751.71,
-          "Department of Health and Human Services",
-          "2027-03-14"
-        ],
-        [
-          15,
-          {
-            "text": "W15QKN19F1334",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_W15QKN19F1334_9700_GS35F0165Y_4732/"
-          },
-          111961986.68,
-          "Department of Defense",
-          "2024-09-28"
-        ],
-        [
-          16,
-          {
-            "text": "19AQMM24F1317",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_19AQMM24F1317_1900_19AQMM18D0086_1900/"
-          },
-          92786400.67,
-          "Department of State",
-          "2026-06-05"
-        ],
-        [
-          17,
-          {
-            "text": "75FCMC23F0114",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_75FCMC23F0114_7530_GS35F694GA_4732/"
-          },
-          80857937.09,
-          "Department of Health and Human Services",
-          "2027-08-31"
-        ],
-        [
-          18,
-          {
-            "text": "W15QKN17F0006",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_W15QKN17F0006_9700_GS00Q09BGD0056_4735/"
-          },
-          74846196.49,
-          "Department of Defense",
-          "2022-02-26"
-        ],
-        [
-          19,
-          {
-            "text": "75D30121F10650",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_75D30121F10650_7523_HHSN316201200025W_7529/"
-          },
-          73390176.89,
-          "Department of Health and Human Services",
-          "2027-02-15"
-        ],
-        [
-          20,
-          {
-            "text": "N0017322C2002",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_N0017322C2002_9700_-NONE-_-NONE-/"
-          },
-          63507255.54,
-          "Department of Defense",
-          "2026-12-20"
-        ],
-        [
-          21,
-          {
-            "text": "47QFMA24F0016",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_47QFMA24F0016_4732_47QTCK18D0011_4732/"
-          },
-          60850797.21,
+          133171239.58,
           "General Services Administration",
-          "2026-04-30"
+          "2024-04-30"
         ],
         [
-          22,
+          8,
           {
-            "text": "W91RUS23F0373",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_W91RUS23F0373_9700_W52P1J18DA137_9700/"
+            "text": "75FCMC25F0002",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75FCMC25F0002_7530_GS35F694GA_4732/"
           },
-          59838465.77,
-          "Department of Defense",
-          "2026-09-18"
+          58992766.19,
+          "Department of Health and Human Services",
+          "2027-10-31"
         ],
         [
-          23,
-          {
-            "text": "693KA726F00009",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_693KA726F00009_6920_693KA726D00003_6920/"
-          },
-          55300000,
-          "Department of Transportation",
-          "2028-12-31"
-        ],
-        [
-          24,
-          {
-            "text": "2032H520F00164",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_2032H520F00164_2050_47QTCK18D0011_4732/"
-          },
-          52729802.7,
-          "Department of the Treasury",
-          "2026-03-29"
-        ],
-        [
-          25,
+          9,
           {
             "text": "693KA726F00029",
             "href": "https://www.usaspending.gov/award/CONT_AWD_693KA726F00029_6920_693KA726D00003_6920/"
           },
-          49702112,
+          58568298,
           "Department of Transportation",
           "2029-01-19"
+        ],
+        [
+          10,
+          {
+            "text": "75D30121F12101",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75D30121F12101_7523_HHSN316201200036W_7529/"
+          },
+          39256057.8,
+          "Department of Health and Human Services",
+          "2027-01-29"
+        ],
+        [
+          11,
+          {
+            "text": "693KA826F00054",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_693KA826F00054_6920_693KA726D00003_6920/"
+          },
+          27547063.42,
+          "Department of Transportation",
+          "2028-12-31"
+        ],
+        [
+          12,
+          {
+            "text": "693KA726F00013",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_693KA726F00013_6920_693KA726D00003_6920/"
+          },
+          25520967,
+          "Department of Transportation",
+          "2028-12-31"
+        ],
+        [
+          13,
+          {
+            "text": "693KA826F00055",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_693KA826F00055_6920_693KA726D00003_6920/"
+          },
+          19018455,
+          "Department of Transportation",
+          "2028-12-31"
+        ],
+        [
+          14,
+          {
+            "text": "75D30125F00192",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75D30125F00192_7523_47QTCK18D0011_4732/"
+          },
+          15855010.99,
+          "Department of Health and Human Services",
+          "2028-03-26"
+        ],
+        [
+          15,
+          {
+            "text": "47QFMA26F0009",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_47QFMA26F0009_4732_GS35F694GA_4732/"
+          },
+          15526126.14,
+          "General Services Administration",
+          "2027-06-24"
+        ],
+        [
+          16,
+          {
+            "text": "15F06726F0000743",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_15F06726F0000743_1549_15F06724A0000305_1549/"
+          },
+          14703135.79,
+          "Department of Justice",
+          "2027-09-29"
+        ],
+        [
+          17,
+          {
+            "text": "19AQMM26F0141",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_19AQMM26F0141_1900_19AQMM18D0086_1900/"
+          },
+          9550000,
+          "Department of State",
+          "2027-02-17"
+        ],
+        [
+          18,
+          {
+            "text": "693KA726F00014",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_693KA726F00014_6920_693KA726D00003_6920/"
+          },
+          9399527.88,
+          "Department of Transportation",
+          "2028-12-31"
+        ],
+        [
+          19,
+          {
+            "text": "693KA826F00112",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_693KA826F00112_6920_693KA726D00003_6920/"
+          },
+          8992349.29,
+          "Department of Transportation",
+          "2028-05-31"
+        ],
+        [
+          20,
+          {
+            "text": "86615325F00007",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_86615325F00007_8600_47QTCK18D0011_4732/"
+          },
+          7410075.21,
+          "Department of Housing and Urban Development",
+          "2027-12-31"
+        ],
+        [
+          21,
+          {
+            "text": "140G0126F0289",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_140G0126F0289_1434_140G0123D0007_1434/"
+          },
+          7136298,
+          "Department of the Interior",
+          "2027-08-31"
+        ],
+        [
+          22,
+          {
+            "text": "697DCK26F00350",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_697DCK26F00350_6920_693KA726D00003_6920/"
+          },
+          6293121.66,
+          "Department of Transportation",
+          "2035-12-31"
+        ],
+        [
+          23,
+          {
+            "text": "47QFMA26F0005",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_47QFMA26F0005_4732_47QFMA24A0012_4732/"
+          },
+          5978405.24,
+          "General Services Administration",
+          "2027-04-05"
+        ],
+        [
+          24,
+          {
+            "text": "20341224F00066",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_20341224F00066_2036_20341222D00001_2036/"
+          },
+          5613888,
+          "Department of the Treasury",
+          "2026-03-31"
+        ],
+        [
+          25,
+          {
+            "text": "75A50324F80011",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75A50324F80011_7505_HHSN316201200036W_7529/"
+          },
+          4686731.14,
+          "Department of Health and Human Services",
+          "2029-11-06"
         ]
       ]
     },
@@ -473,11 +461,20 @@
       "rows": [
         [
           {
+            "text": "80GSFC19C0063",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_80GSFC19C0063_8000_-NONE-_-NONE-/"
+          },
+          "National Aeronautics and Space Administration",
+          1533288042.82,
+          "2027-09-30"
+        ],
+        [
+          {
             "text": "47QFCA21F0058",
             "href": "https://www.usaspending.gov/award/CONT_AWD_47QFCA21F0058_4732_GS00Q14OADU117_4732/"
           },
           "General Services Administration",
-          887646731.6,
+          890000662.6,
           "2027-01-05"
         ],
         [
@@ -486,7 +483,7 @@
             "href": "https://www.usaspending.gov/award/CONT_AWD_47QFCA24F0002_4732_47QTCK18D0011_4732/"
           },
           "General Services Administration",
-          818589723,
+          870792495,
           "2027-05-16"
         ],
         [
@@ -495,7 +492,7 @@
             "href": "https://www.usaspending.gov/award/CONT_AWD_47QFCA24F0006_4732_GS00Q14OADU117_4732/"
           },
           "General Services Administration",
-          414916328.79,
+          419505115.79,
           "2027-01-04"
         ],
         [
@@ -509,12 +506,12 @@
         ],
         [
           {
-            "text": "80GSFC19C0060",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_80GSFC19C0060_8000_-NONE-_-NONE-/"
+            "text": "80GSFC22CA019",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_80GSFC22CA019_8000_-NONE-_-NONE-/"
           },
           "National Aeronautics and Space Administration",
-          341723840.93,
-          "2026-09-30"
+          184393117.27,
+          "2027-09-30"
         ],
         [
           {
@@ -549,17 +546,8 @@
             "href": "https://www.usaspending.gov/award/CONT_AWD_N0017322C2002_9700_-NONE-_-NONE-/"
           },
           "Department of Defense",
-          63507255.54,
+          63024223.16,
           "2026-12-20"
-        ],
-        [
-          {
-            "text": "W91RUS25FA007",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_W91RUS25FA007_9700_W52P1J18DA137_9700/"
-          },
-          "Department of Defense",
-          47293180,
-          "2027-02-28"
         ]
       ]
     },
@@ -590,34 +578,34 @@
     }
   ],
   "narrative": {
-    "intro": "Peraton is a major federal contractor with $2.2B in contract obligations in FY2026 to date. Peraton won 313 awards so far this fiscal year, with an average award size of $6.9M, and obligations are up 2.9% year over year. Peraton’s obligations have climbed steadily from $466M in FY21, to $1.1B in FY22, $1.7B in FY23, $2B in FY24, $2.1B in FY25, and $2.2B in FY26. Peraton’s largest buying agency in FY2026 to date is the General Services Administration at $701M, followed by the Department of Defense at $404M and the Department of Transportation at $275M. Peraton’s top markets by NAICS in FY2026 to date are Computer Systems Design Services at $982M and Engineering Services at $460M, followed by Custom Computer Programming Services at $228M. The FY2026 to date figures are partial, representing fiscal year to date obligations, while largest-awards and expiring-contracts values are total contract values when shown elsewhere.",
+    "intro": "Peraton obligated $77.3M in federal contracts in FY2027 to date across 37 awards, with an average award size of $2.1M. Peraton's obligations fell 96.7% year over year. The General Services Administration obligated $45.4M and the Department of Health and Human Services obligated $25.5M in FY2027 to date. Computer Systems Design Services totaled $50M and Custom Computer Programming Services totaled $19M in FY2027 to date. Historical annual obligations rose from $1.1B in FY22 to $2.4B in FY26 before FY27 obligations of $77.3M.",
     "sections": [
       {
-        "heading": "Which agencies drive Peraton's federal revenue?",
-        "body": "The General Services Administration is Peraton’s largest buyer at $701M in FY2026 to date. The Department of Defense follows at $404M and the Department of Transportation at $275M. Multiple civilian agencies also contribute meaningfully, including NASA at $216M and the Department of Commerce at $163M. Smaller but notable buyers include HHS at $158M and the Department of State at $120M."
+        "heading": "How concentrated are Peraton's FY2027 obligations by agency?",
+        "body": "The General Services Administration is the largest buyer, obligated $45.4M, and the Department of Health and Human Services is the second largest, obligated $25.5M. Combined, those two agencies account for most of Peraton's $77.3M in FY2027 obligations. The National Aeronautics and Space Administration obligated $8.2M and the Department of the Interior obligated $3.2M in FY2027 to date."
       },
       {
-        "heading": "What markets and services does Peraton compete in?",
-        "body": "Computer Systems Design Services is Peraton’s largest market at $982M in FY2026 to date. Engineering Services is the next largest market at $460M, followed by Custom Computer Programming Services at $228M. Peraton also shows exposure in telecommunications and infrastructure areas, including All Other Telecommunications at $144M and Computing Infrastructure Providers, Data Processing, Web Hosting, and Related Services at $49.9M."
+        "heading": "Which markets and services drive Peraton's FY2027 revenue?",
+        "body": "Computer Systems Design Services is the largest market, totaling $50M, followed by Custom Computer Programming Services at $19M. Other FY2027 markets include All Other Telecommunications at $6.2M and Engineering Services at $3.5M."
       }
     ]
   },
   "faq": [
     {
       "q": "How much does Peraton make from federal contracts?",
-      "a": "Peraton made $2.2B in federal contract obligations in FY2026 to date. Peraton won 313 awards so far this fiscal year, with an average award size of $6.9M, and obligations are up 2.9% year over year."
+      "a": "Peraton has $77.3M in federal contract obligations in FY2027 to date. Peraton's FY2027 total comes from 37 awards with an average award size of $2.1M, and obligations fell 96.7% year over year."
     },
     {
       "q": "Which agencies buy from Peraton?",
-      "a": "The General Services Administration, Department of Defense, and Department of Transportation are Peraton’s top buyers in FY2026 to date. The General Services Administration obligated $701M, the Department of Defense obligated $404M, and the Department of Transportation obligated $275M; other buyers include NASA at $216M and the Department of Commerce at $163M."
+      "a": "Peraton's top buyers in FY2027 to date are the General Services Administration, which obligated $45.4M, and the Department of Health and Human Services, which obligated $25.5M. Other FY2027 buyers include the National Aeronautics and Space Administration at $8.2M and the Department of the Interior at $3.2M."
     },
     {
       "q": "What does Peraton sell to the government?",
-      "a": "Peraton sells systems, engineering, and software services to the government, with Computer Systems Design Services and Engineering Services as the largest markets. Computer Systems Design Services accounts for $982M and Engineering Services accounts for $460M in FY2026 to date, with Custom Computer Programming Services at $228M and telecommunications and infrastructure services represented across other NAICS."
+      "a": "Peraton sells primarily Computer Systems Design Services and Custom Computer Programming Services in FY2027 to date. Peraton's FY2027 market totals include Computer Systems Design Services at $50M, Custom Computer Programming Services at $19M, All Other Telecommunications at $6.2M, and Engineering Services at $3.5M."
     },
     {
       "q": "Which Peraton contracts are expiring soon?",
-      "a": "Contract expirations are not listed in the provided figures. The summary notes that largest-awards and expiring-contracts tables use total contract values when shown, but no specific expiring-contract entries or dates are provided."
+      "a": "The provided information does not list specific expiring-contract dates or a table of expiring contracts."
     }
   ],
   "related": [
@@ -626,28 +614,28 @@
       "href": "/insights/expiring-federal-contracts/"
     },
     {
-      "label": "Honeywell Federal Manufacturing and Technologies federal contracts",
-      "href": "/insights/vendor/honeywell-federal-manufacturing-and-technologies/"
+      "label": "Idaho Environmental Coalition federal contracts",
+      "href": "/insights/vendor/idaho-environmental-coalition/"
     },
     {
-      "label": "Bechtel Plant Machinery federal contracts",
-      "href": "/insights/vendor/bechtel-plant-machinery/"
+      "label": "Minburn Technology Group federal contracts",
+      "href": "/insights/vendor/minburn-technology-group/"
     },
     {
-      "label": "General Atomics Aeronautical Systems federal contracts",
-      "href": "/insights/vendor/general-atomics-aeronautical-systems/"
+      "label": "Elevated Technologies Services federal contracts",
+      "href": "/insights/vendor/elevated-technologies-services/"
     },
     {
-      "label": "Battelle Energy Alliance federal contracts",
-      "href": "/insights/vendor/battelle-energy-alliance/"
+      "label": "Federal Express federal contracts",
+      "href": "/insights/vendor/federal-express/"
     },
     {
-      "label": "Bath Iron Works federal contracts",
-      "href": "/insights/vendor/bath-iron-works/"
+      "label": "Bechtel National federal contracts",
+      "href": "/insights/vendor/bechtel-national/"
     },
     {
-      "label": "California Institute of Technology federal contracts",
-      "href": "/insights/vendor/california-institute-of-technology/"
+      "label": "Salient Crgt federal contracts",
+      "href": "/insights/vendor/salient-crgt/"
     }
   ],
   "sources": [
@@ -655,5 +643,6 @@
       "label": "USAspending.gov award data",
       "href": "https://www.usaspending.gov"
     }
-  ]
+  ],
+  "noindex": true
 }

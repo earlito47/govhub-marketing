@@ -1,20 +1,20 @@
 {
   "pageType": "state",
   "slug": "iowa",
-  "title": "Iowa Federal Contracts: $63.4M in FY2027",
+  "title": "Iowa Federal Contracts: $80M in FY2027",
   "h1": "Federal Contracts in Iowa: Spending, Agencies & Vendors",
-  "metaDescription": "Federal agencies obligated $63.4M to contractors in Iowa in FY2027 to date. See top buying agencies, top vendors, and industries.",
-  "updated": "2026-11-16",
+  "metaDescription": "Federal agencies obligated $80M to contractors in Iowa in FY2027 to date. See top buying agencies, top vendors, and industries.",
+  "updated": "2026-11-23",
   "fyWindow": {
     "label": "FY2027 to date",
     "start": "2026-10-01",
-    "end": "2026-11-16"
+    "end": "2026-11-23"
   },
   "stats": {
-    "totalObligations": 63381981.88,
-    "awardCount": 239,
-    "yoyGrowthPct": -97,
-    "avgAwardSize": 265197,
+    "totalObligations": 80004807.15,
+    "awardCount": 282,
+    "yoyGrowthPct": -96.2,
+    "avgAwardSize": 283705,
     "smallBusinessSharePct": null
   },
   "charts": [
@@ -36,7 +36,7 @@
             ],
             [
               "FY24",
-              3600131454.78
+              3600110699.38
             ],
             [
               "FY25",
@@ -44,17 +44,17 @@
             ],
             [
               "FY26",
-              2103735822.26
+              2111260905.04
             ],
             [
               "FY27",
-              63381981.88
+              80004807.15
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Obligations fell 97.0% year over year, from $2.1B in FY2026 to $63.4M in FY2027 to date."
+      "takeaway": "Obligations fell 96.2% year over year, from $2.1B in FY2026 to $80M in FY2027 to date."
     },
     {
       "id": "iowa-top-agencies",
@@ -66,49 +66,49 @@
           "points": [
             [
               "Department of the Treasury",
-              29255592.67
+              31153644.95
             ],
             [
               "Department of Justice",
-              13126953.23
-            ],
-            [
-              "Department of Veterans Affairs",
-              9511218.32
+              13497452.64
             ],
             [
               "Department of Agriculture",
-              5172755
+              11306170.04
+            ],
+            [
+              "Department of Veterans Affairs",
+              9592138.89
+            ],
+            [
+              "Department of Transportation",
+              5977775.12
             ],
             [
               "Department of Energy",
               4434709
             ],
             [
-              "General Services Administration",
-              540054.58
-            ],
-            [
               "Department of Health and Human Services",
-              456078.16
-            ],
-            [
-              "Department of Homeland Security",
-              209617.07
-            ],
-            [
-              "Department of Labor",
-              179048.49
+              1919769.56
             ],
             [
               "National Aeronautics and Space Administration",
-              171667.17
+              671667.17
+            ],
+            [
+              "General Services Administration",
+              628201.44
+            ],
+            [
+              "Department of Homeland Security",
+              222517.07
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Department of the Treasury was the top federal buyer in Iowa, obligating $29.3M (46.2% of the state total)."
+      "takeaway": "Department of the Treasury was the top federal buyer in Iowa, obligating $31.2M (38.9% of the state total)."
     },
     {
       "id": "iowa-top-vendors",
@@ -127,42 +127,42 @@
               10914781.2
             ],
             [
+              "THE UNIVERSITY OF IOWA",
+              4771763.39
+            ],
+            [
               "IOWA STATE UNIVERSITY OF SCIENCE AND TECHNOLOGY",
               4434709
             ],
             [
-              "THE UNIVERSITY OF IOWA",
-              4226122.04
+              "WEATHER DATA, INC.",
+              3217192.7
+            ],
+            [
+              "THE CBE GROUP, INC.",
+              2934472.97
+            ],
+            [
+              "DIVERSIFIED MANAGEMENT SOLUTIONS, INC.",
+              2645927.42
             ],
             [
               "HEARTLAND GOODWILL ENTERPRISES",
               2306858.15
             ],
             [
-              "METROPOLITAN SECURITY SERVICES, INC.",
-              1310689.48
-            ],
-            [
-              "IMPACTLIFE",
-              1078205
-            ],
-            [
-              "THE CBE GROUP, INC.",
-              1036420.69
-            ],
-            [
-              "NAPHCARE LLC",
-              767593.55
+              "SONSTEGARD FOODS CO",
+              2149120.2
             ],
             [
               "ASSOCIATED MILK PRODUCERS INC",
-              735991.2
+              1952989.92
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "PMX INDUSTRIES, INC. led all contractors in Iowa with $28.2M, 44.6% of the state total."
+      "takeaway": "PMX INDUSTRIES, INC. led all contractors in Iowa with $28.2M, 35.3% of the state total."
     },
     {
       "id": "iowa-top-naics",
@@ -181,8 +181,16 @@
               10414225.68
             ],
             [
+              "All Other Professional, Scientific, and Technical Services",
+              5863120.12
+            ],
+            [
               "Research and Development in the Physical, Engineering, and Life Sciences",
               4434709
+            ],
+            [
+              "All Other Miscellaneous Food Manufacturing",
+              2540113.8
             ],
             [
               "Colleges, Universities, and Professional Schools",
@@ -193,24 +201,16 @@
               2259667.58
             ],
             [
-              "Research and Development in Biotechnology (except Nanobiotechnology)",
-              1455759
+              "Cheese Manufacturing",
+              1952989.92
             ],
             [
-              "Security Guards and Patrol Services",
-              1407557.66
+              "Collection Agencies",
+              1775525.85
             ],
             [
-              "Commercial and Institutional Building Construction",
-              1227723.03
-            ],
-            [
-              "Pharmaceutical Preparation Manufacturing",
-              1196502.81
-            ],
-            [
-              "Offices of Certified Public Accountants",
-              1158947.12
+              "Administrative Management and General Management Consulting Services",
+              1463691.4
             ]
           ]
         }
@@ -229,28 +229,24 @@
       "href": "/insights/agency/department-of-justice/"
     },
     {
+      "label": "Department of Agriculture contracts",
+      "href": "/insights/agency/department-of-agriculture/"
+    },
+    {
       "label": "Department of Veterans Affairs contracts",
       "href": "/insights/agency/department-of-veterans-affairs/"
     },
     {
-      "label": "Department of Agriculture contracts",
-      "href": "/insights/agency/department-of-agriculture/"
+      "label": "NAICS 541990: All Other Professional, Scientific, and Technical Services",
+      "href": "/insights/naics/541990/"
     },
     {
       "label": "NAICS 541715: Research and Development in the Physical, Engineering, and Life Sciences",
       "href": "/insights/naics/541715/"
     },
     {
-      "label": "NAICS 561612: Security Guards and Patrol Services",
-      "href": "/insights/naics/561612/"
-    },
-    {
-      "label": "NAICS 236220: Commercial and Institutional Building Construction",
-      "href": "/insights/naics/236220/"
-    },
-    {
-      "label": "NAICS 325412: Pharmaceutical Preparation Manufacturing",
-      "href": "/insights/naics/325412/"
+      "label": "NAICS 541611: Administrative Management and General Management Consulting Services",
+      "href": "/insights/naics/541611/"
     }
   ],
   "tables": [
@@ -281,21 +277,45 @@
         [
           3,
           {
+            "text": "THE UNIVERSITY OF IOWA",
+            "href": "https://www.usaspending.gov/recipient/0b441d38-e3c0-de89-ee08-69fc9e6ee58a-C/latest/"
+          },
+          4771763.39
+        ],
+        [
+          4,
+          {
             "text": "IOWA STATE UNIVERSITY OF SCIENCE AND TECHNOLOGY",
             "href": "https://www.usaspending.gov/recipient/7148b6ec-c422-d557-aa04-0c8488cc6775-C/latest/"
           },
           4434709
         ],
         [
-          4,
+          5,
           {
-            "text": "THE UNIVERSITY OF IOWA",
-            "href": "https://www.usaspending.gov/recipient/0b441d38-e3c0-de89-ee08-69fc9e6ee58a-C/latest/"
+            "text": "WEATHER DATA, INC.",
+            "href": "https://www.usaspending.gov/recipient/40a85a15-7d37-e01c-554b-3db0a68ff027-C/latest/"
           },
-          4226122.04
+          3217192.7
         ],
         [
-          5,
+          6,
+          {
+            "text": "THE CBE GROUP, INC.",
+            "href": "https://www.usaspending.gov/recipient/231c3fa2-4f14-06be-083b-5b27d19525fa-C/latest/"
+          },
+          2934472.97
+        ],
+        [
+          7,
+          {
+            "text": "DIVERSIFIED MANAGEMENT SOLUTIONS, INC.",
+            "href": "https://www.usaspending.gov/recipient/271bc6b9-5c50-3f19-43f9-3395101d897f-C/latest/"
+          },
+          2645927.42
+        ],
+        [
+          8,
           {
             "text": "HEARTLAND GOODWILL ENTERPRISES",
             "href": "https://www.usaspending.gov/recipient/38ebcccb-b4ac-817a-65d2-81713c2409dd-C/latest/"
@@ -303,36 +323,12 @@
           2306858.15
         ],
         [
-          6,
-          {
-            "text": "METROPOLITAN SECURITY SERVICES, INC.",
-            "href": "https://www.usaspending.gov/recipient/835e42fb-f461-4e30-e17e-3205a1805635-C/latest/"
-          },
-          1310689.48
-        ],
-        [
-          7,
-          {
-            "text": "IMPACTLIFE",
-            "href": "https://www.usaspending.gov/recipient/bc8b4f84-5ea8-e723-4ed1-4c9278717c22-C/latest/"
-          },
-          1078205
-        ],
-        [
-          8,
-          {
-            "text": "THE CBE GROUP, INC.",
-            "href": "https://www.usaspending.gov/recipient/231c3fa2-4f14-06be-083b-5b27d19525fa-C/latest/"
-          },
-          1036420.69
-        ],
-        [
           9,
           {
-            "text": "NAPHCARE LLC",
-            "href": "https://www.usaspending.gov/recipient/d11fd97e-be81-3cac-3a64-cda5ed4b8619-C/latest/"
+            "text": "SONSTEGARD FOODS CO",
+            "href": "https://www.usaspending.gov/recipient/0f154a72-f152-44ca-8365-afed1e0be336-C/latest/"
           },
-          767593.55
+          2149120.2
         ],
         [
           10,
@@ -340,7 +336,7 @@
             "text": "ASSOCIATED MILK PRODUCERS INC",
             "href": "https://www.usaspending.gov/recipient/a9414861-272b-30e3-68c7-b2551f46810a-C/latest/"
           },
-          735991.2
+          1952989.92
         ]
       ]
     },
@@ -374,6 +370,15 @@
         [
           3,
           {
+            "text": "THE UNIVERSITY OF IOWA",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_80GSFC18C0008_8000_-NONE-_-NONE-/"
+          },
+          188814792.75,
+          "National Aeronautics and Space Administration"
+        ],
+        [
+          4,
+          {
             "text": "TELLIGEN, INC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_75FCMC25FJ050_7530_75FCMC19D0058_7530/"
           },
@@ -381,7 +386,7 @@
           "Department of Health and Human Services"
         ],
         [
-          4,
+          5,
           {
             "text": "BRISTON CONSTRUCTION, LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C77622C0126_3600_-NONE-_-NONE-/"
@@ -390,7 +395,7 @@
           "Department of Veterans Affairs"
         ],
         [
-          5,
+          6,
           {
             "text": "CAREER SYSTEMS DEVELOPMENT CORPORATION",
             "href": "https://www.usaspending.gov/award/CONT_AWD_1605JW23C0005_1605_-NONE-_-NONE-/"
@@ -399,16 +404,16 @@
           "Department of Labor"
         ],
         [
-          6,
+          7,
           {
             "text": "DEAN SNYDER CONSTRUCTION CO.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_12639526C0001_12K3_-NONE-_-NONE-/"
           },
-          32916872.59,
+          33078929.16,
           "Department of Agriculture"
         ],
         [
-          7,
+          8,
           {
             "text": "ODLE MANAGEMENT GROUP, L.L.C.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_1605JW23F00009_1605_1605JE22D0016_1605/"
@@ -417,7 +422,7 @@
           "Department of Labor"
         ],
         [
-          8,
+          9,
           {
             "text": "PMX INDUSTRIES, INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_2031JG26F71128_2044_2031JG23D00002_2044/"
@@ -426,7 +431,7 @@
           "Department of the Treasury"
         ],
         [
-          9,
+          10,
           {
             "text": "IOWA HEALTHCARE COLLABORATIVE",
             "href": "https://www.usaspending.gov/award/CONT_AWD_75FCMC20F0002_7530_75FCMC19D0028_7530/"
@@ -435,7 +440,7 @@
           "Department of Health and Human Services"
         ],
         [
-          10,
+          11,
           {
             "text": "PMX INDUSTRIES, INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_2031JG27F71130_2044_2031JG23D00002_2044/"
@@ -444,7 +449,7 @@
           "Department of the Treasury"
         ],
         [
-          11,
+          12,
           {
             "text": "PMX INDUSTRIES, INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_2031JG27F71131_2044_2031JG23D00002_2044/"
@@ -453,7 +458,7 @@
           "Department of the Treasury"
         ],
         [
-          12,
+          13,
           {
             "text": "THE CBE GROUP, INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_2033H626F00030_2036_2033H625A00007_2036/"
@@ -462,7 +467,7 @@
           "Department of the Treasury"
         ],
         [
-          13,
+          14,
           {
             "text": "THE CBE GROUP, INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_2033H624F00062_2036_GS23F0230P_4730/"
@@ -471,7 +476,7 @@
           "Department of the Treasury"
         ],
         [
-          14,
+          15,
           {
             "text": "THE CBE GROUP, INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_2033H625F00063_2036_47QRAA24D0062_4732/"
@@ -480,7 +485,7 @@
           "Department of the Treasury"
         ],
         [
-          15,
+          16,
           {
             "text": "BRISTON CONSTRUCTION, LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C26325C0037_3600_-NONE-_-NONE-/"
@@ -489,7 +494,7 @@
           "Department of Veterans Affairs"
         ],
         [
-          16,
+          17,
           {
             "text": "ADVANCED TECHNOLOGIES GROUP LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_15BNAS26P00000199_1540_-NONE-_-NONE-/"
@@ -498,7 +503,7 @@
           "Department of Justice"
         ],
         [
-          17,
+          18,
           {
             "text": "COVENANT CONSTRUCTION SERVICES LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C77624C0093_3600_-NONE-_-NONE-/"
@@ -507,7 +512,7 @@
           "Department of Veterans Affairs"
         ],
         [
-          18,
+          19,
           {
             "text": "DAX/GBAB JV LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C26323N1142_3600_36C26320D0024_3600/"
@@ -516,7 +521,7 @@
           "Department of Veterans Affairs"
         ],
         [
-          19,
+          20,
           {
             "text": "COVENANT CONSTRUCTION SERVICES LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C26323C0034_3600_-NONE-_-NONE-/"
@@ -525,7 +530,7 @@
           "Department of Veterans Affairs"
         ],
         [
-          20,
+          21,
           {
             "text": "AR6 CONSTRUCTION & ENGINEERING, LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_12639525C0077_12K3_-NONE-_-NONE-/"
@@ -534,78 +539,69 @@
           "Department of Agriculture"
         ],
         [
-          21,
+          22,
+          {
+            "text": "WEATHER DATA, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_6973GH26F00980_6920_6973GH23D00055_6920/"
+          },
+          5694728.12,
+          "Department of Transportation"
+        ],
+        [
+          23,
+          {
+            "text": "DIVERSIFIED MANAGEMENT SOLUTIONS, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_6973GH26F00982_6920_6973GH23D00057_6920/"
+          },
+          5673714.79,
+          "Department of Transportation"
+        ],
+        [
+          24,
+          {
+            "text": "WEATHER DATA, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_6973GH26F00984_6920_6973GH23D00059_6920/"
+          },
+          5660755.78,
+          "Department of Transportation"
+        ],
+        [
+          25,
           {
             "text": "EPATHUSA, INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_75FCMC24C0030_7530_-NONE-_-NONE-/"
           },
           5651783,
           "Department of Health and Human Services"
-        ],
-        [
-          22,
-          {
-            "text": "ODLE MANAGEMENT GROUP, L.L.C.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_1605JE26F00003_1605_1605JE22D0016_1605/"
-          },
-          5114729.8,
-          "Department of Labor"
-        ],
-        [
-          23,
-          {
-            "text": "METROPOLITAN SECURITY SERVICES, INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_15M10525FD3026CSO_1544_15M10522DA4700007_1544/"
-          },
-          3891364.92,
-          "Department of Justice"
-        ],
-        [
-          24,
-          {
-            "text": "THE UNIVERSITY OF IOWA",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C26325C0001_3600_-NONE-_-NONE-/"
-          },
-          3668557.72,
-          "Department of Veterans Affairs"
-        ],
-        [
-          25,
-          {
-            "text": "DEB EL FOOD PRODUCTS LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_123J1426C1507_12K2_-NONE-_-NONE-/"
-          },
-          2953344,
-          "Department of Agriculture"
         ]
       ]
     }
   ],
   "narrative": {
-    "intro": "Iowa federal contracts totaled $63.4M in FY2027 to date. The state recorded 239 awards with an average award size of $265K. Obligations fell 97.0% year over year. Historical context shows larger annual totals before FY2027: FY22 obligations were $3B, FY23 obligations were $4.3B, FY24 obligations were $3.6B, FY25 obligations were $4.7B, and FY26 obligations were $2.1B. The Department of the Treasury is the top buyer in FY2027 to date, obligating $29.3M. PMX INDUSTRIES, INC. is the top vendor in FY2027 to date with $28.2M. Copper Rolling, Drawing, Extruding, and Alloying is the largest NAICS industry by obligations in FY2027 to date with $28.2M. This snapshot covers contract obligations only and reflects fiscal year to date activity rather than a full fiscal year total. Use these figures for procurement planning, prioritizing outreach to the agencies and industries showing the most activity so far in FY2027.",
+    "intro": "Iowa received $80M in federal contract obligations in FY2027 to date. Obligations fell 96.2% year over year. Award activity so far includes 282 awards, with an average award size of $284K. Year-to-date totals are partial because the fiscal year is still in progress. Fiscal-year comparisons show steep swings: FY22 totaled $3B, FY23 totaled $4.3B, FY24 totaled $3.6B, FY25 totaled $4.7B, FY26 totaled $2.1B, and FY27 totaled $80M. The Department of the Treasury was the largest buyer in FY2027 to date, obligating $31.2M, followed by the Department of Justice with $13.5M and the Department of Agriculture with $11.3M. PMX INDUSTRIES, INC. was the largest vendor in FY2027 to date with $28.2M in obligations. Copper Rolling, Drawing, Extruding, and Alloying is the largest industry by obligation in FY2027 to date with $28.2M. The data show concentrated fiscal-year activity and a much smaller current-year total compared with recent completed fiscal years.",
     "sections": [
       {
         "heading": "How does FY2027 to date compare with prior fiscal years?",
-        "body": "FY27 obligations are $63.4M compared with FY26 obligations of $2.1B. FY25 obligations were $4.7B, FY24 obligations were $3.6B, FY23 obligations were $4.3B, and FY22 obligations were $3B. Obligations fell 97.0% year over year."
+        "body": "FY2027 to date totaled $80M in obligations. Prior full fiscal years ranged from $2.1B to $4.7B: FY22 totaled $3B, FY23 totaled $4.3B, FY24 totaled $3.6B, FY25 totaled $4.7B, and FY26 totaled $2.1B. Obligations fell 96.2% year over year. The FY2027 total is a partial, fiscal year to date figure."
       },
       {
-        "heading": "Which agencies and vendors dominate federal contracting in Iowa so far in FY2027?",
-        "body": "The Department of the Treasury obligated $29.3M in FY2027 to date, followed by the Department of Justice with $13.1M and the Department of Veterans Affairs with $9.5M. PMX INDUSTRIES, INC. received $28.2M, ADVANCED TECHNOLOGIES GROUP LLC received $10.9M, and IOWA STATE UNIVERSITY OF SCIENCE AND TECHNOLOGY received $4.4M. Copper Rolling, Drawing, Extruding, and Alloying leads industries with $28.2M."
+        "heading": "Which agencies, vendors, and industries account for most FY2027 to date spending?",
+        "body": "The Department of the Treasury led buying with $31.2M, followed by the Department of Justice with $13.5M and the Department of Agriculture with $11.3M. PMX INDUSTRIES, INC. led vendors with $28.2M, followed by ADVANCED TECHNOLOGIES GROUP LLC with $10.9M and THE UNIVERSITY OF IOWA with $4.8M. Copper Rolling, Drawing, Extruding, and Alloying led industries with $28.2M, followed by Software Publishers with $10.4M and All Other Professional, Scientific, and Technical Services with $5.9M."
       }
     ]
   },
   "faq": [
     {
       "q": "How much federal contract money goes to Iowa?",
-      "a": "Iowa received $63.4M in federal contract obligations in FY2027 to date. The state recorded 239 awards with an average award size of $265K, and obligations fell 97.0% year over year. Historical annual obligations were larger: FY26 $2.1B, FY25 $4.7B, FY24 $3.6B, FY23 $4.3B, and FY22 $3B."
+      "a": "Iowa received $80M in federal contract obligations in FY2027 to date. The state recorded 282 awards with an average award size of $284K. Fiscal-year totals for previous years were larger: FY22 totaled $3B, FY23 totaled $4.3B, FY24 totaled $3.6B, FY25 totaled $4.7B, and FY26 totaled $2.1B. Obligations fell 96.2% year over year."
     },
     {
       "q": "Which agencies award the most contracts in Iowa?",
-      "a": "The Department of the Treasury awards the most contracts in Iowa in FY2027 to date with $29.3M. The Department of Justice follows with $13.1M, and the Department of Veterans Affairs follows with $9.5M. Other significant buyers include the Department of Agriculture with $5.2M and the Department of Energy with $4.4M."
+      "a": "The Department of the Treasury is the largest awarding agency in FY2027 to date with $31.2M in obligations. The Department of Justice awarded $13.5M and the Department of Agriculture awarded $11.3M in FY2027 to date. Other FY2027 to date buyers include the Department of Veterans Affairs with $9.6M and the Department of Transportation with $6M."
     },
     {
       "q": "Who are the largest federal contractors in Iowa?",
-      "a": "PMX INDUSTRIES, INC. is the largest federal contractor in Iowa in FY2027 to date with $28.2M. ADVANCED TECHNOLOGIES GROUP LLC is next with $10.9M, followed by IOWA STATE UNIVERSITY OF SCIENCE AND TECHNOLOGY with $4.4M and THE UNIVERSITY OF IOWA with $4.2M."
+      "a": "PMX INDUSTRIES, INC. is the largest federal contractor in Iowa for FY2027 to date with $28.2M in obligations. ADVANCED TECHNOLOGIES GROUP LLC is second with $10.9M, and THE UNIVERSITY OF IOWA is third with $4.8M. Other top vendors in FY2027 to date include IOWA STATE UNIVERSITY OF SCIENCE AND TECHNOLOGY with $4.4M and WEATHER DATA, INC. with $3.2M."
     }
   ],
   "related": [

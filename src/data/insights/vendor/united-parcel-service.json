@@ -1,20 +1,20 @@
 {
   "pageType": "vendor",
   "slug": "united-parcel-service",
-  "title": "United Parcel Service Government Contracts: $56.4M (FY2027)",
+  "title": "United Parcel Service Government Contracts: $59.3M (FY2027)",
   "h1": "United Parcel Service: Federal Contracts, Agencies & Awards",
-  "metaDescription": "United Parcel Service won $56.4M in federal contract obligations in FY2027 to date. See its top agencies, markets, largest awards, and expiring contracts.",
-  "updated": "2026-11-16",
+  "metaDescription": "United Parcel Service won $59.3M in federal contract obligations in FY2027 to date. See its top agencies, markets, largest awards, and expiring contracts.",
+  "updated": "2026-11-23",
   "fyWindow": {
     "label": "FY2027 to date",
     "start": "2026-10-01",
-    "end": "2026-11-16"
+    "end": "2026-11-23"
   },
   "stats": {
-    "totalObligations": 56440645.78,
-    "awardCount": 210,
-    "yoyGrowthPct": -61.1,
-    "avgAwardSize": 268765,
+    "totalObligations": 59334252,
+    "awardCount": 234,
+    "yoyGrowthPct": -59.1,
+    "avgAwardSize": 253565,
     "smallBusinessSharePct": null
   },
   "charts": [
@@ -44,17 +44,17 @@
             ],
             [
               "FY26",
-              145102911.53
+              145103072.66
             ],
             [
               "FY27",
-              56440645.78
+              59334252
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Obligations fell 61.1% year over year, from $145M in FY2026 to $56.4M in FY2027 to date."
+      "takeaway": "Obligations fell 59.1% year over year, from $145M in FY2026 to $59.3M in FY2027 to date."
     },
     {
       "id": "united-parcel-service-top-agencies",
@@ -66,7 +66,11 @@
           "points": [
             [
               "Department of Veterans Affairs",
-              55309465.6
+              55602129.71
+            ],
+            [
+              "Department of the Treasury",
+              2731293.71
             ],
             [
               "Department of Commerce",
@@ -74,7 +78,7 @@
             ],
             [
               "Department of Homeland Security",
-              93500
+              81358.32
             ],
             [
               "Consumer Financial Protection Bureau",
@@ -82,15 +86,15 @@
             ],
             [
               "Department of Justice",
-              53557.17
+              54866.09
             ],
             [
               "General Services Administration",
               50000
             ],
             [
-              "Department of the Treasury",
-              40000
+              "Department of Energy",
+              45039.7
             ],
             [
               "Consumer Product Safety Commission",
@@ -99,16 +103,12 @@
             [
               "Department of Health and Human Services",
               12000
-            ],
-            [
-              "Federal Maritime Commission",
-              7500
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Department of Veterans Affairs is United Parcel Service's largest federal customer, with $55.3M obligated (98.0% of the company's federal obligations)."
+      "takeaway": "Department of Veterans Affairs is United Parcel Service's largest federal customer, with $55.6M obligated (93.7% of the company's federal obligations)."
     }
   ],
   "crossLinks": [
@@ -117,16 +117,16 @@
       "href": "/insights/agency/department-of-veterans-affairs/"
     },
     {
+      "label": "Department of the Treasury contracts",
+      "href": "/insights/agency/department-of-the-treasury/"
+    },
+    {
       "label": "Department of Commerce contracts",
       "href": "/insights/agency/department-of-commerce/"
     },
     {
       "label": "Department of Homeland Security contracts",
       "href": "/insights/agency/department-of-homeland-security/"
-    },
-    {
-      "label": "Department of Justice contracts",
-      "href": "/insights/agency/department-of-justice/"
     }
   ],
   "tables": [
@@ -183,6 +183,16 @@
         [
           5,
           {
+            "text": "2043FY27F00004",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_2043FY27F00004_2050_HTC71123DC025_9700/"
+          },
+          2723920.11,
+          "Department of the Treasury",
+          "2027-09-30"
+        ],
+        [
+          6,
+          {
             "text": "36C25027F0007",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C25027F0007_3600_HTC71123DC025_9700/"
           },
@@ -191,7 +201,7 @@
           "2027-09-30"
         ],
         [
-          6,
+          7,
           {
             "text": "36C24927F0022",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C24927F0022_3600_HTC71123DC025_9700/"
@@ -201,7 +211,7 @@
           "2027-09-30"
         ],
         [
-          7,
+          8,
           {
             "text": "36C25027F0012",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C25027F0012_3600_HTC71123DC025_9700/"
@@ -211,7 +221,7 @@
           "2027-09-30"
         ],
         [
-          8,
+          9,
           {
             "text": "36C25627F0032",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C25627F0032_3600_HTC71123DC025_9700/"
@@ -221,17 +231,17 @@
           "2027-10-09"
         ],
         [
-          9,
+          10,
           {
             "text": "89303023FMA400659",
             "href": "https://www.usaspending.gov/award/CONT_AWD_89303023FMA400659_8900_HTC71123DC025_9700/"
           },
-          1700107,
+          1740107,
           "Department of Energy",
           "2027-09-30"
         ],
         [
-          10,
+          11,
           {
             "text": "36C26027F0004",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C26027F0004_3600_HTC71123DC025_9700/"
@@ -241,7 +251,7 @@
           "2027-09-30"
         ],
         [
-          11,
+          12,
           {
             "text": "36C24827F0026",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C24827F0026_3600_HTC71123DC025_9700/"
@@ -251,7 +261,7 @@
           "2027-10-31"
         ],
         [
-          12,
+          13,
           {
             "text": "36C24827F0014",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C24827F0014_3600_HTC71123DC025_9700/"
@@ -261,7 +271,7 @@
           "2027-09-30"
         ],
         [
-          13,
+          14,
           {
             "text": "36C26223F0355",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C26223F0355_3600_HTC71123DC025_9700/"
@@ -271,7 +281,7 @@
           "2027-09-30"
         ],
         [
-          14,
+          15,
           {
             "text": "36C26223F0358",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C26223F0358_3600_HTC71123DC025_9700/"
@@ -281,7 +291,17 @@
           "2027-09-30"
         ],
         [
-          15,
+          16,
+          {
+            "text": "12314424F0668",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_12314424F0668_1205_HTC71123DC025_9700/"
+          },
+          1207306,
+          "Department of Agriculture",
+          "2027-09-29"
+        ],
+        [
+          17,
           {
             "text": "36C25924F0004",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C25924F0004_3600_HTC71123DC025_9700/"
@@ -291,7 +311,7 @@
           "2027-09-30"
         ],
         [
-          16,
+          18,
           {
             "text": "36C24827F0031",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C24827F0031_3600_HTC71123DC025_9700/"
@@ -301,7 +321,7 @@
           "2027-09-30"
         ],
         [
-          17,
+          19,
           {
             "text": "36C24727F0017",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C24727F0017_3600_HTC71123DC025_9700/"
@@ -311,7 +331,7 @@
           "2027-09-30"
         ],
         [
-          18,
+          20,
           {
             "text": "36C24827F0016",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C24827F0016_3600_HTC71123DC025_9700/"
@@ -321,7 +341,17 @@
           "2027-09-30"
         ],
         [
-          19,
+          21,
+          {
+            "text": "36C25623F0111",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C25623F0111_3600_HTC71123DC025_9700/"
+          },
+          674046.93,
+          "Department of Veterans Affairs",
+          "2025-09-30"
+        ],
+        [
+          22,
           {
             "text": "36C25227F0007",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C25227F0007_3600_HTC71123DC025_9700/"
@@ -331,7 +361,7 @@
           "2028-03-31"
         ],
         [
-          20,
+          23,
           {
             "text": "36C25227F0009",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C25227F0009_3600_HTC71123DC025_9700/"
@@ -341,7 +371,7 @@
           "2028-03-31"
         ],
         [
-          21,
+          24,
           {
             "text": "36C26127F0001",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C26127F0001_3600_HTC71123DC025_9700/"
@@ -351,42 +381,12 @@
           "2027-09-30"
         ],
         [
-          22,
+          25,
           {
             "text": "36C26227F0030",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C26227F0030_3600_HTC71123DC025_9700/"
           },
           620120,
-          "Department of Veterans Affairs",
-          "2027-09-30"
-        ],
-        [
-          23,
-          {
-            "text": "36C24927F0024",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C24927F0024_3600_HTC71123DC025_9700/"
-          },
-          600000,
-          "Department of Veterans Affairs",
-          "2027-09-30"
-        ],
-        [
-          24,
-          {
-            "text": "36C77623F0008",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C77623F0008_3600_HTC71123DC025_9700/"
-          },
-          590216.43,
-          "Department of Veterans Affairs",
-          "2027-09-30"
-        ],
-        [
-          25,
-          {
-            "text": "36C25027F0005",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C25027F0005_3600_HTC71123DC025_9700/"
-          },
-          572000,
           "Department of Veterans Affairs",
           "2027-09-30"
         ]
@@ -435,34 +435,34 @@
     }
   ],
   "narrative": {
-    "intro": "United Parcel Service has $56.4M in federal contract obligations in FY2027 to date. United Parcel Service received 210 awards so far this fiscal year, with an average award size of $269K, and obligations are down 61.1% year over year. The Department of Veterans Affairs is the dominant buyer, accounting for $55.3M of FY2027 obligations. Obligations by fiscal year were $238M in FY22, $230M in FY23, $345M in FY24, $198M in FY25, $145M in FY26, and $56.4M in FY27. The current-year totals are partial and cover fiscal year to date activity. The top buying agencies after the Department of Veterans Affairs are the Department of Commerce at $1000K and the Department of Homeland Security at $93.5K, followed by several smaller agency buyers. These figures are contract obligations except where noted otherwise for award values in award tables. The picture for FY2027 to date shows a concentrated set of obligations tied heavily to one agency and a marked decline in obligations compared with the prior year.",
+    "intro": "United Parcel Service recorded $59.3M in federal contract obligations in FY2027 to date, spread across 234 awards with an average award size of $254K. Obligations are down 59.1% year over year. Fiscal-year obligations peaked at $345M in FY24 and trended lower through FY26 at $145M before the current-year total of $59.3M. The Department of Veterans Affairs is the dominant buyer in FY2027 to date, obligating $55.6M. Other buying agencies include the Department of the Treasury with $2.7M and the Department of Commerce with $1000K, followed by smaller obligations from the Department of Homeland Security, the Consumer Financial Protection Bureau, and several other agencies. The FY2027 picture so far reflects a much smaller obligation run rate compared with the prior three fiscal years, with FY22 at $238M, FY23 at $230M, and FY24 at $345M. Contract-count and average-award-size metrics show activity concentrated in many modest awards rather than a few mega-awards in the current fiscal year.",
     "sections": [
       {
-        "heading": "How concentrated are United Parcel Service federal obligations in FY2027 to date?",
-        "body": "United Parcel Service obligations are highly concentrated in FY2027 to date. The Department of Veterans Affairs obligated $55.3M, which represents the vast majority of the $56.4M total. The remaining obligations are spread across several agencies at much smaller amounts. The concentration indicates most FY2027 activity ties to one buyer."
+        "heading": "How concentrated are United Parcel Service obligations in FY2027 to date?",
+        "body": "The Department of Veterans Affairs obligated $55.6M, which represents the large majority of United Parcel Service obligations in FY2027 to date. United Parcel Service has 234 awards so far, and the average award size is $254K. Other agencies each account for much smaller obligations, with the next-largest buyer, the Department of the Treasury, obligating $2.7M."
       },
       {
-        "heading": "How has United Parcel Service federal business moved over recent fiscal years?",
-        "body": "United Parcel Service obligations rose and fell across the last five fiscal years. Obligations were $238M in FY22, $230M in FY23, $345M in FY24, $198M in FY25, $145M in FY26, and $56.4M in FY27. FY2027 to date obligations are down 61.1% year over year. The average award size in FY2027 to date is $269K across 210 awards."
+        "heading": "How does FY2027 to date compare with prior fiscal years?",
+        "body": "United Parcel Service obligations in FY2027 to date are $59.3M, down from $145M in FY26 and far below the FY24 peak of $345M. Obligations were $238M in FY22 and $230M in FY23, showing that the current fiscal-year total is a smaller share of recent annual totals. Obligations fell 59.1% year over year."
       }
     ]
   },
   "faq": [
     {
       "q": "How much does United Parcel Service make from federal contracts?",
-      "a": "United Parcel Service has $56.4M in contract obligations in FY2027 to date, with 210 awards and an average award size of $269K, and obligations are down 61.1% year over year. This total reflects fiscal year to date obligations and is partial for the current fiscal year. The Department of Veterans Affairs accounts for $55.3M of those obligations."
+      "a": "United Parcel Service has received $59.3M in contract obligations in FY2027 to date. United Parcel Service recorded 234 awards in the same period and the average award size is $254K."
     },
     {
       "q": "Which agencies buy from United Parcel Service?",
-      "a": "The Department of Veterans Affairs buys from United Parcel Service, obligating $55.3M in FY2027 to date. Other buyers include the Department of Commerce at $1000K, the Department of Homeland Security at $93.5K, the Consumer Financial Protection Bureau at $60K, and smaller obligations from agencies such as the Department of Justice and the General Services Administration."
+      "a": "The Department of Veterans Affairs is the largest buyer, with $55.6M, followed by the Department of the Treasury with $2.7M and the Department of Commerce with $1000K. Other buying agencies in FY2027 to date include the Department of Homeland Security ($81.4K), the Consumer Financial Protection Bureau ($60K), the Department of Justice ($54.9K), the General Services Administration ($50K), the Department of Energy ($45K), the Consumer Product Safety Commission ($25K), and the Department of Health and Human Services ($12K)."
     },
     {
       "q": "What does United Parcel Service sell to the government?",
-      "a": "No product or service descriptions are provided with these contract obligation figures. The available figures list obligations, award counts, and agency-level totals but do not specify the goods or services procured."
+      "a": "United Parcel Service has 234 awards and an average award size of $254K in FY2027 to date, but the available obligation figures do not list specific products or services sold to the government. The obligations and agency breakdown show where spending went, not line-item descriptions of supplies or services."
     },
     {
       "q": "Which United Parcel Service contracts are expiring soon?",
-      "a": "No expiring-contract details are provided in these figures. The available information includes current obligations and agency totals but does not list contract expiration schedules."
+      "a": "No expiring contracts are listed in the obligation and award summaries for FY2027 to date. The tables and rankings provide obligations and award counts but do not include an expiring-contracts list."
     }
   ],
   "related": [
@@ -471,28 +471,28 @@
       "href": "/insights/expiring-federal-contracts/"
     },
     {
-      "label": "Softrams federal contracts",
-      "href": "/insights/vendor/softrams/"
+      "label": "National Government Services federal contracts",
+      "href": "/insights/vendor/national-government-services/"
     },
     {
-      "label": "Ameresco federal contracts",
-      "href": "/insights/vendor/ameresco/"
+      "label": "Adams and Associates federal contracts",
+      "href": "/insights/vendor/adams-and-associates/"
+    },
+    {
+      "label": "Softrams federal contracts",
+      "href": "/insights/vendor/softrams/"
     },
     {
       "label": "Suratech federal contracts",
       "href": "/insights/vendor/suratech/"
     },
     {
-      "label": "Crowley Government Services federal contracts",
-      "href": "/insights/vendor/crowley-government-services/"
+      "label": "Ameresco federal contracts",
+      "href": "/insights/vendor/ameresco/"
     },
     {
-      "label": "Strategic Storage Partners federal contracts",
-      "href": "/insights/vendor/strategic-storage-partners/"
-    },
-    {
-      "label": "Ferrovial Construccion PR federal contracts",
-      "href": "/insights/vendor/ferrovial-construccion-pr/"
+      "label": "Quest Diagnostics federal contracts",
+      "href": "/insights/vendor/quest-diagnostics/"
     }
   ],
   "sources": [

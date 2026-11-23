@@ -1,20 +1,20 @@
 {
   "pageType": "vendor",
   "slug": "corecivic",
-  "title": "Corecivic Federal Contracts: $399M in FY2026",
+  "title": "Corecivic Federal Contracts: $77M in FY2027",
   "h1": "Corecivic: Federal Contracts, Agencies & Awards",
-  "metaDescription": "Corecivic won $399M in federal contract obligations in FY2026 to date. See its top agencies, markets, largest awards, and expiring contracts.",
-  "updated": "2026-08-24",
+  "metaDescription": "Corecivic won $77M in federal contract obligations in FY2027 to date. See its top agencies, markets, largest awards, and expiring contracts.",
+  "updated": "2026-11-23",
   "fyWindow": {
-    "label": "FY2026 to date",
-    "start": "2025-10-01",
-    "end": "2026-08-24"
+    "label": "FY2027 to date",
+    "start": "2026-10-01",
+    "end": "2026-11-23"
   },
   "stats": {
-    "totalObligations": 399417786.23,
-    "awardCount": 42,
-    "yoyGrowthPct": 0.9,
-    "avgAwardSize": 9509947,
+    "totalObligations": 77013539.11,
+    "awardCount": 9,
+    "yoyGrowthPct": -83.1,
+    "avgAwardSize": 8557060,
     "smallBusinessSharePct": null
   },
   "charts": [
@@ -26,10 +26,6 @@
         {
           "label": "Obligations",
           "points": [
-            [
-              "FY21",
-              272458002.98
-            ],
             [
               "FY22",
               288326686.77
@@ -48,61 +44,65 @@
             ],
             [
               "FY26",
-              399417786.23
+              454667724.44
+            ],
+            [
+              "FY27",
+              77013539.11
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Obligations grew 0.9% year over year, from $396M in FY2025 to $399M in FY2026 to date."
+      "takeaway": "Obligations fell 83.1% year over year, from $455M in FY2026 to $77M in FY2027 to date."
     },
     {
       "id": "corecivic-top-agencies",
       "type": "bar",
-      "title": "Top 10 buying agencies, FY2026 to date",
+      "title": "Top 10 buying agencies, FY2027 to date",
       "series": [
         {
           "label": "Obligations",
           "points": [
             [
               "Department of Homeland Security",
-              317743762.44
+              49801900
             ],
             [
               "Department of Justice",
-              81674023.79
+              27211639.11
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Department of Homeland Security is Corecivic's largest federal customer, with $318M obligated (79.6% of the company's federal obligations)."
+      "takeaway": "Department of Homeland Security is Corecivic's largest federal customer, with $49.8M obligated (64.7% of the company's federal obligations)."
     },
     {
       "id": "corecivic-top-naics",
       "type": "bar",
-      "title": "Top 10 markets (NAICS), FY2026 to date",
+      "title": "Top 10 markets (NAICS), FY2027 to date",
       "series": [
         {
           "label": "Obligations",
           "points": [
             [
               "Security Guards and Patrol Services",
-              335715657.81
-            ],
-            [
-              "Other Justice, Public Order, and Safety Activities",
-              33294719.98
+              53244088.34
             ],
             [
               "Other Residential Care Facilities",
-              30407408.44
+              18504067.64
+            ],
+            [
+              "Other Justice, Public Order, and Safety Activities",
+              5265383.13
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Security Guards and Patrol Services is Corecivic's largest federal market, with $336M in obligations."
+      "takeaway": "Security Guards and Patrol Services is Corecivic's largest federal market, with $53.2M in obligations."
     }
   ],
   "crossLinks": [
@@ -121,7 +121,7 @@
   ],
   "tables": [
     {
-      "title": "Largest awards, FY2026 to date",
+      "title": "Largest awards, FY2027 to date",
       "columns": [
         "Rank",
         "Award",
@@ -136,249 +136,89 @@
             "text": "DJJODT8C0001",
             "href": "https://www.usaspending.gov/award/CONT_AWD_DJJODT8C0001_1501_-NONE-_-NONE-/"
           },
-          560138025.65,
+          566806118.25,
           "Department of Justice",
-          "2028-09-30"
+          "2030-09-30"
         ],
         [
           2,
           {
-            "text": "70CDCR25FR0000011",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_70CDCR25FR0000011_7012_70CDCR20D00000007_7012/"
+            "text": "70CDCR26FR0000123",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70CDCR26FR0000123_7012_70CDCR25D00000008_7012/"
           },
-          114347542.62,
+          56601900,
           "Department of Homeland Security",
-          "2025-12-19"
+          "2027-08-31"
         ],
         [
           3,
           {
-            "text": "70CDCR25FR0000122",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_70CDCR25FR0000122_7012_70CDCR25D00000010_7012/"
+            "text": "15BRRC27F00000022",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_15BRRC27F00000022_1540_15BRRC27D00000014_1540/"
           },
-          112137175.37,
-          "Department of Homeland Security",
-          "2026-08-31"
+          16023998.64,
+          "Department of Justice",
+          "2028-02-29"
         ],
         [
           4,
           {
-            "text": "70CDCR26FR0000030",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_70CDCR26FR0000030_7012_70CDCR20D00000007_7012/"
-          },
-          79849894.95,
-          "Department of Homeland Security",
-          "2026-12-19"
-        ],
-        [
-          5,
-          {
-            "text": "70CDCR24FR0000051",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_70CDCR24FR0000051_7012_70CDCR20D00000014_7012/"
-          },
-          52488893,
-          "Department of Homeland Security",
-          "2025-08-17"
-        ],
-        [
-          6,
-          {
-            "text": "70CDCR25FR0000095",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_70CDCR25FR0000095_7012_70CDCR20D00000014_7012/"
-          },
-          50023999.86,
-          "Department of Homeland Security",
-          "2026-08-17"
-        ],
-        [
-          7,
-          {
-            "text": "70CDCR25FR0000123",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_70CDCR25FR0000123_7012_70CDCR25D00000008_7012/"
-          },
-          37946574.12,
-          "Department of Homeland Security",
-          "2026-06-30"
-        ],
-        [
-          8,
-          {
-            "text": "15M40025FA3500001",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_15M40025FA3500001_1544_70CDCR20D00000007_7012/"
-          },
-          30768084.98,
-          "Department of Justice",
-          "2025-10-30"
-        ],
-        [
-          9,
-          {
-            "text": "15M40026FA3500008",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_15M40026FA3500008_1544_70CDCR20D00000007_7012/"
-          },
-          28207601.91,
-          "Department of Justice",
-          "2026-10-31"
-        ],
-        [
-          10,
-          {
-            "text": "70CDCR25FR0000041",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_70CDCR25FR0000041_7012_DJJODT9C0001_1501/"
-          },
-          27602800,
-          "Department of Homeland Security",
-          "2026-06-30"
-        ],
-        [
-          11,
-          {
-            "text": "70CDCR25FR0000090",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_70CDCR25FR0000090_7012_70CDCR20D00000013_7012/"
-          },
-          26171130.4,
-          "Department of Homeland Security",
-          "2026-07-31"
-        ],
-        [
-          12,
-          {
-            "text": "70CDCR24FR0000039",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_70CDCR24FR0000039_7012_70CDCR20D00000013_7012/"
-          },
-          24394912.37,
-          "Department of Homeland Security",
-          "2025-07-31"
-        ],
-        [
-          13,
-          {
-            "text": "15M40024FA3500003",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_15M40024FA3500003_1544_70CDCR20D00000007_7012/"
-          },
-          24322916.14,
-          "Department of Justice",
-          "2024-10-31"
-        ],
-        [
-          14,
-          {
-            "text": "70CDCR26FR0000110",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_70CDCR26FR0000110_7012_70CDCR26D00000050_7012/"
-          },
-          15884130,
-          "Department of Homeland Security",
-          "2027-08-10"
-        ],
-        [
-          15,
-          {
             "text": "15BRRC26F00000039",
             "href": "https://www.usaspending.gov/award/CONT_AWD_15BRRC26F00000039_1540_15BRRC21D00000282_1540/"
           },
-          14802727.23,
+          13992532.03,
           "Department of Justice",
           "2026-08-31"
         ],
         [
-          16,
-          {
-            "text": "70CDCR26FR0000058",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_70CDCR26FR0000058_7012_70CDCR26D00000029_7012/"
-          },
-          14085950,
-          "Department of Homeland Security",
-          "2026-09-30"
-        ],
-        [
-          17,
-          {
-            "text": "70CDCR25FR0000039",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_70CDCR25FR0000039_7012_70CDCR25D00000010_7012/"
-          },
-          13658622.28,
-          "Department of Homeland Security",
-          "2025-08-31"
-        ],
-        [
-          18,
-          {
-            "text": "15BRRC25F00000060",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_15BRRC25F00000060_1540_15BRRC21D00000282_1540/"
-          },
-          12777480.17,
-          "Department of Justice",
-          "2025-08-31"
-        ],
-        [
-          19,
-          {
-            "text": "15BRRC24F00000036",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_15BRRC24F00000036_1540_15BRRC21D00000282_1540/"
-          },
-          12716432.66,
-          "Department of Justice",
-          "2024-08-31"
-        ],
-        [
-          20,
-          {
-            "text": "70CDCR25FR0000033",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_70CDCR25FR0000033_7012_70CDCR25D00000008_7012/"
-          },
-          9056689.5,
-          "Department of Homeland Security",
-          "2025-09-25"
-        ],
-        [
-          21,
-          {
-            "text": "70CDCR26FR0000060",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_70CDCR26FR0000060_7012_70CDCR26D00000029_7012/"
-          },
-          8683769.24,
-          "Department of Homeland Security",
-          "2026-09-30"
-        ],
-        [
-          22,
+          5,
           {
             "text": "15M40026FA3500014",
             "href": "https://www.usaspending.gov/award/CONT_AWD_15M40026FA3500014_1544_70CDCR25D00000010_7012/"
           },
           8545912,
           "Department of Justice",
-          "2026-10-31"
+          "2027-08-31"
         ],
         [
-          23,
+          6,
           {
-            "text": "70CDCR26FR0000099",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_70CDCR26FR0000099_7012_70CDCR26D00000025_7012/"
+            "text": "15M40027FA3500001",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_15M40027FA3500001_1544_70CDCR20D00000007_7012/"
           },
-          7901085,
-          "Department of Homeland Security",
-          "2026-09-30"
-        ],
-        [
-          24,
-          {
-            "text": "15BRRC26F00000007",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_15BRRC26F00000007_1540_15BRRC22D00000334_1540/"
-          },
-          5835481.28,
+          3442188.34,
           "Department of Justice",
-          "2026-08-31"
+          "2027-10-31"
         ],
         [
-          25,
+          7,
           {
-            "text": "70CDCR26FR0000109",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_70CDCR26FR0000109_7012_70CDCR20D00000013_7012/"
+            "text": "15BRRC27F00000043",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_15BRRC27F00000043_1540_15BRRC27D00000002_1540/"
           },
-          4974490,
-          "Department of Homeland Security",
-          "2027-07-31"
+          2381609.9,
+          "Department of Justice",
+          "2028-01-31"
+        ],
+        [
+          8,
+          {
+            "text": "15BRRC27F00000017",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_15BRRC27F00000017_1540_15BRRC22D00000334_1540/"
+          },
+          929066.3,
+          "Department of Justice",
+          "2027-08-31"
+        ],
+        [
+          9,
+          {
+            "text": "15BRRC26F00000342",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_15BRRC26F00000342_1540_15BRRC26D00000070_1540/"
+          },
+          876679.8,
+          "Department of Justice",
+          "2026-09-30"
         ]
       ]
     },
@@ -393,66 +233,30 @@
       "rows": [
         [
           {
-            "text": "70CDCR25FR0000122",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_70CDCR25FR0000122_7012_70CDCR25D00000010_7012/"
-          },
-          "Department of Homeland Security",
-          112137175.37,
-          "2026-08-31"
-        ],
-        [
-          {
             "text": "70CDCR26FR0000030",
             "href": "https://www.usaspending.gov/award/CONT_AWD_70CDCR26FR0000030_7012_70CDCR20D00000007_7012/"
           },
           "Department of Homeland Security",
-          79849894.95,
+          84654774.95,
           "2026-12-19"
         ],
         [
           {
-            "text": "15M40026FA3500008",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_15M40026FA3500008_1544_70CDCR20D00000007_7012/"
-          },
-          "Department of Justice",
-          28207601.91,
-          "2026-10-31"
-        ],
-        [
-          {
-            "text": "70CDCR26FR0000110",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_70CDCR26FR0000110_7012_70CDCR26D00000050_7012/"
+            "text": "70CDCR26FR0000123",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70CDCR26FR0000123_7012_70CDCR25D00000008_7012/"
           },
           "Department of Homeland Security",
-          15884130,
-          "2027-08-10"
+          56601900,
+          "2027-08-31"
         ],
         [
           {
-            "text": "15BRRC26F00000039",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_15BRRC26F00000039_1540_15BRRC21D00000282_1540/"
-          },
-          "Department of Justice",
-          14802727.23,
-          "2026-08-31"
-        ],
-        [
-          {
-            "text": "70CDCR26FR0000058",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_70CDCR26FR0000058_7012_70CDCR26D00000029_7012/"
+            "text": "70CDCR26FR0000118",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70CDCR26FR0000118_7012_70CDCR25D00000010_7012/"
           },
           "Department of Homeland Security",
-          14085950,
-          "2026-09-30"
-        ],
-        [
-          {
-            "text": "70CDCR26FR0000060",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_70CDCR26FR0000060_7012_70CDCR26D00000029_7012/"
-          },
-          "Department of Homeland Security",
-          8683769.24,
-          "2026-09-30"
+          12284933.33,
+          "2027-08-31"
         ],
         [
           {
@@ -461,7 +265,25 @@
           },
           "Department of Justice",
           8545912,
-          "2026-10-31"
+          "2027-08-31"
+        ],
+        [
+          {
+            "text": "70CDCR26FR0000069",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70CDCR26FR0000069_7012_DJJODT9C0001_1501/"
+          },
+          "Department of Homeland Security",
+          8378302.57,
+          "2027-06-30"
+        ],
+        [
+          {
+            "text": "70CDCR26FR0000109",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70CDCR26FR0000109_7012_70CDCR20D00000013_7012/"
+          },
+          "Department of Homeland Security",
+          4974490,
+          "2027-07-31"
         ]
       ]
     },
@@ -488,34 +310,34 @@
     }
   ],
   "narrative": {
-    "intro": "Corecivic obligated $399M in FY2026 to date across 42 awards. Corecivic received an average award size of $9.5M and obligations were up 0.9% year over year. Corecivic’s FY series shows a rise from $272M in FY21 to $399M in FY26, with intermediate totals of $288M in FY22, $253M in FY23, $271M in FY24, and $396M in FY25. Corecivic’s business is concentrated by buyer and market: the Department of Homeland Security accounted for $318M of obligations and the Department of Justice accounted for $81.7M. Corecivic’s largest NAICS markets were Security Guards and Patrol Services with $336M, Other Justice, Public Order, and Safety Activities with $33.3M, and Other Residential Care Facilities with $30.4M. Corecivic’s current-year totals are partial because FY2026 is still in progress. Corecivic’s award-count and average-award-size suggest a small number of relatively large contracts drive the total obligations, and the top agencies and markets show where those large contracts are concentrated.",
+    "intro": "Corecivic obligated $77M in federal contracts in FY2027 to date, spread across 9 awards with an average award size of $8.6M. Corecivic obligations fell 83.1% year over year. Corecivic has a multi-year history of larger obligations: FY22 obligations were $288M, FY23 obligations were $253M, FY24 obligations were $271M, FY25 obligations were $396M, and FY26 obligations were $455M. Corecivic receives the largest share of FY2027 to-date obligations from the Department of Homeland Security, which obligated $49.8M, followed by the Department of Justice, which obligated $27.2M. Corecivic sells services primarily in Security Guards and Patrol Services, which accounted for $53.2M in FY2027 to date, and in Other Residential Care Facilities, which accounted for $18.5M, plus Other Justice, Public Order, and Safety Activities at $5.3M. Current-year totals are partial and represent fiscal year to date obligations, while some tables report award-value figures as total contract values.",
     "sections": [
       {
-        "heading": "How concentrated are Corecivic's federal obligations?",
-        "body": "Corecivic’s obligations are highly concentrated with the Department of Homeland Security obligating $318M and the Department of Justice obligating $81.7M. Corecivic’s top NAICS market, Security Guards and Patrol Services, accounted for $336M of obligations. Corecivic received 42 awards with an average award size of $9.5M, indicating relatively large individual awards."
+        "heading": "How did Corecivic's FY2027 obligations compare with prior years?",
+        "body": "Corecivic obligated $77M in FY2027 to date. Corecivic obligations fell 83.1% year over year. Corecivic obligations were $455M in FY26 and trended lower from FY25 through FY23 before that, with FY25 at $396M, FY24 at $271M, FY23 at $253M, and FY22 at $288M."
       },
       {
-        "heading": "How have Corecivic's federal obligations trended over recent years?",
-        "body": "Corecivic’s obligations rose from $272M in FY21 to $288M in FY22, then decreased to $253M in FY23 before increasing to $271M in FY24, $396M in FY25, and $399M in FY26 to date. Corecivic’s obligations were up 0.9% year over year between the most recent full reporting periods. Corecivic’s FY2026 total is partial because the fiscal year is ongoing."
+        "heading": "Who are Corecivic's main federal customers and what do they buy?",
+        "body": "The Department of Homeland Security obligated $49.8M in FY2027 to date and the Department of Justice obligated $27.2M. Corecivic sells Security Guards and Patrol Services, which accounted for $53.2M in FY2027 to date, Other Residential Care Facilities at $18.5M, and Other Justice, Public Order, and Safety Activities at $5.3M."
       }
     ]
   },
   "faq": [
     {
       "q": "How much does Corecivic make from federal contracts?",
-      "a": "Corecivic obligated $399M in FY2026 to date. Corecivic received 42 awards with an average award size of $9.5M, and obligations were up 0.9% year over year. Corecivic’s recent fiscal-year totals were $272M in FY21, $288M in FY22, $253M in FY23, $271M in FY24, and $396M in FY25."
+      "a": "Corecivic obligated $77M in federal contract obligations in FY2027 to date. Corecivic has 9 awards in FY2027 to date with an average award size of $8.6M, and obligations fell 83.1% year over year compared with the prior fiscal year."
     },
     {
       "q": "Which agencies buy from Corecivic?",
-      "a": "The Department of Homeland Security and the Department of Justice are the top buyers. The Department of Homeland Security obligated $318M and the Department of Justice obligated $81.7M in FY2026 to date."
+      "a": "The Department of Homeland Security obligated $49.8M from Corecivic in FY2027 to date. The Department of Justice obligated $27.2M from Corecivic in FY2027 to date."
     },
     {
       "q": "What does Corecivic sell to the government?",
-      "a": "Corecivic sells security, detention, and residential services classified under NAICS such as Security Guards and Patrol Services, Other Justice, Public Order, and Safety Activities, and Other Residential Care Facilities. Those markets accounted for $336M, $33.3M, and $30.4M respectively in FY2026 to date."
+      "a": "Corecivic sells Security Guards and Patrol Services, Other Residential Care Facilities, and Other Justice, Public Order, and Safety Activities to the federal government. Security Guards and Patrol Services accounted for $53.2M, Other Residential Care Facilities accounted for $18.5M, and Other Justice, Public Order, and Safety Activities accounted for $5.3M in FY2027 to date."
     },
     {
       "q": "Which Corecivic contracts are expiring soon?",
-      "a": "Corecivic has expiring contracts reflected in current and total contract values, but the provided facts list only totals and not a separate expiring-contracts table in detail. Corecivic’s FY2026 to date obligations total $399M and the dataset notes that award-value figures in largest-awards and expiring-contracts tables are total contract values."
+      "a": "This summary does not list specific expiring-contract figures. The available tables show award-value figures and obligations but do not include a separate list of expiring contracts in the presented figures."
     }
   ],
   "related": [
@@ -524,28 +346,28 @@
       "href": "/insights/expiring-federal-contracts/"
     },
     {
-      "label": "Fedex Supply Chain Distribution System federal contracts",
-      "href": "/insights/vendor/fedex-supply-chain-distribution-system/"
+      "label": "Minburn Technology Group federal contracts",
+      "href": "/insights/vendor/minburn-technology-group/"
     },
     {
-      "label": "M C Dean federal contracts",
-      "href": "/insights/vendor/m-c-dean/"
+      "label": "Elevated Technologies Services federal contracts",
+      "href": "/insights/vendor/elevated-technologies-services/"
     },
     {
-      "label": "Amazon Web Services federal contracts",
-      "href": "/insights/vendor/amazon-web-services/"
+      "label": "Peraton federal contracts",
+      "href": "/insights/vendor/peraton/"
     },
     {
-      "label": "Kiewit Infrastructure South federal contracts",
-      "href": "/insights/vendor/kiewit-infrastructure-south/"
+      "label": "Federal Express federal contracts",
+      "href": "/insights/vendor/federal-express/"
     },
     {
-      "label": "Indra Air Traffic federal contracts",
-      "href": "/insights/vendor/indra-air-traffic/"
+      "label": "Bechtel National federal contracts",
+      "href": "/insights/vendor/bechtel-national/"
     },
     {
-      "label": "BP Oil International federal contracts",
-      "href": "/insights/vendor/bp-oil-international/"
+      "label": "Salient Crgt federal contracts",
+      "href": "/insights/vendor/salient-crgt/"
     }
   ],
   "sources": [
@@ -553,5 +375,6 @@
       "label": "USAspending.gov award data",
       "href": "https://www.usaspending.gov"
     }
-  ]
+  ],
+  "noindex": true
 }
