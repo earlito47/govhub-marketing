@@ -5956,3 +5956,133 @@ unexposed because neither B campaign interpolates `companyName`.
 
 Suppression cross-check clean for a third day: **79 of 79 enforced, 0 still
 mailable.** Desk ledger **252** emails, `needs_human` **9**, `drafted` **45**.
+
+## 2026-11-23 / 11-24 — three replies never reached our own tables, one of them an opt-out
+
+Monday's check arrived 7 hours late, at 06:44 UTC Tuesday, so this covers both
+days and Tuesday's completed runs.
+
+### Three B4 replies are in Instantly and not in `outreach.outcomes`
+
+Seven B4 leads carry a reply flag in Instantly. Four are in `outcomes`. Reading
+the three that are not:
+
+| received | reply | what it is |
+|---|---|---|
+| 11-23 | "Hello Earl **\"Send\"**" + signature | accept by rule |
+| 11-20 | "**Sure! Send me info**" | accept |
+| 11-23 | "**Please remove from list.** Thanks" | opt-out |
+
+**The reply desk had seen two of the three**, which narrows this a long way
+from where it first looked. Checked rather than assumed: the desk holds the
+opt-out as `suppressed / unsubscribe` and the 11-20 accept as `drafted /
+accept`. Only the 11-23 "Send" is in neither the desk nor `outcomes`.
+
+So the opt-out was classified correctly and what was missing was enforcement on
+the company row — the same recurring gap, not a blind spot. Suppressed now, that
+person only, with reason and date; the count went 217 → 218. Their Instantly
+lead was already `status 3`, so `stop_on_reply` had halted the sequence and no
+further mail would have gone out.
+
+That leaves `outcomes` missing 3 of 7 B4 replies and the desk missing 1 of 7.
+`outcomes` is the table item 7's B-against-A comparison reads from, so a third
+of B4's replies are invisible to the only measurement that is supposed to decide
+whether the B line works.
+
+**Cause not established.** The ingest is incremental — `since` is derived from
+the last *successful* run minus a margin — and `metrics` returned 504 on 11-22
+but 200 on both 11-21 and 11-23, so a failed run alone does not explain a
+missing 11-20 reply. One lead worth noting: the 11-20 opener addressed
+"Yajaira" and the reply came from Toby Feldman, President, which would be a
+shared mailbox answering from a different address than the lead's. If the ingest
+matches a reply to a company by sender address, that class of reply cannot
+land. Those three addresses are the test cases.
+
+**And `reply_count` is not the cross-check for this.** It reads *lower* than
+`outcomes` on every A campaign:
+
+| | A1 | A2 | A4 | A5 | B4 |
+|---|---|---|---|---|---|
+| Instantly `reply_count` | 20 | 56 | 19 | 17 | 5 |
+| `outcomes` replied | 23 | 75 | 30 | 37 | 4 |
+
+So it counts something narrower than all-time replies and cannot be differenced
+against our table in either direction. The gap above was found lead by lead —
+`email_reply_count > 0` on the campaign's leads against `outcomes` — and that is
+the comparison worth running daily, not the campaign total.
+
+### The accept backlog is now six people
+
+The three at the provisioning gate since 11-16, plus the 11-20 "Send", plus the
+two found tonight. The oldest has waited **nineteen days**. None has a staged
+proposal. Every one replied to a specific promise — the next three open
+solicitations, or the disqualifier list.
+
+### assign: fixed in code, not deployed
+
+The stall is total — **0 rows written on both 11-23 and 11-24**, with
+`bline.no_signal` 1,199 of 1,200 considered on each.
+
+That refines the 11-18 diagnosis. The predicate was `byCompany.has(c.id)`: true
+for any signal row at status new/approved, including ones past their close date
+and `rfp_match` rows the fit judge rated mismatch or never judged. Of 11,899
+B-line `rfp_match` signals only a few hundred are both live and rated usable, so
+roughly 11,000 companies that can never be assigned sort ahead of the 1,130
+holding a live `competitor_award`.
+
+The predicate now asks what the per-company loop asks: inside the angle's
+close-date buffer, and for an `rfp_match`, a usable fit verdict ("require" on the
+B line, `a2_fit_gate` on the A line). `today` moved above the split so the buffer
+check has it. **It only reorders `todo`** — every gate that decides what a
+company is actually sent still runs unchanged below, so a mistake there costs a
+worse choice of 1,200 companies and cannot produce a wrong email.
+
+`assign-priority.test.mjs` pins the predicate to those gates, including that
+`today` is declared before the split, because declared after it would read
+undefined and every company would sort identically — the stall again, wearing a
+fix. Written against the unchanged source and watched to fail on all four checks
+first. 26 of 26 guards pass.
+
+**The deploy was refused** (`Destructive or Unwanted Actions`), as the 11-17 one
+was until it was asked for:
+
+```
+npx -y supabase@2.118.0 functions deploy outreach-assign \
+  --project-ref iqekrwearenblsmhvdjn --use-api --no-verify-jwt
+```
+
+Queues refilled by hand a **third** time (`?limit=8000`, wrote 195 — B4 173,
+B2 22): B4 **358 ready**, B2 **61**. Wednesday is the only remaining send day
+this week (11-26 and 11-27 are in `no_push_dates`), so this covers Wednesday and
+Monday 11-30.
+
+### A merge I nearly broke, and a better fix than mine
+
+`git merge origin/main` conflicted and I had suppressed its output, so I worked
+on a conflicted tree for several minutes and only found it when `run-all` failed
+with `SyntaxError: Unexpected token '<<'` — conflict markers in
+`close-floor.test.mjs`. Suppressing the output of a merge is how that happens;
+the exit status was there to be read.
+
+Both conflicts were in files I changed on 11-16, and **the other session's
+versions are better than mine on both.** Where I set `A2_FLOOR_DAYS = 16`, they
+replaced the floor with a window — `FIT_WINDOW_MIN_DAYS = 16`,
+`FIT_WINDOW_MAX_DAYS = 30` — matching push's, and reordered the selection to
+`ascending: false`, latest close first. That is exactly the residual I recorded
+on 11-16 and declined to fix ("a signal admitted at exactly the floor can be a
+day under it by the time assign looks"). Their guard checks both ends of the
+window, that the max agrees with the opportunities window and push's ceiling,
+that the query uses both bounds, and that the ordering is latest-first; mine
+checked the floor alone. Resolved both in their favour.
+
+### The rest
+
+Bounce **138 / 7,197 = 1.92%**, flat: A1 1.16%, A2 2.18%, A4 2.11%, A5 1.68%,
+**B4 2.42%**, B2 0 of 41. Nothing near either gate. Push: B4 75 on both days,
+B2 24 Monday and 18 Tuesday, A2 1 Monday. Jobs: `opportunities` took a 500 at
+03:00 Monday and its retry recovered at 03:08; the 03:45 slot is clean for a
+fourth and fifth morning.
+
+`signals_loaded` still reads **20000**, so the 20-page cap recorded on 11-18 is
+unchanged and about 1,500 signals remain invisible to assign. Separate from the
+predicate fix and smaller.
