@@ -1,20 +1,20 @@
 {
   "pageType": "agency",
   "slug": "department-of-state",
-  "title": "State Dept. Contract Spending: $81.7M in FY2027",
+  "title": "State Dept. Contract Spending: $126M in FY2027",
   "h1": "Department of State: Federal Contract Spending & Top Vendors",
-  "metaDescription": "Department of State obligated $81.7M in federal contracts in FY2027 to date. See what it buys, its top vendors, and multi-year trend.",
-  "updated": "2026-11-16",
+  "metaDescription": "Department of State obligated $126M in federal contracts in FY2027 to date. See what it buys, its top vendors, and multi-year trend.",
+  "updated": "2026-11-23",
   "fyWindow": {
     "label": "FY2027 to date",
     "start": "2026-10-01",
-    "end": "2026-11-16"
+    "end": "2026-11-23"
   },
   "stats": {
-    "totalObligations": 81728750.03,
-    "awardCount": 1253,
-    "yoyGrowthPct": -99.2,
-    "avgAwardSize": 65226,
+    "totalObligations": 126434583.01,
+    "awardCount": 1725,
+    "yoyGrowthPct": -98.7,
+    "avgAwardSize": 73295,
     "smallBusinessSharePct": null
   },
   "charts": [
@@ -40,21 +40,21 @@
             ],
             [
               "FY25",
-              9838424737.73
+              9838422844.79
             ],
             [
               "FY26",
-              9747212430.69
+              9778449979.09
             ],
             [
               "FY27",
-              81728750.03
+              126434583.01
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Obligations fell 99.2% year over year, from $9.7B in FY2026 to $81.7M in FY2027 to date."
+      "takeaway": "Obligations fell 98.7% year over year, from $9.8B in FY2026 to $126M in FY2027 to date."
     },
     {
       "id": "department-of-state-top-naics",
@@ -66,15 +66,27 @@
           "points": [
             [
               "Security Guards and Patrol Services",
-              22728966.47
+              25676307.5
             ],
             [
               "Facilities Support Services",
-              11936820.58
+              18368902.02
+            ],
+            [
+              "Administrative Management and General Management Consulting Services",
+              7247002.51
+            ],
+            [
+              "Other Computer Related Services",
+              7059659.59
+            ],
+            [
+              "Hotels (except Casino Hotels) and Motels",
+              6181424
             ],
             [
               "Automobile and Light Duty Motor Vehicle Manufacturing",
-              5002245.67
+              5019427.53
             ],
             [
               "Couriers and Express Delivery Services",
@@ -85,30 +97,18 @@
               4481796.16
             ],
             [
-              "Administrative Management and General Management Consulting Services",
-              3758703.94
-            ],
-            [
               "Nonscheduled Chartered Passenger Air Transportation",
               3556800
             ],
             [
-              "Hotels (except Casino Hotels) and Motels",
-              3520420.94
-            ],
-            [
-              "Insurance Agencies and Brokerages",
-              3372432.09
-            ],
-            [
-              "Process, Physical Distribution, and Logistics Consulting Services",
-              2628437.96
+              "All Other Travel Arrangement and Reservation Services",
+              3412641.68
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Security Guards and Patrol Services was State's largest contract category, with $22.7M obligated (27.8% of contract spending)."
+      "takeaway": "Security Guards and Patrol Services was State's largest contract category, with $25.7M obligated (20.3% of contract spending)."
     },
     {
       "id": "department-of-state-top-vendors",
@@ -119,12 +119,12 @@
           "label": "Obligations",
           "points": [
             [
-              "PUTZ SECURITY AG",
-              6213836.47
+              "MISCELLANEOUS FOREIGN AWARDEES",
+              8422045.25
             ],
             [
-              "MISCELLANEOUS FOREIGN AWARDEES",
-              5854954.34
+              "PUTZ SECURITY AG",
+              6213836.47
             ],
             [
               "ARK GROUP DMCC",
@@ -133,6 +133,10 @@
             [
               "KBR SERVICES, LLC",
               5198364
+            ],
+            [
+              "AKUMEN, INC.",
+              5000000
             ],
             [
               "SENECA STRATEGIC PARTNERS, LLC",
@@ -153,16 +157,12 @@
             [
               "PHOENIX AVIATION LIMITED",
               3556800
-            ],
-            [
-              "I3 PATHFINDER USA LLC",
-              3000000
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "PUTZ SECURITY AG led all State contractors with $6.2M, 7.6% of obligations."
+      "takeaway": "MISCELLANEOUS FOREIGN AWARDEES led all State contractors with $8.4M, 6.7% of obligations."
     }
   ],
   "crossLinks": [
@@ -177,6 +177,10 @@
     {
       "label": "NAICS 541611: Administrative Management and General Management Consulting Services",
       "href": "/insights/naics/541611/"
+    },
+    {
+      "label": "NAICS 541519: Other Computer Related Services",
+      "href": "/insights/naics/541519/"
     }
   ],
   "tables": [
@@ -191,18 +195,18 @@
         [
           1,
           {
-            "text": "PUTZ SECURITY AG",
-            "href": "https://www.usaspending.gov/recipient/73e27cd2-20f9-baf7-2c57-3e04e2206c18-C/latest/"
+            "text": "MISCELLANEOUS FOREIGN AWARDEES",
+            "href": "https://www.usaspending.gov/recipient/123456787/latest/"
           },
-          6213836.47
+          8422045.25
         ],
         [
           2,
           {
-            "text": "MISCELLANEOUS FOREIGN AWARDEES",
-            "href": "https://www.usaspending.gov/recipient/123456787/latest/"
+            "text": "PUTZ SECURITY AG",
+            "href": "https://www.usaspending.gov/recipient/73e27cd2-20f9-baf7-2c57-3e04e2206c18-C/latest/"
           },
-          5854954.34
+          6213836.47
         ],
         [
           3,
@@ -223,13 +227,21 @@
         [
           5,
           {
+            "text": "AKUMEN, INC.",
+            "href": "https://www.usaspending.gov/recipient/173c379d-abf0-6504-d72b-a1396e436fa9-C/latest/"
+          },
+          5000000
+        ],
+        [
+          6,
+          {
             "text": "SENECA STRATEGIC PARTNERS, LLC",
             "href": "https://www.usaspending.gov/recipient/047c0362-a498-3e37-2059-f847e9ab3cec-C/latest/"
           },
           4882215
         ],
         [
-          6,
+          7,
           {
             "text": "NORTHERN MANAGEMENT SERVICES, INC.",
             "href": "https://www.usaspending.gov/recipient/de680a27-9f59-f480-75c3-dc87185c9946-C/latest/"
@@ -237,7 +249,7 @@
           4796497.5
         ],
         [
-          7,
+          8,
           {
             "text": "AAR GOVERNMENT SERVICES, INC.",
             "href": "https://www.usaspending.gov/recipient/f21bf992-9b99-df82-c21a-898a38331075-C/latest/"
@@ -245,7 +257,7 @@
           4481796.16
         ],
         [
-          8,
+          9,
           {
             "text": "DTSV INC.",
             "href": "https://www.usaspending.gov/recipient/ed8b8d0f-f37e-ef2f-ce33-0a7619ff7a51-C/latest/"
@@ -253,20 +265,12 @@
           3989530.78
         ],
         [
-          9,
+          10,
           {
             "text": "PHOENIX AVIATION LIMITED",
             "href": "https://www.usaspending.gov/recipient/9b4a7fde-25c2-92d3-4374-6c11518fd1dc-C/latest/"
           },
           3556800
-        ],
-        [
-          10,
-          {
-            "text": "I3 PATHFINDER USA LLC",
-            "href": "https://www.usaspending.gov/recipient/61f8c122-4ee7-c2d4-2e33-34a1839e4351-C/latest/"
-          },
-          3000000
         ]
       ]
     },
@@ -289,13 +293,29 @@
         [
           2,
           {
+            "text": "PCL CONSTRUCTION INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_191BWC24C0008_19BM_-NONE-_-NONE-/"
+          },
+          552372021
+        ],
+        [
+          3,
+          {
             "text": "PERATON INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_19AQMM20F1777_1900_HHSN316201200036W_7529/"
           },
           353624634.02
         ],
         [
-          3,
+          4,
+          {
+            "text": "ABT GLOBAL LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_7200AA23C00012_7200_-NONE-_-NONE-/"
+          },
+          295954038.68
+        ],
+        [
+          5,
           {
             "text": "CHEROKEE NATION MANAGEMENT & CONSULTING, L.L.C..",
             "href": "https://www.usaspending.gov/award/CONT_AWD_19AQMM21F3648_1900_19AQMM21D0125_1900/"
@@ -303,7 +323,7 @@
           287001614.17
         ],
         [
-          4,
+          6,
           {
             "text": "PECKHAM VOCATIONAL INDUSTRIES, INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_19AQMM25C1078_1900_-NONE-_-NONE-/"
@@ -311,7 +331,7 @@
           284548311.93
         ],
         [
-          5,
+          7,
           {
             "text": "PAE GOVERNMENT SERVICES, INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_SAQMMA15F1245_1900_SAQMMA12D0165_1900/"
@@ -319,7 +339,7 @@
           273090665.87
         ],
         [
-          6,
+          8,
           {
             "text": "AT&T TECHNICAL SERVICES COMPANY, INC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_19AQMM21F0420_1900_GS00Q12NSD0004_4732/"
@@ -327,7 +347,7 @@
           249463957.45
         ],
         [
-          7,
+          9,
           {
             "text": "AAR GOVERNMENT SERVICES, INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_19AQMM24F0983_1900_SAQMMA16D0136_1900/"
@@ -335,7 +355,7 @@
           242147201.09
         ],
         [
-          8,
+          10,
           {
             "text": "DELOITTE CONSULTING LLP",
             "href": "https://www.usaspending.gov/award/CONT_AWD_19AQMM21F7091_1900_19AQMM19A0280_1900/"
@@ -343,7 +363,7 @@
           235870832.36
         ],
         [
-          9,
+          11,
           {
             "text": "PAE GOVERNMENT SERVICES, INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_19AQMM19F0009_1900_SAQMMA17D0080_1900/"
@@ -351,7 +371,7 @@
           199366119.37
         ],
         [
-          10,
+          12,
           {
             "text": "PAE GOVERNMENT SERVICES, INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_SAQMMA15F1246_1900_SAQMMA13D0120_1900/"
@@ -359,7 +379,15 @@
           195567723.44
         ],
         [
-          11,
+          13,
+          {
+            "text": "TATITLEK TECHNOLOGIES, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_19AQMM19F0022_1900_19AQMM18D0118_1900/"
+          },
+          159859326.44
+        ],
+        [
+          14,
           {
             "text": "DESBUILD INCORPORATED",
             "href": "https://www.usaspending.gov/award/CONT_AWD_19AQMM18C0257_1900_-NONE-_-NONE-/"
@@ -367,7 +395,7 @@
           155952562.01
         ],
         [
-          12,
+          15,
           {
             "text": "PAE GOVERNMENT SERVICES, INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_19AQMM18F3925_1900_SAQMMA17D0080_1900/"
@@ -375,7 +403,7 @@
           131155500.02
         ],
         [
-          13,
+          16,
           {
             "text": "FIRE CREEK COMPANY",
             "href": "https://www.usaspending.gov/award/CONT_AWD_19AQMM24C0099_1900_-NONE-_-NONE-/"
@@ -383,7 +411,39 @@
           118624168.44
         ],
         [
-          14,
+          17,
+          {
+            "text": "DELOITTE CONSULTING LLP",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_19AQMM25F1648_1900_47QTCK18D0029_4732/"
+          },
+          116071358.78
+        ],
+        [
+          18,
+          {
+            "text": "CGI FEDERAL INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_19AQMM25C0286_1900_-NONE-_-NONE-/"
+          },
+          92022904.02
+        ],
+        [
+          19,
+          {
+            "text": "GENERAL DYNAMICS INFORMATION TECHNOLOGY, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_19AQMM25F0678_1900_47QTCK18D0003_4732/"
+          },
+          87943873.04
+        ],
+        [
+          20,
+          {
+            "text": "T&H SERVICES, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_19AQMM19F2950_1900_19AQMM19D0129_1900/"
+          },
+          81806994.49
+        ],
+        [
+          21,
           {
             "text": "MISCELLANEOUS FOREIGN AWARDEES",
             "href": "https://www.usaspending.gov/award/CONT_AWD_19AQMM20C0009_1900_-NONE-_-NONE-/"
@@ -391,7 +451,15 @@
           78853678.67
         ],
         [
-          15,
+          22,
+          {
+            "text": "ATLAS ADVISORS LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_19AQMM23F1234_1900_19AQMM19D0098_1900/"
+          },
+          69800405.79
+        ],
+        [
+          23,
           {
             "text": "TETRA TECH, INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_19AQMM24F0007_1900_19AQMM18D0080_1900/"
@@ -399,7 +467,7 @@
           60719003.48
         ],
         [
-          16,
+          24,
           {
             "text": "INTRAHEALTH INTERNATIONAL, INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_72066821C00001_7200_-NONE-_-NONE-/"
@@ -407,105 +475,41 @@
           58661839.83
         ],
         [
-          17,
-          {
-            "text": "CHEROKEE NATION STRATEGIC PROGRAMS, L.L.C.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_19AQMM25F0158_1900_47QRAD20D8141_4732/"
-          },
-          47057138.63
-        ],
-        [
-          18,
-          {
-            "text": "KBR SERVICES, LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_19AQMM24F1211_1900_19AQMM19D0115_1900/"
-          },
-          46520055.44
-        ],
-        [
-          19,
-          {
-            "text": "TUVA LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_19AQMM18C0230_1900_-NONE-_-NONE-/"
-          },
-          43779523.35
-        ],
-        [
-          20,
-          {
-            "text": "AMERICAN INSTITUTE IN TAIWAN",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_19AQMM25F1165_1900_19AQMM25D1068_1900/"
-          },
-          43595484.82
-        ],
-        [
-          21,
-          {
-            "text": "MAKWA GLOBAL SECURITY SOLUTIONS, LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_19AQMM26F1566_1900_19AQMM22D0050_1900/"
-          },
-          36226325
-        ],
-        [
-          22,
-          {
-            "text": "DTSV INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_19AQMM24C0012_1900_-NONE-_-NONE-/"
-          },
-          27556355.59
-        ],
-        [
-          23,
-          {
-            "text": "TREWON TECHNOLOGIES LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_19AQMM25F0006_1900_47QRAA18D00DQ_4732/"
-          },
-          27035536.1
-        ],
-        [
-          24,
-          {
-            "text": "CGI FEDERAL INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_19AQMM24F7235_1900_19AQMM24A0165_1900/"
-          },
-          26732386.95
-        ],
-        [
           25,
           {
-            "text": "ZENPOINT SOLUTIONS LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_19AQMM26C1091_1900_-NONE-_-NONE-/"
+            "text": "ASRC FEDERAL HIGHLAND TECHNOLOGY, INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_19AQMM24F1288_1900_47QTCA18D001A_4732/"
           },
-          25182548.77
+          53915757.98
         ]
       ]
     }
   ],
   "narrative": {
-    "intro": "The Department of State obligated $81.7M in FY2027 to date. The Department of State recorded 1,253 awards at an average award size of $65.2K. Obligations fell 99.2% year over year compared with prior full fiscal years. Historical annual obligations show $12B in FY22, $11.7B in FY23, $11.7B in FY24, $9.8B in FY25, and $9.7B in FY26. All figures are contract obligations; current-year totals are partial (fiscal year to date). The FY2027 to date picture is concentrated: the largest category is Security Guards and Patrol Services at $22.7M, and the top vendor is PUTZ SECURITY AG at $6.2M. This snapshot highlights a much smaller fiscal-year-to-date spend compared with multi-billion-dollar totals in recent full fiscal years.",
+    "intro": "The Department of State has obligated $126M on contracts so far in FY2027 to date. The Department of State processed 1,725 awards, with an average award size of $73.3K. Obligations fell 98.7% year over year. Fiscal-year comparisons show prior totals much larger: FY22 totaled $12B, FY23 totaled $11.7B, FY24 totaled $11.7B, FY25 totaled $9.8B, and FY26 totaled $9.8B. The FY2027 to date picture is therefore a sharp reduction in obligations compared with recent full fiscal years. Current-year totals are partial, because the period reported is fiscal year to date. The available NAICS breakdown for FY2027 to date highlights Security Guards and Patrol Services with $25.7M and Facilities Support Services with $18.4M. The vendor list for FY2027 to date shows MISCELLANEOUS FOREIGN AWARDEES at $8.4M and PUTZ SECURITY AG at $6.2M among the top recipients. This snapshot highlights where limited FY2027 contracting dollars have concentrated so far.",
     "sections": [
       {
-        "heading": "How has State's contract spending changed since prior years?",
-        "body": "The Department of State obligated $81.7M in FY2027 to date. Obligations fell 99.2% year over year. Annual obligations were $12B in FY22, $11.7B in FY23, $11.7B in FY24, $9.8B in FY25, and $9.7B in FY26. The current fiscal-year-to-date total is a small fraction of those full-year totals."
+        "heading": "How does current spending compare to recent fiscal years?",
+        "body": "The Department of State obligated $126M in FY2027 to date, compared with $12B in FY22. The Department of State obligated $11.7B in FY23 and $11.7B in FY24. The Department of State obligated $9.8B in FY25 and $9.8B in FY26, so obligations fell 98.7% year over year."
       },
       {
-        "heading": "What are State's top procurement categories and vendors in FY2027 to date?",
-        "body": "Security Guards and Patrol Services is the largest category at $22.7M, followed by Facilities Support Services at $11.9M and Automobile and Light Duty Motor Vehicle Manufacturing at $5M. PUTZ SECURITY AG is the largest vendor at $6.2M, followed by MISCELLANEOUS FOREIGN AWARDEES at $5.9M and ARK GROUP DMCC at $5.8M. The top ten categories and top ten vendors together account for the bulk of the FY2027 to date obligations."
+        "heading": "What categories and vendors are receiving FY2027 to date obligations?",
+        "body": "Security Guards and Patrol Services received $25.7M and Facilities Support Services received $18.4M in FY2027 to date. Administrative Management and General Management Consulting Services received $7.2M and Other Computer Related Services received $7.1M. MISCELLANEOUS FOREIGN AWARDEES received $8.4M and PUTZ SECURITY AG received $6.2M among top vendors."
       }
     ]
   },
   "faq": [
     {
       "q": "How much does Department of State spend on contracts?",
-      "a": "The Department of State spent $81.7M on contracts in FY2027 to date. The Department of State issued 1,253 awards at an average award size of $65.2K. All figures are contract obligations; current-year totals are partial (fiscal year to date)."
+      "a": "The Department of State has obligated $126M on contracts so far in FY2027 to date. The Department of State obligated 1,725 awards with an average award size of $73.3K. Current-year totals are partial because the period reported is fiscal year to date."
     },
     {
       "q": "What does State buy?",
-      "a": "State buys Security Guards and Patrol Services, Facilities Support Services, and a mix of transportation and support services led by Security Guards and Patrol Services at $22.7M and Facilities Support Services at $11.9M. Other notable categories include Automobile and Light Duty Motor Vehicle Manufacturing at $5M and Couriers and Express Delivery Services at $4.6M."
+      "a": "The Department of State is buying security, facilities, consulting, and travel-related services in FY2027 to date. Security Guards and Patrol Services received $25.7M, Facilities Support Services received $18.4M, Administrative Management and General Management Consulting Services received $7.2M, and Other Computer Related Services received $7.1M, among other categories."
     },
     {
       "q": "Who are State's largest contractors?",
-      "a": "PUTZ SECURITY AG is the largest contractor at $6.2M. MISCELLANEOUS FOREIGN AWARDEES is next at $5.9M, followed by ARK GROUP DMCC at $5.8M, KBR SERVICES, LLC at $5.2M, and SENECA STRATEGIC PARTNERS, LLC at $4.9M."
+      "a": "MISCELLANEOUS FOREIGN AWARDEES and PUTZ SECURITY AG are the largest vendors so far in FY2027 to date. MISCELLANEOUS FOREIGN AWARDEES received $8.4M and PUTZ SECURITY AG received $6.2M, followed by ARK GROUP DMCC at $5.8M and KBR SERVICES, LLC at $5.2M."
     }
   ],
   "related": [
@@ -539,6 +543,5 @@
       "label": "USAspending.gov award data",
       "href": "https://www.usaspending.gov"
     }
-  ],
-  "noindex": true
+  ]
 }

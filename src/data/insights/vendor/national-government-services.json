@@ -1,20 +1,20 @@
 {
   "pageType": "vendor",
   "slug": "national-government-services",
-  "title": "Who Buys From National Government Services: $278M in FY2026",
+  "title": "Who Buys From National Government Services: $62.6M in FY2027",
   "h1": "National Government Services: Federal Contracts, Agencies & Awards",
-  "metaDescription": "National Government Services won $278M in federal contract obligations in FY2026 to date. See its top agencies, markets, largest awards, and expiring contract",
-  "updated": "2026-09-10",
+  "metaDescription": "National Government Services won $62.6M in federal contract obligations in FY2027 to date. See its top agencies, markets, largest awards, and expiring contrac",
+  "updated": "2026-11-23",
   "fyWindow": {
-    "label": "FY2026 to date",
-    "start": "2025-10-01",
-    "end": "2026-09-10"
+    "label": "FY2027 to date",
+    "start": "2026-10-01",
+    "end": "2026-11-23"
   },
   "stats": {
-    "totalObligations": 278375811.4,
-    "awardCount": 8,
-    "yoyGrowthPct": 6.6,
-    "avgAwardSize": 34796976,
+    "totalObligations": 62589645.66,
+    "awardCount": 6,
+    "yoyGrowthPct": -77.8,
+    "avgAwardSize": 10431608,
     "smallBusinessSharePct": null
   },
   "charts": [
@@ -26,10 +26,6 @@
         {
           "label": "Obligations",
           "points": [
-            [
-              "FY21",
-              256097365.71
-            ],
             [
               "FY22",
               254193831.86
@@ -48,39 +44,43 @@
             ],
             [
               "FY26",
-              278375811.4
+              281932032.4
+            ],
+            [
+              "FY27",
+              62589645.66
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Obligations grew 6.6% year over year, from $261M in FY2025 to $278M in FY2026 to date."
+      "takeaway": "Obligations fell 77.8% year over year, from $282M in FY2026 to $62.6M in FY2027 to date."
     },
     {
       "id": "national-government-services-top-naics",
       "type": "bar",
-      "title": "Top 10 markets (NAICS), FY2026 to date",
+      "title": "Top 10 markets (NAICS), FY2027 to date",
       "series": [
         {
           "label": "Obligations",
           "points": [
             [
               "Direct Health and Medical Insurance Carriers",
-              204141233
+              62640779
             ],
             [
               "Computer Systems Design Services",
-              63960177.52
+              0
             ],
             [
               "Other Computer Related Services",
-              10274400.88
+              -51133.34
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Direct Health and Medical Insurance Carriers is National Government Services's largest federal market, with $204M in obligations."
+      "takeaway": "Direct Health and Medical Insurance Carriers is National Government Services's largest federal market, with $62.6M in obligations."
     }
   ],
   "crossLinks": [
@@ -95,7 +95,7 @@
   ],
   "tables": [
     {
-      "title": "Largest awards, FY2026 to date",
+      "title": "Largest awards, FY2027 to date",
       "columns": [
         "Rank",
         "Award",
@@ -110,7 +110,7 @@
             "text": "75FCMC20C0026",
             "href": "https://www.usaspending.gov/award/CONT_AWD_75FCMC20C0026_7530_-NONE-_-NONE-/"
           },
-          565466485.07,
+          631537193.07,
           "Department of Health and Human Services",
           "2027-07-31"
         ],
@@ -130,42 +130,12 @@
             "text": "75FCMC22C0003",
             "href": "https://www.usaspending.gov/award/CONT_AWD_75FCMC22C0003_7530_-NONE-_-NONE-/"
           },
-          483573075.85,
+          483699367.85,
           "Department of Health and Human Services",
           "2027-08-31"
         ],
         [
           4,
-          {
-            "text": "75FCMC25FJ026",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_75FCMC25FJ026_7530_HHSM500201600004I_7530/"
-          },
-          21843163.3,
-          "Department of Health and Human Services",
-          "2027-01-26"
-        ],
-        [
-          5,
-          {
-            "text": "75FCMC22F0100",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_75FCMC22F0100_7530_GS35F0674T_4730/"
-          },
-          20016212.33,
-          "Department of Health and Human Services",
-          "2027-06-13"
-        ],
-        [
-          6,
-          {
-            "text": "75FCMC23F0122",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_75FCMC23F0122_7530_GS35F0674T_4730/"
-          },
-          12162498,
-          "Department of Health and Human Services",
-          "2027-01-25"
-        ],
-        [
-          7,
           {
             "text": "75FCMC22F0041",
             "href": "https://www.usaspending.gov/award/CONT_AWD_75FCMC22F0041_7530_GS35F0674T_4730/"
@@ -175,7 +145,17 @@
           "2027-04-30"
         ],
         [
-          8,
+          5,
+          {
+            "text": "75FCMC20F0084",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75FCMC20F0084_7530_GS35F0674T_4730/"
+          },
+          4612583.66,
+          "Department of Health and Human Services",
+          "2025-08-09"
+        ],
+        [
+          6,
           {
             "text": "75FCMC25FJ091",
             "href": "https://www.usaspending.gov/award/CONT_AWD_75FCMC25FJ091_7530_47QTCA24D00EF_4732/"
@@ -201,7 +181,7 @@
             "href": "https://www.usaspending.gov/award/CONT_AWD_75FCMC20C0026_7530_-NONE-_-NONE-/"
           },
           "Department of Health and Human Services",
-          565466485.07,
+          631537193.07,
           "2027-07-31"
         ],
         [
@@ -219,7 +199,7 @@
             "href": "https://www.usaspending.gov/award/CONT_AWD_75FCMC22C0003_7530_-NONE-_-NONE-/"
           },
           "Department of Health and Human Services",
-          483573075.85,
+          483699367.85,
           "2027-08-31"
         ],
         [
@@ -296,34 +276,34 @@
     }
   ],
   "narrative": {
-    "intro": "National Government Services obligated $278M in federal contracts in FY2026 to date. National Government Services received 8 awards so far this fiscal year, with an average award size of $34.8M and obligations up 6.6% year over year. The company’s obligations have varied across recent fiscal years: FY21 totaled $256M, FY22 totaled $254M, FY23 totaled $285M, FY24 totaled $186M, and FY25 totaled $261M. Direct Health and Medical Insurance Carriers is the largest market for National Government Services in FY2026 to date, accounting for $204M in obligations. Computer Systems Design Services is the second market, accounting for $64M, followed by Other Computer Related Services at $10.3M. The current-year totals are fiscal year to date and therefore partial. These figures describe contract obligations, except where specific tables list award values as total contract values. Use these figures to assess scale, concentration by NAICS market, and how FY2026 to date compares with recent fiscal years for contract activity.",
+    "intro": "National Government Services has federal contract obligations of $62.6M in FY2027 to date. National Government Services received 6 awards so far this fiscal year, with an average award size of $10.4M. National Government Services obligations are down 77.8% year over year. Historical totals show National Government Services obligated $254M in FY22, $285M in FY23, $186M in FY24, $261M in FY25, and $282M in FY26. National Government Services’ current FY2027 total is partial and covers the fiscal year to date. National Government Services’ top NAICS market for FY2027 to date is Direct Health and Medical Insurance Carriers with $62.6M in obligations. National Government Services has $0 in obligations in Computer Systems Design Services for FY2027 to date. The figures for awards listed in largest-awards and expiring-contracts tables are total contract values rather than obligations.",
     "sections": [
       {
-        "heading": "How has National Government Services' contract activity trended over recent fiscal years?",
-        "body": "National Government Services obligated $278M in FY2026 to date, up 6.6% year over year. National Government Services previously obligated $261M in FY25 and $186M in FY24, after $285M in FY23, $254M in FY22, and $256M in FY21. These figures show variable annual obligations with FY23 and FY26 to date among the higher years in the series."
+        "heading": "How has National Government Services’ spending trended over recent fiscal years?",
+        "body": "National Government Services obligated $254M in FY22, $285M in FY23, $186M in FY24, $261M in FY25, and $282M in FY26. National Government Services obligated $62.6M in FY27 to date, and obligations are down 77.8% year over year."
       },
       {
-        "heading": "What are National Government Services' largest federal markets and contract sizes?",
-        "body": "Direct Health and Medical Insurance Carriers is the largest market for National Government Services in FY2026 to date at $204M. Computer Systems Design Services accounts for $64M and Other Computer Related Services accounts for $10.3M. National Government Services received 8 awards in FY2026 to date, with an average award size of $34.8M."
+        "heading": "What are National Government Services’ largest markets in FY2027 to date?",
+        "body": "Direct Health and Medical Insurance Carriers is the largest market for National Government Services with $62.6M in obligations. Computer Systems Design Services shows $0 in obligations for National Government Services for FY2027 to date; Other Computer Related Services is recorded with a negative obligation for the same period."
       }
     ]
   },
   "faq": [
     {
       "q": "How much does National Government Services make from federal contracts?",
-      "a": "National Government Services obligated $278M in federal contracts in FY2026 to date. National Government Services received 8 awards in FY2026 to date, with an average award size of $34.8M and obligations up 6.6% year over year."
+      "a": "National Government Services makes $62.6M from federal contracts in FY2027 to date. National Government Services has 6 awards so far this fiscal year and the average award size is $10.4M, and obligations are down 77.8% year over year."
     },
     {
       "q": "Which agencies buy from National Government Services?",
-      "a": "National Government Services' buying agencies are not listed in the provided figures. The available data show obligations by market and by fiscal year, but do not identify specific federal agencies as buyers."
+      "a": "Direct Health and Medical Insurance Carriers is the primary buyer for National Government Services, where National Government Services has $62.6M in obligations for FY2027 to date. National Government Services also shows $0 in obligations in Computer Systems Design Services for the same period."
     },
     {
       "q": "What does National Government Services sell to the government?",
-      "a": "National Government Services sells services in Direct Health and Medical Insurance Carriers, Computer Systems Design Services, and Other Computer Related Services. Direct Health and Medical Insurance Carriers accounted for $204M, Computer Systems Design Services accounted for $64M, and Other Computer Related Services accounted for $10.3M in FY2026 to date."
+      "a": "National Government Services sells under NAICS categories including Direct Health and Medical Insurance Carriers and Computer Systems Design Services. National Government Services has $62.6M in obligations in Direct Health and Medical Insurance Carriers and $0 in Computer Systems Design Services for FY2027 to date."
     },
     {
       "q": "Which National Government Services contracts are expiring soon?",
-      "a": "No expiring National Government Services contracts are listed in the provided figures. The dataset includes award counts, obligations by fiscal year, and top markets, but does not include an expiring-contracts table."
+      "a": "The provided facts do not list specific expiring-contract entries for National Government Services. National Government Services’ FY2027 to date obligations total $62.6M, the award count is 6, and the average award size is $10.4M."
     }
   ],
   "related": [
@@ -332,28 +312,28 @@
       "href": "/insights/expiring-federal-contracts/"
     },
     {
-      "label": "Kiewit Alberici Siop Macc Ajv federal contracts",
-      "href": "/insights/vendor/kiewit-alberici-siop-macc-ajv/"
+      "label": "Bwxt Ordnance Tennessee federal contracts",
+      "href": "/insights/vendor/bwxt-ordnance-tennessee/"
     },
     {
-      "label": "Caci NSS federal contracts",
-      "href": "/insights/vendor/caci-nss/"
+      "label": "Richard Group federal contracts",
+      "href": "/insights/vendor/richard-group/"
     },
     {
-      "label": "Magellan Federal federal contracts",
-      "href": "/insights/vendor/magellan-federal/"
+      "label": "Southern Ohio Cleanup federal contracts",
+      "href": "/insights/vendor/southern-ohio-cleanup/"
     },
     {
-      "label": "Management and Training federal contracts",
-      "href": "/insights/vendor/management-and-training/"
+      "label": "Softrams federal contracts",
+      "href": "/insights/vendor/softrams/"
     },
     {
-      "label": "Bae Systems Space and Mission Systems federal contracts",
-      "href": "/insights/vendor/bae-systems-space-and-mission-systems/"
+      "label": "United Parcel Service federal contracts",
+      "href": "/insights/vendor/united-parcel-service/"
     },
     {
-      "label": "Fluor Intercontinental federal contracts",
-      "href": "/insights/vendor/fluor-intercontinental/"
+      "label": "Suratech federal contracts",
+      "href": "/insights/vendor/suratech/"
     }
   ],
   "sources": [
@@ -361,5 +341,6 @@
       "label": "USAspending.gov award data",
       "href": "https://www.usaspending.gov"
     }
-  ]
+  ],
+  "noindex": true
 }

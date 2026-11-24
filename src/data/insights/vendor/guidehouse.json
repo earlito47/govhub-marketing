@@ -1,20 +1,20 @@
 {
   "pageType": "vendor",
   "slug": "guidehouse",
-  "title": "Who Buys From Guidehouse: $718M in FY2026",
+  "title": "Who Buys From Guidehouse: $172M in FY2027",
   "h1": "Guidehouse: Federal Contracts, Agencies & Awards",
-  "metaDescription": "Guidehouse won $718M in federal contract obligations in FY2026 to date. See its top agencies, markets, largest awards, and expiring contracts.",
-  "updated": "2026-09-28",
+  "metaDescription": "Guidehouse won $172M in federal contract obligations in FY2027 to date. See its top agencies, markets, largest awards, and expiring contracts.",
+  "updated": "2026-11-23",
   "fyWindow": {
-    "label": "FY2026 to date",
-    "start": "2025-10-01",
-    "end": "2026-09-28"
+    "label": "FY2027 to date",
+    "start": "2026-10-01",
+    "end": "2026-11-23"
   },
   "stats": {
-    "totalObligations": 717975084.04,
-    "awardCount": 334,
-    "yoyGrowthPct": 32.8,
-    "avgAwardSize": 2149626,
+    "totalObligations": 172363368.26,
+    "awardCount": 36,
+    "yoyGrowthPct": -79.9,
+    "avgAwardSize": 4787871,
     "smallBusinessSharePct": null
   },
   "charts": [
@@ -26,10 +26,6 @@
         {
           "label": "Obligations",
           "points": [
-            [
-              "FY21",
-              28202440.89
-            ],
             [
               "FY22",
               316809023.02
@@ -44,164 +40,168 @@
             ],
             [
               "FY25",
-              540682584.63
+              542571272.47
             ],
             [
               "FY26",
-              717975084.04
+              857931989.85
+            ],
+            [
+              "FY27",
+              172363368.26
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Obligations grew 32.8% year over year, from $541M in FY2025 to $718M in FY2026 to date."
+      "takeaway": "Obligations fell 79.9% year over year, from $858M in FY2026 to $172M in FY2027 to date."
     },
     {
       "id": "guidehouse-top-agencies",
       "type": "bar",
-      "title": "Top 10 buying agencies, FY2026 to date",
+      "title": "Top 10 buying agencies, FY2027 to date",
       "series": [
         {
           "label": "Obligations",
           "points": [
             [
-              "Department of Defense",
-              146390380.52
-            ],
-            [
               "Department of the Interior",
-              136121875.14
-            ],
-            [
-              "Department of Homeland Security",
-              106646545.79
+              150732645
             ],
             [
               "Department of Health and Human Services",
-              81379300.75
-            ],
-            [
-              "Department of Justice",
-              77562235.28
-            ],
-            [
-              "Department of Veterans Affairs",
-              76080816.35
+              10756612.85
             ],
             [
               "Department of Agriculture",
-              23372680.47
+              4023682.88
             ],
             [
-              "Department of Transportation",
-              20940941.16
+              "Department of the Treasury",
+              3935646.96
             ],
             [
-              "Department of State",
-              20468897.05
+              "Department of Veterans Affairs",
+              1133947.54
             ],
             [
               "General Services Administration",
-              10151175.38
+              965364.95
+            ],
+            [
+              "Department of Commerce",
+              272693.34
+            ],
+            [
+              "Department of Education",
+              244438.18
+            ],
+            [
+              "Department of Transportation",
+              161907.04
+            ],
+            [
+              "Department of Justice",
+              149321.32
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Department of Defense is Guidehouse's largest federal customer, with $146M obligated (20.4% of the company's federal obligations)."
+      "takeaway": "Department of the Interior is Guidehouse's largest federal customer, with $151M obligated (87.5% of the company's federal obligations)."
     },
     {
       "id": "guidehouse-top-naics",
       "type": "bar",
-      "title": "Top 10 markets (NAICS), FY2026 to date",
+      "title": "Top 10 markets (NAICS), FY2027 to date",
       "series": [
         {
           "label": "Obligations",
           "points": [
             [
-              "Administrative Management and General Management Consulting Services",
-              337577168.81
-            ],
-            [
               "Computer Systems Design Services",
-              164208676.06
+              150732645
             ],
             [
-              "Other Accounting Services",
-              110906009.52
-            ],
-            [
-              "Engineering Services",
-              37620660.45
-            ],
-            [
-              "Custom Computer Programming Services",
-              30046298.34
-            ],
-            [
-              "All Other Professional, Scientific, and Technical Services",
-              16784423.45
-            ],
-            [
-              "Other Computer Related Services",
-              7635699.11
-            ],
-            [
-              "Landscape Architectural Services",
-              3947582.06
+              "Administrative Management and General Management Consulting Services",
+              20415466.59
             ],
             [
               "Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology)",
-              3855447.44
+              1133947.54
             ],
             [
-              "All Other Support Services",
-              3204992.96
+              "Engineering Services",
+              98593.62
+            ],
+            [
+              "Other Accounting Services",
+              0
+            ],
+            [
+              "Landscape Architectural Services",
+              0
+            ],
+            [
+              "All Other Professional, Scientific, and Technical Services",
+              -41.77
+            ],
+            [
+              "Custom Computer Programming Services",
+              -50.07
+            ],
+            [
+              "Human Resources Consulting Services",
+              -7297.45
+            ],
+            [
+              "Other Computer Related Services",
+              -9895.2
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Administrative Management and General Management Consulting Services is Guidehouse's largest federal market, with $338M in obligations."
+      "takeaway": "Computer Systems Design Services is Guidehouse's largest federal market, with $151M in obligations."
     }
   ],
   "crossLinks": [
     {
-      "label": "Department of Defense contracts",
-      "href": "/insights/agency/department-of-defense/"
-    },
-    {
       "label": "Department of the Interior contracts",
       "href": "/insights/agency/department-of-the-interior/"
-    },
-    {
-      "label": "Department of Homeland Security contracts",
-      "href": "/insights/agency/department-of-homeland-security/"
     },
     {
       "label": "Department of Health and Human Services contracts",
       "href": "/insights/agency/department-of-health-and-human-services/"
     },
     {
-      "label": "NAICS 541611: Administrative Management and General Management Consulting Services",
-      "href": "/insights/naics/541611/"
+      "label": "Department of Agriculture contracts",
+      "href": "/insights/agency/department-of-agriculture/"
+    },
+    {
+      "label": "Department of the Treasury contracts",
+      "href": "/insights/agency/department-of-the-treasury/"
     },
     {
       "label": "NAICS 541512: Computer Systems Design Services",
       "href": "/insights/naics/541512/"
     },
     {
-      "label": "NAICS 541330: Engineering Services",
-      "href": "/insights/naics/541330/"
+      "label": "NAICS 541611: Administrative Management and General Management Consulting Services",
+      "href": "/insights/naics/541611/"
     },
     {
-      "label": "NAICS 541511: Custom Computer Programming Services",
-      "href": "/insights/naics/541511/"
+      "label": "NAICS 541715: Research and Development in the Physical, Engineering, and Life Sciences",
+      "href": "/insights/naics/541715/"
+    },
+    {
+      "label": "NAICS 541330: Engineering Services",
+      "href": "/insights/naics/541330/"
     }
   ],
   "tables": [
     {
-      "title": "Largest awards, FY2026 to date",
+      "title": "Largest awards, FY2027 to date",
       "columns": [
         "Rank",
         "Award",
@@ -216,249 +216,249 @@
             "text": "140D0423F0882",
             "href": "https://www.usaspending.gov/award/CONT_AWD_140D0423F0882_1406_HHSN316201200040W_7529/"
           },
-          449573999.7,
+          600306644.7,
           "Department of the Interior",
-          "2026-12-31"
+          "2027-12-31"
         ],
         [
           2,
           {
-            "text": "HR001121F0012",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_HR001121F0012_9700_HR001118D0001_9700/"
+            "text": "12C0BZ26F0008",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_12C0BZ26F0008_12E3_12C0BZ26A0001_12E3/"
           },
-          140956598.68,
-          "Department of Defense",
-          "2026-05-21"
+          25706592.55,
+          "Department of Agriculture",
+          "2027-09-26"
         ],
         [
           3,
           {
-            "text": "15JPSS22F00000649",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_15JPSS22F00000649_1501_15JPSS18APZM00009_1501/"
-          },
-          125986404.76,
-          "Department of Justice",
-          "2027-09-07"
-        ],
-        [
-          4,
-          {
-            "text": "89243422FEE400262",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_89243422FEE400262_8900_GS00F045DA_4732/"
-          },
-          105363691.87,
-          "Department of Energy",
-          "2027-11-30"
-        ],
-        [
-          5,
-          {
-            "text": "HQ003421F0003",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_HQ003421F0003_9700_HQ003419A0017_9700/"
-          },
-          89800796.65,
-          "Department of Defense",
-          "2026-04-26"
-        ],
-        [
-          6,
-          {
-            "text": "W91CRB23C0004",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_W91CRB23C0004_9700_-NONE-_-NONE-/"
-          },
-          63602218.88,
-          "Department of Defense",
-          "2026-07-22"
-        ],
-        [
-          7,
-          {
-            "text": "19AQMM24F0191",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_19AQMM24F0191_1900_HHSN316201200040W_7529/"
-          },
-          61028962.2,
-          "Department of State",
-          "2026-06-30"
-        ],
-        [
-          8,
-          {
-            "text": "HR001122F0005",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_HR001122F0005_9700_HR001118D0001_9700/"
-          },
-          58205288.28,
-          "Department of Defense",
-          "2026-10-31"
-        ],
-        [
-          9,
-          {
-            "text": "15F06722F0001132",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_15F06722F0001132_1549_15F06722D0000423_1549/"
-          },
-          56136966.84,
-          "Department of Justice",
-          "2027-08-31"
-        ],
-        [
-          10,
-          {
-            "text": "W91CRB26FA067",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_W91CRB26FA067_9700_W91CRB25D0014_9700/"
-          },
-          55066653.04,
-          "Department of Defense",
-          "2026-10-15"
-        ],
-        [
-          11,
-          {
-            "text": "FA701422F0039",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_FA701422F0039_9700_FA701420D0004_9700/"
-          },
-          51647983.75,
-          "Department of Defense",
-          "2027-06-13"
-        ],
-        [
-          12,
-          {
-            "text": "19AQMM21F7035",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_19AQMM21F7035_1900_19AQMM19A0262_1900/"
-          },
-          49667765.84,
-          "Department of State",
-          "2026-06-15"
-        ],
-        [
-          13,
-          {
-            "text": "HR001122F0003",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_HR001122F0003_9700_HR001118D0001_9700/"
-          },
-          44077640.86,
-          "Department of Defense",
-          "2026-10-31"
-        ],
-        [
-          14,
-          {
-            "text": "HR001121F0036",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_HR001121F0036_9700_HR001118D0001_9700/"
-          },
-          37572906.16,
-          "Department of Defense",
-          "2026-08-30"
-        ],
-        [
-          15,
-          {
-            "text": "75F40124F80049",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_75F40124F80049_7524_GS00F045DA_4732/"
-          },
-          34425913.89,
-          "Department of Health and Human Services",
-          "2026-09-30"
-        ],
-        [
-          16,
-          {
-            "text": "15F06722F0001110",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_15F06722F0001110_1549_15F06722D0000423_1549/"
-          },
-          34302602.12,
-          "Department of Justice",
-          "2027-07-31"
-        ],
-        [
-          17,
-          {
-            "text": "47QFSA21F0008",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_47QFSA21F0008_4732_GS00Q14OADU216_4732/"
-          },
-          31559195.47,
-          "General Services Administration",
-          "2027-06-26"
-        ],
-        [
-          18,
-          {
-            "text": "36C10G26F0008",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10G26F0008_3600_GS00F045DA_4732/"
-          },
-          31163874.37,
-          "Department of Veterans Affairs",
-          "2027-01-25"
-        ],
-        [
-          19,
-          {
-            "text": "HSHQEH17F00031",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_HSHQEH17F00031_7001_GS00Q14OADU208_4732/"
-          },
-          29721519.77,
-          "Department of Homeland Security",
-          "2024-06-30"
-        ],
-        [
-          20,
-          {
-            "text": "75FCMC23F0123",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_75FCMC23F0123_7530_GS00F045DA_4732/"
-          },
-          28738705,
-          "Department of Health and Human Services",
-          "2027-12-31"
-        ],
-        [
-          21,
-          {
-            "text": "N0018924FZ533",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_N0018924FZ533_9700_N0018922DZ018_9700/"
-          },
-          28686151.01,
-          "Department of Defense",
-          "2026-09-23"
-        ],
-        [
-          22,
-          {
-            "text": "N0018923FZ707",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_N0018923FZ707_9700_N0018922DZ018_9700/"
-          },
-          28200989.02,
-          "Department of Defense",
-          "2026-04-02"
-        ],
-        [
-          23,
-          {
-            "text": "70T03024F7667N076",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_70T03024F7667N076_7013_70T04021A7672N001_7013/"
-          },
-          26758669.11,
-          "Department of Homeland Security",
-          "2027-02-28"
-        ],
-        [
-          24,
-          {
             "text": "15F06722F0001858",
             "href": "https://www.usaspending.gov/award/CONT_AWD_15F06722F0001858_1549_15F06722A0000176_1549/"
           },
-          24246473.14,
+          24146023.59,
           "Department of Justice",
           "2027-09-29"
         ],
         [
+          4,
+          {
+            "text": "15DDHQ24F00000827",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_15DDHQ24F00000827_1524_15DDHQ22A00000011_1524/"
+          },
+          13833314.53,
+          "Department of Justice",
+          "2029-09-11"
+        ],
+        [
+          5,
+          {
+            "text": "15F06723F0001401",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_15F06723F0001401_1549_15F06722A0000176_1549/"
+          },
+          13574890.11,
+          "Department of Justice",
+          "2027-08-21"
+        ],
+        [
+          6,
+          {
+            "text": "15F06723F0001350",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_15F06723F0001350_1549_15F06722A0000176_1549/"
+          },
+          13238262.35,
+          "Department of Justice",
+          "2028-08-11"
+        ],
+        [
+          7,
+          {
+            "text": "75F40126F19005",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75F40126F19005_7524_75F40121A00005_7524/"
+          },
+          13035822.34,
+          "Department of Health and Human Services",
+          "2027-09-21"
+        ],
+        [
+          8,
+          {
+            "text": "15JPSS21F00000945",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_15JPSS21F00000945_1501_15JPSS21A00000070_1501/"
+          },
+          10093553.86,
+          "Department of Justice",
+          "2026-12-31"
+        ],
+        [
+          9,
+          {
+            "text": "36C10G25N0038",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10G25N0038_3600_36C10X22D0020_3600/"
+          },
+          5496555.59,
+          "Department of Veterans Affairs",
+          "2027-04-30"
+        ],
+        [
+          10,
+          {
+            "text": "47QFDA23F0006",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_47QFDA23F0006_4732_GS00F045DA_4732/"
+          },
+          5268269.33,
+          "General Services Administration",
+          "2027-10-30"
+        ],
+        [
+          11,
+          {
+            "text": "693JF721F000078",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_693JF721F000078_6938_47QRAA19D0085_4732/"
+          },
+          4777508.57,
+          "Department of Transportation",
+          "2026-11-28"
+        ],
+        [
+          12,
+          {
+            "text": "12314427F0005",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_12314427F0005_1205_GS00F045DA_4732/"
+          },
+          4023682.88,
+          "Department of Agriculture",
+          "2027-10-12"
+        ],
+        [
+          13,
+          {
+            "text": "70B01C25F00001109",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70B01C25F00001109_7014_70B01C24A00000028_7014/"
+          },
+          3965410.81,
+          "Department of Homeland Security",
+          "2026-09-28"
+        ],
+        [
+          14,
+          {
+            "text": "12C0BZ26F0009",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_12C0BZ26F0009_12E3_12C0BZ26A0001_12E3/"
+          },
+          3947323.44,
+          "Department of Agriculture",
+          "2036-09-26"
+        ],
+        [
+          15,
+          {
+            "text": "75FCMC26F0038",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75FCMC26F0038_7530_GS00F045DA_4732/"
+          },
+          3882464.29,
+          "Department of Health and Human Services",
+          "2027-11-15"
+        ],
+        [
+          16,
+          {
+            "text": "2031JW27F00006",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_2031JW27F00006_2046_GS00F045DA_4732/"
+          },
+          3697192.64,
+          "Department of the Treasury",
+          "2027-10-05"
+        ],
+        [
+          17,
+          {
+            "text": "75D30120F08685",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75D30120F08685_7523_GS02Q16DCR0064_4732/"
+          },
+          3226672.27,
+          "Department of Health and Human Services",
+          "2022-09-16"
+        ],
+        [
+          18,
+          {
+            "text": "15M10422FA4700011",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_15M10422FA4700011_1544_GS00Q14OADU142_4732/"
+          },
+          3182794.92,
+          "Department of Justice",
+          "2027-11-29"
+        ],
+        [
+          19,
+          {
+            "text": "91990022F0322",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_91990022F0322_9100_91003120A0011_9100/"
+          },
+          2561609.71,
+          "Department of Education",
+          "2027-11-11"
+        ],
+        [
+          20,
+          {
+            "text": "75D30124F18416",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75D30124F18416_7523_GS00F045DA_4732/"
+          },
+          2444210.22,
+          "Department of Health and Human Services",
+          "2027-12-16"
+        ],
+        [
+          21,
+          {
+            "text": "70B01C22F00000777",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70B01C22F00000777_7014_70B03C20A00000017_7014/"
+          },
+          2414644.3,
+          "Department of Homeland Security",
+          "2023-09-15"
+        ],
+        [
+          22,
+          {
+            "text": "70CMSD26FR0000108",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70CMSD26FR0000108_7012_70CMSD23D00000002_7012/"
+          },
+          2344113.2,
+          "Department of Homeland Security",
+          "2027-09-09"
+        ],
+        [
+          23,
+          {
+            "text": "2099CF26F00019",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_2099CF26F00019_2099_2032H322A00008_2001/"
+          },
+          1709578,
+          "Department of the Treasury",
+          "2027-08-31"
+        ],
+        [
+          24,
+          {
+            "text": "70T05026F5300N002",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70T05026F5300N002_7013_47QRCA25DU150_4732/"
+          },
+          1428470,
+          "Department of Homeland Security",
+          "2027-08-24"
+        ],
+        [
           25,
           {
-            "text": "HR001122F0066",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_HR001122F0066_9700_HR001118D0001_9700/"
+            "text": "1333BJ24F00144002",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_1333BJ24F00144002_1344_1333BJ23A00180002_1344/"
           },
-          24094945.08,
-          "Department of Defense",
-          "2026-08-31"
+          1064357.01,
+          "Department of Commerce",
+          "2027-10-24"
         ]
       ]
     },
@@ -473,30 +473,21 @@
       "rows": [
         [
           {
-            "text": "140D0423F0882",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_140D0423F0882_1406_HHSN316201200040W_7529/"
-          },
-          "Department of the Interior",
-          449573999.7,
-          "2026-12-31"
-        ],
-        [
-          {
             "text": "15JPSS22F00000649",
             "href": "https://www.usaspending.gov/award/CONT_AWD_15JPSS22F00000649_1501_15JPSS18APZM00009_1501/"
           },
           "Department of Justice",
-          125986404.76,
+          131936999.1,
           "2027-09-07"
         ],
         [
           {
-            "text": "HR001122F0005",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_HR001122F0005_9700_HR001118D0001_9700/"
+            "text": "W91CRB23C0004",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_W91CRB23C0004_9700_-NONE-_-NONE-/"
           },
           "Department of Defense",
-          58205288.28,
-          "2026-10-31"
+          84027946.01,
+          "2027-07-22"
         ],
         [
           {
@@ -509,39 +500,12 @@
         ],
         [
           {
-            "text": "W91CRB26FA067",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_W91CRB26FA067_9700_W91CRB25D0014_9700/"
-          },
-          "Department of Defense",
-          55066653.04,
-          "2026-10-15"
-        ],
-        [
-          {
             "text": "FA701422F0039",
             "href": "https://www.usaspending.gov/award/CONT_AWD_FA701422F0039_9700_FA701420D0004_9700/"
           },
           "Department of Defense",
           51647983.75,
           "2027-06-13"
-        ],
-        [
-          {
-            "text": "HR001122F0003",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_HR001122F0003_9700_HR001118D0001_9700/"
-          },
-          "Department of Defense",
-          44077640.86,
-          "2026-10-31"
-        ],
-        [
-          {
-            "text": "75F40124F80049",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_75F40124F80049_7524_GS00F045DA_4732/"
-          },
-          "Department of Health and Human Services",
-          34425913.89,
-          "2026-09-30"
         ],
         [
           {
@@ -560,6 +524,42 @@
           "General Services Administration",
           31559195.47,
           "2027-06-26"
+        ],
+        [
+          {
+            "text": "36C10G26F0008",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10G26F0008_3600_GS00F045DA_4732/"
+          },
+          "Department of Veterans Affairs",
+          31163874.37,
+          "2027-01-25"
+        ],
+        [
+          {
+            "text": "70T03024F7667N076",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70T03024F7667N076_7013_70T04021A7672N001_7013/"
+          },
+          "Department of Homeland Security",
+          26758669.11,
+          "2027-02-28"
+        ],
+        [
+          {
+            "text": "12C0BZ26F0008",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_12C0BZ26F0008_12E3_12C0BZ26A0001_12E3/"
+          },
+          "Department of Agriculture",
+          25706592.55,
+          "2027-09-26"
+        ],
+        [
+          {
+            "text": "15F06722F0001858",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_15F06722F0001858_1549_15F06722A0000176_1549/"
+          },
+          "Department of Justice",
+          24146023.59,
+          "2027-09-29"
         ]
       ]
     },
@@ -590,34 +590,34 @@
     }
   ],
   "narrative": {
-    "intro": "Guidehouse has $718M in federal contract obligations for FY2026 to date. Guidehouse won 334 awards so far, with an average award size of $2.1M. Guidehouse obligations are up 32.8% year over year. Guidehouse received progressively larger obligations from FY21 through FY24, with FY21 at $28.2M, FY22 at $317M, FY23 at $631M, and FY24 at $761M, then fell to $541M in FY25 before rising to $718M in FY26 to date. Guidehouse does the bulk of its FY2026 work in Administrative Management and General Management Consulting Services with $338M, followed by Computer Systems Design Services with $164M and Other Accounting Services with $111M. Guidehouse sells to a wide set of agencies in FY2026 to date, led by the Department of Defense with $146M and the Department of the Interior with $136M. Guidehouse also has material obligations from the Department of Homeland Security with $107M, the Department of Health and Human Services with $81.4M, and the Department of Justice with $77.6M. These figures are fiscal year to date totals.",
+    "intro": "In FY2027 to date, Guidehouse won $172M across 36 contract awards. That is down 79.9% year over year. The average award size was $4.8M.",
     "sections": [
       {
-        "heading": "Which agencies are buying from Guidehouse?",
-        "body": "The Department of Defense obligated $146M from Guidehouse in FY2026 to date. The Department of the Interior obligated $136M and the Department of Homeland Security obligated $107M. The Department of Health and Human Services obligated $81.4M, the Department of Justice obligated $77.6M, and the Department of Veterans Affairs obligated $76.1M."
+        "heading": "Which agencies buy from Guidehouse?",
+        "body": "Department of the Interior accounted for $151M of Guidehouse's federal contract obligations in FY2027 to date, or 87.5% of the company's federal work."
       },
       {
         "heading": "What does Guidehouse sell to the government?",
-        "body": "Administrative Management and General Management Consulting Services is Guidehouse's largest market with $338M in FY2026 to date. Computer Systems Design Services is the second-largest market with $164M, and Other Accounting Services is the third with $111M. Guidehouse also sells Engineering Services with $37.6M and Custom Computer Programming Services with $30M."
+        "body": "Computer Systems Design Services is Guidehouse's largest federal market by obligations, at $151M in FY2027 to date, a 87.5% share of its federal business."
       }
     ]
   },
   "faq": [
     {
       "q": "How much does Guidehouse make from federal contracts?",
-      "a": "Guidehouse has $718M in federal contract obligations for FY2026 to date. Guidehouse won 334 awards in FY2026 to date, with an average award size of $2.1M, and obligations are up 32.8% year over year."
+      "a": "Guidehouse won $172M in federal contract obligations in FY2027 to date, across 36 awards."
     },
     {
       "q": "Which agencies buy from Guidehouse?",
-      "a": "Guidehouse sells to many federal buyers, led by the Department of Defense with $146M, the Department of the Interior with $136M, and the Department of Homeland Security with $107M in FY2026 to date."
+      "a": "Department of the Interior is Guidehouse's largest federal customer, with $151M obligated in FY2027 to date."
     },
     {
       "q": "What does Guidehouse sell to the government?",
-      "a": "Guidehouse sells management and technical services, led by Administrative Management and General Management Consulting Services with $338M, Computer Systems Design Services with $164M, and Other Accounting Services with $111M in FY2026 to date."
+      "a": "Guidehouse's largest federal market is Computer Systems Design Services, with $151M in obligations in FY2027 to date."
     },
     {
       "q": "Which Guidehouse contracts are expiring soon?",
-      "a": "No expiring-contracts figures are provided in the data. The available tables list award-value figures for largest awards and note that expiring-contracts table figures would be total contract values, but no specific expiring-contracts entries appear in the provided facts."
+      "a": "Guidehouse's largest contract expiring in the next 12 months is a $132M award from Department of Justice, with a period of performance ending in September 2027."
     }
   ],
   "related": [
@@ -626,28 +626,28 @@
       "href": "/insights/expiring-federal-contracts/"
     },
     {
-      "label": "Ford Motor federal contracts",
-      "href": "/insights/vendor/ford-motor/"
+      "label": "California Institute of Technology federal contracts",
+      "href": "/insights/vendor/california-institute-of-technology/"
     },
     {
-      "label": "Crowley Government Services federal contracts",
-      "href": "/insights/vendor/crowley-government-services/"
+      "label": "Deloitte Consulting federal contracts",
+      "href": "/insights/vendor/deloitte-consulting/"
     },
     {
-      "label": "Leland Stanford Junior University federal contracts",
-      "href": "/insights/vendor/leland-stanford-junior-university/"
+      "label": "Fermi Forward Discovery Group federal contracts",
+      "href": "/insights/vendor/fermi-forward-discovery-group/"
     },
     {
-      "label": "Black Construction Tutor Perini federal contracts",
-      "href": "/insights/vendor/black-construction-tutor-perini/"
+      "label": "Thundercat Technology federal contracts",
+      "href": "/insights/vendor/thundercat-technology/"
     },
     {
-      "label": "Vigor Marine federal contracts",
-      "href": "/insights/vendor/vigor-marine/"
+      "label": "Regents of the University of California federal contracts",
+      "href": "/insights/vendor/regents-of-the-university-of-california/"
     },
     {
-      "label": "Evernorth Federal Services federal contracts",
-      "href": "/insights/vendor/evernorth-federal-services/"
+      "label": "Brookhaven Science Associates federal contracts",
+      "href": "/insights/vendor/brookhaven-science-associates/"
     }
   ],
   "sources": [

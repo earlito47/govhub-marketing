@@ -1,20 +1,20 @@
 {
   "pageType": "agency",
   "slug": "department-of-education",
-  "title": "What Education Dept. Buys: $2.4B in Contracts, FY2026",
+  "title": "What Education Dept. Buys: $59.1M in Contracts, FY2027",
   "h1": "Department of Education: Federal Contract Spending & Top Vendors",
-  "metaDescription": "Department of Education obligated $2.4B in federal contracts in FY2026 to date. See what it buys, its top vendors, and multi-year trend.",
-  "updated": "2026-09-28",
+  "metaDescription": "Department of Education obligated $59.1M in federal contracts in FY2027 to date. See what it buys, its top vendors, and multi-year trend.",
+  "updated": "2026-11-23",
   "fyWindow": {
-    "label": "FY2026 to date",
-    "start": "2025-10-01",
-    "end": "2026-09-28"
+    "label": "FY2027 to date",
+    "start": "2026-10-01",
+    "end": "2026-11-23"
   },
   "stats": {
-    "totalObligations": 2423349525.37,
-    "awardCount": 780,
-    "yoyGrowthPct": -3.2,
-    "avgAwardSize": 3106858,
+    "totalObligations": 59075500.56,
+    "awardCount": 126,
+    "yoyGrowthPct": -97.9,
+    "avgAwardSize": 468853,
     "smallBusinessSharePct": null
   },
   "charts": [
@@ -26,10 +26,6 @@
         {
           "label": "Obligations",
           "points": [
-            [
-              "FY21",
-              2687507868.02
-            ],
             [
               "FY22",
               2446949795.3
@@ -48,121 +44,125 @@
             ],
             [
               "FY26",
-              2423349525.37
+              2845856669.95
+            ],
+            [
+              "FY27",
+              59075500.56
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Obligations fell 3.2% year over year, from $2.5B in FY2025 to $2.4B in FY2026 to date."
+      "takeaway": "Obligations fell 97.9% year over year, from $2.8B in FY2026 to $59.1M in FY2027 to date."
     },
     {
       "id": "department-of-education-top-naics",
       "type": "bar",
-      "title": "Top 10 categories (NAICS), FY2026 to date",
+      "title": "Top 10 categories (NAICS), FY2027 to date",
       "series": [
         {
           "label": "Obligations",
           "points": [
             [
-              "Other Activities Related to Credit Intermediation",
-              935978907.19
-            ],
-            [
               "Computer Systems Design Services",
-              692849095.86
-            ],
-            [
-              "Other Computer Related Services",
-              166130228.79
+              31445945.12
             ],
             [
               "Research and Development in the Social Sciences and Humanities",
-              148801117.83
+              24866064.92
             ],
             [
               "Custom Computer Programming Services",
-              112129515.69
+              11870711.98
+            ],
+            [
+              "Other Computer Related Services",
+              1738714.64
             ],
             [
               "Administrative Management and General Management Consulting Services",
-              106070263.55
+              971385.69
             ],
             [
-              "Financial Transactions Processing, Reserve, and Clearinghouse Activities",
-              63038936.74
+              "Educational Support Services",
+              613450.33
             ],
             [
-              "Collection Agencies",
-              36167444.12
+              "Marketing Consulting Services",
+              395840.52
             ],
             [
-              "Computing Infrastructure Providers, Data Processing, Web Hosting, and Related Services",
-              35024823.13
+              "Security Systems Services (except Locksmiths)",
+              330699.12
             ],
             [
               "Software Publishers",
-              25138381.42
+              63578.14
+            ],
+            [
+              "All Other Business Support Services",
+              43308.6
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Other Activities Related to Credit Intermediation was Education's largest contract category, with $936M obligated (38.6% of contract spending)."
+      "takeaway": "Computer Systems Design Services was Education's largest contract category, with $31.4M obligated (53.2% of contract spending)."
     },
     {
       "id": "department-of-education-top-vendors",
       "type": "bar",
-      "title": "Top 10 vendors, FY2026 to date",
+      "title": "Top 10 vendors, FY2027 to date",
       "series": [
         {
           "label": "Obligations",
           "points": [
             [
-              "ACCENTURE FEDERAL SERVICES LLC",
-              372123536.25
-            ],
-            [
-              "NELNET SERVICING LLC",
-              299561270.65
-            ],
-            [
-              "MAXIMUS EDUCATION LLC",
-              243132501.65
-            ],
-            [
-              "EDFINANCIAL SERVICES LLC",
-              201105124.18
-            ],
-            [
-              "MISSOURI HIGHER EDUCATION LOAN AUTHORITY",
-              137718040.53
-            ],
-            [
-              "MAXIMUS FEDERAL SERVICES, INC.",
-              131963060.17
-            ],
-            [
               "GENERAL DYNAMICS INFORMATION TECHNOLOGY, INC.",
-              90350992.11
-            ],
-            [
-              "CENTRAL RESEARCH INC",
-              72640883.93
-            ],
-            [
-              "WESTAT, INC.",
-              63180372.38
+              18914183.15
             ],
             [
               "EDUCATIONAL TESTING SERVICE",
-              46880868.24
+              14356344.11
+            ],
+            [
+              "T-REX SOLUTIONS LLC",
+              12595000
+            ],
+            [
+              "SANAMETRIX INC",
+              6410266.44
+            ],
+            [
+              "WESTAT, INC.",
+              6367292.37
+            ],
+            [
+              "DELOITTE CONSULTING LLP",
+              5301641.13
+            ],
+            [
+              "AMERICAN INSTITUTES FOR RESEARCH IN THE BEHAVIORAL SCIENCES",
+              2791359.57
+            ],
+            [
+              "THE MANHATTAN STRATEGY GROUP LLC",
+              1442594.34
+            ],
+            [
+              "NCS PEARSON INC",
+              934172.2
+            ],
+            [
+              "RESEARCH TRIANGLE INSTITUTE",
+              654650.3
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "ACCENTURE FEDERAL SERVICES LLC led all Education contractors with $372M, 15.4% of obligations."
+      "takeaway": "GENERAL DYNAMICS INFORMATION TECHNOLOGY, INC. led all Education contractors with $18.9M, 32.0% of obligations."
     }
   ],
   "crossLinks": [
@@ -171,12 +171,12 @@
       "href": "/insights/naics/541512/"
     },
     {
-      "label": "NAICS 541519: Other Computer Related Services",
-      "href": "/insights/naics/541519/"
-    },
-    {
       "label": "NAICS 541511: Custom Computer Programming Services",
       "href": "/insights/naics/541511/"
+    },
+    {
+      "label": "NAICS 541519: Other Computer Related Services",
+      "href": "/insights/naics/541519/"
     },
     {
       "label": "NAICS 541611: Administrative Management and General Management Consulting Services",
@@ -195,87 +195,87 @@
         [
           1,
           {
-            "text": "ACCENTURE FEDERAL SERVICES LLC",
-            "href": "https://www.usaspending.gov/recipient/d41a6b8a-9d6a-0d28-7e24-989e31731aad-C/latest/"
+            "text": "GENERAL DYNAMICS INFORMATION TECHNOLOGY, INC.",
+            "href": "https://www.usaspending.gov/recipient/455555be-773d-eab1-1e6b-7b94400b757e-C/latest/"
           },
-          372123536.25
+          18914183.15
         ],
         [
           2,
           {
-            "text": "NELNET SERVICING LLC",
-            "href": "https://www.usaspending.gov/recipient/cd787d0c-db43-3ebb-f395-dc3ed272e5e9-C/latest/"
+            "text": "EDUCATIONAL TESTING SERVICE",
+            "href": "https://www.usaspending.gov/recipient/e3896a2e-254d-b2ef-073d-a9d99c35d049-C/latest/"
           },
-          299561270.65
+          14356344.11
         ],
         [
           3,
           {
-            "text": "MAXIMUS EDUCATION LLC",
-            "href": "https://www.usaspending.gov/recipient/006841da-7298-d92c-02f0-ad58caa4eefa-C/latest/"
+            "text": "T-REX SOLUTIONS LLC",
+            "href": "https://www.usaspending.gov/recipient/7e214983-f09a-6feb-ba79-90427af5d171-C/latest/"
           },
-          243132501.65
+          12595000
         ],
         [
           4,
           {
-            "text": "EDFINANCIAL SERVICES LLC",
-            "href": "https://www.usaspending.gov/recipient/fda79c3f-1b49-fe91-889e-e7151ab415b2-C/latest/"
+            "text": "SANAMETRIX INC",
+            "href": "https://www.usaspending.gov/recipient/18f3c560-870b-fbe6-9a72-76c0dc5905d3-C/latest/"
           },
-          201105124.18
+          6410266.44
         ],
         [
           5,
           {
-            "text": "MISSOURI HIGHER EDUCATION LOAN AUTHORITY",
-            "href": "https://www.usaspending.gov/recipient/b005fff7-e9e3-cf0e-af12-6810483a15a1-C/latest/"
+            "text": "WESTAT, INC.",
+            "href": "https://www.usaspending.gov/recipient/1a05eb77-da74-5790-7cc1-11f261fd252e-C/latest/"
           },
-          137718040.53
+          6367292.37
         ],
         [
           6,
           {
-            "text": "MAXIMUS FEDERAL SERVICES, INC.",
-            "href": "https://www.usaspending.gov/recipient/f87b435f-0b05-95c9-7c0e-e60df7cdff50-C/latest/"
+            "text": "DELOITTE CONSULTING LLP",
+            "href": "https://www.usaspending.gov/recipient/92663aec-4451-0476-502b-d8c6919e98e0-C/latest/"
           },
-          131963060.17
+          5301641.13
         ],
         [
           7,
           {
-            "text": "GENERAL DYNAMICS INFORMATION TECHNOLOGY, INC.",
-            "href": "https://www.usaspending.gov/recipient/455555be-773d-eab1-1e6b-7b94400b757e-C/latest/"
+            "text": "AMERICAN INSTITUTES FOR RESEARCH IN THE BEHAVIORAL SCIENCES",
+            "href": "https://www.usaspending.gov/recipient/0e232f5f-5cc0-3d79-f26b-893dc8cced0e-C/latest/"
           },
-          90350992.11
+          2791359.57
         ],
         [
           8,
           {
-            "text": "CENTRAL RESEARCH INC",
-            "href": "https://www.usaspending.gov/recipient/2731b4a1-259a-d74f-10be-f50322d9f560-C/latest/"
+            "text": "THE MANHATTAN STRATEGY GROUP LLC",
+            "href": "https://www.usaspending.gov/recipient/4849d0d1-8e80-6b44-950b-c586dd725c40-C/latest/"
           },
-          72640883.93
+          1442594.34
         ],
         [
           9,
           {
-            "text": "WESTAT, INC.",
-            "href": "https://www.usaspending.gov/recipient/1a05eb77-da74-5790-7cc1-11f261fd252e-C/latest/"
+            "text": "NCS PEARSON INC",
+            "href": "https://www.usaspending.gov/recipient/0f1268fd-344b-1dad-4af9-634d668900ce-C/latest/"
           },
-          63180372.38
+          934172.2
         ],
         [
           10,
           {
-            "text": "EDUCATIONAL TESTING SERVICE",
-            "href": "https://www.usaspending.gov/recipient/e3896a2e-254d-b2ef-073d-a9d99c35d049-C/latest/"
+            "text": "RESEARCH TRIANGLE INSTITUTE",
+            "href": "https://www.usaspending.gov/recipient/8303ed9b-9fb4-3e90-ca81-50bbcf400948-C/latest/"
           },
-          46880868.24
+          654650.3
         ]
       ]
     },
     {
-      "title": "Largest awards, FY2026 to date",
+      "title": "Largest awards, FY2027 to date",
       "columns": [
         "Rank",
         "Recipient",
@@ -285,61 +285,37 @@
         [
           1,
           {
-            "text": "ACCENTURE FEDERAL SERVICES LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_EDFSA15C0006_9100_-NONE-_-NONE-/"
+            "text": "MAXIMUS FEDERAL SERVICES, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_EDFSA13C0021_9100_-NONE-_-NONE-/"
           },
-          1507684723.07
+          892722487.23
         ],
         [
           2,
           {
-            "text": "ACCENTURE FEDERAL SERVICES LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_91003119F0003_9100_HHSN316201200002W_7529/"
+            "text": "PERATON ENTERPRISE SOLUTIONS LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_EDFSA15O0090_9100_HHSN316201200026W_7529/"
           },
-          942639630.41
+          524995456.55
         ],
         [
           3,
           {
-            "text": "MAXIMUS FEDERAL SERVICES, INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_EDFSA13C0021_9100_-NONE-_-NONE-/"
+            "text": "NELNET SERVICING LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_91003124F0321_9100_91003123D0005_9100/"
           },
-          892727843.7
+          392702062.11
         ],
         [
           4,
           {
-            "text": "MISSOURI HIGHER EDUCATION LOAN AUTHORITY",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_91003120F0331_9100_EDFSA11D0012_9100/"
+            "text": "ACCENTURE FEDERAL SERVICES LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_91003125C0013_9100_-NONE-_-NONE-/"
           },
-          639625769.59
+          382920203.11
         ],
         [
           5,
-          {
-            "text": "PERATON ENTERPRISE SOLUTIONS LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_EDFSA15O0090_9100_HHSN316201200026W_7529/"
-          },
-          521348728.91
-        ],
-        [
-          6,
-          {
-            "text": "PENNSLYVANIA HIGHER EDUCATION ASSISTANCE AGENCY",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_91003120F0313_9100_EDFSA09D0014_9100/"
-          },
-          506490833.76
-        ],
-        [
-          7,
-          {
-            "text": "NELNET SERVICING LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_91003124F0321_9100_91003123D0005_9100/"
-          },
-          392438574.93
-        ],
-        [
-          8,
           {
             "text": "MAXIMUS FEDERAL SERVICES, INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_91003125C0011_9100_-NONE-_-NONE-/"
@@ -347,47 +323,39 @@
           327711283.98
         ],
         [
-          9,
-          {
-            "text": "NATIONAL RECOVERIES INC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_0002_9100_EDFSA14D0019_9100/"
-          },
-          325868816.06
-        ],
-        [
-          10,
+          6,
           {
             "text": "MAXIMUS EDUCATION LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_91003124F0317_9100_91003123D0001_9100/"
           },
-          303121725.85
+          301664602.12
         ],
         [
-          11,
-          {
-            "text": "ACCENTURE FEDERAL SERVICES LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_91003125C0013_9100_-NONE-_-NONE-/"
-          },
-          287378836.51
-        ],
-        [
-          12,
+          7,
           {
             "text": "MISSOURI HIGHER EDUCATION LOAN AUTHORITY",
             "href": "https://www.usaspending.gov/award/CONT_AWD_91003124F0320_9100_91003123D0004_9100/"
           },
-          220794044.78
+          220803803.79
         ],
         [
-          13,
+          8,
+          {
+            "text": "MISSOURI HIGHER EDUCATION LOAN AUTHORITY",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_91003126F0021_9100_91003123D0004_9100/"
+          },
+          216022864.28
+        ],
+        [
+          9,
           {
             "text": "NELNET SERVICING LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_91003126F0022_9100_91003123D0005_9100/"
           },
-          210110673.84
+          210660947.59
         ],
         [
-          14,
+          10,
           {
             "text": "EDFINANCIAL SERVICES LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_91003124F0319_9100_91003123D0003_9100/"
@@ -395,39 +363,23 @@
           209310339.07
         ],
         [
-          15,
+          11,
           {
-            "text": "GENERAL DYNAMICS INFORMATION TECHNOLOGY, INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_91003122C0003_9100_-NONE-_-NONE-/"
+            "text": "EDFINANCIAL SERVICES LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_91003126F0020_9100_91003123D0003_9100/"
           },
-          203881353.05
+          194351203.01
         ],
         [
-          16,
-          {
-            "text": "NATIONAL CREDIT SERVICES, INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_0002_9100_EDFSA14D0018_9100/"
-          },
-          190664987.47
-        ],
-        [
-          17,
-          {
-            "text": "GENERAL DYNAMICS INFORMATION TECHNOLOGY, INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_91990018F0014_9100_HHSN316201200050W_7529/"
-          },
-          176936384.74
-        ],
-        [
-          18,
+          12,
           {
             "text": "MAXIMUS EDUCATION LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_91003126F0018_9100_91003123D0001_9100/"
           },
-          172021962.94
+          172729010.8
         ],
         [
-          19,
+          13,
           {
             "text": "NELNET SERVICING LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_91003125F0044_9100_91003123D0005_9100/"
@@ -435,81 +387,129 @@
           154873108.26
         ],
         [
-          20,
+          14,
+          {
+            "text": "MAXIMUS EDUCATION LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_91003125F0040_9100_91003123D0001_9100/"
+          },
+          120014112.77
+        ],
+        [
+          15,
+          {
+            "text": "F.H. CANN & ASSOCIATES, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_91003125F0304_9100_91003120D0008_9100/"
+          },
+          90376826.16
+        ],
+        [
+          16,
+          {
+            "text": "EDFINANCIAL SERVICES LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_91003125F0302_9100_91003120D0001_9100/"
+          },
+          89944601.61
+        ],
+        [
+          17,
           {
             "text": "MISSOURI HIGHER EDUCATION LOAN AUTHORITY",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_91003126F0021_9100_91003123D0004_9100/"
+            "href": "https://www.usaspending.gov/award/CONT_AWD_91003125F0043_9100_91003123D0004_9100/"
           },
-          140321101.42
+          88105332.1
+        ],
+        [
+          18,
+          {
+            "text": "EDFINANCIAL SERVICES LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_91003125F0042_9100_91003123D0003_9100/"
+          },
+          87451735.33
+        ],
+        [
+          19,
+          {
+            "text": "WESTAT, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_91990025C0008_9100_-NONE-_-NONE-/"
+          },
+          85118981
+        ],
+        [
+          20,
+          {
+            "text": "T-REX SOLUTIONS LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_91990024F0014_9100_75N98120D00097_7529/"
+          },
+          46425815.79
         ],
         [
           21,
           {
             "text": "EDUCATIONAL TESTING SERVICE",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_91990019C0051_9100_-NONE-_-NONE-/"
+            "href": "https://www.usaspending.gov/award/CONT_AWD_91990025C0003_9100_-NONE-_-NONE-/"
           },
-          125542315.14
+          45971723.21
         ],
         [
           22,
           {
-            "text": "MAXIMUS EDUCATION LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_91003125F0040_9100_91003123D0001_9100/"
+            "text": "AMERICAN INSTITUTES FOR RESEARCH IN THE BEHAVIORAL SCIENCES",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_91990018C0046_9100_-NONE-_-NONE-/"
           },
-          124463360.81
+          40947225
         ],
         [
           23,
           {
-            "text": "EDFINANCIAL SERVICES LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_91003126F0020_9100_91003123D0003_9100/"
+            "text": "IRON VINE SECURITY LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_91003121F0335_9100_91003121A0012_9100/"
           },
-          124358339
+          36506237.86
         ],
         [
           24,
           {
-            "text": "GENERAL DYNAMICS ONE SOURCE LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_91003119C0007_9100_-NONE-_-NONE-/"
+            "text": "GENERAL DYNAMICS INFORMATION TECHNOLOGY, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_91990026F0033_9100_HHSN316201200023W_7529/"
           },
-          117680962.46
+          33242038.92
         ],
         [
           25,
           {
-            "text": "EDUCATIONAL TESTING SERVICE",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_EDIES13C0018_9100_-NONE-_-NONE-/"
+            "text": "SANAMETRIX INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_91990025F0002_9100_GS35F0329Y_4732/"
           },
-          102835756.2
+          30458038.58
         ]
       ]
     }
   ],
   "narrative": {
-    "intro": "The Department of Education obligations total $2.4B in FY2026 to date. The Department of Education made 780 contract awards so far in the fiscal year, with an average award size of $3.1M. Obligations are down 3.2% year over year. The Department of Education bought a mix of finance-related services and IT work, led by Other Activities Related to Credit Intermediation at $936M and Computer Systems Design Services at $693M. The Department of Education’s top vendors reflect that mix, with ACCENTURE FEDERAL SERVICES LLC at $372M and NELNET SERVICING LLC at $300M. The page covers FY2026 to date, and current-year totals are partial, so these figures reflect the fiscal year to date rather than a full-year total.",
+    "intro": "The Department of Education obligated $59.1M in FY2027 to date across 126 awards. The Department of Education reported average award size of $469K and obligations fell 97.9% year over year. The Department of Education spent far less in FY27 to date than in prior full fiscal years, which ranged from $2.4B to $2.8B. The Department of Education concentrated FY2027 to date obligations in Computer Systems Design Services ($31.4M) and Research and Development in the Social Sciences and Humanities ($24.9M), with smaller allocations to Custom Computer Programming Services ($11.9M) and several other service categories. The Department of Education directed the largest shares of FY2027 to date obligations to GENERAL DYNAMICS INFORMATION TECHNOLOGY, INC. ($18.9M), EDUCATIONAL TESTING SERVICE ($14.4M), and T-REX SOLUTIONS LLC ($12.6M). The Department of Education FY27 to date totals are partial and represent fiscal year to date obligations only.",
     "sections": [
       {
-        "heading": "How has contract spending changed year over year?",
-        "body": "The Department of Education obligations are down 3.2% year over year. The Department of Education obligated $2.4B in FY2026 to date, compared with prior fiscal years that ranged between $2.4B and $2.7B in FY21–FY25. The Department of Education obligated $2.5B in FY25 and $2.7B in FY24, showing some fluctuation around the current-year total."
+        "heading": "How does current-year spending compare to prior years?",
+        "body": "The Department of Education obligated $59.1M in FY2027 to date, versus full-year totals of $2.4B, $2.4B, $2.7B, $2.5B, and $2.8B for FY22 through FY26. The Department of Education reported obligations fell 97.9% year over year. The Department of Education FY27 figure is a fiscal year to date total and is much smaller than prior full-year obligations."
       },
       {
-        "heading": "What are the biggest procurement categories right now?",
-        "body": "The Department of Education’s largest category is Other Activities Related to Credit Intermediation at $936M, followed by Computer Systems Design Services at $693M. The Department of Education also obligated $166M to Other Computer Related Services and $149M to Research and Development in the Social Sciences and Humanities. The Department of Education purchases include both financial services and a large amount of IT and research work."
+        "heading": "What are the biggest categories and vendors this year?",
+        "body": "Computer Systems Design Services is the largest category at $31.4M, followed by Research and Development in the Social Sciences and Humanities at $24.9M and Custom Computer Programming Services at $11.9M. GENERAL DYNAMICS INFORMATION TECHNOLOGY, INC. is the largest vendor at $18.9M, followed by EDUCATIONAL TESTING SERVICE at $14.4M and T-REX SOLUTIONS LLC at $12.6M."
       }
     ]
   },
   "faq": [
     {
       "q": "How much does Department of Education spend on contracts?",
-      "a": "The Department of Education has obligated $2.4B in contracts in FY2026 to date. The Department of Education made 780 awards so far, with an average award size of $3.1M, and obligations are down 3.2% year over year; current-year totals are partial."
+      "a": "The Department of Education has obligated $59.1M in contracts in FY2027 to date. The Department of Education made 126 awards and reported average award size of $469K. The Department of Education noted that obligations fell 97.9% year over year and that the FY27 total is a fiscal year to date figure."
     },
     {
       "q": "What does Education buy?",
-      "a": "The Department of Education’s largest purchases are financial and IT services. The Department of Education obligated $936M to Other Activities Related to Credit Intermediation and $693M to Computer Systems Design Services, with additional spending in Other Computer Related Services ($166M), Research and Development in the Social Sciences and Humanities ($149M), and Custom Computer Programming Services ($112M)."
+      "a": "The Department of Education buys a mix of services led by Computer Systems Design Services and research. Computer Systems Design Services received $31.4M, Research and Development in the Social Sciences and Humanities received $24.9M, and Custom Computer Programming Services received $11.9M, with remaining obligations spread across other service categories."
     },
     {
       "q": "Who are Education's largest contractors?",
-      "a": "ACCENTURE FEDERAL SERVICES LLC is the largest contractor at $372M. NELNET SERVICING LLC follows at $300M, MAXIMUS EDUCATION LLC at $243M, EDFINANCIAL SERVICES LLC at $201M, and MISSOURI HIGHER EDUCATION LOAN AUTHORITY at $138M; the top ten list continues through EDUCATIONAL TESTING SERVICE at $46.9M."
+      "a": "GENERAL DYNAMICS INFORMATION TECHNOLOGY, INC. is the largest contractor at $18.9M, followed by EDUCATIONAL TESTING SERVICE at $14.4M and T-REX SOLUTIONS LLC at $12.6M. Other notable contractors include SANAMETRIX INC ($6.4M), WESTAT, INC. ($6.4M), and DELOITTE CONSULTING LLP ($5.3M)."
     }
   ],
   "related": [
@@ -543,5 +543,6 @@
       "label": "USAspending.gov award data",
       "href": "https://www.usaspending.gov"
     }
-  ]
+  ],
+  "noindex": true
 }

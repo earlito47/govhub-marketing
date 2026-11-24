@@ -4,17 +4,17 @@
   "title": "New Mexico Federal Contracts: $1.6B in FY2027",
   "h1": "Federal Contracts in New Mexico: Spending, Agencies & Vendors",
   "metaDescription": "Federal agencies obligated $1.6B to contractors in New Mexico in FY2027 to date. See top buying agencies, top vendors, and industries.",
-  "updated": "2026-11-16",
+  "updated": "2026-11-23",
   "fyWindow": {
     "label": "FY2027 to date",
     "start": "2026-10-01",
-    "end": "2026-11-16"
+    "end": "2026-11-23"
   },
   "stats": {
-    "totalObligations": 1554862932.74,
-    "awardCount": 407,
-    "yoyGrowthPct": -90.2,
-    "avgAwardSize": 3820302,
+    "totalObligations": 1583686050.43,
+    "awardCount": 504,
+    "yoyGrowthPct": -90,
+    "avgAwardSize": 3142234,
     "smallBusinessSharePct": null
   },
   "charts": [
@@ -44,17 +44,17 @@
             ],
             [
               "FY26",
-              15834668012.56
+              15837716131.1
             ],
             [
               "FY27",
-              1554862932.74
+              1583686050.43
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Obligations fell 90.2% year over year, from $15.8B in FY2026 to $1.6B in FY2027 to date."
+      "takeaway": "Obligations fell 90.0% year over year, from $15.8B in FY2026 to $1.6B in FY2027 to date."
     },
     {
       "id": "new-mexico-top-agencies",
@@ -66,49 +66,49 @@
           "points": [
             [
               "Department of Energy",
-              1513259057.52
+              1525181987.39
             ],
             [
               "Department of Veterans Affairs",
-              17270796.7
+              19843271.98
             ],
             [
               "Department of Health and Human Services",
-              14989857.13
+              16959435.35
             ],
             [
               "Department of Homeland Security",
-              11172392.67
+              11190392.67
+            ],
+            [
+              "Department of Agriculture",
+              5857804.48
             ],
             [
               "Department of Justice",
-              5463456.93
+              5459831.38
             ],
             [
               "Department of the Interior",
-              4923136.94
+              3880417.58
             ],
             [
               "National Aeronautics and Space Administration",
-              291930.81
+              604575.81
+            ],
+            [
+              "General Services Administration",
+              348493.17
             ],
             [
               "Department of Labor",
-              161644.11
-            ],
-            [
-              "Department of the Treasury",
-              0
-            ],
-            [
-              "Department of Commerce",
-              0
+              151644.11
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Department of Energy was the top federal buyer in New Mexico, obligating $1.5B (97.3% of the state total)."
+      "takeaway": "Department of Energy was the top federal buyer in New Mexico, obligating $1.5B (96.3% of the state total)."
     },
     {
       "id": "new-mexico-top-vendors",
@@ -135,8 +135,16 @@
               5691000
             ],
             [
+              "RHINOCORPS LTD. CO.",
+              4770960
+            ],
+            [
               "PRIMARY CARE SOLUTIONS INC",
               4740715.08
+            ],
+            [
+              "LEPRINO FOODS DAIRY PRODUCTS COMPANY",
+              4558479.37
             ],
             [
               "FIRST NATIONS COMMUNITY HEALTH SOURCE INC",
@@ -149,20 +157,12 @@
             [
               "SIEMENS MEDICAL SOLUTIONS USA, INC.",
               2255658.42
-            ],
-            [
-              "WELLPATH MEDICAL LLC",
-              2187744
-            ],
-            [
-              "CAST SPECIALTY TRANSPORTATION INC",
-              2000000
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "TRIAD NATIONAL SECURITY, LLC led all contractors in New Mexico with $875M, 56.3% of the state total."
+      "takeaway": "TRIAD NATIONAL SECURITY, LLC led all contractors in New Mexico with $875M, 55.3% of the state total."
     },
     {
       "id": "new-mexico-top-naics",
@@ -174,7 +174,7 @@
           "points": [
             [
               "Facilities Support Services",
-              1508729793.86
+              1509718933.14
             ],
             [
               "All Other Outpatient Care Centers",
@@ -182,19 +182,27 @@
             ],
             [
               "Janitorial Services",
-              10311992.82
-            ],
-            [
-              "Commercial and Institutional Building Construction",
-              7086659.99
+              10363992.82
             ],
             [
               "Temporary Help Services",
-              5838123.12
+              8600452.55
+            ],
+            [
+              "Commercial and Institutional Building Construction",
+              5959077.53
+            ],
+            [
+              "Engineering Services",
+              4765552.8
+            ],
+            [
+              "Cheese Manufacturing",
+              4558479.37
             ],
             [
               "Computer Systems Design Services",
-              2963116.1
+              3263116.1
             ],
             [
               "Other Computer Related Services",
@@ -203,14 +211,6 @@
             [
               "Irradiation Apparatus Manufacturing",
               2255658.42
-            ],
-            [
-              "Nonscheduled Chartered Passenger Air Transportation",
-              2139420.82
-            ],
-            [
-              "Specialized Freight (except Used Goods) Trucking, Long-Distance",
-              2000000
             ]
           ]
         }
@@ -249,8 +249,8 @@
       "href": "/insights/naics/236220/"
     },
     {
-      "label": "NAICS 541512: Computer Systems Design Services",
-      "href": "/insights/naics/541512/"
+      "label": "NAICS 541330: Engineering Services",
+      "href": "/insights/naics/541330/"
     }
   ],
   "tables": [
@@ -297,13 +297,29 @@
         [
           5,
           {
+            "text": "RHINOCORPS LTD. CO.",
+            "href": "https://www.usaspending.gov/recipient/7990a54a-fd03-6b5c-2462-ce71d2e1c268-C/latest/"
+          },
+          4770960
+        ],
+        [
+          6,
+          {
             "text": "PRIMARY CARE SOLUTIONS INC",
             "href": "https://www.usaspending.gov/recipient/d54992e8-9425-098f-4c7f-446d6fa0c2d3-C/latest/"
           },
           4740715.08
         ],
         [
-          6,
+          7,
+          {
+            "text": "LEPRINO FOODS DAIRY PRODUCTS COMPANY",
+            "href": "https://www.usaspending.gov/recipient/7fe7157c-07fe-8d49-d54a-a415e23b9aad-C/latest/"
+          },
+          4558479.37
+        ],
+        [
+          8,
           {
             "text": "FIRST NATIONS COMMUNITY HEALTH SOURCE INC",
             "href": "https://www.usaspending.gov/recipient/f6503a99-f14d-bc2f-a857-2320f9533810-C/latest/"
@@ -311,7 +327,7 @@
           3589646
         ],
         [
-          7,
+          9,
           {
             "text": "LENTECH, INC",
             "href": "https://www.usaspending.gov/recipient/fe20c242-b507-0ea3-26f9-dbee65918d19-C/latest/"
@@ -319,28 +335,12 @@
           2967202.6
         ],
         [
-          8,
+          10,
           {
             "text": "SIEMENS MEDICAL SOLUTIONS USA, INC.",
             "href": "https://www.usaspending.gov/recipient/fd8478b1-626d-1d4a-edc9-c5fd5914996f-C/latest/"
           },
           2255658.42
-        ],
-        [
-          9,
-          {
-            "text": "WELLPATH MEDICAL LLC",
-            "href": "https://www.usaspending.gov/recipient/ab5d1d82-3d54-7cfa-e09a-61838dc3cc82-C/latest/"
-          },
-          2187744
-        ],
-        [
-          10,
-          {
-            "text": "CAST SPECIALTY TRANSPORTATION INC",
-            "href": "https://www.usaspending.gov/recipient/99fa8619-1f83-34e4-5c01-870ba7bed79c-C/latest/"
-          },
-          2000000
         ]
       ]
     },
@@ -392,6 +392,15 @@
         [
           5,
           {
+            "text": "ARCHER WESTERN CONSTRUCTION, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_140R4022C0012_1425_-NONE-_-NONE-/"
+          },
+          73620308.91,
+          "Department of the Interior"
+        ],
+        [
+          6,
+          {
             "text": "ALEUT-ODLE TRAINING AND DEVELOPMENT, JV",
             "href": "https://www.usaspending.gov/award/CONT_AWD_1605JW21C0007_1605_-NONE-_-NONE-/"
           },
@@ -399,7 +408,7 @@
           "Department of Labor"
         ],
         [
-          6,
+          7,
           {
             "text": "CAST SPECIALTY TRANSPORTATION INC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_89303222FEM400018_8900_89303322DEM000076_8900/"
@@ -408,7 +417,7 @@
           "Department of Energy"
         ],
         [
-          7,
+          8,
           {
             "text": "MCLANE ADVANCED TECHNOLOGIES LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_89233121FNA400365_8900_W52P1J18DA005_9700/"
@@ -417,7 +426,7 @@
           "Department of Energy"
         ],
         [
-          8,
+          9,
           {
             "text": "ADELANTE DEVELOPMENT CENTER INC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_70LART23CPFB00002_7015_-NONE-_-NONE-/"
@@ -426,7 +435,7 @@
           "Department of Homeland Security"
         ],
         [
-          9,
+          10,
           {
             "text": "THE NEW MEXICO COMMISION FOR BLIND",
             "href": "https://www.usaspending.gov/award/CONT_AWD_70LART23CPFB00001_7015_-NONE-_-NONE-/"
@@ -435,7 +444,7 @@
           "Department of Homeland Security"
         ],
         [
-          10,
+          11,
           {
             "text": "TUVA LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_DENA0003424_8900_-NONE-_-NONE-/"
@@ -444,7 +453,16 @@
           "Department of Energy"
         ],
         [
-          11,
+          12,
+          {
+            "text": "CAREER SYSTEMS DEVELOPMENT CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_1605JW24F00002_1605_1605JE22D0012_1605/"
+          },
+          27158154.07,
+          "Department of Labor"
+        ],
+        [
+          13,
           {
             "text": "A2Z MEDICAL & SAFETY SUPPLY, LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C10G23C0002_3600_-NONE-_-NONE-/"
@@ -453,7 +471,7 @@
           "Department of Veterans Affairs"
         ],
         [
-          12,
+          14,
           {
             "text": "CHENEGA HEALTHCARE SERVICES LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_89233120CNA000130_8900_-NONE-_-NONE-/"
@@ -462,30 +480,12 @@
           "Department of Energy"
         ],
         [
-          13,
+          15,
           {
             "text": "CHENEGA PROFESSIONAL & TECHNICAL SERVICES LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_89233119CNA000081_8900_-NONE-_-NONE-/"
           },
-          19294127.16,
-          "Department of Energy"
-        ],
-        [
-          14,
-          {
-            "text": "ROTAK LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_1202SA25K9215_12C2_1202SA25T9231_12C2/"
-          },
-          18800767.26,
-          "Department of Agriculture"
-        ],
-        [
-          15,
-          {
-            "text": "YULISTA SOLUTIONS, LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_89233124CNA000349_8900_-NONE-_-NONE-/"
-          },
-          18587664.87,
+          20497256.05,
           "Department of Energy"
         ],
         [
@@ -494,11 +494,29 @@
             "text": "TKC GLOBAL SOLUTIONS, LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_89233124CNA000329_8900_-NONE-_-NONE-/"
           },
-          18380839.83,
+          20330045.5,
           "Department of Energy"
         ],
         [
           17,
+          {
+            "text": "ROTAK LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_1202SA25K9215_12C2_1202SA25T9231_12C2/"
+          },
+          18800767.26,
+          "Department of Agriculture"
+        ],
+        [
+          18,
+          {
+            "text": "YULISTA SOLUTIONS, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_89233124CNA000349_8900_-NONE-_-NONE-/"
+          },
+          18587664.87,
+          "Department of Energy"
+        ],
+        [
+          19,
           {
             "text": "KBR WYLE SERVICES, LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_140G0222C0008_1434_-NONE-_-NONE-/"
@@ -507,7 +525,7 @@
           "Department of the Interior"
         ],
         [
-          18,
+          20,
           {
             "text": "RED EAGLE JV",
             "href": "https://www.usaspending.gov/award/CONT_AWD_75H70124C00030_7527_-NONE-_-NONE-/"
@@ -516,7 +534,7 @@
           "Department of Health and Human Services"
         ],
         [
-          19,
+          21,
           {
             "text": "TRIBAL HEALTH, LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_75H70723F80026_7527_36F79720D0178_3600/"
@@ -525,7 +543,16 @@
           "Department of Health and Human Services"
         ],
         [
-          20,
+          22,
+          {
+            "text": "\"ALUTIIQ LOGISTICS & MAINTENANCE SERVICES, LLC\"",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_89233125FNA000186_8900_89233125ANA000030_8900/"
+          },
+          15162372.67,
+          "Department of Energy"
+        ],
+        [
+          23,
           {
             "text": "S&K MISSION SUPPORT, LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_89303424FEM400023_8900_89303322DEM000085_8900/"
@@ -534,7 +561,7 @@
           "Department of Energy"
         ],
         [
-          21,
+          24,
           {
             "text": "LENTECH, INC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_15F06723F0000377_1549_GS35F0451V_4730/"
@@ -543,69 +570,42 @@
           "Department of Justice"
         ],
         [
-          22,
+          25,
           {
             "text": "ALUTIIQ INFORMATION MANAGEMENT, LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_19AQMM23F0200_1900_19AQMM18D0001_1900/"
           },
           13326212.53,
           "Department of State"
-        ],
-        [
-          23,
-          {
-            "text": "FIORE INDUSTRIES INC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_70FB8023C00000006_7022_-NONE-_-NONE-/"
-          },
-          11576951.22,
-          "Department of Homeland Security"
-        ],
-        [
-          24,
-          {
-            "text": "BODE AVIATION, INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_1202SA24K9412_12C2_1202SA23T9403_12C2/"
-          },
-          11412954.94,
-          "Department of Agriculture"
-        ],
-        [
-          25,
-          {
-            "text": "LENTECH, INC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_15JPSS23F00000786_1501_GS35F0451V_4730/"
-          },
-          11071116.44,
-          "Department of Justice"
         ]
       ]
     }
   ],
   "narrative": {
-    "intro": "New Mexico has $1.6B in federal contract obligations in FY2027 to date. Federal contract obligations fell 90.2% year over year. The Department of Energy accounted for the largest share of FY2027 to date obligations with $1.5B. TRIAD NATIONAL SECURITY, LLC received $875M and NATIONAL TECHNOLOGY & ENGINEERING SOLUTIONS OF SANDIA, LLC received $633M in FY2027 to date. Facilities Support Services is the largest industry by obligations in FY2027 to date with $1.5B. Award activity in FY2027 to date includes 407 awards with an average award size of $3.8M. Obligations by fiscal year prior to FY2027 were $11.7B in FY22, $12.4B in FY23, $13.1B in FY24, $13.5B in FY25, and $15.8B in FY26. All figures are contract obligations; current-year totals are partial (fiscal year to date).",
+    "intro": "Federal contracting in New Mexico through FY2027 to date shows concentrated spending and a sharp year-over-year drop. Total obligations are $1.6B, across 504 awards with an average award size of $3.1M. Obligations are down 90.0% year over year. The Department of Energy is the dominant buyer with $1.5B in obligations, leaving much smaller totals for other agencies such as the Department of Veterans Affairs at $19.8M and the Department of Health and Human Services at $17M. Facilities Support Services is the largest industry by obligation at $1.5B, reflecting the Department of Energy work. TRIAD NATIONAL SECURITY, LLC and NATIONAL TECHNOLOGY & ENGINEERING SOLUTIONS OF SANDIA, LLC are the top vendors with $875M and $633M respectively. Historical fiscal-year obligations show a peak in FY26 at $15.8B and a much smaller FY27 total of $1.6B so far, which indicates the current-year totals are partial. Readers should treat FY2027 numbers as fiscal year to date and note that the note specifies current-year totals are partial (fiscal year to date).",
     "sections": [
       {
-        "heading": "How large is federal contract spending in New Mexico this fiscal year?",
-        "body": "New Mexico has $1.6B in federal contract obligations in FY2027 to date. Federal contract obligations fell 90.2% year over year. New Mexico recorded 407 awards so far in FY2027 to date with an average award size of $3.8M."
+        "heading": "How concentrated is federal spending in New Mexico this year?",
+        "body": "The Department of Energy obligated $1.5B, concentrating the majority of the $1.6B total. Facilities Support Services accounted for $1.5B of obligations, matching the Department of Energy scale and indicating a tight clustering of dollars in one agency and one industry."
       },
       {
-        "heading": "Which agencies and vendors dominate federal buying in New Mexico?",
-        "body": "The Department of Energy obligated $1.5B in FY2027 to date. TRIAD NATIONAL SECURITY, LLC received $875M and NATIONAL TECHNOLOGY & ENGINEERING SOLUTIONS OF SANDIA, LLC received $633M in FY2027 to date. Facilities Support Services accounted for $1.5B in industry obligations in FY2027 to date."
+        "heading": "How does FY2027 to date compare with recent fiscal years?",
+        "body": "FY26 obligations were $15.8B, while FY27 obligations are $1.6B to date. Obligations are down 90.0% year over year, and the FY2027 totals are partial (fiscal year to date)."
       }
     ]
   },
   "faq": [
     {
       "q": "How much federal contract money goes to New Mexico?",
-      "a": "New Mexico has $1.6B in federal contract obligations in FY2027 to date. New Mexico recorded obligations of $11.7B in FY22, $12.4B in FY23, $13.1B in FY24, $13.5B in FY25, and $15.8B in FY26. All figures are contract obligations and FY2027 totals are partial."
+      "a": "Answer: New Mexico has received $1.6B in federal contract obligations in FY2027 to date. The total comes from 504 awards with an average award size of $3.1M, and obligations are down 90.0% year over year."
     },
     {
       "q": "Which agencies award the most contracts in New Mexico?",
-      "a": "The Department of Energy obligated $1.5B in FY2027 to date. The Department of Veterans Affairs obligated $17.3M, the Department of Health and Human Services obligated $15M, and other agencies with obligations in FY2027 to date include the Department of Homeland Security with $11.2M and the Department of Justice with $5.5M."
+      "a": "Answer: The Department of Energy awards the most contracts in New Mexico, with $1.5B in obligations in FY2027 to date. The Department of Veterans Affairs follows with $19.8M and the Department of Health and Human Services with $17M."
     },
     {
       "q": "Who are the largest federal contractors in New Mexico?",
-      "a": "TRIAD NATIONAL SECURITY, LLC is the largest federal contractor in New Mexico in FY2027 to date with $875M. NATIONAL TECHNOLOGY & ENGINEERING SOLUTIONS OF SANDIA, LLC is the second largest with $633M, followed by ADELANTE DEVELOPMENT CENTER INC with $10.1M."
+      "a": "Answer: TRIAD NATIONAL SECURITY, LLC and NATIONAL TECHNOLOGY & ENGINEERING SOLUTIONS OF SANDIA, LLC are the largest federal contractors in New Mexico, with $875M and $633M in obligations respectively. ADELANTE DEVELOPMENT CENTER INC is the next largest with $10.1M."
     }
   ],
   "related": [

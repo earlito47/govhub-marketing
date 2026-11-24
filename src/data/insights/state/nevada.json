@@ -1,20 +1,20 @@
 {
   "pageType": "state",
   "slug": "nevada",
-  "title": "Federal Contracts in Nevada: $261M (FY2027)",
+  "title": "Federal Contracts in Nevada: $276M (FY2027)",
   "h1": "Federal Contracts in Nevada: Spending, Agencies & Vendors",
-  "metaDescription": "Federal agencies obligated $261M to contractors in Nevada in FY2027 to date. See top buying agencies, top vendors, and industries.",
-  "updated": "2026-11-16",
+  "metaDescription": "Federal agencies obligated $276M to contractors in Nevada in FY2027 to date. See top buying agencies, top vendors, and industries.",
+  "updated": "2026-11-23",
   "fyWindow": {
     "label": "FY2027 to date",
     "start": "2026-10-01",
-    "end": "2026-11-16"
+    "end": "2026-11-23"
   },
   "stats": {
-    "totalObligations": 260533383.34,
-    "awardCount": 396,
-    "yoyGrowthPct": -92.9,
-    "avgAwardSize": 657913,
+    "totalObligations": 276279406.52,
+    "awardCount": 453,
+    "yoyGrowthPct": -92.5,
+    "avgAwardSize": 609888,
     "smallBusinessSharePct": null
   },
   "charts": [
@@ -44,17 +44,17 @@
             ],
             [
               "FY26",
-              3660879474.47
+              3661620707.11
             ],
             [
               "FY27",
-              260533383.34
+              276279406.52
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Obligations fell 92.9% year over year, from $3.7B in FY2026 to $261M in FY2027 to date."
+      "takeaway": "Obligations fell 92.5% year over year, from $3.7B in FY2026 to $276M in FY2027 to date."
     },
     {
       "id": "nevada-top-agencies",
@@ -66,49 +66,49 @@
           "points": [
             [
               "Department of Energy",
-              224897322.5
+              224947322.5
             ],
             [
               "Department of Veterans Affairs",
-              20829676.98
+              20963579.61
+            ],
+            [
+              "Department of Labor",
+              12148952.8
             ],
             [
               "Department of Justice",
-              6745606.82
+              6746006.28
+            ],
+            [
+              "General Services Administration",
+              2907082.29
             ],
             [
               "Department of Agriculture",
-              2763239.16
+              2797389.96
+            ],
+            [
+              "Department of the Interior",
+              2218011.95
             ],
             [
               "Department of the Treasury",
               1804763
             ],
             [
-              "General Services Administration",
-              1359255.23
-            ],
-            [
-              "Department of the Interior",
-              1347014.33
-            ],
-            [
               "Department of Homeland Security",
-              868634.51
+              1074811.35
             ],
             [
               "Environmental Protection Agency",
-              187533.1
-            ],
-            [
-              "National Aeronautics and Space Administration",
-              71310.24
+              545601.1
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Department of Energy was the top federal buyer in Nevada, obligating $225M (86.3% of the state total)."
+      "takeaway": "Department of Energy was the top federal buyer in Nevada, obligating $225M (81.4% of the state total)."
     },
     {
       "id": "nevada-top-vendors",
@@ -121,6 +121,10 @@
             [
               "MISSION SUPPORT & TEST SERVICES LLC",
               224905675.42
+            ],
+            [
+              "UBC NATIONAL JOB CORPS TRAINING FUND INC",
+              12175598.03
             ],
             [
               "CORECIVIC, INC.",
@@ -140,29 +144,25 @@
             ],
             [
               "FLEET VEHICLE SOURCE INC",
-              2449008
+              2448148
             ],
             [
               "VANGUARD INTEGRITY PROFESSIONALS INC",
               1968917
             ],
             [
+              "TEAMGOV, INC.",
+              1503423.87
+            ],
+            [
               "GKY DENTAL ARTS INC",
               1476393
-            ],
-            [
-              "METROPOLITAN SECURITY SERVICES, INC.",
-              1425689.61
-            ],
-            [
-              "QUEST DIAGNOSTICS INCORPORATED",
-              1253947.26
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "MISSION SUPPORT & TEST SERVICES LLC led all contractors in Nevada with $225M, 86.3% of the state total."
+      "takeaway": "MISSION SUPPORT & TEST SERVICES LLC led all contractors in Nevada with $225M, 81.4% of the state total."
     },
     {
       "id": "nevada-top-naics",
@@ -174,7 +174,11 @@
           "points": [
             [
               "Facilities Support Services",
-              224973833.84
+              226461139.54
+            ],
+            [
+              "Vocational Rehabilitation Services",
+              12175598.03
             ],
             [
               "Other Justice, Public Order, and Safety Activities",
@@ -198,25 +202,21 @@
             ],
             [
               "Automobile Manufacturing",
-              2449008
+              2448148
             ],
             [
               "Software Publishers",
               1994260.11
             ],
             [
-              "Dental Laboratories",
-              1476393
-            ],
-            [
-              "Medical Laboratories",
-              1443341.1
+              "Support Activities for Animal Production",
+              1505550
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Facilities Support Services was the largest industry in Nevada, with $225M obligated."
+      "takeaway": "Facilities Support Services was the largest industry in Nevada, with $226M obligated."
     }
   ],
   "crossLinks": [
@@ -233,8 +233,8 @@
       "href": "/insights/agency/department-of-justice/"
     },
     {
-      "label": "Department of Agriculture contracts",
-      "href": "/insights/agency/department-of-agriculture/"
+      "label": "General Services Administration contracts",
+      "href": "/insights/agency/general-services-administration/"
     },
     {
       "label": "NAICS 561210: Facilities Support Services",
@@ -243,10 +243,6 @@
     {
       "label": "NAICS 561612: Security Guards and Patrol Services",
       "href": "/insights/naics/561612/"
-    },
-    {
-      "label": "NAICS 621511: Medical Laboratories",
-      "href": "/insights/naics/621511/"
     }
   ],
   "tables": [
@@ -269,13 +265,21 @@
         [
           2,
           {
+            "text": "UBC NATIONAL JOB CORPS TRAINING FUND INC",
+            "href": "https://www.usaspending.gov/recipient/5761fa60-bbc7-81ce-5c6b-e82161c21e23-C/latest/"
+          },
+          12175598.03
+        ],
+        [
+          3,
+          {
             "text": "CORECIVIC, INC.",
             "href": "https://www.usaspending.gov/recipient/b7ab6cd4-f511-cfe7-c92f-b20d45921e9c-C/latest/"
           },
           5265383.13
         ],
         [
-          3,
+          4,
           {
             "text": "FIDELIS SUSTAINABILITY DISTRIBUTION LLC",
             "href": "https://www.usaspending.gov/recipient/1b49d128-4309-5fb7-55d6-11d85defa8fa-C/latest/"
@@ -283,7 +287,7 @@
           4895684.58
         ],
         [
-          4,
+          5,
           {
             "text": "TITAN-AUXO, LLC",
             "href": "https://www.usaspending.gov/recipient/9dfd2b83-39c3-ad19-bc47-d1e4709fe735-C/latest/"
@@ -291,7 +295,7 @@
           3311408.88
         ],
         [
-          5,
+          6,
           {
             "text": "ABBOTT LABORATORIES INC.",
             "href": "https://www.usaspending.gov/recipient/f740eb86-a84e-ddf4-03cf-fe9834b257e5-C/latest/"
@@ -299,15 +303,15 @@
           2923392.1
         ],
         [
-          6,
+          7,
           {
             "text": "FLEET VEHICLE SOURCE INC",
             "href": "https://www.usaspending.gov/recipient/70cfcc5e-6463-439c-995c-5d2e7305f4ac-C/latest/"
           },
-          2449008
+          2448148
         ],
         [
-          7,
+          8,
           {
             "text": "VANGUARD INTEGRITY PROFESSIONALS INC",
             "href": "https://www.usaspending.gov/recipient/2473704c-c99a-2341-c7ee-80f9e616f3e2-C/latest/"
@@ -315,28 +319,20 @@
           1968917
         ],
         [
-          8,
+          9,
+          {
+            "text": "TEAMGOV, INC.",
+            "href": "https://www.usaspending.gov/recipient/e5cfff9a-53b0-6b6a-c372-9fbb458aa9de-C/latest/"
+          },
+          1503423.87
+        ],
+        [
+          10,
           {
             "text": "GKY DENTAL ARTS INC",
             "href": "https://www.usaspending.gov/recipient/0aac70ad-4dd2-33d4-3c21-282fda036999-C/latest/"
           },
           1476393
-        ],
-        [
-          9,
-          {
-            "text": "METROPOLITAN SECURITY SERVICES, INC.",
-            "href": "https://www.usaspending.gov/recipient/835e42fb-f461-4e30-e17e-3205a1805635-C/latest/"
-          },
-          1425689.61
-        ],
-        [
-          10,
-          {
-            "text": "QUEST DIAGNOSTICS INCORPORATED",
-            "href": "https://www.usaspending.gov/recipient/a9415e64-b17c-f292-0379-5ac52f31d54a-C/latest/"
-          },
-          1253947.26
         ]
       ]
     },
@@ -379,14 +375,23 @@
         [
           4,
           {
-            "text": "MANAGEMENT & TRAINING CORPORATION",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_1605JW22C0014_1605_-NONE-_-NONE-/"
+            "text": "UBC NATIONAL JOB CORPS TRAINING FUND INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_1605C223C0026_1605_-NONE-_-NONE-/"
           },
-          79236288.04,
+          88433894.66,
           "Department of Labor"
         ],
         [
           5,
+          {
+            "text": "MANAGEMENT & TRAINING CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_1605JW22C0014_1605_-NONE-_-NONE-/"
+          },
+          79186288.04,
+          "Department of Labor"
+        ],
+        [
+          6,
           {
             "text": "MANAGEMENT & TRAINING CORPORATION",
             "href": "https://www.usaspending.gov/award/CONT_AWD_1630DC17C0013_1605_-NONE-_-NONE-/"
@@ -395,16 +400,25 @@
           "Department of Labor"
         ],
         [
-          6,
+          7,
+          {
+            "text": "NEVADA SYSTEM OF HIGHER EDUCATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_89233122CNA000255_8900_-NONE-_-NONE-/"
+          },
+          17840848.8,
+          "Department of Energy"
+        ],
+        [
+          8,
           {
             "text": "DENMAR TECHNICAL SERVICES INC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_80AFRC26C0003_8000_-NONE-_-NONE-/"
           },
-          10109523.07,
+          10480569.07,
           "National Aeronautics and Space Administration"
         ],
         [
-          7,
+          9,
           {
             "text": "WHELCON CONTRACTORS LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_6982AF25C000021_6925_-NONE-_-NONE-/"
@@ -413,7 +427,7 @@
           "Department of Transportation"
         ],
         [
-          8,
+          10,
           {
             "text": "SIEMENS MEDICAL SOLUTIONS USA, INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C26122F0120_3600_SPE2D117D0023_9700/"
@@ -422,7 +436,7 @@
           "Department of Veterans Affairs"
         ],
         [
-          9,
+          11,
           {
             "text": "TSAY PROFESSIONAL SERVICES, INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_89233120CNA000124_8900_-NONE-_-NONE-/"
@@ -431,7 +445,7 @@
           "Department of Energy"
         ],
         [
-          10,
+          12,
           {
             "text": "METROPOLITAN SECURITY SERVICES, INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_15M10525FD4826CSO_1544_15M10523DA4700068_1544/"
@@ -440,7 +454,7 @@
           "Department of Justice"
         ],
         [
-          11,
+          13,
           {
             "text": "PUNDIR GROUP, INC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_47PK0225F0002_4740_47PK0225A0001_4740/"
@@ -449,7 +463,16 @@
           "General Services Administration"
         ],
         [
-          12,
+          14,
+          {
+            "text": "TEYA ENTERPRISES LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_140P8121C0007_1443_-NONE-_-NONE-/"
+          },
+          4595721.09,
+          "Department of the Interior"
+        ],
+        [
+          15,
           {
             "text": "HELIQWEST INTERNATIONAL INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_140D0426F0826_1406_1202SA25T9219_12C2/"
@@ -458,7 +481,7 @@
           "Department of the Interior"
         ],
         [
-          13,
+          16,
           {
             "text": "FIDELIS SUSTAINABILITY DISTRIBUTION LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C10X27K0201_3600_36C10G24D0111_3600/"
@@ -467,7 +490,16 @@
           "Department of Veterans Affairs"
         ],
         [
-          14,
+          17,
+          {
+            "text": "TEAMGOV, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_47PK0225F0008_4740_47PK0225A0002_4740/"
+          },
+          3748533.52,
+          "General Services Administration"
+        ],
+        [
+          18,
           {
             "text": "BLUESKY HELICOPTERS INC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_140D0426F0742_1406_1202SA25T9204_12C2/"
@@ -476,7 +508,7 @@
           "Department of the Interior"
         ],
         [
-          15,
+          19,
           {
             "text": "VANGUARD INTEGRITY PROFESSIONALS INC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_2032H526C00001_2050_-NONE-_-NONE-/"
@@ -485,7 +517,7 @@
           "Department of the Treasury"
         ],
         [
-          16,
+          20,
           {
             "text": "TITAN-AUXO, LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C26127F0021_3600_36C10X24D0008_3600/"
@@ -494,7 +526,7 @@
           "Department of Veterans Affairs"
         ],
         [
-          17,
+          21,
           {
             "text": "AIR SHASTA ROTOR & WING, INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_1202SA24K9321_12C2_1202SA23T9301_12C2/"
@@ -503,7 +535,7 @@
           "Department of Agriculture"
         ],
         [
-          18,
+          22,
           {
             "text": "TRILLAMED LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C26126F0310_3600_36F79720D0041_3600/"
@@ -512,7 +544,7 @@
           "Department of Veterans Affairs"
         ],
         [
-          19,
+          23,
           {
             "text": "ABBOTT LABORATORIES INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C26127N0094_3600_36C26124D0060_3600/"
@@ -521,7 +553,7 @@
           "Department of Veterans Affairs"
         ],
         [
-          20,
+          24,
           {
             "text": "STRATEGIC RESOLUTION EXPERTS INC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_47QDCA23F0001_4732_GS10F154AA_4732/"
@@ -530,78 +562,42 @@
           "General Services Administration"
         ],
         [
-          21,
+          25,
           {
             "text": "O'NEILL, CLARK, NARVARTE & VICKS A PROFESSIONAL CORPORATION",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C26125C0002_3600_-NONE-_-NONE-/"
           },
           2735937.56,
           "Department of Veterans Affairs"
-        ],
-        [
-          22,
-          {
-            "text": "AGILERANK LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10B26N0034_3600_36C10A24D0001_3600/"
-          },
-          2402977.05,
-          "Department of Veterans Affairs"
-        ],
-        [
-          23,
-          {
-            "text": "VALI COOPER INTERNATIONAL LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C26123P0003_3600_-NONE-_-NONE-/"
-          },
-          1944828.43,
-          "Department of Veterans Affairs"
-        ],
-        [
-          24,
-          {
-            "text": "FAR WESTERN ANTHROPOLOGICAL RESEARCH GROUP, INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_1282B123C0032_12C2_-NONE-_-NONE-/"
-          },
-          1469199,
-          "Department of Agriculture"
-        ],
-        [
-          25,
-          {
-            "text": "GKY DENTAL ARTS INC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C26126N0085_3600_36C26123D0023_3600/"
-          },
-          1435628,
-          "Department of Veterans Affairs"
         ]
       ]
     }
   ],
   "narrative": {
-    "intro": "Nevada received $261M in federal contract obligations in FY2027 to date. Nevada recorded 396 awards with an average award size of $658K. Nevada obligations fell 92.9% year over year. Nevada obligations for FY27 are a partial fiscal-year total; prior full fiscal years were $3.3B in FY22, $3.8B in FY23, $4.1B in FY24, $4.1B in FY25, and $3.7B in FY26. The Department of Energy is the largest buyer in Nevada in FY2027 to date with $225M in obligations. MISSION SUPPORT & TEST SERVICES LLC is the largest vendor in Nevada in FY2027 to date with $225M in obligations. Facilities Support Services is the top industry in Nevada in FY2027 to date with $225M in obligations. Other agencies and vendors appear at much smaller scales in FY2027 to date, with the Department of Veterans Affairs at $20.8M and the second-largest vendor at $5.3M. These figures reflect obligations only and represent fiscal year to date totals for FY2027.",
+    "intro": "Nevada has recorded $276M in federal contract obligations in FY2027 to date. The state logged 453 awards with an average award size of $610K. Obligations fell 92.5% year over year. The Department of Energy is the top buyer with $225M in obligations. MISSION SUPPORT & TEST SERVICES LLC is the top vendor with $225M in obligations. Facilities Support Services is the largest industry by obligations at $226M. Historical annual obligations show larger totals in earlier years: FY22 was $3.3B, FY23 was $3.8B, FY24 was $4.1B, FY25 was $4.1B, and FY26 was $3.7B. FY2027 to date totals are partial (fiscal year to date). These figures show that most FY2027 to date spending is concentrated in a few large awards and buyers, while overall state obligations are much smaller than recent full-year totals.",
     "sections": [
       {
-        "heading": "What changed year over year?",
-        "body": "Nevada obligations fell 92.9% year over year. Nevada obligations in FY27 are $261M compared with full fiscal-year totals of $3.7B in FY26 and earlier multi-year levels above $3.3B. Nevada award count is 396 and average award size is $658K for FY2027 to date."
+        "heading": "How concentrated is federal spending in Nevada this year?",
+        "body": "The Department of Energy obligated $225M, which accounts for the majority of the $276M total. MISSION SUPPORT & TEST SERVICES LLC received $225M, reflecting concentration among vendors. Facilities Support Services received $226M, indicating a single industry dominates obligations."
       },
       {
-        "heading": "Which agencies, vendors, and industries dominate Nevada spending?",
-        "body": "The Department of Energy obligated $225M in Nevada in FY2027 to date. MISSION SUPPORT & TEST SERVICES LLC received $225M in obligations and Facilities Support Services totaled $225M in obligations. The Department of Veterans Affairs and the next largest vendors and industries are much smaller, with the VA at $20.8M and the second-largest vendor at $5.3M."
+        "heading": "How does FY2027 to date compare with recent full fiscal years?",
+        "body": "FY2027 to date obligations are $276M compared with $3.3B in FY22, $3.8B in FY23, $4.1B in FY24, $4.1B in FY25, and $3.7B in FY26. Obligations fell 92.5% year over year. FY2027 to date totals are partial (fiscal year to date)."
       }
     ]
   },
   "faq": [
     {
       "q": "How much federal contract money goes to Nevada?",
-      "a": "Nevada received $261M in federal contract obligations in FY2027 to date. Nevada obligations are partial fiscal-year totals and compare to full fiscal-year totals of $3.3B in FY22, $3.8B in FY23, $4.1B in FY24, $4.1B in FY25, and $3.7B in FY26. Nevada recorded 396 awards in FY2027 to date with an average award size of $658K."
+      "a": "Nevada received $276M in federal contract obligations in FY2027 to date. The state recorded 453 awards with an average award size of $610K, and obligations fell 92.5% year over year. FY2027 to date totals are partial (fiscal year to date)."
     },
     {
       "q": "Which agencies award the most contracts in Nevada?",
-      "a": "The Department of Energy awarded the most contract obligations in Nevada in FY2027 to date with $225M. The Department of Veterans Affairs is the next largest buyer with $20.8M, followed by the Department of Justice with $6.7M and other agencies at smaller obligation levels."
+      "a": "The Department of Energy awards the most contracts in Nevada. The Department of Energy obligated $225M, followed by the Department of Veterans Affairs with $21M and the Department of Labor with $12.1M."
     },
     {
       "q": "Who are the largest federal contractors in Nevada?",
-      "a": "MISSION SUPPORT & TEST SERVICES LLC is the largest federal contractor in Nevada in FY2027 to date with $225M in obligations. CORECIVIC, INC. is the second-largest contractor with $5.3M, followed by FIDELIS SUSTAINABILITY DISTRIBUTION LLC with $4.9M and other top vendors at smaller obligation amounts."
+      "a": "MISSION SUPPORT & TEST SERVICES LLC is the largest federal contractor in Nevada. MISSION SUPPORT & TEST SERVICES LLC received $225M, followed by UBC NATIONAL JOB CORPS TRAINING FUND INC with $12.2M and CORECIVIC, INC. with $5.3M."
     }
   ],
   "related": [

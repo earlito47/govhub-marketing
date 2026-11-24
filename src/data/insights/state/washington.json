@@ -1,20 +1,20 @@
 {
   "pageType": "state",
   "slug": "washington",
-  "title": "Federal Contracts in Washington: $443M (FY2027)",
+  "title": "Federal Contracts in Washington: $497M (FY2027)",
   "h1": "Federal Contracts in Washington: Spending, Agencies & Vendors",
-  "metaDescription": "Federal agencies obligated $443M to contractors in Washington in FY2027 to date. See top buying agencies, top vendors, and industries.",
-  "updated": "2026-11-16",
+  "metaDescription": "Federal agencies obligated $497M to contractors in Washington in FY2027 to date. See top buying agencies, top vendors, and industries.",
+  "updated": "2026-11-23",
   "fyWindow": {
     "label": "FY2027 to date",
     "start": "2026-10-01",
-    "end": "2026-11-16"
+    "end": "2026-11-23"
   },
   "stats": {
-    "totalObligations": 443206029.66,
-    "awardCount": 2623,
-    "yoyGrowthPct": -97.7,
-    "avgAwardSize": 168969,
+    "totalObligations": 497255399.52,
+    "awardCount": 3128,
+    "yoyGrowthPct": -97.5,
+    "avgAwardSize": 158969,
     "smallBusinessSharePct": null
   },
   "charts": [
@@ -44,17 +44,17 @@
             ],
             [
               "FY26",
-              19522742336.98
+              19530782547.18
             ],
             [
               "FY27",
-              443206029.66
+              497255399.52
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Obligations fell 97.7% year over year, from $19.5B in FY2026 to $443M in FY2027 to date."
+      "takeaway": "Obligations fell 97.5% year over year, from $19.5B in FY2026 to $497M in FY2027 to date."
     },
     {
       "id": "washington-top-agencies",
@@ -66,49 +66,49 @@
           "points": [
             [
               "Department of Energy",
-              339117264.86
+              352689803.83
             ],
             [
               "Department of Veterans Affairs",
-              56827987.08
-            ],
-            [
-              "Department of Agriculture",
-              10964201.64
-            ],
-            [
-              "Department of Health and Human Services",
-              7512099.24
+              57661709.98
             ],
             [
               "Department of Homeland Security",
-              5774721.74
+              30968588.65
+            ],
+            [
+              "Department of Agriculture",
+              15857553.96
+            ],
+            [
+              "Department of Health and Human Services",
+              8651591.67
+            ],
+            [
+              "Department of Transportation",
+              7283022.59
+            ],
+            [
+              "General Services Administration",
+              5957986.38
             ],
             [
               "National Aeronautics and Space Administration",
               5093214.77
             ],
             [
-              "Department of Transportation",
-              4672691.12
-            ],
-            [
               "Department of Justice",
-              3612917.57
+              4848747.17
             ],
             [
               "Department of the Interior",
-              3563992.94
-            ],
-            [
-              "General Services Administration",
-              2150328.52
+              3851536.22
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Department of Energy was the top federal buyer in Washington, obligating $339M (76.5% of the state total)."
+      "takeaway": "Department of Energy was the top federal buyer in Washington, obligating $353M (70.9% of the state total)."
     },
     {
       "id": "washington-top-vendors",
@@ -131,12 +131,20 @@
               73017403.87
             ],
             [
+              "THE GEO GROUP, INC.",
+              24256301
+            ],
+            [
+              "HANFORD LABORATORY MANAGEMENT AND INTEGRATION LLC",
+              20610000
+            ],
+            [
               "T-MOBILE USA, INC.",
               14751576.95
             ],
             [
               "PHILIPS NORTH AMERICA LLC",
-              12049694.86
+              12109495.26
             ],
             [
               "CAPEX CONSTRUCTION LLC",
@@ -147,22 +155,14 @@
               8918113.97
             ],
             [
-              "HANFORD LABORATORY MANAGEMENT AND INTEGRATION LLC",
-              7450000
-            ],
-            [
               "JACOBS ENGINEERING GROUP INC.",
               4402031.36
-            ],
-            [
-              "GXC INC",
-              3044153.49
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "BATTELLE MEMORIAL INSTITUTE led all contractors in Washington with $140M, 31.6% of the state total."
+      "takeaway": "BATTELLE MEMORIAL INSTITUTE led all contractors in Washington with $140M, 28.2% of the state total."
     },
     {
       "id": "washington-top-naics",
@@ -178,11 +178,19 @@
             ],
             [
               "Hazardous Waste Treatment and Disposal",
-              117257150
+              117258660.4
             ],
             [
               "Unknown",
               73017403.87
+            ],
+            [
+              "Security Guards and Patrol Services",
+              30050213.62
+            ],
+            [
+              "Remediation Services",
+              21257570.51
             ],
             [
               "Wireless Telecommunications Carriers (except Satellite)",
@@ -190,27 +198,19 @@
             ],
             [
               "Irradiation Apparatus Manufacturing",
-              12664769.84
+              12724570.24
             ],
             [
               "Plumbing, Heating, and Air-Conditioning Contractors",
-              11222989.07
+              11279904.37
             ],
             [
               "Facilities Support Services",
-              9038760.86
-            ],
-            [
-              "Remediation Services",
-              7450046.7
+              9226842.86
             ],
             [
               "Engineering Services",
-              6753064.33
-            ],
-            [
-              "Security Guards and Patrol Services",
-              5796118.76
+              7276235.99
             ]
           ]
         }
@@ -229,16 +229,20 @@
       "href": "/insights/agency/department-of-veterans-affairs/"
     },
     {
+      "label": "Department of Homeland Security contracts",
+      "href": "/insights/agency/department-of-homeland-security/"
+    },
+    {
       "label": "Department of Agriculture contracts",
       "href": "/insights/agency/department-of-agriculture/"
     },
     {
-      "label": "Department of Health and Human Services contracts",
-      "href": "/insights/agency/department-of-health-and-human-services/"
-    },
-    {
       "label": "NAICS 541715: Research and Development in the Physical, Engineering, and Life Sciences",
       "href": "/insights/naics/541715/"
+    },
+    {
+      "label": "NAICS 561612: Security Guards and Patrol Services",
+      "href": "/insights/naics/561612/"
     },
     {
       "label": "NAICS 561210: Facilities Support Services",
@@ -247,10 +251,6 @@
     {
       "label": "NAICS 541330: Engineering Services",
       "href": "/insights/naics/541330/"
-    },
-    {
-      "label": "NAICS 561612: Security Guards and Patrol Services",
-      "href": "/insights/naics/561612/"
     }
   ],
   "tables": [
@@ -289,21 +289,37 @@
         [
           4,
           {
+            "text": "THE GEO GROUP, INC.",
+            "href": "https://www.usaspending.gov/recipient/9b308edb-a62c-659b-704b-ef4e5cf3f795-C/latest/"
+          },
+          24256301
+        ],
+        [
+          5,
+          {
+            "text": "HANFORD LABORATORY MANAGEMENT AND INTEGRATION LLC",
+            "href": "https://www.usaspending.gov/recipient/1ea82ab3-d0c0-1805-c9ac-915ffda2137c-C/latest/"
+          },
+          20610000
+        ],
+        [
+          6,
+          {
             "text": "T-MOBILE USA, INC.",
             "href": "https://www.usaspending.gov/recipient/9ca06d06-287d-7bc5-0748-b773d09f12eb-C/latest/"
           },
           14751576.95
         ],
         [
-          5,
+          7,
           {
             "text": "PHILIPS NORTH AMERICA LLC",
             "href": "https://www.usaspending.gov/recipient/e7ca1519-17c6-3176-c3cf-cbe3b37f1f77-C/latest/"
           },
-          12049694.86
+          12109495.26
         ],
         [
-          6,
+          8,
           {
             "text": "CAPEX CONSTRUCTION LLC",
             "href": "https://www.usaspending.gov/recipient/1019f4ea-8c63-4d0f-efc1-6c80217b718a-C/latest/"
@@ -311,7 +327,7 @@
           11166791
         ],
         [
-          7,
+          9,
           {
             "text": "CAS FSE JV II LLC",
             "href": "https://www.usaspending.gov/recipient/2026a726-f21b-3a0c-82e5-f61f9dc5f5d3-C/latest/"
@@ -319,28 +335,12 @@
           8918113.97
         ],
         [
-          8,
-          {
-            "text": "HANFORD LABORATORY MANAGEMENT AND INTEGRATION LLC",
-            "href": "https://www.usaspending.gov/recipient/1ea82ab3-d0c0-1805-c9ac-915ffda2137c-C/latest/"
-          },
-          7450000
-        ],
-        [
-          9,
+          10,
           {
             "text": "JACOBS ENGINEERING GROUP INC.",
             "href": "https://www.usaspending.gov/recipient/bb8c7e05-030c-2abc-d88e-7f565abbae82-C/latest/"
           },
           4402031.36
-        ],
-        [
-          10,
-          {
-            "text": "GXC INC",
-            "href": "https://www.usaspending.gov/recipient/47d5e201-5d3c-5acb-c751-4c743a51f377-C/latest/"
-          },
-          3044153.49
         ]
       ]
     },
@@ -395,7 +395,7 @@
             "text": "HANFORD LABORATORY MANAGEMENT AND INTEGRATION LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_89303320CEM000075_8900_-NONE-_-NONE-/"
           },
-          559230977.14,
+          572390977.14,
           "Department of Energy"
         ],
         [
@@ -482,20 +482,20 @@
         [
           15,
           {
-            "text": "CAS FSE JV II LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_75D30124C19717_7523_-NONE-_-NONE-/"
-          },
-          26243064.81,
-          "Department of Health and Human Services"
-        ],
-        [
-          16,
-          {
             "text": "MILLIMAN, INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C10G25C0006_3600_-NONE-_-NONE-/"
           },
           25841777.26,
           "Department of Veterans Affairs"
+        ],
+        [
+          16,
+          {
+            "text": "THE GEO GROUP, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70CDCR27FR0000010_7012_70CDCR27D00000002_7012/"
+          },
+          24256301,
+          "Department of Homeland Security"
         ],
         [
           17,
@@ -527,6 +527,15 @@
         [
           20,
           {
+            "text": "AECOM TECHNICAL SERVICES, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70Z05023F43000005_7008_70Z05018DAECOMT06_7008/"
+          },
+          19525045.58,
+          "Department of Homeland Security"
+        ],
+        [
+          21,
+          {
             "text": "PRECISION, LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_1202SA24K9220_12C2_1202SA23T9285_12C2/"
           },
@@ -534,7 +543,7 @@
           "Department of Agriculture"
         ],
         [
-          21,
+          22,
           {
             "text": "HELICOPTER TRANSPORT SERVICES, LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_1202SA25K9211_12C2_1202SA25T9217_12C2/"
@@ -543,7 +552,7 @@
           "Department of Agriculture"
         ],
         [
-          22,
+          23,
           {
             "text": "FRED HUTCHINSON CANCER CENTER",
             "href": "https://www.usaspending.gov/award/CONT_AWD_75N91025C00008_7529_-NONE-_-NONE-/"
@@ -552,7 +561,7 @@
           "Department of Health and Human Services"
         ],
         [
-          23,
+          24,
           {
             "text": "ATC-ABSHER 1 JOINT VENTURE",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C26024C0031_3600_-NONE-_-NONE-/"
@@ -561,51 +570,42 @@
           "Department of Veterans Affairs"
         ],
         [
-          24,
-          {
-            "text": "ADVANCED TECHNOLOGY CONSTRUCTION CORPORATION",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C26021N0632_3600_36C26018D0006_3600/"
-          },
-          12107297.85,
-          "Department of Veterans Affairs"
-        ],
-        [
           25,
           {
-            "text": "THE MATTHEWS GROUP INC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_697DCK25F00062_6920_697DCK23G00010_6920/"
+            "text": "ANGEL DESIGN BUILD CONSTRUCTION LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C77626C0046_3600_-NONE-_-NONE-/"
           },
-          11851104,
-          "Department of Transportation"
+          12590661.52,
+          "Department of Veterans Affairs"
         ]
       ]
     }
   ],
   "narrative": {
-    "intro": "Washington received $443M in federal contract obligations in FY2027 to date. Washington had 2,623 awards with an average award size of $169K, and obligations fell 97.7% year over year. Past fiscal years show larger totals: FY22 was $12.1B, FY23 was $13B, FY24 was $15.4B, FY25 was $15.9B, and FY26 was $19.5B. The Department of Energy is the largest buyer in FY2027 to date with $339M in obligations, followed by the Department of Veterans Affairs with $56.8M and the Department of Agriculture with $11M. Battelle Memorial Institute is the largest vendor in FY2027 to date with $140M, followed by Hanford Tank Waste Operations & Closure, LLC with $117M and Bechtel National, Inc. with $73M. Research and Development in the Physical, Engineering, and Life Sciences is the largest industry by obligations with $140M, followed by Hazardous Waste Treatment and Disposal with $117M and an entry labeled Unknown at $73M. Note that current-year totals are partial (fiscal year to date).",
+    "intro": "Federal contract obligations to Washington totaled $497M in FY2027 to date. The federal government reported 3,128 awards, with an average award size of $159K. Obligations fell 97.5% year over year. Yearly context shows a peak in FY26 at $19.5B, then declining through FY27 to $497M. The Department of Energy is the dominant buyer in FY2027 to date, obligating $353M, followed by the Department of Veterans Affairs at $57.7M and the Department of Homeland Security at $31M. BATTELLE MEMORIAL INSTITUTE received the largest single share of obligations at $140M, with HANFORD TANK WASTE OPERATIONS & CLOSURE, LLC and BECHTEL NATIONAL, INC. receiving $117M and $73M respectively. Research and Development in the Physical, Engineering, and Life Sciences is the top industry at $140M, and Hazardous Waste Treatment and Disposal follows at $117M. This snapshot reflects a sharp year-over-year reduction in obligations and a FY2027 to date program concentrated in energy, cleanup, and research-related contractors.",
     "sections": [
       {
-        "heading": "What changed in Washington in FY2027 to date?",
-        "body": "Obligations in Washington are $443M for FY2027 to date, and obligations fell 97.7% year over year. Award activity in Washington shows 2,623 awards with an average award size of $169K. FY2026 obligations were $19.5B and FY2027 to date is markedly lower in absolute terms. Current-year totals are partial (fiscal year to date)."
+        "heading": "Which agencies are driving federal spending in Washington?",
+        "body": "The Department of Energy is driving spending in Washington, obligating $353M in FY2027 to date. The Department of Veterans Affairs follows with $57.7M and the Department of Homeland Security follows with $31M. The Department of Agriculture, Department of Health and Human Services, and Department of Transportation also appear among the top buyers with $15.9M, $8.7M, and $7.3M respectively."
       },
       {
-        "heading": "Where is federal spending concentrated in Washington?",
-        "body": "The Department of Energy is the largest buyer in Washington with $339M in obligations for FY2027 to date. Battelle Memorial Institute is the largest vendor with $140M, and Research and Development in the Physical, Engineering, and Life Sciences is the largest industry with $140M. Hazardous Waste Treatment and Disposal is the next largest industry with $117M, supported by Hanford Tank Waste Operations & Closure, LLC receiving $117M."
+        "heading": "Which vendors and industries capture the largest contract shares?",
+        "body": "BATTELLE MEMORIAL INSTITUTE captured the largest vendor share at $140M, with HANFORD TANK WASTE OPERATIONS & CLOSURE, LLC at $117M and BECHTEL NATIONAL, INC. at $73M. Research and Development in the Physical, Engineering, and Life Sciences is the largest industry at $140M, and Hazardous Waste Treatment and Disposal is second at $117M. Security Guards and Patrol Services and Remediation Services also appear in the top industries with $30.1M and $21.3M respectively."
       }
     ]
   },
   "faq": [
     {
       "q": "How much federal contract money goes to Washington?",
-      "a": "Washington received $443M in federal contract obligations in FY2027 to date. Washington recorded 2,623 awards with an average award size of $169K, and obligations fell 97.7% year over year. Prior fiscal years were larger: FY22 $12.1B, FY23 $13B, FY24 $15.4B, FY25 $15.9B, FY26 $19.5B."
+      "a": "Washington received $497M in federal contract obligations in FY2027 to date. Washington had 3,128 awards for FY2027 to date, with an average award size of $159K, and obligations fell 97.5% year over year. FY history shows obligations of $12.1B in FY22, $13B in FY23, $15.4B in FY24, $15.9B in FY25, and $19.5B in FY26."
     },
     {
       "q": "Which agencies award the most contracts in Washington?",
-      "a": "The Department of Energy awards the most contracts in Washington with $339M in obligations for FY2027 to date. The Department of Veterans Affairs follows with $56.8M and the Department of Agriculture follows with $11M."
+      "a": "The Department of Energy awards the most contracts in Washington, obligating $353M in FY2027 to date. The Department of Veterans Affairs obligated $57.7M and the Department of Homeland Security obligated $31M in FY2027 to date. Other top buyers include the Department of Agriculture at $15.9M and the Department of Health and Human Services at $8.7M."
     },
     {
       "q": "Who are the largest federal contractors in Washington?",
-      "a": "Battelle Memorial Institute is the largest federal contractor in Washington with $140M in obligations for FY2027 to date. Hanford Tank Waste Operations & Closure, LLC is the second largest with $117M and Bechtel National, Inc. is third with $73M."
+      "a": "BATTELLE MEMORIAL INSTITUTE is the largest federal contractor in Washington in FY2027 to date, receiving $140M. HANFORD TANK WASTE OPERATIONS & CLOSURE, LLC received $117M and BECHTEL NATIONAL, INC. received $73M. Top industries for those obligations include Research and Development in the Physical, Engineering, and Life Sciences at $140M and Hazardous Waste Treatment and Disposal at $117M."
     }
   ],
   "related": [

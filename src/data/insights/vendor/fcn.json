@@ -1,20 +1,20 @@
 {
   "pageType": "vendor",
   "slug": "fcn",
-  "title": "Who Buys From FCN: $654M in FY2026",
+  "title": "Who Buys From FCN: $91.6M in FY2027",
   "h1": "FCN: Federal Contracts, Agencies & Awards",
-  "metaDescription": "FCN won $654M in federal contract obligations in FY2026 to date. See its top agencies, markets, largest awards, and expiring contracts.",
-  "updated": "2026-09-07",
+  "metaDescription": "FCN won $91.6M in federal contract obligations in FY2027 to date. See its top agencies, markets, largest awards, and expiring contracts.",
+  "updated": "2026-11-23",
   "fyWindow": {
-    "label": "FY2026 to date",
-    "start": "2025-10-01",
-    "end": "2026-09-07"
+    "label": "FY2027 to date",
+    "start": "2026-10-01",
+    "end": "2026-11-23"
   },
   "stats": {
-    "totalObligations": 654212189.67,
-    "awardCount": 1174,
-    "yoyGrowthPct": -36,
-    "avgAwardSize": 557251,
+    "totalObligations": 91567150.42,
+    "awardCount": 207,
+    "yoyGrowthPct": -90,
+    "avgAwardSize": 442353,
     "smallBusinessSharePct": null
   },
   "charts": [
@@ -26,10 +26,6 @@
         {
           "label": "Obligations",
           "points": [
-            [
-              "FY21",
-              612513619.63
-            ],
             [
               "FY22",
               729800052.56
@@ -44,125 +40,101 @@
             ],
             [
               "FY25",
-              1021947823.77
+              1021982933.45
             ],
             [
               "FY26",
-              654212189.67
+              918170511.55
+            ],
+            [
+              "FY27",
+              91567150.42
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Obligations fell 36.0% year over year, from $1B in FY2025 to $654M in FY2026 to date."
+      "takeaway": "Obligations fell 90.0% year over year, from $918M in FY2026 to $91.6M in FY2027 to date."
     },
     {
       "id": "fcn-top-agencies",
       "type": "bar",
-      "title": "Top 10 buying agencies, FY2026 to date",
+      "title": "Top 10 buying agencies, FY2027 to date",
       "series": [
         {
           "label": "Obligations",
           "points": [
             [
               "Department of the Treasury",
-              210081524.48
+              82710199.35
             ],
             [
-              "Department of Homeland Security",
-              148340439.72
+              "Consumer Financial Protection Bureau",
+              3692395
             ],
             [
-              "Department of Defense",
-              146942331.99
+              "National Aeronautics and Space Administration",
+              2038412.57
             ],
             [
-              "Securities and Exchange Commission",
-              32375922.46
+              "General Services Administration",
+              928033.17
             ],
             [
               "Department of Health and Human Services",
-              18276243.42
+              637488.11
             ],
             [
-              "Department of Veterans Affairs",
-              17312445.84
-            ],
-            [
-              "Department of State",
-              16839038.19
+              "Securities and Exchange Commission",
+              576951.13
             ],
             [
               "Department of Commerce",
-              14227127.94
-            ],
-            [
-              "Department of Justice",
-              12910774.39
+              232669.44
             ],
             [
               "Department of the Interior",
-              6993102.25
+              196222.06
+            ],
+            [
+              "National Gallery of Art",
+              133041.36
+            ],
+            [
+              "Department of Homeland Security",
+              105386.29
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Department of the Treasury is FCN's largest federal customer, with $210M obligated (32.1% of the company's federal obligations)."
+      "takeaway": "Department of the Treasury is FCN's largest federal customer, with $82.7M obligated (90.3% of the company's federal obligations)."
     },
     {
       "id": "fcn-top-naics",
       "type": "bar",
-      "title": "Top 10 markets (NAICS), FY2026 to date",
+      "title": "Top 10 markets (NAICS), FY2027 to date",
       "series": [
         {
           "label": "Obligations",
           "points": [
             [
               "Other Computer Related Services",
-              652660472.36
-            ],
-            [
-              "Electronic Computer Manufacturing",
-              1033514.83
+              91484218.79
             ],
             [
               "Computer Systems Design Services",
-              168582.71
+              82931.63
             ],
             [
-              "Radio and Television Broadcasting and Wireless Communications Equipment Manufacturing",
-              151210
-            ],
-            [
-              "Software Publishers",
-              98474.4
-            ],
-            [
-              "Computer and Computer Peripheral Equipment and Software Merchant Wholesalers",
-              52638.2
-            ],
-            [
-              "Computing Infrastructure Providers, Data Processing, Web Hosting, and Related Services",
-              35272.91
-            ],
-            [
-              "Other Communications Equipment Manufacturing",
-              8400
-            ],
-            [
-              "Telecommunications Resellers",
-              3124.26
-            ],
-            [
-              "Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology)",
-              500
+              "Computer Terminal and Other Computer Peripheral Equipment Manufacturing",
+              0
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Other Computer Related Services is FCN's largest federal market, with $653M in obligations."
+      "takeaway": "Other Computer Related Services is FCN's largest federal market, with $91.5M in obligations."
     }
   ],
   "crossLinks": [
@@ -171,12 +143,12 @@
       "href": "/insights/agency/department-of-the-treasury/"
     },
     {
-      "label": "Department of Homeland Security contracts",
-      "href": "/insights/agency/department-of-homeland-security/"
+      "label": "National Aeronautics and Space Administration contracts",
+      "href": "/insights/agency/national-aeronautics-and-space-administration/"
     },
     {
-      "label": "Department of Defense contracts",
-      "href": "/insights/agency/department-of-defense/"
+      "label": "General Services Administration contracts",
+      "href": "/insights/agency/general-services-administration/"
     },
     {
       "label": "Department of Health and Human Services contracts",
@@ -189,15 +161,11 @@
     {
       "label": "NAICS 541512: Computer Systems Design Services",
       "href": "/insights/naics/541512/"
-    },
-    {
-      "label": "NAICS 541715: Research and Development in the Physical, Engineering, and Life Sciences",
-      "href": "/insights/naics/541715/"
     }
   ],
   "tables": [
     {
-      "title": "Largest awards, FY2026 to date",
+      "title": "Largest awards, FY2027 to date",
       "columns": [
         "Rank",
         "Award",
@@ -212,249 +180,249 @@
             "text": "2032H523F00058",
             "href": "https://www.usaspending.gov/award/CONT_AWD_2032H523F00058_2050_47QTCA19D00CB_4732/"
           },
-          242713808.56,
+          309972565.56,
           "Department of the Treasury",
-          "2026-11-30"
+          "2027-11-30"
         ],
         [
           2,
           {
-            "text": "36C10B21F0135",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10B21F0135_3600_NNG15SC71B_8000/"
+            "text": "2032H523F00493",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_2032H523F00493_2050_NNG15SC71B_8000/"
           },
-          82199545.16,
-          "Department of Veterans Affairs",
-          "2026-05-15"
+          233451576.07,
+          "Department of the Treasury",
+          "2027-08-24"
         ],
         [
           3,
           {
-            "text": "FA830723F0008",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_FA830723F0008_9700_NNG15SC71B_8000/"
+            "text": "2032H526F00124",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_2032H526F00124_2050_NNG15SC71B_8000/"
           },
-          60747010,
-          "Department of Defense",
-          "2025-12-19"
+          12118029.81,
+          "Department of the Treasury",
+          "2027-09-29"
         ],
         [
           4,
           {
-            "text": "2032H519F00718",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_2032H519F00718_2050_NNG15SC71B_8000/"
+            "text": "2023H225F00095",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_2023H225F00095_2050_NNG15SC71B_8000/"
           },
-          49731524.18,
+          11166697.59,
           "Department of the Treasury",
-          "2024-09-10"
+          "2026-12-29"
         ],
         [
           5,
           {
-            "text": "HC102824F0060",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_HC102824F0060_9700_NNG15SC71B_8000/"
+            "text": "70T03021F7667N052",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70T03021F7667N052_7013_NNG15SC71B_8000/"
           },
-          41042392.77,
-          "Department of Defense",
-          "2025-12-04"
+          10705618.09,
+          "Department of Homeland Security",
+          "2025-09-26"
         ],
         [
           6,
           {
-            "text": "70T03026F7500N003",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_70T03026F7500N003_7013_NNG15SC71B_8000/"
+            "text": "9531CB25F0037",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_9531CB25F0037_955F_NNG15SC71B_8000/"
           },
-          34547989.54,
-          "Department of Homeland Security",
-          "2027-03-30"
+          10392901.84,
+          "Consumer Financial Protection Bureau",
+          "2027-11-30"
         ],
         [
           7,
           {
-            "text": "2032H521F00937",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_2032H521F00937_2050_NNG15SC71B_8000/"
+            "text": "70Z07924FALD00006",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70Z07924FALD00006_7008_HSHQDC13D00017_7001/"
           },
-          32062680.73,
-          "Department of the Treasury",
-          "2026-09-29"
+          9949216.27,
+          "Department of Homeland Security",
+          "2025-07-31"
         ],
         [
           8,
           {
-            "text": "2032H522F00300",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_2032H522F00300_2050_NNG15SC71B_8000/"
+            "text": "2033H625F00010",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_2033H625F00010_2036_NNG15SC71B_8000/"
           },
-          30954419.83,
+          9142086.08,
           "Department of the Treasury",
-          "2027-06-12"
+          "2027-09-30"
         ],
         [
           9,
           {
-            "text": "70B04C25F00000656",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_70B04C25F00000656_7014_NNG15SC71B_8000/"
+            "text": "70CTD026FC0000002",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70CTD026FC0000002_7012_70CTD023A00000001_7012/"
           },
-          29913509.24,
+          8999998,
           "Department of Homeland Security",
-          "2026-07-31"
+          "2027-03-30"
         ],
         [
           10,
           {
-            "text": "FA852726FB013",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_FA852726FB013_9700_NNG15SC71B_8000/"
+            "text": "2032H522F00340",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_2032H522F00340_2050_NNG15SC71B_8000/"
           },
-          27270895.9,
-          "Department of Defense",
-          "2026-07-18"
+          5752507.22,
+          "Department of the Treasury",
+          "2027-08-30"
         ],
         [
           11,
           {
-            "text": "FA830726FB013",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_FA830726FB013_9700_NNG15SC71B_8000/"
+            "text": "140D0424F1118",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_140D0424F1118_1406_NNG15SC71B_8000/"
           },
-          25675000,
-          "Department of Defense",
-          "2026-12-18"
+          5675120.67,
+          "Department of the Interior",
+          "2027-09-26"
         ],
         [
           12,
           {
-            "text": "50310222F0189",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_50310222F0189_5000_NNG15SC71B_8000/"
+            "text": "2033H624F00068",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_2033H624F00068_2036_NNG15SC71B_8000/"
           },
-          25198898.23,
-          "Securities and Exchange Commission",
-          "2027-09-25"
+          5330666.69,
+          "Department of the Treasury",
+          "2027-01-31"
         ],
         [
           13,
           {
-            "text": "2032H523F00296",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_2032H523F00296_2050_NNG15SC71B_8000/"
+            "text": "2031JW25F00016",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_2031JW25F00016_2046_NNG15SC71B_8000/"
           },
-          24644715.27,
+          5166627.71,
           "Department of the Treasury",
-          "2024-11-04"
+          "2027-10-03"
         ],
         [
           14,
           {
-            "text": "2032H524F00610",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_2032H524F00610_2050_NNG15SC71B_8000/"
+            "text": "2033H625F00035",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_2033H625F00035_2036_NNG15SC71B_8000/"
           },
-          24087694.89,
+          5138577.44,
           "Department of the Treasury",
-          "2025-09-12"
+          "2027-12-30"
         ],
         [
           15,
           {
-            "text": "75P00124F80031",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_75P00124F80031_7570_NNG15SC71B_8000/"
+            "text": "50310222F0128",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_50310222F0128_5000_50310221G0006_5000/"
           },
-          18985853.25,
-          "Department of Health and Human Services",
-          "2027-02-27"
+          4755197.8,
+          "Securities and Exchange Commission",
+          "2027-07-23"
         ],
         [
           16,
           {
-            "text": "HT001524F0095",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_HT001524F0095_9700_NNG15SC71B_8000/"
+            "text": "2031ZB22F00077",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_2031ZB22F00077_2041_NNG15SC71B_8000/"
           },
-          18312573.7,
-          "Department of Defense",
-          "2027-04-24"
+          4717174.86,
+          "Department of the Treasury",
+          "2027-09-14"
         ],
         [
           17,
           {
-            "text": "70CTD026FC0000006",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_70CTD026FC0000006_7012_70CTD023A00000001_7012/"
+            "text": "2032H526F00101",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_2032H526F00101_2050_NNG15SC71B_8000/"
           },
-          18044400,
-          "Department of Homeland Security",
-          "2027-02-05"
+          4145950,
+          "Department of the Treasury",
+          "2027-09-29"
         ],
         [
           18,
           {
-            "text": "36C10B26F0141",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C10B26F0141_3600_NNG15SC71B_8000/"
+            "text": "20341524F00048",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_20341524F00048_2036_NNG15SC71B_8000/"
           },
-          17331233.34,
-          "Department of Veterans Affairs",
-          "2027-05-10"
+          3556890.14,
+          "Department of the Treasury",
+          "2027-08-31"
         ],
         [
           19,
           {
-            "text": "205AE926F00037",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_205AE926F00037_2050_2032L225A00002_2050/"
+            "text": "2033H625F00045",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_2033H625F00045_2036_NNG15SC71B_8000/"
           },
-          16784720.68,
+          2578735.84,
           "Department of the Treasury",
-          "2027-01-20"
+          "2027-02-09"
         ],
         [
           20,
           {
-            "text": "HQ042323F0037",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_HQ042323F0037_9700_NNG15SC71B_8000/"
+            "text": "2031JW25F00081",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_2031JW25F00081_2046_NNG15SC71B_8000/"
           },
-          16604749.16,
-          "Department of Defense",
-          "2026-11-30"
+          2512553.71,
+          "Department of the Treasury",
+          "2026-07-30"
         ],
         [
           21,
           {
-            "text": "205AE925F00212",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_205AE925F00212_2050_NNG15SC71B_8000/"
+            "text": "2033H621F00184",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_2033H621F00184_2036_NNG15SC71B_8000/"
           },
-          15775834,
+          2437828.2,
           "Department of the Treasury",
-          "2026-09-29"
+          "2026-07-13"
         ],
         [
           22,
           {
-            "text": "70T02024F7500N007",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_70T02024F7500N007_7013_NNG15SC71B_8000/"
+            "text": "2031JW27F00002",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_2031JW27F00002_2046_NNG15SC71B_8000/"
           },
-          14999773.99,
-          "Department of Homeland Security",
-          "2027-03-31"
+          2435544.91,
+          "Department of the Treasury",
+          "2027-10-01"
         ],
         [
           23,
           {
-            "text": "HC108426F0229",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_HC108426F0229_9700_NNG15SC71B_8000/"
+            "text": "70CMSD25FR0000143",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70CMSD25FR0000143_7012_NNG15SC71B_8000/"
           },
-          14830904.64,
-          "Department of Defense",
-          "2027-04-23"
+          2099028.46,
+          "Department of Homeland Security",
+          "2026-09-29"
         ],
         [
           24,
           {
-            "text": "2032H523F00756",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_2032H523F00756_2050_NNG15SC71B_8000/"
+            "text": "2033H626F00023",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_2033H626F00023_2036_NNG15SC71B_8000/"
           },
-          14740071.78,
+          1962590.68,
           "Department of the Treasury",
-          "2026-09-27"
+          "2027-11-29"
         ],
         [
           25,
           {
-            "text": "15F06722F0001233",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_15F06722F0001233_1549_NNG15SC71B_8000/"
+            "text": "2032H522F00431",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_2032H522F00431_2050_NNG15SC71B_8000/"
           },
-          14545893.16,
-          "Department of Justice",
-          "2027-07-15"
+          1862145,
+          "Department of the Treasury",
+          "2026-08-09"
         ]
       ]
     },
@@ -469,12 +437,12 @@
       "rows": [
         [
           {
-            "text": "2032H523F00058",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_2032H523F00058_2050_47QTCA19D00CB_4732/"
+            "text": "2032H523F00493",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_2032H523F00493_2050_NNG15SC71B_8000/"
           },
           "Department of the Treasury",
-          242713808.56,
-          "2026-11-30"
+          233451576.07,
+          "2027-08-24"
         ],
         [
           {
@@ -491,8 +459,8 @@
             "href": "https://www.usaspending.gov/award/CONT_AWD_2032H521F00937_2050_NNG15SC71B_8000/"
           },
           "Department of the Treasury",
-          32062680.73,
-          "2026-09-29"
+          33832786.95,
+          "2026-12-29"
         ],
         [
           {
@@ -510,7 +478,7 @@
           },
           "Department of Justice",
           27910198.85,
-          "2026-09-27"
+          "2026-12-20"
         ],
         [
           {
@@ -523,30 +491,30 @@
         ],
         [
           {
-            "text": "2032H521F00871",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_2032H521F00871_2050_GS35F0612L_4730/"
+            "text": "50310222F0189",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_50310222F0189_5000_NNG15SC71B_8000/"
           },
-          "Department of the Treasury",
-          25077886.66,
-          "2026-09-29"
+          "Securities and Exchange Commission",
+          25198898.23,
+          "2027-09-25"
         ],
         [
           {
-            "text": "75P00124F80031",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_75P00124F80031_7570_NNG15SC71B_8000/"
+            "text": "HC108426F0229",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_HC108426F0229_9700_NNG15SC71B_8000/"
           },
-          "Department of Health and Human Services",
-          18985853.25,
-          "2027-02-27"
+          "Department of Defense",
+          22638160.92,
+          "2027-04-23"
         ],
         [
           {
-            "text": "70RDAD23FR0000145",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_70RDAD23FR0000145_7001_NNG15SC71B_8000/"
+            "text": "70CTD026FC0000041",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70CTD026FC0000041_7012_70CTD023A00000001_7012/"
           },
           "Department of Homeland Security",
-          18942832.92,
-          "2026-09-29"
+          21931770.66,
+          "2027-09-23"
         ],
         [
           {
@@ -554,7 +522,7 @@
             "href": "https://www.usaspending.gov/award/CONT_AWD_HT001524F0095_9700_NNG15SC71B_8000/"
           },
           "Department of Defense",
-          18312573.7,
+          21497573.7,
           "2027-04-24"
         ]
       ]
@@ -582,34 +550,34 @@
     }
   ],
   "narrative": {
-    "intro": "FCN recorded $654M in contract obligations in FY2026 to date. FCN won 1,174 awards so far, with an average award size of $557K. FCN obligations are down 36.0% year over year. FCN has concentrated work in Other Computer Related Services, where FCN obligated $653M in FY2026 to date. FCN sells to many agencies, led by the Department of the Treasury at $210M, the Department of Homeland Security at $148M, and the Department of Defense at $147M. FCN obligations through FY21–FY26 show prior-year peaks: FY23 and FY25 each reached $1B, and FY24 reached $995M. FCN’s FY22 obligations were $730M and FY21 obligations were $613M. FCN’s remaining NAICS markets each account for much smaller totals, including Electronic Computer Manufacturing at $1M and Computer Systems Design Services at $169K. FCN should prioritize outreach to the Treasury, DHS, and DoD if the firm wants to maintain or regain scale in federal work.",
+    "intro": "FCN is a federal contractor with $91.6M in contract obligations in FY2027 to date. FCN won 207 awards this fiscal year to date. FCN has an average award size of $442K. FCN obligations are down 90.0% year over year. FCN obligations in FY27 are a sharp step down from prior full fiscal years: FY26 totaled $918M, FY25 totaled $1B, FY24 totaled $995M, FY23 totaled $1B, and FY22 totaled $730M. FCN receives most of its FY2027 obligations from the Department of the Treasury, which obligated $82.7M to FCN. FCN sells primarily in the Other Computer Related Services market, where obligations to FCN total $91.5M so far in FY2027. FCN also shows smaller FY2027 obligations in Computer Systems Design Services and Computer Terminal and Other Computer Peripheral Equipment Manufacturing, with $82.9K and $0 respectively. FCN current-year totals are partial because fiscal year totals are reported to date, and the values listed for largest awards and expiring contracts represent total contract values rather than current-year obligations.",
     "sections": [
       {
-        "heading": "How has FCN’s government business changed year over year?",
-        "body": "FCN obligations fell 36.0% year over year. FCN obligated $654M in FY2026 to date, after FY25 obligations of $1B and FY24 obligations of $995M. FCN’s award count of 1,174 and average award size of $557K show the current program mix remains award-rich but with smaller overall spending compared with the prior peak years."
+        "heading": "How has FCN revenue changed year over year?",
+        "body": "FCN obligations fell 90.0% year over year. FCN FY27 obligations are $91.6M compared with $918M in FY26 and about $1B in FY25 and FY23. FCN obligations in FY24 were $995M and FCN obligations in FY22 were $730M."
       },
       {
-        "heading": "Who are FCN’s largest agency customers and markets?",
-        "body": "The Department of the Treasury is FCN’s largest customer at $210M, followed by the Department of Homeland Security at $148M and the Department of Defense at $147M. The Other Computer Related Services market dominates FCN’s deliveries at $653M, with Electronic Computer Manufacturing at $1M and Computer Systems Design Services at $169K making up the next largest reported markets."
+        "heading": "Who are FCN's top buyers and what does FCN sell?",
+        "body": "FCN receives most FY2027 obligations from the Department of the Treasury, which obligated $82.7M. FCN also has obligations from the Consumer Financial Protection Bureau ($3.7M), the National Aeronautics and Space Administration ($2M), and smaller amounts across other agencies. FCN's largest market is Other Computer Related Services, with $91.5M in FY2027 obligations."
       }
     ]
   },
   "faq": [
     {
       "q": "How much does FCN make from federal contracts?",
-      "a": "FCN recorded $654M in contract obligations in FY2026 to date. FCN received 1,174 awards this period, with an average award size of $557K and obligations down 36.0% year over year."
+      "a": "FCN earned $91.6M in contract obligations in FY2027 to date. FCN won 207 awards this fiscal year to date and has an average award size of $442K. FCN obligations are down 90.0% year over year compared with prior full fiscal years."
     },
     {
       "q": "Which agencies buy from FCN?",
-      "a": "The Department of the Treasury buys the most from FCN at $210M. The Department of Homeland Security bought $148M and the Department of Defense bought $147M in FY2026 to date, followed by the Securities and Exchange Commission at $32.4M and other agencies listed."
+      "a": "The Department of the Treasury is FCN's largest buyer in FY2027 to date, obligating $82.7M. FCN also sells to the Consumer Financial Protection Bureau ($3.7M), the National Aeronautics and Space Administration ($2M), the General Services Administration ($928K), and other agencies."
     },
     {
       "q": "What does FCN sell to the government?",
-      "a": "FCN primarily sells Other Computer Related Services, where FCN obligated $653M in FY2026 to date. FCN also has smaller obligations in Electronic Computer Manufacturing at $1M and Computer Systems Design Services at $169K, plus several other NAICS categories with lower totals."
+      "a": "FCN sells services in Other Computer Related Services, where obligations total $91.5M in FY2027 to date. FCN also has FY2027 obligations in Computer Systems Design Services ($82.9K) and in Computer Terminal and Other Computer Peripheral Equipment Manufacturing ($0)."
     },
     {
       "q": "Which FCN contracts are expiring soon?",
-      "a": "No expiring-contract data is provided in the available figures. The facts include award-value figures for the largest-awards and expiring-contracts tables, but the expiring-contracts table itself is not included in the provided data."
+      "a": "Contract expirations are not listed among the provided figures. The available data show FY2027 to date obligations and total contract values for largest awards and expiring contracts, but specific expiring contract entries were not provided."
     }
   ],
   "related": [
@@ -618,28 +586,28 @@
       "href": "/insights/expiring-federal-contracts/"
     },
     {
-      "label": "M1 Support Services L P federal contracts",
-      "href": "/insights/vendor/m1-support-services-l-p/"
+      "label": "Science Applications International federal contracts",
+      "href": "/insights/vendor/science-applications-international/"
     },
     {
-      "label": "Evernorth Federal Services federal contracts",
-      "href": "/insights/vendor/evernorth-federal-services/"
+      "label": "Lumen Technologies Government Solutions federal contracts",
+      "href": "/insights/vendor/lumen-technologies-government-solutions/"
     },
     {
-      "label": "Parsons Government Services federal contracts",
-      "href": "/insights/vendor/parsons-government-services/"
+      "label": "Medline Industries federal contracts",
+      "href": "/insights/vendor/medline-industries/"
     },
     {
-      "label": "Ford Motor federal contracts",
-      "href": "/insights/vendor/ford-motor/"
+      "label": "Battelle Energy Alliance federal contracts",
+      "href": "/insights/vendor/battelle-energy-alliance/"
     },
     {
-      "label": "Phillips 66 federal contracts",
-      "href": "/insights/vendor/phillips-66/"
+      "label": "Geo Group federal contracts",
+      "href": "/insights/vendor/geo-group/"
     },
     {
-      "label": "General Motors federal contracts",
-      "href": "/insights/vendor/general-motors/"
+      "label": "Fedex Supply Chain Distribution System federal contracts",
+      "href": "/insights/vendor/fedex-supply-chain-distribution-system/"
     }
   ],
   "sources": [
@@ -647,5 +615,6 @@
       "label": "USAspending.gov award data",
       "href": "https://www.usaspending.gov"
     }
-  ]
+  ],
+  "noindex": true
 }

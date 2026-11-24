@@ -1,20 +1,20 @@
 {
   "pageType": "agency",
   "slug": "department-of-commerce",
-  "title": "Commerce Dept. Federal Contracts: $125M in FY2027",
+  "title": "Commerce Dept. Federal Contracts: $147M in FY2027",
   "h1": "Department of Commerce: Federal Contract Spending & Top Vendors",
-  "metaDescription": "Department of Commerce obligated $125M in federal contracts in FY2027 to date. See what it buys, its top vendors, and multi-year trend.",
-  "updated": "2026-11-16",
+  "metaDescription": "Department of Commerce obligated $147M in federal contracts in FY2027 to date. See what it buys, its top vendors, and multi-year trend.",
+  "updated": "2026-11-23",
   "fyWindow": {
     "label": "FY2027 to date",
     "start": "2026-10-01",
-    "end": "2026-11-16"
+    "end": "2026-11-23"
   },
   "stats": {
-    "totalObligations": 125346363.58,
-    "awardCount": 418,
-    "yoyGrowthPct": -97.5,
-    "avgAwardSize": 299872,
+    "totalObligations": 147175495.07,
+    "awardCount": 580,
+    "yoyGrowthPct": -97.1,
+    "avgAwardSize": 253751,
     "smallBusinessSharePct": null
   },
   "charts": [
@@ -40,21 +40,21 @@
             ],
             [
               "FY25",
-              4170601168.55
+              4170036108.48
             ],
             [
               "FY26",
-              5069380138.79
+              5069859848.74
             ],
             [
               "FY27",
-              125346363.58
+              147175495.07
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Obligations fell 97.5% year over year, from $5.1B in FY2026 to $125M in FY2027 to date."
+      "takeaway": "Obligations fell 97.1% year over year, from $5.1B in FY2026 to $147M in FY2027 to date."
     },
     {
       "id": "department-of-commerce-top-naics",
@@ -66,23 +66,35 @@
           "points": [
             [
               "Other Computer Related Services",
-              68931902.45
+              80924659.77
             ],
             [
               "Computer Systems Design Services",
-              39446816.39
+              39306114.57
             ],
             [
               "Engineering Services",
-              4227155.81
+              3813672.37
+            ],
+            [
+              "Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology)",
+              3208931.02
             ],
             [
               "Web Search Portals and All Other Information Services",
               2894211
             ],
             [
-              "Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology)",
-              2418346.74
+              "Computer Facilities Management Services",
+              2581205.1
+            ],
+            [
+              "All Other Professional, Scientific, and Technical Services",
+              2251518.74
+            ],
+            [
+              "Custom Computer Programming Services",
+              2221687.45
             ],
             [
               "Security Guards and Patrol Services",
@@ -90,25 +102,13 @@
             ],
             [
               "Facilities Support Services",
-              1830994.16
-            ],
-            [
-              "Computer Facilities Management Services",
-              1787554
-            ],
-            [
-              "Electric Power Distribution",
-              1423750
-            ],
-            [
-              "Couriers and Express Delivery Services",
-              1059999.97
+              1821205.03
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Other Computer Related Services was Commerce's largest contract category, with $68.9M obligated (55.0% of contract spending)."
+      "takeaway": "Other Computer Related Services was Commerce's largest contract category, with $80.9M obligated (55.0% of contract spending)."
     },
     {
       "id": "department-of-commerce-top-vendors",
@@ -124,7 +124,11 @@
             ],
             [
               "ACCENTURE FEDERAL SERVICES LLC",
-              12335142.58
+              12585767.58
+            ],
+            [
+              "EXECUTIVE INFORMATION SYSTEMS, L.L.C.",
+              9720968.05
             ],
             [
               "HALVIK LLC",
@@ -139,30 +143,26 @@
               7814558.4
             ],
             [
+              "THE MITRE CORPORATION",
+              2831763.46
+            ],
+            [
               "RELX INC.",
               2794212
             ],
             [
               "THUNDERCAT TECHNOLOGY, LLC",
-              2685693.37
+              2735193.37
             ],
             [
-              "RELATIVE DYNAMICS INC",
-              2509627.05
-            ],
-            [
-              "PARSONS GOVERNMENT SERVICES INC.",
-              2000000
-            ],
-            [
-              "PARKER TIDE LLC",
-              1817702.4
+              "I TECH AG LLC",
+              2581205.1
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "GENERAL DYNAMICS INFORMATION TECHNOLOGY, INC. led all Commerce contractors with $61M, 48.6% of obligations."
+      "takeaway": "GENERAL DYNAMICS INFORMATION TECHNOLOGY, INC. led all Commerce contractors with $61M, 41.4% of obligations."
     }
   ],
   "crossLinks": [
@@ -206,10 +206,18 @@
             "text": "ACCENTURE FEDERAL SERVICES LLC",
             "href": "https://www.usaspending.gov/recipient/d41a6b8a-9d6a-0d28-7e24-989e31731aad-C/latest/"
           },
-          12335142.58
+          12585767.58
         ],
         [
           3,
+          {
+            "text": "EXECUTIVE INFORMATION SYSTEMS, L.L.C.",
+            "href": "https://www.usaspending.gov/recipient/589f33bf-0a5c-824b-5e51-d1c6cb930fb5-C/latest/"
+          },
+          9720968.05
+        ],
+        [
+          4,
           {
             "text": "HALVIK LLC",
             "href": "https://www.usaspending.gov/recipient/2ed31089-b7b4-7b1f-a182-2c09a533d721-C/latest/"
@@ -217,7 +225,7 @@
           9558248.71
         ],
         [
-          4,
+          5,
           {
             "text": "BOOZ ALLEN HAMILTON INC",
             "href": "https://www.usaspending.gov/recipient/ffca72e5-fba2-798a-6969-2a6c45e9f985-C/latest/"
@@ -225,7 +233,7 @@
           9248815.08
         ],
         [
-          5,
+          6,
           {
             "text": "SCIENCE APPLICATIONS INTERNATIONAL CORPORATION",
             "href": "https://www.usaspending.gov/recipient/20af0683-f17d-1f8f-38ee-2f11bd124559-C/latest/"
@@ -233,7 +241,15 @@
           7814558.4
         ],
         [
-          6,
+          7,
+          {
+            "text": "THE MITRE CORPORATION",
+            "href": "https://www.usaspending.gov/recipient/3903ae3c-2661-60bb-cdd3-1f26ad214167-C/latest/"
+          },
+          2831763.46
+        ],
+        [
+          8,
           {
             "text": "RELX INC.",
             "href": "https://www.usaspending.gov/recipient/78d54ccd-3a13-a9f7-5268-26c8e7571abc-C/latest/"
@@ -241,36 +257,20 @@
           2794212
         ],
         [
-          7,
+          9,
           {
             "text": "THUNDERCAT TECHNOLOGY, LLC",
             "href": "https://www.usaspending.gov/recipient/dbceb126-f729-60e7-d55a-ba235f519653-C/latest/"
           },
-          2685693.37
-        ],
-        [
-          8,
-          {
-            "text": "RELATIVE DYNAMICS INC",
-            "href": "https://www.usaspending.gov/recipient/7cb7b8d3-e206-e551-1950-03ff318845db-C/latest/"
-          },
-          2509627.05
-        ],
-        [
-          9,
-          {
-            "text": "PARSONS GOVERNMENT SERVICES INC.",
-            "href": "https://www.usaspending.gov/recipient/cb0d434a-9ad7-93b5-09dc-6067d8c45d71-C/latest/"
-          },
-          2000000
+          2735193.37
         ],
         [
           10,
           {
-            "text": "PARKER TIDE LLC",
-            "href": "https://www.usaspending.gov/recipient/8e718306-a5fa-3bd2-91d1-686261162503-C/latest/"
+            "text": "I TECH AG LLC",
+            "href": "https://www.usaspending.gov/recipient/783f9947-f835-5bae-ff60-e75b728ebde4-C/latest/"
           },
-          1817702.4
+          2581205.1
         ]
       ]
     },
@@ -288,7 +288,7 @@
             "text": "ACCENTURE FEDERAL SERVICES LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_1331L520C13OS0005_1301_-NONE-_-NONE-/"
           },
-          246917273.06
+          247167898.06
         ],
         [
           2,
@@ -301,13 +301,21 @@
         [
           3,
           {
+            "text": "GENERAL DYNAMICS INFORMATION TECHNOLOGY, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_1305M424F0170_1330_DOCST133018CQ0073_1330/"
+          },
+          99350257.88
+        ],
+        [
+          4,
+          {
             "text": "JAG ALASKA INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_1305M225C0004_1330_-NONE-_-NONE-/"
           },
           95958031
         ],
         [
-          4,
+          5,
           {
             "text": "BOLLINGER MISSISSIPPI REPAIR, LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_1305M222CNMAN0006_1330_-NONE-_-NONE-/"
@@ -315,7 +323,7 @@
           77849429.69
         ],
         [
-          5,
+          6,
           {
             "text": "GENERAL DYNAMICS INFORMATION TECHNOLOGY, INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_1333BJ27C00280001_1344_-NONE-_-NONE-/"
@@ -323,7 +331,15 @@
           60488251.95
         ],
         [
-          6,
+          7,
+          {
+            "text": "LYNKER CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_1305M221FNCNP0096_1330_1305M419DNCNA0018_1330/"
+          },
+          58682505.59
+        ],
+        [
+          8,
           {
             "text": "ALETHIX, LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_1333LB19F00000520_1323_GS35F443CA_4732/"
@@ -331,7 +347,7 @@
           44591477.37
         ],
         [
-          7,
+          9,
           {
             "text": "BOOZ ALLEN HAMILTON INC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_1333BJ24F00280006_1344_1333BJ21D00280001_1344/"
@@ -339,7 +355,7 @@
           32800060.02
         ],
         [
-          8,
+          10,
           {
             "text": "HALVIK LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_1333BJ24F00000001_1344_1333BJ21D00280002_1344/"
@@ -347,7 +363,7 @@
           31964411.71
         ],
         [
-          9,
+          11,
           {
             "text": "RIVA SOLUTIONS INC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_1333BJ23F00280040_1344_1333BJ21D00280003_1344/"
@@ -355,7 +371,23 @@
           25730332.42
         ],
         [
-          10,
+          12,
+          {
+            "text": "AHTNA INFRASTRUCTURE & TECHNOLOGIES LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_1305M421CNAAJ0005_1330_-NONE-_-NONE-/"
+          },
+          24593534.38
+        ],
+        [
+          13,
+          {
+            "text": "LYNKER CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_1305L221FNCNP0085_1330_47QTCA19D00GN_4732/"
+          },
+          23464650.18
+        ],
+        [
+          14,
           {
             "text": "HALVIK LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_1333BJ24F00280002_1344_1333BJ21D00280002_1344/"
@@ -363,7 +395,7 @@
           21271505.95
         ],
         [
-          11,
+          15,
           {
             "text": "CONSOLIDATED SAFETY SERVICES INCORPORATED",
             "href": "https://www.usaspending.gov/award/CONT_AWD_1332KP24F0017_1330_1305M423DNEEA0014_1330/"
@@ -371,7 +403,15 @@
           20506355.52
         ],
         [
-          12,
+          16,
+          {
+            "text": "THE MITRE CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_1305M223FNWWG0173_1330_1331L523D13OS0003_1301/"
+          },
+          18860480.56
+        ],
+        [
+          17,
           {
             "text": "ACCENTURE FEDERAL SERVICES LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_1333BJ25F00280001_1344_47QTCK18D0036_4732/"
@@ -379,7 +419,7 @@
           18198787.65
         ],
         [
-          13,
+          18,
           {
             "text": "SCIENCE & TECHNOLOGY CORPORATION",
             "href": "https://www.usaspending.gov/award/CONT_AWD_1332KP24F0056_1330_1305M423DNEEA0016_1330/"
@@ -387,7 +427,7 @@
           18109716.66
         ],
         [
-          14,
+          19,
           {
             "text": "LALAITH ASTOR TECHNICAL CONSULTING HOUSE, LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_1333BJ23C00280004_1344_-NONE-_-NONE-/"
@@ -395,7 +435,7 @@
           17615789.3
         ],
         [
-          15,
+          20,
           {
             "text": "GENERAL DYNAMICS INFORMATION TECHNOLOGY, INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_1331L524F13ES0024_1301_1331L523A13ES0071_1301/"
@@ -403,7 +443,7 @@
           16394575.34
         ],
         [
-          16,
+          21,
           {
             "text": "IGNITEACTION LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_13ADEP26F0007_1323_1333LB25A00000002_1323/"
@@ -411,7 +451,7 @@
           15519508
         ],
         [
-          17,
+          22,
           {
             "text": "MISSISSIPPI STATE UNIVERSITY",
             "href": "https://www.usaspending.gov/award/CONT_AWD_1305M425F0153_1330_1305M425D0026_1330/"
@@ -419,7 +459,7 @@
           15000000
         ],
         [
-          18,
+          23,
           {
             "text": "DUKE ENERGY PROGRESS, LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_DOCYB132315NC0056_1323_GS00P14BSD1055_4740/"
@@ -427,89 +467,49 @@
           14757658.29
         ],
         [
-          19,
+          24,
+          {
+            "text": "GAMA-1 TECHNOLOGIES, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_1332KP26F0001_1330_1305M421ANAAA0038_1330/"
+          },
+          14345771.79
+        ],
+        [
+          25,
           {
             "text": "RESTON CONSULTING GROUP, INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_1331L524F13OS0080_1301_1331L523D13OS0035_1301/"
           },
           14041549.81
-        ],
-        [
-          20,
-          {
-            "text": "IGNITEACTION LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_13ADRM26F0002_1323_1333LB25A00000002_1323/"
-          },
-          11749435.6
-        ],
-        [
-          21,
-          {
-            "text": "SCIENCE APPLICATIONS INTERNATIONAL CORPORATION",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_1333BJ26F00280007_1344_1333BJ21D00280004_1344/"
-          },
-          11423927.4
-        ],
-        [
-          22,
-          {
-            "text": "VERIZON BUSINESS NETWORK SERVICES LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_1331L521FNB180371_1301_GS00Q17NSD3009_4732/"
-          },
-          11269235.16
-        ],
-        [
-          23,
-          {
-            "text": "AKTARIUS LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_1305M424C0001_1330_-NONE-_-NONE-/"
-          },
-          10786802.4
-        ],
-        [
-          24,
-          {
-            "text": "OCEAN ASSOCIATES INC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_1305M323FNFFK0110_1330_1305M418DNFFK0010_1330/"
-          },
-          8980774.36
-        ],
-        [
-          25,
-          {
-            "text": "INTEGRATED SYSTEMS SOLUTIONS, INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_1305M221FNCNA0208_1330_1305M419DNCNA0016_1330/"
-          },
-          8862209.59
         ]
       ]
     }
   ],
   "narrative": {
-    "intro": "The Department of Commerce obligated $125M on contracts in FY2027 to date. The FY2027 to date total reflects 418 awards and an average award size of $300K. Obligations fell 97.5% year over year. The FY2027 to date level is small compared with recent full fiscal years: FY22 was $4.1B, FY23 was $5B, FY24 was $5.2B, FY25 was $4.2B, and FY26 was $5.1B. Contracting in FY2027 to date is concentrated in IT and professional services. Other Computer Related Services accounted for $68.9M and Computer Systems Design Services accounted for $39.4M, together representing the bulk of FY2027 to date obligations. General Dynamics Information Technology, Inc. is the top vendor in FY2027 to date with $61M in obligations. The remainder of the top vendor list includes large professional services and technology firms with obligations ranging from $12.3M down to $1.8M. The data are fiscal year to date and represent obligations, not final fiscal year totals.",
+    "intro": "The Department of Commerce obligated $147M in FY2027 to date. The Department of Commerce recorded 580 awards with an average award size of $254K, and obligations fell 97.1% year over year. The FY27 total is partial, fiscal year to date, while prior full-year obligations were $4.1B in FY22, $5B in FY23, $5.2B in FY24, $4.2B in FY25, and $5.1B in FY26. Other Computer Related Services and Computer Systems Design Services account for the largest shares of FY2027 to date obligations at $80.9M and $39.3M respectively, followed by a mix of engineering, R&D, information services, and facilities-related categories. GENERAL DYNAMICS INFORMATION TECHNOLOGY, INC. and ACCENTURE FEDERAL SERVICES LLC are the top vendors in FY2027 to date with $61M and $12.6M in obligations respectively, and the rest of the top ten vendors range from $9.7M down to $2.6M. This snapshot reflects a much smaller fiscal-year-to-date spend compared with prior full-year totals.",
     "sections": [
       {
-        "heading": "How has Commerce's contract spending changed year over year?",
-        "body": "The Department of Commerce obligated $125M in FY2027 to date, down 97.5% year over year. Fiscal-year obligations before FY2027 were $4.1B in FY22, $5B in FY23, $5.2B in FY24, $4.2B in FY25, and $5.1B in FY26. The current-year total is partial for the fiscal year to date and reflects lower obligations so far."
+        "heading": "How much has Commerce obligated so far in FY2027?",
+        "body": "The Department of Commerce obligated $147M in FY2027 to date. The Department of Commerce recorded 580 awards with an average award size of $254K. Obligations fell 97.1% year over year. The FY27 total is a partial, fiscal year to date figure."
       },
       {
-        "heading": "What are the dominant categories and vendors so far in FY2027?",
-        "body": "Other Computer Related Services is the largest category with $68.9M, followed by Computer Systems Design Services with $39.4M. General Dynamics Information Technology, Inc. is the largest vendor with $61M, and ACCENTURE FEDERAL SERVICES LLC is second with $12.3M. The top ten categories and vendors show concentration in IT and professional services."
+        "heading": "What did Commerce buy and who got the work?",
+        "body": "Other Computer Related Services received $80.9M and Computer Systems Design Services received $39.3M in FY2027 to date. GENERAL DYNAMICS INFORMATION TECHNOLOGY, INC. received $61M and ACCENTURE FEDERAL SERVICES LLC received $12.6M, with other top vendors ranging from $9.7M to $2.6M. The category mix includes engineering, R&D, information services, facilities support, and security services."
       }
     ]
   },
   "faq": [
     {
       "q": "How much does Department of Commerce spend on contracts?",
-      "a": "The Department of Commerce has obligated $125M on contracts in FY2027 to date. The FY2027 to date totals reflect 418 awards and an average award size of $300K, and obligations fell 97.5% year over year."
+      "a": "The Department of Commerce obligated $147M in FY2027 to date. The Department of Commerce recorded 580 awards and an average award size of $254K, and obligations fell 97.1% year over year. The FY27 total is a partial, fiscal year to date figure; prior full-year obligations were $4.1B in FY22, $5B in FY23, $5.2B in FY24, $4.2B in FY25, and $5.1B in FY26."
     },
     {
       "q": "What does Commerce buy?",
-      "a": "The Department of Commerce buys mainly IT and professional services in FY2027 to date. Other Computer Related Services accounted for $68.9M and Computer Systems Design Services accounted for $39.4M, with Engineering Services at $4.2M and other categories ranging down to $1.1M."
+      "a": "Commerce buys a mix of IT, professional services, engineering, and facilities support. Other Computer Related Services received $80.9M and Computer Systems Design Services received $39.3M in FY2027 to date, with additional spending across engineering, R&D, information services, computer facilities management, and facilities support."
     },
     {
       "q": "Who are Commerce's largest contractors?",
-      "a": "The largest contractors to the Department of Commerce in FY2027 to date are GENERAL DYNAMICS INFORMATION TECHNOLOGY, INC. with $61M and ACCENTURE FEDERAL SERVICES LLC with $12.3M. Other top vendors include HALVIK LLC with $9.6M, BOOZ ALLEN HAMILTON INC with $9.2M, and SCIENCE APPLICATIONS INTERNATIONAL CORPORATION with $7.8M."
+      "a": "GENERAL DYNAMICS INFORMATION TECHNOLOGY, INC. and ACCENTURE FEDERAL SERVICES LLC are Commerce's largest contractors in FY2027 to date, receiving $61M and $12.6M respectively. Other top contractors in FY2027 to date include EXECUTIVE INFORMATION SYSTEMS, L.L.C. at $9.7M, HALVIK LLC at $9.6M, and BOOZ ALLEN HAMILTON INC at $9.2M, with the rest of the top ten ranging from $7.8M to $2.6M."
     }
   ],
   "related": [

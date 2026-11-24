@@ -1,20 +1,20 @@
 {
   "pageType": "state",
   "slug": "new-york",
-  "title": "New York Federal Contracts: $450M in FY2027",
+  "title": "New York Federal Contracts: $518M in FY2027",
   "h1": "Federal Contracts in New York: Spending, Agencies & Vendors",
-  "metaDescription": "Federal agencies obligated $450M to contractors in New York in FY2027 to date. See top buying agencies, top vendors, and industries.",
-  "updated": "2026-11-16",
+  "metaDescription": "Federal agencies obligated $518M to contractors in New York in FY2027 to date. See top buying agencies, top vendors, and industries.",
+  "updated": "2026-11-23",
   "fyWindow": {
     "label": "FY2027 to date",
     "start": "2026-10-01",
-    "end": "2026-11-16"
+    "end": "2026-11-23"
   },
   "stats": {
-    "totalObligations": 450399102.55,
-    "awardCount": 21149,
-    "yoyGrowthPct": -96.4,
-    "avgAwardSize": 21296,
+    "totalObligations": 518107763.54,
+    "awardCount": 26041,
+    "yoyGrowthPct": -95.9,
+    "avgAwardSize": 19896,
     "smallBusinessSharePct": null
   },
   "charts": [
@@ -40,21 +40,21 @@
             ],
             [
               "FY25",
-              13763624618.66
+              13763624586.41
             ],
             [
               "FY26",
-              12676900029.07
+              12687155422.57
             ],
             [
               "FY27",
-              450399102.55
+              518107763.54
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Obligations fell 96.4% year over year, from $12.7B in FY2026 to $450M in FY2027 to date."
+      "takeaway": "Obligations fell 95.9% year over year, from $12.7B in FY2026 to $518M in FY2027 to date."
     },
     {
       "id": "new-york-top-agencies",
@@ -66,49 +66,49 @@
           "points": [
             [
               "Department of Veterans Affairs",
-              185465390.36
+              190913474.32
             ],
             [
               "Department of Energy",
-              154001629.22
+              144353906.96
             ],
             [
               "General Services Administration",
-              43472756.73
+              58275056.62
+            ],
+            [
+              "Department of Labor",
+              25982667.49
             ],
             [
               "Department of Justice",
-              19851255.79
+              25967297.3
             ],
             [
               "Department of Health and Human Services",
-              14201970.94
+              17692906.38
             ],
             [
-              "Department of Homeland Security",
-              6654017.55
-            ],
-            [
-              "National Aeronautics and Space Administration",
-              4792237.5
-            ],
-            [
-              "Department of Defense",
-              4691011.34
+              "Department of Housing and Urban Development",
+              10124258.2
             ],
             [
               "Department of Agriculture",
-              4033238.89
+              6424397.7
             ],
             [
-              "Environmental Protection Agency",
-              3178026.43
+              "Department of Transportation",
+              6340716.03
+            ],
+            [
+              "National Aeronautics and Space Administration",
+              5534488.25
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Department of Veterans Affairs was the top federal buyer in New York, obligating $185M (41.2% of the state total)."
+      "takeaway": "Department of Veterans Affairs was the top federal buyer in New York, obligating $191M (36.8% of the state total)."
     },
     {
       "id": "new-york-top-vendors",
@@ -132,7 +132,11 @@
             ],
             [
               "SIEMENS HEALTHCARE DIAGNOSTICS INC.",
-              16659304.51
+              16508065.12
+            ],
+            [
+              "EDUCATION & TRAINING RESOURCES LLC",
+              11927675.06
             ],
             [
               "ICAHN SCHOOL OF MEDICINE AT MOUNT SINAI",
@@ -140,29 +144,25 @@
             ],
             [
               "DIRECT ENERGY BUSINESS LLC",
-              10528571.28
+              10518598.12
             ],
             [
               "METROPOLITAN SECURITY SERVICES, INC.",
               10068296.62
             ],
             [
-              "ERNST & YOUNG LLP",
-              8825736.26
+              "FEDCAP REHABILITATION SERVICES, INC",
+              10041264.39
             ],
             [
-              "VALOR HEALTHCARE INC",
-              6055061.16
-            ],
-            [
-              "HANICHI ENTERPRISE INC.",
-              5902619.54
+              "CHUGACH SOLUTIONS ENTERPRISE, LLC",
+              9677517.05
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "BROOKHAVEN SCIENCE ASSOCIATES LLC led all contractors in New York with $154M, 34.2% of the state total."
+      "takeaway": "BROOKHAVEN SCIENCE ASSOCIATES LLC led all contractors in New York with $154M, 29.7% of the state total."
     },
     {
       "id": "new-york-top-naics",
@@ -178,7 +178,11 @@
             ],
             [
               "Surgical and Medical Instrument Manufacturing",
-              34910551.2
+              34883625.57
+            ],
+            [
+              "Other Technical and Trade Schools",
+              25982667.49
             ],
             [
               "All Other Outpatient Care Centers",
@@ -186,7 +190,7 @@
             ],
             [
               "Analytical Laboratory Instrument Manufacturing",
-              22298995.84
+              22673309.86
             ],
             [
               "Computer Systems Design Services",
@@ -194,23 +198,19 @@
             ],
             [
               "Security Guards and Patrol Services",
-              19128564.64
-            ],
-            [
-              "Electric Power Distribution",
-              16004301.27
-            ],
-            [
-              "Commercial and Institutional Building Construction",
-              15559594.33
+              18343391.85
             ],
             [
               "Offices of Certified Public Accountants",
-              9112175.61
+              18010951.61
             ],
             [
-              "Special Needs Transportation",
-              7751175
+              "Commercial and Institutional Building Construction",
+              16686377.55
+            ],
+            [
+              "Electric Power Distribution",
+              16047817.24
             ]
           ]
         }
@@ -292,10 +292,18 @@
             "text": "SIEMENS HEALTHCARE DIAGNOSTICS INC.",
             "href": "https://www.usaspending.gov/recipient/aaac8e0a-87b1-aeb8-e8d0-0e3f64051778-C/latest/"
           },
-          16659304.51
+          16508065.12
         ],
         [
           5,
+          {
+            "text": "EDUCATION & TRAINING RESOURCES LLC",
+            "href": "https://www.usaspending.gov/recipient/820ce97d-63fc-474b-e4cd-464a693e2781-C/latest/"
+          },
+          11927675.06
+        ],
+        [
+          6,
           {
             "text": "ICAHN SCHOOL OF MEDICINE AT MOUNT SINAI",
             "href": "https://www.usaspending.gov/recipient/bace221f-a1f9-fa20-66e4-55984406cf48-C/latest/"
@@ -303,15 +311,15 @@
           10629482.68
         ],
         [
-          6,
+          7,
           {
             "text": "DIRECT ENERGY BUSINESS LLC",
             "href": "https://www.usaspending.gov/recipient/9e5ae602-d931-8e79-815e-643e2556e83b-C/latest/"
           },
-          10528571.28
+          10518598.12
         ],
         [
-          7,
+          8,
           {
             "text": "METROPOLITAN SECURITY SERVICES, INC.",
             "href": "https://www.usaspending.gov/recipient/835e42fb-f461-4e30-e17e-3205a1805635-C/latest/"
@@ -319,28 +327,20 @@
           10068296.62
         ],
         [
-          8,
-          {
-            "text": "ERNST & YOUNG LLP",
-            "href": "https://www.usaspending.gov/recipient/dd8305ba-1d9b-c594-9391-076ac5a963ad-C/latest/"
-          },
-          8825736.26
-        ],
-        [
           9,
           {
-            "text": "VALOR HEALTHCARE INC",
-            "href": "https://www.usaspending.gov/recipient/df822c86-4385-9615-7abf-ce7dec0f7b3c-C/latest/"
+            "text": "FEDCAP REHABILITATION SERVICES, INC",
+            "href": "https://www.usaspending.gov/recipient/b9845340-e772-d0e4-2723-00388e9eb5d9-C/latest/"
           },
-          6055061.16
+          10041264.39
         ],
         [
           10,
           {
-            "text": "HANICHI ENTERPRISE INC.",
-            "href": "https://www.usaspending.gov/recipient/35a4cd54-d579-a8d3-a26d-12113d2c9635-C/latest/"
+            "text": "CHUGACH SOLUTIONS ENTERPRISE, LLC",
+            "href": "https://www.usaspending.gov/recipient/168f86d5-374d-b7c6-28c7-61f1d2b86471-C/latest/"
           },
-          5902619.54
+          9677517.05
         ]
       ]
     },
@@ -392,15 +392,6 @@
         [
           5,
           {
-            "text": "APTIM FEDERAL SERVICES, LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_89303324FEM400420_8900_89303320DEM000038_8900/"
-          },
-          143444534.5,
-          "Department of Energy"
-        ],
-        [
-          6,
-          {
             "text": "SAAB INC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_693KA725C00019_6920_-NONE-_-NONE-/"
           },
@@ -408,7 +399,43 @@
           "Department of Transportation"
         ],
         [
+          6,
+          {
+            "text": "APTIM FEDERAL SERVICES, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_89303324FEM400420_8900_89303320DEM000038_8900/"
+          },
+          133444534.5,
+          "Department of Energy"
+        ],
+        [
           7,
+          {
+            "text": "THE RESEARCH FOUNDATION FOR THE STATE UNIVERSITY OF NEW YORK",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_75D30122C15522_7523_-NONE-_-NONE-/"
+          },
+          85117197.89,
+          "Department of Health and Human Services"
+        ],
+        [
+          8,
+          {
+            "text": "SENECA STRATEGIC PARTNERS, LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_15BNAS24F00000056_1540_15BNAS23D00000157_1540/"
+          },
+          68296699.61,
+          "Department of Justice"
+        ],
+        [
+          9,
+          {
+            "text": "EDUCATION & TRAINING RESOURCES LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_1605JE22C0002_1605_-NONE-_-NONE-/"
+          },
+          65188238.32,
+          "Department of Labor"
+        ],
+        [
+          10,
           {
             "text": "ADAMS AND ASSOCIATES INC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_1630J119C0003_1605_-NONE-_-NONE-/"
@@ -417,16 +444,7 @@
           "Department of Labor"
         ],
         [
-          8,
-          {
-            "text": "EDUCATION & TRAINING RESOURCES LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_1605JE22C0002_1605_-NONE-_-NONE-/"
-          },
-          58934779.22,
-          "Department of Labor"
-        ],
-        [
-          9,
+          11,
           {
             "text": "NEW YORK CITY HEALTH AND HOSPITALS CORPORATION",
             "href": "https://www.usaspending.gov/award/CONT_AWD_75D30125C20641_7523_-NONE-_-NONE-/"
@@ -435,7 +453,16 @@
           "Department of Health and Human Services"
         ],
         [
-          10,
+          12,
+          {
+            "text": "PROFESSIONAL RISK MANAGEMENT, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_15F06723F0001347_1549_15JPSS23D00000066_1501/"
+          },
+          56620744.09,
+          "Department of Justice"
+        ],
+        [
+          13,
           {
             "text": "KALLIDUS TECHNOLOGIES, INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_693JF720C000020_6938_-NONE-_-NONE-/"
@@ -444,7 +471,7 @@
           "Department of Transportation"
         ],
         [
-          11,
+          14,
           {
             "text": "EDUCATION & TRAINING RESOURCES LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_1605JE20C0008_1605_-NONE-_-NONE-/"
@@ -453,7 +480,7 @@
           "Department of Labor"
         ],
         [
-          12,
+          15,
           {
             "text": "ISLAND PEER REVIEW ORGANIZATION INC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_75FCMC26F0040_7530_75FCMC19D0029_7530/"
@@ -462,7 +489,7 @@
           "Department of Health and Human Services"
         ],
         [
-          13,
+          16,
           {
             "text": "CAREER SYSTEMS DEVELOPMENT CORPORATION",
             "href": "https://www.usaspending.gov/award/CONT_AWD_1605JW23C0007_1605_-NONE-_-NONE-/"
@@ -471,7 +498,7 @@
           "Department of Labor"
         ],
         [
-          14,
+          17,
           {
             "text": "BLUEWAY ONE JV LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C24224C0150_3600_-NONE-_-NONE-/"
@@ -480,16 +507,16 @@
           "Department of Veterans Affairs"
         ],
         [
-          15,
+          18,
           {
             "text": "ADAMS AND ASSOCIATES INC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_1605JE22C0004_1605_-NONE-_-NONE-/"
           },
-          47674126.73,
+          48298423.13,
           "Department of Labor"
         ],
         [
-          16,
+          19,
           {
             "text": "INNOVATION ASSOCIATES, INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C77024C0005_3600_-NONE-_-NONE-/"
@@ -498,16 +525,25 @@
           "Department of Veterans Affairs"
         ],
         [
-          17,
+          20,
           {
             "text": "ADAMS AND ASSOCIATES INC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_1605JE24C0012_1605_-NONE-_-NONE-/"
           },
-          38965519.14,
+          42534901.11,
           "Department of Labor"
         ],
         [
-          18,
+          21,
+          {
+            "text": "FEDCAP REHABILITATION SERVICES, INC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_47PC0722F0006_4740_47PC0722A0005_4740/"
+          },
+          39661502.38,
+          "General Services Administration"
+        ],
+        [
+          22,
           {
             "text": "MIRACORP INC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_47PC0822C0002_4740_-NONE-_-NONE-/"
@@ -516,7 +552,7 @@
           "General Services Administration"
         ],
         [
-          19,
+          23,
           {
             "text": "DYNAMIC EDUCATIONAL SYSTEMS INC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_1605JE23C0009_1605_-NONE-_-NONE-/"
@@ -525,7 +561,7 @@
           "Department of Labor"
         ],
         [
-          20,
+          24,
           {
             "text": "PIONEER CREDIT RECOVERY, INC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_2033H618F00104_2036_GS23F0217K_4730/"
@@ -534,78 +570,42 @@
           "Department of the Treasury"
         ],
         [
-          21,
+          25,
           {
             "text": "SENECA TECHNOLOGIES, LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_2033H624C00009_2036_-NONE-_-NONE-/"
           },
           33493597.8,
           "Department of the Treasury"
-        ],
-        [
-          22,
-          {
-            "text": "MURNANE BUILDING CONTRACTORS, INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_47PB5126C0008_4740_-NONE-_-NONE-/"
-          },
-          32930250.97,
-          "General Services Administration"
-        ],
-        [
-          23,
-          {
-            "text": "SEVENSON ENVIRONMENTAL SERVICES, INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_W912DQ24F3039_9700_W912DQ22D3004_9700/"
-          },
-          32680359.66,
-          "Department of Defense"
-        ],
-        [
-          24,
-          {
-            "text": "MANHATTAN TELECOMMUNICATIONS CORPORATION LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_47QTCB20F0006_4732_GS00Q17NSD3007_4732/"
-          },
-          31536675.42,
-          "General Services Administration"
-        ],
-        [
-          25,
-          {
-            "text": "ISLAND PEER REVIEW ORGANIZATION INC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_75FCMC25FJ049_7530_75FCMC19D0029_7530/"
-          },
-          31507904.03,
-          "Department of Health and Human Services"
         ]
       ]
     }
   ],
   "narrative": {
-    "intro": "New York has $450M in federal contract obligations in FY2027 to date. The state recorded 21,149 awards with an average award size of $21.3K, and obligations fell 96.4% year over year. Fiscal history shows obligations were $32B in FY22, $18.7B in FY23, $17B in FY24, $13.8B in FY25, and $12.7B in FY26. The Department of Veterans Affairs and the Department of Energy are the largest buying agencies so far, with $185M and $154M in obligations respectively. BROOKHAVEN SCIENCE ASSOCIATES LLC is the largest vendor with $154M in obligations. Research and Development in the Physical, Engineering, and Life Sciences (except Biotechnology) is the largest industry by obligations, with $154M. Other notable agencies include the General Services Administration with $43.5M and the Department of Justice with $19.9M. Other vendors with significant obligations include WELCH ALLYN, INC. at $31.1M and BOOZ ALLEN HAMILTON INC at $21.1M.",
+    "intro": "New York has received $518M in federal contract obligations in FY2027 to date. The federal buying picture in the state includes 26,041 awards with an average award size of $19.9K, and obligations fell 95.9% year over year. FY2027 to date is a partial fiscal-year total. Obligations peaked at $32B in FY22 and then declined through FY23 ($18.7B), FY24 ($17B), FY25 ($13.8B) and FY26 ($12.7B) before reaching $518M in FY27. Research and Development in the Physical, Engineering, and Life Sciences (except Biotechnology) is the largest industry by obligations at $154M. The Department of Veterans Affairs is the largest buyer in FY2027 to date with $191M, followed by the Department of Energy with $144M. BROOKHAVEN SCIENCE ASSOCIATES LLC is the largest vendor in FY2027 to date with $154M. The totals here are contract obligations and current-year figures are fiscal year to date and therefore partial.",
     "sections": [
       {
-        "heading": "Who are the biggest federal buyers in New York this fiscal year?",
-        "body": "The Department of Veterans Affairs obligated $185M in FY2027 to date. The Department of Energy obligated $154M, and the General Services Administration obligated $43.5M. The Department of Justice and the Department of Health and Human Services obligated $19.9M and $14.2M respectively."
+        "heading": "How has federal contracting in New York changed over recent years?",
+        "body": "Obligations fell from $32B in FY22 to $18.7B in FY23, $17B in FY24, $13.8B in FY25 and $12.7B in FY26. Obligations in FY27 to date are $518M, and obligations fell 95.9% year over year. FY27 to date is a partial fiscal-year total."
       },
       {
-        "heading": "Which vendors and industries collected the most obligations in New York?",
-        "body": "BROOKHAVEN SCIENCE ASSOCIATES LLC received $154M in FY2027 to date. WELCH ALLYN, INC. and BOOZ ALLEN HAMILTON INC collected $31.1M and $21.1M respectively. Research and Development in the Physical, Engineering, and Life Sciences (except Biotechnology) is the top industry with $154M, followed by Surgical and Medical Instrument Manufacturing at $34.9M."
+        "heading": "Who are the biggest buyers and vendors in New York right now?",
+        "body": "The Department of Veterans Affairs obligated $191M and the Department of Energy obligated $144M in FY2027 to date. BROOKHAVEN SCIENCE ASSOCIATES LLC received $154M and WELCH ALLYN, INC. received $31.1M in FY2027 to date. Research and Development in the Physical, Engineering, and Life Sciences (except Biotechnology) accounted for $154M in obligations."
       }
     ]
   },
   "faq": [
     {
       "q": "How much federal contract money goes to New York?",
-      "a": "New York received $450M in federal contract obligations so far in FY2027 to date. Total annual obligations by fiscal year were $32B in FY22, $18.7B in FY23, $17B in FY24, $13.8B in FY25, and $12.7B in FY26, showing the current-year total is partial."
+      "a": "The state received $518M in federal contract obligations in FY2027 to date. Obligations in New York were $32B in FY22, $18.7B in FY23, $17B in FY24, $13.8B in FY25 and $12.7B in FY26. The FY27 total is a fiscal year to date partial figure."
     },
     {
       "q": "Which agencies award the most contracts in New York?",
-      "a": "The Department of Veterans Affairs awarded the most contracts in New York with $185M in obligations. The Department of Energy and the General Services Administration follow with $154M and $43.5M respectively."
+      "a": "The Department of Veterans Affairs awarded the most in FY2027 to date, obligating $191M. The Department of Energy obligated $144M and the General Services Administration obligated $58.3M in FY2027 to date."
     },
     {
       "q": "Who are the largest federal contractors in New York?",
-      "a": "BROOKHAVEN SCIENCE ASSOCIATES LLC is the largest federal contractor in New York with $154M in obligations. Other top vendors include WELCH ALLYN, INC. at $31.1M and BOOZ ALLEN HAMILTON INC at $21.1M."
+      "a": "BROOKHAVEN SCIENCE ASSOCIATES LLC is the largest federal contractor in New York in FY2027 to date with $154M. WELCH ALLYN, INC. received $31.1M and BOOZ ALLEN HAMILTON INC received $21.1M in FY2027 to date."
     }
   ],
   "related": [

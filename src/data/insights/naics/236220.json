@@ -1,20 +1,20 @@
 {
   "pageType": "naics",
   "slug": "236220",
-  "title": "NAICS 236220 Government Contracts: $766M in FY2027",
+  "title": "NAICS 236220 Government Contracts: $1.2B in FY2027",
   "h1": "Commercial and Institutional Building Construction (NAICS 236220): Federal Contract Market",
-  "metaDescription": "Federal agencies obligated $766M on Commercial and Institutional Building Construction (NAICS 236220) in FY2027 to date. See top vendors, top agencies, and",
-  "updated": "2026-11-16",
+  "metaDescription": "Federal agencies obligated $1.2B on Commercial and Institutional Building Construction (NAICS 236220) in FY2027 to date. See top vendors, top agencies, and",
+  "updated": "2026-11-23",
   "fyWindow": {
     "label": "FY2027 to date",
     "start": "2026-10-01",
-    "end": "2026-11-16"
+    "end": "2026-11-23"
   },
   "stats": {
-    "totalObligations": 766493380.12,
-    "awardCount": 1216,
-    "yoyGrowthPct": -98.6,
-    "avgAwardSize": 630340,
+    "totalObligations": 1247015462.62,
+    "awardCount": 1438,
+    "yoyGrowthPct": -97.7,
+    "avgAwardSize": 867187,
     "smallBusinessSharePct": null
   },
   "charts": [
@@ -44,17 +44,17 @@
             ],
             [
               "FY26",
-              53640723789.23
+              53644958311.06
             ],
             [
               "FY27",
-              766493380.12
+              1247015462.62
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Obligations fell 98.6% year over year, from $53.6B in FY2026 to $766M in FY2027 to date."
+      "takeaway": "Obligations fell 97.7% year over year, from $53.6B in FY2026 to $1.2B in FY2027 to date."
     },
     {
       "id": "236220-top-agencies",
@@ -65,50 +65,50 @@
           "label": "Obligations",
           "points": [
             [
-              "Department of Veterans Affairs",
-              410656168.61
+              "Department of Homeland Security",
+              608943918.18
             ],
             [
-              "Department of Homeland Security",
-              169907718.26
+              "Department of Veterans Affairs",
+              433192370.27
             ],
             [
               "General Services Administration",
-              80760837.37
+              84252649.51
             ],
             [
               "Department of the Interior",
-              24044112.92
+              25073569.84
             ],
             [
               "Smithsonian Institution",
-              21559434.45
+              22803314.33
             ],
             [
               "Department of Health and Human Services",
-              19997812.26
+              22128158.18
             ],
             [
               "Department of Agriculture",
-              18701966.45
+              20096523.51
             ],
             [
               "National Aeronautics and Space Administration",
-              13743336.98
+              14361497.98
             ],
             [
               "Department of Transportation",
-              3569700.26
+              12710778.04
             ],
             [
               "Department of Justice",
-              1831088.93
+              1849942.05
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Department of Veterans Affairs was the top buyer, obligating $411M (53.6% of all obligations)."
+      "takeaway": "Department of Homeland Security was the top buyer, obligating $609M (48.8% of all obligations)."
     },
     {
       "id": "236220-top-vendors",
@@ -119,12 +119,20 @@
           "label": "Obligations",
           "points": [
             [
+              "SOUTHWEST VALLEY CONSTRUCTORS CO",
+              283000000
+            ],
+            [
+              "WHITING-TURNER CONTRACTING COMPANY, THE",
+              155011600
+            ],
+            [
               "GILBANE FEDERAL",
               113748477
             ],
             [
               "VETERANS DEVELOPMENT CORPORATION, INC.",
-              67162050.4
+              70784451.1
             ],
             [
               "RICHARD GROUP LLC",
@@ -139,40 +147,32 @@
               30231020.57
             ],
             [
+              "SEMPER TEK CMS JV LLC",
+              26705489
+            ],
+            [
               "VALIANT CONSTRUCTION LLC",
-              25900660
+              26149274.18
             ],
             [
               "STANDARD COMMUNICATIONS INC",
               24474649.33
-            ],
-            [
-              "PAULSEN CONSTRUCTION LLC",
-              21611664
-            ],
-            [
-              "MATOS-GRUNLEY JOINT VENTURE",
-              21405048.73
-            ],
-            [
-              "POINTER CONSTRUCTION GROUP LLC",
-              17279188
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "GILBANE FEDERAL led all vendors with $114M in obligations, 14.8% of the market."
+      "takeaway": "SOUTHWEST VALLEY CONSTRUCTORS CO led all vendors with $283M in obligations, 22.7% of the market."
     }
   ],
   "crossLinks": [
     {
-      "label": "Department of Veterans Affairs contracts",
-      "href": "/insights/agency/department-of-veterans-affairs/"
-    },
-    {
       "label": "Department of Homeland Security contracts",
       "href": "/insights/agency/department-of-homeland-security/"
+    },
+    {
+      "label": "Department of Veterans Affairs contracts",
+      "href": "/insights/agency/department-of-veterans-affairs/"
     },
     {
       "label": "General Services Administration contracts",
@@ -195,21 +195,37 @@
         [
           1,
           {
+            "text": "SOUTHWEST VALLEY CONSTRUCTORS CO",
+            "href": "https://www.usaspending.gov/recipient/50730e17-bc78-a2a6-9220-91b71f88258c-C/latest/"
+          },
+          283000000
+        ],
+        [
+          2,
+          {
+            "text": "WHITING-TURNER CONTRACTING COMPANY, THE",
+            "href": "https://www.usaspending.gov/recipient/71cf1e91-51f2-f450-1fe3-3576b19bb828-C/latest/"
+          },
+          155011600
+        ],
+        [
+          3,
+          {
             "text": "GILBANE FEDERAL",
             "href": "https://www.usaspending.gov/recipient/d1f86443-3285-37ee-befe-b5aa1131a802-C/latest/"
           },
           113748477
         ],
         [
-          2,
+          4,
           {
             "text": "VETERANS DEVELOPMENT CORPORATION, INC.",
             "href": "https://www.usaspending.gov/recipient/87798ff6-9a29-9efd-f1b2-b3e3bbf326a4-C/latest/"
           },
-          67162050.4
+          70784451.1
         ],
         [
-          3,
+          5,
           {
             "text": "RICHARD GROUP LLC",
             "href": "https://www.usaspending.gov/recipient/a9ff02da-1226-e308-fea0-1b7c391e8afe-C/latest/"
@@ -217,7 +233,7 @@
           65446146.67
         ],
         [
-          4,
+          6,
           {
             "text": "SERVIAM CONSTRUCTION LLC",
             "href": "https://www.usaspending.gov/recipient/4dce9661-08fa-b15c-983a-cbc3005cfb64-C/latest/"
@@ -225,7 +241,7 @@
           34292031.21
         ],
         [
-          5,
+          7,
           {
             "text": "BCCG A JOINT VENTURE",
             "href": "https://www.usaspending.gov/recipient/6a7d8bd5-7ff0-a23d-26fe-cef66843cff8-C/latest/"
@@ -233,44 +249,28 @@
           30231020.57
         ],
         [
-          6,
+          8,
+          {
+            "text": "SEMPER TEK CMS JV LLC",
+            "href": "https://www.usaspending.gov/recipient/d1cef1dc-9eb0-ac9c-d3f8-4cc3cb58d058-C/latest/"
+          },
+          26705489
+        ],
+        [
+          9,
           {
             "text": "VALIANT CONSTRUCTION LLC",
             "href": "https://www.usaspending.gov/recipient/eeb4e9e0-f8b4-2c39-8b74-3bba1f767b3e-C/latest/"
           },
-          25900660
+          26149274.18
         ],
         [
-          7,
+          10,
           {
             "text": "STANDARD COMMUNICATIONS INC",
             "href": "https://www.usaspending.gov/recipient/aa1eefb9-aa81-f6de-d238-ab8b4948df53-C/latest/"
           },
           24474649.33
-        ],
-        [
-          8,
-          {
-            "text": "PAULSEN CONSTRUCTION LLC",
-            "href": "https://www.usaspending.gov/recipient/8d71da2e-5e9b-a287-1631-df9cabe3e933-C/latest/"
-          },
-          21611664
-        ],
-        [
-          9,
-          {
-            "text": "MATOS-GRUNLEY JOINT VENTURE",
-            "href": "https://www.usaspending.gov/recipient/72b84ab8-9677-4fe9-1055-f72b9f4552eb-C/latest/"
-          },
-          21405048.73
-        ],
-        [
-          10,
-          {
-            "text": "POINTER CONSTRUCTION GROUP LLC",
-            "href": "https://www.usaspending.gov/recipient/11ed2a94-4190-3cae-9381-c4e29aa07ef7-C/latest/"
-          },
-          17279188
         ]
       ]
     },
@@ -415,7 +415,7 @@
             "text": "HENSEL PHELPS CONSTRUCTION CO.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_47PK0124C0011_4740_-NONE-_-NONE-/"
           },
-          298816427,
+          300087068,
           "General Services Administration"
         ],
         [
@@ -493,20 +493,20 @@
         [
           24,
           {
+            "text": "WHITING-TURNER CONTRACTING COMPANY, THE",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70ZS0727FPCNI0002_7008_70Z04723DPCNI0006_7008/"
+          },
+          155000000,
+          "Department of Homeland Security"
+        ],
+        [
+          25,
+          {
             "text": "WALSH FEDERAL LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_697DCK26C00269_6920_-NONE-_-NONE-/"
           },
           148698971,
           "Department of Transportation"
-        ],
-        [
-          25,
-          {
-            "text": "SOUTHWEST VALLEY CONSTRUCTORS CO",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_70B01C26F00001093_7014_70B01C26D00000025_7014/"
-          },
-          144000000,
-          "Department of Homeland Security"
         ]
       ]
     },
@@ -735,30 +735,30 @@
     }
   ],
   "narrative": {
-    "intro": "Commercial and Institutional Building Construction (NAICS 236220) recorded $766M in contract obligations in FY2027 to date. The market posted 1,216 awards with an average award size of $630K. Obligations fell 98.6% year over year. Fiscal-year totals from FY22 through FY26 show much larger activity, with FY22 at $28.9B, FY23 at $32.9B, FY24 at $30.9B, FY25 at $30.6B, and FY26 at $53.6B, which provides context for the FY2027 to date total. The Department of Veterans Affairs leads buying in FY2027 to date at $411M, followed by the Department of Homeland Security at $170M and the General Services Administration at $80.8M. GILBANE FEDERAL is the top vendor in FY2027 to date at $114M, with VETERANS DEVELOPMENT CORPORATION, INC. at $67.2M and RICHARD GROUP LLC at $65.4M. All figures are contract obligations and FY2027 totals are partial, fiscal year to date.",
+    "intro": "Commercial and Institutional Building Construction obligated $1.2B in FY2027 to date. Obligations fell 97.7% year over year. The market recorded 1,438 awards so far in FY2027 to date. The average award size in FY2027 to date was $867K. Fiscal history shows larger annual totals in recent years: FY22 obligations reached $28.9B, FY23 obligations reached $32.9B, FY24 obligations reached $30.9B, FY25 obligations reached $30.6B, and FY26 obligations reached $53.6B. The top buying agencies in FY2027 to date were the Department of Homeland Security with $609M and the Department of Veterans Affairs with $433M, followed by the General Services Administration with $84.3M. The leading vendors in FY2027 to date were SOUTHWEST VALLEY CONSTRUCTORS CO with $283M, WHITING-TURNER CONTRACTING COMPANY, THE with $155M, and GILBANE FEDERAL with $114M. The FY2027 to date totals are partial and reflect fiscal year to date obligations only.",
     "sections": [
       {
-        "heading": "Who are the largest buyers in FY2027 to date?",
-        "body": "The Department of Veterans Affairs obligated $411M in FY2027 to date. The Department of Homeland Security obligated $170M and the General Services Administration obligated $80.8M. The Department of the Interior and the Smithsonian Institution follow with $24M and $21.6M respectively."
+        "heading": "How large is the FY2027 to date market?",
+        "body": "Commercial and Institutional Building Construction obligated $1.2B in FY2027 to date. The market included 1,438 awards in FY2027 to date and an average award size of $867K. Obligations fell 97.7% year over year. Annual comparisons show FY26 obligations of $53.6B and prior-year obligations ranging from $28.9B to $32.9B."
       },
       {
-        "heading": "Which vendors received the most obligations in FY2027 to date?",
-        "body": "GILBANE FEDERAL received $114M in FY2027 to date. VETERANS DEVELOPMENT CORPORATION, INC. received $67.2M and RICHARD GROUP LLC received $65.4M. SERVIAM CONSTRUCTION LLC and BCCG A JOINT VENTURE received $34.3M and $30.2M respectively."
+        "heading": "Which agencies and contractors dominate FY2027 to date?",
+        "body": "The Department of Homeland Security led buying in FY2027 to date with $609M, followed by the Department of Veterans Affairs with $433M and the General Services Administration with $84.3M. SOUTHWEST VALLEY CONSTRUCTORS CO led vendors in FY2027 to date with $283M, followed by WHITING-TURNER CONTRACTING COMPANY, THE with $155M and GILBANE FEDERAL with $114M. The top ten buyers and top ten vendors together account for a large share of FY2027 to date obligations."
       }
     ]
   },
   "faq": [
     {
       "q": "How much does the federal government spend on NAICS 236220?",
-      "a": "The federal government obligated $766M on NAICS 236220 in FY2027 to date. Total obligations over recent fiscal years were $28.9B in FY22, $32.9B in FY23, $30.9B in FY24, $30.6B in FY25, and $53.6B in FY26. FY2027 totals are partial, fiscal year to date. The market recorded 1,216 awards in FY2027 to date with an average award size of $630K and obligations down 98.6% year over year."
+      "a": "The federal government obligated $1.2B on NAICS 236220 in FY2027 to date. Obligations fell 97.7% year over year, and the market so far includes 1,438 awards with an average award size of $867K."
     },
     {
       "q": "Which agencies buy the most NAICS 236220 services?",
-      "a": "The Department of Veterans Affairs is the largest buyer in FY2027 to date at $411M. The Department of Homeland Security is the second largest buyer at $170M and the General Services Administration is third at $80.8M. Other buying agencies in the top ten include the Department of the Interior at $24M and the Smithsonian Institution at $21.6M."
+      "a": "The Department of Homeland Security buys the most NAICS 236220 services in FY2027 to date, with $609M in obligations. The Department of Veterans Affairs follows with $433M, and the General Services Administration follows with $84.3M."
     },
     {
       "q": "Who are the largest NAICS 236220 government contractors?",
-      "a": "GILBANE FEDERAL is the largest contractor in FY2027 to date at $114M. VETERANS DEVELOPMENT CORPORATION, INC. is the second largest contractor at $67.2M and RICHARD GROUP LLC is the third largest at $65.4M. Other top vendors include SERVIAM CONSTRUCTION LLC at $34.3M and BCCG A JOINT VENTURE at $30.2M."
+      "a": "SOUTHWEST VALLEY CONSTRUCTORS CO is the largest NAICS 236220 government contractor in FY2027 to date with $283M in obligations. WHITING-TURNER CONTRACTING COMPANY, THE follows with $155M, and GILBANE FEDERAL follows with $114M."
     }
   ],
   "related": [

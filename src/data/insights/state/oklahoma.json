@@ -1,20 +1,20 @@
 {
   "pageType": "state",
   "slug": "oklahoma",
-  "title": "Oklahoma Federal Contracts: $287M in FY2027",
+  "title": "Oklahoma Federal Contracts: $306M in FY2027",
   "h1": "Federal Contracts in Oklahoma: Spending, Agencies & Vendors",
-  "metaDescription": "Federal agencies obligated $287M to contractors in Oklahoma in FY2027 to date. See top buying agencies, top vendors, and industries.",
-  "updated": "2026-11-16",
+  "metaDescription": "Federal agencies obligated $306M to contractors in Oklahoma in FY2027 to date. See top buying agencies, top vendors, and industries.",
+  "updated": "2026-11-23",
   "fyWindow": {
     "label": "FY2027 to date",
     "start": "2026-10-01",
-    "end": "2026-11-16"
+    "end": "2026-11-23"
   },
   "stats": {
-    "totalObligations": 287066011.71,
-    "awardCount": 488,
-    "yoyGrowthPct": -94.1,
-    "avgAwardSize": 588250,
+    "totalObligations": 305571438.73,
+    "awardCount": 593,
+    "yoyGrowthPct": -93.7,
+    "avgAwardSize": 515298,
     "smallBusinessSharePct": null
   },
   "charts": [
@@ -44,17 +44,17 @@
             ],
             [
               "FY26",
-              4885852535.99
+              4886508157.32
             ],
             [
               "FY27",
-              287066011.71
+              305571438.73
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Obligations fell 94.1% year over year, from $4.9B in FY2026 to $287M in FY2027 to date."
+      "takeaway": "Obligations fell 93.7% year over year, from $4.9B in FY2026 to $306M in FY2027 to date."
     },
     {
       "id": "oklahoma-top-agencies",
@@ -66,19 +66,27 @@
           "points": [
             [
               "Department of Veterans Affairs",
-              241699489.6
-            ],
-            [
-              "Department of Justice",
-              18549683.78
+              241971549.69
             ],
             [
               "Department of Transportation",
-              16196082.02
+              24535529.61
+            ],
+            [
+              "Department of Justice",
+              21451923.68
             ],
             [
               "Department of Health and Human Services",
-              6157427.36
+              6691581.81
+            ],
+            [
+              "General Services Administration",
+              4619636.93
+            ],
+            [
+              "Department of the Interior",
+              2894207.45
             ],
             [
               "Department of Labor",
@@ -86,29 +94,21 @@
             ],
             [
               "Department of the Treasury",
-              970913.88
-            ],
-            [
-              "General Services Administration",
-              956408.91
-            ],
-            [
-              "Department of the Interior",
-              894239.57
+              969834.9
             ],
             [
               "Department of Agriculture",
-              400000
+              431268.16
             ],
             [
-              "Department of Homeland Security",
-              73154.69
+              "Department of State",
+              297493.75
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Department of Veterans Affairs was the top federal buyer in Oklahoma, obligating $242M (84.2% of the state total)."
+      "takeaway": "Department of Veterans Affairs was the top federal buyer in Oklahoma, obligating $242M (79.2% of the state total)."
     },
     {
       "id": "oklahoma-top-vendors",
@@ -127,12 +127,16 @@
               12350665.74
             ],
             [
+              "ASRC FEDERAL ADVANCED RESEARCH, LLC",
+              4638947.12
+            ],
+            [
               "MGS CONSTRUCTION SERVICES INC.",
               4607137
             ],
             [
-              "ASRC FEDERAL ADVANCED RESEARCH, LLC",
-              3047621.12
+              "SURFACE MOUNT DEPOT INC",
+              3305694.22
             ],
             [
               "OKLAHOMA BLOOD INSTITUTE",
@@ -147,22 +151,18 @@
               2517637.61
             ],
             [
-              "HUNTER HEALTH CLINIC INC",
-              2070744
+              "CORECIVIC, INC.",
+              2381609.9
             ],
             [
-              "METROPOLITAN SECURITY SERVICES, INC.",
-              1904016.16
-            ],
-            [
-              "CHEROKEE NATION",
-              1714647
+              "EMCOR GOVERNMENT SERVICES, INC",
+              2342652
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "SIGNATURE CHOICE III, LLC led all contractors in Oklahoma with $226M, 78.8% of the state total."
+      "takeaway": "SIGNATURE CHOICE III, LLC led all contractors in Oklahoma with $226M, 74.0% of the state total."
     },
     {
       "id": "oklahoma-top-naics",
@@ -178,7 +178,7 @@
             ],
             [
               "Other Support Activities for Air Transportation",
-              13429681.74
+              13452461.66
             ],
             [
               "Commercial and Institutional Building Construction",
@@ -186,31 +186,31 @@
             ],
             [
               "Engineering Services",
-              3054327.52
+              5096521.54
+            ],
+            [
+              "Facilities Support Services",
+              4556292.21
+            ],
+            [
+              "Computer Systems Design Services",
+              4123425.18
+            ],
+            [
+              "Other Residential Care Facilities",
+              3796869.9
+            ],
+            [
+              "Search, Detection, Navigation, Guidance, Aeronautical, and Nautical System and Instrument Manufacturing",
+              3637911.98
             ],
             [
               "Irradiation Apparatus Manufacturing",
               2944426.5
             ],
             [
-              "Janitorial Services",
-              2667304.95
-            ],
-            [
-              "Offices of Physicians, Mental Health Specialists",
-              2506630
-            ],
-            [
               "Security Guards and Patrol Services",
-              2450484.78
-            ],
-            [
-              "Computer Systems Design Services",
-              2368362.38
-            ],
-            [
-              "Facilities Support Services",
-              2243523.87
+              2861827.18
             ]
           ]
         }
@@ -225,12 +225,12 @@
       "href": "/insights/agency/department-of-veterans-affairs/"
     },
     {
-      "label": "Department of Justice contracts",
-      "href": "/insights/agency/department-of-justice/"
-    },
-    {
       "label": "Department of Transportation contracts",
       "href": "/insights/agency/department-of-transportation/"
+    },
+    {
+      "label": "Department of Justice contracts",
+      "href": "/insights/agency/department-of-justice/"
     },
     {
       "label": "Department of Health and Human Services contracts",
@@ -245,12 +245,12 @@
       "href": "/insights/naics/541330/"
     },
     {
-      "label": "NAICS 561720: Janitorial Services",
-      "href": "/insights/naics/561720/"
+      "label": "NAICS 561210: Facilities Support Services",
+      "href": "/insights/naics/561210/"
     },
     {
-      "label": "NAICS 561612: Security Guards and Patrol Services",
-      "href": "/insights/naics/561612/"
+      "label": "NAICS 541512: Computer Systems Design Services",
+      "href": "/insights/naics/541512/"
     }
   ],
   "tables": [
@@ -281,21 +281,29 @@
         [
           3,
           {
+            "text": "ASRC FEDERAL ADVANCED RESEARCH, LLC",
+            "href": "https://www.usaspending.gov/recipient/b6154500-d4c7-fec6-5ec7-150ef46a5b03-C/latest/"
+          },
+          4638947.12
+        ],
+        [
+          4,
+          {
             "text": "MGS CONSTRUCTION SERVICES INC.",
             "href": "https://www.usaspending.gov/recipient/329d228f-caa6-807e-be78-2bf891f5f4bf-C/latest/"
           },
           4607137
         ],
         [
-          4,
+          5,
           {
-            "text": "ASRC FEDERAL ADVANCED RESEARCH, LLC",
-            "href": "https://www.usaspending.gov/recipient/b6154500-d4c7-fec6-5ec7-150ef46a5b03-C/latest/"
+            "text": "SURFACE MOUNT DEPOT INC",
+            "href": "https://www.usaspending.gov/recipient/d60a0fce-0f58-3bef-5918-93530963d918-C/latest/"
           },
-          3047621.12
+          3305694.22
         ],
         [
-          5,
+          6,
           {
             "text": "OKLAHOMA BLOOD INSTITUTE",
             "href": "https://www.usaspending.gov/recipient/befc0a37-fece-5c48-6392-048529366edc-C/latest/"
@@ -303,7 +311,7 @@
           2734695.8
         ],
         [
-          6,
+          7,
           {
             "text": "KING & GEORGE, LLC",
             "href": "https://www.usaspending.gov/recipient/6d4cac2b-0fe3-2286-7c99-ae656304ab63-C/latest/"
@@ -311,7 +319,7 @@
           2662821.31
         ],
         [
-          7,
+          8,
           {
             "text": "SCIENCE APPLICATIONS INTERNATIONAL CORPORATION",
             "href": "https://www.usaspending.gov/recipient/20af0683-f17d-1f8f-38ee-2f11bd124559-C/latest/"
@@ -319,28 +327,20 @@
           2517637.61
         ],
         [
-          8,
-          {
-            "text": "HUNTER HEALTH CLINIC INC",
-            "href": "https://www.usaspending.gov/recipient/a0a92adc-13f9-4c32-8fee-6ceeee700540-C/latest/"
-          },
-          2070744
-        ],
-        [
           9,
           {
-            "text": "METROPOLITAN SECURITY SERVICES, INC.",
-            "href": "https://www.usaspending.gov/recipient/835e42fb-f461-4e30-e17e-3205a1805635-C/latest/"
+            "text": "CORECIVIC, INC.",
+            "href": "https://www.usaspending.gov/recipient/b7ab6cd4-f511-cfe7-c92f-b20d45921e9c-C/latest/"
           },
-          1904016.16
+          2381609.9
         ],
         [
           10,
           {
-            "text": "CHEROKEE NATION",
-            "href": "https://www.usaspending.gov/recipient/7a367a54-8858-ea26-6524-5708a4e420d8-C/latest/"
+            "text": "EMCOR GOVERNMENT SERVICES, INC",
+            "href": "https://www.usaspending.gov/recipient/aff79c5c-0dd5-5065-2e7d-f75eacde1498-C/latest/"
           },
-          1714647
+          2342652
         ]
       ]
     },
@@ -449,7 +449,7 @@
             "text": "BOOZ ALLEN HAMILTON INC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_47QFWA26F0015_4732_47QTCK18D0004_4732/"
           },
-          22037434.83,
+          23393010.85,
           "General Services Administration"
         ],
         [
@@ -482,6 +482,24 @@
         [
           15,
           {
+            "text": "KING AEROSPACE, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_6973GH26F00213_6920_6973GH26D00006_6920/"
+          },
+          16332200,
+          "Department of Transportation"
+        ],
+        [
+          16,
+          {
+            "text": "CHEROKEE NATION SYSTEM SOLUTIONS LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_70SBUR22C00000020_7003_-NONE-_-NONE-/"
+          },
+          16320825.11,
+          "Department of Homeland Security"
+        ],
+        [
+          17,
+          {
             "text": "CELLCO PARTNERSHIP",
             "href": "https://www.usaspending.gov/award/CONT_AWD_6973GH22F00154_6920_6973GH22A00006_6920/"
           },
@@ -489,7 +507,7 @@
           "Department of Transportation"
         ],
         [
-          16,
+          18,
           {
             "text": "OKLAHOMA STATE UNIVERSITY",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C25921C0097_3600_-NONE-_-NONE-/"
@@ -498,7 +516,7 @@
           "Department of Veterans Affairs"
         ],
         [
-          17,
+          19,
           {
             "text": "LOCKHEED MARTIN SERVICES, LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_HSTS0110JOPP043_7013_HSTS0109DOSO900_7013/"
@@ -507,7 +525,7 @@
           "Department of Homeland Security"
         ],
         [
-          18,
+          20,
           {
             "text": "BOOZ ALLEN HAMILTON INC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_47QFWA20F0024_4732_47QTCK18D0004_4732/"
@@ -516,7 +534,7 @@
           "General Services Administration"
         ],
         [
-          19,
+          21,
           {
             "text": "MGS CONSTRUCTION SERVICES INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_75H70124F30001_7527_75H70120D00014_7527/"
@@ -525,7 +543,7 @@
           "Department of Health and Human Services"
         ],
         [
-          20,
+          22,
           {
             "text": "KING & GEORGE, LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_6973GH26F00238_6920_6973GH23D00014_6920/"
@@ -534,7 +552,7 @@
           "Department of Transportation"
         ],
         [
-          21,
+          23,
           {
             "text": "JET SUPPORT SERVICES, INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_6973GH26F01363_6920_6973GH25D00057_6920/"
@@ -543,7 +561,7 @@
           "Department of Transportation"
         ],
         [
-          22,
+          24,
           {
             "text": "INDIAN HEALTH CARE RESOURCE CENTER OF TULSA, INC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_75H71125C00002TUL_7527_-NONE-_-NONE-/"
@@ -552,60 +570,42 @@
           "Department of Health and Human Services"
         ],
         [
-          23,
+          25,
           {
             "text": "S&K MISSION SUPPORT, LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_6973GH26F00764_6920_6973GH24D00038_6920/"
           },
-          10694249.16,
-          "Department of Transportation"
-        ],
-        [
-          24,
-          {
-            "text": "TECHNOLOGY TRENDS GROUP, LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_693KA925F00003_6920_693KA922A00325_6920/"
-          },
-          10222537.74,
-          "Department of Transportation"
-        ],
-        [
-          25,
-          {
-            "text": "SCIENCE APPLICATIONS INTERNATIONAL CORPORATION",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_6973GH26F00369_6920_6973GH25D00014_6920/"
-          },
-          8769707.7,
+          10709192.18,
           "Department of Transportation"
         ]
       ]
     }
   ],
   "narrative": {
-    "intro": "The state of Oklahoma recorded $287M in federal contract obligations in FY2027 to date. The Department of Veterans Affairs led buying activity with $242M, representing the single largest agency outlay in the state so far this fiscal year. Obligations fell 94.1% year over year, reflecting a large drop from prior fiscal years that ranged from $4.9B to $6.8B before FY2027. SIGNATURE CHOICE III, LLC is the top vendor with $226M in obligations, and Direct Health and Medical Insurance Carriers is the largest industry by dollars with $226M. The FY2027 totals are partial, fiscal year to date, so the $287M figure does not represent a full-year total. Oklahoma had 488 awards in FY2027 to date, with an average award size of $588K. The concentration of dollars with a single agency and a single vendor helps explain why statewide obligations are much lower this year than in prior full fiscal years, when annual totals were in the billions.",
+    "intro": "Oklahoma recorded $306M in federal contract obligations in FY2027 to date. Oklahoma logged 593 awards with an average award size of $515K. Obligations fell 93.7% year over year. FY2027 obligations are smaller than recent fiscal years: FY26 obligations were $4.9B, FY25 obligations were $6.8B, FY24 obligations were $5.5B, FY23 obligations were $5B, and FY22 obligations were $5B. The Department of Veterans Affairs is the largest buyer, obligating $242M. SIGNATURE CHOICE III, LLC is the largest vendor, receiving $226M. Direct Health and Medical Insurance Carriers is the largest industry category with $226M in obligations. Other notable buyers include the Department of Transportation with $24.5M and the Department of Justice with $21.5M. Other notable vendors include AAR AIRCRAFT SERVICES, INC. with $12.4M and several vendors in the top ten with obligations ranging up to $4.6M. All figures are contract obligations; FY2027 totals are partial fiscal year to date.",
     "sections": [
       {
-        "heading": "How concentrated is federal buying in Oklahoma this fiscal year?",
-        "body": "The Department of Veterans Affairs obligated $242M, which makes that agency the dominant buyer in FY2027 to date. SIGNATURE CHOICE III, LLC accounted for $226M of vendor obligations, so a small number of entities capture a large share of the $287M total. Oklahoma had 488 awards and an average award size of $588K, indicating that a mix of large single vendors and smaller contracts make up the current total."
+        "heading": "How does FY2027 contracting in Oklahoma compare to prior years?",
+        "body": "FY2027 obligations are $306M. FY26 obligations were $4.9B and FY25 obligations were $6.8B. Obligations fell 93.7% year over year, reflecting the partial-year nature of the FY2027 total."
       },
       {
-        "heading": "How does FY2027 to date compare with recent full fiscal years?",
-        "body": "FY2027 to date obligations are $287M, well below recent full-year totals of $4.9B to $6.8B in FY22 through FY26. Obligations fell 94.1% year over year, reflecting the partial-year nature of the FY2027 figure and the high concentration of prior full-year dollars. The FY2027 total should be interpreted as fiscal year to date, not a full-year amount."
+        "heading": "Which agencies, vendors, and industries lead FY2027 obligations in Oklahoma?",
+        "body": "The Department of Veterans Affairs leads buyers with $242M. SIGNATURE CHOICE III, LLC leads vendors with $226M, followed by AAR AIRCRAFT SERVICES, INC. at $12.4M. Direct Health and Medical Insurance Carriers leads industries with $226M, and Other Support Activities for Air Transportation has $13.5M."
       }
     ]
   },
   "faq": [
     {
       "q": "How much federal contract money goes to Oklahoma?",
-      "a": "Oklahoma received $287M in federal contract obligations in FY2027 to date. The state had 488 awards with an average award size of $588K, and this total is a fiscal year to date partial figure, not a full-year total."
+      "a": "Oklahoma received $306M in federal contract obligations in FY2027 to date. Oklahoma recorded 593 awards with an average award size of $515K, and obligations fell 93.7% year over year."
     },
     {
       "q": "Which agencies award the most contracts in Oklahoma?",
-      "a": "The Department of Veterans Affairs awards the most contracts in Oklahoma, with $242M in obligations in FY2027 to date. The Department of Justice follows with $18.5M and the Department of Transportation with $16.2M."
+      "a": "The Department of Veterans Affairs awards the most contracts in Oklahoma with $242M in obligations. The Department of Transportation follows with $24.5M, and the Department of Justice follows with $21.5M."
     },
     {
       "q": "Who are the largest federal contractors in Oklahoma?",
-      "a": "The largest federal contractor in Oklahoma is SIGNATURE CHOICE III, LLC with $226M in obligations in FY2027 to date. AAR AIRCRAFT SERVICES, INC. is second with $12.4M, followed by MGS CONSTRUCTION SERVICES INC. with $4.6M."
+      "a": "SIGNATURE CHOICE III, LLC is the largest federal contractor in Oklahoma with $226M in obligations. AAR AIRCRAFT SERVICES, INC. is the next largest with $12.4M, and ASRC FEDERAL ADVANCED RESEARCH, LLC and MGS CONSTRUCTION SERVICES INC. each have $4.6M."
     }
   ],
   "related": [

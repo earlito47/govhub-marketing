@@ -1,20 +1,20 @@
 {
   "pageType": "state",
   "slug": "wisconsin",
-  "title": "Federal Contracts in Wisconsin: $191M (FY2027)",
+  "title": "Federal Contracts in Wisconsin: $202M (FY2027)",
   "h1": "Federal Contracts in Wisconsin: Spending, Agencies & Vendors",
-  "metaDescription": "Federal agencies obligated $191M to contractors in Wisconsin in FY2027 to date. See top buying agencies, top vendors, and industries.",
-  "updated": "2026-11-16",
+  "metaDescription": "Federal agencies obligated $202M to contractors in Wisconsin in FY2027 to date. See top buying agencies, top vendors, and industries.",
+  "updated": "2026-11-23",
   "fyWindow": {
     "label": "FY2027 to date",
     "start": "2026-10-01",
-    "end": "2026-11-16"
+    "end": "2026-11-23"
   },
   "stats": {
-    "totalObligations": 190623998.29,
-    "awardCount": 1253,
-    "yoyGrowthPct": -96.1,
-    "avgAwardSize": 152134,
+    "totalObligations": 202201082.98,
+    "awardCount": 1368,
+    "yoyGrowthPct": -95.9,
+    "avgAwardSize": 147808,
     "smallBusinessSharePct": null
   },
   "charts": [
@@ -44,17 +44,17 @@
             ],
             [
               "FY26",
-              4945136913.42
+              4947682168.53
             ],
             [
               "FY27",
-              190623998.29
+              202201082.98
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Obligations fell 96.1% year over year, from $4.9B in FY2026 to $191M in FY2027 to date."
+      "takeaway": "Obligations fell 95.9% year over year, from $4.9B in FY2026 to $202M in FY2027 to date."
     },
     {
       "id": "wisconsin-top-agencies",
@@ -66,49 +66,49 @@
           "points": [
             [
               "Department of Veterans Affairs",
-              120010726.7
+              121117021.72
             ],
             [
               "Department of Health and Human Services",
-              45174288.3
-            ],
-            [
-              "General Services Administration",
-              9875864.03
+              45083413.8
             ],
             [
               "Department of Agriculture",
-              7223956.72
+              12843327.39
+            ],
+            [
+              "General Services Administration",
+              10115859.28
             ],
             [
               "Department of Justice",
-              4769355.16
+              5101116.09
             ],
             [
               "Department of Homeland Security",
-              2388905.74
+              4050572.48
             ],
             [
               "Department of Transportation",
-              1154345.32
+              3025807.32
             ],
             [
               "Department of the Interior",
-              140948.6
+              638357.18
+            ],
+            [
+              "National Aeronautics and Space Administration",
+              300000
             ],
             [
               "Social Security Administration",
               85781.77
-            ],
-            [
-              "Department of State",
-              64772.58
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Department of Veterans Affairs was the top federal buyer in Wisconsin, obligating $120M (63.0% of the state total)."
+      "takeaway": "Department of Veterans Affairs was the top federal buyer in Wisconsin, obligating $121M (59.9% of the state total)."
     },
     {
       "id": "wisconsin-top-vendors",
@@ -127,12 +127,12 @@
               41836062
             ],
             [
-              "GE PRECISION HEALTHCARE LLC",
-              7790691.31
-            ],
-            [
               "FLEXION INC",
               7757199.11
+            ],
+            [
+              "GE PRECISION HEALTHCARE LLC",
+              7693964.22
             ],
             [
               "U.S. VET GENERAL CONTRACTING, LLC",
@@ -140,29 +140,29 @@
             ],
             [
               "KRUEGER INTERNATIONAL, INC.",
-              3081068.22
+              3129579.25
+            ],
+            [
+              "DISCOVERY ENERGY, LLC",
+              2942114
             ],
             [
               "VERSITI BLOOD HEALTH, INC.",
               2891960.24
             ],
             [
-              "DIDION, INC.",
-              2091307.02
+              "FAIRBANKS MORSE, LLC",
+              2671751.48
             ],
             [
-              "CORPS MEDICAL SUPPLY, LLC",
-              1745520.34
-            ],
-            [
-              "UNIVERSITY OF WISCONSIN HOSPITALS AND CLINICS AUTHORITY",
-              1720281.53
+              "LAKESIDE FOODS INC",
+              2340788.24
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "OPTUMSERVE HEALTH SERVICES, INC. led all contractors in Wisconsin with $85.6M, 44.9% of the state total."
+      "takeaway": "OPTUMSERVE HEALTH SERVICES, INC. led all contractors in Wisconsin with $85.6M, 42.4% of the state total."
     },
     {
       "id": "wisconsin-top-naics",
@@ -182,7 +182,7 @@
             ],
             [
               "Irradiation Apparatus Manufacturing",
-              7829576.32
+              8665171.75
             ],
             [
               "Other Computer Related Services",
@@ -193,24 +193,24 @@
               7294159.35
             ],
             [
+              "Cheese Manufacturing",
+              4501782.95
+            ],
+            [
+              "Motor and Generator Manufacturing",
+              2942114
+            ],
+            [
               "Office Furniture (except Wood) Manufacturing",
-              2838041.61
+              2871903.95
             ],
             [
-              "Biological Product (except Diagnostic) Manufacturing",
-              2668500
+              "Fruit and Vegetable Canning",
+              2818774.1
             ],
             [
-              "Security Guards and Patrol Services",
-              2287445.89
-            ],
-            [
-              "Custom Computer Programming Services",
-              2260040.43
-            ],
-            [
-              "All Other Outpatient Care Centers",
-              2228936.85
+              "Other Engine Equipment Manufacturing",
+              2671751.48
             ]
           ]
         }
@@ -229,12 +229,12 @@
       "href": "/insights/agency/department-of-health-and-human-services/"
     },
     {
-      "label": "General Services Administration contracts",
-      "href": "/insights/agency/general-services-administration/"
-    },
-    {
       "label": "Department of Agriculture contracts",
       "href": "/insights/agency/department-of-agriculture/"
+    },
+    {
+      "label": "General Services Administration contracts",
+      "href": "/insights/agency/general-services-administration/"
     },
     {
       "label": "NAICS 541519: Other Computer Related Services",
@@ -243,14 +243,6 @@
     {
       "label": "NAICS 236220: Commercial and Institutional Building Construction",
       "href": "/insights/naics/236220/"
-    },
-    {
-      "label": "NAICS 561612: Security Guards and Patrol Services",
-      "href": "/insights/naics/561612/"
-    },
-    {
-      "label": "NAICS 541511: Custom Computer Programming Services",
-      "href": "/insights/naics/541511/"
     }
   ],
   "tables": [
@@ -281,18 +273,18 @@
         [
           3,
           {
-            "text": "GE PRECISION HEALTHCARE LLC",
-            "href": "https://www.usaspending.gov/recipient/df31c503-bd81-c7e7-3f7a-659eb76e1b08-C/latest/"
-          },
-          7790691.31
-        ],
-        [
-          4,
-          {
             "text": "FLEXION INC",
             "href": "https://www.usaspending.gov/recipient/c3cb8678-8150-6272-25c5-e83c469bee8f-C/latest/"
           },
           7757199.11
+        ],
+        [
+          4,
+          {
+            "text": "GE PRECISION HEALTHCARE LLC",
+            "href": "https://www.usaspending.gov/recipient/df31c503-bd81-c7e7-3f7a-659eb76e1b08-C/latest/"
+          },
+          7693964.22
         ],
         [
           5,
@@ -308,10 +300,18 @@
             "text": "KRUEGER INTERNATIONAL, INC.",
             "href": "https://www.usaspending.gov/recipient/524c47dd-5fec-792f-7542-bf5ef9d61224-C/latest/"
           },
-          3081068.22
+          3129579.25
         ],
         [
           7,
+          {
+            "text": "DISCOVERY ENERGY, LLC",
+            "href": "https://www.usaspending.gov/recipient/16d57b2c-2fb2-c9cd-fa54-72146d798569-C/latest/"
+          },
+          2942114
+        ],
+        [
+          8,
           {
             "text": "VERSITI BLOOD HEALTH, INC.",
             "href": "https://www.usaspending.gov/recipient/c3b44559-c484-d6ca-f0ba-0a3f42e931ae-C/latest/"
@@ -319,28 +319,20 @@
           2891960.24
         ],
         [
-          8,
-          {
-            "text": "DIDION, INC.",
-            "href": "https://www.usaspending.gov/recipient/2a9940cb-3aba-23d8-7db2-cac35d462572-C/latest/"
-          },
-          2091307.02
-        ],
-        [
           9,
           {
-            "text": "CORPS MEDICAL SUPPLY, LLC",
-            "href": "https://www.usaspending.gov/recipient/928cdbed-f42b-3a36-e621-506e6150733f-C/latest/"
+            "text": "FAIRBANKS MORSE, LLC",
+            "href": "https://www.usaspending.gov/recipient/329c3e85-e066-e89c-6c44-0daa085a7834-C/latest/"
           },
-          1745520.34
+          2671751.48
         ],
         [
           10,
           {
-            "text": "UNIVERSITY OF WISCONSIN HOSPITALS AND CLINICS AUTHORITY",
-            "href": "https://www.usaspending.gov/recipient/6d650196-7dc6-03b5-9a1a-fb6d7f1013da-C/latest/"
+            "text": "LAKESIDE FOODS INC",
+            "href": "https://www.usaspending.gov/recipient/b35c3568-59c9-8544-a0ab-c39f51cc3bb3-C/latest/"
           },
-          1720281.53
+          2340788.24
         ]
       ]
     },
@@ -485,7 +477,7 @@
             "text": "GE PRECISION HEALTHCARE LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C24925N0032_3600_VA797H17D0024_3600/"
           },
-          6164369.29,
+          6067642.21,
           "Department of Veterans Affairs"
         ],
         [
@@ -582,30 +574,30 @@
     }
   ],
   "narrative": {
-    "intro": "Wisconsin received $191M in federal contract obligations in FY2027 to date. The state recorded 1,253 awards with an average award size of $152K. Obligations fell 96.1% year over year. Historical context shows larger prior-year totals: FY22 was $5.6B, FY23 was $5.7B, FY24 was $9.9B, FY25 was $7.4B, and FY26 was $4.9B. The FY2027 to date total is a partial fiscal-year figure. Health-related spending dominates the current-year mix, and the largest single buying agency is the Department of Veterans Affairs with $120M. The composition of top vendors and industries underscores a concentration in medical services and insurance-related work, with OPTUMSERVE HEALTH SERVICES, INC. and WISCONSIN PHYSICIANS SERVICE INSURANCE CORP. together accounting for a large share of obligations.",
+    "intro": "Wisconsin has recorded $202M in federal contract obligations for FY2027 to date. The state has 1,368 awards and an average award size of $148K. Obligations fell 95.9% year over year. Historical totals show large swings: FY22 totaled $5.6B, FY23 totaled $5.7B, FY24 totaled $9.9B, FY25 totaled $7.4B, and FY26 totaled $4.9B. The Department of Veterans Affairs is the largest buyer in FY2027 to date with $121M in obligations, followed by the Department of Health and Human Services with $45.1M and the Department of Agriculture with $12.8M. OPTUMSERVE HEALTH SERVICES, INC. is the largest vendor in FY2027 to date with $85.6M, followed by WISCONSIN PHYSICIANS SERVICE INSURANCE CORP. with $41.8M. Offices of Physicians (except Mental Health Specialists) is the largest industry by obligation with $83.4M, and Direct Health and Medical Insurance Carriers follow with $41.8M. All figures are contract obligations; current-year totals are partial (fiscal year to date).",
     "sections": [
       {
-        "heading": "How big is the current-year drop and what does that mean?",
-        "body": "Obligations fell 96.1% year over year. FY2027 to date obligations are $191M compared with multi-billion totals in FY22 through FY26. The partial fiscal-year nature of the FY2027 figure matters because prior years show sustained, much larger spending levels. Watch buying-agency and vendor activity for the remainder of the fiscal year to see whether totals climb toward prior-year ranges."
+        "heading": "How concentrated is federal procurement in Wisconsin this year?",
+        "body": "The Department of Veterans Affairs accounted for a large share with $121M in obligations. OPTUMSERVE HEALTH SERVICES, INC. accounted for $85.6M of obligations and WISCONSIN PHYSICIANS SERVICE INSURANCE CORP. accounted for $41.8M. Offices of Physicians (except Mental Health Specialists) accounted for $83.4M of industry obligations."
       },
       {
-        "heading": "Who are the top agencies and vendors in Wisconsin right now?",
-        "body": "The Department of Veterans Affairs is the top buying agency with $120M. The Department of Health and Human Services follows with $45.2M, and the General Services Administration follows with $9.9M. OPTUMSERVE HEALTH SERVICES, INC. leads vendors with $85.6M and WISCONSIN PHYSICIANS SERVICE INSURANCE CORP. follows with $41.8M."
+        "heading": "How have Wisconsin obligations trended over recent fiscal years?",
+        "body": "FY24 was the peak in this series with $9.9B in obligations. FY26 obligations fell to $4.9B and FY27 to date stands at $202M. Obligations fell 95.9% year over year for the current fiscal-year-to-date comparison."
       }
     ]
   },
   "faq": [
     {
       "q": "How much federal contract money goes to Wisconsin?",
-      "a": "Wisconsin received $191M in federal contract obligations in FY2027 to date. The state recorded 1,253 awards and an average award size of $152K. Prior fiscal years were much larger: FY22 $5.6B, FY23 $5.7B, FY24 $9.9B, FY25 $7.4B, and FY26 $4.9B. Note that the FY2027 total is a partial fiscal-year figure and obligations fell 96.1% year over year."
+      "a": "Wisconsin has received $202M in federal contract obligations for FY2027 to date. The state has 1,368 awards and an average award size of $148K. Historical annual obligations were $5.6B in FY22, $5.7B in FY23, $9.9B in FY24, $7.4B in FY25, and $4.9B in FY26."
     },
     {
       "q": "Which agencies award the most contracts in Wisconsin?",
-      "a": "The Department of Veterans Affairs awarded $120M in FY2027 to date. The Department of Health and Human Services awarded $45.2M and the General Services Administration awarded $9.9M. Other top buying agencies include the Department of Agriculture at $7.2M and the Department of Justice at $4.8M. The remaining top-10 buying agencies each accounted for $2.4M or less."
+      "a": "The Department of Veterans Affairs awards the most contracts in Wisconsin in FY2027 to date with $121M in obligations. The Department of Health and Human Services follows with $45.1M and the Department of Agriculture follows with $12.8M."
     },
     {
       "q": "Who are the largest federal contractors in Wisconsin?",
-      "a": "OPTUMSERVE HEALTH SERVICES, INC. is the largest federal contractor in Wisconsin with $85.6M in obligations. WISCONSIN PHYSICIANS SERVICE INSURANCE CORP. is the second-largest with $41.8M. Other top vendors include GE PRECISION HEALTHCARE LLC and FLEXION INC at $7.8M each, and U.S. VET GENERAL CONTRACTING, LLC at $5.8M."
+      "a": "OPTUMSERVE HEALTH SERVICES, INC. is the largest federal contractor in Wisconsin in FY2027 to date with $85.6M in obligations. WISCONSIN PHYSICIANS SERVICE INSURANCE CORP. is the second largest with $41.8M."
     }
   ],
   "related": [

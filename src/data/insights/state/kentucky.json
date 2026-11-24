@@ -1,20 +1,20 @@
 {
   "pageType": "state",
   "slug": "kentucky",
-  "title": "Kentucky Federal Contracts: $92M in FY2027",
+  "title": "Kentucky Federal Contracts: $82M in FY2027",
   "h1": "Federal Contracts in Kentucky: Spending, Agencies & Vendors",
-  "metaDescription": "Federal agencies obligated $92M to contractors in Kentucky in FY2027 to date. See top buying agencies, top vendors, and industries.",
-  "updated": "2026-11-16",
+  "metaDescription": "Federal agencies obligated $82M to contractors in Kentucky in FY2027 to date. See top buying agencies, top vendors, and industries.",
+  "updated": "2026-11-23",
   "fyWindow": {
     "label": "FY2027 to date",
     "start": "2026-10-01",
-    "end": "2026-11-16"
+    "end": "2026-11-23"
   },
   "stats": {
-    "totalObligations": 91976087,
-    "awardCount": 505,
-    "yoyGrowthPct": -99,
-    "avgAwardSize": 182131,
+    "totalObligations": 82013339.02,
+    "awardCount": 596,
+    "yoyGrowthPct": -99.1,
+    "avgAwardSize": 137606,
     "smallBusinessSharePct": null
   },
   "charts": [
@@ -40,21 +40,21 @@
             ],
             [
               "FY25",
-              10839352596.73
+              10839068676.73
             ],
             [
               "FY26",
-              9465505642
+              9466606270.15
             ],
             [
               "FY27",
-              91976087
+              82013339.02
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Obligations fell 99.0% year over year, from $9.5B in FY2026 to $92M in FY2027 to date."
+      "takeaway": "Obligations fell 99.1% year over year, from $9.5B in FY2026 to $82M in FY2027 to date."
     },
     {
       "id": "kentucky-top-agencies",
@@ -65,50 +65,50 @@
           "label": "Obligations",
           "points": [
             [
-              "Department of Veterans Affairs",
-              40083986.84
+              "Department of the Treasury",
+              39051331.67
             ],
             [
-              "Department of the Treasury",
-              36360037.96
+              "Department of Veterans Affairs",
+              24827084.65
             ],
             [
               "Department of Justice",
-              13607481.6
+              15564874.5
             ],
             [
               "Department of Agriculture",
-              2200796.02
+              2678382.82
             ],
             [
               "National Aeronautics and Space Administration",
-              621216
+              729386.56
             ],
             [
               "General Services Administration",
-              362649.3
+              405345.3
             ],
             [
               "Department of Homeland Security",
-              303937.39
+              347654.63
+            ],
+            [
+              "Department of Energy",
+              94326.21
             ],
             [
               "Department of Labor",
-              72829.58
+              71440.59
             ],
             [
               "Consumer Financial Protection Bureau",
               60000
-            ],
-            [
-              "Department of Transportation",
-              14990
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Department of Veterans Affairs was the top federal buyer in Kentucky, obligating $40.1M (43.6% of the state total)."
+      "takeaway": "Department of the Treasury was the top federal buyer in Kentucky, obligating $39.1M (47.6% of the state total)."
     },
     {
       "id": "kentucky-top-vendors",
@@ -127,42 +127,42 @@
               7523491.66
             ],
             [
+              "UNITED PARCEL SERVICE CO.",
+              6964457.68
+            ],
+            [
               "VALOR HEALTHCARE INC",
               4804790.9
             ],
             [
               "UNIVERSITY OF KENTUCKY",
-              4587410.92
-            ],
-            [
-              "UNITED PARCEL SERVICE CO.",
-              4398326.14
+              4369410.92
             ],
             [
               "PDS CONSULTANTS, INC",
               4154044.5
             ],
             [
+              "DISMAS CHARITIES INC",
+              2419122.17
+            ],
+            [
               "WARRIOR SERVICE COMPANY LLC",
               2236695
             ],
             [
-              "DISMAS CHARITIES INC",
-              2231785.26
+              "SEVEN CORNERS INC",
+              1851239.61
             ],
             [
               "AMBULANCE MANAGEMENT SERVICES LIMITED",
               1838732.8
-            ],
-            [
-              "METROPOLITAN SECURITY SERVICES, INC.",
-              1802199.6
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "WIELAND ROLLED PRODUCTS NORTH AMERICA, LLC led all contractors in Kentucky with $36M, 39.2% of the state total."
+      "takeaway": "WIELAND ROLLED PRODUCTS NORTH AMERICA, LLC led all contractors in Kentucky with $36M, 43.9% of the state total."
     },
     {
       "id": "kentucky-top-naics",
@@ -178,23 +178,27 @@
             ],
             [
               "Colleges, Universities, and Professional Schools",
-              7859104.85
+              7641104.85
+            ],
+            [
+              "Couriers and Express Delivery Services",
+              7011426.58
+            ],
+            [
+              "General Medical and Surgical Hospitals",
+              6102678.17
             ],
             [
               "All Other Outpatient Care Centers",
               4804790.9
             ],
             [
-              "General Medical and Surgical Hospitals",
-              4556364.31
-            ],
-            [
-              "Couriers and Express Delivery Services",
-              4445295.04
-            ],
-            [
               "Ophthalmic Goods Manufacturing",
               4171681.76
+            ],
+            [
+              "Other Residential Care Facilities",
+              2419122.17
             ],
             [
               "Ambulance Services",
@@ -203,10 +207,6 @@
             [
               "Home Health Care Services",
               2236695
-            ],
-            [
-              "Other Residential Care Facilities",
-              2231785.26
             ],
             [
               "Irradiation Apparatus Manufacturing",
@@ -221,12 +221,12 @@
   ],
   "crossLinks": [
     {
-      "label": "Department of Veterans Affairs contracts",
-      "href": "/insights/agency/department-of-veterans-affairs/"
-    },
-    {
       "label": "Department of the Treasury contracts",
       "href": "/insights/agency/department-of-the-treasury/"
+    },
+    {
+      "label": "Department of Veterans Affairs contracts",
+      "href": "/insights/agency/department-of-veterans-affairs/"
     },
     {
       "label": "Department of Justice contracts",
@@ -265,26 +265,26 @@
         [
           3,
           {
+            "text": "UNITED PARCEL SERVICE CO.",
+            "href": "https://www.usaspending.gov/recipient/a8e90c7c-8175-41a5-b841-5b038f67a07d-C/latest/"
+          },
+          6964457.68
+        ],
+        [
+          4,
+          {
             "text": "VALOR HEALTHCARE INC",
             "href": "https://www.usaspending.gov/recipient/df822c86-4385-9615-7abf-ce7dec0f7b3c-C/latest/"
           },
           4804790.9
         ],
         [
-          4,
+          5,
           {
             "text": "UNIVERSITY OF KENTUCKY",
             "href": "https://www.usaspending.gov/recipient/a57786e2-7699-a2d8-7b33-6a621d5c9654-C/latest/"
           },
-          4587410.92
-        ],
-        [
-          5,
-          {
-            "text": "UNITED PARCEL SERVICE CO.",
-            "href": "https://www.usaspending.gov/recipient/a8e90c7c-8175-41a5-b841-5b038f67a07d-C/latest/"
-          },
-          4398326.14
+          4369410.92
         ],
         [
           6,
@@ -297,34 +297,34 @@
         [
           7,
           {
+            "text": "DISMAS CHARITIES INC",
+            "href": "https://www.usaspending.gov/recipient/2df3efb5-a82f-690f-d027-cd1964a46c6a-C/latest/"
+          },
+          2419122.17
+        ],
+        [
+          8,
+          {
             "text": "WARRIOR SERVICE COMPANY LLC",
             "href": "https://www.usaspending.gov/recipient/d06e53ec-3e29-1434-3e45-e0ec08670ae7-C/latest/"
           },
           2236695
         ],
         [
-          8,
+          9,
           {
-            "text": "DISMAS CHARITIES INC",
-            "href": "https://www.usaspending.gov/recipient/2df3efb5-a82f-690f-d027-cd1964a46c6a-C/latest/"
+            "text": "SEVEN CORNERS INC",
+            "href": "https://www.usaspending.gov/recipient/1566640c-e32f-d759-cb4e-0e95ea51cba1-C/latest/"
           },
-          2231785.26
+          1851239.61
         ],
         [
-          9,
+          10,
           {
             "text": "AMBULANCE MANAGEMENT SERVICES LIMITED",
             "href": "https://www.usaspending.gov/recipient/a1b40827-9f89-30c4-2394-8dcdc0dcc384-C/latest/"
           },
           1838732.8
-        ],
-        [
-          10,
-          {
-            "text": "METROPOLITAN SECURITY SERVICES, INC.",
-            "href": "https://www.usaspending.gov/recipient/835e42fb-f461-4e30-e17e-3205a1805635-C/latest/"
-          },
-          1802199.6
         ]
       ]
     },
@@ -352,7 +352,7 @@
             "text": "INSIGHTS TRAINING GROUP, LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_1605JE21C0009_1605_-NONE-_-NONE-/"
           },
-          57160001.68,
+          57158612.69,
           "Department of Labor"
         ],
         [
@@ -376,6 +376,15 @@
         [
           5,
           {
+            "text": "FOUR RIVERS NUCLEAR PARTNERSHIP LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_89303123FEM400244_8900_DEEM0004895_8900/"
+          },
+          18550000,
+          "Department of Energy"
+        ],
+        [
+          6,
+          {
             "text": "WIELAND ROLLED PRODUCTS NORTH AMERICA, LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_2031JG27F70149_2044_2031JG23D00001_2044/"
           },
@@ -383,7 +392,16 @@
           "Department of the Treasury"
         ],
         [
-          6,
+          7,
+          {
+            "text": "SIGO VALIANT JV LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_36C77624C0041_3600_-NONE-_-NONE-/"
+          },
+          18053876.08,
+          "Department of Veterans Affairs"
+        ],
+        [
+          8,
           {
             "text": "WIELAND ROLLED PRODUCTS NORTH AMERICA, LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_2031JG27F70148_2044_2031JG23D00001_2044/"
@@ -392,7 +410,7 @@
           "Department of the Treasury"
         ],
         [
-          7,
+          9,
           {
             "text": "INSIGHTS TRAINING GROUP, LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_1605JE22C0007_1605_-NONE-_-NONE-/"
@@ -401,7 +419,7 @@
           "Department of Labor"
         ],
         [
-          8,
+          10,
           {
             "text": "G.M. HILL ENGINEERING, INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_12445123C0013_12C2_-NONE-_-NONE-/"
@@ -410,7 +428,7 @@
           "Department of Agriculture"
         ],
         [
-          9,
+          11,
           {
             "text": "CONDUENT FEDERAL SOLUTIONS LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_28321324FA0010150_2800_28321320A00040016_2800/"
@@ -419,7 +437,7 @@
           "Social Security Administration"
         ],
         [
-          10,
+          12,
           {
             "text": "GENERAL DYNAMICS INFORMATION TECHNOLOGY, INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_70SBUR25F00000086_7003_70SBUR24D00000002_7003/"
@@ -428,7 +446,7 @@
           "Department of Homeland Security"
         ],
         [
-          11,
+          13,
           {
             "text": "SAFEWARE INC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_47QFNA26F0114_4732_47QFNA25D0016_4732/"
@@ -437,7 +455,7 @@
           "General Services Administration"
         ],
         [
-          12,
+          14,
           {
             "text": "VALOR HEALTHCARE INC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C24927N0163_3600_36C24921D0014_3600/"
@@ -446,7 +464,7 @@
           "Department of Veterans Affairs"
         ],
         [
-          13,
+          15,
           {
             "text": "PDS CONSULTANTS, INC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C24126N0577_3600_36C24126D0018_3600/"
@@ -455,7 +473,16 @@
           "Department of Veterans Affairs"
         ],
         [
-          14,
+          16,
+          {
+            "text": "EDWARD HOLMES, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_89303322CEM000095_8900_-NONE-_-NONE-/"
+          },
+          4499947,
+          "Department of Energy"
+        ],
+        [
+          17,
           {
             "text": "UNIVERSITY OF LOUISVILLE",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C24927N0161_3600_36C24925D0051_3600/"
@@ -464,7 +491,7 @@
           "Department of Veterans Affairs"
         ],
         [
-          15,
+          18,
           {
             "text": "WRIGHT & WRIGHT MACHINERY CO., INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_47QSWC25F0171_4732_GS07F0564W_4730/"
@@ -473,16 +500,16 @@
           "General Services Administration"
         ],
         [
-          16,
+          19,
           {
             "text": "MLU SERVICES, LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_70FBR426F00000002_7022_70FB8018D00000013_7022/"
           },
-          4341000,
+          4336039.84,
           "Department of Homeland Security"
         ],
         [
-          17,
+          20,
           {
             "text": "PDS CONSULTANTS, INC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C24226N0196_3600_36C24225D0091_3600/"
@@ -491,7 +518,7 @@
           "Department of Veterans Affairs"
         ],
         [
-          18,
+          21,
           {
             "text": "W S DARLEY & CO",
             "href": "https://www.usaspending.gov/award/CONT_AWD_47QFNA25F0035_4732_47QFNA20D0003_4732/"
@@ -500,7 +527,7 @@
           "General Services Administration"
         ],
         [
-          19,
+          22,
           {
             "text": "COMMUNITY PASTOR CARE LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C24922C0054_3600_-NONE-_-NONE-/"
@@ -509,7 +536,7 @@
           "Department of Veterans Affairs"
         ],
         [
-          20,
+          23,
           {
             "text": "DISMAS CHARITIES INC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_15BRRC26F00000080_1540_15BRRC19D00000208_1540/"
@@ -518,7 +545,7 @@
           "Department of Justice"
         ],
         [
-          21,
+          24,
           {
             "text": "PDS CONSULTANTS, INC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_36C24126N0964_3600_36C24126D0020_3600/"
@@ -527,69 +554,42 @@
           "Department of Veterans Affairs"
         ],
         [
-          22,
+          25,
           {
             "text": "MINUTEMAN AVIATION INC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_1202SA24K9314_12C2_1202SA23T9327_12C2/"
           },
           3320172.77,
           "Department of Agriculture"
-        ],
-        [
-          23,
-          {
-            "text": "C M C, INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_68HE0422F0044_6800_68HE0421D0012_6800/"
-          },
-          3264478.64,
-          "Environmental Protection Agency"
-        ],
-        [
-          24,
-          {
-            "text": "FOUR RIVERS NUCLEAR PARTNERSHIP LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_89303123FEM400297_8900_DEEM0004895_8900/"
-          },
-          3263423.47,
-          "Department of Energy"
-        ],
-        [
-          25,
-          {
-            "text": "PARADIGM ENGINEERS AND CONSTRUCTORS, PLLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_36C26322C0113_3600_-NONE-_-NONE-/"
-          },
-          2929000.52,
-          "Department of Veterans Affairs"
         ]
       ]
     }
   ],
   "narrative": {
-    "intro": "Kentucky has recorded $92M in federal contract obligations for FY2027 to date. The state received 505 awards with an average award size of $182K. Obligations fell 99.0% year over year. Obligations by fiscal year show a sharp drop from prior years: FY22 was $12.3B, FY23 was $13B, FY24 was $12.9B, FY25 was $10.8B, and FY26 was $9.5B. The Department of Veterans Affairs obligated $40.1M in Kentucky this fiscal year to date, and the Department of the Treasury obligated $36.4M. WIELAND ROLLED PRODUCTS NORTH AMERICA, LLC received $36M in obligations and Copper Rolling, Drawing, Extruding, and Alloying is the largest industry by obligations at $36M. Colleges, Universities, and Professional Schools accounted for $7.9M in obligations, and Universities such as UNIVERSITY OF LOUISVILLE and UNIVERSITY OF KENTUCKY received $7.5M and $4.6M respectively. The FY2027 totals are partial, fiscal year to date, and reflect obligations recorded so far this fiscal year.",
+    "intro": "Federal contract obligations in Kentucky for FY2027 to date total $82M across 596 awards, with an average award size of $138K. Obligations are down 99.1% year over year. The Department of the Treasury, the Department of Veterans Affairs, and the Department of Justice are the largest buyers so far, obligating $39.1M, $24.8M, and $15.6M respectively. WIELAND ROLLED PRODUCTS NORTH AMERICA, LLC is the top contractor with $36M, followed by UNIVERSITY OF LOUISVILLE at $7.5M and UNITED PARCEL SERVICE CO. at $7M. Copper Rolling, Drawing, Extruding, and Alloying is the largest industry by obligations at $36M, with Colleges, Universities, and Professional Schools and Couriers and Express Delivery Services next at $7.6M and $7M. Fiscal-year comparisons show a sharp drop from prior years, where FY26 obligations were $9.5B and FY25 obligations were $10.8B; FY22 through FY24 ranged from $12.3B to $13B. Current-year totals are partial and represent fiscal year to date obligations only.",
     "sections": [
       {
-        "heading": "What changed in Kentucky federal contracting this fiscal year?",
-        "body": "Obligations fell 99.0% year over year. Total obligations for FY2027 to date are $92M, down from $9.5B in FY26 and from higher totals in FY22 through FY25. Award activity shows 505 awards with an average award size of $182K, reflecting the current fiscal year to date picture. The FY2027 totals are partial and represent obligations recorded so far."
+        "heading": "How concentrated is federal spending in Kentucky right now?",
+        "body": "The Department of the Treasury leads buying in Kentucky with $39.1M in obligations. The Department of Veterans Affairs and the Department of Justice follow with $24.8M and $15.6M respectively. Total obligations are $82M across 596 awards, and obligations are down 99.1% year over year."
       },
       {
-        "heading": "Who are the biggest buyers and contractors in Kentucky this fiscal year?",
-        "body": "The Department of Veterans Affairs obligated $40.1M and the Department of the Treasury obligated $36.4M in Kentucky for FY2027 to date. WIELAND ROLLED PRODUCTS NORTH AMERICA, LLC received $36M, and UNIVERSITY OF LOUISVILLE received $7.5M. Copper Rolling, Drawing, Extruding, and Alloying is the top industry at $36M, and Colleges, Universities, and Professional Schools accounted for $7.9M."
+        "heading": "Which vendors and industries dominate FY2027 to date?",
+        "body": "WIELAND ROLLED PRODUCTS NORTH AMERICA, LLC is the top vendor with $36M in obligations. The largest NAICS industry is Copper Rolling, Drawing, Extruding, and Alloying at $36M, followed by Colleges, Universities, and Professional Schools at $7.6M and Couriers and Express Delivery Services at $7M."
       }
     ]
   },
   "faq": [
     {
       "q": "How much federal contract money goes to Kentucky?",
-      "a": "Kentucky received $92M in federal contract obligations for FY2027 to date. Total obligations for prior fiscal years were $12.3B in FY22, $13B in FY23, $12.9B in FY24, $10.8B in FY25, and $9.5B in FY26, and the FY2027 figure is partial, fiscal year to date."
+      "a": "Kentucky has received $82M in federal contract obligations in FY2027 to date. Those obligations come from 596 awards with an average award size of $138K, and obligations are down 99.1% year over year."
     },
     {
       "q": "Which agencies award the most contracts in Kentucky?",
-      "a": "The Department of Veterans Affairs and the Department of the Treasury are the largest buyers in Kentucky for FY2027 to date. The Department of Veterans Affairs obligated $40.1M and the Department of the Treasury obligated $36.4M, followed by the Department of Justice at $13.6M and the Department of Agriculture at $2.2M."
+      "a": "The Department of the Treasury is the largest buyer in Kentucky with $39.1M in obligations. The Department of Veterans Affairs and the Department of Justice are next with $24.8M and $15.6M respectively."
     },
     {
       "q": "Who are the largest federal contractors in Kentucky?",
-      "a": "WIELAND ROLLED PRODUCTS NORTH AMERICA, LLC is the largest federal contractor in Kentucky for FY2027 to date. WIELAND ROLLED PRODUCTS NORTH AMERICA, LLC received $36M; other large contractors include UNIVERSITY OF LOUISVILLE at $7.5M and VALOR HEALTHCARE INC at $4.8M."
+      "a": "WIELAND ROLLED PRODUCTS NORTH AMERICA, LLC is the largest federal contractor in Kentucky with $36M in obligations. UNIVERSITY OF LOUISVILLE and UNITED PARCEL SERVICE CO. follow with $7.5M and $7M respectively."
     }
   ],
   "related": [

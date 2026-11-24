@@ -1,20 +1,20 @@
 {
   "pageType": "agency",
   "slug": "department-of-the-treasury",
-  "title": "Treasury Contract Spending: $547M in FY2027",
+  "title": "Treasury Contract Spending: $743M in FY2027",
   "h1": "Department of the Treasury: Federal Contract Spending & Top Vendors",
-  "metaDescription": "Department of the Treasury obligated $547M in federal contracts in FY2027 to date. See what it buys, its top vendors, and multi-year trend.",
-  "updated": "2026-11-16",
+  "metaDescription": "Department of the Treasury obligated $743M in federal contracts in FY2027 to date. See what it buys, its top vendors, and multi-year trend.",
+  "updated": "2026-11-23",
   "fyWindow": {
     "label": "FY2027 to date",
     "start": "2026-10-01",
-    "end": "2026-11-16"
+    "end": "2026-11-23"
   },
   "stats": {
-    "totalObligations": 546991713.68,
-    "awardCount": 1608,
-    "yoyGrowthPct": -92.2,
-    "avgAwardSize": 340169,
+    "totalObligations": 743029167.62,
+    "awardCount": 1787,
+    "yoyGrowthPct": -89.4,
+    "avgAwardSize": 415797,
     "smallBusinessSharePct": null
   },
   "charts": [
@@ -44,17 +44,17 @@
             ],
             [
               "FY26",
-              7025588140.73
+              7025769538.28
             ],
             [
               "FY27",
-              546991713.68
+              743029167.62
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Obligations fell 92.2% year over year, from $7B in FY2026 to $547M in FY2027 to date."
+      "takeaway": "Obligations fell 89.4% year over year, from $7B in FY2026 to $743M in FY2027 to date."
     },
     {
       "id": "department-of-the-treasury-top-naics",
@@ -66,49 +66,49 @@
           "points": [
             [
               "Nonferrous Metal (except Aluminum) Smelting and Refining",
-              240012483.99
+              281105988.52
+            ],
+            [
+              "Other Computer Related Services",
+              148694857.88
             ],
             [
               "Copper Rolling, Drawing, Extruding, and Alloying",
               64285004.54
             ],
             [
-              "Other Computer Related Services",
-              61444771.9
+              "Nonferrous Metal (except Copper and Aluminum) Rolling, Drawing, and Extruding",
+              42866702.16
             ],
             [
               "Computing Infrastructure Providers, Data Processing, Web Hosting, and Related Services",
-              41981612.76
+              42085782.7
             ],
             [
               "Paper Mills",
               33993619.2
             ],
             [
-              "Software Publishers",
-              12784176.5
-            ],
-            [
               "Computer Systems Design Services",
-              10532196.11
+              15295488.11
             ],
             [
               "Software Publishers",
-              7702521.97
-            ],
-            [
-              "Electronic Computer Manufacturing",
-              6935229.24
+              12787151.3
             ],
             [
               "Administrative Management and General Management Consulting Services",
-              6683085.93
+              8095177.59
+            ],
+            [
+              "Software Publishers",
+              7731412.03
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "Nonferrous Metal (except Aluminum) Smelting and Refining was Treasury's largest contract category, with $240M obligated (43.9% of contract spending)."
+      "takeaway": "Nonferrous Metal (except Aluminum) Smelting and Refining was Treasury's largest contract category, with $281M obligated (37.8% of contract spending)."
     },
     {
       "id": "department-of-the-treasury-top-vendors",
@@ -120,7 +120,15 @@
           "points": [
             [
               "STONEX FINANCIAL LTD",
-              240012483.99
+              281105988.52
+            ],
+            [
+              "FCN, INC.",
+              82710199.35
+            ],
+            [
+              "ASAHI REFINING USA INC",
+              42866702.16
             ],
             [
               "PRIORITY FULFILLMENT SERVICES, INC.",
@@ -139,30 +147,22 @@
               28242793.32
             ],
             [
-              "FCN, INC.",
-              14511993.01
-            ],
-            [
               "DELOITTE & TOUCHE LLP",
-              13901851.26
+              13899322.24
             ],
             [
-              "ACCENTURE FEDERAL SERVICES LLC",
-              8271162.16
-            ],
-            [
-              "SICPA SECURINK CORP",
-              5908785.37
+              "DELOITTE CONSULTING LLP",
+              13323465.62
             ],
             [
               "INTERNATIONAL BUSINESS MACHINES CORPORATION",
-              5534215.98
+              10455498.92
             ]
           ]
         }
       ],
       "unit": "usd",
-      "takeaway": "STONEX FINANCIAL LTD led all Treasury contractors with $240M, 43.9% of obligations."
+      "takeaway": "STONEX FINANCIAL LTD led all Treasury contractors with $281M, 37.8% of obligations."
     }
   ],
   "crossLinks": [
@@ -194,10 +194,26 @@
             "text": "STONEX FINANCIAL LTD",
             "href": "https://www.usaspending.gov/recipient/9e88e310-e87a-d26a-2ddb-dd18f27b49a5-C/latest/"
           },
-          240012483.99
+          281105988.52
         ],
         [
           2,
+          {
+            "text": "FCN, INC.",
+            "href": "https://www.usaspending.gov/recipient/3792ca7f-d5d2-d89c-872b-8c64e4e6390e-C/latest/"
+          },
+          82710199.35
+        ],
+        [
+          3,
+          {
+            "text": "ASAHI REFINING USA INC",
+            "href": "https://www.usaspending.gov/recipient/bb19d6bf-9975-f10a-ee78-4404ebdc6d61-C/latest/"
+          },
+          42866702.16
+        ],
+        [
+          4,
           {
             "text": "PRIORITY FULFILLMENT SERVICES, INC.",
             "href": "https://www.usaspending.gov/recipient/f48f39bb-dd47-eaa3-da35-172f5b26b392-C/latest/"
@@ -205,7 +221,7 @@
           36786860.52
         ],
         [
-          3,
+          5,
           {
             "text": "WIELAND ROLLED PRODUCTS NORTH AMERICA, LLC",
             "href": "https://www.usaspending.gov/recipient/f5c94e5f-0c97-f038-ac92-9f0668fd7115-C/latest/"
@@ -213,7 +229,7 @@
           36041584.2
         ],
         [
-          4,
+          6,
           {
             "text": "CRANE & CO., INC.",
             "href": "https://www.usaspending.gov/recipient/57d990eb-6c0b-82fd-a854-5b67e14a3b54-C/latest/"
@@ -221,7 +237,7 @@
           35959873.6
         ],
         [
-          5,
+          7,
           {
             "text": "PMX INDUSTRIES, INC.",
             "href": "https://www.usaspending.gov/recipient/7ac9c230-cad5-6fc9-a095-a7f14a4f5665-C/latest/"
@@ -229,36 +245,20 @@
           28242793.32
         ],
         [
-          6,
-          {
-            "text": "FCN, INC.",
-            "href": "https://www.usaspending.gov/recipient/3792ca7f-d5d2-d89c-872b-8c64e4e6390e-C/latest/"
-          },
-          14511993.01
-        ],
-        [
-          7,
+          8,
           {
             "text": "DELOITTE & TOUCHE LLP",
             "href": "https://www.usaspending.gov/recipient/921ab747-c89d-0aa2-e86e-5fa9b858e626-C/latest/"
           },
-          13901851.26
-        ],
-        [
-          8,
-          {
-            "text": "ACCENTURE FEDERAL SERVICES LLC",
-            "href": "https://www.usaspending.gov/recipient/d41a6b8a-9d6a-0d28-7e24-989e31731aad-C/latest/"
-          },
-          8271162.16
+          13899322.24
         ],
         [
           9,
           {
-            "text": "SICPA SECURINK CORP",
-            "href": "https://www.usaspending.gov/recipient/ee34ef76-6c21-0316-9dc0-834f5764a589-C/latest/"
+            "text": "DELOITTE CONSULTING LLP",
+            "href": "https://www.usaspending.gov/recipient/92663aec-4451-0476-502b-d8c6919e98e0-C/latest/"
           },
-          5908785.37
+          13323465.62
         ],
         [
           10,
@@ -266,7 +266,7 @@
             "text": "INTERNATIONAL BUSINESS MACHINES CORPORATION",
             "href": "https://www.usaspending.gov/recipient/6ffc4386-853e-ef89-67e8-22c28ddcf15c-C/latest/"
           },
-          5534215.98
+          10455498.92
         ]
       ]
     },
@@ -290,12 +290,20 @@
           2,
           {
             "text": "FCN, INC.",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_2032H523F00058_2050_47QTCA19D00CB_4732/"
+          },
+          309972565.56
+        ],
+        [
+          3,
+          {
+            "text": "FCN, INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_2032H523F00493_2050_NNG15SC71B_8000/"
           },
           233451576.07
         ],
         [
-          3,
+          4,
           {
             "text": "THE CBE GROUP, INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_2032H521F00136_2050_GS23F0230P_4730/"
@@ -303,15 +311,15 @@
           195746890.75
         ],
         [
-          4,
+          5,
           {
             "text": "SCIENCE APPLICATIONS INTERNATIONAL CORPORATION",
             "href": "https://www.usaspending.gov/award/CONT_AWD_2032H525F00053_2050_2032H523A00010_2050/"
           },
-          187382939.26
+          174984466.18
         ],
         [
-          5,
+          6,
           {
             "text": "CONTINENTAL SERVICE GROUP, LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_2032H521F00138_2050_GS23F0084P_4730/"
@@ -319,7 +327,15 @@
           144184067.82
         ],
         [
-          6,
+          7,
+          {
+            "text": "ACCENTURE FEDERAL SERVICES LLC",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_205AE926F00106_2050_47QTCK18D0036_4732/"
+          },
+          142660787.74
+        ],
+        [
+          8,
           {
             "text": "COAST PROFESSIONAL, INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_2032H521F00137_2050_GS23F0009U_4730/"
@@ -327,7 +343,7 @@
           139909489.2
         ],
         [
-          7,
+          9,
           {
             "text": "KOENIG & BAUER BANKNOTE SOLUTIONS SA",
             "href": "https://www.usaspending.gov/award/CONT_AWD_2031ZA24C00044_2041_-NONE-_-NONE-/"
@@ -335,7 +351,15 @@
           124058906.5
         ],
         [
-          8,
+          10,
+          {
+            "text": "DELOITTE CONSULTING LLP",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_2032H525F00063_2050_47QTCK18D0029_4732/"
+          },
+          82045140.1
+        ],
+        [
+          11,
           {
             "text": "KOENIG & BAUER BANKNOTE SOLUTIONS SA",
             "href": "https://www.usaspending.gov/award/CONT_AWD_2031ZA23C00254_2041_-NONE-_-NONE-/"
@@ -343,7 +367,7 @@
           80151471.8
         ],
         [
-          9,
+          12,
           {
             "text": "ACCENTURE FEDERAL SERVICES LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_2032H524F00180_2050_2032H523A00001_2050/"
@@ -351,7 +375,7 @@
           72404783.44
         ],
         [
-          10,
+          13,
           {
             "text": "METGREEN SOLUTIONS INC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_2032H524F00012_2050_NNG15SD87B_8000/"
@@ -359,7 +383,15 @@
           52419072.89
         ],
         [
-          11,
+          14,
+          {
+            "text": "SCIENCE APPLICATIONS INTERNATIONAL CORPORATION",
+            "href": "https://www.usaspending.gov/award/CONT_AWD_2099AC26F00075_2099_2032H523A00010_2050/"
+          },
+          47492495.49
+        ],
+        [
+          15,
           {
             "text": "MAKPAR CORPORATION",
             "href": "https://www.usaspending.gov/award/CONT_AWD_2032H523F00366_2050_47QTCB21D0348_4732/"
@@ -367,7 +399,7 @@
           44666712.52
         ],
         [
-          12,
+          16,
           {
             "text": "BOOZ ALLEN HAMILTON INC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_20341419F00036_2036_47QTCK18D0004_4732/"
@@ -375,7 +407,7 @@
           44258340.32
         ],
         [
-          13,
+          17,
           {
             "text": "PRIORITY FULFILLMENT SERVICES, INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_2031JG24F00026_2044_2031JG23D00015_2044/"
@@ -383,7 +415,7 @@
           43118475.31
         ],
         [
-          14,
+          18,
           {
             "text": "DELOITTE & TOUCHE LLP",
             "href": "https://www.usaspending.gov/award/CONT_AWD_2031JW22F00004_2046_GS00F029DA_4732/"
@@ -391,7 +423,7 @@
           42414688
         ],
         [
-          15,
+          19,
           {
             "text": "FOUR LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_2033H624F00133_2036_NNG15SC73B_8000/"
@@ -399,7 +431,7 @@
           40556032.14
         ],
         [
-          16,
+          20,
           {
             "text": "SIKICH FEDERAL INC.",
             "href": "https://www.usaspending.gov/award/CONT_AWD_20341422F00009_2036_HHSN316201200098W_7529/"
@@ -407,7 +439,7 @@
           38322838.04
         ],
         [
-          17,
+          21,
           {
             "text": "SENECA STRATEGIC PARTNERS, LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_2033H623C00004_2036_-NONE-_-NONE-/"
@@ -415,7 +447,7 @@
           37743682.7
         ],
         [
-          18,
+          22,
           {
             "text": "STONEX FINANCIAL LTD",
             "href": "https://www.usaspending.gov/award/CONT_AWD_2031JG27F56095_2044_2031JG21D00023_2044/"
@@ -423,7 +455,7 @@
           37570880.04
         ],
         [
-          19,
+          23,
           {
             "text": "DERIVATIVE LLC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_20341221F00063_2036_47QRAD20D1175_4732/"
@@ -431,7 +463,7 @@
           37060905.75
         ],
         [
-          20,
+          24,
           {
             "text": "PIONEER CREDIT RECOVERY, INC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_2033H618F00104_2036_GS23F0217K_4730/"
@@ -439,73 +471,41 @@
           36652200.23
         ],
         [
-          21,
+          25,
           {
             "text": "UNISON SOFTWARE INC",
             "href": "https://www.usaspending.gov/award/CONT_AWD_2033H622F00156_2036_47QTCA19D00EP_4732/"
           },
           36049087.63
-        ],
-        [
-          22,
-          {
-            "text": "PLURIBUS DIGITAL, INC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_20341425F00022_2036_75N98120D00076_7529/"
-          },
-          35065183.65
-        ],
-        [
-          23,
-          {
-            "text": "PRIORITY FULFILLMENT SERVICES, INC.",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_2031JG24F00029_2044_2031JG23D00015_2044/"
-          },
-          33917959.96
-        ],
-        [
-          24,
-          {
-            "text": "SENECA TECHNOLOGIES, LLC",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_2033H624C00009_2036_-NONE-_-NONE-/"
-          },
-          33493597.8
-        ],
-        [
-          25,
-          {
-            "text": "STONEX FINANCIAL LTD",
-            "href": "https://www.usaspending.gov/award/CONT_AWD_2031JG27F56093_2044_2031JG21D00023_2044/"
-          },
-          32756349.15
         ]
       ]
     }
   ],
   "narrative": {
-    "intro": "The Department of the Treasury obligated $547M in FY2027 to date. The Department of the Treasury recorded 1,608 awards in that period, with an average award size of $340K. Obligations fell 92.2% year over year. The Department of the Treasury's current-year totals are partial, fiscal year to date. Historical obligations show a multi-year decline from $10.3B in FY23, $9.3B in FY24, $8.6B in FY25, and $7B in FY26 to $547M in FY27. The top NAICS category in FY2027 to date is Nonferrous Metal (except Aluminum) Smelting and Refining at $240M, followed by Copper Rolling, Drawing, Extruding, and Alloying at $64.3M and Other Computer Related Services at $61.4M. The top vendor in FY2027 to date is STONEX FINANCIAL LTD at $240M, followed by PRIORITY FULFILLMENT SERVICES, INC. at $36.8M and WIELAND ROLLED PRODUCTS NORTH AMERICA, LLC at $36M. These figures show where fiscal activity concentrated in the fiscal year to date.",
+    "intro": "The Department of the Treasury obligated $743M in FY2027 to date for federal contracts. The department made 1,787 awards with an average award size of $416K. Obligations fell 89.4% year over year compared with the prior fiscal period. Historically, Treasury obligated $9.3B in FY22, $10.3B in FY23, $9.3B in FY24, $8.6B in FY25, and $7B in FY26. The FY2027 to date total is partial and covers the fiscal year to date. The largest single NAICS category in FY2027 to date is Nonferrous Metal (except Aluminum) Smelting and Refining at $281M, followed by Other Computer Related Services at $149M. The top vendor in FY2027 to date is STONEX FINANCIAL LTD at $281M, followed by FCN, INC. at $82.7M and ASAHI REFINING USA INC at $42.9M. This snapshot shows a much smaller current-year obligations total compared with prior full fiscal years.",
     "sections": [
       {
-        "heading": "What drove the drop in FY2027 to date?",
-        "body": "The Department of the Treasury obligated $547M in FY2027 to date, down 92.2% year over year. Annual obligations were higher in prior years, including $10.3B in FY23 and $9.3B in FY24. The Department of the Treasury's FY2027 total is a fiscal year to date number and is partial. Year-over-year comparisons reflect that partial current-year total against prior full-year totals."
+        "heading": "How large is Treasury's contracting program right now?",
+        "body": "The Department of the Treasury obligated $743M in FY2027 to date. The department made 1,787 awards with an average award size of $416K. Obligations fell 89.4% year over year. Prior full-year obligations were $9.3B in FY22, $10.3B in FY23, $9.3B in FY24, $8.6B in FY25, and $7B in FY26."
       },
       {
-        "heading": "Which industries and vendors received the most in FY2027 to date?",
-        "body": "Nonferrous Metal (except Aluminum) Smelting and Refining received $240M, making it the largest NAICS category in FY2027 to date. Other leading categories include Copper Rolling, Drawing, Extruding, and Alloying at $64.3M and Other Computer Related Services at $61.4M. STONEX FINANCIAL LTD received $240M, followed by PRIORITY FULFILLMENT SERVICES, INC. at $36.8M and WIELAND ROLLED PRODUCTS NORTH AMERICA, LLC at $36M."
+        "heading": "What is Treasury buying and who are the suppliers?",
+        "body": "Nonferrous Metal (except Aluminum) Smelting and Refining is the largest NAICS category at $281M, followed by Other Computer Related Services at $149M and Copper Rolling, Drawing, Extruding, and Alloying at $64.3M. Computing Infrastructure Providers, Data Processing, Web Hosting, and Related Services is $42.1M and Paper Mills is $34M. The top vendors are STONEX FINANCIAL LTD at $281M, FCN, INC. at $82.7M, and ASAHI REFINING USA INC at $42.9M."
       }
     ]
   },
   "faq": [
     {
       "q": "How much does Department of the Treasury spend on contracts?",
-      "a": "The Department of the Treasury obligated $547M in FY2027 to date. The Department of the Treasury recorded 1,608 awards and an average award size of $340K, and obligations fell 92.2% year over year. Current-year totals are partial, fiscal year to date, and prior full-year obligations included $9.3B in FY22, $10.3B in FY23, $9.3B in FY24, $8.6B in FY25, and $7B in FY26."
+      "a": "The Department of the Treasury obligated $743M in FY2027 to date. The department made 1,787 awards with an average award size of $416K. Obligations fell 89.4% year over year and prior full-year totals were $9.3B in FY22, $10.3B in FY23, $9.3B in FY24, $8.6B in FY25, and $7B in FY26."
     },
     {
       "q": "What does Treasury buy?",
-      "a": "The Department of the Treasury bought items and services concentrated in metals and technology. Nonferrous Metal (except Aluminum) Smelting and Refining received $240M, Copper Rolling, Drawing, Extruding, and Alloying received $64.3M, Other Computer Related Services received $61.4M, Computing Infrastructure Providers, Data Processing, Web Hosting, and Related Services received $42M, and Paper Mills received $34M. Other categories in the top 10 include Software Publishers, Computer Systems Design Services, Electronic Computer Manufacturing, and Administrative Management and General Management Consulting Services with values as listed."
+      "a": "Treasury is buying a mix of metal refining and processing and information and computing services. Nonferrous Metal (except Aluminum) Smelting and Refining is $281M, Other Computer Related Services is $149M, Copper Rolling, Drawing, Extruding, and Alloying is $64.3M, and Computing Infrastructure Providers, Data Processing, Web Hosting, and Related Services is $42.1M."
     },
     {
       "q": "Who are Treasury's largest contractors?",
-      "a": "The Department of the Treasury's largest contractors in FY2027 to date are STONEX FINANCIAL LTD at $240M, PRIORITY FULFILLMENT SERVICES, INC. at $36.8M, WIELAND ROLLED PRODUCTS NORTH AMERICA, LLC at $36M, CRANE & CO., INC. at $36M, and PMX INDUSTRIES, INC. at $28.2M. Additional top vendors include FCN, INC. at $14.5M, DELOITTE & TOUCHE LLP at $13.9M, ACCENTURE FEDERAL SERVICES LLC at $8.3M, SICPA SECURINK CORP at $5.9M, and INTERNATIONAL BUSINESS MACHINES CORPORATION at $5.5M."
+      "a": "Treasury's largest contractors in FY2027 to date are STONEX FINANCIAL LTD at $281M, FCN, INC. at $82.7M, and ASAHI REFINING USA INC at $42.9M. Other top vendors include PRIORITY FULFILLMENT SERVICES, INC. at $36.8M, WIELAND ROLLED PRODUCTS NORTH AMERICA, LLC at $36M, and CRANE & CO., INC. at $36M."
     }
   ],
   "related": [

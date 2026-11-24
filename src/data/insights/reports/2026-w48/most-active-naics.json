@@ -1,0 +1,207 @@
+{
+  "pageType": "report",
+  "slug": "most-active-naics",
+  "week": "2026-w48",
+  "publishedDate": "2026-11-23",
+  "title": "Most Active Federal Markets This Week, Nov 17–23, 2026",
+  "h1": "Most active federal contract markets, week of Nov 17–23, 2026",
+  "metaDescription": "The most active federal contract industries (by newly reported obligations) the week of Nov 17–23, 2026, led by Computer Systems Design Services.",
+  "updated": "2026-11-23",
+  "fyWindow": {
+    "label": "Week of Nov 17–23, 2026",
+    "start": "2026-11-17",
+    "end": "2026-11-23"
+  },
+  "stats": {
+    "totalObligations": 1513495079.7399998,
+    "awardCount": null,
+    "yoyGrowthPct": null,
+    "avgAwardSize": null,
+    "smallBusinessSharePct": null
+  },
+  "charts": [
+    {
+      "id": "2026-w48-most-active-naics",
+      "type": "bar",
+      "title": "Most active industries (NAICS) by obligations, week of Nov 17–23, 2026",
+      "series": [
+        {
+          "label": "Obligations",
+          "points": [
+            [
+              "Computer Systems Design Services",
+              395240039.25
+            ],
+            [
+              "Commercial and Institutional Building Construction",
+              291619540.7
+            ],
+            [
+              "Security Guards and Patrol Services",
+              142552496.39
+            ],
+            [
+              "Other Computer Related Services",
+              132610693.14
+            ],
+            [
+              "Engineering Services",
+              130316166.26
+            ],
+            [
+              "Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology)",
+              116778692.29
+            ],
+            [
+              "Other Technical and Trade Schools",
+              89389868.5
+            ],
+            [
+              "Custom Computer Programming Services",
+              78440464.57
+            ],
+            [
+              "Telecommunications Resellers",
+              73834680.36
+            ],
+            [
+              "Direct Health and Medical Insurance Carriers",
+              62712438.28
+            ]
+          ]
+        }
+      ],
+      "unit": "usd",
+      "takeaway": "Computer Systems Design Services was the most active market, with $395M in newly reported obligations."
+    }
+  ],
+  "tables": [
+    {
+      "title": "Most active industries, week of Nov 17–23, 2026",
+      "columns": [
+        "Rank",
+        "Industry (NAICS)",
+        "Obligations"
+      ],
+      "rows": [
+        [
+          1,
+          {
+            "text": "Computer Systems Design Services (541512)",
+            "href": "/insights/naics/541512/"
+          },
+          395240039.25
+        ],
+        [
+          2,
+          {
+            "text": "Commercial and Institutional Building Construction (236220)",
+            "href": "/insights/naics/236220/"
+          },
+          291619540.7
+        ],
+        [
+          3,
+          {
+            "text": "Security Guards and Patrol Services (561612)",
+            "href": "/insights/naics/561612/"
+          },
+          142552496.39
+        ],
+        [
+          4,
+          {
+            "text": "Other Computer Related Services (541519)",
+            "href": "/insights/naics/541519/"
+          },
+          132610693.14
+        ],
+        [
+          5,
+          {
+            "text": "Engineering Services (541330)",
+            "href": "/insights/naics/541330/"
+          },
+          130316166.26
+        ],
+        [
+          6,
+          {
+            "text": "Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology) (541715)",
+            "href": "/insights/naics/541715/"
+          },
+          116778692.29
+        ],
+        [
+          7,
+          {
+            "text": "Other Technical and Trade Schools (611519)",
+            "href": null
+          },
+          89389868.5
+        ],
+        [
+          8,
+          {
+            "text": "Custom Computer Programming Services (541511)",
+            "href": "/insights/naics/541511/"
+          },
+          78440464.57
+        ],
+        [
+          9,
+          {
+            "text": "Telecommunications Resellers (517310)",
+            "href": null
+          },
+          73834680.36
+        ],
+        [
+          10,
+          {
+            "text": "Direct Health and Medical Insurance Carriers (524114)",
+            "href": null
+          },
+          62712438.28
+        ]
+      ]
+    }
+  ],
+  "narrative": {
+    "intro": "Computer Systems Design Services was the most active federal contract market the week of Nov 17–23, 2026, with $395M in newly reported obligations. The ten most active industries obligated $1.5B combined.",
+    "sections": []
+  },
+  "faq": [],
+  "related": [
+    {
+      "label": "NAICS 541512: Computer Systems Design Services",
+      "href": "/insights/naics/541512/"
+    },
+    {
+      "label": "NAICS 236220: Commercial and Institutional Building Construction",
+      "href": "/insights/naics/236220/"
+    },
+    {
+      "label": "NAICS 561612: Security Guards and Patrol Services",
+      "href": "/insights/naics/561612/"
+    },
+    {
+      "label": "NAICS 541519: Other Computer Related Services",
+      "href": "/insights/naics/541519/"
+    },
+    {
+      "label": "NAICS 541330: Engineering Services",
+      "href": "/insights/naics/541330/"
+    },
+    {
+      "label": "NAICS 541715: Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology)",
+      "href": "/insights/naics/541715/"
+    }
+  ],
+  "sources": [
+    {
+      "label": "USAspending.gov award data",
+      "href": "https://www.usaspending.gov"
+    }
+  ]
+}
