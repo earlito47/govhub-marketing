@@ -6086,3 +6086,45 @@ fourth and fifth morning.
 `signals_loaded` still reads **20000**, so the 20-page cap recorded on 11-18 is
 unchanged and about 1,500 signals remain invisible to assign. Separate from the
 predicate fix and smaller.
+
+### 2026-11-24 23:32 — correcting this morning's reply-gap count
+
+This morning's entry says three B4 replies are in Instantly and not in
+`outreach.outcomes`. Re-checked tonight, it is **two**, and the third was a lag
+rather than a loss:
+
+| reply | this morning | tonight |
+|---|---|---|
+| 11-23 "Send" (2 TEKS) | missing | **recorded**, `replied_at` 11-24 02:47 |
+| 11-23 opt-out (Raken) | missing | still `replied = false` |
+| 11-20 "Sure! Send me info" | missing | still `replied = false` |
+
+The 2 TEKS row carries the reply's own timestamp, not its write time, so it was
+ingested somewhere between 06:44 and 23:30 today and stamped 02:47 — the ingest
+caught up with a lag of roughly twelve to twenty hours. I had no way to see that
+at 06:44 and should have said "not recorded yet" rather than implying the
+ingest had dropped it.
+
+The other two stand at **one and four days** unrecorded, and both outcomes rows
+exist with `replied = false`, so the company is matched and it is the reply event
+that failed to attach. The four-day-old one is the case where the opener
+addressed one name and a different person answered from a different address,
+which is still the best hypothesis and still unproven.
+
+`metrics` — the ingest — returned **504** again at 23:00, its third: 11-18,
+11-22 and 11-24, three of thirteen runs since 11-12. Not a weekend pattern.
+Three failed ingest runs and two replies that never attached are suggestive but
+not the same claim, and I have not connected them.
+
+### The rest, quiet
+
+Three replies since this morning, all autoresponders, none a stop or a decline,
+so nothing suppressed. Two are repeats worth noting rather than acting on: the
+dead BioCircuit mailbox answered for a **third** time (11-13, 11-18, 11-24) and
+is still `no_action` at the desk, and the National Fuse autoresponder came back a
+second time, still flagged `human_reply = true`.
+
+Queues unchanged since this morning's refill, because today's push ran at 06:00
+before it: B4 **358 ready** (4.8 days), B2 **55**. Wednesday is the last send day
+before the 11-26 and 11-27 holidays, so this covers through 11-30. Every other
+job 2xx on first attempt.
