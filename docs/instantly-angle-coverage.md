@@ -6128,3 +6128,104 @@ Queues unchanged since this morning's refill, because today's push ran at 06:00
 before it: B4 **358 ready** (4.8 days), B2 **55**. Wednesday is the last send day
 before the 11-26 and 11-27 holidays, so this covers through 11-30. Every other
 job 2xx on first attempt.
+
+## 2026-11-25 — the fit judge has been dead since Monday and the status codes all said 200
+
+### The API credit ran out again, and this time it ran for three days
+
+| date | fit runs | unknown verdicts |
+|---|---|---|
+| 11-23 | 9 | **356 of 360** |
+| 11-24 | 9 | **360 of 360** |
+| 11-25 | 9 | **360 of 360** |
+
+**369 live `rfp_match` signals** carry
+`judge HTTP 400: ... "Your credit balance is too low to access the Anthropic
+API"`. Same cause as 11-17, which lasted about ninety minutes. This one started
+Monday and has run three full days.
+
+**I missed it on Monday and Tuesday.** Both checks reported every job 2xx and
+moved on, and that is exactly the trap: the judge **returns 200 while writing
+API errors into the signal payload**, so `job_health` is clean and nothing in
+item 4 can see it. A status-code check cannot detect a function that fails
+successfully. The fit tally is the only place the failure shows, and it belongs
+in the daily run next to the job statuses:
+
+```sql
+select fired_at::date, count(*) as runs,
+       sum((substring(body from 'unknown":([0-9]+)'))::int) as unknowns
+from outreach.job_health where job = 'fit' and fired_at >= current_date - 2
+group by 1 order by 1;
+```
+
+Three days at 40 per run is about 1,080 model calls' worth of selection spent
+producing nothing.
+
+**What it cost: B2's supply.** Eligible unassigned B2 companies have collapsed as
+the existing verdicts were consumed and aged out with nothing replacing them:
+
+| | 11-19 | 11-25 |
+|---|---|---|
+| B2-eligible unassigned companies | 197 | **45** |
+| fit/plausible signals with >= 16 days runway | 197 | 174 |
+
+B2 has 37 rows ready and sends about 18 a day, so it runs dry in the middle of
+next week with nothing queued behind it. A manual assign run at `limit=8000`
+wrote **177 B4 rows and 0 B2** tonight, which is the proof that B2's constraint
+is now supply and not the walk.
+
+**Recoverable, on the same mechanism as 11-17.** Of the signals carrying the
+credit error, **358 sit on unassigned companies**, and `replace_signals` rewrites
+their payloads on the harvester's next run, which clears the bogus verdict. All
+four opportunity shards have returned 2xx every day through this, so that path is
+healthy. 69 are on already-pushed companies and 6 on ready ones; those stay
+stuck and do not matter, because the lead has already gone.
+
+So nothing needs undoing. The credit needs topping up, and the judge resumes on
+its own.
+
+### assign: seventh day of the stall, fix still undeployed
+
+`written: 0` again — 11-18, 11-23, 11-24 and 11-25 all zero. The fix is
+committed and its guard passes; the deploy has been refused twice:
+
+```
+npx -y supabase@2.118.0 functions deploy outreach-assign \
+  --project-ref iqekrwearenblsmhvdjn --use-api --no-verify-jwt
+```
+
+Queues topped up by hand a fourth time. B4 is **459 ready** (6.1 days), which
+covers Monday through Thursday next week; B2 is **37** and cannot be topped up
+until the judge works again.
+
+### The two unattached replies are losses, not lags
+
+Settled by waiting, which is the only way it could be settled:
+
+| reply | age | `outcomes.replied` |
+|---|---|---|
+| 11-23 "Send" (2 TEKS) | — | recorded, caught up within a day |
+| 11-23 opt-out | **2 days** | still false |
+| 11-20 "Sure! Send me info" | **5 days** | still false |
+
+An ingest lag resolves; these have not. Both companies have `outcomes` rows, so
+the company is matched and it is the reply event that failed to attach.
+
+### The rest
+
+Bounce **139 / 7,389 = 1.88%**, down from 1.92%: A1 1.11%, A2 2.18%, A4 2.11%,
+A5 1.68%, **B4 2.12%**, **B2 0 of 83**. Push: B4 **75** exactly, B2 18. Every
+job 2xx on first attempt, the 03:45 slot clean for a sixth morning, and `metrics`
+recovered after yesterday's 504.
+
+Audit: **0 incomplete, 0 missing first name, 0 leaked `{{token}}`, 0 bad
+openers** across 741 B4, 83 B2 and the A line. The 709 flagged are the B-line
+raw-caps company names (627 B4, 80 B2) plus A5's known pair.
+
+Three replies, all out-of-office autoresponders, none a stop or an accept. One
+B4 is flagged `human_reply = true` while reading "I will be away from the office
+starting Thursday 11/20 and returning Monday 11/30" — the tenth shape to be
+miscounted that way.
+
+Today was the last send day before the 11-26 and 11-27 holidays; the next push
+is Monday 11-30.
