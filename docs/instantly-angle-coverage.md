@@ -6229,3 +6229,201 @@ miscounted that way.
 
 Today was the last send day before the 11-26 and 11-27 holidays; the next push
 is Monday 11-30.
+
+## 2026-11-26 — a holiday with sends in it, and the nightly report had been dying every other night
+
+Thanksgiving. A `no_push_dates` day, so push created nothing: three runs, all
+`{"pushed":0,"note":"holiday (no_push_dates)"}`. Everything else about today was
+quiet in the way that hides things, so this is the long entry.
+
+### Cold emails went out on Thanksgiving morning
+
+112 people received a first email today, and one of them replied at 20:39:
+
+> Happy Thanksgiving?
+
+That is the whole reply, quoting an opener sent at 08:00 on Thanksgiving Day.
+
+Push honoured the holiday. The campaigns did not, because they were never
+asked to: all six were ACTIVE all day, and Instantly sends from the queue it
+already holds whether or not we add to it. `no_push_dates` is a rule about
+our writes, not about the mail.
+
+**This is the file's own recurring bug, shape (b): a guarantee asserted on one
+code path must be asserted on every path that reaches the same place.** The
+guarantee is "we do not mail people on federal holidays". Push asserts it.
+Campaign state does not. The precedent for asserting it in both places already
+exists and is two weeks old — on 11-10 at 21:16 UTC A1, A2 and A4 were paused
+on purpose for Veterans Day and resumed the next evening. Nobody did that for
+11-26, and 11-27 is also in `no_push_dates` with every campaign still active
+and B4's schedule still Mon–Fri 09:00–16:00 America/Detroit.
+
+I have not paused anything. The daily routine scopes pausing a campaign without
+asking to one trigger, a bounce breach, and bounce is fine; campaign scheduling
+belongs to whoever set the Veterans Day pause. The lever, if it is wanted
+before 09:00 Detroit tomorrow, is the same one they used.
+
+### The nightly report has been dying every other night since 11-18
+
+`metrics` returned 504 `{"code":"IDLE_TIMEOUT","message":"Request idle timeout
+limit (150s) reached"}` tonight — and on 11-24, 11-22 and 11-18. Four of the
+last nine nights, alternating. I treated last night's recovery as a one-off and
+said so in yesterday's entry; it was a pattern with a cause.
+
+A killed run writes no body at all, so `job_health` held a bare 504 with
+nothing in it. The cause was a budget that did not cover the run.
+`FETCH_DEADLINE_MS` was applied as `Date.now() + 115_000` **at the start of the
+email feed**, so everything before and after the feed was free. Measured today:
+
+| phase | cost |
+|---|---|
+| prelude: 1 analytics call, 6 daily calls, 6 × `PACE_MS` | ~21.0 s |
+| fetch budget as written | 115.0 s |
+| post-fetch DB paging: 24 company pages + 11 assignment pages | ~4.6 s |
+| **total** | **~140.6 s** against a 150 s cut |
+
+Nine seconds of headroom, and one Instantly 429 costs about 12 s of backoff.
+That is the whole of the alternating pattern: it fails on the nights a retry
+fires.
+
+Both halves grew the familiar way — a constant that was safe at this size until
+the universe grew. The prelude was 4 × `PACE_MS` when four campaigns existed and
+is 6 × with the B-line's two. The company paging was 8 pages when companies held
+7,659 unsuppressed rows and is **24** now that the 11-07 B-line load took that to
+23,732.
+
+It is now `RUN_BUDGET_MS`, 125 s, anchored at the top of `handle()`.
+
+**No reply data was lost, and it is worth being exact about why**, because I
+nearly wrote the opposite. The watermark is the last run with `outcome = 'ok'`,
+so a killed run does not advance it and the next success re-reads with a 3-day
+margin. And the function kept running after the gateway gave up: two replies
+that arrived today, at 15:22 and 20:39, are both in `outcomes` tonight, written
+by the run that 504'd. What a 504 costs is the report, not the record.
+
+### Seven autoresponders had been counted as human replies
+
+Reply rate is the only metric this programme is judged on. I read the text of
+all 105 replies flagged `human_reply` instead of trusting the flag, which is
+what the routine says to do, and seven of them were machines:
+
+| shape | why it got through |
+|---|---|
+| "I will be away from the office starting Thursday 11/20 and returning Monday 11/30" | "away from", not "out of" — and its second clause missed too, because both return patterns want the preposition and this one wrote a bare weekday |
+| "…want to thank you for e-mailing us and will try to respond…" | `thank you for your email` was in `AUTO_SUBJECT` **only** |
+| "Thank you for contacting [company]. Please be advised…" | same |
+| "Thank you for contacting [company]. We've received your request and assigned it Ticket #13544" | same, a ticketing robot |
+| "I will be out of the country from September 29, 2026 to December 20, 2026" | left the country, not the office |
+| "please expect responses to be delayed up to 1 week" | `expect delays` was in `AUTO_SUBJECT` only |
+| "I've recently updated my email address to …" | the address-change pattern was future tense only |
+
+`human_reply` read 105 against a true **98** — a 6.7% overstatement, the same
+error as the Lexset delegation and Widescope address-change notices at seven
+times the scale. The seven stored rows were corrected in place, because the
+classifier re-reads only three days and they would have kept the wrong flag
+forever. `outcomes` now reads 98 human / 78 auto of 176.
+
+Two things about the fix are worth keeping:
+
+**A case that passes for the wrong reason proves nothing.** Custom Case Pros has
+been in the classifier test since 10-01 with exactly the auto-acknowledgement
+body shape, and it was passing on its `Automatic reply` **subject** alone. Its
+positive branch never exercised the body patterns, so three more of the same
+shape walked through for seven weeks. The new cases all carry ordinary `Re:`
+subjects.
+
+**A pattern verified against a hand-typed test case is verified against the
+wrong text.** The address-change pattern was written with a straight apostrophe.
+The reply it was written for arrived with U+2019, as Gmail and Outlook both
+emit. The test passed and the sweep over all 176 stored replies flipped six of
+the seven shapes, leaving the seventh human on one character. Every new pattern
+containing an apostrophe now accepts both.
+
+New guard `scripts/outreach-tests/metrics-budget.test.mjs`; nine new cases in
+`reply-classifier.test.mjs`, six of them these replies verbatim and three of them
+negative controls — a person thanking the sender, a person out of town who still
+answers, and the curly-apostrophe form. 28 cases, 27/27 guards pass. Committed
+`5908b2e7`. **Not deployed:** the deploy was refused, so the live function still
+carries both defects and tomorrow night's report may 504 again.
+
+### The A line is out of supply, and that is now the structural fact
+
+A1's queue is **0** against a cap of 37. A2's is **1** against 125. A4's is 0
+against 55 — and GH-A4-CompetitorWon has gone to Instantly status 3,
+**completed**. 217 slots a day, and this is the whole A-line pool behind them:
+
+| kind | live signals, A line, unassigned |
+|---|---|
+| `rfp_match` | 5 |
+| `recompete` | 0 |
+| `competitor_award` | 0 |
+
+Five. The `recompetes` job is working — it wrote 8 signals on each of six runs
+today — but 3,481 of the 3,492 live `recompete` signals are on B-line companies
+and the handful on A-line companies already have final assignments. A1 is not
+stalled; its audience is finished. From Monday, essentially all sending is
+B-line: B4 75 a day plus B2 50, against the A line's nominal 217.
+
+This also settles a question I could have got wrong: A1's zero is **not** the
+undeployed assign fix. I checked the supply directly rather than inferring it
+from `tally.A1 = 0`.
+
+### The fit judge is still dead — day four, and it is the binding constraint
+
+360 of 360 verdicts came back `unknown` again today, same as 11-24 and 11-25,
+all of them `judge HTTP 400: … "Your credit balance is too low to access the
+Anthropic API"`. 382 live `rfp_match` signals now carry a poisoned verdict.
+
+The damage stays almost entirely repairable: **369 of the 382 are on companies
+with no final assignment**, and the harvester rewrites those payloads, so the
+verdict clears and is re-judged the moment credit returns. The 13 stuck ones are
+all on companies that already have an assignment and do not need a new verdict.
+
+And the supply behind the judge is much larger than B2's queue suggests. There
+are **11,319 live B-line `rfp_match` signals**. B2's problem is not 39 companies;
+it is 11,319 signals waiting on a judge with no credit. At 40 per run and nine
+runs a day, one working day produces roughly 290 verdicts, ~80% of them fit or
+plausible — about six days of B2 sending at cap 50. **Topping up the Anthropic
+API credit is the single highest-value thing available.**
+
+### The rest
+
+Bounce **141 / 7,501 = 1.88%**, unchanged, under the 2% gate. A1 1.07%, A2
+2.18%, A4 2.11%, A5 1.68%, B4 2.18%, B2 **0 of 83**. No campaign near the 5%
+line. B4's lifetime figure is still carried by its 11-12 launch cohort (5 of 75);
+its last two judgeable cohorts are 0 of 75 and 0 of 75, so there is no
+deterioration behind the lifetime number.
+
+Audit: **0 incomplete, 0 missing first name, 0 leaked `{{token}}`, 0 bad
+openers** across 741 B4, 83 B2 and the A line. The 709 flagged are the known
+raw-caps company names (627 B4, 80 B2) and A5's unfixable pair.
+
+Queues after a hand-run refill at `?limit=8000`: B4 **471** ready (6.3 days at
+cap), B2 **39**. The refill wrote only 14 rows against yesterday's 177, with
+`bline.no_signal` at 7,978 of 8,000 considered — the assignable pool is now
+drained down to what the judge can replenish. `signals_loaded` reported
+**20,000** again, which is still the hard page ceiling against 21,483 rows.
+
+Every job 2xx on first attempt except `metrics`. The 03:45 slot was clean for a
+seventh morning.
+
+Replies: 13 B-line repliers at lead level (12 B4, 1 B2 — B2's first, an
+out-of-office). Reply desk **needs_human 10, drafted 48**. Nothing new is an
+accept or a stop. The two replies that never reached `outcomes` are now **3 and
+6 days** old and are confirmed losses rather than lags; the opt-out among them
+was honoured by hand on 11-24, so no one is waiting on a removal — what is lost
+is the bookkeeping, and the accept among them is visible to the accept sync
+because that script reads the reply desk rather than `outcomes`.
+
+### Waiting on a person
+
+1. **Top up the Anthropic API credit.** Day four. Nothing else moves B2.
+2. **Two deploys, both refused by the auto-mode classifier.** `outreach-assign`
+   (fix committed `8606fd8b`, guard passing, refused three times — it is why the
+   queues are refilled by hand each night) and now `outreach-metrics`
+   (`5908b2e7`), without which the nightly report keeps dying every other night.
+3. **Six accepts behind `node scripts/outreach/sync-proposal-accepts.mjs
+   --apply`**, oldest 21 days, three of them B-line. All six read unambiguously
+   as accepts. The gate is deliberate and I have not run it.
+4. **Whether to pause the campaigns on `no_push_dates`**, starting with 11-27
+   tomorrow.
