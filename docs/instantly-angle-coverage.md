@@ -6427,3 +6427,149 @@ because that script reads the reply desk rather than `outcomes`.
    as accepts. The gate is deliberate and I have not run it.
 4. **Whether to pause the campaigns on `no_push_dates`**, starting with 11-27
    tomorrow.
+
+## 2026-11-27 — the holiday sends were twice what I said, and tonight's report reverted yesterday's fix
+
+Second `no_push_dates` day. Push created nothing again (three runs, all
+`{"pushed":0,"note":"holiday (no_push_dates)"}`). Three things to correct or
+add; everything else is unchanged from yesterday.
+
+### Correction: 224 people, not 112, and it is not a drain-down
+
+Yesterday I reported 112 cold first-touches on Thanksgiving. The daily series
+for both holidays:
+
+| | 11-26 | 11-27 |
+|---|---|---|
+| A1 first-touched | 37 | 37 |
+| B4 first-touched | 75 | 75 |
+| B2 first-touched | 0 | 0 |
+| **total** | **112** | **112** |
+
+**224 people, and both numbers are exactly the daily caps.** That is the part I
+should have seen yesterday and did not: 37 is `daily_caps.A1` and 75 is
+`daily_caps.B4`. Instantly holds its own queue of pushed-but-not-yet-emailed
+leads and drains it at the campaign's own daily limit, so a holiday that stops
+our writes does not slow the mail at all. About 400 emails went out across the
+two days.
+
+It is also not a backlog finishing. A1 has ~90 untouched leads left, but B4 has
+**471 ready** in our queue behind whatever Instantly already holds, so this
+repeats on every future `no_push_dates` day at full cap. The next one is
+**2026-12-24**, then 12-25, 12-31, 01-01, 01-18 and 02-15.
+
+I have still not paused anything, and tonight that is the easy call rather than
+a close one: the next affected day is four weeks out, so the decision has time
+to be made deliberately instead of by me at 23:30. The lever is the one the
+Veterans Day pause used on 11-10.
+
+### The undeployed metrics fix cost something new tonight
+
+`metrics` 504'd again, as expected with the fix unshipped — five of the last ten
+nights now. But it also did something I had not thought through.
+
+Yesterday I corrected seven `outcomes` rows whose autoresponders had been scored
+as human replies. Tonight's run re-ingested with its 3-day margin and **reverted
+two of the seven**, because the live function still carries the old patterns:
+
+| reply | `replied_at` | state tonight |
+|---|---|---|
+| "…urgent family matters; expect responses to be delayed" | 10-30 | still corrected |
+| "I've recently updated my email address to…" | 10-30 | still corrected |
+| "out of the country from September 29 to December 20" | 11-02 | still corrected |
+| "Thank you for contacting [company]… Ticket #13544" | 11-09 | still corrected |
+| "Thank you for contacting [company]. Please be advised" | 11-11 | still corrected |
+| "…want to thank you for e-mailing us…" | **11-24** | **reverted to human** |
+| "I will be away from the office starting Thursday 11/20" | **11-25** | **reverted to human** |
+
+The five older rows fall outside the re-read window and kept my write. The two
+recent ones were re-upserted at 23:02:33 tonight by the old classifier.
+`outcomes` reads 100 human / 78 auto of 178, where it should read 98.
+
+**A hand correction inside the re-read window is not a correction; it is a
+correction with a three-day expiry.** I am not re-doing it tonight, because
+tomorrow's run would undo it again. But there is a deadline in it: on about
+11-29 those two rows fall out of the window, and whichever value they hold then
+is the one they keep. If the deploy has not landed by then they need correcting
+by hand, and that time it will stick.
+
+Incidentally the 23:02:33 timestamp confirms yesterday's reading of the 504 from
+the other direction: the run was killed by the gateway at 23:00 and was still
+writing two minutes later. A 504 costs the report, not the record.
+
+### `awards` took a 500, and it is transient — but it exposed a real gap
+
+One of four `awards` runs failed at 09:45:
+
+```
+{"job":"awards","error":"signals page 0: canceling statement due to statement timeout"}
+```
+
+No work was lost: the 15:45 and 21:45 runs both came back 200 with
+`pairs_still_unscanned: 0`.
+
+I was ready to call this the signals table outgrowing its access paths, which
+would have fitted the week's pattern, and measured it instead. The query the
+job runs — `kind = ? and status in ('new','approved') and valid_until >= today`,
+ordered by `id`, first page — plans as an index scan on `signals_pkey` with a
+filter and **executes in 25.8 ms** with 1,847 rows removed by filter. That is
+not a plan problem and does not want an index. A statement timeout on a 25 ms
+query is contention or a one-off spike.
+
+What it did expose is an asymmetry worth naming, and it is this file's shape
+(b) again — a guarantee asserted on some paths and not others. `opportunities`
+and its three shards, `assign` and `push` all have `retry_job_if_failed` crons.
+`awards`, `recompetes`, `fit`, `stage` and `advance` do not, which is harmless
+because they run four to 288 times a day and the next run picks the work up.
+**`metrics` runs once a day and has no retry.** It is the single least redundant
+job in the system and the one that has failed five nights in ten. Once the
+budget fix is deployed, a `retry_job_if_failed('metrics','/outreach-metrics')`
+at about 23:20 would mean a bad night still produces a report. Adding it before
+the deploy would only double a failure, so it belongs with the deploy.
+
+### The signals page ceiling is getting worse, not holding
+
+`assign` reported `signals_loaded: 20000` again — its hard ceiling of 20 pages
+of 1,000. `outreach.signals` now holds **32,704 rows, 23,257 of them `new` or
+`approved`**, so roughly **3,257 signals are invisible to assign**, against the
+~1,500 I recorded a few days ago. The table is growing faster than the entry
+for it has been updated.
+
+### The rest, all unchanged
+
+Fit judge dead for a **fifth day**: 360 of 360 verdicts `unknown`, same credit
+error. 381 live poisoned signals, **368 of them on unassigned companies** and so
+self-healing, 13 stuck on companies that already have assignments and do not
+need a verdict. The count is stable day over day, so the harvester is clearing
+them as fast as the judge poisons them.
+
+Bounce **142 / 7,613 = 1.87%**, under the gate and slightly better than
+yesterday. A1 1.03%, A2 2.18%, A4 2.11%, A5 1.68%, B4 **2.09%** (improving), B2
+**0 of 83**. Nothing near the 5% line.
+
+Audit: **0 incomplete, 0 missing first name, 0 leaked `{{token}}`, 0 bad
+openers**. The 709 flagged are the known raw-caps names and A5's pair.
+
+Queues unchanged with no push: B4 **471** (6.3 days at cap), B2 **39**, A1 0,
+A2 1, A4 0, A5 727 frozen at cap 0. A-line assignable supply is **6** live
+signals, one more than yesterday — the A line is still finished.
+
+Replies: two new, both out-of-office, both classified correctly by the live
+patterns. Reply desk **needs_human 10, drafted 49**. No new accept and no stop.
+
+Every job 2xx on first attempt except `awards` (above) and `metrics`. The 03:45
+slot clean for an eighth morning.
+
+### Waiting on a person — unchanged, with one new deadline
+
+1. **Top up the Anthropic API credit.** Day five. 11,319 live B-line
+   `rfp_match` signals are waiting on it; one working judge day is about six
+   days of B2 at cap 50.
+2. **The two deploys** (`outreach-assign` `8606fd8b`, `outreach-metrics`
+   `5908b2e7`), both refused by the auto-mode classifier. The metrics one now
+   has a date on it: **by about 11-29**, or two reply rows freeze at the wrong
+   value.
+3. **Six accepts** behind `sync-proposal-accepts.mjs --apply`, now oldest 22
+   days.
+4. **Whether to pause the campaigns on `no_push_dates`.** Next affected day
+   2026-12-24.
